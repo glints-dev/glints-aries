@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["> 99.5%"]
+      }
+    }],
+    "react",
+    "flow"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }],
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ]
+}
