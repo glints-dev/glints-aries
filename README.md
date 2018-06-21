@@ -39,7 +39,8 @@ export {Uikit as default, UikitConsumer, UikitProvider} from './Provider';
 ```
 
 ## Todos
-- [ ] better documentation
+- [x] better documentation
+- [ ] more better documentation
 - [ ] refactoring existing component so it can be more flexible and reliable
 
 ## Coming soon
