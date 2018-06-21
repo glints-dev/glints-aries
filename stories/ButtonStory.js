@@ -32,21 +32,15 @@ const ButtonStories = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="job" onClick={action('default button')}>Hello World</Button>
+              <Button variant="job" onClick={action('job button')}>Hello World</Button>
             </td>
             <td><code>{`<Button variant="job">Hello World</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="secondary" onClick={action('default button')}>Secondary</Button>
+              <Button variant="secondary" onClick={action('secondary button')}>Secondary</Button>
             </td>
             <td><code>{`<Button variant="secondary">Secondary</Button>`}</code></td>
-          </tr>
-          <tr>
-            <td style={{padding: 20}}>
-              <button onClick={action('native button')}>Native button</button>
-            </td>
-            <td><code>{`<button>Secondary</button>`}</code></td>
           </tr>
         </tbody>
       </table>

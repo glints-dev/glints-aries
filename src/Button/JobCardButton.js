@@ -11,10 +11,10 @@ const CTAButton = (props) => {
   )
 };
 
-const JobCardButton = ({ children, label, icon }) =>  {
+const JobCardButton = ({ children, label, icon, ...defaultButtonProps }) =>  {
 
   return (
-    <JobCardContainer>
+    <JobCardContainer {...defaultButtonProps}>
       <JobCardBtn>
         { label }
         {icon
