@@ -59,8 +59,8 @@ const JobCard = ({
       </JobDescription>
     </Body>
     <Footer>
-      <DefaultButton label={'Share'} icon={ShareIcon} />
-      <DefaultButton label={'Save'} icon={StarIcon} />
+      <DefaultButton icon={ShareIcon}>Share</DefaultButton>
+      <DefaultButton icon={StarIcon}>Save</DefaultButton>
       <Button variant={'job'}>Apply</Button>
     </Footer>
   </JobCardContainer>
