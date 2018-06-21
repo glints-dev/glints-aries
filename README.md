@@ -17,7 +17,7 @@ import { Button } from 'glints-aries';
 
 const MyComponent = () => {
   return(
-    <Button variant="default">I'm a button</Button>
+    <Button variant="default">Im a button</Button>
   )
 }
 
@@ -31,7 +31,7 @@ npm run storybook
 then open your browser on port 9001
 
 ### development
-once you done adding component on `src` folder add it on `src/index.js` file
+all components lived on `src` folder. once you done adding component on `src` folder add it on `src/index.js` file
 ```javascript
 export {default as Button} from './Button';
 export {default as MyAwesomeComponent} from './MyAwesomeComponent';
