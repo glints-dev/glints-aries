@@ -23,13 +23,13 @@ const ButtonStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="cta" onClick={test}>Hello World</Button>
+              <Button variant="default" onClick={test}>default</Button>
             </td>
             <td><code>{`<Button variant="cta">Hello World</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="job" onClick={action('default button')}>Hello World</Button>
+              <Button onClick={action('cta primary')} variant="cta" type="primary">CTA primary</Button>
             </td>
             <td><code>{`<Button variant="job">Hello World</Button>`}</code></td>
           </tr>
