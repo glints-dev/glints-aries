@@ -11,4 +11,20 @@ const CTAButton = (props) => {
   )
 };
 
-export default CTAButton;
+const JobCardButton = ({ children, label, icon }) =>  {
+
+  return (
+    <JobCardContainer>
+      <JobCardBtn>
+        { label }
+        {icon
+          ? <Icon image={icon} position={'right'} />
+          : null
+        }
+        {children}
+      </JobCardBtn>
+    </JobCardContainer>
+  );
+}
+
+export default JobCardButton;

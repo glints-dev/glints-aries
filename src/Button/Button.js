@@ -1,6 +1,6 @@
 /* @flow */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import CtaButton from './CtaButton';
 import JobCardButton from './JobCardButton';
 import SecondaryButton from './SecondaryButton';
@@ -13,23 +13,23 @@ const Button = (props: Props) => {
 	const { variant } = props;
 
 	return (
-		<div>
+		<Fragment>
 			{variant === 'cta' &&
-				<CtaButton onClick={props.onClick}>Hello world</CtaButton>
+				<CtaButton onClick={props.onClick}>{props.children}</CtaButton>
 			}
 
 			{variant === 'job' && 
-				<JobCardButton onClick={props.onClick}>Hello World</JobCardButton>
+				<JobCardButton onClick={props.onClick}>{props.children}</JobCardButton>
 			}
 
 			{variant === "secondary" && 
-				<SecondaryButton onClick={props.onClick}>Secondary</SecondaryButton>
+				<SecondaryButton onClick={props.onClick}>{props.children}</SecondaryButton>
 			}
 
 			{variant === "nostyle" && 
 				<button>no style button</button>
 			}
-		</div>
+		</Fragment>
 	);
 }
 
