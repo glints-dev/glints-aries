@@ -2,24 +2,8 @@
 
 import React, { Fragment } from 'react';
 import styled, {css} from 'styled-components';
-import CtaButton from './CtaButton';
-import JobCardButton from './JobCardButton';
-import SecondaryButton from './SecondaryButton';
-
-type ButtonVariant = 'default' | 'cta';
-type ButtonType = 'primary' | 'secondary' | 'info'
-
-type Props = {
-	disabled: boolean,
-	variant?: ButtonVariant,
-	type?: ButtonType,
-}
-
-type HandlerProps = {
-	disabled: boolean,
-	variant?: ButtonVariant,
-	type?: ButtonType
-};
+import { SecondaryColor, PrimaryColor } from './../Style/Colors';
+import { Variant, Theme } from '../Utils/StyleConfig';
 
 const buttonStyleHandler = (props: HandlerProps) => {
   const styles: Object = {};
@@ -28,25 +12,19 @@ const buttonStyleHandler = (props: HandlerProps) => {
   styles.borderRadius = props.round ? '8rem' : '0rem';
 
   switch (props.variant) {
-    case 'cta':
-      styles.border = 'solid 0.1rem rgba(0, 0, 0, 0.24)';
-      styles.borderBottomColor = 'rgba(0, 0, 0, 0.32)';
-      styles.backgroundColor = '#3d70b2';
-      styles.mouseEventBackgroundColor = '#30588c';
+    case Variant.GHOST:
+			styles.mouseEventBackgroundColor = '#30588c';
+			styles.border = '2px solid #000';
       break;
     default:
-      styles.border = 'solid 0.1rem rgba(0, 0, 0, 0.24)';
-      styles.borderBottomColor = 'rgba(0, 0, 0, 0.32)';
       styles.backgroundColor = '#fff';
       styles.mouseEventBackgroundColor = '#d2d2d2';
 	}
-	
-	switch (props.type) {
-		case 'primary':
-			styles.backgroundColor = 'red';
-			break;
-		default:
-			styles.backgroundColor = '#333';
+
+	switch (props.theme) {
+		case Theme.RED: 
+			styles.backgroundColor = PrimaryColor.glintsred;
+			styles.color = SecondaryColor.white;
 	}
 
   styles.cursor = props.disabled ? 'not-allowed' : 'pointer';
@@ -61,8 +39,32 @@ const buttonStyleHandler = (props: HandlerProps) => {
 };
 
 const ButtonWrapper = styled.button`
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border: ${props => props.variant === 'ghost' ? `${buttonStyleHandler(props).border}` : `none` };
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 14px;
+	padding: .8em .6em;
+	min-width: 8.5em;
 	appearance: none;
+	color : ${props => buttonStyleHandler(props).color};
 	background-color: ${props => buttonStyleHandler(props).backgroundColor};
+
+	&:hover {
+    background: ${SecondaryColor.whitesmoke};
+    transition: all .5s;
+  }
+
+  &:active {
+    background: ${SecondaryColor.black};
+    color: ${SecondaryColor.white};
+    transition: all .5s;
+  }
 `
 
 const Button = (props: Props) => {
@@ -82,5 +84,20 @@ const Button = (props: Props) => {
 		</ButtonWrapper>
 	);
 }
+
+type ButtonVariant = 'default' | 'cta';
+type ButtonType = 'primary' | 'secondary';
+
+type Props = {
+	disabled: boolean,
+	variant?: ButtonVariant,
+	theme?: ButtonType,
+}
+
+type HandlerProps = {
+	disabled: boolean,
+	variant?: ButtonVariant,
+	theme?: ButtonType
+};
 
 export default Button;

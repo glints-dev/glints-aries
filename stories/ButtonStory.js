@@ -1,12 +1,9 @@
 import React from 'react';
 import Button from './../src/Button';
 import { action } from '@storybook/addon-actions';
+import { Variant } from './../src/Utils/StyleConfig';
 
 const ButtonStories = () => {
-  function test() {
-    console.log('test');
-  }
-
   return (
     <div className="doc-mainbar">
       <h1>Glints Buttons</h1>
@@ -17,27 +14,27 @@ const ButtonStories = () => {
             <th colSpan="0">
               props: <code>variant</code>
             </th>
-            <th onClick={test}>usage</th>
+            <th>usage</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="default" onClick={test}>default</Button>
+              <Button onClick={action('default button')}>No Props</Button>
             </td>
-            <td><code>{`<Button variant="cta">Hello World</Button>`}</code></td>
+            <td><code>{`<Button>No Props</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button onClick={action('cta primary')} variant="cta" type="primary">CTA primary</Button>
+              <Button variant={Variant.DEFAULT} theme="red" onClick={action('variant default')}>{Variant.DEFAULT}</Button>
             </td>
-            <td><code>{`<Button variant="job">Hello World</Button>`}</code></td>
+            <td><code>{`<Button variant="default" theme="red">Hello World</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="secondary" onClick={action('default button')}>Secondary</Button>
+              <Button variant={Variant.GHOST} theme="red" onClick={action('default button')}>{Variant.GHOST}</Button>
             </td>
-            <td><code>{`<Button variant="secondary">Secondary</Button>`}</code></td>
+            <td><code>{`<Button variant=${Variant.GHOST} theme="red">${Variant.GHOST}</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
