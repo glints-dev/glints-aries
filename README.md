@@ -3,14 +3,14 @@ Glints-aries UI-kit
 
 [https://github.com/glints-dev/glints-aries](https://github.com/glints-dev/glints-aries)
 
-### installation
+## installation
 ```bash
 npm install -S glints-aries
 ```
 
-### usage
+## usage
 
-## Button
+### Button
 ```javascript
 import React from 'react';
 import { Button } from 'glints-aries';
@@ -24,13 +24,13 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-### npm scripts
+## npm scripts
 ```bash
 npm run storybook
 ```
 then open your browser on port 9001
 
-### development
+## development
 all components lived on `src` folder. once you done adding component on `src` folder include it on `src/index.js` file
 ```javascript
 export {default as Button} from './Button';
@@ -38,9 +38,9 @@ export {default as MyAwesomeComponent} from './MyAwesomeComponent';
 export {Uikit as default, UikitConsumer, UikitProvider} from './Provider';
 ```
 
-### Todos
+## Todos
 - [ ] better documentation
 - [ ] refactoring existing component so it can be more flexible and reliable
 
-### Coming soon
+## Coming soon
 - [ ] another awesome component
