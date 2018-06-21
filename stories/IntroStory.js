@@ -4,7 +4,7 @@ const IntroStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Installation</h1>
-      <p>npm: <code>{`npm install -S [package name]`}</code></p>
+      <p>npm: <code>{`npm install -S glints-aries`}</code></p>
     </div>
   );
 }
