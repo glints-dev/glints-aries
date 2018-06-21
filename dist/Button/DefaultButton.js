@@ -14,18 +14,22 @@ var _react2 = _interopRequireDefault(_react);
 
 var _ButtonStyle = require('./../Style/ButtonStyle');
 
+var _IconStyle = require('./../Style/IconStyle');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-;
+var DefaultButton = function DefaultButton(props) {
+  var children = props.children,
+      icon = props.icon,
+      defaultButtonProps = (0, _objectWithoutProperties3.default)(props, ['children', 'icon']);
 
-var SecondaryButton = function SecondaryButton(props) {
-  var defaultButtonProps = (0, _objectWithoutProperties3.default)(props, []);
 
   return _react2.default.createElement(
-    _ButtonStyle.SecondaryBtn,
+    _ButtonStyle.DefaultBtn,
     defaultButtonProps,
-    props.children
+    icon ? _react2.default.createElement(_IconStyle.Icon, { image: icon, position: 'left' }) : null,
+    children
   );
 };
 
-exports.default = SecondaryButton;
+exports.default = DefaultButton;

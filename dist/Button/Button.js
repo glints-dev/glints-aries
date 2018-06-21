@@ -20,6 +20,10 @@ var _SecondaryButton = require('./SecondaryButton');
 
 var _SecondaryButton2 = _interopRequireDefault(_SecondaryButton);
 
+var _DefaultButton = require('./DefaultButton');
+
+var _DefaultButton2 = _interopRequireDefault(_DefaultButton);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Button = function Button(props) {
@@ -27,22 +31,27 @@ var Button = function Button(props) {
 
 
 	return _react2.default.createElement(
-		'div',
+		_react.Fragment,
 		null,
+		variant === 'default' && _react2.default.createElement(
+			_DefaultButton2.default,
+			{ onClick: props.onClick },
+			props.children
+		),
 		variant === 'cta' && _react2.default.createElement(
 			_CtaButton2.default,
 			{ onClick: props.onClick },
-			'Hello world'
+			props.children
 		),
 		variant === 'job' && _react2.default.createElement(
 			_JobCardButton2.default,
 			{ onClick: props.onClick },
-			'Hello World'
+			props.children
 		),
 		variant === "secondary" && _react2.default.createElement(
 			_SecondaryButton2.default,
 			{ onClick: props.onClick },
-			'Secondary'
+			props.children
 		),
 		variant === "nostyle" && _react2.default.createElement(
 			'button',
