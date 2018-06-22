@@ -42,7 +42,7 @@ export const DefaultBtn = Button.extend`
  * CTA Button
  */
 
-export const CTAContainer = styled.div`
+export const PrimaryContainer = styled.div`
   position: relative;
   display: inline-flex;
 
@@ -70,7 +70,7 @@ export const CTAContainer = styled.div`
   }
 `;
 
-export const CTABtn = Button.extend`
+export const PrimaryBtn = Button.extend`
   flex: 1;
   background-color: ${PrimaryColor.glintsred};
   color: ${SecondaryColor.white};
@@ -89,7 +89,7 @@ export const CTABtn = Button.extend`
 `;
 
 /*
- * Job Card Button
+ * Secondary Button
  */
 
 const Bouncing = keyframes`
@@ -102,7 +102,7 @@ const Bouncing = keyframes`
   }
 `;
 
-export const JobCardBtn = Button.extend`
+export const SecondaryBtn = Button.extend`
   flex: 1;
   background-color: ${SecondaryColor.whitesmoke};
   color: ${SecondaryColor.black};
@@ -110,7 +110,7 @@ export const JobCardBtn = Button.extend`
   z-index: 2;
 `;
 
-export const JobCardContainer = styled.div`
+export const SecondaryContainer = styled.div`
   position: relative;
   display: inline-flex;
 
@@ -131,7 +131,7 @@ export const JobCardContainer = styled.div`
   }
 
   &:hover {
-    ${JobCardBtn} {
+    ${SecondaryBtn} {
       background-color: ${PrimaryColor.glintsyellow};
       transform: translate3d(-.265em, -.265em, 0);
       transition: transform .2s;
@@ -145,7 +145,7 @@ export const JobCardContainer = styled.div`
   }
 
   &:active {
-    ${JobCardBtn} {
+    ${SecondaryBtn} {
       background-color: ${SecondaryColor.black};
       color: ${SecondaryColor.white};
       transition: all .2s;
@@ -164,16 +164,56 @@ export const JobCardContainer = styled.div`
  * Secondary Button
  */
 
-export const SecondaryBtn = Button.extend`
+export const GhostBtn = Button.extend`
   flex: 1;
-  border: 2px solid ${PrimaryColor.glintsred};
-  color: ${PrimaryColor.glintsred};
   transition: background-color .5s;
 
+  ${props => {
+    switch(props.theme) {
+      case 'red':
+        return`
+          border: 2px solid ${PrimaryColor.glintsred};
+          color: ${PrimaryColor.glintsred};
+        `;
+      case 'yellow':
+        return`
+          border: 2px solid ${PrimaryColor.glintsyellow};
+          color: ${PrimaryColor.glintsyellow};
+        `;
+      case 'blue':
+        return`
+          border: 2px solid ${PrimaryColor.glintsblue};
+          color: ${PrimaryColor.glintsblue};
+        `;
+      default:
+        null
+    }
+  }}
+
   &:hover {
-    background-color: ${PrimaryColor.glintsred};
-    color: ${SecondaryColor.white};
     transition: background-color .5s;
+
+    ${props => {
+      switch(props.theme) {
+        case 'red':
+          return`
+            background-color: ${PrimaryColor.glintsred};
+            color: ${SecondaryColor.white};
+          `;
+        case 'yellow':
+          return`
+            background-color: ${PrimaryColor.glintsyellow};
+            color: ${SecondaryColor.white};
+          `;
+        case 'blue':
+          return`
+            background-color: ${PrimaryColor.glintsblue};
+            color: ${SecondaryColor.white};
+          `;
+        default:
+          null
+      }
+    }}
   }
 
   &:active {

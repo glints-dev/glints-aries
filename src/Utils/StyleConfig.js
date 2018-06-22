@@ -6,7 +6,7 @@ export const Variant = {
   LINK: 'link',
 };
 
-export const Color = {
+export const Theme = {
   RED: 'red',
   YELLOW: 'yellow',
   BLUE: 'blue',
