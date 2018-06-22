@@ -1,28 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PrimaryColor } from './../Style/Colors';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Item = (props) => {
   const { title, url, imgUrl, isExternal, isReactRouter, subtitle } = props;
   return (
-    <React.Fragment>
-      <ItemWrapper>
-        <ItemImage>
-          <img src={imgUrl} alt='' />
-        </ItemImage>
-        <ItemContent>
-          <h4>{title}</h4>
-          {!isReactRouter &&
-            <a href={url} target={isExternal ? "_blank" : "_self"} rel="noopener noreferrer">{subtitle}</a>
-          }
+    <ItemWrapper>
+      <ItemImage>
+        <img src={imgUrl} alt='' />
+      </ItemImage>
+      <ItemContent>
+        <h4>{title}</h4>
+        {!isReactRouter &&
+          <a href={url} target={isExternal ? "_blank" : "_self"} rel="noopener noreferrer">{subtitle}</a>
+        }
 
-          {isReactRouter &&
-            <Link to={url}>{subtitle}</Link>
-          }
-        </ItemContent>
-      </ItemWrapper>
-    </React.Fragment>
+        {isReactRouter &&
+          <Link to={url}>{subtitle}</Link>
+        }
+      </ItemContent>
+    </ItemWrapper>
   );
 }
 
