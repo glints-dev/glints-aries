@@ -1,15 +1,16 @@
+/* @flow */
 import React from 'react';
 import styled from 'styled-components';
 import { PrimaryColor } from './../Style/Colors';
 import { Link } from 'react-router-dom';
 
-const Item = (props) => {
+const Item = (props: Props) => {
   const { title, url, imgUrl, isExternal, isReactRouter, subtitle } = props;
   return (
     <ItemWrapper>
-      <ItemImage>
-        <img src={imgUrl} alt='' />
-      </ItemImage>
+      <ItemImgWrapper>
+        <img src={imgUrl} alt='' width="64" height="64" />
+      </ItemImgWrapper>
       <ItemContent>
         <h4>{title}</h4>
         {!isReactRouter &&
@@ -26,7 +27,6 @@ const Item = (props) => {
 
 const ItemWrapper = styled.div`
   display: flex;
-  margin: 1em 0;
   width: 100%;
   min-height: 0;
   background: 0 0;
@@ -42,12 +42,13 @@ const ItemWrapper = styled.div`
   z-index: '';
 `;
 
-const ItemImage = styled.span`
+const ItemImgWrapper = styled.span`
   flex: 0 0 auto;
   display: block;
   float: none;
   margin: 0;
-  padding: 0;
+  padding: .2em;
+  border: 1px solid #C6C6C6;
 `;
 
 const ItemContent = styled.div`
@@ -61,7 +62,7 @@ const ItemContent = styled.div`
 
   h4 {
     font-size: 1.1em;
-    line-height: .8em;
+    line-height: 1.15em;
     margin-bottom: .2em;
   }
 
@@ -83,6 +84,16 @@ Item.defaultProps = {
   subtitle: 'subtitle',
   title: 'default',
   url: '/',
+};
+
+//Typecheck goes here
+type Props = {
+  title?: string,
+  subtitle?: string,
+  imgUrl?: string,
+  isExternal: boolean,
+  isReactRouter: boolean,
+  url?: string,
 };
 
 export default Item;
