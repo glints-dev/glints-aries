@@ -7,6 +7,7 @@ import IntroStory from './IntroStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
 import FormStory from './FormStory';
+import ItemStory from './ItemStory';
 import LabelStory from './LabelStory';
 
 storiesOf('Glints Components', module)
@@ -15,5 +16,6 @@ storiesOf('Glints Components', module)
   .add('Button', () => <ButtonStory />)
   .add('Card', () => <CardStory />)
   .add('Form', () => <FormStory />)
+  .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />);
   
