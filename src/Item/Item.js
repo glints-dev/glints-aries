@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PrimaryColor } from './../Style/Colors';
+import {Link} from 'react-router-dom';
 
 const Item = (props) => {
-  const { title, url, imgUrl } = props;
+  const { title, url, imgUrl, isExternal, isReactRouter, subtitle } = props;
   return (
     <React.Fragment>
       <ItemWrapper>
@@ -12,7 +13,13 @@ const Item = (props) => {
         </ItemImage>
         <ItemContent>
           <h4>{title}</h4>
-          <a href={url} target="_blank">company name</a>
+          {!isReactRouter &&
+            <a href={url} target={isExternal ? "_blank" : "_self"}>{subtitle}</a>
+          }
+
+          {isReactRouter &&
+            <Link to={url}>{subtitle}</Link>
+          }
         </ItemContent>
       </ItemWrapper>
     </React.Fragment>
@@ -56,7 +63,8 @@ const ItemContent = styled.div`
 
   h4 {
     font-size: 1.1em;
-    margin-bottom: 0;
+    line-height: .8em;
+    margin-bottom: .2em;
   }
 
   a {
@@ -71,11 +79,12 @@ const ItemContent = styled.div`
 `;
 
 Item.defaultProps = {
-  title: 'default',
-  url: '/',
-  imgUrl: 'https://placeimg.com/64/64/any',
+  imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png',
   isExternal: false,
   isReactRouter: false,
+  subtitle: 'subtitle',
+  title: 'default',
+  url: '/',
 };
 
 export default Item;

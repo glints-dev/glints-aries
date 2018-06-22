@@ -6,10 +6,12 @@ const ItemStory = () => {
     <div className="doc-mainbar">
       <div style={{width: '100%', border: '1px solid #000', padding: '20px'}}>
         <Item
-          title="role name by props"
-          url="javascript:void(0)"
+          title="item title"
+          subtitle="subtitle"
+          url="https://glints.id"
           imgUrl="https://placeimg.com/64/64/any"
-          isExternal="false"
+          isExternal={false}
+          isReactRouter={true}
         />
       </div>
     </div>
