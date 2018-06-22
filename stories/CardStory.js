@@ -6,11 +6,12 @@ const CardStories = () => {
     <div className="doc-mainbar">
       <h1>Glints Card</h1>
       <p>Usage: <code>{`import { Card } from glints-aries`}</code></p>
+      <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>
           <tr>
-            <th colSpan="0">
-              props: <code>variant</code>
+            <th>
+              Preview
             </th>
             <th>usage</th>
           </tr>
@@ -30,7 +31,7 @@ const CardStories = () => {
                 JobType={'Full-Time'}
               />
             </td>
-            <td><pre>{`<Card
+            <td style={{verticalAlign: 'top', paddingTop: 20}}><pre>{`<Card
   FeaturedImage={'url'} 
   FeaturedLabel={'Special'} 
   CompanyLogo={'url'}
