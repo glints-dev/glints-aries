@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './../src/Button';
 import { action } from '@storybook/addon-actions';
-import ShareIcon from './../assets/icons/share.svg';
+import { Variant, Theme } from '../src/Utils/StyleConfig';
 
 const ButtonStories = () => {
   return (
@@ -20,27 +20,27 @@ const ButtonStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="default" icon={ShareIcon} onClick={action('default button')}>Default Button</Button>
+              <Button variant={Variant.DEFAULT} onClick={action('default button')}>Default</Button>
             </td>
-            <td><code>{`<Button variant="default">Default Button</Button>`}</code></td>
+            <td><code>{`<Button variant="default">Default</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="cta" onClick={action('cta button')}>Hello World</Button>
+              <Button variant={Variant.PRIMARY} onClick={action('cta button')}>Primary</Button>
             </td>
-            <td><code>{`<Button variant="cta">Hello World</Button>`}</code></td>
+            <td><code>{`<Button variant="primary">Primary</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant="job" onClick={action('job button')}>Hello World</Button>
-            </td>
-            <td><code>{`<Button variant="job">Hello World</Button>`}</code></td>
-          </tr>
-          <tr>
-            <td style={{padding: 20}}>
-              <Button variant="secondary" onClick={action('secondary button')}>Secondary</Button>
+              <Button variant={Variant.SECONDARY} onClick={action('job button')}>Secondary</Button>
             </td>
             <td><code>{`<Button variant="secondary">Secondary</Button>`}</code></td>
+          </tr>
+          <tr>
+            <td style={{padding: 20}}>
+              <Button variant={Variant.GHOST} theme={Theme.RED}  onClick={action('secondary button')}>Ghost</Button>
+            </td>
+            <td><code>{`<Button variant="ghost" theme="red">Ghost</Button>`}</code></td>
           </tr>
         </tbody>
       </table>

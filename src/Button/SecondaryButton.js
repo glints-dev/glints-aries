@@ -1,13 +1,20 @@
-/* @flow */
-
 import React from 'react';
-import { SecondaryBtn } from './../Style/ButtonStyle';;
+import { SecondaryContainer, SecondaryBtn } from './../Style/ButtonStyle';
 
-const SecondaryButton = (props) => {
-  const { ...defaultButtonProps } = props;
+const SecondaryButton = ({ children, label, icon, ...defaultButtonProps }) =>  {
+
   return (
-    <SecondaryBtn {...defaultButtonProps}>{props.children}</SecondaryBtn>
+    <SecondaryContainer {...defaultButtonProps}>
+      <SecondaryBtn>
+        { label }
+        {icon
+          ? <Icon image={icon} position={'right'} />
+          : null
+        }
+        {children}
+      </SecondaryBtn>
+    </SecondaryContainer>
   );
-};
+}
 
 export default SecondaryButton;
