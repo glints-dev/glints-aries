@@ -14,7 +14,7 @@ const Item = (props) => {
         <ItemContent>
           <h4>{title}</h4>
           {!isReactRouter &&
-            <a href={url} target={isExternal ? "_blank" : "_self"}>{subtitle}</a>
+            <a href={url} target={isExternal ? "_blank" : "_self"} rel="noopener noreferrer">{subtitle}</a>
           }
 
           {isReactRouter &&
