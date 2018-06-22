@@ -5,7 +5,7 @@ Glints-aries UI-kit
 
 ## installation
 ```bash
-npm install -S glints-aries
+npm install -S @glints-dev/glints-aries
 ```
 
 ## usage
@@ -13,7 +13,7 @@ npm install -S glints-aries
 ### Button
 ```javascript
 import React from 'react';
-import { Button } from 'glints-aries';
+import { Button } from '@glints-dev/glints-aries';
 
 const MyComponent = () => {
   return(

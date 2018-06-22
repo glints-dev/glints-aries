@@ -7,7 +7,7 @@ const ButtonStories = () => {
   return (
     <div className="doc-mainbar">
       <h1>Glints Buttons</h1>
-      <p>Usage: <code>{`import { Button } from glints-aries`}</code></p>
+      <p>Usage: <code>{`import { Button } from '@glints-dev/glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>
