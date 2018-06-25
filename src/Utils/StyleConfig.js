@@ -12,3 +12,9 @@ export const Theme = {
   BLUE: 'blue',
   WHITE: 'white',
 };
+
+export const Size = {
+  LARGE: 'large',
+  MEDIUM: 'medium',
+  SMALL: 'small',
+};
