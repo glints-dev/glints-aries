@@ -1,16 +1,11 @@
 import React from 'react';
 import { SecondaryContainer, SecondaryBtn } from './../Style/ButtonStyle';
 
-const SecondaryButton = ({ children, label, icon, ...defaultButtonProps }) =>  {
+const SecondaryButton = ({ children, ...defaultButtonProps }) =>  {
 
   return (
     <SecondaryContainer {...defaultButtonProps}>
       <SecondaryBtn>
-        { label }
-        {icon
-          ? <Icon image={icon} position={'right'} />
-          : null
-        }
         {children}
       </SecondaryBtn>
     </SecondaryContainer>

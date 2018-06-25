@@ -6,10 +6,11 @@ import SecondaryButton from './SecondaryButton';
 import GhostButton from './GhostButton';
 import DefaultButton from './DefaultButton';
 
-import { Variant, Theme } from '../Utils/StyleConfig';
+import { Variant } from '../Utils/StyleConfig';
 
 type Props = {
-	variant?: string
+	variant?: string,
+	theme?: string,
 }
 
 const Button = (props: Props) => {

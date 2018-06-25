@@ -21,13 +21,13 @@ const LabelStory = () => {
             <td style={{padding: 20}}>
               <Label>No variant Label</Label>
             </td>
-            <td><code>{`<Label>No variant Label</Label>`}</code></td>
+            <td><code>{`<Label>No Variant Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="secondary">secondary Label</Label>
+              <Label variant="secondary">Secondary Label</Label>
             </td>
-            <td><code>{`<Label variant="secondary">secondary Label</Label>`}</code></td>
+            <td><code>{`<Label variant="secondary">Secondary Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
@@ -37,15 +37,15 @@ const LabelStory = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="danger">danger Label</Label>
+              <Label variant="danger">Danger Label</Label>
             </td>
-            <td><code>{`<Label variant="danger">danger Label</Label>`}</code></td>
+            <td><code>{`<Label variant="danger">Danger Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="warning">warning Label</Label>
+              <Label variant="warning">Warning Label</Label>
             </td>
-            <td><code>{`<Label variant="warning">warning Label</Label>`}</code></td>
+            <td><code>{`<Label variant="warning">Warning Label</Label>`}</code></td>
           </tr>
         </tbody>
       </table>
