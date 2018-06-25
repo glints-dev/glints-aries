@@ -24,8 +24,7 @@ import StarIcon from './../../assets/icons/star.svg';
 import NavigateIcon from './../../assets/icons/navigate.svg';
 
 const JobCard = ({
-  FeaturedImage,
-  FeaturedLabel,
+  children,
   CompanyLogo,
   CompanyName,
   JobTitle,
@@ -35,9 +34,7 @@ const JobCard = ({
   JobType
 }) => (
   <JobCardContainer>
-    <Header FeaturedImage={ FeaturedImage }>
-      <label>{ FeaturedLabel }</label>
-    </Header>
+    {children}
     <Body>
       <CompanyWrapper>
         <CompanyImageWrapper>
