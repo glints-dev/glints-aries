@@ -18,7 +18,7 @@ const Label = (props: Props) => {
 }
 
 // flow type checking goes here
-type LabelVariant = 'primary' | 'secondary' | 'warning' | 'danger';
+type LabelVariant = 'secondary' | 'red' | 'yellow' | 'blue' | 'white';
 
 type Props = {
   variant: LabelVariant,
