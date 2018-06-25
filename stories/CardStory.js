@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './../src/Card';
+import Divider from './../src/Divider';
 import JobBanner from './../src/JobBanner';
 import Item from './../src/Item';
 
@@ -40,6 +41,9 @@ const CardStories = () => {
                   isExternal={true}
                   paddingSize={'1.4em'}
                 />
+
+                <Divider />
+
               </Card>
             </td>
             <td style={{verticalAlign: 'top', paddingTop: 20, width: '100%'}}><pre>{`<Card
@@ -63,6 +67,9 @@ const CardStories = () => {
     isExternal={true}
     paddingSize={'1.4em'}
   />
+
+  <Divider />
+  
 </Card>`}</pre></td>
           </tr>
         </tbody>

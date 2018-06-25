@@ -25,9 +25,6 @@ import NavigateIcon from './../../assets/icons/navigate.svg';
 
 const JobCard = ({
   children,
-  CompanyLogo,
-  CompanyName,
-  JobTitle,
   JobCategory,
   JobSalary,
   JobLocation,
@@ -36,15 +33,6 @@ const JobCard = ({
   <JobCardContainer>
     {children}
     <Body>
-      <CompanyWrapper>
-        <CompanyImageWrapper>
-          <img src={CompanyLogo} />
-        </CompanyImageWrapper>
-        <Company>
-          <label>{ JobTitle }</label>
-          <span>{ CompanyName }</span>
-        </Company>
-      </CompanyWrapper>
       <JobDetail>
         <label><img src={ManIcon} /> { JobCategory }</label>
         <label><img src={CurrencyIcon} /> { JobSalary }</label>
