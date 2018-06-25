@@ -5,7 +5,7 @@ const CardStories = () => {
   return (
     <div className="doc-mainbar">
       <h1>Glints Card</h1>
-      <p>Usage: <code>{`import { Card } from glints-aries`}</code></p>
+      <p>Usage: <code>{`import { Card } from '@glints-dev/glints-aries'`}</code></p>
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>

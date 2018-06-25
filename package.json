@@ -1,5 +1,5 @@
 {
-  "name": "glints-aries",
+  "name": "@glints-dev/glints-aries",
   "version": "0.0.3",
   "description": "Glints ui-kit for frontend",
   "main": "dist/index.js",
