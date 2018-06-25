@@ -11,6 +11,7 @@ export const Theme = {
   YELLOW: 'yellow',
   BLUE: 'blue',
   WHITE: 'white',
+  SECONDARY: 'secondary',
 };
 
 export const Size = {

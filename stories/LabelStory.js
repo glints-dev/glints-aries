@@ -8,6 +8,12 @@ const LabelStory = () => {
       <h1>Glints Label</h1>
       <p>usage: <code>{`import { Label } from '@glints-dev/glints-aries'`}</code></p>
 
+      <Label block size="small">small Label</Label>
+      <Label block>Default Label</Label>
+      <Label block size="medium">medium Label</Label>
+      <Label block size="large">large Label</Label>
+      <Label block size="xlarge">xlarge Label</Label>
+
       <table className="doc-table">
         <thead>
           <tr>
@@ -26,6 +32,12 @@ const LabelStory = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
+              <Label theme={Theme.SECONDARY}>Secondary Label</Label>
+            </td>
+            <td><code>{`<Label theme="secondary">Secondary Label</Label>`}</code></td>
+          </tr>
+          <tr>
+            <td style={{padding: 20}}>
               <Label theme={Theme.RED}>Red Label</Label>
             </td>
             <td><code>{`<Label theme="red">Danger Label</Label>`}</code></td>
@@ -40,7 +52,7 @@ const LabelStory = () => {
             <td style={{padding: 20}}>
               <Label theme={Theme.BLUE}>Blue Label</Label>
             </td>
-            <td><code>{`<Label variant="blue">Blue Label</Label>`}</code></td>
+            <td><code>{`<Label theme="blue">Blue Label</Label>`}</code></td>
           </tr>
         </tbody>
       </table>
