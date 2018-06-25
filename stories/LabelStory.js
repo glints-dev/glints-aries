@@ -1,5 +1,6 @@
 import React from 'react';
 import Label from './../src/Label';
+import { Theme } from '../src/Utils/StyleConfig';
 
 const LabelStory = () => {
   return (
@@ -19,33 +20,27 @@ const LabelStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Label>No variant Label</Label>
+              <Label>Default Label</Label>
             </td>
             <td><code>{`<Label>No Variant Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="secondary">Secondary Label</Label>
+              <Label theme={Theme.RED}>Red Label</Label>
             </td>
-            <td><code>{`<Label variant="secondary">Secondary Label</Label>`}</code></td>
+            <td><code>{`<Label theme="red">Danger Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="primary">Primary Label</Label>
+              <Label theme={Theme.YELLOW}>Yellow Label</Label>
             </td>
-            <td><code>{`<Label variant="primary">Primary Label</Label>`}</code></td>
+            <td><code>{`<Label theme="yellow">Warning Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label variant="danger">Danger Label</Label>
+              <Label theme={Theme.BLUE}>Blue Label</Label>
             </td>
-            <td><code>{`<Label variant="danger">Danger Label</Label>`}</code></td>
-          </tr>
-          <tr>
-            <td style={{padding: 20}}>
-              <Label variant="warning">Warning Label</Label>
-            </td>
-            <td><code>{`<Label variant="warning">Warning Label</Label>`}</code></td>
+            <td><code>{`<Label variant="blue">Blue Label</Label>`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -63,9 +58,9 @@ const LabelStory = () => {
         </thead>
         <tbody>
           <tr>
-            <td>variant</td>
+            <td>theme</td>
             <td>string</td>
-            <td><pre>{`'primary' | 'secondary' | 'warning' | 'danger'`}</pre></td>
+            <td><pre>{`'red' | 'yellow' | 'blue'`}</pre></td>
           </tr>
         </tbody>
       </table>

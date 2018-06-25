@@ -39,7 +39,7 @@ export const DefaultBtn = Button.extend`
 `;
 
 /*
- * CTA Button
+ * Primary Button
  */
 
 export const PrimaryContainer = styled.div`
@@ -72,9 +72,31 @@ export const PrimaryContainer = styled.div`
 
 export const PrimaryBtn = Button.extend`
   flex: 1;
-  background-color: ${PrimaryColor.glintsred};
-  color: ${SecondaryColor.white};
   transition: all .2s;
+
+  ${props => {
+    switch(props.theme) {
+      case 'red':
+        return`
+          background-color: ${PrimaryColor.glintsred};
+          color: ${SecondaryColor.white};
+        `;
+      case 'blue':
+        return`
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
+      default:
+        return`
+          background-color: ${SecondaryColor.white};
+          color: ${PrimaryColor.glintsblue};
+
+          &:active {
+            color: ${SecondaryColor.white};
+          }
+        `;
+    }
+  }}
 
   &:hover {
     transform: translate3d(.15em, .15em, 0);
@@ -222,5 +244,14 @@ export const GhostBtn = Button.extend`
     border: 2px solid ${SecondaryColor.black};
     transition: background-color .5s; 
   }
+`;
+
+/*
+ * Link Button
+ */
+
+export const LinkBtn = styled(Button)`
+  font-weight: normal;
+  text-transform: inherit;
 `;
 

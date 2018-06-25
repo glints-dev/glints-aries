@@ -3,7 +3,7 @@ import { PrimaryContainer, PrimaryBtn } from './../Style/ButtonStyle';
 
 const PrimaryButton = (props) => (
 	<PrimaryContainer>
-		<PrimaryBtn onClick={props.onClick}>{props.children}</PrimaryBtn>
+		<PrimaryBtn theme={props.theme} onClick={props.onClick}>{props.children}</PrimaryBtn>
 	</PrimaryContainer>
 );
 

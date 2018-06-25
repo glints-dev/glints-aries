@@ -26,9 +26,9 @@ const ButtonStories = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant={Variant.PRIMARY} onClick={action('cta button')}>Primary</Button>
+              <Button variant={Variant.PRIMARY} theme={Theme.RED} onClick={action('Primary button')}>Primary</Button>
             </td>
-            <td><code>{`<Button variant="primary">Primary</Button>`}</code></td>
+            <td><code>{`<Button variant="primary" theme="red">Primary</Button>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
@@ -41,6 +41,12 @@ const ButtonStories = () => {
               <Button variant={Variant.GHOST} theme={Theme.RED}  onClick={action('secondary button')}>Ghost</Button>
             </td>
             <td><code>{`<Button variant="ghost" theme="red">Ghost</Button>`}</code></td>
+          </tr>
+          <tr>
+            <td style={{padding: 20}}>
+              <Button variant={Variant.LINK} theme={Theme.BLUE}  onClick={action('link button')}>Link</Button>
+            </td>
+            <td><code>{`<Button variant="link" theme="blue">Link</Button>`}</code></td>
           </tr>
         </tbody>
       </table>
