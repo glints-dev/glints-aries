@@ -8,7 +8,7 @@ import JobBannerStory from './JobBannerStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
 import FormStory from './FormStory';
-import HeaderStory from './HeaderStory';
+import StatsStory from './StatsStory';
 import ItemStory from './ItemStory';
 import LabelStory from './LabelStory';
 
@@ -18,7 +18,7 @@ storiesOf('Glints Components', module)
   .add('Button', () => <ButtonStory />)
   .add('Card', () => <CardStory />)
   .add('Form', () => <FormStory />)
-  .add('Header', () => <HeaderStory />)
+  .add('Stats', () => <StatsStory />)
   .add('Item', () => <ItemStory />)
   .add('JobBanner', () => <JobBannerStory />)
   .add('Label', () => <LabelStory />);
