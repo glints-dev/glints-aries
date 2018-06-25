@@ -14,7 +14,7 @@ const highlight = css`
         height: .6em;
         z-index: -1;
         left: 0;
-        top: .8em;
+        bottom: 0;
     }
 `;
 
