@@ -71,8 +71,13 @@ const LabelStory = () => {
         <tbody>
           <tr>
             <td>theme</td>
-            <td>string</td>
+            <td><code>string</code></td>
             <td><pre>{`'red' | 'yellow' | 'blue'`}</pre></td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td><code>string</code></td>
+            <td><pre>{`'small' | 'medium' | 'large' | 'xlarge`}</pre></td>
           </tr>
         </tbody>
       </table>
