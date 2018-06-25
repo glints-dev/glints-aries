@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Label from './../Label';
 import { StatsWrapper } from '../Style/StatsStyle';
 
