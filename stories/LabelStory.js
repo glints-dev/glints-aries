@@ -58,9 +58,9 @@ const LabelStory = () => {
         </thead>
         <tbody>
           <tr>
-            <td>variant</td>
+            <td>theme</td>
             <td>string</td>
-            <td><pre>{`'primary' | 'secondary' | 'warning' | 'danger'`}</pre></td>
+            <td><pre>{`'red' | 'yellow' | 'blue'`}</pre></td>
           </tr>
         </tbody>
       </table>
