@@ -4,6 +4,7 @@ import React from 'react';
 import Provider from './Provider';
 import {storiesOf} from '@storybook/react';
 import IntroStory from './IntroStory';
+import JobBannerStory from './JobBannerStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
 import FormStory from './FormStory';
@@ -17,5 +18,6 @@ storiesOf('Glints Components', module)
   .add('Card', () => <CardStory />)
   .add('Form', () => <FormStory />)
   .add('Item', () => <ItemStory />)
+  .add('JobBanner', () => <JobBannerStory />)
   .add('Label', () => <LabelStory />);
   
