@@ -13,3 +13,9 @@ export const Theme = {
   WHITE: 'white',
   SECONDARY: 'secondary',
 };
+
+export const Size = {
+  LARGE: 'large',
+  MEDIUM: 'medium',
+  SMALL: 'small',
+};

@@ -253,5 +253,9 @@ export const GhostBtn = Button.extend`
 export const LinkBtn = styled(Button)`
   font-weight: normal;
   text-transform: inherit;
+
+  label {
+    cursor: pointer;
+  }
 `;
 
