@@ -49,11 +49,7 @@ var _navigate2 = _interopRequireDefault(_navigate);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var JobCard = function JobCard(_ref) {
-  var FeaturedImage = _ref.FeaturedImage,
-      FeaturedLabel = _ref.FeaturedLabel,
-      CompanyLogo = _ref.CompanyLogo,
-      CompanyName = _ref.CompanyName,
-      JobTitle = _ref.JobTitle,
+  var children = _ref.children,
       JobCategory = _ref.JobCategory,
       JobSalary = _ref.JobSalary,
       JobLocation = _ref.JobLocation,
@@ -61,41 +57,10 @@ var JobCard = function JobCard(_ref) {
   return _react2.default.createElement(
     _CardStyle.JobCardContainer,
     null,
-    _react2.default.createElement(
-      _CardStyle.Header,
-      { FeaturedImage: FeaturedImage },
-      _react2.default.createElement(
-        'label',
-        null,
-        FeaturedLabel
-      )
-    ),
+    children,
     _react2.default.createElement(
       _CardStyle.Body,
       null,
-      _react2.default.createElement(
-        _CardStyle.CompanyWrapper,
-        null,
-        _react2.default.createElement(
-          _CardStyle.CompanyImageWrapper,
-          null,
-          _react2.default.createElement('img', { src: CompanyLogo })
-        ),
-        _react2.default.createElement(
-          _CardStyle.Company,
-          null,
-          _react2.default.createElement(
-            'label',
-            null,
-            JobTitle
-          ),
-          _react2.default.createElement(
-            'span',
-            null,
-            CompanyName
-          )
-        )
-      ),
       _react2.default.createElement(
         _CardStyle.JobDetail,
         null,
@@ -153,7 +118,7 @@ var JobCard = function JobCard(_ref) {
       ),
       _react2.default.createElement(
         _Button2.default,
-        { variant: 'job' },
+        { variant: 'secondary' },
         'Apply'
       )
     )

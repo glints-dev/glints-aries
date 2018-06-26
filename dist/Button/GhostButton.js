@@ -16,20 +16,14 @@ var _ButtonStyle = require('./../Style/ButtonStyle');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SecondaryButton = function SecondaryButton(_ref) {
-  var children = _ref.children,
-      defaultButtonProps = (0, _objectWithoutProperties3.default)(_ref, ['children']);
-
+var GhostButton = function GhostButton(props) {
+  var defaultButtonProps = (0, _objectWithoutProperties3.default)(props, []);
 
   return _react2.default.createElement(
-    _ButtonStyle.SecondaryContainer,
+    _ButtonStyle.GhostBtn,
     defaultButtonProps,
-    _react2.default.createElement(
-      _ButtonStyle.SecondaryBtn,
-      null,
-      children
-    )
+    props.children
   );
 };
 
-exports.default = SecondaryButton;
+exports.default = GhostButton;

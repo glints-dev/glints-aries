@@ -55,7 +55,10 @@ export const Header = styled.header`
 
 export const Body = styled.div`
   position: relative;
-  padding: 1.4em;
+  padding-top: 0;
+  padding-right: 1.4em;
+  padding-bottom: 1.4em;
+  padding-left: 1.4em;
 `;
 
 export const CompanyWrapper = styled.div`
