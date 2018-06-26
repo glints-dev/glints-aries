@@ -24,30 +24,15 @@ import StarIcon from './../../assets/icons/star.svg';
 import NavigateIcon from './../../assets/icons/navigate.svg';
 
 const JobCard = ({
-  FeaturedImage,
-  FeaturedLabel,
-  CompanyLogo,
-  CompanyName,
-  JobTitle,
+  children,
   JobCategory,
   JobSalary,
   JobLocation,
   JobType
 }) => (
   <JobCardContainer>
-    <Header FeaturedImage={ FeaturedImage }>
-      <label>{ FeaturedLabel }</label>
-    </Header>
+    {children}
     <Body>
-      <CompanyWrapper>
-        <CompanyImageWrapper>
-          <img src={CompanyLogo} />
-        </CompanyImageWrapper>
-        <Company>
-          <label>{ JobTitle }</label>
-          <span>{ CompanyName }</span>
-        </Company>
-      </CompanyWrapper>
       <JobDetail>
         <label><img src={ManIcon} /> { JobCategory }</label>
         <label><img src={CurrencyIcon} /> { JobSalary }</label>
@@ -61,7 +46,7 @@ const JobCard = ({
     <Footer>
       <DefaultButton icon={ShareIcon}>Share</DefaultButton>
       <DefaultButton icon={StarIcon}>Save</DefaultButton>
-      <Button variant={'job'}>Apply</Button>
+      <Button variant={'secondary'}>Apply</Button>
     </Footer>
   </JobCardContainer>
 );

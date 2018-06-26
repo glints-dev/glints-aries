@@ -12,16 +12,16 @@ var _ButtonStyle = require('./../Style/ButtonStyle');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CTAButton = function CTAButton(props) {
+var PrimaryButton = function PrimaryButton(props) {
 	return _react2.default.createElement(
-		_ButtonStyle.CTAContainer,
+		_ButtonStyle.PrimaryContainer,
 		null,
 		_react2.default.createElement(
-			_ButtonStyle.CTABtn,
-			{ onClick: props.onClick },
+			_ButtonStyle.PrimaryBtn,
+			{ theme: props.theme, onClick: props.onClick },
 			props.children
 		)
 	);
 };
 
-exports.default = CTAButton;
+exports.default = PrimaryButton;

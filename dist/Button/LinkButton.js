@@ -14,22 +14,24 @@ var _react2 = _interopRequireDefault(_react);
 
 var _ButtonStyle = require('./../Style/ButtonStyle');
 
+var _Label = require('../Label');
+
+var _Label2 = _interopRequireDefault(_Label);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SecondaryButton = function SecondaryButton(_ref) {
-  var children = _ref.children,
-      defaultButtonProps = (0, _objectWithoutProperties3.default)(_ref, ['children']);
-
+var LinkButton = function LinkButton(props) {
+  var defaultButtonProps = (0, _objectWithoutProperties3.default)(props, []);
 
   return _react2.default.createElement(
-    _ButtonStyle.SecondaryContainer,
-    defaultButtonProps,
+    _ButtonStyle.LinkBtn,
+    null,
     _react2.default.createElement(
-      _ButtonStyle.SecondaryBtn,
-      null,
-      children
+      _Label2.default,
+      { theme: props.theme },
+      props.children
     )
   );
 };
 
-exports.default = SecondaryButton;
+exports.default = LinkButton;
