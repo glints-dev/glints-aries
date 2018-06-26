@@ -8,7 +8,12 @@ const CardStories = () => {
   return (
     <div className="doc-mainbar">
       <h1>Glints Card</h1>
-      <p>Usage: <code>{`import { Card, JobBanner, Item } from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <pre>{`import {
+  Card,
+  JobBanner,
+  Item,
+  Divider,
+} from '@glints-dev/glints-aries'`}</pre></p>
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>
@@ -69,7 +74,7 @@ const CardStories = () => {
   />
 
   <Divider />
-  
+
 </Card>`}</pre></td>
           </tr>
         </tbody>
