@@ -20,7 +20,7 @@ class AccordionStory extends Component {
   render() {
     return (
       <div className="doc-mainbar">
-        <h1>Glints Label</h1>
+        <h1>Glints Accordion</h1>
         <p>usage: <pre>{`import Accordion, { AccordionItem, AccordionHeader, Label } '@glints-dev/glints-aries'`}</pre></p>
   
         <table className="doc-table">
