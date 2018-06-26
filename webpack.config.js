@@ -3,7 +3,7 @@ const entry = require('webpack-glob-entry');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 module.exports = {
-  entry: entry('./assets/**/*.*'),
+  entry: entry('./assets/icons/*.*', './assets/logos/*.*'),
   output: {
     path: path.resolve('./dist/public/'),
     filename: '[name]-[hash].js',

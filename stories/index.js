@@ -5,6 +5,7 @@ import Provider from './Provider';
 import {storiesOf} from '@storybook/react';
 import IntroStory from './IntroStory';
 import ButtonStory from './ButtonStory';
+import AccordionStory from './AccordionStory';
 import BlockquoteStory from './BlockquoteStory';
 import CardStory from './CardStory';
 import FormStory from './FormStory';
@@ -18,6 +19,7 @@ storiesOf('Glints Components', module)
   .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
   .add('Introduction', () => <IntroStory />)
   .add('Button', () => <ButtonStory />)
+  .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Card', () => <CardStory />)
   .add('Form', () => <FormStory />)
