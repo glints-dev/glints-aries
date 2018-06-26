@@ -8,12 +8,12 @@ const CardStories = () => {
   return (
     <div className="doc-mainbar">
       <h1>Glints Card</h1>
-      <p>Usage: <pre>{`import {
+      <div>Usage: <pre>{`import {
   Card,
   JobBanner,
   Item,
   Divider,
-} from '@glints-dev/glints-aries'`}</pre></p>
+} from '@glints-dev/glints-aries'`}</pre></div>
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>
