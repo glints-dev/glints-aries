@@ -20,7 +20,7 @@ const LabelStyleHandler = (props: HandlerProps) => {
     case 'blue':
       styles.color = PrimaryColor.glintsblue;
       break;
-    case 'secondary':
+    case 'grey':
       styles.color = SecondaryColor.lightgrey;
       break;
     default:

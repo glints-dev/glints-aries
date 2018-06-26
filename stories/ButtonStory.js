@@ -44,7 +44,7 @@ const ButtonStories = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant={Variant.LINK} theme={Theme.BLUE}  onClick={action('link button')}>Link</Button>
+              <Button variant={Variant.LINK} theme={Theme.RED}  onClick={action('link button')}>Link</Button>
             </td>
             <td><code>{`<Button variant="link" theme="blue">Link</Button>`}</code></td>
           </tr>

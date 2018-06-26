@@ -11,10 +11,11 @@ export const Theme = {
   YELLOW: 'yellow',
   BLUE: 'blue',
   WHITE: 'white',
-  SECONDARY: 'secondary',
+  GREY: 'grey',
 };
 
 export const Size = {
+  XLARGE: 'xlarge',
   LARGE: 'large',
   MEDIUM: 'medium',
   SMALL: 'small',

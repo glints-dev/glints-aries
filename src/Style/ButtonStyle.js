@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
+import { Theme, Size } from '../Utils/StyleConfig';
 import './GlobalStyle';
 
 const Button = styled.button`
@@ -76,12 +77,12 @@ export const PrimaryBtn = Button.extend`
 
   ${props => {
     switch(props.theme) {
-      case 'red':
+      case `${Theme.RED}`:
         return`
           background-color: ${PrimaryColor.glintsred};
           color: ${SecondaryColor.white};
         `;
-      case 'blue':
+      case `${Theme.BLUE}`:
         return`
           background-color: ${PrimaryColor.glintsblue};
           color: ${SecondaryColor.white};
@@ -192,17 +193,17 @@ export const GhostBtn = Button.extend`
 
   ${props => {
     switch(props.theme) {
-      case 'red':
+      case `${Theme.RED}`:
         return`
           border: 2px solid ${PrimaryColor.glintsred};
           color: ${PrimaryColor.glintsred};
         `;
-      case 'yellow':
+      case `${Theme.YELLOW}`:
         return`
           border: 2px solid ${PrimaryColor.glintsyellow};
           color: ${PrimaryColor.glintsyellow};
         `;
-      case 'blue':
+      case `${Theme.BLUE}`:
         return`
           border: 2px solid ${PrimaryColor.glintsblue};
           color: ${PrimaryColor.glintsblue};
@@ -217,17 +218,17 @@ export const GhostBtn = Button.extend`
 
     ${props => {
       switch(props.theme) {
-        case 'red':
+        case `${Theme.RED}`:
           return`
             background-color: ${PrimaryColor.glintsred};
             color: ${SecondaryColor.white};
           `;
-        case 'yellow':
+        case `${Theme.YELLOW}`:
           return`
             background-color: ${PrimaryColor.glintsyellow};
             color: ${SecondaryColor.white};
           `;
-        case 'blue':
+        case `${Theme.BLUE}`:
           return`
             background-color: ${PrimaryColor.glintsblue};
             color: ${SecondaryColor.white};
