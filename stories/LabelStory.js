@@ -8,11 +8,36 @@ const LabelStory = () => {
       <h1>Glints Label</h1>
       <p>usage: <code>{`import { Label } from '@glints-dev/glints-aries'`}</code></p>
 
-      <Label block size="small">small Label</Label>
-      <Label block>Default Label</Label>
-      <Label block size="medium">medium Label</Label>
-      <Label block size="large">large Label</Label>
-      <Label block size="xlarge">xlarge Label</Label>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th colSpan="0">
+              props: <code>size</code>
+            </th>
+            <th>usage</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><Label block>Default Label</Label></td>
+            <td><pre>{`<Label block>Default Label</Label>`}</pre></td>
+          </tr>
+          <tr>
+            <td><Label block size="medium">medium Label</Label></td>
+            <td><pre>{`<Label block size="medium">medium Label</Label>`}</pre></td>
+          </tr>
+          <tr>
+            <td><Label block size="large">large Label</Label></td>
+            <td><pre>{`<Label block size="large">large Label</Label>`}</pre></td>
+          </tr>
+          <tr>
+            <td><Label block size="xlarge">xlarge Label</Label></td>
+            <td><pre>{`<Label block size="xlarge">xlarge Label</Label>`}</pre></td>
+          </tr>
+        </tbody>
+
+      </table>
 
       <table className="doc-table">
         <thead>
