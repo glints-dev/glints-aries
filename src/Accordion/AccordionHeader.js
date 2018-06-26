@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { StyledAccordionHeader, AccordionItemWrapper } from './../Style/AccordionStyle';
 import { Icons } from './../Icon';
 
@@ -9,7 +9,12 @@ const AccordionHeader = (props: Props) => {
     <Fragment>
       <StyledAccordionHeader isOpen={isOpen} {...propsDefault}>
         <p>{title}</p>
-        <Icons name="18-plus" extension="svg" />
+        <Icons
+          name={isOpen ? "chevron-back" : "drop-down"}
+          paddingRight={14}
+          paddingTop={6}
+          IconBgColor="#fff"
+        />
       </StyledAccordionHeader>
 
       {isOpen &&
@@ -22,7 +27,8 @@ const AccordionHeader = (props: Props) => {
 }
 
 type Props = {
-  title?: string
+  title?: string,
+  isOpen: boolean
 }
 
 export default AccordionHeader;

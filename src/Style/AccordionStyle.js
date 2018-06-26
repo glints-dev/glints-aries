@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { PrimaryColor } from './../Style/Colors';
 import './GlobalStyle';
 
@@ -26,6 +26,7 @@ export const StyledAccordionItem = styled.span`
   width: 100%;
   position: relative;
   padding-bottom: 12px;
+  margin-bottom: 6px;
 
   &:last-child {
     padding-bottom: 0;
@@ -36,6 +37,24 @@ export const StyledAccordionItem = styled.span`
     cursor: pointer;
     color: ${PrimaryColor.glintsblue}
   }
+`;
+
+const animateItem = keyframes`
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+`
+
+export const AnimatedItem = styled.div`
+  animation: ${animateItem} .2s linear;
 `;
 
 export const StyledAccordionHeader = styled.div`
