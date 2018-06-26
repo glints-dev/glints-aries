@@ -4,7 +4,7 @@ import Item from './../src/Item';
 const ItemStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Item</h1>
+      <h1>Item</h1>
       <p>Usage: <code>{`import { Item } from '@glints-dev/glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
@@ -12,7 +12,7 @@ const ItemStory = () => {
             <th>
               Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

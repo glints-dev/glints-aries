@@ -6,15 +6,15 @@ const HeadingStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Heading</h1>
-      <p>usage: <code>{`import { Heading } from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <code>{`import { Heading } from '@glints-dev/glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>variant</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

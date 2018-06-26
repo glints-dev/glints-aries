@@ -6,16 +6,16 @@ import Profile from '../assets/image/profile.png';
 const BlockquoteStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Heading</h1>
-      <p>usage: <code>{`import { Blockquote } from '@glints-dev/glints-aries'`}</code></p>
+      <h1>Blockquote</h1>
+      <p>Usage: <code>{`import { Blockquote } from '@glints-dev/glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>variant</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@ const BlockquoteStory = () => {
                 I didn't really know what I wanted to do and what were all the career paths out there - and was just exploring the careers on Glints - now I have discovered what I love to do and found my dream career!
               </Blockquote>
             </td>
-            <td><code>{`<Blockquote theme="blue" profileImage="url" author="Sean Goodwin" origin="National University of Singapore (NUS)">Type your text here...</Blockquote>`}</code></td>
+            <td><code>{`<Blockquote theme="blue" profileImage="{url}" author="Sean Goodwin" origin="National University of Singapore (NUS)">Type your text here...</Blockquote>`}</code></td>
           </tr>
         </tbody>
       </table>

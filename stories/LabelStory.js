@@ -5,16 +5,16 @@ import { Theme } from '../src/Utils/StyleConfig';
 const LabelStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Label</h1>
-      <p>usage: <code>{`import { Label } from '@glints-dev/glints-aries'`}</code></p>
+      <h1>Label</h1>
+      <p>Usage: <code>{`import { Label } from '@glints-dev/glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>size</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
 
@@ -43,9 +43,9 @@ const LabelStory = () => {
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>variant</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

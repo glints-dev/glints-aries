@@ -4,7 +4,7 @@ import Stats from './../src/Stats';
 const StatsStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Stats</h1>
+      <h1>Statistic</h1>
       <br/>
 
       <Stats

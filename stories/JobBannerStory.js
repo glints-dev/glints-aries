@@ -6,15 +6,15 @@ const previewImage = 'http://www.pastamania.com.sg/wp-content/uploads/2016/02/ne
 const JobBannerStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Banner</h1>
+      <h1>Banner</h1>
       <p>Usage: <code>{`import { JobBanner } from '@glints-dev/glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>variant</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

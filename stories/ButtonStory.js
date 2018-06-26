@@ -6,15 +6,15 @@ import { Variant, Theme } from '../src/Utils/StyleConfig';
 const ButtonStories = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Buttons</h1>
+      <h1>Buttons</h1>
       <p>Usage: <code>{`import { Button } from '@glints-dev/glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>
             <th colSpan="0">
-              props: <code>variant</code>
+              Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

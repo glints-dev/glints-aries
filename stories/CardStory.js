@@ -7,7 +7,7 @@ import Item from './../src/Item';
 const CardStories = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Card</h1>
+      <h1>Card</h1>
       <p>Usage: <pre>{`import {
   Card,
   JobBanner,
@@ -21,7 +21,7 @@ const CardStories = () => {
             <th>
               Preview
             </th>
-            <th>usage</th>
+            <th>Usage</th>
           </tr>
         </thead>
         <tbody>

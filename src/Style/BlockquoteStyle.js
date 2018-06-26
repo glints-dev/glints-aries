@@ -23,10 +23,6 @@ export const Author = styled.p`
 		height: 1px;
 		bottom: .2em;
 		margin-right: 1em;
-
-		@media ${device.mobileL} {
-			
-		}
 	}
 `;
 
@@ -73,8 +69,8 @@ export const BlockquoteContainer = styled.div`
 		position: relative;
         width: 8em;
         height: 8em;
-		top: 2em;
 		left: -2em;
+		align-self: center;
 
 		@media ${device.mobileL} {
 			top: -2.5em;
