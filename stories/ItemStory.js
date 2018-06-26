@@ -18,16 +18,14 @@ const ItemStory = () => {
         <tbody>
           <tr>
             <td>
-              <div style={{margin: '0 34px'}}>
-                <Item
-                  title="Item title"
-                  subtitle="Item subtitle"
-                  url="https://glints.id"
-                  imgUrl="https://placeimg.com/64/64/any"
-                  isExternal={false}
-                  isReactRouter={true}
-                />
-              </div>
+              <Item
+                title="Item title"
+                subtitle="Item subtitle"
+                url="https://glints.id"
+                imgUrl="https://placeimg.com/64/64/any"
+                isExternal={false}
+                isReactRouter={true}
+              />
             </td>
             <td>
               <pre>{`<Item

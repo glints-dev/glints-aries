@@ -8,6 +8,7 @@ export const SecondaryColor = {
   white: '#FFFFFF',
   whitesmoke: '#F5F5F5',
   black: '#000000',
+  lightblack: '#777777',
   grey: '#646464',
   lightgrey: '#C6C6C6',
   buttercup: '#F5A623',
