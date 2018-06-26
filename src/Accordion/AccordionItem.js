@@ -1,6 +1,6 @@
 /* @flow */
-import React, { Component, Fragment } from 'react';
-import { StyledAccordionItem } from './../Style/AccordionStyle';
+import React from 'react';
+import { AnimatedItem, StyledAccordionItem } from './../Style/AccordionStyle';
 
 const AccordionItem = (props: Props) => {
   const {
@@ -8,9 +8,11 @@ const AccordionItem = (props: Props) => {
   } = props;
   
   return (
-    <StyledAccordionItem {...defaultAccordionProps}>
-      {props.children}
-    </StyledAccordionItem>
+    <AnimatedItem>
+      <StyledAccordionItem {...defaultAccordionProps}>
+        {props.children}
+      </StyledAccordionItem>
+    </AnimatedItem>
   )
 }
 
