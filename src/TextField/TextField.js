@@ -4,7 +4,8 @@ import {
   TextFieldInput,
   TextFieldLabel,
   Icon
-} from './../../src/Style/FormStyle';
+} from './../../src/Style/TextFieldStyle';
+
 class TextField extends Component {
   state = {
     floating: false
@@ -12,15 +13,15 @@ class TextField extends Component {
 
   handleFocusChange = e => {
     this.setState({
-      floating: e.target.value.length > 0 ? true : false
+      floating: e.target.value.length > 0 ? true : false,
     })
   }
 
   render() {
-    const { label, sizeContainer, status, disabled } = this.props;
+    const { label, inputWidth, status, disabled } = this.props;
 
     return(
-      <TextFieldContainer size={sizeContainer}>
+      <TextFieldContainer size={inputWidth}>
         <TextFieldInput type="text" 
           status={status} 
           disabled={disabled} 
