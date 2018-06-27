@@ -1,15 +1,15 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { Origin } from './../Style/BlockquoteStyle';
+import { StyledOrigin } from './../Style/BlockquoteStyle';
 
-const OriginSection = (props: Props) => {
+const Origin = (props: Props) => {
   const {
     children,
   } = props;
 
   return (
-    <Origin>{children}</Origin>
+    <StyledOrigin>{children}</StyledOrigin>
   );
 }
 
@@ -17,4 +17,4 @@ type Props = {
   children: React$Node,
 }
   
-export default OriginSection;
+export default Origin;

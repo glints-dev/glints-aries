@@ -4,13 +4,13 @@ import { device } from '../Utils/StyleConfig';
 import RedQuote from '../../assets/icons/red-quote.svg';
 import BlueQuote from '../../assets/icons/blue-quote.svg';
 
-export const Testimony = styled.p`
+export const StyledTestimony = styled.p`
 	font-weight: 100;
     font-size: 1.2rem;
 	margin-bottom: .5em;
 `;
 
-export const Author = styled.p`
+export const StyledAuthor = styled.p`
 	margin: 0;
 	font-weight: 500;
 	opacity: .75;
@@ -26,7 +26,7 @@ export const Author = styled.p`
 	}
 `;
 
-export const Origin = styled.span`
+export const StyledOrigin = styled.span`
 	font-size: 1rem;
 	font-weight: 100;
 	opacity: .75;

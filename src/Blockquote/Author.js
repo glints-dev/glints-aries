@@ -1,15 +1,15 @@
 /* @flow */
 
 import React from 'react';
-import { Author } from './../Style/BlockquoteStyle';
+import { StyledAuthor } from './../Style/BlockquoteStyle';
 
-const AuthorSection = (props: Props) => {
+const Author = (props: Props) => {
   const {
     children
   } = props;
 
   return (
-    <Author>{children}</Author>
+    <StyledAuthor>{children}</StyledAuthor>
   );
 }
 
@@ -17,4 +17,4 @@ type Props = {
   children: React$Node,
 }
 
-export default AuthorSection;
+export default Author;

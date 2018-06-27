@@ -5,7 +5,7 @@ import { Paragraph } from './../Style/BlockquoteStyle';
 
 const BlockquoteContent = (props: Props) => {
   const {
-      children,
+    children,
   } = props;
 
   return (
@@ -13,6 +13,10 @@ const BlockquoteContent = (props: Props) => {
       {children}
     </Paragraph>
   );
+}
+
+type Props = {
+  children: React$Node,
 }
 
 export default BlockquoteContent;

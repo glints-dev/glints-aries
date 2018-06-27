@@ -1,15 +1,15 @@
 /* @flow */
 
 import React from 'react';
-import { Testimony } from './../Style/BlockquoteStyle';
+import { StyledTestimony } from './../Style/BlockquoteStyle';
 
-const TestimonySection = (props: Props) => {
+const Testimony = (props: Props) => {
   const {
     children,
   } = props;
   
   return (
-    <Testimony>{children}</Testimony>
+    <StyledTestimony>{children}</StyledTestimony>
   );
 }
 
@@ -17,4 +17,4 @@ type Props = {
   children: React$Node,
 }
 
-export default TestimonySection;
+export default Testimony;
