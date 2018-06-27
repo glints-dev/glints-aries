@@ -1,3 +1,9 @@
+#### 0.0.6 (2018-06-27)
+
+##### Bug Fixes
+
+* **Component:**  fix export accordion ([c5d0cc3f](https://github.com/glints-dev/glints-aries/commit/c5d0cc3fedfed131ae6b3cafcbafff18333d8845))
+
 #### 0.0.5 (2018-06-27)
 
 ##### New Features
