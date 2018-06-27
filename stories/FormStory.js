@@ -5,8 +5,8 @@ const FormStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Text Field</h1>
-      <p>Usage: <code>{`import { PsychedelicText } from '@glints-dev/glints-aries'`}</code></p>
-
+      <p>Usage: <code>{`import { ... } from '@glints-dev/glints-aries'`}</code></p>
+      <h4 style={{color: 'red'}}>Beta</h4>
       <table className="doc-table">
         <thead>
           <tr>
