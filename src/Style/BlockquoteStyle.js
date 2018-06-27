@@ -78,7 +78,7 @@ export const BlockquoteContainer = styled.div`
 		}
     }
 	
-    ${Author} {
+    ${StyledAuthor} {
 		&:before {
 			background: ${props => props.inverted ? `${SecondaryColor.white}` : `${SecondaryColor.lightblack}`};
 		}
