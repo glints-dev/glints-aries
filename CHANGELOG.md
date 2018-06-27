@@ -1,3 +1,9 @@
+#### 0.0.12 (2018-06-27)
+
+##### Bug Fixes
+
+* **component:**  fix error, Author of undefined ([bcf8b2f3](https://github.com/glints-dev/glints-aries/commit/bcf8b2f370c96a132190b2569894358f1fa9ed8c))
+
 #### 0.0.11 (2018-06-27)
 
 ##### Bug Fixes
