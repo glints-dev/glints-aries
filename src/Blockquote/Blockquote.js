@@ -6,14 +6,18 @@ const Blockquote = (props: Props) => {
   const {
     children,
     inverted,
-    ...defaultLabelProps
   } = props;
 
   return (
     <BlockquoteContainer inverted={inverted}>
-        {children}
+      {children}
     </BlockquoteContainer>
   );
+}
+
+type Props = {
+  children: React$Node,
+  inverted: boolean
 }
 
 export default Blockquote;

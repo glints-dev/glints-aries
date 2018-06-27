@@ -4,16 +4,17 @@ import React, { Fragment } from 'react';
 import { Origin } from './../Style/BlockquoteStyle';
 
 const OriginSection = (props: Props) => {
-    const {
-      children,
-      ...defaultLabelProps
-    } = props;
+  const {
+    children,
+  } = props;
+
+  return (
+    <Origin>{children}</Origin>
+  );
+}
+
+type Props = {
+  children: React$Node,
+}
   
-    return (
-      <Fragment>
-        <Origin>{children}</Origin>
-      </Fragment>
-    );
-  }
-  
-  export default OriginSection;
+export default OriginSection;
