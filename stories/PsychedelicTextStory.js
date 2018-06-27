@@ -32,7 +32,7 @@ const PsychedelicTextStory = () => {
         </tbody>
       </table>
 
-      <h1>Available Props</h1>
+      <h1>Props</h1>
       <table className="doc-table">
         <thead>
           <tr>

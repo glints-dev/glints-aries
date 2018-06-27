@@ -14,7 +14,7 @@ export const TextFieldContainer = styled.div`
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: ${props => props.size};
+  width: ${props => props.size+`%`};
 `;
 
 export const TextFieldLabel = styled.label`

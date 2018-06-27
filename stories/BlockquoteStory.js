@@ -43,7 +43,7 @@ const BlockquoteStory = () => {
         </tbody>
       </table>
 
-      <h1>Available Props</h1>
+      <h1>Props</h1>
       <table className="doc-table">
         <thead>
           <tr>
@@ -60,7 +60,7 @@ const BlockquoteStory = () => {
             <td>string</td>
             <td><pre>{`true | false`}</pre></td>
             <td>no</td>
-            <td>The are two variant colors on the Blockquote which is white (without <b>inverted</b>) and blue (<b>inverted</b></td>
+            <td>Sets blockquote into blue.</td>
           </tr>
         </tbody>
       </table>
