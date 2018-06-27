@@ -13,4 +13,5 @@ export {default as Item} from './Item';
 export {default as JobBanner} from './JobBanner';
 export {default as Label} from './Label';
 export {default as Stats} from './Stats';
+export {default as PsychedelicText} from './PsychedelicText';
 export {Uikit as default, UikitConsumer, UikitProvider} from './Provider';
