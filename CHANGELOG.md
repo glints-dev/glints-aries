@@ -1,3 +1,13 @@
+#### 0.0.11 (2018-06-27)
+
+##### Bug Fixes
+
+* **component:**  fix error on blockquote component. missed export name ([f32dc9c1](https://github.com/glints-dev/glints-aries/commit/f32dc9c180d36b5d19deed5b191d906d15152de0))
+
+##### Refactors
+
+* **component:**  refactor BlockquoteContent ([0bcf61bb](https://github.com/glints-dev/glints-aries/commit/0bcf61bb32688e42e007f9dd5cd5eafa1e41615c))
+
 #### 0.0.10 (2018-06-27)
 
 ##### Refactors
