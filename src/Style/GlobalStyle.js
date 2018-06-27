@@ -75,7 +75,7 @@ injectGlobal`
 	}
 
 	h1 {
-		font-size: 2.4rem;
+		font-size: 2.6rem;
 	}
 
 	h2 {

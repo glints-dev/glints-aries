@@ -1,5 +1,12 @@
 import React from 'react';
 import Blockquote from './../src/Blockquote';
+
+import BlockquotePicture from './../src/Blockquote/BlockquotePicture';
+import BlockquoteContent from '../src/Blockquote/BlockquoteContent';
+import Testimony from './../src/Blockquote/Testimony';
+import Author from './../src/Blockquote/Author';
+import Origin from './../src/Blockquote/Origin';
+
 import { Theme } from '../src/Utils/StyleConfig';
 import Profile from '../assets/image/profile.png';
 
@@ -21,15 +28,24 @@ const BlockquoteStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Blockquote 
-                theme={Theme.BLUE} 
-                profileImage={Profile}
-                author={'Sean Goodwin'}
-                origin={'National University of Singapore (NUS)'}>
-                I didn't really know what I wanted to do and what were all the career paths out there - and was just exploring the careers on Glints - now I have discovered what I love to do and found my dream career!
+              <Blockquote theme={Theme.BLUE}>
+                <BlockquotePicture profileImage={Profile} />
+                <BlockquoteContent>
+                  <Testimony>I didn't really know what I wanted to do and what were all the career paths out there - and was just exploring the careers on Glints - now I have discovered what I love to do and found my dream career!</Testimony>
+                  <Author>Sean Goodwin</Author>
+                  <Origin>National University of Singapore (NUS)</Origin>
+                </BlockquoteContent>
               </Blockquote>
             </td>
-            <td><code>{`<Blockquote theme="blue" profileImage="{url}" author="Sean Goodwin" origin="National University of Singapore (NUS)">Type your text here...</Blockquote>`}</code></td>
+            <td><pre>
+{`<Blockquote theme={Theme.BLUE}>
+  <BlockquotePicture profileImage={Profile} />
+  <BlockquoteContent>
+    <Testimony>Type your text here...</Testimony>
+    <Author>Sean Goodwin</Author>
+    <Origin>National University of Singapore (NUS)</Origin>
+  </BlockquoteContent>
+</Blockquote>`}</pre></td>
           </tr>
         </tbody>
       </table>
@@ -50,21 +66,6 @@ const BlockquoteStory = () => {
             <td>theme</td>
             <td>string</td>
             <td><pre>{`'blue'`}</pre></td>
-          </tr>
-          <tr>
-            <td>profileImage</td>
-            <td>string</td>
-            <td><pre>{`url`}</pre></td>
-          </tr>
-          <tr>
-            <td>author</td>
-            <td>string</td>
-            <td><pre>{`any`}</pre></td>
-          </tr>
-          <tr>
-            <td>origin</td>
-            <td>string</td>
-            <td><pre>{`any`}</pre></td>
           </tr>
         </tbody>
       </table>

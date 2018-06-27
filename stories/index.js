@@ -13,6 +13,7 @@ import HeadingStory from './HeadingStory';
 import ItemStory from './ItemStory';
 import JobBannerStory from './JobBannerStory';
 import LabelStory from './LabelStory';
+import PsychedelicTextStory from './PsychedelicTextStory';
 
 storiesOf('Glints Components', module)
   .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
@@ -25,5 +26,6 @@ storiesOf('Glints Components', module)
   .add('Heading', () => <HeadingStory />)
   .add('Item', () => <ItemStory />)
   .add('JobBanner', () => <JobBannerStory />)
-  .add('Label', () => <LabelStory />);
+  .add('Label', () => <LabelStory />)
+  .add('PsychedelicText', () => <PsychedelicTextStory />);
   

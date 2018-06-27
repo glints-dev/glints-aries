@@ -6,6 +6,15 @@ export const Variant = {
   LINK: 'link',
 };
 
+export const PsychedelicTheme = {
+  BLUEDOMINANT_COLOR: 'bluedominant-color',
+  BLUEDOMINANT_DEFAULT: 'bluedominant-default',
+  REDDOMINANT_COLOR: 'reddominant-color',
+  REDDOMINANT_DEFAULT: 'reddominant-default',
+  YELLOWDOMINANT_COLOR: 'yellowdominant-color',
+  YELLOWDOMINANT_DEFAULT: 'yellowdominant-default',
+};
+
 export const Theme = {
   RED: 'red',
   YELLOW: 'yellow',
