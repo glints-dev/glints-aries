@@ -21,6 +21,8 @@ type Props = {
   size?: IconSize,
   children: React$Element<'img' | 'svg' | 'i'>,
   padding?: Width,
+  paddingLeft?: Width,
+  paddingRight?: Width,
   backgroundColor?: IconBgColor,
   rounded?: boolean,
 };
@@ -35,7 +37,6 @@ const iconSizeHandler = StyleMatcher.create('size', [
 const IconWrapper = styled.span`
   display: block;
   position: relative;
-  margin: 0 auto;
   ${props =>
     props.backgroundColor &&
     css`
@@ -63,9 +64,9 @@ const IconContentWrapper = styled.div`
   height: ${iconSizeHandler};
 `;
 
-const Icon = ({children, padding, ...iconProps}: Props) => (
+const Icon = ({children, padding, paddingRight, paddingTop, ...iconProps}: Props) => (
   <IconWrapper {...iconProps}>
-    <View padding={padding}>
+    <View padding={padding} paddingRight={paddingRight} paddingTop={paddingTop}>
       <IconContentWrapper {...iconProps}>
         {React.cloneElement(children, {
           style: {
