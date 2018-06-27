@@ -7,12 +7,12 @@ export const Variant = {
 };
 
 export const PsychedelicTheme = {
-  BLUEDOMINANT_COLOR: 'bluedominant-color',
-  BLUEDOMINANT_DEFAULT: 'bluedominant-default',
-  REDDOMINANT_COLOR: 'reddominant-color',
-  REDDOMINANT_DEFAULT: 'reddominant-default',
-  YELLOWDOMINANT_COLOR: 'yellowdominant-color',
-  YELLOWDOMINANT_DEFAULT: 'yellowdominant-default',
+  BLUE_DOMINANT: 'blue-dominant',
+  BLUE_DEFAULT: 'blue-default',
+  RED_DOMINANT: 'red-dominant',
+  RED_DEFAULT: 'red-default',
+  YELLOW_DOMINANT: 'yellow-dominant',
+  YELLOW_DEFAULT: 'yellow-default',
 };
 
 export const Theme = {

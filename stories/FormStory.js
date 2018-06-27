@@ -4,8 +4,70 @@ import Form from './../src/Form';
 const FormStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Forms</h1>
-      <Form label="Username" sizeContainer="100%" status="" disabled="" />
+      <h1>Text Field</h1>
+      <p>Usage: <code>{`import { PsychedelicText } from '@glints-dev/glints-aries'`}</code></p>
+
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th colSpan="0">
+              Preview
+            </th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{padding: 20}}>
+              <Form label="Username" sizeContainer="100%" status="" disabled="" />
+            </td>
+            <td><code>{`<PsychedelicText heading>Glints</PsychedelicText>`}</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Available Props</h1>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>heading</td>
+            <td>boolean</td>
+            <td><pre>{`true | false`}</pre></td>
+            <td>yes</td>
+            <td>It's used to display Main Heading</td>
+          </tr>
+          <tr>
+            <td>subheading</td>
+            <td>boolean</td>
+            <td><pre>{`true | false`}</pre></td>
+            <td>yes</td>
+            <td>It's used to display Sub Heading</td>
+          </tr>
+          <tr>
+            <td>psychTheme</td>
+            <td>string</td>
+            <td>
+              <pre>{`blue-dominant | 
+blue-default | 
+red-dominant | 
+red-default | 
+yellow-dominant | 
+yellow-default`}</pre>
+            </td>
+            <td>yes</td>
+            <td>This props is only available along with <b>subheading</b> props.<br />It's a required props to display Psychedelic Effect on the text.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

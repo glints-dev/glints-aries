@@ -46,6 +46,7 @@ export const DefaultBtn = Button.extend`
 export const PrimaryContainer = styled.div`
   position: relative;
   display: inline-flex;
+  z-index: 1;
 
   &:after {
     content: '';

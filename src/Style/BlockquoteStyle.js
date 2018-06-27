@@ -37,8 +37,8 @@ export const BlockquoteContainer = styled.div`
     display: flex;
     grid-template-columns: 20% 80%;
     width: 100%;
-    background: ${props => props.theme === 'blue' ? `${PrimaryColor.glintsblue}` : `${SecondaryColor.white}`};
-    color: ${props => props.theme === 'blue' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+    background: ${props => props.inverted ? `${PrimaryColor.glintsblue}` : `${SecondaryColor.white}`};
+    color: ${props => props.inverted ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
 
 	@media ${device.mobileL} {
 		flex-direction: column;
@@ -50,7 +50,7 @@ export const BlockquoteContainer = styled.div`
 		position: absolute;
 		top: -1.5em;
 		left: 8em;
-		background: ${props => props.theme === 'blue' ? `url(${RedQuote})` : `url(${BlueQuote})`};
+		background: ${props => props.inverted ? `url(${RedQuote})` : `url(${BlueQuote})`};
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -62,7 +62,6 @@ export const BlockquoteContainer = styled.div`
 			left: auto;
 			align-self: center;
 		}
-
 	}
 
     img {
@@ -81,7 +80,7 @@ export const BlockquoteContainer = styled.div`
 	
     ${Author} {
 		&:before {
-			background: ${props => props.theme === 'blue' ? `${SecondaryColor.white}` : `${SecondaryColor.lightblack}`};
+			background: ${props => props.inverted ? `${SecondaryColor.white}` : `${SecondaryColor.lightblack}`};
 		}
 	}
 `;

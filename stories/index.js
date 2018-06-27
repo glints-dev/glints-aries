@@ -27,7 +27,7 @@ storiesOf('Glints Components', module)
   .add('Stats', () => <StatsStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Item', () => <ItemStory />)
-  .add('JobBanner', () => <JobBannerStory />)
+  .add('Job Banner', () => <JobBannerStory />)
   .add('Label', () => <LabelStory />)
-  .add('PsychedelicText', () => <PsychedelicTextStory />);
+  .add('Psychedelic Text', () => <PsychedelicTextStory />);
   

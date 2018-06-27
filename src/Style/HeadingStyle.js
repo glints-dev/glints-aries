@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from '../Style/Colors';
 
 const highlight = css`
     display: inline-flex;
     position: relative;
     text-transform: uppercase;
+    color: ${SecondaryColor.black};
+    z-index: 1;
 
     &:after {
         content: '';

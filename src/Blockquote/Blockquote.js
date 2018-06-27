@@ -5,12 +5,12 @@ import { BlockquoteContainer } from './../Style/BlockquoteStyle';
 const Blockquote = (props: Props) => {
   const {
     children,
-    theme,
+    inverted,
     ...defaultLabelProps
   } = props;
 
   return (
-    <BlockquoteContainer theme={theme}>
+    <BlockquoteContainer inverted={inverted}>
         {children}
     </BlockquoteContainer>
   );

@@ -25,9 +25,9 @@ const PsychedelicTextStory = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <PsychedelicText subheading psychTheme="yellowdominant-color">Sub Heading</PsychedelicText>
+              <PsychedelicText subheading psychTheme="yellow-dominant">Sub Heading</PsychedelicText>
             </td>
-            <td><code>{`<PsychedelicText subheading psychTheme="yellowdominant-color">Glints</PsychedelicText>`}</code></td>
+            <td><code>{`<PsychedelicText subheading psychTheme="yellow-dominant">Glints</PsychedelicText>`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -38,8 +38,8 @@ const PsychedelicTextStory = () => {
           <tr>
             <th>Name</th>
             <th>Type</th>
-            <th>Default</th>
             <th>Value</th>
+            <th>Required</th>
             <th>Description</th>
           </tr>
         </thead>
@@ -47,29 +47,29 @@ const PsychedelicTextStory = () => {
           <tr>
             <td>heading</td>
             <td>boolean</td>
-            <td>true</td>
             <td><pre>{`true | false`}</pre></td>
-            <td></td>
+            <td>yes</td>
+            <td>It's used to display Main Heading</td>
           </tr>
           <tr>
             <td>subheading</td>
             <td>boolean</td>
-            <td>true</td>
             <td><pre>{`true | false`}</pre></td>
-            <td></td>
+            <td>yes</td>
+            <td>It's used to display Sub Heading</td>
           </tr>
           <tr>
             <td>psychTheme</td>
             <td>string</td>
-            <td></td>
             <td>
-              <pre>{`bluedominant-color | 
-bluedominant-default | 
-reddominant-color | 
-reddominant-default | 
-yellowdominant-color | 
-yellowdominant-default`}</pre>
+              <pre>{`blue-dominant | 
+blue-default | 
+red-dominant | 
+red-default | 
+yellow-dominant | 
+yellow-default`}</pre>
             </td>
+            <td>yes</td>
             <td>This props is only available along with <b>subheading</b> props.<br />It's a required props to display Psychedelic Effect on the text.</td>
           </tr>
         </tbody>

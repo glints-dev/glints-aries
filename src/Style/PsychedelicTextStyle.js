@@ -9,30 +9,30 @@ export const Heading = styled.h1`
 export const SubHeading = styled.h3`
     ${props => {
       switch(props.psychTheme) {
-        case `${PsychedelicTheme.BLUEDOMINANT_COLOR}`:
+        case `${PsychedelicTheme.BLUE_DOMINANT}`:
           return`
             color: ${PrimaryColor.glintsblue};
             text-shadow: 1px 0 0 ${PrimaryColor.glintsred}, 1px 1px 0 ${PrimaryColor.glintsyellow};
           `;
-        case `${PsychedelicTheme.BLUEDOMINANT_DEFAULT}`:
+        case `${PsychedelicTheme.BLUE_DEFAULT}`:
           return`
             text-shadow: 1px 0 0 ${PrimaryColor.glintsyellow}, 1px 1px 0 ${PrimaryColor.glintsred};
           `;
-        case `${PsychedelicTheme.REDDOMINANT_COLOR}`:
+        case `${PsychedelicTheme.RED_DOMINANT}`:
           return`
             color: ${PrimaryColor.glintsred};
             text-shadow: 1px 0 0 ${PrimaryColor.glintsyellow}, 1px 1px 0 ${PrimaryColor.glintsblue};
           `;
-        case `${PsychedelicTheme.REDDOMINANT_DEFAULT}`:
+        case `${PsychedelicTheme.RED_DEFAULT}`:
           return`
             text-shadow: 1px 0 0 ${PrimaryColor.glintsblue}, 1px 1px 0 ${PrimaryColor.glintsyellow};
           `;
-        case `${PsychedelicTheme.YELLOWDOMINANT_COLOR}`:
+        case `${PsychedelicTheme.YELLOW_DOMINANT}`:
           return`
             color: ${PrimaryColor.glintsyellow};
             text-shadow: 1px 0 0 ${PrimaryColor.glintsblue}, 1px 1px 0 ${PrimaryColor.glintsred};
           `;
-        case `${PsychedelicTheme.YELLOWDOMINANT_DEFAULT}`:
+        case `${PsychedelicTheme.YELLOW_DEFAULT}`:
           return`
             text-shadow: 1px 0 0 ${PrimaryColor.glintsblue}, 1px 1px 0 ${PrimaryColor.glintsred};
           `;

@@ -97,4 +97,8 @@ injectGlobal`
 	h6 {
 		font-size: 1.4rem;
 	}
+
+	a {
+		text-decoration: none;
+	}
 `;
