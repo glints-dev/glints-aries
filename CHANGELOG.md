@@ -1,3 +1,13 @@
+#### 0.0.8 (2018-06-27)
+
+##### New Features
+
+* **component:**  adding PsychedelicText component ([5432a04f](https://github.com/glints-dev/glints-aries/commit/5432a04fb9f8f587154c08d4a4a8a638f7485e17))
+
+##### Bug Fixes
+
+* **component:**  fix export Blockquote component ([5c5b051f](https://github.com/glints-dev/glints-aries/commit/5c5b051fa75c1d74fd42519a8a21d52b463b2433))
+
 #### 0.0.7 (2018-06-27)
 
 ##### Bug Fixes
