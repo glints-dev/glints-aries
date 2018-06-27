@@ -7,14 +7,21 @@ class AccordionStory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobAccordionOpen: false
+      jobAccordionOpen: false,
+      locAccordionOpen: true,
     };
-    this.openJobAccordion = this.openJobAccordion.bind(this);
+    this.toggleJobAccordion = this.toggleJobAccordion.bind(this);
+    this.toggleLocAccordion = this.toggleLocAccordion.bind(this);
   }
 
-  openJobAccordion() {
+  toggleJobAccordion() {
     const { jobAccordionOpen } = this.state;
     this.setState({ jobAccordionOpen: !jobAccordionOpen })
+  }
+
+  toggleLocAccordion() {
+    const { locAccordionOpen } = this.state;
+    this.setState({ locAccordionOpen: !locAccordionOpen })
   }
 
   render() {
@@ -37,7 +44,7 @@ class AccordionStory extends Component {
               <td style={{verticalAlign: 'top'}}>
                 <div style={{marginBottom: '200px'}}>
                 <Accordion>
-                  <AccordionHeader title="Jobs" isOpen={this.state.jobAccordionOpen} onClick={this.openJobAccordion}>
+                  <AccordionHeader title="Jobs" isOpen={this.state.jobAccordionOpen} onClick={this.toggleJobAccordion}>
                     <AccordionItem onClick={action('Accounting')}>Accounting</AccordionItem>
                     <AccordionItem onClick={action('art & design')}>Art & design</AccordionItem>
                     <AccordionItem onClick={action('Business')}>Business Development</AccordionItem>
@@ -51,7 +58,7 @@ class AccordionStory extends Component {
                     <Label size="medium" theme="secondary">in</Label>
                   </div>
   
-                  <AccordionHeader title="this location" isOpen={true}>
+                  <AccordionHeader title="this location" isOpen={this.state.locAccordionOpen} onClick={this.toggleLocAccordion}>
                     <AccordionItem onClick={action('Singapore')}>Singapore</AccordionItem>
                     <AccordionItem onClick={action('Jakarta')}>Jakarta</AccordionItem>
                     <AccordionItem onClick={action('Tokyo')}>Tokyo</AccordionItem>

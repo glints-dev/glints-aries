@@ -5,8 +5,10 @@ import './GlobalStyle';
 export const StyledAccordionWrapper = styled.div`
   max-width: 301px;
   min-width: 300px;
-  min-height: 300px;
+  min-height: 66px;
+  height: auto;
   border: solid 5px #cccccc;
+  background-color: #fff;
 `;
 
 export const AccordionItemWrapper = styled.span`
@@ -14,19 +16,19 @@ export const AccordionItemWrapper = styled.span`
   position: relative;
   width: 100%;
   display: block;
-  padding: 20px 15px;
+  padding: 6px 15px 20px 15px;
   max-height: 259px;
-  overflow: scroll;
+  overflow-y: auto;
 `;
 
 export const StyledAccordionItem = styled.span`
   color: #000;
-  display: inline-block;
+  display: inline;
+  text-align: left;
   order: 1;
   width: 100%;
   position: relative;
   padding-bottom: 12px;
-  margin-bottom: 6px;
 
   &:last-child {
     padding-bottom: 0;
@@ -55,6 +57,10 @@ const animateItem = keyframes`
 
 export const AnimatedItem = styled.div`
   animation: ${animateItem} .2s linear;
+  > .accordion-item {
+    display: inline-block;
+    margin-top: 8px !important;
+  }
 `;
 
 export const StyledAccordionHeader = styled.div`

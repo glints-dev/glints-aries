@@ -9,7 +9,7 @@ const AccordionItem = (props: Props) => {
   
   return (
     <AnimatedItem>
-      <StyledAccordionItem {...defaultAccordionProps}>
+      <StyledAccordionItem className="accordion-item" {...defaultAccordionProps}>
         {props.children}
       </StyledAccordionItem>
     </AnimatedItem>
@@ -17,7 +17,8 @@ const AccordionItem = (props: Props) => {
 }
 
 type Props = {
-  title?: string
+  title?: string,
+  children: React$Node,
 };
 
 export default AccordionItem;
