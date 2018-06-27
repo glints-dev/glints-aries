@@ -1,19 +1,20 @@
 /* @flow */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Author } from './../Style/BlockquoteStyle';
 
 const AuthorSection = (props: Props) => {
-    const {
-      children,
-      ...defaultLabelProps
-    } = props;
-  
-    return (
-      <Fragment>
-        <Author>{children}</Author>
-      </Fragment>
-    );
-  }
-  
-  export default AuthorSection;
+  const {
+    children
+  } = props;
+
+  return (
+    <Author>{children}</Author>
+  );
+}
+
+type Props = {
+  children: React$Node,
+}
+
+export default AuthorSection;

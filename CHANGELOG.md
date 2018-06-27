@@ -1,3 +1,9 @@
+#### 0.0.10 (2018-06-27)
+
+##### Refactors
+
+* **component:**  Blockquote component refactor ([5144ae0a](https://github.com/glints-dev/glints-aries/commit/5144ae0a080612cf94ba8c0ea0b87378c7ecc446))
+
 #### 0.0.8 (2018-06-27)
 
 ##### New Features

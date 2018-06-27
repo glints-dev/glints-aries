@@ -1,19 +1,20 @@
 /* @flow */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Testimony } from './../Style/BlockquoteStyle';
 
 const TestimonySection = (props: Props) => {
-    const {
-      children,
-      ...defaultLabelProps
-    } = props;
+  const {
+    children,
+  } = props;
   
-    return (
-      <Fragment>
-        <Testimony>{children}</Testimony>
-      </Fragment>
-    );
-  }
-  
-  export default TestimonySection;
+  return (
+    <Testimony>{children}</Testimony>
+  );
+}
+
+type Props = {
+  children: React$Node,
+}
+
+export default TestimonySection;
