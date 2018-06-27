@@ -1,4 +1,7 @@
-.sass-cache
-yarn-error.log
 node_modules
-**/.DS_Store
+dist
+*.log
+.out
+.DS_Store
+flow-typed
+.vscode
