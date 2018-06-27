@@ -4,16 +4,15 @@ import React from 'react';
 import { Paragraph } from './../Style/BlockquoteStyle';
 
 const BlockquoteContent = (props: Props) => {
-    const {
+  const {
       children,
-      ...defaultLabelProps
-    } = props;
-  
-    return (
-        <Paragraph>
-            {children}
-        </Paragraph>
-    );
-  }
-  
-  export default BlockquoteContent;
+  } = props;
+
+  return (
+    <Paragraph>
+      {children}
+    </Paragraph>
+  );
+}
+
+export default BlockquoteContent;
