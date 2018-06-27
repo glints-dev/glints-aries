@@ -1,10 +1,5 @@
 import React from 'react';
-import Blockquote from './../src/Blockquote';
-
-import BlockquoteContent from '../src/Blockquote/BlockquoteContent';
-import Testimony from './../src/Blockquote/Testimony';
-import Author from './../src/Blockquote/Author';
-import Origin from './../src/Blockquote/Origin';
+import Blockquote, { BlockquoteContent, Testimony, Author, Origin } from './../src/Blockquote';
 
 import Profile from '../assets/image/profile.png';
 
@@ -12,7 +7,7 @@ const BlockquoteStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Blockquote</h1>
-      <p>Usage: <code>{`import { Blockquote } from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <code>{`import Blockquote, { BlockquoteContent, Testimony, Author, Origin } from '@glints-dev/glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

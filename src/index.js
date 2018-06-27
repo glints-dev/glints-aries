@@ -3,6 +3,7 @@
 // @create-index
 // keep in alphabetical order
 export {default as Accordion, AccordionHeader, AccordionItem} from './Accordion';
+export {default as Blockquote, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
 export {default as Button} from './Button';
 export {default as Card} from './Card';
 export {default as Divider} from './Divider';
