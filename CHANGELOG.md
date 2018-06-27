@@ -1,3 +1,47 @@
+#### 0.0.4 (2018-06-27)
+
+##### New Features
+
+* **component:**
+  *  Glints Icon ([649fb51b](https://github.com/glints-dev/glints-aries/commit/649fb51b0d2d965310c23bd9106545ded69db9e3))
+  *  Glints accordion ([4438e3ff](https://github.com/glints-dev/glints-aries/commit/4438e3ffedfa88f9d3e0a6e2d745bcbca5a509ee))
+  *  Glints Icon ([27b5652c](https://github.com/glints-dev/glints-aries/commit/27b5652c6100e7dcc427081c9dad3d967718e29b))
+  *  Glints accordion ([e8478454](https://github.com/glints-dev/glints-aries/commit/e8478454fc6410ce155a4c5439c69ca1e46bb77a))
+  *  Divider Component ([825d3778](https://github.com/glints-dev/glints-aries/commit/825d37789bdfdce45f6a8fda5af4c32cb50e872e))
+  *  add Label props to controll size ([b8454803](https://github.com/glints-dev/glints-aries/commit/b8454803fe1f1ae98e064f91c2c8fdc587a00bb8))
+  *  add Header component ([a2dd58cf](https://github.com/glints-dev/glints-aries/commit/a2dd58cf50a60e9ed10a4011f0dab07e65fc5f0c))
+* **Job Banner:**  JobBanner component ([f3f53744](https://github.com/glints-dev/glints-aries/commit/f3f5374436f20fe1693688465716eaf387efe3ba))
+* **npm:**  update to scope package name ([0cdc15f0](https://github.com/glints-dev/glints-aries/commit/0cdc15f0cc88e4e6e23623cab2b8494926c51618))
+
+##### Bug Fixes
+
+* **webpack:**
+  *  fix file-loader ([18363456](https://github.com/glints-dev/glints-aries/commit/18363456dc2247cfb056199abecdb5e60861ed25))
+  *  fix file-loader ([83598e05](https://github.com/glints-dev/glints-aries/commit/83598e05efeac4528ad4ef36f4a39f437a0fd868))
+
+##### Other Changes
+
+* **doc:**  adding new props doc ([079f802a](https://github.com/glints-dev/glints-aries/commit/079f802a7f95f3c3742a04d21f01e31a0588f10d))
+* **conflict:**  fix conflict ([e0a4136e](https://github.com/glints-dev/glints-aries/commit/e0a4136e4c0d7ffe3103d83b3b18b4584efe1ff5))
+* **package:**
+  *  using scoped package ([8869d6a4](https://github.com/glints-dev/glints-aries/commit/8869d6a4bda514494c951c5f6f528a03afe0fe1c))
+  *  using scoped package ([0c5ac416](https://github.com/glints-dev/glints-aries/commit/0c5ac4160cfd147e9222720021ff11d0cb985cdb))
+
+##### Refactors
+
+* **component:**
+  *  using Divider component on Card ([9130eb44](https://github.com/glints-dev/glints-aries/commit/9130eb44239e7b4045a7e856b7e571348f810752))
+  *  reuse Item component on Card ([98c659ea](https://github.com/glints-dev/glints-aries/commit/98c659eabc60f7c4e3d9f8ac4945dfd4c6b00dcd))
+  *  Item style refactor ([f54896a1](https://github.com/glints-dev/glints-aries/commit/f54896a16bfb87ff6a3ca05dafaf92cd6cdbd186))
+  *  refactor header to become Stats ([36961830](https://github.com/glints-dev/glints-aries/commit/369618301cc864ec3d0b4a053215d58e03fb08f1))
+* **props:**  deprecated props value on Label variant ([6f3e682b](https://github.com/glints-dev/glints-aries/commit/6f3e682b57679689dcf8f491239a8d98d677465b))
+* **JobCard:**  using JobBanner component for image banner ([6c83ab5d](https://github.com/glints-dev/glints-aries/commit/6c83ab5d9d57b4e040c471bf28f3b8cbd4ccfcc8))
+* **Label:**  separate label style ([1df92c4a](https://github.com/glints-dev/glints-aries/commit/1df92c4aabbd5feb55b004dbc1d8ef083c19693c))
+
+##### Tests
+
+* **snapshot:**  update snapshot ([e1533001](https://github.com/glints-dev/glints-aries/commit/e1533001c2c223670c21a7204becedb6b4d259e3))
+
 #### 0.0.3 (2018-06-22)
 
 ##### New Features
