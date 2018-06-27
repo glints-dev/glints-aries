@@ -1,3 +1,9 @@
+#### 0.0.7 (2018-06-27)
+
+##### Bug Fixes
+
+* **component:**  fix Accordion style glitch ([ffdaced0](https://github.com/glints-dev/glints-aries/commit/ffdaced0826a749925fb43ffc4784b5c66603880))
+
 #### 0.0.6 (2018-06-27)
 
 ##### Bug Fixes
