@@ -1,5 +1,5 @@
 import React from 'react';
-import Blockquote, { BlockquoteContent, Testimony, Author, Origin } from './../src/Blockquote';
+import { Blockquote, BlockquoteContent, Testimony, Author, Origin } from './../src/Blockquote';
 
 const BlockquoteStory = () => {
   return (
