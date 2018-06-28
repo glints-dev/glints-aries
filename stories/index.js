@@ -9,6 +9,7 @@ import AccordionStory from './AccordionStory';
 import BlockquoteStory from './BlockquoteStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
+import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import ItemStory from './ItemStory';
 import JobBannerStory from './JobBannerStory';
@@ -33,3 +34,7 @@ storiesOf('Glints Components', module)
   .add('Stats', () => <StatsStory />)
   .add('Text Field', () => <TextFieldStory />);
   
+
+storiesOf('Glints Utilitites', module)
+  .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
+  .add('Center (Flex)', () => <FlexCenterStory />)
