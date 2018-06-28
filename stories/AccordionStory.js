@@ -83,6 +83,42 @@ class AccordionStory extends Component {
             </tr>
           </tbody>
         </table>
+
+        <h1>Props</h1>
+        <table className="doc-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Value</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>title</td>
+              <td>string</td>
+              <td>any</td>
+              <td>yes</td>
+              <td>Sets title for accordion.</td>
+            </tr>
+            <tr>
+              <td>isOpen</td>
+              <td>boolean</td>
+              <td><pre>{`true | false`}</pre></td>
+              <td>yes</td>
+              <td>Sets to open and close accordion.</td>
+            </tr>
+            <tr>
+              <td>onClick</td>
+              <td>function</td>
+              <td></td>
+              <td>yes</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }

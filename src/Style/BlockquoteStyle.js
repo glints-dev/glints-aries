@@ -70,6 +70,8 @@ export const BlockquoteContainer = styled.div`
         height: 8em;
 		left: -2em;
 		align-self: center;
+		object-fit: cover;
+		border-radius: 50%;
 
 		@media ${device.mobileL} {
 			top: -2.5em;
