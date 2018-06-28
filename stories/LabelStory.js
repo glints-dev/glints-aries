@@ -6,7 +6,7 @@ const LabelStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Label</h1>
-      <p>Usage: <code>{`import { Label } from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <code>{`import { Label } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

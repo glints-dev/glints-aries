@@ -13,7 +13,7 @@ const CardStories = () => {
   JobBanner,
   Item,
   Divider,
-} from '@glints-dev/glints-aries'`}</pre></div>
+} from 'glints-aries'`}</pre></div>
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>

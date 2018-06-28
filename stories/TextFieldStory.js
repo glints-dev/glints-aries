@@ -5,7 +5,7 @@ const TextFieldStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Text Field</h1>
-      <p>Usage: <code>{`import TextField from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <code>{`import TextField from 'glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>

@@ -7,7 +7,7 @@ const JobBannerStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Banner</h1>
-      <p>Usage: <code>{`import { JobBanner } from '@glints-dev/glints-aries'`}</code></p>
+      <p>Usage: <code>{`import { JobBanner } from 'glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>

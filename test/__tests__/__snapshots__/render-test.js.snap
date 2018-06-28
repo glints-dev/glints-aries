@@ -10,7 +10,7 @@ exports[`Render Intor story correctly 1`] = `
   <p>
     npm: 
     <code>
-      npm install -S @glints-dev/glints-aries
+      npm install -S glints-aries
     </code>
   </p>
 </div>
