@@ -1,43 +1,12 @@
 import React from 'react';
 import Label from './../src/Label';
-import { Theme } from '../src/Utils/StyleConfig';
+import { Theme, Size } from '../src/Utils/StyleConfig';
 
 const LabelStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Label</h1>
       <p>Usage: <code>{`import { Label } from 'glints-aries'`}</code></p>
-
-      <table className="doc-table">
-        <thead>
-          <tr>
-            <th colSpan="0">
-              Preview
-            </th>
-            <th>Usage</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td><Label block>Default Label</Label></td>
-            <td><pre>{`<Label block>Default Label</Label>`}</pre></td>
-          </tr>
-          <tr>
-            <td><Label block size="medium">medium Label</Label></td>
-            <td><pre>{`<Label block size="medium">medium Label</Label>`}</pre></td>
-          </tr>
-          <tr>
-            <td><Label block size="large">large Label</Label></td>
-            <td><pre>{`<Label block size="large">large Label</Label>`}</pre></td>
-          </tr>
-          <tr>
-            <td><Label block size="xlarge">xlarge Label</Label></td>
-            <td><pre>{`<Label block size="xlarge">xlarge Label</Label>`}</pre></td>
-          </tr>
-        </tbody>
-
-      </table>
 
       <table className="doc-table">
         <thead>
@@ -57,52 +26,63 @@ const LabelStory = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label theme={Theme.SECONDARY}>Secondary Label</Label>
+              <Label block theme={Theme.SECONDARY}>Secondary Label</Label>
             </td>
-            <td><code>{`<Label theme="secondary">Secondary Label</Label>`}</code></td>
+            <td><code>{`<Label block theme="secondary">Secondary Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label theme={Theme.RED}>Red Label</Label>
+              <Label size={Size.MEDIUM} theme={Theme.RED}>Red Label</Label>
             </td>
-            <td><code>{`<Label theme="red">Danger Label</Label>`}</code></td>
+            <td><code>{`<Label size="medium" theme="red">Danger Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label theme={Theme.YELLOW}>Yellow Label</Label>
+              <Label size={Size.LARGE} theme={Theme.YELLOW}>Yellow Label</Label>
             </td>
-            <td><code>{`<Label theme="yellow">Warning Label</Label>`}</code></td>
+            <td><code>{`<Label size="large" theme="yellow">Warning Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label theme={Theme.BLUE}>Blue Label</Label>
+              <Label size={Size.XLARGE} theme={Theme.BLUE}>Blue Label</Label>
             </td>
-            <td><code>{`<Label theme="blue">Blue Label</Label>`}</code></td>
+            <td><code>{`<Label size="xlarge" theme="blue">Blue Label</Label>`}</code></td>
           </tr>
         </tbody>
       </table>
 
-      <h1>Available Props</h1>
+      <h1>Props</h1>
       <table className="doc-table">
         <thead>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>type</th>
-            <th>value</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
+            <td><pre>{`true | false`}</pre></td>
+            <td>no</td>
+            <td>Sets the label into block element.</td>
+          </tr>
+          <tr>
             <td>theme</td>
-            <td><code>string</code></td>
-            <td><pre>{`'red' | 'yellow' | 'blue'`}</pre></td>
+            <td>string</td>
+            <td><pre>{`red | yellow | blue`}</pre></td>
+            <td>no</td>
+            <td></td>
           </tr>
           <tr>
             <td>size</td>
-            <td><code>string</code></td>
-            <td><pre>{`'small' | 'medium' | 'large' | 'xlarge`}</pre></td>
+            <td>string</td>
+            <td><pre>{`medium | large | xlarge`}</pre></td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

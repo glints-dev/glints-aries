@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './../src/Card';
 import Divider from './../src/Divider';
-import JobBanner from './../src/JobBanner';
+import Banner from './../src/Banner';
 import Item from './../src/Item';
 
 const CardStories = () => {
@@ -10,7 +10,7 @@ const CardStories = () => {
       <h1>Glints Card</h1>
       <div>Usage: <pre>{`import {
   Card,
-  JobBanner,
+  Banner,
   Item,
   Divider,
 } from 'glints-aries'`}</pre></div>
@@ -33,10 +33,10 @@ const CardStories = () => {
                 JobLocation={'Singapore'}
                 JobType={'Full-Time'}
               >
-                <JobBanner 
+                <Banner 
                   imgUrl={"http://www.pastamania.com.sg/wp-content/uploads/2016/02/new_content_image_careers-2.jpg"}
-                  variant="primary"
-                >Apply</JobBanner>
+                  theme="blue"
+                >Apply</Banner>
 
                 <Item
                   title="Item title"
@@ -57,12 +57,12 @@ const CardStories = () => {
   JobLocation={'Singapore'}
   JobType={'Full-Time'}
 >
-  <JobBanner 
+  <Banner 
     imgUrl={"string url"}
     variant="primary"
   >
     Apply
-  </JobBanner>
+  </Banner>
 
   <Item
     title="Item title"

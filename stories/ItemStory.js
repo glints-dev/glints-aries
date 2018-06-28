@@ -41,13 +41,15 @@ const ItemStory = () => {
         </tbody>
       </table>
       
-      <h1>Available props</h1>
+      <h1>Props</h1>
       <table className="doc-table">
         <thead>
           <tr>
             <th>Name</th>
-            <th>type</th>
-            <th>possible value</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
@@ -55,30 +57,46 @@ const ItemStory = () => {
             <td>title</td>
             <td>string</td>
             <td>any</td>
+            <td>yes</td>
+            <td></td>
           </tr>
           <tr>
             <td>subtitle</td>
             <td>string</td>
             <td>any</td>
+            <td>yes</td>
+            <td></td>
           </tr>
           <tr>
             <td>url</td>
             <td>string</td>
-            <td><code>any website url</code> or <code>react-router path</code></td>
+            <td>url</td>
+            <td>yes</td>
+            <td>Sets location when title's clicked.</td>
+          </tr>
+          <tr>
+            <td>imgUrl</td>
+            <td>string</td>
+            <td>url</td>
+            <td>yes</td>
+            <td>Display an image.</td>
           </tr>
           <tr>
             <td>isExternal</td>
             <td>boolean</td>
-            <td><code>true | false</code></td>
+            <td><pre>{`true | false`}</pre></td>
+            <td>yes</td>
+            <td></td>
           </tr>
           <tr>
             <td>isReactRouter</td>
             <td>boolean</td>
-            <td><code>true | false</code></td>
+            <td><pre>{`true | false`}</pre></td>
+            <td>yes</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
-
     </div>
   );
 }

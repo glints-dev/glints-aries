@@ -8,7 +8,7 @@ class AccordionStory extends Component {
     super(props);
     this.state = {
       jobAccordionOpen: false,
-      locAccordionOpen: true,
+      locAccordionOpen: false,
     };
     this.toggleJobAccordion = this.toggleJobAccordion.bind(this);
     this.toggleLocAccordion = this.toggleLocAccordion.bind(this);
@@ -28,7 +28,7 @@ class AccordionStory extends Component {
     return (
       <div className="doc-mainbar">
         <h1>Glints Accordion</h1>
-        <p>usage: <pre>{`import { Accordion, AccordionItem, AccordionHeader, Label } 'glints-aries'`}</pre></p>
+        <p>usage: <code>{`import { Accordion, AccordionItem, AccordionHeader, Label } 'glints-aries'`}</code></p>
   
         <table className="doc-table">
           <thead>

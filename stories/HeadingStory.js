@@ -39,22 +39,24 @@ const HeadingStory = () => {
         </tbody>
       </table>
 
-      <h1>Available Props</h1>
+      <h1>Props</h1>
       <table className="doc-table">
         <thead>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>type</th>
-            <th>value</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>size</td>
             <td>string</td>
-            <td><pre>{`'large' | 'medium' | 'small'`}</pre></td>
+            <td><pre>{`large | medium | small`}</pre></td>
+            <td>yes</td>
+            <td>Sets the size of heading.</td>
           </tr>
         </tbody>
       </table>
