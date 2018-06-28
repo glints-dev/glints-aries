@@ -13,6 +13,7 @@ export const SecondaryColor = {
   lightgrey: '#C6C6C6',
   buttercup: '#F5A623',
   purplepizza: '#FF00E5',
+  blue: '#0869C2',
   bluegem: '#9013FE',
 };
 

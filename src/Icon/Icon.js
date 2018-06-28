@@ -34,7 +34,7 @@ const iconSizeHandler = StyleMatcher.create('size', [
   ['xsmall', '1.2rem'],
 ]);
 
-const IconWrapper = styled.span`
+const IconWrapper = styled.i`
   display: block;
   position: relative;
   ${props =>
@@ -57,26 +57,16 @@ const IconWrapper = styled.span`
     css`
       border-radius: 50%;
     `};
+  
+  img {
+    width: ${iconSizeHandler};
+    height: ${iconSizeHandler};
+  }
 `;
 
-const IconContentWrapper = styled.div`
-  width: ${iconSizeHandler};
-  height: ${iconSizeHandler};
-`;
-
-const Icon = ({children, padding, paddingRight, paddingTop, ...iconProps}: Props) => (
+const Icon = ({children, ...iconProps}: Props) => (
   <IconWrapper {...iconProps}>
-    <View padding={padding} paddingRight={paddingRight} paddingTop={paddingTop}>
-      <IconContentWrapper {...iconProps}>
-        {React.cloneElement(children, {
-          style: {
-            display: 'block',
-            width: iconSizeHandler(iconProps),
-            height: iconSizeHandler(iconProps),
-          },
-        })}
-      </IconContentWrapper>
-    </View>
+      {children}
   </IconWrapper>
 );
 
