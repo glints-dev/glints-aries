@@ -1,3 +1,9 @@
+#### 0.0.13 (2018-06-28)
+
+##### Other Changes
+
+* **npm:**  change to public package instead of scoped package ([2e58f6e8](https://github.com/glints-dev/glints-aries/commit/2e58f6e8168993d9a2ab5f03e1b65f0d15a0bd8d))
+
 #### 0.0.12 (2018-06-27)
 
 ##### Bug Fixes
