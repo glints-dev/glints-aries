@@ -1,3 +1,17 @@
+#### 0.0.15 (2018-06-28)
+
+##### Build System / Dependencies
+
+* **assets:**  move assets to public folder ([98838fd9](https://github.com/glints-dev/glints-aries/commit/98838fd9b9c1d96d0cb5bdb481be02120c9a2490))
+
+##### New Features
+
+* **component:**  utilities, FlexCenter ([dc1a07da](https://github.com/glints-dev/glints-aries/commit/dc1a07da9d3449d89497cd53e2e1b916cf8445cc))
+
+##### Other Changes
+
+* **global:**  temporary remove heading size ([2237b852](https://github.com/glints-dev/glints-aries/commit/2237b8525231122e1a8275667f7c056ec107980c))
+
 #### 0.0.14 (2018-06-28)
 
 ##### Other Changes
