@@ -4,7 +4,7 @@
   "description": "Glints ui-kit for frontend",
   "main": "dist/index.js",
   "scripts": {
-    "assets:build": "webpack",
+    "assets:build": "webpack && cp -R assets/fonts/ dist/public/assets/fonts/",
     "babelrc:load": "cp storybook-config/.babelrc .babelrc",
     "babelrc:unload": "rm .babelrc",
     "build": "rm -rf dist && npm run babelrc:load && babel src -d dist --copy-files && npm run copy-source && npm run assets:build && (npm run babelrc:unload) || (npm run babelrc:unload)",
