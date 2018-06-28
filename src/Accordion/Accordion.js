@@ -1,18 +1,24 @@
 /* @flow */
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  StyledAccordionWrapper,
+  AccordionContainer,
   StyledAccordionItem,
 } from './../Style/AccordionStyle';
 
-const Accordion = (props) => {
+const Accordion = (props: Props) => {
+  const {
+    children
+  } = props;
+
   return (
-    <StyledAccordionWrapper>
-      <StyledAccordionItem>
-        {props.children}
-      </StyledAccordionItem>
-    </StyledAccordionWrapper>
+    <AccordionContainer>
+      {children}
+    </AccordionContainer>
   )
 }
+
+type Props = {
+  children: React$Node,
+};
 
 export default Accordion;

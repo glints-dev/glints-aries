@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Accordion, { AccordionItem, AccordionHeader } from './../src/Accordion';
+import Accordion, { AccordionHeader, AccordionItem, AccordionLabel } from './../src/Accordion';
 import Label from './../src/Label';
 import {action} from '@storybook/addon-actions';
 
@@ -42,7 +42,6 @@ class AccordionStory extends Component {
           <tbody>
             <tr>
               <td style={{verticalAlign: 'top'}}>
-                <div style={{marginBottom: '200px'}}>
                 <Accordion>
                   <AccordionHeader title="Jobs" isOpen={this.state.jobAccordionOpen} onClick={this.toggleJobAccordion}>
                     <AccordionItem onClick={action('Accounting')}>Accounting</AccordionItem>
@@ -54,18 +53,17 @@ class AccordionStory extends Component {
                     <AccordionItem onClick={action('Finance')}>Finance</AccordionItem>
                   </AccordionHeader>
                   
-                  <div style={{margin: '20px 22px 9px 22px'}}>
+                  <AccordionLabel>
                     <Label size="medium" theme="secondary">in</Label>
-                  </div>
+                  </AccordionLabel>
   
-                  <AccordionHeader title="this location" isOpen={this.state.locAccordionOpen} onClick={this.toggleLocAccordion}>
+                  <AccordionHeader title="This Location" isOpen={this.state.locAccordionOpen} onClick={this.toggleLocAccordion}>
                     <AccordionItem onClick={action('Singapore')}>Singapore</AccordionItem>
                     <AccordionItem onClick={action('Jakarta')}>Jakarta</AccordionItem>
                     <AccordionItem onClick={action('Tokyo')}>Tokyo</AccordionItem>
                     <AccordionItem onClick={action('India')}>India</AccordionItem>
                   </AccordionHeader>
                 </Accordion>
-                </div>
               </td>
             <td style={{verticalAlign: 'top'}}><pre>{`<Accordion>
   <AccordionHeader title="Jobs" isOpen={${this.state.jobAccordionOpen}} onClick={...}>
@@ -73,11 +71,11 @@ class AccordionStory extends Component {
     <AccordionItem onClick={...}>instagram.com</AccordionItem>
   </AccordionHeader>
 
-  <div style={{margin: '20px 22px 9px 22px'}}>
+  <AccordionLabel>
     <Label size="medium" theme="secondary">in</Label>
-  </div>
+  </AccordionLabel>
 
-  <AccordionHeader title="Related to" isOpen={true}>
+  <AccordionHeader title="This Location" isOpen={true}>
     <AccordionItem>Singapore</AccordionItem>
     <AccordionItem>Jakarta</AccordionItem>
   </AccordionHeader>

@@ -60,7 +60,7 @@ const Icons = ({name, ...iconProps}: Props) => (
   <UikitConsumer>
     {uikit => (
       <Icon {...iconProps}>
-        <img src={uikit.getUrl(`assets/icons/${name}.svg`)} />
+        <img src={uikit.getUrl(`assets/icons/${name}.svg`)} alt={name} />
       </Icon>
     )}
   </UikitConsumer>

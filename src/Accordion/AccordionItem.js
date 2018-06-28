@@ -1,18 +1,17 @@
 /* @flow */
 import React from 'react';
-import { AnimatedItem, StyledAccordionItem } from './../Style/AccordionStyle';
+import { AccordionItemList } from './../Style/AccordionStyle';
 
 const AccordionItem = (props: Props) => {
   const {
+    children,
     ...defaultAccordionProps
   } = props;
   
   return (
-    <AnimatedItem>
-      <StyledAccordionItem className="accordion-item" {...defaultAccordionProps}>
-        {props.children}
-      </StyledAccordionItem>
-    </AnimatedItem>
+    <AccordionItemList {...defaultAccordionProps}>
+      {children}
+    </AccordionItemList>
   )
 }
 
