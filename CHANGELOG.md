@@ -1,3 +1,9 @@
+#### 0.0.17 (2018-06-29)
+
+##### Other Changes
+
+* **pacakge:**  adding keywords ([05901d13](https://github.com/glints-dev/glints-aries/commit/05901d1381c6830416693931217565b1bcf92ee5))
+
 #### 0.0.16 (2018-06-29)
 
 ##### New Features
