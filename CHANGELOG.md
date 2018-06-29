@@ -1,3 +1,9 @@
+#### 0.0.16 (2018-06-29)
+
+##### New Features
+
+* **component:**  FlexCenter component utilities ([b9f1763e](https://github.com/glints-dev/glints-aries/commit/b9f1763e8a5f8dc15b4ca2784a19ff1f0d062a48))
+
 #### 0.0.15 (2018-06-28)
 
 ##### Build System / Dependencies

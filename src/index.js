@@ -8,6 +8,7 @@ export {default as Banner} from './Banner';
 export {default as Button} from './Button';
 export {default as Card} from './Card';
 export {default as Divider} from './Divider';
+export {default as FlexCenter} from './FlexCenter';
 export {default as Heading} from './Heading';
 export {default as Information} from './Information';
 export {default as Icon, Icons} from './Icon';
