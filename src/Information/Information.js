@@ -2,7 +2,7 @@
 import React from 'react';
 import { InformationContainer } from './../Style/InformationStyle';
 
-const Heading = (props: Props) => {
+const Information = (props: Props) => {
   const { children } = props;
 
   return (
@@ -12,4 +12,4 @@ const Heading = (props: Props) => {
   );
 }
 
-export default Heading;
+export default Information;
