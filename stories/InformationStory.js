@@ -1,5 +1,5 @@
 import React from 'react';
-import Information, {Title, Description, Detail} from './../src/Information';
+import {Information, Title, Description, Detail} from './../src/Information';
 import { Divider } from './../src/Divider';
 import { Size } from '../src/Utils/StyleConfig';
 
@@ -7,7 +7,7 @@ const HeadingStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Information</h1>
-      <p>Usage: <code>{`import Information, {Title, Description, Detail, Divider} from 'glints-aries'`}</code></p>
+      <p>Usage: <code>{`import {Title, Information, Description, Detail, Divider} from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

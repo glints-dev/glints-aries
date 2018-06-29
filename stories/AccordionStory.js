@@ -28,7 +28,7 @@ class AccordionStory extends Component {
     return (
       <div className="doc-mainbar">
         <h1>Glints Accordion</h1>
-        <p>usage: <code>{`import { Accordion, AccordionItem, AccordionHeader, Label } 'glints-aries'`}</code></p>
+        <p>usage: <code>{`import { Accordion, AccordionItem, AccordionHeader, Label } from 'glints-aries'`}</code></p>
   
         <table className="doc-table">
           <thead>
