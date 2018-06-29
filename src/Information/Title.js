@@ -6,10 +6,13 @@ const Title = (props: Props) => {
   const { children, bold } = props;
 
   return (
-    <Fragment>
-        <TitleWrapper bold={bold}>{children}</TitleWrapper>
-    </Fragment>
+    <TitleWrapper bold={bold}>{children}</TitleWrapper>
   );
+}
+
+type Props = {
+  children: React$Node,
+  bold?: boolean,
 }
 
 export default Title;
