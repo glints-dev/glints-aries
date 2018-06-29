@@ -1,3 +1,9 @@
+#### 0.0.21 (2018-06-29)
+
+##### Refactors
+
+* **component:**  refactor Information component ([99964437](https://github.com/glints-dev/glints-aries/commit/99964437bec10aff6ac469281a6c6963c24960a8))
+
 #### 0.0.20 (2018-06-29)
 
 ##### Bug Fixes
