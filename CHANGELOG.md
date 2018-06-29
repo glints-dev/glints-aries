@@ -1,3 +1,9 @@
+#### 0.0.18 (2018-06-29)
+
+##### Bug Fixes
+
+* **component:**  fix import ([a8d7bf97](https://github.com/glints-dev/glints-aries/commit/a8d7bf97a9d708ec87d0907721c60f0a206ec0c4))
+
 #### 0.0.17 (2018-06-29)
 
 ##### Other Changes
