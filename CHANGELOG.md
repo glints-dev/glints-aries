@@ -1,3 +1,13 @@
+#### 0.0.23 (2018-06-29)
+
+##### Other Changes
+
+* **doc:**  update storybook doc ([94559aff](https://github.com/glints-dev/glints-aries/commit/94559affd30e7be063b644f5f1ae67d85075d3af))
+
+##### Code Style Changes
+
+* **component:**  adjust overidden style ([6baed40b](https://github.com/glints-dev/glints-aries/commit/6baed40b136af2ec1e717a23300b117ab27576d4))
+
 #### 0.0.21 (2018-06-29)
 
 ##### Refactors
