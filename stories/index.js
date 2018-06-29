@@ -12,6 +12,7 @@ import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
+import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
 import LabelStory from './LabelStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
@@ -28,6 +29,7 @@ storiesOf('Glints Components', module)
   .add('Button', () => <ButtonStory />)
   .add('Card', () => <CardStory />)
   .add('Heading', () => <HeadingStory />)
+  .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)

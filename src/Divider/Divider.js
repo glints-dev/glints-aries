@@ -1,24 +1,13 @@
 /* @flow */
 import React from 'react';
-import styled from 'styled-components';
+import { DividerWrapper } from '../Style/DividerStyle';
 
-const Divider = () => {
+const Divider = (props: Props) => {
+  const { theme, size } = props;
+
   return (
-    <DividerWrapper>
-      <StyledDivider />
-    </DividerWrapper>
+    <DividerWrapper theme={theme} size={size} />
   );
 }
-
-const DividerWrapper = styled.span`
-  display: block;
-  padding: 0 1.4em;
-`;
-
-const StyledDivider = styled.hr`
-  border: 0;
-  height: 0;
-  border-bottom: 1px solid #C6C6C6;\
-`;
 
 export default Divider;
