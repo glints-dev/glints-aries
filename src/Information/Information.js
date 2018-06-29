@@ -7,9 +7,13 @@ const Information = (props: Props) => {
 
   return (
     <InformationContainer>
-        {children}
+      {children}
     </InformationContainer>
   );
 }
+
+type Props = {
+  children: React$Node,
+};
 
 export default Information;

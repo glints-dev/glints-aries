@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { TitleWrapper } from './../Style/InformationStyle';
 
 const Title = (props: Props) => {
