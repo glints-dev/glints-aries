@@ -1,15 +1,17 @@
 /* @flow */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { DetailWrapper } from './../Style/InformationStyle';
 
 const Detail = (props: Props) => {
   const { children } = props;
 
   return (
-    <Fragment>
-        <DetailWrapper>{children}</DetailWrapper>
-    </Fragment>
+    <DetailWrapper>{children}</DetailWrapper>
   );
+}
+
+type Props = {
+  children: React$Node,
 }
 
 export default Detail;

@@ -2,14 +2,18 @@
 import React from 'react';
 import { InformationContainer } from './../Style/InformationStyle';
 
-const Heading = (props: Props) => {
+const Information = (props: Props) => {
   const { children } = props;
 
   return (
     <InformationContainer>
-        {children}
+      {children}
     </InformationContainer>
   );
 }
 
-export default Heading;
+type Props = {
+  children: React$Node,
+};
+
+export default Information;

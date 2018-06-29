@@ -1,3 +1,19 @@
+#### 0.0.21 (2018-06-29)
+
+##### Refactors
+
+* **component:**  refactor Information component ([99964437](https://github.com/glints-dev/glints-aries/commit/99964437bec10aff6ac469281a6c6963c24960a8))
+
+#### 0.0.20 (2018-06-29)
+
+##### Bug Fixes
+
+* **component:**  fixed named export ([3e15d369](https://github.com/glints-dev/glints-aries/commit/3e15d369d1c25193ae8f66c1fef95dc8350d742c))
+
+##### Other Changes
+
+* **component:**  adding typecheck ([52cc9c70](https://github.com/glints-dev/glints-aries/commit/52cc9c70ae5c073049c46334185539ad83daf301))
+
 #### 0.0.19 (2018-06-29)
 
 ##### Bug Fixes
