@@ -10,6 +10,7 @@ import BannerStory from './BannerStory';
 import BlockquoteStory from './BlockquoteStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
+import DividerStory from './DividerStory';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import InformationStory from './InformationStory';
@@ -28,6 +29,7 @@ storiesOf('Glints Components', module)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Button', () => <ButtonStory />)
   .add('Card', () => <CardStory />)
+  .add('Divider', () => <DividerStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)

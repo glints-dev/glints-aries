@@ -10,7 +10,7 @@ export {default as Card} from './Card';
 export {default as Divider} from './Divider';
 export {default as FlexCenter} from './FlexCenter';
 export {default as Heading} from './Heading';
-export {default as Information} from './Information';
+export {default as Information, Title, Description, Detail} from './Information';
 export {default as Icon, Icons} from './Icon';
 export {default as Item} from './Item';
 export {default as Label} from './Label';
