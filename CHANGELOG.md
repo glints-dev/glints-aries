@@ -1,3 +1,21 @@
+#### 0.0.19 (2018-06-29)
+
+##### Bug Fixes
+
+* **component:**  remove duplicated export name ([0e00f478](https://github.com/glints-dev/glints-aries/commit/0e00f478130e3c1d0b90621a86faf11446be1632))
+
+#### 0.0.18 (2018-06-29)
+
+##### Bug Fixes
+
+* **component:**  fix import ([a8d7bf97](https://github.com/glints-dev/glints-aries/commit/a8d7bf97a9d708ec87d0907721c60f0a206ec0c4))
+
+#### 0.0.17 (2018-06-29)
+
+##### Other Changes
+
+* **pacakge:**  adding keywords ([05901d13](https://github.com/glints-dev/glints-aries/commit/05901d1381c6830416693931217565b1bcf92ee5))
+
 #### 0.0.16 (2018-06-29)
 
 ##### New Features

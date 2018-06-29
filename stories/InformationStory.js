@@ -1,5 +1,6 @@
 import React from 'react';
-import Information, {Title, Description, Detail, Divider} from './../src/Information';
+import Information, {Title, Description, Detail} from './../src/Information';
+import { Divider } from './../src/Divider';
 import { Size } from '../src/Utils/StyleConfig';
 
 const HeadingStory = () => {
