@@ -17,7 +17,6 @@ export const DropdownLabelWrapper = styled.div`
     align-items: center;
     padding: .8em 1em;
     cursor: pointer;
-    outline: none;
 `;
 
 export const DropdownLabel = styled.div`
@@ -26,6 +25,8 @@ export const DropdownLabel = styled.div`
 `;
 
 export const DropdownItemWrapper = styled.div`
+    position: absolute;
+    width: 100%;
     background: ${SecondaryColor.white};
     padding: .4em 1em;
     box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
@@ -52,6 +53,7 @@ export const DropdownItem = styled.div`
 
 export const DropdownContainer = styled.div`
     position: relative;
+    outline: none;
 
     ${DropdownLabelWrapper} {
         background: ${props => props.open ? `${SecondaryColor.blue}` : `${SecondaryColor.white}`};

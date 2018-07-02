@@ -17,8 +17,12 @@ class Dropdown extends Component {
     const { children, title, size, isOpen, ...dropdownProps } = this.props;
 
     return (
-      <DropdownContainer size={size} open={this.state.isOpen}>
-          <DropdownLabelWrapper onClick={this.handleOpen} onBlur={this.handleOpen} tabIndex="0">
+      <DropdownContainer size={size} 
+        open={this.state.isOpen} 
+        onClick={this.handleOpen} 
+        onBlur={this.handleOpen} 
+        tabIndex="0">
+          <DropdownLabelWrapper>
               <DropdownLabel>{title}</DropdownLabel>
               <Icons name={"drop-down"} />
           </DropdownLabelWrapper>

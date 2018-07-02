@@ -1,19 +1,14 @@
 import React from 'react';
-import Card from './../src/Card';
+import JobCard from './../src/JobCard';
 import Divider from './../src/Divider';
 import Banner from './../src/Banner';
 import Item from './../src/Item';
 
-const CardStories = () => {
+const JobCardStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Glints Card</h1>
-      <div>Usage: <pre>{`import {
-  Card,
-  Banner,
-  Item,
-  Divider,
-} from 'glints-aries'`}</pre></div>
+      <h1>Job Card</h1>
+      <div>Usage: <pre>{`import { Card, Banner, Item, Divider } from 'glints-aries'`}</pre></div>
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>
@@ -27,7 +22,7 @@ const CardStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Card
+              <JobCard
                 JobCategory={'Design'}
                 JobSalary={'SGD 1000 - 2000'}
                 JobLocation={'Singapore'}
@@ -49,9 +44,9 @@ const CardStories = () => {
 
                 <Divider />
 
-              </Card>
+              </JobCard>
             </td>
-            <td style={{verticalAlign: 'top', paddingTop: 20, width: '100%'}}><pre>{`<Card
+            <td style={{verticalAlign: 'top', paddingTop: 20, width: '100%'}}><pre>{`<JobCard
   JobCategory={'Design'}
   JobSalary={'SGD 1000 - 2000'}
   JobLocation={'Singapore'}
@@ -75,7 +70,7 @@ const CardStories = () => {
 
   <Divider />
 
-</Card>`}</pre></td>
+</JobCard>`}</pre></td>
           </tr>
         </tbody>
       </table>
@@ -83,4 +78,4 @@ const CardStories = () => {
   )
 }
 
-export default CardStories;
+export default JobCardStory;

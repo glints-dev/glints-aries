@@ -10,7 +10,7 @@ import {
   JobDetail,
   JobDescription,
   Footer
-} from './../Style/CardStyle';
+} from '../Style/JobCardStyle';
 
 import DefaultButton from './../Button/DefaultButton';
 import Button from './../Button';

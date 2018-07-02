@@ -9,15 +9,16 @@ import AccordionStory from './AccordionStory';
 import BannerStory from './BannerStory';
 import BlockquoteStory from './BlockquoteStory';
 import ButtonStory from './ButtonStory';
-import CardStory from './CardStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
+import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
+import SearchStory from './SearchStory';
 import StatsStory from './StatsStory';
 import TextFieldStory from './TextFieldStory';
 
@@ -29,7 +30,7 @@ storiesOf('Glints Components', module)
   .add('Banner', () => <BannerStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Button', () => <ButtonStory />)
-  .add('Card', () => <CardStory />)
+  .add('Job Card', () => <JobCardStory />)
   .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Heading', () => <HeadingStory />)
@@ -37,6 +38,7 @@ storiesOf('Glints Components', module)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
+  .add('Search', () => <SearchStory />)
   .add('Stats', () => <StatsStory />)
   .add('Text Field', () => <TextFieldStory />);
   

@@ -27,6 +27,10 @@ export const DefaultBtn = Button.extend`
   background: ${SecondaryColor.white};
   transition: all .5s;
 
+  i {
+    margin: 0 .5em;
+  }
+
   &:hover {
     background: ${SecondaryColor.whitesmoke};
     transition: all .5s;
@@ -185,7 +189,7 @@ export const SecondaryContainer = styled.div`
 `;
 
 /*
- * Secondary Button
+ * Ghost Button
  */
 
 export const GhostBtn = Button.extend`

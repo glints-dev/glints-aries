@@ -18,9 +18,7 @@ const Button = (props: Props) => {
 	const { variant, theme } = props;
 	return (
 		<Fragment>
-			{variant === `${Variant.DEFAULT}`
-				? <DefaultButton onClick={props.onClick}>{props.children}</DefaultButton>
-				: variant === `${Variant.PRIMARY}`
+			{variant === `${Variant.PRIMARY}`
 				? <PrimaryButton theme={theme} onClick={props.onClick}>{props.children}</PrimaryButton>
 				: variant === `${Variant.SECONDARY}`
 				? <SecondaryButton onClick={props.onClick}>{props.children}</SecondaryButton>
@@ -28,7 +26,7 @@ const Button = (props: Props) => {
 				? <GhostButton theme={theme} onClick={props.onClick}>{props.children}</GhostButton>
 				: variant === `${Variant.LINK}`
 				? <LinkButton theme={theme} onClick={props.onClick}>{props.children}</LinkButton>
-				: null
+				: <DefaultButton onClick={props.onClick}>{props.children}</DefaultButton>
 			}
 		</Fragment>
 	);

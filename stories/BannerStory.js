@@ -21,27 +21,27 @@ const BannerStory = () => {
               <Banner
                 imgUrl={"https://images.unsplash.com/photo-1526289375762-27075d038ebd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8614e111728c1c5a0bb118f0dd5b4e56&auto=format&fit=crop&w=750&q=80"}
                 theme="red"
-              >apply</Banner>
+                label="apply" />
             </td>
-            <td><pre><code>{`<Banner imgUrl={'url'} theme="red">Apply</Banner>`}</code></pre></td>
+            <td><pre><code>{`<Banner imgUrl={'url'} theme="red" label="apply" />`}</code></pre></td>
           </tr>
           <tr>
             <td style={{minWidth: 360}}>
               <Banner
                 imgUrl={"https://images.unsplash.com/photo-1525250265090-2739a154ffc4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6760d7b9b023b130de716045e4ee4c24&auto=format&fit=crop&w=751&q=80"}
                 theme="blue"
-              >apply</Banner>
+                label="apply" />
             </td>
-            <td><pre><code>{`<Banner imgUrl={'url'} theme="blue">Apply</Banner>`}</code></pre></td>
+            <td><pre><code>{`<Banner imgUrl={'url'} theme="blue" label="apply" />`}</code></pre></td>
           </tr>
           <tr>
             <td style={{minWidth: 360}}>
               <Banner
                 imgUrl={"https://images.unsplash.com/photo-1502758775495-0ec4a639aa64?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f70633f463eb1587bbdd2d338c12fd15&auto=format&fit=crop&w=808&q=80"}
                 theme="yellow"
-              >apply</Banner>
+                label="apply" />
             </td>
-            <td><pre><code>{`<Banner imgUrl={'url'} theme="yellow">Apply</Banner>`}</code></pre></td>
+            <td><pre><code>{`<Banner imgUrl={'url'} theme="yellow" label="apply" />`}</code></pre></td>
           </tr>
         </tbody>
       </table>

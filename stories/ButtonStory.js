@@ -20,9 +20,9 @@ const ButtonStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant={Variant.DEFAULT} onClick={action('default button')}>Default</Button>
+              <Button onClick={action('default button')}>Default</Button>
             </td>
-            <td><code>{`<Button variant="default">Default</Button>`}</code></td>
+            <td><code>{`<Button>Default</Button>`}</code></td>
           </tr>
         </tbody>
       </table>
