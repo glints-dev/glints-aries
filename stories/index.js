@@ -11,6 +11,7 @@ import BlockquoteStory from './BlockquoteStory';
 import ButtonStory from './ButtonStory';
 import CardStory from './CardStory';
 import DividerStory from './DividerStory';
+import DropdownStory from './DropdownStory';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import InformationStory from './InformationStory';
@@ -30,6 +31,7 @@ storiesOf('Glints Components', module)
   .add('Button', () => <ButtonStory />)
   .add('Card', () => <CardStory />)
   .add('Divider', () => <DividerStory />)
+  .add('Dropdown', () => <DropdownStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)

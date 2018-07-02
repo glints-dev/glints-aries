@@ -1,13 +1,11 @@
 import React from 'react';
 import { Banner } from './../src/Banner';
 
-const previewImage = 'http://www.pastamania.com.sg/wp-content/uploads/2016/02/new_content_image_careers-2.jpg'
-
 const BannerStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Banner</h1>
-      <p>Usage: <code>{`import { Banner } from 'glints-aries'`}</code></p>
+      <p><code>{`import { Banner } from 'glints-aries'`}</code></p>
       <table className="doc-table">
         <thead>
           <tr>
@@ -21,7 +19,7 @@ const BannerStory = () => {
           <tr>
             <td style={{minWidth: 360}}>
               <Banner
-                imgUrl={previewImage}
+                imgUrl={"https://images.unsplash.com/photo-1526289375762-27075d038ebd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8614e111728c1c5a0bb118f0dd5b4e56&auto=format&fit=crop&w=750&q=80"}
                 theme="red"
               >apply</Banner>
             </td>
@@ -30,7 +28,7 @@ const BannerStory = () => {
           <tr>
             <td style={{minWidth: 360}}>
               <Banner
-                imgUrl={previewImage}
+                imgUrl={"https://images.unsplash.com/photo-1525250265090-2739a154ffc4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6760d7b9b023b130de716045e4ee4c24&auto=format&fit=crop&w=751&q=80"}
                 theme="blue"
               >apply</Banner>
             </td>
@@ -39,7 +37,7 @@ const BannerStory = () => {
           <tr>
             <td style={{minWidth: 360}}>
               <Banner
-                imgUrl={previewImage}
+                imgUrl={"https://images.unsplash.com/photo-1502758775495-0ec4a639aa64?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f70633f463eb1587bbdd2d338c12fd15&auto=format&fit=crop&w=808&q=80"}
                 theme="yellow"
               >apply</Banner>
             </td>

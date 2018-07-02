@@ -5,7 +5,7 @@ const BlockquoteStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Blockquote</h1>
-      <p>Usage: <code>{`import { Blockquote, BlockquoteContent, Testimony, Author, Origin } from 'glints-aries'`}</code></p>
+      <p><code>{`import { Blockquote, BlockquoteContent, Testimony, Author, Origin } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

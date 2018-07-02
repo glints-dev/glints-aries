@@ -5,7 +5,7 @@ const StatsStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Statistic</h1>
-      <p>Usage: <code>{`import { Stats } from 'glints-aries'`}</code></p>
+      <p><code>{`import { Stats } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

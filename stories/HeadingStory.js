@@ -6,7 +6,7 @@ const HeadingStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Heading</h1>
-      <p>Usage: <code>{`import { Heading } from 'glints-aries'`}</code></p>
+      <p><code>{`import { Heading } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

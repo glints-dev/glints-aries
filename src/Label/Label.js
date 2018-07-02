@@ -6,13 +6,13 @@ const Label = (props: Props) => {
   const {
     children,
     size,
-    variant,
+    theme,
     ...defaultLabelProps
   } = props;
 
   return (
     <LabelWrapper
-      variant={variant}
+      theme={theme}
       size={size}
       {...defaultLabelProps}
     >{children}</LabelWrapper>
@@ -20,17 +20,19 @@ const Label = (props: Props) => {
 }
 
 // flow type checking goes here
-type LabelVariant = 'secondary' | 'red' | 'yellow' | 'blue' | 'white';
+type LabelVariant = 'red' | 'blue' | 'yellow' | 'grey' | 'white';
 type SizeVariant = 'small' | 'medium' | 'large' | 'xlarge';
 
 type Props = {
-  variant: LabelVariant,
+  theme: LabelVariant,
   size: SizeVariant,
+  children: React$Node,
 };
 
 type HandlerProps = {
-  variant?: LabelVariant,
+  theme?: LabelVariant,
   size?: SizeVariant,
+  children?: React$Node,
 };
 
 export default Label;

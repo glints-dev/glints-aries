@@ -6,7 +6,7 @@ const LabelStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Label</h1>
-      <p>Usage: <code>{`import { Label } from 'glints-aries'`}</code></p>
+      <p><code>{`import { Label } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>
@@ -26,9 +26,9 @@ const LabelStory = () => {
           </tr>
           <tr>
             <td style={{padding: 20}}>
-              <Label block theme={Theme.SECONDARY}>Secondary Label</Label>
+              <Label block theme={Theme.GREY}>Grey Label</Label>
             </td>
-            <td><code>{`<Label block theme="secondary">Secondary Label</Label>`}</code></td>
+            <td><code>{`<Label block theme="grey">Grey Label</Label>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
@@ -73,7 +73,7 @@ const LabelStory = () => {
           <tr>
             <td>theme</td>
             <td>string</td>
-            <td><pre>{`red | yellow | blue`}</pre></td>
+            <td><pre>{`red | yellow | blue | grey | white`}</pre></td>
             <td>no</td>
             <td></td>
           </tr>

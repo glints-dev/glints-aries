@@ -9,8 +9,7 @@ const AccordionHeader = (props: Props) => {
     <Fragment>
       <AccordionHeaderWrapper isOpen={isOpen} {...propsDefault}>
         <p>{title}</p>
-        <Icons name={isOpen ? "chevron-back" : "drop-down"}
-        />
+        <Icons name={isOpen ? "chevron-back" : "drop-down"} />
       </AccordionHeaderWrapper>
 
       {isOpen &&
