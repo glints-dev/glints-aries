@@ -17,6 +17,7 @@ import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
+import MobileMenuStory from './MobileMenuStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
@@ -24,7 +25,7 @@ import StatsStory from './StatsStory';
 import TextFieldStory from './TextFieldStory';
 
 
-storiesOf('Glints Components', module)
+storiesOf('Components', module)
   .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
   .add('Introduction', () => <IntroStory />)
   .add('Accordion', () => <AccordionStory />)
@@ -43,8 +44,11 @@ storiesOf('Glints Components', module)
   .add('Search', () => <SearchStory />)
   .add('Stats', () => <StatsStory />)
   .add('Text Field', () => <TextFieldStory />);
-  
 
-storiesOf('Glints Utilitites', module)
+storiesOf('Mobile Components', module)
+  .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
+  .add('Menu', () => <MobileMenuStory />)
+
+storiesOf('Utilitites', module)
   .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
   .add('Center (Flex)', () => <FlexCenterStory />)

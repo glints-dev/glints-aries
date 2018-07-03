@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Style/Colors';
-import { Theme, Size } from '../Utils/StyleConfig';
+import { Theme, Size, Thickness } from '../Utils/StyleConfig';
 
 export const DividerWrapper = styled.div`
     display: flex;
@@ -10,7 +10,10 @@ export const DividerWrapper = styled.div`
         ? `${PrimaryColor.glintsblue}` 
         : props.theme === `${Theme.YELLOW}`
         ? `${PrimaryColor.glintsyellow}`
+        : props.theme === `${Theme.WHITE}`
+        ? `${SecondaryColor.white}`
         : `${SecondaryColor.black}`};
+
     width: ${props => props.size === `${Size.LARGE}`
         ? '100%'
         : props.size === `${Size.MEDIUM}`
@@ -18,6 +21,12 @@ export const DividerWrapper = styled.div`
         : props.size === `${Size.SMALL}`
         ? '2em' 
         : null };
-    height: 4px;
+    height: ${props => props.thickness === `${Thickness.THICK}`
+        ? '4px'
+        : props.thickness === `${Thickness.NORMAL}`
+        ? '3px'
+        : props.thickness === `${Thickness.THIN}`
+        ? '1px' 
+        : '2px' };
     margin: .6em 0;
 `;

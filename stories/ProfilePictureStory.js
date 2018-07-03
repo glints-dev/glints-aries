@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfilePicture from './../src/ProfilePicture';
-import { Size } from '../src/Utils/StyleConfig';
 
 const ProfilePictureStory = () => {
   return (

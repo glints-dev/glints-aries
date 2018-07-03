@@ -13,6 +13,7 @@ type IconName =
   | 'chevron-back'
   | 'chevron-next'
   | 'close'
+  | 'close-white'
   | 'code'
   | 'comment-active'
   | 'comment'

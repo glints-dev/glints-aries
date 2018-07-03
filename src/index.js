@@ -2,7 +2,7 @@
 
 // @create-index
 // keep in alphabetical order
-export {default as Accordion, AccordionHeader, AccordionItem} from './Accordion';
+export {default as Accordion, AccordionHeader, AccordionLabel, AccordionItem} from './Accordion';
 export {default as Blockquote, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
 export {default as Banner} from './Banner';
 export {default as Button} from './Button';
@@ -15,6 +15,7 @@ export {default as Icon, Icons} from './Icon';
 export {default as Item} from './Item';
 export {default as JobCard} from './JobCard';
 export {default as Label} from './Label';
+export {default as MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems} from './MobileMenu';
 export {default as ProfilePicture} from './ProfilePicture';
 export {default as PsychedelicText} from './PsychedelicText';
 export {default as Search, SearchItems} from './Search';

@@ -14,8 +14,9 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
   font-size: 14px;
-  padding: .8em .6em;
-  min-width: 8.5em;
+  padding: 1em .6em;
+  width: 100%;
+  background: transparent;
 `;
 
 /*
@@ -51,6 +52,7 @@ export const PrimaryContainer = styled.div`
   position: relative;
   display: inline-flex;
   z-index: 1;
+  width: 98%;
 
   &:after {
     content: '';
@@ -141,6 +143,7 @@ export const SecondaryBtn = Button.extend`
 export const SecondaryContainer = styled.div`
   position: relative;
   display: inline-flex;
+  width: 98%;
 
   &:after {
     content: '';
@@ -213,6 +216,11 @@ export const GhostBtn = Button.extend`
           border: 2px solid ${PrimaryColor.glintsblue};
           color: ${PrimaryColor.glintsblue};
         `;
+      case `${Theme.WHITE}`:
+        return`
+          border: 2px solid ${SecondaryColor.white};
+          color: ${SecondaryColor.white};
+        `;
       default:
         null
     }
@@ -238,8 +246,13 @@ export const GhostBtn = Button.extend`
             background-color: ${PrimaryColor.glintsblue};
             color: ${SecondaryColor.white};
           `;
+        case `${Theme.WHITE}`:
+          return`
+            background-color: ${SecondaryColor.white};
+            color: ${PrimaryColor.glintsblue};
+          `;
         default:
-          null
+          null;
       }
     }}
   }

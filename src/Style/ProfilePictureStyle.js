@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Size } from '../Utils/StyleConfig';
 import crossPattern from '../../assets/image/cross-pattern.svg';
 
-
-
 export const ProfilePictureImage = styled.img`
     object-fit: cover;
     border-radius: 50%;
@@ -12,6 +10,7 @@ export const ProfilePictureImage = styled.img`
 
 export const ProfilePictureWrapper = styled.div`
     position: relative;
+    z-index: 1;
 
     ${ProfilePictureImage} {
         ${props => {

@@ -19,9 +19,9 @@ const HeadingStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Divider size="large" theme="yellow" />
+              <Divider size="large" theme="yellow" thickness="thick" />
             </td>
-            <td><code>{`<Divider size="large" theme="yellow" />`}</code></td>
+            <td><code>{`<Divider size="large" theme="yellow" thickness="thick" />`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -51,6 +51,13 @@ const HeadingStory = () => {
                 <td><pre>{`large | medium | small`}</pre></td>
                 <td>yes</td>
                 <td>Sets the width.</td>
+            </tr>
+            <tr>
+                <td>thickness</td>
+                <td>string</td>
+                <td><pre>{`thick | normal | thin`}</pre></td>
+                <td>no</td>
+                <td>Sets the Divider thickness.</td>
             </tr>
         </tbody>
       </table>

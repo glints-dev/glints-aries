@@ -181,7 +181,7 @@ const ButtonStories = () => {
           <tr>
             <td>theme</td>
             <td>string</td>
-            <td><pre>{`red | blue | yellow`}</pre></td>
+            <td><pre>{`red | blue | yellow | white`}</pre></td>
             <td>yes</td>
             <td></td>
           </tr>
