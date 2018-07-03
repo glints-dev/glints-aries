@@ -17,6 +17,7 @@ import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
+import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
 import StatsStory from './StatsStory';
@@ -37,6 +38,7 @@ storiesOf('Glints Components', module)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
+  .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Search', () => <SearchStory />)
   .add('Stats', () => <StatsStory />)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="86px" viewBox="0 0 82 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <pattern id="pattern-1" width="8.8" height="8.8" x="613.2" y="192.2" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-2" transform="scale(0.4,0.4)"></use>
+        </pattern>
+        <image id="image-2" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAE1JREFUOBFjYMAE/4FCIEwRYKJINx7NQ89gRqBviA1PkFqiAc2CApsLRlMFtlAZGDG8cUGzVDH0DCYlN5GUQ2kWFJSkp9FUQUnoDWa9ANxCChcPkK+JAAAAAElFTkSuQmCC"></image>
+    </defs>
+    <g id="Home-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Glints-Home---Login" transform="translate(-622.000000, -201.000000)" fill="url(#pattern-1)">
+            <rect id="Rectangle" x="622" y="201" width="82" height="86"></rect>
+        </g>
+    </g>
+</svg>

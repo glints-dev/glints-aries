@@ -9,18 +9,22 @@ class Dropdown extends Component {
     isOpen: false
   };
 
-  handleOpen = () => {
+  handleOpen = (e) => {
       this.setState({ isOpen: !this.state.isOpen });
   };
 
+  handleClickOutside = () => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
-    const { children, title, size, isOpen, ...dropdownProps } = this.props;
+    const { children, title, size } = this.props;
 
     return (
       <DropdownContainer size={size} 
         open={this.state.isOpen} 
         onClick={this.handleOpen} 
-        onBlur={this.handleOpen} 
+        onBlur={this.handleClickOutside} 
         tabIndex="0">
           <DropdownLabelWrapper>
               <DropdownLabel>{title}</DropdownLabel>
