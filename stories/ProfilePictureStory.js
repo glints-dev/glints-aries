@@ -19,9 +19,12 @@ const ProfilePictureStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <ProfilePicture size="medium" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+              <ProfilePicture 
+                editable
+                size="medium" 
+                assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
             </td>
-            <td><code>{`<ProfilePicture size="medium" assetUrl="..."/>`}</code></td>
+            <td><code>{`<ProfilePicture size="medium" assetUrl="..." editable />`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -51,6 +54,13 @@ const ProfilePictureStory = () => {
             <td>url / path</td>
             <td>yes</td>
             <td></td>
+          </tr>
+          <tr>
+            <td>editable</td>
+            <td>boolean</td>
+            <td><code>{`true | false`}</code></td>
+            <td>no</td>
+            <td>Showing edit icon when it's hovered.</td>
           </tr>
         </tbody>
       </table>

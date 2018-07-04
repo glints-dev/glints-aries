@@ -8,6 +8,7 @@ import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
 import BannerStory from './BannerStory';
 import BlockquoteStory from './BlockquoteStory';
+import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
@@ -31,6 +32,7 @@ storiesOf('Components', module)
   .add('Accordion', () => <AccordionStory />)
   .add('Banner', () => <BannerStory />)
   .add('Blockquote', () => <BlockquoteStory />)
+  .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Divider', () => <DividerStory />)

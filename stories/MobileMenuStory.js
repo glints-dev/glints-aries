@@ -30,7 +30,7 @@ const ProfilePictureStory = () => {
                   <Icons name="close-white" />
                 </TopItems>
                 <HeaderItems>
-                  <ProfilePicture assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                  <ProfilePicture editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   <Label size="medium" theme="white">
                       <span>Hello,</span>
                       <p>Fredy Yanto</p>
@@ -57,7 +57,7 @@ const ProfilePictureStory = () => {
     <Icons name="close-white" />
   </TopItems>
   <HeaderItems>
-    <ProfilePicture assetUrl="..." />
+    <ProfilePicture editable assetUrl="..." />
     <Label size="medium" theme="white">
         <span>Hello,</span>
         <p>Fredy Yanto</p>
@@ -83,7 +83,7 @@ const ProfilePictureStory = () => {
       </table>
 
       <h1>Notes</h1>
-      You just need to <code>import</code> the rest of the components from <code>glints-aries</code> and follow the props guideline on each components.
+      You just need to <code>import</code> the rest of the components from <code>glints-aries</code> and follow the props guideline on each components or just use your own styling.
     </div>
   );
 }

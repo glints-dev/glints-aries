@@ -1,16 +1,14 @@
 /* @flow */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { ProfilePictureWrapper, ProfilePictureImage } from '../Style/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
-  const { size, assetUrl } = props;
+  const { size, assetUrl, editable } = props;
 
   return (
-    <Fragment>
-        <ProfilePictureWrapper size={size}>
-            <ProfilePictureImage src={assetUrl} />
-        </ProfilePictureWrapper>
-    </Fragment>
+      <ProfilePictureWrapper size={size} editable={editable}>
+          <ProfilePictureImage src={assetUrl} />
+      </ProfilePictureWrapper>
   );
 }
 
