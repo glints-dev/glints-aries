@@ -15,7 +15,6 @@ export const DropdownLabelWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .8em 1em;
     cursor: pointer;
 `;
 
