@@ -4,16 +4,35 @@ import { Size } from '../Utils/StyleConfig';
 import CrossPattern from '../../assets/image/cross-pattern.svg';
 import Edit from '../../assets/icons/edit-white.svg';
 
-export const ProfilePictureImage = styled.img`
-    object-fit: cover;
-    border-radius: 50%;
-    z-index: 1;
-`;
-
 export const ProfilePictureWrapper = styled.div`
     position: relative;
     z-index: 1;
     cursor: pointer;
+
+    ${props => {
+        switch(props.size) {
+            case `${Size.SMALL}`:
+                return`
+                    width: 4em;
+                    height: 4em;
+                `;
+            case `${Size.MEDIUM}`:
+                return`
+                    width: 6em;
+                    height: 6em;
+                `;
+            case `${Size.LARGE}`:
+                return`
+                    width: 8em;
+                    height: 8em;
+                `;
+            default:
+                return`
+                    width: 5em;
+                    height: 5em;
+                `;
+            }
+    }}
 
     ${props => {
         if(props.editable) {
@@ -68,31 +87,12 @@ export const ProfilePictureWrapper = styled.div`
                 }
         }}
     }
+`;
 
-    ${ProfilePictureImage} {
-        ${props => {
-            switch(props.size) {
-                case `${Size.SMALL}`:
-                    return`
-                        width: 4em;
-                        height: 4em;
-                    `;
-                case `${Size.MEDIUM}`:
-                    return`
-                        width: 6em;
-                        height: 6em;
-                    `;
-                case `${Size.LARGE}`:
-                    return`
-                        width: 8em;
-                        height: 8em;
-                    `;
-                default:
-                    return`
-                        width: 5em;
-                        height: 5em;
-                    `;
-                }
-        }}
-    }
+export const ProfilePictureImage = styled.img`
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 `;
