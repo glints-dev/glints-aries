@@ -83,7 +83,7 @@ const ProfilePictureStory = () => {
       </table>
 
       <h1>Notes</h1>
-      You just need to <code>import</code> the rest of the components from <code>glints-aries</code> and follow the props guideline on each components or just use your own styling.
+      <p>You just need to <code>import</code> the rest of the components from <code>glints-aries</code> and follow the props guideline on each components or just use your own styling.</p>
     </div>
   );
 }

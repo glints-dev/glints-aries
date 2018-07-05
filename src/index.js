@@ -17,6 +17,7 @@ export {default as Item} from './Item';
 export {default as JobCard} from './JobCard';
 export {default as Label} from './Label';
 export {default as MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems} from './MobileMenu';
+export {default as PointingModal, PointingModalHeader, PointingModalBody, PointingModalItem, PointingModalFooter} from './PointingModal';
 export {default as ProfilePicture} from './ProfilePicture';
 export {default as PsychedelicText} from './PsychedelicText';
 export {default as Search, SearchItems} from './Search';

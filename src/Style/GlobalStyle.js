@@ -87,4 +87,8 @@ injectGlobal`
 	li {
 		margin-bottom: 0;
 	}
+
+	p {
+		margin: 0;
+	}
 `;

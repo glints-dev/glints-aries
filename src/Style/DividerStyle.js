@@ -12,6 +12,8 @@ export const DividerWrapper = styled.div`
         ? `${PrimaryColor.glintsyellow}`
         : props.theme === `${Theme.WHITE}`
         ? `${SecondaryColor.white}`
+        : props.theme === `${Theme.GREY}`
+        ? `${SecondaryColor.lightgrey}`
         : `${SecondaryColor.black}`};
 
     width: ${props => props.size === `${Size.LARGE}`

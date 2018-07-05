@@ -19,6 +19,7 @@ import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
 import MobileMenuStory from './MobileMenuStory';
+import PointingModalStory from './PointingModalStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
@@ -41,6 +42,7 @@ storiesOf('Components', module)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
+  .add('Pointing Modal', () => <PointingModalStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Search', () => <SearchStory />)

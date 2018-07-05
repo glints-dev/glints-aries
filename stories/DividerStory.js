@@ -41,7 +41,7 @@ const HeadingStory = () => {
             <tr>
                 <td>theme</td>
                 <td>string</td>
-                <td><pre>{`red | blue | yellow`}</pre></td>
+                <td><pre>{`red | blue | yellow | grey`}</pre></td>
                 <td>no</td>
                 <td>Sets the color.</td>
             </tr>
