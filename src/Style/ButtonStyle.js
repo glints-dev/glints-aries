@@ -25,17 +25,32 @@ const Button = styled.button`
 
 export const DefaultBtn = Button.extend`
   flex: 1;
-  background: ${SecondaryColor.white};
   transition: all .5s;
 
-  i {
-    margin: 0 .5em;
-  }
-
-  &:hover {
-    background: ${SecondaryColor.whitesmoke};
-    transition: all .5s;
-  }
+  ${props => {
+    switch(props.theme) {
+      case `${Theme.RED}`:
+        return`
+          background-color: ${PrimaryColor.glintsred};
+          color: ${SecondaryColor.white};
+        `;
+      case `${Theme.BLUE}`:
+        return`
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
+      case `${Theme.YELLOW}`:
+        return`
+          background-color: ${PrimaryColor.glintsyellow};
+          color: ${SecondaryColor.black};
+        `;
+      default:
+        return`
+          background-color: ${SecondaryColor.white};
+          color: ${SecondaryColor.black};
+        `;
+    }
+  }}
 
   &:active {
     background: ${SecondaryColor.black};

@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import type {Width} from '../View/View';
 import Icon, {type IconSize, type IconBgColor} from './Icon';
-import {UikitConsumer} from '../Provider';
 
 type IconName =
   | 'add'
@@ -58,18 +57,10 @@ type Props = {
 };
 
 const Icons = ({name, ...iconProps}: Props) => (
-  <UikitConsumer>
-    {uikit => (
-      <Icon {...iconProps}>
-        <img src={require(`../../assets/icons/${name}.svg`)} alt={name} />
-      </Icon>
-    )}
-  </UikitConsumer>
+  <Icon {...iconProps}>
+    <img src={require(`../../assets/icons/${name}.svg`)} alt={name} />
+  </Icon>
 );
-
-Icons.contextTypes = {
-  uikitAssets: PropTypes.object,
-};
 
 export type {IconName};
 export default Icons;

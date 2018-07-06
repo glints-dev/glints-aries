@@ -26,7 +26,7 @@ const Button = (props: Props) => {
 				? <GhostButton theme={theme} onClick={props.onClick}>{props.children}</GhostButton>
 				: variant === `${Variant.LINK}`
 				? <LinkButton theme={theme} onClick={props.onClick}>{props.children}</LinkButton>
-				: <DefaultButton onClick={props.onClick}>{props.children}</DefaultButton>
+				: <DefaultButton theme={theme} onClick={props.onClick}>{props.children}</DefaultButton>
 			}
 		</Fragment>
 	);

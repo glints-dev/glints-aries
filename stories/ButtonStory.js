@@ -20,9 +20,9 @@ const ButtonStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button onClick={action('default button')}>Default</Button>
+              <Button theme="blue" onClick={action('default button')}>Default</Button>
             </td>
-            <td><code>{`<Button>Default</Button>`}</code></td>
+            <td><code>{`<Button theme="blue">Default</Button>`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -45,6 +45,13 @@ const ButtonStories = () => {
             <td>yes</td>
             <td>Sets the Default Button.</td>
           </tr>
+          <tr>
+            <td>theme</td>
+            <td>string</td>
+            <td><pre>{`red | blue | yellow`}</pre></td>
+            <td>no</td>
+            <td>Default theme is white.</td>
+          </tr>
         </tbody>
       </table>
 
@@ -62,7 +69,7 @@ const ButtonStories = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Button variant={Variant.PRIMARY} theme={Theme.RED} onClick={action('Primary button')}>Primary</Button>
+              <Button variant={Variant.PRIMARY} theme={Theme.BLUE} onClick={action('Primary button')}>Primary</Button>
             </td>
             <td><code>{`<Button variant="primary" theme="red">Primary</Button>`}</code></td>
           </tr>
