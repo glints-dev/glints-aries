@@ -81,6 +81,13 @@ const HeadingStory = () => {
             <td>yes</td>
             <td>Sets <b>Divider</b>'s width.</td>
           </tr>
+          <tr>
+            <td>backGroundImageURL</td>
+            <td>string</td>
+            <td><pre>{'URL'}</pre></td>
+            <td>no</td>
+            <td>Sets <b>background-image</b> when hover</td>
+          </tr>
         </tbody>
       </table>
     </div>

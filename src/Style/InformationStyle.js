@@ -7,13 +7,13 @@ export const InformationContainer = styled.div`
     flex-direction: column;
     cursor: pointer;
     :hover {
-        background-image: url(${(props) => props.backGroundImage});
+        background-image: url(${(props) => props.backGroundImageURL});
         background-repeat: no-repeat;
         background-position: top;
         background-size:cover;
         p, span, li {
-            color: white;
-            transition: all 0.3s;
+            color: ${(props) => props.hoverTextColor ? props.hoverTextColor : 'white' };
+            transition: all 0.2s;
         }
     }
 `;

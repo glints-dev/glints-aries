@@ -3,10 +3,13 @@ import React from 'react';
 import { InformationContainer } from './../Style/InformationStyle';
 
 const Information = (props: Props) => {
-  const { children,backGroundImageURL } = props;
+  const { children, backGroundImageURL, hoverTextColor } = props;
 
   return (
-    <InformationContainer backGroundImageURL={backGroundImageURL}>
+    <InformationContainer 
+      backGroundImageURL={backGroundImageURL}
+      hoverTextColor={hoverTextColor}
+    >
       {children}
     </InformationContainer>
   );
