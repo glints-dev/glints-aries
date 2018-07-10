@@ -55,15 +55,6 @@ ${"`"}
 `
           }
         </pre>
-        <p>3. If you used styled-components in the same file of your component, You could use <b>styled(...)</b> approach to override glints-aries component.</p>
-        <pre style={{backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0'}}>
-          {
-            `const GlintsComponentOverride = styled(GlintsComponent)${"`"}
-  your override style goes here
-${"`"}
-`
-          }
-        </pre>
       </div>
 
     </div>

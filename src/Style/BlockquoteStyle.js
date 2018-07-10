@@ -32,17 +32,47 @@ export const StyledOrigin = styled.span`
 	opacity: .75;
 `;
 
+export const ProfileWrapper = styled.div`
+	position: absolute;
+    top: 50%;
+    transform: translate(-25%, -50%);
+
+
+	@media ${device.mobileL} {
+		top: -2.5em;
+		left: 0;
+		align-self: center;
+	}
+`;
+
 export const BlockquoteContainer = styled.div`
     position: relative;
-    display: flex;
-    grid-template-columns: 20% 80%;
     width: 100%;
-    background: ${props => props.inverted ? `${PrimaryColor.glintsblue}` : `${SecondaryColor.white}`};
-    color: ${props => props.inverted ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+    background: ${SecondaryColor.white};
+    color: ${SecondaryColor.black};
+	transition: all .2s;
 
 	@media ${device.mobileL} {
 		flex-direction: column;
 		text-align: center;
+	}
+
+	&:hover {
+		background: ${PrimaryColor.glintsblue};
+    	color: ${SecondaryColor.white};
+	}
+
+	&:hover:before {
+		content: '';
+		position: absolute;
+		top: -1.5em;
+		left: 8em;
+		background: url(${RedQuote});
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 3em;
+		width: 3em;
 	}
 
 	&:before {
@@ -50,7 +80,7 @@ export const BlockquoteContainer = styled.div`
 		position: absolute;
 		top: -1.5em;
 		left: 8em;
-		background: ${props => props.inverted ? `url(${RedQuote})` : `url(${BlueQuote})`};
+		background: url(${BlueQuote});
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -63,22 +93,6 @@ export const BlockquoteContainer = styled.div`
 			align-self: center;
 		}
 	}
-
-    img {
-		position: relative;
-        width: 8em;
-        height: 8em;
-		left: -2em;
-		align-self: center;
-		object-fit: cover;
-		border-radius: 50%;
-
-		@media ${device.mobileL} {
-			top: -2.5em;
-			left: 0;
-			align-self: center;
-		}
-    }
 	
     ${StyledAuthor} {
 		&:before {
@@ -88,7 +102,7 @@ export const BlockquoteContainer = styled.div`
 `;
 
 export const Paragraph = styled.div`
-    padding: 2em 2em 2em 0;
+    padding: 2em 2em 2em 8em;
 	line-height: 1.8;
 
 	@media ${device.mobileL} {

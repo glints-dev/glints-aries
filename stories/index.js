@@ -23,6 +23,7 @@ import PointingModalStory from './PointingModalStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
+import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import TextFieldStory from './TextFieldStory';
 
@@ -46,6 +47,7 @@ storiesOf('Components', module)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Search', () => <SearchStory />)
+  .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Text Field', () => <TextFieldStory />);
 

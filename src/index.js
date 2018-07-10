@@ -4,7 +4,7 @@
 // keep in alphabetical order
 export {default as Accordion, AccordionHeader, AccordionLabel, AccordionItem} from './Accordion';
 export {default as Banner} from './Banner';
-export {default as Blockquote, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
+export {default as Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
 export {default as Brand} from './Brand';
 export {default as Button} from './Button';
 export {default as Divider} from './Divider';
@@ -21,6 +21,7 @@ export {default as PointingModal, PointingModalHeader, PointingModalBody, Pointi
 export {default as ProfilePicture} from './ProfilePicture';
 export {default as PsychedelicText} from './PsychedelicText';
 export {default as Search, SearchItems} from './Search';
+export {default as Slider} from './Slider';
 export {default as Stats} from './Stats';
 export {default as TextField} from './TextField';
 export {Uikit as default, UikitConsumer, UikitProvider} from './Provider';

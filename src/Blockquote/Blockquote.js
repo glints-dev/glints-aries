@@ -9,7 +9,7 @@ const Blockquote = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteContainer inverted={inverted}>
+    <BlockquoteContainer>
       {children}
     </BlockquoteContainer>
   );
