@@ -5,6 +5,17 @@ export const InformationContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    :hover {
+        background-image: url(${(props) => props.backGroundImage});
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size:cover;
+        p, span, li {
+            color: white;
+            transition: all 0.3s;
+        }
+    }
 `;
 
 export const TitleWrapper = styled.p`

@@ -21,7 +21,7 @@ const HeadingStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Information>
+              <Information backGroundImageURL={'https://cdn.zeplin.io/5a99106ac26df76756166bac/assets/C185132C-39F4-47F8-ADC4-4DED4A198209.png'}>
                 <Title bold>Business Development</Title>
                 <Description>Business development entails tasks and processes to develop and implement growth opportunities within and between organizations.</Description>
                 <Divider theme="yellow" size="small" />
