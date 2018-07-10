@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { SecondaryColor } from '../Style/Colors';
 
 export const InformationContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+
     cursor: pointer;
     :hover {
         background-image: url(${(props) => props.backGroundImageURL});
@@ -12,7 +13,7 @@ export const InformationContainer = styled.div`
         background-position: top;
         background-size:cover;
         p, span, li {
-            color: ${(props) => props.hoverTextColor ? props.hoverTextColor : 'white' };
+            color: ${(props) => props.hoverTextColor ? props.hoverTextColor : `${SecondaryColor.white}` };
             transition: all 0.2s;
         }
     }
