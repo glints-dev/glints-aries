@@ -57,6 +57,7 @@ const HeadingStory = () => {
             <th>Value</th>
             <th>Required</th>
             <th>Description</th>
+            <th>Default Value</th>
           </tr>
         </thead>
         <tbody>
@@ -66,6 +67,7 @@ const HeadingStory = () => {
             <td><pre>{`true | false`}</pre></td>
             <td>no</td>
             <td>Emphasizes the <b>Title</b> text.</td>
+            <td>None</td>
           </tr>
           <tr>
             <td>theme</td>
@@ -73,6 +75,7 @@ const HeadingStory = () => {
             <td><pre>{`red | blue | yellow`}</pre></td>
             <td>no</td>
             <td>Sets color for the <b>Divider</b>.</td>
+            <td>None</td>
           </tr>
           <tr>
             <td>size</td>
@@ -80,13 +83,23 @@ const HeadingStory = () => {
             <td><pre>{`large | medium | small`}</pre></td>
             <td>yes</td>
             <td>Sets <b>Divider</b>'s width.</td>
+            <td>None</td>
           </tr>
           <tr>
             <td>backGroundImageURL</td>
             <td>string</td>
             <td><pre>{'URL'}</pre></td>
             <td>no</td>
-            <td>Sets <b>background-image</b> when hover</td>
+            <td>Sets <b>background-image</b> when hovered</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>hoverTextColor</td>
+            <td>string</td>
+            <td><pre>{'hex-value | rba-value | string-value'}</pre></td>
+            <td>no</td>
+            <td>Sets <b>text-color</b> when hovered</td>
+            <td>White</td>
           </tr>
         </tbody>
       </table>
