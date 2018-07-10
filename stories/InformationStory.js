@@ -33,7 +33,9 @@ const HeadingStory = () => {
                 </Detail>
               </Information>
             </td>
-            <td><pre>{`<Information>
+            <td><pre>{`<Information
+    backGroundImageURL={...}
+    hoverTextColor={"white"}>
   <Title bold>Business Development</Title>
   <Description>Type your text here...</Description>
   <Divider theme="yellow" size="small" />
