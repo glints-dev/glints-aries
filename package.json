@@ -45,7 +45,6 @@
     "jest-styled-components": "5.0.1",
     "react-router-dom": "4.3.1",
     "react-test-renderer": "16.4.1",
-    "styled-components": "^3.3.3",
     "webpack": "4.12.0",
     "webpack-assets-manifest": "3.0.1",
     "webpack-cli": "^3.0.8",
@@ -55,11 +54,14 @@
     "create-react-context": "0.2.2",
     "moment": "2.22.1",
     "nuka-carousel": "4.1.0",
-    "prop-types": "15.6.1",
     "r": "0.0.5",
-    "react": "16.4.1",
     "react-datetime": "2.14.0",
     "react-dom": "16.4.1",
     "throttle-debounce": "1.0.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "styled-components": "^3.3.3"
   }
 }
