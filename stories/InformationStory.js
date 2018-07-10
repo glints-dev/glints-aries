@@ -21,7 +21,7 @@ const HeadingStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-              <Information>
+              <Information backGroundImageURL={'https://cdn.zeplin.io/5a99106ac26df76756166bac/assets/C185132C-39F4-47F8-ADC4-4DED4A198209.png'}>
                 <Title bold>Business Development</Title>
                 <Description>Business development entails tasks and processes to develop and implement growth opportunities within and between organizations.</Description>
                 <Divider theme="yellow" size="small" />
@@ -33,7 +33,9 @@ const HeadingStory = () => {
                 </Detail>
               </Information>
             </td>
-            <td><pre>{`<Information>
+            <td><pre>{`<Information
+    backGroundImageURL={...}
+    hoverTextColor={"white"}>
   <Title bold>Business Development</Title>
   <Description>Type your text here...</Description>
   <Divider theme="yellow" size="small" />
@@ -57,6 +59,7 @@ const HeadingStory = () => {
             <th>Value</th>
             <th>Required</th>
             <th>Description</th>
+            <th>Default Value</th>
           </tr>
         </thead>
         <tbody>
@@ -66,6 +69,7 @@ const HeadingStory = () => {
             <td><pre>{`true | false`}</pre></td>
             <td>no</td>
             <td>Emphasizes the <b>Title</b> text.</td>
+            <td>None</td>
           </tr>
           <tr>
             <td>theme</td>
@@ -73,6 +77,7 @@ const HeadingStory = () => {
             <td><pre>{`red | blue | yellow`}</pre></td>
             <td>no</td>
             <td>Sets color for the <b>Divider</b>.</td>
+            <td>None</td>
           </tr>
           <tr>
             <td>size</td>
@@ -80,6 +85,23 @@ const HeadingStory = () => {
             <td><pre>{`large | medium | small`}</pre></td>
             <td>yes</td>
             <td>Sets <b>Divider</b>'s width.</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>backGroundImageURL</td>
+            <td>string</td>
+            <td><pre>{'URL'}</pre></td>
+            <td>no</td>
+            <td>Sets <b>background-image</b> when hovered</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>hoverTextColor</td>
+            <td>string</td>
+            <td><pre>{'hex-value | rba-value | string-value'}</pre></td>
+            <td>no</td>
+            <td>Sets <b>text-color</b> when hovered</td>
+            <td>White</td>
           </tr>
         </tbody>
       </table>
