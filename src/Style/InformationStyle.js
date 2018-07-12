@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../Style/Colors';
+import { SecondaryColor } from './Colors';
 
 export const InformationContainer = styled.div`
     position: relative;
@@ -7,16 +7,6 @@ export const InformationContainer = styled.div`
     flex-direction: column;
 
     cursor: pointer;
-    :hover {
-        background-image: url(${(props) => props.backGroundImageURL});
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size:cover;
-        p, span, li {
-            color: ${(props) => props.hoverTextColor ? props.hoverTextColor : `${SecondaryColor.white}` };
-            transition: all 0.2s;
-        }
-    }
 `;
 
 export const TitleWrapper = styled.p`
@@ -52,4 +42,3 @@ export const DetailWrapper = styled.div`
         }
     }
 `;
-

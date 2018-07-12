@@ -1,19 +1,16 @@
 /* @flow */
 import React from 'react';
-import { InformationContainer } from './../Style/InformationStyle';
+import { InformationContainer } from '../Style/InformationStyle';
 
 const Information = (props: Props) => {
-  const { children, backGroundImageURL, hoverTextColor } = props;
+  const { children } = props;
 
   return (
-    <InformationContainer 
-      backGroundImageURL={backGroundImageURL}
-      hoverTextColor={hoverTextColor}
-    >
+    <InformationContainer>
       {children}
     </InformationContainer>
   );
-}
+};
 
 type Props = {
   children: React$Node,
