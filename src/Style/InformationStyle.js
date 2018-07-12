@@ -5,8 +5,6 @@ export const InformationContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-
-    cursor: pointer;
 `;
 
 export const TitleWrapper = styled.p`
