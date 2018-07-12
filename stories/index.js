@@ -1,8 +1,11 @@
 // @flow
 
 import React from 'react';
+import { storiesOf } from '@storybook/react';
+import {
+  withKnobs, text, boolean, number,
+} from '@storybook/addon-knobs';
 import Provider from './Provider';
-import {storiesOf} from '@storybook/react';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
@@ -29,8 +32,24 @@ import TextFieldStory from './TextFieldStory';
 
 
 storiesOf('Components', module)
-  .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
+  .addDecorator(story => (
+    <Provider>
+      {React.createElement(story)}
+    </Provider>
+  ))
+  .addDecorator(withKnobs)
   .add('Introduction', () => <IntroStory />)
+  .add('Knob', () => {
+    const name = text('Name', 'Arunoda Susiripala');
+    const age = number('Age', 89);
+
+    const content = `I am ${name} and I'm ${age} years old.`;
+    return (
+      <div>
+        {content}
+      </div>
+    );
+  })
   .add('Accordion', () => <AccordionStory />)
   .add('Banner', () => <BannerStory />)
   .add('Blockquote', () => <BlockquoteStory />)
@@ -52,9 +71,17 @@ storiesOf('Components', module)
   .add('Text Field', () => <TextFieldStory />);
 
 storiesOf('Mobile Components', module)
-  .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
-  .add('Menu', () => <MobileMenuStory />)
+  .addDecorator(story => (
+    <Provider>
+      {React.createElement(story)}
+    </Provider>
+  ))
+  .add('Menu', () => <MobileMenuStory />);
 
 storiesOf('Utilitites', module)
-  .addDecorator(story => <Provider>{React.createElement(story)}</Provider>)
-  .add('Center (Flex)', () => <FlexCenterStory />)
+  .addDecorator(story => (
+    <Provider>
+      {React.createElement(story)}
+    </Provider>
+  ))
+  .add('Center (Flex)', () => <FlexCenterStory />);
