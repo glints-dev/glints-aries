@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import React, { Fragment } from 'react';
 import DefaultButton from './DefaultButton';
@@ -15,21 +15,41 @@ type Props = {
 }
 
 const Button = (props: Props) => {
-	const { variant, theme } = props;
-	return (
-		<Fragment>
-			{variant === `${Variant.PRIMARY}`
-				? <PrimaryButton theme={theme} onClick={props.onClick}>{props.children}</PrimaryButton>
-				: variant === `${Variant.SECONDARY}`
-				? <SecondaryButton onClick={props.onClick}>{props.children}</SecondaryButton>
-				: variant === `${Variant.GHOST}`
-				? <GhostButton theme={theme} onClick={props.onClick}>{props.children}</GhostButton>
-				: variant === `${Variant.LINK}`
-				? <LinkButton theme={theme} onClick={props.onClick}>{props.children}</LinkButton>
-				: <DefaultButton theme={theme} onClick={props.onClick}>{props.children}</DefaultButton>
-			}
-		</Fragment>
-	);
-}
+  const { variant, theme } = props;
+  return (
+    <Fragment>
+      {variant === `${Variant.PRIMARY}`
+        ? (
+          <PrimaryButton theme={theme} onClick={props.onClick}>
+            {props.children}
+          </PrimaryButton>
+        )
+        : variant === `${Variant.SECONDARY}`
+          ? (
+            <SecondaryButton onClick={props.onClick}>
+              {props.children}
+            </SecondaryButton>
+          )
+          : variant === `${Variant.GHOST}`
+            ? (
+              <GhostButton theme={theme} onClick={props.onClick}>
+                {props.children}
+              </GhostButton>
+            )
+            : variant === `${Variant.LINK}`
+              ? (
+                <LinkButton theme={theme} onClick={props.onClick}>
+                  {props.children}
+                </LinkButton>
+              )
+              : (
+                <DefaultButton theme={theme} onClick={props.onClick}>
+                  {props.children}
+                </DefaultButton>
+              )
+      }
+    </Fragment>
+  );
+};
 
 export default Button;
