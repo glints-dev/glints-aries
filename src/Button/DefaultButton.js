@@ -1,18 +1,17 @@
 import React from 'react';
 import { DefaultBtn } from '../Style/ButtonStyle';
 
-const DefaultButton = (props) => {
-  const {
-    children,
-    theme,
-    ...defaultButtonProps
-  } = props;
+type Props = {
+  theme: string,
+  onClick: Function,
+  children: React.Node,
+  className: string
+}
 
-  return (
-    <DefaultBtn theme={theme} {...defaultButtonProps}>
-      { children }
-    </DefaultBtn>
-  );
-};
+const DefaultButton = ({ children, ...defaultButtonProps }: Props) => (
+  <DefaultBtn {...defaultButtonProps}>
+    { children }
+  </DefaultBtn>
+);
 
 export default DefaultButton;

@@ -9,6 +9,7 @@
     "flow"
   ],
   "plugins": [
+    "jsx-control-statements",
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true
