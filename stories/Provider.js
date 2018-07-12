@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-import {HashRouter, Link} from 'react-router-dom';
-import Uikit, {UikitProvider} from '../src';
+import { HashRouter, Link } from 'react-router-dom';
+import Uikit, { UikitProvider } from '../src';
 
 type Props = {
   children: React$Element<any>,
@@ -10,7 +10,9 @@ type Props = {
 
 const Provider = (props: Props) => (
   <HashRouter>
-    <UikitProvider value={new Uikit('/', Link)}>{props.children}</UikitProvider>
+    <UikitProvider value={new Uikit('/', Link)}>
+      {props.children}
+    </UikitProvider>
   </HashRouter>
 );
 

@@ -1,14 +1,20 @@
 import React from 'react';
-import { LinkBtn } from './../Style/ButtonStyle';
+import { LinkBtn } from '../Style/ButtonStyle';
 import Label from '../Label';
 
-const LinkButton = (props) => {
-  const { ...defaultButtonProps } = props;
-  return (
-    <LinkBtn>
-      <Label theme={props.theme}>{props.children}</Label>
-    </LinkBtn>
-  );
-};
+type Props = {
+  theme: string,
+  onClick: Function,
+  children: React.Node,
+  className: string
+}
+
+const LinkButton = ({ children, ...defaultButtonProps }: Props) => (
+  <LinkBtn>
+    <Label {...defaultButtonProps}>
+      {children}
+    </Label>
+  </LinkBtn>
+);
 
 export default LinkButton;

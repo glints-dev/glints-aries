@@ -6,10 +6,10 @@ const ProfilePicture = (props: Props) => {
   const { size, assetUrl, editable } = props;
 
   return (
-      <ProfilePictureWrapper size={size} editable={editable}>
-          <ProfilePictureImage src={assetUrl} />
-      </ProfilePictureWrapper>
+    <ProfilePictureWrapper size={size} editable={editable}>
+      <ProfilePictureImage src={assetUrl} />
+    </ProfilePictureWrapper>
   );
-}
+};
 
 export default ProfilePicture;

@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import React, { Fragment } from 'react';
 import DefaultButton from './DefaultButton';
@@ -10,26 +10,58 @@ import LinkButton from './LinkButton';
 import { Variant } from '../Utils/StyleConfig';
 
 type Props = {
-	variant?: string,
-	theme?: string,
+  variant: string,
+  theme: string,
+  onClick: Function,
+  children: React.Node,
+  className: string
 }
 
-const Button = (props: Props) => {
-	const { variant, theme } = props;
-	return (
-		<Fragment>
-			{variant === `${Variant.PRIMARY}`
-				? <PrimaryButton theme={theme} onClick={props.onClick}>{props.children}</PrimaryButton>
-				: variant === `${Variant.SECONDARY}`
-				? <SecondaryButton onClick={props.onClick}>{props.children}</SecondaryButton>
-				: variant === `${Variant.GHOST}`
-				? <GhostButton theme={theme} onClick={props.onClick}>{props.children}</GhostButton>
-				: variant === `${Variant.LINK}`
-				? <LinkButton theme={theme} onClick={props.onClick}>{props.children}</LinkButton>
-				: <DefaultButton theme={theme} onClick={props.onClick}>{props.children}</DefaultButton>
-			}
-		</Fragment>
-	);
-}
+const renderButton = ({
+  variant,
+  theme,
+  children,
+  onClick,
+  className,
+}: Props) => {
+  switch (variant) {
+    case Variant.PRIMARY:
+      return (
+        <PrimaryButton theme={theme} onClick={onClick} className={className}>
+          {children}
+        </PrimaryButton>
+      );
+    case Variant.SECONDARY:
+      return (
+        <SecondaryButton onClick={onClick} className={className}>
+          {children}
+        </SecondaryButton>
+      );
+    case Variant.GHOST:
+      return (
+        <GhostButton theme={theme} onClick={onClick} className={className}>
+          {children}
+        </GhostButton>
+      );
+    case Variant.LINK:
+      return (
+        <LinkButton theme={theme} onClick={onClick} className={className}>
+          {children}
+        </LinkButton>
+      );
+    default:
+      return (
+        <DefaultButton theme={theme} onClick={onClick} className={className}>
+          {children}
+        </DefaultButton>
+      );
+  }
+};
+
+const Button = props => (
+  <Fragment>
+    {renderButton(props)}
+  </Fragment>
+);
 
 export default Button;

@@ -1,8 +1,7 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
-import type {Width} from '../View/View';
-import Icon, {type IconSize, type IconBgColor} from './Icon';
+import type, { Width } from '../View/View';
+import Icon, { type IconSize, type IconBgColor } from './Icon';
 
 type IconName =
   | 'add'
@@ -56,11 +55,11 @@ type Props = {
   rounded?: boolean,
 };
 
-const Icons = ({name, ...iconProps}: Props) => (
+const Icons = ({ name, ...iconProps }: Props) => (
   <Icon {...iconProps}>
     <img src={require(`../../assets/icons/${name}.svg`)} alt={name} />
   </Icon>
 );
 
-export type {IconName};
+export type { IconName };
 export default Icons;
