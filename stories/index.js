@@ -3,8 +3,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  withKnobs, text, boolean, number,
+  withKnobs, text, boolean, number, select,
 } from '@storybook/addon-knobs';
+import { withViewport } from '@storybook/addon-viewport';
 import Provider from './Provider';
 
 import IntroStory from './IntroStory';
@@ -29,7 +30,7 @@ import SearchStory from './SearchStory';
 import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import TextFieldStory from './TextFieldStory';
-
+import { Button } from '../src/Button';
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -40,14 +41,14 @@ storiesOf('Components', module)
   .addDecorator(withKnobs)
   .add('Introduction', () => <IntroStory />)
   .add('Knob', () => {
-    const name = text('Name', 'Arunoda Susiripala');
-    const age = number('Age', 89);
-
-    const content = `I am ${name} and I'm ${age} years old.`;
+    const options = ['primary', 'secondary', 'ghost', 'link'];
+    const colors = ['red', 'yellow', 'blue'];
+    const value = select('Type', options, 'primary');
+    const calorValue = select('Theme', colors, 'red');
     return (
-      <div>
-        {content}
-      </div>
+      <Button variant={value} theme={calorValue}>
+        Knob
+      </Button>
     );
   })
   .add('Accordion', () => <AccordionStory />)
