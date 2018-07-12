@@ -32,7 +32,7 @@ const BlockquoteStory = () => {
               </Blockquote>
             </td>
             <td><pre>
-{`<Blockquote inverted>
+{`<Blockquote>
   <BlockquoteProfileWrapper>
     <ProfilePicture size="large" assetUrl="..." />
   </BlockquoteProfileWrapper>
@@ -45,10 +45,8 @@ const BlockquoteStory = () => {
           </tr>
         </tbody>
       </table>
-
       <h1>Note</h1>
       <p>You can <code>{`import { ProfilePicture } from 'glints-aries'`}</code> to use ProfilePicture Component.</p>
-
       <h1>Props</h1>
       <table className="doc-table">
         <thead>

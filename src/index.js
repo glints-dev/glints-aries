@@ -21,7 +21,7 @@ export {default as PointingModal, PointingModalHeader, PointingModalBody, Pointi
 export {default as ProfilePicture} from './ProfilePicture';
 export {default as PsychedelicText} from './PsychedelicText';
 export {default as Search, SearchItems} from './Search';
-export {default as Slider} from './Slider';
+export {default as Slider, SliderItem} from './Slider';
 export {default as Stats} from './Stats';
 export {default as TextField} from './TextField';
 export {Uikit as default, UikitConsumer, UikitProvider} from './Provider';

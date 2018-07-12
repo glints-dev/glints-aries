@@ -39,15 +39,16 @@ export const ProfileWrapper = styled.div`
 
 
 	@media ${device.mobileL} {
-		top: -2.5em;
-		left: 0;
-		align-self: center;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		transform: translateY(-75%);
+		top: 0;
 	}
 `;
 
 export const BlockquoteContainer = styled.div`
     position: relative;
-    width: 100%;
     background: ${SecondaryColor.white};
     color: ${SecondaryColor.black};
 	transition: all .2s;
@@ -63,16 +64,10 @@ export const BlockquoteContainer = styled.div`
 	}
 
 	&:hover:before {
-		content: '';
-		position: absolute;
-		top: -1.5em;
-		left: 8em;
 		background: url(${RedQuote});
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		height: 3em;
-		width: 3em;
 	}
 
 	&:before {
@@ -88,9 +83,11 @@ export const BlockquoteContainer = styled.div`
 		width: 3em;
 		
 		@media ${device.mobileL} {
-			top: 6.5em;
-			left: auto;
+			display: inline-flex;
 			align-self: center;
+			position: relative;
+			left: auto;
+			top: 8em;
 		}
 	}
 	

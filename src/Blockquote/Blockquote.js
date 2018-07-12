@@ -4,8 +4,7 @@ import { BlockquoteContainer } from './../Style/BlockquoteStyle';
 
 const Blockquote = (props: Props) => {
   const {
-    children,
-    inverted,
+    children
   } = props;
 
   return (
@@ -16,8 +15,7 @@ const Blockquote = (props: Props) => {
 }
 
 type Props = {
-  children: React$Node,
-  inverted: boolean
+  children: React$Node
 }
 
 export default Blockquote;
