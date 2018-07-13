@@ -22,6 +22,7 @@ import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
+import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
 import PointingModalStory from './PointingModalStory';
 import ProfilePictureStory from './ProfilePictureStory';
@@ -29,6 +30,7 @@ import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
 import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
+import SwipeableStory from './SwipeableStory';
 import TextFieldStory from './TextFieldStory';
 import { Button } from '../src/Button';
 
@@ -63,6 +65,7 @@ storiesOf('Components', module)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
+  .add('Loading', () => <LoadingStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
@@ -77,7 +80,8 @@ storiesOf('Mobile Components', module)
       {React.createElement(story)}
     </Provider>
   ))
-  .add('Menu', () => <MobileMenuStory />);
+  .add('Menu', () => <MobileMenuStory />)
+  .add('Swipeable', () => <SwipeableStory />)
 
 storiesOf('Utilitites', module)
   .addDecorator(story => (

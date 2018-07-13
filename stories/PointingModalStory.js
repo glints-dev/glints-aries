@@ -11,7 +11,7 @@ const PointingModalStory = () => {
   return (
     <div className="doc-mainbar">
       <h1>Pointing Modal</h1>
-      <p><code>{`import { PointingModal } from 'glints-aries'`}</code></p>
+      <p><code>{`import { PointingModal, PointingModalHeader, PointingModalBody, PointingModalItem, PointingModalFooter } from 'glints-aries'`}</code></p>
 
       <table className="doc-table">
         <thead>

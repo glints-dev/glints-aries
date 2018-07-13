@@ -40,6 +40,7 @@ class Slider extends Component <Props, State> {
 
   render() {
     const { children } = this.props;
+    
     return (
       <SliderContainer>
         <SliderWrapperStyle style={{

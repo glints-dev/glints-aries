@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import { DropdownContainer, DropdownLabelWrapper, DropdownLabel, DropdownItemWrapper } from './../Style/DropdownStyle';
 import { Icons } from './../Icon';
 
-class Dropdown extends Component {
+class Dropdown extends Component <Props, State> {
   state = {
     isOpen: false
   };
 
-  handleOpen = (e) => {
+  handleOpen = e => {
       this.setState({ isOpen: !this.state.isOpen });
   };
 
@@ -39,5 +39,15 @@ class Dropdown extends Component {
     );
   }
 }
+
+type Props = {
+  children: React$Node,
+  title: string,
+  size: string,
+};
+
+type State = {
+  isOpen: boolean,
+};
 
 export default Dropdown;
