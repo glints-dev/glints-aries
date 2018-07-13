@@ -4,8 +4,10 @@ import Stats from './../src/Stats';
 const StatsStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Statistic</h1>
-      <p><code>{`import { Stats } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Statistic</h1>
+        <p><code>{`import { Stats } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

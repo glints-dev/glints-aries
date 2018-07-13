@@ -5,8 +5,10 @@ import ProfilePicture from './../src/ProfilePicture';
 const BlockquoteStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Blockquote</h1>
-      <p><code>{`import { Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Blockquote</h1>
+        <p><code>{`import { Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>
@@ -45,8 +47,12 @@ const BlockquoteStory = () => {
           </tr>
         </tbody>
       </table>
-      <h1>Note</h1>
-      <p>You can <code>{`import { ProfilePicture } from 'glints-aries'`}</code> to use ProfilePicture Component.</p>
+
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Note</h1>
+        <p>You can <code>{`import { ProfilePicture } from 'glints-aries'`}</code> to use ProfilePicture Component.</p>
+      </div>
+
       <h1>Props</h1>
       <table className="doc-table">
         <thead>

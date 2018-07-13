@@ -1,11 +1,13 @@
 import React from 'react';
 import Divider from './../src/Divider';
 
-const HeadingStory = () => {
+const DividerStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Heading</h1>
-      <p><code>{`import { Heading } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Divider</h1>
+        <p><code>{`import { Divider } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>
@@ -65,4 +67,4 @@ const HeadingStory = () => {
   );
 }
 
-export default HeadingStory;
+export default DividerStory;

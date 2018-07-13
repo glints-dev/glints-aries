@@ -4,8 +4,11 @@ import { Banner } from './../src/Banner';
 const BannerStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Banner</h1>
-      <p><code>{`import { Banner } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Banner</h1>
+        <p><code>{`import { Banner } from 'glints-aries'`}</code></p>
+      </div>
+      
       <table className="doc-table">
         <thead>
           <tr>

@@ -5,8 +5,10 @@ import { Size } from '../src/Utils/StyleConfig';
 const LoadingStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Loading</h1>
-      <p><code>{`import { Loading } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Loading</h1>
+        <p><code>{`import { Loading } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

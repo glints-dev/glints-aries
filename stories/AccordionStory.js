@@ -27,14 +27,16 @@ class AccordionStory extends Component {
   render() {
     return (
       <div className="doc-mainbar">
-        <h1>
-          Accordion
-        </h1>
-        <p>
-          <code>
-            {'import { Accordion, AccordionItem, AccordionHeader, AccordionLabel } from \'glints-aries\''}
-          </code>
-        </p>
+        <div style={{ marginBottom: '2em' }}>
+          <h1>
+            Accordion
+          </h1>
+          <p>
+            <code>
+              {'import { Accordion, AccordionItem, AccordionHeader, AccordionLabel } from \'glints-aries\''}
+            </code>
+          </p>
+        </div>
 
         <table className="doc-table">
           <thead>

@@ -4,8 +4,11 @@ import Item from './../src/Item';
 const ItemStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Item</h1>
-      <p><code>{`import { Item } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Item</h1>
+        <p><code>{`import { Item } from 'glints-aries'`}</code></p>
+      </div>
+      
       <table className="doc-table">
         <thead>
           <tr>

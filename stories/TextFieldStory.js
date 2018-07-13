@@ -4,8 +4,11 @@ import TextField from './../src/TextField';
 const TextFieldStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Text Field</h1>
-      <p><code>{`import { TextField } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Text Field</h1>
+        <p><code>{`import { TextField } from 'glints-aries'`}</code></p>
+      </div>
+
       <table className="doc-table">
         <thead>
           <tr>

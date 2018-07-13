@@ -5,14 +5,11 @@ import { Variant, Theme } from '../src/Utils/StyleConfig';
 
 const ButtonStories = () => (
   <div className="doc-mainbar">
-    <h1>
-      Button
-    </h1>
-    <p>
-      <code>
-        {'import { Button } from \'glints-aries\''}
-      </code>
-    </p>
+    <div style={{ marginBottom: '2em' }}>
+      <h1>Button</h1>
+      <p><code>{'import { Button } from \'glints-aries\''}</code></p>
+    </div>
+
     <table className="doc-table">
       <thead>
         <tr>

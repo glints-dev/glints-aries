@@ -9,8 +9,10 @@ import { Icons } from '../src/Icon';
 const SearchStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Search</h1>
-      <p><code>{`import { Search, SearchItems } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Search</h1>
+        <p><code>{`import { Search, SearchItems } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

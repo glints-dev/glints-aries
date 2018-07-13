@@ -4,8 +4,10 @@ import ProfilePicture from './../src/ProfilePicture';
 const ProfilePictureStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Profile Picture</h1>
-      <p><code>{`import { ProfilePicture } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Profile Picture</h1>
+        <p><code>{`import { ProfilePicture } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

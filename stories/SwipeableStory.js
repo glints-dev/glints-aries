@@ -7,8 +7,10 @@ import { SwipeableCardExample } from '../src/Style/SwipeableStyle';
 const SwipeableStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Swipeable</h1>
-      <p><code>{`import { Swipeable, SwipeableItem } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Swipeable</h1>
+        <p><code>{`import { Swipeable, SwipeableItem } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

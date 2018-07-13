@@ -7,8 +7,11 @@ import Item from './../src/Item';
 const JobCardStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Job Card</h1>
-      <div>Usage: <pre>{`import { Card, Banner, Item, Divider } from 'glints-aries'`}</pre></div>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Job Card</h1>
+        <div><code>{`import { Card, Banner, Item, Divider } from 'glints-aries'`}</code></div>
+      </div>
+
       <p style={{color: 'red', fontSize: 20}}>Beta</p>
       <table className="doc-table">
         <thead>

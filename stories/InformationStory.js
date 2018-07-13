@@ -3,11 +3,13 @@ import {Information, Title, Description, Detail} from './../src/Information';
 import { Divider } from './../src/Divider';
 import { Size } from '../src/Utils/StyleConfig';
 
-const HeadingStory = () => {
+const InformationStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Information</h1>
-      <p><code>{`import {Title, Information, Description, Detail, Divider} from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Information</h1>
+        <p><code>{`import {Title, Information, Description, Detail, Divider} from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>
@@ -109,4 +111,4 @@ const HeadingStory = () => {
   );
 }
 
-export default HeadingStory;
+export default InformationStory;

@@ -10,9 +10,11 @@ import Divider from '../src/Divider';
 const PointingModalStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Pointing Modal</h1>
-      <p><code>{`import { PointingModal, PointingModalHeader, PointingModalBody, PointingModalItem, PointingModalFooter } from 'glints-aries'`}</code></p>
-
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Pointing Modal</h1>
+        <p><code>{`import { PointingModal, PointingModalHeader, PointingModalBody, PointingModalItem, PointingModalFooter } from 'glints-aries'`}</code></p>
+      </div>
+      
       <table className="doc-table">
         <thead>
           <tr>

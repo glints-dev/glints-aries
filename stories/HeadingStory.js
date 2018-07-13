@@ -5,8 +5,10 @@ import { Size } from '../src/Utils/StyleConfig';
 const HeadingStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Heading</h1>
-      <p><code>{`import { Heading } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Heading</h1>
+        <p><code>{`import { Heading } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

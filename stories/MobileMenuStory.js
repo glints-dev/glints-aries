@@ -10,8 +10,10 @@ import Button from '../src/Button';
 const ProfilePictureStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Mobile Menu</h1>
-      <p><code>{`import { MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Mobile Menu</h1>
+        <p><code>{`import { MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>

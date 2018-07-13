@@ -4,8 +4,10 @@ import PsychedelicText from './../src/PsychedelicText';
 const PsychedelicTextStory = () => {
   return (
     <div className="doc-mainbar">
-      <h1>Psychedelic Text</h1>
-      <p><code>{`import { PsychedelicText } from 'glints-aries'`}</code></p>
+      <div style={{ marginBottom: '2em' }}>
+        <h1>Psychedelic Text</h1>
+        <p><code>{`import { PsychedelicText } from 'glints-aries'`}</code></p>
+      </div>
 
       <table className="doc-table">
         <thead>
