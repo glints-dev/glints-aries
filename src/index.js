@@ -7,6 +7,7 @@ export {default as Banner} from './Banner';
 export {default as Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
 export {default as Brand} from './Brand';
 export {default as Button} from './Button';
+export {default as PrimaryColor, SecondaryColor} from './Style/Colors';
 export {default as Divider} from './Divider';
 export {default as Dropdown, DropdownItems} from './Dropdown';
 export {default as FlexCenter} from './FlexCenter';
