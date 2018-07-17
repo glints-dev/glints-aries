@@ -1,19 +1,16 @@
 /* @flow */
 
 import React from 'react';
-import { ProfilePictureWrapper, ProfilePictureImage } from '../Style/ProfilePictureStyle';
+import { ProfilePictureWrapper } from '../Style/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
-  const { 
-    size, 
-    assetUrl, 
-    editable, 
-    className 
+  const {
+    size, editable, children, className,
   } = props;
 
   return (
     <ProfilePictureWrapper className={className} size={size} editable={editable}>
-      <ProfilePictureImage src={assetUrl} />
+      {children}
     </ProfilePictureWrapper>
   );
 };
