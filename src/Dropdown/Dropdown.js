@@ -1,12 +1,12 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { DropdownContainer, DropdownLabelWrapper, DropdownLabel, DropdownItemWrapper } from './../Style/DropdownStyle';
 import { Icons } from './../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
-    isOpen: false
+    isOpen: true
   };
 
   handleOpen = e => {
@@ -16,6 +16,10 @@ class Dropdown extends Component <Props, State> {
   handleClickOutside = () => {
     this.setState({ isOpen: false });
   };
+
+  componentDidMount() {
+    this.handleOpen();
+  }
 
   render() {
     const { 
@@ -30,17 +34,16 @@ class Dropdown extends Component <Props, State> {
         open={this.state.isOpen} 
         onClick={this.handleOpen} 
         onBlur={this.handleClickOutside} 
-        tabIndex="0"
-        className={className}>
-          <DropdownLabelWrapper>
+        tabIndex="0">
+          <DropdownLabelWrapper className={className}>
               <DropdownLabel>{title}</DropdownLabel>
               <Icons name={"drop-down"} />
           </DropdownLabelWrapper>
           {this.state.isOpen &&
-            (<DropdownItemWrapper>
+            <Fragment>
                 {children}
-            </DropdownItemWrapper>
-          )}
+            </Fragment>
+          }
       </DropdownContainer>
     );
   }

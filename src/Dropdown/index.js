@@ -1,8 +1,9 @@
 // @flow
 
 import Dropdown from './Dropdown';
-import DropdownItems from './DropdownItems';
+import DropdownBody from './DropdownBody';
+import DropdownItem from './DropdownItem';
 
-export {Dropdown, DropdownItems};
+export {Dropdown, DropdownBody, DropdownItem};
 
 export default Dropdown;

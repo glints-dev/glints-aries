@@ -17,13 +17,13 @@ const Brand = (props: Props) => {
   return (
     <BrandImageWrapper className={className}>
         <BrandImage 
-            size={size}
-            src={asset === 'glints-black' 
-                ? `${GlintsBlack}` 
-                : asset === 'glints-white'
-                ? `${GlintsWhite}` 
-                : asset } 
-                />
+          size={size}
+          src={asset === 'glints-black' 
+              ? `${GlintsBlack}` 
+              : asset === 'glints-white'
+              ? `${GlintsWhite}` 
+              : asset } 
+        />
     </BrandImageWrapper>
   );
 }

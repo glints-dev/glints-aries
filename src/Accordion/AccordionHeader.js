@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { AccordionHeaderWrapper, AccordionItemWrapper } from './../Style/AccordionStyle';
+import { AccordionHeaderWrapper } from './../Style/AccordionStyle';
 import { Icons } from './../Icon';
 
 const AccordionHeader = (props: Props) => {
@@ -21,9 +21,9 @@ const AccordionHeader = (props: Props) => {
       </AccordionHeaderWrapper>
 
       {isOpen &&
-        <AccordionItemWrapper>
+        <Fragment>
           {children}
-        </AccordionItemWrapper>
+        </Fragment>
       }
     </Fragment>
   );

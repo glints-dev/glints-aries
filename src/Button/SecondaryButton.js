@@ -12,7 +12,6 @@ const SecondaryButton = ({ children, ...defaultButtonProps }: Props) => (
 );
 
 type Props = {
-  theme: string,
   onClick: Function,
   children: React$Node,
   className: string,

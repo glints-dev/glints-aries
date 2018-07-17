@@ -2,14 +2,14 @@
 
 // @create-index
 // keep in alphabetical order
-export {default as Accordion, AccordionHeader, AccordionLabel, AccordionItem} from './Accordion';
+export {default as Accordion, AccordionHeader, AccordionBody, AccordionItem, AccordionLabel} from './Accordion';
 export {default as Banner} from './Banner';
 export {default as Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin} from './Blockquote';
 export {default as Brand} from './Brand';
 export {default as Button} from './Button';
 export {default as PrimaryColor, SecondaryColor} from './Style/Colors';
 export {default as Divider} from './Divider';
-export {default as Dropdown, DropdownItems} from './Dropdown';
+export {default as Dropdown, DropdownBody, DropdownItem} from './Dropdown';
 export {default as FlexCenter} from './FlexCenter';
 export {default as Heading} from './Heading';
 export {default as Information, Title, Description, Detail} from './Information';

@@ -12,7 +12,12 @@ const Divider = (props: Props) => {
   } = props;
 
   return (
-    <DividerWrapper className={className} theme={theme} size={size} thickness={thickness} />
+    <DividerWrapper 
+      className={className} 
+      theme={theme} 
+      size={size} 
+      thickness={thickness} 
+    />
   );
 }
 

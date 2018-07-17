@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown, {DropdownItems} from './../src/Dropdown';
+import { Dropdown, DropdownBody, DropdownItem } from './../src/Dropdown';
 import { Size } from '../src/Utils/StyleConfig';
 
 const DropdownStory = () => {
@@ -7,7 +7,7 @@ const DropdownStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Dropdown</h1>
-        <p><code>{`import { Dropdown, DropdownItems } from 'glints-aries'`}</code></p>
+        <p><code>{`import { Dropdown, DropdownBody, DropdownItem } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -23,23 +23,27 @@ const DropdownStory = () => {
           <tr>
             <td style={{padding: 20}}>
               <Dropdown title="This Career" size="medium">
-                <DropdownItems>Accounting</DropdownItems>
-                <DropdownItems>Art & Design</DropdownItems>
-                <DropdownItems>Business Development</DropdownItems>
-                <DropdownItems>Consulting</DropdownItems>
-                <DropdownItems>Engineering</DropdownItems>
-                <DropdownItems>Entrepreneurship</DropdownItems>
-                <DropdownItems>Finance</DropdownItems>
-                <DropdownItems>General Affair</DropdownItems>
-                <DropdownItems>Human Resources</DropdownItems>
+                <DropdownBody>
+                  <DropdownItem>Accounting</DropdownItem>
+                  <DropdownItem>Art & Design</DropdownItem>
+                  <DropdownItem>Business Development</DropdownItem>
+                  <DropdownItem>Consulting</DropdownItem>
+                  <DropdownItem>Engineering</DropdownItem>
+                  <DropdownItem>Entrepreneurship</DropdownItem>
+                  <DropdownItem>Finance</DropdownItem>
+                  <DropdownItem>General Affair</DropdownItem>
+                  <DropdownItem>Human Resources</DropdownItem>
+                </DropdownBody>
               </Dropdown>
             </td>
             <td><pre>{`<Dropdown title="This Career" size="medium">
-  <DropdownItems>Accounting</DropdownItems>
-  <DropdownItems>Art & Design</DropdownItems>
-  <DropdownItems>Business Development</DropdownItems>
-  <DropdownItems>Consulting</DropdownItems>
-  <DropdownItems>Engineering</DropdownItems>
+  <DropdownBody>
+    <DropdownItem>Accounting</DropdownItem>
+    <DropdownItem>Art & Design</DropdownItem>
+    <DropdownItem>Business Development</DropdownItem>
+    <DropdownItem>Consulting</DropdownItem>
+    <DropdownItem>Engineering</DropdownItem>
+  </DropdownBody>
 </Dropdown>`}</pre></td>
           </tr>
         </tbody>

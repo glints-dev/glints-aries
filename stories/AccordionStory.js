@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { action } from '@storybook/addon-actions';
-import Accordion, { AccordionHeader, AccordionItem, AccordionLabel } from '../src/Accordion';
+import { Accordion, AccordionHeader, AccordionBody, AccordionItem, AccordionLabel } from '../src/Accordion';
 import Label from '../src/Label';
 
 class AccordionStory extends Component {
@@ -33,7 +33,7 @@ class AccordionStory extends Component {
           </h1>
           <p>
             <code>
-              {'import { Accordion, AccordionItem, AccordionHeader, AccordionLabel } from \'glints-aries\''}
+              {'import { Accordion, AccordionHeader, AccordionBody, AccordionItem, AccordionLabel } from \'glints-aries\''}
             </code>
           </p>
         </div>
@@ -54,27 +54,29 @@ usage
               <td style={{ verticalAlign: 'top' }}>
                 <Accordion>
                   <AccordionHeader title="Jobs" isOpen={this.state.jobAccordionOpen} onClick={this.toggleJobAccordion}>
-                    <AccordionItem onClick={action('Accounting')}>
-Accounting
-                    </AccordionItem>
-                    <AccordionItem onClick={action('art & design')}>
-Art & design
-                    </AccordionItem>
-                    <AccordionItem onClick={action('Business')}>
-Business Development
-                    </AccordionItem>
-                    <AccordionItem onClick={action('consulting')}>
-Consulting
-                    </AccordionItem>
-                    <AccordionItem onClick={action('engineering')}>
-Egineering
-                    </AccordionItem>
-                    <AccordionItem onClick={action('Enterpreneurship')}>
-Enterpreneurship
-                    </AccordionItem>
-                    <AccordionItem onClick={action('Finance')}>
-Finance
-                    </AccordionItem>
+                    <AccordionBody>
+                      <AccordionItem onClick={action('Accounting')}>
+  Accounting
+                      </AccordionItem>
+                      <AccordionItem onClick={action('art & design')}>
+  Art & design
+                      </AccordionItem>
+                      <AccordionItem onClick={action('Business')}>
+  Business Development
+                      </AccordionItem>
+                      <AccordionItem onClick={action('consulting')}>
+  Consulting
+                      </AccordionItem>
+                      <AccordionItem onClick={action('engineering')}>
+  Egineering
+                      </AccordionItem>
+                      <AccordionItem onClick={action('Enterpreneurship')}>
+  Enterpreneurship
+                      </AccordionItem>
+                      <AccordionItem onClick={action('Finance')}>
+  Finance
+                      </AccordionItem>
+                    </AccordionBody>
                   </AccordionHeader>
 
                   <AccordionLabel>
@@ -84,18 +86,20 @@ in
                   </AccordionLabel>
 
                   <AccordionHeader title="This Location" isOpen={this.state.locAccordionOpen} onClick={this.toggleLocAccordion}>
-                    <AccordionItem onClick={action('Singapore')}>
-Singapore
-                    </AccordionItem>
-                    <AccordionItem onClick={action('Jakarta')}>
-Jakarta
-                    </AccordionItem>
-                    <AccordionItem onClick={action('Tokyo')}>
-Tokyo
-                    </AccordionItem>
-                    <AccordionItem onClick={action('India')}>
-India
-                    </AccordionItem>
+                    <AccordionBody>
+                      <AccordionItem onClick={action('Singapore')}>
+  Singapore
+                      </AccordionItem>
+                      <AccordionItem onClick={action('Jakarta')}>
+  Jakarta
+                      </AccordionItem>
+                      <AccordionItem onClick={action('Tokyo')}>
+  Tokyo
+                      </AccordionItem>
+                      <AccordionItem onClick={action('India')}>
+  India
+                      </AccordionItem>
+                    </AccordionBody>
                   </AccordionHeader>
                 </Accordion>
               </td>
@@ -103,8 +107,10 @@ India
                 <pre>
                   {`<Accordion>
   <AccordionHeader title="Jobs" isOpen={${this.state.jobAccordionOpen}} onClick={...}>
-    <AccordionItem onClick={...}>Accounting</AccordionItem>
-    <AccordionItem onClick={...}>instagram.com</AccordionItem>
+    <AccordionBody>
+      <AccordionItem onClick={...}>Accounting</AccordionItem>
+      <AccordionItem onClick={...}>instagram.com</AccordionItem>
+    </AccordionBody>
   </AccordionHeader>
 
   <AccordionLabel>
@@ -112,8 +118,10 @@ India
   </AccordionLabel>
 
   <AccordionHeader title="This Location" isOpen={true}>
-    <AccordionItem>Singapore</AccordionItem>
-    <AccordionItem>Jakarta</AccordionItem>
+    <AccordionBody>
+      <AccordionItem>Singapore</AccordionItem>
+      <AccordionItem>Jakarta</AccordionItem>
+    </AccordionBody>
   </AccordionHeader>
 </Accordion>`}
                 </pre>

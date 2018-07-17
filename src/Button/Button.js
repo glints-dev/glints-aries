@@ -62,7 +62,7 @@ type Props = {
   theme: string,
   onClick: Function,
   children: React$Node,
-  className: string
+  className: string,
 }
 
 export default Button;
