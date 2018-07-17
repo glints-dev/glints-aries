@@ -18,10 +18,16 @@ class TextField extends Component {
   }
 
   render() {
-    const { label, inputWidth, status, disabled } = this.props;
+    const { 
+      label, 
+      inputWidth, 
+      status, 
+      disabled, 
+      className 
+    } = this.props;
 
     return(
-      <TextFieldContainer size={inputWidth}>
+      <TextFieldContainer size={inputWidth} className={className}>
         <TextFieldInput type="text" 
           status={status} 
           disabled={disabled} 
@@ -32,6 +38,14 @@ class TextField extends Component {
       </TextFieldContainer>
     );
   }
+}
+
+type Props = {
+  label: string,
+  inputWidth: string,
+  status: string,
+  disabled: boolean,
+  className: string,
 }
 
 export default TextField;

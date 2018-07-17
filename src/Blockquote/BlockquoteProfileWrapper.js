@@ -6,10 +6,11 @@ import { ProfileWrapper } from './../Style/BlockquoteStyle';
 const BlockquoteProfileWrapper = (props: Props) => {
   const {
     children,
+    className
   } = props;
 
   return (
-    <ProfileWrapper>
+    <ProfileWrapper className={className}>
       {children}
     </ProfileWrapper>
   );
@@ -17,6 +18,7 @@ const BlockquoteProfileWrapper = (props: Props) => {
 
 type Props = {
   children: React$Node,
+  className: string,
 }
 
 export default BlockquoteProfileWrapper;

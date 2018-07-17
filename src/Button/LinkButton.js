@@ -1,13 +1,8 @@
+/* @flow */
+
 import React from 'react';
 import { LinkBtn } from '../Style/ButtonStyle';
 import Label from '../Label';
-
-type Props = {
-  theme: string,
-  onClick: Function,
-  children: React.Node,
-  className: string
-}
 
 const LinkButton = ({ children, ...defaultButtonProps }: Props) => (
   <LinkBtn>
@@ -16,5 +11,12 @@ const LinkButton = ({ children, ...defaultButtonProps }: Props) => (
     </Label>
   </LinkBtn>
 );
+
+type Props = {
+  theme: string,
+  onClick: Function,
+  children: React$Node,
+  className: string,
+}
 
 export default LinkButton;

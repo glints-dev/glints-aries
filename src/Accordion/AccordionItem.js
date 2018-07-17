@@ -1,23 +1,25 @@
 /* @flow */
+
 import React from 'react';
 import { AccordionItemList } from './../Style/AccordionStyle';
 
 const AccordionItem = (props: Props) => {
   const {
     children,
-    ...defaultAccordionProps
+    className,
+    ...propsDefault
   } = props;
   
   return (
-    <AccordionItemList {...defaultAccordionProps}>
+    <AccordionItemList className={className} {...propsDefault}>
       {children}
     </AccordionItemList>
   )
 }
 
 type Props = {
-  title?: string,
   children: React$Node,
+  className: string,
 };
 
 export default AccordionItem;

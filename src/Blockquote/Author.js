@@ -5,16 +5,20 @@ import { StyledAuthor } from './../Style/BlockquoteStyle';
 
 const Author = (props: Props) => {
   const {
-    children
+    children,
+    className
   } = props;
 
   return (
-    <StyledAuthor>{children}</StyledAuthor>
+    <StyledAuthor className={className}>
+      {children}
+    </StyledAuthor>
   );
 }
 
 type Props = {
   children: React$Node,
+  className: string,
 }
 
 export default Author;

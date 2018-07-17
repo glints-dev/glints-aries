@@ -39,10 +39,13 @@ class Slider extends Component <Props, State> {
   getLength = () => { return document.getElementsByClassName("item").length }
 
   render() {
-    const { children } = this.props;
+    const { 
+      children, 
+      className 
+    } = this.props;
     
     return (
-      <SliderContainer>
+      <SliderContainer className={className}>
         <SliderWrapperStyle style={{
           transform: `translateX(${this.state.translateValue}px)`,
           transition: 'transform ease-out 0.45s'
@@ -58,6 +61,7 @@ class Slider extends Component <Props, State> {
 
 type Props = {
   children: React$Node,
+  className: string,
 };
 
 type State = {

@@ -4,10 +4,13 @@ import React from 'react';
 import { MobileMenuContainer } from '../Style/MobileMenuStyle';
 
 const MobileMenu = (props: Props) => {
-  const { children } = props;
+  const { 
+    children, 
+    className 
+  } = props;
 
   return (
-    <MobileMenuContainer>
+    <MobileMenuContainer className={className}>
         {children}
     </MobileMenuContainer>
   );
@@ -15,6 +18,7 @@ const MobileMenu = (props: Props) => {
 
 type Props = {
     children: React$Node,
+    className: string,
 }
 
 export default MobileMenu;

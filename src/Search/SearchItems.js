@@ -1,17 +1,24 @@
 /* @flow */
+
 import React from 'react';
 import { SearchItemWrapper } from '../Style/SearchStyle';
 
 const SearchItems = (props: Props) => {
-  const { children } = props;
+  const { 
+    children, 
+    className 
+  } = props;
 
   return (
-    <SearchItemWrapper>{children}</SearchItemWrapper>
+    <SearchItemWrapper className={className}>
+      {children}
+    </SearchItemWrapper>
   );
 }
 
 type Props = {
   children: React$Node,
-}
+  className: string,
+};
 
 export default SearchItems;

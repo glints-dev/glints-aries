@@ -1,4 +1,4 @@
-// @flow
+/* @flow */
 
 import React, { Fragment } from 'react';
 import DefaultButton from './DefaultButton';
@@ -9,14 +9,6 @@ import LinkButton from './LinkButton';
 
 import { Variant } from '../Utils/StyleConfig';
 
-type Props = {
-  variant: string,
-  theme: string,
-  onClick: Function,
-  children: React.Node,
-  className: string
-}
-
 const renderButton = ({
   variant,
   theme,
@@ -24,6 +16,7 @@ const renderButton = ({
   onClick,
   className,
 }: Props) => {
+  
   switch (variant) {
     case Variant.PRIMARY:
       return (
@@ -58,10 +51,18 @@ const renderButton = ({
   }
 };
 
-const Button = props => (
+const Button = (props: Props) => (
   <Fragment>
     {renderButton(props)}
   </Fragment>
 );
+
+type Props = {
+  variant: string,
+  theme: string,
+  onClick: Function,
+  children: React$Node,
+  className: string
+}
 
 export default Button;

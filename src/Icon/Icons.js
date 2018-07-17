@@ -47,19 +47,20 @@ type IconName =
   | 'verified'
   | 'verified-green';
 
-type Props = {
-  name: IconName,
-  size?: IconSize,
-  padding?: Width,
-  backgroundColor?: IconBgColor,
-  rounded?: boolean,
-};
-
-const Icons = ({ name, ...iconProps }: Props) => (
-  <Icon {...iconProps}>
+const Icons = ({ name, className, ...iconProps }: Props) => (
+  <Icon className={className} {...iconProps}>
     <img src={require(`../../assets/icons/${name}.svg`)} alt={name} />
   </Icon>
 );
+
+type Props = {
+  name: IconName,
+  size: IconSize,
+  padding: Width,
+  backgroundColor: IconBgColor,
+  rounded: boolean,
+  className: string,
+};
 
 export type { IconName };
 export default Icons;

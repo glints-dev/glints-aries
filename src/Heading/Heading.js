@@ -1,4 +1,5 @@
 /* @flow */
+
 import React, { Fragment } from 'react';
 import { HeadingLarge, HeadingMedium, HeadingSmall } from './../Style/HeadingStyle';
 import { Size } from '../Utils/StyleConfig';
@@ -23,6 +24,12 @@ const Heading = (props: Props) => {
         }
     </Fragment>
   );
+}
+
+type Props = {
+  children: React$Node,
+  size: string,
+  className: string,
 }
 
 export default Heading;

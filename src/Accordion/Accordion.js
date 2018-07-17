@@ -1,4 +1,5 @@
 /* @flow */
+
 import React from 'react';
 import {
   AccordionContainer,
@@ -7,11 +8,12 @@ import {
 
 const Accordion = (props: Props) => {
   const {
-    children
+    children,
+    className,
   } = props;
 
   return (
-    <AccordionContainer>
+    <AccordionContainer className={className}>
       {children}
     </AccordionContainer>
   )
@@ -19,6 +21,7 @@ const Accordion = (props: Props) => {
 
 type Props = {
   children: React$Node,
+  className: string,
 };
 
 export default Accordion;

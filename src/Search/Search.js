@@ -1,15 +1,24 @@
 /* @flow */
+
 import React from 'react';
 import { SearchContainer } from '../Style/SearchStyle';
 
 const Search = (props: Props) => {
-  const { children } = props;
+  const { 
+    children, 
+    className 
+  } = props;
 
   return (
-    <SearchContainer>
+    <SearchContainer className={className}>
         {children}
     </SearchContainer>
   );
 }
+
+type Props = {
+  children: React$Node,
+  className: string,
+};
 
 export default Search;

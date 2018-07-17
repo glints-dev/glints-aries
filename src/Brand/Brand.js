@@ -8,10 +8,14 @@ import GlintsBlack from '../../assets/image/glints-logo-black.svg';
 import GlintsWhite from '../../assets/image/glints-logo-white.svg';
 
 const Brand = (props: Props) => {
-  const { asset, size } = props;
+  const { 
+    asset, 
+    size, 
+    className 
+  } = props;
   
   return (
-    <BrandImageWrapper>
+    <BrandImageWrapper className={className}>
         <BrandImage 
             size={size}
             src={asset === 'glints-black' 
@@ -22,6 +26,12 @@ const Brand = (props: Props) => {
                 />
     </BrandImageWrapper>
   );
+}
+
+type Props = {
+  asset: string,
+  size: string,
+  className: string,
 }
 
 export default Brand;

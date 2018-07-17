@@ -1,14 +1,16 @@
 /* @flow */
+
 import React from 'react';
 import { AccordionLabelWrapper } from './../Style/AccordionStyle';
 
 const AccordionLabel = (props: Props) => {
   const {
-    children
+    children,
+    className
   } = props;
   
   return (
-    <AccordionLabelWrapper>
+    <AccordionLabelWrapper className={className}>
       {children}
     </AccordionLabelWrapper>
   )
@@ -16,6 +18,7 @@ const AccordionLabel = (props: Props) => {
 
 type Props = {
   children: React$Node,
+  className: string,
 };
 
 export default AccordionLabel;

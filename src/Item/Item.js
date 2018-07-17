@@ -1,12 +1,23 @@
 /* @flow */
+
 import React from 'react';
 import { ItemWrapper, ItemImgWrapper, ItemContent } from './../Style/ItemStyle';
 import { Link } from 'react-router-dom';
 
 const Item = (props: Props) => {
-  const { title, url, imgUrl, isExternal, isReactRouter, paddingSize, subtitle } = props;
+  const { 
+    title, 
+    url, 
+    imgUrl, 
+    isExternal, 
+    isReactRouter, 
+    paddingSize, 
+    subtitle, 
+    className 
+  } = props;
+
   return (
-    <ItemWrapper paddingSize={paddingSize}>
+    <ItemWrapper className={className} paddingSize={paddingSize}>
       <ItemImgWrapper>
         <img src={imgUrl} alt='' width="64" height="64" />
       </ItemImgWrapper>
@@ -36,13 +47,14 @@ Item.defaultProps = {
 
 //Typecheck goes here
 type Props = {
-  title?: string,
-  subtitle?: string,
-  imgUrl?: string,
+  title: string,
+  subtitle: string,
+  imgUrl: string,
   isExternal: boolean,
   isReactRouter: boolean,
-  paddingSize?: string,
-  url?: string,
+  paddingSize: string,
+  url: string,
+  className: string,
 };
 
 export default Item;

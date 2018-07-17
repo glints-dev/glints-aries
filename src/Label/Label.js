@@ -1,4 +1,5 @@
 /* @flow */
+
 import React from 'react';
 import { LabelWrapper } from './../Style/LabelStyle';
 
@@ -7,11 +8,13 @@ const Label = (props: Props) => {
     children,
     size,
     theme,
+    className,
     ...defaultLabelProps
   } = props;
 
   return (
     <LabelWrapper
+      className={className}
       theme={theme}
       size={size}
       {...defaultLabelProps}
@@ -27,12 +30,13 @@ type Props = {
   theme: LabelVariant,
   size: SizeVariant,
   children: React$Node,
+  className: string,
 };
 
 type HandlerProps = {
-  theme?: LabelVariant,
-  size?: SizeVariant,
-  children?: React$Node,
+  theme: LabelVariant,
+  size: SizeVariant,
+  children: React$Node,
 };
 
 export default Label;

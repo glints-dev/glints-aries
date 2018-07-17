@@ -1,12 +1,7 @@
+/* @flow */
+
 import React from 'react';
 import { PrimaryContainer, PrimaryBtn } from '../Style/ButtonStyle';
-
-type Props = {
-  theme: string,
-  onClick: Function,
-  children: React.Node,
-  className: string
-}
 
 const PrimaryButton = ({ children, ...defaultButtonProps }: Props) => (
   <PrimaryContainer>
@@ -15,5 +10,12 @@ const PrimaryButton = ({ children, ...defaultButtonProps }: Props) => (
     </PrimaryBtn>
   </PrimaryContainer>
 );
+
+type Props = {
+  theme: string,
+  onClick: Function,
+  children: React$Node,
+  className: string,
+}
 
 export default PrimaryButton;

@@ -1,18 +1,26 @@
 /* @flow */
+
 import React from 'react';
 import { TitleWrapper } from './../Style/InformationStyle';
 
 const Title = (props: Props) => {
-  const { children, bold } = props;
+  const { 
+    children, 
+    bold, 
+    className 
+  } = props;
 
   return (
-    <TitleWrapper bold={bold}>{children}</TitleWrapper>
+    <TitleWrapper bold={bold}>
+      {children}
+    </TitleWrapper>
   );
 }
 
 type Props = {
   children: React$Node,
-  bold?: boolean,
+  bold: boolean,
+  className: string,
 }
 
 export default Title;

@@ -6,10 +6,11 @@ import { Paragraph } from './../Style/BlockquoteStyle';
 const BlockquoteContent = (props: Props) => {
   const {
     children,
+    className
   } = props;
 
   return (
-    <Paragraph>
+    <Paragraph className={className}>
       {children}
     </Paragraph>
   );
@@ -17,6 +18,7 @@ const BlockquoteContent = (props: Props) => {
 
 type Props = {
   children: React$Node,
+  className: string,
 }
 
 export default BlockquoteContent;

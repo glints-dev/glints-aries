@@ -1,4 +1,5 @@
 /* @flow */
+
 import React, { Fragment } from 'react';
 import { Heading, SubHeading } from '../Style/PsychedelicTextStyle';
 
@@ -8,19 +9,27 @@ const PsychedelicText = (props: Props) => {
     heading,
     subheading,
     psychTheme,
-    ...defaultLabelProps
+    className
   } = props;
 
   return (
     <Fragment>
       {heading
-        ? <Heading>{children}</Heading>
+        ? <Heading className={className}>{children}</Heading>
         : subheading
-        ? <SubHeading psychTheme={psychTheme}>{children}</SubHeading>
+        ? <SubHeading className={className} psychTheme={psychTheme}>{children}</SubHeading>
         : <h3>{children}</h3>
       }
     </Fragment>
   );
 }
+
+type Props = {
+  children: React$Node,
+  heading: boolean,
+  subheading: boolean,
+  psychTheme: string,
+  className: string,
+};
 
 export default PsychedelicText;

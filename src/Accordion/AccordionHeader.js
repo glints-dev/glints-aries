@@ -1,13 +1,21 @@
 /* @flow */
+
 import React, { Fragment } from 'react';
 import { AccordionHeaderWrapper, AccordionItemWrapper } from './../Style/AccordionStyle';
 import { Icons } from './../Icon';
 
 const AccordionHeader = (props: Props) => {
-  const { children, isOpen, title, ...propsDefault } = props;
+  const { 
+    children, 
+    isOpen, 
+    title, 
+    className,
+    ...propsDefault 
+  } = props;
+
   return (
     <Fragment>
-      <AccordionHeaderWrapper isOpen={isOpen} {...propsDefault}>
+      <AccordionHeaderWrapper className={className} isOpen={isOpen} {...propsDefault}>
         <p>{title}</p>
         <Icons name={isOpen ? "chevron-back" : "drop-down"} />
       </AccordionHeaderWrapper>
@@ -22,8 +30,10 @@ const AccordionHeader = (props: Props) => {
 }
 
 type Props = {
-  title?: string,
-  isOpen: boolean
+  children: React$Node,
+  title: string,
+  isOpen: boolean,
+  className: string,
 }
 
 export default AccordionHeader;

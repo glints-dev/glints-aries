@@ -7,7 +7,9 @@ const SliderItem = (props: Props) => {
   const { children } = props;
 
   return (
-    <SliderItemStyle className="item">{ children }</SliderItemStyle>
+    <SliderItemStyle className="item">
+      {children}
+    </SliderItemStyle>
   );
 }
 
