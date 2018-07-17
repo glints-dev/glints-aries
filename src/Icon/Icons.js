@@ -49,7 +49,7 @@ type IconName =
 
 const Icons = ({ name, className, ...iconProps }: Props) => (
   <Icon className={className} {...iconProps}>
-    <img src={require(`../../assets/icons/${name}.svg`)} alt={name} />
+    <img className={className} src={require(`../../assets/icons/${name}.svg`)} alt={name} />
   </Icon>
 );
 
