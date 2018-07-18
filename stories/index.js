@@ -16,6 +16,7 @@ import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
+import DropDownPointingModal from './DropDownPointingModal';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import InformationStory from './InformationStory';
@@ -32,6 +33,7 @@ import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import TextFieldStory from './TextFieldStory';
+
 import { Button } from '../src/Button';
 
 storiesOf('Components', module)
@@ -67,6 +69,7 @@ storiesOf('Components', module)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
+  .add('DropDownPointingModal', () => <DropDownPointingModal />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Search', () => <SearchStory />)
@@ -81,7 +84,7 @@ storiesOf('Mobile Components', module)
     </Provider>
   ))
   .add('Menu', () => <MobileMenuStory />)
-  .add('Swipeable', () => <SwipeableStory />)
+  .add('Swipeable', () => <SwipeableStory />);
 
 storiesOf('Utilitites', module)
   .addDecorator(story => (

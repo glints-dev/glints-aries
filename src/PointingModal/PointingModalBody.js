@@ -1,20 +1,16 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalBodyContainer } from './../Style/PointingModalStyle';
+import { PointingModalBodyContainer } from '../Style/PointingModalStyle';
 
-const PointingModalBody = (props: Props) => {
-  const { 
-    children, 
-    className 
-  } = props;
-
-  return (
-    <PointingModalBodyContainer className={className}>
-      {children}
-    </PointingModalBodyContainer>
-  );
-}
+const PointingModalBody = ({
+  children,
+  className,
+}: Props) => (
+  <PointingModalBodyContainer className={className}>
+    {children}
+  </PointingModalBodyContainer>
+);
 
 type Props = {
   children: React$Node,

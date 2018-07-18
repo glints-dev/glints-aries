@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePicture from '../src/ProfilePicture';
+import DropDownPointingModal from '../src/DropDownPointingModal';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -9,7 +9,7 @@ const ProfilePictureStory = () => (
       </h1>
       <p>
         <code>
-          {'import { ProfilePicture } from \'glints-aries\''}
+          {'import { DropDownPointingModal } from \'glints-aries\''}
         </code>
       </p>
     </div>
@@ -28,14 +28,18 @@ const ProfilePictureStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <ProfilePicture
-              editable
-              size="medium"
-            />
+            <div style={{ position: 'absolute', left: '400px' }}>
+              <DropDownPointingModal>
+                <button type="button">
+                    something
+                </button>
+              </DropDownPointingModal>
+            </div>
+
           </td>
           <td>
             <code>
-              {'<ProfilePicture size="medium" editable />'}
+              {'<DropDownPointingModal><button>button</button></DropDownPointingModal>'}
             </code>
           </td>
         </tr>

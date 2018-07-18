@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 import { Size } from '../Utils/StyleConfig';
 
 const growing = keyframes`
@@ -67,22 +67,22 @@ export const DropdownContainer = styled.div`
     }
     
     ${DropdownLabel} {
-        font-size: ${props => props.size === `${Size.SMALL}` 
-            ? '12px' 
-            : props.size === `${Size.MEDIUM}`
-            ? '16px'
-            : props.size === `${Size.LARGE}`
-            ? '20px'
-            : '14px'};
+        font-size: ${props => props.size === `${Size.SMALL}`
+    ? '12px'
+    : props.size === `${Size.MEDIUM}`
+      ? '16px'
+      : props.size === `${Size.LARGE}`
+        ? '20px'
+        : '14px'};
     }
 
     ${DropdownItem} {
-        font-size: ${props => props.size === `${Size.SMALL}` 
-            ? '10px' 
-            : props.size === `${Size.MEDIUM}`
-            ? '12px'
-            : props.size === `${Size.LARGE}`
-            ? '14px'
-            : '12px'};
+        font-size: ${props => props.size === `${Size.SMALL}`
+    ? '10px'
+    : props.size === `${Size.MEDIUM}`
+      ? '12px'
+      : props.size === `${Size.LARGE}`
+        ? '14px'
+        : '12px'};
     }
 `;

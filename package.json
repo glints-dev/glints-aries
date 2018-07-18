@@ -72,6 +72,7 @@
     "r": "0.0.5",
     "react-datetime": "2.14.0",
     "react-dom": "16.4.1",
+    "reakit": "^0.12.0",
     "throttle-debounce": "1.0.1"
   },
   "peerDependencies": {
