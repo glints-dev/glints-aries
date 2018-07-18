@@ -1,5 +1,6 @@
 import React from 'react';
 import Stats from './../src/Stats';
+import Label from './../src/Label';
 
 const StatsStory = () => {
   return (
@@ -21,65 +22,24 @@ const StatsStory = () => {
         <tbody>
           <tr>
             <td style={{padding: 20}}>
-            <Stats
-              caption="we have help"
-              number={"300.000"}
-              description="Young Professionals To Discover Their Dream Careers"
-              suffix="+"
-            />
+            <Stats>
+              <Label block theme="grey" size="small">we have help</Label>
+              <Label block theme="red" size="large"><b>300.000 +</b></Label>
+              <Label>Young Professionals To Discover Their Dream Careers</Label>
+            </Stats>
             </td>
-            <td><pre>{`<Stats
-  caption="we have help"
-  number='300.000'
-  description="Young Professionals To Discover Their Dream Careers"
-  suffix="+"
-/>`}</pre></td>
+            <td><pre>{`<Stats>
+  <Label block theme="grey" size="small">we have help</Label>
+  <Label block theme="red" size="large"><b>300.000 +</b></Label>
+  <Label>Young Professionals To Discover Their Dream Careers</Label>
+</Stats>`}</pre></td>
           </tr>
         </tbody>
       </table>
 
-      <h1>Props</h1>
-      <table className="doc-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Value</th>
-            <th>Required</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>caption</td>
-            <td>string</td>
-            <td>any</td>
-            <td>no</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>number</td>
-            <td>string</td>
-            <td>any</td>
-            <td>no</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>description</td>
-            <td>string</td>
-            <td>any</td>
-            <td>no</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>suffix</td>
-            <td>string</td>
-            <td>any</td>
-            <td>no</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <h1>Note</h1>
+      <p>To use Label Component, please take a look at Label section.</p>
+
     </div>
   );
 }

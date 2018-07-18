@@ -117,7 +117,7 @@ const ButtonStories = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Button variant={Variant.PRIMARY} theme={Theme.BLUE} onClick={action('Primary button')}>
+            <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED} onClick={action('Primary button')}>
       Primary
             </Button>
           </td>
@@ -181,7 +181,7 @@ const ButtonStories = () => (
           </td>
           <td>
             <pre>
-              {'red | blue'}
+              {'red | blue | blue-red'}
             </pre>
           </td>
           <td>

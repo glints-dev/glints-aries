@@ -7,8 +7,8 @@ class AccordionStory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobAccordionOpen: false,
-      locAccordionOpen: false,
+      jobAccordionOpen: true,
+      locAccordionOpen: true,
     };
     this.toggleJobAccordion = this.toggleJobAccordion.bind(this);
     this.toggleLocAccordion = this.toggleLocAccordion.bind(this);
@@ -22,6 +22,11 @@ class AccordionStory extends Component {
   toggleLocAccordion() {
     const { locAccordionOpen } = this.state;
     this.setState({ locAccordionOpen: !locAccordionOpen });
+  }
+
+  componentDidMount() {
+    this.toggleJobAccordion();
+    this.toggleLocAccordion();
   }
 
   render() {

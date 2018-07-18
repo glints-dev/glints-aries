@@ -15,7 +15,6 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 14px;
   padding: 1em .6em;
-  width: 100%;
   background: transparent;
 `;
 
@@ -67,11 +66,9 @@ export const PrimaryContainer = styled.div`
   position: relative;
   display: inline-flex;
   z-index: 1;
-  width: 98%;
 
   &:after {
     content: '';
-    background-color: ${PrimaryColor.glintsyellow};
     width: 100%;
     height: 100%;
     position: absolute;
@@ -79,6 +76,19 @@ export const PrimaryContainer = styled.div`
     top: .5em;
     left: .5em;
     transition: all .2s;
+
+    ${(props) => {
+      switch (props.theme) {
+        case `${Theme.BLUE_RED}`:
+          return `
+            background-color: ${PrimaryColor.glintsred};
+          `;
+        default:
+          return `
+            background-color: ${PrimaryColor.glintsyellow};
+          `;
+      }
+    }}
   }
 
   &:hover:after {
@@ -105,6 +115,11 @@ export const PrimaryBtn = Button.extend`
           color: ${SecondaryColor.white};
         `;
       case `${Theme.BLUE}`:
+        return `
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
+      case `${Theme.BLUE_RED}`:
         return `
           background-color: ${PrimaryColor.glintsblue};
           color: ${SecondaryColor.white};
@@ -158,7 +173,6 @@ export const SecondaryBtn = Button.extend`
 export const SecondaryContainer = styled.div`
   position: relative;
   display: inline-flex;
-  width: 98%;
 
   &:after {
     content: '';

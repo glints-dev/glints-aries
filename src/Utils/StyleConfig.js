@@ -18,6 +18,7 @@ export const Theme = {
   RED: 'red',
   YELLOW: 'yellow',
   BLUE: 'blue',
+  BLUE_RED: 'blue-red',
   WHITE: 'white',
   GREY: 'grey',
 };

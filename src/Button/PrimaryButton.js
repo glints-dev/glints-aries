@@ -3,9 +3,14 @@
 import React from 'react';
 import { PrimaryContainer, PrimaryBtn } from '../Style/ButtonStyle';
 
-const PrimaryButton = ({ children, ...defaultButtonProps }: Props) => (
-  <PrimaryContainer>
-    <PrimaryBtn {...defaultButtonProps}>
+const PrimaryButton = ({ 
+  children, 
+  theme, 
+  ...defaultButtonProps 
+}: Props) => (
+  
+  <PrimaryContainer theme={theme}>
+    <PrimaryBtn theme={theme} {...defaultButtonProps}>
       {children}
     </PrimaryBtn>
   </PrimaryContainer>
