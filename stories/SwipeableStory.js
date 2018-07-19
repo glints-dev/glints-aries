@@ -1,5 +1,5 @@
 import React from 'react';
-import {Swipeable, SwipeableItem} from './../src/Swipeable';
+import Swipeable from './../src/Swipeable';
 
 // Example
 import { SwipeableCardExample } from '../src/Style/SwipeableStyle';
@@ -9,7 +9,7 @@ const SwipeableStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Swipeable</h1>
-        <p><code>{`import { Swipeable, SwipeableItem } from 'glints-aries'`}</code></p>
+        <p><code>{`import Swipeable from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -25,39 +25,39 @@ const SwipeableStory = () => {
           <tr>
             <td style={{padding: 20}}>
                 <Swipeable>
-                    <SwipeableItem>
+                    <Swipeable.Item>
                         <SwipeableCardExample>
                             <h1>Card.</h1>
                         </SwipeableCardExample>
-                    </SwipeableItem>
-                    <SwipeableItem>
+                    </Swipeable.Item>
+                    <Swipeable.Item>
                         <SwipeableCardExample>
                             <h1>Card.</h1>
                         </SwipeableCardExample>
-                    </SwipeableItem>
-                    <SwipeableItem>
+                    </Swipeable.Item>
+                    <Swipeable.Item>
                         <SwipeableCardExample>
                             <h1>Card.</h1>
                         </SwipeableCardExample>
-                    </SwipeableItem>
-                    <SwipeableItem>
+                    </Swipeable.Item>
+                    <Swipeable.Item>
                         <SwipeableCardExample>
                             <h1>Card.</h1>
                         </SwipeableCardExample>
-                    </SwipeableItem>
+                    </Swipeable.Item>
                 </Swipeable>
             </td>
             <td><pre>{`<Swipeable>
-    <SwipeableItem>
+    <Swipeable.Item>
         <YourComponent />
-    </SwipeableItem>
+    </Swipeable.Item>
 </Swipeable>`}</pre></td>
           </tr>
         </tbody>
       </table>
 
       <h1>Note</h1>
-      <p>1. Always wrap your component inside <code>{`<SwipeableItem />`}</code>.</p>
+      <p>1. Always wrap your component inside <code>{`<Swipeable.Item />`}</code>.</p>
       <p>2. <b>Swipeable Component</b> is only running on mobile web version.</p>
     </div>
   );

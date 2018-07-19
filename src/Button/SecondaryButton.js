@@ -3,16 +3,20 @@
 import React from 'react';
 import { SecondaryContainer, SecondaryBtn } from '../Style/ButtonStyle';
 
-const SecondaryButton = ({ children, ...defaultButtonProps }: Props) => (
-  <SecondaryContainer {...defaultButtonProps}>
-    <SecondaryBtn>
+const SecondaryButton = ({ 
+  children, 
+  className,
+  ...defaultButtonProps 
+}: Props) => (
+
+  <SecondaryContainer className={className}>
+    <SecondaryBtn className="secondaryButton" {...defaultButtonProps}>
       {children}
     </SecondaryBtn>
   </SecondaryContainer>
 );
 
 type Props = {
-  onClick: Function,
   children: React$Node,
   className: string,
 }

@@ -3,6 +3,6 @@
 import Search from './Search';
 import SearchItems from './SearchItems';
 
-export {Search, SearchItems};
+Search.Item = SearchItems;
 
 export default Search;

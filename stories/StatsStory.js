@@ -1,5 +1,6 @@
 import React from 'react';
 import Stats from './../src/Stats';
+
 import Label from './../src/Label';
 
 const StatsStory = () => {
@@ -7,7 +8,7 @@ const StatsStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Statistic</h1>
-        <p><code>{`import { Stats } from 'glints-aries'`}</code></p>
+        <p><code>{`import Stats from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

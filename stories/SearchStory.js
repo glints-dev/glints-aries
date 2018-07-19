@@ -1,7 +1,7 @@
 import React from 'react';
-import { Search, SearchItems} from './../src/Search';
+import Search from './../src/Search';
 
-import { Dropdown, DropdownItems } from '../src/Dropdown';
+import Dropdown from '../src/Dropdown';
 import Label from '../src/Label';
 import Button from '../src/Button';
 import { Icons } from '../src/Icon';
@@ -11,7 +11,7 @@ const SearchStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Search</h1>
-        <p><code>{`import { Search, SearchItems } from 'glints-aries'`}</code></p>
+        <p><code>{`import Search from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -27,46 +27,50 @@ const SearchStory = () => {
           <tr>
             <td style={{padding: 20}}>
               <Search>
-                <SearchItems>
+                <Search.Item>
                     <Dropdown title="This Career" size="medium">
-                        <DropdownItems>Accounting</DropdownItems>
-                        <DropdownItems>Art & Design</DropdownItems>
-                        <DropdownItems>Business Development</DropdownItems>
-                        <DropdownItems>Consulting</DropdownItems>
-                        <DropdownItems>Engineering</DropdownItems>
-                        <DropdownItems>Entrepreneurship</DropdownItems>
-                        <DropdownItems>Finance</DropdownItems>
-                        <DropdownItems>General Affair</DropdownItems>
-                        <DropdownItems>Human Resources</DropdownItems>
+                      <Dropdown.Body>
+                        <Dropdown.Item>Accounting</Dropdown.Item>
+                        <Dropdown.Item>Art & Design</Dropdown.Item>
+                        <Dropdown.Item>Business Development</Dropdown.Item>
+                        <Dropdown.Item>Consulting</Dropdown.Item>
+                        <Dropdown.Item>Engineering</Dropdown.Item>
+                        <Dropdown.Item>Entrepreneurship</Dropdown.Item>
+                        <Dropdown.Item>Finance</Dropdown.Item>
+                        <Dropdown.Item>General Affair</Dropdown.Item>
+                        <Dropdown.Item>Human Resources</Dropdown.Item>
+                      </Dropdown.Body>
                     </Dropdown>
-                </SearchItems>
+                </Search.Item>
 
-                <SearchItems>
+                <Search.Item>
                     <Label theme="grey">in</Label>
-                </SearchItems>
+                </Search.Item>
 
-                <SearchItems>
+                <Search.Item>
                     <Dropdown title="This Location" size="medium">
-                        <DropdownItems>Bangkok</DropdownItems>
-                        <DropdownItems>Ho Chi Minh City</DropdownItems>
-                        <DropdownItems>Jakarta</DropdownItems>
-                        <DropdownItems>Kuala Lumpur</DropdownItems>
-                        <DropdownItems>Singapore</DropdownItems>
+                      <Dropdown.Body>
+                        <Dropdown.Item>Bangkok</Dropdown.Item>
+                        <Dropdown.Item>Ho Chi Minh City</Dropdown.Item>
+                        <Dropdown.Item>Jakarta</Dropdown.Item>
+                        <Dropdown.Item>Kuala Lumpur</Dropdown.Item>
+                        <Dropdown.Item>Singapore</Dropdown.Item>
+                      </Dropdown.Body>
                     </Dropdown>
-                </SearchItems>
+                </Search.Item>
 
-                <SearchItems>
+                <Search.Item>
                   <Button>Go <Icons name='chevron-next' size='small' /></Button>
-                </SearchItems>
+                </Search.Item>
               </Search>
             </td>
             <td><pre>{`<Search>
-  <SearchItems>
+  <Search.Item>
     Put your first component here...
-  </SearchItems>
-  <SearchItems>
+  </Search.Item>
+  <Search.Item>
     Put your second component here...
-  </SearchItems>
+  </Search.Item>
 <Search>`}</pre></td>
           </tr>
         </tbody>

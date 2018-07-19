@@ -3,6 +3,6 @@
 import Swipeable from './Swipeable';
 import SwipeableItem from './SwipeableItem';
 
-export {Swipeable, SwipeableItem};
+Swipeable.Item = SwipeableItem;
 
 export default Swipeable;

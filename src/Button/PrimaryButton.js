@@ -6,11 +6,12 @@ import { PrimaryContainer, PrimaryBtn } from '../Style/ButtonStyle';
 const PrimaryButton = ({ 
   children, 
   theme, 
+  className,
   ...defaultButtonProps 
 }: Props) => (
   
-  <PrimaryContainer theme={theme}>
-    <PrimaryBtn theme={theme} {...defaultButtonProps}>
+  <PrimaryContainer theme={theme} className={className}>
+    <PrimaryBtn className="primaryButton" theme={theme} {...defaultButtonProps}>
       {children}
     </PrimaryBtn>
   </PrimaryContainer>
@@ -18,7 +19,6 @@ const PrimaryButton = ({
 
 type Props = {
   theme: string,
-  onClick: Function,
   children: React$Node,
   className: string,
 }

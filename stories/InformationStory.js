@@ -1,5 +1,5 @@
 import React from 'react';
-import {Information, Title, Description, Detail} from './../src/Information';
+import Information from './../src/Information';
 import { Divider } from './../src/Divider';
 import { Size } from '../src/Utils/StyleConfig';
 
@@ -8,7 +8,7 @@ const InformationStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Information</h1>
-        <p><code>{`import {Title, Information, Description, Detail, Divider} from 'glints-aries'`}</code></p>
+        <p><code>{`import Information from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -24,29 +24,27 @@ const InformationStory = () => {
           <tr>
             <td style={{padding: 20}}>
               <Information backGroundImageURL={'https://cdn.zeplin.io/5a99106ac26df76756166bac/assets/C185132C-39F4-47F8-ADC4-4DED4A198209.png'}>
-                <Title bold>Business Development</Title>
-                <Description>Business development entails tasks and processes to develop and implement growth opportunities within and between organizations.</Description>
+                <Information.Title bold>Business Development</Information.Title>
+                <Information.Description>Business development entails tasks and processes to develop and implement growth opportunities within and between organizations.</Information.Description>
                 <Divider theme="yellow" size="small" />
-                <Detail>
+                <Information.Detail>
                   <ul>
                     <li><span>15</span> occupations</li>
                     <li><span>20</span> opportunities</li>
                   </ul>
-                </Detail>
+                </Information.Detail>
               </Information>
             </td>
-            <td><pre>{`<Information
-    backGroundImageURL={...}
-    hoverTextColor={"white"}>
-  <Title bold>Business Development</Title>
-  <Description>Type your text here...</Description>
+            <td><pre>{`<Information backGroundImageURL={...} hoverTextColor={"white"}>
+  <Information.Title bold>...</Information.Title>
+  <Information.Description>...</Information.Description>
   <Divider theme="yellow" size="small" />
-  <Detail>
+  <Information.Detail>
     <ul>
-      <li><span>15</span> occupations</li>
-      <li><span>20</span> opportunities</li>
+      <li><span>...</span> ...</li>
+      <li><span>...</span> ...</li>
     </ul>
-  </Detail>
+  </Information.Detail>
 </Information>`}</pre></td>
           </tr>
         </tbody>

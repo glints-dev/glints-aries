@@ -1,5 +1,5 @@
 import React from 'react';
-import { Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin } from './../src/Blockquote';
+import Blockquote from './../src/Blockquote';
 import ProfilePicture from './../src/ProfilePicture';
 
 const BlockquoteStory = () => {
@@ -7,7 +7,7 @@ const BlockquoteStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Blockquote</h1>
-        <p><code>{`import { Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin } from 'glints-aries'`}</code></p>
+        <p><code>{`import Blockquote from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -23,26 +23,26 @@ const BlockquoteStory = () => {
           <tr>
             <td style={{padding: 20}}>
               <Blockquote>
-                <BlockquoteProfileWrapper>
+                <Blockquote.Profile>
                   <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-                </BlockquoteProfileWrapper>
-                <BlockquoteContent>
-                  <Testimony>I didn't really know what I wanted to do and what were all the career paths out there - and was just exploring the careers on Glints - now I have discovered what I love to do and found my dream career!</Testimony>
-                  <Author>Sean Goodwin</Author>
-                  <Origin>National University of Singapore (NUS)</Origin>
-                </BlockquoteContent>
+                </Blockquote.Profile>
+                <Blockquote.Content>
+                  <Blockquote.Testimony>I didn't really know what I wanted to do and what were all the career paths out there - and was just exploring the careers on Glints - now I have discovered what I love to do and found my dream career!</Blockquote.Testimony>
+                  <Blockquote.Author>Sean Goodwin</Blockquote.Author>
+                  <Blockquote.Origin>National University of Singapore (NUS)</Blockquote.Origin>
+                </Blockquote.Content>
               </Blockquote>
             </td>
             <td><pre>
 {`<Blockquote>
-  <BlockquoteProfileWrapper>
+  <Blockquote.Profile>
     <ProfilePicture size="large" assetUrl="..." />
-  </BlockquoteProfileWrapper>
-  <BlockquoteContent>
-    <Testimony>Type your text here...</Testimony>
-    <Author>Sean Goodwin</Author>
-    <Origin>National University of Singapore (NUS)</Origin>
-  </BlockquoteContent>
+  </Blockquote.Profile>
+  <Blockquote.Content>
+    <Blockquote.Testimony>...</Blockquote.Testimony>
+    <Blockquote.Author>...</Blockquote.Author>
+    <Blockquote.Origin>...</Blockquote.Origin>
+  </Blockquote.Content>
 </Blockquote>`}</pre></td>
           </tr>
         </tbody>
@@ -50,30 +50,8 @@ const BlockquoteStory = () => {
 
       <div style={{ marginBottom: '2em' }}>
         <h1>Note</h1>
-        <p>You can <code>{`import { ProfilePicture } from 'glints-aries'`}</code> to use ProfilePicture Component.</p>
+        <p>You can <code>{`import ProfilePicture from 'glints-aries'`}</code> to use ProfilePicture Component.</p>
       </div>
-
-      <h1>Props</h1>
-      <table className="doc-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Value</th>
-            <th>Required</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>inverted</td>
-            <td>string</td>
-            <td><pre>{`true | false`}</pre></td>
-            <td>no</td>
-            <td>Sets blockquote into blue.</td>
-          </tr>
-        </tbody>
-      </table>
       
     </div>
   );

@@ -7,6 +7,10 @@ import Testimony from './Testimony';
 import Author from './Author';
 import Origin from './Origin';
 
-export {Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin};
+Blockquote.Profile = BlockquoteProfileWrapper;
+Blockquote.Content = BlockquoteContent;
+Blockquote.Testimony = Testimony;
+Blockquote.Author = Author;
+Blockquote.Origin = Origin;
 
 export default Blockquote;

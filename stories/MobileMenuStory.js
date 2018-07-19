@@ -1,5 +1,5 @@
 import React from 'react';
-import {MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems} from './../src/MobileMenu';
+import MobileMenu from './../src/MobileMenu';
 
 import { Icons } from '../src/Icon';
 import ProfilePicture from '../src/ProfilePicture';
@@ -12,7 +12,7 @@ const ProfilePictureStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Mobile Menu</h1>
-        <p><code>{`import { MobileMenu, TopItems, HeaderItems, MenuItemsWrapper, MenuItems, FooterItems } from 'glints-aries'`}</code></p>
+        <p><code>{`import MobileMenu from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">
@@ -28,57 +28,57 @@ const ProfilePictureStory = () => {
           <tr>
             <td style={{padding: 20}}>
               <MobileMenu>
-                <TopItems>
+                <MobileMenu.Top>
                   <Icons name="close-white" />
-                </TopItems>
-                <HeaderItems>
+                </MobileMenu.Top>
+                <MobileMenu.Header>
                   <ProfilePicture editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   <Label size="medium" theme="white">
                       <span>Hello,</span>
                       <p>Fredy Yanto</p>
                   </Label>
-                </HeaderItems>
+                </MobileMenu.Header>
                 <Divider size="large" theme="white" thickness="thin" />
-                <MenuItemsWrapper>
-                  <MenuItems>Carrers</MenuItems>
-                  <MenuItems>Jobs</MenuItems>
-                  <MenuItems>Internships</MenuItems>
-                  <MenuItems>Companies</MenuItems>
-                  <MenuItems>Pathways</MenuItems>
-                  <MenuItems>Blog</MenuItems>
-                  <MenuItems>Employers</MenuItems>
-                </MenuItemsWrapper>
-                <FooterItems>
+                <MobileMenu.Body>
+                  <MobileMenu.Item>Carrers</MobileMenu.Item>
+                  <MobileMenu.Item>Jobs</MobileMenu.Item>
+                  <MobileMenu.Item>Internships</MobileMenu.Item>
+                  <MobileMenu.Item>Companies</MobileMenu.Item>
+                  <MobileMenu.Item>Pathways</MobileMenu.Item>
+                  <MobileMenu.Item>Blog</MobileMenu.Item>
+                  <MobileMenu.Item>Employers</MobileMenu.Item>
+                </MobileMenu.Body>
+                <MobileMenu.Footer>
                   <Button variant="ghost" theme="white">Sign Out</Button>
                   <Button variant="primary">Sign Up</Button>
-                </FooterItems>
+                </MobileMenu.Footer>
               </MobileMenu>
             </td>
             <td><pre>{`<MobileMenu>
-  <TopItems>
+  <MobileMenu.Top>
     <Icons name="close-white" />
-  </TopItems>
-  <HeaderItems>
+  </MobileMenu.Top>
+  <MobileMenu.Header>
     <ProfilePicture editable assetUrl="..." />
     <Label size="medium" theme="white">
         <span>Hello,</span>
         <p>Fredy Yanto</p>
     </Label>
-  </HeaderItems>
+  </MobileMenu.Header>
   <Divider size="large" theme="white" thickness="thin" />
-  <MenuItemsWrapper>
-    <MenuItems>Carrers</MenuItems>
-    <MenuItems>Jobs</MenuItems>
-    <MenuItems>Internships</MenuItems>
-    <MenuItems>Companies</MenuItems>
-    <MenuItems>Pathways</MenuItems>
-    <MenuItems>Blog</MenuItems>
-    <MenuItems>Employers</MenuItems>
-  </MenuItemsWrapper>
-  <FooterItems>
+  <MobileMenu.Body>
+    <MobileMenu.Item>Carrers</MobileMenu.Item>
+    <MobileMenu.Item>Jobs</MobileMenu.Item>
+    <MobileMenu.Item>Internships</MobileMenu.Item>
+    <MobileMenu.Item>Companies</MobileMenu.Item>
+    <MobileMenu.Item>Pathways</MobileMenu.Item>
+    <MobileMenu.Item>Blog</MobileMenu.Item>
+    <MobileMenu.Item>Employers</MobileMenu.Item>
+  </MobileMenu.Body>
+  <MobileMenu.Footer>
     <Button variant="ghost" theme="white">Sign Out</Button>
     <Button variant="primary">Sign Up</Button>
-  </FooterItems>
+  </MobileMenu.Footer>
 </MobileMenu>`}</pre></td>
           </tr>
         </tbody>

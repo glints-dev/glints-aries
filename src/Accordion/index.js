@@ -6,6 +6,9 @@ import AccordionBody from './AccordionBody';
 import AccordionItem from './AccordionItem';
 import AccordionLabel from './AccordionLabel';
 
-export {Accordion, AccordionHeader, AccordionBody, AccordionItem, AccordionLabel};
+Accordion.Header = AccordionHeader;
+Accordion.Body = AccordionBody;
+Accordion.Item = AccordionItem;
+Accordion.Label = AccordionLabel;
 
 export default Accordion;

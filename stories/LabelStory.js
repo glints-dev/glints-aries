@@ -7,7 +7,7 @@ const LabelStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Label</h1>
-        <p><code>{`import { Label } from 'glints-aries'`}</code></p>
+        <p><code>{`import Label from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

@@ -6,7 +6,7 @@ const PsychedelicTextStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Psychedelic Text</h1>
-        <p><code>{`import { PsychedelicText } from 'glints-aries'`}</code></p>
+        <p><code>{`import PsychedelicText from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

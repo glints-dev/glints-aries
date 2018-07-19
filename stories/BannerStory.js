@@ -1,12 +1,12 @@
 import React from 'react';
-import { Banner } from './../src/Banner';
+import Banner from './../src/Banner';
 
 const BannerStory = () => {
   return (
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Banner</h1>
-        <p><code>{`import { Banner } from 'glints-aries'`}</code></p>
+        <p><code>{`import Banner from 'glints-aries'`}</code></p>
       </div>
       
       <table className="doc-table">
