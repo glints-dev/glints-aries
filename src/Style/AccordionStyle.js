@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 import './GlobalStyle';
 
 const animateItem = keyframes`
@@ -15,7 +15,6 @@ const animateItem = keyframes`
 `;
 
 export const AccordionContainer = styled.div`
-  min-width: 300px;
   border: 5px solid ${SecondaryColor.lightgrey};
   background-color: ${SecondaryColor.white};
 `;
@@ -63,4 +62,3 @@ export const AccordionItemList = styled.p`
 export const AccordionLabelWrapper = styled.div`
   padding: 1.8rem 1.5rem;
 `;
-
