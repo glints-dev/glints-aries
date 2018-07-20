@@ -35,8 +35,11 @@ const InformationStory = () => {
                 </Information.Detail>
               </Information>
             </td>
-            <td><pre>{`<Information backGroundImageURL={...} hoverTextColor={"white"}>
-  <Information.Title bold>...</Information.Title>
+            <td><pre>{`<Information 
+  backGroundImageURL={...} 
+  hoverTextColor={"white"} 
+  onClick={...}>
+  <Information.Title bold onClick={...}>...</Information.Title>
   <Information.Description>...</Information.Description>
   <Divider theme="yellow" size="small" />
   <Information.Detail>
@@ -102,6 +105,13 @@ const InformationStory = () => {
             <td>no</td>
             <td>Sets <b>text-color</b> when hovered</td>
             <td>White</td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

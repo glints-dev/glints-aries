@@ -51,7 +51,7 @@ const PointingModalStory = () => {
   </PointingModal.Header>
   <Divider size="large" thickness="thin" theme="grey" />
   <PointingModal.Body>
-    <PointingModal.Item>View Profile</PointingModal.Item>
+    <PointingModal.Item onClick={...}>View Profile</PointingModal.Item>
     <PointingModal.Item>Edit Profile</PointingModal.Item>
     <PointingModal.Item>Sign Out</PointingModal.Item>
   </PointingModal.Body>
@@ -59,6 +59,28 @@ const PointingModalStory = () => {
     Footer section here ...
   </PointingModal.Footer>
 </PointingModal>`}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Props</h1>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

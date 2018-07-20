@@ -7,11 +7,11 @@ const AccordionItem = (props: Props) => {
   const {
     children,
     className,
-    ...propsDefault
+    ...defaultProps
   } = props;
   
   return (
-    <AccordionItemList className={className} {...propsDefault}>
+    <AccordionItemList className={className} {...defaultProps}>
       {children}
     </AccordionItemList>
   )

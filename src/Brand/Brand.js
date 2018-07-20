@@ -11,11 +11,12 @@ const Brand = (props: Props) => {
   const { 
     asset, 
     size, 
-    className 
+    className,
+    ...defaultProps 
   } = props;
   
   return (
-    <BrandImageWrapper className={className}>
+    <BrandImageWrapper className={className} {...defaultProps}>
         <BrandImage 
           size={size}
           src={asset === 'glints-black' 

@@ -29,11 +29,33 @@ const StatsStory = () => {
               <Label>Young Professionals To Discover Their Dream Careers</Label>
             </Stats>
             </td>
-            <td><pre>{`<Stats>
+            <td><pre>{`<Stats onClick={...}>
   <Label block theme="grey" size="small">we have help</Label>
   <Label block theme="red" size="large"><b>300.000 +</b></Label>
   <Label>Young Professionals To Discover Their Dream Careers</Label>
 </Stats>`}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Props</h1>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

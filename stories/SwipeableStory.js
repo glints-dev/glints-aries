@@ -48,10 +48,32 @@ const SwipeableStory = () => {
                 </Swipeable>
             </td>
             <td><pre>{`<Swipeable>
-    <Swipeable.Item>
+    <Swipeable.Item onClick={...}>
         <YourComponent />
     </Swipeable.Item>
 </Swipeable>`}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Props</h1>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

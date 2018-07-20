@@ -9,15 +9,16 @@ const PsychedelicText = (props: Props) => {
     heading,
     subheading,
     psychTheme,
-    className
+    className,
+    ...defaultProps
   } = props;
 
   return (
     <Fragment>
       {heading
-        ? <Heading className={className}>{children}</Heading>
+        ? <Heading className={className} {...defaultProps}>{children}</Heading>
         : subheading
-        ? <SubHeading className={className} psychTheme={psychTheme}>{children}</SubHeading>
+        ? <SubHeading className={className} psychTheme={psychTheme} {...defaultProps}>{children}</SubHeading>
         : <h3>{children}</h3>
       }
     </Fragment>

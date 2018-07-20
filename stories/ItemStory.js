@@ -38,6 +38,7 @@ const ItemStory = () => {
   imgUrl="https://placeimg.com/64/64/any"
   isExternal={false}
   isReactRouter={true}
+  onClick={...}
 />`}</pre>
             </td>
           </tr>
@@ -96,6 +97,13 @@ const ItemStory = () => {
             <td>boolean</td>
             <td><pre>{`true | false`}</pre></td>
             <td>yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>

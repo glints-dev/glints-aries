@@ -6,9 +6,9 @@ import { PointingModalBodyItemWrapper } from '../Style/PointingModalStyle';
 const PointingModalItem = ({
   children,
   className,
-  ...props
+  ...defaultProps
 }: Props) => (
-  <PointingModalBodyItemWrapper className={className} {...props}>
+  <PointingModalBodyItemWrapper className={className} {...defaultProps}>
     {children}
   </PointingModalBodyItemWrapper>
 );

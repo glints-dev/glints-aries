@@ -26,31 +26,21 @@ const IntroStory = () => {
         <h4>Override using css.</h4>
         <p style={{marginBottom: '.5em'}}>You can override the style with your own styling by simply put a <b>class</b> or <b>id</b> on the component.</p>
         <p>Example:
-          <code>{`<Heading className="overrideHeading" size="small">Small Heading</Heading>`}</code>
+          <code>{`<Heading className="yourClass" size="small">Small Heading</Heading>`}</code>
         </p>
         <pre style={{backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0'}}>
           {
             `.yourClass {
-  .overrideHeading { your override style goes here }
+  your override style goes here 
 }`
           }
         </pre>
         <h4>Override using styled-component.</h4>
-        <p>It's pretty easy to override through styled-component. We can do it in many ways.</p>
-        <p>1. You can add a <b>class</b> or <b>id</b> into the component. Then you can simply access that class/ id inside of your styled-component.</p>
+        <p>It's pretty easy to override through styled-component. You can use <b>styled</b> method.</p>
         <pre style={{backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0'}}>
           {
-            `const HomeContainer = styled.div ${"`"}
-  .overrideHome { your override style goes here }
-${"`"}
-`
-          }
-        </pre>
-        <p>2. You can also override directly the element inside your styled-component.</p>
-        <pre style={{backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0'}}>
-          {
-            `const HomeContainer = styled.div ${"`"}
-  img { your override style goes here }
+            `const ButtonOverride = styled('Button)${"`"}
+  your override style goes here 
 ${"`"}
 `
           }

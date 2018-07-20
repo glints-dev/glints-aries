@@ -6,11 +6,12 @@ import { InformationContainer } from '../Style/InformationStyle';
 const Information = (props: Props) => {
   const { 
     children, 
-    className 
+    className,
+    ...defaultProps
   } = props;
 
   return (
-    <InformationContainer className={className}>
+    <InformationContainer className={className} {...defaultProps}>
       {children}
     </InformationContainer>
   );

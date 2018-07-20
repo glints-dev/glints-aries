@@ -61,6 +61,13 @@ const ButtonStories = () => (
             <td>no</td>
             <td>Default theme is white.</td>
           </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -115,6 +122,13 @@ const ButtonStories = () => (
             <td><pre>{'red | blue | blue-red'}</pre></td>
             <td>no</td>
             <td>The default value is{' '}<b>white color</b>.</td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -179,6 +193,13 @@ const ButtonStories = () => (
             <td><pre>{'secondary'}</pre></td>
             <td>yes</td>
             <td>Sets the Secondary Button.</td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -252,6 +273,13 @@ const ButtonStories = () => (
             <td>yes</td>
             <td></td>
           </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -305,6 +333,13 @@ const ButtonStories = () => (
             <td>string</td>
             <td><pre>red | yellow | blue | grey | white</pre></td>
             <td>yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>

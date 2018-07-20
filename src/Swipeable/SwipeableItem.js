@@ -6,11 +6,12 @@ import { SwipeableWrapper } from '../Style/SwipeableStyle';
 const SwipeableItem = (props: Props) => {
   const { 
     children, 
-    className 
+    className,
+    ...defaultProps 
   } = props;
 
   return (
-    <SwipeableWrapper className={className}>
+    <SwipeableWrapper className={className} {...defaultProps}>
         { children }
     </SwipeableWrapper>
   );

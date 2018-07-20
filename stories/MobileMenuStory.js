@@ -67,7 +67,7 @@ const ProfilePictureStory = () => {
   </MobileMenu.Header>
   <Divider size="large" theme="white" thickness="thin" />
   <MobileMenu.Body>
-    <MobileMenu.Item>Carrers</MobileMenu.Item>
+    <MobileMenu.Item onClick={...}>Carrers</MobileMenu.Item>
     <MobileMenu.Item>Jobs</MobileMenu.Item>
     <MobileMenu.Item>Internships</MobileMenu.Item>
     <MobileMenu.Item>Companies</MobileMenu.Item>
@@ -80,6 +80,28 @@ const ProfilePictureStory = () => {
     <Button variant="primary">Sign Up</Button>
   </MobileMenu.Footer>
 </MobileMenu>`}</pre></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Props</h1>
+      <table className="doc-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

@@ -10,12 +10,12 @@ const AccordionHeader = (props: Props) => {
     isOpen, 
     title, 
     className,
-    ...propsDefault 
+    ...defaultProps 
   } = props;
 
   return (
     <Fragment>
-      <AccordionHeaderWrapper className={className} isOpen={isOpen} {...propsDefault}>
+      <AccordionHeaderWrapper className={className} isOpen={isOpen} {...defaultProps}>
         <p>{title}</p>
         <Icons name={isOpen ? "chevron-back" : "drop-down"} />
       </AccordionHeaderWrapper>

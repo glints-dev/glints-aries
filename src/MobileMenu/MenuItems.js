@@ -6,11 +6,12 @@ import { MenuItemWraper } from './../Style/MobileMenuStyle';
 const MenuItems = (props: Props) => {
   const { 
     children, 
-    className 
+    className,
+    ...defaultProps 
   } = props;
 
   return (
-    <MenuItemWraper className={className}>
+    <MenuItemWraper className={className} {...defaultProps}>
       {children}
     </MenuItemWraper>
   );

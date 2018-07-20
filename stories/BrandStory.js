@@ -62,6 +62,13 @@ const BrandStory = () => {
             <td>no</td>
             <td>Sets the size of <b>Brand</b> logo.</td>
           </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     </div>

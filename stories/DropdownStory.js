@@ -38,7 +38,7 @@ const DropdownStory = () => {
             </td>
             <td><pre>{`<Dropdown title="This Career" size="medium">
   <Dropdown.Body>
-    <Dropdown.Item>Accounting</Dropdown.Item>
+    <Dropdown.Item onClick={...}>Accounting</Dropdown.Item>
     <Dropdown.Item>Art & Design</Dropdown.Item>
     <Dropdown.Item>Business Development</Dropdown.Item>
     <Dropdown.Item>Consulting</Dropdown.Item>
@@ -74,6 +74,13 @@ const DropdownStory = () => {
             <td><pre>{`large | medium | small`}</pre></td>
             <td>no</td>
             <td>Sets the size of dropdown.</td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

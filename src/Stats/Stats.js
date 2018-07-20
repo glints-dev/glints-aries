@@ -5,11 +5,12 @@ import { StatsWrapper } from '../Style/StatsStyle';
 
 const Stats = (props: Props) => {
   const { children,
-    className 
+    className,
+    ...defaultProps 
   } = props;
 
   return (
-    <StatsWrapper className={className}>
+    <StatsWrapper className={className} {...defaultProps}>
       {children}
     </StatsWrapper>
   );

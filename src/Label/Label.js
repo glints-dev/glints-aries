@@ -9,7 +9,7 @@ const Label = (props: Props) => {
     size,
     theme,
     className,
-    ...defaultLabelProps
+    ...defaultProps
   } = props;
 
   return (
@@ -17,7 +17,7 @@ const Label = (props: Props) => {
       className={className}
       theme={theme}
       size={size}
-      {...defaultLabelProps}
+      {...defaultProps}
     >{children}</LabelWrapper>
   );
 }

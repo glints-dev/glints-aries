@@ -9,17 +9,17 @@ const Heading = (props: Props) => {
     children,
     size,
     className,
-    ...defaultLabelProps
+    ...defaultProps
   } = props;
 
   return (
     <Fragment>
         {size === `${Size.LARGE}`
-            ? <HeadingLarge className={className}>{children}</HeadingLarge>
+            ? <HeadingLarge className={className} {...defaultProps}>{children}</HeadingLarge>
             : size === `${Size.MEDIUM}`
-            ? <HeadingMedium className={className}>{children}</HeadingMedium>
+            ? <HeadingMedium className={className} {...defaultProps}>{children}</HeadingMedium>
             : size === `${Size.SMALL}`
-            ? <HeadingSmall className={className}>{children}</HeadingSmall>
+            ? <HeadingSmall className={className} {...defaultProps}>{children}</HeadingSmall>
             : null
         }
     </Fragment>

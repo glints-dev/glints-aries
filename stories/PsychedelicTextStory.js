@@ -23,13 +23,13 @@ const PsychedelicTextStory = () => {
             <td style={{padding: 20}}>
               <PsychedelicText heading>Heading</PsychedelicText>
             </td>
-            <td><code>{`<PsychedelicText heading>Glints</PsychedelicText>`}</code></td>
+            <td><code>{`<PsychedelicText heading onClick={...}>Glints</PsychedelicText>`}</code></td>
           </tr>
           <tr>
             <td style={{padding: 20}}>
               <PsychedelicText subheading psychTheme="yellow-dominant">Sub Heading</PsychedelicText>
             </td>
-            <td><code>{`<PsychedelicText subheading psychTheme="yellow-dominant">Glints</PsychedelicText>`}</code></td>
+            <td><code>{`<PsychedelicText subheading psychTheme="yellow-dominant" onClick={...}>Glints</PsychedelicText>`}</code></td>
           </tr>
         </tbody>
       </table>
@@ -73,6 +73,13 @@ yellow-default`}</pre>
             </td>
             <td>yes</td>
             <td>This props is only available along with <b>subheading</b> props.<br />It's a required props to display Psychedelic Effect on the text.</td>
+          </tr>
+          <tr>
+            <td>onClick</td>
+            <td>Function</td>
+            <td>any</td>
+            <td>no</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

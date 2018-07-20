@@ -5,11 +5,15 @@ import { ProfilePictureWrapper } from '../Style/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
   const {
-    size, editable, children, className,
+    size, 
+    editable, 
+    children, 
+    className,
+    ...defaultProps
   } = props;
 
   return (
-    <ProfilePictureWrapper className={className} size={size} editable={editable}>
+    <ProfilePictureWrapper className={className} size={size} editable={editable} {...defaultProps}>
       {children}
     </ProfilePictureWrapper>
   );
@@ -20,6 +24,7 @@ type Props = {
   assetUrl: string,
   editable: boolean,
   className: string,
+  children: string,
 };
 
 export default ProfilePicture;

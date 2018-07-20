@@ -13,11 +13,12 @@ const Item = (props: Props) => {
     isReactRouter, 
     paddingSize, 
     subtitle, 
-    className 
+    className,
+    ...defaultProps
   } = props;
 
   return (
-    <ItemWrapper className={className} paddingSize={paddingSize}>
+    <ItemWrapper className={className} paddingSize={paddingSize} {...defaultProps}>
       <ItemImgWrapper>
         <img src={imgUrl} alt='' width="64" height="64" />
       </ItemImgWrapper>

@@ -7,11 +7,12 @@ const Title = (props: Props) => {
   const { 
     children, 
     bold, 
-    className 
+    className,
+    ...defaultProps
   } = props;
 
   return (
-    <TitleWrapper bold={bold}>
+    <TitleWrapper bold={bold} {...defaultProps}>
       {children}
     </TitleWrapper>
   );

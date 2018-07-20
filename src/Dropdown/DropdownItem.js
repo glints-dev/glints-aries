@@ -5,11 +5,12 @@ import { DropdownItem } from './../Style/DropdownStyle';
 const DropdownItems = (props: Props) => {
   const { 
     children,
-    className
+    className,
+    ...defaultProps 
   } = props;
 
   return (
-    <DropdownItem className={className}>
+    <DropdownItem className={className} {...defaultProps}>
       {children}
     </DropdownItem>
   );
