@@ -1,23 +1,23 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 
 const padding = '1em 1.5em';
 
 export const PointingModalContainer = styled.div`
     position: relative;
     background: ${SecondaryColor.white};
-    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+`;
 
-    &:before {
-        position: absolute;
-        right: 10px;
-        top: -15px;
-        content: "";
-        border-top: 0 solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 15px solid ${SecondaryColor.white};
-        border-left: 15px solid transparent;
-    }
+export const PointingModalHeaderArrow = styled.div`
+    position: absolute;
+    right: 18px;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background-color: white;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
 `;
 
 export const PointingModalHeaderContainer = styled.header`
@@ -82,5 +82,3 @@ export const PointingModalFooterContainer = styled.footer`
     position: relative;
     padding: ${padding};
 `;
-
-

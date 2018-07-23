@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 
 const arrow = css`
     position: absolute;
@@ -32,12 +32,11 @@ export const SliderItemStyle = styled.div`
 export const LeftArrowContainer = styled.div`
     ${arrow};
     left: 0;
-    cursor: ${props => props.index === 1 ? 'not-allowed' : 'pointer'};
+    cursor: ${({ index }) => index === 1 ? 'not-allowed' : 'pointer'};
 `;
 
 export const RightArrowContainer = styled.div`
     ${arrow};
     right: 0;
-    cursor: ${props => props.index === props.limit ? 'not-allowed' : 'pointer'};
+    cursor: ${({ index, limit }) => index === limit ? 'not-allowed' : 'pointer'};
 `;
-

@@ -26,6 +26,7 @@ import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
 import PointingModalStory from './PointingModalStory';
+import PointingModalPopOverStory from './PointingModalPopOverStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
@@ -34,11 +35,14 @@ import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import TextFieldStory from './TextFieldStory';
 import { Button } from '../src/Button';
+import { GlintsAriesContainer } from '../src';
 
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      {React.createElement(story)}
+      <GlintsAriesContainer>
+        {React.createElement(story)}
+      </GlintsAriesContainer>
     </Provider>
   ))
   .addDecorator(withKnobs)
@@ -74,7 +78,8 @@ storiesOf('Components', module)
   .add('Search', () => <SearchStory />)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
-  .add('Text Field', () => <TextFieldStory />);
+  .add('Text Field', () => <TextFieldStory />)
+  .add('TEST', () => <PointingModalPopOverStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
@@ -83,7 +88,7 @@ storiesOf('Mobile Components', module)
     </Provider>
   ))
   .add('Menu', () => <MobileMenuStory />)
-  .add('Swipeable', () => <SwipeableStory />)
+  .add('Swipeable', () => <SwipeableStory />);
 
 storiesOf('Utilitites', module)
   .addDecorator(story => (

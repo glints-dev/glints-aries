@@ -6,11 +6,11 @@ import { Icon } from './../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
-    isOpen: true
+    isOpen: true,
   };
 
-  handleOpen = e => {
-      this.setState({ isOpen: !this.state.isOpen });
+  handleOpen = (e) => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
 
   handleClickOutside = () => {
@@ -22,11 +22,11 @@ class Dropdown extends Component <Props, State> {
   }
 
   render() {
-    const { 
-      children, 
-      title, 
+    const {
+      children,
+      title,
       size,
-      className, 
+      className,
     } = this.props;
 
     return (
@@ -42,8 +42,9 @@ class Dropdown extends Component <Props, State> {
           {this.state.isOpen &&
             <Fragment>
                 {children}
-            </Fragment>
-          }
+              </Fragment>
+            )
+        }
       </DropdownContainer>
     );
   }

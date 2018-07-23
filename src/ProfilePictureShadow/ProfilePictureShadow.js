@@ -3,11 +3,11 @@
 import React from 'react';
 import { ProfilePictureWrapper } from '../Style/ProfilePictureStyle';
 
-const ProfilePicture = (props: Props) => {
+const ProfilePictureShadow = (props: Props) => {
   const {
-    size, 
-    editable, 
-    children, 
+    size,
+    editable,
+    children,
     className,
     ...defaultProps
   } = props;
@@ -27,4 +27,4 @@ type Props = {
   children: string,
 };
 
-export default ProfilePicture;
+export default ProfilePictureShadow;
