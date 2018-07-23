@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Icons } from './../Icon';
+import { Icon } from './../Icon';
 import { LeftArrowContainer } from './../Style/SliderStyle';
 
 const LeftArrow = (props: Props) => {
@@ -9,7 +9,7 @@ const LeftArrow = (props: Props) => {
 
   return (
     <LeftArrowContainer index={index} onClick={previousSlide}>
-        <Icons name={"chevron-back"} />
+        <Icon name={"arrow-back"} size="35" />
     </LeftArrowContainer>
   );
 }

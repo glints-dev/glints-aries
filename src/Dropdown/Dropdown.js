@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import { DropdownContainer, DropdownLabelWrapper, DropdownLabel, DropdownItemWrapper } from './../Style/DropdownStyle';
-import { Icons } from './../Icon';
+import { Icon } from './../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
@@ -37,7 +37,7 @@ class Dropdown extends Component <Props, State> {
         tabIndex="0">
           <DropdownLabelWrapper className={className}>
               <DropdownLabel>{title}</DropdownLabel>
-              <Icons name={"drop-down"} />
+              <Icon name={"arrow-down"} size="25" />
           </DropdownLabelWrapper>
           {this.state.isOpen &&
             <Fragment>

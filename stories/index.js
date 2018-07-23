@@ -18,6 +18,7 @@ import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
 import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
+import IconStory from './IconStory';
 import InformationStory from './InformationStory';
 import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
@@ -62,6 +63,7 @@ storiesOf('Components', module)
   .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Heading', () => <HeadingStory />)
+  .add('Icon', () => <IconStory />)
   .add('Information', () => <InformationStory />)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)

@@ -4,7 +4,7 @@ import Search from './../src/Search';
 import Dropdown from '../src/Dropdown';
 import Label from '../src/Label';
 import Button from '../src/Button';
-import { Icons } from '../src/Icon';
+import { Icon } from '../src/Icon';
 
 const SearchStory = () => {
   return (
@@ -60,7 +60,7 @@ const SearchStory = () => {
                 </Search.Item>
 
                 <Search.Item>
-                  <Button>Go <Icons name='chevron-next' size='small' /></Button>
+                  <Button>Go <Icon name='arrow-next' size='25' /></Button>
                 </Search.Item>
               </Search>
             </td>

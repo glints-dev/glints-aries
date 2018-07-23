@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Icons } from './../Icon';
+import { Icon } from './../Icon';
 import { RightArrowContainer } from './../Style/SliderStyle';
 
 const RightArrow = (props: Props) => {
@@ -9,7 +9,7 @@ const RightArrow = (props: Props) => {
 
   return (
     <RightArrowContainer index={index} limit={limit} onClick={nextSlide}>
-        <Icons name={"chevron-next"} />
+        <Icon name={"arrow-next"} size="35" />
     </RightArrowContainer>
   );
 }

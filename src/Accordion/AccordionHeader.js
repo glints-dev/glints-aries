@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 import { AccordionHeaderWrapper } from './../Style/AccordionStyle';
-import { Icons } from './../Icon';
+import { Icon } from './../Icon';
 
 const AccordionHeader = (props: Props) => {
   const { 
@@ -17,7 +17,7 @@ const AccordionHeader = (props: Props) => {
     <Fragment>
       <AccordionHeaderWrapper className={className} isOpen={isOpen} {...defaultProps}>
         <p>{title}</p>
-        <Icons name={isOpen ? "chevron-back" : "drop-down"} />
+        <Icon name={isOpen ? "arrow-back" : "arrow-down"} size="25" />
       </AccordionHeaderWrapper>
 
       {isOpen &&
