@@ -2,7 +2,7 @@ import React from 'react';
 import MobileMenu from './../src/MobileMenu';
 
 import { Icon } from '../src/Icon';
-import ProfilePicture from '../src/ProfilePicture';
+import ProfilePictureShadow from '../src/ProfilePictureShadow';
 import Label from '../src/Label';
 import Divider from '../src/Divider';
 import Button from '../src/Button';
@@ -32,7 +32,7 @@ const ProfilePictureStory = () => {
                   <Icon name="close" size="40" color="white" />
                 </MobileMenu.Top>
                 <MobileMenu.Header>
-                  <ProfilePicture editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                  <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   <Label size="medium" theme="white">
                       <span>Hello,</span>
                       <p>Fredy Yanto</p>

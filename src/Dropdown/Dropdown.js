@@ -37,13 +37,12 @@ class Dropdown extends Component <Props, State> {
         tabIndex="0">
           <DropdownLabelWrapper className={className}>
               <DropdownLabel>{title}</DropdownLabel>
-              <Icon name={"arrow-down"} size="25" />
+              <Icon name={"arrow-down"} size="25" color="black" />
           </DropdownLabelWrapper>
           {this.state.isOpen &&
             <Fragment>
                 {children}
-              </Fragment>
-            )
+            </Fragment>
         }
       </DropdownContainer>
     );

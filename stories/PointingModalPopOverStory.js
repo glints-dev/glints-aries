@@ -2,12 +2,12 @@ import React from 'react';
 import PointingModal from '../src/PointingModal';
 import ModalPopOver from '../src/PointingModalPopOver';
 
-import ProfilePicture from '../src/ProfilePicture';
+import ProfilePictureShadow from '../src/ProfilePictureShadow';
 import Label from '../src/Label';
 import Divider from '../src/Divider';
-import { Icons } from '../src/Icon';
+import { Icon } from '../src/Icon';
 
-const PointingModalStory = () => (
+const PointingModalPopOverStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
@@ -39,7 +39,7 @@ Usage
                 content={(
                   <PointingModal>
                     <PointingModal.Header>
-                      <ProfilePicture editable />
+                      <ProfilePictureShadow editable />
                       <Label size="medium">
                         <span>
                         Hello,
@@ -64,7 +64,7 @@ Usage
                   </PointingModal>
                 )}
               >
-                <Icons name="drop-down" />
+                <Icon name="arrow-down" />
               </ModalPopOver>
             </div>
           </td>
@@ -130,4 +130,4 @@ for the flex-direction.
   </div>
 );
 
-export default PointingModalStory;
+export default PointingModalPopOverStory;

@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from '../src/Slider';
 
 import Blockquote from '../src/Blockquote';
-import ProfilePicture from '../src/ProfilePicture';
+import ProfilePictureShadow from '../src/ProfilePictureShadow';
 
 const SliderStory = () => (
   <div className="doc-mainbar">
@@ -35,7 +35,7 @@ const SliderStory = () => (
               <Slider.Item>
                 <Blockquote>
                   <Blockquote.Profile>
-                    <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                    <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
@@ -51,7 +51,7 @@ const SliderStory = () => (
                 </Blockquote>
                 <Blockquote>
                   <Blockquote.Profile>
-                    <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                    <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
@@ -69,7 +69,7 @@ const SliderStory = () => (
               <Slider.Item>
                 <Blockquote>
                   <Blockquote.Profile>
-                    <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                    <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
@@ -85,7 +85,7 @@ const SliderStory = () => (
                 </Blockquote>
                 <Blockquote>
                   <Blockquote.Profile>
-                    <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                    <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
@@ -103,7 +103,7 @@ const SliderStory = () => (
               <Slider.Item>
                 <Blockquote>
                   <Blockquote.Profile>
-                    <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                    <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>

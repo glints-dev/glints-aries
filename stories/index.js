@@ -72,6 +72,7 @@ storiesOf('Components', module)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
+  .add('Modal Pop Over', () => <PointingModalPopOverStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
@@ -79,7 +80,6 @@ storiesOf('Components', module)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Text Field', () => <TextFieldStory />)
-  .add('TEST', () => <PointingModalPopOverStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
