@@ -1,22 +1,28 @@
 /* @flow */
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 import { SliderContainer, SliderWrapperStyle } from '../Style/SliderStyle';
 
 class Slider extends Component <Props, State> {
-  state = {
-    translateValue: 0,
-    index: 1,
-  };
+  constructor() {
+    super();
+    this.state = {
+      translateValue: 0,
+      index: 1,
+    };
+    this.sliderContainer = null;
+  }
 
   previousSlide = () => {
     const { index, translateValue } = this.state;
     if (index !== 1) {
+      const containerWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
       this.setState({
         index: index - 1,
-        translateValue: translateValue + window.innerWidth,
+        translateValue: translateValue + containerWidth,
       });
     }
   }
@@ -25,9 +31,10 @@ class Slider extends Component <Props, State> {
     const { index, translateValue } = this.state;
     const { children } = this.props;
     if (index !== children.length) {
+      const containerWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
       this.setState({
         index: index + 1,
-        translateValue: translateValue - window.innerWidth,
+        translateValue: translateValue - containerWidth,
       });
     }
   }
@@ -36,7 +43,7 @@ class Slider extends Component <Props, State> {
     const { translateValue, index } = this.state;
     const { children, className } = this.props;
     return (
-      <SliderContainer className={className}>
+      <SliderContainer ref={(node) => { this.sliderContainer = node; }} className={className}>
         <SliderWrapperStyle
           style={{
             transform: `translateX(${translateValue}px)`,
