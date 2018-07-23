@@ -34,11 +34,14 @@ import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import TextFieldStory from './TextFieldStory';
 import { Button } from '../src/Button';
+import { GlintsAriesContainer } from '../src';
 
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      {React.createElement(story)}
+      <GlintsAriesContainer>
+        {React.createElement(story)}
+      </GlintsAriesContainer>
     </Provider>
   ))
   .addDecorator(withKnobs)

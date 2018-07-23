@@ -12,6 +12,7 @@ export { default as Divider } from './Divider';
 export { default as Dropdown } from './Dropdown';
 export { default as FlexCenter } from './FlexCenter';
 export { default as Heading } from './Heading';
+export { default as GlintsAriesContainer } from './Style/GlintsAriesContainer';
 export { default as Information } from './Information';
 export { default as Icon, Icons } from './Icon';
 export { default as Item } from './Item';
