@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-import { SliderContainer, SliderWrapperStyle, SliderItemStyle } from '../Style/SliderStyle';
-import { Blockquote, BlockquoteProfileWrapper, BlockquoteContent, Testimony, Author, Origin } from '../Blockquote';
-import ProfilePicture from '../ProfilePicture';
+import { SliderContainer, SliderWrapperStyle } from '../Style/SliderStyle';
 
 class Slider extends Component <Props, State> {
   state = {
@@ -14,46 +12,41 @@ class Slider extends Component <Props, State> {
   };
 
   previousSlide = () => {
-    if(this.state.index === 1) {
-      return null;
-    }else {
-      this.setState({ 
-        index: this.state.index - 1,
-        translateValue: this.state.translateValue + this.getWidth(),
+    const { index, translateValue } = this.state;
+    if (index !== 1) {
+      this.setState({
+        index: index - 1,
+        translateValue: translateValue + window.innerWidth,
       });
     }
   }
 
   nextSlide = () => {
-    if(this.state.index === this.getLength()) {
-      return null;
-    }else {
-      this.setState({ 
-        index: this.state.index + 1,
-        translateValue: this.state.translateValue - this.getWidth(),
+    const { index, translateValue } = this.state;
+    const { children } = this.props;
+    if (index !== children.length) {
+      this.setState({
+        index: index + 1,
+        translateValue: translateValue - window.innerWidth,
       });
     }
   }
-  
-  getWidth = () => { return document.querySelector('.item').clientWidth }
-  getLength = () => { return document.getElementsByClassName("item").length }
 
   render() {
-    const { 
-      children, 
-      className 
-    } = this.props;
-    
+    const { translateValue, index } = this.state;
+    const { children, className } = this.props;
     return (
       <SliderContainer className={className}>
-        <SliderWrapperStyle style={{
-          transform: `translateX(${this.state.translateValue}px)`,
-          transition: 'transform ease-out 0.45s'
-        }}>
+        <SliderWrapperStyle
+          style={{
+            transform: `translateX(${translateValue}px)`,
+            transition: 'transform ease-out 0.45s',
+          }}
+        >
           { children }
         </SliderWrapperStyle>
-        <LeftArrow previousSlide={this.previousSlide} index={this.state.index} />
-        <RightArrow nextSlide={this.nextSlide} index={this.state.index} limit={this.getLength()}/>  
+        <LeftArrow previousSlide={this.previousSlide} index={index} />
+        <RightArrow nextSlide={this.nextSlide} index={index} limit={children.length} />
       </SliderContainer>
     );
   }

@@ -1,16 +1,18 @@
 /* @flow */
 
 import React, { Component, Fragment } from 'react';
-import { DropdownContainer, DropdownLabelWrapper, DropdownLabel, DropdownItemWrapper } from './../Style/DropdownStyle';
-import { Icons } from './../Icon';
+import {
+  DropdownContainer, DropdownLabelWrapper, DropdownLabel, DropdownItemWrapper,
+} from '../Style/DropdownStyle';
+import { Icons } from '../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
-    isOpen: true
+    isOpen: true,
   };
 
-  handleOpen = e => {
-      this.setState({ isOpen: !this.state.isOpen });
+  handleOpen = (e) => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
 
   handleClickOutside = () => {
@@ -22,28 +24,34 @@ class Dropdown extends Component <Props, State> {
   }
 
   render() {
-    const { 
-      children, 
-      title, 
+    const {
+      children,
+      title,
       size,
-      className, 
+      className,
     } = this.props;
 
     return (
-      <DropdownContainer size={size} 
-        open={this.state.isOpen} 
-        onClick={this.handleOpen} 
-        onBlur={this.handleClickOutside} 
-        tabIndex="0">
-          <DropdownLabelWrapper className={className}>
-              <DropdownLabel>{title}</DropdownLabel>
-              <Icons name={"drop-down"} />
-          </DropdownLabelWrapper>
-          {this.state.isOpen &&
-            <Fragment>
+      <DropdownContainer
+        size={size}
+        open={this.state.isOpen}
+        onClick={this.handleOpen}
+        onBlur={this.handleClickOutside}
+        tabIndex="0"
+      >
+        <DropdownLabelWrapper className={className}>
+          <DropdownLabel>
+            {title}
+          </DropdownLabel>
+          <Icons name="drop-down" />
+        </DropdownLabelWrapper>
+        {this.state.isOpen
+            && (
+              <Fragment>
                 {children}
-            </Fragment>
-          }
+              </Fragment>
+            )
+        }
       </DropdownContainer>
     );
   }

@@ -11,7 +11,7 @@ const SliderItem = (props: Props) => {
       {children}
     </SliderItemStyle>
   );
-}
+};
 
 type Props = {
   children: React$Node,
