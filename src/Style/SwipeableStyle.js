@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { SecondaryColor } from './Colors';
 
 export const SwipeableContainer = styled.div`
+    display: flex;
     position: relative;
-    white-space: nowrap;
     overflow-x: auto;
 
     &::-webkit-scrollbar {
