@@ -12,7 +12,7 @@ const ProfilePictureStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Mobile Menu</h1>
-        <p><code>{`import MobileMenu from 'glints-aries'`}</code></p>
+        <p><code>{`import { MobileMenu } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

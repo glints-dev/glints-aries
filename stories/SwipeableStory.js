@@ -9,7 +9,7 @@ const SwipeableStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Swipeable</h1>
-        <p><code>{`import Swipeable from 'glints-aries'`}</code></p>
+        <p><code>{`import { Swipeable } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

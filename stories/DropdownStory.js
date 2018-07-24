@@ -7,7 +7,7 @@ const DropdownStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Dropdown</h1>
-        <p><code>{`import Dropdown from 'glints-aries'`}</code></p>
+        <p><code>{`import { Dropdown } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

@@ -28,11 +28,13 @@ class TextField extends Component {
 
     return(
       <TextFieldContainer size={inputWidth} className={className}>
-        <TextFieldInput type="text" 
-          status={status} 
-          disabled={disabled} 
+        <TextFieldInput 
+          type="text"
+          status={status}
+          disabled={disabled}
           onBlur={this.handleFocusChange}
-          floating={this.state.floating} />
+          floating={this.state.floating} 
+        />
         <TextFieldLabel floating={this.state.floating}>{label}</TextFieldLabel>
         <Icon status={status} size="14px" />
       </TextFieldContainer>

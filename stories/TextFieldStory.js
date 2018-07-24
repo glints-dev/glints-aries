@@ -6,7 +6,7 @@ const TextFieldStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Text Field</h1>
-        <p><code>{`import TextField from 'glints-aries'`}</code></p>
+        <p><code>{`import { TextField } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

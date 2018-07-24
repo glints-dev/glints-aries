@@ -11,7 +11,7 @@ const SearchStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Search</h1>
-        <p><code>{`import Search from 'glints-aries'`}</code></p>
+        <p><code>{`import { Search } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

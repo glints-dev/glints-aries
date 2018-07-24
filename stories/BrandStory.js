@@ -6,7 +6,7 @@ const BrandStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Brand</h1>
-        <p><code>{`import Brand from 'glints-aries'`}</code></p>
+        <p><code>{`import { Brand } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

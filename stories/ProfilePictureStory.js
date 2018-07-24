@@ -4,14 +4,8 @@ import ProfilePictureShadow from '../src/ProfilePictureShadow';
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Profile Picture
-      </h1>
-      <p>
-        <code>
-          import ProfilePicture from 'glints-aries'
-        </code>
-      </p>
+      <h1>Profile Picture</h1>
+      <p><code>{`import { ProfilePictureShadow } from 'glints-aries'`}</code></p>
     </div>
 
     <table className="doc-table">

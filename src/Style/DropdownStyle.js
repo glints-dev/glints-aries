@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Style/Colors';
 import { Size } from '../Utils/StyleConfig';
+import './GlobalStyle';
 
 const growing = keyframes`
     from {

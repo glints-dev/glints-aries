@@ -14,9 +14,10 @@ import BannerStory from './BannerStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
+import ColorStory from './ColorStory';
+import DeviceStory from './DeviceStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
-import FlexCenterStory from './FlexCenterStory';
 import HeadingStory from './HeadingStory';
 import IconStory from './IconStory';
 import InformationStory from './InformationStory';
@@ -26,7 +27,7 @@ import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
 import PointingModalStory from './PointingModalStory';
-import PointingModalPopOverStory from './PointingModalPopOverStory';
+import PopoverStory from './PopoverStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import SearchStory from './SearchStory';
@@ -35,14 +36,14 @@ import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import TextFieldStory from './TextFieldStory';
 import { Button } from '../src/Button';
-import { GlintsAriesContainer } from '../src';
+import { GlintsContainer } from '../src';
 
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      <GlintsAriesContainer>
+      <GlintsContainer>
         {React.createElement(story)}
-      </GlintsAriesContainer>
+      </GlintsContainer>
     </Provider>
   ))
   .addDecorator(withKnobs)
@@ -72,8 +73,8 @@ storiesOf('Components', module)
   .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
-  .add('Modal Pop Over', () => <PointingModalPopOverStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
+  .add('Pop Over', () => <PopoverStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Search', () => <SearchStory />)
@@ -90,10 +91,11 @@ storiesOf('Mobile Components', module)
   .add('Menu', () => <MobileMenuStory />)
   .add('Swipeable', () => <SwipeableStory />);
 
-storiesOf('Utilitites', module)
+storiesOf('Utilities', module)
   .addDecorator(story => (
     <Provider>
       {React.createElement(story)}
     </Provider>
   ))
-  .add('Center (Flex)', () => <FlexCenterStory />);
+  .add('Colors', () => <ColorStory />)
+  .add('Devices Size', () => <DeviceStory />);

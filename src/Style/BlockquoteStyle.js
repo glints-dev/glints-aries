@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Style/Colors';
-import { device } from '../Utils/StyleConfig';
+import { Device } from '../Utils/StyleConfig';
 import RedQuote from '../../assets/icons/red-quote.svg';
 import BlueQuote from '../../assets/icons/blue-quote.svg';
 
@@ -38,7 +38,7 @@ export const ProfileWrapper = styled.div`
     transform: translate(-25%, -50%);
 
 
-	@media ${device.mobileL} {
+	@media ${Device.mobileL} {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -53,7 +53,7 @@ export const BlockquoteContainer = styled.div`
     color: ${SecondaryColor.black};
 	transition: all .2s;
 
-	@media ${device.mobileL} {
+	@media ${Device.mobileL} {
 		flex-direction: column;
 		text-align: center;
 	}
@@ -82,7 +82,7 @@ export const BlockquoteContainer = styled.div`
 		height: 3em;
 		width: 3em;
 		
-		@media ${device.mobileL} {
+		@media ${Device.mobileL} {
 			display: inline-flex;
 			align-self: center;
 			position: relative;
@@ -102,7 +102,7 @@ export const Paragraph = styled.div`
     padding: 2em 2em 2em 8em;
 	line-height: 1.8;
 
-	@media ${device.mobileL} {
+	@media ${Device.mobileL} {
 		padding: 2.5em 2em 2.5em 2em;
 	}
 `;

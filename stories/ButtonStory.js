@@ -7,7 +7,7 @@ const ButtonStories = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>Button</h1>
-      <p><code>{'import Button from \'glints-aries\''}</code></p>
+      <p><code>{`import { Button } from 'glints-aries'`}</code></p>
     </div>
 
     <div style={{ marginBottom: '6em' }}>

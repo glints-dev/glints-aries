@@ -12,7 +12,7 @@ const SliderStory = () => (
       </h1>
       <p>
         <code>
-          {'import Slider from \'glints-aries\''}
+          {`import { Slider } from 'glints-aries'`}
         </code>
       </p>
     </div>

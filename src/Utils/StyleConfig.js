@@ -38,7 +38,7 @@ export const Thickness = {
 
 /* Screen size library of Glints
  * Usage:
- * @media ${device.mobileL} { ... }
+ * @media ${Device.mobileL} { ... }
  */
 
 const size = {
@@ -51,7 +51,7 @@ const size = {
   desktop: '2560px',
 };
 
-export const device = {
+export const Device = {
   mobileS: `(max-width: ${size.mobileS})`,
   mobileM: `(max-width: ${size.mobileM})`,
   mobileL: `(max-width: ${size.mobileL})`,
@@ -59,5 +59,4 @@ export const device = {
   laptop: `(max-width: ${size.laptop})`,
   laptopL: `(max-width: ${size.laptopL})`,
   desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
 };

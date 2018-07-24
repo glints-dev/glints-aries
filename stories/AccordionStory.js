@@ -38,7 +38,7 @@ class AccordionStory extends Component {
           </h1>
           <p>
             <code>
-              {'import Accordion from \'glints-aries\''}
+              {`import { Accordion } from 'glints-aries'`}
             </code>
           </p>
         </div>

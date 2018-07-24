@@ -36,7 +36,7 @@ class Dropdown extends Component <Props, State> {
         onBlur={this.handleClickOutside} 
         tabIndex="0">
           <DropdownLabelWrapper className={className}>
-              <DropdownLabel>{title}</DropdownLabel>
+              <DropdownLabel><span>{title}</span></DropdownLabel>
               <Icon name={"arrow-down"} size="25" color="black" />
           </DropdownLabelWrapper>
           {this.state.isOpen &&

@@ -8,7 +8,7 @@ const InformationStory = () => {
     <div className="doc-mainbar">
       <div style={{ marginBottom: '2em' }}>
         <h1>Information</h1>
-        <p><code>{`import Information from 'glints-aries'`}</code></p>
+        <p><code>{`import { Information } from 'glints-aries'`}</code></p>
       </div>
 
       <table className="doc-table">

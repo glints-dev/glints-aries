@@ -1,36 +1,7 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
+import { ChildHolder, ButtonContainer, PopOverContent } from '../Style/PopoverStyle';
 
-const opacityAnimation = keyframes`
-    0% {
-        opacity: 0
-    }
-    80% {
-        opacity: 1;
-    }
-`;
-
-const ChildHolder = styled.div`
-    transform: translateX(-50%);
-    cursor: pointer;
-`;
-
-const ButtonContainer = styled.div`
-    position: relative;
-    outline: none;
-`;
-
-const PopOverContent = styled.div`
-    position: absolute;
-    right: 0px;
-    top: 35px;
-    min-width: 250px;
-    animation: ${opacityAnimation} .2s linear;
-    z-index: 10;
-`;
-
-
-class ModalPopOver extends Component <Props, State> {
+class Popover extends Component <Props, State> {
   constructor() {
     super();
     this.state = {
@@ -60,6 +31,7 @@ class ModalPopOver extends Component <Props, State> {
   render() {
     const { isOpen } = this.state;
     const { content, children } = this.props;
+    
     return (
       <ButtonContainer
         tabIndex="0"
@@ -78,12 +50,12 @@ class ModalPopOver extends Component <Props, State> {
 
 
 type Props = {
-    children: React$Node,
-    content: React$Node,
-  };
+  children: React$Node,
+  content: React$Node,
+};
 
-  type State = {
-    isOpen: boolean,
-  };
+type State = {
+  isOpen: boolean,
+};
 
-export default ModalPopOver;
+export default Popover;

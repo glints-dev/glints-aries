@@ -66,7 +66,7 @@ export const Spinner = styled.div`
                     width: 4em;
                     height: 4em;
                 `;
-            }
+        }
     }};
 
     &:before {

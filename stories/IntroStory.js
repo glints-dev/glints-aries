@@ -31,21 +31,22 @@ const IntroStory = () => (
       </h3>
       <div style={{ marginBottom: '1em' }}>
         <p>
-          {'Wrap component in'}
-        </p>
-        <code>
-          {'<GlintsAriesContainer>{your component here}</GlintsAriesContainer>'}
-        </code>
-      </div>
-      <div>
-        <p>
-        Just import the component into your component file and follow the instruction on the component section.
+        Import the component into your file and follow the instruction on the component section.
           <br />
           <code>
-            {'import { ... } from \'glints-aries\''}
+            {`import { ... } from 'glints-aries'`}
           </code>
         </p>
       </div>
+      <div>
+        <p>We're using a container to wrap our global style, so <code>Glints Aries</code> won't replace your existing styles.</p>
+        <p>Before you start using our component, it's better to wrap your root component with {`<GlintsContainer/>`}.</p>
+        <pre>{`<GlintsContainer>
+  <YourRootComponent />
+</GlintsContainer>`}
+        </pre>
+      </div>
+      
     </div>
 
     <div style={{ marginBottom: '2.5em' }}>
@@ -84,10 +85,10 @@ const IntroStory = () => (
         }
       </pre>
       <h4>
-        Override using styled-component.
+        Override using styled-components.
       </h4>
       <p>
-        It's pretty easy to override through styled-component. You can use
+        It's pretty easy to override through styled-components. You can use
         {' '}
         <b>
           styled

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const GlintsAriesContainer = styled.div`
+const GlintsContainer = styled.div`
     *,
     *:before,
     *:after {
@@ -19,26 +19,28 @@ const GlintsAriesContainer = styled.div`
     }
 
     a {
-        font-family: 'Poppins';
         text-decoration: none;
     }
 
     ul {
-        font-family: 'Poppins';
         list-style-type: none;
         margin: 0;
         padding: 0;
     }
 
     li {
-        font-family: 'Poppins';
         margin-bottom: 0;
     }
 
     p {
-        font-family: 'Poppins';
         margin: 0;
+    }
+    
+    a, p, label,
+    ul, li, span,
+    i {
+        font-family: 'Poppins';
     }
 `;
 
-export default GlintsAriesContainer;
+export default GlintsContainer;
