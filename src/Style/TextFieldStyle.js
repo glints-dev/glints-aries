@@ -3,8 +3,8 @@ import { PrimaryColor, SecondaryColor } from './Colors';
 import './GlobalStyle';
 
 // Assets
-import checkmark from './../../assets/image/checkmark-green.png';
-import exclamation from './../../assets/image/exclamation.png';
+import checkmark from '../../assets/image/checkmark-green.png';
+import exclamation from '../../assets/image/exclamation.png';
 
 /*
  * Text Field
@@ -14,7 +14,7 @@ export const TextFieldContainer = styled.div`
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: ${props => props.size+`%`};
+  width: ${props => `${props.size}%`};
 `;
 
 export const TextFieldLabel = styled.label`
@@ -26,9 +26,9 @@ export const TextFieldLabel = styled.label`
   pointer-events: none;
   font-weight: 300;
 
-  ${props => {
+  ${(props) => {
     if (props.floating) {
-      return`
+      return `
         transform: translate3d(-.5em, -2em, 0);
         transition: all .2s;
         font-size: 12px;
@@ -48,10 +48,10 @@ export const TextFieldInput = styled.input`
   font-weight: 600;
   transition: all .5s;
 
-  ${props => {
-    if(props.status === 'error'){
+  ${(props) => {
+    if (props.status === 'error') {
       if (props.floating) {
-        return`
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
       }
@@ -77,13 +77,13 @@ export const TextFieldInput = styled.input`
     border: 2px solid ${SecondaryColor.black};
     transition: all .5s;
 
-    ${props => {
-      if (props.status === 'error') {
-        return`
+    ${(props) => {
+    if (props.status === 'error') {
+      return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-      }
-    }}
+    }
+  }}
 
     + label {
       color: ${SecondaryColor.black};
@@ -93,13 +93,13 @@ export const TextFieldInput = styled.input`
   &:focus {
     border: 2px solid ${SecondaryColor.black};
 
-    ${props => {
-      if (props.status === 'error') {
-        return`
+    ${(props) => {
+    if (props.status === 'error') {
+      return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-      }
-    }}
+    }
+  }}
 
     + ${TextFieldLabel} {
       transform: translate3d(-.5em, -2em, 0);
@@ -119,18 +119,15 @@ export const Icon = styled.i`
   background-position: center;
   background-size: contain;
 
-  ${props => {
+  ${(props) => {
     if (props.status === 'success') {
-      return`
+      return `
         background-image: url(${checkmark});
       `;
-    } else if (props.status === 'error') {
-      return`
+    } if (props.status === 'error') {
+      return `
         background-image: url(${exclamation});
       `;
     }
   }}
 `;
-    
-
-
