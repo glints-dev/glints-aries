@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { ProfileWrapper } from './../Style/BlockquoteStyle';
+import { ProfileWrapper } from '../Style/BlockquoteStyle';
 
 const BlockquoteProfileWrapper = (props: Props) => {
   const {
     children,
-    className
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const BlockquoteProfileWrapper = (props: Props) => {
       {children}
     </ProfileWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

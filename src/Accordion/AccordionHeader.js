@@ -1,33 +1,37 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { AccordionHeaderWrapper } from './../Style/AccordionStyle';
-import { Icon } from './../Icon';
+import { AccordionHeaderWrapper } from '../Style/AccordionStyle';
+import { Icon } from '../Icon';
 
 const AccordionHeader = (props: Props) => {
-  const { 
-    children, 
-    isOpen, 
-    title, 
+  const {
+    children,
+    isOpen,
+    title,
     className,
-    ...defaultProps 
+    ...defaultProps
   } = props;
 
   return (
     <Fragment>
       <AccordionHeaderWrapper className={className} isOpen={isOpen} {...defaultProps}>
-        <p>{title}</p>
-        <Icon name={isOpen ? "arrow-back" : "arrow-down"} size="25" />
+        <p>
+          {title}
+        </p>
+        <Icon name={isOpen ? 'arrow-back' : 'arrow-down'} size="15" color="black" />
       </AccordionHeaderWrapper>
 
-      {isOpen &&
-        <Fragment>
-          {children}
-        </Fragment>
+      {isOpen
+        && (
+          <Fragment>
+            {children}
+          </Fragment>
+        )
       }
     </Fragment>
   );
-}
+};
 
 type Props = {
   children: React$Node,

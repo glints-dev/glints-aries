@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalHeaderContainer } from './../Style/PointingModalStyle';
+import { PointingModalHeaderContainer } from '../Style/PointingModalStyle';
 
 const PointingModalHeader = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const PointingModalHeader = (props: Props) => {
       {children}
     </PointingModalHeaderContainer>
   );
-}
+};
 
 type Props = {
   children: React$Node,

@@ -38,7 +38,7 @@ const GlintsContainer = styled.div`
     
     a, p, label,
     ul, li, span,
-    i {
+    i, div {
         font-family: 'Poppins';
     }
 `;

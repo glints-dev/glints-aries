@@ -1,18 +1,18 @@
 /* @flow */
 
 import React from 'react';
-import { ItemWrapper, ItemImgWrapper, ItemContent } from './../Style/ItemStyle';
 import { Link } from 'react-router-dom';
+import { ItemWrapper, ItemImgWrapper, ItemContent } from '../Style/ItemStyle';
 
 const Item = (props: Props) => {
-  const { 
-    title, 
-    url, 
-    imgUrl, 
-    isExternal, 
-    isReactRouter, 
-    paddingSize, 
-    subtitle, 
+  const {
+    title,
+    url,
+    imgUrl,
+    isExternal,
+    isReactRouter,
+    paddingSize,
+    subtitle,
     className,
     ...defaultProps
   } = props;
@@ -20,21 +20,31 @@ const Item = (props: Props) => {
   return (
     <ItemWrapper className={className} paddingSize={paddingSize} {...defaultProps}>
       <ItemImgWrapper>
-        <img src={imgUrl} alt='' width="64" height="64" />
+        <img src={imgUrl} alt="" width="64" height="64" />
       </ItemImgWrapper>
       <ItemContent>
-        <h4>{title}</h4>
-        {!isReactRouter &&
-          <a href={url} target={isExternal ? "_blank" : "_self"} rel="noopener noreferrer">{subtitle}</a>
+        <h4>
+          {title}
+        </h4>
+        {!isReactRouter
+          && (
+            <a href={url} target={isExternal ? '_blank' : '_self'} rel="noopener noreferrer">
+              {subtitle}
+            </a>
+          )
         }
 
-        {isReactRouter &&
-          <Link to={url}>{subtitle}</Link>
+        {isReactRouter
+          && (
+            <Link to={url}>
+              {subtitle}
+            </Link>
+          )
         }
       </ItemContent>
     </ItemWrapper>
   );
-}
+};
 
 Item.defaultProps = {
   imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png',
@@ -46,7 +56,7 @@ Item.defaultProps = {
   url: '/',
 };
 
-//Typecheck goes here
+// Typecheck goes here
 type Props = {
   title: string,
   subtitle: string,

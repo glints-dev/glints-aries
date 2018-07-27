@@ -1,12 +1,12 @@
 /* @flow */
 import React from 'react';
-import { DropdownItem } from './../Style/DropdownStyle';
+import { DropdownItem } from '../Style/DropdownStyle';
 
 const DropdownItems = (props: Props) => {
-  const { 
+  const {
     children,
     className,
-    ...defaultProps 
+    ...defaultProps
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const DropdownItems = (props: Props) => {
       {children}
     </DropdownItem>
   );
-}
+};
 
 type Props = {
   children: React$Node,

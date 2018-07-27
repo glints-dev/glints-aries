@@ -30,6 +30,8 @@ class AccordionStory extends Component {
   }
 
   render() {
+    const { jobAccordionOpen, locAccordionOpen } = this.state;
+
     return (
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
@@ -38,7 +40,7 @@ class AccordionStory extends Component {
           </h1>
           <p>
             <code>
-              {`import { Accordion } from 'glints-aries'`}
+              {'import { Accordion } from \'glints-aries\''}
             </code>
           </p>
         </div>
@@ -50,7 +52,7 @@ class AccordionStory extends Component {
                 Preview
               </th>
               <th>
-usage
+                Usage
               </th>
             </tr>
           </thead>
@@ -58,51 +60,51 @@ usage
             <tr>
               <td style={{ verticalAlign: 'top' }}>
                 <Accordion>
-                  <Accordion.Header title="Jobs" isOpen={this.state.jobAccordionOpen} onClick={this.toggleJobAccordion}>
+                  <Accordion.Header title="Jobs" isOpen={jobAccordionOpen} onClick={this.toggleJobAccordion}>
                     <Accordion.Body>
                       <Accordion.Item onClick={action('Accounting')}>
-  Accounting
+                        Accounting
                       </Accordion.Item>
                       <Accordion.Item onClick={action('art & design')}>
-  Art & design
+                        Art & design
                       </Accordion.Item>
                       <Accordion.Item onClick={action('Business')}>
-  Business Development
+                        Business Development
                       </Accordion.Item>
                       <Accordion.Item onClick={action('consulting')}>
-  Consulting
+                        Consulting
                       </Accordion.Item>
                       <Accordion.Item onClick={action('engineering')}>
-  Egineering
+                        Engineering
                       </Accordion.Item>
                       <Accordion.Item onClick={action('Enterpreneurship')}>
-  Enterpreneurship
+                        Enterpreneurship
                       </Accordion.Item>
                       <Accordion.Item onClick={action('Finance')}>
-  Finance
+                        Finance
                       </Accordion.Item>
                     </Accordion.Body>
                   </Accordion.Header>
 
                   <Accordion.Label>
                     <Label size="medium" theme="secondary">
-in
+                      in
                     </Label>
                   </Accordion.Label>
 
-                  <Accordion.Header title="This Location" isOpen={this.state.locAccordionOpen} onClick={this.toggleLocAccordion}>
+                  <Accordion.Header title="This Location" isOpen={locAccordionOpen} onClick={this.toggleLocAccordion}>
                     <Accordion.Body>
                       <Accordion.Item onClick={action('Singapore')}>
-  Singapore
+                        Singapore
                       </Accordion.Item>
                       <Accordion.Item onClick={action('Jakarta')}>
-  Jakarta
+                        Jakarta
                       </Accordion.Item>
                       <Accordion.Item onClick={action('Tokyo')}>
-  Tokyo
+                        Tokyo
                       </Accordion.Item>
                       <Accordion.Item onClick={action('India')}>
-  India
+                        India
                       </Accordion.Item>
                     </Accordion.Body>
                   </Accordion.Header>
@@ -111,16 +113,16 @@ in
               <td style={{ verticalAlign: 'top' }}>
                 <pre>
                   {`<Accordion>
-  <Accordion.Header title="Jobs" isOpen={${this.state.jobAccordionOpen}} onClick={...}>
+  <Accordion.Header title="Jobs" isOpen={${jobAccordionOpen}} onClick={...}>
     <Accordion.Body>
       <Accordion.Item onClick={...}>Accounting</Accordion.Item>
       <Accordion.Item onClick={...}>instagram.com</Accordion.Item>
     </Accordion.Body>
   </Accordion.Header>
 
-  <AccordionLabel>
+  <Accordion.Label>
     <Label size="medium" theme="secondary">in</Label>
-  </AccordionLabel>
+  </Accordion.Label>
 
   <Accordion.Header title="This Location" isOpen={true}>
     <Accordion.Body>
@@ -136,52 +138,52 @@ in
         </table>
 
         <h1>
-Props
+          Props
         </h1>
         <table className="doc-table">
           <thead>
             <tr>
               <th>
-Name
+                Name
               </th>
               <th>
-Type
+                Type
               </th>
               <th>
-Value
+                Value
               </th>
               <th>
-Required
+                Required
               </th>
               <th>
-Description
+                Description
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-title
+                title
               </td>
               <td>
-string
+                string
               </td>
               <td>
-any
+                any
               </td>
               <td>
-yes
+                yes
               </td>
               <td>
-Sets title for accordion.
+                Sets title for accordion.
               </td>
             </tr>
             <tr>
               <td>
-isOpen
+                isOpen
               </td>
               <td>
-boolean
+                boolean
               </td>
               <td>
                 <pre>
@@ -189,22 +191,22 @@ boolean
                 </pre>
               </td>
               <td>
-yes
+                yes
               </td>
               <td>
-Sets to open and close accordion.
+                Sets to open and close accordion.
               </td>
             </tr>
             <tr>
               <td>
-onClick
+                onClick
               </td>
               <td>
-function
+                function
               </td>
               <td></td>
               <td>
-yes
+                yes
               </td>
               <td></td>
             </tr>

@@ -4,9 +4,9 @@ import React from 'react';
 import { SearchItemWrapper } from '../Style/SearchStyle';
 
 const SearchItems = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const SearchItems = (props: Props) => {
       {children}
     </SearchItemWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

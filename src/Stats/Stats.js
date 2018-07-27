@@ -4,9 +4,10 @@ import React from 'react';
 import { StatsWrapper } from '../Style/StatsStyle';
 
 const Stats = (props: Props) => {
-  const { children,
+  const {
+    children,
     className,
-    ...defaultProps 
+    ...defaultProps
   } = props;
 
   return (
@@ -14,7 +15,7 @@ const Stats = (props: Props) => {
       {children}
     </StatsWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

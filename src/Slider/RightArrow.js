@@ -1,18 +1,18 @@
 /* @flow */
 
 import React from 'react';
-import { Icon } from './../Icon';
-import { RightArrowContainer } from './../Style/SliderStyle';
+import { Icon } from '../Icon';
+import { RightArrowContainer } from '../Style/SliderStyle';
 
 const RightArrow = (props: Props) => {
   const { index, limit, nextSlide } = props;
 
   return (
     <RightArrowContainer index={index} limit={limit} onClick={nextSlide}>
-        <Icon name={"arrow-next"} size="35" />
+      <Icon name="arrow-next" size="35" color="black" />
     </RightArrowContainer>
   );
-}
+};
 
 type Props = {
   index: number,

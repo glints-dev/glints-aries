@@ -1,20 +1,20 @@
 /* @flow */
 
 import React from 'react';
-import { AccordionItemWrapper } from './../Style/AccordionStyle';
+import { AccordionItemWrapper } from '../Style/AccordionStyle';
 
 const AccordionBody = (props: Props) => {
   const {
     children,
-    className
+    className,
   } = props;
-  
+
   return (
     <AccordionItemWrapper className={className}>
       {children}
     </AccordionItemWrapper>
-  )
-}
+  );
+};
 
 type Props = {
   children: React$Node,

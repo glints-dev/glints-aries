@@ -1,13 +1,13 @@
 /* @flow */
 
 import React from 'react';
-import { MenuItemWraper } from './../Style/MobileMenuStyle';
+import { MenuItemWraper } from '../Style/MobileMenuStyle';
 
 const MenuItems = (props: Props) => {
-  const { 
-    children, 
+  const {
+    children,
     className,
-    ...defaultProps 
+    ...defaultProps
   } = props;
 
   return (
@@ -15,7 +15,7 @@ const MenuItems = (props: Props) => {
       {children}
     </MenuItemWraper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

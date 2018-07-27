@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { DetailWrapper } from './../Style/InformationStyle';
+import { DetailWrapper } from '../Style/InformationStyle';
 
 const Detail = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const Detail = (props: Props) => {
       {children}
     </DetailWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

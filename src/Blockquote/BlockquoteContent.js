@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { Paragraph } from './../Style/BlockquoteStyle';
+import { Paragraph } from '../Style/BlockquoteStyle';
 
 const BlockquoteContent = (props: Props) => {
   const {
     children,
-    className
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const BlockquoteContent = (props: Props) => {
       {children}
     </Paragraph>
   );
-}
+};
 
 type Props = {
   children: React$Node,

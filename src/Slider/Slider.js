@@ -11,37 +11,59 @@ class Slider extends Component <Props, State> {
     super();
     this.state = {
       translateValue: 0,
+      screenSize: 0,
       index: 1,
     };
     this.sliderContainer = null;
   }
 
   previousSlide = () => {
-    const { index, translateValue } = this.state;
+    const { index, translateValue, screenSize } = this.state;
     if (index !== 1) {
-      const containerWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
       this.setState({
         index: index - 1,
-        translateValue: translateValue + containerWidth,
+        translateValue: translateValue + screenSize,
       });
     }
   }
 
   nextSlide = () => {
-    const { index, translateValue } = this.state;
+    const { index, translateValue, screenSize } = this.state;
     const { children } = this.props;
     if (index !== children.length) {
-      const containerWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
       this.setState({
         index: index + 1,
-        translateValue: translateValue - containerWidth,
+        translateValue: translateValue - screenSize,
       });
     }
+  }
+
+  setSize = () => {
+    const { index } = this.state;
+    const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
+    this.setState({
+      screenSize: ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width,
+      translateValue: -(windowWidth * (index - 1)),
+    });
+  }
+
+  componentDidMount() {
+    const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
+    this.setState({
+      screenSize: windowWidth,
+    });
+
+    window.addEventListener('resize', this.setSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setSize);
   }
 
   render() {
     const { translateValue, index } = this.state;
     const { children, className } = this.props;
+
     return (
       <SliderContainer ref={(node) => { this.sliderContainer = node; }} className={className}>
         <SliderWrapperStyle
@@ -67,6 +89,7 @@ type Props = {
 type State = {
   translateValue: number,
   index: number,
+  screenSize: number,
 };
 
 export default Slider;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { GlintsAriesContainer } from '../src';
 
 const IntroStory = () => (
   <div className="doc-mainbar">
@@ -8,7 +7,7 @@ const IntroStory = () => (
         Glints Aries
       </h1>
       <p style={{ paddingRight: '25%' }}>
-        We proudly present to you Glints-aries made by Front End Engineers of Glints. It's a Frontend framework to simplify and speed up your development. It's a project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a lot of amazing components to be built.
+        We proudly present to you Glints-aries made by Front End Engineers of Glints. It is a Frontend framework to simplify and speed up your development. This project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a lot of amazing components to be built.
         <br />
         We also make sure to make this project as flexible as we can, so that you can also customize the styling with your own style!
       </p>
@@ -34,19 +33,32 @@ const IntroStory = () => (
         Import the component into your file and follow the instruction on the component section.
           <br />
           <code>
-            {`import { ... } from 'glints-aries'`}
+            {'import { ... } from \'glints-aries\''}
           </code>
         </p>
       </div>
       <div>
-        <p>We're using a container to wrap our global style, so <code>Glints Aries</code> won't replace your existing styles.</p>
-        <p>Before you start using our component, it's better to wrap your root component with {`<GlintsContainer/>`}.</p>
-        <pre>{`<GlintsContainer>
+        <p>
+          We are using a container to wrap our global style, so
+          <b>
+          Glints Aries
+          </b>
+          {' '}
+          {'won\'t replace your existing styles.'}
+        </p>
+        <p>
+          {'Before you start using our component, it\'s better to wrap your root component with'}
+          {'<GlintsContainer/>'}
+          .
+        </p>
+        <pre style={{ display: 'inline-flex' }}>
+          {`import { GlintsContainer } from 'glints-aries'
+
+<GlintsContainer>
   <YourRootComponent />
 </GlintsContainer>`}
         </pre>
       </div>
-      
     </div>
 
     <div style={{ marginBottom: '2.5em' }}>
@@ -88,13 +100,13 @@ const IntroStory = () => (
         Override using styled-components.
       </h4>
       <p>
-        It's pretty easy to override through styled-components. You can use
+        {'It\'s pretty easy to override through styled-components. You can use'}
         {' '}
         <b>
           styled
         </b>
         {' '}
-          method.
+        method.
       </p>
       <pre style={{ backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0' }}>
         {
@@ -105,7 +117,6 @@ ${'`'}
         }
       </pre>
     </div>
-
   </div>
 );
 

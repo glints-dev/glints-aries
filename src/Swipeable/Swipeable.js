@@ -4,17 +4,17 @@ import React from 'react';
 import { SwipeableContainer } from '../Style/SwipeableStyle';
 
 const Swipeable = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
     <SwipeableContainer className={className}>
-        { children }
+      { children }
     </SwipeableContainer>
   );
-}
+};
 
 type Props = {
   children: React$Node,

@@ -1,12 +1,12 @@
 /* @flow */
 
-import React, { Fragment } from 'react';
-import { StyledOrigin } from './../Style/BlockquoteStyle';
+import React from 'react';
+import { StyledOrigin } from '../Style/BlockquoteStyle';
 
 const Origin = (props: Props) => {
   const {
     children,
-    className
+    className,
   } = props;
 
   return (
@@ -14,11 +14,11 @@ const Origin = (props: Props) => {
       {children}
     </StyledOrigin>
   );
-}
+};
 
 type Props = {
   children: React$Node,
   className: string,
 }
-  
+
 export default Origin;

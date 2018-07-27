@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { MenuFooter } from './../Style/MobileMenuStyle';
+import { MenuFooter } from '../Style/MobileMenuStyle';
 
 const FooterItems = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const FooterItems = (props: Props) => {
       {children}
     </MenuFooter>
   );
-}
+};
 
 type Props = {
   children: React$Node,

@@ -3,39 +3,42 @@ import {
   TextFieldContainer,
   TextFieldInput,
   TextFieldLabel,
-  Icon
-} from './../../src/Style/TextFieldStyle';
+  Icon,
+} from '../Style/TextFieldStyle';
 
-class TextField extends Component {
+class TextField extends Component <Props, State> {
   state = {
-    floating: false
+    floating: false,
   }
 
-  handleFocusChange = e => {
+  handleFocusChange = (e) => {
     this.setState({
-      floating: e.target.value.length > 0 ? true : false,
-    })
+      floating: e.target.value.length > 0,
+    });
   }
 
   render() {
-    const { 
-      label, 
-      inputWidth, 
-      status, 
-      disabled, 
-      className 
+    const {
+      label,
+      status,
+      disabled,
+      className,
     } = this.props;
 
-    return(
-      <TextFieldContainer size={inputWidth} className={className}>
-        <TextFieldInput 
+    const { floating } = this.state;
+
+    return (
+      <TextFieldContainer className={className}>
+        <TextFieldInput
           type="text"
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange}
-          floating={this.state.floating} 
+          floating={floating}
         />
-        <TextFieldLabel floating={this.state.floating}>{label}</TextFieldLabel>
+        <TextFieldLabel floating={floating}>
+          {label}
+        </TextFieldLabel>
         <Icon status={status} size="14px" />
       </TextFieldContainer>
     );
@@ -44,10 +47,13 @@ class TextField extends Component {
 
 type Props = {
   label: string,
-  inputWidth: string,
   status: string,
   disabled: boolean,
   className: string,
 }
+
+type State = {
+  floating: boolean,
+};
 
 export default TextField;

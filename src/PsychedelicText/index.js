@@ -2,6 +2,6 @@
 
 import PsychedelicText from './PsychedelicText';
 
-export {PsychedelicText};
+export { PsychedelicText };
 
 export default PsychedelicText;

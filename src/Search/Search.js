@@ -4,17 +4,17 @@ import React from 'react';
 import { SearchContainer } from '../Style/SearchStyle';
 
 const Search = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
     <SearchContainer className={className}>
-        {children}
+      {children}
     </SearchContainer>
   );
-}
+};
 
 type Props = {
   children: React$Node,

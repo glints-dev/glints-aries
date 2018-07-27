@@ -3,8 +3,7 @@
 import React from 'react';
 import {
   AccordionContainer,
-  StyledAccordionItem,
-} from './../Style/AccordionStyle';
+} from '../Style/AccordionStyle';
 
 const Accordion = (props: Props) => {
   const {
@@ -16,8 +15,8 @@ const Accordion = (props: Props) => {
     <AccordionContainer className={className}>
       {children}
     </AccordionContainer>
-  )
-}
+  );
+};
 
 type Props = {
   children: React$Node,

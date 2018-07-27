@@ -4,18 +4,18 @@ import React from 'react';
 import { SwipeableWrapper } from '../Style/SwipeableStyle';
 
 const SwipeableItem = (props: Props) => {
-  const { 
-    children, 
+  const {
+    children,
     className,
-    ...defaultProps 
+    ...defaultProps
   } = props;
 
   return (
     <SwipeableWrapper className={className} {...defaultProps}>
-        { children }
+      { children }
     </SwipeableWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

@@ -142,8 +142,6 @@ const SliderStory = () => (
     <p>
       {'You must always wrap your component inside <SliderItem>. If you wanna show one or two components in each slider, You could wrap it inside <SliderItem>.'}
     </p>
-
   </div>
 );
-
 export default SliderStory;

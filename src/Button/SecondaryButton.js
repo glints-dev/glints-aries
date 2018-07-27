@@ -3,10 +3,10 @@
 import React from 'react';
 import { SecondaryContainer, SecondaryBtn } from '../Style/ButtonStyle';
 
-const SecondaryButton = ({ 
-  children, 
+const SecondaryButton = ({
+  children,
   className,
-  ...defaultButtonProps 
+  ...defaultButtonProps
 }: Props) => (
 
   <SecondaryContainer className={className}>

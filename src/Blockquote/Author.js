@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { StyledAuthor } from './../Style/BlockquoteStyle';
+import { StyledAuthor } from '../Style/BlockquoteStyle';
 
 const Author = (props: Props) => {
   const {
     children,
-    className
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const Author = (props: Props) => {
       {children}
     </StyledAuthor>
   );
-}
+};
 
 type Props = {
   children: React$Node,

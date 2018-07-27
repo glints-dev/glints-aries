@@ -1,18 +1,18 @@
 /* @flow */
 
 import React from 'react';
-import { Icon } from './../Icon';
-import { LeftArrowContainer } from './../Style/SliderStyle';
+import { Icon } from '../Icon';
+import { LeftArrowContainer } from '../Style/SliderStyle';
 
 const LeftArrow = (props: Props) => {
   const { index, previousSlide } = props;
 
   return (
     <LeftArrowContainer index={index} onClick={previousSlide}>
-        <Icon name={"arrow-back"} size="35" />
+      <Icon name="arrow-back" size="35" color="black" />
     </LeftArrowContainer>
   );
-}
+};
 
 type Props = {
   index: number,

@@ -1,11 +1,11 @@
 /* @flow */
 import React from 'react';
-import { DropdownItemWrapper } from './../Style/DropdownStyle';
+import { DropdownItemWrapper } from '../Style/DropdownStyle';
 
 const DropdownBody = (props: Props) => {
-  const { 
+  const {
     children,
-    className
+    className,
   } = props;
 
   return (
@@ -13,7 +13,7 @@ const DropdownBody = (props: Props) => {
       {children}
     </DropdownItemWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

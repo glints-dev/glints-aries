@@ -37,6 +37,7 @@ export const AccordionHeaderWrapper = styled.div`
 
   p {
     margin: 0;
+    margin-right: 1em;
   }
 `;
 

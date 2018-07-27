@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { TopIconWrapper } from './../Style/MobileMenuStyle';
+import { TopIconWrapper } from '../Style/MobileMenuStyle';
 
 const TopItems = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const TopItems = (props: Props) => {
       {children}
     </TopIconWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

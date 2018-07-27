@@ -14,7 +14,6 @@ export const TextFieldContainer = styled.div`
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: ${props => `${props.size}%`};
 `;
 
 export const TextFieldLabel = styled.label`
@@ -25,7 +24,7 @@ export const TextFieldLabel = styled.label`
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
-
+  
   ${(props) => {
     if (props.floating) {
       return `

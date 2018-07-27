@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { TitleWrapper } from './../Style/InformationStyle';
+import { TitleWrapper } from '../Style/InformationStyle';
 
 const Title = (props: Props) => {
-  const { 
-    children, 
-    bold, 
+  const {
+    children,
+    bold,
     className,
     ...defaultProps
   } = props;
@@ -16,7 +16,7 @@ const Title = (props: Props) => {
       {children}
     </TitleWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

@@ -16,7 +16,6 @@ const renderButton = ({
   onClick,
   className,
 }: Props) => {
-  
   switch (variant) {
     case Variant.PRIMARY:
       return (

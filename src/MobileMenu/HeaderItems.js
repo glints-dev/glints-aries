@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-import { HeaderWrapper } from './../Style/MobileMenuStyle';
+import { HeaderWrapper } from '../Style/MobileMenuStyle';
 
 const HeaderItems = (props: Props) => {
-  const { 
-    children, 
-    className 
+  const {
+    children,
+    className,
   } = props;
 
   return (
@@ -14,7 +14,7 @@ const HeaderItems = (props: Props) => {
       {children}
     </HeaderWrapper>
   );
-}
+};
 
 type Props = {
   children: React$Node,

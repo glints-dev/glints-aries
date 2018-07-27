@@ -1,5 +1,4 @@
 import React from 'react';
-import { Device } from './../src/Utils/StyleConfig';
 
 const DeviceStory = () => {
   return (

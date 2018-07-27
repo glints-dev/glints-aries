@@ -31,7 +31,7 @@ class Popover extends Component <Props, State> {
   render() {
     const { isOpen } = this.state;
     const { content, children } = this.props;
-    
+
     return (
       <ButtonContainer
         tabIndex="0"

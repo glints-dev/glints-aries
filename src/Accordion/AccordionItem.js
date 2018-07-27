@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { AccordionItemList } from './../Style/AccordionStyle';
+import { AccordionItemList } from '../Style/AccordionStyle';
 
 const AccordionItem = (props: Props) => {
   const {
@@ -9,13 +9,13 @@ const AccordionItem = (props: Props) => {
     className,
     ...defaultProps
   } = props;
-  
+
   return (
     <AccordionItemList className={className} {...defaultProps}>
       {children}
     </AccordionItemList>
-  )
-}
+  );
+};
 
 type Props = {
   children: React$Node,

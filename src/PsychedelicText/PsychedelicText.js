@@ -3,32 +3,44 @@
 import React, { Fragment } from 'react';
 import { Heading, SubHeading } from '../Style/PsychedelicTextStyle';
 
-const PsychedelicText = (props: Props) => {
-  const {
-    children,
-    heading,
-    subheading,
-    psychTheme,
-    className,
-    ...defaultProps
-  } = props;
+const renderPsychedelicText = ({
+  children,
+  type,
+  psychTheme,
+  className,
+  ...defaultProps
+} : Props) => {
+  switch (type) {
+    case 'heading':
+      return (
+        <Heading className={className} {...defaultProps}>
+          {children}
+        </Heading>
+      );
+    case 'subheading':
+      return (
+        <SubHeading className={className} psychTheme={psychTheme} {...defaultProps}>
+          {children}
+        </SubHeading>
+      );
+    default:
+      return (
+        <h3>
+          {children}
+        </h3>
+      );
+  }
+};
 
-  return (
-    <Fragment>
-      {heading
-        ? <Heading className={className} {...defaultProps}>{children}</Heading>
-        : subheading
-        ? <SubHeading className={className} psychTheme={psychTheme} {...defaultProps}>{children}</SubHeading>
-        : <h3>{children}</h3>
-      }
-    </Fragment>
-  );
-}
+const PsychedelicText = (props: Props) => (
+  <Fragment>
+    {renderPsychedelicText(props)}
+  </Fragment>
+);
 
 type Props = {
   children: React$Node,
-  heading: boolean,
-  subheading: boolean,
+  type: string,
   psychTheme: string,
   className: string,
 };
