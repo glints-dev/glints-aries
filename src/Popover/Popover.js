@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { ChildHolder, ButtonContainer, PopOverContent } from '../Style/PopoverStyle';
 
 class Popover extends Component <Props, State> {
+  static defaultProps = {
+    margin: '',
+  }
+
   constructor() {
     super();
     this.state = {
@@ -22,11 +26,14 @@ class Popover extends Component <Props, State> {
     this.setState({ isOpen: false });
   }
 
-  renderChildren = children => (
-    <ChildHolder onClick={this.handleOnClick}>
-      {children}
-    </ChildHolder>
-  )
+  renderChildren = (children) => {
+    const { margin } = this.props;
+    return (
+      <ChildHolder onClick={this.handleOnClick} margin={margin}>
+        {children}
+      </ChildHolder>
+    );
+  }
 
   render() {
     const { isOpen } = this.state;

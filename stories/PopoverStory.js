@@ -10,17 +10,25 @@ import { Icon } from '../src/Icon';
 const PopoverStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
-      <h1>Popover</h1>
+      <h1>
+Popover
+      </h1>
       <p>
-        <code>{`import { Popover } from 'glints-aries'`}</code>
+        <code>
+          {'import { Popover } from \'glints-aries\''}
+        </code>
       </p>
     </div>
 
     <table className="doc-table">
       <thead>
         <tr>
-          <th colSpan="0">Preview</th>
-          <th>Usage</th>
+          <th colSpan="0">
+Preview
+          </th>
+          <th>
+Usage
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -69,8 +77,73 @@ const PopoverStory = () => (
       </tbody>
     </table>
 
-    <h1>Notes</h1>
-    <p>You can change any component for triggering the Popover. In the case above, we use {`<Icon />`} to trigger Popover Component.</p>
+    <h1>
+      Notes
+    </h1>
+    <p>
+        You can change any component for triggering the Popover. In the case above, we use
+      {' '}
+      {'<Icon />'}
+      {' '}
+        to trigger Popover Component.
+    </p>
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            content
+          </td>
+          <td>
+            element
+          </td>
+          <td>
+            Value
+          </td>
+          <td>
+            Yes
+          </td>
+          <td>
+            Content to display when button is clicked
+          </td>
+        </tr>
+        <tr>
+          <td>
+            margin
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            Margin css
+          </td>
+          <td>
+            No
+          </td>
+          <td>
+            Margin for the button position
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 );
 
