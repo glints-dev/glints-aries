@@ -11,7 +11,7 @@ const PopoverStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-Popover
+        Popover
       </h1>
       <p>
         <code>
@@ -24,10 +24,10 @@ Popover
       <thead>
         <tr>
           <th colSpan="0">
-Preview
+            Preview
           </th>
           <th>
-Usage
+            Usage
           </th>
         </tr>
       </thead>
@@ -41,10 +41,10 @@ Usage
                     <ProfilePictureShadow editable />
                     <Label size="medium">
                       <span>
-                      Hello,
+                        Hello,
                       </span>
                       <p>
-                      Fredy Yanto
+                        Fredy Yanto
                       </p>
                     </Label>
                   </PointingModal.Header>
@@ -81,7 +81,7 @@ Usage
       Notes
     </h1>
     <p>
-        You can change any component for triggering the Popover. In the case above, we use
+      You can change any component for triggering the Popover. In the case above, we use
       {' '}
       {'<Icon />'}
       {' '}

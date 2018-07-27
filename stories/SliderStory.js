@@ -12,7 +12,7 @@ const SliderStory = () => (
       </h1>
       <p>
         <code>
-          {`import { Slider } from 'glints-aries'`}
+          {'import { Slider } from \'glints-aries\''}
         </code>
       </p>
     </div>
@@ -39,7 +39,7 @@ const SliderStory = () => (
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
-                      I didn't really know what I wanted to do and what were all the career paths out there!
+                      {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
                     </Blockquote.Testimony>
                     <Blockquote.Author>
                       Fredy Yanto
@@ -55,7 +55,7 @@ const SliderStory = () => (
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
-                      I didn't really know what I wanted to do and what were all the career paths out there!
+                      {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
                     </Blockquote.Testimony>
                     <Blockquote.Author>
                       Fredy Yanto
@@ -89,7 +89,7 @@ const SliderStory = () => (
                   </Blockquote.Profile>
                   <Blockquote.Content>
                     <Blockquote.Testimony>
-                      I didn't really know what I wanted to do and what were all the career paths out there!
+                      {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
                     </Blockquote.Testimony>
                     <Blockquote.Author>
                       Fredy Yanto

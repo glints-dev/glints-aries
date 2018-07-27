@@ -4,8 +4,14 @@ import ProfilePictureShadow from '../src/ProfilePictureShadow';
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
-      <h1>Profile Picture</h1>
-      <p><code>{`import { ProfilePictureShadow } from 'glints-aries'`}</code></p>
+      <h1>
+        Profile Picture
+      </h1>
+      <p>
+        <code>
+          {'import { ProfilePictureShadow } from \'glints-aries\''}
+        </code>
+      </p>
     </div>
 
     <table className="doc-table">
@@ -110,7 +116,7 @@ const ProfilePictureStory = () => (
             no
           </td>
           <td>
-            Showing edit icon when it's hovered.
+            {'Showing edit icon when it\'s hovered.'}
           </td>
         </tr>
       </tbody>
