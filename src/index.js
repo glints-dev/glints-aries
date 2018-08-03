@@ -21,10 +21,12 @@ export { default as PointingModal } from './PointingModal';
 export { default as Popover } from './Popover';
 export { default as ProfilePictureShadow } from './ProfilePictureShadow';
 export { default as PsychedelicText } from './PsychedelicText';
+export { default as RadioButton } from './RadioButton';
 export { default as Search } from './Search';
 export { default as Slider } from './Slider';
 export { default as Stats } from './Stats';
 export { default as Swipeable } from './Swipeable';
+export { default as Switch } from './Switch';
 export { default as TextField } from './TextField';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 

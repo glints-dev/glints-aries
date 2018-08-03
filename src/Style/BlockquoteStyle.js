@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 import { Device } from '../Utils/StyleConfig';
 import RedQuote from '../../assets/icons/red-quote.svg';
 import BlueQuote from '../../assets/icons/blue-quote.svg';
 
 export const StyledTestimony = styled.p`
-	font-weight: 100;
-    font-size: 1.2rem;
-	margin-bottom: .5em;
+  font-weight: 100;
+  font-size: 1.2rem;
+  margin-bottom: .5em;
 `;
 
 export const StyledAuthor = styled.p`
 	margin: 0;
 	font-weight: 500;
 	opacity: .75;
-	
+
 	&:before {
 		position: relative;
 		content: '';
@@ -23,6 +23,7 @@ export const StyledAuthor = styled.p`
 		height: 1px;
 		bottom: .2em;
 		margin-right: 1em;
+		background: ${SecondaryColor.lightblack};
 	}
 `;
 
@@ -88,12 +89,6 @@ export const BlockquoteContainer = styled.div`
 			position: relative;
 			left: auto;
 			top: 8em;
-		}
-	}
-	
-    ${StyledAuthor} {
-		&:before {
-			background: ${props => props.inverted ? `${SecondaryColor.white}` : `${SecondaryColor.lightblack}`};
 		}
 	}
 `;

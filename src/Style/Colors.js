@@ -9,6 +9,7 @@ export const SecondaryColor = {
   whitesmoke: '#F5F5F5',
   black: '#000000',
   lightblack: '#777777',
+  lighterblack: '#AAAAAA',
   grey: '#646464',
   lightgrey: '#C6C6C6',
   buttercup: '#F5A623',
@@ -16,4 +17,3 @@ export const SecondaryColor = {
   blue: '#0869C2',
   bluegem: '#9013FE',
 };
-

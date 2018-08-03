@@ -34,10 +34,12 @@ import PointingModalStory from './PointingModalStory';
 import PopoverStory from './PopoverStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
+import RadioButtonStory from './RadioButtonStory';
 import SearchStory from './SearchStory';
 import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
+import SwitchStory from './SwitchStory';
 import TextFieldStory from './TextFieldStory';
 
 storiesOf('Components', module)
@@ -79,10 +81,12 @@ storiesOf('Components', module)
   .add('Pop Over', () => <PopoverStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
+  .add('Radio Button', () => <RadioButtonStory />)
   .add('Search', () => <SearchStory />)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
-  .add('Text Field', () => <TextFieldStory />)
+  .add('Switch', () => <SwitchStory />)
+  .add('Text Field', () => <TextFieldStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (

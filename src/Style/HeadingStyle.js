@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Style/Colors';
+import { PrimaryColor, SecondaryColor } from './Colors';
 
 const highlight = css`
     display: inline-flex;
@@ -31,4 +31,3 @@ export const HeadingMedium = styled.h3`
 export const HeadingSmall = styled.h6`
     ${highlight};
 `;
-
