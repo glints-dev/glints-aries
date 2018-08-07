@@ -1,3 +1,9 @@
+#### 0.1.1 (2018-08-07)
+
+##### Code Style Changes
+
+* **Blockquote:**  adjust padding for blockquote testimony ([81d8404e](https://github.com/glints-dev/glints-aries/commit/81d8404e20d8ec4ae1854c070453f034c5ead7a3))
+
 #### 0.0.43 (2018-08-07)
 
 ##### Code Style Changes
