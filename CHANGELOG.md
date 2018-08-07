@@ -1,3 +1,9 @@
+#### 0.0.43 (2018-08-07)
+
+##### Code Style Changes
+
+* **Blockquote:**  adding fontsize for blockquote testimony & author ([7a36ffd6](https://github.com/glints-dev/glints-aries/commit/7a36ffd6ca3449fd543f4729ad9e2f5b634581c1))
+
 #### 0.0.42 (2018-08-07)
 
 #### 0.0.41 (2018-08-03)
