@@ -41,8 +41,6 @@ class Dropdown extends Component <Props, State> {
         onClick={this.handleOpen}
         onBlur={this.handleClickOutside}
         tabIndex="0"
-
-        id="D-container"
       >
         <DropdownLabelWrapper className={className}>
           <DropdownLabel>
