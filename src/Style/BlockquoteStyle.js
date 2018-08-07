@@ -95,7 +95,7 @@ export const BlockquoteContainer = styled.div`
 `;
 
 export const Paragraph = styled.div`
-  padding: 2em 2em 2em 8em;
+  padding: 2.86em 2.86em 3.57em 8em;
   line-height: 1.8;
   
   @media ${Device.mobileL} {
