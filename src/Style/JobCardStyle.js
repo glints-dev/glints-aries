@@ -32,24 +32,46 @@ export const JobCardContainer = styled.div`
   }
 `;
 
-export const Header = styled.header`
-  position: relative;
-  background-image: url(${props => props.FeaturedImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 12em;
+export const HeaderContainer = styled.div`
+  display: flex;
+  padding: ${props => props.paddingSize};
+`;
+
+export const HeaderImage = styled.div`
+  padding: .2em;
+  border: 1px solid #C6C6C6;
+
+  img {
+    object-fit: contain;
+  }
+`;
+
+export const HeaderContent = styled.div`
+  padding-left: 1.2em;
 
   label {
-    position: absolute;
-    bottom: 0;
-    left: 1.4em;
     background: ${PrimaryColor.glintsblue};
     color: ${SecondaryColor.white};
     text-transform: uppercase;
+    padding: .2em .6em;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: .5em;
+  }
+
+  h3 {
     font-weight: 600;
-    padding: .2em 1em;
+  }
+
+  a {
+    color: ${SecondaryColor.blue};
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: none;
+      opacity: .75;
+    }
   }
 `;
 
@@ -59,55 +81,31 @@ export const Body = styled.div`
   padding-right: 1.4em;
   padding-bottom: 1.4em;
   padding-left: 1.4em;
-`;
 
-export const CompanyWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 25% 75%;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid ${SecondaryColor.lightgrey};
-`;
-
-export const CompanyImageWrapper = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 4em;
-  height: 4em;
-  border: 1px solid ${SecondaryColor.lightgrey};
-  padding: .2em;
-
-  img {
+  &:before {
+    content: '';
+    background: ${SecondaryColor.lightgrey};
     width: 100%;
-  }
-`;
-
-export const Company = styled.div`
-  position: relative;
-
-  label {
+    height: 1px;
     display: flex;
-    font-weight: bold;
-  }
-
-  span {
-    color: ${PrimaryColor.glintsblue};
   }
 `;
 
-export const JobDetail = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: .4em;
+export const JobDetail = styled.div`  
   padding-top: 1.5em;
 
-  label {
-    display: flex;
-    align-items: center;
-    img {
-      height: 14px;
-      width: 14px;
-      margin-right: .6em;
+  ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: .4em;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: .5em;
+      }
     }
   }
 `;

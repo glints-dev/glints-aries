@@ -2,11 +2,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ItemWrapper, ItemImgWrapper, ItemContent } from '../Style/ItemStyle';
+import Label from '../Label';
+import { HeaderContainer, HeaderImage, HeaderContent } from '../Style/JobCardStyle';
 
-const Item = (props: Props) => {
+const JobCardHeader = (props: Props) => {
   const {
     title,
+    tag,
     url,
     imgUrl,
     isExternal,
@@ -18,14 +20,22 @@ const Item = (props: Props) => {
   } = props;
 
   return (
-    <ItemWrapper className={className} paddingSize={paddingSize} {...defaultProps}>
-      <ItemImgWrapper>
+    <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
+      <HeaderImage>
         <img src={imgUrl} alt="" width="64" height="64" />
-      </ItemImgWrapper>
-      <ItemContent>
-        <h4>
+      </HeaderImage>
+      <HeaderContent>
+        {tag
+          && (
+            <Label>
+              {tag}
+            </Label>
+          )
+        }
+
+        <h3>
           {title}
-        </h4>
+        </h3>
         {!isReactRouter
           && (
             <a href={url} target={isExternal ? '_blank' : '_self'} rel="noopener noreferrer">
@@ -41,24 +51,14 @@ const Item = (props: Props) => {
             </Link>
           )
         }
-      </ItemContent>
-    </ItemWrapper>
+      </HeaderContent>
+    </HeaderContainer>
   );
 };
 
-Item.defaultProps = {
-  imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png',
-  isExternal: false,
-  isReactRouter: false,
-  subtitle: 'subtitle',
-  title: 'default',
-  paddingSize: '0',
-  url: '/',
-};
-
-// Typecheck goes here
 type Props = {
   title: string,
+  tag: string,
   subtitle: string,
   imgUrl: string,
   isExternal: boolean,
@@ -68,4 +68,4 @@ type Props = {
   className: string,
 };
 
-export default Item;
+export default JobCardHeader;

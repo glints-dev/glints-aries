@@ -131,6 +131,16 @@ const IconStory = () => (
             </p>
           </td>
           <td style={{ padding: 20 }}>
+            <Icon name="dot" color="black" size="25" />
+            <p>
+              <code>
+                dot
+              </code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style={{ padding: 20 }}>
             <Icon name="edit" color="black" size="25" />
             <p>
               <code>
@@ -138,8 +148,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="exclamation" color="black" size="25" />
             <p>
@@ -180,6 +188,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="instagram" color="black" size="25" />
             <p>
@@ -188,8 +198,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="linkedin" color="black" size="25" />
             <p>
@@ -230,6 +238,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="more" color="black" size="25" />
             <p>
@@ -238,8 +248,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="notification" color="black" size="25" />
             <p>
@@ -280,6 +288,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="quotation" color="black" size="25" />
             <p>
@@ -288,8 +298,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="whatsapp" color="black" size="25" />
             <p>
@@ -298,7 +306,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td></td>
           <td></td>
           <td></td>
           <td></td>

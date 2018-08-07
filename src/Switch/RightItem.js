@@ -5,7 +5,13 @@ import { RadioButton } from '../RadioButton';
 import { RightItemWrapper } from '../Style/SwitchStyle';
 
 const RightItem = (props: Props) => {
-  const { id, label, name, value, onClick } = props;
+  const {
+    id,
+    label,
+    name,
+    value,
+    onClick,
+  } = props;
 
   return (
     <RightItemWrapper>
@@ -14,7 +20,7 @@ const RightItem = (props: Props) => {
         label={label}
         name={name}
         value={value}
-        onChange={onClick}
+        onClick={onClick}
       />
     </RightItemWrapper>
   );

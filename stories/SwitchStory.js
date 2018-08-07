@@ -72,7 +72,7 @@ const SwitchStory = () => (
             label
           </td>
           <td>
-            string
+            array
           </td>
           <td>
             any
@@ -80,16 +80,14 @@ const SwitchStory = () => (
           <td>
             yes
           </td>
-          <td>
-            the value is an array to give value into left and right item.
-          </td>
+          <td></td>
         </tr>
         <tr>
           <td>
             name
           </td>
           <td>
-            string
+            array
           </td>
           <td>
             any
@@ -97,16 +95,14 @@ const SwitchStory = () => (
           <td>
             yes
           </td>
-          <td>
-            the value is an array to give value into left and right item.
-          </td>
+          <td></td>
         </tr>
         <tr>
           <td>
             value
           </td>
           <td>
-            string
+            array
           </td>
           <td>
             any
@@ -114,9 +110,7 @@ const SwitchStory = () => (
           <td>
             yes
           </td>
-          <td>
-            the value is an array to give value into left and right item.
-          </td>
+          <td></td>
         </tr>
         <tr>
           <td>

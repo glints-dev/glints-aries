@@ -12,7 +12,6 @@ export { default as Dropdown } from './Dropdown';
 export { default as Heading } from './Heading';
 export { default as Information } from './Information';
 export { default as Icon } from './Icon';
-export { default as Item } from './Item';
 export { default as JobCard } from './JobCard';
 export { default as Label } from './Label';
 export { default as Loading } from './Loading';

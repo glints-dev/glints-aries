@@ -25,7 +25,6 @@ import GlintsContainerStory from './GlintsContainerStory';
 import HeadingStory from './HeadingStory';
 import IconStory from './IconStory';
 import InformationStory from './InformationStory';
-import ItemStory from './ItemStory';
 import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
@@ -74,7 +73,6 @@ storiesOf('Components', module)
   .add('Heading', () => <HeadingStory />)
   .add('Icon', () => <IconStory />)
   .add('Information', () => <InformationStory />)
-  .add('Item', () => <ItemStory />)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
