@@ -1,3 +1,9 @@
+#### 0.1.4 (2018-08-08)
+
+##### Bug Fixes
+
+* **component:**  fix slider component next/previous icon ([3c0ea055](https://github.com/glints-dev/glints-aries/commit/3c0ea055e22503a6860ed39801fae0bf03da688b))
+
 #### 0.1.3 (2018-08-08)
 
 #### 0.1.2 (2018-08-08)
