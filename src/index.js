@@ -3,7 +3,6 @@
 // @create-index
 // keep in alphabetical order
 export { default as Accordion } from './Accordion';
-export { default as Banner } from './Banner';
 export { default as Blockquote } from './Blockquote';
 export { default as Brand } from './Brand';
 export { default as Button } from './Button';
@@ -16,6 +15,7 @@ export { default as JobCard } from './JobCard';
 export { default as Label } from './Label';
 export { default as Loading } from './Loading';
 export { default as MobileMenu } from './MobileMenu';
+export { default as OmniSearch } from './OmniSearch';
 export { default as PointingModal } from './PointingModal';
 export { default as Popover } from './Popover';
 export { default as ProfilePictureShadow } from './ProfilePictureShadow';

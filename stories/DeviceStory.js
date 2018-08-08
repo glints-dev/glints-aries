@@ -30,58 +30,58 @@ const DeviceStory = () => (
       <tbody>
         <tr>
           <td>
-                Desktop
+            Desktop Large
           </td>
           <td>
-                2560px
-          </td>
-          <td>
-            <code>
-              {'@media'}
-              {' '}
-              &#x00024;
-              {'{Device.desktop} {...}'}
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                Laptop Large
-          </td>
-          <td>
-                1440px
+            1440px
           </td>
           <td>
             <code>
               {'@media'}
               {' '}
               &#x00024;
-              {'{Device.laptopL} {...}'}
+              {'{Device.desktopL} {...}'}
             </code>
           </td>
         </tr>
         <tr>
           <td>
-                Laptop
+            Desktop Medium
           </td>
           <td>
-                1024px
+            1260px
           </td>
           <td>
             <code>
               {'@media'}
               {' '}
               &#x00024;
-              {'{Device.laptop} {...}'}
+              {'{Device.desktopM} {...}'}
             </code>
           </td>
         </tr>
         <tr>
           <td>
-                Tablet
+            Desktop Small
           </td>
           <td>
-                768px
+            1024px
+          </td>
+          <td>
+            <code>
+              {'@media'}
+              {' '}
+              &#x00024;
+              {'{Device.desktopS} {...}'}
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Tablet
+          </td>
+          <td>
+            768px
           </td>
           <td>
             <code>
@@ -94,10 +94,10 @@ const DeviceStory = () => (
         </tr>
         <tr>
           <td>
-                Mobile Large
+            Mobile Large
           </td>
           <td>
-                425px
+            640px
           </td>
           <td>
             <code>
@@ -110,10 +110,10 @@ const DeviceStory = () => (
         </tr>
         <tr>
           <td>
-                Mobile Medium
+            Mobile Medium
           </td>
           <td>
-                375px
+            480px
           </td>
           <td>
             <code>
@@ -126,10 +126,10 @@ const DeviceStory = () => (
         </tr>
         <tr>
           <td>
-                Mobile Small
+            Mobile Small
           </td>
           <td>
-                320px
+            320px
           </td>
           <td>
             <code>

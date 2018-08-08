@@ -43,12 +43,12 @@ export const Thickness = {
 
 const size = {
   mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
+  mobileM: '480px',
+  mobileL: '640px',
   tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
+  desktopS: '1024px',
+  desktopM: '1260px',
+  desktopL: '1440px',
 };
 
 export const Device = {
@@ -56,7 +56,7 @@ export const Device = {
   mobileM: `(max-width: ${size.mobileM})`,
   mobileL: `(max-width: ${size.mobileL})`,
   tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
+  desktopS: `(max-width: ${size.desktopS})`,
+  desktopM: `(max-width: ${size.desktopM})`,
+  desktopL: `(max-width: ${size.desktopL})`,
 };

@@ -39,7 +39,7 @@ export const ProfileWrapper = styled.div`
     transform: translate(-25%, -50%);
 
 
-	@media ${Device.mobileL} {
+	@media ${Device.mobileM} {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -54,7 +54,7 @@ export const BlockquoteContainer = styled.div`
     color: ${SecondaryColor.black};
 	transition: all .2s;
 
-	@media ${Device.mobileL} {
+	@media ${Device.mobileM} {
 		flex-direction: column;
 		text-align: center;
 	}
@@ -83,7 +83,7 @@ export const BlockquoteContainer = styled.div`
 		height: 3em;
 		width: 3em;
 		
-		@media ${Device.mobileL} {
+		@media ${Device.mobileM} {
 			display: inline-flex;
 			align-self: center;
 			position: relative;
@@ -97,7 +97,7 @@ export const Paragraph = styled.div`
     padding: 2em 2em 2em 8em;
 	line-height: 1.8;
 
-	@media ${Device.mobileL} {
+	@media ${Device.mobileM} {
 		padding: 2.5em 2em 2.5em 2em;
 	}
 `;

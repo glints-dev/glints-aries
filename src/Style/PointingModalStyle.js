@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './Colors';
+import { SecondaryColor } from './Colors';
 
 const padding = '1em 1.5em';
 

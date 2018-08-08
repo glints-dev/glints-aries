@@ -13,7 +13,6 @@ import GlintsContainer from '../src/Style/GlintsContainer';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
-import BannerStory from './BannerStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
@@ -29,6 +28,7 @@ import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
+import OmniSearchStory from './OmniSearchStory';
 import PointingModalStory from './PointingModalStory';
 import PopoverStory from './PopoverStory';
 import ProfilePictureStory from './ProfilePictureStory';
@@ -63,7 +63,6 @@ storiesOf('Components', module)
     );
   })
   .add('Accordion', () => <AccordionStory />)
-  .add('Banner', () => <BannerStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
@@ -75,6 +74,7 @@ storiesOf('Components', module)
   .add('Information', () => <InformationStory />)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
+  .add('Omni Search', () => <OmniSearchStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)

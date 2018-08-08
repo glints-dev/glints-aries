@@ -81,6 +81,16 @@ const IconStory = () => (
             </p>
           </td>
           <td style={{ padding: 20 }}>
+            <Icon name="arrow-round-forward" color="black" size="25" />
+            <p>
+              <code>
+                arrow-round-forward
+              </code>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style={{ padding: 20 }}>
             <Icon name="bookmark" color="black" size="25" />
             <p>
               <code>
@@ -88,8 +98,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="camera" color="black" size="25" />
             <p>
@@ -130,6 +138,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="dot" color="black" size="25" />
             <p>
@@ -138,8 +148,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="edit" color="black" size="25" />
             <p>
@@ -180,6 +188,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="job-search" color="black" size="25" />
             <p>
@@ -188,8 +198,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="instagram" color="black" size="25" />
             <p>
@@ -203,6 +211,14 @@ const IconStory = () => (
             <p>
               <code>
                 linkedin
+              </code>
+            </p>
+          </td>
+          <td style={{ padding: 20 }}>
+            <Icon name="location" color="black" size="25" />
+            <p>
+              <code>
+                location
               </code>
             </p>
           </td>
@@ -222,6 +238,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="menu" color="black" size="25" />
             <p>
@@ -238,8 +256,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="more" color="black" size="25" />
             <p>
@@ -272,6 +288,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="twitter" color="black" size="25" />
             <p>
@@ -288,8 +306,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="quotation" color="black" size="25" />
             <p>
@@ -306,8 +322,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td></td>
-          <td></td>
           <td></td>
           <td></td>
         </tr>
