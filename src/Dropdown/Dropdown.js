@@ -53,7 +53,7 @@ class Dropdown extends Component <Props, State> {
         {isOpen
             && (
               <Fragment>
-                {children}
+                { children }
               </Fragment>
             )
         }
