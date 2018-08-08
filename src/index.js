@@ -30,6 +30,6 @@ export { default as TextField } from './TextField';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Utilities
-export { default as Device } from './Utils/StyleConfig';
+export { Device } from './Utils/StyleConfig';
 export { default as GlintsContainer } from './Style/GlintsContainer';
-export { default as PrimaryColor, SecondaryColor } from './Style/Colors';
+export { PrimaryColor, SecondaryColor } from './Style/Colors';
