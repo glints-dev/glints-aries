@@ -17,7 +17,7 @@ export const OmniSearchBar = styled.div`
 
     input { 
         margin: 0;
-        padding: 1em 7em 1em 1em;
+        padding: 1.8rem 17rem 1.8rem 3rem;
         background: ${SecondaryColor.white};
         border: 5px solid ${SecondaryColor.lightgrey};
         font-size: 22px;
@@ -25,7 +25,6 @@ export const OmniSearchBar = styled.div`
         width: 100%;
         
         @media ${Device.mobileL} {
-            margin-bottom: 1em;
             padding: 1em;
         }
 
@@ -36,11 +35,12 @@ export const OmniSearchBar = styled.div`
 
     button {
         position: absolute;
-        right: 2em;
-        padding: 1em 2em;
+        right: 1rem;
+        padding: 1.4rem 3rem;
+        font-size: 22px;
 
         @media ${Device.mobileL} {
-            position: relative;
+            top: 11rem;
             right: 0;
             width: 100%;
         }
@@ -52,11 +52,16 @@ export const OmniSearchBar = styled.div`
 `;
 
 export const OmniSearchItemContainer = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 2.14em 2.14em 2.86em 2.14em;
     background: ${SecondaryColor.white};
     border: 1px solid ${SecondaryColor.lightgrey};
+    @media ${Device.mobileL} {
+        grid-template-columns: auto;
+        grid-gap: 2em;
+    }
 `;
 
 export const OmniSearchItemWrapper = styled.div`
@@ -69,20 +74,29 @@ export const OmniSearchItemWrapper = styled.div`
         letter-spacing: .3px;
     }
 
-    li {
-        display: flex;
-        align-items: center;
-        margin-bottom: .6em;
+    ul {
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: .6em;
 
-        &:first-child {
-            margin-top: .5em;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+            &:first-child {
+                margin-top: .5em;
+            }
 
-        svg {
-            margin-right: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            svg,
+            img {
+                margin-right: 1em;
+            }
+
+            img {
+                object-fit: cover;
+                border-radius: 50%;
+            }
         }
     }
 `;
