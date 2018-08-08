@@ -8,7 +8,7 @@ import { Icon } from '../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
-    isOpen: true,
+    isOpen: false,
   };
 
   handleOpen = () => {
@@ -19,10 +19,6 @@ class Dropdown extends Component <Props, State> {
   handleClickOutside = () => {
     this.setState({ isOpen: false });
   };
-
-  componentDidMount() {
-    this.handleOpen();
-  }
 
   render() {
     const {

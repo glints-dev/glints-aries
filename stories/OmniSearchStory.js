@@ -32,6 +32,7 @@ const OmniSearchStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <OmniSearch
+              label="Find Internships, Locations, and Companies"
               content={(
                 <Button theme="blue">
                   Go!
@@ -107,6 +108,7 @@ const OmniSearchStory = () => (
           <td>
             <pre>
               {`<OmniSearch
+  label="Find Internships, Locations, and Companies"
   content={(
     <Button theme="blue">
       Go! 
@@ -183,6 +185,23 @@ const OmniSearchStory = () => (
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            label
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            {'Sets placeholder'}
+          </td>
+        </tr>
         <tr>
           <td>
             Any Event Handlers

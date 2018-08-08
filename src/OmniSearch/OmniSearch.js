@@ -16,6 +16,7 @@ class OmniSearch extends Component <Props, State> {
 
   render() {
     const {
+      label,
       children,
       className,
       content,
@@ -28,7 +29,7 @@ class OmniSearch extends Component <Props, State> {
         <OmniSearchBar>
           <input
             type="text"
-            placeholder="Cari judul magang, lokasi, atau perusahaan"
+            placeholder={label}
             onFocus={this.handleOpen}
             onBlur={this.handleOpen}
             {...defaultProps}
@@ -46,6 +47,7 @@ class OmniSearch extends Component <Props, State> {
 }
 
 type Props = {
+  label: string,
   children: React$Node,
   content: React$Node,
   className: string,
