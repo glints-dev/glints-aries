@@ -17,14 +17,11 @@ const OmniSearchStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
+    <table className="doc-table" style={{ width: '100%', marginBottom: '6em' }}>
       <thead>
         <tr>
-          <th colSpan="0">
-              Preview
-          </th>
           <th>
-            Usage
+              Preview
           </th>
         </tr>
       </thead>
@@ -105,18 +102,27 @@ const OmniSearchStory = () => (
               </OmniSearch.Body>
             </OmniSearch>
           </td>
-          <td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Usage
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style={{ padding: 20 }}>
             <pre>
               {`<OmniSearch
   label="Find Internships, Locations, and Companies"
   content={(
-    <Button theme="blue">
-      Go! 
-      <Icon 
-        name="arrow-round-forward" 
-        color="white" 
-        size="16"
-      />
+    <Button theme="blue">Go! 
+      <Icon name="arrow-round-forward" color="white" size="16" />
     </Button>
 )}>
   <OmniSearch.Body>
@@ -130,11 +136,7 @@ const OmniSearchStory = () => (
       <label>Lokasi Populer</label>
       <ul>
         <li>
-          <Icon 
-            name="location" 
-            color="#AAAAAA" 
-            size="14"
-          />
+          <Icon name="location" color="#AAAAAA" size="14"/>
           Lowongan Pekerjaan di Jakarta
         </li>
       </ul>
@@ -143,12 +145,7 @@ const OmniSearchStory = () => (
       <label>Perusahaan Populer</label>
       <ul>
         <li>
-          <img 
-            src="..." 
-            width="40" 
-            height="40" 
-            alt="gojek" 
-          />
+          <img src="..." width="40" height="40" alt="gojek" />
           Gojek
         </li>
       </ul>

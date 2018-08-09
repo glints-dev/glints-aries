@@ -79,6 +79,7 @@ export const OmniSearchItemWrapper = styled.div`
             display: flex;
             align-items: center;
             margin-bottom: .6em;
+            cursor: pointer;
 
             &:first-child {
                 margin-top: .5em;
