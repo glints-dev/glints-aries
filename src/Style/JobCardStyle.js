@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
-import './GlobalStyle';
 
 /*
  * Job Card
@@ -34,7 +33,7 @@ export const JobCardContainer = styled.div`
 
 export const HeaderContainer = styled.div`
   display: flex;
-  padding: ${props => props.paddingSize};
+  padding: ${({ paddingSize }) => paddingSize};
 `;
 
 export const HeaderImage = styled.div`

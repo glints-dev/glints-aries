@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
-import './GlobalStyle';
 
 // Assets
 import checkmark from '../../assets/image/checkmark-green.png';
@@ -20,7 +19,7 @@ export const TextFieldLabel = styled.label`
   position: absolute;
   left: 1em;
   background: ${SecondaryColor.white};
-  color: ${props => props.floating ? `${SecondaryColor.black}` : `${SecondaryColor.grey}`};
+  color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.grey}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;

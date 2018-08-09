@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
-import { Theme, Size } from '../Utils/StyleConfig';
-import './GlobalStyle';
+import { Theme } from '../Utils/StyleConfig';
 
 const Button = styled.button`
   display: flex;
@@ -78,17 +77,17 @@ export const PrimaryContainer = styled.div`
     transition: all .2s;
 
     ${(props) => {
-      switch (props.theme) {
-        case `${Theme.BLUE_RED}`:
-          return `
-            background-color: ${PrimaryColor.glintsred};
-          `;
-        default:
-          return `
-            background-color: ${PrimaryColor.glintsyellow};
-          `;
-      }
-    }}
+    switch (props.theme) {
+      case `${Theme.BLUE_RED}`:
+        return `
+          background-color: ${PrimaryColor.glintsred};
+        `;
+      default:
+        return `
+          background-color: ${PrimaryColor.glintsyellow};
+        `;
+    }
+  }}
   }
 
   &:hover:after {
@@ -251,7 +250,7 @@ export const GhostBtn = Button.extend`
           color: ${SecondaryColor.white};
         `;
       default:
-        null;
+        return null;
     }
   }}
 
@@ -281,7 +280,7 @@ export const GhostBtn = Button.extend`
             color: ${PrimaryColor.glintsblue};
           `;
       default:
-        null;
+        return null;
     }
   }}
   }

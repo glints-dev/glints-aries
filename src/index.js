@@ -1,5 +1,8 @@
 // @flow
 
+// Declaring Global Style
+import './Style/GlobalStyle.css';
+
 // @create-index
 // keep in alphabetical order
 export { default as Accordion } from './Accordion';
@@ -31,5 +34,4 @@ export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Utilities
 export { Device } from './Utils/StyleConfig';
-export { default as GlintsContainer } from './Style/GlintsContainer';
 export { PrimaryColor, SecondaryColor } from './Style/Colors';

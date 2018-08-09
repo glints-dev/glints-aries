@@ -5,7 +5,7 @@ export const RadioLabel = styled.span`
   display: inline-flex; 
   position: relative;
   padding-left: 1.8em;
-  color: ${props => props.theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+  color: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
 
   &:before {
     content: '';
@@ -16,15 +16,15 @@ export const RadioLabel = styled.span`
     border-radius: 50%;
     width: 18px;
     height: 18px;
-    border: ${props => props.theme === 'white' ? `1px solid ${SecondaryColor.white}` : `1px solid ${SecondaryColor.lightgrey}`};
-    background: ${props => props.theme === 'white' ? 'transparent' : `${SecondaryColor.white}`};
+    border: ${({ theme }) => theme === 'white' ? `1px solid ${SecondaryColor.white}` : `1px solid ${SecondaryColor.lightgrey}`};
+    background: ${({ theme }) => theme === 'white' ? 'transparent' : `${SecondaryColor.white}`};
   }
   &:after {
     content: '';
     display: block; 
     width: 12px;
     height: 12px;
-    background: ${props => props.theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+    background: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
     position: absolute;
     border-radius: 50%;
     top: 3px;

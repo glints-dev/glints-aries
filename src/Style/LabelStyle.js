@@ -31,7 +31,7 @@ const LabelStyleHandler = (props: HandlerProps) => {
       break;
   }
 
-  switch(props.size) {
+  switch (props.size) {
     case 'xlarge':
       styles.fontSize = '2.5em';
       break;
@@ -48,7 +48,7 @@ const LabelStyleHandler = (props: HandlerProps) => {
       styles.fontSize = '1em';
   }
 
-  switch(props.block) {
+  switch (props.block) {
     case true:
       styles.display = 'block';
       break;
@@ -57,5 +57,4 @@ const LabelStyleHandler = (props: HandlerProps) => {
   }
 
   return styles;
-}
-
+};

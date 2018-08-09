@@ -1,42 +1,41 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './Colors';
 
 const arrow = css`
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 `;
 
 export const SliderContainer = styled.div`
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const SliderWrapperStyle = styled.div`
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 `;
 
 export const SliderItemStyle = styled.div`
-    display: inline-flex;
-    flex: 0 0 auto;
-    justify-content: center;
-    width: 100%;
-    white-space: normal;
-    padding: 2em 4em;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  width: 100%;
+  white-space: normal;
+  padding: 2em 4em;
 `;
 
 export const LeftArrowContainer = styled.div`
-    ${arrow};
-    left: 0;
-    cursor: ${({ index }) => index === 1 ? 'not-allowed' : 'pointer'};
+  ${arrow};
+  left: 0;
+  cursor: ${({ index }) => index === 1 ? 'not-allowed' : 'pointer'};
 `;
 
 export const RightArrowContainer = styled.div`
-    ${arrow};
-    right: 0;
-    cursor: ${({ index, limit }) => index === limit ? 'not-allowed' : 'pointer'};
+  ${arrow};
+  right: 0;
+  cursor: ${({ index, limit }) => index === limit ? 'not-allowed' : 'pointer'};
 `;

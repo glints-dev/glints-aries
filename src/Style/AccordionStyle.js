@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
-import './GlobalStyle';
 
 const animateItem = keyframes`
   from {
@@ -25,8 +24,8 @@ export const AccordionHeaderWrapper = styled.div`
   align-items: center;
   font-size: 22px;
   font-weight: 600;
-  color: ${props => props.isOpen ? `${SecondaryColor.white}` : `${SecondaryColor.blue}`};
-  background-color: ${props => props.isOpen ? `${SecondaryColor.blue}` : null};
+  color: ${({ isOpen }) => isOpen ? `${SecondaryColor.white}` : `${SecondaryColor.blue}`};
+  background-color: ${({ isOpen }) => isOpen ? `${SecondaryColor.blue}` : null};
   padding: 1.8rem 1.5rem;
 
   &:hover {
