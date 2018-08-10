@@ -14,6 +14,10 @@ const ContainerStory = () => (
       </p>
     </div>
 
+    <Container>
+      Test
+    </Container>
+
     <table className="doc-table">
       <thead>
         <tr>
@@ -161,7 +165,7 @@ const ContainerStory = () => (
       <tbody>
         <tr>
           <td>
-            {'To achieve this size, you should always wrap your container with <Container />'}
+            {'To achieve this size, you should always wrap your container inside <Container />'}
           </td>
         </tr>
       </tbody>
