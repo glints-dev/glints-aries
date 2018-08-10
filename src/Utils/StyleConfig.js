@@ -41,7 +41,7 @@ export const Thickness = {
  * @media ${Device.mobileL} { ... }
  */
 
-const size = {
+export const size = {
   mobileS: '320px',
   mobileM: '480px',
   mobileL: '640px',

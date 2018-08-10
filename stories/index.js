@@ -16,6 +16,7 @@ import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
 import ColorStory from './ColorStory';
+import ContainerStory from './ContainerStory';
 import DeviceStory from './DeviceStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
@@ -98,4 +99,5 @@ storiesOf('Utilities', module)
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)
+  .add('Container', () => <ContainerStory />)
   .add('Devices Size', () => <DeviceStory />);
