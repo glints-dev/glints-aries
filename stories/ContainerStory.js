@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../src/Container';
 
 const ContainerStory = () => (
   <div className="doc-mainbar">
@@ -13,10 +12,6 @@ const ContainerStory = () => (
         </code>
       </p>
     </div>
-
-    <Container>
-      Test
-    </Container>
 
     <table className="doc-table">
       <thead>
