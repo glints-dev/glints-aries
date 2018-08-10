@@ -97,34 +97,6 @@ const ContainerStory = () => (
             1400px
           </td>
         </tr>
-        <tr>
-          <td>
-            <th>
-              Gutter width
-            </th>
-          </td>
-          <td>
-              10px
-          </td>
-          <td>
-              20px
-          </td>
-          <td>
-              20px
-          </td>
-          <td>
-              24px
-          </td>
-          <td>
-              32px
-          </td>
-          <td>
-              30px
-          </td>
-          <td>
-              20px
-          </td>
-        </tr>
       </tbody>
     </table>
 
@@ -160,7 +132,7 @@ const ContainerStory = () => (
       <tbody>
         <tr>
           <td>
-            {'To achieve this size, you should always wrap your container inside <Container />'}
+            {'To achieve this size always wraps your container inside <Container />'}
           </td>
         </tr>
       </tbody>
