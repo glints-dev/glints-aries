@@ -1,3 +1,9 @@
+#### 0.1.12 (2018-08-11)
+
+##### Code Style Changes
+
+* **Dropdown:**  adjust dropdown text size ([3ab89059](https://github.com/glints-dev/glints-aries/commit/3ab8905997b8538702892450c23e4a3f4064e228))
+
 #### 0.1.11 (2018-08-10)
 
 #### 0.1.10 (2018-08-10)

@@ -28,7 +28,7 @@ const DropdownStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Dropdown title="This Career" size="medium">
+            <Dropdown title="This Career" size="large">
               <Dropdown.Body>
                 <Dropdown.Item>
                   Accounting
