@@ -72,7 +72,7 @@ export const DropdownContainer = styled.div`
     : props.size === `${Size.MEDIUM}`
     ? '16px'
     : props.size === `${Size.LARGE}`
-    ? '20px'
+    ? '22px'
     : '14px'};
   }
 
