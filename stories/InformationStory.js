@@ -10,7 +10,7 @@ const InformationStory = () => (
       </h1>
       <p>
         <code>
-          {'import { Information } from \'glints-aries\''}
+          {'import { Information, Divider } from \'glints-aries\''}
         </code>
       </p>
     </div>
