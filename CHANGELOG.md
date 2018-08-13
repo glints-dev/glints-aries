@@ -1,3 +1,20 @@
+#### 0.1.14 (2018-08-13)
+
+##### Documentation Changes
+
+* **component:**  update import docs for Information component ([b15a018f](https://github.com/glints-dev/glints-aries/commit/b15a018fcf8590c8b0b89ffe17d6f48e7a860277))
+
+##### Bug Fixes
+
+* **component:**  fix unnecessary spaces (eslint) ([bcdd785f](https://github.com/glints-dev/glints-aries/commit/bcdd785f8511e4bd1bfc0e51a02d3a14c3176536))
+
+##### Code Style Changes
+
+* **component:**
+  *  adjust margin for Information component ([0677fe24](https://github.com/glints-dev/glints-aries/commit/0677fe2425e5d52c55c89cf7e507514a46596690))
+  *  adjust information divider ([451962cc](https://github.com/glints-dev/glints-aries/commit/451962ccd7a273c30c92e5cf019d722010769e62))
+  *  adding darkgrey on secondary color ([3229d823](https://github.com/glints-dev/glints-aries/commit/3229d8234a56e03960cdfb0abe8f4df1f08d1b6f))
+
 #### 0.1.13 (2018-08-13)
 
 #### 0.1.12 (2018-08-11)
