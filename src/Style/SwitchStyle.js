@@ -26,7 +26,7 @@ export const SwitchContainer = styled.div`
     position: absolute;
     left: 0;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-    transform: ${({ ID }) => ID === 'item-1' ? 'translateX(0)' : 'translateX(150px)'};
+    transform: ${({ ID, value, defaultValue }) => ID && value[0] === defaultValue ? 'translateX(0)' : 'translateX(150px)'};
     transition: transform .2s ease-out;
   }
 `;

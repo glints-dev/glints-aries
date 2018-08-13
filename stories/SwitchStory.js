@@ -28,7 +28,7 @@ const SwitchStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Switch label={['Full Time', 'Internship']} name={['job-type', 'job-type']} value={['full-time', 'intership']} />
+            <Switch label={['Full Time', 'Internship']} name={['job-type', 'job-type']} value={['full-time', 'internship']} defaultValue="full-time" />
           </td>
           <td>
             <pre>
@@ -36,6 +36,7 @@ const SwitchStory = () => (
   label={['Full Time', 'Internship']} 
   name={['job-type', 'job-type']}
   value={['full-time', 'internship']} 
+  defaultValue="full-time"
   />`}
             </pre>
           </td>
@@ -111,6 +112,23 @@ const SwitchStory = () => (
             yes
           </td>
           <td></td>
+        </tr>
+        <tr>
+          <td>
+            defaultValue
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            To set initial value of Switch
+          </td>
         </tr>
         <tr>
           <td>
