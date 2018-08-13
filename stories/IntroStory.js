@@ -39,24 +39,34 @@ const IntroStory = () => (
       </div>
       <div>
         <p>
-          We are using a container to wrap our global style, so
+          {'Before you start using the components, it\'s better to always wrap your root component with'}
+          {' '}
+          {'<Container/>'}
+          .
+          <br />
+          {' '}
+          We created that Container to adapt with every screen sizes, so Users will always have best experience whenever they visit your site from their devices.
+          <br />
+          {' '}
+          For more details, you can read this at
+          {' '}
           <b>
-          Glints Aries
+          Utilities
+          </b>
+          , then
+          {' '}
+          <b>
+          Container
           </b>
           {' '}
-          {'won\'t replace your existing styles.'}
-        </p>
-        <p>
-          {'Before you start using our component, it\'s better to wrap your root component with'}
-          {'<GlintsContainer/>'}
-          .
+          section.
         </p>
         <pre style={{ display: 'inline-flex' }}>
-          {`import { GlintsContainer } from 'glints-aries'
+          {`import { Container } from 'glints-aries'
 
-<GlintsContainer>
+<Container>
   <YourRootComponent />
-</GlintsContainer>`}
+</Container>`}
         </pre>
       </div>
     </div>
