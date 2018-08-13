@@ -4,8 +4,8 @@ import React from 'react';
 import { InformationContainer } from '../Style/InformationStyle';
 
 const Information = (props: Props) => {
-  const { 
-    children, 
+  const {
+    children,
     className,
     ...defaultProps
   } = props;
