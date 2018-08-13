@@ -30,5 +30,5 @@ export const DividerWrapper = styled.div`
       : props.thickness === `${Thickness.THIN}`
         ? '1px'
         : '2px'};
-    margin: .6em 0;
+    margin: 15px 0;
 `;
