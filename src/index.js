@@ -34,4 +34,5 @@ export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Utilities
 export { Device } from './Utils/StyleConfig';
+export { Container } from './Container';
 export { PrimaryColor, SecondaryColor } from './Style/Colors';
