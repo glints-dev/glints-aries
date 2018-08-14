@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StorybookStyle = styled.div`
+const GlintsContainer = styled.div`
     *,
     *:before,
     *:after {
@@ -37,4 +37,4 @@ const StorybookStyle = styled.div`
     }
 `;
 
-export default StorybookStyle;
+export default GlintsContainer;

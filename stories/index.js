@@ -9,7 +9,7 @@ import { withViewport } from '@storybook/addon-viewport';
 import Provider from './Provider';
 
 import { Button } from '../src/Button';
-import StorybookStyle from '../src/Style/StorybookStyle';
+import GlintsContainer from '../src/Style/GlintsContainer';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
@@ -22,6 +22,7 @@ import ContainerStory from './ContainerStory';
 import DeviceStory from './DeviceStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
+import GlintsContainerStory from './GlintsContainerStory';
 import HeadingStory from './HeadingStory';
 import IconStory from './IconStory';
 import InformationStory from './InformationStory';
@@ -46,9 +47,9 @@ import TextFieldStory from './TextFieldStory';
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
+      <GlintsContainer>
         {React.createElement(story)}
-      </StorybookStyle>
+      </GlintsContainer>
     </Provider>
   ))
   .addDecorator(withKnobs)
@@ -93,9 +94,9 @@ storiesOf('Components', module)
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
+      <GlintsContainer>
         {React.createElement(story)}
-      </StorybookStyle>
+      </GlintsContainer>
     </Provider>
   ))
   .add('Menu', () => <MobileMenuStory />)
@@ -104,11 +105,12 @@ storiesOf('Mobile Components', module)
 storiesOf('Utilities', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
+      <GlintsContainer>
         {React.createElement(story)}
-      </StorybookStyle>
+      </GlintsContainer>
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)
   .add('Container', () => <ContainerStory />)
-  .add('Devices Size', () => <DeviceStory />);
+  .add('Devices Size', () => <DeviceStory />)
+  .add('Glints Container', () => <GlintsContainerStory />);

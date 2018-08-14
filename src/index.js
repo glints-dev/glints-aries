@@ -1,6 +1,5 @@
 // @flow
 
-// Declaring Global Style
 import './Style/GlobalStyle.css';
 
 // @create-index
@@ -38,3 +37,4 @@ export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 export { Device } from './Utils/StyleConfig';
 export { Container } from './Container';
 export { PrimaryColor, SecondaryColor } from './Style/Colors';
+export { default as GlintsContainer } from './Style/GlintsContainer';
