@@ -111,15 +111,33 @@ export const JobDetail = styled.div`
 
 export const JobDescription = styled.div`
   margin-top: 2em;
-  > p {
+  color: ${SecondaryColor.lightblack};
+  font-weight: 100;
+
+  p {
     font-size: 14px;
     line-height: 1.6;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-top: .5em;
+
+    svg {
+      margin-right: .5em;
+    }
+  }
 `;
 
 export const Footer = styled.footer`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 2fr;
+
+  > *:nth-child(2) {
+    margin-right: ${({ totalItems }) => totalItems === 3 && '6em'};
+  }
+  
 `;

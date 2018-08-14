@@ -17,94 +17,81 @@ const OmniSearchStory = () => (
       </p>
     </div>
 
-    <table className="doc-table" style={{ width: '100%', marginBottom: '6em' }}>
-      <thead>
-        <tr>
-          <th>
-              Preview
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <OmniSearch
-              label="Find Internships, Locations, and Companies"
-              content={(
-                <Button theme="blue">
-                  Go!
-                  {' '}
-                  <Icon name="arrow-round-forward" color="white" size="16" />
-                </Button>
-              )}
-            >
-              <OmniSearch.Body>
-                <OmniSearch.Item>
-                  <label>
-                    Karir Populer
-                  </label>
-                  <ul>
-                    <li>
-                      Business Development/ Sales
-                    </li>
-                    <li>
-                      Software Engineering
-                    </li>
-                    <li>
-                      Design
-                    </li>
-                  </ul>
-                </OmniSearch.Item>
-                <OmniSearch.Item>
-                  <label>
-                    Lokasi Populer
-                  </label>
-                  <ul>
-                    <li>
-                      <Icon name="location" color="#AAAAAA" size="14" />
-                      {' '}
-                      Lowongan Pekerjaan di Jakarta
-                    </li>
-                    <li>
-                      <Icon name="location" color="#AAAAAA" size="14" />
-                      {' '}
-                      Lowongan Pekerjaan di Bogor
-                    </li>
-                    <li>
-                      <Icon name="location" color="#AAAAAA" size="14" />
-                      {' '}
-                      Lowongan Pekerjaan di Bandung
-                    </li>
-                  </ul>
-                </OmniSearch.Item>
-                <OmniSearch.Item>
-                  <label>
-                    Perusahaan Populer
-                  </label>
-                  <ul>
-                    <li>
-                      <img src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg" width="40" height="40" alt="gojek" />
-                      {' '}
-                      Gojek
-                    </li>
-                    <li>
-                      <img src="http://sp.beritasatu.com/media/images/original/20140925164546835.jpg" width="40" height="40" alt="traveloka" />
-                      {' '}
-                      Traveloka
-                    </li>
-                    <li>
-                      <img src="https://ecs7.tokopedia.net/img/microsite-brand-resource/logo-tokopedia-asset.png" width="40" height="40" alt="traveloka" />
-                      {' '}
-                      Tokopedia
-                    </li>
-                  </ul>
-                </OmniSearch.Item>
-              </OmniSearch.Body>
-            </OmniSearch>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '6em' }}>
+      <OmniSearch
+        label="Find Internships, Locations, and Companies"
+        content={(
+          <Button theme="blue">
+                    Go!
+            {' '}
+            <Icon name="arrow-round-forward" color="white" size="16" />
+          </Button>
+        )}
+      >
+        <OmniSearch.Body>
+          <OmniSearch.Item>
+            <label>
+                      Karir Populer
+            </label>
+            <ul>
+              <li>
+                        Business Development/ Sales
+              </li>
+              <li>
+                        Software Engineering
+              </li>
+              <li>
+                        Design
+              </li>
+            </ul>
+          </OmniSearch.Item>
+          <OmniSearch.Item>
+            <label>
+                      Lokasi Populer
+            </label>
+            <ul>
+              <li>
+                <Icon name="location" color="#AAAAAA" size="14" />
+                {' '}
+                        Lowongan Pekerjaan di Jakarta
+              </li>
+              <li>
+                <Icon name="location" color="#AAAAAA" size="14" />
+                {' '}
+                        Lowongan Pekerjaan di Bogor
+              </li>
+              <li>
+                <Icon name="location" color="#AAAAAA" size="14" />
+                {' '}
+                        Lowongan Pekerjaan di Bandung
+              </li>
+            </ul>
+          </OmniSearch.Item>
+          <OmniSearch.Item>
+            <label>
+                      Perusahaan Populer
+            </label>
+            <ul>
+              <li>
+                <img src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg" width="40" height="40" alt="gojek" />
+                {' '}
+                        Gojek
+              </li>
+              <li>
+                <img src="http://sp.beritasatu.com/media/images/original/20140925164546835.jpg" width="40" height="40" alt="traveloka" />
+                {' '}
+                        Traveloka
+              </li>
+              <li>
+                <img src="https://ecs7.tokopedia.net/img/microsite-brand-resource/logo-tokopedia-asset.png" width="40" height="40" alt="traveloka" />
+                {' '}
+                        Tokopedia
+              </li>
+            </ul>
+          </OmniSearch.Item>
+        </OmniSearch.Body>
+      </OmniSearch>
+    </div>
 
     <table className="doc-table">
       <thead>

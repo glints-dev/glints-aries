@@ -3,7 +3,7 @@ import React from 'react';
 import { Footer } from '../Style/JobCardStyle';
 
 const JobCardFooter = ({ children }:Props) => (
-  <Footer>
+  <Footer totalItems={children.length}>
     { children }
   </Footer>
 );
