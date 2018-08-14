@@ -102,3 +102,7 @@ export const OmniSearchItemWrapper = styled.div`
     }
   }
 `;
+
+export const OmniSearchItem = styled.li`
+  position: relative;
+`;

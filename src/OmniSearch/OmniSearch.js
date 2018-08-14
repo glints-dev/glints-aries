@@ -20,6 +20,7 @@ class OmniSearch extends Component <Props, State> {
       children,
       className,
       content,
+      value,
       ...defaultProps
     } = this.props;
     const { isOpen } = this.state;
@@ -30,8 +31,9 @@ class OmniSearch extends Component <Props, State> {
           <input
             type="text"
             placeholder={label}
-            onFocus={this.handleOpen}
+            onClick={this.handleOpen}
             onBlur={this.handleOpen}
+            value={value}
             {...defaultProps}
           />
           { content }
@@ -51,6 +53,7 @@ type Props = {
   children: React$Node,
   content: React$Node,
   className: string,
+  value: string,
 };
 
 type State = {

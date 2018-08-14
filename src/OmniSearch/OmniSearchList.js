@@ -3,8 +3,9 @@
 import React from 'react';
 import { OmniSearchItemWrapper } from '../Style/OmniSearchStyle';
 
-const OmniSearchItem = (props: Props) => {
+const OmniSearchList = (props: Props) => {
   const {
+    title,
     children,
     className,
     ...defaultProps
@@ -12,7 +13,12 @@ const OmniSearchItem = (props: Props) => {
 
   return (
     <OmniSearchItemWrapper className={className} {...defaultProps}>
-      {children}
+      <label>
+        {title}
+      </label>
+      <ul>
+        {children}
+      </ul>
     </OmniSearchItemWrapper>
   );
 };
@@ -20,6 +26,7 @@ const OmniSearchItem = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  title: string,
 };
 
-export default OmniSearchItem;
+export default OmniSearchList;

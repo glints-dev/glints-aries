@@ -17,7 +17,7 @@ export const Container = styled.div`
       display: block;
       position: absolute;
       top: 2px;
-      left: 9px;
+      left: 7px;
       width: 6px;
       height: 14px;
       border: solid ${SecondaryColor.white};
@@ -41,7 +41,7 @@ export const Container = styled.div`
       background-color: transparent;
       border: 2px solid ${SecondaryColor.lightblack};
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 1rem;
+      padding: .8rem;
       display: inline-block;
       position: relative;
       vertical-align: middle;
