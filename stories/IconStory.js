@@ -273,6 +273,14 @@ const IconStory = () => (
             </p>
           </td>
           <td style={{ padding: 20 }}>
+            <Icon name="search" color="black" size="25" />
+            <p>
+              <code>
+                search
+              </code>
+            </p>
+          </td>
+          <td style={{ padding: 20 }}>
             <Icon name="share" color="black" size="25" />
             <p>
               <code>
@@ -280,6 +288,8 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="telegram" color="black" size="25" />
             <p>
@@ -288,8 +298,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="twitter" color="black" size="25" />
             <p>
@@ -322,7 +330,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td></td>
           <td></td>
         </tr>
       </tbody>

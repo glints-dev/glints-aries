@@ -26,7 +26,7 @@ export const DropdownLabel = styled.div`
 
 export const DropdownItemWrapper = styled.div`
   position: absolute;
-  width: 100%;
+  width: auto;
   background: ${SecondaryColor.white};
   padding: .4em 1em;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
@@ -51,7 +51,6 @@ export const DropdownItem = styled.div`
 `;
 
 export const DropdownContainer = styled.div`
-  position: relative;
   outline: none;
 
   ${DropdownLabelWrapper} {

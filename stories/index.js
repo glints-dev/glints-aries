@@ -15,6 +15,7 @@ import AccordionStory from './AccordionStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
+import CheckboxStory from './CheckboxStory';
 import ColorStory from './ColorStory';
 import ContainerStory from './ContainerStory';
 import DeviceStory from './DeviceStory';
@@ -34,6 +35,7 @@ import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import RadioButtonStory from './RadioButtonStory';
 import SearchStory from './SearchStory';
+import SearchFilterStory from './SearchFilterStory';
 import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
@@ -63,6 +65,7 @@ storiesOf('Components', module)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
+  .add('Checkbox', () => <CheckboxStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
@@ -78,6 +81,7 @@ storiesOf('Components', module)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Search', () => <SearchStory />)
+  .add('Search Filter', () => <SearchFilterStory />)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Switch', () => <SwitchStory />)
