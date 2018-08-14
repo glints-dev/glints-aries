@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Outter, Inner} from '../Style/ContainerStyle';
+import { Outter } from '../Style/ContainerStyle';
 
 const Container = (props: Props) => {
   const {
@@ -11,9 +11,7 @@ const Container = (props: Props) => {
 
   return (
     <Outter className={className}>
-      <Inner>
-        {children}
-      </Inner>
+      {children}
     </Outter>
   );
 };

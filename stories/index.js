@@ -9,6 +9,7 @@ import { withViewport } from '@storybook/addon-viewport';
 import Provider from './Provider';
 
 import { Button } from '../src/Button';
+import StorybookStyle from '../src/Style/StorybookStyle';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
@@ -45,7 +46,9 @@ import TextFieldStory from './TextFieldStory';
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      {React.createElement(story)}
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
     </Provider>
   ))
   .addDecorator(withKnobs)
@@ -90,7 +93,9 @@ storiesOf('Components', module)
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
     <Provider>
-      {React.createElement(story)}
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
     </Provider>
   ))
   .add('Menu', () => <MobileMenuStory />)
@@ -99,7 +104,9 @@ storiesOf('Mobile Components', module)
 storiesOf('Utilities', module)
   .addDecorator(story => (
     <Provider>
-      {React.createElement(story)}
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)

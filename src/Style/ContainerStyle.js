@@ -5,9 +5,44 @@ export const Outter = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
-`;
 
-export const Inner = styled.div`
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    h1, h2, h3,
+    h4, h5, h6 {
+        font-family: 'Poppins';
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a, p, label,
+    ul, li, span,
+    i, div, input,
+    button {
+        font-family: 'Poppins';
+    }
+
     @media (min-width: ${size.desktopL}) { 
         width: 1400px;
     }
@@ -38,6 +73,5 @@ export const Inner = styled.div`
 
     @media ${Device.mobileS} { 
         width: 300px;
-        padding: 0 1rem;
     }
 `;
