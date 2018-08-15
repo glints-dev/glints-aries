@@ -5,6 +5,7 @@ import './Style/GlobalStyle.css';
 // @create-index
 // keep in alphabetical order
 export { default as Accordion } from './Accordion';
+export { default as Badge } from './Badge';
 export { default as Blockquote } from './Blockquote';
 export { default as Brand } from './Brand';
 export { default as Button } from './Button';

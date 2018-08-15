@@ -13,6 +13,7 @@ import GlintsContainer from '../src/Style/GlintsContainer';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
+import BadgeStory from './BadgeStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
@@ -66,6 +67,7 @@ storiesOf('Components', module)
     );
   })
   .add('Accordion', () => <AccordionStory />)
+  .add('Badge', () => <BadgeStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
