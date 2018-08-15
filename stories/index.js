@@ -25,6 +25,7 @@ import HeadingStory from './HeadingStory';
 import IconStory from './IconStory';
 import InformationStory from './InformationStory';
 import JobCardStory from './JobCardStory';
+import JobOverviewStory from './JobOverviewStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
@@ -67,6 +68,7 @@ storiesOf('Components', module)
   .add('Button', () => <ButtonStory />)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Job Card', () => <JobCardStory />)
+  .add('Job Overview', () => <JobOverviewStory />)
   .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Heading', () => <HeadingStory />)
