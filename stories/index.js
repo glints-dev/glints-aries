@@ -45,6 +45,7 @@ import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import SwitchStory from './SwitchStory';
+import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
 
 storiesOf('Components', module)
@@ -95,6 +96,7 @@ storiesOf('Components', module)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Switch', () => <SwitchStory />)
+  .add('Tag', () => <TagStory />)
   .add('Text Field', () => <TextFieldStory />);
 
 storiesOf('Mobile Components', module)
