@@ -9,6 +9,7 @@ const Divider = (props: Props) => {
     size,
     thickness,
     className,
+    style,
   } = props;
 
   return (
@@ -17,6 +18,7 @@ const Divider = (props: Props) => {
       theme={theme}
       size={size}
       thickness={thickness}
+      style={style}
     />
   );
 };
@@ -26,6 +28,7 @@ type Props = {
   size: string,
   thickness: string,
   className: string,
+  style: Object,
 }
 
 export default Divider;
