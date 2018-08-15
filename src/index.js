@@ -19,6 +19,7 @@ export { default as JobCard } from './JobCard';
 export { default as Label } from './Label';
 export { default as Loading } from './Loading';
 export { default as MobileMenu } from './MobileMenu';
+export { default as Modal } from './Modal';
 export { default as OmniSearch } from './OmniSearch';
 export { default as PointingModal } from './PointingModal';
 export { default as Popover } from './Popover';

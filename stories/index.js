@@ -31,6 +31,7 @@ import JobCardStory from './JobCardStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
+import ModalStory from './ModalStory';
 import OmniSearchStory from './OmniSearchStory';
 import PointingModalStory from './PointingModalStory';
 import PopoverStory from './PopoverStory';
@@ -80,6 +81,7 @@ storiesOf('Components', module)
   .add('Information', () => <InformationStory />)
   .add('Label', () => <LabelStory />)
   .add('Loading', () => <LoadingStory />)
+  .add('Modal', () => <ModalStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)
