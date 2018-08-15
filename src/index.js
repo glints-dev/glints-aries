@@ -16,6 +16,7 @@ export { default as Heading } from './Heading';
 export { default as Information } from './Information';
 export { default as Icon } from './Icon';
 export { default as JobCard } from './JobCard';
+export { default as JobOverview } from './JobOverview';
 export { default as Label } from './Label';
 export { default as Loading } from './Loading';
 export { default as MobileMenu } from './MobileMenu';
