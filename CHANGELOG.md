@@ -1,3 +1,21 @@
+#### 0.1.22 (2018-08-15)
+
+##### Build System / Dependencies
+
+* **component:**  export JobOverview component ([8aa654de](https://github.com/glints-dev/glints-aries/commit/8aa654dea094755d9a391d6d5be288586cf69b6e))
+
+##### Documentation Changes
+
+* **component:**  adding JobOverview usage story ([f75cd154](https://github.com/glints-dev/glints-aries/commit/f75cd15482ad645a791bda80bc68868e3625f695))
+
+##### New Features
+
+* **component:**  JobOverview component ([1dfe6199](https://github.com/glints-dev/glints-aries/commit/1dfe61997d37a50dd34d9030a06215cbacdd743f))
+
+##### Code Style Changes
+
+* **component:**  update Divider. accept style props ([e9873d05](https://github.com/glints-dev/glints-aries/commit/e9873d056480305f93d5752543deeaf7a829e328))
+
 #### 0.1.21 (2018-08-14)
 
 #### 0.1.20 (2018-08-14)
