@@ -12,7 +12,7 @@ export const JobCardContainer = styled.div`
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 380px;
   max-height: 32em;
-  min-height: 30em;
+  min-height: 32em;
 
   &:after {
     content: '';
@@ -140,6 +140,8 @@ export const JobDescription = styled.div`
 `;
 
 export const Footer = styled.footer`
+  position: absolute;
+  bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
 
