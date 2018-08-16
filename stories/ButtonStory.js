@@ -38,13 +38,13 @@ const ButtonStories = () => (
         <tbody>
           <tr>
             <td style={{ padding: 20 }}>
-              <Button theme="blue" onClick={action('Default Button')}>
+              <Button theme="blue" onClick={action('Default Button')} hoverColor="red">
                 Default
               </Button>
             </td>
             <td>
               <code>
-                {'<Button theme="blue">Default</Button>'}
+                {'<Button theme="blue" hoverColor="red">Default</Button>'}
               </code>
             </td>
           </tr>
@@ -96,6 +96,25 @@ const ButtonStories = () => (
             </td>
             <td>
               Sets the Default Button.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              hoverColor
+            </td>
+            <td>
+              string
+            </td>
+            <td>
+              <pre>
+                red | blue | yellow
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+
             </td>
           </tr>
           <tr>
@@ -216,6 +235,25 @@ const ButtonStories = () => (
             </td>
             <td>
               Sets the Primary Button.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              hoverColor
+            </td>
+            <td>
+              string
+            </td>
+            <td>
+              <pre>
+                red | blue | yellow
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+
             </td>
           </tr>
           <tr>
@@ -503,6 +541,25 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
+              hoverColor
+            </td>
+            <td>
+              string
+            </td>
+            <td>
+              <pre>
+                red | blue | yellow
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
               theme
             </td>
             <td>
@@ -617,6 +674,25 @@ const ButtonStories = () => (
             </td>
             <td>
               Sets the Link Button.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              hoverColor
+            </td>
+            <td>
+              string
+            </td>
+            <td>
+              <pre>
+                red | blue | yellow
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+
             </td>
           </tr>
           <tr>

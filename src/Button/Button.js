@@ -15,35 +15,36 @@ const renderButton = ({
   children,
   onClick,
   className,
+  hoverColor,
 }: Props) => {
   switch (variant) {
     case Variant.PRIMARY:
       return (
-        <PrimaryButton theme={theme} onClick={onClick} className={className}>
+        <PrimaryButton theme={theme} onClick={onClick} className={className} hoverColor={hoverColor}>
           {children}
         </PrimaryButton>
       );
     case Variant.SECONDARY:
       return (
-        <SecondaryButton onClick={onClick} className={className}>
+        <SecondaryButton onClick={onClick} className={className} hoverColor={hoverColor}>
           {children}
         </SecondaryButton>
       );
     case Variant.GHOST:
       return (
-        <GhostButton theme={theme} onClick={onClick} className={className}>
+        <GhostButton theme={theme} onClick={onClick} className={className} hoverColor={hoverColor}>
           {children}
         </GhostButton>
       );
     case Variant.LINK:
       return (
-        <LinkButton theme={theme} onClick={onClick} className={className}>
+        <LinkButton theme={theme} onClick={onClick} className={className} hoverColor={hoverColor}>
           {children}
         </LinkButton>
       );
     default:
       return (
-        <DefaultButton theme={theme} onClick={onClick} className={className}>
+        <DefaultButton theme={theme} onClick={onClick} className={className} hoverColor={hoverColor}>
           {children}
         </DefaultButton>
       );
@@ -62,6 +63,7 @@ type Props = {
   onClick: Function,
   children: React$Node,
   className: string,
+  hoverColor: string
 }
 
 export default Button;

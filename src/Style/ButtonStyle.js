@@ -15,6 +15,28 @@ const Button = styled.button`
   font-size: 14px;
   padding: 1em .6em;
   background: transparent;
+  transition: all .2s;
+
+  &:hover {
+    ${(props) => {
+    switch (props.hoverColor) {
+      case `${Theme.RED}`:
+        return `
+            color: ${PrimaryColor.glintsred};
+          `;
+      case `${Theme.YELLOW}`:
+        return `
+            color: ${PrimaryColor.glintsyellow};
+          `;
+      case `${Theme.BLUE}`:
+        return `
+            color: ${PrimaryColor.glintsblue};
+          `;
+      default:
+        return null;
+    }
+  }}
+  }
 `;
 
 /*
