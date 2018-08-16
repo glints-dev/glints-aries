@@ -11,6 +11,7 @@ export { default as Brand } from './Brand';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
+export { default as Collapsible } from './Collapsible';
 export { default as Divider } from './Divider';
 export { default as Dropdown } from './Dropdown';
 export { default as Heading } from './Heading';
