@@ -1,3 +1,13 @@
+#### 0.1.25 (2018-08-16)
+
+##### Build System / Dependencies
+
+* **component:**  export Collapsible component ([fa9d4e81](https://github.com/glints-dev/glints-aries/commit/fa9d4e81429976e852b18cd4fda5a32144ca3132))
+
+##### New Features
+
+* **component:**  adding collapsible component ([780943aa](https://github.com/glints-dev/glints-aries/commit/780943aa5f292ee1ce4c272b1ddcfd8959d3bbbf))
+
 #### 0.1.24 (2018-08-15)
 
 #### 0.1.23 (2018-08-15)
