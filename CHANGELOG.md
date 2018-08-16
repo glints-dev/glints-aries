@@ -1,3 +1,11 @@
+#### 0.1.26 (2018-08-16)
+
+##### Bug Fixes
+
+* **component:**
+  *  eslint fix missing semicolon ([43c52152](https://github.com/glints-dev/glints-aries/commit/43c521529158836763b1b61e5becbb91bbab2585))
+  *  change the Collapsible chevron icon ([303e89e6](https://github.com/glints-dev/glints-aries/commit/303e89e6905619a0a3fc89e3e9082b927f4f3a1c))
+
 #### 0.1.25 (2018-08-16)
 
 ##### Build System / Dependencies
