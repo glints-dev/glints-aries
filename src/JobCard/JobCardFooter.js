@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Footer } from '../Style/JobCardStyle';
 
-const JobCardFooter = ({ children }:Props) => (
-  <Footer totalItems={children.length}>
+const JobCardFooter = ({ children, ...defaultProps }:Props) => (
+  <Footer totalItems={children.length} {...defaultProps}>
     { children }
   </Footer>
 );

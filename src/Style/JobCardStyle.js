@@ -11,6 +11,8 @@ export const JobCardContainer = styled.div`
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 380px;
+  max-height: 32em;
+  min-height: 30em;
 
   &:after {
     content: '';
@@ -37,7 +39,12 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: .2em;
+  height: 5em;
+  width: 5em;
   border: 1px solid #C6C6C6;
 
   img {

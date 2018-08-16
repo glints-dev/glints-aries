@@ -3,8 +3,8 @@
 import React from 'react';
 import { JobCardContainer } from '../Style/JobCardStyle';
 
-const JobCard = ({ children }: Props) => (
-  <JobCardContainer>
+const JobCard = ({ children, ...defaultProps }: Props) => (
+  <JobCardContainer {...defaultProps}>
     {children}
   </JobCardContainer>
 );

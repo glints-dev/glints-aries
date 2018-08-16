@@ -3,8 +3,8 @@ import Icon from '../Icon';
 
 import { JobDetail } from '../Style/JobCardStyle';
 
-const JobCardDetail = ({ details }: Props) => (
-  <JobDetail>
+const JobCardDetail = ({ details, ...defaultProps }: Props) => (
+  <JobDetail {...defaultProps}>
     <ul>
       {details.map(data => (
         <li key={data}>

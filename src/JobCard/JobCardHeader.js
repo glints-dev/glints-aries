@@ -22,7 +22,7 @@ const JobCardHeader = (props: Props) => {
   return (
     <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
       <HeaderImage>
-        <img src={imgUrl} alt="" width="64" height="64" />
+        <img src={imgUrl} alt="" />
       </HeaderImage>
       <HeaderContent>
         {tag

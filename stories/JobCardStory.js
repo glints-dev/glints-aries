@@ -65,7 +65,10 @@ const JobCardStory = () => (
   />
   <JobCard.Body>
     <JobCard.Detail details={['...', '...', '...', '...']} />
-    <JobCard.Description description={'...'} />
+    <JobCard.Description 
+      description={'...'} 
+      time="5 days ago"
+    />
   </JobCard.Body>
   <JobCard.Footer>
     <Button>Save</Button>

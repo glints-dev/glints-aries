@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Body } from '../Style/JobCardStyle';
 
-const JobCardBody = ({ children }:Props) => (
-  <Body>
+const JobCardBody = ({ children, ...defaultProps }:Props) => (
+  <Body {...defaultProps}>
     {children}
   </Body>
 );
