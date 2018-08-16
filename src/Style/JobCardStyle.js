@@ -43,7 +43,8 @@ export const JobCardContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 5em 1fr;
   padding: ${({ paddingSize }) => paddingSize};
 `;
 
@@ -52,21 +53,9 @@ export const HeaderImage = styled.div`
   justify-content: center;
   align-items: center;
   padding: .2em;
-  height: 5em;
-  width: 5em;
   border: 1px solid #C6C6C6;
   overflow: hidden;
-  img {
-    object-fit: cover;
-  }
-
-  @media ${Device.mobileM} {
-    width: 7em;
-  }
-
-  @media ${Device.mobileS} {
-    width: 7em;
-  }
+  margin: auto;
 `;
 
 export const HeaderContent = styled.div`
@@ -183,5 +172,10 @@ export const Footer = styled.footer`
   > *:nth-child(2) {
     margin-right: ${({ totalItems }) => totalItems === 3 && '6em'};
   }
-  
+`;
+
+export const Image = styled.img`
+  object-fit: contain;
+  height: 5em;
+  width: 5em;
 `;

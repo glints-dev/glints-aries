@@ -3,7 +3,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Label from '../Label';
-import { HeaderContainer, HeaderImage, HeaderContent } from '../Style/JobCardStyle';
+import {
+  HeaderContainer, HeaderImage, HeaderContent, Image,
+} from '../Style/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
   const {
@@ -18,13 +20,13 @@ const JobCardHeader = (props: Props) => {
     className,
     ...defaultProps
   } = props;
-  console.log('typeof imgUrl', typeof imgUrl);
+
   return (
     <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
       <HeaderImage>
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
-            <img src={imgUrl} alt="" />
+            <Image src={imgUrl} alt="" />
           </When>
           <Otherwise>
             {imgUrl}
