@@ -18,6 +18,7 @@ import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
 import ButtonStory from './ButtonStory';
 import CheckboxStory from './CheckboxStory';
+import CollapsibleStory from './CollapsibleStory';
 import ColorStory from './ColorStory';
 import ContainerStory from './ContainerStory';
 import DeviceStory from './DeviceStory';
@@ -75,6 +76,7 @@ storiesOf('Components', module)
   .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
   .add('Checkbox', () => <CheckboxStory />)
+  .add('Collapsible', () => <CollapsibleStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
   .add('Divider', () => <DividerStory />)
