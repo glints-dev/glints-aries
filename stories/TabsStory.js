@@ -3,11 +3,11 @@ import Tag from '../src/Tag';
 
 import Icon from '../src/Icon';
 
-const TagStory = () => (
+const TabsStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        Tag
+        Tabs
       </h1>
       <p>
         <code>
@@ -36,9 +36,7 @@ const TagStory = () => (
           </td>
           <td>
             <pre>
-              {`<Tag label="Software Engineer">
-  <Icon name="close" color="black" size="10" />
-</Tag>`}
+              {'<Tag />'}
             </pre>
           </td>
         </tr>
@@ -91,4 +89,4 @@ const TagStory = () => (
   </div>
 );
 
-export default TagStory;
+export default TabsStory;

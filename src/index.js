@@ -8,6 +8,7 @@ export { default as Accordion } from './Accordion';
 export { default as Badge } from './Badge';
 export { default as Blockquote } from './Blockquote';
 export { default as Brand } from './Brand';
+export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Divider } from './Divider';

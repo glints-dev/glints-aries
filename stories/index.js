@@ -16,6 +16,7 @@ import AccordionStory from './AccordionStory';
 import BadgeStory from './BadgeStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
+import BreadcrumbStory from './BreadcrumbStory';
 import ButtonStory from './ButtonStory';
 import CheckboxStory from './CheckboxStory';
 import ColorStory from './ColorStory';
@@ -45,6 +46,7 @@ import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import SwitchStory from './SwitchStory';
+import TabsStory from './TabsStory';
 import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
 
@@ -73,6 +75,7 @@ storiesOf('Components', module)
   .add('Badge', () => <BadgeStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Brand', () => <BrandStory />)
+  .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Button', () => <ButtonStory />)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Job Card', () => <JobCardStory />)
@@ -96,6 +99,7 @@ storiesOf('Components', module)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Switch', () => <SwitchStory />)
+  .add('Tabs', () => <TabsStory />)
   .add('Tag', () => <TagStory />)
   .add('Text Field', () => <TextFieldStory />);
 
