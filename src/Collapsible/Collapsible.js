@@ -43,8 +43,8 @@ export const CollapsibleHead = (props: HeadProps) => {
                 props.children
               }
             </span>
-            {isOpenContext && <Icon name="arrow-back" size="12" color="#000000" />}
-            {!isOpenContext && <Icon name="arrow-up" size="12" color="#000000" />}
+            {isOpenContext && <Icon name="arrow-up" size="12" color="#000000" />}
+            {!isOpenContext && <Icon name="arrow-down" size="12" color="#000000" />}
           </CollapsibleHeadStyle>
         )
       }}
