@@ -18,11 +18,18 @@ const JobCardHeader = (props: Props) => {
     className,
     ...defaultProps
   } = props;
-
+  console.log('typeof imgUrl', typeof imgUrl);
   return (
     <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
       <HeaderImage>
-        <img src={imgUrl} alt="" />
+        <Choose>
+          <When condition={typeof imgUrl === 'string'}>
+            <img src={imgUrl} alt="" />
+          </When>
+          <Otherwise>
+            {imgUrl}
+          </Otherwise>
+        </Choose>
       </HeaderImage>
       <HeaderContent>
         {tag

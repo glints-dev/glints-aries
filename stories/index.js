@@ -51,6 +51,8 @@ import TabsStory from './TabsStory';
 import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
 
+import JobCard from '../src/JobCard/JobCard';
+
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>

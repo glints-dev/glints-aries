@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
+import { Device } from '../Utils/StyleConfig';
 
 /*
  * Job Card
@@ -11,7 +12,7 @@ export const JobCardContainer = styled.div`
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 380px;
-  max-height: 32em;
+  max-height: 40em;
   min-height: 32em;
 
   &:after {
@@ -31,6 +32,14 @@ export const JobCardContainer = styled.div`
     opacity: 1;
     transition: all .2s;
   }
+
+  @media ${Device.mobileM} {
+    width: 300px;
+  }
+
+  @media ${Device.mobileS} {
+    width: 300px;
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -46,9 +55,17 @@ export const HeaderImage = styled.div`
   height: 5em;
   width: 5em;
   border: 1px solid #C6C6C6;
-
+  overflow: hidden;
   img {
-    object-fit: contain;
+    object-fit: cover;
+  }
+
+  @media ${Device.mobileM} {
+    width: 7em;
+  }
+
+  @media ${Device.mobileS} {
+    width: 7em;
   }
 `;
 
@@ -87,7 +104,7 @@ export const Body = styled.div`
   padding-right: 1.4em;
   padding-bottom: 1.4em;
   padding-left: 1.4em;
-
+  margin-bottom: 3.4em;
   &:before {
     content: '';
     background: ${SecondaryColor.lightgrey};
@@ -106,12 +123,20 @@ export const JobDetail = styled.div`
     grid-gap: .4em;
 
     li {
+      position: relative;
       display: flex;
-      align-items: center;
 
       svg {
-        margin-right: .5em;
+        margin: .5em;
       }
+    }
+
+    @media ${Device.mobileM} {
+      grid-template-columns: auto;
+    }
+
+    @media ${Device.mobileS} {
+      grid-template-columns: auto;
     }
   }
 `;
@@ -120,12 +145,22 @@ export const JobDescription = styled.div`
   margin-top: 2em;
   color: ${SecondaryColor.lightblack};
   font-weight: 100;
-
   p {
+    position: relative;
     font-size: 14px;
     line-height: 1.6;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    height: 9.28571em;
+    overflow: hidden;
+    &:after {
+      content: '';
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: ${325 / 2}px;
+      height: 1.428571429em;
+      background: linear-gradient(90deg, rgba(256, 256, 256, 0.0), rgba(256, 256, 256, 1.0) 75%);
+    }
   }
 
   label {

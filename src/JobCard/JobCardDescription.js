@@ -7,7 +7,7 @@ import { JobDescription } from '../Style/JobCardStyle';
 const JobCardDescription = ({ description, time, ...defaultProps }:Props) => (
   <JobDescription {...defaultProps}>
     <p>
-      {`${description.slice(0, 150)} ...`}
+      {`${description}`}
     </p>
     <label>
       <Icon name="clock" color="#646464" size="12" />
