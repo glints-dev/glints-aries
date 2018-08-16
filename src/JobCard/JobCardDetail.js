@@ -7,10 +7,12 @@ const JobCardDetail = ({ details, ...defaultProps }: Props) => (
   <JobDetail {...defaultProps}>
     <ul>
       {details.map((data, index) => (
-        <li key={index}>
-          <Icon name="dot" color="#c6c6c6" size="6" />
-          { data }
-        </li>
+        <If condition={data !== ''}>
+          <li key={index}>
+            <Icon name="dot" color="#c6c6c6" size="6" />
+            { data }
+          </li>
+        </If>
       ))}
     </ul>
   </JobDetail>
