@@ -34,7 +34,7 @@ const JobCardHeader = (props: Props) => {
         }
 
         <h3>
-          {title}
+          {`${title.slice(0, 50)}`}
         </h3>
         {!isReactRouter
           && (

@@ -6,8 +6,8 @@ import { JobDetail } from '../Style/JobCardStyle';
 const JobCardDetail = ({ details, ...defaultProps }: Props) => (
   <JobDetail {...defaultProps}>
     <ul>
-      {details.map(data => (
-        <li key={data}>
+      {details.map((data, index) => (
+        <li key={index}>
           <Icon name="dot" color="#c6c6c6" size="6" />
           { data }
         </li>
