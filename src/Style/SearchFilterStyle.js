@@ -22,6 +22,10 @@ export const SearchBarWrapper = styled.div`
     color: ${SecondaryColor.lightblack};
     width: 100%;
 
+    @media ${Device.mobileL} {
+      padding: 1rem 5.7rem 1rem 1rem;
+    }
+
     &:focus {
       outline: none;
     }

@@ -32,7 +32,7 @@ const BadgeStory = () => (
           </td>
           <td>
             <pre>
-              {'<Badge />'}
+              {'<Badge label="6" />'}
             </pre>
           </td>
         </tr>

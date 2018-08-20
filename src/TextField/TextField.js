@@ -20,9 +20,11 @@ class TextField extends Component <Props, State> {
   render() {
     const {
       label,
+      value,
       status,
       disabled,
       className,
+      ...defaultProps
     } = this.props;
 
     const { floating } = this.state;
@@ -35,6 +37,8 @@ class TextField extends Component <Props, State> {
           disabled={disabled}
           onBlur={this.handleFocusChange}
           floating={floating}
+          value={value}
+          {...defaultProps}
         />
         <TextFieldLabel floating={floating}>
           {label}

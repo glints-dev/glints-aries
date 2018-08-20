@@ -32,7 +32,7 @@ const TextFieldStory = () => (
           </td>
           <td>
             <code>
-              {'<TextField label="Username" />'}
+              {'<TextField label="Username" value="..." />'}
             </code>
           </td>
         </tr>
@@ -78,6 +78,23 @@ const TextFieldStory = () => (
           </td>
           <td>
             Sets placeholder value for the Text Field.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            value
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets value of Text Field.
           </td>
         </tr>
         <tr>
