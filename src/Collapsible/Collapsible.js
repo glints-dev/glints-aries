@@ -1,96 +1,59 @@
-/* @flow */
+import React, { Component } from 'react';
+import Icon from '../Icon';
 
-import React from 'react';
-import createReactContext, { type Context } from 'create-react-context';
-import {
-  CollapsibleContainer,
-  CollapsibleHeadStyle,
-  CollapsibleBodyStyle,
-} from '../Style/CollapsibleStyle';
-import { Icon } from '../Icon';
+import { CollapsibleContainer, CollapsibleHead, CollapsibleBody } from '../Style/CollapsibleStyle';
 
-type isOpen = true | false;
-type children = React$Node;
-const CollapsibleContext: Context<isOpen> = createReactContext(false);
+class Collapsible extends Component <Props, State> {
+  state = {
+    isOpen: false,
+  }
 
+  handleOpen = () => {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
+  }
 
-const Collapsible = (props: Props) => {
-  const {
-    children,
-    isOpen,
-    style,
-    title,
-    ...defaultProps
-  } = props;
+  render() {
+    const {
+      label,
+      children,
+      className,
+      ...defaultProps
+    } = this.props;
 
-  return (
-    <CollapsibleContainer style={style} {...defaultProps}>
-      <CollapsibleContext.Provider value={isOpen}>
-        {children}
-      </CollapsibleContext.Provider>
-    </CollapsibleContainer>
-  );
-};
+    const { isOpen } = this.state;
 
-export const CollapsibleHead = (props: HeadProps) => {
-  return (
-    <CollapsibleContext.Consumer>
-      {(isOpenContext) => {
-        return (
-          <CollapsibleHeadStyle>
-            <span>
-              {
-                props.children
-              }
-            </span>
-            {isOpenContext && <Icon name="arrow-up" size="12" color="#000000" />}
-            {!isOpenContext && <Icon name="arrow-down" size="12" color="#000000" />}
-          </CollapsibleHeadStyle>
-        );
-      }}
-    </CollapsibleContext.Consumer>
-  );
+    return (
+      <CollapsibleContainer className={className} {...defaultProps} onClick={this.handleOpen}>
+        <CollapsibleHead className="head">
+          {label}
+          <Choose>
+            <When condition={isOpen === false}>
+              <Icon name="arrow-down" size="12" color="#000000" />
+            </When>
+            <Otherwise>
+              <Icon name="arrow-up" size="12" color="#000000" />
+            </Otherwise>
+          </Choose>
+        </CollapsibleHead>
+        {isOpen && (
+          <CollapsibleBody className="body">
+            {children}
+          </CollapsibleBody>
+        )}
+      </CollapsibleContainer>
+    );
+  }
 }
-
-export const CollapsibleBody = (props: BodyProps) => {
-  return (
-    <CollapsibleContext.Consumer>
-      {(isOpenContext) => {
-        if (isOpenContext) {
-          return (
-            <CollapsibleBodyStyle>
-              {
-                props.children
-              }
-            </CollapsibleBodyStyle>
-          );
-        }
-
-        return null;
-      }}
-    </CollapsibleContext.Consumer>
-  );
-};
 
 type Props = {
-  children?: children,
-  style?: Object,
-  isOpen?: isOpen,
-  title: String,
-}
-
-type HeadProps = {
-  children?: children,
-  style?: Object,
-}
-
-type BodyProps = {
-  children?: children,
-  style?: Object,
-}
-
-Collapsible.defaultProps = {
-  isOpen: false,
+  children: React$Node,
+  className: string,
+  label: string,
 };
+
+type State = {
+  isOpen: boolean,
+}
 
 export default Collapsible;

@@ -12,6 +12,7 @@ export const SecondaryColor = {
   lighterblack: '#AAAAAA',
   grey: '#646464',
   lightgrey: '#C6C6C6',
+  lightergrey: '#EEEEEE',
   darkgrey: '#777777',
   buttercup: '#F5A623',
   purplepizza: '#FF00E5',

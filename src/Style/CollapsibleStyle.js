@@ -1,21 +1,22 @@
 import styled from 'styled-components';
+import { SecondaryColor } from './Colors';
 
 export const CollapsibleContainer = styled.div`
   cursor: pointer;
   color: black;
-  background-color: #ffffff;
-  border: solid 1px #c6c6c6;
+  background-color: ${SecondaryColor.white};
+  border: solid 1px ${SecondaryColor.lightergrey};
   font-size: 16px;
 `;
 
-export const CollapsibleHeadStyle = styled.div`
-  background: #fff;
+export const CollapsibleHead = styled.div`
+  background: ${SecondaryColor.white};
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 1.2em;
 
   &:hover {
-    color: #0076e0;
+    color: ${SecondaryColor.blue};
   }
 
   svg {
@@ -23,7 +24,6 @@ export const CollapsibleHeadStyle = styled.div`
   }
 `;
 
-export const CollapsibleBodyStyle = styled.div`
-  margin-top: 17px;
-  padding: 0 20px 20px 20px;
+export const CollapsibleBody = styled.div`
+  padding: 0 1.2em 1.2em 1.2em;
 `;

@@ -1,57 +1,90 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Collapsible from '../src/Collapsible';
 
-class CollapsibleStory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-    };
+const CollapsibleStory = () => (
+  <div className="doc-mainbar">
+    <div style={{ marginBottom: '2em' }}>
+      <h1>
+        Collapsible
+      </h1>
+      <p>
+        <code>
+          {'import { Collapsible } from \'glints-aries\''}
+        </code>
+      </p>
+    </div>
 
-    this.toggleCollapsible = this.toggleCollapsible.bind(this);
-  }
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Personal Detail">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+      </Collapsible>
+    </div>
 
-  toggleCollapsible() {
-    const { isOpen } = this.state;
-    this.setState({
-      isOpen: !isOpen,
-    });
-  }
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Usage
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre>
+              {`<Collapsible label="Personal Detail">
+  ...
+</Collapsible>`}
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  render() {
-    const { isOpen } = this.state;
-    return (
-      <div className="doc-mainbar">
-        <div style={{ marginBottom: '2.5em' }}>
-          <h1>
-            Collapsible
-          </h1>
-
-          <Collapsible isOpen={isOpen} onClick={this.toggleCollapsible}>
-            <Collapsible.Head>
-              title children
-            </Collapsible.Head>
-
-            <Collapsible.Body>
-              <p>this is the collapsible body. lorem ipsum dolor sit amed</p>
-            </Collapsible.Body>
-          </Collapsible>
-        </div>
-
-        <div>
-          <pre>{`<Collapsible isOpen={boolean} onClick={this.toggleCollapsible}>
-  <Collapsible.Head>
-    title children
-  </Collapsible.Head>
-
-  <Collapsible.Body>
-    <p>this is the collapsible body. lorem ipsum dolor sit amed</p>
-  </Collapsible.Body>
-</Collapsible>`}</pre>
-        </div>
-      </div>
-    );
-  }
-};
+    <h1>
+      Props
+    </h1>
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            label
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            Sets title for Collapsible.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
 
 export default CollapsibleStory;

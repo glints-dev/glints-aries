@@ -1,8 +1,5 @@
 // @flow
 
-import Collapsible, { CollapsibleHead, CollapsibleBody } from './Collapsible';
-
-Collapsible.Head = CollapsibleHead;
-Collapsible.Body = CollapsibleBody;
+import Collapsible from './Collapsible';
 
 export default Collapsible;

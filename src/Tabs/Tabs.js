@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Container, TabWrapper } from '../Style/TabsStyle';
+import { Container } from '../Style/TabsStyle';
 
 class Tabs extends Component <Props, State> {
 	render() {
@@ -10,8 +10,11 @@ class Tabs extends Component <Props, State> {
 		return(
 			<Container>
 				<ul>
-					<li>test</li>
+					<li className="active">test</li>
 					<li>qwe</li>
+					<li>123</li>
+					<li>vbc</li>
+					<li>321</li>
 				</ul>
 				{children}
 			</Container>
