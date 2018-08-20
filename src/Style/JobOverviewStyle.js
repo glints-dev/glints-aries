@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Device } from '../Utils/StyleConfig';
 
 export const JobOverviewContainer = styled.div`
-  font-family: Poppins;
+  font-family: 'Poppins';
   position: relative;
   display: flex;
 `;
