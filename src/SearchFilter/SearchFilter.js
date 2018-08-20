@@ -25,7 +25,7 @@ class SearchFilter extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <Container>
+      <Container className={className}>
         <SearchBarWrapper>
           <input
             type="text"
