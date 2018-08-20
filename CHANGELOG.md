@@ -1,3 +1,16 @@
+#### 0.1.36 (2018-08-20)
+
+##### New Features
+
+* **style-lint:**  adding style lint feature ([6931bf4b](https://github.com/glints-dev/glints-aries/commit/6931bf4b9f9c97c2d3810174704180705a5fd1b7))
+
+##### Bug Fixes
+
+* **path:**  fix import path ([802b0776](https://github.com/glints-dev/glints-aries/commit/802b0776dc9b49d12911a182315a7e74f656e70a))
+* **component:**
+  *  eslint fix missing semicolon ([43c52152](https://github.com/glints-dev/glints-aries/commit/43c521529158836763b1b61e5becbb91bbab2585))
+  *  change the Collapsible chevron icon ([303e89e6](https://github.com/glints-dev/glints-aries/commit/303e89e6905619a0a3fc89e3e9082b927f4f3a1c))
+
 #### 0.1.35 (2018-08-20)
 
 #### 0.1.34 (2018-08-20)
