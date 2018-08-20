@@ -20,6 +20,7 @@ class SearchFilter extends Component <Props, State> {
       className,
       label,
       content,
+      value,
       ...defaultProps
     } = this.props;
     const { isOpen } = this.state;
@@ -30,8 +31,9 @@ class SearchFilter extends Component <Props, State> {
           <input
             type="text"
             placeholder={label}
-            onFocus={this.handleOpen}
+            onClick={this.handleOpen}
             onBlur={this.handleOpen}
+            value={value}
             {...defaultProps}
           />
           {content}
@@ -53,6 +55,7 @@ type Props = {
   content: React$Node,
   className: string,
   label: string,
+  value: string,
 };
 
 type State = {

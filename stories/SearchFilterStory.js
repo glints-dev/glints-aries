@@ -30,17 +30,17 @@ const SearchFilterStory = () => (
         <SearchFilter.Body>
           <SearchFilter.Item>
             <label>
-                Karir Populer
+              Karir Populer
             </label>
             <ul>
               <li>
-                Business Development/ Sales
+              Business Development/ Sales
               </li>
             </ul>
           </SearchFilter.Item>
           <SearchFilter.Item>
             <label>
-                        Lokasi Populer
+              Lokasi Populer
             </label>
             <ul>
               <li>
