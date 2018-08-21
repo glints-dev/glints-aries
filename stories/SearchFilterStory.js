@@ -9,7 +9,7 @@ const SearchFilterStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        Omni Search
+        Search Filter
       </h1>
       <p>
         <code>
@@ -28,40 +28,25 @@ const SearchFilterStory = () => (
         )}
       >
         <SearchFilter.Body>
-          <SearchFilter.Item>
-            <label>
-              Karir Populer
-            </label>
-            <ul>
-              <li>
+          <SearchFilter.List title="Karir Populer">
+            <SearchFilter.Item>
               Business Development/ Sales
-              </li>
-            </ul>
-          </SearchFilter.Item>
-          <SearchFilter.Item>
-            <label>
-              Lokasi Populer
-            </label>
-            <ul>
-              <li>
-                <Icon name="location" color="#AAAAAA" size="14" />
-                {' '}
-                  Lowongan Pekerjaan di Jakarta
-              </li>
-            </ul>
-          </SearchFilter.Item>
-          <SearchFilter.Item>
-            <label>
-                Perusahaan Populer
-            </label>
-            <ul>
-              <li>
-                <img src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg" width="40" height="40" alt="gojek" />
-                {' '}
-                  Gojek
-              </li>
-            </ul>
-          </SearchFilter.Item>
+            </SearchFilter.Item>
+          </SearchFilter.List>
+          <SearchFilter.List title="Lokasi Populer">
+            <SearchFilter.Item>
+              <Icon name="location" color="#AAAAAA" size="14" />
+              {' '}
+              Lowongan Pekerjaan di Jakarta
+            </SearchFilter.Item>
+          </SearchFilter.List>
+          <SearchFilter.List title="Perusahaan Populer">
+            <SearchFilter.Item>
+              <img src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg" width="40" height="40" alt="gojek" />
+              {' '}
+              Gojek
+            </SearchFilter.Item>
+          </SearchFilter.List>
         </SearchFilter.Body>
       </SearchFilter>
     </div>
@@ -78,7 +63,35 @@ const SearchFilterStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <pre>
-              {'<SearchFilter />'}
+              {`<SearchFilter
+  label="Search for job title, location, or company"
+  value="Gojek"
+  content={(
+    <Button theme="blue">
+      <Icon name="search" color="white" size="20" />
+    </Button>
+  )}
+>
+  <SearchFilter.Body>
+    <SearchFilter.List title="Karir Populer">
+      <SearchFilter.Item onClick={this.handleClick}>
+        Business Development/ Sales
+      </SearchFilter.Item>
+    </SearchFilter.List>
+    <SearchFilter.List title="Lokasi Populer">
+      <SearchFilter.Item>
+        <Icon name="location" color="#AAAAAA" size="14" />
+        Lowongan Pekerjaan di Jakarta
+      </SearchFilter.Item>
+    </SearchFilter.List>
+    <SearchFilter.List title="Perusahaan Populer">
+      <SearchFilter.Item>
+        <img src="..." width="40" height="40" alt="gojek" />
+        Gojek
+      </SearchFilter.Item>
+    </SearchFilter.List>
+  </SearchFilter.Body>
+</SearchFilter>`}
             </pre>
           </td>
         </tr>
@@ -128,10 +141,10 @@ const SearchFilterStory = () => (
         </tr>
         <tr>
           <td>
-            Any Event Handlers
+            value
           </td>
           <td>
-            Function
+            string
           </td>
           <td>
             any
@@ -140,7 +153,7 @@ const SearchFilterStory = () => (
             no
           </td>
           <td>
-            {'You can pass any event handlers into <OmniSearch/>, <OmniSearch.Body>, <OmniSearch.Item>'}
+            {'Sets input value'}
           </td>
         </tr>
         <tr>
@@ -158,6 +171,40 @@ const SearchFilterStory = () => (
           </td>
           <td>
             Content to display element inside Input Field
+          </td>
+        </tr>
+        <tr>
+          <td>
+            title
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            {'Sets title tag on <SearchFilter.Item />'}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            onClick
+          </td>
+          <td>
+            Function
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            {'You can pass onClick function on <SearchFilter.Item />'}
           </td>
         </tr>
       </tbody>

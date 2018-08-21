@@ -91,3 +91,7 @@ export const ItemWrapper = styled.div`
     }
   }
 `;
+
+export const SearchFilterItems = styled.li`
+  position: relative;
+`;

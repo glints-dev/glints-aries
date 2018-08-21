@@ -1,24 +1,26 @@
 /* @flow */
 
 import React from 'react';
-import { ItemWrapper } from '../Style/SearchFilterStyle';
+import { SearchFilterItems } from '../Style/SearchFilterStyle';
 
 const SearchFilterItem = (props: Props) => {
   const {
     children,
     className,
+    onClick,
     ...defaultProps
   } = props;
 
   return (
-    <ItemWrapper className={className} {...defaultProps}>
+    <SearchFilterItems className={className} onMouseDown={onClick} {...defaultProps}>
       {children}
-    </ItemWrapper>
+    </SearchFilterItems>
   );
 };
 
 type Props = {
   children: React$Node,
+  onClick: Function,
   className: string,
 };
 
