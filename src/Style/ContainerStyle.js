@@ -3,8 +3,6 @@ import { size, Device } from '../Utils/StyleConfig';
 
 export const Outter = styled.div`
     position: relative;
-    display: flex;
-    justify-content: center;
 
     @media (min-width: ${size.desktopL}) { 
         width: 1400px;
