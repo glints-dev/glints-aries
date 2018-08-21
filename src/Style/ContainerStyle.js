@@ -4,7 +4,7 @@ import { size, Device } from '../Utils/StyleConfig';
 export const Outter = styled.div`
     position: relative;
     margin: 0 auto;
-
+    
     @media (min-width: ${size.desktopL}) { 
         width: 1400px;
     }
