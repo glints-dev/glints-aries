@@ -9,6 +9,9 @@ export const Container = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
+    height: 100vh;
+    z-index: 9999;
+
     ${({ visibility }) => {
     if (visibility) {
       return `

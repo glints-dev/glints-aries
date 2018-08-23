@@ -14,9 +14,9 @@ const Modal = (props: Props) => {
   } = props;
 
   return (
-    <Container {...defaultProps} visibility={visibility}>
-      <ModalBackground onClick={close} />
-      <ModalArea className={className} type={type}>
+    <Container {...defaultProps} visibility={visibility} className={className}>
+      <ModalBackground onClick={close} className="modalBackground" />
+      <ModalArea className="modalArea" type={type}>
         {children}
       </ModalArea>
     </Container>
