@@ -41,11 +41,13 @@ const IntroStory = () => (
         <p>
           {'Before you start using the components, it\'s better to always wrap your root component with'}
           {' '}
-          {'<Container/>'}
+          {'<GlintsContainer/>'}
           .
           <br />
           {' '}
           We created that Container to adapt with every screen sizes, so Users will always have best experience whenever they visit your site from their devices.
+          <br />
+          GlintsContainer is also the global style for glints-aries component.
           <br />
           {' '}
           For more details, you can read this at
@@ -56,17 +58,17 @@ const IntroStory = () => (
           , then
           {' '}
           <b>
-          Container
+          GlintsContainer
           </b>
           {' '}
           section.
         </p>
         <pre style={{ display: 'inline-flex' }}>
-          {`import { Container } from 'glints-aries'
+          {`import { GlintsContainer } from 'glints-aries'
 
-<Container>
-  <YourRootComponent />
-</Container>`}
+<GlintsContainer>
+  <Component />
+</GlintsContainer>`}
         </pre>
       </div>
     </div>

@@ -43,6 +43,7 @@ export const ModalArea = styled.div`
     height: ${({ type }) => type === 'full-screen' && '100vh'};
     overflow: auto;
     padding: 1.5rem 3rem;
+    z-index: 9999;
 
     ${({ type }) => {
     switch (type) {

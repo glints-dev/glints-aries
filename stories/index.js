@@ -9,7 +9,7 @@ import { withViewport } from '@storybook/addon-viewport';
 import Provider from './Provider';
 
 import { Button } from '../src/Button';
-import GlintsContainer from '../src/Style/GlintsContainer';
+import StorybookStyle from '../src/Style/StorybookStyle';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
@@ -21,7 +21,6 @@ import ButtonStory from './ButtonStory';
 import CheckboxStory from './CheckboxStory';
 import CollapsibleStory from './CollapsibleStory';
 import ColorStory from './ColorStory';
-import ContainerStory from './ContainerStory';
 import DeviceStory from './DeviceStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
@@ -51,14 +50,12 @@ import TabsStory from './TabsStory';
 import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
 
-import JobCard from '../src/JobCard/JobCard';
-
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
-      <GlintsContainer>
+      <StorybookStyle>
         {React.createElement(story)}
-      </GlintsContainer>
+      </StorybookStyle>
     </Provider>
   ))
   .addDecorator(withKnobs)
@@ -110,9 +107,9 @@ storiesOf('Components', module)
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
     <Provider>
-      <GlintsContainer>
+      <StorybookStyle>
         {React.createElement(story)}
-      </GlintsContainer>
+      </StorybookStyle>
     </Provider>
   ))
   .add('Menu', () => <MobileMenuStory />)
@@ -121,12 +118,11 @@ storiesOf('Mobile Components', module)
 storiesOf('Utilities', module)
   .addDecorator(story => (
     <Provider>
-      <GlintsContainer>
+      <StorybookStyle>
         {React.createElement(story)}
-      </GlintsContainer>
+      </StorybookStyle>
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)
-  .add('Container', () => <ContainerStory />)
   .add('Devices Size', () => <DeviceStory />)
   .add('Glints Container', () => <GlintsContainerStory />);

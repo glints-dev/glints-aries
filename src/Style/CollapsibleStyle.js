@@ -5,7 +5,7 @@ export const CollapsibleContainer = styled.div`
   cursor: pointer;
   color: black;
   background-color: ${SecondaryColor.white};
-  border: solid 1px ${SecondaryColor.lightergrey};
+  border: solid 1px ${SecondaryColor.lightgrey};
   font-size: 16px;
 `;
 

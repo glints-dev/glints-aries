@@ -31,7 +31,7 @@ class OmniSearch extends Component <Props, State> {
           <input
             type="text"
             placeholder={label}
-            onClick={this.handleOpen}
+            onFocus={this.handleOpen}
             onBlur={this.handleOpen}
             value={value}
             {...defaultProps}
