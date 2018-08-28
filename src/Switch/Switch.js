@@ -37,7 +37,13 @@ class Switch extends Component <Props, State> {
     const { clickID, initialValue } = this.state;
 
     return (
-      <SwitchContainer className={className} {...defaultProps} ID={clickID} defaultValue={initialValue} value={value}>
+      <SwitchContainer
+        className={className}
+        ID={clickID}
+        defaultValue={initialValue}
+        items={value}
+        {...defaultProps}
+      >
         <RadioButton
           id={value[0]}
           label={label[0]}

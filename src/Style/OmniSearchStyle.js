@@ -59,6 +59,8 @@ export const OmniSearchItemContainer = styled.div`
   padding: 2.14em 2.14em 2.86em 2.14em;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
+  z-index: 9999;
+  
   @media ${Device.mobileL} {
     grid-template-columns: auto;
     grid-gap: 2em;
