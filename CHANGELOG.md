@@ -1,3 +1,9 @@
+#### 0.2.1 (2018-08-28)
+
+##### Bug Fixes
+
+* **component:**  adding className Props on button element ([f6c30d7c](https://github.com/glints-dev/glints-aries/commit/f6c30d7c050891f221491846cf256ea16e15fb0f))
+
 #### 0.1.48 (2018-08-28)
 
 ##### Bug Fixes
