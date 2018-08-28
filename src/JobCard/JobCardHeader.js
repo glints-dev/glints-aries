@@ -44,8 +44,8 @@ const JobCardHeader = (props: Props) => {
           )
         }
 
-        <TitleLink className={jobTitleId}>
-          <h3>
+        <TitleLink>
+          <h3 className={jobTitleId}>>
             {`${title.slice(0, 50)}`}
           </h3>
         </TitleLink>
