@@ -10,7 +10,7 @@ const SecondaryButton = ({
 }: Props) => (
 
   <SecondaryContainer className={className}>
-    <SecondaryBtn className="secondaryButton" {...defaultButtonProps}>
+    <SecondaryBtn className={`${className} secondaryButton`} {...defaultButtonProps}>
       {children}
     </SecondaryBtn>
   </SecondaryContainer>
