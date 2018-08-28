@@ -1,3 +1,9 @@
+#### 0.2.2 (2018-08-28)
+
+##### Bug Fixes
+
+* **component:**  remove typo ([f82b7ac7](https://github.com/glints-dev/glints-aries/commit/f82b7ac756dc7d66659eb8e94015dce6a53d0c1d))
+
 #### 0.2.1 (2018-08-28)
 
 ##### Bug Fixes
