@@ -1,3 +1,13 @@
+#### 0.1.48 (2018-08-28)
+
+##### Bug Fixes
+
+* **class:**  fix incorrect placing of className ([a17be42e](https://github.com/glints-dev/glints-aries/commit/a17be42e096a64cf568786503e3de863cf36d14d))
+
+##### Refactors
+
+* **component:**  Button component refactor. adding id attribute support ([39d3bf48](https://github.com/glints-dev/glints-aries/commit/39d3bf483eb2d26931fdc4ec698730f55dd5136f))
+
 #### 0.1.47 (2018-08-28)
 
 ##### New Features
