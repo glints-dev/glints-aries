@@ -46,14 +46,14 @@ const JobCardStory = () => (
               </JobCard.Body>
               <JobCard.Footer>
                 <Button>
-Save
-</Button>
+                  Save
+                </Button>
                 <Button>
-Apply
-</Button>
+                  Apply
+                </Button>
                 <Button variant="secondary">
-Detail
-</Button>
+                  Detail
+                </Button>
               </JobCard.Footer>
             </JobCard>
           </td>

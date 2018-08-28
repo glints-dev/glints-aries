@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Label from '../Label';
 import {
-  HeaderContainer, HeaderImage, HeaderContent, Image,
+  HeaderContainer, HeaderImage, HeaderContent, Image, TitleLink,
 } from '../Style/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
@@ -18,6 +18,8 @@ const JobCardHeader = (props: Props) => {
     paddingSize,
     subtitle,
     className,
+    jobTitleId,
+    companyNameId,
     ...defaultProps
   } = props;
 
@@ -42,12 +44,19 @@ const JobCardHeader = (props: Props) => {
           )
         }
 
-        <h3>
-          {`${title.slice(0, 50)}`}
-        </h3>
+        <TitleLink>
+          <h3 className={jobTitleId}>>
+            {`${title.slice(0, 50)}`}
+          </h3>
+        </TitleLink>
         {!isReactRouter
           && (
-            <a href={url} target={isExternal ? '_blank' : '_self'} rel="noopener noreferrer">
+            <a 
+              href={url}
+              className={companyNameId}
+              target={isExternal ? '_blank' : '_self'}
+              rel="noopener noreferrer"
+            >
               {subtitle}
             </a>
           )
@@ -55,7 +64,7 @@ const JobCardHeader = (props: Props) => {
 
         {isReactRouter
           && (
-            <Link to={url}>
+            <Link to={url} className={companyNameId}>
               {subtitle}
             </Link>
           )
@@ -66,15 +75,22 @@ const JobCardHeader = (props: Props) => {
 };
 
 type Props = {
+  className: string,
+  companyNameId: string,
   title: string,
   tag: string,
   subtitle: string,
   imgUrl: string,
   isExternal: boolean,
   isReactRouter: boolean,
+  jobTitleId: string,
   paddingSize: string,
   url: string,
-  className: string,
+};
+
+JobCardHeader.defaultProps = {
+  jobTitleId: '',
+  companyNameId: '',
 };
 
 export default JobCardHeader;
