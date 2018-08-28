@@ -163,6 +163,15 @@ export const JobDescription = styled.div`
   }
 `;
 
+export const TitleLink = styled.a`
+  h3 {
+    color: ${SecondaryColor.black};
+    &:hover {
+      color: ${SecondaryColor.lightblack};
+    }
+  }
+`;
+
 export const Footer = styled.footer`
   position: absolute;
   bottom: 0;
