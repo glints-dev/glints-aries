@@ -4,6 +4,12 @@
 
 * **props:**  adding jobTitleId & companyNameId to jobcard Component ([60941ea4](https://github.com/glints-dev/glints-aries/commit/60941ea42d2873e3f6c3220b76abd93ded9ebd8f))
 
+#### 0.1.47 (2018-08-28)
+
+##### New Features
+
+* **props:**  adding jobTitleId & companyNameId to jobcard Component ([60941ea4](https://github.com/glints-dev/glints-aries/commit/60941ea42d2873e3f6c3220b76abd93ded9ebd8f))
+
 #### 0.1.46 (2018-08-24)
 
 #### 0.1.45 (2018-08-23)
