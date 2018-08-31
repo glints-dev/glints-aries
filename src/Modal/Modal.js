@@ -1,27 +1,34 @@
 /* @flow */
 
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { Container, ModalBackground, ModalArea } from '../Style/ModalStyle';
 
-const Modal = (props: Props) => {
-  const {
-    visibility,
-    close,
-    type,
-    children,
-    className,
-    ...defaultProps
-  } = props;
+class Modal extends Component <Props> {
+  render() {
+    const {
+      visibility,
+      close,
+      type,
+      children,
+      className,
+      hideContentArea,
+      ...defaultProps
+    } = this.props;
 
-  return (
-    <Container {...defaultProps} visibility={visibility} className={className}>
-      <ModalBackground onClick={close} className="modalBackground" />
-      <ModalArea className="modalArea" type={type}>
-        {children}
-      </ModalArea>
-    </Container>
-  );
-};
+    return (
+      <Fragment>
+        {visibility && (
+          <Container {...defaultProps} className={className}>
+            <ModalBackground onClick={close} className="modalBackground" />
+            <ModalArea className="modalArea" type={type} hideContentArea={hideContentArea}>
+              {children}
+            </ModalArea>
+          </Container>
+        )}
+      </Fragment>
+    );
+  }
+}
 
 type Props = {
   children: React$Node,
@@ -29,6 +36,7 @@ type Props = {
   type: string,
   close: Function,
   className: string,
+  hideContentArea: boolean,
 }
 
 export default Modal;

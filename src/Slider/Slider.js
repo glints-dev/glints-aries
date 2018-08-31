@@ -48,12 +48,37 @@ class Slider extends Component <Props, State> {
   }
 
   componentDidMount() {
+    const { showItem, children } = this.props;
     const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
+
     this.setState({
       screenSize: windowWidth,
     });
 
+    if (showItem !== undefined) {
+      if (showItem > 0 && showItem <= children.length) {
+        this.setState({
+          translateValue: -(windowWidth * (showItem - 1)),
+          index: showItem,
+        });
+      } else {
+        this.setState({
+          translateValue: 0,
+          index: 1,
+        });
+      }
+    }
+
     window.addEventListener('resize', this.setSize);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
+
+    this.setState({
+      translateValue: -(windowWidth * (nextProps.showItem - 1)),
+      index: nextProps.showItem,
+    });
   }
 
   componentWillUnmount() {
@@ -84,6 +109,7 @@ class Slider extends Component <Props, State> {
 type Props = {
   children: React$Node,
   className: string,
+  showItem: number,
 };
 
 type State = {

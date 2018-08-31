@@ -24,6 +24,7 @@ import ColorStory from './ColorStory';
 import DeviceStory from './DeviceStory';
 import DividerStory from './DividerStory';
 import DropdownStory from './DropdownStory';
+import GalleryStory from './GalleryStory';
 import GlintsContainerStory from './GlintsContainerStory';
 import HeadingStory from './HeadingStory';
 import IconStory from './IconStory';
@@ -83,6 +84,7 @@ storiesOf('Components', module)
   .add('Job Overview', () => <JobOverviewStory />)
   .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('Gallery', () => <GalleryStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Icon', () => <IconStory />)
   .add('Information', () => <InformationStory />)

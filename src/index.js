@@ -14,6 +14,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as Collapsible } from './Collapsible';
 export { default as Divider } from './Divider';
 export { default as Dropdown } from './Dropdown';
+export { default as Gallery } from './Gallery';
 export { default as Heading } from './Heading';
 export { default as Information } from './Information';
 export { default as Icon } from './Icon';

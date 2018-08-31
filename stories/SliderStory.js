@@ -118,7 +118,7 @@ const SliderStory = () => (
         <tr>
           <td>
             <pre>
-              {`<Slider>
+              {`<Slider showItem={2}>
   <Slider.Item>
     <Component />
     <Component />
@@ -132,6 +132,51 @@ const SliderStory = () => (
         </tr>
       </tbody>
     </table>
+
+    <h1>
+      Props
+    </h1>
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            showItem
+          </td>
+          <td>
+            number
+          </td>
+          <td>
+            index of item
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets default item to show.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <h1>
       Note
     </h1>

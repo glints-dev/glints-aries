@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { SecondaryColor } from './Colors';
 import { Device } from '../Utils/StyleConfig';
 
 export const Container = styled.div`
     position: fixed;
+    display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
@@ -11,17 +13,6 @@ export const Container = styled.div`
     left: 0;
     height: 100vh;
     z-index: 9999;
-
-    ${({ visibility }) => {
-    if (visibility) {
-      return `
-        display: flex;
-      `;
-    }
-    return `
-        display: none;
-      `;
-  }}
 `;
 
 export const ModalBackground = styled.div`
@@ -37,12 +28,11 @@ export const ModalBackground = styled.div`
 
 export const ModalArea = styled.div`
     position: relative;
-    z-index: 2;
-    background: white;
+    background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
     max-height: ${({ type }) => type === 'full-screen' ? '100vh' : '75vh'};
     height: ${({ type }) => type === 'full-screen' && '100vh'};
-    overflow: auto;
-    padding: 1.5rem 3rem;
+    overflow: ${({ hideContentArea }) => hideContentArea ? 'hidden' : 'auto'};
+    padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1.5rem 3rem'};
     z-index: 9999;
 
     ${({ type }) => {
@@ -62,9 +52,13 @@ export const ModalArea = styled.div`
             width: 800px;
             max-width: 800px;
         `;
-      default:
+      case 'full-screen':
         return `
             width: 100%;
+        `;
+      default:
+        return `
+            width: auto;
         `;
     }
   }}

@@ -150,6 +150,25 @@ handleModal = () => {
             </tr>
             <tr>
               <td>
+                hideContentArea
+              </td>
+              <td>
+                boolean
+              </td>
+              <td>
+                <pre>
+                  {'true | false'}
+                </pre>
+              </td>
+              <td>
+                no
+              </td>
+              <td>
+                Hides the content area.
+              </td>
+            </tr>
+            <tr>
+              <td>
                 type
               </td>
               <td>

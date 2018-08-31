@@ -39,10 +39,10 @@ class Switch extends Component <Props, State> {
     return (
       <SwitchContainer
         className={className}
+        {...defaultProps}
         ID={clickID}
         defaultValue={initialValue}
         items={value}
-        {...defaultProps}
       >
         <RadioButton
           id={value[0]}
