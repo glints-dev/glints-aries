@@ -1,13 +1,25 @@
 /* @flow */
 
 import React, { Component, Fragment } from 'react';
+import { escEvent } from '../Utils/DomUtils';
 import { Container, ModalBackground, ModalArea } from '../Style/ModalStyle';
 
 class Modal extends Component <Props> {
+  componentDidMount() {
+    const { closeWithESC } = this.props;
+    document.addEventListener('keydown', escEvent(closeWithESC), false);
+  }
+
+  componentWillUnmount() {
+    const { closeWithESC } = this.props;
+    document.removeEventListener('keydown', escEvent(closeWithESC), false);
+  }
+
   render() {
     const {
       visibility,
       close,
+      closeWithESC,
       type,
       children,
       className,
@@ -37,6 +49,7 @@ type Props = {
   close: Function,
   className: string,
   hideContentArea: boolean,
+  closeWithESC: Function,
 }
 
 export default Modal;

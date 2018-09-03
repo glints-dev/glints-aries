@@ -43,6 +43,7 @@ import PsychedelicTextStory from './PsychedelicTextStory';
 import RadioButtonStory from './RadioButtonStory';
 import SearchStory from './SearchStory';
 import SearchFilterStory from './SearchFilterStory';
+import SelectStory from './SelectStory';
 import SliderStory from './SliderStory';
 import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
@@ -99,6 +100,7 @@ storiesOf('Components', module)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Search', () => <SearchStory />)
   .add('Search Filter', () => <SearchFilterStory />)
+  .add('Select', () => <SelectStory />)
   .add('Slider', () => <SliderStory />)
   .add('Stats', () => <StatsStory />)
   .add('Switch', () => <SwitchStory />)

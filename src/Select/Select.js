@@ -3,9 +3,9 @@ import {
   TextFieldContainer,
   TextFieldInput,
   TextFieldLabel,
-} from '../Style/TextFieldStyle';
+} from '../Style/SelectStyle';
 
-class TextField extends Component <Props, State> {
+class Select extends Component <Props, State> {
   state = {
     floating: false,
   }
@@ -67,4 +67,4 @@ type State = {
   floating: boolean,
 };
 
-export default TextField;
+export default Select;

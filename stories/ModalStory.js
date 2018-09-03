@@ -13,6 +13,10 @@ class ModalStory extends Component {
     this.setState({ visible: !visible });
   }
 
+  closeWithESC = () => {
+    this.setState({ visible: false });
+  }
+
   render() {
     const { visible } = this.state;
 
@@ -49,6 +53,7 @@ class ModalStory extends Component {
                 <Modal
                   visibility={visible}
                   close={this.handleModal}
+                  closeWithESC={this.closeWithESC}
                   type="medium"
                 >
                   <h1>
@@ -67,6 +72,10 @@ handleModal = () => {
   this.setState({ visible: !visible });
 }
 
+closeWithESC = () => {
+  this.setState({ visible: false });
+}
+
 <Button 
   type="default"
   theme="blue"
@@ -78,6 +87,7 @@ handleModal = () => {
 <Modal
   visibility={visible}
   close={this.handleModal}
+  closeWithESC={this.closeWithESC}
   type="medium"
 >
   This is modal
@@ -146,6 +156,23 @@ handleModal = () => {
               </td>
               <td>
                 Sets to close Modal.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                closeWithESC
+              </td>
+              <td>
+                Function
+              </td>
+              <td>
+                Function
+              </td>
+              <td>
+                no
+              </td>
+              <td>
+                Sets to close active Modal using ESC button.
               </td>
             </tr>
             <tr>

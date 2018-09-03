@@ -35,6 +35,10 @@ class Gallery extends Component <Props, State> {
     });
   }
 
+  closeWithESC = () => {
+    this.setState({ visible: false });
+  }
+
   componentDidMount() {
     const { children } = this.props;
 
@@ -59,6 +63,7 @@ class Gallery extends Component <Props, State> {
         <Modal
           visibility={visible}
           close={this.closeModal}
+          closeWithESC={this.closeWithESC}
           hideContentArea
         >
           <Slider showItem={currentIndex + 1}>

@@ -32,6 +32,7 @@ export { default as PsychedelicText } from './PsychedelicText';
 export { default as RadioButton } from './RadioButton';
 export { default as Search } from './Search';
 export { default as SearchFilter } from './SearchFilter';
+export { default as Select } from './Select';
 export { default as Slider } from './Slider';
 export { default as Stats } from './Stats';
 export { default as Swipeable } from './Swipeable';
