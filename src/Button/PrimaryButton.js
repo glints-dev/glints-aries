@@ -8,10 +8,10 @@ const PrimaryButton = ({
   children,
   theme,
   className,
-  ...defaultButtonProps
+  ...defaultProps
 }: Props) => (
   <PrimaryContainer theme={theme} className={className}>
-    <PrimaryBtn className={`primaryButton ${className}`} id={id} theme={theme} {...defaultButtonProps}>
+    <PrimaryBtn className={`primaryButton ${className}`} id={id} theme={theme} {...defaultProps}>
       {children}
     </PrimaryBtn>
   </PrimaryContainer>
@@ -23,10 +23,5 @@ type Props = {
   children: React$Node,
   className: string,
 }
-
-PrimaryButton.defaultProps = {
-  id: '',
-  className: '',
-};
 
 export default PrimaryButton;

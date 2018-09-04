@@ -17,6 +17,7 @@ const renderButton = ({
   onClick,
   className,
   hoverColor,
+  ...defaultProps,
 }: Props) => {
   switch (variant) {
     case Variant.PRIMARY:
@@ -27,6 +28,7 @@ const renderButton = ({
           theme={theme}
           className={className}
           hoverColor={hoverColor}
+          {...defaultProps}
         >
           {children}
         </PrimaryButton>
@@ -38,6 +40,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          {...defaultProps}
         >
           {children}
         </SecondaryButton>
@@ -50,6 +53,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          {...defaultProps}
         >
           {children}
         </GhostButton>
@@ -62,6 +66,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          {...defaultProps}
         >
           {children}
         </LinkButton>
@@ -74,6 +79,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          {...defaultProps}
         >
           {children}
         </DefaultButton>

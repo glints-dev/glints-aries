@@ -3,8 +3,8 @@
 import React from 'react';
 import { DefaultBtn } from '../Style/ButtonStyle';
 
-const DefaultButton = ({ children, ...defaultButtonProps }: Props) => (
-  <DefaultBtn {...defaultButtonProps}>
+const DefaultButton = ({ children, ...defaultProps }: Props) => (
+  <DefaultBtn {...defaultProps}>
     { children }
   </DefaultBtn>
 );

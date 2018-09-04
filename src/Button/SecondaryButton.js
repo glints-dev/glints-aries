@@ -6,11 +6,11 @@ import { SecondaryContainer, SecondaryBtn } from '../Style/ButtonStyle';
 const SecondaryButton = ({
   children,
   className,
-  ...defaultButtonProps
+  ...defaultProps
 }: Props) => (
 
   <SecondaryContainer className={className}>
-    <SecondaryBtn className={`${className} secondaryButton`} {...defaultButtonProps}>
+    <SecondaryBtn className={`${className} secondaryButton`} {...defaultProps}>
       {children}
     </SecondaryBtn>
   </SecondaryContainer>

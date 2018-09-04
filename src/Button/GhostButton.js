@@ -3,8 +3,8 @@
 import React from 'react';
 import { GhostBtn } from '../Style/ButtonStyle';
 
-const GhostButton = ({ children, ...defaultButtonProps }: Props) => (
-  <GhostBtn {...defaultButtonProps}>
+const GhostButton = ({ children, ...defaultProps }: Props) => (
+  <GhostBtn {...defaultProps}>
     {children}
   </GhostBtn>
 );

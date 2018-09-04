@@ -4,9 +4,9 @@ import React from 'react';
 import { LinkBtn } from '../Style/ButtonStyle';
 import Label from '../Label';
 
-const LinkButton = ({ children, ...defaultButtonProps }: Props) => (
+const LinkButton = ({ children, ...defaultProps }: Props) => (
   <LinkBtn>
-    <Label {...defaultButtonProps}>
+    <Label {...defaultProps}>
       {children}
     </Label>
   </LinkBtn>
