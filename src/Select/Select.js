@@ -44,6 +44,17 @@ class Select extends Component <Props, State> {
     return listener;
   }
 
+  componentDidMount() {
+    const { value } = this.props;
+    if (value !== undefined) {
+      if (value !== '') {
+        this.setState({
+          floating: true,
+        });
+      }
+    }
+  }
+
   render() {
     const {
       label,
