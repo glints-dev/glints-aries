@@ -28,12 +28,28 @@ const SelectStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Select label="Username" />
+            <Select label="Jobs">
+              <Select.Item>
+                Accountant
+              </Select.Item>
+              <Select.Item>
+                Business Development
+              </Select.Item>
+              <Select.Item>
+                Finance
+              </Select.Item>
+              <Select.Item>
+                Software Engineer
+              </Select.Item>
+            </Select>
           </td>
           <td>
-            <code>
-              {'<Select />'}
-            </code>
+            <pre>
+              {`<Select label="Jobs">
+  <Select.Item>...</Select.Item>
+  <Select.Item>...</Select.Item>
+</Select>`}
+            </pre>
           </td>
         </tr>
       </tbody>

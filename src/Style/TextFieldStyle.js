@@ -19,7 +19,7 @@ export const TextFieldLabel = styled.label`
   ${({ floating }) => {
     if (floating) {
       return `
-        transform: translate3d(-.5em, -2em, 0);
+        transform: translate3d(-.5em, -2.2em, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -40,10 +40,9 @@ export const TextFieldInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 1em 2em 1em 1em;
   border: 2px solid ${SecondaryColor.lightblack};
-  font-weight: 600;
   transition: all .5s;
 
   ${({ status, floating }) => {
@@ -108,7 +107,7 @@ export const TextFieldInput = styled.input`
   }}
 
     + ${TextFieldLabel} {
-      transform: translate3d(-.5em, -2em, 0);
+      transform: translate3d(-.5em, -2.2em, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

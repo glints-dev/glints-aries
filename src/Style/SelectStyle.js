@@ -1,13 +1,25 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
 
-export const TextFieldContainer = styled.div`
+export const Container = styled.div`
   position: relative;
-  display: inline-flex;
-  align-items: center;
 `;
 
-export const TextFieldLabel = styled.label`
+export const SelectWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  .icon {
+    position: absolute;
+    right: 1em;
+    display: flex;
+    height: 1em;
+    width: 1em;
+    align-items: center;
+    pointer-events: none;
+  }
+`;
+
+export const Label = styled.label`
   position: absolute;
   left: 1em;
   background: ${SecondaryColor.white};
@@ -19,7 +31,7 @@ export const TextFieldLabel = styled.label`
   ${({ floating }) => {
     if (floating) {
       return `
-        transform: translate3d(-.5em, -2em, 0);
+        transform: translate3d(-.5em, -2.2em, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -35,15 +47,13 @@ export const TextFieldLabel = styled.label`
   }}
 `;
 
-export const TextFieldInput = styled.input`
-  position: relative;
+export const Input = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 1em 2em 1em 1em;
   border: 2px solid ${SecondaryColor.lightblack};
-  font-weight: 600;
   transition: all .5s;
 
   ${({ status, floating }) => {
@@ -61,7 +71,7 @@ export const TextFieldInput = styled.input`
     cursor: not-allowed;
     background: ${SecondaryColor.whitesmoke};
 
-    + ${TextFieldLabel} {
+    + ${Label} {
       background: transparent;
       color: ${SecondaryColor.grey};
     }
@@ -83,7 +93,7 @@ export const TextFieldInput = styled.input`
     }
   }}
 
-    + ${TextFieldLabel} {
+    + ${Label} {
       color: ${SecondaryColor.black};
 
       ${({ status }) => {
@@ -107,8 +117,8 @@ export const TextFieldInput = styled.input`
     }
   }}
 
-    + ${TextFieldLabel} {
-      transform: translate3d(-.5em, -2em, 0);
+    + ${Label} {
+      transform: translate3d(-.5em, -2.2em, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
@@ -122,4 +132,30 @@ export const TextFieldInput = styled.input`
   }}
     }
   }
+`;
+
+export const ItemWrapper = styled.div`
+  position: absolute;
+  background: ${SecondaryColor.white};
+  width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+  padding: 1em 2em 1em 1em;
+  z-index: 9999;
+  
+  ul {
+    li {
+      margin-bottom: .5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+`;
+
+export const Item = styled.li`
+  display: flex;
+  cursor: pointer;
 `;

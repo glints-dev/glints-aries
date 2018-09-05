@@ -1,7 +1,8 @@
 // @flow
 
 import Select from './Select';
+import SelectItems from './SelectItems';
 
-export { Select };
+Select.Item = SelectItems;
 
 export default Select;
