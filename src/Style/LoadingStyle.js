@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-import { PrimaryColor, SecondaryColor } from './Colors';
+import { SecondaryColor } from './Colors';
 import { Size } from '../Utils/StyleConfig';
 
 const spin = keyframes`
@@ -16,30 +16,19 @@ const spin = keyframes`
 const spinnerGlobal = css`
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: 8px solid transparent;
-  border-top-color: ${PrimaryColor.glintsred};
 `;
 
 export const LoadingContainer = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-
-  label {
-    position: relative;
-    text-transform: uppercase;
-    top: -.5em;
-    font-weight: 600;
-  }
+  display: inline-flex;
 `;
 
 export const Spinner = styled.div`
   position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -47,23 +36,23 @@ export const Spinner = styled.div`
     switch (props.size) {
       case `${Size.SMALL}`:
         return `
-          width: 3em;
-          height: 3em;
+          width: 1.5rem;
+          height: 1.5rem;
         `;
       case `${Size.MEDIUM}`:
         return `
-          width: 4em;
-          height: 4em;
+          width: 2.5rem;
+          height: 2.5rem;
         `;
       case `${Size.LARGE}`:
         return `
-          width: 6em;
-          height: 6em;
+          width: 3.5rem;
+          height: 3.5rem;
         `;
       default:
         return `
-          width: 4em;
-          height: 4em;
+          width: 2.5rem;
+          height: 2.5rem;
         `;
     }
   }};
@@ -72,10 +61,57 @@ export const Spinner = styled.div`
     ${spinnerGlobal};
     z-index: 100;
     animation: ${spin} 1s infinite;
+    
+    ${(props) => {
+    switch (props.size) {
+      case `${Size.SMALL}`:
+        return `
+          border: 3px solid transparent;
+          border-top-color: ${SecondaryColor.white};
+        `;
+      case `${Size.MEDIUM}`:
+        return `
+          border: 4px solid transparent;
+          border-top-color: ${SecondaryColor.white};
+        `;
+      case `${Size.LARGE}`:
+        return `
+          border: 5px solid transparent;
+          border-top-color: ${SecondaryColor.white};
+        `;
+      default:
+        return `
+          border: 4px solid transparent;
+          border-top-color: ${SecondaryColor.white};
+        `;
+    }
+  }};
   }
 
   &:after {
     ${spinnerGlobal};
-    border: 8px solid ${SecondaryColor.whitesmoke};
+    border: 8px solid transparent;
+
+    ${(props) => {
+    switch (props.size) {
+      case `${Size.SMALL}`:
+        return `
+          border: 3px solid ${SecondaryColor.actionblue};
+        `;
+      case `${Size.MEDIUM}`:
+        return `
+          border: 4px solid ${SecondaryColor.actionblue};
+        `;
+      case `${Size.LARGE}`:
+        return `
+          border: 5px solid ${SecondaryColor.actionblue};
+        `;
+      default:
+        return `
+          border: 4px solid transparent;
+          border-top-color: ${SecondaryColor.white};
+        `;
+    }
+  }};
   }
 `;

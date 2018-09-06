@@ -28,11 +28,11 @@ const LoadingStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Loading size="small" text="saving" />
+            <Loading size="medium" />
           </td>
           <td>
             <code>
-              {'<Loading size="small" title="saving" />'}
+              {'<Loading size="medium" />'}
             </code>
           </td>
         </tr>
@@ -85,23 +85,6 @@ const LoadingStory = () => (
               medium
             </b>
             .
-          </td>
-        </tr>
-        <tr>
-          <td>
-            text
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets title beside loader.
           </td>
         </tr>
       </tbody>

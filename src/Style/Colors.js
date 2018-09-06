@@ -18,5 +18,6 @@ export const SecondaryColor = {
   purplepizza: '#FF00E5',
   blue: '#0869C2',
   bluegem: '#9013FE',
+  actionblue: '#017EB7',
   green: '#008464',
 };

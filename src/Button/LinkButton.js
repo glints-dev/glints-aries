@@ -1,11 +1,15 @@
 /* @flow */
 
 import React from 'react';
+import Loading from '../Loading';
 import { LinkBtn } from '../Style/ButtonStyle';
 import Label from '../Label';
 
-const LinkButton = ({ children, ...defaultProps }: Props) => (
+const LinkButton = ({ children, loading, ...defaultProps }: Props) => (
   <LinkBtn>
+    {loading
+      && <Loading className="loader" size="small" />
+    }
     <Label {...defaultProps}>
       {children}
     </Label>
@@ -17,6 +21,7 @@ type Props = {
   onClick: Function,
   children: React$Node,
   className: string,
+  loading: boolean,
 }
 
 export default LinkButton;

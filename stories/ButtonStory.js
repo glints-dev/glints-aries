@@ -38,14 +38,21 @@ const ButtonStories = () => (
         <tbody>
           <tr>
             <td style={{ padding: 20 }}>
-              <Button theme="blue" onClick={action('Default Button')} hoverColor="red">
+              <Button theme="blue" loading disabled onClick={action('Default Button')} hoverColor="red">
                 Default
               </Button>
             </td>
             <td>
-              <code>
-                {'<Button theme="blue" hoverColor="red">Default</Button>'}
-              </code>
+              <pre>
+                {`<Button
+  theme="blue"
+  loading
+  disabled
+  hoverColor="red"
+>
+  Default
+</Button>`}
+              </pre>
             </td>
           </tr>
         </tbody>
@@ -151,6 +158,42 @@ const ButtonStories = () => (
             </td>
             <td></td>
           </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              loading
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+              Showing loader inside button.
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -182,9 +225,14 @@ const ButtonStories = () => (
               </Button>
             </td>
             <td>
-              <code>
-                {'<Button variant="primary" theme="red">Primary</Button>'}
-              </code>
+              <pre>
+                {`<Button
+  variant="primary"
+  theme="red"
+>
+  Primary
+</Button>`}
+              </pre>
             </td>
           </tr>
         </tbody>
@@ -252,9 +300,7 @@ const ButtonStories = () => (
             <td>
               no
             </td>
-            <td>
-
-            </td>
+            <td></td>
           </tr>
           <tr>
             <td>
@@ -294,6 +340,42 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
+          </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              loading
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+              Showing loader inside button.
+            </td>
           </tr>
         </tbody>
       </table>
@@ -354,9 +436,13 @@ const ButtonStories = () => (
               </Button>
             </td>
             <td>
-              <code>
-                {'<Button variant="secondary">Secondary</Button>'}
-              </code>
+              <pre>
+                {`<Button
+  variant="secondary"
+>
+  Secondary
+</Button>`}
+              </pre>
             </td>
           </tr>
         </tbody>
@@ -424,6 +510,42 @@ const ButtonStories = () => (
             </td>
             <td></td>
           </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              loading
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+              Showing loader inside button.
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -484,9 +606,14 @@ const ButtonStories = () => (
               </Button>
             </td>
             <td>
-              <code>
-                {'<Button variant="ghost" theme="red">Ghost</Button>'}
-              </code>
+              <pre>
+                {`<Button
+  variant="ghost"
+  theme="red"
+>
+  Ghost
+</Button>`}
+              </pre>
             </td>
           </tr>
         </tbody>
@@ -554,9 +681,7 @@ const ButtonStories = () => (
             <td>
               no
             </td>
-            <td>
-
-            </td>
+            <td></td>
           </tr>
           <tr>
             <td>
@@ -590,6 +715,42 @@ const ButtonStories = () => (
             </td>
             <td></td>
           </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              loading
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+              Showing loader inside button.
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -621,9 +782,14 @@ const ButtonStories = () => (
               </Button>
             </td>
             <td>
-              <code>
-                {'<Button variant="link" theme="blue">Link</Button>'}
-              </code>
+              <pre>
+                {`<Button
+  variant="link"
+  theme="blue"
+>
+  Link
+</Button>`}
+              </pre>
             </td>
           </tr>
         </tbody>
@@ -726,6 +892,42 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
+          </tr>
+          <tr>
+            <td>
+              disabled
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              loading
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <pre>
+                true | false
+              </pre>
+            </td>
+            <td>
+              no
+            </td>
+            <td>
+              Showing loader inside button.
+            </td>
           </tr>
         </tbody>
       </table>

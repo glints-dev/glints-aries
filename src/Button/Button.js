@@ -17,7 +17,8 @@ const renderButton = ({
   onClick,
   className,
   hoverColor,
-  ...defaultProps,
+  loading,
+  ...defaultProps
 }: Props) => {
   switch (variant) {
     case Variant.PRIMARY:
@@ -28,6 +29,7 @@ const renderButton = ({
           theme={theme}
           className={className}
           hoverColor={hoverColor}
+          loading={loading}
           {...defaultProps}
         >
           {children}
@@ -40,6 +42,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          loading={loading}
           {...defaultProps}
         >
           {children}
@@ -53,6 +56,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          loading={loading}
           {...defaultProps}
         >
           {children}
@@ -66,6 +70,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          loading={loading}
           {...defaultProps}
         >
           {children}
@@ -79,6 +84,7 @@ const renderButton = ({
           onClick={onClick}
           className={className}
           hoverColor={hoverColor}
+          loading={loading}
           {...defaultProps}
         >
           {children}
@@ -100,7 +106,8 @@ type Props = {
   onClick: Function,
   children: React$Node,
   className: string,
-  hoverColor: string
+  hoverColor: string,
+  loading: boolean,
 }
 
 export default Button;

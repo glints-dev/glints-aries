@@ -77,6 +77,10 @@ export const DefaultBtn = Button.extend`
     color: ${SecondaryColor.white};
     transition: all .5s;
   }
+
+  .loader {
+    margin-right: .5em;
+  }
 `;
 
 /*
@@ -127,6 +131,10 @@ export const PrimaryContainer = styled.div`
 export const PrimaryBtn = Button.extend`
   flex: 1;
   transition: all .2s;
+
+  .loader {
+    margin-right: .5em;
+  }
 
   ${(props) => {
     switch (props.theme) {
@@ -189,6 +197,10 @@ export const SecondaryBtn = Button.extend`
   color: ${SecondaryColor.black};
   transition: all .2s;
   z-index: 2;
+
+  .loader {
+    margin-right: .5em;
+  }
 `;
 
 export const SecondaryContainer = styled.div`
@@ -248,6 +260,10 @@ export const SecondaryContainer = styled.div`
 export const GhostBtn = Button.extend`
   flex: 1;
   transition: background-color .5s;
+
+  .loader {
+    margin-right: .5em;
+  }
 
   ${(props) => {
     switch (props.theme) {
@@ -322,6 +338,10 @@ export const GhostBtn = Button.extend`
 export const LinkBtn = styled(Button)`
   font-weight: normal;
   text-transform: inherit;
+
+  .loader {
+    margin-right: .5em;
+  }
 
   label {
     cursor: pointer;
