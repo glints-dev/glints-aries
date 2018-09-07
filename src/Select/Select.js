@@ -13,6 +13,7 @@ class Select extends Component <Props, State> {
   state = {
     floating: false,
     isFocus: false,
+    selectedValue: '',
   }
 
   handleFocusChange = (onBlur) => {
@@ -44,12 +45,21 @@ class Select extends Component <Props, State> {
     return listener;
   }
 
+  handleClick = (e) => {
+    this.setState({
+      selectedValue: e.currentTarget.innerText,
+      floating: true,
+      isFocus: false,
+    });
+  }
+
   componentDidMount() {
     const { value } = this.props;
     if (value !== undefined) {
       if (value !== '') {
         this.setState({
           floating: true,
+          selectedValue: value,
         });
       }
     }
@@ -67,8 +77,7 @@ class Select extends Component <Props, State> {
       children,
       ...defaultProps
     } = this.props;
-
-    const { floating, isFocus } = this.state;
+    const { floating, isFocus, selectedValue } = this.state;
 
     return (
       <Container className={className}>
@@ -78,9 +87,8 @@ class Select extends Component <Props, State> {
             status={status}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
-            onBlur={this.handleFocusChange(onBlur)}
             floating={floating}
-            value={value}
+            value={selectedValue}
             {...defaultProps}
           />
           <Label floating={floating} status={status}>
@@ -93,7 +101,11 @@ class Select extends Component <Props, State> {
         {isFocus && (
           <ItemWrapper>
             <ul>
-              { children }
+              {children.map(data => (
+                <Item key={data.props.children} onClick={this.handleClick}>
+                  {data.props.children}
+                </Item>
+              ))}
             </ul>
           </ItemWrapper>
         )}
@@ -113,6 +125,7 @@ type Props = {
 type State = {
   floating: boolean,
   isFocus: boolean,
+  selectedValue: string,
 };
 
 export default Select;

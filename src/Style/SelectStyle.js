@@ -140,22 +140,26 @@ export const ItemWrapper = styled.div`
   width: 100%;
   height: auto;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
-  padding: 1em 2em 1em 1em;
   z-index: 9999;
-  
-  ul {
-    li {
-      margin-bottom: .5em;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-  
+  max-height: 200px;
+  overflow: auto;
 `;
 
 export const Item = styled.li`
   display: flex;
   cursor: pointer;
+  padding: .5em 1em;
+  
+  &:first-child {
+    margin-top: .5em;
+  }
+
+  &:last-child {
+    margin-bottom: .5em;
+  }
+
+  &:hover {
+    color: ${SecondaryColor.blue};
+    background: ${SecondaryColor.lightergrey};
+  }
 `;

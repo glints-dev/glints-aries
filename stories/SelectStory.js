@@ -29,18 +29,18 @@ const SelectStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <Select label="Jobs">
-              <Select.Item>
+              <li>
                 Accountant
-              </Select.Item>
-              <Select.Item>
+              </li>
+              <li>
                 Business Development
-              </Select.Item>
-              <Select.Item>
+              </li>
+              <li>
                 Finance
-              </Select.Item>
-              <Select.Item>
+              </li>
+              <li>
                 Software Engineer
-              </Select.Item>
+              </li>
             </Select>
           </td>
           <td>
