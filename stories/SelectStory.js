@@ -46,8 +46,8 @@ const SelectStory = () => (
           <td>
             <pre>
               {`<Select label="Jobs">
-  <Select.Item>...</Select.Item>
-  <Select.Item>...</Select.Item>
+  <li>...</li>
+  <li>...</li>
 </Select>`}
             </pre>
           </td>
