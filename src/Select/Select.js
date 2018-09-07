@@ -45,6 +45,20 @@ class Select extends Component <Props, State> {
     return listener;
   }
 
+  handleChange = (onChange) => {
+    const listener = (e) => {
+      this.setState({
+        selectedValue: e.target.value,
+      });
+
+      if (onChange !== undefined) {
+        return onChange();
+      }
+    };
+
+    return listener;
+  }
+
   handleClick = (e) => {
     this.setState({
       selectedValue: e.currentTarget.innerText,
@@ -74,6 +88,7 @@ class Select extends Component <Props, State> {
       className,
       onFocus,
       onBlur,
+      onChange,
       children,
       ...defaultProps
     } = this.props;
@@ -88,6 +103,7 @@ class Select extends Component <Props, State> {
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
             onBlur={this.handleFocusChange(onBlur)}
+            onChange={this.handleChange(onChange)}
             floating={floating}
             value={selectedValue}
             {...defaultProps}
