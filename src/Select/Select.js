@@ -53,6 +53,12 @@ class Select extends Component <Props, State> {
     });
   }
 
+  handleChange = (e) => {
+    this.setState({
+      selectedValue: e.target.value,
+    });
+  }
+
   componentDidMount() {
     const { value } = this.props;
     if (value !== undefined) {
@@ -87,8 +93,10 @@ class Select extends Component <Props, State> {
             status={status}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
+            onBlur={this.handleFocusChange(onBlur)}
             floating={floating}
             value={selectedValue}
+            onChange={this.handleChange}
             {...defaultProps}
           />
           <Label floating={floating} status={status}>
