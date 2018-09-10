@@ -28,7 +28,7 @@ const BreadcrumbStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Breadcrumb>
+            <Breadcrumb bgColor="#f3f3f3">
               <Breadcrumb.Item>
                 Home
               </Breadcrumb.Item>
