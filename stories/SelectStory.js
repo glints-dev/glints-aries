@@ -45,7 +45,15 @@ const SelectStory = () => (
           </td>
           <td>
             <pre>
-              {`<Select label="Jobs">
+              {`
+handleChange = (value) => {
+  console.log('selected value: ', value);
+}
+
+<Select
+  label="Jobs"
+  onChange={this.handleChange}
+>
   <li>...</li>
   <li>...</li>
 </Select>`}
@@ -149,6 +157,23 @@ const SelectStory = () => (
           </td>
           <td>
             Disable the Text Field.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            onChange
+          </td>
+          <td>
+            function
+          </td>
+          <td>
+            -
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Called when select an option or value of input is changed.
           </td>
         </tr>
       </tbody>
