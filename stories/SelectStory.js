@@ -28,20 +28,10 @@ const SelectStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Select label="Jobs">
-              <li>
-                Accountant
-              </li>
-              <li>
-                Business Development
-              </li>
-              <li>
-                Finance
-              </li>
-              <li>
-                Software Engineer
-              </li>
-            </Select>
+            <Select
+              label="Jobs"
+              options={['Accountant', 'Business Development', 'Finance', 'Software Engineer']}
+            />
           </td>
           <td>
             <pre>
@@ -52,11 +42,9 @@ handleChange = (value) => {
 
 <Select
   label="Jobs"
+  options={options}
   onChange={this.handleChange}
->
-  <li>...</li>
-  <li>...</li>
-</Select>`}
+/>`}
             </pre>
           </td>
         </tr>
@@ -102,6 +90,23 @@ handleChange = (value) => {
           </td>
           <td>
             Sets placeholder value for the Text Field.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            options
+          </td>
+          <td>
+            array
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            Sets options for Select.
           </td>
         </tr>
         <tr>

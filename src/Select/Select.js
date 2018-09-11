@@ -14,9 +14,10 @@ class Select extends Component <Props, State> {
     floating: false,
     isFocus: false,
     selectedValue: '',
+    filterValue: [],
   }
 
-  handleFocusChange = (onBlur) => {
+  handleFocusOut = (onBlur) => {
     const listener = (e) => {
       this.setState({
         floating: e.target.value.length > 0,
@@ -46,8 +47,11 @@ class Select extends Component <Props, State> {
   }
 
   handleChange = (e) => {
+    const { options } = this.props;
+
     this.setState({
       selectedValue: e.target.value,
+      filterValue: options.filter(data => data.toLowerCase().includes(e.target.value.toLowerCase())),
     });
   }
 
@@ -66,7 +70,12 @@ class Select extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { value } = this.props;
+    const { value, options } = this.props;
+
+    this.setState({
+      filterValue: options.map(data => data),
+    });
+
     if (value !== undefined) {
       if (value !== '') {
         this.setState({
@@ -80,16 +89,22 @@ class Select extends Component <Props, State> {
   render() {
     const {
       label,
+      options,
       value,
       status,
       disabled,
       className,
       onFocus,
       onBlur,
-      children,
       ...defaultProps
     } = this.props;
-    const { floating, isFocus, selectedValue } = this.state;
+
+    const {
+      floating,
+      isFocus,
+      selectedValue,
+      filterValue,
+    } = this.state;
 
     return (
       <Container className={className}>
@@ -99,7 +114,7 @@ class Select extends Component <Props, State> {
             status={status}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
-            onBlur={this.handleFocusChange(onBlur)}
+            onBlur={this.handleFocusOut(onBlur)}
             onChange={this.handleChange}
             floating={floating}
             value={selectedValue}
@@ -115,9 +130,9 @@ class Select extends Component <Props, State> {
         {isFocus && (
           <ItemWrapper>
             <ul>
-              {children.map(data => (
-                <Item key={data.props.children} onClick={this.handleClick}>
-                  {data.props.children}
+              {filterValue.map((data, index) => (
+                <Item key={index} onClick={this.handleClick}>
+                  {data}
                 </Item>
               ))}
             </ul>
@@ -133,13 +148,13 @@ type Props = {
   status: string,
   disabled: boolean,
   className: string,
-  children: React$Node,
 }
 
 type State = {
   floating: boolean,
   isFocus: boolean,
   selectedValue: string,
+  filterValue: array,
 };
 
 export default Select;
