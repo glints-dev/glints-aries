@@ -24,7 +24,7 @@ export const SideBarContainer = styled.div`
     height: 100vh;
     width: 100vw;
     top: 0px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: white;
     transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100vh)'};
     transition: all .3s ease-in-out;
     z-index: 9999;

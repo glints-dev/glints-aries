@@ -31,6 +31,7 @@ import IconStory from './IconStory';
 import InformationStory from './InformationStory';
 import JobCardStory from './JobCardStory';
 import JobOverviewStory from './JobOverviewStory';
+import SideBarStory from './SideBarStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
@@ -108,7 +109,7 @@ storiesOf('Components', module)
   .add('Tabs', () => <TabsStory />)
   .add('Tag', () => <TagStory />)
   .add('Text Field', () => <TextFieldStory />)
-  .add('TEST', () => <Layout />);
+  .add('Side Bar', () => <SideBarStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
