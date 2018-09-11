@@ -100,7 +100,7 @@ const SearchStory = () => (
                 <Button>
                   Go
                   {' '}
-                  <Icon name="arrow-next" size="25" />
+                  <Icon name="arrow-next" size="10" />
                 </Button>
               </Search.Item>
             </Search>
