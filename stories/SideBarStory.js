@@ -1,16 +1,14 @@
 import React from 'react';
-import Select from '../src/Select';
-import SideBar from '../src/SideBar';
 
-const SelectStory = () => (
+const SideBarStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        Select
+        Side Bar
       </h1>
       <p>
         <code>
-          {'import { Select } from \'glints-aries\''}
+          {'import { SideBar } from \'glints-aries\''}
         </code>
       </p>
     </div>
@@ -137,4 +135,4 @@ const SelectStory = () => (
   </div>
 );
 
-export default SelectStory;
+export default SideBarStory;
