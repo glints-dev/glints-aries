@@ -1,3 +1,11 @@
+#### 0.2.14 (2018-09-11)
+
+##### Code Style Changes
+
+* **component:**
+  *  JobOverview style adjustment ([b1c077f8](https://github.com/glints-dev/glints-aries/commit/b1c077f8e860c78a720886fe019bf6fa0e30d841))
+  *  update breadcrumb. accept bgColor & marginBottomProps ([52841427](https://github.com/glints-dev/glints-aries/commit/528414274b4b8ab3f667210f0f065a1ce2eae43e))
+
 #### 0.2.13 (2018-09-10)
 
 #### 0.2.12 (2018-09-07)
