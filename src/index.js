@@ -30,6 +30,7 @@ export { default as Popover } from './Popover';
 export { default as ProfilePictureShadow } from './ProfilePictureShadow';
 export { default as PsychedelicText } from './PsychedelicText';
 export { default as RadioButton } from './RadioButton';
+export { default as SideBar } from './SideBar';
 export { default as Search } from './Search';
 export { default as SearchFilter } from './SearchFilter';
 export { default as Select } from './Select';

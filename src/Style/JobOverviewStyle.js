@@ -12,6 +12,7 @@ export const JobOverviewHeaderStyle = styled.div`
 
 export const JobOverviewBodystyle = styled.div`
   padding-left: 15px;
+  width: 100%;
 `;
 
 export const JobOverviewLabelStyle = styled.p`
@@ -23,7 +24,7 @@ export const JobOverviewLabelStyle = styled.p`
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 18px;
+  margin-bottom: 15px !important;
 `;
 
 export const JobOverviewHeadingStyle = styled.h1`
@@ -34,7 +35,7 @@ export const JobOverviewHeadingStyle = styled.h1`
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 `;
 
 export const JobOverviewLinkStyle = styled.div`
@@ -64,8 +65,8 @@ export const JobOverviewInfostyle = styled.div`
   }
 
   p {
-    margin-right: 30px;
-    margin-bottom: 10px;
+    margin-right: 30px !important;
+    margin-bottom: 10px !important;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -73,10 +74,13 @@ export const JobOverviewInfostyle = styled.div`
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
-    display: block;
+    display: flex;
     svg {
       vertical-align: middle;
       margin-right: 5px;
+      margin-top: 7px;
+      width: 6px;
+      height: 6px;
     }
   }
 `;

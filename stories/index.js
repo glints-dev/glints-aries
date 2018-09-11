@@ -31,6 +31,7 @@ import IconStory from './IconStory';
 import InformationStory from './InformationStory';
 import JobCardStory from './JobCardStory';
 import JobOverviewStory from './JobOverviewStory';
+import SideBarStory from './SideBarStory';
 import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
@@ -51,6 +52,7 @@ import SwitchStory from './SwitchStory';
 import TabsStory from './TabsStory';
 import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
+import { Layout } from '../src/SideBar';
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -106,7 +108,8 @@ storiesOf('Components', module)
   .add('Switch', () => <SwitchStory />)
   .add('Tabs', () => <TabsStory />)
   .add('Tag', () => <TagStory />)
-  .add('Text Field', () => <TextFieldStory />);
+  .add('Text Field', () => <TextFieldStory />)
+  .add('Side Bar', () => <SideBarStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
