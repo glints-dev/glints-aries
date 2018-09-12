@@ -1,7 +1,9 @@
 /* @flow */
 
 import React from 'react';
-import { HeaderWrapper } from '../Style/MobileMenuStyle';
+import { HeaderWrapper, DividerWrapper } from '../Style/MobileMenuStyle';
+
+import Divider from '../Divider';
 
 const HeaderItems = (props: Props) => {
   const {
@@ -10,9 +12,14 @@ const HeaderItems = (props: Props) => {
   } = props;
 
   return (
-    <HeaderWrapper className={className}>
-      {children}
-    </HeaderWrapper>
+    <div>
+      <HeaderWrapper className={className}>
+        {children}
+      </HeaderWrapper>
+      <DividerWrapper>
+        <Divider size="large" theme="white" thickness="thin" />
+      </DividerWrapper>
+    </div>
   );
 };
 
