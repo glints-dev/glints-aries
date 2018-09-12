@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Icon from '../Icon';
 import Item from './SelectItems';
 import {
@@ -15,6 +16,7 @@ class Select extends Component <Props, State> {
     isFocus: false,
     selectedValue: '',
     filterValue: [],
+    cursor: 0,
   }
 
   handleFocusOut = (onBlur) => {
@@ -47,21 +49,20 @@ class Select extends Component <Props, State> {
   }
 
   handleChange = (e) => {
-    const { options } = this.props;
+    const { children } = this.props;
 
     this.setState({
       selectedValue: e.target.value,
-      filterValue: options.filter(data => data.toLowerCase().includes(e.target.value.toLowerCase())),
+      filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
     });
   }
 
   handleClick = (e) => {
-    const { onChange } = this.props;
+    const { children, onChange } = this.props;
 
     this.setState({
       selectedValue: e.currentTarget.innerText,
-      floating: true,
-      isFocus: false,
+      filterValue: children.map(data => data),
     });
 
     if (onChange !== undefined) {
@@ -69,11 +70,34 @@ class Select extends Component <Props, State> {
     }
   }
 
+  handleKeyDown = (e) => {
+    const { children } = this.props;
+    const { cursor, filterValue } = this.state;
+
+    if (e.keyCode === 38 && cursor > 0) {
+      this.setState({
+        cursor: cursor - 1,
+      });
+    } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
+      this.setState({
+        cursor: cursor + 1,
+      });
+    } else if (e.keyCode === 13) {
+      e.target.blur();
+      this.setState({
+        selectedValue: document.querySelector('.active').innerHTML,
+        filterValue: children.map(data => data),
+        floating: true,
+        isFocus: false,
+      });
+    }
+  }
+
   componentDidMount() {
-    const { value, options } = this.props;
+    const { value, children } = this.props;
 
     this.setState({
-      filterValue: options.map(data => data),
+      filterValue: children.map(data => data),
     });
 
     if (value !== undefined) {
@@ -89,13 +113,13 @@ class Select extends Component <Props, State> {
   render() {
     const {
       label,
-      options,
       value,
       status,
       disabled,
       className,
       onFocus,
       onBlur,
+      children,
       ...defaultProps
     } = this.props;
 
@@ -104,6 +128,7 @@ class Select extends Component <Props, State> {
       isFocus,
       selectedValue,
       filterValue,
+      cursor,
     } = this.state;
 
     return (
@@ -116,6 +141,7 @@ class Select extends Component <Props, State> {
             onFocus={this.handleFocus(onFocus)}
             onBlur={this.handleFocusOut(onBlur)}
             onChange={this.handleChange}
+            onKeyDown={this.handleKeyDown}
             floating={floating}
             value={selectedValue}
             {...defaultProps}
@@ -131,8 +157,8 @@ class Select extends Component <Props, State> {
           <ItemWrapper>
             <ul>
               {filterValue.map((data, index) => (
-                <Item key={index} onClick={this.handleClick}>
-                  {data}
+                <Item className={cursor === index ? 'active' : null} key={index} onClick={this.handleClick}>
+                  {data.props.children}
                 </Item>
               ))}
             </ul>
@@ -148,6 +174,7 @@ type Props = {
   status: string,
   disabled: boolean,
   className: string,
+  children: React$Node,
 }
 
 type State = {
@@ -155,6 +182,7 @@ type State = {
   isFocus: boolean,
   selectedValue: string,
   filterValue: array,
+  cursor: number,
 };
 
 export default Select;
