@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Divider from '../Divider/Divider';
+import LanguageSelect from '../LanguageSelect';
 
 import { PrimaryColor, SecondaryColor } from './Colors';
 
@@ -11,6 +11,7 @@ export const MobileMenuContainer = styled.div`
   padding: 1.8em 0;
   min-width: 400px;
   height: 100vh;
+  overflow-y: auto;
 `;
 
 export const TopIconWrapper = styled.div`
@@ -49,16 +50,16 @@ export const MenuItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 2em 1.8em 0;
 `;
 
 export const MenuItemWraper = styled.div`
   text-transform: uppercase;
-  margin-bottom: 1.2em;
+  padding: 10px 1.2em;
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 600;
   cursor: pointer;
+  transition: all .3s;
 
   a {
       text-decoration: none;
@@ -71,12 +72,15 @@ export const MenuItemWraper = styled.div`
   li {
       cursor: pointer;
   }
+  &:hover {
+      background: #0171A4;
+    }
 `;
 
 export const MenuFooter = styled.footer`
-  margin-top: 1em;
+  margin-bottom: 10em;
+`;
 
-  > * {
-      margin-bottom: 1em;
-  }
+export const CustomLanguageSelect = styled(LanguageSelect)`
+  padding: 1em 2em;
 `;

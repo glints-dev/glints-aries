@@ -47,7 +47,7 @@ class LanguageSelect extends Component <State, Props> {
    }
 
    render() {
-     const { languageItem, center } = this.props;
+     const { languageItem, center, hoverColor } = this.props;
      const {
        flag, isOpen, title, color,
      } = this.state;
@@ -58,8 +58,9 @@ class LanguageSelect extends Component <State, Props> {
          onClick={this.handleOpen}
          onBlur={this.handleClickOutside}
          tabIndex="0"
+         hoverColor={hoverColor}
        >
-         <DropdownLabelWrapper spaceBetween={false}>
+         <DropdownLabelWrapper spaceBetween={false} {...this.props}>
            <ImageContainer>
              <Image src={flag} />
            </ImageContainer>
@@ -83,8 +84,8 @@ class LanguageSelect extends Component <State, Props> {
 }
 
 type State = {
-  flag: string,
   isOpen: boolean,
+  flag: string,
   title: string,
   color: string
 }
@@ -92,7 +93,8 @@ type State = {
 type Props = {
     center: boolean,
     languageItem: array,
-    defaultItem: object
+    defaultItem: object,
+    hoverColor: string
   };
 
 export default LanguageSelect;

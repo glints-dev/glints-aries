@@ -39,7 +39,7 @@ export const LanguageContainer = styled(DropdownContainer)`
     transition: all .3s;
 
     &:hover {
-      background: ${SecondaryColor.blue};
+      background: ${({ hoverColor }) => hoverColor || SecondaryColor.blue};
       transition: all .3s;
     }
   }

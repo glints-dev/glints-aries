@@ -30,6 +30,7 @@ const DropdownStory = () => (
           <td style={{ width: 400, padding: 20, backgroundColor: '#027EB7' }}>
             <LanguageSelect
               center
+              hoverColor="#0171A4"
               defaultItem={
                 {
                   label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
@@ -48,7 +49,8 @@ const DropdownStory = () => (
           <td>
             <pre>
               {`<LanguageSelect
-    center={true}          
+    center={true}     
+    hoverColor="#0171A4"     
     defaultItem={
         {
             label: 'Indonesian', 
@@ -152,6 +154,25 @@ const DropdownStory = () => (
           </td>
           <td>
             Set container for items into center
+          </td>
+        </tr>
+        <tr>
+          <td>
+          hoverColor
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <pre>
+            hex-value | rba-value | string-value
+            </pre>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set hover background color
           </td>
         </tr>
       </tbody>
