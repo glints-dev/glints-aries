@@ -10,9 +10,12 @@ const opacityAnimation = keyframes`
 `;
 
 export const ChildHolder = styled.div`
-  cursor: pointer;
   position: relative;
   margin: ${({ margin }) => margin};
+`;
+
+export const CursorPointer = styled.div`
+  cursor: pointer;
 `;
 
 export const ButtonContainer = styled.div`
