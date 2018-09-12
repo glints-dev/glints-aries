@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { ChildHolder, ButtonContainer, PopOverContent } from '../Style/PopoverStyle';
+import {
+  ChildHolder, ButtonContainer, PopOverContent, CursorPointer,
+} from '../Style/PopoverStyle';
 
 class Popover extends Component <Props, State> {
   static defaultProps = {
@@ -9,12 +11,8 @@ class Popover extends Component <Props, State> {
   constructor() {
     super();
     this.state = {
-      isOpen: true,
+      isOpen: false,
     };
-  }
-
-  componentDidMount() {
-    this.handleOnClick();
   }
 
   handleOnClick = () => {
@@ -27,29 +25,28 @@ class Popover extends Component <Props, State> {
   }
 
   renderChildren = (children) => {
-    const { margin } = this.props;
+    const { isOpen } = this.state;
+    const { margin, content } = this.props;
     return (
       <ChildHolder onClick={this.handleOnClick} margin={margin}>
-        {children}
+        <CursorPointer>{children}</CursorPointer>
+        <If condition={isOpen}>
+          <PopOverContent>
+            {content}
+          </PopOverContent>
+        </If>
       </ChildHolder>
     );
   }
 
   render() {
-    const { isOpen } = this.state;
-    const { content, children } = this.props;
-
+    const { children } = this.props;
     return (
       <ButtonContainer
         tabIndex="0"
         onBlur={this.handleClickOutside}
       >
         {this.renderChildren(children)}
-        <If condition={isOpen}>
-          <PopOverContent>
-            {content}
-          </PopOverContent>
-        </If>
       </ButtonContainer>
     );
   }
