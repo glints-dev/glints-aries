@@ -1,3 +1,13 @@
+#### 0.2.16 (2018-09-12)
+
+##### Other Changes
+
+* **storybook:**  update JobOverview storybook ([887e8e0a](https://github.com/glints-dev/glints-aries/commit/887e8e0a3bbdf1d3b37b65180f24b4419411cfa7))
+
+##### Code Style Changes
+
+* **adjustment:**  adjust Job Overview Info component style ([8b08dcc5](https://github.com/glints-dev/glints-aries/commit/8b08dcc5f16d0394110bcd9c221ea3cb1b2c8da7))
+
 #### 0.2.15 (2018-09-11)
 
 #### 0.2.14 (2018-09-11)
