@@ -47,7 +47,7 @@ class LanguageSelect extends Component <State, Props> {
    }
 
    render() {
-     const { languageItem } = this.props;
+     const { languageItem, center } = this.props;
      const {
        flag, isOpen, title, color,
      } = this.state;
@@ -57,6 +57,7 @@ class LanguageSelect extends Component <State, Props> {
          open={isOpen}
          onClick={this.handleOpen}
          onBlur={this.handleClickOutside}
+         tabIndex="0"
        >
          <DropdownLabelWrapper spaceBetween={false}>
            <ImageContainer>
@@ -68,7 +69,7 @@ class LanguageSelect extends Component <State, Props> {
            <Icon name="arrow-down" size="15" color={color} />
          </DropdownLabelWrapper>
          <If condition={isOpen}>
-           <LanguageItemWrapper>
+           <LanguageItemWrapper center={center}>
              <For each="item" of={languageItem}>
                <LanguageItem key={item.label} onClick={() => this.handleItemClick(item)}>
                  {item.label}
@@ -82,13 +83,16 @@ class LanguageSelect extends Component <State, Props> {
 }
 
 type State = {
-    flag: string,
-    title: string
+  flag: string,
+  isOpen: boolean,
+  title: string,
+  color: string
 }
 
 type Props = {
-    width: number,
-    height: number,
+    center: boolean,
+    languageItem: array,
+    defaultItem: object
   };
 
 export default LanguageSelect;

@@ -25,9 +25,11 @@ export const Image = styled.img`
 
 export const LanguageItemWrapper = styled(DropdownItemWrapper)`
     width: calc(100% - 1.4em - 1.4em);
-    margin: 0 1.4em;
+    min-width: 280px;
     border: solid 1px #eeeeee;
     padding: 0px;
+    left: ${({ center }) => center ? '50%' : null};
+    transform: ${({ center }) => center ? 'translateX(-50%)' : null};
 `;
 
 export const LanguageContainer = styled(DropdownContainer)`

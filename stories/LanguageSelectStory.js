@@ -29,7 +29,7 @@ const DropdownStory = () => (
         <tr>
           <td style={{ width: 400, padding: 20, backgroundColor: '#027EB7' }}>
             <LanguageSelect
-              title="EN"
+              center
               defaultItem={
                 {
                   label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
@@ -48,6 +48,7 @@ const DropdownStory = () => (
           <td>
             <pre>
               {`<LanguageSelect
+    center={true}          
     defaultItem={
         {
             label: 'Indonesian', 
@@ -114,7 +115,7 @@ const DropdownStory = () => (
             no
           </td>
           <td>
-            Sets the dropdown title.
+            To show default data
           </td>
         </tr>
         <tr>
@@ -131,7 +132,26 @@ const DropdownStory = () => (
             no
           </td>
           <td>
-            Sets the size of dropdown.
+            List of item to be display in selection
+          </td>
+        </tr>
+        <tr>
+          <td>
+          center
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <pre>
+              true | false
+            </pre>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set container for items into center
           </td>
         </tr>
       </tbody>
