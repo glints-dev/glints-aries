@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
 
 import {
-  DropdownItemWrapper, DropdownContainer, DropdownLabel,
+  DropdownItemWrapper, DropdownContainer, DropdownLabel, DropdownLabelWrapper,
 } from './DropdownStyle';
 
 export const ImageContainer = styled.div`
@@ -32,10 +32,25 @@ export const LanguageItemWrapper = styled(DropdownItemWrapper)`
 
 export const LanguageContainer = styled(DropdownContainer)`
     position: relative;
+    ${DropdownLabelWrapper} {
+    background: ${({ open }) => open ? `${SecondaryColor.blue}` : 'rgba(0,0,0,0)'};
+    transition: all .3s;
+
+    &:hover {
+      background: ${SecondaryColor.blue};
+      transition: all .3s;
+    }
+  }
 `;
 
 export const LanguageLabel = styled(DropdownLabel)`
     margin-right: 1em;
+    color: ${({ color }) => color};
+    text-transform: uppercase;
+`;
+
+export const LanguageLabelWrapper = styled(DropdownLabelWrapper)`
+    background-color: #027EB7;
 `;
 
 export const LanguageItem = styled.div`

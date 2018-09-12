@@ -27,28 +27,55 @@ const DropdownStory = () => (
       </thead>
       <tbody>
         <tr>
-          <td style={{ width: 400, padding: 20 }}>
-            <LanguageSelect title="EN">
-
-            </LanguageSelect>
+          <td style={{ width: 400, padding: 20, backgroundColor: '#027EB7' }}>
+            <LanguageSelect
+              title="EN"
+              defaultItem={
+                {
+                  label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+                }
+              }
+              languageItem={[
+                {
+                  label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+                },
+                {
+                  label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+                },
+              ]}
+            />
           </td>
           <td>
             <pre>
-              {`<Dropdown title="This Career" size="medium">
-  <Dropdown.Body>
-    <Dropdown.Item onClick={...}>Accounting</Dropdown.Item>
-    <Dropdown.Item>Art & Design</Dropdown.Item>
-    <Dropdown.Item>Business Development</Dropdown.Item>
-    <Dropdown.Item>Consulting</Dropdown.Item>
-    <Dropdown.Item>Engineering</Dropdown.Item>
-  </Dropdown.Body>
-</Dropdown>`}
+              {`<LanguageSelect
+    defaultItem={
+        {
+            label: 'Indonesian', 
+            title: 'ID', 
+            value: 'indonesian', 
+            countryIcon: 'id',
+        }
+    }
+    languageItem={[
+        {
+            label: 'English', 
+            title: 'EN', 
+            value: 'english', 
+            countryIcon: 'gb',
+        },
+        {
+            label: 'Indonesian', 
+            title: 'ID', 
+            value: 'indonesian', 
+            countryIcon: 'id',
+        },
+    ]}
+/>`}
             </pre>
           </td>
         </tr>
       </tbody>
     </table>
-
     <h1>
       Props
     </h1>
@@ -75,16 +102,16 @@ const DropdownStory = () => (
       <tbody>
         <tr>
           <td>
-            title
+          defaultItem
           </td>
           <td>
-            string
+            object
           </td>
           <td>
             any
           </td>
           <td>
-            yes
+            no
           </td>
           <td>
             Sets the dropdown title.
@@ -92,29 +119,10 @@ const DropdownStory = () => (
         </tr>
         <tr>
           <td>
-            size
+          languageItem
           </td>
           <td>
-            string
-          </td>
-          <td>
-            <pre>
-              large | medium | small
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets the size of dropdown.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            onClick
-          </td>
-          <td>
-            Function
+            array
           </td>
           <td>
             any
@@ -122,7 +130,9 @@ const DropdownStory = () => (
           <td>
             no
           </td>
-          <td></td>
+          <td>
+            Sets the size of dropdown.
+          </td>
         </tr>
       </tbody>
     </table>
