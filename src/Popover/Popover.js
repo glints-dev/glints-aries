@@ -9,7 +9,7 @@ class Popover extends Component <Props, State> {
   constructor() {
     super();
     this.state = {
-      isOpen: true,
+      isOpen: false,
     };
   }
 
@@ -27,29 +27,27 @@ class Popover extends Component <Props, State> {
   }
 
   renderChildren = (children) => {
-    const { margin } = this.props;
+    const { isOpen } = this.state;
+    const { margin, content } = this.props;
     return (
       <ChildHolder onClick={this.handleOnClick} margin={margin}>
         {children}
-      </ChildHolder>
-    );
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    const { content, children } = this.props;
-
-    return (
-      <ButtonContainer
-        tabIndex="0"
-        onBlur={this.handleClickOutside}
-      >
-        {this.renderChildren(children)}
         <If condition={isOpen}>
           <PopOverContent>
             {content}
           </PopOverContent>
         </If>
+      </ChildHolder>
+    );
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+      <ButtonContainer
+        onBlur={this.handleClickOutside}
+      >
+        {this.renderChildren(children)}
       </ButtonContainer>
     );
   }
