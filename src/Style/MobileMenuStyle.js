@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import LanguageSelect from '../LanguageSelect';
 
-import { PrimaryColor, SecondaryColor } from './Colors';
+import { SecondaryColor } from './Colors';
 
 export const MobileMenuContainer = styled.div`
   position: relative;
