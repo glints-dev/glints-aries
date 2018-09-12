@@ -10,9 +10,12 @@ const opacityAnimation = keyframes`
 `;
 
 export const ChildHolder = styled.div`
-  cursor: pointer;
   position: relative;
   margin: ${({ margin }) => margin};
+`;
+
+export const CursorPointer = styled.div`
+  cursor: pointer;
 `;
 
 export const ButtonContainer = styled.div`
@@ -24,9 +27,10 @@ export const ButtonContainer = styled.div`
 
 export const PopOverContent = styled.div`
   position: absolute;
-  top: 100%;
-  right: 0;
+  top: calc(100% + 5px);
+  right: 50%;
   animation: ${opacityAnimation} .2s linear;
   z-index: 10;
   min-width: 250px;
+  transform: translateX(calc(18px + 7.5px));
 `;

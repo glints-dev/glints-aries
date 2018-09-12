@@ -63,7 +63,7 @@ const PopoverStory = () => (
                 </PointingModal>
               )}
             >
-              <Icon name="arrow-down" size="50" />
+              <Icon name="arrow-down" size="20" />
             </Popover>
           </td>
           <td>

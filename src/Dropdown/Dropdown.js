@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   DropdownContainer, DropdownLabelWrapper, DropdownLabel,
 } from '../Style/DropdownStyle';
@@ -26,6 +26,7 @@ class Dropdown extends Component <Props, State> {
       title,
       size,
       className,
+      spaceBetween,
     } = this.props;
 
     const { isOpen } = this.state;
@@ -38,7 +39,7 @@ class Dropdown extends Component <Props, State> {
         onBlur={this.handleClickOutside}
         tabIndex="0"
       >
-        <DropdownLabelWrapper className={className}>
+        <DropdownLabelWrapper className={className} spaceBetween={spaceBetween}>
           <DropdownLabel>
             <span>
               {title}
@@ -46,17 +47,17 @@ class Dropdown extends Component <Props, State> {
           </DropdownLabel>
           <Icon name="arrow-down" size="15" color="black" />
         </DropdownLabelWrapper>
-        {isOpen
-            && (
-              <Fragment>
-                { children }
-              </Fragment>
-            )
-        }
+        <If condition={isOpen}>
+          { children }
+        </If>
       </DropdownContainer>
     );
   }
 }
+
+Dropdown.defaultProps = {
+  spaceBetween: true,
+};
 
 type Props = {
   children: React$Node,

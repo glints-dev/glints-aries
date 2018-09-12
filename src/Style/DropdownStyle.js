@@ -13,7 +13,7 @@ const growing = keyframes`
 
 export const DropdownLabelWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ spaceBetween }) => spaceBetween ? 'space-between' : null};
   align-items: center;
   cursor: pointer;
   padding: 1em;
@@ -40,7 +40,6 @@ export const DropdownItem = styled.div`
   cursor: pointer;
   margin-bottom: .5em;
   color: ${SecondaryColor.lightblack};
-    
   &:last-child {
     margin-bottom: 0;
   }
@@ -69,19 +68,19 @@ export const DropdownContainer = styled.div`
     font-size: ${props => props.size === `${Size.SMALL}`
     ? '12px'
     : props.size === `${Size.MEDIUM}`
-    ? '16px'
-    : props.size === `${Size.LARGE}`
-    ? '22px'
-    : '14px'};
+      ? '16px'
+      : props.size === `${Size.LARGE}`
+        ? '22px'
+        : '14px'};
   }
 
   ${DropdownItem} {
     font-size: ${props => props.size === `${Size.SMALL}`
     ? '10px'
     : props.size === `${Size.MEDIUM}`
-    ? '12px'
-    : props.size === `${Size.LARGE}`
-    ? '14px'
-    : '12px'};
+      ? '12px'
+      : props.size === `${Size.LARGE}`
+        ? '14px'
+        : '12px'};
   }
 `;

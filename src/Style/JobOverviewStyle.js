@@ -11,7 +11,7 @@ export const JobOverviewHeaderStyle = styled.div`
 `;
 
 export const JobOverviewBodystyle = styled.div`
-  padding-left: 15px;
+  margin-left: 30px;
   width: 100%;
 `;
 
@@ -75,6 +75,11 @@ export const JobOverviewInfostyle = styled.div`
     letter-spacing: normal;
     color: #000000;
     display: flex;
+    
+    span svg {
+      margin-top: 0;
+    }
+
     svg {
       vertical-align: middle;
       margin-right: 5px;

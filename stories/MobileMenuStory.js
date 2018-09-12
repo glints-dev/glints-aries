@@ -4,8 +4,7 @@ import MobileMenu from '../src/MobileMenu';
 import { Icon } from '../src/Icon';
 import ProfilePictureShadow from '../src/ProfilePictureShadow';
 import Label from '../src/Label';
-import Divider from '../src/Divider';
-import Button from '../src/Button';
+import LanguageSelect from '../src/LanguageSelect';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -36,7 +35,7 @@ const ProfilePictureStory = () => (
           <td style={{ padding: 20 }}>
             <MobileMenu>
               <MobileMenu.Top>
-                <Icon name="close" size="40" color="white" />
+                <Icon name="close" size="21" color="white" />
               </MobileMenu.Top>
               <MobileMenu.Header>
                 <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
@@ -49,7 +48,6 @@ const ProfilePictureStory = () => (
                   </p>
                 </Label>
               </MobileMenu.Header>
-              <Divider size="large" theme="white" thickness="thin" />
               <MobileMenu.Body>
                 <MobileMenu.Item>
                   Carrers
@@ -74,12 +72,22 @@ const ProfilePictureStory = () => (
                 </MobileMenu.Item>
               </MobileMenu.Body>
               <MobileMenu.Footer>
-                <Button variant="ghost" theme="white">
-                  Sign Out
-                </Button>
-                <Button variant="primary">
-                  Sign Up
-                </Button>
+                <LanguageSelect
+                  center
+                  defaultItem={
+                    {
+                      label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+                    }
+                  }
+                  languageItem={[
+                    {
+                      label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+                    },
+                    {
+                      label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+                    },
+                  ]}
+                />
               </MobileMenu.Footer>
             </MobileMenu>
           </td>
@@ -87,28 +95,59 @@ const ProfilePictureStory = () => (
             <pre>
               {`<MobileMenu>
   <MobileMenu.Top>
-    <Icons name="close-white" />
+    <Icon name="close" size="21" color="white" />
   </MobileMenu.Top>
   <MobileMenu.Header>
-    <ProfilePicture editable assetUrl="..." />
+    <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
     <Label size="medium" theme="white">
-        <span>Hello,</span>
-        <p>Fredy Yanto</p>
+      <span>
+                    Hello,
+      </span>
+      <p>
+                    Fredy Yanto
+      </p>
     </Label>
   </MobileMenu.Header>
-  <Divider size="large" theme="white" thickness="thin" />
   <MobileMenu.Body>
-    <MobileMenu.Item onClick={...}>Carrers</MobileMenu.Item>
-    <MobileMenu.Item>Jobs</MobileMenu.Item>
-    <MobileMenu.Item>Internships</MobileMenu.Item>
-    <MobileMenu.Item>Companies</MobileMenu.Item>
-    <MobileMenu.Item>Pathways</MobileMenu.Item>
-    <MobileMenu.Item>Blog</MobileMenu.Item>
-    <MobileMenu.Item>Employers</MobileMenu.Item>
+    <MobileMenu.Item>
+                  Carrers
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Jobs
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Internships
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Companies
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Pathways
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Blog
+    </MobileMenu.Item>
+    <MobileMenu.Item>
+                  Employers
+    </MobileMenu.Item>
   </MobileMenu.Body>
   <MobileMenu.Footer>
-    <Button variant="ghost" theme="white">Sign Out</Button>
-    <Button variant="primary">Sign Up</Button>
+    <LanguageSelect
+        center
+        defaultItem={
+          {
+            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+          }
+        }
+        languageItem={[
+          {
+            label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+          },
+          {
+            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+          },
+        ]}
+      />
   </MobileMenu.Footer>
 </MobileMenu>`}
             </pre>

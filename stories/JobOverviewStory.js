@@ -40,8 +40,10 @@ const JobOverviewStory = () => (
 
           <JobOverview.Info>
             <p>
-              <Icon name="dot" color="#c6c6c6" size="6" />
-              <span>HR Recruitment</span>
+              <span>
+                <Icon name="dot" color="#c6c6c6" size="6" />
+                <span>HR Recruitment</span>
+              </span>
             </p>
             <p>
               <Icon name="dot" color="#c6c6c6" size="6" />
@@ -96,19 +98,19 @@ const JobOverviewStory = () => (
     <JobOverview.Info>
       <p>
         <Icon name="dot" color="#c6c6c6" size="6" />
-        HR Recruitment
+        <span>HR Recruitment</span>
       </p>
       <p>
         <Icon name="dot" color="#c6c6c6" size="6" />
-        Jakarta Selatan, Indonesia
+        <span>Jakarta Selatan, Indonesia</span>
       </p>
       <p>
         <Icon name="dot" color="#c6c6c6" size="6" />
-        IDR 7,000,000 - 14,000,000
+        <span>IDR 7,000,000 - 14,000,000</span>
       </p>
       <p>
         <Icon name="dot" color="#c6c6c6" size="6" />
-        Magang: 3 bulan
+        <span>Magang: 3 bulan</span>
       </p>
     </JobOverview.Info>
 
