@@ -110,7 +110,7 @@ storiesOf('Components', module)
   .add('Tag', () => <TagStory />)
   .add('Text Field', () => <TextFieldStory />)
   .add('Side Bar', () => <SideBarStory />)
-  .add('test', () => <LanguageSelectStory />);
+  .add('Language Select', () => <LanguageSelectStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (
