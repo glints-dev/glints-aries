@@ -35,13 +35,12 @@ export const HeaderWrapper = styled.header`
   label {
     font-weight: 700;
     span {
-        font-weight: 100;
-        font-size: 18px;
+      font-weight: 100;
+      font-size: 18px;
     }
-
     p {
-        margin: 0;
-        cursor: pointer;
+      margin: 0;
+      cursor: pointer;
     }
   }
 `;

@@ -27,6 +27,8 @@ class Dropdown extends Component <Props, State> {
       size,
       className,
       spaceBetween,
+      noPadding,
+      hoverColor,
     } = this.props;
 
     const { isOpen } = this.state;
@@ -38,8 +40,13 @@ class Dropdown extends Component <Props, State> {
         onClick={this.handleOpen}
         onBlur={this.handleClickOutside}
         tabIndex="0"
+        hoverColor={hoverColor}
       >
-        <DropdownLabelWrapper className={className} spaceBetween={spaceBetween}>
+        <DropdownLabelWrapper
+          className={className}
+          spaceBetween={spaceBetween}
+          noPadding={noPadding}
+        >
           <DropdownLabel>
             <span>
               {title}
@@ -55,15 +62,12 @@ class Dropdown extends Component <Props, State> {
   }
 }
 
-Dropdown.defaultProps = {
-  spaceBetween: true,
-};
-
 type Props = {
   children: React$Node,
   title: string,
   size: string,
   className: string,
+  noPadding: boolean
 };
 
 type State = {

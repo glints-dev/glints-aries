@@ -16,7 +16,7 @@ export const DropdownLabelWrapper = styled.div`
   justify-content: ${({ spaceBetween }) => spaceBetween ? 'space-between' : null};
   align-items: center;
   cursor: pointer;
-  padding: 1em;
+  padding: ${({ noPadding }) => noPadding ? null : '1em'};
 `;
 
 export const DropdownLabel = styled.div`
@@ -58,7 +58,7 @@ export const DropdownContainer = styled.div`
     transition: all .3s;
 
     &:hover {
-      background: ${SecondaryColor.blue};
+      background: ${({ hoverColor }) => hoverColor || SecondaryColor.blue};
       color: ${SecondaryColor.white};
       transition: all .3s;
     }

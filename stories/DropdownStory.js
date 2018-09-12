@@ -28,7 +28,10 @@ const DropdownStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Dropdown title="This Career" size="large">
+            <Dropdown
+              title="This Career"
+              size="medium"
+            >
               <Dropdown.Body>
                 <Dropdown.Item>
                   Accounting
@@ -151,6 +154,42 @@ const DropdownStory = () => (
             no
           </td>
           <td></td>
+        </tr>
+        <tr>
+          <td>
+            noPadding
+          </td>
+          <td>
+            bool
+          </td>
+          <td>
+            <pre>
+              true | false
+            </pre>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set no padding
+          </td>
+        </tr>
+        <tr>
+          <td>
+            hoverColor
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set hover background color
+          </td>
         </tr>
       </tbody>
     </table>
