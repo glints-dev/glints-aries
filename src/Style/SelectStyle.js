@@ -158,6 +158,7 @@ export const Item = styled.li`
     margin-bottom: .5em;
   }
 
+  &.active,
   &:hover {
     color: ${SecondaryColor.blue};
     background: ${SecondaryColor.lightergrey};
