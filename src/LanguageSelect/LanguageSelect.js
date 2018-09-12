@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
-import Dropdown from '../Dropdown';
+import {
+  ImageContainer, Image, LanguageItemWrapper, LanguageContainer, LanguageItem, LanguageLabel,
+} from '../Style/LanguageSelectStyle';
+import {
+  DropdownLabelWrapper,
+} from '../Style/DropdownStyle';
 
-import { ImageContainer, Image, ListBox } from '../Style/LanguageSelectStyle';
-
+import { Icon } from '../Icon';
 class LanguageSelect extends Component <State, Props> {
   constructor() {
     super();
     this.state = {
       flag: null,
+      isOpen: true,
     };
   }
 
@@ -17,30 +22,57 @@ class LanguageSelect extends Component <State, Props> {
     this.setState({ flag });
   }
 
+  handleOpen = () => {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
+  }
+
+  handleClickOutside = () => {
+    this.setState({ isOpen: false });
+  }
+
   render() {
-    const { width, height } = this.props;
-    const { flag } = this.state;
+    const {
+      title,
+    } = this.props;
+    const { flag, isOpen } = this.state;
     return (
-      <div>
-        <ImageContainer
-          width={width}
-          height={height}
-        >
-          <Image src={flag} />
-        </ImageContainer>
-        <Dropdown title="EN" size="medium">
-          <Dropdown.Body>
-            <Dropdown.Item>Accounting</Dropdown.Item>
-            <Dropdown.Item>Art & Design</Dropdown.Item>
-            <Dropdown.Item>Business Development</Dropdown.Item>
-            <Dropdown.Item>Consulting</Dropdown.Item>
-            <Dropdown.Item>Engineering</Dropdown.Item>
-          </Dropdown.Body>
-        </Dropdown>
-      </div>
+      <LanguageContainer
+        size="medium"
+        open={isOpen}
+        onClick={this.handleOpen}
+        onBlur={this.handleClickOutside}
+      >
+        <DropdownLabelWrapper spaceBetween={false}>
+          <ImageContainer>
+            <Image src={flag} />
+          </ImageContainer>
+          <LanguageLabel>
+            <span>
+              {title}
+            </span>
+          </LanguageLabel>
+          <Icon name="arrow-down" size="15" color="white" />
+        </DropdownLabelWrapper>
+        <If condition={isOpen}>
+          <LanguageItemWrapper>
+            <LanguageItem>
+                English
+            </LanguageItem>
+            <LanguageItem>
+                Indonesian
+            </LanguageItem>
+          </LanguageItemWrapper>
+        </If>
+      </LanguageContainer>
     );
   }
 }
+
+LanguageSelect.defaultProps = {
+  size: 'small',
+  title: 'EN',
+};
 
 type State = {
     flag: string
