@@ -53,6 +53,7 @@ import TabsStory from './TabsStory';
 import TagStory from './TagStory';
 import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
+import NotificationStory from './NotificationStory';
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -110,7 +111,8 @@ storiesOf('Components', module)
   .add('Tag', () => <TagStory />)
   .add('Text Field', () => <TextFieldStory />)
   .add('Side Bar', () => <SideBarStory />)
-  .add('Language Select', () => <LanguageSelectStory />);
+  .add('Language Select', () => <LanguageSelectStory />)
+  .add('Notification', () => <NotificationStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (

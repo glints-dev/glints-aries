@@ -25,6 +25,7 @@ export { default as Loading } from './Loading';
 export { default as LanguageSelect } from './LanguageSelect';
 export { default as MobileMenu } from './MobileMenu';
 export { default as Modal } from './Modal';
+export { default as Notification } from './Notification';
 export { default as OmniSearch } from './OmniSearch';
 export { default as PointingModal } from './PointingModal';
 export { default as Popover } from './Popover';
