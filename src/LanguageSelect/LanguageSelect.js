@@ -23,8 +23,9 @@ class LanguageSelect extends Component <State, Props> {
 
   async componentDidMount() {
     const { defaultItem } = this.props;
-    const flagCode = defaultItem && defaultItem.countryIcon ? defaultItem.countryIcon : 'bg';
-    const flag = await import(`../../assets/icons/flags/${flagCode}.svg`);
+    const flagCode = defaultItem && defaultItem.countryIcon ? defaultItem.countryIcon : 'gb';
+    const flagModule = await import(`./FlagComponents/${flagCode}`);
+    const flag = flagModule.default;
     this.setState({ flag });
   }
 
@@ -38,7 +39,8 @@ class LanguageSelect extends Component <State, Props> {
   }
 
    handleItemClick = async (item) => {
-     const flag = await import(`../../assets/icons/flags/${item.countryIcon}.svg`);
+     const flagModule = await import(`./FlagComponents/${item.countryIcon}`);
+     const flag = flagModule.default;
      this.setState({
        isOpen: false,
        title: item.title,
