@@ -30,7 +30,7 @@ const ProfilePictureStory = () => (
       </thead>
       <tbody>
         <tr>
-          <td style={{ padding: 20 }}>
+          <td style={{ padding: 20, minWidth: 400 }}>
             <MobileMenu>
               <MobileMenu.Top
                 name="close"
