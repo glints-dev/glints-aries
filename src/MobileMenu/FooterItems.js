@@ -5,28 +5,22 @@ import { MenuFooter, CustomLanguageSelect } from '../Style/MobileMenuStyle';
 
 const FooterItems = (props: Props) => {
   const {
-    children,
     className,
+    defaultItem,
+    languageItem,
+    center,
+    hoverColor,
   } = props;
 
   return (
-    <MenuFooter className={className}>
+    <MenuFooter
+      className={className}
+    >
       <CustomLanguageSelect
-        center
-        hoverColor="#0171A4"
-        defaultItem={
-          {
-            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-          }
-        }
-        languageItem={[
-          {
-            label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
-          },
-          {
-            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-          },
-        ]}
+        center={center}
+        hoverColor={hoverColor}
+        defaultItem={defaultItem}
+        languageItem={languageItem}
       />
     </MenuFooter>
   );

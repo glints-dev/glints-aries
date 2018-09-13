@@ -24,7 +24,7 @@ class LanguageSelect extends Component <State, Props> {
   async componentDidMount() {
     const { defaultItem } = this.props;
     const flagCode = defaultItem && defaultItem.countryIcon ? defaultItem.countryIcon : 'bg';
-    const flag = await import(`../../assets/icons/flags/${sCode}.svg`);
+    const flag = await import(`../../assets/icons/flags/${flagCode}.svg`);
     this.setState({ flag });
   }
 

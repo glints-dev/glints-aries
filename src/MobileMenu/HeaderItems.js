@@ -9,11 +9,15 @@ const HeaderItems = (props: Props) => {
   const {
     children,
     className,
+    margin,
   } = props;
 
   return (
     <div>
-      <HeaderWrapper className={className}>
+      <HeaderWrapper
+        className={className}
+        margin={margin}
+      >
         {children}
       </HeaderWrapper>
       <DividerWrapper>
@@ -26,6 +30,7 @@ const HeaderItems = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  margin: boolean
 }
 
 export default HeaderItems;

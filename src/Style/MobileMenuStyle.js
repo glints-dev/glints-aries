@@ -30,7 +30,7 @@ export const HeaderWrapper = styled.header`
   grid-template-rows: repeat(2, auto);
   grid-row-gap: 15px;
   align-items: center;
-  margin: 0 1.8em;
+  margin: ${({ margin }) => margin ? '0 1.8em' : null};
 
   label {
     font-weight: 700;
