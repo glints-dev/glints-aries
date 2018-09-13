@@ -9,7 +9,6 @@ export const MobileMenuContainer = styled.div`
   background: #027EB7;
   color: ${SecondaryColor.white};
   padding: 1.8em 0;
-  min-width: 400px;
   height: 100vh;
   overflow-y: auto;
 `;
