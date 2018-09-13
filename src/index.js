@@ -42,6 +42,7 @@ export { default as Swipeable } from './Swipeable';
 export { default as Switch } from './Switch';
 export { default as Tabs } from './Tabs';
 export { default as Tag } from './Tag';
+export { default as Textarea } from './Textarea';
 export { default as TextField } from './TextField';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 

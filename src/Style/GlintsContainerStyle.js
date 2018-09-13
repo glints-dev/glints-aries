@@ -69,7 +69,8 @@ const GlintsContainer = styled.div`
   
   a, p, label,
   ul, li, span,
-  i, div, input {
+  i, div, input,
+  textarea {
     font-family: 'Poppins';
   }
 `;

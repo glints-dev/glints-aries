@@ -51,6 +51,7 @@ import SwipeableStory from './SwipeableStory';
 import SwitchStory from './SwitchStory';
 import TabsStory from './TabsStory';
 import TagStory from './TagStory';
+import TextareaStory from './TextareaStory';
 import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
 import NotificationStory from './NotificationStory';
@@ -109,6 +110,7 @@ storiesOf('Components', module)
   .add('Switch', () => <SwitchStory />)
   .add('Tabs', () => <TabsStory />)
   .add('Tag', () => <TagStory />)
+  .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />)
   .add('Side Bar', () => <SideBarStory />)
   .add('Language Select', () => <LanguageSelectStory />)
