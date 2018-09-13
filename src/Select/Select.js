@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Icon from '../Icon';
 import Item from './SelectItems';
 import {
@@ -54,6 +53,7 @@ class Select extends Component <Props, State> {
     this.setState({
       selectedValue: e.target.value,
       filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
+      cursor: 0,
     });
   }
 
@@ -66,12 +66,12 @@ class Select extends Component <Props, State> {
     });
 
     if (onChange !== undefined) {
-      onChange(e.currentTarget.innerText);
+      onChange(e.target.dataset.value);
     }
   }
 
   handleKeyDown = (e) => {
-    const { children } = this.props;
+    const { children, onChange } = this.props;
     const { cursor, filterValue } = this.state;
 
     if (e.keyCode === 38 && cursor > 0) {
@@ -90,7 +90,20 @@ class Select extends Component <Props, State> {
         floating: true,
         isFocus: false,
       });
+      if (onChange !== undefined) {
+        const itemValue = document.querySelector('.active').dataset.value;
+        onChange(itemValue);
+      }
+    } else if (e.keyCode === 27) {
+      e.target.blur();
+      this.setState({ isFocus: false });
     }
+  }
+
+  handleMouseEnter = (e) => {
+    this.setState({
+      cursor: Number(e.target.dataset.id),
+    });
   }
 
   componentDidMount() {
@@ -157,7 +170,14 @@ class Select extends Component <Props, State> {
           <ItemWrapper>
             <ul>
               {filterValue.map((data, index) => (
-                <Item className={cursor === index ? 'active' : null} key={index} onClick={this.handleClick}>
+                <Item
+                  className={cursor === index ? 'active' : null}
+                  key={index}
+                  data-id={index}
+                  data-value={data.props.value}
+                  onClick={this.handleClick}
+                  onMouseEnter={this.handleMouseEnter}
+                >
                   {data.props.children}
                 </Item>
               ))}
