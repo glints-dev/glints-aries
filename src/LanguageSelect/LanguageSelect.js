@@ -39,6 +39,8 @@ class LanguageSelect extends Component <State, Props> {
   }
 
    handleItemClick = async (item) => {
+     const { onChange } = this.props;
+     onChange(item);
      const flagModule = await import(`./FlagComponents/${item.countryIcon}`);
      const flag = flagModule.default;
      this.setState({
@@ -74,7 +76,10 @@ class LanguageSelect extends Component <State, Props> {
          <If condition={isOpen}>
            <LanguageItemWrapper center={center}>
              <For each="item" of={languageItem}>
-               <LanguageItem key={item.label} onClick={() => this.handleItemClick(item)}>
+               <LanguageItem
+                 key={item.label}
+                 onClick={() => this.handleItemClick(item)}
+               >
                  {item.label}
                </LanguageItem>
              </For>
@@ -96,7 +101,8 @@ type Props = {
     center: boolean,
     languageItem: array,
     defaultItem: object,
-    hoverColor: string
+    hoverColor: string,
+    onChange: Function
   };
 
 export default LanguageSelect;
