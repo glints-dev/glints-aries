@@ -1,7 +1,6 @@
 import React from 'react';
 import MobileMenu from '../src/MobileMenu';
 
-import { Icon } from '../src/Icon';
 import ProfilePictureShadow from '../src/ProfilePictureShadow';
 import Label from '../src/Label';
 
