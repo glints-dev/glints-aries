@@ -10,6 +10,7 @@ const FooterItems = (props: Props) => {
     languageItem,
     center,
     hoverColor,
+    onChange,
   } = props;
 
   return (
@@ -21,6 +22,7 @@ const FooterItems = (props: Props) => {
         hoverColor={hoverColor}
         defaultItem={defaultItem}
         languageItem={languageItem}
+        onChange={onChange}
       />
     </MenuFooter>
   );
@@ -29,6 +31,11 @@ const FooterItems = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  defaultItem: object,
+  languageItem: array,
+  center: boolean,
+  hoverColor: string,
+  onChange:Function
 }
 
 export default FooterItems;

@@ -75,6 +75,7 @@ const ProfilePictureStory = () => (
               </MobileMenu.Body>
               <MobileMenu.Footer
                 center
+                onChange={item => console.log('item', item)}
                 hoverColor="#0171A4"
                 defaultItem={
                   {
@@ -121,6 +122,7 @@ const ProfilePictureStory = () => (
   <MobileMenu.Footer
       center
       hoverColor="#0171A4"
+      onChange={...function}
       defaultItem={
         {
           label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
