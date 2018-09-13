@@ -4,7 +4,6 @@ import MobileMenu from '../src/MobileMenu';
 import { Icon } from '../src/Icon';
 import ProfilePictureShadow from '../src/ProfilePictureShadow';
 import Label from '../src/Label';
-import LanguageSelect from '../src/LanguageSelect';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -34,9 +33,11 @@ const ProfilePictureStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <MobileMenu>
-              <MobileMenu.Top>
-                <Icon name="close" size="21" color="white" />
-              </MobileMenu.Top>
+              <MobileMenu.Top
+                name="close"
+                size="21"
+                color="white"
+              />
               <MobileMenu.Header>
                 <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                 <Label size="medium" theme="white">
@@ -71,24 +72,23 @@ const ProfilePictureStory = () => (
                   Employers
                 </MobileMenu.Item>
               </MobileMenu.Body>
-              <MobileMenu.Footer>
-                <LanguageSelect
-                  center
-                  defaultItem={
-                    {
-                      label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-                    }
+              <MobileMenu.Footer
+                center
+                hoverColor="#0171A4"
+                defaultItem={
+                  {
+                    label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
                   }
-                  languageItem={[
-                    {
-                      label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
-                    },
-                    {
-                      label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-                    },
-                  ]}
-                />
-              </MobileMenu.Footer>
+                }
+                languageItem={[
+                  {
+                    label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+                  },
+                  {
+                    label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+                  },
+                ]}
+              />
             </MobileMenu>
           </td>
           <td>
@@ -100,55 +100,36 @@ const ProfilePictureStory = () => (
   <MobileMenu.Header>
     <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
     <Label size="medium" theme="white">
-      <span>
-                    Hello,
-      </span>
-      <p>
-                    Fredy Yanto
-      </p>
+      <span>Hello,</span>
+      <p>Fredy Yanto</p>
     </Label>
   </MobileMenu.Header>
   <MobileMenu.Body>
-    <MobileMenu.Item>
-                  Carrers
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Jobs
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Internships
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Companies
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Pathways
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Blog
-    </MobileMenu.Item>
-    <MobileMenu.Item>
-                  Employers
-    </MobileMenu.Item>
+    <MobileMenu.Item>Carrers</MobileMenu.Item>
+    <MobileMenu.Item>Jobs</MobileMenu.Item>
+    <MobileMenu.Item>Internships</MobileMenu.Item>
+    <MobileMenu.Item>Companies</MobileMenu.Item>
+    <MobileMenu.Item>Pathways</MobileMenu.Item>
+    <MobileMenu.Item>Blog</MobileMenu.Item>
+    <MobileMenu.Item>Employers</MobileMenu.Item>
   </MobileMenu.Body>
-  <MobileMenu.Footer>
-    <LanguageSelect
-        center
-        defaultItem={
-          {
-            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-          }
+  <MobileMenu.Footer
+      center
+      hoverColor="#0171A4"
+      defaultItem={
+        {
+          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
         }
-        languageItem={[
-          {
-            label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
-          },
-          {
-            label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-          },
-        ]}
-      />
-  </MobileMenu.Footer>
+      }
+      languageItem={[
+        {
+          label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+        },
+        {
+          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+        },
+      ]}
+    />
 </MobileMenu>`}
             </pre>
           </td>

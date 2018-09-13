@@ -2,16 +2,26 @@
 
 import React from 'react';
 import { TopIconWrapper } from '../Style/MobileMenuStyle';
+import { Icon } from '../Icon';
 
 const TopItems = (props: Props) => {
   const {
-    children,
     className,
+    name,
+    size,
+    color,
   } = props;
 
   return (
-    <TopIconWrapper className={className}>
-      {children}
+    <TopIconWrapper
+      className={className}
+      {...props}
+    >
+      <Icon
+        name={name}
+        size={size}
+        color={color}
+      />
     </TopIconWrapper>
   );
 };
@@ -19,6 +29,9 @@ const TopItems = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  name: string,
+  size: string,
+  color: string,
 }
 
 export default TopItems;
