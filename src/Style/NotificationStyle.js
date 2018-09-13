@@ -35,7 +35,7 @@ export const NotificationContainer = styled.div`
     align-items: center;
     grid-column-gap: 10px;
     background-color: ${SecondaryColor.darkerWhite};
-    z-index: 9999;
+    z-index: 5000;
     width: 80vw;
     max-width: 500px;
     animation: ${({ isOpen }) => isOpen ? fadeDown : fadeUp} .3s ease-in-out;
