@@ -29,15 +29,17 @@ const SelectStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <Select label="Jobs">
-              <li>Accountant</li>
-              <li>Business Development</li>
-              <li>Finance</li>
-              <li>Software Engineer</li>
+              <Select.Option value="accountant">Accountant</Select.Option>
+              <Select.Option value="business development">Business Development</Select.Option>
+              <Select.Option value="finance">Finance</Select.Option>
+              <Select.Option value="software engineer">Software Engineer</Select.Option>
             </Select>
           </td>
           <td>
             <pre>
               {`
+const Option = Select.Option;
+
 handleChange = (value) => {
   console.log('selected value: ', value);
 }
@@ -46,8 +48,8 @@ handleChange = (value) => {
   label="Jobs"
   onChange={this.handleChange}
 >
-  <li>...</li>
-  <li>...</li>
+  <Option value="accountant">Accountant</Option>
+  <Option value="finance">Finance</Option>
 </Select>`}
             </pre>
           </td>
@@ -99,6 +101,8 @@ handleChange = (value) => {
         <tr>
           <td>
             value
+            {' '}
+            <b>(Select)</b>
           </td>
           <td>
             string
@@ -110,7 +114,26 @@ handleChange = (value) => {
             no
           </td>
           <td>
-            Sets value of Text Field.
+            Sets default value for the input.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            value
+            {' '}
+            <b>(Option)</b>
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            Sets value for each options.
           </td>
         </tr>
         <tr>
