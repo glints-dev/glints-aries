@@ -40,17 +40,14 @@ class SideBarStory extends Component {
         <table className="doc-table">
           <thead>
             <tr>
-              <th colSpan="0">
-                Preview
-              </th>
               <th>
-              Usage
+                Preview
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style={{ width: 200, padding: 20 }}>
+              <td style={{ maxWidth: 200, padding: 20 }}>
                 <div>HEADER</div>
                 <SideBar
                   mobileMediaQuery={1000}
@@ -72,6 +69,20 @@ class SideBarStory extends Component {
                   </div>
                 </SideBar>
               </td>
+            </tr>
+          </tbody>
+        </table>
+        <table className="doc-table">
+          <thead>
+            <tr>
+              <th>
+                Usage
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
               <td>
                 <pre>
                   {`<SideBar
