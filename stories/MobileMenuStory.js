@@ -38,7 +38,9 @@ const ProfilePictureStory = () => (
                 size="21"
                 color="white"
               />
-              <MobileMenu.Header>
+              <MobileMenu.Header
+                margin
+              >
                 <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
                 <Label size="medium" theme="white">
                   <span>
@@ -94,10 +96,14 @@ const ProfilePictureStory = () => (
           <td>
             <pre>
               {`<MobileMenu>
-  <MobileMenu.Top>
-    <Icon name="close" size="21" color="white" />
-  </MobileMenu.Top>
-  <MobileMenu.Header>
+  <MobileMenu.Top
+    name="close" 
+    size="21" 
+    color="white"
+  />
+  <MobileMenu.Header
+    margin={true}
+  >
     <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
     <Label size="medium" theme="white">
       <span>Hello,</span>
