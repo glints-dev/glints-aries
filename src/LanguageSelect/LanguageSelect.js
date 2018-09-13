@@ -90,6 +90,10 @@ class LanguageSelect extends Component <State, Props> {
    }
 }
 
+LanguageSelect.defaultProps = {
+  onChange: () => {},
+};
+
 type State = {
   isOpen: boolean,
   flag: string,
