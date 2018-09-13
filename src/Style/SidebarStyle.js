@@ -67,9 +67,9 @@ export const SideBarContainer = styled.div`
     width: 100vw;
     top: 0px;
     left: 0px;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.5);
     animation: ${({ open }) => open ? fadeIn : fadeOut} .3s ease-in-out;
-    z-index: ${({ open }) => open ? '9999' : '-1'};
+    z-index: ${({ noDisplay }) => noDisplay ? '-1' : '9999'};
 `;
 
 export const SideBarWrapper = styled.div`
@@ -82,4 +82,5 @@ export const SideBarWrapper = styled.div`
     animation: ${({ open }) => open ? sideToLeft : sideToRight} .3s ease-in-out;
     transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
     outline: none;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
 `;
