@@ -72,7 +72,13 @@ export const MenuItemWraper = styled.div`
   }
   &:hover {
       background: #0171A4;
-    }
+  }
+  &:first-child {
+    padding: 0px 1.2em 10px;
+  }
+  &:last-child {
+    padding: 10px 1.2em 0px;
+  }
 `;
 
 export const MenuFooter = styled.footer`
