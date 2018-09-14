@@ -3,7 +3,7 @@ import { PrimaryColor, SecondaryColor } from './Colors';
 
 export const Container = styled.div`
   position: relative;
-  display: inline-flex;
+  display: flex;
 `;
 
 export const TextareaLabel = styled.label`
@@ -43,8 +43,9 @@ export const TextareaComponent = styled.textarea`
   font-size: 16px;
   padding: 1em;
   border: 2px solid ${SecondaryColor.lightblack};
-  transition: all .5s;
+  transition: border .5s;
   resize: vertical;
+  overflow: auto;
 
   ${({ status, floating }) => {
     if (status === 'error') {
@@ -73,7 +74,7 @@ export const TextareaComponent = styled.textarea`
 
   &:hover {
     border: 2px solid ${SecondaryColor.black};
-    transition: all .5s;
+    transition: border .5s;
 
     ${({ status }) => {
     if (status === 'error') {
