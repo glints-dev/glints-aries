@@ -75,7 +75,6 @@ const ProfilePictureStory = () => (
               </MobileMenu.Body>
               <MobileMenu.Footer
                 center
-                onChange={item => console.log('item', item)}
                 hoverColor="#0171A4"
                 defaultItem={
                   {

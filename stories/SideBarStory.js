@@ -179,7 +179,7 @@ class SideBarStory extends Component {
               <td>no</td>
               <td>
                 Set sidebar width
-                <pre>defaultValue: 40vh</pre>
+                <pre>defaultValue: 80vw</pre>
               </td>
             </tr>
           </tbody>
