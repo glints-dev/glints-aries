@@ -75,7 +75,8 @@ export const SideBarContainer = styled.div`
 export const SideBarWrapper = styled.div`
     position: absolute;
     height: 100vh;
-    width: ${({ sidebarWidth }) => sidebarWidth || '40vw'};
+    width: ${({ sidebarWidth }) => sidebarWidth || '80vw'};
+    max-width: 300px;
     top: 0px;
     right: 0px;
     background-color: white;
@@ -83,4 +84,5 @@ export const SideBarWrapper = styled.div`
     transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
     outline: none;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    overflow-x: none;
 `;

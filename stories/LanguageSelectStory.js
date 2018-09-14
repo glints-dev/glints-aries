@@ -50,6 +50,7 @@ const DropdownStory = () => (
             <pre>
               {`<LanguageSelect
     center={true}     
+    onChange={...function}
     hoverColor="#0171A4"     
     defaultItem={
         {
