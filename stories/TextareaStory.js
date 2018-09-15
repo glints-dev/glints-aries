@@ -77,7 +77,7 @@ const TextareaStory = () => (
             no
           </td>
           <td>
-            Sets placeholder value for the Text Field.
+            Sets title for Textarea.
           </td>
         </tr>
         <tr>
@@ -94,7 +94,7 @@ const TextareaStory = () => (
             no
           </td>
           <td>
-            Sets value of Text Field.
+            Sets default value of Textarea.
           </td>
         </tr>
         <tr>
@@ -113,7 +113,7 @@ const TextareaStory = () => (
             no
           </td>
           <td>
-            Sets different style for the Text Field based on status.
+            Sets different style for the Textarea based on status.
           </td>
         </tr>
         <tr>
@@ -132,7 +132,7 @@ const TextareaStory = () => (
             no
           </td>
           <td>
-            Disable the Text Field.
+            Disable Textarea.
           </td>
         </tr>
       </tbody>
