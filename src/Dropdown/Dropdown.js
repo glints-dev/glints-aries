@@ -12,7 +12,7 @@ import { Icon } from '../Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
-    isOpen: false,
+    isOpen: true,
   };
 
   handleOpen = () => {
@@ -35,6 +35,8 @@ class Dropdown extends Component <Props, State> {
       hoverColor,
       hoverBackGroundColor,
       iconColor,
+      fontSize,
+      fontWeight,
     } = this.props;
 
     const { isOpen } = this.state;
@@ -45,14 +47,17 @@ class Dropdown extends Component <Props, State> {
         open={isOpen}
         onClick={this.handleOpen}
         onBlur={this.handleClickOutside}
-        tabIndex="0"
+
         hoverColor={hoverColor}
         hoverBackGroundColor={hoverBackGroundColor}
+        noPadding={noPadding}
       >
         <DropdownLabelWrapper
           className={className}
           spaceBetween={spaceBetween}
           noPadding={noPadding}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
         >
           <DropdownLabel>
             <span>

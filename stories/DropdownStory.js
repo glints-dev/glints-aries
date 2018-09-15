@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from '../src/Dropdown';
+import Icon from '../src/Icon';
 
 const DropdownStory = () => (
   <div className="doc-mainbar">
@@ -32,32 +33,41 @@ const DropdownStory = () => (
               title="This Career"
               size="medium"
             >
-              <Dropdown.Body center>
+              <Dropdown.Body center iconWrapper>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Accounting
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Art & Design
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Business Development
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Consulting
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Engineering
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Entrepreneurship
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Finance
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   General Affair
                 </Dropdown.Item>
                 <Dropdown.Item>
+                  <Icon name="add" color="black" size="16" />
                   Human Resources
                 </Dropdown.Item>
               </Dropdown.Body>

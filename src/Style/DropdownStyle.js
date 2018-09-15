@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './Colors';
-import { Size } from '../Utils/StyleConfig';
+import { SecondaryColor } from './Colors';
 
 const growing = keyframes`
   from {
@@ -11,17 +10,24 @@ const growing = keyframes`
   }
 `;
 
-export const DropdownLabelWrapper = styled.div`
-  display: flex;
-  justify-content: ${({ spaceBetween }) => spaceBetween ? 'space-between' : null};
-  align-items: center;
-  cursor: pointer;
-  padding: ${({ noPadding }) => noPadding ? null : '.7em'};
-`;
-
 export const DropdownLabel = styled.div`
   margin-right: 3em;
   cursor: pointer;
+`;
+
+export const DropdownItem = styled.div`
+  display: flex;
+  cursor: pointer;
+  margin-bottom: .5em;
+  padding: 1em 1.3em;
+  color: ${SecondaryColor.lightblack};
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 `;
 
 export const DropdownItemWrapper = styled.div`
@@ -36,21 +42,28 @@ export const DropdownItemWrapper = styled.div`
   animation: ${growing} .2s linear;
   border: solid 1px #eeeeee;
   transform: ${({ center }) => center ? 'translateX(-50%)' : null};
+  font-size: ${({ fontSize }) => fontSize || null};
+
+  ${DropdownItem} {
+    ${({ iconWrapper }) => iconWrapper ? (
+    `
+      display: grid;
+      grid-template-columns: 15px 1fr;
+      grid-column-gap: 1em;
+      align-items: center;
+    `
+  ) : null};
+  }
 `;
 
-export const DropdownItem = styled.div`
+export const DropdownLabelWrapper = styled.div`
   display: flex;
+  justify-content: ${({ spaceBetween }) => spaceBetween ? 'space-between' : null};
+  align-items: center;
   cursor: pointer;
-  margin-bottom: .5em;
-  padding: 0.9em 1.3em 0.6em;
-  color: ${SecondaryColor.lightblack};
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
+  padding: ${({ noPadding }) => noPadding ? null : '.7em'};
+  font-size: ${({ fontSize }) => fontSize || null};
+  font-weight: ${({ fontWeight }) => fontWeight || null};
 `;
 
 export const DropdownContainer = styled.div`
@@ -68,24 +81,8 @@ export const DropdownContainer = styled.div`
       transition: all .3s;
     }
   }
-    
-  ${DropdownLabel} {
-    font-size: ${props => props.size === `${Size.SMALL}`
-    ? '12px'
-    : props.size === `${Size.MEDIUM}`
-      ? '16px'
-      : props.size === `${Size.LARGE}`
-        ? '22px'
-        : '14px'};
-  }
 
-  ${DropdownItem} {
-    font-size: ${props => props.size === `${Size.SMALL}`
-    ? '10px'
-    : props.size === `${Size.MEDIUM}`
-      ? '12px'
-      : props.size === `${Size.LARGE}`
-        ? '14px'
-        : '12px'};
+  ${DropdownItemWrapper} {
+    margin-top: ${({ noPadding }) => noPadding ? '10px' : null};
   }
 `;

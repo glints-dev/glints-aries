@@ -7,12 +7,16 @@ const DropdownBody = (props: Props) => {
     children,
     className,
     center,
+    iconWrapper,
+    fontSize,
   } = props;
 
   return (
     <DropdownItemWrapper
       center={center}
       className={className}
+      iconWrapper={iconWrapper}
+      fontSize={fontSize}
     >
       {children}
     </DropdownItemWrapper>
@@ -22,7 +26,9 @@ const DropdownBody = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
-  center: boolean
+  fontSize: string,
+  center: boolean,
+  iconWrapper: boolean
 }
 
 export default DropdownBody;
