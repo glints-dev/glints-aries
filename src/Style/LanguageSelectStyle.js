@@ -65,6 +65,5 @@ export const LanguageItem = styled.div`
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.05);
-        color: ${PrimaryColor.glintsblue};
     }
 `;

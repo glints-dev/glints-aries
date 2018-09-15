@@ -6,10 +6,14 @@ const DropdownBody = (props: Props) => {
   const {
     children,
     className,
+    center,
   } = props;
 
   return (
-    <DropdownItemWrapper className={className}>
+    <DropdownItemWrapper
+      center={center}
+      className={className}
+    >
       {children}
     </DropdownItemWrapper>
   );
@@ -18,6 +22,7 @@ const DropdownBody = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  center: boolean
 }
 
 export default DropdownBody;

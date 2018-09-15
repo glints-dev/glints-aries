@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import {
   DropdownContainer, DropdownLabelWrapper, DropdownLabel,
 } from '../Style/DropdownStyle';
+import {
+  SecondaryColor,
+} from '../Style/Colors';
+
 import { Icon } from '../Icon';
 
 class Dropdown extends Component <Props, State> {
@@ -29,6 +33,8 @@ class Dropdown extends Component <Props, State> {
       spaceBetween,
       noPadding,
       hoverColor,
+      hoverBackGroundColor,
+      iconColor,
     } = this.props;
 
     const { isOpen } = this.state;
@@ -41,6 +47,7 @@ class Dropdown extends Component <Props, State> {
         onBlur={this.handleClickOutside}
         tabIndex="0"
         hoverColor={hoverColor}
+        hoverBackGroundColor={hoverBackGroundColor}
       >
         <DropdownLabelWrapper
           className={className}
@@ -52,7 +59,7 @@ class Dropdown extends Component <Props, State> {
               {title}
             </span>
           </DropdownLabel>
-          <Icon name="arrow-down" size="15" color="black" />
+          <Icon name="arrow-down" size="15" color={iconColor} />
         </DropdownLabelWrapper>
         <If condition={isOpen}>
           { children }
@@ -62,12 +69,19 @@ class Dropdown extends Component <Props, State> {
   }
 }
 
+Dropdown.defaultProps = {
+  hoverBackGroundColor: SecondaryColor.blue,
+  hoverColor: SecondaryColor.white,
+  iconColor: SecondaryColor.black,
+};
+
 type Props = {
   children: React$Node,
   title: string,
   size: string,
   className: string,
-  noPadding: boolean
+  noPadding: boolean,
+  iconColor: string
 };
 
 type State = {
