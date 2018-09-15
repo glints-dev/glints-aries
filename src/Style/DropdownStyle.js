@@ -71,7 +71,7 @@ export const DropdownContainer = styled.div`
   position: relative;
 
   ${DropdownLabelWrapper} {
-    background: ${({ open }) => open ? `${SecondaryColor.blue}` : `${SecondaryColor.white}`};
+    background: ${({ open, backGroundColor }) => open ? `${SecondaryColor.blue}` : backGroundColor};
     color: ${({ open }) => open ? `${SecondaryColor.white}` : `${SecondaryColor.blue}`};
     transition: all .3s;
 

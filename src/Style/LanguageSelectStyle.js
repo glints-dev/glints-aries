@@ -51,7 +51,7 @@ export const LanguageLabel = styled(DropdownLabel)`
 `;
 
 export const LanguageLabelWrapper = styled(DropdownLabelWrapper)`
-    background-color: #027EB7;
+    background-color: ${({ backGroundColor }) => backGroundColor};
 `;
 
 export const LanguageItem = styled.div`

@@ -92,6 +92,7 @@ class LanguageSelect extends Component <State, Props> {
 
 LanguageSelect.defaultProps = {
   onChange: () => {},
+  backGroundColor: '#027EB7',
 };
 
 type State = {
