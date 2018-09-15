@@ -406,8 +406,22 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td></td>
-          <td></td>
+          <td style={{ padding: 20 }}>
+            <Icon name="power-off" color="black" size="25" />
+            <p>
+              <code>
+                power-off
+              </code>
+            </p>
+          </td>
+          <td style={{ padding: 20 }}>
+            <Icon name="setting" color="black" size="25" />
+            <p>
+              <code>
+                setting
+              </code>
+            </p>
+          </td>
           <td></td>
           <td></td>
         </tr>
