@@ -18,13 +18,13 @@ const JobCardHeader = (props: Props) => {
     paddingSize,
     subtitle,
     className,
-    jobTitleId,
-    companyNameId,
+    jobTitleClass,
+    companyNameClass,
     ...defaultProps
   } = props;
 
   return (
-    <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
+  <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
       <HeaderImage>
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
@@ -45,7 +45,7 @@ const JobCardHeader = (props: Props) => {
         }
 
         <TitleLink>
-          <h3 className={jobTitleId}>
+          <h3 className={jobTitleClass}>
             {`${title.slice(0, 50)}`}
           </h3>
         </TitleLink>
@@ -53,7 +53,7 @@ const JobCardHeader = (props: Props) => {
           && (
             <a 
               href={url}
-              className={companyNameId}
+              className={companyNameClass}
               target={isExternal ? '_blank' : '_self'}
               rel="noopener noreferrer"
             >
@@ -64,7 +64,7 @@ const JobCardHeader = (props: Props) => {
 
         {isReactRouter
           && (
-            <Link to={url} className={companyNameId}>
+            <Link to={url} className={companyNameClass}>
               {subtitle}
             </Link>
           )
@@ -76,21 +76,21 @@ const JobCardHeader = (props: Props) => {
 
 type Props = {
   className: string,
-  companyNameId: string,
+  companyNameClass: string,
   title: string,
   tag: string,
   subtitle: string,
   imgUrl: string,
   isExternal: boolean,
   isReactRouter: boolean,
-  jobTitleId: string,
+  jobTitleClass: string,
   paddingSize: string,
   url: string,
 };
 
 JobCardHeader.defaultProps = {
-  jobTitleId: '',
-  companyNameId: '',
+  jobTitleClass: '',
+  companyNameClass: '',
 };
 
 export default JobCardHeader;
