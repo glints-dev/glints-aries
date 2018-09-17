@@ -1,3 +1,24 @@
+#### 0.2.24 (2018-09-17)
+
+##### New Features
+
+* **Collapsible:**  set default open true & add animate to Collapsible body ([83b08907](https://github.com/glints-dev/glints-aries/commit/83b08907a7e6b6b4194f8204915bd3803f72a966))
+
+##### Other Changes
+
+* **storybook:**  update JobOverview storybook ([887e8e0a](https://github.com/glints-dev/glints-aries/commit/887e8e0a3bbdf1d3b37b65180f24b4419411cfa7))
+
+##### Refactors
+
+* **props:**  update props name for JobCardHeader ([8dc319e9](https://github.com/glints-dev/glints-aries/commit/8dc319e9a51829a200e5bede80c528e553b18490))
+
+##### Code Style Changes
+
+* **adjustment:**  adjust Job Overview Info component style ([8b08dcc5](https://github.com/glints-dev/glints-aries/commit/8b08dcc5f16d0394110bcd9c221ea3cb1b2c8da7))
+* **component:**
+  *  JobOverview style adjustment ([b1c077f8](https://github.com/glints-dev/glints-aries/commit/b1c077f8e860c78a720886fe019bf6fa0e30d841))
+  *  update breadcrumb. accept bgColor & marginBottomProps ([52841427](https://github.com/glints-dev/glints-aries/commit/528414274b4b8ab3f667210f0f065a1ce2eae43e))
+
 #### 0.2.23 (2018-09-17)
 
 #### 0.2.22 (2018-09-16)
