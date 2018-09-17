@@ -1,5 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { SecondaryColor } from './Colors';
+
+const animateCollapsibleBody = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 export const CollapsibleContainer = styled.div`
   cursor: pointer;
@@ -26,4 +38,5 @@ export const CollapsibleHead = styled.div`
 
 export const CollapsibleBody = styled.div`
   padding: 0 1.2em 1.2em 1.2em;
+  animation: ${animateCollapsibleBody} .3s linear;
 `;

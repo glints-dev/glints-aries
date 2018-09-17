@@ -5,7 +5,7 @@ import { CollapsibleContainer, CollapsibleHead, CollapsibleBody } from '../Style
 
 class Collapsible extends Component <Props, State> {
   state = {
-    isOpen: false,
+    isOpen: true,
   }
 
   handleOpen = () => {
