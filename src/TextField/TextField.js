@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Icon from '../Icon';
 import {
   TextFieldContainer,
   TextFieldInput,
@@ -6,8 +7,14 @@ import {
 } from '../Style/TextFieldStyle';
 
 class TextField extends Component <Props, State> {
-  state = {
-    floating: false,
+  constructor(props) {
+    super(props);
+    const { type } = this.props;
+
+    this.state = {
+      floating: false,
+      inputType: type,
+    };
   }
 
   handleFocusChange = (onBlur) => {
@@ -24,6 +31,14 @@ class TextField extends Component <Props, State> {
     return listener;
   }
 
+  handleShowPassword = () => {
+    const { inputType } = this.state;
+
+    this.setState({
+      inputType: inputType === 'password' ? 'text' : 'password',
+    });
+  }
+
   componentDidMount() {
     const { value } = this.props;
     if (value !== undefined) {
@@ -37,6 +52,7 @@ class TextField extends Component <Props, State> {
 
   render() {
     const {
+      type,
       label,
       value,
       status,
@@ -46,12 +62,12 @@ class TextField extends Component <Props, State> {
       ...defaultProps
     } = this.props;
 
-    const { floating } = this.state;
+    const { floating, inputType } = this.state;
 
     return (
       <TextFieldContainer className={className}>
         <TextFieldInput
-          type="text"
+          type={inputType}
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange(onBlur)}
@@ -62,12 +78,24 @@ class TextField extends Component <Props, State> {
         <TextFieldLabel floating={floating} status={status}>
           {label}
         </TextFieldLabel>
+        {type === 'password'
+          && (
+            <div className="see-password" onClick={this.handleShowPassword}>
+              <Icon
+                name={inputType === 'password' ? 'eye' : 'eye-slashed'}
+                color={inputType === 'password' ? 'black' : '#777777'}
+                size="18"
+              />
+            </div>
+          )
+        }
       </TextFieldContainer>
     );
   }
 }
 
 type Props = {
+  type: string,
   label: string,
   status: string,
   disabled: boolean,

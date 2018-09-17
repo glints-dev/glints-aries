@@ -28,11 +28,21 @@ const TextFieldStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <TextField label="Username" />
+            <TextField type="text" label="Username" />
           </td>
           <td>
             <code>
-              {'<TextField label="Username" value="..." />'}
+              {'<TextField type="text" label="Username" value="..." />'}
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td style={{ padding: 20 }}>
+            <TextField type="password" label="Password" />
+          </td>
+          <td>
+            <code>
+              {'<TextField type="password" label="Password" value="..." />'}
             </code>
           </td>
         </tr>
@@ -63,6 +73,25 @@ const TextFieldStory = () => (
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            type
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <code>
+              {'text | password'}
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets the type of Text Field.
+          </td>
+        </tr>
         <tr>
           <td>
             label

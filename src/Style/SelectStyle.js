@@ -27,6 +27,7 @@ export const Label = styled.label`
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
+  padding: 0 .5em;
   
   ${({ floating }) => {
     if (floating) {
