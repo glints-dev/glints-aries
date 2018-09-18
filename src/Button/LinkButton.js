@@ -3,16 +3,13 @@
 import React from 'react';
 import Loading from '../Loading';
 import { LinkBtn } from '../Style/ButtonStyle';
-import Label from '../Label';
 
 const LinkButton = ({ children, loading, ...defaultProps }: Props) => (
-  <LinkBtn>
+  <LinkBtn {...defaultProps}>
     {loading
       && <Loading className="loader" size="small" />
     }
-    <Label {...defaultProps}>
-      {children}
-    </Label>
+    {children}
   </LinkBtn>
 );
 

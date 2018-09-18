@@ -9,9 +9,7 @@ const DefaultButton = ({ children, loading, ...defaultProps }: Props) => (
     {loading
       && <Loading className="loader" size="small" />
     }
-    <label>
-      { children }
-    </label>
+    { children }
   </DefaultBtn>
 );
 

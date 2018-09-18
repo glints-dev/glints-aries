@@ -163,4 +163,13 @@ export const Item = styled.li`
     color: ${SecondaryColor.blue};
     background: ${SecondaryColor.lightergrey};
   }
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        cursor: not-allowed;
+        background: ${SecondaryColor.lightergrey};
+      `;
+    }
+  }}
 `;

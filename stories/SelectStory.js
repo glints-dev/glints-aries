@@ -28,7 +28,7 @@ const SelectStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Select label="Jobs">
+            <Select label="Jobs" noOptionResult="No Result Found.">
               <Select.Option value="accountant">Accountant</Select.Option>
               <Select.Option value="business development">Business Development</Select.Option>
               <Select.Option value="finance">Finance</Select.Option>

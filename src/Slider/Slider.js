@@ -81,15 +81,6 @@ class Slider extends Component <Props, State> {
     });
   }
 
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   console.log('nextProps ', nextProps);
-  //   console.log('prevState ', prevState);
-  //   return ({
-  //     translateValue: prevState.translateValue,
-  //     index: nextProps.showItem,
-  //   });
-  // }
-
   componentWillUnmount() {
     window.removeEventListener('resize', this.setSize);
   }

@@ -15,9 +15,9 @@ const Icon = (props: Props) => {
 };
 
 type Props = {
-    name: string,
-    color: string,
-    size: string,
+  name: string,
+  color: string,
+  size: string,
 }
 
 export default Icon;

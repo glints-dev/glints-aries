@@ -39,6 +39,8 @@ class Switch extends Component <Props, State> {
     return (
       <SwitchContainer
         className={className}
+        role="switch"
+        aria-checked="true"
         {...defaultProps}
         ID={clickID}
         defaultValue={initialValue}
@@ -46,6 +48,7 @@ class Switch extends Component <Props, State> {
       >
         <RadioButton
           id={value[0]}
+          aria-label={label[0]}
           label={label[0]}
           name={name[0]}
           value={value[0]}
@@ -55,6 +58,7 @@ class Switch extends Component <Props, State> {
         />
         <RadioButton
           id={value[1]}
+          aria-label={label[1]}
           label={label[1]}
           name={name[1]}
           value={value[1]}

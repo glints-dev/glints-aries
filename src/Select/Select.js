@@ -16,6 +16,7 @@ class Select extends Component <Props, State> {
     selectedValue: '',
     filterValue: [],
     cursor: 0,
+    notMatch: false,
   }
 
   handleFocusOut = (onBlur) => {
@@ -123,6 +124,13 @@ class Select extends Component <Props, State> {
     }
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.filterValue.length === 0) {
+      return { notMatch: true };
+    }
+    return { notMatch: false };
+  }
+
   render() {
     const {
       label,
@@ -132,6 +140,7 @@ class Select extends Component <Props, State> {
       className,
       onFocus,
       onBlur,
+      noOptionResult,
       children,
       ...defaultProps
     } = this.props;
@@ -142,13 +151,17 @@ class Select extends Component <Props, State> {
       selectedValue,
       filterValue,
       cursor,
+      notMatch,
     } = this.state;
 
     return (
       <Container className={className}>
-        <SelectWrapper>
+        <SelectWrapper role="combobox">
           <Input
             type="text"
+            aria-haspopup="true"
+            aria-expanded={isFocus}
+            aria-autocomplete="list"
             status={status}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
@@ -162,7 +175,7 @@ class Select extends Component <Props, State> {
           <Label floating={floating} status={status}>
             {label}
           </Label>
-          <div className="icon">
+          <div className="icon" aria-label="show options">
             <Icon name="arrow-down" color="#777" size="14" />
           </div>
         </SelectWrapper>
@@ -173,6 +186,7 @@ class Select extends Component <Props, State> {
                 <Item
                   className={cursor === index ? 'active' : null}
                   key={index}
+                  role="option"
                   data-id={index}
                   data-value={data.props.value}
                   onClick={this.handleClick}
@@ -181,6 +195,15 @@ class Select extends Component <Props, State> {
                   {data.props.children}
                 </Item>
               ))}
+              {notMatch && (
+                <Item
+                  disabled
+                  role="option"
+                  aria-disabled="true"
+                >
+                  {noOptionResult}
+                </Item>
+              )}
             </ul>
           </ItemWrapper>
         )}
@@ -194,6 +217,7 @@ type Props = {
   status: string,
   disabled: boolean,
   className: string,
+  noOptionResult: string,
   children: React$Node,
 }
 
@@ -203,6 +227,7 @@ type State = {
   selectedValue: string,
   filterValue: array,
   cursor: number,
+  notMatch: boolean,
 };
 
 export default Select;
