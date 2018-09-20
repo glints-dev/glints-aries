@@ -16,7 +16,7 @@ class LanguageSelect extends Component <State, Props> {
     this.state = {
       flag: null,
       isOpen: false,
-      title: props.defaultItem && props.defaultItem.countryIcon ? props.defaultItem.countryIcon : 'EN',
+      title: props.defaultItem && props.defaultItem.title ? props.defaultItem.title : 'EN',
       color: props.color ? props.color : SecondaryColor.white,
     };
   }

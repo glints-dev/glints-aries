@@ -21,7 +21,7 @@ export const TopIconWrapper = styled.div`
 `;
 
 export const DividerWrapper = styled.div`
-  margin: 2.2em .7em;
+  margin: 2.2em .7em 1.4em; 
 `;
 
 export const HeaderWrapper = styled.header`
@@ -74,7 +74,7 @@ export const MenuItemWraper = styled.div`
       background: #0171A4;
   }
   &:first-child {
-    padding: 0px 1.2em 10px;
+    padding: 10px 1.2em;
   }
 `;
 
