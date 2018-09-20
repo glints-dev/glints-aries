@@ -5,12 +5,7 @@ const StorybookStyle = styled.div`
   *:before,
   *:after {
     box-sizing: border-box;
-  }
-
-  h1, h2, h3,
-  h4, h5, h6 {
     font-family: 'Poppins';
-    margin: 0;
   }
 
   a {
@@ -25,17 +20,6 @@ const StorybookStyle = styled.div`
 
   li {
     margin-bottom: 0;
-  }
-
-  p {
-    margin: 0;
-  }
-  
-  a, p, label,
-  ul, li, span,
-  i, div, input,
-  textarea {
-    font-family: 'Poppins';
   }
 `;
 

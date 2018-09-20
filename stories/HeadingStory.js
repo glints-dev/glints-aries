@@ -19,7 +19,7 @@ const HeadingStory = () => (
       <thead>
         <tr>
           <th colSpan="0">
-              Preview
+            Preview
           </th>
           <th>
             Usage
@@ -29,100 +29,15 @@ const HeadingStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Heading size={Size.LARGE}>
-              Large Heading
+            <Heading>
+              This is Heading
             </Heading>
           </td>
           <td>
             <code>
-              {'<Heading size="large">Large Heading</Heading>'}
+              {'<Heading>This is Heading</Heading>'}
             </code>
           </td>
-        </tr>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Heading size={Size.MEDIUM}>
-              Medium Heading
-            </Heading>
-          </td>
-          <td>
-            <code>
-              {'<Heading size="medium">Medium Heading</Heading>'}
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Heading size={Size.SMALL}>
-              Small Heading
-            </Heading>
-          </td>
-          <td>
-            <code>
-              {'<Heading size="small">Small Heading</Heading>'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h1>
-      Props
-    </h1>
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            size
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              large | medium | small
-            </pre>
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets the size of heading.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            onClick
-          </td>
-          <td>
-            Function
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td></td>
         </tr>
       </tbody>
     </table>

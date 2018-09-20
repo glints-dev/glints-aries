@@ -72,63 +72,6 @@ const IntroStory = () => (
         </pre>
       </div>
     </div>
-
-    <div style={{ marginBottom: '2.5em' }}>
-      <h3 style={{ marginBottom: '.5em' }}>
-        How to override the style
-      </h3>
-      <h4>
-        Override using css.
-      </h4>
-      <p style={{ marginBottom: '.5em' }}>
-        You can override the style with your own styling by simply put a
-        {' '}
-        <b>
-          class
-        </b>
-        {' '}
-          or
-        {' '}
-        <b>
-          id
-        </b>
-        {' '}
-          on the component.
-      </p>
-      <p>
-        Example:
-        <code>
-          {'<Heading className="yourClass" size="small">Small Heading</Heading>'}
-        </code>
-      </p>
-      <pre style={{ backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0' }}>
-        {
-          `.yourClass {
-  your override style goes here 
-}`
-        }
-      </pre>
-      <h4>
-        Override using styled-components.
-      </h4>
-      <p>
-        {'It\'s pretty easy to override through styled-components. You can use'}
-        {' '}
-        <b>
-          styled
-        </b>
-        {' '}
-        method.
-      </p>
-      <pre style={{ backgroundColor: 'transparent', display: 'inline-block', margin: '1em 0' }}>
-        {
-          `const ButtonOverride = styled('Button)${'`'}
-  your override style goes here 
-${'`'}
-`
-        }
-      </pre>
-    </div>
   </div>
 );
 

@@ -156,10 +156,10 @@ class Select extends Component <Props, State> {
 
     return (
       <Container className={className}>
-        <SelectWrapper role="combobox">
+        <SelectWrapper>
           <Input
             type="text"
-            aria-haspopup="true"
+            role="combobox"
             aria-expanded={isFocus}
             aria-autocomplete="list"
             status={status}
@@ -180,31 +180,29 @@ class Select extends Component <Props, State> {
           </div>
         </SelectWrapper>
         {isFocus && (
-          <ItemWrapper>
-            <ul>
-              {filterValue.map((data, index) => (
-                <Item
-                  className={cursor === index ? 'active' : null}
-                  key={index}
-                  role="option"
-                  data-id={index}
-                  data-value={data.props.value}
-                  onClick={this.handleClick}
-                  onMouseEnter={this.handleMouseEnter}
-                >
-                  {data.props.children}
-                </Item>
-              ))}
-              {notMatch && (
-                <Item
-                  disabled
-                  role="option"
-                  aria-disabled="true"
-                >
-                  {noOptionResult}
-                </Item>
-              )}
-            </ul>
+          <ItemWrapper role="listbox">
+            {filterValue.map((data, index) => (
+              <Item
+                className={cursor === index ? 'active' : null}
+                key={data.props.value}
+                role="option"
+                data-id={index}
+                data-value={data.props.value}
+                onClick={this.handleClick}
+                onMouseEnter={this.handleMouseEnter}
+              >
+                {data.props.children}
+              </Item>
+            ))}
+            {notMatch && (
+              <Item
+                disabled
+                role="option"
+                aria-disabled="true"
+              >
+                {noOptionResult}
+              </Item>
+            )}
           </ItemWrapper>
         )}
       </Container>

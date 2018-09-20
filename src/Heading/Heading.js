@@ -1,50 +1,28 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { HeadingLarge, HeadingMedium, HeadingSmall } from '../Style/HeadingStyle';
-import { Size } from '../Utils/StyleConfig';
+import { Container } from '../Style/HeadingStyle';
 
-const renderHeading = ({
-  children,
-  size,
-  className,
-  ...defaultProps
-}: Props) => {
-  switch (size) {
-    case Size.LARGE:
-      return (
-        <HeadingLarge className={className} {...defaultProps}>
+const Heading = (props: Props) => {
+  const {
+    className,
+    children,
+    ...defaultProps
+  } = props;
+
+  return (
+    <Fragment>
+      <Container className={className} {...defaultProps}>
+        <span>
           {children}
-        </HeadingLarge>
-      );
-    case Size.MEDIUM:
-      return (
-        <HeadingMedium className={className} {...defaultProps}>
-          {children}
-        </HeadingMedium>
-      );
-    case Size.SMALL:
-      return (
-        <HeadingSmall className={className} {...defaultProps}>
-          {children}
-        </HeadingSmall>
-      );
-    default:
-      return (
-        null
-      );
-  }
+        </span>
+      </Container>
+    </Fragment>
+  );
 };
-
-const Heading = (props: Props) => (
-  <Fragment>
-    {renderHeading(props)}
-  </Fragment>
-);
 
 type Props = {
   children: React$Node,
-  size: string,
   className: string,
 }
 

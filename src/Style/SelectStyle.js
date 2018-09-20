@@ -135,7 +135,7 @@ export const Input = styled.input`
   }
 `;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.ul`
   position: absolute;
   background: ${SecondaryColor.white};
   width: 100%;
@@ -169,6 +169,8 @@ export const Item = styled.li`
       return `
         cursor: not-allowed;
         background: ${SecondaryColor.lightergrey};
+        color: ${SecondaryColor.grey};
+        font-style: italic;
       `;
     }
   }}

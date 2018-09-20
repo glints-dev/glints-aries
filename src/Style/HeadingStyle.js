@@ -1,33 +1,11 @@
-import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './Colors';
+import styled from 'styled-components';
+import { PrimaryColor } from './Colors';
 
-const highlight = css`
-  display: inline-flex;
+export const Container = styled.h1`
   position: relative;
-  text-transform: uppercase;
-  color: ${SecondaryColor.black};
-  z-index: 1;
+  font-size: 3em;
 
-  &:after {
-    content: '';
-    position: absolute;
-    background: ${PrimaryColor.glintsyellow};
-    width: 100%;
-    height: .6em;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
+  span {
+    background-image: ${`linear-gradient(to top, ${PrimaryColor.glintsyellow} 40%, white 0)`};
   }
-`;
-
-export const HeadingLarge = styled.h1`
-  ${highlight};
-`;
-
-export const HeadingMedium = styled.h3`
-  ${highlight};
-`;
-
-export const HeadingSmall = styled.h6`
-  ${highlight};
 `;
