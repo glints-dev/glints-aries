@@ -18,7 +18,6 @@ export const DropdownLabel = styled.div`
 export const DropdownItem = styled.div`
   display: flex;
   cursor: pointer;
-  margin-bottom: .5em;
   padding: 1em 1.3em;
   color: ${SecondaryColor.lightblack};
   &:last-child {
@@ -33,14 +32,14 @@ export const DropdownItem = styled.div`
 export const DropdownItemWrapper = styled.div`
   position: absolute;
   left: ${({ center }) => center ? '50%' : null};
-  width: calc(100% - 1.4em - 1.4em);
+  width: ${({ center }) => center ? 'calc(100% - 1.4em - 1.4em)' : '100%'};
   background: ${SecondaryColor.white};
   padding: 0px;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
   max-height: 180px;
-  overflow-y: auto;
   animation: ${growing} .2s linear;
   border: solid 1px #eeeeee;
+  overflow-y: auto;
   transform: ${({ center }) => center ? 'translateX(-50%)' : null};
   font-size: ${({ fontSize }) => fontSize || null};
 
