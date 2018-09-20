@@ -202,4 +202,7 @@ export const LabelTag = styled.span`
 export const CustomLink = styled(Link)`
   color: ${SecondaryColor.black};
   cursor: pointer;
+  &:hover {
+    color: ${SecondaryColor.black};
+  }
 `;
