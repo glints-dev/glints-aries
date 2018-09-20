@@ -9,10 +9,10 @@ const JobCardDescription = ({ description, time, ...defaultProps }:Props) => (
     <p>
       {`${description}`}
     </p>
-    <label>
+    <span>
       <Icon name="clock" color="#646464" size="12" />
       { time }
-    </label>
+    </span>
 
   </JobDescription>
 );

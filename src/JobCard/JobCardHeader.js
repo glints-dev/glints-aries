@@ -1,10 +1,8 @@
 /* @flow */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Label from '../Label';
 import {
-  HeaderContainer, HeaderImage, HeaderContent, Image, TitleLink,
+  HeaderContainer, HeaderImage, HeaderContent, Image, SubtitleTitle, LabelTag,
 } from '../Style/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
@@ -14,9 +12,9 @@ const JobCardHeader = (props: Props) => {
     url,
     imgUrl,
     isExternal,
-    isReactRouter,
     paddingSize,
     subtitle,
+    subtitleOnClick,
     className,
     jobTitleClass,
     companyNameClass,
@@ -24,7 +22,7 @@ const JobCardHeader = (props: Props) => {
   } = props;
 
   return (
-  <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
+    <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
       <HeaderImage>
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
@@ -36,39 +34,20 @@ const JobCardHeader = (props: Props) => {
         </Choose>
       </HeaderImage>
       <HeaderContent>
-        {tag
-          && (
-            <Label>
-              {tag}
-            </Label>
-          )
-        }
-
-        <TitleLink>
-          <h3 className={jobTitleClass}>
-            {`${title.slice(0, 50)}`}
-          </h3>
-        </TitleLink>
-        {!isReactRouter
-          && (
-            <a 
-              href={url}
-              className={companyNameClass}
-              target={isExternal ? '_blank' : '_self'}
-              rel="noopener noreferrer"
-            >
-              {subtitle}
-            </a>
-          )
-        }
-
-        {isReactRouter
-          && (
-            <Link to={url} className={companyNameClass}>
-              {subtitle}
-            </Link>
-          )
-        }
+        <If condition={tag}>
+          <LabelTag>
+            {tag}
+          </LabelTag>
+        </If>
+        <h3 className={jobTitleClass}>
+          {`${title.slice(0, 50)}`}
+        </h3>
+        <SubtitleTitle
+          onClick={subtitleOnClick}
+          className={companyNameClass}
+        >
+          {subtitle}
+        </SubtitleTitle>
       </HeaderContent>
     </HeaderContainer>
   );
@@ -82,7 +61,6 @@ type Props = {
   subtitle: string,
   imgUrl: string,
   isExternal: boolean,
-  isReactRouter: boolean,
   jobTitleClass: string,
   paddingSize: string,
   url: string,
@@ -91,6 +69,7 @@ type Props = {
 JobCardHeader.defaultProps = {
   jobTitleClass: '',
   companyNameClass: '',
+  subtitleOnClick: () => {},
 };
 
 export default JobCardHeader;

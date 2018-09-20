@@ -30,12 +30,13 @@ const JobCardStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <JobCard>
+            <JobCard
+              url="https://glints.id"
+            >
               <JobCard.Header
                 title="Item title"
                 tag="Special"
                 subtitle="Item subtitle"
-                url="https://glints.id"
                 imgUrl="https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png"
                 isExternal
                 paddingSize="1.4em"

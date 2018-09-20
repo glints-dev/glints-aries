@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import { PrimaryColor, SecondaryColor } from './Colors';
 import { Device } from '../Utils/StyleConfig';
 
@@ -8,7 +10,6 @@ import { Device } from '../Utils/StyleConfig';
 
 export const JobCardContainer = styled.div`
   position: relative;
-  cursor: pointer;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 380px;
@@ -60,6 +61,7 @@ export const HeaderImage = styled.div`
 
 export const HeaderContent = styled.div`
   padding-left: 1.2em;
+  cursor: pointer;
 
   label {
     background: ${PrimaryColor.glintsblue};
@@ -94,6 +96,7 @@ export const Body = styled.div`
   padding-bottom: 1.4em;
   padding-left: 1.4em;
   margin-bottom: 3.4em;
+  cursor: pointer;
   &:before {
     content: '';
     background: ${SecondaryColor.lightgrey};
@@ -146,13 +149,13 @@ export const JobDescription = styled.div`
       position: absolute;
       bottom: 0;
       right: 0;
-      width: ${325 / 2}px;
+      width: 10em;
       height: 1.428571429em;
       background: linear-gradient(90deg, rgba(256, 256, 256, 0.0), rgba(256, 256, 256, 1.0) 75%);
     }
   }
 
-  label {
+  span {
     display: flex;
     align-items: center;
     margin-top: .5em;
@@ -163,13 +166,8 @@ export const JobDescription = styled.div`
   }
 `;
 
-export const TitleLink = styled.a`
-  h3 {
-    color: ${SecondaryColor.black};
-    &:hover {
-      color: ${SecondaryColor.lightblack};
-    }
-  }
+export const SubtitleTitle = styled.p`
+  color: ${SecondaryColor.blue};
 `;
 
 export const Footer = styled.footer`
@@ -187,4 +185,21 @@ export const Image = styled.img`
   object-fit: contain;
   height: 5em;
   width: 5em;
+`;
+
+export const LabelTag = styled.span`
+  font-family: Poppins;
+  display: inline-block;
+  color: ${SecondaryColor.white};
+  background-color: ${PrimaryColor.glintsblue};
+  padding: .2em .6em;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+`;
+
+export const CustomLink = styled(Link)`
+  color: ${SecondaryColor.black};
+  cursor: pointer;
 `;
