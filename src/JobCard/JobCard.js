@@ -2,28 +2,16 @@
 
 import React, { Component, Children } from 'react';
 
-import JobCardHeader from './JobCardHeader';
-import JobCardBody from './JobCardBody';
 import { JobCardContainer, CustomLink } from '../Style/JobCardStyle';
 
 class JobCard extends Component <Props> {
-  constructor() {
-    super();
-    this.headerName = Object.assign({}, <JobCardHeader />).type.name;
-    this.bodyName = Object.assign({}, <JobCardBody />).type.name;
-  }
-
   renderLinkChild = () => {
-    const { children, defaultProps } = this.props;
+    const { children, defaultProps, url } = this.props;
     const linkChild = Children.map(children, (child) => {
-      switch (child.type.name) {
-        case this.headerName:
-          return React.cloneElement(child, { ...defaultProps });
-        case this.bodyName:
-          return React.cloneElement(child, { ...defaultProps });
-        default:
-          return null;
+      if (url && child.props.isLinkAble) {
+        return React.cloneElement(child, { ...defaultProps });
       }
+      return null;
     });
     return linkChild;
   }
@@ -31,9 +19,10 @@ class JobCard extends Component <Props> {
   renderNonLinkChild = () => {
     const { children } = this.props;
     const nonLinkChild = Children.map(children, (child) => {
-      if (child.type.name !== this.headerName && child.type.name !== this.bodyName) {
+      if (!child.props.isLinkAble) {
         return child;
       }
+      return null;
     });
     return nonLinkChild;
   }

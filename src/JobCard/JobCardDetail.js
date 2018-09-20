@@ -6,9 +6,9 @@ import { JobDetail } from '../Style/JobCardStyle';
 const JobCardDetail = ({ details, ...defaultProps }: Props) => (
   <JobDetail {...defaultProps}>
     <ul>
-      <For each="data" of={details}>
+      <For each="data" of={details} index="index">
         <If condition={data !== ''}>
-          <li key={data}>
+          <li key={data + index}>
             <Icon name="dot" color="#c6c6c6" size="6" />
             { data }
           </li>
