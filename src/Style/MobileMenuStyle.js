@@ -25,10 +25,6 @@ export const DividerWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.header`
-  display: grid;
-  grid-template-rows: repeat(2, auto);
-  grid-row-gap: 15px;
-  align-items: center;
   margin: ${({ margin }) => margin ? '0 1.8em' : null};
 
   label {

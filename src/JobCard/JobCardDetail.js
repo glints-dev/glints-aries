@@ -6,14 +6,14 @@ import { JobDetail } from '../Style/JobCardStyle';
 const JobCardDetail = ({ details, ...defaultProps }: Props) => (
   <JobDetail {...defaultProps}>
     <ul>
-      {details.map((data, index) => (
+      <For each="data" of={details} index="index">
         <If condition={data !== ''}>
-          <li key={index}>
+          <li key={data + index}>
             <Icon name="dot" color="#c6c6c6" size="6" />
             { data }
           </li>
         </If>
-      ))}
+      </For>
     </ul>
   </JobDetail>
 );
