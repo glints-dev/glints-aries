@@ -1,5 +1,5 @@
 import React from 'react';
-import Brand from '../src/Brand';
+import Brand from '../src/Base/Brand';
 
 const BrandStory = () => (
   <div className="doc-mainbar">
@@ -40,12 +40,11 @@ const BrandStory = () => (
           <td style={{ padding: 20 }}>
             <Brand
               asset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Logo_of_Unsplash.svg/2000px-Logo_of_Unsplash.svg.png"
-              size="medium"
             />
           </td>
           <td>
             <code>
-              {'<Brand asset={\'asset url / path\'} size="medium" />'}
+              {'<Brand asset={\'asset url / path\'} />'}
             </code>
           </td>
         </tr>
@@ -99,31 +98,6 @@ const BrandStory = () => (
             </b>
             {' '}
             props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            size
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              large | medium | small
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets the size of
-            {' '}
-            <b>
-              Brand
-            </b>
-            {' '}
-            logo.
           </td>
         </tr>
         <tr>
