@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../src/Badge';
+import Badge from '../src/Base/Badge';
 
 const BadgeStory = () => (
   <div className="doc-mainbar">
@@ -27,7 +27,7 @@ const BadgeStory = () => (
       </thead>
       <tbody>
         <tr>
-          <td style={{ padding: 20 }}>
+          <td style={{ fontSize: '12px' }}>
             <Badge label="6" />
           </td>
           <td>
