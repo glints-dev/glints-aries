@@ -56,6 +56,18 @@ import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
 import NotificationStory from './NotificationStory';
 
+storiesOf('Base', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Introduction', () => <IntroStory />)
+  .add('Badge', () => <BadgeStory />)
+  .add('Brand', () => <BrandStory />);
+
 storiesOf('Components', module)
   .addDecorator(story => (
     <Provider>
@@ -64,23 +76,8 @@ storiesOf('Components', module)
       </StorybookStyle>
     </Provider>
   ))
-  .addDecorator(withKnobs)
-  .add('Introduction', () => <IntroStory />)
-  .add('Knob', () => {
-    const options = ['primary', 'secondary', 'ghost', 'link'];
-    const colors = ['red', 'yellow', 'blue'];
-    const value = select('Type', options, 'primary');
-    const calorValue = select('Theme', colors, 'red');
-    return (
-      <Button variant={value} theme={calorValue}>
-        Knob
-      </Button>
-    );
-  })
   .add('Accordion', () => <AccordionStory />)
-  .add('Badge', () => <BadgeStory />)
   .add('Blockquote', () => <BlockquoteStory />)
-  .add('Brand', () => <BrandStory />)
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Button', () => <ButtonStory />)
   .add('Checkbox', () => <CheckboxStory />)
