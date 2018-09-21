@@ -56,7 +56,7 @@ import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
 import NotificationStory from './NotificationStory';
 
-storiesOf('Base', module)
+storiesOf('General', module)
   .addDecorator(story => (
     <Provider>
       <StorybookStyle>
