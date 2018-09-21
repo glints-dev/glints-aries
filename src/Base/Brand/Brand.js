@@ -1,15 +1,14 @@
 /* @flow */
 
 import React from 'react';
-import { BrandImageWrapper, BrandImage } from '../Style/BrandStyle';
+import { BrandImageWrapper, BrandImage } from '../../Style/BrandStyle';
 
-import GlintsBlack from '../../assets/image/glints-logo-black.svg';
-import GlintsWhite from '../../assets/image/glints-logo-white.svg';
+import GlintsBlack from '../../../assets/image/glints-logo-black.svg';
+import GlintsWhite from '../../../assets/image/glints-logo-white.svg';
 
 const Brand = (props: Props) => {
   const {
     asset,
-    size,
     className,
     ...defaultProps
   } = props;
@@ -26,17 +25,13 @@ const Brand = (props: Props) => {
 
   return (
     <BrandImageWrapper className={className} {...defaultProps}>
-      <BrandImage
-        size={size}
-        src={srcAsset}
-      />
+      <BrandImage src={srcAsset} />
     </BrandImageWrapper>
   );
 };
 
 type Props = {
   asset: string,
-  size: string,
   className: string,
 }
 
