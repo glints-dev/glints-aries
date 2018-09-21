@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumb from '../src/Breadcrumb';
+import Breadcrumb from '../src/General/Breadcrumb';
 
 const BreadcrumbStory = () => (
   <div className="doc-mainbar">
