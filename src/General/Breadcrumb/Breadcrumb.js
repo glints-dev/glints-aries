@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Container } from '../Style/BreadcrumbStyle';
+import { Container } from '../../Style/BreadcrumbStyle';
 
 const Breadcrumb = (props: Props) => {
   const {
