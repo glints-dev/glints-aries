@@ -215,6 +215,14 @@ const IconStory = () => (
             </p>
           </td>
           <td style={{ padding: 20 }}>
+          <Icon name="globe" color="black" size="25" />
+            <p>
+              <code>
+                globe
+              </code>
+            </p>
+          </td>
+          <td style={{ padding: 20 }}>
             <Icon name="group" color="black" size="25" />
             <p>
               <code>
@@ -230,7 +238,9 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td style={{ padding: 20 }}>
+        </tr>
+        <tr>
+        <td style={{ padding: 20 }}>
             <Icon name="help" color="black" size="25" />
             <p>
               <code>
@@ -238,8 +248,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="job-search" color="black" size="25" />
             <p>
@@ -280,7 +288,9 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td style={{ padding: 20 }}>
+        </tr>
+        <tr>
+        <td style={{ padding: 20 }}>
             <Icon name="medal" color="black" size="25" />
             <p>
               <code>
@@ -288,8 +298,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="menu" color="black" size="25" />
             <p>
@@ -330,6 +338,24 @@ const IconStory = () => (
               </code>
             </p>
           </td>
+        </tr>
+        <tr>
+        <td style={{ padding: 20 }}>
+            <Icon name="power-off" color="black" size="25" />
+            <p>
+              <code>
+                power-off
+              </code>
+            </p>
+          </td>
+        <td style={{ padding: 20 }}>
+            <Icon name="setting" color="black" size="25" />
+            <p>
+              <code>
+                setting
+              </code>
+            </p>
+          </td>
           <td style={{ padding: 20 }}>
             <Icon name="search" color="black" size="25" />
             <p>
@@ -338,8 +364,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="share" color="black" size="25" />
             <p>
@@ -364,7 +388,9 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td style={{ padding: 20 }}>
+        </tr>
+        <tr>
+        <td style={{ padding: 20 }}>
             <Icon name="twitter" color="black" size="25" />
             <p>
               <code>
@@ -372,7 +398,7 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td style={{ padding: 20 }}>
+        <td style={{ padding: 20 }}>
             <Icon name="user" color="black" size="25" />
             <p>
               <code>
@@ -388,8 +414,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-        </tr>
-        <tr>
           <td style={{ padding: 20 }}>
             <Icon name="warning" color="black" size="25" />
             <p>
@@ -406,23 +430,6 @@ const IconStory = () => (
               </code>
             </p>
           </td>
-          <td style={{ padding: 20 }}>
-            <Icon name="power-off" color="black" size="25" />
-            <p>
-              <code>
-                power-off
-              </code>
-            </p>
-          </td>
-          <td style={{ padding: 20 }}>
-            <Icon name="setting" color="black" size="25" />
-            <p>
-              <code>
-                setting
-              </code>
-            </p>
-          </td>
-          <td></td>
           <td></td>
         </tr>
       </tbody>
