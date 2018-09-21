@@ -5,13 +5,10 @@ import {
   DropdownItemWrapper, DropdownContainer, DropdownLabel, DropdownLabelWrapper,
 } from './DropdownStyle';
 
-export const ImageContainer = styled.div`
+export const IconContainer = styled.div`
     display: flex;
     justify-items: center;
     align-items: center;
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
     margin-right: 1em;
 `;
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { SecondaryColor } from '../Style/Colors';
 
 import {
-  ImageContainer, Image, LanguageItemWrapper, LanguageContainer, LanguageItem, LanguageLabel,
+  IconContainer, LanguageItemWrapper, LanguageContainer, LanguageItem, LanguageLabel,
 } from '../Style/LanguageSelectStyle';
 import {
   DropdownLabelWrapper,
@@ -14,19 +14,10 @@ class LanguageSelect extends Component <State, Props> {
   constructor(props) {
     super(props);
     this.state = {
-      flag: null,
       isOpen: false,
       title: props.defaultItem && props.defaultItem.title ? props.defaultItem.title : 'EN',
       color: props.color ? props.color : SecondaryColor.white,
     };
-  }
-
-  async componentDidMount() {
-    const { defaultItem } = this.props;
-    const flagCode = defaultItem && defaultItem.countryIcon ? defaultItem.countryIcon : 'gb';
-    const flagModule = await import(`./FlagComponents/${flagCode}`);
-    const flag = flagModule.default;
-    this.setState({ flag });
   }
 
   handleOpen = () => {
@@ -41,19 +32,16 @@ class LanguageSelect extends Component <State, Props> {
    handleItemClick = async (item) => {
      const { onChange } = this.props;
      onChange(item);
-     const flagModule = await import(`./FlagComponents/${item.countryIcon}`);
-     const flag = flagModule.default;
      this.setState({
        isOpen: false,
        title: item.title,
-       flag,
      });
    }
 
    render() {
      const { languageItem, center, hoverColor } = this.props;
      const {
-       flag, isOpen, title, color,
+       isOpen, title, color,
      } = this.state;
      return (
        <LanguageContainer
@@ -65,9 +53,9 @@ class LanguageSelect extends Component <State, Props> {
          hoverColor={hoverColor}
        >
          <DropdownLabelWrapper spaceBetween={false} {...this.props}>
-           <ImageContainer>
-             <Image src={flag} />
-           </ImageContainer>
+           <IconContainer>
+             <Icon name="globe" size="19" color={color} />
+           </IconContainer>
            <LanguageLabel color={color}>
              {title}
            </LanguageLabel>
