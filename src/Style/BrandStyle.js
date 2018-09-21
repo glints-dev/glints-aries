@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BrandImageWrapper = styled.div`
+export const Container = styled.div`
   position: relative;
   display: inline-flex;
 `;

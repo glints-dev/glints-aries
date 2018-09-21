@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../src/Base/Badge';
+import Badge from '../src/General/Badge';
 
 const BadgeStory = () => (
   <div className="doc-mainbar">
