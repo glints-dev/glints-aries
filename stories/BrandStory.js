@@ -1,5 +1,5 @@
 import React from 'react';
-import Brand from '../src/Base/Brand';
+import Brand from '../src/General/Brand';
 
 const BrandStory = () => (
   <div className="doc-mainbar">
