@@ -8,7 +8,6 @@ import {
 import { withViewport } from '@storybook/addon-viewport';
 import Provider from './Provider';
 
-import { Button } from '../src/Button';
 import StorybookStyle from '../src/Style/StorybookStyle';
 
 import IntroStory from './IntroStory';
