@@ -66,7 +66,40 @@ storiesOf('General', module)
   ))
   .add('Introduction', () => <IntroStory />)
   .add('Badge', () => <BadgeStory />)
-  .add('Brand', () => <BrandStory />);
+  .add('Brand', () => <BrandStory />)
+  .add('Breadcrumb', () => <BreadcrumbStory />)
+  .add('Button', () => <ButtonStory />)
+  .add('Collapsible', () => <CollapsibleStory />);
+
+storiesOf('Inputs', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Checkbox', () => <CheckboxStory />);
+
+storiesOf('Navigations', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Introduction', () => <IntroStory />);
+
+storiesOf('Contents', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Introduction', () => <IntroStory />);
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -78,10 +111,6 @@ storiesOf('Components', module)
   ))
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
-  .add('Breadcrumb', () => <BreadcrumbStory />)
-  .add('Button', () => <ButtonStory />)
-  .add('Checkbox', () => <CheckboxStory />)
-  .add('Collapsible', () => <CollapsibleStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
   .add('Divider', () => <DividerStory />)
