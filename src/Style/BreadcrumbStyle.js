@@ -3,22 +3,21 @@ import { SecondaryColor } from './Colors';
 
 export const Item = styled.label`
   cursor: pointer;
-  span {
-    margin: 0 .5em;
-    color: ${SecondaryColor.lighterblack};
-  }
+  font-size: 1em;
+  line-height: 1.5;
+  color: ${({ active }) => active && `${SecondaryColor.blue}`};
 
-  &.active {
-    color: ${SecondaryColor.blue};
+  span {
+    margin: 0 1em;
+    color: ${SecondaryColor.lighterblack};
   }
 `;
 
 export const Container = styled.div`
   position: relative;
   display: flex;
-  background-color: ${props => props.bgColor};
-  padding: 10px;
-  margin-bottom: ${props => props.marginBottom};
+  background-color: ${SecondaryColor.whitesmoke};
+  padding: 1em;
   color: ${SecondaryColor.lightblack};
 
   > label:last-child span {

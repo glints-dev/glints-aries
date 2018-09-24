@@ -27,7 +27,7 @@ class Select extends Component <Props, State> {
       });
 
       if (onBlur !== undefined) {
-        return onBlur();
+        return onBlur(e);
       }
     };
 
@@ -35,13 +35,13 @@ class Select extends Component <Props, State> {
   }
 
   handleFocus = (onFocus) => {
-    const listener = () => {
+    const listener = (e) => {
       this.setState({
         isFocus: true,
       });
 
       if (onFocus !== undefined) {
-        return onFocus();
+        return onFocus(e);
       }
     };
 

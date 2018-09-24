@@ -5,13 +5,14 @@ import { Item } from '../../Style/BreadcrumbStyle';
 
 const BreadcrumbItem = (props: Props) => {
   const {
+    active,
     className,
     children,
     ...defaultProps
   } = props;
 
   return (
-    <Item className={className} {...defaultProps}>
+    <Item className={className} active={active} {...defaultProps}>
       {children}
       <span>/</span>
     </Item>
@@ -20,6 +21,7 @@ const BreadcrumbItem = (props: Props) => {
 
 type Props = {
   children: React$Node,
+  active: boolean,
   className: string,
 }
 

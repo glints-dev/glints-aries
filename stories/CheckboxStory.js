@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../src/Checkbox';
+import Checkbox from '../src/Inputs/Checkbox';
 
 const CheckboxStory = () => (
   <div className="doc-mainbar">
@@ -18,7 +18,7 @@ const CheckboxStory = () => (
       <thead>
         <tr>
           <th colSpan="0">
-              Preview
+            Preview
           </th>
           <th>
             Usage
@@ -28,11 +28,11 @@ const CheckboxStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Checkbox id="software-engineer" label="Software Engineer" />
+            <Checkbox id="software-engineer" value="Software Engineer" />
           </td>
           <td>
             <pre>
-              {'<Checkbox id="software-engineer" label="Software Engineer" />'}
+              {'<Checkbox id="software-engineer" value="Software Engineer" />'}
             </pre>
           </td>
         </tr>
@@ -82,7 +82,7 @@ const CheckboxStory = () => (
         </tr>
         <tr>
           <td>
-            label
+            value
           </td>
           <td>
             string

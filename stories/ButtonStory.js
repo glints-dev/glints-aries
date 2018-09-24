@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 import { Variant, Theme } from '../src/Utils/StyleConfig';
 
 const ButtonStories = () => (
@@ -38,7 +38,7 @@ const ButtonStories = () => (
         <tbody>
           <tr>
             <td style={{ padding: 20 }}>
-              <Button theme="blue" loading disabled onClick={action('Default Button')} hoverColor="red">
+              <Button theme="blue" onClick={action('Default Button')}>
                 Default
               </Button>
             </td>
@@ -46,9 +46,7 @@ const ButtonStories = () => (
               <pre>
                 {`<Button
   theme="blue"
-  loading
   disabled
-  hoverColor="red"
 >
   Default
 </Button>`}
@@ -107,25 +105,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              hoverColor
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <pre>
-                red | blue | yellow
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-
-            </td>
-          </tr>
-          <tr>
-            <td>
               theme
             </td>
             <td>
@@ -174,25 +153,6 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
-          </tr>
-          <tr>
-            <td>
-              loading
-            </td>
-            <td>
-              boolean
-            </td>
-            <td>
-              <pre>
-                true | false
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Showing loader inside button.
-            </td>
           </tr>
         </tbody>
       </table>
@@ -287,23 +247,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              hoverColor
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <pre>
-                red | blue | yellow
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               theme
             </td>
             <td>
@@ -357,25 +300,6 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
-          </tr>
-          <tr>
-            <td>
-              loading
-            </td>
-            <td>
-              boolean
-            </td>
-            <td>
-              <pre>
-                true | false
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Showing loader inside button.
-            </td>
           </tr>
         </tbody>
       </table>
@@ -527,25 +451,6 @@ const ButtonStories = () => (
             </td>
             <td></td>
           </tr>
-          <tr>
-            <td>
-              loading
-            </td>
-            <td>
-              boolean
-            </td>
-            <td>
-              <pre>
-                true | false
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Showing loader inside button.
-            </td>
-          </tr>
         </tbody>
       </table>
 
@@ -668,23 +573,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              hoverColor
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <pre>
-                red | blue | yellow
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               theme
             </td>
             <td>
@@ -731,25 +619,6 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
-          </tr>
-          <tr>
-            <td>
-              loading
-            </td>
-            <td>
-              boolean
-            </td>
-            <td>
-              <pre>
-                true | false
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Showing loader inside button.
-            </td>
           </tr>
         </tbody>
       </table>
@@ -844,25 +713,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              hoverColor
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <pre>
-                red | blue | yellow
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-
-            </td>
-          </tr>
-          <tr>
-            <td>
               theme
             </td>
             <td>
@@ -909,25 +759,6 @@ const ButtonStories = () => (
               no
             </td>
             <td></td>
-          </tr>
-          <tr>
-            <td>
-              loading
-            </td>
-            <td>
-              boolean
-            </td>
-            <td>
-              <pre>
-                true | false
-              </pre>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Showing loader inside button.
-            </td>
           </tr>
         </tbody>
       </table>

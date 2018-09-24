@@ -28,14 +28,14 @@ const BreadcrumbStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Breadcrumb bgColor="#f3f3f3">
+            <Breadcrumb>
               <Breadcrumb.Item>
                 Home
               </Breadcrumb.Item>
               <Breadcrumb.Item>
                 Jobs
               </Breadcrumb.Item>
-              <Breadcrumb.Item className="active">
+              <Breadcrumb.Item active>
                 Software Engineer
               </Breadcrumb.Item>
             </Breadcrumb>
@@ -43,18 +43,58 @@ const BreadcrumbStory = () => (
           <td>
             <pre>
               {`<Breadcrumb>
-  <Breadcrumb.Item>
-    Home
-  </Breadcrumb.Item>
-  <Breadcrumb.Item>
-    Jobs
-  </Breadcrumb.Item>
-  <Breadcrumb.Item className="active">
-    Software Engineer
-  </Breadcrumb.Item>
+  <Breadcrumb.Item>Home</Breadcrumb.Item>
+  <Breadcrumb.Item>Jobs</Breadcrumb.Item>
+  <Breadcrumb.Item active>Software Engineer</Breadcrumb.Item>
 </Breadcrumb>
               `}
             </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>
+      Props
+    </h1>
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            active
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              {'true | false'}
+            </code>
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            Sets the current position on Breadcrumb.
           </td>
         </tr>
       </tbody>
