@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 
 import Notification from '../src/Notification';
 

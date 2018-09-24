@@ -2,7 +2,7 @@ import React from 'react';
 import OmniSearch from '../src/OmniSearch';
 
 import Icon from '../src/Icon';
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 
 const OmniSearchStory = () => (
   <div className="doc-mainbar">

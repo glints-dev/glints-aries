@@ -1,7 +1,7 @@
 import React from 'react';
 import JobCard from '../src/JobCard';
 
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 
 const JobCardStory = () => (
   <div className="doc-mainbar">
