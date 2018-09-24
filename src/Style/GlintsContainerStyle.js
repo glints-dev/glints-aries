@@ -43,7 +43,6 @@ const GlintsContainer = styled.div`
     box-sizing: border-box;
     font-family: 'Poppins';
   }
-
   a {
     text-decoration: none;
   }
@@ -53,7 +52,7 @@ const GlintsContainer = styled.div`
     margin: 0;
     padding: 0;
   }
-
+  
   li {
     margin-bottom: 0;
   }

@@ -6,13 +6,14 @@ import { Container } from '../Style/HeadingStyle';
 const Heading = (props: Props) => {
   const {
     className,
+    inline,
     children,
     ...defaultProps
   } = props;
 
   return (
     <Fragment>
-      <Container className={className} {...defaultProps}>
+      <Container className={className} inline={inline} {...defaultProps}>
         <span>
           {children}
         </span>
@@ -24,6 +25,7 @@ const Heading = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  inline: boolean,
 }
 
 export default Heading;

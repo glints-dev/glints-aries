@@ -35,8 +35,54 @@ const HeadingStory = () => (
           </td>
           <td>
             <code>
-              {'<Heading>This is Heading</Heading>'}
+              {'<Heading inline>This is Heading</Heading>'}
             </code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>
+      Props
+    </h1>
+    <table className="doc-table">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            inline
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              {'true | false'}
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Heading into inline element.
           </td>
         </tr>
       </tbody>
