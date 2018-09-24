@@ -38,6 +38,7 @@ then open your browser on port 9001
 2. Run `yarn link` / `npm link`
 3. Open terminal in your project
 4. Run `yarn link glints-aries` / `npm link glints-aries`
+5. Run `yarn build` in `glints-aries` when finish changes and want to test in your project
 
 ## What will be our doing next?
 Here's the list of our next work:
