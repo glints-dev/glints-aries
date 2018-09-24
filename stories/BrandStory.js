@@ -28,7 +28,7 @@ const BrandStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Brand asset="glints-black" />
+            <Brand asset="glints-black" alt="Glints Logo" />
           </td>
           <td>
             <code>

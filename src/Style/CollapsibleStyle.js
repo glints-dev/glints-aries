@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { SecondaryColor } from './Colors';
 
-const animateCollapsibleBody = keyframes`
+const animateCollapsible = keyframes`
   from {
     opacity: 0;
     transform: translate3d(0, 10%, 0);
@@ -13,30 +13,28 @@ const animateCollapsibleBody = keyframes`
   }
 `;
 
-export const CollapsibleContainer = styled.div`
+export const Container = styled.div`
   cursor: pointer;
   color: black;
   background-color: ${SecondaryColor.white};
   border: solid 1px ${SecondaryColor.lightgrey};
-  font-size: 16px;
+  font-size: 1em;
 `;
 
-export const CollapsibleHead = styled.div`
+export const Header = styled.div`
   background: ${SecondaryColor.white};
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.2em;
 
   &:hover {
     color: ${SecondaryColor.blue};
   }
-
-  svg {
-    margin-top: 6px;
-  }
 `;
 
-export const CollapsibleBody = styled.div`
+export const Body = styled.p`
   padding: 0 1.2em 1.2em 1.2em;
-  animation: ${animateCollapsibleBody} .3s linear;
+  margin-bottom: 0;
+  animation: ${animateCollapsible} .3s linear;
 `;
