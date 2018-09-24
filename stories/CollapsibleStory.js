@@ -1,5 +1,5 @@
 import React from 'react';
-import Collapsible from '../src/Collapsible';
+import Collapsible from '../src/General/Collapsible';
 
 const CollapsibleStory = () => (
   <div className="doc-mainbar">
@@ -80,6 +80,25 @@ const CollapsibleStory = () => (
           </td>
           <td>
             Sets title for Collapsible.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            collapsing
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              {'true | false'}
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Collapsing as default.
           </td>
         </tr>
       </tbody>
