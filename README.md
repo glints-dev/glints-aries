@@ -33,6 +33,12 @@ yarn storybook
 ```
 then open your browser on port 9001
 
+## How to test local changes in glints-aries to your project
+1. Open terminal in `glints-aries`
+2. Run `yarn link` / `npm link`
+3. Open terminal in your project
+4. Run `yarn link glints-aries` / `npm link glints-aries`
+
 ## What will be our doing next?
 Here's the list of our next work:
 1. Recategorizing components based on each functionalities, like base component and content component.
