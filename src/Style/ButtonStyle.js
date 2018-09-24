@@ -12,38 +12,18 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1em;
+  line-height: 1.5;
   padding: 1em .6em;
   background: transparent;
   transition: all .2s;
-
-  &:hover {
-    ${(props) => {
-    switch (props.hoverColor) {
-      case `${Theme.RED}`:
-        return `
-            color: ${PrimaryColor.glintsred};
-          `;
-      case `${Theme.YELLOW}`:
-        return `
-            color: ${PrimaryColor.glintsyellow};
-          `;
-      case `${Theme.BLUE}`:
-        return `
-            color: ${PrimaryColor.glintsblue};
-          `;
-      default:
-        return null;
-    }
-  }}
-  }
 `;
 
 /*
  * Default Button
  */
 
-export const DefaultBtn = Button.extend`
+export const DefaultBtn = styled(Button)`
   flex: 1;
   transition: all .5s;
 
@@ -128,7 +108,7 @@ export const PrimaryContainer = styled.div`
   }
 `;
 
-export const PrimaryBtn = Button.extend`
+export const PrimaryBtn = styled(Button)`
   flex: 1;
   transition: all .2s;
 
@@ -191,7 +171,7 @@ const Bouncing = keyframes`
   }
 `;
 
-export const SecondaryBtn = Button.extend`
+export const SecondaryBtn = styled(Button)`
   flex: 1;
   background-color: ${SecondaryColor.whitesmoke};
   color: ${SecondaryColor.black};
@@ -257,7 +237,7 @@ export const SecondaryContainer = styled.div`
  * Ghost Button
  */
 
-export const GhostBtn = Button.extend`
+export const GhostBtn = styled(Button)`
   flex: 1;
   transition: background-color .5s;
 

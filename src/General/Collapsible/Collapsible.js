@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
-import Icon from '../Icon';
+import Icon from '../../Icon';
 
-import { CollapsibleContainer, CollapsibleHead, CollapsibleBody } from '../Style/CollapsibleStyle';
+import { Container, Header, Body } from '../../Style/CollapsibleStyle';
 
 class Collapsible extends Component <Props, State> {
   state = {
-    isOpen: true,
+    isOpen: false,
   }
 
   handleOpen = () => {
     const { isOpen } = this.state;
     this.setState({ isOpen: !isOpen });
+  }
+
+  componentDidMount() {
+    const { collapsing } = this.props;
+
+    if (collapsing) {
+      this.setState({
+        isOpen: false,
+      });
+    }
   }
 
   render() {
@@ -24,24 +34,24 @@ class Collapsible extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <CollapsibleContainer className={className} {...defaultProps} onClick={this.handleOpen}>
-        <CollapsibleHead className="head">
+      <Container className="collapsible" {...defaultProps} onClick={this.handleOpen}>
+        <Header className="head">
           {label}
           <Choose>
             <When condition={isOpen === false}>
-              <Icon name="arrow-down" size="12" color="#000000" />
+              <Icon name="arrow-down" color="#000000" />
             </When>
             <Otherwise>
-              <Icon name="arrow-up" size="12" color="#000000" />
+              <Icon name="arrow-up" color="#000000" />
             </Otherwise>
           </Choose>
-        </CollapsibleHead>
+        </Header>
         {isOpen && (
-          <CollapsibleBody className="body">
+          <Body className="body">
             {children}
-          </CollapsibleBody>
+          </Body>
         )}
-      </CollapsibleContainer>
+      </Container>
     );
   }
 }
