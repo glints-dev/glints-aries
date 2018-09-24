@@ -3,7 +3,7 @@ import Search from '../src/Search';
 
 import Dropdown from '../src/Dropdown';
 import Label from '../src/Label';
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 import { Icon } from '../src/Icon';
 
 const SearchStory = () => (

@@ -2,7 +2,7 @@ import React from 'react';
 import SearchFilter from '../src/SearchFilter';
 
 import Icon from '../src/Icon';
-import Button from '../src/Button';
+import Button from '../src/General/Button';
 
 
 const SearchFilterStory = () => (
