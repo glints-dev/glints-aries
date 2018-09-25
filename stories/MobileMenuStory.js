@@ -2,7 +2,6 @@ import React from 'react';
 import MobileMenu from '../src/MobileMenu';
 
 import ProfilePictureShadow from '../src/ProfilePictureShadow';
-import Label from '../src/Label';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -41,14 +40,14 @@ const ProfilePictureStory = () => (
                 margin
               >
                 <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-                <Label size="medium" theme="white">
+                <label>
                   <span>
                     Hello,
                   </span>
                   <p>
                     Fredy Yanto
                   </p>
-                </Label>
+                </label>
               </MobileMenu.Header>
               <MobileMenu.Body>
                 <MobileMenu.Item>
@@ -104,10 +103,10 @@ const ProfilePictureStory = () => (
     margin={true}
   >
     <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-    <Label size="medium" theme="white">
+    <label>
       <span>Hello,</span>
       <p>Fredy Yanto</p>
-    </Label>
+    </label>
   </MobileMenu.Header>
   <MobileMenu.Body>
     <MobileMenu.Item>Carrers</MobileMenu.Item>
