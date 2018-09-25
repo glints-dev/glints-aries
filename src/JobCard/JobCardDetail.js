@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '../General/Icon';
 
 import { JobDetail } from '../Style/JobCardStyle';
 

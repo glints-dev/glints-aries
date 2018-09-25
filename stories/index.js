@@ -76,7 +76,7 @@ storiesOf('General', module)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Tag', () => <TagStory />);
 
-storiesOf('Inputs', module)
+storiesOf('Input', module)
   .addDecorator(story => (
     <Provider>
       <StorybookStyle>
@@ -86,7 +86,7 @@ storiesOf('Inputs', module)
   ))
   .add('Checkbox', () => <CheckboxStory />);
 
-storiesOf('Navigations', module)
+storiesOf('Navigation', module)
   .addDecorator(story => (
     <Provider>
       <StorybookStyle>
@@ -96,7 +96,7 @@ storiesOf('Navigations', module)
   ))
   .add('Introduction', () => <IntroStory />);
 
-storiesOf('Contents', module)
+storiesOf('Content', module)
   .addDecorator(story => (
     <Provider>
       <StorybookStyle>

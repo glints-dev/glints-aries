@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Icon } from '../Icon';
+import { Icon } from '../General/Icon';
 import { LeftArrowContainer } from '../Style/SliderStyle';
 
 const LeftArrow = (props: Props) => {

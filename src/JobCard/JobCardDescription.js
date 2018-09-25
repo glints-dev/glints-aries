@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Icon } from '../Icon';
+import { Icon } from '../General/Icon';
 
 import { JobDescription } from '../Style/JobCardStyle';
 

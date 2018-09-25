@@ -8,7 +8,7 @@ import {
   SecondaryColor,
 } from '../Style/Colors';
 
-import { Icon } from '../Icon';
+import { Icon } from '../General/Icon';
 
 class Dropdown extends Component <Props, State> {
   state = {
