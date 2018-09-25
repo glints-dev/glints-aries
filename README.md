@@ -34,11 +34,12 @@ yarn storybook
 then open your browser on port 9001
 
 ## How to test local changes in glints-aries in your project
-1. Open terminal in `glints-aries`
-2. Run `yarn link`
-3. Open terminal in your project
-4. Run `yarn link glints-aries` 
-5. Run `yarn build` in `glints-aries` when finish changes in `glints-aries` and want to test locally in your project
+1. Open terminal in `glints-aries`.
+2. Run `yarn link`.
+3. Open terminal in your project.
+4. Run `yarn link glints-aries`.
+5. Run `yarn build` in `glints-aries` when finish changes in `glints-aries` and want to test locally in your project.
+
 Run `yarn unlink glints-aries` and re-install `glints-aries` when you want to stop using local `glints-aries`
 
 ## What will be our doing next?
