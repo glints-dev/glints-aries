@@ -22,7 +22,7 @@ const fadeUp = keyframes`
   }
 `;
 
-export const NotificationContainer = styled.div`
+export const Container = styled.div`
   position: fixed;
   left: 50%;
   top: ${({ isVisible }) => isVisible ? '10px' : '0px'};

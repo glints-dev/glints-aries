@@ -9,7 +9,7 @@ import {
   DropdownLabelWrapper,
 } from '../Style/DropdownStyle';
 
-import { Icon } from '../Icon';
+import { Icon } from '../General/Icon';
 class LanguageSelect extends Component <State, Props> {
   constructor(props) {
     super(props);

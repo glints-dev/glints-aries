@@ -2,7 +2,7 @@ import React from 'react';
 import PointingModal from '../src/PointingModal';
 import Popover from '../src/Popover';
 
-import ProfilePictureShadow from '../src/ProfilePictureShadow';
+import ProfilePicture from '../src/General/ProfilePicture';
 import Divider from '../src/General/Divider';
 import { Icon } from '../src/General/Icon';
 
@@ -37,7 +37,7 @@ const PopoverStory = () => (
               content={(
                 <PointingModal>
                   <PointingModal.Header>
-                    <ProfilePictureShadow editable />
+                    <ProfilePicture editable />
                     <label>
                       <span>
                         Hello,
