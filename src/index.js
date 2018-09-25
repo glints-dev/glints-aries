@@ -11,7 +11,7 @@ export { default as Blockquote } from './Blockquote';
 export { default as Brand } from './General/Brand';
 export { default as Breadcrumb } from './General/Breadcrumb';
 export { default as Button } from './General/Button';
-export { default as Checkbox } from './Inputs/Checkbox';
+export { default as Checkbox } from './Input/Checkbox';
 export { default as Collapsible } from './General/Collapsible';
 export { default as Divider } from './General/Divider';
 export { default as Dropdown } from './Dropdown';
