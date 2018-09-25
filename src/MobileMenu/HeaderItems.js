@@ -3,7 +3,7 @@
 import React from 'react';
 import { HeaderWrapper, DividerWrapper } from '../Style/MobileMenuStyle';
 
-import Divider from '../Divider';
+import Divider from '../General/Divider';
 
 const HeaderItems = (props: Props) => {
   const {

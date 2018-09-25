@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from '../src/Dropdown';
-import Icon from '../src/Icon';
+import Icon from '../src/General/Icon';
 
 const DropdownStory = () => (
   <div className="doc-mainbar">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Information from '../src/Information';
-import { Divider } from '../src/Divider';
+import { Divider } from '../src/General/Divider';
 
 const InformationStory = () => (
   <div className="doc-mainbar">

@@ -1,7 +1,7 @@
 import React from 'react';
 import JobOverview from '../src/JobOverview';
-import Icon from '../src/Icon';
-import Divider from '../src/Divider';
+import Icon from '../src/General/Icon';
+import Divider from '../src/General/Divider';
 
 const JobOverviewStory = () => (
   <div className="doc-mainbar">
@@ -10,7 +10,7 @@ const JobOverviewStory = () => (
         JobOverview
       </h1>
       <div>
-        <pre>{`import {JobOverview, Icon, Divider} from 'glints-aries';`}</pre>
+        <pre>{'import {JobOverview, Icon, Divider} from \'glints-aries\''}</pre>
       </div>
 
       <JobOverview>

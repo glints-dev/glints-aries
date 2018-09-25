@@ -1,6 +1,6 @@
 import React from 'react';
 import Blockquote from '../src/Blockquote';
-import ProfilePictureShadow from '../src/ProfilePictureShadow';
+import ProfilePicture from '../src/General/ProfilePicture';
 
 const BlockquoteStory = () => (
   <div className="doc-mainbar">
@@ -31,7 +31,7 @@ const BlockquoteStory = () => (
           <td style={{ padding: 20 }}>
             <Blockquote>
               <Blockquote.Profile>
-                <ProfilePictureShadow size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+                <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
               </Blockquote.Profile>
               <Blockquote.Content>
                 <Blockquote.Testimony>
@@ -50,7 +50,7 @@ const BlockquoteStory = () => (
             <pre>
               {`<Blockquote>
   <Blockquote.Profile>
-    <ProfilePictureShadow size="large" assetUrl="..." />
+    <ProfilePicture size="large" assetUrl="..." />
   </Blockquote.Profile>
   <Blockquote.Content>
     <Blockquote.Testimony>...</Blockquote.Testimony>

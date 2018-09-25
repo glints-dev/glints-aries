@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { TopIconWrapper } from '../Style/MobileMenuStyle';
-import { Icon } from '../Icon';
+import { Icon } from '../General/Icon';
 
 const TopItems = (props: Props) => {
   const {

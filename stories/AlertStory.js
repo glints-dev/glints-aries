@@ -22,6 +22,7 @@ class AlertStory extends Component {
 
   render() {
     const { isOpen } = this.state;
+
     return (
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
@@ -61,11 +62,19 @@ class AlertStory extends Component {
             <tr>
               <td style={{ padding: 20 }}>
                 <pre>
-                  {`<Alert
-      message="message"
-      isOpen={isOpen}
-      onClose={...function}
-  />`}
+                  {`state = {
+  isOpen: false,
+}
+
+handleOnClose = () => {
+  this.setState({ isOpen: false });
+}
+
+<Alert
+  message="message"
+  isOpen={isOpen}
+  onClose={this.handleOnClose}
+/>`}
                 </pre>
               </td>
             </tr>
