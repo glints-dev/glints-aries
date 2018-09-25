@@ -22,6 +22,7 @@ class AlertStory extends Component {
 
   render() {
     const { isOpen } = this.state;
+
     return (
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
