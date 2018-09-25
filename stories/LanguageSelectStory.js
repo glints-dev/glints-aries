@@ -27,10 +27,11 @@ const DropdownStory = () => (
       </thead>
       <tbody>
         <tr>
-          <td style={{ width: 400, padding: 20, backgroundColor: '#027EB7' }}>
+          <td style={{ width: 400, padding: 20 }}>
             <LanguageSelect
               center
-              hoverColor="#0171A4"
+              color="black"
+              hoverColor="white"
               defaultItem={
                 {
                   label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
@@ -51,7 +52,8 @@ const DropdownStory = () => (
               {`<LanguageSelect
     center={true}     
     onChange={...function}
-    hoverColor="#0171A4"     
+    hoverColor="#0171A4"    
+    color="black"
     defaultItem={
         {
             label: 'Indonesian', 
@@ -174,6 +176,44 @@ const DropdownStory = () => (
           </td>
           <td>
             Set hover background color
+          </td>
+        </tr>
+        <tr>
+          <td>
+          color
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <pre>
+            hex-value | rba-value | string-value
+            </pre>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set color
+          </td>
+        </tr>
+        <tr>
+          <td>
+          backGroundColor
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <pre>
+            hex-value | rba-value | string-value
+            </pre>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Set background color
           </td>
         </tr>
       </tbody>

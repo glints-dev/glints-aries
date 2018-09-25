@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from './Colors';
+import { SecondaryColor } from './Colors';
 
 import {
   DropdownItemWrapper, DropdownContainer, DropdownLabel, DropdownLabelWrapper,
@@ -32,7 +32,7 @@ export const LanguageItemWrapper = styled(DropdownItemWrapper)`
 export const LanguageContainer = styled(DropdownContainer)`
     position: relative;
     ${DropdownLabelWrapper} {
-    background: ${({ open }) => open ? `${SecondaryColor.blue}` : 'rgba(0,0,0,0)'};
+    background: ${({ backGroundColor }) => backGroundColor || 'rgba(0,0,0,0)'};
     transition: all .3s;
 
     &:hover {

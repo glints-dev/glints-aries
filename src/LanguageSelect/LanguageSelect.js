@@ -39,7 +39,9 @@ class LanguageSelect extends Component <State, Props> {
    }
 
    render() {
-     const { languageItem, center, hoverColor } = this.props;
+     const {
+       languageItem, center, hoverColor, backGroundColor,
+     } = this.props;
      const {
        isOpen, title, color,
      } = this.state;
@@ -51,6 +53,7 @@ class LanguageSelect extends Component <State, Props> {
          onBlur={this.handleClickOutside}
          tabIndex="0"
          hoverColor={hoverColor}
+         backGroundColor={backGroundColor}
        >
          <DropdownLabelWrapper spaceBetween={false} {...this.props}>
            <IconContainer>
@@ -80,7 +83,6 @@ class LanguageSelect extends Component <State, Props> {
 
 LanguageSelect.defaultProps = {
   onChange: () => {},
-  backGroundColor: '#027EB7',
 };
 
 type State = {
