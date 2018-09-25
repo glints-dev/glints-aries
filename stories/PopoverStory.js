@@ -3,9 +3,8 @@ import PointingModal from '../src/PointingModal';
 import Popover from '../src/Popover';
 
 import ProfilePictureShadow from '../src/ProfilePictureShadow';
-import Label from '../src/Label';
-import Divider from '../src/Divider';
-import { Icon } from '../src/Icon';
+import Divider from '../src/General/Divider';
+import { Icon } from '../src/General/Icon';
 
 const PopoverStory = () => (
   <div className="doc-mainbar">
@@ -39,14 +38,14 @@ const PopoverStory = () => (
                 <PointingModal>
                   <PointingModal.Header>
                     <ProfilePictureShadow editable />
-                    <Label size="medium">
+                    <label>
                       <span>
                         Hello,
                       </span>
                       <p>
                         Fredy Yanto
                       </p>
-                    </Label>
+                    </label>
                   </PointingModal.Header>
                   <Divider size="large" thickness="thin" theme="grey" />
                   <PointingModal.Body>

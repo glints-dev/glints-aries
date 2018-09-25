@@ -2,9 +2,8 @@ import React from 'react';
 import Search from '../src/Search';
 
 import Dropdown from '../src/Dropdown';
-import Label from '../src/Label';
 import Button from '../src/General/Button';
-import { Icon } from '../src/Icon';
+import { Icon } from '../src/General/Icon';
 
 const SearchStory = () => (
   <div className="doc-mainbar">
@@ -69,9 +68,9 @@ const SearchStory = () => (
               </Search.Item>
 
               <Search.Item>
-                <Label theme="grey">
+                <label>
                   in
-                </Label>
+                </label>
               </Search.Item>
 
               <Search.Item>

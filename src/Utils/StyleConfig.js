@@ -30,12 +30,6 @@ export const Size = {
   SMALL: 'small',
 };
 
-export const Thickness = {
-  THIN: 'thin',
-  NORMAL: 'normal',
-  THICK: 'thick',
-};
-
 /* Screen size library of Glints
  * Usage:
  * @media ${Device.mobileL} { ... }

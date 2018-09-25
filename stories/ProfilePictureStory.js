@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePictureShadow from '../src/ProfilePictureShadow';
+import ProfilePicture from '../src/General/ProfilePicture';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -9,7 +9,7 @@ const ProfilePictureStory = () => (
       </h1>
       <p>
         <code>
-          {'import { ProfilePictureShadow } from \'glints-aries\''}
+          {'import { ProfilePicture } from \'glints-aries\''}
         </code>
       </p>
     </div>
@@ -28,15 +28,16 @@ const ProfilePictureStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <ProfilePictureShadow
-              editable
-              size="medium"
-            />
+            <ProfilePicture editable>
+              <img src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80" alt="profile" />
+            </ProfilePicture>
           </td>
           <td>
-            <code>
-              {'<ProfilePicture size="medium" assetUrl="..." editable />'}
-            </code>
+            <pre>
+              {`<ProfilePicture editable>
+  <img src="..." alt="..." />
+</ProfilePicture>`}
+            </pre>
           </td>
         </tr>
       </tbody>
@@ -84,21 +85,6 @@ const ProfilePictureStory = () => (
           <td>
             Sets the size of picture.
           </td>
-        </tr>
-        <tr>
-          <td>
-            assetUrl
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            url / path
-          </td>
-          <td>
-            yes
-          </td>
-          <td></td>
         </tr>
         <tr>
           <td>

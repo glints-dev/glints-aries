@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ICONS } from '../Utils/IconLibrary';
+import { ICONS } from '../../Utils/IconLibrary';
 
 const Icon = (props: Props) => {
   const { name, color } = props;

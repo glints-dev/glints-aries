@@ -27,64 +27,13 @@ const LoadingStory = () => (
       </thead>
       <tbody>
         <tr>
-          <td style={{ padding: 20 }}>
-            <Loading size="medium" />
+          <td style={{ padding: 20, fontSize: '24px' }}>
+            <Loading />
           </td>
           <td>
             <code>
-              {'<Loading size="medium" />'}
+              {'<Loading />'}
             </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h1>
-      Props
-    </h1>
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            size
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              {'large | medium | small'}
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Default value is
-            {' '}
-            <b>
-              medium
-            </b>
-            .
           </td>
         </tr>
       </tbody>

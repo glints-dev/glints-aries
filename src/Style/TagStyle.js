@@ -5,8 +5,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     background: ${SecondaryColor.whitesmoke};
-    padding: .5rem 1.2rem;
-    border-radius: 20px;
+    padding: .4em 1em;
+    border-radius: 1em;
+    font-size: 1em;
+    line-height: 1.5;
 
     * {
         margin-left: 1.5rem;
