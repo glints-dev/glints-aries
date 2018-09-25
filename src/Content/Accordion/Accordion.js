@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   AccordionContainer,
-} from '../Style/AccordionStyle';
+} from '../../Style/AccordionStyle';
 
 const Accordion = (props: Props) => {
   const {

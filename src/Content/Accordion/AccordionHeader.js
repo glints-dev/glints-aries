@@ -1,8 +1,8 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { AccordionHeaderWrapper } from '../Style/AccordionStyle';
-import { Icon } from '../General/Icon';
+import { AccordionHeaderWrapper } from '../../Style/AccordionStyle';
+import { Icon } from '../../General/Icon';
 
 const AccordionHeader = (props: Props) => {
   const {

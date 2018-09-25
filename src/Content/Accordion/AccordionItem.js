@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { AccordionItemList } from '../Style/AccordionStyle';
+import { AccordionItemList } from '../../Style/AccordionStyle';
 
 const AccordionItem = (props: Props) => {
   const {

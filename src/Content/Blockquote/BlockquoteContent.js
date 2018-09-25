@@ -1,18 +1,18 @@
 /* @flow */
 
 import React from 'react';
-import { StyledAuthor } from '../Style/BlockquoteStyle';
+import { Paragraph } from '../../Style/BlockquoteStyle';
 
-const Author = (props: Props) => {
+const BlockquoteContent = (props: Props) => {
   const {
     children,
     className,
   } = props;
 
   return (
-    <StyledAuthor className={className}>
+    <Paragraph className={className}>
       {children}
-    </StyledAuthor>
+    </Paragraph>
   );
 };
 
@@ -21,4 +21,4 @@ type Props = {
   className: string,
 }
 
-export default Author;
+export default BlockquoteContent;

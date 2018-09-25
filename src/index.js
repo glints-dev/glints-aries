@@ -4,15 +4,15 @@ import './Style/GlobalStyle.css';
 
 // @create-index
 // keep in alphabetical order
-export { default as Accordion } from './Accordion';
+export { default as Accordion } from './Content/Accordion';
 export { default as Alert } from './General/Alert';
 export { default as Badge } from './General/Badge';
-export { default as Blockquote } from './Blockquote';
+export { default as Blockquote } from './Content/Blockquote';
 export { default as Brand } from './General/Brand';
-export { default as Breadcrumb } from './General/Breadcrumb';
+export { default as Breadcrumb } from './Navigation/Breadcrumb';
 export { default as Button } from './General/Button';
 export { default as Checkbox } from './Input/Checkbox';
-export { default as Collapsible } from './General/Collapsible';
+export { default as Collapsible } from './Content/Collapsible';
 export { default as Divider } from './General/Divider';
 export { default as Dropdown } from './Dropdown';
 export { default as Gallery } from './Gallery';

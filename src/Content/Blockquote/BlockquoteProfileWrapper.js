@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ProfileWrapper } from '../Style/BlockquoteStyle';
+import { ProfileWrapper } from '../../Style/BlockquoteStyle';
 
 const BlockquoteProfileWrapper = (props: Props) => {
   const {

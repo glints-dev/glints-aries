@@ -1,18 +1,18 @@
 /* @flow */
 
 import React from 'react';
-import { StyledOrigin } from '../Style/BlockquoteStyle';
+import { StyledAuthor } from '../../Style/BlockquoteStyle';
 
-const Origin = (props: Props) => {
+const Author = (props: Props) => {
   const {
     children,
     className,
   } = props;
 
   return (
-    <StyledOrigin className={className}>
+    <StyledAuthor className={className}>
       {children}
-    </StyledOrigin>
+    </StyledAuthor>
   );
 };
 
@@ -21,4 +21,4 @@ type Props = {
   className: string,
 }
 
-export default Origin;
+export default Author;
