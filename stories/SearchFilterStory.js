@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchFilter from '../src/SearchFilter';
 
-import Icon from '../src/Icon';
+import Icon from '../src/General/Icon';
 import Button from '../src/General/Button';
 
 

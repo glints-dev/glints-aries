@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Icon from '../Icon';
 import {
-  NotificationContainer,
+  Container,
   NotificationMessage,
   NotificationIcon,
 } from '../../Style/AlertStyle';
@@ -27,6 +27,7 @@ class Alert extends Component <State, Props> {
 
   renderMessage() {
     const { message } = this.props;
+
     return (
       <NotificationMessage>
         {message}
@@ -36,6 +37,7 @@ class Alert extends Component <State, Props> {
 
   renderIcon() {
     const { onClose } = this.props;
+
     return (
       <NotificationIcon onClick={onClose}>
         <Icon name="close" color="black" />
@@ -46,12 +48,13 @@ class Alert extends Component <State, Props> {
   render() {
     const { isOpen } = this.props;
     const { isVisible } = this.state;
+
     return (
       <If condition={isVisible}>
-        <NotificationContainer isOpen={isOpen} isVisible={isVisible}>
+        <Container isOpen={isOpen} isVisible={isVisible}>
           {this.renderMessage.bind(this)()}
           {this.renderIcon.bind(this)()}
-        </NotificationContainer>
+        </Container>
       </If>
     );
   }
