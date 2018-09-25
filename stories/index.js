@@ -12,6 +12,7 @@ import StorybookStyle from '../src/Style/StorybookStyle';
 
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
+import AlertStory from './AlertStory';
 import BadgeStory from './BadgeStory';
 import BlockquoteStory from './BlockquoteStory';
 import BrandStory from './BrandStory';
@@ -31,7 +32,6 @@ import InformationStory from './InformationStory';
 import JobCardStory from './JobCardStory';
 import JobOverviewStory from './JobOverviewStory';
 import SideBarStory from './SideBarStory';
-import LabelStory from './LabelStory';
 import LoadingStory from './LoadingStory';
 import MobileMenuStory from './MobileMenuStory';
 import ModalStory from './ModalStory';
@@ -53,7 +53,6 @@ import TagStory from './TagStory';
 import TextareaStory from './TextareaStory';
 import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
-import NotificationStory from './NotificationStory';
 
 storiesOf('General', module)
   .addDecorator(story => (
@@ -64,11 +63,18 @@ storiesOf('General', module)
     </Provider>
   ))
   .add('Introduction', () => <IntroStory />)
+  .add('Alert', () => <AlertStory />)
   .add('Badge', () => <BadgeStory />)
   .add('Brand', () => <BrandStory />)
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Button', () => <ButtonStory />)
-  .add('Collapsible', () => <CollapsibleStory />);
+  .add('Collapsible', () => <CollapsibleStory />)
+  .add('Divider', () => <DividerStory />)
+  .add('Heading', () => <HeadingStory />)
+  .add('Icon', () => <IconStory />)
+  .add('Loading', () => <LoadingStory />)
+  .add('Profile Picture', () => <ProfilePictureStory />)
+  .add('Tag', () => <TagStory />);
 
 storiesOf('Inputs', module)
   .addDecorator(story => (
@@ -112,19 +118,13 @@ storiesOf('Components', module)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
-  .add('Divider', () => <DividerStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Gallery', () => <GalleryStory />)
-  .add('Heading', () => <HeadingStory />)
-  .add('Icon', () => <IconStory />)
   .add('Information', () => <InformationStory />)
-  .add('Label', () => <LabelStory />)
-  .add('Loading', () => <LoadingStory />)
   .add('Modal', () => <ModalStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)
-  .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Search', () => <SearchStory />)
@@ -134,12 +134,10 @@ storiesOf('Components', module)
   .add('Stats', () => <StatsStory />)
   .add('Switch', () => <SwitchStory />)
   .add('Tabs', () => <TabsStory />)
-  .add('Tag', () => <TagStory />)
   .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />)
   .add('Side Bar', () => <SideBarStory />)
-  .add('Language Select', () => <LanguageSelectStory />)
-  .add('Notification', () => <NotificationStory />);
+  .add('Language Select', () => <LanguageSelectStory />);
 
 storiesOf('Mobile Components', module)
   .addDecorator(story => (

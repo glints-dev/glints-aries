@@ -1,6 +1,5 @@
 import React from 'react';
-import Heading from '../src/Heading';
-import { Size } from '../src/Utils/StyleConfig';
+import Heading from '../src/General/Heading';
 
 const HeadingStory = () => (
   <div className="doc-mainbar">
@@ -35,7 +34,7 @@ const HeadingStory = () => (
           </td>
           <td>
             <code>
-              {'<Heading inline>This is Heading</Heading>'}
+              {'<Heading>This is Heading</Heading>'}
             </code>
           </td>
         </tr>

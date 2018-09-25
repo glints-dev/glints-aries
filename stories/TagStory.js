@@ -1,7 +1,7 @@
 import React from 'react';
-import Tag from '../src/Tag';
+import Tag from '../src/General/Tag';
 
-import Icon from '../src/Icon';
+import Icon from '../src/General/Icon';
 
 const TagStory = () => (
   <div className="doc-mainbar">
@@ -31,13 +31,13 @@ const TagStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <Tag label="Software Engineer">
-              <Icon name="close" color="black" size="10" />
+              <Icon name="close" color="black" />
             </Tag>
           </td>
           <td>
             <pre>
               {`<Tag label="Software Engineer">
-  <Icon name="close" color="black" size="10" />
+  <Icon name="close" color="black" />
 </Tag>`}
             </pre>
           </td>
