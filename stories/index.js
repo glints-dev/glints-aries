@@ -66,9 +66,7 @@ storiesOf('General', module)
   .add('Alert', () => <AlertStory />)
   .add('Badge', () => <BadgeStory />)
   .add('Brand', () => <BrandStory />)
-  .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Button', () => <ButtonStory />)
-  .add('Collapsible', () => <CollapsibleStory />)
   .add('Divider', () => <DividerStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Icon', () => <IconStory />)
@@ -94,7 +92,7 @@ storiesOf('Navigation', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Introduction', () => <IntroStory />);
+  .add('Breadcrumb', () => <BreadcrumbStory />);
 
 storiesOf('Content', module)
   .addDecorator(story => (
@@ -104,7 +102,9 @@ storiesOf('Content', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Introduction', () => <IntroStory />);
+  .add('Accordion', () => <AccordionStory />)
+  .add('Blockquote', () => <BlockquoteStory />)
+  .add('Collapsible', () => <CollapsibleStory />);
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -114,8 +114,6 @@ storiesOf('Components', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Accordion', () => <AccordionStory />)
-  .add('Blockquote', () => <BlockquoteStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
   .add('Dropdown', () => <DropdownStory />)

@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../src/Inputs/Checkbox';
+import Checkbox from '../src/Input/Checkbox';
 
 const CheckboxStory = () => (
   <div className="doc-mainbar">

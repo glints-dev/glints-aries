@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { AccordionItemWrapper } from '../Style/AccordionStyle';
+import { AccordionItemWrapper } from '../../Style/AccordionStyle';
 
 const AccordionBody = (props: Props) => {
   const {
