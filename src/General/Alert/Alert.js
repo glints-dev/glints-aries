@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import Icon from '../Icon/Icon';
+import Icon from '../Icon';
 import {
   NotificationContainer,
   NotificationMessage,
   NotificationIcon,
-} from '../Style/NotificationStyle';
+} from '../../Style/AlertStyle';
 
-class CloseableNotification extends Component <State, Props> {
+class Alert extends Component <State, Props> {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class CloseableNotification extends Component <State, Props> {
     const { onClose } = this.props;
     return (
       <NotificationIcon onClick={onClose}>
-        <Icon name="close" color="black" size={13} />
+        <Icon name="close" color="black" />
       </NotificationIcon>
     );
   }
@@ -67,4 +67,4 @@ type Props = {
   isOpen: boolean
 }
 
-export default CloseableNotification;
+export default Alert;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { action } from '@storybook/addon-actions';
 import Accordion from '../src/Accordion';
-import Label from '../src/Label';
 
 class AccordionStory extends Component {
   constructor(props) {
@@ -82,9 +81,9 @@ class AccordionStory extends Component {
                   </Accordion.Header>
 
                   <Accordion.Label>
-                    <Label size="medium" theme="secondary">
+                    <label>
                       in
-                    </Label>
+                    </label>
                   </Accordion.Label>
 
                   <Accordion.Header title="This Location" isOpen={locAccordionOpen} onClick={this.toggleLocAccordion}>
@@ -116,7 +115,7 @@ class AccordionStory extends Component {
   </Accordion.Header>
 
   <Accordion.Label>
-    <Label size="medium" theme="secondary">in</Label>
+    <label>in</label>
   </Accordion.Label>
 
   <Accordion.Header title="This Location" isOpen={true}>

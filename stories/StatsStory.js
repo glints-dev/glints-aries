@@ -1,8 +1,6 @@
 import React from 'react';
 import Stats from '../src/Stats';
 
-import Label from '../src/Label';
-
 const StatsStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
@@ -31,25 +29,25 @@ const StatsStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <Stats>
-              <Label block theme="grey" size="small">
+              <label>
                 we have help
-              </Label>
-              <Label block theme="red" size="large">
+              </label>
+              <label>
                 <b>
                   300.000 +
                 </b>
-              </Label>
-              <Label>
+              </label>
+              <label>
                 Young Professionals To Discover Their Dream Careers
-              </Label>
+              </label>
             </Stats>
           </td>
           <td>
             <pre>
               {`<Stats onClick={...}>
-  <Label block theme="grey" size="small">we have help</Label>
-  <Label block theme="red" size="large"><b>300.000 +</b></Label>
-  <Label>Young Professionals To Discover Their Dream Careers</Label>
+  <label>we have help</label>
+  <label><b>300.000 +</b></label>
+  <label>Young Professionals To Discover Their Dream Careers</label>
 </Stats>`}
             </pre>
           </td>

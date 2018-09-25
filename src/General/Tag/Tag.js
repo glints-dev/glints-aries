@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Container } from '../Style/TagStyle';
+import { Container } from '../../Style/TagStyle';
 
 const Tag = (props: Props) => {
   const {

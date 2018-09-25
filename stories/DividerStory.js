@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../src/Divider';
+import Divider from '../src/General/Divider';
 
 const DividerStory = () => (
   <div className="doc-mainbar">
@@ -28,11 +28,11 @@ const DividerStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <Divider size="large" theme="yellow" thickness="thick" />
+            <Divider />
           </td>
           <td>
             <code>
-              {'<Divider size="large" theme="yellow" thickness="thick" />'}
+              {'<Divider />'}
             </code>
           </td>
         </tr>
@@ -72,52 +72,14 @@ const DividerStory = () => (
           </td>
           <td>
             <pre>
-              red | blue | yellow | grey
+              red | blue | yellow | white | grey
             </pre>
           </td>
           <td>
             no
           </td>
           <td>
-            Sets the color.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            size
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              {'large | medium | small'}
-            </pre>
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets the width.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            thickness
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              thick | normal | thin
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets the Divider thickness.
+            {'Sets Divider\'s color.'}
           </td>
         </tr>
       </tbody>
