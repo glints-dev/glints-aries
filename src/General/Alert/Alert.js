@@ -43,15 +43,9 @@ class Alert extends Component <State, Props> {
     const { onClose } = this.props;
 
     return (
-<<<<<<< HEAD:src/General/Alert/Alert.js
-      <NotificationIcon onClick={onClose}>
-        <Icon name="close" color="black" />
-      </NotificationIcon>
-=======
       <AlertIcon onClick={onClose}>
         <Icon name="close" color="black" />
       </AlertIcon>
->>>>>>> 41c0a69d61369fda6d82e6f951d62f294de7fab4:src/General/Alert/Alert.js
     );
   }
 
@@ -61,17 +55,10 @@ class Alert extends Component <State, Props> {
 
     return (
       <If condition={isVisible}>
-<<<<<<< HEAD:src/General/Alert/Alert.js
-        <Container isOpen={isOpen} isVisible={isVisible}>
-          {this.renderMessage.bind(this)()}
-          {this.renderIcon.bind(this)()}
-        </Container>
-=======
         <AlertContainer isOpen={isOpen} isVisible={isVisible}>
           {this.renderMessage.bind(this)()}
           {this.renderIcon.bind(this)()}
         </AlertContainer>
->>>>>>> 41c0a69d61369fda6d82e6f951d62f294de7fab4:src/General/Alert/Alert.js
       </If>
     );
   }

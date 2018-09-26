@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Body } from '../Style/JobCardStyle';
+import { JobcardBodyWrapper } from '../../Style/JobCardStyle';
 
 const JobCardBody = ({ children, ...defaultProps }:Props) => (
-  <Body {...defaultProps}>
+  <JobcardBodyWrapper {...defaultProps}>
     {children}
-  </Body>
+  </JobcardBodyWrapper>
 );
 
 type Props = {

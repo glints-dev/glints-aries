@@ -1,5 +1,5 @@
 import React from 'react';
-import JobCard from '../src/JobCard';
+import JobCard from '../src/Content/JobCard';
 
 import Button from '../src/General/Button';
 

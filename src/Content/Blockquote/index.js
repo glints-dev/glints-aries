@@ -1,16 +1,16 @@
 // @flow
 
 import Blockquote from './Blockquote';
-import BlockquoteProfileWrapper from './BlockquoteProfileWrapper';
+import BlockquoteProfile from './BlockquoteProfile';
 import BlockquoteContent from './BlockquoteContent';
-import Testimony from './Testimony';
-import Author from './Author';
-import Origin from './Origin';
+import BlockquoteTestimony from './BlockquoteTestimony';
+import BlockquoteAuthor from './BlockquoteAuthor';
+import BlockquoteOrigin from './BlockquoteOrigin';
 
-Blockquote.Profile = BlockquoteProfileWrapper;
+Blockquote.Profile = BlockquoteProfile;
 Blockquote.Content = BlockquoteContent;
-Blockquote.Testimony = Testimony;
-Blockquote.Author = Author;
-Blockquote.Origin = Origin;
+Blockquote.Testimony = BlockquoteTestimony;
+Blockquote.Author = BlockquoteAuthor;
+Blockquote.Origin = BlockquoteOrigin;
 
 export default Blockquote;

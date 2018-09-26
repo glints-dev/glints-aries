@@ -2,7 +2,7 @@
 
 import React, { Component, Children } from 'react';
 
-import { JobCardContainer, CustomLink } from '../Style/JobCardStyle';
+import { JobcardContainer, CustomLink } from '../../Style/JobCardStyle';
 
 class JobCard extends Component <Props> {
   renderLinkChild = () => {
@@ -32,7 +32,7 @@ class JobCard extends Component <Props> {
       children, url, target, onClick, ...defaultProps
     } = this.props;
     return (
-      <JobCardContainer {...defaultProps}>
+      <JobcardContainer {...defaultProps}>
         <Choose>
           <When condition={url}>
             <CustomLink to={url} target={target}>
@@ -47,7 +47,7 @@ class JobCard extends Component <Props> {
             { this.renderNonLinkChild() }
           </Otherwise>
         </Choose>
-      </JobCardContainer>
+      </JobcardContainer>
     );
   }
 }

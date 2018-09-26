@@ -8,7 +8,7 @@ import { Device } from '../Utils/StyleConfig';
  * Job Card
  */
 
-export const JobCardContainer = styled.div`
+export const JobcardContainer = styled.div`
   position: relative;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
@@ -43,13 +43,13 @@ export const JobCardContainer = styled.div`
   }
 `;
 
-export const HeaderContainer = styled.div`
+export const JobcardHeaderWrapper = styled.div`
   display: grid;
   grid-template-columns: 5em 1fr;
   padding: ${({ paddingSize }) => paddingSize};
 `;
 
-export const HeaderImage = styled.div`
+export const JobcardHeaderImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@ export const HeaderImage = styled.div`
   margin: auto;
 `;
 
-export const HeaderContent = styled.div`
+export const JobcardHeaderContent = styled.div`
   padding-left: 1.2em;
   cursor: pointer;
 
@@ -89,7 +89,7 @@ export const HeaderContent = styled.div`
   }
 `;
 
-export const Body = styled.div`
+export const JobcardBodyWrapper = styled.div`
   position: relative;
   padding-top: 0;
   padding-right: 1.4em;
@@ -106,7 +106,7 @@ export const Body = styled.div`
   }
 `;
 
-export const JobDetail = styled.div`  
+export const JobcardDetailWrapper = styled.div`  
   padding-top: 1.5em;
 
   ul {
@@ -133,7 +133,7 @@ export const JobDetail = styled.div`
   }
 `;
 
-export const JobDescription = styled.div`
+export const JobcardDescriptionWrapper = styled.div`
   margin-top: 2em;
   color: ${SecondaryColor.lightblack};
   font-weight: 100;
@@ -170,7 +170,7 @@ export const SubtitleTitle = styled.p`
   color: ${SecondaryColor.blue};
 `;
 
-export const Footer = styled.footer`
+export const JobcardFooterWrapper = styled.footer`
   position: absolute;
   bottom: 0;
   display: grid;

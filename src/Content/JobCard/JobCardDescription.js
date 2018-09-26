@@ -1,20 +1,19 @@
 import React from 'react';
 
-import { Icon } from '../General/Icon';
+import { Icon } from '../../General/Icon';
 
-import { JobDescription } from '../Style/JobCardStyle';
+import { JobcardDescriptionWrapper } from '../../Style/JobCardStyle';
 
 const JobCardDescription = ({ description, time, ...defaultProps }:Props) => (
-  <JobDescription {...defaultProps}>
+  <JobcardDescriptionWrapper {...defaultProps}>
     <p>
       {`${description}`}
     </p>
     <span>
-      <Icon name="clock" color="#646464" size="12" />
+      <Icon name="clock" color="#646464" />
       { time }
     </span>
-
-  </JobDescription>
+  </JobcardDescriptionWrapper>
 );
 
 type Props = {

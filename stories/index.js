@@ -104,7 +104,8 @@ storiesOf('Content', module)
   ))
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
-  .add('Collapsible', () => <CollapsibleStory />);
+  .add('Collapsible', () => <CollapsibleStory />)
+  .add('Job Card', () => <JobCardStory />);
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -114,7 +115,6 @@ storiesOf('Components', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Gallery', () => <GalleryStory />)

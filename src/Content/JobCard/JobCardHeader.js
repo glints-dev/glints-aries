@@ -2,8 +2,8 @@
 
 import React from 'react';
 import {
-  HeaderContainer, HeaderImage, HeaderContent, Image, SubtitleTitle, LabelTag,
-} from '../Style/JobCardStyle';
+  JobcardHeaderWrapper, JobcardHeaderImage, JobcardHeaderContent, Image, SubtitleTitle, LabelTag,
+} from '../../Style/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
   const {
@@ -22,8 +22,8 @@ const JobCardHeader = (props: Props) => {
   } = props;
 
   return (
-    <HeaderContainer className={className} paddingSize={paddingSize} {...defaultProps}>
-      <HeaderImage>
+    <JobcardHeaderWrapper className={className} paddingSize={paddingSize} {...defaultProps}>
+      <JobcardHeaderImage>
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
             <Image src={imgUrl} alt="" />
@@ -32,8 +32,8 @@ const JobCardHeader = (props: Props) => {
             {imgUrl}
           </Otherwise>
         </Choose>
-      </HeaderImage>
-      <HeaderContent>
+      </JobcardHeaderImage>
+      <JobcardHeaderContent>
         <If condition={tag}>
           <LabelTag>
             {tag}
@@ -48,8 +48,8 @@ const JobCardHeader = (props: Props) => {
         >
           {subtitle}
         </SubtitleTitle>
-      </HeaderContent>
-    </HeaderContainer>
+      </JobcardHeaderContent>
+    </JobcardHeaderWrapper>
   );
 };
 
