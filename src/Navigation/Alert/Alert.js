@@ -39,9 +39,9 @@ class Alert extends Component <State, Props> {
     const { onClose } = this.props;
 
     return (
-      <NotificationIcon onClick={onClose}>
+      <AlertIcon onClick={onClose}>
         <Icon name="close" color="black" />
-      </NotificationIcon>
+      </AlertIcon>
     );
   }
 
@@ -51,10 +51,10 @@ class Alert extends Component <State, Props> {
 
     return (
       <If condition={isVisible}>
-        <Container isOpen={isOpen} isVisible={isVisible}>
+        <AlertContainer isOpen={isOpen} isVisible={isVisible}>
           {this.renderMessage.bind(this)()}
           {this.renderIcon.bind(this)()}
-        </Container>
+        </AlertContainer>
       </If>
     );
   }

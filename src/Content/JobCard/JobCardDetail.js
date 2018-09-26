@@ -1,21 +1,21 @@
 import React from 'react';
-import Icon from '../General/Icon';
+import Icon from '../../General/Icon';
 
-import { JobDetail } from '../Style/JobCardStyle';
+import { JobcardDetailWrapper } from '../../Style/JobCardStyle';
 
 const JobCardDetail = ({ details, ...defaultProps }: Props) => (
-  <JobDetail {...defaultProps}>
+  <JobcardDetailWrapper {...defaultProps}>
     <ul>
       <For each="data" of={details} index="index">
         <If condition={data !== ''}>
           <li key={data + index}>
-            <Icon name="dot" color="#c6c6c6" size="6" />
+            <Icon name="dot" color="#c6c6c6" />
             { data }
           </li>
         </If>
       </For>
     </ul>
-  </JobDetail>
+  </JobcardDetailWrapper>
 );
 
 type Props = {

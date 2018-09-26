@@ -6,7 +6,6 @@ import Edit from '../../assets/icons/edit-white.svg';
 export const Container = styled.div`
   position: relative;
   z-index: 1;
-  cursor: pointer;
   width: 5em;
   height: 5em;
 
@@ -24,6 +23,7 @@ export const Container = styled.div`
           height: 100%;
           width: 100%;
           border-radius: 50%;
+          cursor: pointer;
         }
       `;
     }
