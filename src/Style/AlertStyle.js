@@ -22,7 +22,7 @@ const fadeUp = keyframes`
   }
 `;
 
-export const Container = styled.div`
+export const AlertContainer = styled.div`
   position: fixed;
   left: 50%;
   top: ${({ isVisible }) => isVisible ? '10px' : '0px'};
@@ -41,12 +41,12 @@ export const Container = styled.div`
   animation: ${({ isOpen }) => isOpen ? fadeDown : fadeUp} .3s ease-in-out;
 `;
 
-export const NotificationMessage = styled.div`
+export const AlertMessage = styled.div`
   position: relative;
   word-wrap: break-word;
 `;
 
-export const NotificationIcon = styled.div`
+export const AlertIcon = styled.div`
   position: relative;
   display: inherit;
   align-items: center;

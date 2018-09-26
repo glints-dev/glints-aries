@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CrossPattern from '../../assets/image/cross-pattern.svg';
 import Edit from '../../assets/icons/edit-white.svg';
 
-export const Container = styled.div`
+export const ProfilePictureContainer = styled.div`
   position: relative;
   z-index: 1;
   cursor: pointer;

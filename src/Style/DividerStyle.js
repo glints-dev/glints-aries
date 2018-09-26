@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from './Colors';
 
-export const DividerWrapper = styled.div`
+export const DividerContainer = styled.div`
     display: flex;
     width: 100%;
     height: .15em;

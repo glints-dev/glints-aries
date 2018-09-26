@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { DividerWrapper } from '../../Style/DividerStyle';
+import { DividerContainer } from '../../Style/DividerStyle';
 
 const Divider = (props: Props) => {
   const {
@@ -10,7 +10,7 @@ const Divider = (props: Props) => {
   } = props;
 
   return (
-    <DividerWrapper
+    <DividerContainer
       className={className}
       theme={theme}
     />

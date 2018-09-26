@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Icon from '../Icon';
 import {
-  Container,
-  NotificationMessage,
-  NotificationIcon,
+  AlertContainer,
+  AlertMessage,
+  AlertIcon,
 } from '../../Style/AlertStyle';
 
 class Alert extends Component <State, Props> {
@@ -15,13 +15,17 @@ class Alert extends Component <State, Props> {
     };
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isOpen && !prevState.isVisible) {
+      return { isVisible: true };
+    }
+    return null;
+  }
+
   componentDidUpdate(prevProps) {
     const { isOpen } = this.props;
-    const { isVisible } = this.state;
     if (prevProps.isOpen && !isOpen) {
-      setTimeout(() => this.setState({ isVisible: false }), 300); //eslint-disable-line
-    } else if (isOpen !== isVisible) {
-      this.setState({ isVisible: isOpen }); //eslint-disable-line
+      setTimeout(() => this.setState({ isVisible: false }), 300);
     }
   }
 
@@ -29,9 +33,9 @@ class Alert extends Component <State, Props> {
     const { message } = this.props;
 
     return (
-      <NotificationMessage>
+      <AlertMessage>
         {message}
-      </NotificationMessage>
+      </AlertMessage>
     );
   }
 
@@ -39,9 +43,9 @@ class Alert extends Component <State, Props> {
     const { onClose } = this.props;
 
     return (
-      <NotificationIcon onClick={onClose}>
+      <AlertIcon onClick={onClose}>
         <Icon name="close" color="black" />
-      </NotificationIcon>
+      </AlertIcon>
     );
   }
 
@@ -51,10 +55,10 @@ class Alert extends Component <State, Props> {
 
     return (
       <If condition={isVisible}>
-        <Container isOpen={isOpen} isVisible={isVisible}>
+        <AlertContainer isOpen={isOpen} isVisible={isVisible}>
           {this.renderMessage.bind(this)()}
           {this.renderIcon.bind(this)()}
-        </Container>
+        </AlertContainer>
       </If>
     );
   }

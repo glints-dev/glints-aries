@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SecondaryColor } from './Colors';
 
-export const Item = styled.label`
+export const BreadcrumbItemWrapper = styled.label`
   cursor: pointer;
   font-size: 1em;
   line-height: 1.5;
@@ -13,7 +13,7 @@ export const Item = styled.label`
   }
 `;
 
-export const Container = styled.div`
+export const BreadcrumbContainer = styled.div`
   position: relative;
   display: flex;
   background-color: ${SecondaryColor.whitesmoke};

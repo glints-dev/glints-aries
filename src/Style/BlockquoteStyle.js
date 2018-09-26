@@ -4,17 +4,17 @@ import { Device } from '../Utils/StyleConfig';
 import RedQuote from '../../assets/icons/red-quote.svg';
 import BlueQuote from '../../assets/icons/blue-quote.svg';
 
-export const StyledTestimony = styled.p`
+export const BlockquoteTestimonyWrapper = styled.p`
   font-weight: 100;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: .5em;
 `;
 
-export const StyledAuthor = styled.p`
+export const BlockquoteAuthorWrapper = styled.p`
   margin: 0;
   font-weight: 500;
+  font-size: 1.1em;
   opacity: .75;
-  font-size: 1.2em;
 
   &:before {
     position: relative;
@@ -28,16 +28,16 @@ export const StyledAuthor = styled.p`
   }
 `;
 
-export const StyledOrigin = styled.span`
-  font-size: 1rem;
+export const BlockquoteOriginWrapper = styled.span`
   font-weight: 100;
+  font-size: 1em;
   opacity: .75;
 `;
 
-export const ProfileWrapper = styled.div`
+export const BlockquoteProfileWrapper = styled.div`
   position: absolute;
-    top: 50%;
-    transform: translate(-25%, -50%);
+  font-size: 1.7em;
+  transform: translate(-25%, 40%);
 
 
   @media ${Device.mobileL} {
@@ -54,6 +54,8 @@ export const BlockquoteContainer = styled.div`
   background: ${SecondaryColor.white};
   color: ${SecondaryColor.black};
   transition: all .2s;
+  font-size: 1em;
+  line-height: 1.5;
   
   @media ${Device.mobileL} {
     flex-direction: column;
@@ -76,7 +78,7 @@ export const BlockquoteContainer = styled.div`
     content: '';
     position: absolute;
     top: -1.5em;
-    left: 8em;
+    left: 9em;
     background: url(${BlueQuote});
     background-position: center;
     background-size: contain;
@@ -89,14 +91,13 @@ export const BlockquoteContainer = styled.div`
       align-self: center;
       position: relative;
       left: auto;
-      top: 8em;
+      top: 9em;
     }
   }
 `;
 
-export const Paragraph = styled.div`
-  padding: 2.86em 2.86em 3.57em 8em;
-  line-height: 1.8;
+export const BlockquoteContentWrapper = styled.div`
+  padding: 2.86em 2.86em 3.57em 9em;
   
   @media ${Device.mobileL} {
     padding: 2.5em 2em 2.5em 2em;
