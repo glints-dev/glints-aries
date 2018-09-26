@@ -51,7 +51,7 @@ export const LayoutContainer = styled.div`
 export const LayoutHeader = styled.div`
     position: fixed;
     height: ${({ headerHeight }) => headerHeight}px;
-    background-color: ${({ backGroundColour }) => backGroundColour || null};
+    background-color: ${({ backgroundColour }) => backgroundColour || null};
     width: 100vw;
     z-index: 100;
     box-shadow: ${({ showDivider }) => showDivider ? '0 1px 0 0 #d4d4d4' : null};
