@@ -100,7 +100,7 @@ handleOnClose = () => {
               <td>string</td>
               <td>any</td>
               <td>yes</td>
-              <td>Sets message for notification</td>
+              <td>Sets message for Alert.</td>
             </tr>
             <tr>
               <td>isOpen</td>
@@ -110,15 +110,15 @@ handleOnClose = () => {
                   true | false
                 </pre>
               </td>
-              <td>no</td>
-              <td>Sets notification to show</td>
+              <td>yes</td>
+              <td>Sets Alert to show.</td>
             </tr>
             <tr>
               <td>onClose</td>
               <td>function</td>
               <td>-</td>
-              <td>no</td>
-              <td>Function to close notification</td>
+              <td>yes</td>
+              <td>Function to close Alert.</td>
             </tr>
           </tbody>
         </table>

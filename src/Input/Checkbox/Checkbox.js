@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Container } from '../../Style/CheckboxStyle';
+import { CheckboxContainer } from '../../Style/CheckboxStyle';
 
 class Checkbox extends Component <Props, State> {
   state = {
@@ -35,7 +35,7 @@ class Checkbox extends Component <Props, State> {
     const { checked } = this.state;
 
     return (
-      <Container
+      <CheckboxContainer
         className={className}
         tabIndex={0}
         role="checkbox"
@@ -52,7 +52,7 @@ class Checkbox extends Component <Props, State> {
         <label htmlFor={id}>
           {value}
         </label>
-      </Container>
+      </CheckboxContainer>
     );
   }
 }

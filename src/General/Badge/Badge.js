@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { Container } from '../../Style/BadgeStyle';
+import { BadgeContainer } from '../../Style/BadgeStyle';
 
 const Badge = (props: Props) => {
   const {
@@ -14,9 +14,9 @@ const Badge = (props: Props) => {
     <Fragment>
       {label
         && (
-          <Container className={className} {...defaultProps}>
+          <BadgeContainer className={className} {...defaultProps}>
             {label}
-          </Container>
+          </BadgeContainer>
         )
       }
     </Fragment>

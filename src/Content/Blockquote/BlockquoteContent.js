@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Paragraph } from '../../Style/BlockquoteStyle';
+import { BlockquoteContentWrapper } from '../../Style/BlockquoteStyle';
 
 const BlockquoteContent = (props: Props) => {
   const {
@@ -10,9 +10,9 @@ const BlockquoteContent = (props: Props) => {
   } = props;
 
   return (
-    <Paragraph className={className}>
+    <BlockquoteContentWrapper className={className}>
       {children}
-    </Paragraph>
+    </BlockquoteContentWrapper>
   );
 };
 

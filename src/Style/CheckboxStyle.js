@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SecondaryColor } from './Colors';
 
-export const Container = styled.div`
+export const CheckboxContainer = styled.div`
   position: relative;
   font-size: 1em;
   line-height: 1.5;

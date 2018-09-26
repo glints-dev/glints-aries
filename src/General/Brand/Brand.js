@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Container, BrandImage } from '../../Style/BrandStyle';
+import { BrandContainer, BrandImage } from '../../Style/BrandStyle';
 
 import GlintsBlack from '../../../assets/image/glints-logo-black.svg';
 import GlintsWhite from '../../../assets/image/glints-logo-white.svg';
@@ -25,9 +25,9 @@ const Brand = (props: Props) => {
   }
 
   return (
-    <Container {...defaultProps}>
+    <BrandContainer {...defaultProps}>
       <BrandImage className={className} src={srcAsset} alt={alt} />
-    </Container>
+    </BrandContainer>
   );
 };
 

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Container } from '../../Style/ProfilePictureStyle';
+import { ProfilePictureContainer } from '../../Style/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
   const {
@@ -12,9 +12,9 @@ const ProfilePicture = (props: Props) => {
   } = props;
 
   return (
-    <Container className={className} editable={editable} {...defaultProps}>
+    <ProfilePictureContainer className={className} editable={editable} {...defaultProps}>
       {children}
-    </Container>
+    </ProfilePictureContainer>
   );
 };
 

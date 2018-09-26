@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Container } from '../../Style/TagStyle';
+import { TagContainer } from '../../Style/TagStyle';
 
 const Tag = (props: Props) => {
   const {
@@ -12,10 +12,10 @@ const Tag = (props: Props) => {
   } = props;
 
   return (
-    <Container className={className} {...defaultProps}>
+    <TagContainer className={className} {...defaultProps}>
       {label}
       {children}
-    </Container>
+    </TagContainer>
   );
 };
 

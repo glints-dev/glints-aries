@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { Container } from '../../Style/HeadingStyle';
+import { HeadingContainer } from '../../Style/HeadingStyle';
 
 const Heading = (props: Props) => {
   const {
@@ -13,11 +13,11 @@ const Heading = (props: Props) => {
 
   return (
     <Fragment>
-      <Container className={className} inline={inline} {...defaultProps}>
+      <HeadingContainer className={className} inline={inline} {...defaultProps}>
         <span>
           {children}
         </span>
-      </Container>
+      </HeadingContainer>
     </Fragment>
   );
 };
