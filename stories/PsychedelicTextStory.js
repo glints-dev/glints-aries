@@ -1,5 +1,5 @@
 import React from 'react';
-import PsychedelicText from '../src/PsychedelicText';
+import PsychedelicText from '../src/General/PsychedelicText';
 
 const PsychedelicTextStory = () => (
   <div className="doc-mainbar">

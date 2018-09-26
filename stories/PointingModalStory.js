@@ -1,5 +1,5 @@
 import React from 'react';
-import PointingModal from '../src/PointingModal';
+import PointingModal from '../src/Navigation/PointingModal';
 
 import ProfilePicture from '../src/General/ProfilePicture';
 import Divider from '../src/General/Divider';

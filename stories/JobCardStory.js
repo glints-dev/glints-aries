@@ -31,7 +31,7 @@ const JobCardStory = () => (
         <tr>
           <td style={{ padding: 20 }}>
             <JobCard
-              url="https://glints.id"
+              url="https://www.glints.com"
             >
               <JobCard.Header
                 title="Item title"
@@ -39,7 +39,6 @@ const JobCardStory = () => (
                 subtitle="Item subtitle"
                 imgUrl="https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png"
                 isExternal
-                paddingSize="1.4em"
                 isLinkAble
               />
               <JobCard.Body isLinkAble>
@@ -69,7 +68,6 @@ const JobCardStory = () => (
     url="..."
     imgUrl="imageUrl | imageComponent"
     isExternal
-    paddingSize="1.4em"
   />
   <JobCard.Body>
     <JobCard.Detail details={['...', '...', '...', '...']} />
