@@ -48,7 +48,7 @@ class SideBarStory extends Component {
           <tbody>
             <tr>
               <td style={{ maxWidth: 200, padding: 20 }}>
-                <div>HEADER</div>
+                <div style={{ boxShadow: '0 1px 0 0 #d4d4d4' }}>HEADER</div>
                 <SideBar
                   mobileMediaQuery={1000}
                   sideBarComponent={this.renderSideBar()}
@@ -94,6 +94,8 @@ class SideBarStory extends Component {
       isOpen
       handleClose={...function}
       sidebarWidth="60vw"
+      showDivider={true}
+      backGroundColour="white"
       >
           <div>content</div>
   </SideBar>`}
@@ -180,6 +182,24 @@ class SideBarStory extends Component {
               <td>
                 Set sidebar width
                 <pre>defaultValue: 80vw</pre>
+              </td>
+            </tr>
+            <tr>
+              <td>showDivider</td>
+              <td>bool</td>
+              <td><pre>true | false</pre></td>
+              <td>no</td>
+              <td>
+                Show divider between header and content
+              </td>
+            </tr>
+            <tr>
+              <td>backGroundColour</td>
+              <td>string</td>
+              <td><pre>hex-value | rba-value | string-value</pre></td>
+              <td>no</td>
+              <td>
+                Set background colour for header
               </td>
             </tr>
           </tbody>

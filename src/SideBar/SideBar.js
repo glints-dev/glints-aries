@@ -66,6 +66,8 @@ class SideBar extends Component<State, Props> {
       sidebarWidth,
       isOpen,
       handleClose,
+      backGroundColour,
+      showDivider,
     } = this.props;
 
     return (
@@ -73,7 +75,11 @@ class SideBar extends Component<State, Props> {
         tempRows={tempRows}
         tempCols={tempCols}
       >
-        <LayoutHeader headerHeight={headerHeight}>
+        <LayoutHeader
+          headerHeight={headerHeight}
+          backGroundColour={backGroundColour}
+          showDivider={showDivider}
+        >
           {headerComponent}
         </LayoutHeader>
         <LayoutHeaderEmptySpace headerHeight={headerHeight} />
