@@ -95,7 +95,7 @@ class SideBarStory extends Component {
       handleClose={...function}
       sidebarWidth="60vw"
       showDivider={true}
-      backGroundColour="white"
+      backgroundColour="white"
       >
           <div>content</div>
   </SideBar>`}
@@ -194,7 +194,7 @@ class SideBarStory extends Component {
               </td>
             </tr>
             <tr>
-              <td>backGroundColour</td>
+              <td>backgroundColour</td>
               <td>string</td>
               <td><pre>hex-value | rba-value | string-value</pre></td>
               <td>no</td>
