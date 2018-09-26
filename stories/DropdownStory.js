@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from '../src/Dropdown';
+import Dropdown from '../src/Navigation/Dropdown';
 import Icon from '../src/General/Icon';
 
 const DropdownStory = () => (

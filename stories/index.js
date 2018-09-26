@@ -41,7 +41,6 @@ import PopoverStory from './PopoverStory';
 import ProfilePictureStory from './ProfilePictureStory';
 import PsychedelicTextStory from './PsychedelicTextStory';
 import RadioButtonStory from './RadioButtonStory';
-import SearchStory from './SearchStory';
 import SearchFilterStory from './SearchFilterStory';
 import SelectStory from './SelectStory';
 import SliderStory from './SliderStory';
@@ -72,6 +71,7 @@ storiesOf('General', module)
   .add('Icon', () => <IconStory />)
   .add('Loading', () => <LoadingStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
+  .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Tag', () => <TagStory />);
 
 storiesOf('Input', module)
@@ -82,7 +82,8 @@ storiesOf('Input', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Checkbox', () => <CheckboxStory />);
+  .add('Checkbox', () => <CheckboxStory />)
+  .add('Omni Search', () => <OmniSearchStory />);
 
 storiesOf('Navigation', module)
   .addDecorator(story => (
@@ -92,7 +93,9 @@ storiesOf('Navigation', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Breadcrumb', () => <BreadcrumbStory />);
+  .add('Breadcrumb', () => <BreadcrumbStory />)
+  .add('Dropdown', () => <DropdownStory />)
+  .add('Pointing Modal', () => <PointingModalStory />);
 
 storiesOf('Content', module)
   .addDecorator(story => (
@@ -105,7 +108,12 @@ storiesOf('Content', module)
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Collapsible', () => <CollapsibleStory />)
-  .add('Job Card', () => <JobCardStory />);
+  .add('Gallery', () => <GalleryStory />)
+  .add('Information', () => <InformationStory />)
+  .add('Job Card', () => <JobCardStory />)
+  .add('Job Overview', () => <JobOverviewStory />)
+  .add('Modal', () => <ModalStory />)
+  .add('Pop Over', () => <PopoverStory />);
 
 storiesOf('Components', module)
   .addDecorator(story => (
@@ -115,17 +123,7 @@ storiesOf('Components', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Job Overview', () => <JobOverviewStory />)
-  .add('Dropdown', () => <DropdownStory />)
-  .add('Gallery', () => <GalleryStory />)
-  .add('Information', () => <InformationStory />)
-  .add('Modal', () => <ModalStory />)
-  .add('Omni Search', () => <OmniSearchStory />)
-  .add('Pointing Modal', () => <PointingModalStory />)
-  .add('Pop Over', () => <PopoverStory />)
-  .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Radio Button', () => <RadioButtonStory />)
-  .add('Search', () => <SearchStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Slider', () => <SliderStory />)

@@ -12,7 +12,8 @@ export const JobcardContainer = styled.div`
   position: relative;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
-  width: 380px;
+  width: 100%;
+  min-width: 300px;
   max-height: 40em;
   min-height: 32em;
 
@@ -46,7 +47,7 @@ export const JobcardContainer = styled.div`
 export const JobcardHeaderWrapper = styled.div`
   display: grid;
   grid-template-columns: 5em 1fr;
-  padding: ${({ paddingSize }) => paddingSize};
+  padding: 1.4em;
 `;
 
 export const JobcardHeaderImage = styled.div`

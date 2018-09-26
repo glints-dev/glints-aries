@@ -1,5 +1,5 @@
 import React from 'react';
-import JobOverview from '../src/JobOverview';
+import JobOverview from '../src/Content/JobOverview';
 import Icon from '../src/General/Icon';
 import Divider from '../src/General/Divider';
 

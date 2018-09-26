@@ -12,7 +12,6 @@ const JobCardHeader = (props: Props) => {
     url,
     imgUrl,
     isExternal,
-    paddingSize,
     subtitle,
     subtitleOnClick,
     className,
@@ -22,7 +21,7 @@ const JobCardHeader = (props: Props) => {
   } = props;
 
   return (
-    <JobcardHeaderWrapper className={className} paddingSize={paddingSize} {...defaultProps}>
+    <JobcardHeaderWrapper className={className} {...defaultProps}>
       <JobcardHeaderImage>
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
@@ -62,7 +61,6 @@ type Props = {
   imgUrl: string,
   isExternal: boolean,
   jobTitleClass: string,
-  paddingSize: string,
   url: string,
 };
 
