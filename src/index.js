@@ -19,7 +19,7 @@ export { default as Gallery } from './Gallery';
 export { default as Heading } from './General/Heading';
 export { default as Information } from './Information';
 export { default as Icon } from './General/Icon';
-export { default as JobCard } from './JobCard';
+export { default as JobCard } from './Content/JobCard';
 export { default as JobOverview } from './JobOverview';
 export { default as Loading } from './Loading';
 export { default as LanguageSelect } from './LanguageSelect';
