@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from '../src/Tabs';
+import Tabs from '../src/Display/Tabs';
 
 const TabsStory = () => (
   <div className="doc-mainbar">

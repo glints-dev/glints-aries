@@ -1,5 +1,5 @@
 import React from 'react';
-import Stats from '../src/Stats';
+import Stats from '../src/Application/Stats';
 
 const StatsStory = () => (
   <div className="doc-mainbar">

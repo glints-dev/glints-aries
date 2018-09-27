@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { action } from '@storybook/addon-actions';
-import Accordion from '../src/Content/Accordion';
+import Accordion from '../src/Display/Accordion';
 
 class AccordionStory extends Component {
   constructor(props) {

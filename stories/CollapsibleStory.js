@@ -1,5 +1,5 @@
 import React from 'react';
-import Collapsible from '../src/Content/Collapsible';
+import Collapsible from '../src/Display/Collapsible';
 
 const CollapsibleStory = () => (
   <div className="doc-mainbar">

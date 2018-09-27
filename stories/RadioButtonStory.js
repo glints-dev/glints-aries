@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioButton from '../src/RadioButton';
+import RadioButton from '../src/Input/RadioButton';
 
 const RadioButtonStory = () => (
   <div className="doc-mainbar">

@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguageSelect from '../src/LanguageSelect';
+import LanguageSelect from '../src/Input/LanguageSelect';
 
 const DropdownStory = () => (
   <div className="doc-mainbar">

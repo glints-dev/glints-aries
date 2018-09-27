@@ -53,6 +53,16 @@ import TextareaStory from './TextareaStory';
 import TextFieldStory from './TextFieldStory';
 import LanguageSelectStory from './LanguageSelectStory';
 
+storiesOf('Introduction', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Getting started', () => <IntroStory />);
+
 storiesOf('General', module)
   .addDecorator(story => (
     <Provider>
@@ -61,7 +71,6 @@ storiesOf('General', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Introduction', () => <IntroStory />)
   .add('Alert', () => <AlertStory />)
   .add('Badge', () => <BadgeStory />)
   .add('Brand', () => <BrandStory />)
@@ -83,7 +92,14 @@ storiesOf('Input', module)
     </Provider>
   ))
   .add('Checkbox', () => <CheckboxStory />)
-  .add('Omni Search', () => <OmniSearchStory />);
+  .add('Language Select', () => <LanguageSelectStory />)
+  .add('Omni Search', () => <OmniSearchStory />)
+  .add('Radio Button', () => <RadioButtonStory />)
+  .add('Search Filter', () => <SearchFilterStory />)
+  .add('Select', () => <SelectStory />)
+  .add('Switch', () => <SwitchStory />)
+  .add('Textarea', () => <TextareaStory />)
+  .add('Text Field', () => <TextFieldStory />);
 
 storiesOf('Navigation', module)
   .addDecorator(story => (
@@ -95,9 +111,10 @@ storiesOf('Navigation', module)
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Dropdown', () => <DropdownStory />)
-  .add('Pointing Modal', () => <PointingModalStory />);
+  .add('Mobile Menu', () => <MobileMenuStory />)
+  .add('Side Bar', () => <SideBarStory />);
 
-storiesOf('Content', module)
+storiesOf('Display', module)
   .addDecorator(story => (
     <Provider>
       <StorybookStyle>
@@ -108,43 +125,26 @@ storiesOf('Content', module)
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Collapsible', () => <CollapsibleStory />)
+  .add('Modal', () => <ModalStory />)
+  .add('Pointing Modal', () => <PointingModalStory />)
+  .add('Pop Over', () => <PopoverStory />)
+  .add('Slider', () => <SliderStory />)
+  .add('Swipeable', () => <SwipeableStory />)
+  .add('Tabs', () => <TabsStory />);
+
+storiesOf('Application', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
   .add('Gallery', () => <GalleryStory />)
   .add('Information', () => <InformationStory />)
   .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />)
-  .add('Modal', () => <ModalStory />)
-  .add('Pop Over', () => <PopoverStory />);
-
-storiesOf('Components', module)
-  .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
-  ))
-  .add('Radio Button', () => <RadioButtonStory />)
-  .add('Search Filter', () => <SearchFilterStory />)
-  .add('Select', () => <SelectStory />)
-  .add('Slider', () => <SliderStory />)
-  .add('Stats', () => <StatsStory />)
-  .add('Switch', () => <SwitchStory />)
-  .add('Tabs', () => <TabsStory />)
-  .add('Textarea', () => <TextareaStory />)
-  .add('Text Field', () => <TextFieldStory />)
-  .add('Side Bar', () => <SideBarStory />)
-  .add('Language Select', () => <LanguageSelectStory />);
-
-storiesOf('Mobile Components', module)
-  .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
-  ))
-  .add('Menu', () => <MobileMenuStory />)
-  .add('Swipeable', () => <SwipeableStory />);
+  .add('Stats', () => <StatsStory />);
 
 storiesOf('Utilities', module)
   .addDecorator(story => (

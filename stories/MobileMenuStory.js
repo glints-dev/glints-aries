@@ -1,5 +1,5 @@
 import React from 'react';
-import MobileMenu from '../src/MobileMenu';
+import MobileMenu from '../src/Navigation/MobileMenu';
 
 import ProfilePicture from '../src/General/ProfilePicture';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from '../src/Select';
+import Select from '../src/Input/Select';
 
 const SelectStory = () => (
   <div className="doc-mainbar">

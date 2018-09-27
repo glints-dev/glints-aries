@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from '../src/Slider';
+import Slider from '../src/Display/Slider';
 
-import Blockquote from '../src/Content/Blockquote';
+import Blockquote from '../src/Display/Blockquote';
 import ProfilePicture from '../src/General/ProfilePicture';
 
 const SliderStory = () => (

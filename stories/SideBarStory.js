@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { SideBar, Button } from '../src';
+import SideBar from '../src/Navigation/SideBar';
+import Button from '../src/General/Button';
+
 class SideBarStory extends Component {
   constructor() {
     super();

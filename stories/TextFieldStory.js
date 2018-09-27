@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from '../src/TextField';
+import TextField from '../src/Input/TextField';
 
 const TextFieldStory = () => (
   <div className="doc-mainbar">
