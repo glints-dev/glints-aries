@@ -1,5 +1,5 @@
 import React from 'react';
-import Swipeable from '../src/Swipeable';
+import Swipeable from '../src/Display/Swipeable';
 
 // Example
 import { SwipeableCardExample } from '../src/Style/SwipeableStyle';

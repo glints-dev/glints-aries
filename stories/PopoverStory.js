@@ -1,6 +1,6 @@
 import React from 'react';
 import PointingModal from '../src/Navigation/PointingModal';
-import Popover from '../src/Content/Popover';
+import Popover from '../src/Display/Popover';
 
 import ProfilePicture from '../src/General/ProfilePicture';
 import Divider from '../src/General/Divider';

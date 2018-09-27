@@ -1,5 +1,5 @@
 import React from 'react';
-import Textarea from '../src/Textarea';
+import Textarea from '../src/Input/Textarea';
 
 const TextareaStory = () => (
   <div className="doc-mainbar">

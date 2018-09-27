@@ -1,5 +1,5 @@
 import React from 'react';
-import Information from '../src/Content/Information';
+import Information from '../src/Application/Information';
 import { Divider } from '../src/General/Divider';
 
 const InformationStory = () => (

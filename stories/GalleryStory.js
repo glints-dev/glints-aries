@@ -1,5 +1,5 @@
 import React from 'react';
-import Gallery from '../src/Gallery';
+import Gallery from '../src/Application/Gallery';
 
 const GalleryStory = () => (
   <div className="doc-mainbar">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Blockquote from '../src/Content/Blockquote';
+import Blockquote from '../src/Display/Blockquote';
 import ProfilePicture from '../src/General/ProfilePicture';
 
 const BlockquoteStory = () => (

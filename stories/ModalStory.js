@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from '../src/Content/Modal';
+import Modal from '../src/Display/Modal';
 
 import Button from '../src/General/Button';
 
