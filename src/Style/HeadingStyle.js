@@ -3,7 +3,7 @@ import { PrimaryColor } from './Colors';
 
 export const HeadingContainer = styled.h1`
   position: relative;
-  display: ${({ inline }) => inline ? 'inline-flex' : 'flex'};
+  display: ${({ inline }) => inline ? 'inline-block' : 'block'};
   font-size: 2em;
 
   span {
