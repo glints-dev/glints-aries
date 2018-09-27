@@ -9,6 +9,8 @@ import Provider from './Provider';
 
 import StorybookStyle from '../src/Style/StorybookStyle';
 
+import '../src/Style/GlobalStyle.css';
+
 import IntroStory from './IntroStory';
 import AccordionStory from './AccordionStory';
 import AlertStory from './AlertStory';
@@ -54,21 +56,17 @@ import LanguageSelectStory from './LanguageSelectStory';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Getting started', () => <IntroStory />);
 
 storiesOf('General', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Alert', () => <AlertStory />)
   .add('Badge', () => <BadgeStory />)
@@ -84,11 +82,9 @@ storiesOf('General', module)
 
 storiesOf('Input', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Checkbox', () => <CheckboxStory />)
   .add('Language Select', () => <LanguageSelectStory />)
@@ -102,11 +98,9 @@ storiesOf('Input', module)
 
 storiesOf('Navigation', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Dropdown', () => <DropdownStory />)
@@ -115,11 +109,9 @@ storiesOf('Navigation', module)
 
 storiesOf('Display', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
@@ -133,11 +125,9 @@ storiesOf('Display', module)
 
 storiesOf('Application', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Gallery', () => <GalleryStory />)
   .add('Information', () => <InformationStory />)
@@ -147,11 +137,9 @@ storiesOf('Application', module)
 
 storiesOf('Utilities', module)
   .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>
-        {React.createElement(story)}
-      </StorybookStyle>
-    </Provider>
+    <StorybookStyle>
+      {React.createElement(story)}
+    </StorybookStyle>
   ))
   .add('Colors', () => <ColorStory />)
   .add('Devices Size', () => <DeviceStory />)
