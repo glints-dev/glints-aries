@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import LanguageSelect from '../LanguageSelect';
+import LanguageSelect from '../Input/LanguageSelect';
 
 import { SecondaryColor } from './Colors';
 

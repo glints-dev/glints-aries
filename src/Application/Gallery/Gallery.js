@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import Modal from '../../Display/Modal';
-import Slider from '../../Slider';
+import Slider from '../../Display/Slider';
 import {
   Container, Wrapper, ItemWrapper, ImageWrapper, ThumbnailWrapper,
 } from '../../Style/GalleryStyle';

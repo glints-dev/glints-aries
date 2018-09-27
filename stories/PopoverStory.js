@@ -1,5 +1,5 @@
 import React from 'react';
-import PointingModal from '../src/Navigation/PointingModal';
+import PointingModal from '../src/Display/PointingModal';
 import Popover from '../src/Display/Popover';
 
 import ProfilePicture from '../src/General/ProfilePicture';

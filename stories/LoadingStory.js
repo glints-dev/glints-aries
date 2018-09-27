@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from '../src/Loading';
+import Loading from '../src/General/Loading';
 
 const LoadingStory = () => (
   <div className="doc-mainbar">
