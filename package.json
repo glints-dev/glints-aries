@@ -31,7 +31,6 @@
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-knobs": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
-    "@storybook/addon-viewport": "^3.4.8",
     "@storybook/react": "^3.4.8",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
@@ -79,7 +78,8 @@
     "r": "0.0.5",
     "react-datetime": "2.14.0",
     "react-responsive": "^5.0.0",
-    "throttle-debounce": "1.0.1"
+    "throttle-debounce": "1.0.1",
+    "yarn": "^1.10.1"
   },
   "peerDependencies": {
     "react": "^16.5.2",
