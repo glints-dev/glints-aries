@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { LoadingContainer, Spinner } from '../Style/LoadingStyle';
+import { LoadingContainer, Spinner } from '../../Style/LoadingStyle';
 
 const Loading = (props: Props) => {
   const {
