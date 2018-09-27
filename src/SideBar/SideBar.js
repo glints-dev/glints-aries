@@ -6,6 +6,7 @@ import {
   LayoutContainer,
   LayoutHeader,
   LayoutHeaderEmptySpace,
+  LayoutBody,
   SideBarContainer,
   SideBarWrapper,
 } from '../Style/SidebarStyle';
@@ -83,9 +84,9 @@ class SideBar extends Component<State, Props> {
           {headerComponent}
         </LayoutHeader>
         <LayoutHeaderEmptySpace headerHeight={headerHeight} />
-        <div>
+        <LayoutBody>
           {children}
-        </div>
+        </LayoutBody>
         <If condition={sideBarComponent}>
           <MediaQuery maxWidth={mobileMediaQuery}>
             <SideBarContainer

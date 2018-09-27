@@ -62,6 +62,11 @@ export const LayoutHeaderEmptySpace = styled.div`
     width: 100vw;
 `;
 
+export const LayoutBody = styled.div`
+    width: 100vw;
+`;
+
+
 export const SideBarContainer = styled.div`
     position: fixed;
     display: ${({ noDisplay }) => noDisplay ? 'none' : 'block'};
