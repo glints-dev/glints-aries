@@ -1,3 +1,9 @@
+#### 0.2.37 (2018-09-28)
+
+##### Refactors
+
+* **package:**  move react-dom into dev & peer dependencies, upgrade to react v16.5.2 ([734f6aef](https://github.com/glints-dev/glints-aries/commit/734f6aef0e05196f9122cb23a6b8c1ab836e6801))
+
 #### 0.2.36 (2018-09-27)
 
 #### 0.2.35 (2018-09-27)
