@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Item } from '../../Style/BreadcrumbStyle';
+import { BreadcrumbItemWrapper } from '../../Style/BreadcrumbStyle';
 
 const BreadcrumbItem = (props: Props) => {
   const {
@@ -12,10 +12,10 @@ const BreadcrumbItem = (props: Props) => {
   } = props;
 
   return (
-    <Item className={className} active={active} {...defaultProps}>
+    <BreadcrumbItemWrapper className={className} active={active} {...defaultProps}>
       {children}
       <span>/</span>
-    </Item>
+    </BreadcrumbItemWrapper>
   );
 };
 

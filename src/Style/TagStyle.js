@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SecondaryColor } from './Colors';
 
-export const Container = styled.div`
+export const TagContainer = styled.div`
     display: flex;
     align-items: center;
     background: ${SecondaryColor.whitesmoke};
