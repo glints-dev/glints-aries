@@ -69,25 +69,6 @@ const ProfilePictureStory = () => (
       <tbody>
         <tr>
           <td>
-            size
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <pre>
-              large | medium | small
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets the size of picture.
-          </td>
-        </tr>
-        <tr>
-          <td>
             editable
           </td>
           <td>

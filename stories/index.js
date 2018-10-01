@@ -45,7 +45,6 @@ import RadioButtonStory from './RadioButtonStory';
 import SearchFilterStory from './SearchFilterStory';
 import SelectStory from './SelectStory';
 import SliderStory from './SliderStory';
-import StatsStory from './StatsStory';
 import SwipeableStory from './SwipeableStory';
 import SwitchStory from './SwitchStory';
 import TabsStory from './TabsStory';
@@ -144,8 +143,7 @@ storiesOf('Application', module)
   .add('Gallery', () => <GalleryStory />)
   .add('Information', () => <InformationStory />)
   .add('Job Card', () => <JobCardStory />)
-  .add('Job Overview', () => <JobOverviewStory />)
-  .add('Stats', () => <StatsStory />);
+  .add('Job Overview', () => <JobOverviewStory />);
 
 storiesOf('Utilities', module)
   .addDecorator(story => (
@@ -156,5 +154,5 @@ storiesOf('Utilities', module)
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)
-  .add('Devices Size', () => <DeviceStory />)
+  .add('Device Size', () => <DeviceStory />)
   .add('Glints Container', () => <GlintsContainerStory />);

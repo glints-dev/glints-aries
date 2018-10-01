@@ -7,6 +7,6 @@ export const HeadingContainer = styled.h1`
   font-size: 2em;
 
   span {
-    background-image: ${`linear-gradient(to top, ${PrimaryColor.glintsyellow} 40%, white 0)`};
+    background-image: ${`linear-gradient(to top, ${PrimaryColor.glintsyellow} 40%, transparent 0)`};
   }
 `;

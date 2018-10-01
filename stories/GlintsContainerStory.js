@@ -15,17 +15,7 @@ const GlintsContainerStory = () => (
 
     <div style={{ marginTop: '1.5em' }}>
       <p>
-        Glints Aries is using
-        {' '}
-        {'<GlintsContainer />'}
-        {' '}
-        to wrap up the Global Style.
-      </p>
-      <p>
-        We prevent clash between Glints Aries and your existing style with
-        {' '}
-        {'<GlintsContainer />'}
-        .
+        GlintsContainer is a special container built to serve whole Glints Aries components. So you need wrap your Root Component with GlintsContainer to achieve the best look of Glints Aries. It also contains the breakpoint to help your project looks good on every device.
       </p>
     </div>
 
@@ -127,35 +117,16 @@ const GlintsContainerStory = () => (
         How to use it?
       </h3>
       <p style={{ marginBottom: '.5em' }}>
-        You just need to wrap
+        Just wrap your Root Component with
         {' '}
         {'<GlintsContainer />'}
-        {' '}
-        on your Root Component or on Glints Aries component.
       </p>
       <pre style={{ display: 'inline-flex' }}>
         {`<GlintsContainer>
-  <Component />
+  <App />
 </GlintsContainer>`}
       </pre>
     </div>
-
-    <table className="doc-table" style={{ marginTop: '2em' }}>
-      <thead>
-        <tr>
-          <th>
-            Note
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            {'To achieve this size always wraps your component with <GlintsContainer />'}
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 );
 

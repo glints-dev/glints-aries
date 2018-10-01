@@ -35,7 +35,6 @@ export { default as SideBar } from './Navigation/SideBar';
 export { default as SearchFilter } from './Input/SearchFilter';
 export { default as Select } from './Input/Select';
 export { default as Slider } from './Display/Slider';
-export { default as Stats } from './Application/Stats';
 export { default as Swipeable } from './Display/Swipeable';
 export { default as Switch } from './Input/Switch';
 export { default as Tabs } from './Display/Tabs';

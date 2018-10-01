@@ -18,10 +18,10 @@ export const CheckboxContainer = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: .15em;
-      left: .4em;
-      width: .5em;
-      height: 1em;
+      top: .2em;
+      left: .5em;
+      width: .4em;
+      height: .85em;
       border: solid ${SecondaryColor.white};
       border-width: 0 .15em .15em 0;
       transform: rotate(45deg);

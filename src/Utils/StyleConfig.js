@@ -23,34 +23,27 @@ export const Theme = {
   GREY: 'grey',
 };
 
-export const Size = {
-  XLARGE: 'xlarge',
-  LARGE: 'large',
-  MEDIUM: 'medium',
-  SMALL: 'small',
-};
-
 /* Screen size library of Glints
  * Usage:
  * @media ${Device.mobileL} { ... }
  */
 
-export const size = {
-  mobileS: '320px',
-  mobileM: '480px',
-  mobileL: '640px',
-  tablet: '768px',
-  desktopS: '1024px',
-  desktopM: '1260px',
-  desktopL: '1440px',
+export const ScreenSize = {
+  mobileS: 320,
+  mobileM: 480,
+  mobileL: 640,
+  tablet: 768,
+  desktopS: 1024,
+  desktopM: 1260,
+  desktopL: 1440,
 };
 
 export const Device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  desktopS: `(max-width: ${size.desktopS})`,
-  desktopM: `(max-width: ${size.desktopM})`,
-  desktopL: `(max-width: ${size.desktopL})`,
+  mobileS: `(max-width: ${ScreenSize.mobileS}px)`,
+  mobileM: `(max-width: ${ScreenSize.mobileM}px)`,
+  mobileL: `(max-width: ${ScreenSize.mobileL}px)`,
+  tablet: `(max-width: ${ScreenSize.tablet}px)`,
+  desktopS: `(max-width: ${ScreenSize.desktopS}px)`,
+  desktopM: `(max-width: ${ScreenSize.desktopM}px)`,
+  desktopL: `(max-width: ${ScreenSize.desktopL}px)`,
 };
