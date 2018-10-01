@@ -72,9 +72,8 @@ Always give line break between different section when importing.
    - Third: React life cycle
    - Forth: Render
 6. Always do line break whenever your import or variable is so long.
+You can do it like this but you can do it in another format as long as it can be legible and not long.
 ```bash
-You can do it like this but you can do it in another format as long as it can be legible and not long
-
 const {
   type,
   children,
