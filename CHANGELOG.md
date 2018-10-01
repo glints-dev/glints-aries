@@ -1,4 +1,15 @@
-#### 0.2.38 (2018-10-01)
+#### 1.0.0 (2018-10-01)
+1. Remove Label and Stats Component
+2. Added Screen Size into Device Size section
+3. Notification changed into Alert
+4. Remove size props in Badge, Brand, Divider, Heading, Loading, Icon, and Profile Picture
+5. Remove loading props in Button
+6. Remove Thickness in Heading
+7. ProfilePictureShadow changed into ProfilePicture
+8. Remove bgColor props in Breadcrumb
+9. Replace className: active with active props in Breadcrumb
+10. Add collapsing props in Collapsible for defining the default state
+11. Categorize glints-aries component based on each purpose
 
 #### 0.2.37 (2018-09-28)
 
@@ -6,29 +17,6 @@
 
 * **package:**  move react-dom into dev & peer dependencies, upgrade to react v16.5.2 ([734f6aef](https://github.com/glints-dev/glints-aries/commit/734f6aef0e05196f9122cb23a6b8c1ab836e6801))
 
-#### 0.2.36 (2018-09-27)
-
-#### 0.2.35 (2018-09-27)
-
-#### 0.2.34 (2018-09-26)
-
-#### 0.2.33 (2018-09-26)
-
-#### 0.2.32 (2018-09-26)
-
-#### 0.2.31 (2018-09-25)
-
-#### 0.2.30 (2018-09-24)
-
-#### 0.2.29 (2018-09-21)
-
-#### 0.2.28 (2018-09-21)
-
-#### 0.2.27 (2018-09-20)
-
-#### 0.2.26 (2018-09-20)
-
-#### 0.2.25 (2018-09-18)
 
 #### 0.2.24 (2018-09-17)
 
@@ -51,19 +39,6 @@
   *  JobOverview style adjustment ([b1c077f8](https://github.com/glints-dev/glints-aries/commit/b1c077f8e860c78a720886fe019bf6fa0e30d841))
   *  update breadcrumb. accept bgColor & marginBottomProps ([52841427](https://github.com/glints-dev/glints-aries/commit/528414274b4b8ab3f667210f0f065a1ce2eae43e))
 
-#### 0.2.23 (2018-09-17)
-
-#### 0.2.22 (2018-09-16)
-
-#### 0.2.21 (2018-09-14)
-
-#### 0.2.20 (2018-09-13)
-
-#### 0.2.19 (2018-09-13)
-
-#### 0.2.18 (2018-09-13)
-
-#### 0.2.17 (2018-09-12)
 
 #### 0.2.16 (2018-09-12)
 
@@ -75,8 +50,6 @@
 
 * **adjustment:**  adjust Job Overview Info component style ([8b08dcc5](https://github.com/glints-dev/glints-aries/commit/8b08dcc5f16d0394110bcd9c221ea3cb1b2c8da7))
 
-#### 0.2.15 (2018-09-11)
-
 #### 0.2.14 (2018-09-11)
 
 ##### Code Style Changes
@@ -85,27 +58,6 @@
   *  JobOverview style adjustment ([b1c077f8](https://github.com/glints-dev/glints-aries/commit/b1c077f8e860c78a720886fe019bf6fa0e30d841))
   *  update breadcrumb. accept bgColor & marginBottomProps ([52841427](https://github.com/glints-dev/glints-aries/commit/528414274b4b8ab3f667210f0f065a1ce2eae43e))
 
-#### 0.2.13 (2018-09-10)
-
-#### 0.2.12 (2018-09-07)
-
-#### 0.2.11 (2018-09-07)
-
-#### 0.2.10 (2018-09-07)
-
-#### 0.2.9 (2018-09-07)
-
-#### 0.2.8 (2018-09-07)
-
-#### 0.2.7 (2018-09-06)
-
-#### 0.2.6 (2018-09-05)
-
-#### 0.2.5 (2018-09-05)
-
-#### 0.2.4 (2018-09-04)
-
-#### 0.2.3 (2018-09-03)
 
 #### 0.2.2 (2018-08-28)
 
