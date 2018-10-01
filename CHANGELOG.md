@@ -10,6 +10,7 @@
 9. Replace className: active with active props in Breadcrumb
 10. Add collapsing props in Collapsible for defining the default state
 11. Categorize glints-aries component based on each purpose
+12. Improve accessibility in Checkbox, Switch, and Select
 
 #### 0.2.37 (2018-09-28)
 
