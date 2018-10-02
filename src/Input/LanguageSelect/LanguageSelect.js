@@ -4,10 +4,8 @@ import { SecondaryColor } from '../../Style/Colors';
 
 import {
   IconContainer, LanguageItemWrapper, LanguageContainer, LanguageItem, LanguageLabel,
-} from '../../Style/LanguageSelectStyle';
-import {
-  DropdownLabelWrapper,
-} from '../../Style/DropdownStyle';
+} from '../../Style/Input/LanguageSelectStyle';
+import { DropdownLabelWrapper } from '../../Style/Navigation/DropdownStyle';
 
 import { Icon } from '../../General/Icon';
 class LanguageSelect extends Component <State, Props> {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { LinkBtn } from '../../Style/ButtonStyle';
+import { LinkBtn } from '../../Style/General/ButtonStyle';
 
 const LinkButton = ({ children, ...defaultProps }: Props) => (
   <LinkBtn {...defaultProps}>

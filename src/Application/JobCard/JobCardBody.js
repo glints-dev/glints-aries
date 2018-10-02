@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { JobcardBodyWrapper } from '../../Style/JobCardStyle';
+import { JobcardBodyWrapper } from '../../Style/Application/JobCardStyle';
 
 const JobCardBody = ({ children, ...defaultProps }:Props) => (
   <JobcardBodyWrapper {...defaultProps}>

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ItemWrapper } from '../../Style/SearchFilterStyle';
+import { ItemWrapper } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterList = (props: Props) => {
   const {

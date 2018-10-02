@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Icon from '../../General/Icon';
 
-import { Container, Header, Body } from '../../Style/CollapsibleStyle';
+import { Container, Header, Body } from '../../Style/Display/CollapsibleStyle';
 
 class Collapsible extends Component <Props, State> {
   state = {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { JobOverviewHeaderStyle } from '../../Style/JobOverviewStyle';
+import { JobOverviewHeaderStyle } from '../../Style/Application/JobOverviewStyle';
 
 const JobOverViewHeader = (props: Props) => {
   const {

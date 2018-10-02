@@ -7,7 +7,7 @@ import {
   Input,
   Label,
   ItemWrapper,
-} from '../../Style/SelectStyle';
+} from '../../Style/Input/SelectStyle';
 
 class Select extends Component <Props, State> {
   state = {

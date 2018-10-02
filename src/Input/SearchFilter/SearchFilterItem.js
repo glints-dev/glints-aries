@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SearchFilterItems } from '../../Style/SearchFilterStyle';
+import { SearchFilterItems } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterItem = (props: Props) => {
   const {

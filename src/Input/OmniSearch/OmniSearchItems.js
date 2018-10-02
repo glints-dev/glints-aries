@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 
-import { OmniSearchItem } from '../../Style/OmniSearchStyle';
+import { OmniSearchItem } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchItems = (props: Props) => {
   const {

@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   JobcardHeaderWrapper, JobcardHeaderImage, JobcardHeaderContent, Image, SubtitleTitle, LabelTag,
-} from '../../Style/JobCardStyle';
+} from '../../Style/Application/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
   const {

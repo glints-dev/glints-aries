@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { RadioContainer, RadioLabel } from '../../Style/RadioButtonStyle';
+import { RadioContainer, RadioLabel } from '../../Style/Input/RadioButtonStyle';
 
 const RadioButton = (props: Props) => {
   const {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { InformationContainer } from '../../Style/InformationStyle';
+import { InformationContainer } from '../../Style/Application/InformationStyle';
 
 const Information = (props: Props) => {
   const {

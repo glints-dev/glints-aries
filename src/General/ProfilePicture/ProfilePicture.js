@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ProfilePictureContainer } from '../../Style/ProfilePictureStyle';
+import { ProfilePictureContainer } from '../../Style/General/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
   const {

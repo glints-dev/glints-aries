@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { Heading, SubHeading } from '../../Style/PsychedelicTextStyle';
+import { Heading, SubHeading } from '../../Style/General/PsychedelicTextStyle';
 
 const renderPsychedelicText = ({
   children,

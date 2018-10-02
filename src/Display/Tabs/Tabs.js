@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Container } from '../../Style/TabsStyle';
+import { Container } from '../../Style/Display/TabsStyle';
 
 class Tabs extends Component <Props, State> {
   render() {

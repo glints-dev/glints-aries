@@ -4,7 +4,7 @@ import {
   TextFieldContainer,
   TextFieldInput,
   TextFieldLabel,
-} from '../../Style/TextFieldStyle';
+} from '../../Style/Input/TextFieldStyle';
 
 class TextField extends Component <Props, State> {
   constructor(props) {

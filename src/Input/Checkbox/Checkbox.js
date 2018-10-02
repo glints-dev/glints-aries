@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { CheckboxContainer } from '../../Style/CheckboxStyle';
+import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 
 class Checkbox extends Component <Props, State> {
   state = {

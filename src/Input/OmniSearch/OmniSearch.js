@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 
-import { OmniSearchContainer, OmniSearchBar } from '../../Style/OmniSearchStyle';
+import { OmniSearchContainer, OmniSearchBar } from '../../Style/Input/OmniSearchStyle';
 
 class OmniSearch extends Component <Props, State> {
   state = {

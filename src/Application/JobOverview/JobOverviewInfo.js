@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { JobOverviewInfostyle } from '../../Style/JobOverviewStyle';
+import { JobOverviewInfostyle } from '../../Style/Application/JobOverviewStyle';
 
 const JobOverviewInfo = ({ children, style }:Props) => (
   <JobOverviewInfostyle style={style}>

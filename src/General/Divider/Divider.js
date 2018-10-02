@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { DividerContainer } from '../../Style/DividerStyle';
+import { DividerContainer } from '../../Style/General/DividerStyle';
 
 const Divider = (props: Props) => {
   const {

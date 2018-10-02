@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { BlockquoteContentWrapper } from '../../Style/BlockquoteStyle';
+import { BlockquoteContentWrapper } from '../../Style/Display/BlockquoteStyle';
 
 const BlockquoteContent = (props: Props) => {
   const {

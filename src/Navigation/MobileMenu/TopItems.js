@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { TopIconWrapper } from '../../Style/MobileMenuStyle';
+import { TopIconWrapper } from '../../Style/Navigation/MobileMenuStyle';
 import { Icon } from '../../General/Icon';
 
 const TopItems = (props: Props) => {

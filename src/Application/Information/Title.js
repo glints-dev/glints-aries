@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { TitleWrapper } from '../../Style/InformationStyle';
+import { TitleWrapper } from '../../Style/Application/InformationStyle';
 
 const Title = (props: Props) => {
   const {

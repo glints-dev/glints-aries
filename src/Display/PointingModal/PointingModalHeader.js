@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalHeaderContainer } from '../../Style/PointingModalStyle';
+import { PointingModalHeaderContainer } from '../../Style/Display/PointingModalStyle';
 
 const PointingModalHeader = (props: Props) => {
   const {

@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { DropdownItemWrapper } from '../../Style/DropdownStyle';
+import { DropdownItemWrapper } from '../../Style/Navigation/DropdownStyle';
 
 const DropdownBody = (props: Props) => {
   const {

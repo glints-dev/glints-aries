@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { MenuFooter, CustomLanguageSelect } from '../../Style/MobileMenuStyle';
+import { MenuFooter, CustomLanguageSelect } from '../../Style/Navigation/MobileMenuStyle';
 
 const FooterItems = (props: Props) => {
   const {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalBodyItemWrapper } from '../../Style/PointingModalStyle';
+import { PointingModalBodyItemWrapper } from '../../Style/Display/PointingModalStyle';
 
 const PointingModalItem = ({
   children,

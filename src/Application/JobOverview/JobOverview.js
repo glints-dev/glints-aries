@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { JobOverviewContainer } from '../../Style/JobOverviewStyle';
+import { JobOverviewContainer } from '../../Style/Application/JobOverviewStyle';
 
 const JobOverview = ({ children }: Props) => (
   <JobOverviewContainer>

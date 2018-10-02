@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-import { SliderContainer, SliderWrapperStyle } from '../../Style/SliderStyle';
+import { SliderContainer, SliderWrapperStyle } from '../../Style/Display/SliderStyle';
 
 class Slider extends Component <Props, State> {
   constructor() {

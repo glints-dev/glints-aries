@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SecondaryContainer, SecondaryBtn } from '../../Style/ButtonStyle';
+import { SecondaryContainer, SecondaryBtn } from '../../Style/General/ButtonStyle';
 
 const SecondaryButton = ({
   children,

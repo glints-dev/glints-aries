@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import { escEvent } from '../../Utils/DomUtils';
-import { Container, ModalBackground, ModalArea } from '../../Style/ModalStyle';
+import { Container, ModalBackground, ModalArea } from '../../Style/Display/ModalStyle';
 
 class Modal extends Component <Props> {
   componentDidMount() {

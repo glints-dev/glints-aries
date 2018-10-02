@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ResultContainer } from '../../Style/SearchFilterStyle';
+import { ResultContainer } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterBody = (props: Props) => {
   const {

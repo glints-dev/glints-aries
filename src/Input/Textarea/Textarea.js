@@ -5,7 +5,7 @@ import {
   Container,
   TextareaComponent,
   TextareaLabel,
-} from '../../Style/TextareaStyle';
+} from '../../Style/Input/TextareaStyle';
 
 class Textarea extends Component <Props, State> {
   state = {

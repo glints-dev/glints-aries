@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 
-import { Container, SearchBarWrapper } from '../../Style/SearchFilterStyle';
+import { Container, SearchBarWrapper } from '../../Style/Input/SearchFilterStyle';
 
 class SearchFilter extends Component <Props, State> {
   state = {

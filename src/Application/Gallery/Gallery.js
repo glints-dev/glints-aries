@@ -5,7 +5,7 @@ import Modal from '../../Display/Modal';
 import Slider from '../../Display/Slider';
 import {
   Container, Wrapper, ItemWrapper, ImageWrapper, ThumbnailWrapper,
-} from '../../Style/GalleryStyle';
+} from '../../Style/Application/GalleryStyle';
 
 class Gallery extends Component <Props, State> {
   state = {

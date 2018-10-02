@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { OmniSearchItemWrapper } from '../../Style/OmniSearchStyle';
+import { OmniSearchItemWrapper } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchList = (props: Props) => {
   const {

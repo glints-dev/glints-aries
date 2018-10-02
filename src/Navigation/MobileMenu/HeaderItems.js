@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { HeaderWrapper, DividerWrapper } from '../../Style/MobileMenuStyle';
+import { HeaderWrapper, DividerWrapper } from '../../Style/Navigation/MobileMenuStyle';
 
 import Divider from '../../General/Divider';
 

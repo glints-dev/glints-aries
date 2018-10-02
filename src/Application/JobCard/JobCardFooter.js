@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { JobcardFooterWrapper } from '../../Style/JobCardStyle';
+import { JobcardFooterWrapper } from '../../Style/Application/JobCardStyle';
 
 const JobCardFooter = ({ children, ...defaultProps }:Props) => (
   <JobcardFooterWrapper totalItems={children.length} {...defaultProps}>

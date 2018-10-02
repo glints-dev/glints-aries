@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { BadgeContainer } from '../../Style/BadgeStyle';
+import { BadgeContainer } from '../../Style/General/BadgeStyle';
 
 const Badge = (props: Props) => {
   const {

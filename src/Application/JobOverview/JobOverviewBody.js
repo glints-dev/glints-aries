@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { JobOverviewBodystyle } from '../../Style/JobOverviewStyle';
+import { JobOverviewBodystyle } from '../../Style/Application/JobOverviewStyle';
 
 const JobOverViewBody = ({ children, ...defaultProps }:Props) => (
   <JobOverviewBodystyle {...defaultProps}>

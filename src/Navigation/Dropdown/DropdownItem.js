@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { DropdownItem } from '../../Style/DropdownStyle';
+import { DropdownItem } from '../../Style/Navigation/DropdownStyle';
 
 const DropdownItems = (props: Props) => {
   const {

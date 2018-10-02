@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { RadioButton } from '../RadioButton';
-import { SwitchContainer } from '../../Style/SwitchStyle';
+import { SwitchContainer } from '../../Style/Input/SwitchStyle';
 
 class Switch extends Component <Props, State> {
   state = {

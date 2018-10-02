@@ -9,7 +9,7 @@ import {
   LayoutBody,
   SideBarContainer,
   SideBarWrapper,
-} from '../../Style/SidebarStyle';
+} from '../../Style/Navigation/SidebarStyle';
 
 class SideBar extends Component<State, Props> {
   constructor() {

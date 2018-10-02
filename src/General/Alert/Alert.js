@@ -5,7 +5,7 @@ import {
   AlertContainer,
   AlertMessage,
   AlertIcon,
-} from '../../Style/AlertStyle';
+} from '../../Style/General/AlertStyle';
 
 class Alert extends Component <State, Props> {
   constructor(props) {

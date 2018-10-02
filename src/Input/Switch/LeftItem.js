@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { RadioButton } from '../RadioButton';
-import { LeftItemWrapper } from '../../Style/SwitchStyle';
+import { LeftItemWrapper } from '../../Style/Input/SwitchStyle';
 
 const LeftItem = (props: Props) => {
   const {

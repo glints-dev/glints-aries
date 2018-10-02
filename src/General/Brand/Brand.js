@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { BrandContainer, BrandImage } from '../../Style/BrandStyle';
+import { BrandContainer, BrandImage } from '../../Style/General/BrandStyle';
 
 import GlintsBlack from '../../../assets/image/glints-logo-black.svg';
 import GlintsWhite from '../../../assets/image/glints-logo-white.svg';

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { MenuItemWraper } from '../../Style/MobileMenuStyle';
+import { MenuItemWraper } from '../../Style/Navigation/MobileMenuStyle';
 
 const MenuItems = (props: Props) => {
   const {

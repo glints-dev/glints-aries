@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Icon } from '../../General/Icon';
-import { RightArrowContainer } from '../../Style/SliderStyle';
+import { RightArrowContainer } from '../../Style/Display/SliderStyle';
 
 const RightArrow = (props: Props) => {
   const { index, limit, nextSlide } = props;

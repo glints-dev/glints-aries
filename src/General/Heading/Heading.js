@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { HeadingContainer } from '../../Style/HeadingStyle';
+import { HeadingContainer } from '../../Style/General/HeadingStyle';
 
 const Heading = (props: Props) => {
   const {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Icon } from '../../General/Icon';
-import { LeftArrowContainer } from '../../Style/SliderStyle';
+import { LeftArrowContainer } from '../../Style/Display/SliderStyle';
 
 const LeftArrow = (props: Props) => {
   const { index, previousSlide } = props;

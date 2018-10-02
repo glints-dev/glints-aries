@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 
-import { Item } from '../../Style/SelectStyle';
+import { Item } from '../../Style/Input/SelectStyle';
 
 const SelectItems = (props: Props) => {
   const {

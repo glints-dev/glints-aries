@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalBodyContainer } from '../../Style/PointingModalStyle';
+import { PointingModalBodyContainer } from '../../Style/Display/PointingModalStyle';
 
 const PointingModalBody = (props: Props) => {
   const {

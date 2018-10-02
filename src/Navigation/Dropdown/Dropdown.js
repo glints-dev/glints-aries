@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import {
   DropdownContainer, DropdownLabelWrapper, DropdownLabel,
-} from '../../Style/DropdownStyle';
+} from '../../Style/Navigation/DropdownStyle';
 import {
   SecondaryColor,
 } from '../../Style/Colors';

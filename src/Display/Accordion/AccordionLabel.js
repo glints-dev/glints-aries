@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { AccordionLabelWrapper } from '../../Style/AccordionStyle';
+import { AccordionLabelWrapper } from '../../Style/Display/AccordionStyle';
 
 const AccordionLabel = (props: Props) => {
   const {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '../../General/Icon';
 
-import { JobcardDetailWrapper } from '../../Style/JobCardStyle';
+import { JobcardDetailWrapper } from '../../Style/Application/JobCardStyle';
 
 const JobCardDetail = ({ details, ...defaultProps }: Props) => (
   <JobcardDetailWrapper {...defaultProps}>

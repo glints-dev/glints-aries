@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { DetailWrapper } from '../../Style/InformationStyle';
+import { DetailWrapper } from '../../Style/Application/InformationStyle';
 
 const Detail = (props: Props) => {
   const {

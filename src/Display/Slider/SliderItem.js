@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SliderItemStyle } from '../../Style/SliderStyle';
+import { SliderItemStyle } from '../../Style/Display/SliderStyle';
 
 const SliderItem = (props: Props) => {
   const { children } = props;

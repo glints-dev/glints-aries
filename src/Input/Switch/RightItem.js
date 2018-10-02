@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { RadioButton } from '../RadioButton';
-import { RightItemWrapper } from '../../Style/SwitchStyle';
+import { RightItemWrapper } from '../../Style/Input/SwitchStyle';
 
 const RightItem = (props: Props) => {
   const {

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { OmniSearchItemContainer } from '../../Style/OmniSearchStyle';
+import { OmniSearchItemContainer } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchBody = (props: Props) => {
   const {

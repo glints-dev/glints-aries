@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { DescriptionWrapper } from '../../Style/InformationStyle';
+import { DescriptionWrapper } from '../../Style/Application/InformationStyle';
 
 const Description = (props: Props) => {
   const {

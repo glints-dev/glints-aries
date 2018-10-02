@@ -1,5 +1,5 @@
 import React from 'react';
-import { JobOverviewLinkStyle } from '../../Style/JobOverviewStyle';
+import { JobOverviewLinkStyle } from '../../Style/Application/JobOverviewStyle';
 
 const JobOverviewLink = (props: Props) => {
   const { children, style, ...defaultProps } = props;

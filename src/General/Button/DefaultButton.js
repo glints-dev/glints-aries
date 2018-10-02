@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { DefaultBtn } from '../../Style/ButtonStyle';
+import { DefaultBtn } from '../../Style/General/ButtonStyle';
 
 const DefaultButton = ({ children, ...defaultProps }: Props) => (
   <DefaultBtn {...defaultProps}>

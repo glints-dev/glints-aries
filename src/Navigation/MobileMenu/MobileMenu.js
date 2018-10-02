@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { MobileMenuContainer } from '../../Style/MobileMenuStyle';
+import { MobileMenuContainer } from '../../Style/Navigation/MobileMenuStyle';
 
 const MobileMenu = (props: Props) => {
   const {

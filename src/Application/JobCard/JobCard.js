@@ -2,7 +2,7 @@
 
 import React, { Component, Children } from 'react';
 
-import { JobcardContainer, CustomLink } from '../../Style/JobCardStyle';
+import { JobcardContainer, CustomLink } from '../../Style/Application/JobCardStyle';
 
 class JobCard extends Component <Props> {
   renderLinkChild = () => {

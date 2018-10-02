@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SwipeableWrapper } from '../../Style/SwipeableStyle';
+import { SwipeableWrapper } from '../../Style/Display/SwipeableStyle';
 
 const SwipeableItem = (props: Props) => {
   const {

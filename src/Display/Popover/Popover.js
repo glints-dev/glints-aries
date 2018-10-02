@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   ChildHolder, ButtonContainer, PopOverContent, CursorPointer,
-} from '../../Style/PopoverStyle';
+} from '../../Style/Display/PopoverStyle';
 
 class Popover extends Component <Props, State> {
   static defaultProps = {
