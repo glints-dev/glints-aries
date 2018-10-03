@@ -84,6 +84,44 @@ const HeadingStory = () => (
             Sets Heading into inline element.
           </td>
         </tr>
+        <tr>
+          <td>
+            boldText
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              {'true | false'}
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Heading text to bold.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            uppercaseText
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              {'true | false'}
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Heading text to uppercase.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

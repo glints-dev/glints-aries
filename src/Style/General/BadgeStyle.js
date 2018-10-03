@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
-export const BadgeContainer = styled.label`
+export const BadgeContainer = styled.span`
   display: inline-flex;
   background: ${PrimaryColor.glintsred};
   color: ${SecondaryColor.white};
