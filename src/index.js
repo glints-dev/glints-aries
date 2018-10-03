@@ -44,6 +44,6 @@ export { default as TextField } from './Input/TextField';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Utilities
-export { Device } from './Utils/StyleConfig';
+export { Device, ScreenSize } from './Utils/StyleConfig';
 export { PrimaryColor, SecondaryColor } from './Style/Colors';
 export { default as GlintsContainer } from './Style/GlintsContainerStyle';

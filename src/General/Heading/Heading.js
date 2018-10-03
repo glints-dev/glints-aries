@@ -8,12 +8,20 @@ const Heading = (props: Props) => {
     className,
     inline,
     children,
+    boldText,
+    uppercaseText,
     ...defaultProps
   } = props;
 
   return (
     <Fragment>
-      <HeadingContainer className={className} inline={inline} {...defaultProps}>
+      <HeadingContainer
+        className={className}
+        inline={inline}
+        boldText={boldText}
+        uppercaseText={uppercaseText}
+        {...defaultProps}
+      >
         <span>
           {children}
         </span>
