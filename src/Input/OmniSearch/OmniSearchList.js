@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { OmniSearchItemWrapper } from '../../Style/Input/OmniSearchStyle';
+import { OmniSearchListItem } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchList = (props: Props) => {
   const {
@@ -12,14 +12,14 @@ const OmniSearchList = (props: Props) => {
   } = props;
 
   return (
-    <OmniSearchItemWrapper className={className} {...defaultProps}>
+    <OmniSearchListItem className={className} {...defaultProps}>
       <label>
         {title}
       </label>
       <ul>
         {children}
       </ul>
-    </OmniSearchItemWrapper>
+    </OmniSearchListItem>
   );
 };
 

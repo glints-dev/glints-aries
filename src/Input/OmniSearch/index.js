@@ -3,10 +3,10 @@
 import OmniSearch from './OmniSearch';
 import OmniSearchBody from './OmniSearchBody';
 import OmniSearchList from './OmniSearchList';
-import OmniSearchItems from './OmniSearchItems';
+import OmniSearchItem from './OmniSearchItem';
 
 OmniSearch.Body = OmniSearchBody;
 OmniSearch.List = OmniSearchList;
-OmniSearch.Item = OmniSearchItems;
+OmniSearch.Item = OmniSearchItem;
 
 export default OmniSearch;

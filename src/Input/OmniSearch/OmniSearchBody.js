@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { OmniSearchItemContainer } from '../../Style/Input/OmniSearchStyle';
+import { OmniSearchResultContainer } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchBody = (props: Props) => {
   const {
@@ -11,9 +11,9 @@ const OmniSearchBody = (props: Props) => {
   } = props;
 
   return (
-    <OmniSearchItemContainer className={className} {...defaultProps}>
+    <OmniSearchResultContainer className={className} {...defaultProps}>
       {children}
-    </OmniSearchItemContainer>
+    </OmniSearchResultContainer>
   );
 };
 

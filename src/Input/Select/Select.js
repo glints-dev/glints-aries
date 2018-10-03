@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Icon from '../../General/Icon';
-import Item from './SelectItems';
+import SelectItem from './SelectItem';
 import {
-  Container,
+  SelectContainer,
   SelectWrapper,
-  Input,
-  Label,
-  ItemWrapper,
+  SelectInput,
+  SelectLabel,
+  SelectListWrapper,
 } from '../../Style/Input/SelectStyle';
 
 class Select extends Component <Props, State> {
@@ -155,9 +155,9 @@ class Select extends Component <Props, State> {
     } = this.state;
 
     return (
-      <Container className={className}>
+      <SelectContainer className={className}>
         <SelectWrapper>
-          <Input
+          <SelectInput
             type="text"
             role="combobox"
             aria-expanded={isFocus}
@@ -172,17 +172,17 @@ class Select extends Component <Props, State> {
             value={selectedValue}
             {...defaultProps}
           />
-          <Label floating={floating} status={status}>
+          <SelectLabel floating={floating} status={status}>
             {label}
-          </Label>
-          <div className="icon" aria-label="show options">
+          </SelectLabel>
+          <div className="select-icon" aria-label="show options">
             <Icon name="arrow-down" color="#777" size="14" />
           </div>
         </SelectWrapper>
         {isFocus && (
-          <ItemWrapper role="listbox">
+          <SelectListWrapper role="listbox">
             {filterValue.map((data, index) => (
-              <Item
+              <SelectItem
                 className={cursor === index ? 'active' : null}
                 key={data.props.value}
                 role="option"
@@ -192,20 +192,20 @@ class Select extends Component <Props, State> {
                 onMouseEnter={this.handleMouseEnter}
               >
                 {data.props.children}
-              </Item>
+              </SelectItem>
             ))}
             {notMatch && (
-              <Item
+              <SelectItem
                 disabled
                 role="option"
                 aria-disabled="true"
               >
                 {noOptionResult}
-              </Item>
+              </SelectItem>
             )}
-          </ItemWrapper>
+          </SelectListWrapper>
         )}
-      </Container>
+      </SelectContainer>
     );
   }
 }

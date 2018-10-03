@@ -4,26 +4,26 @@ import { Device } from '../../Utils/StyleConfig';
 
 import { SecondaryColor } from '../Colors';
 
-export const Container = styled.div`
+export const SearchFilterContainer = styled.div`
   position: relative;
 `;
 
-export const SearchBarWrapper = styled.div`
+export const SearchFilterBar = styled.div`
   display: flex;
   align-items: center;
   position: relative;
 
   input { 
-    margin: 0;
-    padding: 1.8rem 17rem 1.8rem 3rem;
+    padding: 25px 3.5em 25px 30px;
     background: ${SecondaryColor.white};
-    border: 5px solid ${SecondaryColor.lightgrey};
-    font-size: 22px;
+    border: 3px solid ${SecondaryColor.darkgrey};
+    font-size: 1.5em;
+    line-height: 1.5;
     color: ${SecondaryColor.lightblack};
     width: 100%;
 
     @media ${Device.mobileL} {
-      padding: 1rem 5.7rem 1rem 1rem;
+      padding: 1em 5em 1em 1em;
     }
 
     &:focus {
@@ -35,17 +35,19 @@ export const SearchBarWrapper = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    padding: 0 2rem;
+    padding: 0 1em;
+    font-size: 1.5em;
     height: 100%;
   }
 `;
 
-export const ResultContainer = styled.div`
+export const SearchFilterResultContainer = styled.div`
   position: absolute;
   width: 100%;
   display: grid;
+  font-size: 1.1em;
   grid-template-columns: auto auto auto;
-  padding: 2.14em 2.14em 2.86em 2.14em;
+  padding: 2.5rem 3rem 2.5rem 3rem;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   z-index: 9999;
@@ -56,7 +58,7 @@ export const ResultContainer = styled.div`
   }
 `;
 
-export const ItemWrapper = styled.div`
+export const SearchFilterListWrapper = styled.div`
   position: relative;
 
   label {
@@ -94,6 +96,6 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const SearchFilterItems = styled.li`
+export const SearchFilterItemWrapper = styled.li`
   position: relative;
 `;

@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SearchFilterItems } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterItemWrapper } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterItem = (props: Props) => {
   const {
@@ -12,9 +12,13 @@ const SearchFilterItem = (props: Props) => {
   } = props;
 
   return (
-    <SearchFilterItems className={className} onMouseDown={onClick} {...defaultProps}>
+    <SearchFilterItemWrapper
+      className={className}
+      onMouseDown={onClick}
+      {...defaultProps}
+    >
       {children}
-    </SearchFilterItems>
+    </SearchFilterItemWrapper>
   );
 };
 

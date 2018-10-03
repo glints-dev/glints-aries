@@ -2,9 +2,9 @@
 
 import React, { Fragment } from 'react';
 
-import { Item } from '../../Style/Input/SelectStyle';
+import { OmniSearchItemWrapper } from '../../Style/Input/OmniSearchStyle';
 
-const SelectItems = (props: Props) => {
+const OmniSearchItem = (props: Props) => {
   const {
     children,
     className,
@@ -14,9 +14,9 @@ const SelectItems = (props: Props) => {
 
   return (
     <Fragment>
-      <Item className={className} onMouseDown={onClick} {...defaultProps}>
+      <OmniSearchItemWrapper className={className} onMouseDown={onClick} {...defaultProps}>
         {children}
-      </Item>
+      </OmniSearchItemWrapper>
     </Fragment>
   );
 };
@@ -27,4 +27,4 @@ type Props = {
   className: string,
 };
 
-export default SelectItems;
+export default OmniSearchItem;

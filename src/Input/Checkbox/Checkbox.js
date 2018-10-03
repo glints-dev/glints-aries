@@ -37,7 +37,6 @@ class Checkbox extends Component <Props, State> {
     return (
       <CheckboxContainer
         className={className}
-        tabIndex={0}
         role="checkbox"
         aria-labelledby={id}
         aria-checked={checked}

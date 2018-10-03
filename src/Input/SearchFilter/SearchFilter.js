@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 
-import { Container, SearchBarWrapper } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterContainer, SearchFilterBar } from '../../Style/Input/SearchFilterStyle';
 
 class SearchFilter extends Component <Props, State> {
   state = {
@@ -23,11 +23,12 @@ class SearchFilter extends Component <Props, State> {
       value,
       ...defaultProps
     } = this.props;
+
     const { isOpen } = this.state;
 
     return (
-      <Container className={className}>
-        <SearchBarWrapper>
+      <SearchFilterContainer className={className}>
+        <SearchFilterBar>
           <input
             type="text"
             placeholder={label}
@@ -37,7 +38,7 @@ class SearchFilter extends Component <Props, State> {
             {...defaultProps}
           />
           {content}
-        </SearchBarWrapper>
+        </SearchFilterBar>
         {isOpen
           && (
             <Fragment>
@@ -45,7 +46,7 @@ class SearchFilter extends Component <Props, State> {
             </Fragment>
           )
         }
-      </Container>
+      </SearchFilterContainer>
     );
   }
 }

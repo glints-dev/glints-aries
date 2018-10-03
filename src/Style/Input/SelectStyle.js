@@ -1,25 +1,24 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
-export const Container = styled.div`
+export const SelectContainer = styled.div`
   position: relative;
 `;
 
 export const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
-  .icon {
+
+  .select-icon {
     position: absolute;
     right: 1em;
     display: flex;
-    height: 1em;
-    width: 1em;
     align-items: center;
     pointer-events: none;
   }
 `;
 
-export const Label = styled.label`
+export const SelectLabel = styled.label`
   position: absolute;
   left: 1em;
   background: ${SecondaryColor.white};
@@ -32,13 +31,13 @@ export const Label = styled.label`
   ${({ floating }) => {
     if (floating) {
       return `
-        transform: translate3d(-.5em, -2.2em, 0);
+        top: 0;
+        transform: translate3d(-.5em, -50%, 0);
         transition: all .2s;
-        font-size: 12px;
+        font-size: .8em;
       `;
     }
   }}
-
   ${({ status, floating }) => {
     if (status === 'error' && floating) {
       return `
@@ -48,14 +47,15 @@ export const Label = styled.label`
   }}
 `;
 
-export const Input = styled.input`
+export const SelectInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
-  padding: 1em 2em 1em 1em;
+  padding: 16px 2.5em 16px 16px;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
+  font-size: 1.2em;
+  line-height: 1.5;
 
   ${({ status, floating }) => {
     if (status === 'error') {
@@ -67,25 +67,20 @@ export const Input = styled.input`
     }
   }}
     
-
   &:disabled {
     cursor: not-allowed;
     background: ${SecondaryColor.whitesmoke};
-
-    + ${Label} {
+    + ${SelectLabel} {
       background: transparent;
       color: ${SecondaryColor.grey};
     }
-
     &:hover {
       border: 2px solid ${SecondaryColor.lightgrey};
     }
   }
-
   &:hover {
     border: 2px solid ${SecondaryColor.black};
     transition: all .5s;
-
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -93,10 +88,8 @@ export const Input = styled.input`
         `;
     }
   }}
-
-    + ${Label} {
+    + ${SelectLabel} {
       color: ${SecondaryColor.black};
-
       ${({ status }) => {
     if (status === 'error') {
       return `
@@ -106,10 +99,8 @@ export const Input = styled.input`
   }}
     }
   }
-
   &:focus {
     border: 2px solid ${SecondaryColor.black};
-
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -117,13 +108,12 @@ export const Input = styled.input`
         `;
     }
   }}
-
-    + ${Label} {
-      transform: translate3d(-.5em, -2.2em, 0);
+    + ${SelectLabel} {
+      top: 0;
+      transform: translate3d(-.5em, -50%, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
-      font-size: 12px;
-
+      font-size: .8em;
       ${({ status }) => {
     if (status === 'error') {
       return `
@@ -135,7 +125,7 @@ export const Input = styled.input`
   }
 `;
 
-export const ItemWrapper = styled.ul`
+export const SelectListWrapper = styled.ul`
   position: absolute;
   background: ${SecondaryColor.white};
   width: 100%;
@@ -146,7 +136,7 @@ export const ItemWrapper = styled.ul`
   overflow: auto;
 `;
 
-export const Item = styled.li`
+export const SelectItemWrapper = styled.li`
   display: flex;
   cursor: pointer;
   padding: .5em 1em;
@@ -154,16 +144,13 @@ export const Item = styled.li`
   &:first-child {
     margin-top: .5em;
   }
-
   &:last-child {
     margin-bottom: .5em;
   }
-
   &.active {
     color: ${SecondaryColor.blue};
     background: ${SecondaryColor.lightergrey};
   }
-
   ${({ disabled }) => {
     if (disabled) {
       return `

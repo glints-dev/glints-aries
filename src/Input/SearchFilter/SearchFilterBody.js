@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ResultContainer } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterResultContainer } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterBody = (props: Props) => {
   const {
@@ -11,9 +11,9 @@ const SearchFilterBody = (props: Props) => {
   } = props;
 
   return (
-    <ResultContainer className={className} {...defaultProps}>
+    <SearchFilterResultContainer className={className} {...defaultProps}>
       {children}
-    </ResultContainer>
+    </SearchFilterResultContainer>
   );
 };
 

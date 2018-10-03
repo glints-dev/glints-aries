@@ -18,9 +18,9 @@ export const OmniSearchBar = styled.div`
   }
 
   input { 
-    padding: 1em 8em 1em 1.5em;
+    padding: 25px 8em 25px 30px;
     background: ${SecondaryColor.white};
-    border: 5px solid ${SecondaryColor.lightgrey};
+    border: 3px solid ${SecondaryColor.darkgrey};
     font-size: 1.5em;
     line-height: 1.5;
     color: ${SecondaryColor.lightblack};
@@ -37,8 +37,8 @@ export const OmniSearchBar = styled.div`
 
   button {
     position: absolute;
-    padding: 1em 1.5em;
-    right: .5rem;
+    padding: 25px 30px;
+    right: .3rem;
     font-size: 1.5em;
     font-weight: normal;
 
@@ -54,12 +54,12 @@ export const OmniSearchBar = styled.div`
   }
 `;
 
-export const OmniSearchItemContainer = styled.div`
+export const OmniSearchResultContainer = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: auto auto auto;
-  padding: 2.5em;
-  line-height: 1.5;
+  padding: 2.5rem 3rem 2.5rem 3rem;
+  font-size: 1.1em;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   z-index: 9999;
@@ -70,7 +70,7 @@ export const OmniSearchItemContainer = styled.div`
   }
 `;
 
-export const OmniSearchItemWrapper = styled.div`
+export const OmniSearchListItem = styled.div`
   position: relative;
 
   label {
@@ -108,6 +108,6 @@ export const OmniSearchItemWrapper = styled.div`
   }
 `;
 
-export const OmniSearchItem = styled.li`
+export const OmniSearchItemWrapper = styled.li`
   position: relative;
 `;

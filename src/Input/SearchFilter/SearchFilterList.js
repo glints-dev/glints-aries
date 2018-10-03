@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ItemWrapper } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterListWrapper } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterList = (props: Props) => {
   const {
@@ -12,14 +12,14 @@ const SearchFilterList = (props: Props) => {
   } = props;
 
   return (
-    <ItemWrapper className={className} {...defaultProps}>
+    <SearchFilterListWrapper className={className} {...defaultProps}>
       <label>
         {title}
       </label>
       <ul>
         {children}
       </ul>
-    </ItemWrapper>
+    </SearchFilterListWrapper>
   );
 };
 
