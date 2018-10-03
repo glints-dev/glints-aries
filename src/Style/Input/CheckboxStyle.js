@@ -51,6 +51,8 @@ export const CheckboxContainer = styled.div`
       cursor: pointer;
       margin-right: .5em;
       border-radius: 4px;
+      height: 1em;
+      width: 1em;
     }
   }
 `;
