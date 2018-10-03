@@ -1,3 +1,5 @@
+#### 1.0.1 (2018-10-03)
+
 #### 1.0.0 (2018-10-01)
 1. Remove Label and Stats Component
 2. Added Screen Size into Device Size section
