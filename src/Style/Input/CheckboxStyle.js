@@ -36,6 +36,7 @@ export const CheckboxContainer = styled.div`
   label {
     position: relative;
     display: flex;
+    align-items: center;
     cursor: pointer;
 
     &:before{
