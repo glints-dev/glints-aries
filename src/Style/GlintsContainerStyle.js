@@ -32,7 +32,7 @@ const GlintsContainer = styled.div`
     padding: 0 20px;
   }
 
-  @media ${`(min-width: ${ScreenSize.mobileS})px`} and (max-width: 479px) { 
+  @media ${`(min-width: ${ScreenSize.mobileS}px)`} and (max-width: 479px) { 
     padding: 0 10px;
   }
 

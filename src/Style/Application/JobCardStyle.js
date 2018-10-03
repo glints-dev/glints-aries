@@ -14,7 +14,7 @@ export const JobcardContainer = styled.div`
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 100%;
   min-width: 300px;
-  max-height: 40em;
+  max-height: 32em;
   min-height: 32em;
 
   &:after {
@@ -118,6 +118,7 @@ export const JobcardDetailWrapper = styled.div`
     li {
       position: relative;
       display: flex;
+      margin-left: 1em;
 
       svg {
         margin: .5em;
@@ -131,6 +132,11 @@ export const JobcardDetailWrapper = styled.div`
     @media ${Device.mobileS} {
       grid-template-columns: auto;
     }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -206,4 +212,9 @@ export const CustomLink = styled(Link)`
   &:hover {
     color: ${SecondaryColor.black};
   }
+`;
+
+export const IconHolder = styled.div`
+  width: .5em;
+  height: .5em;
 `;
