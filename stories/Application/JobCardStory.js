@@ -27,7 +27,7 @@ const JobCardStory = () => (
               targetUrl="https://glints.com/"
             >
               <JobCard.Header
-                title="Item title"
+                title="https://brillianceadvisory.wixsite.com/mysite"
                 tag="Special"
                 subtitle="https://brillianceadvisory.wixsite.com/mysite"
                 imgUrl="https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png"

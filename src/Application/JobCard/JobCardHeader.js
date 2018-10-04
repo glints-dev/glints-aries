@@ -2,7 +2,13 @@
 
 import React from 'react';
 import {
-  JobcardHeaderWrapper, JobcardHeaderImage, JobcardHeaderContent, Image, SubtitleTitle, LabelTag,
+  JobcardHeaderWrapper,
+  JobcardHeaderImage,
+  JobcardHeaderContent,
+  Image,
+  SubtitleTitle,
+  Title,
+  LabelTag,
 } from '../../Style/Application/JobCardStyle';
 
 const JobCardHeader = (props: Props) => {
@@ -37,9 +43,9 @@ const JobCardHeader = (props: Props) => {
             {tag}
           </LabelTag>
         </If>
-        <h3 className={jobTitleClass}>
+        <Title className={jobTitleClass}>
           {`${title.slice(0, 50)}`}
-        </h3>
+        </Title>
         <SubtitleTitle
           onClick={subtitleOnClick}
           className={companyNameClass}
