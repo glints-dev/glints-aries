@@ -6,9 +6,9 @@ import { JobcardContainer, CustomLink } from '../../Style/Application/JobCardSty
 
 class JobCard extends Component <Props> {
   renderLinkChild = () => {
-    const { children, defaultProps, url } = this.props;
+    const { children, defaultProps, targetUrl } = this.props;
     const linkChild = Children.map(children, (child) => {
-      if (url && child.props.isLinkAble) {
+      if (targetUrl && child.props.isLinkAble) {
         return React.cloneElement(child, { ...defaultProps });
       }
       return null;
@@ -29,21 +29,21 @@ class JobCard extends Component <Props> {
 
   render() {
     const {
-      children, url, target, onClick, ...defaultProps
+      children,
+      targetUrl,
+      onClick,
+      ...defaultProps
     } = this.props;
     return (
       <JobcardContainer {...defaultProps}>
         <Choose>
-          <When condition={url}>
-            <CustomLink to={url} target={target}>
+          <When condition={targetUrl}>
+            <CustomLink to={targetUrl} target="_blank">
               { this.renderLinkChild() }
             </CustomLink>
             { this.renderNonLinkChild() }
           </When>
           <Otherwise>
-            <div onClick={onClick}>
-              { this.renderLinkChild() }
-            </div>
             { this.renderNonLinkChild() }
           </Otherwise>
         </Choose>
@@ -54,10 +54,11 @@ class JobCard extends Component <Props> {
 
 type Props = {
   children: React$Node,
+  targetUrl: String,
+  onClick: Function,
 }
 
 JobCard.defaultProps = {
-  target: '_blank',
   onClick: () => {},
 };
 

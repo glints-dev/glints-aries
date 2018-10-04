@@ -11,7 +11,6 @@ const JobCardHeader = (props: Props) => {
     tag,
     url,
     imgUrl,
-    isExternal,
     subtitle,
     subtitleOnClick,
     className,
@@ -59,7 +58,6 @@ type Props = {
   tag: string,
   subtitle: string,
   imgUrl: string,
-  isExternal: boolean,
   jobTitleClass: string,
   url: string,
 };
