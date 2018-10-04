@@ -173,8 +173,13 @@ export const JobcardDescriptionWrapper = styled.div`
   }
 `;
 
+export const Title = styled.h3`
+  word-break: break-word;
+`;
+
 export const SubtitleTitle = styled.p`
   color: ${SecondaryColor.blue};
+  word-break: break-word;
 `;
 
 export const JobcardFooterWrapper = styled.footer`
