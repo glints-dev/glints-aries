@@ -5,50 +5,32 @@ export const SwitchContainer = styled.div`
   position: relative;
   display: flex;
   background: ${SecondaryColor.lighterblack};
-  width: 300px;
-  height: 50px;
-  border-radius: 3rem;
+  border-radius: 3em;
 
   label {
     display: flex;
     justify-content: center;
-    align-items: center;
     color: ${SecondaryColor.white};
     font-weight: 100;
+    padding: 1em;
     width: 100%;
-    height: inherit;
   }
 
   &:before {
     content: '';
     background: ${PrimaryColor.glintsblue};
-    width: 150px;
-    height: 50px;
-    border-radius: 3rem;
+    width: 50%;
+    height: 100%;
+    border-radius: 3em;
     display: flex;
     position: absolute;
     left: 0;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-    transform: ${({ ID, items, defaultValue }) => ID && items[0] === defaultValue ? 'translateX(0)' : 'translateX(150px)'};
+    transform: ${({ ID, items, defaultValue }) => ID && items[0] === defaultValue ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform .2s ease-out;
   }
 `;
 
-export const SwitchItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: inherit;
-  cursor: pointer;
-`;
-
-export const LeftItemWrapper = styled.div`
-  position: relative;
-  display: flex;
-`;
-
-export const RightItemWrapper = styled.div`
-  position: relative;
-  display: flex;
+export const SwitchItemWrapper = styled.div`
+  flex: 1 auto;
 `;

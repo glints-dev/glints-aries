@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
-export const Container = styled.div`
+export const TextareaContainer = styled.div`
   position: relative;
   display: flex;
 `;
 
 export const TextareaLabel = styled.label`
   position: absolute;
-  left: 1em;
-  top: 1em;
+  left: 2rem;
+  top: 1.5rem;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
-  padding: 0 .5em;
   
   ${({ floating }) => {
     if (floating) {
       return `
-        transform: translate3d(-.5rem,-2rem,0);
+        padding: 0 .5rem;
+        transform: translate3d(-1rem,-2.4rem,0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -36,13 +36,14 @@ export const TextareaLabel = styled.label`
   }}
 `;
 
-export const TextareaComponent = styled.textarea`
+export const TextareaInput = styled.textarea`
   position: relative;
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
-  padding: 1em;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 1.8rem;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: border .5s;
   resize: vertical;
@@ -110,7 +111,8 @@ export const TextareaComponent = styled.textarea`
   }}
 
     + ${TextareaLabel} {
-      transform: translate3d(-.5rem,-2rem,0);
+      padding: 0 .5rem;
+      transform: translate3d(-1rem,-2.4rem,0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

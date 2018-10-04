@@ -20,21 +20,21 @@ export const SelectWrapper = styled.div`
 
 export const SelectLabel = styled.label`
   position: absolute;
-  left: 1em;
+  left: 2rem;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
-  padding: 0 .5em;
   
   ${({ floating }) => {
     if (floating) {
       return `
-        top: 0;
-        transform: translate3d(-.5em, -50%, 0);
+        padding: 0 .5rem;
+        top: 1em;
+        transform: translate3d(-1rem, -2rem, 0);
         transition: all .2s;
-        font-size: .8em;
+        font-size: 12px;
       `;
     }
   }}
@@ -51,10 +51,10 @@ export const SelectInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  padding: 16px 2.5em 16px 16px;
+  padding: 1.8rem 2.5em 1.8rem 1.8rem;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.5;
 
   ${({ status, floating }) => {
@@ -109,11 +109,12 @@ export const SelectInput = styled.input`
     }
   }}
     + ${SelectLabel} {
-      top: 0;
-      transform: translate3d(-.5em, -50%, 0);
+      padding: 0 .5rem;
+      top: 1em;
+      transform: translate3d(-1rem, -2rem, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
-      font-size: .8em;
+      font-size: 12px;
       ${({ status }) => {
     if (status === 'error') {
       return `

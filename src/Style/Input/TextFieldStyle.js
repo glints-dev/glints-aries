@@ -3,7 +3,7 @@ import { PrimaryColor, SecondaryColor } from '../Colors';
 
 export const TextFieldContainer = styled.div`
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
   .see-password {
@@ -16,18 +16,19 @@ export const TextFieldContainer = styled.div`
 
 export const TextFieldLabel = styled.label`
   position: absolute;
-  left: 1em;
+  left: 2rem;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
-  padding: 0 .5em;
   
   ${({ floating }) => {
     if (floating) {
       return `
-        transform: translate3d(-.5em, -2.2em, 0);
+        padding: 0 .5rem;
+        top: 1em;
+        transform: translate3d(-1rem, -2rem, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -48,8 +49,9 @@ export const TextFieldInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
-  padding: 1em 2em 1em 1em;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 1.8rem;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
 
@@ -115,7 +117,9 @@ export const TextFieldInput = styled.input`
   }}
 
     + ${TextFieldLabel} {
-      transform: translate3d(-.5em, -2.2em, 0);
+      padding: 0 .5rem;
+      top: 1em;
+      transform: translate3d(-1rem, -2rem, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

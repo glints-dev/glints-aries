@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import {
-  Container,
-  TextareaComponent,
+  TextareaContainer,
+  TextareaInput,
   TextareaLabel,
 } from '../../Style/Input/TextareaStyle';
 
@@ -89,8 +89,8 @@ class Textarea extends Component <Props, State> {
     } = this.state;
 
     return (
-      <Container className={className}>
-        <TextareaComponent
+      <TextareaContainer className={className}>
+        <TextareaInput
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange(onBlur)}
@@ -107,7 +107,7 @@ class Textarea extends Component <Props, State> {
         <TextareaLabel floating={floating} status={status}>
           {label}
         </TextareaLabel>
-      </Container>
+      </TextareaContainer>
     );
   }
 }
