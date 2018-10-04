@@ -55,6 +55,7 @@ const JobCardStory = () => (
     tag="Special"
     subtitle="Item subtitle"
     imgUrl="imageUrl | imageComponent"
+    subtitleOnClick={() => ...}
     isLinkAble={true}
   />
   <JobCard.Body isLinkAble={true}>
@@ -144,6 +145,13 @@ const JobCardStory = () => (
           <td><pre>true | false</pre></td>
           <td>no</td>
           <td>Should the component be included in link.</td>
+        </tr>
+        <tr>
+          <td>subtitleOnClick</td>
+          <td>function</td>
+          <td>any</td>
+          <td>no</td>
+          <td>Callback function for subtitle OnClick</td>
         </tr>
       </tbody>
     </table>
