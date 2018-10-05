@@ -6,50 +6,51 @@ import { SecondaryColor } from '../Colors';
 
 export const MobileMenuContainer = styled.div`
   position: relative;
-  background: #027EB7;
+  background: ${SecondaryColor.darkerblue};
   color: ${SecondaryColor.white};
-  padding: 1.8em 0;
+  padding: 2rem 0;
   height: 100vh;
   overflow-y: auto;
 `;
 
-export const TopIconWrapper = styled.div`
+export const MobileMenuTopWrapper = styled.div`
   position: absolute;
-  top: 25px;
-  right: 10px;
+  display: flex;
+  top: 2rem;
+  right: 1.5rem;
   cursor: pointer;
 `;
 
-export const DividerWrapper = styled.div`
-  margin: 2.2em .7em 1.4em; 
-`;
+export const MobileMenuHeaderWrapper = styled.header`
+  margin: 0 2rem;
 
-export const HeaderWrapper = styled.header`
-  margin: ${({ margin }) => margin ? '0 1.8em' : null};
-
-  label {
+  .header-profile {
+    margin-top: 1rem;
     font-weight: 700;
+
     span {
       font-weight: 100;
-      font-size: 18px;
+      font-size: 1.2em;
     }
     p {
       margin: 0;
+      font-size: 1.4em;
       cursor: pointer;
     }
   }
 `;
 
-export const MenuItemContainer = styled.div`
+export const MobileMenuBodyWrapper = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 2rem 0;
 `;
 
-export const MenuItemWraper = styled.div`
+export const MobileMenuItemWrapper = styled.div`
   text-transform: uppercase;
-  padding: 10px 1.2em;
-  font-size: 20px;
+  padding: 1rem 2rem;
+  font-size: 1.4em;
   letter-spacing: 1px;
   font-weight: 600;
   cursor: pointer;
@@ -66,18 +67,17 @@ export const MenuItemWraper = styled.div`
   li {
       cursor: pointer;
   }
+
   &:hover {
       background: #0171A4;
   }
-  &:first-child {
-    padding: 10px 1.2em;
-  }
 `;
 
-export const MenuFooter = styled.footer`
-  margin-bottom: 10em;
+export const MobileMenuFooterWrapper = styled.footer`
+  position: relative;
+  margin-bottom: 10rem;
 `;
 
 export const CustomLanguageSelect = styled(LanguageSelect)`
-  padding: 1em 2em;
+  padding: 2rem;
 `;

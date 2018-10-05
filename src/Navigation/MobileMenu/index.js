@@ -1,16 +1,16 @@
 // @flow
 
 import MobileMenu from './MobileMenu';
-import TopItems from './TopItems';
-import HeaderItems from './HeaderItems';
-import MenuItemsWrapper from './MenuItemsWrapper';
-import MenuItems from './MenuItems';
-import FooterItems from './FooterItems';
+import MobileMenuTop from './MobileMenuTop';
+import MobileMenuHeader from './MobileMenuHeader';
+import MobileMenuBody from './MobileMenuBody';
+import MobileMenuItem from './MobileMenuItem';
+import MobileMenuFooter from './MobileMenuFooter';
 
-MobileMenu.Top = TopItems;
-MobileMenu.Header = HeaderItems;
-MobileMenu.Body = MenuItemsWrapper;
-MobileMenu.Item = MenuItems;
-MobileMenu.Footer = FooterItems;
+MobileMenu.Top = MobileMenuTop;
+MobileMenu.Header = MobileMenuHeader;
+MobileMenu.Body = MobileMenuBody;
+MobileMenu.Item = MobileMenuItem;
+MobileMenu.Footer = MobileMenuFooter;
 
 export default MobileMenu;

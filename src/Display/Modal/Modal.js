@@ -1,25 +1,26 @@
 /* @flow */
 
 import React, { Component, Fragment } from 'react';
+
 import { escEvent } from '../../Utils/DomUtils';
-import { Container, ModalBackground, ModalArea } from '../../Style/Display/ModalStyle';
+
+import { ModalContainer, ModalBackground, ModalContentArea } from '../../Style/Display/ModalStyle';
 
 class Modal extends Component <Props> {
   componentDidMount() {
-    const { closeWithESC } = this.props;
-    document.addEventListener('keydown', escEvent(closeWithESC), false);
+    const { onCloseWithESC } = this.props;
+    document.addEventListener('keydown', escEvent(onCloseWithESC), false);
   }
 
   componentWillUnmount() {
-    const { closeWithESC } = this.props;
-    document.removeEventListener('keydown', escEvent(closeWithESC), false);
+    const { onCloseWithESC } = this.props;
+    document.removeEventListener('keydown', escEvent(onCloseWithESC), false);
   }
 
   render() {
     const {
-      visibility,
-      close,
-      closeWithESC,
+      isVisible,
+      onClose,
       type,
       children,
       className,
@@ -29,13 +30,13 @@ class Modal extends Component <Props> {
 
     return (
       <Fragment>
-        {visibility && (
-          <Container {...defaultProps} className={className}>
-            <ModalBackground onClick={close} className="modalBackground" />
-            <ModalArea className="modalArea" type={type} hideContentArea={hideContentArea}>
+        {isVisible && (
+          <ModalContainer className={className} {...defaultProps}>
+            <ModalBackground onClick={onClose} className="modal-background" />
+            <ModalContentArea className="modal-area" type={type} hideContentArea={hideContentArea}>
               {children}
-            </ModalArea>
-          </Container>
+            </ModalContentArea>
+          </ModalContainer>
         )}
       </Fragment>
     );
@@ -44,12 +45,12 @@ class Modal extends Component <Props> {
 
 type Props = {
   children: React$Node,
-  visibility: boolean,
+  isVisible: boolean,
   type: string,
-  close: Function,
+  onClose: Function,
+  onCloseWithESC: Function,
   className: string,
   hideContentArea: boolean,
-  closeWithESC: Function,
 }
 
 export default Modal;

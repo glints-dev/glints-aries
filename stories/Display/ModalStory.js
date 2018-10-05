@@ -13,7 +13,7 @@ class ModalStory extends Component {
     this.setState({ visible: !visible });
   }
 
-  closeWithESC = () => {
+  onCloseWithESC = () => {
     this.setState({ visible: false });
   }
 
@@ -51,9 +51,9 @@ class ModalStory extends Component {
                   Open Modal
                 </Button>
                 <Modal
-                  visibility={visible}
-                  close={this.handleModal}
-                  closeWithESC={this.closeWithESC}
+                  isVisible={visible}
+                  onClose={this.handleModal}
+                  onCloseWithESC={this.onCloseWithESC}
                   type="medium"
                 >
                   <h1>
@@ -72,7 +72,7 @@ handleModal = () => {
   this.setState({ visible: !visible });
 }
 
-closeWithESC = () => {
+onCloseWithESC = () => {
   this.setState({ visible: false });
 }
 
@@ -85,9 +85,9 @@ closeWithESC = () => {
 </Button>
 
 <Modal
-  visibility={visible}
-  close={this.handleModal}
-  closeWithESC={this.closeWithESC}
+  isVisible={visible}
+  onClose={this.handleModal}
+  onCloseWithESC={this.onCloseWithESC}
   type="medium"
 >
   This is modal
@@ -124,7 +124,7 @@ closeWithESC = () => {
           <tbody>
             <tr>
               <td>
-                visibility
+                isVisible
               </td>
               <td>
                 boolean
@@ -143,7 +143,7 @@ closeWithESC = () => {
             </tr>
             <tr>
               <td>
-                close
+                onClose
               </td>
               <td>
                 Function
@@ -160,7 +160,7 @@ closeWithESC = () => {
             </tr>
             <tr>
               <td>
-                closeWithESC
+                onCloseWithESC
               </td>
               <td>
                 Function

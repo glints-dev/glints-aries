@@ -1,6 +1,7 @@
 import React from 'react';
 import MobileMenu from '../../src/Navigation/MobileMenu';
 
+import Icon from '../../src/General/Icon';
 import ProfilePicture from '../../src/General/ProfilePicture';
 
 const ProfilePictureStory = () => (
@@ -31,25 +32,21 @@ const ProfilePictureStory = () => (
         <tr>
           <td style={{ padding: 20, minWidth: 400 }}>
             <MobileMenu>
-              <MobileMenu.Top
-                name="close"
-                size="21"
-                color="white"
-              />
-              <MobileMenu.Header
-                margin
-              >
+              <MobileMenu.Top>
+                <Icon name="close" color="white" />
+              </MobileMenu.Top>
+              <MobileMenu.Header>
                 <ProfilePicture editable>
                   <img src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" alt="profile" />
                 </ProfilePicture>
-                <label>
+                <div className="header-profile">
                   <span>
                     Hello,
                   </span>
                   <p>
                     Fredy Yanto
                   </p>
-                </label>
+                </div>
               </MobileMenu.Header>
               <MobileMenu.Body>
                 <MobileMenu.Item>
@@ -96,28 +93,26 @@ const ProfilePictureStory = () => (
           <td>
             <pre>
               {`<MobileMenu>
-  <MobileMenu.Top
-    name="close" 
-    size="21" 
-    color="white"
-  />
+  <MobileMenu.Top>
+    <Icon name="close" color="white" />
+  </MobileMenu.Top>
   <MobileMenu.Header
     margin={true}
   >
-    <ProfilePictureShadow editable assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-    <label>
-      <span>Hello,</span>
-      <p>Fredy Yanto</p>
-    </label>
+    <ProfilePicture editable assetUrl="..." alt="..." />
+    <div className="header-profile">
+      <span>
+        Hello,
+      </span>
+      <p>
+        Fredy Yanto
+      </p>
+    </div>
   </MobileMenu.Header>
   <MobileMenu.Body>
-    <MobileMenu.Item>Carrers</MobileMenu.Item>
-    <MobileMenu.Item>Jobs</MobileMenu.Item>
-    <MobileMenu.Item>Internships</MobileMenu.Item>
-    <MobileMenu.Item>Companies</MobileMenu.Item>
-    <MobileMenu.Item>Pathways</MobileMenu.Item>
-    <MobileMenu.Item>Blog</MobileMenu.Item>
-    <MobileMenu.Item>Employers</MobileMenu.Item>
+    <MobileMenu.Item>
+      ...
+    </MobileMenu.Item>
   </MobileMenu.Body>
   <MobileMenu.Footer
       center

@@ -7,7 +7,7 @@ export const PrimaryColor = {
 export const SecondaryColor = {
   white: '#FFFFFF',
   whitesmoke: '#F3F3F3',
-  darkerWhite: '#FFFAEA',
+  darkerwhite: '#FFFAEA',
   black: '#000000',
   lightblack: '#777777',
   lighterblack: '#AAAAAA',
@@ -18,6 +18,7 @@ export const SecondaryColor = {
   buttercup: '#F5A623',
   purplepizza: '#FF00E5',
   blue: '#0869C2',
+  darkerblue: '#027EB7',
   bluegem: '#9013FE',
   actionblue: '#017EB7',
   green: '#008464',

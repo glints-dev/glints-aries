@@ -17,8 +17,8 @@ const MobileMenu = (props: Props) => {
 };
 
 type Props = {
-    children: React$Node,
-    className: string,
+  children: React$Node,
+  className: string,
 }
 
 export default MobileMenu;

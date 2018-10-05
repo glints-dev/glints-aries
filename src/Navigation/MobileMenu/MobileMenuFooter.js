@@ -1,9 +1,9 @@
 /* @flow */
 
 import React from 'react';
-import { MenuFooter, CustomLanguageSelect } from '../../Style/Navigation/MobileMenuStyle';
+import { MobileMenuFooterWrapper, CustomLanguageSelect } from '../../Style/Navigation/MobileMenuStyle';
 
-const FooterItems = (props: Props) => {
+const MobileMenuFooter = (props: Props) => {
   const {
     className,
     defaultItem,
@@ -11,11 +11,13 @@ const FooterItems = (props: Props) => {
     center,
     hoverColor,
     onChange,
+    ...defaultProps
   } = props;
 
   return (
-    <MenuFooter
+    <MobileMenuFooterWrapper
       className={className}
+      {...defaultProps}
     >
       <CustomLanguageSelect
         center={center}
@@ -24,7 +26,7 @@ const FooterItems = (props: Props) => {
         languageItem={languageItem}
         onChange={onChange}
       />
-    </MenuFooter>
+    </MobileMenuFooterWrapper>
   );
 };
 
@@ -38,4 +40,4 @@ type Props = {
   onChange:Function
 }
 
-export default FooterItems;
+export default MobileMenuFooter;
