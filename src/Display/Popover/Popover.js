@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import {
-  ChildHolder, ButtonContainer, PopOverContent, CursorPointer,
+  ButtonContainer,
+  ChildHolder,
+  CursorPointer,
+  IconHolder,
+  PopOverContent,
+  FlexCenterBox,
 } from '../../Style/Display/PopoverStyle';
 
+import Icon from '../../General/Icon';
 class Popover extends Component <Props, State> {
   static defaultProps = {
     margin: '',
@@ -24,12 +30,14 @@ class Popover extends Component <Props, State> {
     this.setState({ isOpen: false });
   }
 
-  renderChildren = (children) => {
+  renderChildren = () => {
     const { isOpen } = this.state;
-    const { margin, content } = this.props;
+    const { content } = this.props;
     return (
-      <ChildHolder onClick={this.handleOnClick} margin={margin}>
-        <CursorPointer>{children}</CursorPointer>
+      <ChildHolder onClick={this.handleOnClick}>
+        <IconHolder>
+          <Icon name="arrow-down" color="black" />
+        </IconHolder>
         <If condition={isOpen}>
           <PopOverContent>
             {content}
@@ -42,11 +50,18 @@ class Popover extends Component <Props, State> {
   render() {
     const { children } = this.props;
     return (
-      <ButtonContainer
-        tabIndex="0"
-        onBlur={this.handleClickOutside}
-      >
-        {this.renderChildren(children)}
+      <ButtonContainer>
+        <ButtonContainer
+          tabIndex="0"
+          onBlur={this.handleClickOutside}
+        >
+          <CursorPointer onClick={this.handleOnClick}>
+            {children}
+          </CursorPointer>
+          <FlexCenterBox>
+            {this.renderChildren()}
+          </FlexCenterBox>
+        </ButtonContainer>
       </ButtonContainer>
     );
   }

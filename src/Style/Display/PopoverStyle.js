@@ -11,7 +11,7 @@ const opacityAnimation = keyframes`
 
 export const ChildHolder = styled.div`
   position: relative;
-  margin: ${({ margin }) => margin};
+  margin-left: 1em;
 `;
 
 export const CursorPointer = styled.div`
@@ -27,10 +27,18 @@ export const ButtonContainer = styled.div`
 
 export const PopOverContent = styled.div`
   position: absolute;
-  top: calc(100% + 5px);
   right: 50%;
   animation: ${opacityAnimation} .2s linear;
   z-index: 10;
   min-width: 250px;
   transform: translateX(calc(18px + 7.5px));
+`;
+
+export const IconHolder = styled.div`
+  font-size: 1.5em;
+`;
+
+export const FlexCenterBox = styled(CursorPointer)`
+  display: flex;
+  align-items: center;
 `;
