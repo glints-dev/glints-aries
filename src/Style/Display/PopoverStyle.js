@@ -27,7 +27,6 @@ export const ButtonContainer = styled.div`
 
 export const PopOverContent = styled.div`
   position: absolute;
-  top: calc(100%);
   right: 50%;
   animation: ${opacityAnimation} .2s linear;
   z-index: 10;
