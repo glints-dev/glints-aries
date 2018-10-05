@@ -4,7 +4,6 @@ import Popover from '../../src/Display/Popover';
 
 import ProfilePicture from '../../src/General/ProfilePicture';
 import Divider from '../../src/General/Divider';
-import { Icon } from '../../src/General/Icon';
 
 const PopoverStory = () => (
   <div className="doc-mainbar">
@@ -62,13 +61,17 @@ const PopoverStory = () => (
                 </PointingModal>
               )}
             >
-              <Icon name="arrow-down" size="20" />
+              <ProfilePicture editable>
+                <img src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80" alt="profile" />
+              </ProfilePicture>
             </Popover>
           </td>
           <td>
             <pre>
               {`<Popover content={( <Component /> )}>
-  <Icon name="arrow-down" size="50" />
+  <ProfilePicture editable>
+  <img src="..." alt="..." />
+</ProfilePicture>
 </Popover>`}
             </pre>
           </td>
@@ -89,57 +92,27 @@ const PopoverStory = () => (
     <table className="doc-table">
       <thead>
         <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Value</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>
-            content
-          </td>
-          <td>
-            element
-          </td>
-          <td>
-            Value
-          </td>
-          <td>
-            Yes
-          </td>
-          <td>
-            Content to display when button is clicked
-          </td>
+          <td>content</td>
+          <td>element</td>
+          <td>Value</td>
+          <td>Yes</td>
+          <td>Content to display when button is clicked</td>
         </tr>
         <tr>
-          <td>
-            margin
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            Margin css
-          </td>
-          <td>
-            No
-          </td>
-          <td>
-            Margin for the button position
-          </td>
+          <td>margin</td>
+          <td>string</td>
+          <td>Margin css</td>
+          <td>No</td>
+          <td>Margin for the button position</td>
         </tr>
       </tbody>
     </table>
