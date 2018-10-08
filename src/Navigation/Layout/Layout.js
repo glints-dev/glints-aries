@@ -4,8 +4,8 @@ import {
   LayoutContainer,
 } from '../../Style/Navigation/LayoutStyle';
 
-const Layout = ({ children }:Props) => (
-  <LayoutContainer>
+const Layout = ({ children, ...defaultProps }:Props) => (
+  <LayoutContainer {...defaultProps}>
     {children}
   </LayoutContainer>
 );
