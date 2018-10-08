@@ -12,6 +12,7 @@ export const LayoutHeader = styled.div`
     background-color: ${SecondaryColor.white};
     width: 100vw;
     z-index: 100;
+    border-bottom: 3px solid #E3E3E3;
 `;
 
 export const LayoutHeaderEmptySpace = styled.div`
