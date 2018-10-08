@@ -54,7 +54,7 @@ class SideBarStory extends Component {
                   <Button
                     theme="blue"
                     hoverColor="red"
-                    onClick={() => this.setState({ isOpen: !isOpen })}
+                    onClick={() => this.setState({ isOpen: true })}
                   >
                     OPEN
                   </Button>

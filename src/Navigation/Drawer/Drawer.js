@@ -10,7 +10,7 @@ class Drawer extends Component<State, Props> {
   constructor() {
     super();
     this.state = {
-      isDisplay: true,
+      isDisplay: false,
       disableClick: false,
     };
   }
@@ -18,7 +18,7 @@ class Drawer extends Component<State, Props> {
   componentDidUpdate() {
     const { isDisplay } = this.state;
     const { isOpen } = this.props;
-    if (isOpen && isDisplay) {
+    if (isOpen && !isDisplay) {
       this.handleStart();
     }
   }
@@ -38,11 +38,11 @@ class Drawer extends Component<State, Props> {
   }
 
   handleStart = () => {
-    this.setState({ isDisplay: false });
+    this.setState({ isDisplay: true });
   }
 
   handleAnimationEnd = () => {
-    this.setState({ isDisplay: true });
+    this.setState({ isDisplay: false });
   }
 
   render() {

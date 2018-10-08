@@ -42,14 +42,14 @@ const fadeOut = keyframes`
 
 export const DrawerContainer = styled.div`
     position: fixed;
-    display: ${({ isDisplay }) => isDisplay ? 'none' : 'block'};
+    display: ${({ isDisplay }) => isDisplay ? 'block' : 'none'};
     height: 100vh;
     width: 100vw;
     top: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.5);
     animation: ${({ open }) => open ? fadeIn : fadeOut} .3s ease-in-out;
-    z-index: ${({ isDisplay }) => isDisplay ? '-1' : '9999'};
+    z-index: ${({ isDisplay }) => isDisplay ? '9999' : '-1'};
 `;
 
 export const DrawerWrapper = styled.div`
