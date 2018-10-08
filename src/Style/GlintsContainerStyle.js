@@ -55,10 +55,6 @@ const GlintsContainer = styled.div`
     margin: 0;
     padding: 0;
   }
-  
-  li {
-    margin-bottom: 0;
-  }
 `;
 
 export default GlintsContainer;

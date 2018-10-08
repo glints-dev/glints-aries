@@ -1,18 +1,19 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalFooterContainer } from '../../Style/Display/PointingModalStyle';
+import { PointingModalFooterWrapper } from '../../Style/Display/PointingModalStyle';
 
 const PointingModalFooter = (props: Props) => {
   const {
     children,
     className,
+    ...defaultProps
   } = props;
 
   return (
-    <PointingModalFooterContainer className={className}>
+    <PointingModalFooterWrapper className={className} {...defaultProps}>
       {children}
-    </PointingModalFooterContainer>
+    </PointingModalFooterWrapper>
   );
 };
 

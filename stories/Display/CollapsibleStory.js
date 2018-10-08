@@ -84,7 +84,7 @@ const CollapsibleStory = () => (
         </tr>
         <tr>
           <td>
-            collapsing
+            isCollapsing
           </td>
           <td>
             boolean

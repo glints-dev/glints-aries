@@ -1,17 +1,21 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalBodyItemWrapper } from '../../Style/Display/PointingModalStyle';
+import { PointingModalItemWrapper } from '../../Style/Display/PointingModalStyle';
 
-const PointingModalItem = ({
-  children,
-  className,
-  ...defaultProps
-}: Props) => (
-  <PointingModalBodyItemWrapper className={className} {...defaultProps}>
-    {children}
-  </PointingModalBodyItemWrapper>
-);
+const PointingModalItem = (props: Props) => {
+  const {
+    children,
+    className,
+    ...defaultProps
+  } = props;
+
+  return (
+    <PointingModalItemWrapper className={className} {...defaultProps}>
+      {children}
+    </PointingModalItemWrapper>
+  );
+};
 
 type Props = {
   children: React$Node,
