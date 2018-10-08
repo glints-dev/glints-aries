@@ -36,7 +36,7 @@ const PointingModalStory = () => (
                 <ProfilePicture editable>
                   <img src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" alt="profile" />
                 </ProfilePicture>
-                <div>
+                <div className="aries-modal-profile">
                   <span>
                     Hello,
                   </span>
@@ -66,7 +66,7 @@ const PointingModalStory = () => (
 <PointingModal>
   <PointingModal.Header>
     <ProfilePicture editable assetUrl="{ url / path }" />
-    <div>
+    <div className="aries-modal-profile">
         <span>Hello,</span>
         <p>Fredy Yanto</p>
     </div>

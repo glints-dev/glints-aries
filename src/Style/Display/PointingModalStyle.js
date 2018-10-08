@@ -36,7 +36,7 @@ export const PointingModalHeaderWrapper = styled.div`
     margin-right: .5em;
   }
 
-  div {
+  .aries-modal-profile {
     font-weight: 700;
   }
 
@@ -47,6 +47,7 @@ export const PointingModalHeaderWrapper = styled.div`
 
   p {
     font-size: 1.2em;
+    margin: 0;
   }
 `;
 

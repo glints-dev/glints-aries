@@ -9,36 +9,39 @@ const opacityAnimation = keyframes`
   }
 `;
 
-export const ChildHolder = styled.div`
-  position: relative;
-  margin-left: 1em;
-`;
-
-export const CursorPointer = styled.div`
-  cursor: pointer;
-`;
-
-export const ButtonContainer = styled.div`
+export const PopoverContainer = styled.div`
   position: relative;
   outline: none;
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
+`;
+
+export const PopoverChildren = styled.div`
+  position: relative;
+`;
+
+export const PopoverContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+`;
+
+export const PopoverItemWrapper = styled.div`
+  position: relative;
+`;
+
+export const PopoverIcon = styled.div`
+  display: flex;
+  font-size: 1.5em;
 `;
 
 export const PopOverContent = styled.div`
   position: absolute;
   right: 50%;
+  top: 2.5em;
   animation: ${opacityAnimation} .2s linear;
   z-index: 10;
   min-width: 250px;
-  transform: translateX(calc(18px + 7.5px)) translateY(7.5px);
-`;
-
-export const IconHolder = styled.div`
-  font-size: 1.5em;
-`;
-
-export const FlexCenterBox = styled(CursorPointer)`
-  display: flex;
-  align-items: center;
+  transform: translateX(calc(1em + .7em)) translateY(.5em);
 `;

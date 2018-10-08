@@ -1,7 +1,7 @@
 import React from 'react';
-import PointingModal from '../../src/Display/PointingModal';
-import Popover from '../../src/Display/Popover';
 
+import Popover from '../../src/Display/Popover';
+import PointingModal from '../../src/Display/PointingModal';
 import ProfilePicture from '../../src/General/ProfilePicture';
 import Divider from '../../src/General/Divider';
 
@@ -37,14 +37,14 @@ const PopoverStory = () => (
                 <PointingModal>
                   <PointingModal.Header>
                     <ProfilePicture editable />
-                    <label>
+                    <div className="aries-modal-profile">
                       <span>
                         Hello,
                       </span>
                       <p>
                         Fredy Yanto
                       </p>
-                    </label>
+                    </div>
                   </PointingModal.Header>
                   <Divider size="large" thickness="thin" theme="grey" />
                   <PointingModal.Body>
@@ -80,23 +80,26 @@ const PopoverStory = () => (
     </table>
 
     <h1>
-      Notes
+      Props
     </h1>
-    <p>
-      You can change any component for triggering the Popover. In the case above, we use
-      {' '}
-      {'<Icon />'}
-      {' '}
-        to trigger Popover Component.
-    </p>
     <table className="doc-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Value</th>
-          <th>Required</th>
-          <th>Description</th>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -107,15 +110,19 @@ const PopoverStory = () => (
           <td>Yes</td>
           <td>Content to display when button is clicked</td>
         </tr>
-        <tr>
-          <td>margin</td>
-          <td>string</td>
-          <td>Margin css</td>
-          <td>No</td>
-          <td>Margin for the button position</td>
-        </tr>
       </tbody>
     </table>
+
+    <h1>
+      Notes
+    </h1>
+    <p>
+      You can change any component for triggering the Popover. In the case above, we use
+      {' '}
+      {'<Icon />'}
+      {' '}
+        to trigger Popover Component.
+    </p>
   </div>
 );
 

@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import {
-  ButtonContainer,
-  ChildHolder,
-  CursorPointer,
-  IconHolder,
-  PopOverContent,
-  FlexCenterBox,
-} from '../../Style/Display/PopoverStyle';
 
 import Icon from '../../General/Icon';
-class Popover extends Component <Props, State> {
-  static defaultProps = {
-    margin: '',
-  }
 
+import {
+  PopoverContainer,
+  PopoverContentWrapper,
+  PopoverChildren,
+  PopoverIcon,
+  PopOverContent,
+  PopoverItemWrapper,
+} from '../../Style/Display/PopoverStyle';
+
+class Popover extends Component <Props, State> {
   constructor() {
     super();
     this.state = {
@@ -23,6 +21,7 @@ class Popover extends Component <Props, State> {
 
   handleOnClick = () => {
     const { isOpen } = this.state;
+
     this.setState({ isOpen: !isOpen });
   }
 
@@ -31,42 +30,41 @@ class Popover extends Component <Props, State> {
   }
 
   renderChildren = () => {
-    const { isOpen } = this.state;
     const { content } = this.props;
+    const { isOpen } = this.state;
+
     return (
-      <ChildHolder onClick={this.handleOnClick}>
-        <IconHolder>
+      <PopoverItemWrapper>
+        <PopoverIcon>
           <Icon name="arrow-down" color="black" />
-        </IconHolder>
+        </PopoverIcon>
         <If condition={isOpen}>
           <PopOverContent>
             {content}
           </PopOverContent>
         </If>
-      </ChildHolder>
+      </PopoverItemWrapper>
     );
   }
 
   render() {
     const { children } = this.props;
+
     return (
-      <ButtonContainer>
-        <ButtonContainer
-          tabIndex="0"
-          onBlur={this.handleClickOutside}
-        >
-          <CursorPointer onClick={this.handleOnClick}>
-            {children}
-          </CursorPointer>
-          <FlexCenterBox>
-            {this.renderChildren()}
-          </FlexCenterBox>
-        </ButtonContainer>
-      </ButtonContainer>
+      <PopoverContainer
+        tabIndex="0"
+        onBlur={this.handleClickOutside}
+      >
+        <PopoverChildren onClick={this.handleOnClick}>
+          {children}
+        </PopoverChildren>
+        <PopoverContentWrapper onClick={this.handleOnClick}>
+          {this.renderChildren()}
+        </PopoverContentWrapper>
+      </PopoverContainer>
     );
   }
 }
-
 
 type Props = {
   children: React$Node,
