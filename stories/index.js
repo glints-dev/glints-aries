@@ -32,7 +32,7 @@ import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
 import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
-import SideBarStory from './Navigation/SideBarStory';
+import DrawerStory from './Navigation/DrawerStory';
 import LanguageSelectStory from './Input/LanguageSelectStory';
 import LoadingStory from './General/LoadingStory';
 import MobileMenuStory from './Navigation/MobileMenuStory';
@@ -112,7 +112,7 @@ storiesOf('Navigation', module)
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Mobile Menu', () => <MobileMenuStory />)
-  .add('Side Bar', () => <SideBarStory />);
+  .add('Drawer', () => <DrawerStory />);
 
 storiesOf('Display', module)
   .addDecorator(story => (

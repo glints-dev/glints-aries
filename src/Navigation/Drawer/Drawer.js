@@ -1,13 +1,10 @@
 
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
 
 import {
   DrawerContainer,
   DrawerWrapper,
 } from '../../Style/Navigation/DrawerStyle';
-
-import { ScreenSize } from '../../Utils/StyleConfig';
 
 class Drawer extends Component<State, Props> {
   constructor() {
@@ -61,30 +58,26 @@ class Drawer extends Component<State, Props> {
     } = this.props;
 
     return (
-      <div>
-        <MediaQuery maxWidth={ScreenSize.desktopS}>
-          <DrawerContainer
-            isDisplay={isDisplay}
-            open={isOpen}
-            onAnimationStart={this.handleAnimationStart}
-            onAnimationEnd={this.handleAnimationEnd}
-            onClick={() => {
-              if (!disableClick) {
-                handleClose();
-              }
-            }}
-          >
-            <DrawerWrapper
-              open={isOpen}
-              onFocus={() => this.handleDisableClick('focus')}
-              onBlur={() => this.handleDisableClick('blur')}
-              tabIndex="0"
-            >
-              {children}
-            </DrawerWrapper>
-          </DrawerContainer>
-        </MediaQuery>
-      </div>
+      <DrawerContainer
+        isDisplay={isDisplay}
+        open={isOpen}
+        onAnimationStart={this.handleAnimationStart}
+        onAnimationEnd={this.handleAnimationEnd}
+        onClick={() => {
+          if (!disableClick) {
+            handleClose();
+          }
+        }}
+      >
+        <DrawerWrapper
+          open={isOpen}
+          onFocus={() => this.handleDisableClick('focus')}
+          onBlur={() => this.handleDisableClick('blur')}
+          tabIndex="0"
+        >
+          {children}
+        </DrawerWrapper>
+      </DrawerContainer>
     );
   }
 }
