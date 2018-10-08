@@ -31,7 +31,7 @@ export const PopOverContent = styled.div`
   animation: ${opacityAnimation} .2s linear;
   z-index: 10;
   min-width: 250px;
-  transform: translateX(calc(18px + 7.5px));
+  transform: translateX(calc(18px + 7.5px)) translateY(7.5px);
 `;
 
 export const IconHolder = styled.div`
