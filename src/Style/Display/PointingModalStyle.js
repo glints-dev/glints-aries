@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
-const padding = '1em 1.5em';
-
 export const PointingModalContainer = styled.div`
   position: relative;
   background: ${SecondaryColor.white};
@@ -11,19 +9,19 @@ export const PointingModalContainer = styled.div`
 
 export const PointingModalHeaderArrow = styled.div`
   position: absolute;
-  right: 18px;
-  top: -8px;
-  width: 15px;
-  height: 15px;
+  right: 1em;
+  top: -.7em;
+  width: 1.5em;
+  height: 1.5em;
   transform: rotate(45deg);
   background-color: white;
   box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
 `;
 
-export const PointingModalHeaderContainer = styled.header`
+export const PointingModalHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: ${padding};
+  padding: 2rem;
 
   > *:first-child {
     margin-left: 0;
@@ -38,35 +36,34 @@ export const PointingModalHeaderContainer = styled.header`
     margin-right: .5em;
   }
 
-  label {
+  div {
     font-weight: 700;
   }
 
   span {
-    font-size: 12px;
+    font-size: 1em;
     font-weight: 500;
   }
 
   p {
-    font-size: 16px;
+    font-size: 1.2em;
   }
 `;
 
-export const PointingModalBodyContainer = styled.div`
+export const PointingModalBodyWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: ${padding};
+
+  ul {
+    padding: 2rem 0;
+  }
 `;
 
-export const PointingModalBodyItemWrapper = styled.p`
+export const PointingModalItemWrapper = styled.li`
   font-weight: 600;
   cursor: pointer;
-  margin: .3em 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
+  padding: .5em 2rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -75,10 +72,14 @@ export const PointingModalBodyItemWrapper = styled.p`
   * {
     cursor: pointer;
   }
+
+  &:hover {
+    background: ${SecondaryColor.whitesmoke};
+  }
 `;
 
-export const PointingModalFooterContainer = styled.footer`
+export const PointingModalFooterWrapper = styled.footer`
   display: flex;
   position: relative;
-  padding: ${padding};
+  padding: 2rem;
 `;

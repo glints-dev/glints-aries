@@ -14,11 +14,11 @@ class Collapsible extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { collapsing } = this.props;
+    const { isCollapsing } = this.props;
 
-    if (collapsing) {
+    if (isCollapsing) {
       this.setState({
-        isOpen: false,
+        isOpen: true,
       });
     }
   }
@@ -34,7 +34,11 @@ class Collapsible extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <Container className="collapsible" {...defaultProps} onClick={this.handleOpen}>
+      <Container
+        className="collapsible"
+        onClick={this.handleOpen}
+        {...defaultProps}
+      >
         <Header className="head">
           {label}
           <Choose>
@@ -60,6 +64,7 @@ type Props = {
   children: React$Node,
   className: string,
   label: string,
+  isCollapsing: boolean,
 };
 
 type State = {

@@ -36,16 +36,16 @@ const PointingModalStory = () => (
                 <ProfilePicture editable>
                   <img src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" alt="profile" />
                 </ProfilePicture>
-                <label>
+                <div>
                   <span>
                     Hello,
                   </span>
                   <p>
                     Fredy Yanto
                   </p>
-                </label>
+                </div>
               </PointingModal.Header>
-              <Divider size="large" thickness="thin" theme="grey" />
+              <Divider theme="grey" />
               <PointingModal.Body>
                 <PointingModal.Item>
                   View Profile
@@ -61,19 +61,21 @@ const PointingModalStory = () => (
           </td>
           <td>
             <pre>
-              {`<PointingModal>
+              {` import { PointingModal, ProfilePicture } from 'glints-aries';
+
+<PointingModal>
   <PointingModal.Header>
     <ProfilePicture editable assetUrl="{ url / path }" />
-    <label>
+    <div>
         <span>Hello,</span>
         <p>Fredy Yanto</p>
-    </label>
+    </div>
   </PointingModal.Header>
-  <Divider size="large" thickness="thin" theme="grey" />
+  <Divider theme="grey" />
   <PointingModal.Body>
-    <PointingModal.Item onClick={...}>View Profile</PointingModal.Item>
-    <PointingModal.Item>Edit Profile</PointingModal.Item>
-    <PointingModal.Item>Sign Out</PointingModal.Item>
+    <PointingModal.Item onClick={...}>
+      View Profile
+    </PointingModal.Item>
   </PointingModal.Body>
   <PointingModal.Footer>
     Footer section here ...
@@ -126,40 +128,6 @@ const PointingModalStory = () => (
         </tr>
       </tbody>
     </table>
-
-    <h1>
-      Notes
-    </h1>
-    <p>
-      - You just need to
-      {' '}
-      <code>
-        import
-      </code>
-      {' '}
-      the rest of the components from
-      {' '}
-      <code>
-        glints-aries
-      </code>
-      {' '}
-      and follow the props guideline on each components or just use your own styling.
-    </p>
-    <p>
-      - Header and Footer section are using
-      {' '}
-      <b>
-        row
-      </b>
-      {' '}
-      and Body is using
-      {' '}
-      <b>
-        column
-      </b>
-      {' '}
-      for the flex-direction.
-    </p>
   </div>
 );
 

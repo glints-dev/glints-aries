@@ -3,15 +3,15 @@
 import React from 'react';
 import { PointingModalContainer, PointingModalHeaderArrow } from '../../Style/Display/PointingModalStyle';
 
-const Heading = (props: Props) => {
+const PointingModal = (props: Props) => {
   const {
     children,
     className,
-    ...pointingProps
+    ...defaultProps
   } = props;
 
   return (
-    <PointingModalContainer className={className} {...pointingProps}>
+    <PointingModalContainer className={className} {...defaultProps}>
       <PointingModalHeaderArrow />
       {children}
     </PointingModalContainer>
@@ -23,4 +23,4 @@ type Props = {
   className: string,
 };
 
-export default Heading;
+export default PointingModal;

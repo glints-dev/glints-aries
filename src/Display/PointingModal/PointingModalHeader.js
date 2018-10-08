@@ -1,18 +1,19 @@
 /* @flow */
 
 import React from 'react';
-import { PointingModalHeaderContainer } from '../../Style/Display/PointingModalStyle';
+import { PointingModalHeaderWrapper } from '../../Style/Display/PointingModalStyle';
 
 const PointingModalHeader = (props: Props) => {
   const {
     children,
     className,
+    ...defaultProps
   } = props;
 
   return (
-    <PointingModalHeaderContainer className={className}>
+    <PointingModalHeaderWrapper className={className} {...defaultProps}>
       {children}
-    </PointingModalHeaderContainer>
+    </PointingModalHeaderWrapper>
   );
 };
 

@@ -5,7 +5,6 @@ export const DividerContainer = styled.div`
     display: flex;
     width: 100%;
     height: .15em;
-    margin: 15px 0;
 
     ${({ theme }) => {
     switch (theme) {
