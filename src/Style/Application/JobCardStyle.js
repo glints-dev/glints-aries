@@ -14,8 +14,7 @@ export const JobcardContainer = styled.div`
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 100%;
   min-width: 300px;
-  max-height: 40em;
-  min-height: 40em;
+  min-height: 100%;
 
   &:after {
     content: '';
