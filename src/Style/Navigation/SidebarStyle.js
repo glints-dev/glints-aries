@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { SecondaryColor } from '../Colors';
 
 const sideToLeft = keyframes`
     from {
@@ -50,15 +51,14 @@ export const LayoutContainer = styled.div`
 
 export const LayoutHeader = styled.div`
     position: fixed;
-    height: ${({ headerHeight }) => headerHeight}px;
-    background-color: ${({ backgroundColour }) => backgroundColour || null};
+    height: 90px;
+    background-color: ${SecondaryColor.white};
     width: 100vw;
     z-index: 100;
-    box-shadow: ${({ showDivider }) => showDivider ? '0 1px 0 0 #d4d4d4' : null};
 `;
 
 export const LayoutHeaderEmptySpace = styled.div`
-    height: ${({ headerHeight }) => headerHeight}px;
+    height: 90px;
     width: 100vw;
 `;
 
@@ -66,23 +66,27 @@ export const LayoutBody = styled.div`
     width: 100vw;
 `;
 
+export const LayoutFooter = styled.div`
+    width: 100vw;
+`;
+
 
 export const SideBarContainer = styled.div`
     position: fixed;
-    display: ${({ noDisplay }) => noDisplay ? 'none' : 'block'};
+    display: ${({ isDisplay }) => isDisplay ? 'none' : 'block'};
     height: 100vh;
     width: 100vw;
     top: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.5);
     animation: ${({ open }) => open ? fadeIn : fadeOut} .3s ease-in-out;
-    z-index: ${({ noDisplay }) => noDisplay ? '-1' : '9999'};
+    z-index: ${({ isDisplay }) => isDisplay ? '-1' : '9999'};
 `;
 
 export const SideBarWrapper = styled.div`
     position: absolute;
     height: 100vh;
-    width: ${({ sidebarWidth }) => sidebarWidth || '80vw'};
+    width: 80vw;
     max-width: 300px;
     top: 0px;
     right: 0px;
