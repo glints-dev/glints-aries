@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   LayoutContainer,
-} from '../../Style/Navigation/SidebarStyle';
+} from '../../Style/Navigation/LayoutStyle';
 
 const Layout = ({ children }:Props) => (
   <LayoutContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   LayoutFooter,
-} from '../../Style/Navigation/SidebarStyle';
+} from '../../Style/Navigation/LayoutStyle';
 
 const LayoutFooterContainer = ({ children, ...defaultProps } :Props) => (
   <LayoutFooter {...defaultProps}>

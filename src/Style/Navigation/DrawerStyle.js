@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { SecondaryColor } from '../Colors';
 
 const sideToLeft = keyframes`
     from {
@@ -41,37 +40,7 @@ const fadeOut = keyframes`
     }
 `;
 
-export const LayoutContainer = styled.div`
-    display: grid;
-    grid-template-rows: ${({ tempRows }) => tempRows};
-    grid-template-columns: ${({ tempCols }) => tempCols};
-    width: 100vw;
-    height: 100vh;
-`;
-
-export const LayoutHeader = styled.div`
-    position: fixed;
-    height: 90px;
-    background-color: ${SecondaryColor.white};
-    width: 100vw;
-    z-index: 100;
-`;
-
-export const LayoutHeaderEmptySpace = styled.div`
-    height: 90px;
-    width: 100vw;
-`;
-
-export const LayoutBody = styled.div`
-    width: 100vw;
-`;
-
-export const LayoutFooter = styled.div`
-    width: 100vw;
-`;
-
-
-export const SideBarContainer = styled.div`
+export const DrawerContainer = styled.div`
     position: fixed;
     display: ${({ isDisplay }) => isDisplay ? 'none' : 'block'};
     height: 100vh;
@@ -83,7 +52,7 @@ export const SideBarContainer = styled.div`
     z-index: ${({ isDisplay }) => isDisplay ? '-1' : '9999'};
 `;
 
-export const SideBarWrapper = styled.div`
+export const DrawerWrapper = styled.div`
     position: absolute;
     height: 100vh;
     width: 80vw;

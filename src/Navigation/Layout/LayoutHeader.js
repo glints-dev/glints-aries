@@ -2,7 +2,7 @@ import React from 'react';
 import {
   LayoutHeader,
   LayoutHeaderEmptySpace,
-} from '../../Style/Navigation/SidebarStyle';
+} from '../../Style/Navigation/LayoutStyle';
 
 const LayoutHeaderContainer = ({ children, ...defaultProps }:Props) => (
   <React.Fragment>

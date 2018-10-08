@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 
 import {
-  SideBarContainer,
-  SideBarWrapper,
-} from '../../Style/Navigation/SidebarStyle';
+  DrawerContainer,
+  DrawerWrapper,
+} from '../../Style/Navigation/DrawerStyle';
 
 import { ScreenSize } from '../../Utils/StyleConfig';
 
@@ -63,7 +63,7 @@ class Drawer extends Component<State, Props> {
     return (
       <div>
         <MediaQuery maxWidth={ScreenSize.desktopS}>
-          <SideBarContainer
+          <DrawerContainer
             isDisplay={isDisplay}
             open={isOpen}
             onAnimationStart={this.handleAnimationStart}
@@ -74,15 +74,15 @@ class Drawer extends Component<State, Props> {
               }
             }}
           >
-            <SideBarWrapper
+            <DrawerWrapper
               open={isOpen}
               onFocus={() => this.handleDisableClick('focus')}
               onBlur={() => this.handleDisableClick('blur')}
               tabIndex="0"
             >
               {children}
-            </SideBarWrapper>
-          </SideBarContainer>
+            </DrawerWrapper>
+          </DrawerContainer>
         </MediaQuery>
       </div>
     );

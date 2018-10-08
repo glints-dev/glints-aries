@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   LayoutBody,
-} from '../../Style/Navigation/SidebarStyle';
+} from '../../Style/Navigation/LayoutStyle';
 
 const LayoutBodyContainer = ({ children, ...defaultProps }:Props) => (
   <LayoutBody {...defaultProps}>
