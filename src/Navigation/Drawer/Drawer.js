@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 
 import {
@@ -13,14 +12,6 @@ class Drawer extends Component<State, Props> {
       isDisplay: false,
       disableClick: false,
     };
-  }
-
-  componentDidUpdate() {
-    const { isDisplay } = this.state;
-    const { isOpen } = this.props;
-    if (isOpen && !isDisplay) {
-      this.handleStart();
-    }
   }
 
   handleDisableClick = (eventName) => {
@@ -45,6 +36,15 @@ class Drawer extends Component<State, Props> {
     this.setState({ isDisplay: false });
   }
 
+  componentDidUpdate() {
+    const { isDisplay } = this.state;
+    const { isOpen } = this.props;
+
+    if (isOpen && !isDisplay) {
+      this.handleStart();
+    }
+  }
+
   render() {
     const {
       isDisplay,
@@ -54,7 +54,7 @@ class Drawer extends Component<State, Props> {
     const {
       children,
       isOpen,
-      handleClose,
+      onClose,
     } = this.props;
 
     return (
@@ -65,7 +65,7 @@ class Drawer extends Component<State, Props> {
         onAnimationEnd={this.handleAnimationEnd}
         onClick={() => {
           if (!disableClick) {
-            handleClose();
+            onClose();
           }
         }}
       >
@@ -87,9 +87,9 @@ type State = {
 }
 
 type Props = {
-    children: React$Node,
-    isOpen: boolean,
-    handleClose: Function,
+  children: React$Node,
+  isOpen: boolean,
+  onClose: Function,
 }
 
 export default Drawer;

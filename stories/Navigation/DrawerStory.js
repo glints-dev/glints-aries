@@ -61,7 +61,7 @@ class SideBarStory extends Component {
                 </div>
                 <Drawer
                   isOpen={isOpen}
-                  handleClose={() => this.setState({ isOpen: false })}
+                  onClose={() => this.setState({ isOpen: false })}
                 >
                   {this.renderSideBar()}
                 </Drawer>
@@ -84,7 +84,7 @@ class SideBarStory extends Component {
                 <pre>
                   {`<Drawer
     isOpen={isOpen}
-    handleClose={() => this.setState({ isOpen: false })}
+    onClose={() => this.setState({ isOpen: false })}
   >
     {this.renderSideBar()}
 </Drawer>`}
@@ -115,7 +115,7 @@ class SideBarStory extends Component {
               <td>Open/Close sidebar</td>
             </tr>
             <tr>
-              <td>handleClose</td>
+              <td>onClose</td>
               <td>function</td>
               <td>-</td>
               <td>no</td>
