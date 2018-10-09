@@ -40,49 +40,22 @@ const fadeOut = keyframes`
     }
 `;
 
-export const LayoutContainer = styled.div`
-    display: grid;
-    grid-template-rows: ${({ tempRows }) => tempRows};
-    grid-template-columns: ${({ tempCols }) => tempCols};
-    width: 100vw;
-    height: 100vh;
-`;
-
-export const LayoutHeader = styled.div`
+export const DrawerContainer = styled.div`
     position: fixed;
-    height: ${({ headerHeight }) => headerHeight}px;
-    background-color: ${({ backgroundColour }) => backgroundColour || null};
-    width: 100vw;
-    z-index: 100;
-    box-shadow: ${({ showDivider }) => showDivider ? '0 1px 0 0 #d4d4d4' : null};
-`;
-
-export const LayoutHeaderEmptySpace = styled.div`
-    height: ${({ headerHeight }) => headerHeight}px;
-    width: 100vw;
-`;
-
-export const LayoutBody = styled.div`
-    width: 100vw;
-`;
-
-
-export const SideBarContainer = styled.div`
-    position: fixed;
-    display: ${({ noDisplay }) => noDisplay ? 'none' : 'block'};
+    display: ${({ isDisplay }) => isDisplay ? 'block' : 'none'};
     height: 100vh;
     width: 100vw;
     top: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.5);
     animation: ${({ open }) => open ? fadeIn : fadeOut} .3s ease-in-out;
-    z-index: ${({ noDisplay }) => noDisplay ? '-1' : '9999'};
+    z-index: ${({ isDisplay }) => isDisplay ? '9999' : '-1'};
 `;
 
-export const SideBarWrapper = styled.div`
+export const DrawerWrapper = styled.div`
     position: absolute;
     height: 100vh;
-    width: ${({ sidebarWidth }) => sidebarWidth || '80vw'};
+    width: 80vw;
     max-width: 300px;
     top: 0px;
     right: 0px;
