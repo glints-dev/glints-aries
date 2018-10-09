@@ -25,6 +25,7 @@ import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
 import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
+import DrawerStory from './Navigation/DrawerStory';
 import DropdownStory from './Navigation/DropdownStory';
 import GalleryStory from './Application/GalleryStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
@@ -33,8 +34,8 @@ import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
 import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
-import SideBarStory from './Navigation/SideBarStory';
 import LanguageSelectStory from './Input/LanguageSelectStory';
+import LayoutStory from './Navigation/LayoutStory';
 import LoadingStory from './General/LoadingStory';
 import MobileMenuStory from './Navigation/MobileMenuStory';
 import ModalStory from './Display/ModalStory';
@@ -112,8 +113,9 @@ storiesOf('Navigation', module)
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('Drawer', () => <DrawerStory />)
   .add('Mobile Menu', () => <MobileMenuStory />)
-  .add('Side Bar', () => <SideBarStory />);
+  .add('Layout', () => <LayoutStory />);
 
 storiesOf('Display', module)
   .addDecorator(story => (
