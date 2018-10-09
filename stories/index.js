@@ -19,6 +19,7 @@ import BlockquoteStory from './Display/BlockquoteStory';
 import BrandStory from './General/BrandStory';
 import BreadcrumbStory from './Navigation/BreadcrumbStory';
 import ButtonStory from './General/ButtonStory';
+import CarouselStory from './Display/CarouselStory';
 import CheckboxStory from './Input/CheckboxStory';
 import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
@@ -124,6 +125,7 @@ storiesOf('Display', module)
   ))
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
+  .add('Carousel', () => <CarouselStory />)
   .add('Collapsible', () => <CollapsibleStory />)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)

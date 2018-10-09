@@ -20,7 +20,7 @@ export const SliderContentWrapper = styled.div`
   align-items: center;
 `;
 
-export const SliderItemStyle = styled.div`
+export const SliderItemWrapper = styled.div`
   display: inline-flex;
   flex: 0 0 auto;
   justify-content: center;
