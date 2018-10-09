@@ -12,7 +12,7 @@ const RightArrow = (props: Props) => {
 
   return (
     <RightArrowContainer index={index} limit={limit} onClick={nextSlide}>
-      <Icon name="arrow-next" size="35" color={arrowColor} />
+      <Icon name="arrow-next" color={arrowColor} />
     </RightArrowContainer>
   );
 };

@@ -118,7 +118,7 @@ const SliderStory = () => (
         <tr>
           <td>
             <pre>
-              {`<Slider showItem={2}>
+              {`<Slider>
   <Slider.Item>
     <Component />
     <Component />
@@ -159,7 +159,7 @@ const SliderStory = () => (
       <tbody>
         <tr>
           <td>
-            showItem
+            initialItem
           </td>
           <td>
             number
@@ -171,7 +171,7 @@ const SliderStory = () => (
             no
           </td>
           <td>
-            Sets default item to show.
+            Sets initial item to show.
           </td>
         </tr>
       </tbody>

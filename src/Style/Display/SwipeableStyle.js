@@ -11,7 +11,7 @@ export const SwipeableContainer = styled.div`
   }
 `;
 
-export const SwipeableWrapper = styled.div`
+export const SwipeableItemWrapper = styled.div`
   display: inline-flex;
   margin: 0 1em;
   padding: 1em 0;

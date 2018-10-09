@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { SwipeableWrapper } from '../../Style/Display/SwipeableStyle';
+import { SwipeableItemWrapper } from '../../Style/Display/SwipeableStyle';
 
 const SwipeableItem = (props: Props) => {
   const {
@@ -11,9 +11,9 @@ const SwipeableItem = (props: Props) => {
   } = props;
 
   return (
-    <SwipeableWrapper className={className} {...defaultProps}>
+    <SwipeableItemWrapper className={className} {...defaultProps}>
       { children }
-    </SwipeableWrapper>
+    </SwipeableItemWrapper>
   );
 };
 

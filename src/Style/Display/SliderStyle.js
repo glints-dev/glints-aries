@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const arrow = css`
   position: absolute;
+  display: flex;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -13,7 +14,7 @@ export const SliderContainer = styled.div`
   overflow: hidden;
 `;
 
-export const SliderWrapperStyle = styled.div`
+export const SliderContentWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;

@@ -1,10 +1,16 @@
 /* @flow */
 
 import React, { Component } from 'react';
+
 import Modal from '../../Display/Modal';
 import Slider from '../../Display/Slider';
+
 import {
-  Container, Wrapper, ItemWrapper, ImageWrapper, ThumbnailWrapper,
+  GalleryContainer,
+  GalleryItemWrapper,
+  GalleryItem,
+  GalleryImageWrapper,
+  GalleryThumbnailWrapper,
 } from '../../Style/Application/GalleryStyle';
 
 class Gallery extends Component <Props, State> {
@@ -52,30 +58,30 @@ class Gallery extends Component <Props, State> {
     const { visible, currentIndex, imageLeft } = this.state;
 
     return (
-      <Container>
-        <Wrapper>
+      <GalleryContainer>
+        <GalleryItemWrapper>
           { children.slice(0, 8).map((data, index) => (
-            <ItemWrapper key={index} imageLeft={imageLeft} onClick={() => this.handleClick(index)}>
+            <GalleryItem key={index} imageLeft={imageLeft} onClick={() => this.handleClick(index)}>
               <img src={data.props.src} alt={index} />
-            </ItemWrapper>
+            </GalleryItem>
           ))}
-        </Wrapper>
+        </GalleryItemWrapper>
         <Modal
-          visibility={visible}
-          close={this.closeModal}
-          closeWithESC={this.closeWithESC}
+          isVisible={visible}
+          onClose={this.closeModal}
+          onCloseWithESC={this.closeWithESC}
           hideContentArea
         >
-          <Slider showItem={currentIndex + 1}>
+          <Slider initialItem={currentIndex + 1}>
             { children.map((data, index) => (
               <Slider.Item>
-                <ImageWrapper>
+                <GalleryImageWrapper>
                   <img src={data.props.src} key={index} alt={index} />
-                </ImageWrapper>
+                </GalleryImageWrapper>
               </Slider.Item>
             ))}
           </Slider>
-          <ThumbnailWrapper>
+          <GalleryThumbnailWrapper>
             { children.map((data, index) => (
               <div key={index} onClick={() => this.handleClickThumbs(index)}>
                 <img
@@ -85,9 +91,9 @@ class Gallery extends Component <Props, State> {
                 />
               </div>
             ))}
-          </ThumbnailWrapper>
+          </GalleryThumbnailWrapper>
         </Modal>
-      </Container>
+      </GalleryContainer>
     );
   }
 }

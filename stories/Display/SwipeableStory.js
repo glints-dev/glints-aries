@@ -66,7 +66,10 @@ const SwipeableStory = () => (
             <pre>
               {`<Swipeable>
     <Swipeable.Item onClick={...}>
-        <YourComponent />
+        <Component />
+    </Swipeable.Item>
+    <Swipeable.Item>
+        <Component />
     </Swipeable.Item>
 </Swipeable>`}
             </pre>

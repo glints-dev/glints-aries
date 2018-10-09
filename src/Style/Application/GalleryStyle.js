@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
-export const Container = styled.div`
+export const GalleryContainer = styled.div`
   position: relative;
 
-  .modalArea {
+  .modal-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const GalleryItemWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: .5em;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ItemWrapper = styled.div`
+export const GalleryItem = styled.div`
   position: relative;
 
   ${({ imageLeft }) => {
@@ -51,7 +51,7 @@ export const ItemWrapper = styled.div`
   }}
 `;
 
-export const ImageWrapper = styled.div`
+export const GalleryImageWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const ThumbnailWrapper = styled.div`
+export const GalleryThumbnailWrapper = styled.div`
   position: relative;
   display: flex;
 

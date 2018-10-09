@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-import { SliderContainer, SliderWrapperStyle } from '../../Style/Display/SliderStyle';
+import { SliderContainer, SliderContentWrapper } from '../../Style/Display/SliderStyle';
 
 class Slider extends Component <Props, State> {
   constructor() {
@@ -48,18 +48,18 @@ class Slider extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { showItem, children } = this.props;
+    const { initialItem, children } = this.props;
     const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
 
     this.setState({
       screenSize: windowWidth,
     });
 
-    if (showItem !== undefined) {
-      if (showItem > 0 && showItem <= children.length) {
+    if (initialItem !== undefined) {
+      if (initialItem > 0 && initialItem <= children.length) {
         this.setState({
-          translateValue: -(windowWidth * (showItem - 1)),
-          index: showItem,
+          translateValue: -(windowWidth * (initialItem - 1)),
+          index: initialItem,
         });
       } else {
         this.setState({
@@ -76,8 +76,8 @@ class Slider extends Component <Props, State> {
     const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
 
     this.setState({
-      translateValue: -(windowWidth * (nextProps.showItem - 1)),
-      index: nextProps.showItem,
+      translateValue: -(windowWidth * (nextProps.initialItem - 1)),
+      index: nextProps.initialItem,
     });
   }
 
@@ -91,14 +91,14 @@ class Slider extends Component <Props, State> {
 
     return (
       <SliderContainer ref={(node) => { this.sliderContainer = node; }} className={className}>
-        <SliderWrapperStyle
+        <SliderContentWrapper
           style={{
             transform: `translateX(${translateValue}px)`,
             transition: 'transform ease-out 0.45s',
           }}
         >
           { children }
-        </SliderWrapperStyle>
+        </SliderContentWrapper>
         <LeftArrow previousSlide={this.previousSlide} index={index} />
         <RightArrow nextSlide={this.nextSlide} index={index} limit={children.length} />
       </SliderContainer>
@@ -109,7 +109,7 @@ class Slider extends Component <Props, State> {
 type Props = {
   children: React$Node,
   className: string,
-  showItem: number,
+  initialItem: number,
 };
 
 type State = {
