@@ -6,7 +6,7 @@ export const LayoutContainer = styled.div`
   height: 100vh;
 `;
 
-export const LayoutHeader = styled.div`
+export const LayoutHeaderWrapper = styled.div`
   position: fixed;
   height: 90px;
   background-color: ${SecondaryColor.white};
@@ -15,15 +15,10 @@ export const LayoutHeader = styled.div`
   border-bottom: 3px solid #E3E3E3;
 `;
 
-export const LayoutHeaderEmptySpace = styled.div`
-  height: 90px;
+export const LayoutBodyWrapper = styled.div`
   width: 100vw;
 `;
 
-export const LayoutBody = styled.div`
-  width: 100vw;
-`;
-
-export const LayoutFooter = styled.div`
+export const LayoutFooterWrapper = styled.div`
   width: 100vw;
 `;

@@ -35,7 +35,7 @@ import InformationStory from './Application/InformationStory';
 import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
 import LanguageSelectStory from './Input/LanguageSelectStory';
-import LayoutStory from './Navigation/LayoutStory';
+import LayoutStory from './Layout/LayoutStory';
 import LoadingStory from './General/LoadingStory';
 import MobileMenuStory from './Navigation/MobileMenuStory';
 import ModalStory from './Display/ModalStory';
@@ -85,6 +85,16 @@ storiesOf('General', module)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Tag', () => <TagStory />);
 
+storiesOf('Layout', module)
+  .addDecorator(story => (
+    <Provider>
+      <StorybookStyle>
+        {React.createElement(story)}
+      </StorybookStyle>
+    </Provider>
+  ))
+  .add('Layout', () => <LayoutStory />);
+
 storiesOf('Input', module)
   .addDecorator(story => (
     <Provider>
@@ -114,8 +124,7 @@ storiesOf('Navigation', module)
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Dropdown', () => <DropdownStory />)
   .add('Drawer', () => <DrawerStory />)
-  .add('Mobile Menu', () => <MobileMenuStory />)
-  .add('Layout', () => <LayoutStory />);
+  .add('Mobile Menu', () => <MobileMenuStory />);
 
 storiesOf('Display', module)
   .addDecorator(story => (

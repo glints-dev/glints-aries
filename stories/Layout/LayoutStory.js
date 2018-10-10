@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Layout from '../../src/Layout/Layout';
+import GlintsContainer from '../../src/Style/GlintsContainerStyle';
+
 class LayoutStory extends Component {
   renderHeader() {
     return (
@@ -26,6 +29,8 @@ class LayoutStory extends Component {
   }
 
   render() {
+    const { Body, Footer } = Layout;
+
     return (
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
@@ -38,24 +43,16 @@ class LayoutStory extends Component {
             </code>
           </p>
         </div>
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th>
-                Preview
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ padding: 20, width: 600 }}>
-                {this.renderHeader()}
-                {this.renderBody()}
-                {this.renderFooter()}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
+        <Layout>
+          <Body>
+              Body
+          </Body>
+          <Footer>
+              Footer
+          </Footer>
+        </Layout>
+
         <table className="doc-table">
           <thead>
             <tr>

@@ -24,7 +24,7 @@ export { default as Icon } from './General/Icon';
 export { default as JobCard } from './Application/JobCard';
 export { default as JobOverview } from './Application/JobOverview';
 export { default as LanguageSelect } from './Input/LanguageSelect';
-export { default as Layout } from './Navigation/Layout';
+export { default as Layout } from './Layout/Layout';
 export { default as Loading } from './General/Loading';
 export { default as MobileMenu } from './Navigation/MobileMenu';
 export { default as Modal } from './Display/Modal';
