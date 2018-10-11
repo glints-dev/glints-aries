@@ -22,4 +22,5 @@ export const SecondaryColor = {
   bluegem: '#9013FE',
   actionblue: '#017EB7',
   green: '#008464',
+  orange: '#F5A623',
 };

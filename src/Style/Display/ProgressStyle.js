@@ -53,13 +53,11 @@ export const ProgressLabelWrapper = styled.label`
   margin: 0;
   font-size: 1.5em;
   font-weight: 900;
-  color: ${PrimaryColor.glintsred};
 
   p {
     margin: 0;
     margin-top: .6em;
     font-size: .5em;
     font-weight: 500;
-    color: ${SecondaryColor.black};
   }
 `;
