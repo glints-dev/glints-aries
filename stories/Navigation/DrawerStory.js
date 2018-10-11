@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+
 import Drawer from '../../src/Navigation/Drawer';
 import Button from '../../src/General/Button';
 
-class SideBarStory extends Component {
+class DrawerStory extends Component {
   constructor() {
     super();
     this.state = {
@@ -31,11 +32,11 @@ class SideBarStory extends Component {
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
           <h1>
-          Side Bar
+            Drawer
           </h1>
           <p>
             <code>
-              {'import { SideBar } from \'glints-aries\''}
+              {'import { Drawer } from \'glints-aries\''}
             </code>
           </p>
         </div>
@@ -128,4 +129,4 @@ class SideBarStory extends Component {
   }
 }
 
-export default SideBarStory;
+export default DrawerStory;

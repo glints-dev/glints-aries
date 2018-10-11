@@ -43,6 +43,7 @@ import OmniSearchStory from './Input/OmniSearchStory';
 import PointingModalStory from './Display/PointingModalStory';
 import PopoverStory from './Display/PopoverStory';
 import ProfilePictureStory from './General/ProfilePictureStory';
+import ProgressStory from './Display/ProgressStory';
 import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
 import SearchFilterStory from './Input/SearchFilterStory';
@@ -141,6 +142,7 @@ storiesOf('Display', module)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)
+  .add('Progress', () => <ProgressStory />)
   .add('Slider', () => <SliderStory />)
   .add('Swipeable', () => <SwipeableStory />)
   .add('Tabs', () => <TabsStory />);
