@@ -40,7 +40,7 @@ const AccordionStory = () => (
         <tr>
           <td>
             <pre>
-              {`<Accordion initialItem={1}>
+              {`<Accordion>
   <Accordion.Panel
     label="..."
     content="..."
@@ -82,19 +82,36 @@ const AccordionStory = () => (
       <tbody>
         <tr>
           <td>
-            initialItem
+            label
           </td>
           <td>
-            number
+            string
           </td>
           <td>
-            index of item
+            any
           </td>
           <td>
-            no
+            yes
           </td>
           <td>
-            Sets initial item to show. Index starts from 1 until so on.
+            {'Sets Panel\'s title.'}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            content
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            yes
+          </td>
+          <td>
+            {'Sets content.'}
           </td>
         </tr>
       </tbody>
