@@ -24,7 +24,8 @@ export const FlexCenter = styled.div`
 `;
 
 export const IconHolder = styled.div`
-    font-size: 12px;
+    font-size: 8px;
+    cursor: pointer;
 `;
 
 export const Table = styled.table`
@@ -59,4 +60,10 @@ export const HoverContent = styled.div`
         }
     `
     : null}
+`;
+
+export const GridBox = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: .5em;
 `;

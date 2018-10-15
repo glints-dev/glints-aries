@@ -11,6 +11,7 @@ import {
   Td,
   Th,
   HoverContent,
+  GridBox,
 } from '../../Style/Application/DatePickerStyle';
 
 import Icon from '../../General/Icon';
@@ -18,18 +19,58 @@ import Icon from '../../General/Icon';
 class DatePicker extends Component {
   constructor() {
     super();
+    const currentYear = new Date().getFullYear().toString();
+    const currentMonth = new Date().getMonth();
     this.state = {
+      currentYear,
+      currentMonth,
       firstDay: new Date(
-        new Date().getFullYear().toString(),
-        new Date().getMonth(),
+        currentYear,
+        currentMonth,
         1
       ).getDay(),
       lastDate: new Date(
-        new Date().getFullYear().toString(),
-        new Date().getMonth() + 1,
+        currentYear,
+        currentMonth + 1,
         0
       ).getDate(),
     };
+  }
+
+  setYearBack = () => {
+    const { currentYear } = this.state;
+    const currentMonth = new Date().getMonth();
+    this.setState({
+      currentYear: Number(currentYear) - 1,
+      firstDay: new Date(
+        Number(currentYear) - 1,
+        currentMonth,
+        1
+      ).getDay(),
+      lastDate: new Date(
+        Number(currentYear) - 1,
+        currentMonth + 1,
+        0
+      ).getDate(),
+    });
+  }
+
+  setYearNext = () => {
+    const { currentYear } = this.state;
+    const currentMonth = new Date().getMonth();
+    this.setState({
+      currentYear: Number(currentYear) + 1,
+      firstDay: new Date(
+        Number(currentYear) + 1,
+        currentMonth,
+        1
+      ).getDay(),
+      lastDate: new Date(
+        Number(currentYear) + 1,
+        currentMonth + 1,
+        0
+      ).getDate(),
+    });
   }
 
   renderTHead = () => {
@@ -38,7 +79,7 @@ class DatePicker extends Component {
       <thead>
         <tr role="row">
           {days.map(day => (
-            <Th role="columnheader" title={day}>
+            <Th key={day} role="columnheader" title={day}>
               <HoverContent>
                 {day}
               </HoverContent>
@@ -67,7 +108,7 @@ class DatePicker extends Component {
     for (let i = 1; i <= 7 - firstDay; i++) {
       tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
     }
-    return <tr>{tempArray}</tr>;
+    return <tr key="row1">{tempArray}</tr>;
   }
 
   renderDayRow = (array = [], startingCount = 0) => {
@@ -85,7 +126,7 @@ class DatePicker extends Component {
         isLastDate = true;
       }
     }
-    functionArray.push(<tr>{tempArray}</tr>);
+    functionArray.push(<tr key={`row${functionArray.length}`}>{tempArray}</tr>);
     if (isLastDate) {
       return functionArray;
     }
@@ -96,27 +137,39 @@ class DatePicker extends Component {
     const { firstDay } = this.state;
     const tempArray = [];
     for (let i = firstDay; i >= 1; i--) {
-      tempArray.push(<Td key={i} />);
+      tempArray.push(<Td key={`offset${i}`} />);
     }
     return tempArray;
   }
 
   render() {
+    const { currentYear, currentMonth } = this.state;
     return (
       <Container>
         <input type="input" />
         <DatePickerContainer>
           <SectionContainer border>
             <FlexCenter justify="space-between">
-              <IconHolder>
-                <Icon name="arrow-back" color="grey" />
-                <Icon name="arrow-back" color="grey" />
-              </IconHolder>
-              <FlexCenter>year</FlexCenter>
-              <IconHolder>
-                <Icon name="arrow-next" color="grey" />
-                <Icon name="arrow-next" color="grey" />
-              </IconHolder>
+              <GridBox>
+                <IconHolder onClick={this.setYearBack}>
+                  <Icon name="arrow-back" color="grey" />
+                </IconHolder>
+                <IconHolder>
+                  <Icon name="arrow-back" color="grey" />
+                </IconHolder>
+              </GridBox>
+              <FlexCenter>
+                {currentMonth}
+                {currentYear}
+              </FlexCenter>
+              <GridBox>
+                <IconHolder>
+                  <Icon name="arrow-next" color="grey" />
+                </IconHolder>
+                <IconHolder onClick={this.setYearNext}>
+                  <Icon name="arrow-next" color="grey" />
+                </IconHolder>
+              </GridBox>
             </FlexCenter>
           </SectionContainer>
           <SectionContainer border>
