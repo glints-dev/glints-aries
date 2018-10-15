@@ -15,6 +15,22 @@ import {
 import Icon from '../../General/Icon';
 
 class DatePicker extends Component {
+  constructor() {
+    super();
+    this.state = {
+      firstDay: new Date(
+        new Date().getFullYear().toString(),
+        new Date().getMonth(),
+        1
+      ).getDay(),
+      lastDate: new Date(
+        new Date().getFullYear().toString(),
+        new Date().getMonth() + 1,
+        0
+      ).getDate(),
+    };
+  }
+
   renderTHead = () => {
     const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
     return (
@@ -34,11 +50,7 @@ class DatePicker extends Component {
 
   renderTBody = () => {
     const content = [];
-    const firstDay = new Date('2018', 10, 1).getDay();
-    const lastDate = new Date('2018', 11, 0).getDate();
-    console.log('firstDay', firstDay);
-    console.log('lastDay', lastDate);
-    this.renderDayRow(content, 1, firstDay, lastDate);
+    this.renderDayRow(content);
     return (
       <tbody>
         {content}
@@ -46,27 +58,53 @@ class DatePicker extends Component {
     );
   }
 
-  renderDayRow = (array, startingCount, firstDay, lastDate) => {
+  renderDayRow = (array, startingCount = 1) => {
+    /* eslint-disable no-plusplus  */
+    const { firstDay, lastDate } = this.state;
     const functionArray = array;
-    const tempArray = [];
+    let functionStartingCount = startingCount;
+    let tempArray = [];
     let isLastDate = false;
-    for (let i = startingCount; i < (startingCount + 7); i + 1) {
-      if (i <= lastDate) {
+    console.log('functionArray', functionArray);
+    console.log('functionStartingCount', functionStartingCount);
+    if (functionArray.length === 0) {
+      tempArray = this.renderOffSetDay();
+      for (let i = 1; i <= 7 - firstDay; i++) {
         tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
-      } else {
-        tempArray.push(<Td />);
-        isLastDate = true;
+        functionStartingCount = i;
+      }
+    } else {
+      for (let i = startingCount; i < (startingCount + 7); i++) {
+        if (i <= lastDate) {
+          tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
+          functionStartingCount = i;
+        } else {
+          tempArray.push(<Td key={i} />);
+          isLastDate = true;
+        }
       }
     }
-    console.log('functionArray', functionArray.length);
     functionArray.push(<tr>{tempArray}</tr>);
     if (isLastDate) {
-      return thisArray;
+      return functionArray;
     }
-    return this.renderDayRow(thisArray, startingCount + 7, firstDay, lastDate);
+    return this.renderDayRow(functionArray, functionStartingCount + 1);
+  }
+
+  renderOffSetDay = () => {
+    const { firstDay } = this.state;
+    const tempArray = [];
+    for (let i = firstDay; i >= 1; i--) {
+      console.log('i', i);
+      tempArray.push(<Td key={i} />);
+    }
+    return tempArray;
   }
 
   render() {
+    const { firstDay, lastDate } = this.state;
+    console.log('firstDay:', firstDay, 'lastDate:', lastDate);
+    console.log('month', new Date().getMonth());
     return (
       <Container>
         <input type="input" />
