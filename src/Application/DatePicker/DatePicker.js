@@ -16,6 +16,21 @@ import {
 
 import Icon from '../../General/Icon';
 
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 class DatePicker extends Component {
   constructor() {
     super();
@@ -26,7 +41,7 @@ class DatePicker extends Component {
       currentMonth,
       firstDay: new Date(
         currentYear,
-        currentMonth,
+        currentMonth + 1,
         1
       ).getDay(),
       lastDate: new Date(
@@ -49,7 +64,7 @@ class DatePicker extends Component {
       ).getDay(),
       lastDate: new Date(
         Number(currentYear) - 1,
-        currentMonth + 1,
+        currentMonth,
         0
       ).getDate(),
     });
@@ -67,10 +82,56 @@ class DatePicker extends Component {
       ).getDay(),
       lastDate: new Date(
         Number(currentYear) + 1,
-        currentMonth + 1,
+        currentMonth,
         0
       ).getDate(),
     });
+  }
+
+  setMonthBack = () => {
+    const { currentMonth, currentYear } = this.state;
+    const checkCurrentMonth = currentMonth;
+    if (checkCurrentMonth > 0) {
+      this.setState({
+        currentMonth: currentMonth - 1,
+        firstDay: new Date(
+          currentYear,
+          currentMonth,
+          1
+        ).getDay(),
+        lastDate: new Date(
+          currentYear,
+          currentMonth,
+          0
+        ).getDate(),
+      });
+    } else {
+      this.setYearBack();
+      this.setState({ currentMonth: 11 });
+    }
+  }
+
+  setMonthNext = () => {
+    const { currentMonth, currentYear } = this.state;
+    const checkCurrentMonth = currentMonth;
+    if (checkCurrentMonth < 11) {
+      this.setState({
+        currentMonth: currentMonth + 1,
+        firstDay: new Date(
+          currentYear,
+          currentMonth + 2,
+          1
+        ).getDay(),
+        lastDate: new Date(
+          currentYear,
+          currentMonth + 2,
+          0
+        ).getDate(),
+      });
+    } else {
+      this.setYearNext();
+      this.setState({ currentMonth: 0 });
+    }
   }
 
   renderTHead = () => {
@@ -106,9 +167,9 @@ class DatePicker extends Component {
     let tempArray = [];
     tempArray = this.renderOffSetDay();
     for (let i = 1; i <= 7 - firstDay; i++) {
-      tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
+      tempArray.push(<Td role="gridcell" key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
     }
-    return <tr key="row1">{tempArray}</tr>;
+    return <tr role="row" key="row1">{tempArray}</tr>;
   }
 
   renderDayRow = (array = [], startingCount = 0) => {
@@ -120,13 +181,13 @@ class DatePicker extends Component {
 
     for (let i = functionStartingCount; i < (functionStartingCount + 7); i++) {
       if (i <= lastDate) {
-        tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
+        tempArray.push(<Td role="gridcell" key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
       } else {
         tempArray.push(<Td key={i} />);
         isLastDate = true;
       }
     }
-    functionArray.push(<tr key={`row${functionArray.length}`}>{tempArray}</tr>);
+    functionArray.push(<tr role="row" key={`row${functionArray.length}`}>{tempArray}</tr>);
     if (isLastDate) {
       return functionArray;
     }
@@ -154,16 +215,17 @@ class DatePicker extends Component {
                 <IconHolder onClick={this.setYearBack}>
                   <Icon name="arrow-back" color="grey" />
                 </IconHolder>
-                <IconHolder>
+                <IconHolder onClick={this.setMonthBack}>
                   <Icon name="arrow-back" color="grey" />
                 </IconHolder>
               </GridBox>
               <FlexCenter>
-                {currentMonth}
+                {months[currentMonth]}
+                &nbsp;&nbsp;
                 {currentYear}
               </FlexCenter>
               <GridBox>
-                <IconHolder>
+                <IconHolder onClick={this.setMonthNext}>
                   <Icon name="arrow-next" color="grey" />
                 </IconHolder>
                 <IconHolder onClick={this.setYearNext}>
@@ -174,7 +236,7 @@ class DatePicker extends Component {
           </SectionContainer>
           <SectionContainer border>
             <FlexCenter>
-              <Table>
+              <Table cellSpacing="0" role="grid">
                 {this.renderTHead()}
                 {this.renderTBody()}
               </Table>
