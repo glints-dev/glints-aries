@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus  */
 import React, { Component } from 'react';
 
 import {
@@ -50,7 +51,8 @@ class DatePicker extends Component {
 
   renderTBody = () => {
     const content = [];
-    this.renderDayRow(content);
+    content.push(this.renderFirstWeekRow());
+    content.push(this.renderDayRow());
     return (
       <tbody>
         {content}
@@ -58,53 +60,48 @@ class DatePicker extends Component {
     );
   }
 
-  renderDayRow = (array, startingCount = 1) => {
-    /* eslint-disable no-plusplus  */
+  renderFirstWeekRow = () => {
+    const { firstDay } = this.state;
+    let tempArray = [];
+    tempArray = this.renderOffSetDay();
+    for (let i = 1; i <= 7 - firstDay; i++) {
+      tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
+    }
+    return <tr>{tempArray}</tr>;
+  }
+
+  renderDayRow = (array = [], startingCount = 0) => {
     const { firstDay, lastDate } = this.state;
     const functionArray = array;
-    let functionStartingCount = startingCount;
-    let tempArray = [];
+    const functionStartingCount = startingCount === 0 ? 7 - firstDay : startingCount;
+    const tempArray = [];
     let isLastDate = false;
-    console.log('functionArray', functionArray);
-    console.log('functionStartingCount', functionStartingCount);
-    if (functionArray.length === 0) {
-      tempArray = this.renderOffSetDay();
-      for (let i = 1; i <= 7 - firstDay; i++) {
+
+    for (let i = functionStartingCount; i < (functionStartingCount + 7); i++) {
+      if (i <= lastDate) {
         tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
-        functionStartingCount = i;
-      }
-    } else {
-      for (let i = startingCount; i < (startingCount + 7); i++) {
-        if (i <= lastDate) {
-          tempArray.push(<Td key={i}><HoverContent hoverAble>{i}</HoverContent></Td>);
-          functionStartingCount = i;
-        } else {
-          tempArray.push(<Td key={i} />);
-          isLastDate = true;
-        }
+      } else {
+        tempArray.push(<Td key={i} />);
+        isLastDate = true;
       }
     }
     functionArray.push(<tr>{tempArray}</tr>);
     if (isLastDate) {
       return functionArray;
     }
-    return this.renderDayRow(functionArray, functionStartingCount + 1);
+    return this.renderDayRow(functionArray, functionStartingCount + 7);
   }
 
   renderOffSetDay = () => {
     const { firstDay } = this.state;
     const tempArray = [];
     for (let i = firstDay; i >= 1; i--) {
-      console.log('i', i);
       tempArray.push(<Td key={i} />);
     }
     return tempArray;
   }
 
   render() {
-    const { firstDay, lastDate } = this.state;
-    console.log('firstDay:', firstDay, 'lastDate:', lastDate);
-    console.log('month', new Date().getMonth());
     return (
       <Container>
         <input type="input" />
