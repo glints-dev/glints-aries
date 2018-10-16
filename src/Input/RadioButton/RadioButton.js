@@ -8,12 +8,13 @@ const RadioButton = (props: Props) => {
     label,
     theme,
     className,
+    ariaChecked,
     ...defaultProps
   } = props;
 
   return (
     <Fragment>
-      <RadioContainer className={className} role="radio">
+      <RadioContainer className={className} role="radio" aria-checked={ariaChecked}>
         <input type="radio" {...defaultProps} />
         <RadioLabel theme={theme}>
           {label}
