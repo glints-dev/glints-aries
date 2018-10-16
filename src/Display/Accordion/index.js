@@ -1,14 +1,8 @@
 // @flow
 
 import Accordion from './Accordion';
-import AccordionHeader from './AccordionHeader';
-import AccordionBody from './AccordionBody';
-import AccordionItem from './AccordionItem';
-import AccordionLabel from './AccordionLabel';
+import AccordionPanel from './AccordionPanel';
 
-Accordion.Header = AccordionHeader;
-Accordion.Body = AccordionBody;
-Accordion.Item = AccordionItem;
-Accordion.Label = AccordionLabel;
+Accordion.Panel = AccordionPanel;
 
 export default Accordion;

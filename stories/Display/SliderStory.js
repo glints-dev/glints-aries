@@ -171,7 +171,7 @@ const SliderStory = () => (
             no
           </td>
           <td>
-            Sets initial item to show.
+            Sets initial item to show. Index starts from 1 until so on.
           </td>
         </tr>
       </tbody>
