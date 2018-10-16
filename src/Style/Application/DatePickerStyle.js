@@ -52,6 +52,12 @@ export const HoverContent = styled.div`
     transition: background .3s ease;
     background-color: transparent;
     line-height: 22px;
+    ${({ selectedDate, index }) => selectedDate && selectedDate === index
+    ? `
+        background-color: #1890ff;
+        color: white;
+    `
+    : null}
     ${({ hoverAble }) => hoverAble
     ? `
         cursor: pointer;
