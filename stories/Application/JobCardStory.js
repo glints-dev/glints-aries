@@ -49,7 +49,7 @@ const JobCardStory = () => (
           </td>
           <td style={{ verticalAlign: 'top', paddingTop: 20, width: '100%' }}>
             <pre>
-              {`<JobCard targetUrl="...">
+              {`<JobCard targetUrl="..." target="...">
   <JobCard.Header
     title="Item title"
     tag="Special"
@@ -83,7 +83,8 @@ const JobCardStory = () => (
         <tr>
           <th>Name</th>
           <th>Type</th>
-          <th>Value</th>
+          <th>Possible Values</th>
+          <th>Default Value</th>
           <th>Required</th>
           <th>Description</th>
         </tr>
@@ -92,9 +93,18 @@ const JobCardStory = () => (
         <tr>
           <td>targetUrl</td>
           <td>string</td>
-          <td>any</td>
+          <td>any valid url</td>
+          <td>none</td>
           <td>no</td>
           <td>redirect URL when clicked</td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>string</td>
+          <td>_blank|_self|_parent|_top|framename</td>
+          <td>_self</td>
+          <td>no</td>
+          <td>Specifies where to open the linked document</td>
         </tr>
       </tbody>
     </table>
