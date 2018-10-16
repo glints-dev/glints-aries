@@ -28,7 +28,7 @@ const RadioButtonStory = () => (
       <tbody>
         <tr>
           <td style={{ padding: 20 }}>
-            <RadioButton label="Full Time" name="job-type" value="full-time" checked />
+            <RadioButton label="Full Time" name="job-type" value="full-time" />
             <div style={{ display: 'inline-flex', marginRight: '1em' }} />
             <RadioButton label="Intership" name="job-type" value="intership" />
           </td>
@@ -38,7 +38,6 @@ const RadioButtonStory = () => (
   label="Full Time" 
   name="job-type" 
   value="full-time" 
-  checked 
   />`}
             </pre>
           </td>

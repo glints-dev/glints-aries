@@ -13,7 +13,7 @@ const RadioButton = (props: Props) => {
 
   return (
     <Fragment>
-      <RadioContainer className={className}>
+      <RadioContainer className={className} role="radio">
         <input type="radio" {...defaultProps} />
         <RadioLabel theme={theme}>
           {label}

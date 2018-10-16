@@ -27,13 +27,27 @@ class Alert extends Component <State, Props> {
     if (prevProps.isOpen && !isOpen) {
       setTimeout(() => this.setState({ isVisible: false }), 300);
     }
+
+    if (isOpen) {
+      document.getElementById('aries-alert').focus();
+    }
+  }
+
+  handleKeyDown = (onClose) => {
+    const listener = (e) => {
+      if (e.keyCode === 13 || e.keyCode === 27) {
+        onClose();
+      }
+    };
+
+    return listener;
   }
 
   renderMessage() {
     const { message } = this.props;
 
     return (
-      <AlertMessage>
+      <AlertMessage className="aries-alert-message">
         {message}
       </AlertMessage>
     );
@@ -43,19 +57,32 @@ class Alert extends Component <State, Props> {
     const { onClose } = this.props;
 
     return (
-      <AlertIcon onClick={onClose}>
+      <AlertIcon
+        role="button"
+        aria-label="Press Enter or Escape button to close"
+        onClick={onClose}
+      >
         <Icon name="close" color="black" />
       </AlertIcon>
     );
   }
 
   render() {
-    const { isOpen } = this.props;
+    const { isOpen, onClose } = this.props;
     const { isVisible } = this.state;
 
     return (
       <If condition={isVisible}>
-        <AlertContainer isOpen={isOpen} isVisible={isVisible}>
+        <AlertContainer
+          id="aries-alert"
+          role="alertdialog"
+          aria-hidden={isVisible ? 'false' : 'true'}
+          aria-describedby="aries-alert-message"
+          isOpen={isOpen}
+          isVisible={isVisible}
+          tabIndex={isVisible ? '0' : '-1'}
+          onKeyDown={this.handleKeyDown(onClose)}
+        >
           {this.renderMessage.bind(this)()}
           {this.renderIcon.bind(this)()}
         </AlertContainer>

@@ -60,6 +60,7 @@ type Props = {
   id: string,
   value: string,
   className: string,
+  onClick: Function,
 }
 
 type State = {
