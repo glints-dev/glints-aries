@@ -15,6 +15,7 @@ const SearchFilterItem = (props: Props) => {
     <SearchFilterItemWrapper
       className={className}
       onMouseDown={onClick}
+      role="listitem"
       {...defaultProps}
     >
       {children}

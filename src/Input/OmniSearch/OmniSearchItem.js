@@ -14,7 +14,12 @@ const OmniSearchItem = (props: Props) => {
 
   return (
     <Fragment>
-      <OmniSearchItemWrapper className={className} onMouseDown={onClick} {...defaultProps}>
+      <OmniSearchItemWrapper
+        className={className}
+        onMouseDown={onClick}
+        role="listitem"
+        {...defaultProps}
+      >
         {children}
       </OmniSearchItemWrapper>
     </Fragment>

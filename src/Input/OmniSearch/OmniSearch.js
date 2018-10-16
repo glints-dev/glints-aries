@@ -26,7 +26,12 @@ class OmniSearch extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <OmniSearchContainer className={className}>
+      <OmniSearchContainer
+        className={className}
+        role="search"
+        aria-expanded={isOpen}
+        aria-label={label}
+      >
         <OmniSearchBar>
           <input
             type="text"

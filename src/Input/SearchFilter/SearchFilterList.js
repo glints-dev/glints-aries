@@ -12,7 +12,11 @@ const SearchFilterList = (props: Props) => {
   } = props;
 
   return (
-    <SearchFilterListWrapper className={className} {...defaultProps}>
+    <SearchFilterListWrapper
+      className={className}
+      role="list"
+      {...defaultProps}
+    >
       <label>
         {title}
       </label>

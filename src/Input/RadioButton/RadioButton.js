@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
+
 import { RadioContainer, RadioLabel } from '../../Style/Input/RadioButtonStyle';
 
 const RadioButton = (props: Props) => {
@@ -8,13 +9,12 @@ const RadioButton = (props: Props) => {
     label,
     theme,
     className,
-    ariaChecked,
     ...defaultProps
   } = props;
 
   return (
     <Fragment>
-      <RadioContainer className={className} role="radio" aria-checked={ariaChecked}>
+      <RadioContainer className={className}>
         <input type="radio" {...defaultProps} />
         <RadioLabel theme={theme}>
           {label}

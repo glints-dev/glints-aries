@@ -27,7 +27,12 @@ class SearchFilter extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <SearchFilterContainer className={className}>
+      <SearchFilterContainer
+        className={className}
+        role="search"
+        aria-expanded={isOpen}
+        aria-label={label}
+      >
         <SearchFilterBar>
           <input
             type="text"
