@@ -1,3 +1,9 @@
+#### 1.0.8 (2018-10-16)
+
+##### Bug Fixes
+
+* **collapsible:**  change default opened state & adding shallow compare ([22e1acab](https://github.com/glints-dev/glints-aries/commit/22e1acab60597b045052862d3665bdfccc8e825a))
+
 #### 1.0.7 (2018-10-16)
 
 #### 1.0.6 (2018-10-16)
