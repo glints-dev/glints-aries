@@ -104,7 +104,7 @@ const JobCardStory = () => (
           <td>_blank|_self|_parent|_top|framename</td>
           <td>_self</td>
           <td>no</td>
-          <td>redirect URL when clicked</td>
+          <td>Specifies where to open the linked document</td>
         </tr>
       </tbody>
     </table>
