@@ -7,10 +7,14 @@ const MobileMenu = (props: Props) => {
   const {
     children,
     className,
+    ...defaultProps
   } = props;
 
   return (
-    <MobileMenuContainer className={className}>
+    <MobileMenuContainer
+      className={className}
+      {...defaultProps}
+    >
       {children}
     </MobileMenuContainer>
   );

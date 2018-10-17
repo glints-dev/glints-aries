@@ -96,42 +96,37 @@ const ProfilePictureStory = () => (
   <MobileMenu.Top>
     <Icon name="close" color="white" />
   </MobileMenu.Top>
-  <MobileMenu.Header
-    margin={true}
-  >
-    <ProfilePicture editable assetUrl="..." alt="..." />
+  <MobileMenu.Header>
+    <ProfilePicture editable>
+      <img src={url} alt="profile" />
+    </ProfilePicture>
     <div className="header-profile">
-      <span>
-        Hello,
-      </span>
-      <p>
-        Fredy Yanto
-      </p>
+      <span>Hello,</span>
+      <p>Fredy Yanto</p>
     </div>
   </MobileMenu.Header>
   <MobileMenu.Body>
     <MobileMenu.Item>
-      ...
+      Carrers
     </MobileMenu.Item>
   </MobileMenu.Body>
   <MobileMenu.Footer
-      center
-      hoverColor="#0171A4"
-      onChange={...function}
-      defaultItem={
-        {
-          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-        }
+    center
+    hoverColor="#0171A4"
+    defaultItem={
+      {
+        label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
       }
-      languageItem={[
-        {
-          label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
-        },
-        {
-          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-        },
-      ]}
-    />
+    }
+    languageItem={[
+      {
+        label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+      },
+      {
+        label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+      },
+    ]}
+  />
 </MobileMenu>`}
             </pre>
           </td>

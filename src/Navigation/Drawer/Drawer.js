@@ -47,18 +47,21 @@ class Drawer extends Component<State, Props> {
 
   render() {
     const {
+      children,
+      isOpen,
+      onClose,
+      ...defaultProps
+    } = this.props;
+
+    const {
       isDisplay,
       disableClick,
     } = this.state;
 
-    const {
-      children,
-      isOpen,
-      onClose,
-    } = this.props;
-
     return (
       <DrawerContainer
+        aria-modal="true"
+        aria-hidden={isDisplay ? 'false' : 'true'}
         isDisplay={isDisplay}
         open={isOpen}
         onAnimationStart={this.handleAnimationStart}
@@ -70,10 +73,12 @@ class Drawer extends Component<State, Props> {
         }}
       >
         <DrawerWrapper
+          role="dialog"
           open={isOpen}
           onFocus={() => this.handleDisableClick('focus')}
           onBlur={() => this.handleDisableClick('blur')}
           tabIndex="0"
+          {...defaultProps}
         >
           {children}
         </DrawerWrapper>
@@ -81,15 +86,14 @@ class Drawer extends Component<State, Props> {
     );
   }
 }
-
-type State = {
-  isDisplay: boolean
-}
-
 type Props = {
   children: React$Node,
   isOpen: boolean,
   onClose: Function,
+}
+
+type State = {
+  isDisplay: boolean
 }
 
 export default Drawer;
