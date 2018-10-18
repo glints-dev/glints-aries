@@ -5,21 +5,21 @@ import { PrimaryContainer, PrimaryBtn } from '../../Style/General/ButtonStyle';
 
 const PrimaryButton = ({
   children,
-  theme,
   className,
+  theme,
   ...defaultProps
 }: Props) => (
-  <PrimaryContainer theme={theme} className={className}>
-    <PrimaryBtn className={`primaryButton ${className}`} theme={theme} {...defaultProps}>
+  <PrimaryContainer theme={theme} className={className} {...defaultProps}>
+    <PrimaryBtn className={`primaryButton ${className}`} theme={theme}>
       {children}
     </PrimaryBtn>
   </PrimaryContainer>
 );
 
 type Props = {
-  theme: string,
   children: React$Node,
   className: string,
+  theme: string,
 }
 
 export default PrimaryButton;
