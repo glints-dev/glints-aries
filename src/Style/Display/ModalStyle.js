@@ -29,7 +29,7 @@ export const ModalBackground = styled.div`
 export const ModalContentArea = styled.div`
   position: relative;
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
-  max-height: ${({ type }) => type === 'full-screen' ? '100vh' : '75vh'};
+  max-height: ${({ type }) => type === 'full-screen' ? '100vh' : '85vh'};
   height: ${({ type }) => type === 'full-screen' && '100vh'};
   overflow: ${({ hideContentArea }) => hideContentArea ? 'hidden' : 'auto'};
   padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1.5rem 3rem'};
