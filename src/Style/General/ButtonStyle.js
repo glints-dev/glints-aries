@@ -83,28 +83,57 @@ export const PrimaryContainer = styled.div`
     transition: all .2s;
 
     ${(props) => {
-    switch (props.theme) {
-      case `${Theme.BLUE_RED}`:
-        return `
-          background-color: ${PrimaryColor.glintsred};
-        `;
-      default:
-        return `
-          background-color: ${PrimaryColor.glintsyellow};
-        `;
-    }
-  }}
+      switch (props.disabled) {
+        case true: {
+          return 'background-color: none';
+        }
+        default: {
+          switch (props.theme) {
+            case `${Theme.BLUE_RED}`:
+              return `
+                background-color: ${PrimaryColor.glintsred};
+              `;
+            default:
+              return `
+                background-color: ${PrimaryColor.glintsyellow};
+              `;
+          }
+        }
+      }
+    }}
   }
 
   &:hover:after {
-    transform: translate3d(-.15em, -.15em, 0);
-    transition: all .2s;
-    background-color: ${SecondaryColor.black};
+    ${(props) => {
+      switch (props.disabled) {
+        case true: {
+          return 'background-color: none;';
+        }
+        default: {
+          return `
+              background: ${SecondaryColor.black};
+              transform: translate3d(-.15em, -.15em, 0);
+              transition: all .2s;
+            `;
+        }
+      }
+    }}
   }
 
   &:active:after {
-    transform: translate3d(-.265em, -.265em, 0);
-    transition: all .2s;
+    ${(props) => {
+      switch (!props.disabled) {
+        case true: {
+          return `
+            transform: translate3d(-.265em, -.265em, 0);
+            transition: all .2s;
+          `;
+        }
+        default: {
+          return false;
+        }
+      }
+    }}
   }
 `;
 
@@ -117,43 +146,77 @@ export const PrimaryBtn = styled(Button)`
   }
 
   ${(props) => {
-    switch (props.theme) {
-      case `${Theme.RED}`:
+    switch (props.disabled) {
+      case true: {
         return `
-          background-color: ${PrimaryColor.glintsred};
+          background-color: ${SecondaryColor.lightgrey}
           color: ${SecondaryColor.white};
-        `;
-      case `${Theme.BLUE}`:
-        return `
-          background-color: ${PrimaryColor.glintsblue};
-          color: ${SecondaryColor.white};
-        `;
-      case `${Theme.BLUE_RED}`:
-        return `
-          background-color: ${PrimaryColor.glintsblue};
-          color: ${SecondaryColor.white};
-        `;
-      default:
-        return `
-          background-color: ${SecondaryColor.white};
-          color: ${PrimaryColor.glintsblue};
+        `
+      }
 
-          &:active {
-            color: ${SecondaryColor.white};
+      default: {
+        switch (props.theme) {
+          case `${Theme.RED}`: {
+            return `
+              background-color: ${PrimaryColor.glintsred};
+              color: ${SecondaryColor.white};
+            `;
           }
-        `;
+          case `${Theme.BLUE}`: {
+            return `
+              background-color: ${PrimaryColor.glintsblue};
+              color: ${SecondaryColor.white};
+            `;
+          }
+          case `${Theme.BLUE_RED}`: {
+            return `
+              background-color: ${PrimaryColor.glintsblue};
+              color: ${SecondaryColor.white};
+            `;
+          }
+          default: {
+            return `
+              background-color: ${SecondaryColor.white};
+              color: ${PrimaryColor.glintsblue};
+    
+              &:active {
+                color: ${SecondaryColor.white};
+              }
+            `;
+          }
+        }
+      }
     }
   }}
 
   &:hover {
-    transform: translate3d(.15em, .15em, 0);
-    transition: all .2s;
+    ${(props) => {
+      if (!props.disabled) {
+        return `
+          transform: translate3d(.15em, .15em, 0);
+          transition: all .2s;
+        `;
+      }
+
+      return 'transform: none';
+    }}
   }
 
   &:active {
-    transform: translate3d(.265em, .265em, 0);
-    transition: all .2s;
-    background-color: ${SecondaryColor.black};
+    ${(props) => {
+      switch (props.disabled) {
+        case true: {
+          return `
+            transform: translate3d(.265em, .265em, 0);
+            transition: all .2s;
+            background-color: ${SecondaryColor.black};
+          `;
+        }
+        default: {
+          return 'transform: none';
+        }
+      }
+    }}
   }
 `;
 
