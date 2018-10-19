@@ -1,6 +1,14 @@
 #### 1.0.12 (2018-10-19)
-
-#### 1.0.11 (2018-10-19)
+1. Improve Accessibility for these following components:
+Alert, Brand, Loading, Checkbox, Omni Search, Radio Button, Search Filter, Select, Switch, Textarea, TextField,          Breadcrumb, Drawer, Mobile Menu, Accordion, Collapsible, Modal, Pointing Modal, Pop Over, Progress, Gallery, and Job Card.
+2. Refactor Drawer.
+   - Remove DisabledClick, onBlur, and onFocus to prevent Drawer Area from being closed.
+   - Using stopPropagation to prevent Drawer Area from being closed when it's clicked.
+3. Refactor Modal.
+   - Remove modal-background node.
+   - Using stopPropagation to prevent Modal Content from being closed when it's clicked.
+4. Checkbox:
+   - Remove outline when it's clicked but showing up when using tab to navigate.
 
 ##### New Features
 
