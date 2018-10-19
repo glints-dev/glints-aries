@@ -26,8 +26,14 @@ const JobCardHeader = (props: Props) => {
   } = props;
 
   return (
-    <JobcardHeaderWrapper className={className} {...defaultProps}>
-      <JobcardHeaderImage>
+    <JobcardHeaderWrapper
+      className={className}
+      role="presentation"
+      aria-label="Job Card Header"
+      tabIndex={0}
+      {...defaultProps}
+    >
+      <JobcardHeaderImage aria-hidden="true">
         <Choose>
           <When condition={typeof imgUrl === 'string'}>
             <Image src={imgUrl} alt="" />
@@ -49,6 +55,8 @@ const JobCardHeader = (props: Props) => {
         <SubtitleTitle
           onClick={subtitleOnClick}
           className={companyNameClass}
+          role="link"
+          tabIndex={0}
         >
           {subtitle}
         </SubtitleTitle>

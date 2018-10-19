@@ -8,6 +8,7 @@ export const LayoutContainer = styled.div`
 
 export const LayoutHeaderWrapper = styled.div`
   position: fixed;
+  top: 0;
   height: 90px;
   background-color: ${SecondaryColor.white};
   width: 100vw;
@@ -17,6 +18,7 @@ export const LayoutHeaderWrapper = styled.div`
 
 export const LayoutBodyWrapper = styled.div`
   width: 100vw;
+  padding-top: 90px;
 `;
 
 export const LayoutFooterWrapper = styled.div`

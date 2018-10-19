@@ -58,33 +58,6 @@ class ModalStory extends Component {
                   <h1>
                     This is Modal
                   </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
-                  <h1>
-                    This is Modal
-                  </h1>
                 </Modal>
               </td>
               <td style={{ verticalAlign: 'top' }}>

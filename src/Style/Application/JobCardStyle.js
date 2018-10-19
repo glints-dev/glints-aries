@@ -2,11 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { PrimaryColor, SecondaryColor } from '../Colors';
-import { Device } from '../../Utils/StyleConfig';
 
-/*
- * Job Card
- */
+import { Device } from '../../Utils/StyleConfig';
 
 export const JobcardContainer = styled.div`
   position: relative;
@@ -75,6 +72,7 @@ export const JobcardHeaderContent = styled.div`
 
   h3 {
     font-weight: 600;
+    margin: 0;
   }
 
   a {

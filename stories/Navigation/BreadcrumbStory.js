@@ -50,7 +50,9 @@ const BreadcrumbStory = () => (
     <a href="/jobs">Jobs</a>
   </Breadcrumb.Item>
   <Breadcrumb.Item active>
-    <a href="/software-engineer">Software Engineer</a>
+    <a href="/software-engineer">
+      Software Engineer
+    </a>
   </Breadcrumb.Item>
 </Breadcrumb>
               `}

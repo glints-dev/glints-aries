@@ -10,22 +10,7 @@ class Drawer extends Component<State, Props> {
     super();
     this.state = {
       isDisplay: false,
-      disableClick: false,
     };
-  }
-
-  handleDisableClick = (eventName) => {
-    switch (eventName) {
-      case 'focus':
-        this.setState({ disableClick: true });
-        break;
-      case 'blur':
-        this.setState({ disableClick: false });
-        break;
-      default:
-        this.setState({ disableClick: false });
-        break;
-    }
   }
 
   handleStart = () => {
@@ -55,7 +40,6 @@ class Drawer extends Component<State, Props> {
 
     const {
       isDisplay,
-      disableClick,
     } = this.state;
 
     return (
@@ -66,18 +50,13 @@ class Drawer extends Component<State, Props> {
         open={isOpen}
         onAnimationStart={this.handleAnimationStart}
         onAnimationEnd={this.handleAnimationEnd}
-        onClick={() => {
-          if (!disableClick) {
-            onClose();
-          }
-        }}
+        onClick={() => onClose()}
       >
         <DrawerWrapper
           role="dialog"
           open={isOpen}
-          onFocus={() => this.handleDisableClick('focus')}
-          onBlur={() => this.handleDisableClick('blur')}
           tabIndex="0"
+          onClick={e => e.stopPropagation()}
           {...defaultProps}
         >
           {children}
