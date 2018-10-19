@@ -186,6 +186,7 @@ class Select extends Component <Props, State> {
                 className={cursor === index ? 'active' : null}
                 key={data.props.value}
                 role="option"
+                aria-hidden={false}
                 data-id={index}
                 data-value={data.props.value}
                 onClick={this.handleClick}
@@ -198,6 +199,7 @@ class Select extends Component <Props, State> {
               <SelectItem
                 disabled
                 role="option"
+                aria-hidden={false}
                 aria-disabled="true"
               >
                 {noOptionResult}

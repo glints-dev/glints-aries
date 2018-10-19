@@ -12,7 +12,11 @@ const ProfilePicture = (props: Props) => {
   } = props;
 
   return (
-    <ProfilePictureContainer className={className} editable={editable} {...defaultProps}>
+    <ProfilePictureContainer
+      className={className}
+      editable={editable}
+      {...defaultProps}
+    >
       {children}
     </ProfilePictureContainer>
   );

@@ -19,6 +19,13 @@ export const MobileMenuTopWrapper = styled.div`
   top: 2rem;
   right: 1.5rem;
   cursor: pointer;
+  
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+  }
 `;
 
 export const MobileMenuHeaderWrapper = styled.header`
@@ -32,10 +39,15 @@ export const MobileMenuHeaderWrapper = styled.header`
       font-weight: 100;
       font-size: 1.2em;
     }
-    p {
+    a, p, div, button, label {
+      display: flex;
       margin: 0;
       font-size: 1.4em;
       cursor: pointer;
+    }
+
+    a {
+      color: ${SecondaryColor.white};
     }
   }
 `;
@@ -57,7 +69,8 @@ export const MobileMenuItemWrapper = styled.div`
   transition: all .3s;
 
   a {
-      text-decoration: none;
+    text-decoration: none;
+    color: ${SecondaryColor.white};
   }
 
   a,

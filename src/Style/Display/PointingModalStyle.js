@@ -45,7 +45,9 @@ export const PointingModalHeaderWrapper = styled.div`
     font-weight: 500;
   }
 
-  p {
+  a {
+    display: flex;
+    color: ${SecondaryColor.black};
     font-size: 1.2em;
     margin: 0;
   }
@@ -72,6 +74,7 @@ export const PointingModalItemWrapper = styled.li`
 
   * {
     cursor: pointer;
+    color: ${SecondaryColor.black};
   }
 
   &:hover {

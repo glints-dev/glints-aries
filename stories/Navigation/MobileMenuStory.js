@@ -33,7 +33,9 @@ const ProfilePictureStory = () => (
           <td style={{ padding: 20, minWidth: 400 }}>
             <MobileMenu>
               <MobileMenu.Top>
-                <Icon name="close" color="white" />
+                <button type="button" aria-label="Close Menu">
+                  <Icon name="close" color="white" />
+                </button>
               </MobileMenu.Top>
               <MobileMenu.Header>
                 <ProfilePicture editable>
@@ -43,32 +45,32 @@ const ProfilePictureStory = () => (
                   <span>
                     Hello,
                   </span>
-                  <p>
+                  <a href="./profile">
                     Fredy Yanto
-                  </p>
+                  </a>
                 </div>
               </MobileMenu.Header>
               <MobileMenu.Body>
                 <MobileMenu.Item>
-                  Carrers
+                  <a href="./carrer">Carrers</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Jobs
+                  <a href="./jobs">Jobs</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Internships
+                  <a href="./internship">internship</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Companies
+                  <a href="./companies">Companies</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Pathways
+                  <a href="./pathways">Pathways</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Blog
+                  <a href="./blog">Blog</a>
                 </MobileMenu.Item>
                 <MobileMenu.Item>
-                  Employers
+                  <a href="./employers">Employers</a>
                 </MobileMenu.Item>
               </MobileMenu.Body>
               <MobileMenu.Footer
@@ -96,42 +98,37 @@ const ProfilePictureStory = () => (
   <MobileMenu.Top>
     <Icon name="close" color="white" />
   </MobileMenu.Top>
-  <MobileMenu.Header
-    margin={true}
-  >
-    <ProfilePicture editable assetUrl="..." alt="..." />
+  <MobileMenu.Header>
+    <ProfilePicture editable>
+      <img src={url} alt="profile" />
+    </ProfilePicture>
     <div className="header-profile">
-      <span>
-        Hello,
-      </span>
-      <p>
-        Fredy Yanto
-      </p>
+      <span>Hello,</span>
+      <a href="./profile">Fredy Yanto</a>
     </div>
   </MobileMenu.Header>
   <MobileMenu.Body>
     <MobileMenu.Item>
-      ...
+      <a href="./carrer">Carrers</a>
     </MobileMenu.Item>
   </MobileMenu.Body>
   <MobileMenu.Footer
-      center
-      hoverColor="#0171A4"
-      onChange={...function}
-      defaultItem={
-        {
-          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-        }
+    center
+    hoverColor="#0171A4"
+    defaultItem={
+      {
+        label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
       }
-      languageItem={[
-        {
-          label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
-        },
-        {
-          label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
-        },
-      ]}
-    />
+    }
+    languageItem={[
+      {
+        label: 'English', title: 'EN', value: 'english', countryIcon: 'gb',
+      },
+      {
+        label: 'Indonesian', title: 'ID', value: 'indonesian', countryIcon: 'id',
+      },
+    ]}
+  />
 </MobileMenu>`}
             </pre>
           </td>

@@ -10,22 +10,7 @@ class Drawer extends Component<State, Props> {
     super();
     this.state = {
       isDisplay: false,
-      disableClick: false,
     };
-  }
-
-  handleDisableClick = (eventName) => {
-    switch (eventName) {
-      case 'focus':
-        this.setState({ disableClick: true });
-        break;
-      case 'blur':
-        this.setState({ disableClick: false });
-        break;
-      default:
-        this.setState({ disableClick: false });
-        break;
-    }
   }
 
   handleStart = () => {
@@ -47,33 +32,32 @@ class Drawer extends Component<State, Props> {
 
   render() {
     const {
-      isDisplay,
-      disableClick,
-    } = this.state;
-
-    const {
       children,
       isOpen,
       onClose,
+      ...defaultProps
     } = this.props;
+
+    const {
+      isDisplay,
+    } = this.state;
 
     return (
       <DrawerContainer
+        aria-modal="true"
+        aria-hidden={isDisplay ? 'false' : 'true'}
         isDisplay={isDisplay}
         open={isOpen}
         onAnimationStart={this.handleAnimationStart}
         onAnimationEnd={this.handleAnimationEnd}
-        onClick={() => {
-          if (!disableClick) {
-            onClose();
-          }
-        }}
+        onClick={() => onClose()}
       >
         <DrawerWrapper
+          role="dialog"
           open={isOpen}
-          onFocus={() => this.handleDisableClick('focus')}
-          onBlur={() => this.handleDisableClick('blur')}
           tabIndex="0"
+          onClick={e => e.stopPropagation()}
+          {...defaultProps}
         >
           {children}
         </DrawerWrapper>
@@ -81,15 +65,14 @@ class Drawer extends Component<State, Props> {
     );
   }
 }
-
-type State = {
-  isDisplay: boolean
-}
-
 type Props = {
   children: React$Node,
   isOpen: boolean,
   onClose: Function,
+}
+
+type State = {
+  isDisplay: boolean
 }
 
 export default Drawer;

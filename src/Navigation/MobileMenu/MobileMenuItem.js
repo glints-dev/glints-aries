@@ -13,6 +13,7 @@ const MobileMenuItem = (props: Props) => {
   return (
     <MobileMenuItemWrapper
       className={className}
+      role="listitem"
       {...defaultProps}
     >
       {children}

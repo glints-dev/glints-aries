@@ -44,7 +44,7 @@ class AlertStory extends Component {
               Open
           </Button>
           <Alert
-            message="message"
+            message="Our system is currently busy. Please try again."
             isOpen={isOpen}
             onClose={this.handleOnClose}
           />
@@ -71,7 +71,7 @@ handleOnClose = () => {
 }
 
 <Alert
-  message="message"
+  message="Our system is currently busy. Please try again."
   isOpen={isOpen}
   onClose={this.handleOnClose}
 />`}

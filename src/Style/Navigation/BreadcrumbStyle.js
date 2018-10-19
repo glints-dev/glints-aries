@@ -5,7 +5,10 @@ export const BreadcrumbItemWrapper = styled.label`
   cursor: pointer;
   font-size: 1em;
   line-height: 1.5;
-  color: ${({ active }) => active && `${SecondaryColor.blue}`};
+  
+  * {
+    color: ${({ active }) => active ? `${SecondaryColor.blue}` : `${SecondaryColor.lightblack}`};
+  }
 
   span {
     margin: 0 1em;
@@ -18,7 +21,6 @@ export const BreadcrumbContainer = styled.div`
   display: flex;
   background-color: ${SecondaryColor.whitesmoke};
   padding: 1em;
-  color: ${SecondaryColor.lightblack};
 
   > label:last-child span {
     display: none;

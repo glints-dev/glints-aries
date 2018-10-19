@@ -17,7 +17,13 @@ const AccordionPanel = (props: Props) => {
   } = props;
 
   return (
-    <AccordionPanelWrapper className={className} {...defaultProps}>
+    <AccordionPanelWrapper
+      className={className}
+      role="tab"
+      aria-expanded={active}
+      tabIndex={0}
+      {...defaultProps}
+    >
       <AccordionIconWrapper>
         <Icon name="add" color={SecondaryColor.lightblack} />
       </AccordionIconWrapper>

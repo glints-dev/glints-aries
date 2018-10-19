@@ -30,22 +30,30 @@ const BreadcrumbStory = () => (
           <td style={{ padding: 20 }}>
             <Breadcrumb>
               <Breadcrumb.Item>
-                Home
+                <a href="/home">Home</a>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
-                Jobs
+                <a href="/jobs">Jobs</a>
               </Breadcrumb.Item>
               <Breadcrumb.Item active>
-                Software Engineer
+                <a href="/software-engineer">Software Engineer</a>
               </Breadcrumb.Item>
             </Breadcrumb>
           </td>
           <td>
             <pre>
               {`<Breadcrumb>
-  <Breadcrumb.Item>Home</Breadcrumb.Item>
-  <Breadcrumb.Item>Jobs</Breadcrumb.Item>
-  <Breadcrumb.Item active>Software Engineer</Breadcrumb.Item>
+  <Breadcrumb.Item>
+    <a href="/home">Home</a>
+  </Breadcrumb.Item>
+  <Breadcrumb.Item>
+    <a href="/jobs">Jobs</a>
+  </Breadcrumb.Item>
+  <Breadcrumb.Item active>
+    <a href="/software-engineer">
+      Software Engineer
+    </a>
+  </Breadcrumb.Item>
 </Breadcrumb>
               `}
             </pre>

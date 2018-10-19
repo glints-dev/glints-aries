@@ -61,7 +61,6 @@ class Accordion extends Component <Props, State> {
 
   render() {
     const { children, className } = this.props;
-    const { currIndex, isOpenSingleItem } = this.state;
 
     return (
       <AccordionContainer className={className}>

@@ -11,8 +11,14 @@ const PointingModal = (props: Props) => {
   } = props;
 
   return (
-    <PointingModalContainer className={className} {...defaultProps}>
-      <PointingModalHeaderArrow />
+    <PointingModalContainer
+      className={className}
+      role="dialog"
+      aria-modal="true"
+      tabIndex={0}
+      {...defaultProps}
+    >
+      <PointingModalHeaderArrow role="presentation" />
       {children}
     </PointingModalContainer>
   );

@@ -97,6 +97,7 @@ class Textarea extends Component <Props, State> {
           onChange={this.handleChange(onChange)}
           floating={floating}
           value={value}
+          aria-label={label}
           {...defaultProps}
           style={{
             height: `${textareaHeight}px`,

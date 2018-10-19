@@ -36,26 +36,28 @@ const PopoverStory = () => (
               content={(
                 <PointingModal>
                   <PointingModal.Header>
-                    <ProfilePicture editable />
+                    <ProfilePicture editable>
+                      <img src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" alt="profile" />
+                    </ProfilePicture>
                     <div className="aries-modal-profile">
                       <span>
                         Hello,
                       </span>
-                      <p>
+                      <a href="./profile">
                         Fredy Yanto
-                      </p>
+                      </a>
                     </div>
                   </PointingModal.Header>
-                  <Divider size="large" thickness="thin" theme="grey" />
+                  <Divider theme="grey" />
                   <PointingModal.Body>
                     <PointingModal.Item>
-                      View Profile
+                      <a href="./profile">View Profile</a>
                     </PointingModal.Item>
                     <PointingModal.Item>
-                      Edit Profile
+                      <a href="./edit-profile">Edit Profile</a>
                     </PointingModal.Item>
                     <PointingModal.Item>
-                      Sign Out
+                      <a href="./sign-out">Sign Out</a>
                     </PointingModal.Item>
                   </PointingModal.Body>
                 </PointingModal>

@@ -10,7 +10,12 @@ const Loading = (props: Props) => {
   } = props;
 
   return (
-    <LoadingContainer className={className}>
+    <LoadingContainer
+      className={className}
+      role="alert"
+      aria-busy="true"
+      aria-live="polite"
+    >
       <Spinner size={size} />
     </LoadingContainer>
   );

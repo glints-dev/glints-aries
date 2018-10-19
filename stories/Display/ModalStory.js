@@ -54,7 +54,6 @@ class ModalStory extends Component {
                   isVisible={visible}
                   onClose={this.handleModal}
                   onCloseWithESC={this.onCloseWithESC}
-                  type="medium"
                 >
                   <h1>
                     This is Modal
@@ -88,7 +87,6 @@ onCloseWithESC = () => {
   isVisible={visible}
   onClose={this.handleModal}
   onCloseWithESC={this.onCloseWithESC}
-  type="medium"
 >
   This is modal
 </Modal>`}
@@ -192,25 +190,6 @@ onCloseWithESC = () => {
               </td>
               <td>
                 Hides the content area.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                type
-              </td>
-              <td>
-                string
-              </td>
-              <td>
-                <pre>
-                  {'small | medium | large | full-screen'}
-                </pre>
-              </td>
-              <td>
-                yes
-              </td>
-              <td>
-                Sets the size of Modal Item.
               </td>
             </tr>
           </tbody>

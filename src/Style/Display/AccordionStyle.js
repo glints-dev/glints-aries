@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
 export const AccordionContainer = styled.div`
@@ -12,7 +12,7 @@ export const AccordionPanelWrapper = styled.div`
   grid-gap: 1rem;
   font-size: 1em;
   line-height: 1.5;
-  padding: 2em 0;
+  padding: 1.5em 0;
   cursor: pointer;
 
   p {

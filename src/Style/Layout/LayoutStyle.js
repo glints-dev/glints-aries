@@ -18,7 +18,7 @@ export const LayoutHeaderWrapper = styled.div`
 
 export const LayoutBodyWrapper = styled.div`
   width: 100vw;
-  margin-top: 90px;
+  padding-top: 90px;
 `;
 
 export const LayoutFooterWrapper = styled.div`

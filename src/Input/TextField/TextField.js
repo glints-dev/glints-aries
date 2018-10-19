@@ -73,6 +73,7 @@ class TextField extends Component <Props, State> {
           onBlur={this.handleFocusChange(onBlur)}
           floating={floating}
           value={value}
+          aria-label={label}
           {...defaultProps}
         />
         <TextFieldLabel floating={floating} status={status}>

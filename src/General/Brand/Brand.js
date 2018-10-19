@@ -25,7 +25,7 @@ const Brand = (props: Props) => {
   }
 
   return (
-    <BrandContainer {...defaultProps}>
+    <BrandContainer role="presentation" focusable="false" {...defaultProps}>
       <BrandImage className={className} src={srcAsset} alt={alt} />
     </BrandContainer>
   );

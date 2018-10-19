@@ -27,9 +27,9 @@ const JobCardStory = () => (
               targetUrl="https://glints.com/"
             >
               <JobCard.Header
-                title="https://brillianceadvisory.wixsite.com/mysite"
+                title="Software Engineer"
                 tag="Special"
-                subtitle="https://brillianceadvisory.wixsite.com/mysite"
+                subtitle="Glints"
                 imgUrl="https://upload.wikimedia.org/wikipedia/commons/d/df/GLINTS_LOGO293.png"
                 isLinkAble
               />
@@ -59,7 +59,9 @@ const JobCardStory = () => (
     isLinkAble={true}
   />
   <JobCard.Body isLinkAble={true}>
-    <JobCard.Detail details={['...', '...', '...', '...']} />
+    <JobCard.Detail
+      details={['...', '...', '...', '...']}
+    />
     <JobCard.Description 
       description={'...'} 
       time="5 days ago"

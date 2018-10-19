@@ -12,7 +12,11 @@ const OmniSearchList = (props: Props) => {
   } = props;
 
   return (
-    <OmniSearchListItem className={className} {...defaultProps}>
+    <OmniSearchListItem
+      className={className}
+      role="list"
+      {...defaultProps}
+    >
       <label>
         {title}
       </label>

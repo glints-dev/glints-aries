@@ -40,6 +40,7 @@ class Checkbox extends Component <Props, State> {
         role="checkbox"
         aria-labelledby={id}
         aria-checked={checked}
+        tabIndex="0"
       >
         <input
           type="checkbox"
@@ -60,6 +61,7 @@ type Props = {
   id: string,
   value: string,
   className: string,
+  onClick: Function,
 }
 
 type State = {

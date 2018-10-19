@@ -34,12 +34,19 @@ class JobCard extends Component <Props> {
   render() {
     const {
       children,
+      className,
       target,
       targetUrl,
       ...defaultProps
     } = this.props;
     return (
-      <JobcardContainer {...defaultProps}>
+      <JobcardContainer
+        className={className}
+        role="presentation"
+        aria-label="Job Card"
+        tabIndex={0}
+        {...defaultProps}
+      >
         <Choose>
           <When condition={targetUrl}>
             <CustomLink to={targetUrl} target={target}>
@@ -58,8 +65,9 @@ class JobCard extends Component <Props> {
 
 type Props = {
   children: React$Node,
-  targetUrl: String,
-  target: String,
+  className: string,
+  targetUrl: string,
+  target: string,
 }
 
 export default JobCard;
