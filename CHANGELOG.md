@@ -1,3 +1,17 @@
+#### 1.0.11 (2018-10-19)
+
+##### New Features
+
+* **Button:**  adding disabled state on primary Button component ([644cf7b5](https://github.com/glints-dev/glints-aries/commit/644cf7b5450b052a812810abcfcba4950f99f288))
+
+##### Bug Fixes
+
+* **defaultProps:**  change the defaultProps to PrimaryContainer ([6d720584](https://github.com/glints-dev/glints-aries/commit/6d720584da3ca4e997a73b859a9f8a113002b83b))
+
+##### Code Style Changes
+
+* **modal:**  adjust modal height ([9c87dc10](https://github.com/glints-dev/glints-aries/commit/9c87dc101b57a0f6e5992d84c61aea9f2e05aecd))
+
 #### 1.0.10 (2018-10-17)
 
 #### 1.0.9 (2018-10-16)
