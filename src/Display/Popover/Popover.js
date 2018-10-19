@@ -52,8 +52,10 @@ class Popover extends Component <Props, State> {
 
     return (
       <PopoverContainer
-        tabIndex="0"
         onBlur={this.handleClickOutside}
+        aria-haspopup="true"
+        aria-busy="false"
+        tabIndex="0"
       >
         <PopoverChildren onClick={this.handleOnClick}>
           {children}

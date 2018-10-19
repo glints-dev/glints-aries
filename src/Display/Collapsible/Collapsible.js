@@ -36,10 +36,15 @@ class Collapsible extends Component <Props, State> {
     return (
       <Container
         className="collapsible"
+        tabIndex={0}
         onClick={this.handleOpen}
         {...defaultProps}
       >
-        <Header className="head">
+        <Header
+          className="head"
+          role="tab"
+          aria-expanded={isOpen}
+        >
           {label}
           <Choose>
             <When condition={isOpen === false}>

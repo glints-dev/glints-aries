@@ -40,21 +40,21 @@ const PointingModalStory = () => (
                   <span>
                     Hello,
                   </span>
-                  <p>
+                  <a href="./profile">
                     Fredy Yanto
-                  </p>
+                  </a>
                 </div>
               </PointingModal.Header>
               <Divider theme="grey" />
               <PointingModal.Body>
                 <PointingModal.Item>
-                  View Profile
+                  <a href="./profile">View Profile</a>
                 </PointingModal.Item>
                 <PointingModal.Item>
-                  Edit Profile
+                  <a href="./edit-profile">Edit Profile</a>
                 </PointingModal.Item>
                 <PointingModal.Item>
-                  Sign Out
+                  <a href="./sign-out">Sign Out</a>
                 </PointingModal.Item>
               </PointingModal.Body>
             </PointingModal>
@@ -68,13 +68,13 @@ const PointingModalStory = () => (
     <ProfilePicture editable assetUrl="{ url / path }" />
     <div className="aries-modal-profile">
         <span>Hello,</span>
-        <p>Fredy Yanto</p>
+        <a href="#">Fredy Yanto</a>
     </div>
   </PointingModal.Header>
   <Divider theme="grey" />
   <PointingModal.Body>
     <PointingModal.Item onClick={...}>
-      View Profile
+      <a href="#">View Profile</a>
     </PointingModal.Item>
   </PointingModal.Body>
   <PointingModal.Footer>

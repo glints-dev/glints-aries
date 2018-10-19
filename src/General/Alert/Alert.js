@@ -29,7 +29,7 @@ class Alert extends Component <State, Props> {
     }
 
     if (isOpen) {
-      document.getElementById('aries-alert').focus();
+      document.getElementsByClassName('aries-alert')[0].focus();
     }
   }
 
@@ -74,13 +74,13 @@ class Alert extends Component <State, Props> {
     return (
       <If condition={isVisible}>
         <AlertContainer
-          id="aries-alert"
+          className="aries-alert"
           role="alertdialog"
           aria-hidden={isVisible ? 'false' : 'true'}
           aria-describedby="aries-alert-message"
           isOpen={isOpen}
           isVisible={isVisible}
-          tabIndex={isVisible ? '0' : '-1'}
+          tabIndex={0}
           onKeyDown={this.handleKeyDown(onClose)}
         >
           {this.renderMessage.bind(this)()}

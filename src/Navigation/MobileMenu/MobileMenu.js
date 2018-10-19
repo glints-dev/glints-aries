@@ -13,6 +13,8 @@ const MobileMenu = (props: Props) => {
   return (
     <MobileMenuContainer
       className={className}
+      role="menu"
+      tabIndex="0"
       {...defaultProps}
     >
       {children}

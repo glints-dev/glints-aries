@@ -67,6 +67,8 @@ export const GalleryImageWrapper = styled.div`
 export const GalleryThumbnailWrapper = styled.div`
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     height: 4em;

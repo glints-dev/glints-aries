@@ -11,7 +11,10 @@ const PointingModalFooter = (props: Props) => {
   } = props;
 
   return (
-    <PointingModalFooterWrapper className={className} {...defaultProps}>
+    <PointingModalFooterWrapper
+      className={className}
+      {...defaultProps}
+    >
       {children}
     </PointingModalFooterWrapper>
   );

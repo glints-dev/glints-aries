@@ -13,6 +13,7 @@ const MobileMenuBody = (props: Props) => {
   return (
     <MobileMenuBodyWrapper
       className={className}
+      role="list"
       {...defaultProps}
     >
       {children}
