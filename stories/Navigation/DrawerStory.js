@@ -87,7 +87,7 @@ class DrawerStory extends Component {
     isOpen={isOpen}
     onClose={() => this.setState({ isOpen: false })}
   >
-    {this.renderSideBar()}
+    <Component />
 </Drawer>`}
                 </pre>
               </td>

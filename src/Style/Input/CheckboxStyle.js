@@ -6,6 +6,14 @@ export const CheckboxContainer = styled.div`
   font-size: 1em;
   line-height: 1.5;
 
+  &:focus {
+    outline: none;
+  }
+  
+  &:focus > label {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
   input {
     padding: 0;
     height: initial;
@@ -36,7 +44,10 @@ export const CheckboxContainer = styled.div`
   label {
     position: relative;
     display: flex;
+    justify-content: center;
+    line-height: 1.5;
     cursor: pointer;
+    outline: none;
 
     &:before{
       content:'';

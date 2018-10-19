@@ -49,7 +49,10 @@ class Checkbox extends Component <Props, State> {
           onClick={this.handleClick(onClick)}
           {...defaultProps}
         />
-        <label htmlFor={id}>
+        <label
+          htmlFor={id}
+          tabIndex="-1"
+        >
           {value}
         </label>
       </CheckboxContainer>
