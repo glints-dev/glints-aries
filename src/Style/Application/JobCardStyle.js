@@ -182,12 +182,8 @@ export const SubtitleTitle = styled.p`
 export const JobcardFooterWrapper = styled.footer`
   position: absolute;
   bottom: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-
-  > *:nth-child(2) {
-    margin-right: ${({ totalItems }) => totalItems === 3 && '6em'};
-  }
+  display: flex;
+  width: 100%;
 `;
 
 export const Image = styled.img`

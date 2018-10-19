@@ -5,6 +5,10 @@ import React, { Component, Children } from 'react';
 import { JobcardContainer, CustomLink } from '../../Style/Application/JobCardStyle';
 
 class JobCard extends Component <Props> {
+  static defaultProps = {
+    target: '_self',
+  }
+
   renderLinkChild = () => {
     const { children, targetUrl, ...defaultProps } = this.props;
     const linkChild = Children.map(children, (child) => {
@@ -31,6 +35,7 @@ class JobCard extends Component <Props> {
     const {
       children,
       className,
+      target,
       targetUrl,
       ...defaultProps
     } = this.props;
@@ -44,7 +49,7 @@ class JobCard extends Component <Props> {
       >
         <Choose>
           <When condition={targetUrl}>
-            <CustomLink to={targetUrl} target="_blank">
+            <CustomLink to={targetUrl} target={target}>
               { this.renderLinkChild() }
             </CustomLink>
             { this.renderNonLinkChild() }
@@ -61,7 +66,8 @@ class JobCard extends Component <Props> {
 type Props = {
   children: React$Node,
   className: string,
-  targetUrl: String,
+  targetUrl: string,
+  target: string,
 }
 
 export default JobCard;

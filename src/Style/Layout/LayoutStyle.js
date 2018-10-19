@@ -8,7 +8,7 @@ export const LayoutContainer = styled.div`
 
 export const LayoutHeaderWrapper = styled.div`
   position: fixed;
-  top: 0;
+  top: 0px;
   height: 90px;
   background-color: ${SecondaryColor.white};
   width: 100vw;

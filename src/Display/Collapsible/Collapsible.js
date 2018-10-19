@@ -5,7 +5,7 @@ import { Container, Header, Body } from '../../Style/Display/CollapsibleStyle';
 
 class Collapsible extends Component <Props, State> {
   state = {
-    isOpen: false,
+    isOpen: true,
   }
 
   handleOpen = () => {
@@ -13,14 +13,15 @@ class Collapsible extends Component <Props, State> {
     this.setState({ isOpen: !isOpen });
   }
 
-  componentDidMount() {
-    const { isCollapsing } = this.props;
-
-    if (isCollapsing) {
-      this.setState({
-        isOpen: true,
-      });
+  shouldComponentUpdate(nextProps, nextState) {
+    const { isOpen } = this.state;
+    if (isOpen !== nextState.isOpen) {
+      // re-render
+      return true;
     }
+
+    // nothing changed. avoid unnecessary re-render
+    return false;
   }
 
   render() {
@@ -69,7 +70,6 @@ type Props = {
   children: React$Node,
   className: string,
   label: string,
-  isCollapsing: boolean,
 };
 
 type State = {
