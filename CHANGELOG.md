@@ -10,6 +10,7 @@ Alert, Brand, Loading, Checkbox, Omni Search, Radio Button, Search Filter, Selec
 4. Checkbox:
    - Remove outline when it's clicked but showing up when using tab to navigate.
 
+#### 1.0.10 (2018-10-17)
 ##### New Features
 
 * **Button:**  adding disabled state on primary Button component ([644cf7b5](https://github.com/glints-dev/glints-aries/commit/644cf7b5450b052a812810abcfcba4950f99f288))
@@ -22,7 +23,6 @@ Alert, Brand, Loading, Checkbox, Omni Search, Radio Button, Search Filter, Selec
 
 * **modal:**  adjust modal height ([9c87dc10](https://github.com/glints-dev/glints-aries/commit/9c87dc101b57a0f6e5992d84c61aea9f2e05aecd))
 
-#### 1.0.10 (2018-10-17)
 
 #### 1.0.9 (2018-10-16)
 
