@@ -1,3 +1,9 @@
+#### 1.0.16 (2018-10-23)
+
+##### Refactors
+
+* **switch:**  change switch to if ([7ad73d81](https://github.com/glints-dev/glints-aries/commit/7ad73d81c11a486b60885d89e812dc37662fa951))
+
 #### 1.0.15 (2018-10-23)
 
 #### 1.0.14 (2018-10-23)
