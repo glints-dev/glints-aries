@@ -98,34 +98,27 @@ export const PrimaryContainer = styled.div`
 
   &:hover:after {
     ${(props) => {
-    switch (props.disabled) {
-      case true: {
-        return 'background-color: none;';
-      }
-      default: {
-        return `
-              background: ${SecondaryColor.black};
-              transform: translate3d(-.15em, -.15em, 0);
-              transition: all .2s;
-            `;
-      }
+    if (props.disabled) {
+      return 'background-color: none;';
     }
+    return `
+      background: ${SecondaryColor.black};
+      transform: translate3d(-.15em, -.15em, 0);
+      transition: all .2s;
+    `;
   }}
   }
 
   &:active:after {
     ${(props) => {
-    switch (!props.disabled) {
-      case true: {
-        return `
-            transform: translate3d(-.265em, -.265em, 0);
-            transition: all .2s;
-          `;
-      }
-      default: {
-        return false;
-      }
+    if (!props.disabled) {
+      return `
+        transform: translate3d(-.265em, -.265em, 0);
+        transition: all .2s;
+      `;
     }
+
+    return false;
   }}
   }
 `;
@@ -139,44 +132,43 @@ export const PrimaryBtn = styled(Button)`
   }
 
   ${(props) => {
-    switch (props.disabled) {
-      case true: {
-        return `
-          background-color: ${SecondaryColor.lightgrey}
-          color: ${SecondaryColor.white};
-        `;
-      }
+    const isDisabled = props.disabled;
+    if (isDisabled) {
+      return `
+        background-color: ${SecondaryColor.lightgrey}
+        color: ${SecondaryColor.white};
+      `;
+    }
 
-      default: {
-        switch (props.theme) {
-          case `${Theme.RED}`: {
-            return `
-              background-color: ${PrimaryColor.glintsred};
+    if (!isDisabled) {
+      switch (props.theme) {
+        case `${Theme.RED}`: {
+          return `
+            background-color: ${PrimaryColor.glintsred};
+            color: ${SecondaryColor.white};
+          `;
+        }
+        case `${Theme.BLUE}`: {
+          return `
+            background-color: ${PrimaryColor.glintsblue};
+            color: ${SecondaryColor.white};
+          `;
+        }
+        case `${Theme.BLUE_RED}`: {
+          return `
+            background-color: ${PrimaryColor.glintsblue};
+            color: ${SecondaryColor.white};
+          `;
+        }
+        default: {
+          return `
+            background-color: ${SecondaryColor.white};
+            color: ${PrimaryColor.glintsblue};
+  
+            &:active {
               color: ${SecondaryColor.white};
-            `;
-          }
-          case `${Theme.BLUE}`: {
-            return `
-              background-color: ${PrimaryColor.glintsblue};
-              color: ${SecondaryColor.white};
-            `;
-          }
-          case `${Theme.BLUE_RED}`: {
-            return `
-              background-color: ${PrimaryColor.glintsblue};
-              color: ${SecondaryColor.white};
-            `;
-          }
-          default: {
-            return `
-              background-color: ${SecondaryColor.white};
-              color: ${PrimaryColor.glintsblue};
-    
-              &:active {
-                color: ${SecondaryColor.white};
-              }
-            `;
-          }
+            }
+          `;
         }
       }
     }
@@ -186,9 +178,9 @@ export const PrimaryBtn = styled(Button)`
     ${(props) => {
     if (!props.disabled) {
       return `
-          transform: translate3d(.15em, .15em, 0);
-          transition: all .2s;
-        `;
+        transform: translate3d(.15em, .15em, 0);
+        transition: all .2s;
+      `;
     }
 
     return 'transform: none';
@@ -197,18 +189,15 @@ export const PrimaryBtn = styled(Button)`
 
   &:active {
     ${(props) => {
-    switch (props.disabled) {
-      case true: {
-        return `
-            transform: translate3d(.265em, .265em, 0);
-            transition: all .2s;
-            background-color: ${SecondaryColor.black};
-          `;
-      }
-      default: {
-        return 'transform: none';
-      }
+    if (props.disabled) {
+      return `
+        transform: translate3d(.265em, .265em, 0);
+        transition: all .2s;
+        background-color: ${SecondaryColor.black};
+      `;
     }
+
+    return 'transform: none';
   }}
   }
 `;
@@ -335,24 +324,24 @@ export const GhostBtn = styled(Button)`
     switch (props.theme) {
       case `${Theme.RED}`:
         return `
-            background-color: ${PrimaryColor.glintsred};
-            color: ${SecondaryColor.white};
-          `;
+          background-color: ${PrimaryColor.glintsred};
+          color: ${SecondaryColor.white};
+        `;
       case `${Theme.YELLOW}`:
         return `
-            background-color: ${PrimaryColor.glintsyellow};
-            color: ${SecondaryColor.white};
-          `;
+          background-color: ${PrimaryColor.glintsyellow};
+          color: ${SecondaryColor.white};
+        `;
       case `${Theme.BLUE}`:
         return `
-            background-color: ${PrimaryColor.glintsblue};
-            color: ${SecondaryColor.white};
-          `;
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
       case `${Theme.WHITE}`:
         return `
-            background-color: ${SecondaryColor.white};
-            color: ${PrimaryColor.glintsblue};
-          `;
+          background-color: ${SecondaryColor.white};
+          color: ${PrimaryColor.glintsblue};
+        `;
       default:
         return null;
     }
