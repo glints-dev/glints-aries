@@ -134,52 +134,49 @@ export const PrimaryBtn = styled(Button)`
   ${(props) => {
     if (props.disabled) {
       return `
-        background-color: ${SecondaryColor.lightgrey}
+        background-color: ${SecondaryColor.lightgrey};
         color: ${SecondaryColor.white};
       `;
     }
-    switch (props.theme) {
-      case `${Theme.RED}`: {
-        return `
-          background-color: ${PrimaryColor.glintsred};
-          color: ${SecondaryColor.white};
-        `;
-      }
-      case `${Theme.BLUE}`: {
-        return `
-          background-color: ${PrimaryColor.glintsblue};
-          color: ${SecondaryColor.white};
-        `;
-      }
-      case `${Theme.BLUE_RED}`: {
-        return `
-          background-color: ${PrimaryColor.glintsblue};
-          color: ${SecondaryColor.white};
-        `;
-      }
-      default: {
-        return `
-          background-color: ${SecondaryColor.white};
-          color: ${PrimaryColor.glintsblue};
 
-          &:active {
-            color: ${SecondaryColor.white};
-          }
-        `;
-      }
+    const themeColors = {
+      [Theme.RED]: `
+        background-color: ${PrimaryColor.glintsred};
+        color: ${SecondaryColor.white};
+      `,
+      [Theme.BLUE]: `
+        background-color: ${PrimaryColor.glintsblue};
+        color: ${SecondaryColor.white};
+      `,
+      [Theme.BLUE_RED]: `
+        background-color: ${PrimaryColor.glintsblue};
+        color: ${SecondaryColor.white};
+      `,
+    };
+
+    if (props.theme && themeColors[props.theme]) {
+      return themeColors[props.theme];
     }
+
+    return `
+      background-color: ${SecondaryColor.white};
+      color: ${PrimaryColor.glintsblue};
+
+      &:active {
+        color: ${SecondaryColor.white};
+      }
+    `;
   }}
 
   &:hover {
     ${(props) => {
-    if (!props.disabled) {
-      return `
+    if (props.disabled) {
+      return 'transform: none';
+    }
+    return `
         transform: translate3d(.15em, .15em, 0);
         transition: all .2s;
       `;
-    }
-
-    return 'transform: none';
   }}
   }
 

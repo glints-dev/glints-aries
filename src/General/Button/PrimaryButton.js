@@ -10,8 +10,8 @@ const PrimaryButton = ({
   disabled,
   ...defaultProps
 }: Props) => (
-  <PrimaryContainer theme={theme} className={className} disabled={disabled}>
-    <PrimaryBtn className={`primaryButton ${className}`} theme={theme} {...defaultProps}>
+  <PrimaryContainer className={className} theme={theme} disabled={disabled}>
+    <PrimaryBtn className={`primaryButton ${className}`} theme={theme} disabled={disabled} {...defaultProps}>
       {children}
     </PrimaryBtn>
   </PrimaryContainer>
