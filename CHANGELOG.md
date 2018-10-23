@@ -1,9 +1,18 @@
 #### 1.0.13 (2018-10-23)
 
 #### 1.0.12 (2018-10-19)
+1. Improve Accessibility for these following components:
+Alert, Brand, Loading, Checkbox, Omni Search, Radio Button, Search Filter, Select, Switch, Textarea, TextField,          Breadcrumb, Drawer, Mobile Menu, Accordion, Collapsible, Modal, Pointing Modal, Pop Over, Progress, Gallery, and Job Card.
+2. Refactor Drawer.
+   - Remove DisabledClick, onBlur, and onFocus to prevent Drawer Area from being closed.
+   - Using stopPropagation to prevent Drawer Area from being closed when it's clicked.
+3. Refactor Modal.
+   - Remove modal-background node.
+   - Using stopPropagation to prevent Modal Content from being closed when it's clicked.
+4. Checkbox:
+   - Remove outline when it's clicked but showing up when using tab to navigate.
 
-#### 1.0.11 (2018-10-19)
-
+#### 1.0.10 (2018-10-17)
 ##### New Features
 
 * **Button:**  adding disabled state on primary Button component ([644cf7b5](https://github.com/glints-dev/glints-aries/commit/644cf7b5450b052a812810abcfcba4950f99f288))
@@ -16,7 +25,6 @@
 
 * **modal:**  adjust modal height ([9c87dc10](https://github.com/glints-dev/glints-aries/commit/9c87dc101b57a0f6e5992d84c61aea9f2e05aecd))
 
-#### 1.0.10 (2018-10-17)
 
 #### 1.0.9 (2018-10-16)
 
