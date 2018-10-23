@@ -134,6 +134,7 @@ export const PrimaryBtn = styled(Button)`
   ${(props) => {
     if (props.disabled) {
       return `
+        cursor: not-allowed;
         background-color: ${SecondaryColor.lightgrey};
         color: ${SecondaryColor.white};
       `;
