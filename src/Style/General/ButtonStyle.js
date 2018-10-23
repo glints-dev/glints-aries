@@ -57,10 +57,6 @@ export const DefaultBtn = styled(Button)`
     color: ${SecondaryColor.white};
     transition: all .5s;
   }
-
-  .loader {
-    margin-right: .5em;
-  }
 `;
 
 /*
@@ -127,10 +123,6 @@ export const PrimaryBtn = styled(Button)`
   flex: 1;
   transition: all .2s;
 
-  .loader {
-    margin-right: .5em;
-  }
-
   ${(props) => {
     if (props.disabled) {
       return `
@@ -183,7 +175,7 @@ export const PrimaryBtn = styled(Button)`
 
   &:active {
     ${(props) => {
-    if (props.disabled) {
+    if (!props.disabled) {
       return `
         transform: translate3d(.265em, .265em, 0);
         transition: all .2s;
@@ -216,10 +208,6 @@ export const SecondaryBtn = styled(Button)`
   color: ${SecondaryColor.black};
   transition: all .2s;
   z-index: 2;
-
-  .loader {
-    margin-right: .5em;
-  }
 `;
 
 export const SecondaryContainer = styled.div`
@@ -279,10 +267,6 @@ export const SecondaryContainer = styled.div`
 export const GhostBtn = styled(Button)`
   flex: 1;
   transition: background-color .5s;
-
-  .loader {
-    margin-right: .5em;
-  }
 
   ${(props) => {
     switch (props.theme) {
@@ -357,10 +341,6 @@ export const GhostBtn = styled(Button)`
 export const LinkBtn = styled(Button)`
   font-weight: normal;
   text-transform: inherit;
-
-  .loader {
-    margin-right: .5em;
-  }
 
   label {
     cursor: pointer;
