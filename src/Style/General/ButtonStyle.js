@@ -132,44 +132,40 @@ export const PrimaryBtn = styled(Button)`
   }
 
   ${(props) => {
-    const isDisabled = props.disabled;
-    if (isDisabled) {
+    if (props.disabled) {
       return `
         background-color: ${SecondaryColor.lightgrey}
         color: ${SecondaryColor.white};
       `;
     }
+    switch (props.theme) {
+      case `${Theme.RED}`: {
+        return `
+          background-color: ${PrimaryColor.glintsred};
+          color: ${SecondaryColor.white};
+        `;
+      }
+      case `${Theme.BLUE}`: {
+        return `
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
+      }
+      case `${Theme.BLUE_RED}`: {
+        return `
+          background-color: ${PrimaryColor.glintsblue};
+          color: ${SecondaryColor.white};
+        `;
+      }
+      default: {
+        return `
+          background-color: ${SecondaryColor.white};
+          color: ${PrimaryColor.glintsblue};
 
-    if (!isDisabled) {
-      switch (props.theme) {
-        case `${Theme.RED}`: {
-          return `
-            background-color: ${PrimaryColor.glintsred};
+          &:active {
             color: ${SecondaryColor.white};
-          `;
-        }
-        case `${Theme.BLUE}`: {
-          return `
-            background-color: ${PrimaryColor.glintsblue};
-            color: ${SecondaryColor.white};
-          `;
-        }
-        case `${Theme.BLUE_RED}`: {
-          return `
-            background-color: ${PrimaryColor.glintsblue};
-            color: ${SecondaryColor.white};
-          `;
-        }
-        default: {
-          return `
-            background-color: ${SecondaryColor.white};
-            color: ${PrimaryColor.glintsblue};
-  
-            &:active {
-              color: ${SecondaryColor.white};
-            }
-          `;
-        }
+          }
+        `;
       }
     }
   }}
