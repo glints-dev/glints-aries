@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 
 import Button from '../../src/General/Button';
+import Collapsible from '../../src/Display/Collapsible';
 
 import Toast from '../../src/Display/Toast';
 
 class ToastStory extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false,
-    };
+  state = {
+    isOpen: false,
   }
 
-  handleOnClick = () => {
+  handleOpen = () => {
     this.setState({ isOpen: true });
   }
 
-  handleOnClose = () => {
+  handleClose = () => {
     this.setState({ isOpen: false });
   }
 
@@ -37,27 +35,52 @@ class ToastStory extends Component {
         </div>
 
         <div style={{ marginBottom: '2em' }}>
-          <Toast />
+          <Button type="default" theme="red" onClick={this.handleOpen}>
+            Open Toast
+          </Button>
+          <Toast
+            isVisible={isOpen}
+            onClose={this.handleClose}
+          >
+            <h3>Glints is looking for you!</h3>
+            <p>Glints is hiring for a talented Software Engineer.</p>
+            <p>Click button below for more details</p>
+            <Button type="default">More Details</Button>
+          </Toast>
         </div>
 
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th>
-                  Usage
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ padding: 20 }}>
-                <pre>
-                  {'<Toast />'}
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div style={{ marginBottom: '2em' }}>
+          <Collapsible label="Usage">
+            <pre>
+              {`state = {
+    isOpen: false,
+  }
+
+  handleOpen = () => {
+    this.setState({ isOpen: true });
+  }
+
+  handleClose = () => {
+    this.setState({ isOpen: false });
+  }
+
+  <Button
+    type="default"
+    theme="red"
+    onClick={this.handleOpen}
+  >
+    Open Toast
+  </Button>
+
+  <Toast
+    isVisible={isOpen}
+    onClose={this.handleClose}
+  >
+    <Component />
+  </Toast>`}
+            </pre>
+          </Collapsible>
+        </div>
 
         <h1>
           Props
@@ -67,36 +90,44 @@ class ToastStory extends Component {
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Value</th>
+              <th>Default Value</th>
+              <th>Possible Value</th>
               <th>Required</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>message</td>
-              <td>string</td>
-              <td>any</td>
-              <td>yes</td>
-              <td>Sets message for Alert.</td>
-            </tr>
-            <tr>
-              <td>isOpen</td>
-              <td>bool</td>
+              <td>isVisible</td>
+              <td>boolean</td>
+              <td>false</td>
               <td>
-                <pre>
-                  true | false
-                </pre>
+                <code>
+                  {'true | false'}
+                </code>
               </td>
               <td>yes</td>
-              <td>Sets Alert to show.</td>
+              <td>Shows the Toast.</td>
             </tr>
             <tr>
               <td>onClose</td>
               <td>function</td>
-              <td>-</td>
+              <td>function</td>
+              <td></td>
               <td>yes</td>
-              <td>Function to close Alert.</td>
+              <td>Close the Toast.</td>
+            </tr>
+            <tr>
+              <td>theme</td>
+              <td>string</td>
+              <td>blue</td>
+              <td>
+                <code>
+                  {'blue | black'}
+                </code>
+              </td>
+              <td>no</td>
+              <td>{'Sets Toast\'s theme.'}</td>
             </tr>
           </tbody>
         </table>
