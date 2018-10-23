@@ -1,6 +1,6 @@
 {
   "name": "glints-aries",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Glints ui-kit for frontend",
   "main": "dist/index.js",
   "scripts": {
