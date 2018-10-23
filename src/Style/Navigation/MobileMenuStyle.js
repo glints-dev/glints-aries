@@ -11,6 +11,7 @@ export const MobileMenuContainer = styled.div`
   padding: 2rem 0;
   height: 100vh;
   overflow-y: auto;
+  outline: none;
 `;
 
 export const MobileMenuTopWrapper = styled.div`

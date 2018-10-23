@@ -5,6 +5,7 @@ export const PointingModalContainer = styled.div`
   position: relative;
   background: ${SecondaryColor.white};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
 `;
 
 export const PointingModalHeaderArrow = styled.div`

@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import CrossPattern from '../../../assets/image/cross-pattern.svg';
 import Edit from '../../../assets/icons/edit-white.svg';
 
-export const ProfilePictureContainer = styled.div`
+export const ProfilePictureContent = styled.div`
   position: relative;
   z-index: 1;
   width: 5em;
   height: 5em;
+  outline: none;
 
   ${({ editable }) => {
     if (editable) {
@@ -47,5 +48,17 @@ export const ProfilePictureContainer = styled.div`
     width: 100%;
     height: 100%;
     z-index: 1;
+  }
+`;
+
+export const ProfilePictureContainer = styled.div`
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${ProfilePictureContent} {
+    outline: 5px auto -webkit-focus-ring-color;
   }
 `;

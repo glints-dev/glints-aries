@@ -12,6 +12,7 @@ export const JobcardContainer = styled.div`
   width: 100%;
   min-width: 300px;
   min-height: 100%;
+  outline: none;
 
   &:after {
     content: '';
@@ -44,6 +45,7 @@ export const JobcardHeaderWrapper = styled.div`
   display: grid;
   grid-template-columns: 5em 1fr;
   padding: 1.4em;
+  outline: none;
 `;
 
 export const JobcardHeaderImage = styled.div`
@@ -95,6 +97,8 @@ export const JobcardBodyWrapper = styled.div`
   padding-left: 1.4em;
   margin-bottom: 3.4em;
   cursor: pointer;
+  outline: none;
+
   &:before {
     content: '';
     background: ${SecondaryColor.lightgrey};
@@ -184,6 +188,7 @@ export const JobcardFooterWrapper = styled.footer`
   bottom: 0;
   display: flex;
   width: 100%;
+  outline: none;
 `;
 
 export const Image = styled.img`

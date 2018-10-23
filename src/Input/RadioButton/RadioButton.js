@@ -16,10 +16,13 @@ const RadioButton = (props: Props) => {
     <Fragment>
       <RadioContainer
         className={className}
-        tabIndex={0}
+        tabIndex="0"
       >
         <input type="radio" {...defaultProps} />
-        <RadioLabel theme={theme}>
+        <RadioLabel
+          theme={theme}
+          tabIndex="-1"
+        >
           {label}
         </RadioLabel>
       </RadioContainer>

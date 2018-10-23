@@ -55,6 +55,7 @@ import TabsStory from './Display/TabsStory';
 import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
+import ToastStory from './Display/ToastStory';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
@@ -145,7 +146,8 @@ storiesOf('Display', module)
   .add('Progress', () => <ProgressStory />)
   .add('Slider', () => <SliderStory />)
   .add('Swipeable', () => <SwipeableStory />)
-  .add('Tabs', () => <TabsStory />);
+  .add('Tabs', () => <TabsStory />)
+  .add('Toast', () => <ToastStory />);
 
 storiesOf('Application', module)
   .addDecorator(story => (

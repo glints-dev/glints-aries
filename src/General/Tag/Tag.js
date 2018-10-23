@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Fragment } from 'react';
-import { TagContainer } from '../../Style/General/TagStyle';
+import { TagContainer, TagContent } from '../../Style/General/TagStyle';
 
 const Tag = (props: Props) => {
   const {
@@ -13,9 +13,16 @@ const Tag = (props: Props) => {
 
   return (
     <Fragment>
-      <TagContainer className={className} {...defaultProps}>
-        {label}
-        {children}
+      <TagContainer
+        className={className}
+        role="presentation"
+        tabIndex="0"
+        {...defaultProps}
+      >
+        <TagContent tabIndex="-1">
+          {label}
+          {children}
+        </TagContent>
       </TagContainer>
     </Fragment>
   );

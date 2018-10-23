@@ -44,6 +44,7 @@ export { default as Tabs } from './Display/Tabs';
 export { default as Tag } from './General/Tag';
 export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './Input/TextField';
+export { default as Toast } from './Display/Toast';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Utilities

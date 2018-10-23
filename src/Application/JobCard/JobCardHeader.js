@@ -18,7 +18,7 @@ const JobCardHeader = (props: Props) => {
     url,
     imgUrl,
     subtitle,
-    subtitleOnClick,
+    onClickSubtitle,
     className,
     jobTitleClass,
     companyNameClass,
@@ -53,7 +53,7 @@ const JobCardHeader = (props: Props) => {
           {`${title.slice(0, 50)}`}
         </Title>
         <SubtitleTitle
-          onClick={subtitleOnClick}
+          onClick={onClickSubtitle}
           className={companyNameClass}
           role="link"
           tabIndex={0}
@@ -74,12 +74,13 @@ type Props = {
   imgUrl: string,
   jobTitleClass: string,
   url: string,
+  onClickSubtitle: Function,
 };
 
 JobCardHeader.defaultProps = {
   jobTitleClass: '',
   companyNameClass: '',
-  subtitleOnClick: () => {},
+  onClickSubtitle: () => {},
 };
 
 export default JobCardHeader;

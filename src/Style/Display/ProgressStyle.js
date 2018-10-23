@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../Colors';
 
 const spinning = keyframes`
   from {
@@ -11,11 +11,24 @@ const spinning = keyframes`
   }
 `;
 
+export const ProgressContent = styled.div`
+  position: relative;
+  outline: none;
+`;
+
 export const ProgressContainer = styled.div`
   position: relative;
   display: flex;
   background: transparent;
   z-index: 2;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${ProgressContent} {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 
   &:after {
     content: '';

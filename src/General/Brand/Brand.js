@@ -10,7 +10,6 @@ const Brand = (props: Props) => {
   const {
     asset,
     className,
-    alt,
     ...defaultProps
   } = props;
 
@@ -25,8 +24,17 @@ const Brand = (props: Props) => {
   }
 
   return (
-    <BrandContainer role="presentation" focusable="false" {...defaultProps}>
-      <BrandImage className={className} src={srcAsset} alt={alt} />
+    <BrandContainer
+      role="presentation"
+      focusable="false"
+      tabIndex="0"
+    >
+      <BrandImage
+        className={className}
+        src={srcAsset}
+        tabIndex="-1"
+        {...defaultProps}
+      />
     </BrandContainer>
   );
 };
@@ -34,7 +42,6 @@ const Brand = (props: Props) => {
 type Props = {
   asset: string,
   className: string,
-  alt: string,
 }
 
 export default Brand;

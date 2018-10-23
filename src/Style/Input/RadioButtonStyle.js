@@ -7,6 +7,7 @@ export const RadioLabel = styled.span`
   padding-left: 1.8em;
   font-size: 1em;
   color: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+  outline: none;
 
   &:before {
     content: '';
@@ -51,5 +52,13 @@ export const RadioContainer = styled.label`
       opacity: 1;
       transform: scale(1,1);
     }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${RadioLabel} {
+    outline: 5px auto -webkit-focus-ring-color;
   }
 `;

@@ -15,7 +15,6 @@ const PointingModal = (props: Props) => {
       className={className}
       role="dialog"
       aria-modal="true"
-      tabIndex={0}
       {...defaultProps}
     >
       <PointingModalHeaderArrow role="presentation" />

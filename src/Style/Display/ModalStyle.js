@@ -16,7 +16,6 @@ export const ModalContainer = styled.div`
   background: rgba(0, 0, 0, 0.65);
 `;
 
-
 export const ModalContentArea = styled.div`
   position: relative;
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
@@ -25,6 +24,7 @@ export const ModalContentArea = styled.div`
   max-width: 100%;
   max-height: 85vh;
   z-index: 9999;
+  outline: none;
     
   @media ${Device.mobileM} {
     padding: 1.5rem;

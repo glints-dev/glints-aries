@@ -13,15 +13,28 @@ const animateCollapsible = keyframes`
   }
 `;
 
-export const Container = styled.div`
+export const CollapsibleContent = styled.div`
+  position: relative;
+  outline: none;
+`;
+
+export const CollapsibleContainer = styled.div`
   cursor: pointer;
   color: black;
   background-color: ${SecondaryColor.white};
   border: solid 1px ${SecondaryColor.lightgrey};
   font-size: 1em;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${CollapsibleContent} {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 `;
 
-export const Header = styled.div`
+export const CollapsibleHeader = styled.div`
   background: ${SecondaryColor.white};
   display: flex;
   justify-content: space-between;
@@ -33,7 +46,7 @@ export const Header = styled.div`
   }
 `;
 
-export const Body = styled.p`
+export const CollapsibleBody = styled.p`
   padding: 0 1.2em 1.2em 1.2em;
   margin-bottom: 0;
   animation: ${animateCollapsible} .3s linear;

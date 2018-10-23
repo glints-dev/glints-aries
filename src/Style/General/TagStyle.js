@@ -1,16 +1,29 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
-export const TagContainer = styled.label`
-    display: inline-flex;
-    align-items: center;
-    background: ${SecondaryColor.whitesmoke};
-    padding: .4em 1em;
-    border-radius: 1em;
-    font-size: 1em;
-    line-height: 1.5;
+export const TagContent = styled.label`
+  display: flex;
+  align-items: center;
+  padding: .4em 1em;
+  outline: none;
+  
+  * {
+    margin-left: 1.5rem;
+  }
+`;
 
-    * {
-        margin-left: 1.5rem;
-    }
+export const TagContainer = styled.div`
+  display: inline-flex;
+  background: ${SecondaryColor.whitesmoke};
+  border-radius: 1em;
+  font-size: 1em;
+  line-height: 1.5;
+  
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${TagContent} {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 `;

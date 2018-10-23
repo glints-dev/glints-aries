@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Icon from '../../General/Icon';
 
-import { Container, Header, Body } from '../../Style/Display/CollapsibleStyle';
+import {
+  CollapsibleContainer,
+  CollapsibleContent,
+  CollapsibleHeader,
+  CollapsibleBody,
+} from '../../Style/Display/CollapsibleStyle';
 
 class Collapsible extends Component <Props, State> {
   state = {
@@ -35,33 +40,35 @@ class Collapsible extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <Container
+      <CollapsibleContainer
         className="collapsible"
-        tabIndex={0}
+        tabIndex="0"
         onClick={this.handleOpen}
         {...defaultProps}
       >
-        <Header
-          className="head"
-          role="tab"
-          aria-expanded={isOpen}
-        >
-          {label}
-          <Choose>
-            <When condition={isOpen === false}>
-              <Icon name="arrow-down" color="#000000" />
-            </When>
-            <Otherwise>
-              <Icon name="arrow-up" color="#000000" />
-            </Otherwise>
-          </Choose>
-        </Header>
-        {isOpen && (
-          <Body className="body">
-            {children}
-          </Body>
-        )}
-      </Container>
+        <CollapsibleContent tabIndex="-1">
+          <CollapsibleHeader
+            className="head"
+            role="tab"
+            aria-expanded={isOpen}
+          >
+            {label}
+            <Choose>
+              <When condition={isOpen === false}>
+                <Icon name="arrow-down" color="#000000" />
+              </When>
+              <Otherwise>
+                <Icon name="arrow-up" color="#000000" />
+              </Otherwise>
+            </Choose>
+          </CollapsibleHeader>
+          {isOpen && (
+            <CollapsibleBody className="body">
+              {children}
+            </CollapsibleBody>
+          )}
+        </CollapsibleContent>
+      </CollapsibleContainer>
     );
   }
 }

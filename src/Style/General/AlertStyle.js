@@ -39,6 +39,7 @@ export const AlertContainer = styled.div`
   width: 80vw;
   max-width: 500px;
   animation: ${({ isOpen }) => isOpen ? fadeDown : fadeUp} .3s ease-in-out;
+  outline: none;
 `;
 
 export const AlertMessage = styled.div`

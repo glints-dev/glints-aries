@@ -5,7 +5,7 @@ export const AccordionContainer = styled.div`
   position: relative;
 `;
 
-export const AccordionPanelWrapper = styled.div`
+export const AccordionContentWrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -14,6 +14,7 @@ export const AccordionPanelWrapper = styled.div`
   line-height: 1.5;
   padding: 1.5em 0;
   cursor: pointer;
+  outline: none;
 
   p {
     margin: 0;
@@ -31,6 +32,18 @@ export const AccordionPanelWrapper = styled.div`
     width: 100%;
     height: 1px;
     background: ${SecondaryColor.lightgrey};
+  }
+`;
+
+export const AccordionPanelWrapper = styled.div`
+  position: relative;
+  
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${AccordionContentWrapper} {
+    outline: 5px auto -webkit-focus-ring-color;
   }
 `;
 

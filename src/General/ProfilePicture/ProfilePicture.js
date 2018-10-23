@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { ProfilePictureContainer } from '../../Style/General/ProfilePictureStyle';
+import { ProfilePictureContainer, ProfilePictureContent } from '../../Style/General/ProfilePictureStyle';
 
 const ProfilePicture = (props: Props) => {
   const {
@@ -14,10 +14,16 @@ const ProfilePicture = (props: Props) => {
   return (
     <ProfilePictureContainer
       className={className}
-      editable={editable}
+      tabIndex="0"
+      role="presentation"
       {...defaultProps}
     >
-      {children}
+      <ProfilePictureContent
+        editable={editable}
+        tabIndex="-1"
+      >
+        {children}
+      </ProfilePictureContent>
     </ProfilePictureContainer>
   );
 };

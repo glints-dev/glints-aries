@@ -4,7 +4,7 @@ import React from 'react';
 
 import Icon from '../../General/Icon';
 
-import { AccordionPanelWrapper, AccordionIconWrapper, AccordionContent } from '../../Style/Display/AccordionStyle';
+import { AccordionPanelWrapper, AccordionIconWrapper, AccordionContentWrapper, AccordionContent } from '../../Style/Display/AccordionStyle';
 import { SecondaryColor } from '../../Style/Colors';
 
 const AccordionPanel = (props: Props) => {
@@ -21,20 +21,22 @@ const AccordionPanel = (props: Props) => {
       className={className}
       role="tab"
       aria-expanded={active}
-      tabIndex={0}
+      tabIndex="0"
       {...defaultProps}
     >
-      <AccordionIconWrapper>
-        <Icon name="add" color={SecondaryColor.lightblack} />
-      </AccordionIconWrapper>
-      <p>{label}</p>
-      {active
-        && (
-          <AccordionContent>
-            {content}
-          </AccordionContent>
-        )
-      }
+      <AccordionContentWrapper tabIndex="-1">
+        <AccordionIconWrapper>
+          <Icon name="add" color={SecondaryColor.lightblack} />
+        </AccordionIconWrapper>
+        <p>{label}</p>
+        {active
+          && (
+            <AccordionContent>
+              {content}
+            </AccordionContent>
+          )
+        }
+      </AccordionContentWrapper>
     </AccordionPanelWrapper>
   );
 };
