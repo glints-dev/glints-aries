@@ -5,7 +5,7 @@ class Toast extends Component {
   render() {
     return (
       <ToastContainer>
-				asd
+				this is toast
 			</ToastContainer>
     );
   }
