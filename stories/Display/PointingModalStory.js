@@ -1,4 +1,6 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
+
 import PointingModal from '../../src/Display/PointingModal';
 
 import ProfilePicture from '../../src/General/ProfilePicture';
@@ -47,8 +49,8 @@ const PointingModalStory = () => (
               </PointingModal.Header>
               <Divider theme="grey" />
               <PointingModal.Body>
-                <PointingModal.Item>
-                  <a href="./profile">View Profile</a>
+                <PointingModal.Item onClick={action('Default Button')}>
+                  View Profile
                 </PointingModal.Item>
                 <PointingModal.Item>
                   <a href="./edit-profile">Edit Profile</a>

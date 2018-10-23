@@ -14,13 +14,11 @@ const ProfilePicture = (props: Props) => {
   return (
     <ProfilePictureContainer
       className={className}
-      tabIndex="0"
       role="presentation"
       {...defaultProps}
     >
       <ProfilePictureContent
         editable={editable}
-        tabIndex="-1"
       >
         {children}
       </ProfilePictureContent>
