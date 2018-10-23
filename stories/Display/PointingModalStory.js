@@ -49,14 +49,14 @@ const PointingModalStory = () => (
               </PointingModal.Header>
               <Divider theme="grey" />
               <PointingModal.Body>
-                <PointingModal.Item onClick={action('Default Button')}>
+                <PointingModal.Item onClick={action('View Profile')}>
                   View Profile
                 </PointingModal.Item>
-                <PointingModal.Item>
-                  <a href="./edit-profile">Edit Profile</a>
+                <PointingModal.Item onClick={action('Edit Profile')}>
+                  Edit Profile
                 </PointingModal.Item>
-                <PointingModal.Item>
-                  <a href="./sign-out">Sign Out</a>
+                <PointingModal.Item onClick={action('Sign Out')}>
+                  Sign Out
                 </PointingModal.Item>
               </PointingModal.Body>
             </PointingModal>
@@ -76,7 +76,7 @@ const PointingModalStory = () => (
   <Divider theme="grey" />
   <PointingModal.Body>
     <PointingModal.Item onClick={...}>
-      <a href="#">View Profile</a>
+      View Profile
     </PointingModal.Item>
   </PointingModal.Body>
   <PointingModal.Footer>

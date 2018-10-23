@@ -37,7 +37,7 @@ const PopoverStory = () => (
               content={(
                 <PointingModal>
                   <PointingModal.Header>
-                    <ProfilePicture editable onClick={action('Default Button')}>
+                    <ProfilePicture editable onClick={action('Profile Picture is')}>
                       <img src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" alt="profile" />
                     </ProfilePicture>
                     <div className="aries-modal-profile">
@@ -51,14 +51,14 @@ const PopoverStory = () => (
                   </PointingModal.Header>
                   <Divider theme="grey" />
                   <PointingModal.Body>
-                    <PointingModal.Item onClick={action('Default Button')}>
+                    <PointingModal.Item onClick={action('View Profile')}>
                       View Profile
                     </PointingModal.Item>
-                    <PointingModal.Item>
-                      <a href="./edit-profile">Edit Profile</a>
+                    <PointingModal.Item onClick={action('Edit Profile')}>
+                      Edit Profile
                     </PointingModal.Item>
-                    <PointingModal.Item>
-                      <a href="./sign-out">Sign Out</a>
+                    <PointingModal.Item onClick={action('Sign Out')}>
+                      Sign Out
                     </PointingModal.Item>
                   </PointingModal.Body>
                 </PointingModal>
