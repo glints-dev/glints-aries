@@ -83,57 +83,50 @@ export const PrimaryContainer = styled.div`
     transition: all .2s;
 
     ${(props) => {
-      switch (props.disabled) {
-        case true: {
-          return 'background-color: none';
-        }
-        default: {
-          switch (props.theme) {
-            case `${Theme.BLUE_RED}`:
-              return `
-                background-color: ${PrimaryColor.glintsred};
-              `;
-            default:
-              return `
-                background-color: ${PrimaryColor.glintsyellow};
-              `;
-          }
-        }
-      }
-    }}
+    const themeBackgrounds = {
+      [Theme.BLUE_RED]: PrimaryColor.glintsred,
+    };
+    if (props.disabled) {
+      return 'background-color: none';
+    }
+    if (props.theme && themeBackgrounds[props.theme]) {
+      return `background-color: ${themeBackgrounds[props.theme]};`;
+    }
+    return `background-color: ${PrimaryColor.glintsyellow};`;
+  }}
   }
 
   &:hover:after {
     ${(props) => {
-      switch (props.disabled) {
-        case true: {
-          return 'background-color: none;';
-        }
-        default: {
-          return `
+    switch (props.disabled) {
+      case true: {
+        return 'background-color: none;';
+      }
+      default: {
+        return `
               background: ${SecondaryColor.black};
               transform: translate3d(-.15em, -.15em, 0);
               transition: all .2s;
             `;
-        }
       }
-    }}
+    }
+  }}
   }
 
   &:active:after {
     ${(props) => {
-      switch (!props.disabled) {
-        case true: {
-          return `
+    switch (!props.disabled) {
+      case true: {
+        return `
             transform: translate3d(-.265em, -.265em, 0);
             transition: all .2s;
           `;
-        }
-        default: {
-          return false;
-        }
       }
-    }}
+      default: {
+        return false;
+      }
+    }
+  }}
   }
 `;
 
@@ -151,7 +144,7 @@ export const PrimaryBtn = styled(Button)`
         return `
           background-color: ${SecondaryColor.lightgrey}
           color: ${SecondaryColor.white};
-        `
+        `;
       }
 
       default: {
@@ -191,32 +184,32 @@ export const PrimaryBtn = styled(Button)`
 
   &:hover {
     ${(props) => {
-      if (!props.disabled) {
-        return `
+    if (!props.disabled) {
+      return `
           transform: translate3d(.15em, .15em, 0);
           transition: all .2s;
         `;
-      }
+    }
 
-      return 'transform: none';
-    }}
+    return 'transform: none';
+  }}
   }
 
   &:active {
     ${(props) => {
-      switch (props.disabled) {
-        case true: {
-          return `
+    switch (props.disabled) {
+      case true: {
+        return `
             transform: translate3d(.265em, .265em, 0);
             transition: all .2s;
             background-color: ${SecondaryColor.black};
           `;
-        }
-        default: {
-          return 'transform: none';
-        }
       }
-    }}
+      default: {
+        return 'transform: none';
+      }
+    }
+  }}
   }
 `;
 
