@@ -1,5 +1,7 @@
 import React from 'react';
+
 import ProfilePicture from '../../src/General/ProfilePicture';
+import Collapsible from '../../src/Display/Collapsible';
 
 const ProfilePictureStory = () => (
   <div className="doc-mainbar">
@@ -14,40 +16,31 @@ const ProfilePictureStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-            Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <ProfilePicture editable>
-              <img src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80" alt="Ying Cong" />
-            </ProfilePicture>
-          </td>
-          <td>
-            <pre>
-              {`<ProfilePicture editable>
+    <div style={{ marginBottom: '2em' }}>
+      <ProfilePicture editable>
+        <img src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80" alt="Ying Cong" />
+      </ProfilePicture>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<ProfilePicture editable>
   <img src="..." alt="..." />
 </ProfilePicture>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -56,7 +49,10 @@ const ProfilePictureStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -76,7 +72,12 @@ const ProfilePictureStory = () => (
           </td>
           <td>
             <code>
-            true | false
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
             </code>
           </td>
           <td>

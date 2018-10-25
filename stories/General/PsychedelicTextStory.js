@@ -1,5 +1,9 @@
 import React from 'react';
+
 import PsychedelicText from '../../src/General/PsychedelicText';
+import Heading from '../../src/General/Heading';
+import Collapsible from '../../src/Display/Collapsible';
+import Divider from '../../src/General/Divider';
 
 const PsychedelicTextStory = () => (
   <div className="doc-mainbar">
@@ -14,57 +18,54 @@ const PsychedelicTextStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <PsychedelicText type="heading">
-              Glints
-            </PsychedelicText>
-          </td>
-          <td>
-            <pre>
-              {`<PsychedelicText type="heading">
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Heading</Heading>
+      <PsychedelicText type="heading">
+        Glints
+      </PsychedelicText>
+    </div>
+
+    <div style={{ marginBottom: '4em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<PsychedelicText type="heading">
   Glints
 </PsychedelicText>`}
-            </pre>
-          </td>
-        </tr>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <PsychedelicText type="subheading" psychTheme="yellow-dominant">
-              Glints
-            </PsychedelicText>
-          </td>
-          <td>
-            <pre>
-              {`<PsychedelicText
+        </pre>
+      </Collapsible>
+    </div>
+
+    <Divider theme="grey" />
+
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Subheading</Heading>
+      <PsychedelicText type="subheading" psychTheme="yellow-dominant">
+        Glints
+      </PsychedelicText>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<PsychedelicText
   type="subheading"
   psychTheme="yellow-dominant"
 >
   Glints
 </PsychedelicText>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -73,7 +74,10 @@ const PsychedelicTextStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -91,10 +95,11 @@ const PsychedelicTextStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
-            <pre>
-              {'heading | subheading'}
-            </pre>
+            <code>
+              heading | subheading
+            </code>
           </td>
           <td>
             yes
@@ -110,6 +115,7 @@ const PsychedelicTextStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             <pre>
               {`blue-dominant | 

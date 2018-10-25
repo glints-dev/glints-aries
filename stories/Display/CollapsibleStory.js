@@ -15,31 +15,25 @@ const CollapsibleStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Personal Detail">
+      <Collapsible
+        label="Personal Detail"
+      >
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
       </Collapsible>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre>
-              {`<Collapsible label="Personal Detail">
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible
+        label="Usage"
+        isOpen={false}
+      >
+        <pre>
+          {`<Collapsible label="Personal Detail">
   ...
 </Collapsible>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
     <h1>
       Props
@@ -54,7 +48,10 @@ const CollapsibleStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -72,6 +69,7 @@ const CollapsibleStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -88,6 +86,11 @@ const CollapsibleStory = () => (
           </td>
           <td>
             boolean
+          </td>
+          <td>
+            <code>
+              {'true'}
+            </code>
           </td>
           <td>
             <code>

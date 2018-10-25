@@ -3,6 +3,7 @@ import { SecondaryColor } from '../Colors';
 
 export const CheckboxContainer = styled.div`
   position: relative;
+  display: inline-flex;
   font-size: 1em;
   line-height: 1.5;
 

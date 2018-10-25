@@ -1,48 +1,47 @@
 import React from 'react';
+import Range from '../../src/Input/Range';
 
-import RadioButton from '../../src/Input/RadioButton';
-import Collapsible from '../../src/Display/Collapsible';
-
-const RadioButtonStory = () => (
+const RangeStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        Radio Button
+        Range
       </h1>
       <p>
         <code>
-          {'import { RadioButton } from \'glints-aries\''}
+          {'import { Range } from \'glints-aries\''}
         </code>
       </p>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <RadioButton label="Full Time" name="job-type" value="full-time" />
-      <div style={{ display: 'inline-flex', marginRight: '1em' }} />
-      <RadioButton label="Intership" name="job-type" value="intership" />
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`<RadioButton 
-  label="Full Time" 
-  name="job-type" 
-  value="full-time"
-  />`}
-        </pre>
-      </Collapsible>
+      <Range />
     </div>
 
     <table className="doc-table">
       <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              Props
-            </h3>
+        <tr>
+          <th>
+            Usage
           </th>
         </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre>
+              {'<Range />'}
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>
+      Props
+    </h1>
+    <table className="doc-table">
+      <thead>
         <tr>
           <th>
             Name
@@ -51,10 +50,7 @@ const RadioButtonStory = () => (
             Type
           </th>
           <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
+            Value
           </th>
           <th>
             Required
@@ -72,7 +68,6 @@ const RadioButtonStory = () => (
           <td>
             string
           </td>
-          <td></td>
           <td>
             any
           </td>
@@ -80,7 +75,7 @@ const RadioButtonStory = () => (
             yes
           </td>
           <td>
-            Sets the label of radio button
+            Sets the label of radio button.
           </td>
         </tr>
         <tr>
@@ -90,7 +85,6 @@ const RadioButtonStory = () => (
           <td>
             string
           </td>
-          <td></td>
           <td>
             any
           </td>
@@ -106,7 +100,6 @@ const RadioButtonStory = () => (
           <td>
             string
           </td>
-          <td></td>
           <td>
             any
           </td>
@@ -123,14 +116,9 @@ const RadioButtonStory = () => (
             boolean
           </td>
           <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
+            <pre>
               true | false
-            </code>
+            </pre>
           </td>
           <td>
             no
@@ -146,11 +134,6 @@ const RadioButtonStory = () => (
           </td>
           <td>
             <code>
-              black
-            </code>
-          </td>
-          <td>
-            <code>
               white
             </code>
           </td>
@@ -158,7 +141,7 @@ const RadioButtonStory = () => (
             no
           </td>
           <td>
-            Sets theme of Radio Button
+            Default theme is black.
           </td>
         </tr>
       </tbody>
@@ -166,4 +149,4 @@ const RadioButtonStory = () => (
   </div>
 );
 
-export default RadioButtonStory;
+export default RangeStory;

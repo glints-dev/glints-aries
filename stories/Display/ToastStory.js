@@ -50,34 +50,34 @@ class ToastStory extends Component {
         </div>
 
         <div style={{ marginBottom: '2em' }}>
-          <Collapsible label="Usage">
+          <Collapsible label="Usage" isOpen={false}>
             <pre>
               {`state = {
-    isOpen: false,
-  }
+  isOpen: false,
+}
 
-  handleOpen = () => {
-    this.setState({ isOpen: true });
-  }
+handleOpen = () => {
+  this.setState({ isOpen: true });
+}
 
-  handleClose = () => {
-    this.setState({ isOpen: false });
-  }
+handleClose = () => {
+  this.setState({ isOpen: false });
+}
 
-  <Button
-    type="default"
-    theme="red"
-    onClick={this.handleOpen}
-  >
-    Open Toast
-  </Button>
+<Button
+  type="default"
+  theme="red"
+  onClick={this.handleOpen}
+>
+  Open Toast
+</Button>
 
-  <Toast
-    isVisible={isOpen}
-    onClose={this.handleClose}
-  >
-    <Component />
-  </Toast>`}
+<Toast
+  isVisible={isOpen}
+  onClose={this.handleClose}
+>
+  <Component />
+</Toast>`}
             </pre>
           </Collapsible>
         </div>
@@ -100,7 +100,11 @@ class ToastStory extends Component {
             <tr>
               <td>isVisible</td>
               <td>boolean</td>
-              <td>false</td>
+              <td>
+                <code>
+                  {'false'}
+                </code>
+              </td>
               <td>
                 <code>
                   {'true | false'}
@@ -112,15 +116,19 @@ class ToastStory extends Component {
             <tr>
               <td>onClose</td>
               <td>function</td>
-              <td>function</td>
               <td></td>
+              <td>function</td>
               <td>yes</td>
               <td>Close the Toast.</td>
             </tr>
             <tr>
               <td>theme</td>
               <td>string</td>
-              <td>blue</td>
+              <td>
+                <code>
+                  {'blue'}
+                </code>
+              </td>
               <td>
                 <code>
                   {'blue | black'}

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Select from '../../src/Input/Select';
+import Collapsible from '../../src/Display/Collapsible';
 
 const SelectStory = () => (
   <div className="doc-mainbar">
@@ -14,31 +16,21 @@ const SelectStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Select label="Jobs" noOptionResult="No Result Found.">
-              <Select.Option value="accountant">Accountant</Select.Option>
-              <Select.Option value="business development">Business Development</Select.Option>
-              <Select.Option value="finance">Finance</Select.Option>
-              <Select.Option value="software engineer">Software Engineer</Select.Option>
-            </Select>
-          </td>
-          <td>
-            <pre>
-              {`
-const Option = Select.Option;
+    <div style={{ marginBottom: '2em' }}>
+      <div style={{ width: '300px' }}>
+        <Select label="Jobs" noOptionResult="No Result Found.">
+          <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">Business Development</Select.Option>
+          <Select.Option value="finance">Finance</Select.Option>
+          <Select.Option value="software engineer">Software Engineer</Select.Option>
+        </Select>
+      </div>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`const Option = Select.Option;
 
 handleChange = (value) => {
   console.log('selected value: ', value);
@@ -51,26 +43,34 @@ handleChange = (value) => {
   <Option value="accountant">Accountant</Option>
   <Option value="finance">Finance</Option>
 </Select>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="7">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
           </th>
           <th>
+            Component
+          </th>
+          <th>
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -86,8 +86,12 @@ handleChange = (value) => {
             label
           </td>
           <td>
+            {'<Select />'}
+          </td>
+          <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -101,12 +105,17 @@ handleChange = (value) => {
         <tr>
           <td>
             value
-            {' '}
-            <b>(Select)</b>
+          </td>
+          <td>
+            <pre>
+              {`<Select />
+<Select.Option />`}
+            </pre>
           </td>
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -114,26 +123,7 @@ handleChange = (value) => {
             no
           </td>
           <td>
-            Sets default value for the input.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            value
-            {' '}
-            <b>(Option)</b>
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets value for each options.
+            Sets value for the Input or Option
           </td>
         </tr>
         <tr>
@@ -141,18 +131,22 @@ handleChange = (value) => {
             status
           </td>
           <td>
-            string
+            {'<Select />'}
           </td>
           <td>
-            <pre>
+            string
+          </td>
+          <td></td>
+          <td>
+            <code>
               success | error
-            </pre>
+            </code>
           </td>
           <td>
             no
           </td>
           <td>
-            Sets different style for the Text Field based on status.
+            Sets different style for Select based on status.
           </td>
         </tr>
         <tr>
@@ -160,12 +154,20 @@ handleChange = (value) => {
             disabled
           </td>
           <td>
+            {'<Select />'}
+          </td>
+          <td>
             boolean
           </td>
           <td>
-            <pre>
-              {'true | false'}
-            </pre>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
           </td>
           <td>
             no
@@ -179,10 +181,14 @@ handleChange = (value) => {
             onChange
           </td>
           <td>
-            function
+            {'<Select.Option />'}
           </td>
           <td>
-            -
+            function
+          </td>
+          <td></td>
+          <td>
+            function
           </td>
           <td>
             no

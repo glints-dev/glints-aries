@@ -17,7 +17,7 @@ export const ToastContainer = styled.div`
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
 
   @media ${Device.mobileM} {
-    width: 100%;
+    min-width: 100%;
     bottom: 0;
     right: 0;
   }
@@ -41,4 +41,5 @@ export const ToastBodyWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: .5em;
+  text-align: center;
 `;

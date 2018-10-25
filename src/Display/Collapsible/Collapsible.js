@@ -29,6 +29,16 @@ class Collapsible extends Component <Props, State> {
     return false;
   }
 
+  componentDidMount() {
+    const { isOpen } = this.props;
+
+    if (isOpen === false && isOpen !== undefined) {
+      this.setState({
+        isOpen,
+      });
+    }
+  }
+
   render() {
     const {
       label,

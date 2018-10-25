@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchFilter from '../../src/Input/SearchFilter';
 
+import SearchFilter from '../../src/Input/SearchFilter';
 import Icon from '../../src/General/Icon';
 import Button from '../../src/General/Button';
-
+import Collapsible from '../../src/Display/Collapsible';
 
 const SearchFilterStory = () => (
   <div className="doc-mainbar">
@@ -18,12 +18,12 @@ const SearchFilterStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '6em' }}>
+    <div style={{ marginBottom: '4em' }}>
       <SearchFilter
         label="Search for job title, location, or company"
         content={(
           <Button theme="blue">
-            <Icon name="search" color="white" size="20" />
+            <Icon name="search" color="white" />
           </Button>
         )}
       >
@@ -35,7 +35,7 @@ const SearchFilterStory = () => (
           </SearchFilter.List>
           <SearchFilter.List title="Lokasi Populer">
             <SearchFilter.Item>
-              <Icon name="location" color="#AAAAAA" size="14" />
+              <Icon name="location" color="#AAAAAA" />
               {' '}
               Lowongan Pekerjaan di Jakarta
             </SearchFilter.Item>
@@ -51,24 +51,15 @@ const SearchFilterStory = () => (
       </SearchFilter>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <pre>
-              {`<SearchFilter
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<SearchFilter
   label="Search for job title, location, or company"
   value="Gojek"
   content={(
     <Button theme="blue">
-      <Icon name="search" color="white" size="20" />
+      <Icon name="search" color="white" />
     </Button>
   )}
 >
@@ -80,7 +71,7 @@ const SearchFilterStory = () => (
     </SearchFilter.List>
     <SearchFilter.List title="Lokasi Populer">
       <SearchFilter.Item>
-        <Icon name="location" color="#AAAAAA" size="14" />
+        <Icon name="location" color="#AAAAAA" />
         Lowongan Pekerjaan di Jakarta
       </SearchFilter.Item>
     </SearchFilter.List>
@@ -92,17 +83,19 @@ const SearchFilterStory = () => (
     </SearchFilter.List>
   </SearchFilter.Body>
 </SearchFilter>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -111,7 +104,10 @@ const SearchFilterStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -129,6 +125,7 @@ const SearchFilterStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -146,6 +143,7 @@ const SearchFilterStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -161,8 +159,9 @@ const SearchFilterStory = () => (
             content
           </td>
           <td>
-            Element
+            element
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -180,6 +179,7 @@ const SearchFilterStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -195,8 +195,9 @@ const SearchFilterStory = () => (
             onClick
           </td>
           <td>
-            Function
+            function
           </td>
+          <td></td>
           <td>
             any
           </td>

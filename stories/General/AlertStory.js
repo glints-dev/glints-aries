@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Button from '../../src/General/Button';
-
 import Alert from '../../src/General/Alert';
+import Button from '../../src/General/Button';
+import Collapsible from '../../src/Display/Collapsible';
 
 class AlertStory extends Component {
   constructor() {
@@ -41,7 +41,7 @@ class AlertStory extends Component {
             theme="blue"
             onClick={this.handleOnClick}
           >
-              Open
+              Open Alert
           </Button>
           <Alert
             message="Our system is currently busy. Please try again."
@@ -50,19 +50,10 @@ class AlertStory extends Component {
           />
         </div>
 
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th>
-                  Usage
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ padding: 20 }}>
-                <pre>
-                  {`state = {
+        <div style={{ marginBottom: '2em' }}>
+          <Collapsible label="Usage" isOpen={false}>
+            <pre>
+              {`state = {
   isOpen: false,
 }
 
@@ -75,21 +66,24 @@ handleOnClose = () => {
   isOpen={isOpen}
   onClose={this.handleOnClose}
 />`}
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </pre>
+          </Collapsible>
+        </div>
 
-        <h1>
-          Props
-        </h1>
         <table className="doc-table">
           <thead>
+            <tr style={{ borderBottom: '1px solid lightgrey' }}>
+              <th colSpan="6">
+                <h3 style={{ margin: '.8em 0' }}>
+                  Props
+                </h3>
+              </th>
+            </tr>
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Value</th>
+              <th>Default Value</th>
+              <th>Possible Value</th>
               <th>Required</th>
               <th>Description</th>
             </tr>
@@ -98,6 +92,7 @@ handleOnClose = () => {
             <tr>
               <td>message</td>
               <td>string</td>
+              <td></td>
               <td>any</td>
               <td>yes</td>
               <td>Sets message for Alert.</td>
@@ -106,9 +101,14 @@ handleOnClose = () => {
               <td>isOpen</td>
               <td>bool</td>
               <td>
-                <pre>
+                <code>
+                  false
+                </code>
+              </td>
+              <td>
+                <code>
                   true | false
-                </pre>
+                </code>
               </td>
               <td>yes</td>
               <td>Sets Alert to show.</td>
@@ -116,7 +116,8 @@ handleOnClose = () => {
             <tr>
               <td>onClose</td>
               <td>function</td>
-              <td>-</td>
+              <td></td>
+              <td>function</td>
               <td>yes</td>
               <td>Function to close Alert.</td>
             </tr>

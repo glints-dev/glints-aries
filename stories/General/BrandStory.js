@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Brand from '../../src/General/Brand';
+import Collapsible from '../../src/Display/Collapsible';
 
 const BrandStory = () => (
   <div className="doc-mainbar">
@@ -14,48 +16,30 @@ const BrandStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Brand asset="glints-black" alt="Glints Logo" />
-          </td>
-          <td>
-            <code>
-              {'<Brand asset="glints-black" />'}
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Brand
-              asset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Logo_of_Unsplash.svg/2000px-Logo_of_Unsplash.svg.png"
-            />
-          </td>
-          <td>
-            <code>
-              {'<Brand asset={\'asset url / path\'} />'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Brand asset="glints-black" alt="Glints Logo" />
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Brand
+  asset={glints-black | glints-white | url / path}
+  alt="..."
+/>`}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -64,7 +48,10 @@ const BrandStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -82,6 +69,7 @@ const BrandStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             <pre>
               glints-black | glints-white | url / path
@@ -99,21 +87,6 @@ const BrandStory = () => (
             {' '}
             props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo.
           </td>
-        </tr>
-        <tr>
-          <td>
-            onClick
-          </td>
-          <td>
-            Function
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td></td>
         </tr>
       </tbody>
     </table>

@@ -1,8 +1,9 @@
 import React from 'react';
-import OmniSearch from '../../src/Input/OmniSearch';
 
+import OmniSearch from '../../src/Input/OmniSearch';
 import Icon from '../../src/General/Icon';
 import Button from '../../src/General/Button';
+import Collapsible from '../../src/Display/Collapsible';
 
 const OmniSearchStory = () => (
   <div className="doc-mainbar">
@@ -17,14 +18,14 @@ const OmniSearchStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '6em' }}>
+    <div style={{ marginBottom: '4em' }}>
       <OmniSearch
         label="Find Internships, Locations, and Companies"
         content={(
           <Button theme="blue">
                     Go!
             {' '}
-            <Icon name="arrow-round-forward" color="white" size="16" />
+            <Icon name="arrow-round-forward" color="white" />
           </Button>
         )}
       >
@@ -42,17 +43,17 @@ const OmniSearchStory = () => (
           </OmniSearch.List>
           <OmniSearch.List title="Lokasi Populer">
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" size="14" />
+              <Icon name="location" color="#AAAAAA" />
               {' '}
               Lowongan Pekerjaan di Jakarta
             </OmniSearch.Item>
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" size="14" />
+              <Icon name="location" color="#AAAAAA" />
               {' '}
               Lowongan Pekerjaan di Bogor
             </OmniSearch.Item>
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" size="14" />
+              <Icon name="location" color="#AAAAAA" />
               {' '}
               Lowongan Pekerjaan di Bandung
             </OmniSearch.Item>
@@ -78,25 +79,17 @@ const OmniSearchStory = () => (
       </OmniSearch>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <pre>
-              {`<OmniSearch
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          <pre>
+            {`<OmniSearch
   label="Find Internships, Locations, and Companies"
   value="Traveloka"
   content={(
     <Button theme="blue">
       Go!
-      <Icon name="arrow-round-forward" color="white" size="16" />
+      <Icon name="arrow-round-forward" color="white" />
     </Button>
   )}
 >
@@ -108,7 +101,7 @@ const OmniSearchStory = () => (
     </OmniSearch.List>
     <OmniSearch.List title="Lokasi Populer">
       <OmniSearch.Item>
-        <Icon name="location" color="#AAAAAA" size="14" />
+        <Icon name="location" color="#AAAAAA" />
         Lowongan Pekerjaan di Jakarta
       </OmniSearch.Item>
     </OmniSearch.List>
@@ -120,17 +113,20 @@ const OmniSearchStory = () => (
     </OmniSearch.List>
   </OmniSearch.Body>
 </OmniSearch>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </pre>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -139,7 +135,10 @@ const OmniSearchStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -157,6 +156,7 @@ const OmniSearchStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -174,6 +174,7 @@ const OmniSearchStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -189,8 +190,9 @@ const OmniSearchStory = () => (
             content
           </td>
           <td>
-            Element
+            element
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -208,6 +210,7 @@ const OmniSearchStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -223,8 +226,9 @@ const OmniSearchStory = () => (
             onClick
           </td>
           <td>
-            Function
+            function
           </td>
+          <td></td>
           <td>
             any
           </td>

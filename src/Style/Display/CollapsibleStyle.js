@@ -46,7 +46,7 @@ export const CollapsibleHeader = styled.div`
   }
 `;
 
-export const CollapsibleBody = styled.p`
+export const CollapsibleBody = styled.div`
   padding: 0 1.2em 1.2em 1.2em;
   margin-bottom: 0;
   animation: ${animateCollapsible} .3s linear;

@@ -5,7 +5,6 @@ export const HeadingContainer = styled.h1`
   position: relative;
   display: ${({ inline }) => inline ? 'inline-block' : 'block'};
   font-size: 2em;
-  font-weight: ${({ boldText }) => boldText ? 'bold' : null};
   text-transform: ${({ uppercaseText }) => uppercaseText ? 'uppercase' : null};
 
   span {

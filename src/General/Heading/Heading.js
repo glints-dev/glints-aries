@@ -8,7 +8,6 @@ const Heading = (props: Props) => {
     className,
     inline,
     children,
-    boldText,
     uppercaseText,
     ...defaultProps
   } = props;
@@ -18,7 +17,6 @@ const Heading = (props: Props) => {
       <HeadingContainer
         className={className}
         inline={inline}
-        boldText={boldText}
         uppercaseText={uppercaseText}
         {...defaultProps}
       >

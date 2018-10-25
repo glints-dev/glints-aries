@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Icon from '../../src/General/Icon';
+import Collapsible from '../../src/Display/Collapsible';
 
 import { ICONS } from '../../src/Utils/IconLibrary';
 
@@ -16,25 +18,6 @@ const IconStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="6">
-              Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colSpan="6">
-            <code>
-              {'<Icon name="add" color="black" />'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
     <div style={{ display: 'flex', flexWrap: 'wrap', fontSize: '20px' }}>
       {Object.keys(ICONS).sort().map(data => (
         <div style={{ flex: '1 1 20%', margin: '1em' }} key={data}>
@@ -46,11 +29,23 @@ const IconStory = () => (
       ))}
     </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<Icon name="add" color="black" />'}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -77,8 +72,9 @@ const IconStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
-            based on the list
+            based on the list above
           </td>
           <td>
             yes
@@ -93,7 +89,14 @@ const IconStory = () => (
             string
           </td>
           <td>
-            hex-value | rba-value | string-value
+            <code>
+              black
+            </code>
+          </td>
+          <td>
+            <code>
+              hex-value | rba-value | string-value
+            </code>
           </td>
           <td>
             no

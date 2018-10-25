@@ -1,6 +1,12 @@
 import React from 'react';
+
 import { action } from '@storybook/addon-actions';
+
 import Button from '../../src/General/Button';
+import Heading from '../../src/General/Heading';
+import Collapsible from '../../src/Display/Collapsible';
+import Divider from '../../src/General/Divider';
+
 import { Variant, Theme } from '../../src/Utils/StyleConfig';
 
 const ButtonStories = () => (
@@ -16,51 +22,31 @@ const ButtonStories = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '6em' }}>
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="2">
-              <h3>
-                  Default Button
-              </h3>
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Preview
-            </th>
-            <th>
-              Usage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: 20 }}>
-              <Button theme="blue" onClick={action('Default Button')}>
-                Default
-              </Button>
-            </td>
-            <td>
-              <pre>
-                {`<Button
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Default Button</Heading>
+      <Button theme="blue" onClick={action('Default Button')}>
+        Default
+      </Button>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Button
   theme="blue"
-  disabled
 >
   Default
 </Button>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </pre>
+      </Collapsible>
+    </div>
 
+    <div style={{ marginBottom: '4em' }}>
       <table className="doc-table">
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="5">
-              <h3>
+            <th colSpan="6">
+              <h3 style={{ margin: '.8em 0' }}>
                 Props
               </h3>
             </th>
@@ -73,7 +59,10 @@ const ButtonStories = () => (
               Type
             </th>
             <th>
-              Value
+              Default Value
+            </th>
+            <th>
+              Possible Value
             </th>
             <th>
               Required
@@ -92,10 +81,11 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
+              <code>
                 default
-              </pre>
+              </code>
             </td>
+            <td></td>
             <td>
               yes
             </td>
@@ -110,10 +100,11 @@ const ButtonStories = () => (
             <td>
               string
             </td>
+            <td></td>
             <td>
-              <pre>
+              <code>
                 red | blue | yellow
-              </pre>
+              </code>
             </td>
             <td>
               no
@@ -127,10 +118,11 @@ const ButtonStories = () => (
               onClick
             </td>
             <td>
-              Function
+              function
             </td>
+            <td></td>
             <td>
-              any
+              function
             </td>
             <td>
               no
@@ -145,9 +137,14 @@ const ButtonStories = () => (
               boolean
             </td>
             <td>
-              <pre>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
                 true | false
-              </pre>
+              </code>
             </td>
             <td>
               no
@@ -158,51 +155,34 @@ const ButtonStories = () => (
       </table>
     </div>
 
-    <div style={{ marginBottom: '6em' }}>
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="2">
-              <h3>
-                Primary Button
-              </h3>
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Preview
-            </th>
-            <th>
-              Usage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: 20 }}>
-              <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED} onClick={action('Primary Button')}>
-                Primary
-              </Button>
-            </td>
-            <td>
-              <pre>
-                {`<Button
+    <Divider theme="grey" />
+
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Primary Button</Heading>
+      <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED} onClick={action('Primary Button')}>
+        Primary
+      </Button>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Button
   variant="primary"
   theme="red"
 >
   Primary
 </Button>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </pre>
+      </Collapsible>
+    </div>
 
+    <div style={{ marginBottom: '4em' }}>
       <table className="doc-table">
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="5">
-              <h3>
+            <th colSpan="6">
+              <h3 style={{ margin: '.8em 0' }}>
                 Props
               </h3>
             </th>
@@ -215,7 +195,10 @@ const ButtonStories = () => (
               Type
             </th>
             <th>
-              Value
+              Default Value
+            </th>
+            <th>
+              Possible Value
             </th>
             <th>
               Required
@@ -234,10 +217,11 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
-                {'primary'}
-              </pre>
+              <code>
+                primary
+              </code>
             </td>
+            <td></td>
             <td>
               yes
             </td>
@@ -253,20 +237,20 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
+              <code>
+                white
+              </code>
+            </td>
+            <td>
+              <code>
                 red | blue | blue-red
-              </pre>
+              </code>
             </td>
             <td>
               no
             </td>
             <td>
-              The default value is
-              {' '}
-              <b>
-              white color
-              </b>
-              .
+              Sets theme color for Primary Button.
             </td>
           </tr>
           <tr>
@@ -274,10 +258,11 @@ const ButtonStories = () => (
               onClick
             </td>
             <td>
-              Function
+              function
             </td>
+            <td></td>
             <td>
-              any
+              function
             </td>
             <td>
               no
@@ -292,9 +277,14 @@ const ButtonStories = () => (
               boolean
             </td>
             <td>
-              <pre>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
                 true | false
-              </pre>
+              </code>
             </td>
             <td>
               no
@@ -303,80 +293,35 @@ const ButtonStories = () => (
           </tr>
         </tbody>
       </table>
-
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th>
-              <h3>
-                Note
-              </h3>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Primary Button structure. For overriding purpose.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
-                {`<div>
-  <button className="primaryButton">Primary</button>
-</div>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
 
-    <div style={{ marginBottom: '6em' }}>
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="2">
-              <h3>
-                Secondary Button
-              </h3>
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Preview
-            </th>
-            <th>
-              Usage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: 20 }}>
-              <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
-                Secondary
-              </Button>
-            </td>
-            <td>
-              <pre>
-                {`<Button
+    <Divider theme="grey" />
+
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Secondary Button</Heading>
+      <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
+        Secondary
+      </Button>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Button
   variant="secondary"
 >
   Secondary
 </Button>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </pre>
+      </Collapsible>
+    </div>
 
+    <div style={{ marginBottom: '4em' }}>
       <table className="doc-table">
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="5">
-              <h3>
+            <th colSpan="6">
+              <h3 style={{ margin: '.8em 0' }}>
                 Props
               </h3>
             </th>
@@ -389,7 +334,10 @@ const ButtonStories = () => (
               Type
             </th>
             <th>
-              Value
+              Default Value
+            </th>
+            <th>
+              Possible Value
             </th>
             <th>
               Required
@@ -408,10 +356,11 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
+              <code>
                 secondary
-              </pre>
+              </code>
             </td>
+            <td></td>
             <td>
               yes
             </td>
@@ -424,10 +373,11 @@ const ButtonStories = () => (
               onClick
             </td>
             <td>
-              Function
+              function
             </td>
+            <td></td>
             <td>
-              any
+              function
             </td>
             <td>
               no
@@ -442,9 +392,14 @@ const ButtonStories = () => (
               boolean
             </td>
             <td>
-              <pre>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
                 true | false
-              </pre>
+              </code>
             </td>
             <td>
               no
@@ -453,82 +408,36 @@ const ButtonStories = () => (
           </tr>
         </tbody>
       </table>
-
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th>
-              <h3>
-                Note
-              </h3>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              Secondary Button structure. For overriding purpose.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
-                {`<div>
-  <button className="secondaryButton">Secondary</button>
-</div>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
 
+    <Divider theme="grey" />
 
-    <div style={{ marginBottom: '6em' }}>
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="2">
-              <h3>
-                Ghost Button
-              </h3>
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Preview
-            </th>
-            <th>
-              Usage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: 20 }}>
-              <Button variant={Variant.GHOST} theme={Theme.RED} onClick={action('Ghost Button')}>
-                Ghost
-              </Button>
-            </td>
-            <td>
-              <pre>
-                {`<Button
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Ghost Button</Heading>
+      <Button variant={Variant.GHOST} theme={Theme.RED} onClick={action('Ghost Button')}>
+        Ghost
+      </Button>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Button
   variant="ghost"
   theme="red"
 >
   Ghost
 </Button>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </pre>
+      </Collapsible>
+    </div>
 
+    <div style={{ marginBottom: '4em' }}>
       <table className="doc-table">
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="5">
-              <h3>
+            <th colSpan="6">
+              <h3 style={{ margin: '.8em 0' }}>
                 Props
               </h3>
             </th>
@@ -541,7 +450,10 @@ const ButtonStories = () => (
               Type
             </th>
             <th>
-              Value
+              Default Value
+            </th>
+            <th>
+              Possible Value
             </th>
             <th>
               Required
@@ -560,10 +472,11 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
+              <code>
                 ghost
-              </pre>
+              </code>
             </td>
+            <td></td>
             <td>
               yes
             </td>
@@ -578,10 +491,11 @@ const ButtonStories = () => (
             <td>
               string
             </td>
+            <td></td>
             <td>
-              <pre>
-                {'red | blue | yellow | white'}
-              </pre>
+              <code>
+                red | blue | yellow | white
+              </code>
             </td>
             <td>
               yes
@@ -593,10 +507,11 @@ const ButtonStories = () => (
               onClick
             </td>
             <td>
-              Function
+              function
             </td>
+            <td></td>
             <td>
-              any
+              function
             </td>
             <td>
               no
@@ -611,9 +526,14 @@ const ButtonStories = () => (
               boolean
             </td>
             <td>
-              <pre>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
                 true | false
-              </pre>
+              </code>
             </td>
             <td>
               no
@@ -624,51 +544,34 @@ const ButtonStories = () => (
       </table>
     </div>
 
-    <div>
-      <table className="doc-table">
-        <thead>
-          <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="2">
-              <h3>
-                Link Button
-              </h3>
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Preview
-            </th>
-            <th>
-              Usage
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: 20 }}>
-              <Button variant={Variant.LINK} theme={Theme.RED} onClick={action('Link Button')}>
-                Link
-              </Button>
-            </td>
-            <td>
-              <pre>
-                {`<Button
+    <Divider theme="grey" />
+
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Link Button</Heading>
+      <Button variant={Variant.LINK} theme={Theme.RED} onClick={action('Link Button')}>
+        Link
+      </Button>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Button
   variant="link"
   theme="blue"
 >
   Link
 </Button>`}
-              </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </pre>
+      </Collapsible>
+    </div>
 
+    <div>
       <table className="doc-table">
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
-            <th colSpan="5">
-              <h3>
+            <th colSpan="6">
+              <h3 style={{ margin: '.8em 0' }}>
                 Props
               </h3>
             </th>
@@ -681,7 +584,10 @@ const ButtonStories = () => (
               Type
             </th>
             <th>
-              Value
+              Default Value
+            </th>
+            <th>
+              Possible Value
             </th>
             <th>
               Required
@@ -700,10 +606,11 @@ const ButtonStories = () => (
               string
             </td>
             <td>
-              <pre>
+              <code>
                 link
-              </pre>
+              </code>
             </td>
+            <td></td>
             <td>
               yes
             </td>
@@ -718,10 +625,11 @@ const ButtonStories = () => (
             <td>
               string
             </td>
+            <td></td>
             <td>
-              <pre>
+              <code>
                 red | yellow | blue | grey | white
-              </pre>
+              </code>
             </td>
             <td>
               yes
@@ -733,10 +641,11 @@ const ButtonStories = () => (
               onClick
             </td>
             <td>
-              Function
+              function
             </td>
+            <td></td>
             <td>
-              any
+              function
             </td>
             <td>
               no
@@ -751,9 +660,14 @@ const ButtonStories = () => (
               boolean
             </td>
             <td>
-              <pre>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
                 true | false
-              </pre>
+              </code>
             </td>
             <td>
               no

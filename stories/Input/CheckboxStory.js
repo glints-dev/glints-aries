@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Checkbox from '../../src/Input/Checkbox';
+import Collapsible from '../../src/Display/Collapsible';
 
 const CheckboxStory = () => (
   <div className="doc-mainbar">
@@ -14,36 +16,27 @@ const CheckboxStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-            Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Checkbox id="software-engineer" value="Software Engineer" />
-          </td>
-          <td>
-            <pre>
-              {'<Checkbox id="software-engineer" value="Software Engineer" />'}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Checkbox id="software-engineer" value="Software Engineer" />
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<Checkbox id="software-engineer" value="Software Engineer" />'}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -52,7 +45,10 @@ const CheckboxStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -70,6 +66,7 @@ const CheckboxStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -87,6 +84,7 @@ const CheckboxStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>

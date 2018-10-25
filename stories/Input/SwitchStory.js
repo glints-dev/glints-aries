@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Switch from '../../src/Input/Switch';
+import Collapsible from '../../src/Display/Collapsible';
 
 const SwitchStory = () => (
   <div className="doc-mainbar">
@@ -14,41 +16,39 @@ const SwitchStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Switch label={['Full Time', 'Internship']} name={['job-type', 'job-type']} value={['full-time', 'internship']} defaultValue="full-time" />
-          </td>
-          <td>
-            <pre>
-              {`<Switch 
+    <div style={{ marginBottom: '2em' }}>
+      <div style={{ width: '300px' }}>
+        <Switch
+          label={['Full Time', 'Internship']}
+          name={['job-type', 'job-type']}
+          value={['full-time', 'internship']}
+          defaultValue="full-time"
+        />
+      </div>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Switch 
   label={['Full Time', 'Internship']} 
   name={['job-type', 'job-type']}
   value={['full-time', 'internship']} 
   defaultValue="full-time"
   />`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -57,7 +57,10 @@ const SwitchStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -75,6 +78,7 @@ const SwitchStory = () => (
           <td>
             array
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -90,6 +94,7 @@ const SwitchStory = () => (
           <td>
             array
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -105,6 +110,7 @@ const SwitchStory = () => (
           <td>
             array
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -120,6 +126,7 @@ const SwitchStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -135,10 +142,11 @@ const SwitchStory = () => (
             onChange
           </td>
           <td>
-            Function
+            function
           </td>
+          <td></td>
           <td>
-            any
+            function
           </td>
           <td>
             no

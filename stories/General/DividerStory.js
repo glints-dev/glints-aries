@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Divider from '../../src/General/Divider';
+import Collapsible from '../../src/Display/Collapsible';
 
 const DividerStory = () => (
   <div className="doc-mainbar">
@@ -14,36 +16,27 @@ const DividerStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Divider />
-          </td>
-          <td>
-            <code>
-              {'<Divider />'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Divider />
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<Divider />'}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -52,7 +45,10 @@ const DividerStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -71,9 +67,14 @@ const DividerStory = () => (
             string
           </td>
           <td>
-            <pre>
+            <code>
+              black
+            </code>
+          </td>
+          <td>
+            <code>
               red | blue | yellow | white | grey
-            </pre>
+            </code>
           </td>
           <td>
             no

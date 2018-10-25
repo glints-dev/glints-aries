@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Heading from '../../src/General/Heading';
+import Collapsible from '../../src/Display/Collapsible';
 
 const HeadingStory = () => (
   <div className="doc-mainbar">
@@ -14,38 +16,31 @@ const HeadingStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-            Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Heading>
-              This is Heading
-            </Heading>
-          </td>
-          <td>
-            <code>
-              {'<Heading>This is Heading</Heading>'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Heading>
+        This is Heading
+      </Heading>
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Heading>
+  This is Heading
+</Heading>`}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -54,7 +49,10 @@ const HeadingStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -74,7 +72,12 @@ const HeadingStory = () => (
           </td>
           <td>
             <code>
-              {'true | false'}
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
             </code>
           </td>
           <td>
@@ -86,25 +89,6 @@ const HeadingStory = () => (
         </tr>
         <tr>
           <td>
-            boldText
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              {'true | false'}
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets Heading text to bold.
-          </td>
-        </tr>
-        <tr>
-          <td>
             uppercaseText
           </td>
           <td>
@@ -112,7 +96,12 @@ const HeadingStory = () => (
           </td>
           <td>
             <code>
-              {'true | false'}
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
             </code>
           </td>
           <td>
