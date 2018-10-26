@@ -35,7 +35,7 @@ const SwitchStory = () => (
   name={['job-type', 'job-type']}
   value={['full-time', 'internship']} 
   defaultValue="full-time"
-  />`}
+/>`}
         </pre>
       </Collapsible>
     </div>

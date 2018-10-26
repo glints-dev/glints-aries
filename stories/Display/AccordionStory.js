@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Accordion from '../../src/Display/Accordion';
+import Collapsible from '../../src/Display/Collapsible';
 
 const AccordionStory = () => (
   <div className="doc-mainbar">
@@ -15,7 +16,7 @@ const AccordionStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '4em' }}>
+    <div style={{ marginBottom: '2em' }}>
       <Accordion>
         <Accordion.Panel
           label="What is Lorem Ipsum?"
@@ -28,39 +29,26 @@ const AccordionStory = () => (
       </Accordion>
     </div>
 
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Accordion>
+  <Accordion.Panel label="..." content="..." />
+  <Accordion.Panel label="..." content="..." />
+</Accordion>`}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
-        <tr>
-          <th>
-            Usage
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
           </th>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre>
-              {`<Accordion>
-  <Accordion.Panel
-    label="..."
-    content="..."
-  />
-  <Accordion.Panel
-    label="..."
-    content="..."
-  />
-</Accordion>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h1>
-      Props
-    </h1>
-    <table className="doc-table">
-      <thead>
         <tr>
           <th>
             Name
@@ -69,7 +57,10 @@ const AccordionStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -87,6 +78,7 @@ const AccordionStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -104,6 +96,7 @@ const AccordionStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>

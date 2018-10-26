@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Textarea from '../../src/Input/Textarea';
+import Collapsible from '../../src/Display/Collapsible';
 
 const TextareaStory = () => (
   <div className="doc-mainbar">
@@ -14,36 +16,32 @@ const TextareaStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Textarea label="Job" />
-          </td>
-          <td>
-            <code>
-              {'<Textarea />'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <div style={{ width: '300px' }}>
+        <Textarea label="Job" />
+      </div>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<Textarea label="Job" />'}
+        </pre>
+      </Collapsible>
+    </div>
 
     <h1>
       Props
     </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -52,7 +50,10 @@ const TextareaStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -70,6 +71,7 @@ const TextareaStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -87,6 +89,7 @@ const TextareaStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -104,10 +107,11 @@ const TextareaStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
-            <pre>
+            <code>
               success | error
-            </pre>
+            </code>
           </td>
           <td>
             no
@@ -124,9 +128,14 @@ const TextareaStory = () => (
             boolean
           </td>
           <td>
-            <pre>
-              {'true | false'}
-            </pre>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
           </td>
           <td>
             no

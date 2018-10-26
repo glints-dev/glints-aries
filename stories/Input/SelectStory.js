@@ -61,7 +61,7 @@ handleChange = (value) => {
             Name
           </th>
           <th>
-            Component
+            Element
           </th>
           <th>
             Type
@@ -86,7 +86,9 @@ handleChange = (value) => {
             label
           </td>
           <td>
-            {'<Select />'}
+            <code>
+              {'<Select />'}
+            </code>
           </td>
           <td>
             string
@@ -123,7 +125,7 @@ handleChange = (value) => {
             no
           </td>
           <td>
-            Sets value for the Input or Option
+            - Sets value for Input and Option.
           </td>
         </tr>
         <tr>
@@ -131,7 +133,9 @@ handleChange = (value) => {
             status
           </td>
           <td>
-            {'<Select />'}
+            <code>
+              {'<Select />'}
+            </code>
           </td>
           <td>
             string
@@ -154,7 +158,9 @@ handleChange = (value) => {
             disabled
           </td>
           <td>
-            {'<Select />'}
+            <code>
+              {'<Select />'}
+            </code>
           </td>
           <td>
             boolean
@@ -181,7 +187,9 @@ handleChange = (value) => {
             onChange
           </td>
           <td>
-            {'<Select.Option />'}
+            <code>
+              {'<Select.Option />'}
+            </code>
           </td>
           <td>
             function

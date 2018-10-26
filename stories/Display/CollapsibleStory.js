@@ -35,11 +35,15 @@ const CollapsibleStory = () => (
       </Collapsible>
     </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name

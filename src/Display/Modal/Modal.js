@@ -12,8 +12,8 @@ class Modal extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { onCloseWithESC } = this.props;
-    document.addEventListener('keydown', escEvent(onCloseWithESC), false);
+    const { onClose } = this.props;
+    document.addEventListener('keydown', escEvent(onClose), false);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -37,8 +37,8 @@ class Modal extends Component <Props, State> {
   }
 
   componentWillUnmount() {
-    const { onCloseWithESC } = this.props;
-    document.removeEventListener('keydown', escEvent(onCloseWithESC), false);
+    const { onClose } = this.props;
+    document.removeEventListener('keydown', escEvent(onClose), false);
   }
 
   render() {
@@ -83,7 +83,6 @@ type Props = {
   isVisible: boolean,
   type: string,
   onClose: Function,
-  onCloseWithESC: Function,
   className: string,
   hideContentArea: boolean,
 }

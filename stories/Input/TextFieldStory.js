@@ -1,5 +1,9 @@
 import React from 'react';
+
 import TextField from '../../src/Input/TextField';
+import Heading from '../../src/General/Heading';
+import Collapsible from '../../src/Display/Collapsible';
+import Divider from '../../src/General/Divider';
 
 const TextFieldStory = () => (
   <div className="doc-mainbar">
@@ -14,46 +18,47 @@ const TextFieldStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <TextField type="text" label="Username" />
-          </td>
-          <td>
-            <code>
-              {'<TextField type="text" label="Username" value="..." />'}
-            </code>
-          </td>
-        </tr>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <TextField type="password" label="Password" />
-          </td>
-          <td>
-            <code>
-              {'<TextField type="password" label="Password" value="..." />'}
-            </code>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Text</Heading>
+      <div style={{ width: '300px' }}>
+        <TextField type="text" label="Username" />
+      </div>
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '4em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<TextField type="text" label="Username" value="..." />'}
+        </pre>
+      </Collapsible>
+    </div>
+
+    <Divider theme="grey" />
+
+    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Password</Heading>
+      <div style={{ width: '300px' }}>
+        <TextField type="password" label="Password" />
+      </div>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<TextField type="password" label="Password" value="..." />'}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -62,7 +67,10 @@ const TextFieldStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -82,7 +90,12 @@ const TextFieldStory = () => (
           </td>
           <td>
             <code>
-              {'text | password'}
+              text
+            </code>
+          </td>
+          <td>
+            <code>
+              text | password
             </code>
           </td>
           <td>
@@ -99,6 +112,7 @@ const TextFieldStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -116,6 +130,7 @@ const TextFieldStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
             any
           </td>
@@ -133,10 +148,11 @@ const TextFieldStory = () => (
           <td>
             string
           </td>
+          <td></td>
           <td>
-            <pre>
+            <code>
               success | error
-            </pre>
+            </code>
           </td>
           <td>
             no
@@ -153,9 +169,14 @@ const TextFieldStory = () => (
             boolean
           </td>
           <td>
-            <pre>
-              {'true | false'}
-            </pre>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
           </td>
           <td>
             no

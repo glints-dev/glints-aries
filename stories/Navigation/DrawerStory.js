@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Drawer from '../../src/Navigation/Drawer';
 import Button from '../../src/General/Button';
+import Collapsible from '../../src/Display/Collapsible';
 
 class DrawerStory extends Component {
   constructor() {
@@ -40,69 +41,50 @@ class DrawerStory extends Component {
             </code>
           </p>
         </div>
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th>
-                Preview
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ maxWidth: 200, padding: 20 }}>
-                <div style={{ boxShadow: '0 1px 0 0 #d4d4d4' }}>
-                  <Button
-                    theme="blue"
-                    hoverColor="red"
-                    onClick={() => this.setState({ isOpen: true })}
-                  >
-                    OPEN
-                  </Button>
-                </div>
-                <Drawer
-                  isOpen={isOpen}
-                  onClose={() => this.setState({ isOpen: false })}
-                >
-                  {this.renderSideBar()}
-                </Drawer>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th>
-                Usage
-              </th>
-            </tr>
-          </thead>
-          <tbody>
 
-            <tr>
-              <td>
-                <pre>
-                  {`<Drawer
+        <div style={{ marginBottom: '2em' }}>
+          <Button
+            theme="blue"
+            hoverColor="red"
+            onClick={() => this.setState({ isOpen: true })}
+          >
+            OPEN
+          </Button>
+          <Drawer
+            isOpen={isOpen}
+            onClose={() => this.setState({ isOpen: false })}
+          >
+            {this.renderSideBar()}
+          </Drawer>
+        </div>
+
+        <div style={{ marginBottom: '2em' }}>
+          <Collapsible label="Usage" isOpen={false}>
+            <pre>
+              {`<Drawer
     isOpen={isOpen}
     onClose={() => this.setState({ isOpen: false })}
   >
     <Component />
 </Drawer>`}
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <h1>
-        Props
-        </h1>
+            </pre>
+          </Collapsible>
+        </div>
+
         <table className="doc-table">
           <thead>
+            <tr style={{ borderBottom: '1px solid lightgrey' }}>
+              <th colSpan="6">
+                <h3 style={{ margin: '.8em 0' }}>
+                  Props
+                </h3>
+              </th>
+            </tr>
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Value</th>
+              <th>Default Value</th>
+              <th>Possible Value</th>
               <th>Required</th>
               <th>Description</th>
             </tr>
@@ -111,14 +93,16 @@ class DrawerStory extends Component {
             <tr>
               <td>isOpen</td>
               <td>boolean</td>
-              <td><pre>true | false</pre></td>
+              <td><code>false</code></td>
+              <td><code>true | false</code></td>
               <td>no</td>
               <td>Open/Close sidebar</td>
             </tr>
             <tr>
               <td>onClose</td>
               <td>function</td>
-              <td>-</td>
+              <td></td>
+              <td>function</td>
               <td>no</td>
               <td>Handle sidebar close</td>
             </tr>

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import Modal from '../../src/Display/Modal';
 
+import Modal from '../../src/Display/Modal';
 import Button from '../../src/General/Button';
+import Collapsible from '../../src/Display/Collapsible';
 
 class ModalStory extends Component {
   state = {
     visible: false,
   }
 
-  handleModal = () => {
-    const { visible } = this.state;
-    this.setState({ visible: !visible });
+  handleOpen = () => {
+    this.setState({ visible: true });
   }
 
-  onCloseWithESC = () => {
+  handleClose = () => {
     this.setState({ visible: false });
   }
 
@@ -33,74 +33,62 @@ class ModalStory extends Component {
           </p>
         </div>
 
-        <table className="doc-table">
-          <thead>
-            <tr>
-              <th colSpan="0">
-                Preview
-              </th>
-              <th>
-                Usage
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ verticalAlign: 'top' }}>
-                <Button type="default" theme="blue" onClick={this.handleModal}>
-                  Open Modal
-                </Button>
-                <Modal
-                  isVisible={visible}
-                  onClose={this.handleModal}
-                  onCloseWithESC={this.onCloseWithESC}
-                >
-                  <h1>
-                    This is Modal
-                  </h1>
-                </Modal>
-              </td>
-              <td style={{ verticalAlign: 'top' }}>
-                <pre>
-                  {`state = {
+        <div style={{ marginBottom: '2em' }}>
+          <Button type="default" theme="blue" onClick={this.handleOpen}>
+            Open Modal
+          </Button>
+          <Modal
+            isVisible={visible}
+            onClose={this.handleClose}
+          >
+            <h1>
+              This is Modal
+            </h1>
+          </Modal>
+        </div>
+
+        <div style={{ marginBottom: '2em' }}>
+          <Collapsible label="Usage" isOpen={false}>
+            <pre>
+              {`state = {
   visible: false,
 }
 
-handleModal = () => {
-  const { visible } = this.state;
-  this.setState({ visible: !visible });
+handleOpen = () => {
+  this.setState({ visible: true });
 }
 
-onCloseWithESC = () => {
+handleClose = () => {
   this.setState({ visible: false });
 }
 
 <Button 
   type="default"
   theme="blue"
-  onClick={this.handleModal}
+  onClick={this.handleOpen}
 >
   Open Modal
 </Button>
 
 <Modal
   isVisible={visible}
-  onClose={this.handleModal}
-  onCloseWithESC={this.onCloseWithESC}
+  onClose={this.handleClose}
 >
   This is modal
 </Modal>`}
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </pre>
+          </Collapsible>
+        </div>
 
-        <h1>
-          Props
-        </h1>
         <table className="doc-table">
           <thead>
+            <tr style={{ borderBottom: '1px solid lightgrey' }}>
+              <th colSpan="6">
+                <h3 style={{ margin: '.8em 0' }}>
+                  Props
+                </h3>
+              </th>
+            </tr>
             <tr>
               <th>
                 Name
@@ -109,7 +97,10 @@ onCloseWithESC = () => {
                 Type
               </th>
               <th>
-                Value
+                Default Value
+              </th>
+              <th>
+                Possible Value
               </th>
               <th>
                 Required
@@ -128,9 +119,14 @@ onCloseWithESC = () => {
                 boolean
               </td>
               <td>
-                <pre>
-                  {'true | false'}
-                </pre>
+                <code>
+                  false
+                </code>
+              </td>
+              <td>
+                <code>
+                  true | false
+                </code>
               </td>
               <td>
                 yes
@@ -144,10 +140,11 @@ onCloseWithESC = () => {
                 onClose
               </td>
               <td>
-                Function
+                function
               </td>
+              <td></td>
               <td>
-                Function
+                function
               </td>
               <td>
                 yes
@@ -158,38 +155,26 @@ onCloseWithESC = () => {
             </tr>
             <tr>
               <td>
-                onCloseWithESC
-              </td>
-              <td>
-                Function
-              </td>
-              <td>
-                Function
-              </td>
-              <td>
-                no
-              </td>
-              <td>
-                Sets to close active Modal using ESC button.
-              </td>
-            </tr>
-            <tr>
-              <td>
                 hideContentArea
               </td>
               <td>
                 boolean
               </td>
               <td>
-                <pre>
-                  {'true | false'}
-                </pre>
+                <code>
+                  false
+                </code>
+              </td>
+              <td>
+                <code>
+                  true | false
+                </code>
               </td>
               <td>
                 no
               </td>
               <td>
-                Hides the content area.
+                Hides content area.
               </td>
             </tr>
           </tbody>

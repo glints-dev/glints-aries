@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Breadcrumb from '../../src/Navigation/Breadcrumb';
+import Collapsible from '../../src/Display/Collapsible';
 
 const BreadcrumbStory = () => (
   <div className="doc-mainbar">
@@ -14,35 +16,24 @@ const BreadcrumbStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-              Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Breadcrumb>
-              <Breadcrumb.Item>
-                <a href="/home">Home</a>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>
-                <a href="/jobs">Jobs</a>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>
-                <a href="/software-engineer">Software Engineer</a>
-              </Breadcrumb.Item>
-            </Breadcrumb>
-          </td>
-          <td>
-            <pre>
-              {`<Breadcrumb>
+    <div style={{ marginBottom: '2em' }}>
+      <Breadcrumb>
+        <Breadcrumb.Item>
+          <a href="/home">Home</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="/jobs">Jobs</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>
+          <a href="/software-engineer">Software Engineer</a>
+        </Breadcrumb.Item>
+      </Breadcrumb>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Breadcrumb>
   <Breadcrumb.Item>
     <a href="/home">Home</a>
   </Breadcrumb.Item>
@@ -56,17 +47,19 @@ const BreadcrumbStory = () => (
   </Breadcrumb.Item>
 </Breadcrumb>
               `}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        </pre>
+      </Collapsible>
+    </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -75,7 +68,10 @@ const BreadcrumbStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -95,7 +91,12 @@ const BreadcrumbStory = () => (
           </td>
           <td>
             <code>
-              {'true | false'}
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
             </code>
           </td>
           <td>
