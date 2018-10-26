@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Swipeable from '../../src/Display/Swipeable';
+import Collapsible from '../../src/Display/Collapsible';
 
 // Example
 import { SwipeableCardExample } from '../../src/Style/Display/SwipeableStyle';
@@ -17,72 +19,63 @@ const SwipeableStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-            Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Swipeable>
-              <Swipeable.Item>
-                <SwipeableCardExample>
-                  <h1>
-                    Card.
-                  </h1>
-                </SwipeableCardExample>
-              </Swipeable.Item>
-              <Swipeable.Item>
-                <SwipeableCardExample>
-                  <h1>
-                    Card.
-                  </h1>
-                </SwipeableCardExample>
-              </Swipeable.Item>
-              <Swipeable.Item>
-                <SwipeableCardExample>
-                  <h1>
-                    Card.
-                  </h1>
-                </SwipeableCardExample>
-              </Swipeable.Item>
-              <Swipeable.Item>
-                <SwipeableCardExample>
-                  <h1>
-                    Card.
-                  </h1>
-                </SwipeableCardExample>
-              </Swipeable.Item>
-            </Swipeable>
-          </td>
-          <td>
-            <pre>
-              {`<Swipeable>
-    <Swipeable.Item onClick={...}>
-        <Component />
-    </Swipeable.Item>
-    <Swipeable.Item>
-        <Component />
-    </Swipeable.Item>
-</Swipeable>`}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Swipeable>
+        <Swipeable.Item>
+          <SwipeableCardExample>
+            <h1>
+              Card.
+            </h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+        <Swipeable.Item>
+          <SwipeableCardExample>
+            <h1>
+              Card.
+            </h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+        <Swipeable.Item>
+          <SwipeableCardExample>
+            <h1>
+              Card.
+            </h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+        <Swipeable.Item>
+          <SwipeableCardExample>
+            <h1>
+              Card.
+            </h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+      </Swipeable>
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {`<Swipeable>
+  <Swipeable.Item onClick={...}>
+      <Component />
+  </Swipeable.Item>
+  <Swipeable.Item>
+      <Component />
+  </Swipeable.Item>
+</Swipeable>`}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="7">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -91,7 +84,13 @@ const SwipeableStory = () => (
             Type
           </th>
           <th>
-            Value
+            Element
+          </th>
+          <th>
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -107,10 +106,16 @@ const SwipeableStory = () => (
             onClick
           </td>
           <td>
-            Function
+            <code>
+              {'<Swipeable.Item />'}
+            </code>
           </td>
           <td>
-            any
+            function
+          </td>
+          <td></td>
+          <td>
+            function
           </td>
           <td>
             no
@@ -119,27 +124,6 @@ const SwipeableStory = () => (
         </tr>
       </tbody>
     </table>
-
-    <h1>
-      Note
-    </h1>
-    <p>
-      1. Always wrap your component inside
-      {' '}
-      <code>
-        {'<Swipeable.Item />'}
-      </code>
-      .
-    </p>
-    <p>
-      2.
-      {' '}
-      <b>
-      Swipeable Component
-      </b>
-      {' '}
-      is only running on mobile web version.
-    </p>
   </div>
 );
 

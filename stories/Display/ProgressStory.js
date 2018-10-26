@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Progress from '../../src/Display/Progress';
+import Collapsible from '../../src/Display/Collapsible';
 
 const ProgressStory = () => (
   <div className="doc-mainbar">
@@ -15,36 +16,27 @@ const ProgressStory = () => (
       </p>
     </div>
 
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th colSpan="0">
-            Preview
-          </th>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style={{ padding: 20 }}>
-            <Progress percentage={54} />
-          </td>
-          <td>
-            <pre>
-              {'<Progress percentage={54} />'}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div style={{ marginBottom: '2em' }}>
+      <Progress percentage={54} />
+    </div>
 
-    <h1>
-      Props
-    </h1>
+    <div style={{ marginBottom: '2em' }}>
+      <Collapsible label="Usage" isOpen={false}>
+        <pre>
+          {'<Progress percentage={54} />'}
+        </pre>
+      </Collapsible>
+    </div>
+
     <table className="doc-table">
       <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              Props
+            </h3>
+          </th>
+        </tr>
         <tr>
           <th>
             Name
@@ -53,7 +45,10 @@ const ProgressStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required
@@ -67,6 +62,7 @@ const ProgressStory = () => (
         <tr>
           <td>percentage</td>
           <td>number</td>
+          <td></td>
           <td>0 - 100</td>
           <td>Yes</td>
           <td>Sets progress value.</td>
