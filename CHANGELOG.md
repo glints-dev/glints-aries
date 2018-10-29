@@ -1,3 +1,16 @@
+#### 2.0.0 (2018-10-29)
+1. Removing onCloseWithESC props on **Modal**.
+2. Moving Modal's scrollbar into Body.
+3. Adding Close Button on **Modal**.
+4. Revamping glints-aries storybook.
+5. Props documentation is divided by elements.
+6. Adding Default Value and Possible Value on props section.
+7. Adding target props to JobCard.
+8. Improve focus state. Outline doesn't show up when clicked, but showing when using tab.
+9. New Component:
+   - Toast
+   - Progress
+
 #### 1.0.18 (2018-10-29)
 
 #### 1.0.17 (2018-10-25)
