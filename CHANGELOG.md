@@ -1,5 +1,5 @@
 #### 2.0.0 (2018-10-29)
-1. Removing onCloseWithESC props on **Modal**.
+1. Removing onCloseWithESC props on **Modal**. onCloseWithESC is merged to onClose.
 2. Moving Modal's scrollbar into Body.
 3. Adding Close Button on **Modal**.
 4. Revamping glints-aries storybook.
