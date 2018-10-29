@@ -18,7 +18,7 @@ const MobileMenuStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '2em' }}>
+    <div style={{ marginBottom: '2em', width: '300px' }}>
       <MobileMenu>
         <MobileMenu.Top>
           <button type="button" aria-label="Close Menu">

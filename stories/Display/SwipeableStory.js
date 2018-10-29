@@ -70,9 +70,11 @@ const SwipeableStory = () => (
     <table className="doc-table">
       <thead>
         <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="7">
+          <th colSpan="6">
             <h3 style={{ margin: '.8em 0' }}>
-              Props
+              <span style={{ fontWeight: '100' }}>Props for</span>
+              {' '}
+              Swipeable.Item
             </h3>
           </th>
         </tr>
@@ -82,9 +84,6 @@ const SwipeableStory = () => (
           </th>
           <th>
             Type
-          </th>
-          <th>
-            Element
           </th>
           <th>
             Default Value
@@ -104,11 +103,6 @@ const SwipeableStory = () => (
         <tr>
           <td>
             onClick
-          </td>
-          <td>
-            <code>
-              {'<Swipeable.Item />'}
-            </code>
           </td>
           <td>
             function

@@ -30,9 +30,7 @@ const SelectStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`const Option = Select.Option;
-
-handleChange = (value) => {
+          {`handleChange = (value) => {
   console.log('selected value: ', value);
 }
 
@@ -40,8 +38,8 @@ handleChange = (value) => {
   label="Jobs"
   onChange={this.handleChange}
 >
-  <Option value="accountant">Accountant</Option>
-  <Option value="finance">Finance</Option>
+  <Select.Option value="accountant">Accountant</Select.Option>
+  <Select.Option value="finance">Finance</Select.Option>
 </Select>`}
         </pre>
       </Collapsible>
@@ -50,18 +48,17 @@ handleChange = (value) => {
     <table className="doc-table">
       <thead>
         <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="7">
+          <th colSpan="6">
             <h3 style={{ margin: '.8em 0' }}>
-              Props
+              <span style={{ fontWeight: '100' }}>Props for</span>
+              {' '}
+              Select
             </h3>
           </th>
         </tr>
         <tr>
           <th>
             Name
-          </th>
-          <th>
-            Element
           </th>
           <th>
             Type
@@ -86,11 +83,6 @@ handleChange = (value) => {
             label
           </td>
           <td>
-            <code>
-              {'<Select />'}
-            </code>
-          </td>
-          <td>
             string
           </td>
           <td></td>
@@ -109,12 +101,6 @@ handleChange = (value) => {
             value
           </td>
           <td>
-            <pre>
-              {`<Select />
-<Select.Option />`}
-            </pre>
-          </td>
-          <td>
             string
           </td>
           <td></td>
@@ -125,17 +111,12 @@ handleChange = (value) => {
             no
           </td>
           <td>
-            - Sets value for Input and Option.
+            Sets value for Input.
           </td>
         </tr>
         <tr>
           <td>
             status
-          </td>
-          <td>
-            <code>
-              {'<Select />'}
-            </code>
           </td>
           <td>
             string
@@ -156,11 +137,6 @@ handleChange = (value) => {
         <tr>
           <td>
             disabled
-          </td>
-          <td>
-            <code>
-              {'<Select />'}
-            </code>
           </td>
           <td>
             boolean
@@ -187,11 +163,6 @@ handleChange = (value) => {
             onChange
           </td>
           <td>
-            <code>
-              {'<Select.Option />'}
-            </code>
-          </td>
-          <td>
             function
           </td>
           <td></td>
@@ -203,6 +174,60 @@ handleChange = (value) => {
           </td>
           <td>
             Called when select an option or value of input is changed.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table className="doc-table">
+      <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              <span style={{ fontWeight: '100' }}>Props for</span>
+              {' '}
+              Select.Option
+            </h3>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Default Value
+          </th>
+          <th>
+            Possible Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            value
+          </td>
+          <td>
+            string
+          </td>
+          <td></td>
+          <td>
+            any
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets value for Option.
           </td>
         </tr>
       </tbody>

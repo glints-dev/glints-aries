@@ -30,9 +30,6 @@ const TextareaStory = () => (
       </Collapsible>
     </div>
 
-    <h1>
-      Props
-    </h1>
     <table className="doc-table">
       <thead>
         <tr style={{ borderBottom: '1px solid lightgrey' }}>

@@ -2,9 +2,16 @@
 
 import React, { Component, Fragment } from 'react';
 
+import Icon from '../../General/Icon';
+
 import { escEvent } from '../../Utils/DomUtils';
 
-import { ModalContainer, ModalContentArea } from '../../Style/Display/ModalStyle';
+import {
+  ModalContainer,
+  ModalDialog,
+  ModalHeader,
+  ModalContentArea,
+} from '../../Style/Display/ModalStyle';
 
 class Modal extends Component <Props, State> {
   state = {
@@ -60,17 +67,24 @@ class Modal extends Component <Props, State> {
             className={className}
             onClick={() => onClose()}
           >
-            <ModalContentArea
-              className="aries-modal-content"
-              role="dialog"
-              aria-modal="true"
-              hideContentArea={hideContentArea}
-              onClick={e => e.stopPropagation()}
-              tabIndex={0}
-              {...defaultProps}
-            >
-              {children}
-            </ModalContentArea>
+            <ModalDialog>
+              <ModalContentArea
+                className="aries-modal-content"
+                role="dialog"
+                aria-modal="true"
+                hideContentArea={hideContentArea}
+                onClick={e => e.stopPropagation()}
+                tabIndex={0}
+                {...defaultProps}
+              >
+                <ModalHeader>
+                  <button type="button" onClick={() => onClose()}>
+                    <Icon name="close" color="black" />
+                  </button>
+                </ModalHeader>
+                {children}
+              </ModalContentArea>
+            </ModalDialog>
           </ModalContainer>
         )}
       </Fragment>
