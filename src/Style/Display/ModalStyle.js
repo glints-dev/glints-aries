@@ -24,7 +24,7 @@ export const ModalContentArea = styled.div`
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
   padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1.5rem 3rem'};
   margin: 4rem auto;
-  max-width: 100%;
+  max-width: 95vw;
   z-index: 9999;
   outline: none;
     
