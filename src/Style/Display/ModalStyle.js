@@ -6,6 +6,7 @@ export const ModalContainer = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
+  align-items: ${({ centering }) => centering && 'center'};
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,6 +28,15 @@ export const ModalContentArea = styled.div`
   max-width: 95vw;
   z-index: 9999;
   outline: none;
+
+  ${({ centering }) => {
+    if (centering) {
+      return `
+        max-height: 85vh;
+        overflow: auto;
+      `;
+    }
+  }}
     
   @media ${Device.mobileM} {
     padding: 1.5rem;

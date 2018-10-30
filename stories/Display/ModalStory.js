@@ -155,6 +155,30 @@ handleClose = () => {
             </tr>
             <tr>
               <td>
+                centering
+              </td>
+              <td>
+                boolean
+              </td>
+              <td>
+                <code>
+                  false
+                </code>
+              </td>
+              <td>
+                <code>
+                  true | false
+                </code>
+              </td>
+              <td>
+                no
+              </td>
+              <td>
+                Centering Modal.
+              </td>
+            </tr>
+            <tr>
+              <td>
                 hideContentArea
               </td>
               <td>

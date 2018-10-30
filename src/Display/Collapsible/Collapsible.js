@@ -73,7 +73,10 @@ class Collapsible extends Component <Props, State> {
             </Choose>
           </CollapsibleHeader>
           {isOpen && (
-            <CollapsibleBody className="body">
+            <CollapsibleBody
+              className="body"
+              onClick={e => e.stopPropagation()}
+            >
               {children}
             </CollapsibleBody>
           )}

@@ -46,6 +46,7 @@ class Modal extends Component <Props, State> {
   componentWillUnmount() {
     const { onClose } = this.props;
     document.removeEventListener('keydown', escEvent(onClose), false);
+    document.body.removeAttribute('style');
   }
 
   render() {
@@ -55,6 +56,7 @@ class Modal extends Component <Props, State> {
       children,
       className,
       hideContentArea,
+      centering,
       ...defaultProps
     } = this.props;
 
@@ -65,6 +67,7 @@ class Modal extends Component <Props, State> {
         {isOpen && (
           <ModalContainer
             className={className}
+            centering={centering}
             onClick={() => onClose()}
           >
             <ModalDialog>
@@ -73,6 +76,7 @@ class Modal extends Component <Props, State> {
                 role="dialog"
                 aria-modal="true"
                 hideContentArea={hideContentArea}
+                centering={centering}
                 onClick={e => e.stopPropagation()}
                 tabIndex={0}
                 {...defaultProps}
@@ -99,6 +103,7 @@ type Props = {
   onClose: Function,
   className: string,
   hideContentArea: boolean,
+  centering: boolean,
 }
 
 type State = {
