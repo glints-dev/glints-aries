@@ -12,7 +12,7 @@ const propsColumnName = [
   'description',
 ];
 
-class StoryBookComponent extends Component {
+class StoryBookComponent extends Component <Props> {
   renderTitle() {
     const { title } = this.props;
     return (
@@ -99,5 +99,12 @@ class StoryBookComponent extends Component {
     );
   }
 }
+
+type Props = {
+    children: React$Node,
+    title: string,
+    code: string,
+    propsObject: Array;
+  }
 
 export default StoryBookComponent;

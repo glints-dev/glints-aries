@@ -50,18 +50,14 @@ import RangeStory from './Input/RangeStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
+import StoryBookComponentStory from './Utilities/StoryBookComponentStory';
 import SwipeableStory from './Display/SwipeableStory';
 import SwitchStory from './Input/SwitchStory';
 import TabsStory from './Display/TabsStory';
 import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
-
 import ToastStory from './Display/ToastStory';
-import Tag from '../src/General/Tag';
-import Icon from '../src/General/Icon';
-
-import StoryBookComponent from './StoryBookComponent';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
@@ -180,23 +176,4 @@ storiesOf('Utilities', module)
   .add('Colors', () => <ColorStory />)
   .add('Device Size', () => <DeviceStory />)
   .add('Glints Container', () => <GlintsContainerStory />)
-  .add('test', () => (
-    <StoryBookComponent
-      title="Tag"
-      code="import { Tag } from glints-aries"
-      propsObject={[
-        {
-          name: 'name',
-          type: 'type',
-          defaultValue: 'dafault value',
-          possibleValue: 'possible value',
-          require: 'require',
-          description: 'description',
-        },
-      ]}
-    >
-      <Tag label="Software Engineer">
-        <Icon name="close" color="black" />
-      </Tag>
-    </StoryBookComponent>
-  ));
+  .add('Story Book Component', () => <StoryBookComponentStory />);
