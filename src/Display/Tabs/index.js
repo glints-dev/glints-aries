@@ -1,7 +1,8 @@
 // @flow
 
 import Tabs from './Tabs';
+import TabPane from './TabPane';
 
-export { Tabs };
+Tabs.Pane = TabPane;
 
 export default Tabs;

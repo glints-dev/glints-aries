@@ -26,6 +26,7 @@ import ColorStory from './Utilities/ColorStory';
 import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
 import DropdownStory from './Navigation/DropdownStory';
+import NewDropdownStory from './Navigation/NewDropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Application/GalleryStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
@@ -128,6 +129,7 @@ storiesOf('Navigation', module)
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Drawer', () => <DrawerStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('NewDropdown', () => <NewDropdownStory />)
   .add('Mobile Menu', () => <MobileMenuStory />);
 
 storiesOf('Display', module)

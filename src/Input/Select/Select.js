@@ -176,7 +176,7 @@ class Select extends Component <Props, State> {
             {label}
           </SelectLabel>
           <div className="select-icon" aria-label="show options">
-            <Icon name="arrow-down" color="#777" size="14" />
+            <Icon name="arrow-down" color="#777777" />
           </div>
         </SelectWrapper>
         {isFocus && (

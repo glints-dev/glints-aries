@@ -4,7 +4,13 @@ import React from 'react';
 
 import Icon from '../../General/Icon';
 
-import { AccordionPanelWrapper, AccordionIconWrapper, AccordionContentWrapper, AccordionContent } from '../../Style/Display/AccordionStyle';
+import {
+  AccordionPanelWrapper,
+  AccordionIconWrapper,
+  AccordionContentWrapper,
+  AccordionContent,
+} from '../../Style/Display/AccordionStyle';
+
 import { SecondaryColor } from '../../Style/Colors';
 
 const AccordionPanel = (props: Props) => {
