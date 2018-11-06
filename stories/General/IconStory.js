@@ -54,7 +54,10 @@ const IconStory = () => (
             Type
           </th>
           <th>
-            Value
+            Default Value
+          </th>
+          <th>
+            Possible Value
           </th>
           <th>
             Required

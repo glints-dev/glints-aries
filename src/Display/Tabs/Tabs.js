@@ -38,15 +38,21 @@ class Tabs extends Component <Props, State> {
     return (
       <TabsContainer className={className}>
         <TabsHeader>
-          <ul>
+          <ul role="tablist">
             {children.map((data, index) => (
               <li
+                id={`tab-${index}`}
                 key={data.props.tab}
                 className={currentIndex === index ? 'active' : undefined}
+                role="tab"
+                aria-selected={currentIndex === index && true}
+                aria-controls={`tab-item-${index}`}
+                tabIndex={currentIndex === index ? '0' : '-1'}
               >
                 <button
                   type="button"
                   onClick={this.handleClickTab(index)}
+                  tabIndex="-1"
                 >
                   {data.props.tab}
                 </button>
@@ -54,8 +60,14 @@ class Tabs extends Component <Props, State> {
             ))}
           </ul>
         </TabsHeader>
-        <TabsBody>
-          <TabPane className={className}>
+        <TabsBody tabIndex="0">
+          <TabPane
+            id={`tab-item-${currentIndex}`}
+            className={className}
+            role="tabpanel"
+            aria-labelledby={`tab-${currentIndex}`}
+            tabIndex="-1"
+          >
             {children[currentIndex].props.children}
           </TabPane>
         </TabsBody>

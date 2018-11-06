@@ -43,6 +43,14 @@ export const TabsHeader = styled.div`
         }
       }
 
+      &:focus {
+        outline: none;
+      }
+
+      &:focus > button {
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+
       button {
         padding: 0;
         background: transparent;
@@ -54,11 +62,20 @@ export const TabsHeader = styled.div`
   }
 `;
 
+export const TabsContent = styled.div`
+  position: relative;
+  outline: none;
+`;
+
 export const TabsBody = styled.div`
   position: relative;
   padding-top: 2rem;
-`;
 
-export const TabsContent = styled.div`
-  position: relative;
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${TabsContent} {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 `;
