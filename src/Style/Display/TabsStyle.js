@@ -23,8 +23,8 @@ export const TabsHeader = styled.div`
 
     li {
       display: inline-flex;
-      padding: 2rem 0;
-      margin: 0 1rem;
+      padding: 1.2em 0;
+      margin: 0 .6em;
       text-transform: uppercase;
 
       &:first-child {
@@ -69,7 +69,7 @@ export const TabsContent = styled.div`
 
 export const TabsBody = styled.div`
   position: relative;
-  padding-top: 2rem;
+  padding-top: 1.2em;
 
   &:focus {
     outline: none;

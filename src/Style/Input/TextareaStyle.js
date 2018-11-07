@@ -8,8 +8,8 @@ export const TextareaContainer = styled.div`
 
 export const TextareaLabel = styled.label`
   position: absolute;
-  left: 2rem;
-  top: 1.5rem;
+  left: 1em;
+  top: 1em;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
@@ -19,8 +19,8 @@ export const TextareaLabel = styled.label`
   ${({ floating }) => {
     if (floating) {
       return `
-        padding: 0 .5rem;
-        transform: translate3d(-1rem,-2.4rem,0);
+        padding: 0 .5em;
+        transform: translate3d(-.6em,-1.6em,0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -43,7 +43,7 @@ export const TextareaInput = styled.textarea`
   outline: none;
   font-size: 1em;
   line-height: 1.5;
-  padding: 1.8rem;
+  padding: 1em;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: border .5s;
   resize: vertical;
@@ -111,8 +111,8 @@ export const TextareaInput = styled.textarea`
   }}
 
     + ${TextareaLabel} {
-      padding: 0 .5rem;
-      transform: translate3d(-1rem,-2.4rem,0);
+      padding: 0 .5em;
+      transform: translate3d(-.6em,-1.6em,0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

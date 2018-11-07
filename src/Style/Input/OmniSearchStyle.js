@@ -38,7 +38,7 @@ export const OmniSearchBar = styled.div`
   button {
     position: absolute;
     padding: 25px 30px;
-    right: .3rem;
+    right: 3px;
     font-size: 1.5em;
     font-weight: normal;
 
@@ -58,7 +58,7 @@ export const OmniSearchResultContainer = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: auto auto auto;
-  padding: 2.5rem 3rem 2.5rem 3rem;
+  padding: 25px 3em 25px 30px;
   font-size: 1.1em;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};

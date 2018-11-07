@@ -16,7 +16,7 @@ export const TextFieldContainer = styled.div`
 
 export const TextFieldLabel = styled.label`
   position: absolute;
-  left: 2rem;
+  left: 1em;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
@@ -26,9 +26,9 @@ export const TextFieldLabel = styled.label`
   ${({ floating }) => {
     if (floating) {
       return `
-        padding: 0 .5rem;
+        padding: 0 .5em;
         top: 1em;
-        transform: translate3d(-1rem, -2rem, 0);
+        transform: translate3d(-.6em, -1.8em, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -51,7 +51,7 @@ export const TextFieldInput = styled.input`
   outline: none;
   font-size: 1em;
   line-height: 1.5;
-  padding: 1.8rem;
+  padding: 18px;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
 
@@ -117,9 +117,9 @@ export const TextFieldInput = styled.input`
   }}
 
     + ${TextFieldLabel} {
-      padding: 0 .5rem;
+      padding: 0 .5em;
       top: 1em;
-      transform: translate3d(-1rem, -2rem, 0);
+      transform: translate3d(-.6em, -1.8em, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

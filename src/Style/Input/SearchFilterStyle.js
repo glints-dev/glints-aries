@@ -47,7 +47,7 @@ export const SearchFilterResultContainer = styled.div`
   display: grid;
   font-size: 1.1em;
   grid-template-columns: auto auto auto;
-  padding: 2.5rem 3rem 2.5rem 3rem;
+  padding: 25px 3.5em 25px 30px;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   z-index: 9999;

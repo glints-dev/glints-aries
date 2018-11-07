@@ -22,7 +22,7 @@ export const PointingModalHeaderArrow = styled.div`
 export const PointingModalHeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 1.2em;
 
   > *:first-child {
     margin-left: 0;
@@ -60,14 +60,14 @@ export const PointingModalBodyWrapper = styled.div`
   flex-direction: column;
 
   ul {
-    padding: 2rem 0;
+    padding: 1.2em 0;
   }
 `;
 
 export const PointingModalItemWrapper = styled.li`
   font-weight: 600;
   cursor: pointer;
-  padding: .5em 2rem;
+  padding: .5em 1.2em;
 
   &:last-child {
     margin-bottom: 0;
@@ -86,5 +86,5 @@ export const PointingModalItemWrapper = styled.li`
 export const PointingModalFooterWrapper = styled.footer`
   display: flex;
   position: relative;
-  padding: 2rem;
+  padding: 1.2em;
 `;

@@ -23,8 +23,8 @@ export const ModalDialog = styled.div`
 export const ModalContentArea = styled.div`
   position: relative;
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
-  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1.5rem 3rem'};
-  margin: 4rem auto;
+  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em'};
+  margin: 2.5em auto;
   max-width: 95vw;
   z-index: 9999;
   outline: none;
@@ -39,14 +39,14 @@ export const ModalContentArea = styled.div`
   }}
     
   @media ${Device.mobileM} {
-    padding: 1.5rem;
+    padding: 1em;
   }
 `;
 
 export const ModalHeader = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1em;
   font-size: 1.2em;
   
   button {

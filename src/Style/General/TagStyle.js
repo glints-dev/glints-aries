@@ -8,7 +8,7 @@ export const TagContent = styled.label`
   outline: none;
   
   * {
-    margin-left: 1.5rem;
+    margin-left: 1em;
   }
 `;
 

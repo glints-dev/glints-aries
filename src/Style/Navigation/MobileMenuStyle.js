@@ -8,7 +8,7 @@ export const MobileMenuContainer = styled.div`
   position: relative;
   background: ${SecondaryColor.darkerblue};
   color: ${SecondaryColor.white};
-  padding: 2rem 0;
+  padding: 2em 0;
   height: 100vh;
   overflow-y: auto;
   outline: none;
@@ -17,8 +17,8 @@ export const MobileMenuContainer = styled.div`
 export const MobileMenuTopWrapper = styled.div`
   position: absolute;
   display: flex;
-  top: 2rem;
-  right: 1.5rem;
+  top: 2em;
+  right: 1em;
   cursor: pointer;
   
   button {
@@ -30,10 +30,10 @@ export const MobileMenuTopWrapper = styled.div`
 `;
 
 export const MobileMenuHeaderWrapper = styled.header`
-  margin: 0 2rem;
+  margin: 0 1.5em;
 
   .header-profile {
-    margin-top: 1rem;
+    margin-top: 1em;
     font-weight: 700;
 
     span {
@@ -57,12 +57,12 @@ export const MobileMenuBodyWrapper = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 2rem 0;
+  padding: 1.5em 0;
 `;
 
 export const MobileMenuItemWrapper = styled.div`
   text-transform: uppercase;
-  padding: 1rem 2rem;
+  padding: .6em 1em;
   font-size: 1.4em;
   letter-spacing: 1px;
   font-weight: 600;
@@ -89,9 +89,9 @@ export const MobileMenuItemWrapper = styled.div`
 
 export const MobileMenuFooterWrapper = styled.footer`
   position: relative;
-  margin-bottom: 10rem;
+  margin-bottom: 8em;
 `;
 
 export const CustomLanguageSelect = styled(LanguageSelect)`
-  padding: 2rem;
+  padding: 1.4em;
 `;
