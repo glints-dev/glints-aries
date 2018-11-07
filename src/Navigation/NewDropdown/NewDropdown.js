@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 
+import { escEvent } from '../../Utils/DomUtils';
+
 import Icon from '../../General/Icon';
 
 import {
@@ -18,6 +20,7 @@ class NewDropdown extends Component <Props, State> {
     this.state = {
       dropdownLabel: props.label,
       isOpen: false,
+      cursor: 0,
     };
   }
 
@@ -29,12 +32,14 @@ class NewDropdown extends Component <Props, State> {
       this.setState({
         isOpen: !isOpen,
       });
-      document.getElementsByClassName('aries-dropdown-content')[0].focus();
     }
   }
 
   handleClose = () => {
-    this.setState({ isOpen: false });
+    this.setState({
+      isOpen: false,
+      cursor: 0,
+    });
   };
 
   handleClickItem = (e) => {
@@ -44,11 +49,46 @@ class NewDropdown extends Component <Props, State> {
       dropdownLabel: e.target.innerHTML,
       isOpen: false,
     });
-    document.getElementsByClassName('aries-dropdown')[0].blur();
 
     if (onChange !== undefined) {
-      onChange(e.target.innerHTML);
+      onChange(e.target.dataset.value);
     }
+  }
+
+  handleMouseEnter = (index) => {
+    this.setState({
+      cursor: Number(index),
+    });
+  }
+
+  handleKeyDown = (e) => {
+    e.preventDefault();
+
+    const { children } = this.props;
+    const { cursor } = this.state;
+
+    if (e.keyCode === 38 && cursor > 0) {
+      this.setState({
+        cursor: cursor - 1,
+      });
+    } else if (e.keyCode === 40 && cursor < children.length - 1) {
+      this.setState({
+        cursor: cursor + 1,
+      });
+    } else if (e.keyCode === 13) {
+      this.setState({
+        dropdownLabel: document.querySelector('.active').innerHTML,
+        isOpen: false,
+      });
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', escEvent(this.handleClose), false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', escEvent(this.handleClose), false);
   }
 
   render() {
@@ -60,7 +100,7 @@ class NewDropdown extends Component <Props, State> {
       ...defaultProps
     } = this.props;
 
-    const { isOpen, dropdownLabel } = this.state;
+    const { isOpen, dropdownLabel, cursor } = this.state;
 
     return (
       <DropdownContainer
@@ -68,6 +108,7 @@ class NewDropdown extends Component <Props, State> {
         tabIndex="0"
         onClick={this.handleOpen}
         onBlur={this.handleClose}
+        onKeyDown={this.handleKeyDown}
         role="menuitem"
         aria-label={dropdownLabel}
         aria-haspopup="true"
@@ -87,13 +128,17 @@ class NewDropdown extends Component <Props, State> {
               role="listbox"
               onClick={e => e.stopPropagation()}
             >
-              {children.map(data => (
+              {children.map((data, index) => (
                 <DropdownItemWrapper
-                  key={data.props.value}
-                  onClick={this.handleClickItem}
+                  className={cursor === index ? 'active' : undefined}
                   role="option"
+                  data-value={data.props.value}
+                  key={data.props.value}
+                  onMouseDown={this.handleClickItem}
+                  onMouseEnter={() => this.handleMouseEnter(index)}
+                  tabIndex="0"
                 >
-                  {data.props.value}
+                  {data.props.children}
                 </DropdownItemWrapper>
               ))}
             </DropdownBody>
@@ -115,6 +160,7 @@ type Props = {
 type State = {
   isOpen: boolean,
   dropdownLabel: string,
+  cursor: number,
 }
 
 export default NewDropdown;

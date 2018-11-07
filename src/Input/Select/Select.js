@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Icon from '../../General/Icon';
+
 import SelectItem from './SelectItem';
+
+import Icon from '../../General/Icon';
+
 import {
   SelectContainer,
   SelectWrapper,
@@ -191,6 +194,7 @@ class Select extends Component <Props, State> {
                 data-value={data.props.value}
                 onClick={this.handleClick}
                 onMouseEnter={this.handleMouseEnter}
+                tabIndex="0"
               >
                 {data.props.children}
               </SelectItem>

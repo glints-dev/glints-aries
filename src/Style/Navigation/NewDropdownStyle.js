@@ -50,7 +50,7 @@ export const DropdownItemWrapper = styled.li`
   padding: 1em 1.4em;
   cursor: pointer;
 
-  &:hover {
+  &.active {
     background: ${SecondaryColor.whitesmoke};
   }
 `;

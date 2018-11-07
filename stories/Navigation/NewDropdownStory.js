@@ -19,6 +19,8 @@ const NewDropdownStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <NewDropdown label="Career">
         <NewDropdown.Item value="Business Development">Business Development</NewDropdown.Item>
+        <NewDropdown.Item value="Finance">Finance</NewDropdown.Item>
+        <NewDropdown.Item value="Product Manager">Product Manager</NewDropdown.Item>
         <NewDropdown.Item value="Software Engineer">Software Engineer</NewDropdown.Item>
       </NewDropdown>
     </div>
