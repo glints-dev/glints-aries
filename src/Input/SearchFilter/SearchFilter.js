@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 
-import { SearchFilterContainer, SearchFilterBar } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterContainer, SearchFilterBar, SearchFilterBody } from '../../Style/Input/SearchFilterStyle';
 
 class SearchFilter extends Component <Props, State> {
   state = {
@@ -44,13 +44,13 @@ class SearchFilter extends Component <Props, State> {
           />
           {content}
         </SearchFilterBar>
-        {isOpen
-          && (
-            <Fragment>
-              { children }
-            </Fragment>
-          )
-        }
+        <SearchFilterBody
+          role="menuitem"
+          aria-hidden={!isOpen && true}
+          open={isOpen}
+        >
+          { children }
+        </SearchFilterBody>
       </SearchFilterContainer>
     );
   }

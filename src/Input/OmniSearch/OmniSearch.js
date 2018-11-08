@@ -2,7 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 
-import { OmniSearchContainer, OmniSearchBar } from '../../Style/Input/OmniSearchStyle';
+import { OmniSearchContainer, OmniSearchBar, OmniSearchBody } from '../../Style/Input/OmniSearchStyle';
 
 class OmniSearch extends Component <Props, State> {
   state = {
@@ -43,11 +43,13 @@ class OmniSearch extends Component <Props, State> {
           />
           { content }
         </OmniSearchBar>
-        {isOpen && (
-          <Fragment>
-            { children }
-          </Fragment>
-        )}
+        <OmniSearchBody
+          role="menuitem"
+          aria-hidden={!isOpen && true}
+          open={isOpen}
+        >
+          { children }
+        </OmniSearchBody>
       </OmniSearchContainer>
     );
   }

@@ -182,35 +182,36 @@ class Select extends Component <Props, State> {
             <Icon name="arrow-down" color="#777777" />
           </div>
         </SelectWrapper>
-        {isFocus && (
-          <SelectListWrapper role="listbox">
-            {filterValue.map((data, index) => (
-              <SelectItem
-                className={cursor === index ? 'active' : null}
-                key={data.props.value}
-                role="option"
-                aria-hidden={false}
-                data-id={index}
-                data-value={data.props.value}
-                onClick={this.handleClick}
-                onMouseEnter={this.handleMouseEnter}
-                tabIndex="0"
-              >
-                {data.props.children}
-              </SelectItem>
-            ))}
-            {notMatch && (
-              <SelectItem
-                disabled
-                role="option"
-                aria-hidden={false}
-                aria-disabled="true"
-              >
-                {noOptionResult}
-              </SelectItem>
-            )}
-          </SelectListWrapper>
-        )}
+        <SelectListWrapper
+          role="listbox"
+          aria-hidden={!isFocus && true}
+          open={isFocus}
+        >
+          {filterValue.map((data, index) => (
+            <SelectItem
+              className={cursor === index ? 'active' : null}
+              key={data.props.value}
+              role="option"
+              data-id={index}
+              data-value={data.props.value}
+              onClick={this.handleClick}
+              onMouseEnter={this.handleMouseEnter}
+              tabIndex="0"
+            >
+              {data.props.children}
+            </SelectItem>
+          ))}
+          {notMatch && (
+            <SelectItem
+              disabled
+              role="option"
+              aria-hidden={false}
+              aria-disabled="true"
+            >
+              {noOptionResult}
+            </SelectItem>
+          )}
+        </SelectListWrapper>
       </SelectContainer>
     );
   }

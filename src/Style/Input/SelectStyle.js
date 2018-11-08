@@ -20,19 +20,20 @@ export const SelectWrapper = styled.div`
 
 export const SelectLabel = styled.label`
   position: absolute;
-  left: 1.5em;
+  left: 22px;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
+  font-size: 1.1em;
   
   ${({ floating }) => {
     if (floating) {
       return `
         padding: 0 5px;
         top: 1em;
-        transform: translate3d(-10px, -22px, 0);
+        transform: translate3d(-15px, -20px, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -51,10 +52,10 @@ export const SelectInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  padding: 18px 2.5em 18px 18px;
+  padding: 15px 2.5em 15px 20px;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5;
 
   ${({ status, floating }) => {
@@ -111,7 +112,7 @@ export const SelectInput = styled.input`
     + ${SelectLabel} {
       padding: 0 5px;
       top: 1em;
-      transform: translate3d(-10px, -22px, 0);
+      transform: translate3d(-15px, -20px, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
@@ -128,6 +129,7 @@ export const SelectInput = styled.input`
 
 export const SelectListWrapper = styled.ul`
   position: absolute;
+  display: ${({ open }) => open ? 'block' : 'none'};
   background: ${SecondaryColor.white};
   width: 100%;
   height: auto;
@@ -135,6 +137,7 @@ export const SelectListWrapper = styled.ul`
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
+  font-size: 1.1em;
 `;
 
 export const SelectItemWrapper = styled.li`

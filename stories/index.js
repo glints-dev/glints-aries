@@ -19,7 +19,7 @@ import BlockquoteStory from './Display/BlockquoteStory';
 import BrandStory from './General/BrandStory';
 import BreadcrumbStory from './Navigation/BreadcrumbStory';
 import ButtonStory from './General/ButtonStory';
-import CarouselStory from './Display/CarouselStory';
+// import CarouselStory from './Display/CarouselStory';
 import CheckboxStory from './Input/CheckboxStory';
 import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
@@ -47,7 +47,7 @@ import ProfilePictureStory from './General/ProfilePictureStory';
 import ProgressStory from './Display/ProgressStory';
 import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
-import RangeStory from './Input/RangeStory';
+// import RangeStory from './Input/RangeStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
@@ -112,7 +112,6 @@ storiesOf('Input', module)
   .add('Language Select', () => <LanguageSelectStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Radio Button', () => <RadioButtonStory />)
-  .add('Range', () => <RangeStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Switch', () => <SwitchStory />)
@@ -143,7 +142,6 @@ storiesOf('Display', module)
   ))
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
-  .add('Carousel', () => <CarouselStory />)
   .add('Collapsible', () => <CollapsibleStory />)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)

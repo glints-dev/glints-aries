@@ -13,8 +13,6 @@ const SearchFilterBody = (props: Props) => {
   return (
     <SearchFilterResultContainer
       className={className}
-      role="menuitem"
-      aria-hidden={false}
       {...defaultProps}
     >
       {children}

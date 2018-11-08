@@ -35,13 +35,13 @@ const AccordionPanel = (props: Props) => {
           <Icon name="add" color={SecondaryColor.lightblack} />
         </AccordionIconWrapper>
         <p>{label}</p>
-        {active
-          && (
-            <AccordionContent>
-              {content}
-            </AccordionContent>
-          )
-        }
+        {active && (
+          <AccordionContent
+            onClick={e => e.stopPropagation()}
+          >
+            {content}
+          </AccordionContent>
+        )}
       </AccordionContentWrapper>
     </AccordionPanelWrapper>
   );

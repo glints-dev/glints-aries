@@ -40,6 +40,7 @@ export const DropdownHeader = styled.div`
 
 export const DropdownBody = styled.ul`
   position: absolute;
+  display: ${({ open }) => open ? 'block' : 'none'};
   background: ${SecondaryColor.white};
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;

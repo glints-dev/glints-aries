@@ -14,10 +14,10 @@ export const SearchFilterBar = styled.div`
   position: relative;
 
   input { 
-    padding: 25px 3.5em 25px 30px;
+    padding: 25px 4em 25px 30px;
     background: ${SecondaryColor.white};
     border: 3px solid ${SecondaryColor.darkgrey};
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.5;
     color: ${SecondaryColor.lightblack};
     width: 100%;
@@ -41,13 +41,18 @@ export const SearchFilterBar = styled.div`
   }
 `;
 
+export const SearchFilterBody = styled.div`
+  position: relative;
+  display: ${({ open }) => open ? 'block' : 'none'};
+`;
+
 export const SearchFilterResultContainer = styled.div`
   position: absolute;
   width: 100%;
   display: grid;
   font-size: 1.1em;
   grid-template-columns: auto auto auto;
-  padding: 25px 3.5em 25px 30px;
+  padding: 25px 30px;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   z-index: 9999;

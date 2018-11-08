@@ -41,6 +41,7 @@ export const OmniSearchBar = styled.div`
     right: 3px;
     font-size: 1.5em;
     font-weight: normal;
+    z-index: 1;
 
     @media ${Device.mobileL} {
       top: 5em;
@@ -54,11 +55,16 @@ export const OmniSearchBar = styled.div`
   }
 `;
 
+export const OmniSearchBody = styled.div`
+  position: relative;
+  display: ${({ open }) => open ? 'block' : 'none'};
+`;
+
 export const OmniSearchResultContainer = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: auto auto auto;
-  padding: 25px 3em 25px 30px;
+  padding: 25px 30px;
   font-size: 1.1em;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};

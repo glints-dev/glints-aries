@@ -55,4 +55,5 @@ export const AccordionIconWrapper = styled.div`
 
 export const AccordionContent = styled.div`
   grid-column-start: 2;
+  cursor: default;
 `;

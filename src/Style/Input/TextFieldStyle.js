@@ -16,19 +16,20 @@ export const TextFieldContainer = styled.div`
 
 export const TextFieldLabel = styled.label`
   position: absolute;
-  left: 1em;
+  left: 22px;
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
+  font-size: 1.1em;
   
   ${({ floating }) => {
     if (floating) {
       return `
-        padding: 0 .5em;
+        padding: 0 5px;
         top: 1em;
-        transform: translate3d(-.6em, -1.8em, 0);
+        transform: translate3d(-15px, -20px, 0);
         transition: all .2s;
         font-size: 12px;
       `;
@@ -49,9 +50,9 @@ export const TextFieldInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5;
-  padding: 18px;
+  padding: 15px 20px;
   border: 2px solid ${SecondaryColor.lightblack};
   transition: all .5s;
 
@@ -117,9 +118,9 @@ export const TextFieldInput = styled.input`
   }}
 
     + ${TextFieldLabel} {
-      padding: 0 .5em;
+      padding: 0 5px;
       top: 1em;
-      transform: translate3d(-.6em, -1.8em, 0);
+      transform: translate3d(-15px, -20px, 0);
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;

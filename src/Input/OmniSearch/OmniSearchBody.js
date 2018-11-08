@@ -13,8 +13,6 @@ const OmniSearchBody = (props: Props) => {
   return (
     <OmniSearchResultContainer
       className={className}
-      role="menuitem"
-      aria-hidden={false}
       {...defaultProps}
     >
       {children}

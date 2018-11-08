@@ -20,7 +20,7 @@ const PointingModalStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '2em' }}>
+    <div style={{ marginBottom: '2em', width: '250px' }}>
       <PointingModal>
         <PointingModal.Header>
           <ProfilePicture editable>

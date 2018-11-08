@@ -122,27 +122,27 @@ class NewDropdown extends Component <Props, State> {
             {dropdownLabel}
             <Icon name="arrow-down" color={!disabled ? 'black' : '#777777'} />
           </DropdownHeader>
-          {isOpen && (
-            <DropdownBody
-              className="aries-dropdown-content"
-              role="listbox"
-              onClick={e => e.stopPropagation()}
-            >
-              {children.map((data, index) => (
-                <DropdownItemWrapper
-                  className={cursor === index ? 'active' : undefined}
-                  role="option"
-                  data-value={data.props.value}
-                  key={data.props.value}
-                  onMouseDown={this.handleClickItem}
-                  onMouseEnter={() => this.handleMouseEnter(index)}
-                  tabIndex="0"
-                >
-                  {data.props.children}
-                </DropdownItemWrapper>
-              ))}
-            </DropdownBody>
-          )}
+          <DropdownBody
+            className="aries-dropdown-content"
+            role="listbox"
+            aria-hidden={!isOpen && true}
+            onClick={e => e.stopPropagation()}
+            open={isOpen}
+          >
+            {children.map((data, index) => (
+              <DropdownItemWrapper
+                className={cursor === index ? 'active' : undefined}
+                role="option"
+                data-value={data.props.value}
+                key={data.props.value}
+                onMouseDown={this.handleClickItem}
+                onMouseEnter={() => this.handleMouseEnter(index)}
+                tabIndex="0"
+              >
+                {data.props.children}
+              </DropdownItemWrapper>
+            ))}
+          </DropdownBody>
         </DropdownWrapper>
       </DropdownContainer>
     );
