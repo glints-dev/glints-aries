@@ -16,6 +16,7 @@ export const TabsHeader = styled.div`
     white-space: nowrap;
     overflow: auto;
     font-size: 1.2em;
+    padding: 0;
     
     &::-webkit-scrollbar {
       display: none;

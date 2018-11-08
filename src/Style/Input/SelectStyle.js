@@ -138,6 +138,7 @@ export const SelectListWrapper = styled.ul`
   max-height: 200px;
   overflow: auto;
   font-size: 1.1em;
+  padding: 0;
 `;
 
 export const SelectItemWrapper = styled.li`

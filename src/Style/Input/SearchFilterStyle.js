@@ -74,6 +74,8 @@ export const SearchFilterListWrapper = styled.div`
   }
 
   ul {
+    padding: 0;
+
     li {
       display: flex;
       align-items: center;
