@@ -17,6 +17,7 @@ export const TabsHeader = styled.div`
     overflow: auto;
     font-size: 1.2em;
     padding: 0;
+    margin: 0;
     
     &::-webkit-scrollbar {
       display: none;
@@ -27,6 +28,7 @@ export const TabsHeader = styled.div`
       padding: 1.2em 0;
       margin: 0 .6em;
       text-transform: uppercase;
+      list-style-type: none;
 
       &:first-child {
         margin-left: 0;

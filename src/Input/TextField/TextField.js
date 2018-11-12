@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Icon from '../../General/Icon';
+
 import {
   TextFieldContainer,
   TextFieldInput,

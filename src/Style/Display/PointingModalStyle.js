@@ -61,6 +61,7 @@ export const PointingModalBodyWrapper = styled.div`
 
   ul {
     padding: 1.2em 0;
+    margin: 0;
   }
 `;
 
@@ -68,6 +69,7 @@ export const PointingModalItemWrapper = styled.li`
   font-weight: 600;
   cursor: pointer;
   padding: .5em 1.2em;
+  list-style-type: none;
 
   &:last-child {
     margin-bottom: 0;

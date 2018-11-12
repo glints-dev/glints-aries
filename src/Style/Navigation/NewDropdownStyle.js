@@ -45,6 +45,11 @@ export const DropdownBody = styled.ul`
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;
   padding: 0;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+  }
 `;
 
 export const DropdownItemWrapper = styled.li`

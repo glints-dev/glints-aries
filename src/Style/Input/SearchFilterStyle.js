@@ -75,12 +75,14 @@ export const SearchFilterListWrapper = styled.div`
 
   ul {
     padding: 0;
+    margin: 0;
 
     li {
       display: flex;
       align-items: center;
       margin-bottom: .6em;
       cursor: pointer;
+      list-style-type: none;
 
       &:first-child {
         margin-top: .5em;

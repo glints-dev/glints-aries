@@ -45,7 +45,7 @@ export const TextareaInput = styled.textarea`
   font-size: 1.1em;
   line-height: 1.5;
   padding: 15px 20px;
-  border: 2px solid ${SecondaryColor.lightblack};
+  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
   transition: border .5s;
   resize: vertical;
   overflow: auto;
@@ -76,7 +76,7 @@ export const TextareaInput = styled.textarea`
   }
 
   &:hover {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
     transition: border .5s;
 
     ${({ status }) => {
@@ -101,7 +101,7 @@ export const TextareaInput = styled.textarea`
   }
 
   &:focus {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
 
     ${({ status }) => {
     if (status === 'error') {

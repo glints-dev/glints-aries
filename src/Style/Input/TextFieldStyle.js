@@ -53,7 +53,7 @@ export const TextFieldInput = styled.input`
   font-size: 1.1em;
   line-height: 1.5;
   padding: 15px 20px;
-  border: 2px solid ${SecondaryColor.lightblack};
+  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
 
   ${({ status, floating }) => {
@@ -82,7 +82,7 @@ export const TextFieldInput = styled.input`
   }
 
   &:hover {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
 
     ${({ status }) => {
@@ -107,7 +107,7 @@ export const TextFieldInput = styled.input`
   }
 
   &:focus {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
 
     ${({ status }) => {
     if (status === 'error') {

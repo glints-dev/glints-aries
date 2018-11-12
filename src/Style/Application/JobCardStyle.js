@@ -115,11 +115,13 @@ export const JobcardDetailWrapper = styled.div`
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: .4em;
+    margin: 0;
 
     li {
       position: relative;
       display: flex;
       margin-left: 1em;
+      list-style-type: none;
 
       svg {
         margin: .5em;

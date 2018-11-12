@@ -53,7 +53,7 @@ export const SelectInput = styled.input`
   border: none;
   outline: none;
   padding: 15px 2.5em 15px 20px;
-  border: 2px solid ${SecondaryColor.lightblack};
+  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
@@ -80,8 +80,9 @@ export const SelectInput = styled.input`
     }
   }
   &:hover {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
+
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -101,7 +102,8 @@ export const SelectInput = styled.input`
     }
   }
   &:focus {
-    border: 2px solid ${SecondaryColor.black};
+    border: 2px solid ${SecondaryColor.actionblue};
+
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -139,12 +141,14 @@ export const SelectListWrapper = styled.ul`
   overflow: auto;
   font-size: 1.1em;
   padding: 0;
+  margin: 0;
 `;
 
 export const SelectItemWrapper = styled.li`
   display: flex;
   cursor: pointer;
   padding: .5em 1em;
+  list-style-type: none;
   
   &:first-child {
     margin-top: .5em;
@@ -153,7 +157,7 @@ export const SelectItemWrapper = styled.li`
     margin-bottom: .5em;
   }
   &.active {
-    color: ${SecondaryColor.blue};
+    color: ${SecondaryColor.actionblue};
     background: ${SecondaryColor.lightergrey};
   }
   ${({ disabled }) => {
