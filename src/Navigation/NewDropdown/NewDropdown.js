@@ -42,17 +42,25 @@ class NewDropdown extends Component <Props, State> {
     });
   };
 
-  handleClickItem = (e) => {
-    const { onChange } = this.props;
+  handleClickItem = (onClick) => {
+    const listener = (e) => {
+      const { onChange } = this.props;
 
-    this.setState({
-      dropdownLabel: e.target.dataset.value,
-      isOpen: false,
-    });
+      this.setState({
+        dropdownLabel: e.target.dataset.value,
+        isOpen: false,
+      });
 
-    if (onChange !== undefined) {
-      onChange(e.target.dataset.value);
-    }
+      if (onChange !== undefined) {
+        onChange(e.target.dataset.value);
+      }
+
+      if (onClick !== undefined) {
+        onClick();
+      }
+    };
+
+    return listener;
   }
 
   handleMouseEnter = (index) => {
@@ -145,7 +153,7 @@ class NewDropdown extends Component <Props, State> {
                 role="option"
                 data-value={data.props.value}
                 key={data.props.value}
-                onMouseDown={this.handleClickItem}
+                onMouseDown={this.handleClickItem(data.props.onClick)}
                 onMouseEnter={() => this.handleMouseEnter(index)}
                 tabIndex="0"
               >

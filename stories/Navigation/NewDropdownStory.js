@@ -269,6 +269,22 @@ const NewDropdownStory = () => (
           </td>
           <td>{'Sets Dropdown\'s item value'}</td>
         </tr>
+        <tr>
+          <td>
+            onClick
+          </td>
+          <td>
+            function
+          </td>
+          <td></td>
+          <td>
+            function
+          </td>
+          <td>
+            no
+          </td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
