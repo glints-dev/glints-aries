@@ -18,8 +18,8 @@ const NewDropdownStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <NewDropdown label="Career">
-        <NewDropdown.Item value="Business Development">Business Development</NewDropdown.Item>
-        <NewDropdown.Item value="Finance">Finance</NewDropdown.Item>
+        <NewDropdown.Item value="EN">English</NewDropdown.Item>
+        <NewDropdown.Item value="ID">Indonesian</NewDropdown.Item>
         <NewDropdown.Item value="Product Manager">Product Manager</NewDropdown.Item>
         <NewDropdown.Item value="Software Engineer">Software Engineer</NewDropdown.Item>
       </NewDropdown>
@@ -132,6 +132,90 @@ const NewDropdownStory = () => (
             no
           </td>
           <td>Disabling Dropdown.</td>
+        </tr>
+        <tr>
+          <td>
+            showHoverLine
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>Show underline when hovered.</td>
+        </tr>
+        <tr>
+          <td>
+            leftIconName
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            none
+          </td>
+          <td>
+            based on the Icon list
+          </td>
+          <td>
+            no
+          </td>
+          <td>Icon to show at the left side of dropdown button.</td>
+        </tr>
+        <tr>
+          <td>
+            dropDownPlacement
+          </td>
+          <td>
+            string
+          </td>
+          <td>
+            <code>
+              left
+            </code>
+          </td>
+          <td>
+            <code>
+              left | right
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>Placement position for dropdown.</td>
+        </tr>
+        <tr>
+          <td>
+            noLineBreak
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              true
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>No break line in dropdown.</td>
         </tr>
       </tbody>
     </table>

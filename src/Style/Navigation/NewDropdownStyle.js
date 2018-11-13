@@ -2,6 +2,48 @@ import styled from 'styled-components';
 
 import { SecondaryColor } from '../Colors';
 
+const underLine = `
+  position: relative;
+  
+  &:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+    
+  &:after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 1.4em - 1.4em);
+    height: 2px;
+    background: black;
+    margin: 0 auto;
+    bottom: 0px;
+    left: 1.4em;
+    transition: all .2s ease-in-out;
+    transform: scaleX(0);
+  }
+`;
+
+const underLineAlwaysShow = `
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 1.4em - 1.4em);
+    height: 2px;
+    background: black;
+    margin: 0 auto;
+    bottom: 0px;
+    left: 1.4em;
+    transition: all .2s ease-in-out;
+    transform: scaleX(1);
+  }
+`;
+
 export const DropdownWrapper = styled.div`
   display: inline;
   outline: none;
@@ -9,6 +51,7 @@ export const DropdownWrapper = styled.div`
 
 export const DropdownContainer = styled.div`
   display: inline;
+  position: relative;
 
   &:focus {
     outline: none;
@@ -25,15 +68,35 @@ export const DropdownHeader = styled.div`
   align-items: center;
   padding: 1em 1.4em;
   cursor: pointer;
-  background: ${({ isOpen, disabled }) => isOpen || disabled ? `${SecondaryColor.whitesmoke}` : null};
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
   color: ${({ disabled }) => disabled && `${SecondaryColor.lightblack}`};
+  ${({ showHoverLine, isOpen, disabled }) => {
+    if (showHoverLine) {
+      if (isOpen) {
+        return (`
+          padding: 1em 1.4em 5px;
+          ${underLineAlwaysShow}
+        `);
+      }
+      return (`
+        padding: 1em 1.4em 5px;
+        ${underLine}
+      `);
+    }
+    return (`
+      padding: 1em 1.4em;
+      background: ${isOpen || disabled ? `${SecondaryColor.whitesmoke}` : null};
+      &:hover {
+        background: ${SecondaryColor.whitesmoke};
+      }`
+    );
+  }}
 
-  &:hover {
-    background: ${SecondaryColor.whitesmoke};
+  svg:first-child {
+    margin-right: .6em;
   }
 
-  svg {
+  svg:last-child {
     margin-left: .6em;
   }
 `;
@@ -46,7 +109,18 @@ export const DropdownBody = styled.ul`
   z-index: 1000;
   padding: 0;
   margin: 0;
-
+  ${({ dropDownPlacement }) => {
+    if (dropDownPlacement === 'right') {
+      return (`
+        right: 0;
+      `);
+    }
+    return (`
+      left: 0;
+    `);
+  }}
+  width: auto;
+  white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
   li {
     list-style-type: none;
   }
@@ -59,5 +133,9 @@ export const DropdownItemWrapper = styled.li`
 
   &.active {
     background: ${SecondaryColor.whitesmoke};
+  }
+
+  &:hover > ${DropdownHeader} {
+    ${underLine}
   }
 `;
