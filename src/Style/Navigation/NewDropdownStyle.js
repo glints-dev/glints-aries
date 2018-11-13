@@ -16,12 +16,11 @@ const underLine = `
   &:after {
     content: '';
     position: absolute;
-    width: calc(100% - 1.4em - 1.4em);
+    width: 100%;
     height: 2px;
     background: black;
-    margin: 0 auto;
     bottom: 0px;
-    left: 1.4em;
+    left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(0);
   }
@@ -33,12 +32,11 @@ const underLineAlwaysShow = `
   &:after {
     content: '';
     position: absolute;
-    width: calc(100% - 1.4em - 1.4em);
+    width: 100%;
     height: 2px;
     background: black;
-    margin: 0 auto;
     bottom: 0px;
-    left: 1.4em;
+    left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(1);
   }
@@ -66,7 +64,6 @@ export const DropdownHeader = styled.div`
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 1em 1.4em;
   cursor: pointer;
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
   color: ${({ disabled }) => disabled && `${SecondaryColor.lightblack}`};
@@ -74,12 +71,14 @@ export const DropdownHeader = styled.div`
     if (showHoverLine) {
       if (isOpen) {
         return (`
-          padding: 1em 1.4em 5px;
+          margin-bottom: 8px;
+          padding-bottom: 5px;
           ${underLineAlwaysShow}
         `);
       }
       return (`
-        padding: 1em 1.4em 5px;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
         ${underLine}
       `);
     }
