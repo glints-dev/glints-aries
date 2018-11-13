@@ -11,6 +11,7 @@ import StorybookStyle from '../src/Style/StorybookStyle';
 
 import '../src/Style/GlobalStyle.css';
 
+// Candidate
 import IntroStory from './IntroStory';
 import AccordionStory from './Display/AccordionStory';
 import AlertStory from './General/AlertStory';
@@ -19,7 +20,6 @@ import BlockquoteStory from './Display/BlockquoteStory';
 import BrandStory from './General/BrandStory';
 import BreadcrumbStory from './Navigation/BreadcrumbStory';
 import ButtonStory from './General/ButtonStory';
-// import CarouselStory from './Display/CarouselStory';
 import CheckboxStory from './Input/CheckboxStory';
 import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
@@ -47,7 +47,6 @@ import ProfilePictureStory from './General/ProfilePictureStory';
 import ProgressStory from './Display/ProgressStory';
 import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
-// import RangeStory from './Input/RangeStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
@@ -59,6 +58,9 @@ import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
 import ToastStory from './Display/ToastStory';
+
+// Employers
+import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
@@ -143,6 +145,7 @@ storiesOf('Display', module)
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Collapsible', () => <CollapsibleStory />)
+  .add('Employers Blockquote', () => <EmployersBlockquoteStory />)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)

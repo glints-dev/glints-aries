@@ -2,8 +2,7 @@
 
 import './Style/GlobalStyle.css';
 
-// @create-index
-// keep in alphabetical order
+// Candidate
 export { default as Accordion } from './Display/Accordion';
 export { default as Alert } from './General/Alert';
 export { default as Badge } from './General/Badge';
@@ -48,6 +47,9 @@ export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './Input/TextField';
 export { default as Toast } from './Display/Toast';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
+
+// Employers
+export { default as EmployersBlockquote } from './Display/EmployersBlockquote';
 
 // Utilities
 export { Device, ScreenSize } from './Utils/StyleConfig';
