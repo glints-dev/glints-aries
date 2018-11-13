@@ -16,7 +16,7 @@ const EmployersBlockquoteStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '2em' }}>
+    <div style={{ marginBottom: '2em', width: '450px' }}>
       <EmployersBlockquote
         profileURL="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80"
         alt="Jia Ann"
