@@ -46,7 +46,7 @@ class NewDropdown extends Component <Props, State> {
     const { onChange } = this.props;
 
     this.setState({
-      dropdownLabel: e.target.innerHTML,
+      dropdownLabel: e.target.dataset.value,
       isOpen: false,
     });
 
@@ -97,6 +97,10 @@ class NewDropdown extends Component <Props, State> {
       className,
       label,
       disabled,
+      showHoverLine,
+      leftIconName,
+      dropDownPlacement,
+      noLineBreak,
       ...defaultProps
     } = this.props;
 
@@ -118,7 +122,11 @@ class NewDropdown extends Component <Props, State> {
           <DropdownHeader
             isOpen={isOpen}
             disabled={disabled}
+            showHoverLine={showHoverLine}
           >
+            <If condition={leftIconName}>
+              <Icon name={leftIconName} color={!disabled ? 'black' : '#777777'} />
+            </If>
             {dropdownLabel}
             <Icon name="arrow-down" color={!disabled ? 'black' : '#777777'} />
           </DropdownHeader>
@@ -128,6 +136,8 @@ class NewDropdown extends Component <Props, State> {
             aria-hidden={!isOpen && true}
             onClick={e => e.stopPropagation()}
             open={isOpen}
+            dropDownPlacement={dropDownPlacement}
+            noLineBreak={noLineBreak}
           >
             {children.map((data, index) => (
               <DropdownItemWrapper
@@ -148,6 +158,12 @@ class NewDropdown extends Component <Props, State> {
     );
   }
 }
+
+NewDropdown.defaultProps = {
+  showHoverLine: false,
+  dropDownPlacement: 'left',
+  noLineBreak: false,
+};
 
 type Props = {
   children: React$Node,
