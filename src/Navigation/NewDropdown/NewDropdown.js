@@ -46,20 +46,25 @@ class NewDropdown extends Component <Props, State> {
     const listener = (e) => {
       const { onChange } = this.props;
 
-      this.setState({
-        dropdownLabel: e.target.dataset.value,
-        isOpen: false,
-      });
+      if (e.target.dataset.value) {
+        this.setState({
+          dropdownLabel: e.target.dataset.value,
+          isOpen: false,
+        });
 
-      if (onChange !== undefined) {
-        onChange(e.target.dataset.value);
+        if (onChange !== undefined) {
+          onChange(e.target.dataset.value);
+        }
+      } else {
+        this.setState({
+          isOpen: false,
+        });
       }
 
       if (onClick !== undefined) {
         onClick();
       }
     };
-
     return listener;
   }
 

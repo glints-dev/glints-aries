@@ -8,11 +8,12 @@ const DropdownItem = (props: Props) => {
   const {
     children,
     className,
+    itemOnClick,
     ...defaultProps
   } = props;
 
   return (
-    <DropdownItemWrapper className={className} {...defaultProps}>
+    <DropdownItemWrapper className={className} onMouseDown={itemOnClick} {...defaultProps}>
       {children}
     </DropdownItemWrapper>
   );
@@ -21,6 +22,7 @@ const DropdownItem = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
+  onClick: Function
 }
 
 export default DropdownItem;
