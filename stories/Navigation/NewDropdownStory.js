@@ -219,7 +219,7 @@ const NewDropdownStory = () => (
         </tr>
         <tr>
           <td>
-            dropDownComponentLabel
+          itemElement
           </td>
           <td>
             element
