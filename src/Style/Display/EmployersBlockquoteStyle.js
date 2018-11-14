@@ -4,10 +4,15 @@ import { Device } from '../../Utils/StyleConfig';
 
 import { SecondaryColor } from '../Colors';
 
+export const BlockquoteWrapper = styled.div`
+  position: relative;
+  padding: 30px;
+  outline: none;
+`;
+
 export const BlockquoteContainer = styled.div`
   position: relative;
   border: 1px solid ${SecondaryColor.black};
-  padding: 30px;
   background: ${SecondaryColor.white};
 
   &:after {
@@ -26,6 +31,14 @@ export const BlockquoteContainer = styled.div`
   &:hover:after {
     opacity: 1;
     transition: all .2s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > ${BlockquoteWrapper} {
+    outline: 5px auto -webkit-focus-ring-color;
   }
 `;
 
