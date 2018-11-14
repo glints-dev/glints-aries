@@ -13,7 +13,7 @@ const DropdownItem = (props: Props) => {
   } = props;
 
   return (
-    <DropdownItemWrapper className={className} onMouseDown={itemOnClick} {...defaultProps}>
+    <DropdownItemWrapper className={className} {...defaultProps}>
       {children}
     </DropdownItemWrapper>
   );

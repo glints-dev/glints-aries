@@ -217,6 +217,24 @@ const NewDropdownStory = () => (
           </td>
           <td>No break line in dropdown.</td>
         </tr>
+        <tr>
+          <td>
+            dropDownComponentLabel
+          </td>
+          <td>
+            element
+          </td>
+          <td>
+            none
+          </td>
+          <td>
+            any
+          </td>
+          <td>
+            no
+          </td>
+          <td>Dropdown label in component.</td>
+        </tr>
       </tbody>
     </table>
 
