@@ -114,6 +114,7 @@ class NewDropdown extends Component <Props, State> {
       leftIconName,
       dropDownPlacement,
       noLineBreak,
+      itemElement,
       ...defaultProps
     } = this.props;
 
@@ -140,7 +141,14 @@ class NewDropdown extends Component <Props, State> {
             <If condition={leftIconName}>
               <Icon name={leftIconName} color={!disabled ? 'black' : '#777777'} />
             </If>
-            {dropdownLabel}
+            <Choose>
+              <When condition={itemElement}>
+                {itemElement}
+              </When>
+              <Otherwise>
+                {dropdownLabel}
+              </Otherwise>
+            </Choose>
             <Icon name="arrow-down" color={!disabled ? 'black' : '#777777'} />
           </DropdownHeader>
           <DropdownBody
@@ -180,6 +188,7 @@ NewDropdown.defaultProps = {
 
 type Props = {
   children: React$Node,
+  dropDownComponentLabel: React$Node,
   className: string,
   label: string,
   onChange: Function,
