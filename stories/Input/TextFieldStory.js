@@ -185,6 +185,30 @@ const TextFieldStory = () => (
             Disable the Text Field.
           </td>
         </tr>
+        <tr>
+          <td>
+            small
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets TextField to be smaller.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

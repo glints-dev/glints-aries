@@ -145,6 +145,7 @@ class Select extends Component <Props, State> {
       onBlur,
       noOptionResult,
       children,
+      small,
       ...defaultProps
     } = this.props;
 
@@ -173,9 +174,14 @@ class Select extends Component <Props, State> {
             onKeyDown={this.handleKeyDown}
             floating={floating}
             value={selectedValue}
+            small={small}
             {...defaultProps}
           />
-          <SelectLabel floating={floating} status={status}>
+          <SelectLabel
+            floating={floating}
+            status={status}
+            small={small}
+          >
             {label}
           </SelectLabel>
           <div className="select-icon" aria-label="show options">
@@ -186,6 +192,7 @@ class Select extends Component <Props, State> {
           role="listbox"
           aria-hidden={!isFocus && true}
           open={isFocus}
+          small={small}
         >
           {filterValue.map((data, index) => (
             <SelectItem
@@ -224,6 +231,7 @@ type Props = {
   className: string,
   noOptionResult: string,
   children: React$Node,
+  small: boolean,
 }
 
 type State = {

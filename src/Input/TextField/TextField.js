@@ -61,6 +61,7 @@ class TextField extends Component <Props, State> {
       disabled,
       className,
       onBlur,
+      small,
       ...defaultProps
     } = this.props;
 
@@ -76,9 +77,14 @@ class TextField extends Component <Props, State> {
           floating={floating}
           value={value}
           aria-label={label}
+          small={small}
           {...defaultProps}
         />
-        <TextFieldLabel floating={floating} status={status}>
+        <TextFieldLabel
+          floating={floating}
+          status={status}
+          small={small}
+        >
           {label}
         </TextFieldLabel>
         {type === 'password'
@@ -103,6 +109,7 @@ type Props = {
   status: string,
   disabled: boolean,
   className: string,
+  small: boolean,
 }
 
 type State = {

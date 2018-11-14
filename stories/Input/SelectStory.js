@@ -176,6 +176,30 @@ const SelectStory = () => (
             Called when select an option or value of input is changed.
           </td>
         </tr>
+        <tr>
+          <td>
+            small
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Select to be smaller.
+          </td>
+        </tr>
       </tbody>
     </table>
 

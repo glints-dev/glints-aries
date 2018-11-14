@@ -20,7 +20,7 @@ export const SelectWrapper = styled.div`
 
 export const SelectLabel = styled.label`
   position: absolute;
-  left: 22px;
+  left: ${({ small }) => small ? '16px' : '22px'};
   background: ${SecondaryColor.white};
   color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
@@ -39,6 +39,15 @@ export const SelectLabel = styled.label`
       `;
     }
   }}
+
+  ${({ floating, small }) => {
+    if (floating && small) {
+      return `
+        transform: translate3d(-10px, -20px, 0);
+      `;
+    }
+  }}
+
   ${({ status, floating }) => {
     if (status === 'error' && floating) {
       return `
@@ -52,10 +61,10 @@ export const SelectInput = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  padding: 15px 2.5em 15px 20px;
+  padding: ${({ small }) => small ? '13px 2.5em 13px 15px' : '15px 2.5em 15px 20px'};
   border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
-  font-size: 1.1em;
+  font-size: ${({ small }) => small ? '1em' : '1.1em'};
   line-height: 1.5;
 
   ${({ status, floating }) => {
@@ -114,7 +123,7 @@ export const SelectInput = styled.input`
     + ${SelectLabel} {
       padding: 0 5px;
       top: 1em;
-      transform: translate3d(-15px, -20px, 0);
+      transform: ${({ small }) => small ? 'translate3d(-10px, -20px, 0)' : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
@@ -139,7 +148,7 @@ export const SelectListWrapper = styled.ul`
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
-  font-size: 1.1em;
+  font-size: ${({ small }) => small ? '1em' : '1.1em'};
   padding: 0;
   margin: 0;
 `;
