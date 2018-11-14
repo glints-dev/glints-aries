@@ -12,7 +12,7 @@ export const ToastContainer = styled.div`
   max-width: 500px;
   background: ${({ theme }) => theme === 'black' ? `${SecondaryColor.black}` : `${PrimaryColor.glintsblue}`};
   color: ${({ theme }) => theme === 'black' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
-  z-index: 9999;
+  z-index: 1005;
   line-height: 1.5;
   padding: 1em;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);

@@ -11,7 +11,7 @@ export const ModalContainer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 1000;
   background: rgba(0, 0, 0, 0.65);
   overflow: auto;
 `;
@@ -26,7 +26,6 @@ export const ModalContentArea = styled.div`
   padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em'};
   margin: 2.5em auto;
   max-width: 95vw;
-  z-index: 9999;
   outline: none;
 
   ${({ centering }) => {
