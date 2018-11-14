@@ -3,6 +3,7 @@
 import React from 'react';
 import {
   BlockquoteContainer,
+  BlockquoteWrapper,
   BlockquoteContent,
   BlockquoteProfileWrapper,
   BlockquoteProfilePicture,
@@ -17,22 +18,30 @@ const Blockquote = (props: Props) => {
     alt,
     profileName,
     additionalInfo,
+    ...defaultProps
   } = props;
 
   return (
-    <BlockquoteContainer className={className}>
-      <BlockquoteContent>
-        {children}
-      </BlockquoteContent>
-      <BlockquoteProfileWrapper>
-        <BlockquoteProfilePicture>
-          <img src={profileURL} alt={alt} />
-        </BlockquoteProfilePicture>
-        <BlockquoteIdentity>
-          <p>{profileName}</p>
-          <span>{additionalInfo}</span>
-        </BlockquoteIdentity>
-      </BlockquoteProfileWrapper>
+    <BlockquoteContainer
+      className={className}
+      tabIndex="0"
+      role="presentation"
+      {...defaultProps}
+    >
+      <BlockquoteWrapper tabIndex="-1">
+        <BlockquoteContent>
+          {children}
+        </BlockquoteContent>
+        <BlockquoteProfileWrapper>
+          <BlockquoteProfilePicture>
+            <img src={profileURL} alt={alt} aria-hidden="true" />
+          </BlockquoteProfilePicture>
+          <BlockquoteIdentity>
+            <p>{profileName}</p>
+            <span>{additionalInfo}</span>
+          </BlockquoteIdentity>
+        </BlockquoteProfileWrapper>
+      </BlockquoteWrapper>
     </BlockquoteContainer>
   );
 };

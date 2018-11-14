@@ -8,7 +8,6 @@ const DropdownItem = (props: Props) => {
   const {
     children,
     className,
-    itemOnClick,
     ...defaultProps
   } = props;
 
@@ -22,7 +21,6 @@ const DropdownItem = (props: Props) => {
 type Props = {
   children: React$Node,
   className: string,
-  onClick: Function
 }
 
 export default DropdownItem;
