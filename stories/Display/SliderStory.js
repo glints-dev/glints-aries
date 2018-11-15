@@ -174,6 +174,46 @@ const SliderStory = () => (
             Sets initial item to show. Index starts from 1 until so on.
           </td>
         </tr>
+        <tr>
+          <td>
+            fullContent
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets content to fill all area.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            arrowWhite
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Changes arrow color to white.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

@@ -86,11 +86,20 @@ class Slider extends Component <Props, State> {
   }
 
   render() {
+    const {
+      children,
+      className,
+      fullContent,
+      arrowWhite,
+    } = this.props;
     const { translateValue, index } = this.state;
-    const { children, className } = this.props;
 
     return (
-      <SliderContainer ref={(node) => { this.sliderContainer = node; }} className={className}>
+      <SliderContainer
+        ref={(node) => { this.sliderContainer = node; }}
+        className={className}
+        fullContent={fullContent}
+      >
         <SliderContentWrapper
           style={{
             transform: `translateX(${translateValue}px)`,
@@ -99,8 +108,17 @@ class Slider extends Component <Props, State> {
         >
           { children }
         </SliderContentWrapper>
-        <LeftArrow previousSlide={this.previousSlide} index={index} />
-        <RightArrow nextSlide={this.nextSlide} index={index} limit={children.length} />
+        <LeftArrow
+          previousSlide={this.previousSlide}
+          index={index}
+          arrowWhite={arrowWhite}
+        />
+        <RightArrow
+          nextSlide={this.nextSlide}
+          index={index}
+          limit={children.length}
+          arrowWhite={arrowWhite}
+        />
       </SliderContainer>
     );
   }
@@ -110,6 +128,8 @@ type Props = {
   children: React$Node,
   className: string,
   initialItem: number,
+  fullContent: boolean,
+  arrowWhite: boolean,
 };
 
 type State = {

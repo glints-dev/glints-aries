@@ -2,6 +2,7 @@ import React from 'react';
 
 import Tabs from '../../src/Display/Tabs';
 import Collapsible from '../../src/Display/Collapsible';
+import Badge from '../../src/General/Badge';
 
 const TabsStory = () => (
   <div className="doc-mainbar">
@@ -18,7 +19,7 @@ const TabsStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <Tabs>
-        <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
+        <Tabs.Pane tab="Job">Software Engineer <Badge label="1" /></Tabs.Pane>
         <Tabs.Pane tab="Company">Glints</Tabs.Pane>
         <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
         <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>

@@ -6,12 +6,7 @@ const arrow = css`
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-`;
-
-export const SliderContainer = styled.div`
-  position: relative;
-  white-space: nowrap;
-  overflow: hidden;
+  font-size: 2em;
 `;
 
 export const SliderContentWrapper = styled.div`
@@ -26,7 +21,6 @@ export const SliderItemWrapper = styled.div`
   justify-content: center;
   width: 100%;
   white-space: normal;
-  padding: 2em 4em;
 `;
 
 export const LeftArrowContainer = styled.div`
@@ -39,4 +33,14 @@ export const RightArrowContainer = styled.div`
   ${arrow};
   right: 0;
   cursor: ${({ index, limit }) => index === limit ? 'not-allowed' : 'pointer'};
+`;
+
+export const SliderContainer = styled.div`
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+
+  ${SliderItemWrapper} {
+    padding: ${({ fullContent }) => !fullContent && '2em 4em'};
+  }
 `;
