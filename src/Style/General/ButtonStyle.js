@@ -282,8 +282,8 @@ export const GhostBtn = styled(Button)`
         `;
       case `${Theme.BLUE}`:
         return `
-          border: 2px solid ${PrimaryColor.glintsblue};
-          color: ${PrimaryColor.glintsblue};
+          border: 2px solid ${SecondaryColor.blue};
+          color: ${SecondaryColor.blue};
         `;
       case `${Theme.WHITE}`:
         return `
@@ -312,7 +312,7 @@ export const GhostBtn = styled(Button)`
         `;
       case `${Theme.BLUE}`:
         return `
-          background-color: ${PrimaryColor.glintsblue};
+          background-color: ${SecondaryColor.blue};
           color: ${SecondaryColor.white};
         `;
       case `${Theme.WHITE}`:

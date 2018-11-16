@@ -414,7 +414,7 @@ const ButtonStories = () => (
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Ghost Button</Heading>
-      <Button variant={Variant.GHOST} theme={Theme.RED} onClick={action('Ghost Button')}>
+      <Button variant={Variant.GHOST} theme={Theme.BLUE} onClick={action('Ghost Button')}>
         Ghost
       </Button>
     </div>
@@ -424,7 +424,7 @@ const ButtonStories = () => (
         <pre>
           {`<Button
   variant="ghost"
-  theme="red"
+  theme="blue"
 >
   Ghost
 </Button>`}
