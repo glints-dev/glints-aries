@@ -1,4 +1,7 @@
 #### 2.0.10 (2018-11-16)
+1. Adding new icons
+2. Revising old icons
+3. Changing blue color on Ghost Button
 
 #### 2.0.9 (2018-11-15)
 
