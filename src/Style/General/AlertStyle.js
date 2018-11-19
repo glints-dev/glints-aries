@@ -34,7 +34,7 @@ export const AlertContainer = styled.div`
   padding: 0.5em 0.5em 0.5em 2em;
   align-items: center;
   grid-column-gap: 10px;
-  background-color: ${SecondaryColor.darkerWhite};
+  background-color: ${SecondaryColor.ivory};
   z-index: 5000;
   width: 80vw;
   max-width: 500px;

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { PrimaryColor, SecondaryColor } from '../Colors';
 
 const arrow = css`
   position: absolute;
@@ -42,5 +43,29 @@ export const SliderContainer = styled.div`
 
   ${SliderItemWrapper} {
     padding: ${({ fullContent }) => !fullContent && '2em 4em'};
+  }
+
+  ul {
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      display: inline-flex;
+      width: 1em;
+      height: 1em;
+      background: ${SecondaryColor.white};
+      border-radius: 50%;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+      margin: 0 6px;
+      cursor: pointer;
+
+      &.active {
+        width: 2.5em;
+        border-radius: 1em;
+        background: ${PrimaryColor.glintsyellow};
+      }
+    }
   }
 `;

@@ -7,7 +7,7 @@ export const PrimaryColor = {
 export const SecondaryColor = {
   white: '#FFFFFF',
   whitesmoke: '#F3F3F3',
-  darkerwhite: '#FFFAEA',
+  ivory: '#FFFAEA',
   black: '#000000',
   lightblack: '#777777',
   lighterblack: '#AAAAAA',

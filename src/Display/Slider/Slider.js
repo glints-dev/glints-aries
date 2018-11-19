@@ -47,6 +47,15 @@ class Slider extends Component <Props, State> {
     });
   }
 
+  handleDotClick = (idx) => {
+    const { screenSize } = this.state;
+
+    this.setState({
+      index: idx + 1,
+      translateValue: -(screenSize * idx),
+    });
+  }
+
   componentDidMount() {
     const { initialItem, children } = this.props;
     const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
@@ -91,6 +100,7 @@ class Slider extends Component <Props, State> {
       className,
       fullContent,
       arrowWhite,
+      removeDots,
     } = this.props;
     const { translateValue, index } = this.state;
 
@@ -119,6 +129,17 @@ class Slider extends Component <Props, State> {
           limit={children.length}
           arrowWhite={arrowWhite}
         />
+        {!removeDots && (
+          <ul>
+            {children.map((data, idx) => (
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+              <li
+                className={idx + 1 === index && 'active'}
+                onClick={() => this.handleDotClick(idx)}
+              ></li>
+            ))}
+          </ul>
+        )}
       </SliderContainer>
     );
   }
@@ -130,6 +151,7 @@ type Props = {
   initialItem: number,
   fullContent: boolean,
   arrowWhite: boolean,
+  removeDots: boolean,
 };
 
 type State = {

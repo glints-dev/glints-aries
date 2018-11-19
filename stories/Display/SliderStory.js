@@ -214,6 +214,26 @@ const SliderStory = () => (
             Changes arrow color to white.
           </td>
         </tr>
+        <tr>
+          <td>
+            removeDots
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Remove dots.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
