@@ -166,6 +166,7 @@ class NewDropdown extends Component <Props, State> {
             dropDownPlacement={dropDownPlacement}
             noLineBreak={noLineBreak}
             showFullWidth={showFullWidth}
+            showHoverLine={showHoverLine}
           >
             {children.map((data, index) => (
               <DropdownItemWrapper
@@ -189,7 +190,7 @@ class NewDropdown extends Component <Props, State> {
 }
 
 NewDropdown.defaultProps = {
-  showHoverLine: false,
+  showHoverLine: true,
   dropDownPlacement: 'left',
   noLineBreak: false,
   defaultColor: 'black',

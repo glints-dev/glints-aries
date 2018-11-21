@@ -19,28 +19,26 @@ const underLine = `
     width: 100%;
     height: 2px;
     background: black;
-    bottom: 0px;
+    bottom: -5px;
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(0);
-    margin-top: 5px;
   }
 `;
 
 const underLineAlwaysShow = `
   position: relative;
-
+  
   &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background: black;
-    bottom: 0px;
+    bottom: -5px;
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(1);
-    margin-top: 5px;
   }
 `;
 
@@ -81,7 +79,8 @@ export const DropdownHeader = styled.div`
       return (`
         ${underLine}
       `);
-    } if (showFullWidth) {
+    }
+    if (showFullWidth) {
       return (`
         width: 100%;
         padding: 10px 0 10px 20px;
@@ -94,7 +93,7 @@ export const DropdownHeader = styled.div`
         background: ${SecondaryColor.whitesmoke};
       }`
     );
-  }}
+  }};
 
   svg:first-child {
     margin-right: .6em;
@@ -118,7 +117,6 @@ export const DropdownBody = styled.ul`
       return (`
         right: 0;
         width: auto;
-        margin-top: 8px;
       `);
     }
     if (showFullWidth) {
@@ -130,9 +128,16 @@ export const DropdownBody = styled.ul`
     return (`
       left: 0;
       width: auto;
-      margin-top: 8px;
     `);
-  }}
+  }};
+  ${({ showHoverLine }) => {
+    if (showHoverLine) {
+      return (`
+        margin-top: 13px;
+      `);
+    }
+    return null;
+  }};
   white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
   li {
     list-style-type: none;
