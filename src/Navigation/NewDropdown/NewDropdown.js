@@ -193,7 +193,7 @@ NewDropdown.defaultProps = {
   dropDownPlacement: 'left',
   noLineBreak: false,
   defaultColor: 'black',
-  showFullWidth: true,
+  showFullWidth: false,
 };
 
 type Props = {

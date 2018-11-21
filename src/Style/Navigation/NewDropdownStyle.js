@@ -86,7 +86,7 @@ export const DropdownHeader = styled.div`
     } if (showFullWidth) {
       return (`
         width: 100%;
-        padding-bottom: 10px;
+        padding: 10px 0 10px 20px;
       `);
     }
     return (`
