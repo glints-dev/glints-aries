@@ -43,7 +43,8 @@ const fadeOut = keyframes`
 export const DrawerContainer = styled.div`
   position: fixed;
   display: ${({ isDisplay }) => isDisplay ? 'block' : 'none'};
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   top: 0px;
   left: 0px;
@@ -64,5 +65,5 @@ export const DrawerWrapper = styled.div`
   transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
   outline: none;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-  overflow-x: none;
+  overflow-y: auto;
 `;

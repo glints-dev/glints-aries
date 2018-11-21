@@ -1,311 +1,124 @@
 import React from 'react';
 
 import NewDropdown from '../../src/Navigation/NewDropdown';
-import Collapsible from '../../src/Display/Collapsible';
+import StoryBookComponent from '../StoryBookComponent';
+
+const props = {
+  NewDropdown: [
+    {
+      name: 'label',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets label of Dropdown.',
+    },
+    {
+      name: 'onChange',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'To get value of Dropdown\'s item.',
+    },
+    {
+      name: 'disabled',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Disabling Dropdown.',
+    },
+    {
+      name: 'showHoverLine',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Show underline when hovered.',
+    },
+    {
+      name: 'leftIconName',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'based on the Icon list',
+      require: 'no',
+      description: 'Icon to show at the left side of dropdown button.',
+    },
+    {
+      name: 'dropDownPlacement',
+      type: 'string',
+      defaultValue: <code>left</code>,
+      possibleValue: <code>left | right</code>,
+      require: 'no',
+      description: 'Placement position for dropdown.',
+    },
+    {
+      name: 'noLineBreak',
+      type: 'boolean',
+      defaultValue: <code>true</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'No break line in dropdown.',
+    },
+    {
+      name: 'itemElement',
+      type: 'element',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Dropdown label in component.',
+    },
+    {
+      name: 'showFullWidth',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Dropdown take full width',
+    },
+    {
+      name: 'iconDefaultColor',
+      type: 'string',
+      defaultValue: 'black',
+      possibleValue: <code>hex-value | rba-value | string-value</code>,
+      require: 'no',
+      description: 'Dropdown icon color',
+    },
+  ],
+  'NewDropdown.Item': [
+    {
+      name: 'value',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets Dropdown\'s item value',
+    },
+    {
+      name: 'onClick',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: '',
+    },
+  ],
+};
 
 const NewDropdownStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>
-        NewDropdown
-      </h1>
-      <p>
-        <code>
-          {'import { NewDropdown } from \'glints-aries\''}
-        </code>
-      </p>
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <NewDropdown label="Career">
-        <NewDropdown.Item value="EN">English</NewDropdown.Item>
-        <NewDropdown.Item value="ID">Indonesian</NewDropdown.Item>
-        <NewDropdown.Item value="Product Manager">Product Manager</NewDropdown.Item>
-        <NewDropdown.Item value="Software Engineer">Software Engineer</NewDropdown.Item>
-      </NewDropdown>
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`handleChange = (value) => {
-  console.log('selected value: ', value);
-}
-
-<NewDropdown label="Career" onChange={this.handleChange}>
-  <NewDropdown.Item value="Business Development">
-    Business Development
-  </NewDropdown.Item>
-  <NewDropdown.Item value="Software Engineer">
-    Software Engineer
-  </NewDropdown.Item>
-</NewDropdown>`}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              NewDropdown
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            label
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets label of Dropdown.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            onChange
-          </td>
-          <td>
-            function
-          </td>
-          <td></td>
-          <td>
-            function
-          </td>
-          <td>
-            no
-          </td>
-          <td>{'To get value of Dropdown\'s item.'}</td>
-        </tr>
-        <tr>
-          <td>
-            disabled
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>Disabling Dropdown.</td>
-        </tr>
-        <tr>
-          <td>
-            showHoverLine
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>Show underline when hovered.</td>
-        </tr>
-        <tr>
-          <td>
-            leftIconName
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            none
-          </td>
-          <td>
-            based on the Icon list
-          </td>
-          <td>
-            no
-          </td>
-          <td>Icon to show at the left side of dropdown button.</td>
-        </tr>
-        <tr>
-          <td>
-            dropDownPlacement
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <code>
-              left
-            </code>
-          </td>
-          <td>
-            <code>
-              left | right
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>Placement position for dropdown.</td>
-        </tr>
-        <tr>
-          <td>
-            noLineBreak
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              true
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>No break line in dropdown.</td>
-        </tr>
-        <tr>
-          <td>
-          itemElement
-          </td>
-          <td>
-            element
-          </td>
-          <td>
-            none
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td>Dropdown label in component.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              NewDropdown.Item
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            value
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>{'Sets Dropdown\'s item value'}</td>
-        </tr>
-        <tr>
-          <td>
-            onClick
-          </td>
-          <td>
-            function
-          </td>
-          <td></td>
-          <td>
-            function
-          </td>
-          <td>
-            no
-          </td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <StoryBookComponent
+    title="NewDropdown"
+    code="import { NewDropdown} from 'glints-aries'"
+    propsObject={props}
+  >
+    <NewDropdown label="Career">
+      <NewDropdown.Item value="EN">English</NewDropdown.Item>
+      <NewDropdown.Item value="ID">Indonesian</NewDropdown.Item>
+      <NewDropdown.Item value="Product Manager">Product Manager</NewDropdown.Item>
+      <NewDropdown.Item value="Software Engineer">Software Engineer</NewDropdown.Item>
+    </NewDropdown>
+  </StoryBookComponent>
 );
 
 export default NewDropdownStory;

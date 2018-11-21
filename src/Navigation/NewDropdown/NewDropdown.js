@@ -12,6 +12,7 @@ import {
   DropdownHeader,
   DropdownBody,
   DropdownItemWrapper,
+  IconWrapper,
 } from '../../Style/Navigation/NewDropdownStyle';
 
 class NewDropdown extends Component <Props, State> {
@@ -115,6 +116,8 @@ class NewDropdown extends Component <Props, State> {
       dropDownPlacement,
       noLineBreak,
       itemElement,
+      iconDefaultColor,
+      showFullWidth,
       ...defaultProps
     } = this.props;
 
@@ -137,9 +140,10 @@ class NewDropdown extends Component <Props, State> {
             isOpen={isOpen}
             disabled={disabled}
             showHoverLine={showHoverLine}
+            showFullWidth={showFullWidth}
           >
             <If condition={leftIconName}>
-              <Icon name={leftIconName} color={!disabled ? 'black' : '#777777'} />
+              <Icon name={leftIconName} color={!disabled ? iconDefaultColor : '#777777'} />
             </If>
             <Choose>
               <When condition={itemElement}>
@@ -149,7 +153,9 @@ class NewDropdown extends Component <Props, State> {
                 {dropdownLabel}
               </Otherwise>
             </Choose>
-            <Icon name="arrow-down" color={!disabled ? 'black' : '#777777'} />
+            <IconWrapper>
+              <Icon name="arrow-down" color={!disabled ? iconDefaultColor : '#777777'} />
+            </IconWrapper>
           </DropdownHeader>
           <DropdownBody
             className="aries-dropdown-content"
@@ -159,6 +165,8 @@ class NewDropdown extends Component <Props, State> {
             open={isOpen}
             dropDownPlacement={dropDownPlacement}
             noLineBreak={noLineBreak}
+            showFullWidth={showFullWidth}
+            showHoverLine={showHoverLine}
           >
             {children.map((data, index) => (
               <DropdownItemWrapper
@@ -169,6 +177,7 @@ class NewDropdown extends Component <Props, State> {
                 onMouseDown={this.handleClickItem(data.props.onClick)}
                 onMouseEnter={() => this.handleMouseEnter(index)}
                 tabIndex="0"
+                showFullWidth={showFullWidth}
               >
                 {data.props.children}
               </DropdownItemWrapper>
@@ -184,6 +193,8 @@ NewDropdown.defaultProps = {
   showHoverLine: false,
   dropDownPlacement: 'left',
   noLineBreak: false,
+  iconDefaultColor: 'black',
+  showFullWidth: false,
 };
 
 type Props = {

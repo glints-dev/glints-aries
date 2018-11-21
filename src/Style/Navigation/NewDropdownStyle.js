@@ -19,7 +19,7 @@ const underLine = `
     width: 100%;
     height: 2px;
     background: black;
-    bottom: 0px;
+    bottom: -5px;
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(0);
@@ -28,14 +28,14 @@ const underLine = `
 
 const underLineAlwaysShow = `
   position: relative;
-
+  
   &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background: black;
-    bottom: 0px;
+    bottom: -5px;
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(1);
@@ -67,19 +67,23 @@ export const DropdownHeader = styled.div`
   cursor: pointer;
   cursor: ${({ disabled }) => disabled && 'not-allowed'};
   color: ${({ disabled }) => disabled && `${SecondaryColor.lightblack}`};
-  ${({ showHoverLine, isOpen, disabled }) => {
+  ${({
+    showHoverLine, isOpen, disabled, showFullWidth,
+  }) => {
     if (showHoverLine) {
       if (isOpen) {
         return (`
-          margin-bottom: 8px;
-          padding-bottom: 5px;
           ${underLineAlwaysShow}
         `);
       }
       return (`
-        margin-bottom: 8px;
-        padding-bottom: 5px;
         ${underLine}
+      `);
+    }
+    if (showFullWidth) {
+      return (`
+        width: 100%;
+        padding: 10px 0 10px 20px;
       `);
     }
     return (`
@@ -89,7 +93,7 @@ export const DropdownHeader = styled.div`
         background: ${SecondaryColor.whitesmoke};
       }`
     );
-  }}
+  }};
 
   svg:first-child {
     margin-right: .6em;
@@ -108,17 +112,32 @@ export const DropdownBody = styled.ul`
   z-index: 1000;
   padding: 0;
   margin: 0;
-  ${({ dropDownPlacement }) => {
+  ${({ dropDownPlacement, showFullWidth }) => {
     if (dropDownPlacement === 'right') {
       return (`
         right: 0;
+        width: auto;
+      `);
+    }
+    if (showFullWidth) {
+      return (`
+        width: calc(100% - 20px);
+        left: 10px;
       `);
     }
     return (`
       left: 0;
+      width: auto;
     `);
-  }}
-  width: auto;
+  }};
+  ${({ showHoverLine }) => {
+    if (showHoverLine) {
+      return (`
+        margin-top: 13px;
+      `);
+    }
+    return null;
+  }};
   white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
   li {
     list-style-type: none;
@@ -129,6 +148,14 @@ export const DropdownItemWrapper = styled.li`
   position: relative;
   padding: 1em 1.4em;
   cursor: pointer;
+  ${({ showFullWidth }) => {
+    if (showFullWidth) {
+      return (`
+        width: 100%;
+      `);
+    }
+    return null;
+  }}
 
   &.active {
     background: ${SecondaryColor.whitesmoke};
@@ -137,4 +164,8 @@ export const DropdownItemWrapper = styled.li`
   &:hover > ${DropdownHeader} {
     ${underLine}
   }
+`;
+
+export const IconWrapper = styled.span`
+  padding-top: 0.6em;
 `;
