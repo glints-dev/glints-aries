@@ -190,7 +190,7 @@ class NewDropdown extends Component <Props, State> {
 }
 
 NewDropdown.defaultProps = {
-  showHoverLine: true,
+  showHoverLine: false,
   dropDownPlacement: 'left',
   noLineBreak: false,
   iconDefaultColor: 'black',
