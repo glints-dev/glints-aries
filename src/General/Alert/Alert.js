@@ -61,7 +61,7 @@ class Alert extends Component <State, Props> {
   }
 
   renderIcon() {
-    const { iconColor, onClose } = this.props;
+    const { closeIconColor, onClose } = this.props;
 
     return (
       <AlertIcon
@@ -69,7 +69,7 @@ class Alert extends Component <State, Props> {
         aria-label="Press Enter or Escape button to close"
         onClick={onClose}
       >
-        <Icon name="close" color={iconColor ? iconColor : '#000'} />
+        <Icon name="close" color={closeIconColor ? closeIconColor : '#000'} />
       </AlertIcon>
     );
   }
