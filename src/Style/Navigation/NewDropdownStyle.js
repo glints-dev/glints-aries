@@ -23,6 +23,7 @@ const underLine = `
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(0);
+    margin-top: 5px;
   }
 `;
 
@@ -39,6 +40,7 @@ const underLineAlwaysShow = `
     left: 0px;
     transition: all .2s ease-in-out;
     transform: scaleX(1);
+    margin-top: 5px;
   }
 `;
 
@@ -73,14 +75,10 @@ export const DropdownHeader = styled.div`
     if (showHoverLine) {
       if (isOpen) {
         return (`
-          margin-bottom: 8px;
-          padding-bottom: 5px;
           ${underLineAlwaysShow}
         `);
       }
       return (`
-        margin-bottom: 8px;
-        padding-bottom: 5px;
         ${underLine}
       `);
     } if (showFullWidth) {
@@ -120,6 +118,7 @@ export const DropdownBody = styled.ul`
       return (`
         right: 0;
         width: auto;
+        margin-top: 8px;
       `);
     }
     if (showFullWidth) {
@@ -131,6 +130,7 @@ export const DropdownBody = styled.ul`
     return (`
       left: 0;
       width: auto;
+      margin-top: 8px;
     `);
   }}
   white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
