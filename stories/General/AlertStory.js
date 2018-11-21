@@ -44,6 +44,13 @@ class AlertStory extends Component {
               Open Alert
           </Button>
           <Alert
+            style={{
+              color: "#fff",
+              backgroundColor: "#f60",
+              border: "1px solid magenta"
+            }}
+            closeIconColor="magenta"
+            autoClose={5000}
             message="Our system is currently busy. Please try again."
             isOpen={isOpen}
             onClose={this.handleOnClose}
@@ -112,6 +119,26 @@ handleOnClose = () => {
               </td>
               <td>yes</td>
               <td>Sets Alert to show.</td>
+            </tr>
+            <tr>
+              <td>autoClose</td>
+              <td>number</td>
+              <td><code>null</code></td>
+              <td>
+                any number
+              </td>
+              <td>no</td>
+              <td>auto close alert in millisecond</td>
+            </tr>
+            <tr>
+              <td>style</td>
+              <td>object</td>
+              <td><code>null</code></td>
+              <td>
+                <pre>{`{ backgroundColor: 'red' }`}</pre>
+              </td>
+              <td>no</td>
+              <td>style object</td>
             </tr>
             <tr>
               <td>onClose</td>
