@@ -44,11 +44,6 @@ class AlertStory extends Component {
               Open Alert
           </Button>
           <Alert
-            style={{
-              color: "#fff",
-              backgroundColor: "#f60",
-              border: "1px solid magenta"
-            }}
             autoClose={5000}
             message="Our system is currently busy. Please try again."
             isOpen={isOpen}
@@ -71,6 +66,7 @@ handleOnClose = () => {
   message="Our system is currently busy. Please try again."
   isOpen={isOpen}
   onClose={this.handleOnClose}
+  autoClose={5000} /* in millisecond */
 />`}
             </pre>
           </Collapsible>
