@@ -1,8 +1,15 @@
 import React from 'react';
 
-import Tag from '../../src/General/Tag';
-import Icon from '../../src/General/Icon';
 import Collapsible from '../../src/Display/Collapsible';
+
+const object = `tableName: {
+  name: "name",
+  type: "type",
+  defaultValue: "defaultValue",
+  possibleValue: "possibleValue",
+  require: "require",
+  description: "description",
+}`;
 
 const StoryBookComponentStory = () => (
   <div className="doc-mainbar">
@@ -25,16 +32,18 @@ const StoryBookComponentStory = () => (
           {`<StoryBookComponent
     title="title"
     code="import { component} from 'glints-aries'"
-    propsObject=[
-      {
-        name:'name'
-        type:'type'
-        defaultValue:'defaultValue'
-        possibleValue:'possibleValue'
-        require:'require'
-        description:'description'
-      }
-    ]
+    propsObject={
+      TableName:[
+        {
+          name:'name',
+          type:'type',
+          defaultValue:'defaultValue',
+          possibleValue:'possibleValue',
+          require:'require',
+          description:'description',
+        },
+      ]
+    }
 >
   <Component/>
 </StoryBookComponent>`}
@@ -118,7 +127,9 @@ const StoryBookComponentStory = () => (
           </td>
           <td></td>
           <td>
-            any
+            <pre>
+              {object}
+            </pre>
           </td>
           <td>
             yes

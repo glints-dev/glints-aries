@@ -40,12 +40,12 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderTHead() {
+  renderTHead(tableName) {
     return (
       <thead>
         <tr style={{ borderBottom: '1px solid lightgrey' }}>
           <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>Props</h3>
+            <h3 style={{ margin: '.8em 0' }}>{tableName}</h3>
           </th>
         </tr>
         <tr>
@@ -60,15 +60,31 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderTBody() {
-    const { propsObject } = this.props;
-    return propsObject.map(object => <tr key={object}>{this.renderTD(object)}</tr>);
+  renderTBody(object) {
+    return <tr key={object}>{this.renderTD(object)}</tr>;
   }
 
   renderTD(object) {
     return (
       propsColumnName.map(columnName => <td key={object[columnName]}>{object[columnName]}</td>)
     );
+  }
+
+  renderTable() {
+    const { propsObject } = this.props;
+    const propsObjectKey = Object.keys(propsObject);
+    return propsObjectKey.map(key => (
+      <table className="doc-table">
+        {this.renderTHead(key)}
+        <tbody>
+          {
+            propsObject[key].map(object => (
+              this.renderTBody(object)
+            ))
+          }
+        </tbody>
+      </table>
+    ));
   }
 
   render() {
@@ -88,12 +104,7 @@ class StoryBookComponent extends Component <Props> {
           </Collapsible>
         </div>
         <div style={{ marginBottom: '4em' }}>
-          <table className="doc-table">
-            {this.renderTHead()}
-            <tbody>
-              {this.renderTBody()}
-            </tbody>
-          </table>
+          {this.renderTable()}
         </div>
       </div>
     );
@@ -104,7 +115,7 @@ type Props = {
     children: React$Node,
     title: string,
     code: string,
-    propsObject: Array;
+    propsObject: Object;
   }
 
 export default StoryBookComponent;

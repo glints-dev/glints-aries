@@ -116,7 +116,7 @@ class NewDropdown extends Component <Props, State> {
       dropDownPlacement,
       noLineBreak,
       itemElement,
-      defaultColor,
+      iconDefaultColor,
       showFullWidth,
       ...defaultProps
     } = this.props;
@@ -143,7 +143,7 @@ class NewDropdown extends Component <Props, State> {
             showFullWidth={showFullWidth}
           >
             <If condition={leftIconName}>
-              <Icon name={leftIconName} color={!disabled ? defaultColor : '#777777'} />
+              <Icon name={leftIconName} color={!disabled ? iconDefaultColor : '#777777'} />
             </If>
             <Choose>
               <When condition={itemElement}>
@@ -154,7 +154,7 @@ class NewDropdown extends Component <Props, State> {
               </Otherwise>
             </Choose>
             <IconWrapper>
-              <Icon name="arrow-down" color={!disabled ? defaultColor : '#777777'} />
+              <Icon name="arrow-down" color={!disabled ? iconDefaultColor : '#777777'} />
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody
@@ -193,7 +193,7 @@ NewDropdown.defaultProps = {
   showHoverLine: true,
   dropDownPlacement: 'left',
   noLineBreak: false,
-  defaultColor: 'black',
+  iconDefaultColor: 'black',
   showFullWidth: false,
 };
 
