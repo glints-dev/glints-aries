@@ -7,6 +7,7 @@ import {
   AlertIcon,
 } from '../../Style/General/AlertStyle';
 
+let autoCloseTimeout = null;
 class Alert extends Component <State, Props> {
   constructor(props) {
     super(props);
@@ -17,13 +18,19 @@ class Alert extends Component <State, Props> {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.isOpen && !prevState.isVisible) {
+      if (nextProps.autoClose) {
+        setTimeout(() => {
+          nextProps.onClose();
+          clearTimeout(autoCloseTimeout);
+        }, nextProps.autoClose);
+      }
       return { isVisible: true };
     }
     return null;
   }
 
   componentDidUpdate(prevProps) {
-    const { isOpen } = this.props;
+    const { autoClose, isOpen } = this.props;
     if (prevProps.isOpen && !isOpen) {
       setTimeout(() => this.setState({ isVisible: false }), 300);
     }
@@ -54,7 +61,7 @@ class Alert extends Component <State, Props> {
   }
 
   renderIcon() {
-    const { onClose } = this.props;
+    const { iconColor, onClose } = this.props;
 
     return (
       <AlertIcon
@@ -62,13 +69,13 @@ class Alert extends Component <State, Props> {
         aria-label="Press Enter or Escape button to close"
         onClick={onClose}
       >
-        <Icon name="close" color="black" />
+        <Icon name="close" color={iconColor ? iconColor : '#000'} />
       </AlertIcon>
     );
   }
 
   render() {
-    const { isOpen, onClose } = this.props;
+    const { isOpen, onClose, style } = this.props;
     const { isVisible } = this.state;
 
     return (
@@ -80,6 +87,7 @@ class Alert extends Component <State, Props> {
           aria-describedby="aries-alert-message"
           isOpen={isOpen}
           isVisible={isVisible}
+          style={style ? style : null}
           tabIndex={0}
           onKeyDown={this.handleKeyDown(onClose)}
         >
