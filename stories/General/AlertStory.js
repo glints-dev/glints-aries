@@ -49,7 +49,6 @@ class AlertStory extends Component {
               backgroundColor: "#f60",
               border: "1px solid magenta"
             }}
-            closeIconColor="magenta"
             autoClose={5000}
             message="Our system is currently busy. Please try again."
             isOpen={isOpen}
@@ -135,10 +134,20 @@ handleOnClose = () => {
               <td>object</td>
               <td><code>null</code></td>
               <td>
-                <pre>{`{ backgroundColor: 'red' }`}</pre>
+                <code>{`{ backgroundColor: 'red' }`}</code>
               </td>
               <td>no</td>
               <td>style object</td>
+            </tr>
+            <tr>
+              <td>closeIconColor</td>
+              <td>string</td>
+              <td><code>null</code></td>
+              <td>
+                <code>{`#000`}</code>
+              </td>
+              <td>no</td>
+              <td>hex color of close icon</td>
             </tr>
             <tr>
               <td>onClose</td>
