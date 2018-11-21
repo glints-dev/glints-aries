@@ -1,3 +1,22 @@
+#### 2.0.11 (2018-11-21)
+
+##### New Features
+
+* **Alert:**  adding style, autoClose & iconColor Props to Alert component ([d778ef08](https://github.com/glints-dev/glints-aries/commit/d778ef08cf8d97eea6d578f72fe41bc773ecdff0))
+
+##### Other Changes
+
+* **doc:**
+  *  update Alert Component documentation ([b3ee0834](https://github.com/glints-dev/glints-aries/commit/b3ee0834b0a7629bcfa6b2952ad684623474f4ae))
+  *  update Alert component documentation ([f6049f81](https://github.com/glints-dev/glints-aries/commit/f6049f8119b20b15af6d6cdeec654b56a97840fd))
+
+##### Refactors
+
+* **props:**
+  *  change props name ([21373efb](https://github.com/glints-dev/glints-aries/commit/21373efb2d4cb06d3d8396bb3fcfbf08c653c968))
+  *  change props name ([aca562ef](https://github.com/glints-dev/glints-aries/commit/aca562efeca46b654b6a2af54e3328ba7531c681))
+* **switch:**  change switch to if ([7ad73d81](https://github.com/glints-dev/glints-aries/commit/7ad73d81c11a486b60885d89e812dc37662fa951))
+
 #### 2.0.10 (2018-11-16)
 1. Adding new icons
 2. Revising old icons
