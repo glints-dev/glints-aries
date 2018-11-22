@@ -13,6 +13,7 @@ class Slider extends Component <Props, State> {
       translateValue: 0,
       screenSize: 0,
       index: 1,
+      isFocus: false,
     };
     this.sliderContainer = null;
   }
@@ -23,6 +24,7 @@ class Slider extends Component <Props, State> {
       this.setState({
         index: index - 1,
         translateValue: translateValue + screenSize,
+        isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
       });
     }
   }
@@ -34,6 +36,7 @@ class Slider extends Component <Props, State> {
       this.setState({
         index: index + 1,
         translateValue: translateValue - screenSize,
+        isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
       });
     }
   }
@@ -53,6 +56,13 @@ class Slider extends Component <Props, State> {
     this.setState({
       index: idx + 1,
       translateValue: -(screenSize * idx),
+      isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
+    });
+  }
+
+  handleBlur = () => {
+    this.setState({
+      isFocus: false,
     });
   }
 
@@ -102,13 +112,15 @@ class Slider extends Component <Props, State> {
       arrowWhite,
       removeDots,
     } = this.props;
-    const { translateValue, index } = this.state;
+    const { translateValue, index, isFocus } = this.state;
 
     return (
       <SliderContainer
         ref={(node) => { this.sliderContainer = node; }}
         className={className}
+        onBlur={this.handleBlur}
         fullContent={fullContent}
+        tabIndex="0"
       >
         <SliderContentWrapper
           style={{
@@ -158,6 +170,7 @@ type State = {
   translateValue: number,
   index: number,
   screenSize: number,
+  isFocus: boolean,
 };
 
 export default Slider;

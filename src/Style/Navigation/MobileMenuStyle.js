@@ -6,7 +6,7 @@ import { SecondaryColor } from '../Colors';
 
 export const MobileMenuContainer = styled.div`
   position: relative;
-  background: ${SecondaryColor.darkerblue};
+  background: ${SecondaryColor.actionblue};
   color: ${SecondaryColor.white};
   padding: 2em 0;
   height: 100vh;

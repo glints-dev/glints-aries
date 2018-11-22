@@ -46,6 +46,9 @@ export const SliderContainer = styled.div`
   }
 
   ul {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: 0;
     margin: 10px 0;
     display: flex;
@@ -55,7 +58,7 @@ export const SliderContainer = styled.div`
       display: inline-flex;
       width: 1em;
       height: 1em;
-      background: ${SecondaryColor.white};
+      background: ${SecondaryColor.lightgrey};
       border-radius: 50%;
       box-shadow: 0 1px 1px rgba(0,0,0,0.15);
       margin: 0 6px;
