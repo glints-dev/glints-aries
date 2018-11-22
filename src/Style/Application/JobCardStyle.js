@@ -23,7 +23,7 @@ export const JobcardContainer = styled.div`
     background: repeating-linear-gradient(-45deg, transparent, transparent 5px, ${SecondaryColor.lightgrey} 7px);
     top: .5em;
     left: .5em;
-    z-index: -1;
+    z-index: 0;
     transition: all .2s;
   }
 
@@ -39,6 +39,14 @@ export const JobcardContainer = styled.div`
   @media ${Device.mobileS} {
     width: 300px;
   }
+`;
+
+export const JobCardWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: white;
 `;
 
 export const JobcardHeaderWrapper = styled.div`
@@ -116,7 +124,7 @@ export const JobcardDetailWrapper = styled.div`
     grid-template-columns: auto auto;
     grid-gap: .4em;
     margin: 0;
-
+    padding: 0;
     li {
       position: relative;
       display: flex;

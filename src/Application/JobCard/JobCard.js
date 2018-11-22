@@ -2,7 +2,7 @@
 
 import React, { Component, Children } from 'react';
 
-import { JobcardContainer, CustomLink } from '../../Style/Application/JobCardStyle';
+import { JobcardContainer, JobCardWrapper, CustomLink } from '../../Style/Application/JobCardStyle';
 
 class JobCard extends Component <Props> {
   static defaultProps = {
@@ -40,24 +40,26 @@ class JobCard extends Component <Props> {
       ...defaultProps
     } = this.props;
     return (
-      <JobcardContainer
-        className={className}
-        role="presentation"
-        aria-label="Job Card"
-        tabIndex={0}
-        {...defaultProps}
-      >
-        <Choose>
-          <When condition={targetUrl}>
-            <CustomLink to={targetUrl} target={target}>
-              { this.renderLinkChild() }
-            </CustomLink>
-            { this.renderNonLinkChild() }
-          </When>
-          <Otherwise>
-            { this.renderNonLinkChild() }
-          </Otherwise>
-        </Choose>
+      <JobcardContainer>
+        <JobCardWrapper
+          className={className}
+          role="presentation"
+          aria-label="Job Card"
+          tabIndex={0}
+          {...defaultProps}
+        >
+          <Choose>
+            <When condition={targetUrl}>
+              <CustomLink to={targetUrl} target={target}>
+                { this.renderLinkChild() }
+              </CustomLink>
+              { this.renderNonLinkChild() }
+            </When>
+            <Otherwise>
+              { this.renderNonLinkChild() }
+            </Otherwise>
+          </Choose>
+        </JobCardWrapper>
       </JobcardContainer>
     );
   }
