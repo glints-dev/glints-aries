@@ -22,5 +22,9 @@ export const SecondaryColor = {
   actionblue: '#017EB7',
   green: '#008464',
   lightgreen: '#EEF6F4',
+  darkgreen: '#008464',
   orange: '#F5A623',
+  lightorange: '#FFF6E8',
+  lightred: '#FFF2F3',
+  lightblue: '#D6F4FF',
 };

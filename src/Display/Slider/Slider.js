@@ -13,7 +13,6 @@ class Slider extends Component <Props, State> {
       translateValue: 0,
       screenSize: 0,
       index: 1,
-      isFocus: false,
     };
     this.sliderContainer = null;
   }
@@ -24,7 +23,6 @@ class Slider extends Component <Props, State> {
       this.setState({
         index: index - 1,
         translateValue: translateValue + screenSize,
-        isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
       });
     }
   }
@@ -36,7 +34,6 @@ class Slider extends Component <Props, State> {
       this.setState({
         index: index + 1,
         translateValue: translateValue - screenSize,
-        isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
       });
     }
   }
@@ -56,14 +53,15 @@ class Slider extends Component <Props, State> {
     this.setState({
       index: idx + 1,
       translateValue: -(screenSize * idx),
-      isFocus: document.activeElement === ReactDOM.findDOMNode(this.sliderContainer),
     });
   }
 
-  handleBlur = () => {
-    this.setState({
-      isFocus: false,
-    });
+  handleKeyDown = (e) => {
+    if (e.keyCode === 37) {
+      this.previousSlide();
+    } else if (e.keyCode === 39) {
+      this.nextSlide();
+    }
   }
 
   componentDidMount() {
@@ -112,46 +110,48 @@ class Slider extends Component <Props, State> {
       arrowWhite,
       removeDots,
     } = this.props;
-    const { translateValue, index, isFocus } = this.state;
+    const { translateValue, index } = this.state;
 
     return (
       <SliderContainer
         ref={(node) => { this.sliderContainer = node; }}
         className={className}
-        onBlur={this.handleBlur}
+        onKeyDown={this.handleKeyDown}
         fullContent={fullContent}
         tabIndex="0"
       >
-        <SliderContentWrapper
-          style={{
-            transform: `translateX(${translateValue}px)`,
-            transition: 'transform ease-out 0.45s',
-          }}
-        >
-          { children }
-        </SliderContentWrapper>
-        <LeftArrow
-          previousSlide={this.previousSlide}
-          index={index}
-          arrowWhite={arrowWhite}
-        />
-        <RightArrow
-          nextSlide={this.nextSlide}
-          index={index}
-          limit={children.length}
-          arrowWhite={arrowWhite}
-        />
-        {!removeDots && (
-          <ul>
-            {children.map((data, idx) => (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <li
-                className={idx + 1 === index && 'active'}
-                onClick={() => this.handleDotClick(idx)}
-              ></li>
-            ))}
-          </ul>
-        )}
+        <div tabIndex="-1">
+          <SliderContentWrapper
+            style={{
+              transform: `translateX(${translateValue}px)`,
+              transition: 'transform ease-out 0.45s',
+            }}
+          >
+            { children }
+          </SliderContentWrapper>
+          <LeftArrow
+            previousSlide={this.previousSlide}
+            index={index}
+            arrowWhite={arrowWhite}
+          />
+          <RightArrow
+            nextSlide={this.nextSlide}
+            index={index}
+            limit={children.length}
+            arrowWhite={arrowWhite}
+          />
+          {!removeDots && (
+            <ul>
+              {children.map((data, idx) => (
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                <li
+                  className={idx + 1 === index && 'active'}
+                  onClick={() => this.handleDotClick(idx)}
+                ></li>
+              ))}
+            </ul>
+          )}
+        </div>
       </SliderContainer>
     );
   }
@@ -170,7 +170,6 @@ type State = {
   translateValue: number,
   index: number,
   screenSize: number,
-  isFocus: boolean,
 };
 
 export default Slider;

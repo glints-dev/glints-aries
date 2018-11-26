@@ -41,6 +41,18 @@ export const SliderContainer = styled.div`
   white-space: nowrap;
   overflow: hidden;
 
+  &:focus {
+    outline: none;
+  }
+
+  &:focus > div {
+    outline: 10px auto -webkit-focus-ring-color;
+  }
+
+  > div {
+    outline: none;
+  }
+
   ${SliderItemWrapper} {
     padding: ${({ fullContent }) => !fullContent && '2em 4em'};
   }

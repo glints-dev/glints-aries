@@ -44,8 +44,8 @@ class AlertStory extends Component {
               Open Alert
           </Button>
           <Alert
-            autoClose={5000}
-            message="Our system is currently busy. Please try again."
+            type="success"
+            message="You have successfully applied to Glints as Software Engineer."
             isOpen={isOpen}
             onClose={this.handleOnClose}
           />
@@ -63,10 +63,11 @@ handleOnClose = () => {
 }
 
 <Alert
-  message="Our system is currently busy. Please try again."
+  type="success"
+  message="You have successfully applied to Glints as Software Engineer."
   isOpen={isOpen}
   onClose={this.handleOnClose}
-  autoClose={5000} /* in millisecond */
+  autoClose={3000}
 />`}
             </pre>
           </Collapsible>
@@ -92,6 +93,18 @@ handleOnClose = () => {
           </thead>
           <tbody>
             <tr>
+              <td>type</td>
+              <td>string</td>
+              <td>
+                <code>info</code>
+              </td>
+              <td>
+                <code>success | warning | danger | info</code>
+              </td>
+              <td>yes</td>
+              <td>{'Sets Alert\'s style'}</td>
+            </tr>
+            <tr>
               <td>message</td>
               <td>string</td>
               <td></td>
@@ -116,42 +129,22 @@ handleOnClose = () => {
               <td>Sets Alert to show.</td>
             </tr>
             <tr>
-              <td>autoClose</td>
-              <td>number</td>
-              <td><code>null</code></td>
-              <td>
-                any number
-              </td>
-              <td>no</td>
-              <td>auto close alert in millisecond</td>
-            </tr>
-            <tr>
-              <td>style</td>
-              <td>object</td>
-              <td><code>null</code></td>
-              <td>
-                <code>{`{ backgroundColor: 'red' }`}</code>
-              </td>
-              <td>no</td>
-              <td>style object</td>
-            </tr>
-            <tr>
-              <td>closeIconColor</td>
-              <td>string</td>
-              <td><code>null</code></td>
-              <td>
-                <code>{`#000`}</code>
-              </td>
-              <td>no</td>
-              <td>hex color of close icon</td>
-            </tr>
-            <tr>
               <td>onClose</td>
               <td>function</td>
               <td></td>
               <td>function</td>
               <td>yes</td>
               <td>Function to close Alert.</td>
+            </tr>
+            <tr>
+              <td>autoClose</td>
+              <td>number</td>
+              <td></td>
+              <td>
+                number in millisecond
+              </td>
+              <td>no</td>
+              <td>Sets Alert to close by itself. The value is in millisecond.</td>
             </tr>
           </tbody>
         </table>

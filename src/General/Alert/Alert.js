@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Icon from '../Icon';
+
 import {
   AlertContainer,
+  AlertContent,
   AlertMessage,
   AlertIcon,
 } from '../../Style/General/AlertStyle';
 
-let autoCloseTimeout = null;
+import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+
 class Alert extends Component <State, Props> {
   constructor(props) {
     super(props);
@@ -18,26 +21,31 @@ class Alert extends Component <State, Props> {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.isOpen && !prevState.isVisible) {
-      if (nextProps.autoClose) {
-        setTimeout(() => {
-          nextProps.onClose();
-          clearTimeout(autoCloseTimeout);
-        }, nextProps.autoClose);
-      }
       return { isVisible: true };
     }
     return null;
   }
 
   componentDidUpdate(prevProps) {
-    const { autoClose, isOpen } = this.props;
+    const { isOpen } = this.props;
+
+    clearTimeout(this.autoCloseTimeout);
+
     if (prevProps.isOpen && !isOpen) {
       setTimeout(() => this.setState({ isVisible: false }), 300);
+    } else if (prevProps.autoClose) {
+      this.autoCloseTimeout = setTimeout(() => {
+        prevProps.onClose();
+      }, prevProps.autoClose);
     }
 
     if (isOpen) {
       document.getElementsByClassName('aries-alert')[0].focus();
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.autoCloseTimeout);
   }
 
   handleKeyDown = (onClose) => {
@@ -48,6 +56,41 @@ class Alert extends Component <State, Props> {
     };
 
     return listener;
+  }
+
+  renderAlertTypeIcon() {
+    const { type } = this.props;
+    let alertType = null;
+    let alertColor = null;
+
+    switch (type) {
+      case 'success':
+        alertType = 'checkmark-solid';
+        alertColor = SecondaryColor.darkgreen;
+        break;
+      case 'warning':
+        alertType = 'warning-solid';
+        alertColor = SecondaryColor.orange;
+        break;
+      case 'danger':
+        alertType = 'warning-solid';
+        alertColor = PrimaryColor.glintsred;
+        break;
+      case 'info':
+        alertType = 'info-solid';
+        alertColor = PrimaryColor.glintsblue;
+        break;
+      default:
+        alertType = 'info-solid';
+        alertColor = PrimaryColor.glintsblue;
+        break;
+    }
+
+    return (
+      <Fragment>
+        <Icon name={alertType} color={alertColor} />
+      </Fragment>
+    );
   }
 
   renderMessage() {
@@ -61,38 +104,46 @@ class Alert extends Component <State, Props> {
   }
 
   renderIcon() {
-    const { closeIconColor, onClose } = this.props;
+    const { onClose } = this.props;
 
     return (
       <AlertIcon
         role="button"
-        aria-label="Press Enter or Escape button to close"
+        aria-label="Press Escape or Enter button to close alert"
+        title="Close alert"
         onClick={onClose}
       >
-        <Icon name="close" color={closeIconColor ? closeIconColor : '#000'} />
+        <Icon name="close" color={SecondaryColor.grey} />
       </AlertIcon>
     );
   }
 
   render() {
-    const { isOpen, onClose, style } = this.props;
+    const {
+      type,
+      isOpen,
+      onClose,
+    } = this.props;
     const { isVisible } = this.state;
 
     return (
       <If condition={isVisible}>
         <AlertContainer
           className="aries-alert"
+          type={type}
           role="alertdialog"
           aria-hidden={isVisible ? 'false' : 'true'}
           aria-describedby="aries-alert-message"
           isOpen={isOpen}
           isVisible={isVisible}
-          style={style ? style : null}
           tabIndex={0}
           onKeyDown={this.handleKeyDown(onClose)}
         >
-          {this.renderMessage.bind(this)()}
-          {this.renderIcon.bind(this)()}
+          {this.renderAlertTypeIcon()}
+          <AlertContent>
+            {this.renderMessage()}
+            {this.renderIcon()}
+          </AlertContent>
         </AlertContainer>
       </If>
     );
@@ -104,9 +155,10 @@ type State = {
 }
 
 type Props = {
+  type: string,
   message: string,
   onClose: Function,
-  isOpen: boolean
+  isOpen: boolean,
 }
 
 export default Alert;

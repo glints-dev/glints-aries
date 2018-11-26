@@ -14,6 +14,10 @@ export const JobcardContainer = styled.div`
   min-height: 100%;
   outline: none;
 
+  a {
+    text-decoration: none;
+  }
+
   &:after {
     content: '';
     opacity: 0;

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor, PrimaryColor } from '../Colors';
 
 const fadeDown = keyframes`
   0% {
@@ -27,29 +27,70 @@ export const AlertContainer = styled.div`
   left: 50%;
   top: ${({ isVisible }) => isVisible ? '10px' : '0px'};
   transform: ${({ isVisible }) => isVisible ? 'translate(-50%, 0%)' : 'translate(-50%, -100%)'};
-  display: grid;
-  grid-template-columns: 1fr auto;
-  border-radius: 5px;
-  box-shadow: ${({ isVisible }) => isVisible ? '0 4px 12px 2px rgba(0, 0, 0, .4)' : null};
-  padding: 0.5em 0.5em 0.5em 2em;
-  align-items: center;
-  grid-column-gap: 10px;
+  display: flex;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12);
+  padding: 10px;
   background-color: ${SecondaryColor.ivory};
   z-index: 5000;
-  width: 80vw;
-  max-width: 500px;
+  min-width: 500px;
+  max-width: 800px;
   animation: ${({ isOpen }) => isOpen ? fadeDown : fadeUp} .3s ease-in-out;
   outline: none;
+  line-height: 1.5;
+  font-size: 1em;
+
+  ${({ type }) => {
+    switch (type) {
+      case 'success':
+        return `
+          background: ${SecondaryColor.lightgreen};
+          border: 1px solid ${SecondaryColor.darkgreen};
+        `;
+      case 'warning':
+        return `
+          background: ${SecondaryColor.lightorange};
+          border: 1px solid ${SecondaryColor.orange};
+        `;
+      case 'danger':
+        return `
+          background: ${SecondaryColor.lightred};
+          border: 1px solid ${PrimaryColor.glintsred};
+        `;
+      case 'info':
+        return `
+          background: ${SecondaryColor.lightblue};
+          border: 1px solid ${PrimaryColor.glintsblue};
+        `;
+      default:
+        return `
+          background: ${SecondaryColor.lightblue};
+          border: 1px solid ${PrimaryColor.glintsblue};
+        `;
+    }
+  }}
+
+  > svg {
+    font-size: 1.4em;
+    margin-right: 10px;
+  }
 `;
 
-export const AlertMessage = styled.div`
+export const AlertContent = styled.div`
   position: relative;
-  word-wrap: break-word;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const AlertMessage = styled.p`
+  position: relative;
+  margin: 0;
 `;
 
 export const AlertIcon = styled.div`
   position: relative;
-  display: inherit;
-  align-items: center;
-  cursor: pointer;
+
+  svg {
+    cursor: pointer;
+  }
 `;
