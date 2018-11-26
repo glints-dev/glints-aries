@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 import { Device } from '../../Utils/StyleConfig';
-import RedQuote from '../../../assets/icons/red-quote.svg';
-import BlueQuote from '../../../assets/icons/blue-quote.svg';
 
 export const BlockquoteTestimonyWrapper = styled.p`
   font-weight: 100;
@@ -66,32 +64,19 @@ export const BlockquoteContainer = styled.div`
     background: ${PrimaryColor.glintsblue};
     color: ${SecondaryColor.white};
   }
-  
-  &:hover:before {
-    background: url(${RedQuote});
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  &:before {
-    content: '';
+
+  svg {
     position: absolute;
-    top: -1.5em;
-    left: 9em;
-    background: url(${BlueQuote});
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 3em;
-    width: 3em;
-    
+    font-size: 3em;
+    top: -20px;
+    left: 120px;
+
     @media ${Device.mobileL} {
       display: inline-flex;
       align-self: center;
       position: relative;
       left: auto;
-      top: 9em;
+      top: 120px;
     }
   }
 `;

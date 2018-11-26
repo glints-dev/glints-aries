@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 
-import { escEvent } from '../../Utils/DomUtils';
-
 import Icon from '../../General/Icon';
+
+import { escEvent } from '../../Utils/DomUtils';
 
 import {
   DropdownContainer,
