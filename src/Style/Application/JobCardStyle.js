@@ -11,7 +11,7 @@ export const JobcardContainer = styled.div`
   border: 1px solid ${SecondaryColor.lightgrey};
   width: 100%;
   min-width: 300px;
-  min-height: 100%;
+  height: 100%;
   outline: none;
 
   a {
@@ -55,7 +55,7 @@ export const JobCardWrapper = styled.div`
 
 export const JobcardHeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: 5em 1fr;
+  grid-template-columns: auto 1fr;
   padding: 1.4em;
   outline: none;
 `;
