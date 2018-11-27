@@ -1,35 +1,67 @@
 /* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
+
+import Icon from '../Icon';
+
 import { ProfilePictureContainer, ProfilePictureContent } from '../../Style/General/ProfilePictureStyle';
 
-const ProfilePicture = (props: Props) => {
-  const {
-    editable,
-    children,
-    className,
-    ...defaultProps
-  } = props;
+class ProfilePicture extends Component <Props, State> {
+  state = {
+    isHover: false,
+  }
 
-  return (
-    <ProfilePictureContainer
-      className={className}
-      role="presentation"
-      {...defaultProps}
-    >
-      <ProfilePictureContent
-        editable={editable}
+  handleMouseEnter = () => {
+    const { editable } = this.props;
+
+    if (editable) {
+      this.setState({ isHover: true });
+    }
+  }
+
+  handleMouseLeave = () => {
+    const { editable } = this.props;
+
+    if (editable) {
+      this.setState({ isHover: false });
+    }
+  }
+
+  render() {
+    const {
+      editable,
+      children,
+      className,
+      ...defaultProps
+    } = this.props;
+
+    const { isHover } = this.state;
+
+    return (
+      <ProfilePictureContainer
+        className={className}
+        role="presentation"
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        {...defaultProps}
       >
-        {children}
-      </ProfilePictureContent>
-    </ProfilePictureContainer>
-  );
-};
+        <ProfilePictureContent editable={editable}>
+          {isHover && <Icon name="edit" color="white" />}
+          {children}
+        </ProfilePictureContent>
+      </ProfilePictureContainer>
+    );
+  }
+}
 
 type Props = {
   editable: boolean,
   className: string,
   children: string,
 };
+
+type State = {
+  isHover: boolean,
+}
 
 export default ProfilePicture;
