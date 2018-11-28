@@ -25,7 +25,6 @@ import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
 import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
-import DropdownStory from './Navigation/DropdownStory';
 import NewDropdownStory from './Navigation/NewDropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Application/GalleryStory';
@@ -35,10 +34,8 @@ import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
 import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
-import LanguageSelectStory from './Input/LanguageSelectStory';
 import LayoutStory from './Layout/LayoutStory';
 import LoadingStory from './General/LoadingStory';
-import MobileMenuStory from './Navigation/MobileMenuStory';
 import ModalStory from './Display/ModalStory';
 import OmniSearchStory from './Input/OmniSearchStory';
 import PointingModalStory from './Display/PointingModalStory';
@@ -111,7 +108,6 @@ storiesOf('Input', module)
     </Provider>
   ))
   .add('Checkbox', () => <CheckboxStory />)
-  .add('Language Select', () => <LanguageSelectStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Search Filter', () => <SearchFilterStory />)
@@ -130,9 +126,7 @@ storiesOf('Navigation', module)
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Drawer', () => <DrawerStory />)
-  .add('Dropdown', () => <DropdownStory />)
-  .add('NewDropdown', () => <NewDropdownStory />)
-  .add('Mobile Menu', () => <MobileMenuStory />);
+  .add('NewDropdown', () => <NewDropdownStory />);
 
 storiesOf('Display', module)
   .addDecorator(story => (

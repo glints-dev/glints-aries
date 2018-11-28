@@ -6,6 +6,7 @@ import { BadgeContainer } from '../../Style/General/BadgeStyle';
 const Badge = (props: Props) => {
   const {
     label,
+    sup,
     className,
     ...defaultProps
   } = props;
@@ -14,8 +15,14 @@ const Badge = (props: Props) => {
     <Fragment>
       {label
         && (
-          <BadgeContainer className={className} {...defaultProps}>
-            {label}
+          <BadgeContainer
+            className={className}
+            sup={sup}
+            {...defaultProps}
+          >
+            <span>
+              {label}
+            </span>
           </BadgeContainer>
         )
       }
@@ -26,6 +33,7 @@ const Badge = (props: Props) => {
 type Props = {
   label: string,
   className: string,
+  sup: boolean,
 }
 
 export default Badge;

@@ -17,7 +17,13 @@ const BadgeStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Badge label="6" />
+      <span style={{ marginRight: '.5em' }}>Jobs</span>
+      <Badge label="6" sup />
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <span style={{ marginRight: '.5em' }}>Location</span>
+      <Badge label="15" />
     </div>
 
     <div style={{ marginBottom: '2em' }}>
@@ -75,6 +81,26 @@ const BadgeStory = () => (
           </td>
           <td>
             Sets the label of Badge.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            sup
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Badge into superscript type.
           </td>
         </tr>
       </tbody>

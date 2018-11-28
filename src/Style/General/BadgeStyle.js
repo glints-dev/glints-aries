@@ -1,13 +1,30 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
-export const BadgeContainer = styled.span`
+export const BadgeContainer = styled.div`
+  position: relative;
   display: inline-flex;
   background: ${PrimaryColor.glintsred};
   color: ${SecondaryColor.white};
-  padding: .1em .5em;
   border-radius: 20px;
-  font-size: 1em;
-  line-height: 1.5;
-  font-weight: 600;
+
+  ${({ sup }) => {
+    if (sup) {
+      return `
+        top: -.6em;
+      `;
+    }
+  }}
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: ${({ sup }) => sup ? '1.6em' : '2em'};
+    min-width: ${({ sup }) => sup ? '1.6em' : '2em'};
+    font-size: ${({ sup }) => sup ? '.7em' : '1em'};
+    line-height: 1.5;
+    font-weight: 600;
+    padding: .4em;
+  }
 `;
