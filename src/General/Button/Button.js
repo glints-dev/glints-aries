@@ -15,6 +15,8 @@ const renderButton = ({
   theme,
   children,
   onClick,
+  block,
+  small,
   className,
   ...defaultProps
 }: Props) => {
@@ -25,6 +27,8 @@ const renderButton = ({
           theme={theme}
           className={className}
           onClick={onClick}
+          block={block}
+          small={small}
           {...defaultProps}
         >
           {children}
@@ -35,6 +39,8 @@ const renderButton = ({
         <SecondaryButton
           className={className}
           onClick={onClick}
+          block={block}
+          small={small}
           {...defaultProps}
         >
           {children}
@@ -46,6 +52,8 @@ const renderButton = ({
           theme={theme}
           className={className}
           onClick={onClick}
+          block={block}
+          small={small}
           {...defaultProps}
         >
           {children}
@@ -57,6 +65,8 @@ const renderButton = ({
           theme={theme}
           className={className}
           onClick={onClick}
+          block={block}
+          small={small}
           {...defaultProps}
         >
           {children}
@@ -68,6 +78,8 @@ const renderButton = ({
           theme={theme}
           className={className}
           onClick={onClick}
+          block={block}
+          small={small}
           {...defaultProps}
         >
           {children}
@@ -86,6 +98,8 @@ type Props = {
   variant: string,
   theme: string,
   onClick: Function,
+  block: boolean,
+  small: boolean,
   children: React$Node,
   className: string,
 }

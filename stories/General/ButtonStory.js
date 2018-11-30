@@ -115,22 +115,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
-            <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               disabled
             </td>
             <td>
@@ -145,6 +129,66 @@ const ButtonStories = () => (
               <code>
                 true | false
               </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to disable state.</td>
+          </tr>
+          <tr>
+            <td>
+              block
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to block type.</td>
+          </tr>
+          <tr>
+            <td>
+              small
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              onClick
+            </td>
+            <td>
+              function
+            </td>
+            <td></td>
+            <td>
+              function
             </td>
             <td>
               no
@@ -255,22 +299,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
-            <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               disabled
             </td>
             <td>
@@ -285,6 +313,66 @@ const ButtonStories = () => (
               <code>
                 true | false
               </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to disable state.</td>
+          </tr>
+          <tr>
+            <td>
+              block
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to block type.</td>
+          </tr>
+          <tr>
+            <td>
+              small
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              onClick
+            </td>
+            <td>
+              function
+            </td>
+            <td></td>
+            <td>
+              function
             </td>
             <td>
               no
@@ -370,22 +458,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
-            <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               disabled
             </td>
             <td>
@@ -400,6 +472,66 @@ const ButtonStories = () => (
               <code>
                 true | false
               </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to disable state.</td>
+          </tr>
+          <tr>
+            <td>
+              block
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to block type.</td>
+          </tr>
+          <tr>
+            <td>
+              small
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              onClick
+            </td>
+            <td>
+              function
+            </td>
+            <td></td>
+            <td>
+              function
             </td>
             <td>
               no
@@ -504,22 +636,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
-            <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               disabled
             </td>
             <td>
@@ -534,6 +650,66 @@ const ButtonStories = () => (
               <code>
                 true | false
               </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to disable state.</td>
+          </tr>
+          <tr>
+            <td>
+              block
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to block type.</td>
+          </tr>
+          <tr>
+            <td>
+              small
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              onClick
+            </td>
+            <td>
+              function
+            </td>
+            <td></td>
+            <td>
+              function
             </td>
             <td>
               no
@@ -638,22 +814,6 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
-            <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
               disabled
             </td>
             <td>
@@ -668,6 +828,66 @@ const ButtonStories = () => (
               <code>
                 true | false
               </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to disable state.</td>
+          </tr>
+          <tr>
+            <td>
+              block
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to block type.</td>
+          </tr>
+          <tr>
+            <td>
+              small
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              onClick
+            </td>
+            <td>
+              function
+            </td>
+            <td></td>
+            <td>
+              function
             </td>
             <td>
               no

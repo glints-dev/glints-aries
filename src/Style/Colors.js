@@ -27,4 +27,5 @@ export const SecondaryColor = {
   lightorange: '#FFF6E8',
   lightred: '#FFF2F3',
   lightblue: '#D6F4FF',
+  darkblue: '#004b68',
 };

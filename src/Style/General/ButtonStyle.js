@@ -13,8 +13,8 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
   font-size: 1em;
-  line-height: 1.5;
-  padding: 1em .6em;
+  min-width: 8.6em;
+  padding: ${({ small }) => small ? '10px 20px' : '15px 40px'};
   background: transparent;
   transition: all .2s;
 `;
@@ -24,8 +24,7 @@ const Button = styled.button`
  */
 
 export const DefaultBtn = styled(Button)`
-  flex: 1;
-  transition: all .5s;
+  width: ${({ block }) => block && '100%'};
 
   ${(props) => {
     switch (props.theme) {
@@ -36,7 +35,7 @@ export const DefaultBtn = styled(Button)`
         `;
       case `${Theme.BLUE}`:
         return `
-          background-color: ${PrimaryColor.glintsblue};
+          background-color: ${SecondaryColor.actionblue};
           color: ${SecondaryColor.white};
         `;
       case `${Theme.YELLOW}`:
@@ -52,11 +51,47 @@ export const DefaultBtn = styled(Button)`
     }
   }}
 
-  &:active {
-    background: ${SecondaryColor.black};
-    color: ${SecondaryColor.white};
-    transition: all .5s;
-  }
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        background-color: ${SecondaryColor.lightgrey};
+        cursor: not-allowed;
+      `;
+    }
+    if (!disabled) {
+      return `
+      &:active {
+        background: ${SecondaryColor.black};
+        color: ${SecondaryColor.white};
+        transform: translate3d(2px, 2px, 0);
+        transition: all .2s;
+      }
+
+      &:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
+        top: 6px;
+        left: 6px;
+        z-index: -1;
+        transition: all .2s;
+      }
+
+      &:hover:after {
+        opacity: 1;
+        transition: all .2s;
+      }
+
+      &:active:after {
+        transform: translate3d(-6px, -6px, 0);
+        transition: all .2s;
+      }
+      `;
+    }
+  }}
 `;
 
 /*
@@ -65,7 +100,7 @@ export const DefaultBtn = styled(Button)`
 
 export const PrimaryContainer = styled.div`
   position: relative;
-  display: inline-flex;
+  display: ${({ block }) => block ? 'flex' : 'inline-flex'};
   z-index: 1;
 
   &:after {
@@ -74,8 +109,8 @@ export const PrimaryContainer = styled.div`
     height: 100%;
     position: absolute;
     z-index: -1;
-    top: .5em;
-    left: .5em;
+    top: 8px;
+    left: 8px;
     transition: all .2s;
 
     ${(props) => {
@@ -99,7 +134,7 @@ export const PrimaryContainer = styled.div`
     }
     return `
       background: ${SecondaryColor.black};
-      transform: translate3d(-.15em, -.15em, 0);
+      transform: translate3d(-2px, -2px, 0);
       transition: all .2s;
     `;
   }}
@@ -109,7 +144,7 @@ export const PrimaryContainer = styled.div`
     ${(props) => {
     if (!props.disabled) {
       return `
-        transform: translate3d(-.265em, -.265em, 0);
+        transform: translate3d(-4px, -4px, 0);
         transition: all .2s;
       `;
     }
@@ -120,8 +155,8 @@ export const PrimaryContainer = styled.div`
 `;
 
 export const PrimaryBtn = styled(Button)`
-  flex: 1;
   transition: all .2s;
+  width: ${({ block }) => block && '100%'};
 
   ${(props) => {
     if (props.disabled) {
@@ -167,9 +202,9 @@ export const PrimaryBtn = styled(Button)`
       return 'transform: none';
     }
     return `
-        transform: translate3d(.15em, .15em, 0);
-        transition: all .2s;
-      `;
+      transform: translate3d(2px, 2px, 0);
+      transition: all .2s;
+    `;
   }}
   }
 
@@ -177,7 +212,7 @@ export const PrimaryBtn = styled(Button)`
     ${(props) => {
     if (!props.disabled) {
       return `
-        transform: translate3d(.265em, .265em, 0);
+        transform: translate3d(4px, 4px, 0);
         transition: all .2s;
         background-color: ${SecondaryColor.black};
       `;
@@ -198,21 +233,30 @@ const Bouncing = keyframes`
   }
 
   50%, 100% {
-    transform: translate3d(-.265em, -.265em, 0);
+    transform: translate3d(-4px, -4px, 0);
   }
 `;
 
 export const SecondaryBtn = styled(Button)`
-  flex: 1;
   background-color: ${SecondaryColor.whitesmoke};
   color: ${SecondaryColor.black};
-  transition: all .2s;
   z-index: 2;
+  width: ${({ block }) => block && '100%'};
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        background-color: ${SecondaryColor.lightgrey};
+        color: ${SecondaryColor.white};
+        cursor: not-allowed;
+      `;
+    }
+  }}
 `;
 
 export const SecondaryContainer = styled.div`
   position: relative;
-  display: inline-flex;
+  display: ${({ block }) => block ? 'flex' : 'inline-flex'};
 
   &:after {
     content: '';
@@ -222,26 +266,25 @@ export const SecondaryContainer = styled.div`
     height: 100%;
     position: absolute;
     z-index: -1;
-    top: .5em;
-    left: .5em;
+    top: 6px;
+    left: 6px;
     transition: all .2s;
-    cursor: pointer;
-    transform: translate3d(-.265em, -.265em, 0);
+    transform: translate3d(-4px, -4px, 0);
     z-index: 1;
   }
 
   &:hover {
     ${SecondaryBtn} {
-      background-color: ${PrimaryColor.glintsyellow};
-      transform: translate3d(-.265em, -.265em, 0);
-      transition: transform .2s;
+      ${({ disabled }) => {
+    if (!disabled) {
+      return `
+          background-color: ${PrimaryColor.glintsyellow};
+          transform: translate3d(-4px, -4px, 0);
+          transition: transform .2s;
+        `;
     }
-  }
-
-  &:hover:after {
-    opacity: 1;
-    transition: opacity .8s linear;
-    animation: ${Bouncing} .5s linear;
+  }}
+    }
   }
 
   &:active {
@@ -255,9 +298,21 @@ export const SecondaryContainer = styled.div`
 
   &:active:after {
     background-color: ${SecondaryColor.black};
-    transform: translate3d(-.45em, -.5em, 0);
+    transform: translate3d(-6px, -6px, 0);
     transition: all .2s;
   }
+
+  ${({ disabled }) => {
+    if (!disabled) {
+      return `
+        &:hover:after {
+          opacity: 1;
+          transition: opacity .8s linear;
+          animation: ${Bouncing} .5s linear;
+        }
+      `;
+    }
+  }}
 `;
 
 /*
@@ -265,8 +320,8 @@ export const SecondaryContainer = styled.div`
  */
 
 export const GhostBtn = styled(Button)`
-  flex: 1;
   transition: background-color .5s;
+  width: ${({ block }) => block && '100%'};
 
   ${(props) => {
     switch (props.theme) {
@@ -282,8 +337,8 @@ export const GhostBtn = styled(Button)`
         `;
       case `${Theme.BLUE}`:
         return `
-          border: 2px solid ${SecondaryColor.blue};
-          color: ${SecondaryColor.blue};
+          border: 2px solid ${SecondaryColor.actionblue};
+          color: ${SecondaryColor.actionblue};
         `;
       case `${Theme.WHITE}`:
         return `
@@ -297,41 +352,83 @@ export const GhostBtn = styled(Button)`
 
   &:hover {
     transition: background-color .5s;
+  
+    ${({ disabled, theme }) => {
+    if (!disabled) {
+      switch (theme) {
+        case `${Theme.RED}`:
+          return `
+            background-color: ${PrimaryColor.glintsred};
+            color: ${SecondaryColor.white};
+          `;
+        case `${Theme.YELLOW}`:
+          return `
+            background-color: ${PrimaryColor.glintsyellow};
+            color: ${SecondaryColor.white};
+          `;
+        case `${Theme.BLUE}`:
+          return `
+            background-color: ${SecondaryColor.actionblue};
+            color: ${SecondaryColor.white};
+          `;
+        case `${Theme.WHITE}`:
+          return `
+            background-color: ${SecondaryColor.white};
+            color: ${PrimaryColor.glintsblue};
+          `;
+        default:
+          return null;
+      }
+    }
+  }
+}
+  }
 
-    ${(props) => {
-    switch (props.theme) {
-      case `${Theme.RED}`:
-        return `
-          background-color: ${PrimaryColor.glintsred};
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        background-color: ${SecondaryColor.lightgrey};
+        color: ${SecondaryColor.white};
+        border: none;
+        cursor: not-allowed;
+      `;
+    }
+    if (!disabled) {
+      return `
+        &:active {
+          background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
+          border: 2px solid ${SecondaryColor.black};
+          transition: background-color .5s; 
+          transform: translate3d(2px, 2px, 0);
+          transition: all .2s;
+        }
+
+        &:after {
+          content: '';
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
+          top: 6px;
+          left: 6px;
+          z-index: -1;
+          transition: all .2s;
+        }
+
+        &:hover:after {
+          opacity: 1;
+          transition: all .2s;
+        }
+
+        &:active:after {
+          transform: translate3d(-6px, -6px, 0);
+          transition: all .2s;
+        }
         `;
-      case `${Theme.YELLOW}`:
-        return `
-          background-color: ${PrimaryColor.glintsyellow};
-          color: ${SecondaryColor.white};
-        `;
-      case `${Theme.BLUE}`:
-        return `
-          background-color: ${SecondaryColor.blue};
-          color: ${SecondaryColor.white};
-        `;
-      case `${Theme.WHITE}`:
-        return `
-          background-color: ${SecondaryColor.white};
-          color: ${PrimaryColor.glintsblue};
-        `;
-      default:
-        return null;
     }
   }}
-  }
-
-  &:active {
-    background-color: ${SecondaryColor.black};
-    color: ${SecondaryColor.white};
-    border: 2px solid ${SecondaryColor.black};
-    transition: background-color .5s; 
-  }
 `;
 
 /*
@@ -341,8 +438,20 @@ export const GhostBtn = styled(Button)`
 export const LinkBtn = styled(Button)`
   font-weight: normal;
   text-transform: inherit;
+  width: ${({ block }) => block && '100%'};
+  padding: 0;
+  justify-content: flex-start;
+  color: ${SecondaryColor.actionblue};
 
   label {
     cursor: pointer;
+  }
+
+  &:hover {
+    color: ${SecondaryColor.darkblue};
+  }
+
+  &:active {
+    color: ${SecondaryColor.black};
   }
 `;

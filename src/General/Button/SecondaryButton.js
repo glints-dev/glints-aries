@@ -6,11 +6,25 @@ import { SecondaryContainer, SecondaryBtn } from '../../Style/General/ButtonStyl
 const SecondaryButton = ({
   children,
   className,
+  block,
+  small,
+  disabled,
   ...defaultProps
 }: Props) => (
 
-  <SecondaryContainer className={className}>
-    <SecondaryBtn className={`${className} secondaryButton`} {...defaultProps}>
+  <SecondaryContainer
+    className={className}
+    block={block}
+    small={small}
+    disabled={disabled}
+  >
+    <SecondaryBtn
+      className={`${className} secondaryButton`}
+      block={block}
+      small={small}
+      disabled={disabled}
+      {...defaultProps}
+    >
       {children}
     </SecondaryBtn>
   </SecondaryContainer>
@@ -19,6 +33,9 @@ const SecondaryButton = ({
 type Props = {
   children: React$Node,
   className: string,
+  block: boolean,
+  small: boolean,
+  disabled: boolean,
 }
 
 export default SecondaryButton;
