@@ -1,3 +1,9 @@
+#### 2.1.8 (2018-11-30)
+
+##### Bug Fixes
+
+* **defaultValue:**  fix floating label when textfield supplied with defaultValue ([b7307d4f](https://github.com/glints-dev/glints-aries/commit/b7307d4fbb4dcf5235893262a9b7bd47c4e8568c))
+
 #### 2.1.7 (2018-11-28)
 
 #### 2.1.6 (2018-11-28)
