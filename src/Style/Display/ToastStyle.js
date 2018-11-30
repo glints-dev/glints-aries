@@ -17,6 +17,10 @@ export const ToastContainer = styled.div`
   padding: 1em;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
 
+  h1, h2, h3, h4, h5, h6, p {
+    color: ${({ theme }) => theme === 'black' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+  }
+
   @media ${Device.mobileM} {
     min-width: 100%;
     bottom: 0;
