@@ -42,8 +42,8 @@ class TextField extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { value } = this.props;
-    if (value !== undefined) {
+    const { value, defaultValue } = this.props;
+    if (value !== undefined || defaultValue !== undefined) {
       if (value !== '') {
         this.setState({
           floating: true,
