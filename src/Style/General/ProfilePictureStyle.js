@@ -7,7 +7,6 @@ export const ProfilePictureContent = styled.div`
   z-index: 1;
   width: 5em;
   height: 5em;
-  outline: none;
 
   svg {
     position: absolute;
@@ -19,6 +18,9 @@ export const ProfilePictureContent = styled.div`
   ${({ editable }) => {
     if (editable) {
       return `
+        outline: none;
+        cursor: pointer;
+
         &:hover:before {
           content: '';
           position: absolute;
@@ -26,7 +28,6 @@ export const ProfilePictureContent = styled.div`
           height: 100%;
           width: 100%;
           border-radius: 50%;
-          cursor: pointer;
         }
       `;
     }
@@ -57,11 +58,19 @@ export const ProfilePictureContainer = styled.div`
   position: relative;
   display: inline-flex;
 
-  &:focus {
-    outline: none;
-  }
+  ${({ editable }) => {
+    if (editable) {
+      return `
+        &:focus {
+          outline: none;
+        }
 
-  &:focus > ${ProfilePictureContent} {
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+        &:focus > ${ProfilePictureContent} {
+          outline: 5px auto -webkit-focus-ring-color;
+        }
+      `;
+    }
+  }}
+
+  
 `;

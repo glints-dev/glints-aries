@@ -17,7 +17,11 @@ const BrandStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Brand asset="glints-black" alt="Glints Logo" />
+      <Brand
+        asset="glints-black"
+        alt="Glints Logo"
+        rightClickURL="http://glints-aries.surge.sh"
+      />
     </div>
 
     <div style={{ marginBottom: '2em' }}>
@@ -86,6 +90,22 @@ const BrandStory = () => (
             </b>
             {' '}
             props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            rightClickURL
+          </td>
+          <td>
+            string
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            no
+          </td>
+          <td>
+            Redirect to url when right click is triggered.
           </td>
         </tr>
       </tbody>

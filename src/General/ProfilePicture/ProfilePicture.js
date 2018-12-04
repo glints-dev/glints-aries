@@ -40,12 +40,17 @@ class ProfilePicture extends Component <Props, State> {
     return (
       <ProfilePictureContainer
         className={className}
-        role="presentation"
+        role={editable ? 'button' : 'presentation'}
+        aria-label="Profile Picture"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
+        tabIndex={editable && '0'}
         {...defaultProps}
       >
-        <ProfilePictureContent editable={editable}>
+        <ProfilePictureContent
+          editable={editable}
+          tabIndex={editable && '-1'}
+        >
           {isHover && <Icon name="edit" color="white" />}
           {children}
         </ProfilePictureContent>

@@ -49,6 +49,7 @@ export const TextareaInput = styled.textarea`
   transition: border .5s;
   resize: vertical;
   overflow: auto;
+  height: auto;
 
   ${({ status, floating }) => {
     if (status === 'error') {
