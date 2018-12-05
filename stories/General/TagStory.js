@@ -18,16 +18,37 @@ const TagStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Tag label="Software Engineer">
-        <Icon name="close" color="black" />
-      </Tag>
+      <div style={{ display: 'flex' }}>
+        <div style={{ textAlign: 'center', marginRight: '2em' }}>
+          <h3>Block</h3>
+          <Tag theme="orange" block>
+            <span style={{ marginRight: '12px' }}>Software Engineer</span>
+            <Icon name="close" color="white" />
+          </Tag>
+        </div>
+        <div style={{ textAlign: 'center', marginRight: '2em' }}>
+          <h3>Default</h3>
+          <Tag theme="blue">
+            <span style={{ marginRight: '12px' }}>Software Engineer</span>
+            <Icon name="close" color="white" />
+          </Tag>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <h3>Outline</h3>
+          <Tag theme="green" outline>
+            <span style={{ marginRight: '12px' }}>Software Engineer</span>
+            <Icon name="close" color="#93bd49" />
+          </Tag>
+        </div>
+      </div>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`<Tag label="Software Engineer">
-  <Icon name="close" color="black" />
+          {`<Tag theme="blue">
+  Software Engineer
+  <Icon name="close" color="white" />
 </Tag>`}
         </pre>
       </Collapsible>
@@ -66,20 +87,62 @@ const TagStory = () => (
       <tbody>
         <tr>
           <td>
-            label
+            theme
           </td>
           <td>
             string
           </td>
-          <td></td>
           <td>
-            any
+            <code>grey</code>
           </td>
           <td>
-            yes
+            <code>red | blue | orange | green | black</code>
           </td>
           <td>
-            Sets the label of Badge.
+            no
+          </td>
+          <td>
+            Sets theme of Badge.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            block
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Badge into block style.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            outline
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets Badge into outline style.
           </td>
         </tr>
       </tbody>

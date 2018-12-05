@@ -5,9 +5,11 @@ import { TagContainer, TagContent } from '../../Style/General/TagStyle';
 
 const Tag = (props: Props) => {
   const {
-    label,
     className,
     children,
+    theme,
+    block,
+    outline,
     ...defaultProps
   } = props;
 
@@ -17,10 +19,12 @@ const Tag = (props: Props) => {
         className={className}
         role="presentation"
         tabIndex="0"
+        theme={theme}
+        block={block}
+        outline={outline}
         {...defaultProps}
       >
         <TagContent tabIndex="-1">
-          {label}
           {children}
         </TagContent>
       </TagContainer>
@@ -30,8 +34,10 @@ const Tag = (props: Props) => {
 
 type Props = {
   children: React$Node,
-  label: string,
   className: string,
+  theme: string,
+  block: boolean,
+  outline: boolean,
 }
 
 export default Tag;

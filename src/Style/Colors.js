@@ -20,7 +20,7 @@ export const SecondaryColor = {
   darkerblue: '#027EB7',
   bluegem: '#9013FE',
   actionblue: '#017EB7',
-  green: '#008464',
+  green: '#93bd49',
   lightgreen: '#EEF6F4',
   darkgreen: '#008464',
   orange: '#F5A623',

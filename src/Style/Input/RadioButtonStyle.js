@@ -4,7 +4,6 @@ import { SecondaryColor } from '../Colors';
 export const RadioLabel = styled.span`
   display: inline-flex; 
   position: relative;
-  padding-left: 1.8em;
   font-size: 1em;
   color: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
   outline: none;
@@ -12,9 +11,10 @@ export const RadioLabel = styled.span`
   &:before {
     content: '';
     display: block; 
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
+    margin-right: 8px;
     border-radius: 50%;
     width: 1.4em;
     height: 1.4em;

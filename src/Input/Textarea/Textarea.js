@@ -13,6 +13,7 @@ class Textarea extends Component <Props, State> {
     rows: 4,
     minRows: 4,
     maxRows: 12,
+    textareaMaxHeight: 0,
   }
 
   handleFocusChange = (onBlur) => {
@@ -61,6 +62,7 @@ class Textarea extends Component <Props, State> {
 
   componentDidMount() {
     const { value } = this.props;
+    const textarea = document.getElementsByTagName('textarea')[0];
 
     if (value !== undefined) {
       if (value !== '') {
@@ -69,6 +71,9 @@ class Textarea extends Component <Props, State> {
         });
       }
     }
+    this.setState({
+      textareaMaxHeight: ~~((textarea.offsetHeight * 3.7) + (23 * 8) + 1),
+    });
   }
 
   render() {
@@ -86,6 +91,7 @@ class Textarea extends Component <Props, State> {
     const {
       floating,
       rows,
+      textareaMaxHeight,
     } = this.state;
 
     return (
@@ -100,6 +106,9 @@ class Textarea extends Component <Props, State> {
           value={value}
           aria-label={label}
           {...defaultProps}
+          style={{
+            maxHeight: `${textareaMaxHeight}px`,
+          }}
         />
         <TextareaLabel floating={floating} status={status}>
           {label}
@@ -115,6 +124,8 @@ type Props = {
   disabled: boolean,
   className: string,
   value: string,
+  onBlur: Function,
+  onChange: Function,
 }
 
 type State = {
@@ -122,6 +133,7 @@ type State = {
   rows: number,
   minRows: number,
   maxRows: number,
+  textareaMaxHeight: number,
 };
 
 export default Textarea;
