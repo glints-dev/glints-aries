@@ -61,17 +61,25 @@ class Select extends Component <Props, State> {
     });
   }
 
-  handleClick = (e) => {
-    const { children, onChange } = this.props;
+  handleClick = (onOptionClick) => {
+    const listener = (e) => {
+      const { children, onChange } = this.props;
 
-    this.setState({
-      selectedValue: e.currentTarget.innerText,
-      filterValue: children.map(data => data),
-    });
+      this.setState({
+        selectedValue: e.currentTarget.innerText,
+        filterValue: children.map(data => data),
+      });
 
-    if (onChange !== undefined) {
-      onChange(e.target.dataset.value);
-    }
+      if (onChange !== undefined) {
+        onChange(e.target.dataset.value);
+      }
+
+      if (onOptionClick !== undefined) {
+        onOptionClick(e);
+      }
+    };
+
+    return listener;
   }
 
   handleKeyDown = (e) => {
@@ -113,9 +121,16 @@ class Select extends Component <Props, State> {
   componentDidMount() {
     const { value, children } = this.props;
 
-    this.setState({
-      filterValue: children.map(data => data),
-    });
+    // Checking if children data is exist or not.
+    if (children.length !== 0) {
+      this.setState({
+        filterValue: children.map(data => data),
+      });
+    } else {
+      this.setState({
+        notMatch: true,
+      });
+    }
 
     if (value !== undefined) {
       if (value !== '') {
@@ -131,7 +146,12 @@ class Select extends Component <Props, State> {
     if (prevState.filterValue.length === 0) {
       return { notMatch: true };
     }
-    return { notMatch: false };
+
+    if (prevState.filterValue.length !== 0) {
+      return { notMatch: false };
+    }
+
+    return { filterValue: nextProps.children.map(data => data) };
   }
 
   render() {
@@ -201,7 +221,7 @@ class Select extends Component <Props, State> {
               role="option"
               data-id={index}
               data-value={data.props.value}
-              onClick={this.handleClick}
+              onClick={this.handleClick(data.props.onOptionClick)}
               onMouseEnter={this.handleMouseEnter}
               tabIndex="0"
             >

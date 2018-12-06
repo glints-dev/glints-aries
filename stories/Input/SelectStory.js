@@ -254,6 +254,24 @@ const SelectStory = () => (
             Sets value for Option.
           </td>
         </tr>
+        <tr>
+          <td>
+            onOptionClick
+          </td>
+          <td>
+            function
+          </td>
+          <td></td>
+          <td>
+            function
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets onClick for Option.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
