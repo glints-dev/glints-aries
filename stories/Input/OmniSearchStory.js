@@ -18,7 +18,7 @@ const OmniSearchStory = () => (
       </p>
     </div>
 
-    <div style={{ marginBottom: '4em' }}>
+    <div style={{ marginBottom: '10em' }}>
       <OmniSearch
         label="Find Internships, Locations, and Companies"
         content={(

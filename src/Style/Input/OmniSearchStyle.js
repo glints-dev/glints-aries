@@ -37,7 +37,7 @@ export const OmniSearchBar = styled.div`
 
   button {
     position: absolute;
-    padding: 25px 30px;
+    padding: 30px 0;
     right: 3px;
     font-size: 1.5em;
     font-weight: normal;

@@ -83,8 +83,12 @@ class Select extends Component <Props, State> {
   }
 
   handleKeyDown = (e) => {
-    const { children, onChange } = this.props;
+    const { children, onChange, mode } = this.props;
     const { cursor, filterValue } = this.state;
+
+    if (mode === 'disableTyping') {
+      e.preventDefault();
+    }
 
     if (e.keyCode === 38 && cursor > 0) {
       this.setState({
@@ -166,6 +170,7 @@ class Select extends Component <Props, State> {
       noOptionResult,
       children,
       small,
+      mode,
       ...defaultProps
     } = this.props;
 
@@ -195,6 +200,7 @@ class Select extends Component <Props, State> {
             floating={floating}
             value={selectedValue}
             small={small}
+            mode={mode}
             {...defaultProps}
           />
           <SelectLabel
@@ -252,6 +258,7 @@ type Props = {
   noOptionResult: string,
   children: React$Node,
   small: boolean,
+  mode: string,
 }
 
 type State = {

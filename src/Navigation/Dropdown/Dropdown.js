@@ -13,9 +13,9 @@ import {
   DropdownBody,
   DropdownItemWrapper,
   IconWrapper,
-} from '../../Style/Navigation/NewDropdownStyle';
+} from '../../Style/Navigation/DropdownStyle';
 
-class NewDropdown extends Component <Props, State> {
+class Dropdown extends Component <Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -189,7 +189,7 @@ class NewDropdown extends Component <Props, State> {
   }
 }
 
-NewDropdown.defaultProps = {
+Dropdown.defaultProps = {
   showHoverLine: false,
   dropDownPlacement: 'left',
   noLineBreak: false,
@@ -212,4 +212,4 @@ type State = {
   cursor: number,
 }
 
-export default NewDropdown;
+export default Dropdown;

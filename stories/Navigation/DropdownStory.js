@@ -1,10 +1,10 @@
 import React from 'react';
 
-import NewDropdown from '../../src/Navigation/NewDropdown';
+import Dropdown from '../../src/Navigation/Dropdown';
 import StoryBookComponent from '../StoryBookComponent';
 
 const props = {
-  NewDropdown: [
+  Dropdown: [
     {
       name: 'label',
       type: 'string',
@@ -86,7 +86,7 @@ const props = {
       description: 'Dropdown icon color',
     },
   ],
-  'NewDropdown.Item': [
+  'Dropdown.Item': [
     {
       name: 'value',
       type: 'string',
@@ -106,19 +106,19 @@ const props = {
   ],
 };
 
-const NewDropdownStory = () => (
+const DropdownStory = () => (
   <StoryBookComponent
-    title="NewDropdown"
-    code="import { NewDropdown} from 'glints-aries'"
+    title="Dropdown"
+    code="import { Dropdown} from 'glints-aries'"
     propsObject={props}
   >
-    <NewDropdown label="Career">
-      <NewDropdown.Item value="EN">English</NewDropdown.Item>
-      <NewDropdown.Item value="ID">Indonesian</NewDropdown.Item>
-      <NewDropdown.Item value="Product Manager">Product Manager</NewDropdown.Item>
-      <NewDropdown.Item value="Software Engineer">Software Engineer</NewDropdown.Item>
-    </NewDropdown>
+    <Dropdown label="Career">
+      <Dropdown.Item value="EN">English</Dropdown.Item>
+      <Dropdown.Item value="ID">Indonesian</Dropdown.Item>
+      <Dropdown.Item value="Product Manager">Product Manager</Dropdown.Item>
+      <Dropdown.Item value="Software Engineer">Software Engineer</Dropdown.Item>
+    </Dropdown>
   </StoryBookComponent>
 );
 
-export default NewDropdownStory;
+export default DropdownStory;

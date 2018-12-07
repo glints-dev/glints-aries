@@ -25,7 +25,7 @@ import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
 import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
-import NewDropdownStory from './Navigation/NewDropdownStory';
+import DropdownStory from './Navigation/DropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Application/GalleryStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
@@ -126,7 +126,7 @@ storiesOf('Navigation', module)
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
   .add('Drawer', () => <DrawerStory />)
-  .add('NewDropdown', () => <NewDropdownStory />);
+  .add('Dropdown', () => <DropdownStory />);
 
 storiesOf('Display', module)
   .addDecorator(story => (

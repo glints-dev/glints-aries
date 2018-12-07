@@ -18,7 +18,10 @@ const SelectStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <div style={{ width: '300px' }}>
-        <Select label="Jobs" noOptionResult="No Result Found.">
+        <Select
+          label="Jobs"
+          noOptionResult="No Result Found."
+        >
           <Select.Option value="accountant">Accountant</Select.Option>
           <Select.Option value="business development">Business Development</Select.Option>
           <Select.Option value="finance">Finance</Select.Option>
@@ -132,6 +135,24 @@ const SelectStory = () => (
           </td>
           <td>
             Sets different style for Select based on status.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            mode
+          </td>
+          <td>
+            string
+          </td>
+          <td></td>
+          <td>
+            <code>disableTyping</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            {'Disable typing on Select input, so the option can\'t be searched.'}
           </td>
         </tr>
         <tr>

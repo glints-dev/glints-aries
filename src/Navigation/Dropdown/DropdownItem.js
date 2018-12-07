@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { DropdownItemWrapper } from '../../Style/Navigation/NewDropdownStyle';
+import { DropdownItemWrapper } from '../../Style/Navigation/DropdownStyle';
 
 const DropdownItem = (props: Props) => {
   const {
