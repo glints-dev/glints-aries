@@ -41,7 +41,6 @@ export const OmniSearchBar = styled.div`
     right: 3px;
     font-size: 1.5em;
     font-weight: normal;
-    z-index: 1;
 
     @media ${Device.mobileL} {
       top: 5em;

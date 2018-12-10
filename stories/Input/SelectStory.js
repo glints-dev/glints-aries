@@ -139,14 +139,16 @@ const SelectStory = () => (
         </tr>
         <tr>
           <td>
-            mode
+            disableTyping
           </td>
           <td>
-            string
+            boolean
           </td>
-          <td></td>
           <td>
-            <code>disableTyping</code>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
           </td>
           <td>
             no

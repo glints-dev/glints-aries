@@ -67,9 +67,9 @@ export const SelectInput = styled.input`
   font-size: ${({ small }) => small ? '1em' : '1.1em'};
   line-height: 1.5;
 
-  /* Styling for disableTyping mode */
-  ${({ mode }) => {
-    if (mode === 'disableTyping') {
+  /* Styling for disableTyping */
+  ${({ disableTyping }) => {
+    if (disableTyping) {
       return `
         color: transparent;
         text-shadow: 0 0 0 black;
