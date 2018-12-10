@@ -12,7 +12,7 @@
 11. Improved auto growing on Textarea when there is and no new line.
 12. Removed **MobileMenu**, **old Dropdown**, and **Language Select**.
 13. Renamed **NewDropdown** into **Dropdown**.
-14. Slider can be triggered through left and right arrow when it's in focus state.
+14. Slider can be triggered with left and right arrow when it's in focus state.
 
 #### 2.1.9 (2018-12-10)
 
