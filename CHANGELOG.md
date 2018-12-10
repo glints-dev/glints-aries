@@ -1,3 +1,19 @@
+#### 3.0.0 (2018-12-10)
+1. Fixed circle issue on Badge.
+2. Added **sup** on Badge for setting Badge into superscript type.
+3. Added **rightClickURL** on Brand for redirecting to url when right click is triggered.
+4. Revised all of Button component, including styles, colors, and all of the states.
+5. Role **button** for editable state on ProfilePicture.
+6. Added **block**, **outline**, and **theme** for Tag.
+7. Removed **label** on Tag.
+8. Fixed Select Option will get blank when api has not successfully fetched.
+9. Added **onOptionClick** to support onClick on Select.Option.
+10. Added **disableTyping** to disable typing on Select input.
+11. Improved auto growing on Textarea when there is and no new line.
+12. Removed **MobileMenu**, **old Dropdown**, and **Language Select**.
+13. Renamed **NewDropdown** into **Dropdown**.
+14. Slider can be triggered through left and right arrow when it's in focus state.
+
 #### 2.1.9 (2018-12-10)
 
 #### 2.1.8 (2018-11-30)
