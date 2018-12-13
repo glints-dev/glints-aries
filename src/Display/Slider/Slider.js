@@ -147,6 +147,7 @@ class Slider extends Component <Props, State> {
                 <li
                   className={idx + 1 === index && 'active'}
                   onClick={() => this.handleDotClick(idx)}
+                  key={idx}
                 ></li>
               ))}
             </ul>

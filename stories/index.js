@@ -55,6 +55,7 @@ import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
 import ToastStory from './Display/ToastStory';
+import TooltipStory from './Display/TooltipStory';
 
 // Employers
 import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
@@ -147,7 +148,8 @@ storiesOf('Display', module)
   .add('Slider', () => <SliderStory />)
   .add('Swipeable', () => <SwipeableStory />)
   .add('Tabs', () => <TabsStory />)
-  .add('Toast', () => <ToastStory />);
+  .add('Toast', () => <ToastStory />)
+  .add('Tooltip', () => <TooltipStory />);
 
 storiesOf('Application', module)
   .addDecorator(story => (

@@ -3,8 +3,8 @@
 /**
  * Returns a value when ESC button is triggered.
  *
- * @param  {Boolean} value
- * @return {Boolean}
+ * @param  {Function} value
+ * @return {Function}
  */
 export function escEvent(value) {
   const listener = (e) => {
@@ -20,8 +20,8 @@ export function escEvent(value) {
 /**
  * Returns a value when Tab button is triggered.
  *
- * @param  {Boolean} value
- * @return {Boolean}
+ * @param  {Function} value
+ * @return {Function}
  */
 export function tabEvent(value) {
   const listener = (e) => {

@@ -113,8 +113,6 @@ const DropdownStory = () => (
     propsObject={props}
   >
     <Dropdown label="Career">
-      <Dropdown.Item value="EN">English</Dropdown.Item>
-      <Dropdown.Item value="ID">Indonesian</Dropdown.Item>
       <Dropdown.Item value="Product Manager">Product Manager</Dropdown.Item>
       <Dropdown.Item value="Software Engineer">Software Engineer</Dropdown.Item>
     </Dropdown>

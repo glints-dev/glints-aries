@@ -74,7 +74,7 @@ class Gallery extends Component <Props, State> {
         >
           <Slider initialItem={currentIndex + 1}>
             { children.map((data, index) => (
-              <Slider.Item>
+              <Slider.Item key={index}>
                 <GalleryImageWrapper
                   role="banner"
                   tabIndex={0}

@@ -60,13 +60,11 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderTBody(object) {
-    return <tr key={object}>{this.renderTD(object)}</tr>;
-  }
-
-  renderTD(object) {
+  renderTBody(object, index) {
     return (
-      propsColumnName.map(columnName => <td key={object[columnName]}>{object[columnName]}</td>)
+      <tr key={object.name}>
+        {propsColumnName.map(columnName => <td key={`${columnName}_${index}`}>{object[columnName]}</td>)}
+      </tr>
     );
   }
 
@@ -74,12 +72,12 @@ class StoryBookComponent extends Component <Props> {
     const { propsObject } = this.props;
     const propsObjectKey = Object.keys(propsObject);
     return propsObjectKey.map(key => (
-      <table className="doc-table">
+      <table className="doc-table" key={key}>
         {this.renderTHead(key)}
-        <tbody>
+        <tbody key={key}>
           {
-            propsObject[key].map(object => (
-              this.renderTBody(object)
+            propsObject[key].map((object, index) => (
+              this.renderTBody(object, index)
             ))
           }
         </tbody>
@@ -112,10 +110,10 @@ class StoryBookComponent extends Component <Props> {
 }
 
 type Props = {
-    children: React$Node,
-    title: string,
-    code: string,
-    propsObject: Object;
+  children: React$Node,
+  title: string,
+  code: string,
+  propsObject: Object;
   }
 
 export default StoryBookComponent;
