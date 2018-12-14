@@ -30,6 +30,14 @@ const props = {
       description: 'Disabling Dropdown.',
     },
     {
+      name: 'hoverToOpen',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Opens Dropdown on hovering.',
+    },
+    {
       name: 'showHoverLine',
       type: 'boolean',
       defaultValue: <code>false</code>,

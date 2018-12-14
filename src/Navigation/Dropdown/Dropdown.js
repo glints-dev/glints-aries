@@ -36,6 +36,27 @@ class Dropdown extends Component <Props, State> {
     }
   }
 
+  hoverOpen = () => {
+    const { hoverToOpen } = this.props;
+
+    if (hoverToOpen) {
+      this.setState({
+        isOpen: true,
+      });
+    }
+  }
+
+  hoverClose = () => {
+    const { hoverToOpen } = this.props;
+
+    if (hoverToOpen) {
+      this.setState({
+        isOpen: false,
+        cursor: 0,
+      });
+    }
+  }
+
   handleClose = () => {
     this.setState({
       isOpen: false,
@@ -118,6 +139,7 @@ class Dropdown extends Component <Props, State> {
       itemElement,
       iconDefaultColor,
       showFullWidth,
+      hoverToOpen,
       ...defaultProps
     } = this.props;
 
@@ -128,6 +150,8 @@ class Dropdown extends Component <Props, State> {
         className="aries-dropdown"
         tabIndex="0"
         onClick={this.handleOpen}
+        onMouseEnter={this.hoverOpen}
+        onMouseLeave={this.hoverClose}
         onBlur={this.handleClose}
         onKeyDown={this.handleKeyDown}
         role="menuitem"
@@ -204,6 +228,7 @@ type Props = {
   label: string,
   onChange: Function,
   disabled: boolean,
+  hoverToOpen: boolean,
 }
 
 type State = {

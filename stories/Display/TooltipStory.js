@@ -18,7 +18,9 @@ const TooltipStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Tooltip text="Click here to apply as Software Engginer at Glints">
+      <Tooltip
+        text="Click here to apply as Software Engginer at Glints"
+      >
         <Tag theme="black">
           Software Engineer
         </Tag>
@@ -79,6 +81,20 @@ const TooltipStory = () => (
             yes
           </td>
           <td>Sets text for Tooltip.</td>
+        </tr>
+        <tr>
+          <td>
+            position
+          </td>
+          <td>
+            string
+          </td>
+          <td></td>
+          <td><code>bottom</code></td>
+          <td>
+            no
+          </td>
+          <td>Sets position of Tooltip to be shown.</td>
         </tr>
       </tbody>
     </table>

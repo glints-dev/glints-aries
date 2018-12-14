@@ -44,6 +44,19 @@ export const CollapsibleHeader = styled.div`
   &:hover {
     color: ${SecondaryColor.blue};
   }
+
+  svg {
+    transform: rotate(0);
+    transition: transform .5s;
+    ${({ isOpen }) => {
+    if (isOpen) {
+      return `
+        transform: rotate(180deg);
+        transition: transform .5s;
+      `;
+    }
+  }}
+  }
 `;
 
 export const CollapsibleBody = styled.div`

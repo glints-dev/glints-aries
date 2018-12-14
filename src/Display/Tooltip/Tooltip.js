@@ -14,6 +14,7 @@ class Tooltip extends Component <Props, State> {
       className,
       children,
       text,
+      position,
       ...defaultProps
     } = this.props;
 
@@ -28,6 +29,7 @@ class Tooltip extends Component <Props, State> {
         aria-label={text}
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
+        position={position}
         {...defaultProps}
       >
         {children}
@@ -40,6 +42,7 @@ type Props = {
   children: React$Node,
   className: string,
   text: string,
+  position: string,
 }
 
 type State = {

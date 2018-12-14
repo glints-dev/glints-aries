@@ -33,6 +33,11 @@ export const OmniSearchBar = styled.div`
     &:focus {
       outline: none;
     }
+
+    &:hover,
+    &:focus {
+      border: 3px solid ${SecondaryColor.actionblue};
+    }
   }
 
   button {

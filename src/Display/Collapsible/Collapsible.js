@@ -61,16 +61,10 @@ class Collapsible extends Component <Props, State> {
             className="head"
             role="tab"
             aria-expanded={isOpen}
+            isOpen={isOpen}
           >
             {label}
-            <Choose>
-              <When condition={isOpen === false}>
-                <Icon name="arrow-down" color="#000000" />
-              </When>
-              <Otherwise>
-                <Icon name="arrow-up" color="#000000" />
-              </Otherwise>
-            </Choose>
+            <Icon name="arrow-up" color="#000000" />
           </CollapsibleHeader>
           {isOpen && (
             <CollapsibleBody
