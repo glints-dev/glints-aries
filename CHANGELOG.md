@@ -1,3 +1,5 @@
+#### 3.0.1 (2018-12-14)
+
 #### 3.0.0 (2018-12-10)
 1. Fixed circle issue on Badge.
 2. Added **sup** on Badge for setting Badge into superscript type.
