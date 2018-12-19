@@ -112,7 +112,13 @@ const SliderStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`<Slider>
+          {`getCurrentIndex = (index) => {
+  console.log(index);
+}
+
+<Slider
+  afterChange={this.getCurrentIndex}
+>
   <Slider.Item>
     <Component />
     <Component />
@@ -232,6 +238,22 @@ const SliderStory = () => (
           </td>
           <td>
             Remove dots.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            afterChange
+          </td>
+          <td>
+            function
+          </td>
+          <td></td>
+          <td>function</td>
+          <td>
+            no
+          </td>
+          <td>
+            {'It\'s used to get current index of item.'}
           </td>
         </tr>
       </tbody>

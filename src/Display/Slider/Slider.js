@@ -17,24 +17,35 @@ class Slider extends Component <Props, State> {
     this.sliderContainer = null;
   }
 
-  previousSlide = () => {
+  previousSlide = (e) => {
+    const { afterChange } = this.props;
     const { index, translateValue, screenSize } = this.state;
+
     if (index !== 1) {
       this.setState({
         index: index - 1,
         translateValue: translateValue + screenSize,
       });
+
+      if (afterChange !== undefined) {
+        afterChange(index - 1);
+      }
     }
   }
 
   nextSlide = () => {
+    const { children, afterChange } = this.props;
     const { index, translateValue, screenSize } = this.state;
-    const { children } = this.props;
+
     if (index !== children.length) {
       this.setState({
         index: index + 1,
         translateValue: translateValue - screenSize,
       });
+
+      if (afterChange !== undefined) {
+        afterChange(index + 1);
+      }
     }
   }
 
@@ -48,12 +59,17 @@ class Slider extends Component <Props, State> {
   }
 
   handleDotClick = (idx) => {
+    const { afterChange } = this.props;
     const { screenSize } = this.state;
 
     this.setState({
       index: idx + 1,
       translateValue: -(screenSize * idx),
     });
+
+    if (afterChange !== undefined) {
+      afterChange(idx + 1);
+    }
   }
 
   handleKeyDown = (e) => {
@@ -145,7 +161,7 @@ class Slider extends Component <Props, State> {
               {children.map((data, idx) => (
                 // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
                 <li
-                  className={idx + 1 === index && 'active'}
+                  className={idx + 1 === index ? 'active' : null}
                   onClick={() => this.handleDotClick(idx)}
                   key={idx}
                 ></li>
@@ -165,6 +181,7 @@ type Props = {
   fullContent: boolean,
   arrowWhite: boolean,
   removeDots: boolean,
+  afterChange: Function,
 };
 
 type State = {

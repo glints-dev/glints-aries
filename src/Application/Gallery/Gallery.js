@@ -20,10 +20,15 @@ class Gallery extends Component <Props, State> {
     imageLeft: 0,
   }
 
-  handleClick = (index) => {
-    const { visible } = this.state;
+  closeModal = () => {
     this.setState({
-      visible: !visible,
+      visible: false,
+    });
+  }
+
+  handleClick = (index) => {
+    this.setState({
+      visible: true,
       currentIndex: index,
     });
   }
@@ -34,15 +39,10 @@ class Gallery extends Component <Props, State> {
     });
   }
 
-  closeModal = () => {
-    const { visible } = this.state;
+  getCurrentIndex = (index) => {
     this.setState({
-      visible: !visible,
+      currentIndex: index - 1,
     });
-  }
-
-  closeWithESC = () => {
-    this.setState({ visible: false });
   }
 
   componentDidMount() {
@@ -61,7 +61,7 @@ class Gallery extends Component <Props, State> {
       <GalleryContainer>
         <GalleryItemWrapper>
           { children.slice(0, 8).map((data, index) => (
-            <GalleryItem key={index} imageLeft={imageLeft} onClick={() => this.handleClick(index)}>
+            <GalleryItem key={`${data.props.src}_${index}`} imageLeft={imageLeft} onClick={() => this.handleClick(index)}>
               <img src={data.props.src} alt={index} />
             </GalleryItem>
           ))}
@@ -69,28 +69,32 @@ class Gallery extends Component <Props, State> {
         <Modal
           isVisible={visible}
           onClose={this.closeModal}
-          onCloseWithESC={this.closeWithESC}
           hideContentArea
         >
-          <Slider initialItem={currentIndex + 1}>
+          <Slider
+            initialItem={currentIndex + 1}
+            arrowWhite
+            removeDots
+            afterChange={this.getCurrentIndex}
+          >
             { children.map((data, index) => (
-              <Slider.Item key={index}>
+              <Slider.Item key={`${data.props.src}_${index}`}>
                 <GalleryImageWrapper
                   role="banner"
                   tabIndex={0}
                 >
-                  <img src={data.props.src} key={index} alt={index} />
+                  <img src={data.props.src} key={`${data.props.src}_${index}`} alt={index} />
                 </GalleryImageWrapper>
               </Slider.Item>
             ))}
           </Slider>
           <GalleryThumbnailWrapper>
             { children.map((data, index) => (
-              <div key={index} onClick={() => this.handleClickThumbs(index)}>
+              <div key={`${data.props.src}_${index}`} onClick={() => this.handleClickThumbs(index)}>
                 <img
                   src={data.props.src}
                   alt={index}
-                  className={index === currentIndex && 'active'}
+                  className={index === currentIndex ? 'active' : null}
                 />
               </div>
             ))}
@@ -106,9 +110,9 @@ type Props = {
 };
 
 type State = {
-  visible?: boolean,
-  currentIndex?: number,
-  imageLeft?: number,
+  visible: boolean,
+  currentIndex: number,
+  imageLeft: number,
 };
 
 export default Gallery;
