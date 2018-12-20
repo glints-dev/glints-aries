@@ -136,39 +136,37 @@ class Slider extends Component <Props, State> {
         fullContent={fullContent}
         tabIndex="0"
       >
-        <div tabIndex="-1">
-          <SliderContentWrapper
-            style={{
-              transform: `translateX(${translateValue}px)`,
-              transition: 'transform ease-out 0.45s',
-            }}
-          >
-            { children }
-          </SliderContentWrapper>
-          <LeftArrow
-            previousSlide={this.previousSlide}
-            index={index}
-            arrowWhite={arrowWhite}
-          />
-          <RightArrow
-            nextSlide={this.nextSlide}
-            index={index}
-            limit={children.length}
-            arrowWhite={arrowWhite}
-          />
-          {!removeDots && (
-            <ul>
-              {children.map((data, idx) => (
-                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-                <li
-                  className={idx + 1 === index ? 'active' : null}
-                  onClick={() => this.handleDotClick(idx)}
-                  key={idx}
-                ></li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <SliderContentWrapper
+          style={{
+            transform: `translateX(${translateValue}px)`,
+            transition: 'transform ease-out 0.45s',
+          }}
+        >
+          { children }
+        </SliderContentWrapper>
+        <LeftArrow
+          previousSlide={this.previousSlide}
+          index={index}
+          arrowWhite={arrowWhite}
+        />
+        <RightArrow
+          nextSlide={this.nextSlide}
+          index={index}
+          limit={children.length}
+          arrowWhite={arrowWhite}
+        />
+        {!removeDots && (
+          <ul>
+            {children.map((data, idx) => (
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+              <li
+                className={idx + 1 === index ? 'active' : null}
+                onClick={() => this.handleDotClick(idx)}
+                key={idx}
+              ></li>
+            ))}
+          </ul>
+        )}
       </SliderContainer>
     );
   }

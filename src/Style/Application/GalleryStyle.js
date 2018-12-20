@@ -56,12 +56,11 @@ export const GalleryImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${SecondaryColor.white};
 
   img {
     height: 50vh;
     width: auto;
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 

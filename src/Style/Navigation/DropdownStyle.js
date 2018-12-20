@@ -64,9 +64,9 @@ export const DropdownHeader = styled.div`
   position: relative;
   display: inline-flex;
   align-items: center;
-  cursor: pointer;
-  cursor: ${({ disabled }) => disabled && 'not-allowed'};
+  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
   color: ${({ disabled }) => disabled && `${SecondaryColor.lightblack}`};
+  transition: all .4s;
   ${({
     showHoverLine, isOpen, disabled, showFullWidth,
   }) => {
@@ -91,6 +91,7 @@ export const DropdownHeader = styled.div`
       background: ${isOpen || disabled ? `${SecondaryColor.whitesmoke}` : null};
       &:hover {
         background: ${SecondaryColor.whitesmoke};
+        transition: all .4s;
       }`
     );
   }};
@@ -106,12 +107,18 @@ export const DropdownHeader = styled.div`
 
 export const DropdownBody = styled.ul`
   position: absolute;
-  display: ${({ open }) => open ? 'block' : 'none'};
+  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+  opacity: ${({ open }) => open ? '1' : '0'};
+  transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
+  transform-origin: center top;
+  transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};
   background: ${SecondaryColor.white};
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;
   padding: 0;
   margin: 0;
+  white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
+
   ${({ dropDownPlacement, showFullWidth }) => {
     if (dropDownPlacement === 'right') {
       return (`
@@ -130,6 +137,7 @@ export const DropdownBody = styled.ul`
       width: auto;
     `);
   }};
+
   ${({ showHoverLine }) => {
     if (showHoverLine) {
       return (`
@@ -138,7 +146,7 @@ export const DropdownBody = styled.ul`
     }
     return null;
   }};
-  white-space: ${({ noLineBreak }) => noLineBreak ? 'normal' : 'nowrap'};
+  
   li {
     list-style-type: none;
   }
@@ -168,4 +176,17 @@ export const DropdownItemWrapper = styled.li`
 
 export const IconWrapper = styled.span`
   padding-top: 0.6em;
+
+  svg {
+    transform: rotate(0);
+    transition: transform .5s;
+    ${({ isOpen }) => {
+    if (isOpen) {
+      return `
+        transform: rotate(180deg);
+        transition: transform .5s;
+      `;
+    }
+  }}
+  }
 `;

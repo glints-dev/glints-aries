@@ -83,7 +83,7 @@ class Modal extends Component <Props, State> {
               >
                 <ModalHeader>
                   <button type="button" onClick={() => onClose()}>
-                    <Icon name="close" color="black" />
+                    <Icon name="close" color={hideContentArea ? 'white' : 'black'} />
                   </button>
                 </ModalHeader>
                 {children}

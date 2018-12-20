@@ -177,8 +177,8 @@ class Dropdown extends Component <Props, State> {
                 {dropdownLabel}
               </Otherwise>
             </Choose>
-            <IconWrapper>
-              <Icon name="arrow-down" color={!disabled ? iconDefaultColor : '#777777'} />
+            <IconWrapper isOpen={isOpen}>
+              <Icon name="arrow-up" color={!disabled ? iconDefaultColor : '#777777'} />
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody

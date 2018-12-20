@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* @flow */
 
 import React, { Component } from 'react';
@@ -53,6 +54,16 @@ class Gallery extends Component <Props, State> {
     }
   }
 
+  componentDidUpdate(prevProps, nextState) {
+    if (!nextState.visible) {
+      document.getElementsByClassName('aries-slider')[0].focus();
+    }
+  }
+
+  componentWillUnmount() {
+    document.getElementsByClassName('aries-slider')[0].blur();
+  }
+
   render() {
     const { children } = this.props;
     const { visible, currentIndex, imageLeft } = this.state;
@@ -61,7 +72,11 @@ class Gallery extends Component <Props, State> {
       <GalleryContainer>
         <GalleryItemWrapper>
           { children.slice(0, 8).map((data, index) => (
-            <GalleryItem key={`${data.props.src}_${index}`} imageLeft={imageLeft} onClick={() => this.handleClick(index)}>
+            <GalleryItem
+              key={`${data.props.src}_${index}`}
+              imageLeft={imageLeft}
+              onClick={() => this.handleClick(index)}
+            >
               <img src={data.props.src} alt={index} />
             </GalleryItem>
           ))}
@@ -72,6 +87,7 @@ class Gallery extends Component <Props, State> {
           hideContentArea
         >
           <Slider
+            className="aries-slider"
             initialItem={currentIndex + 1}
             arrowWhite
             removeDots
