@@ -23,6 +23,9 @@ const SelectStory = () => (
           noOptionResult="No Result Found."
         >
           <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">Business Development</Select.Option>
+          <Select.Option value="finance">Finance</Select.Option>
+          <Select.Option value="software engineer">Software Engineer</Select.Option>
         </Select>
       </div>
     </div>
