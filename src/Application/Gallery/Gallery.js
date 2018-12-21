@@ -85,6 +85,7 @@ class Gallery extends Component <Props, State> {
           isVisible={visible}
           onClose={this.closeModal}
           hideContentArea
+          removeAnimation
         >
           <Slider
             className="aries-slider"

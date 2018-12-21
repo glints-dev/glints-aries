@@ -4,10 +4,6 @@ import { SecondaryColor } from '../Colors';
 
 export const ModalContainer = styled.div`
   visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
-  opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
-  transform: ${({ isOpen }) => isOpen ? 'scale(1)' : 'scale(0.98)'};
-  transform-origin: center;
-  transition: ${({ isOpen }) => isOpen ? 'all .2s ease-in' : 'all .15s ease-out'};
   position: fixed;
   display: flex;
   justify-content: center;
@@ -19,6 +15,17 @@ export const ModalContainer = styled.div`
   z-index: 1000;
   background: rgba(0, 0, 0, 0.65);
   overflow: auto;
+
+  ${({ removeAnimation, isOpen }) => {
+    if (!removeAnimation) {
+      return `
+        opacity: ${isOpen ? '1' : '0'};
+        transform: ${isOpen ? 'scale(1)' : 'scale(0.98)'};
+        transform-origin: center;
+        transition: ${isOpen ? 'all .2s ease-in' : 'all .15s ease-out'};
+      `;
+    }
+  }}
 `;
 
 export const ModalDialog = styled.div`
@@ -32,10 +39,17 @@ export const ModalContentArea = styled.div`
   margin: 2.5em auto;
   max-width: 95vw;
   outline: none;
-  opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
-  transform: ${({ isOpen }) => isOpen ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)' : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'};
-  transition: ${({ isOpen }) => isOpen ? 'all .25s ease-in' : 'all .25s ease-out'};
 
+  ${({ removeAnimation, isOpen }) => {
+    if (!removeAnimation) {
+      return `
+        opacity: ${isOpen ? '1' : '0'};
+        transform: ${isOpen ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)' : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'};
+        transition: ${isOpen ? 'all .25s ease-in' : 'all .25s ease-out'};
+      `;
+    }
+  }}
+  
   ${({ centering }) => {
     if (centering) {
       return `
@@ -44,7 +58,7 @@ export const ModalContentArea = styled.div`
       `;
     }
   }}
-    
+
   @media ${Device.mobileM} {
     padding: 1em;
   }
