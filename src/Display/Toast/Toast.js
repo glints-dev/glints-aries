@@ -34,20 +34,19 @@ class Toast extends Component <Props> {
     } = this.props;
 
     return (
-      <Fragment>
-        {isVisible && (
-          <ToastContainer theme={theme}>
-            <ToastTopWrapper>
-              <ToastIcon onClick={onClose}>
-                <Icon name="close" color={theme === 'black' ? 'white' : 'black'} />
-              </ToastIcon>
-            </ToastTopWrapper>
-            <ToastBodyWrapper>
-              { children }
-            </ToastBodyWrapper>
-          </ToastContainer>
-        )}
-      </Fragment>
+      <ToastContainer
+        theme={theme}
+        isVisible={isVisible}
+      >
+        <ToastTopWrapper>
+          <ToastIcon onClick={onClose}>
+            <Icon name="close" color={theme === 'black' ? 'white' : 'black'} />
+          </ToastIcon>
+        </ToastTopWrapper>
+        <ToastBodyWrapper>
+          { children }
+        </ToastBodyWrapper>
+      </ToastContainer>
     );
   }
 }

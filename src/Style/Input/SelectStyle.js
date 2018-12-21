@@ -15,6 +15,11 @@ export const SelectWrapper = styled.div`
     display: flex;
     align-items: center;
     pointer-events: none;
+
+    svg {
+      transform: ${({ isFocus }) => isFocus ? 'rotate(180deg)' : 'rotate(0)'};
+      transition: ${({ isFocus }) => isFocus ? 'transform .5s' : 'transform .5s'};
+    }
   }
 `;
 
@@ -151,7 +156,11 @@ export const SelectInput = styled.input`
 
 export const SelectListWrapper = styled.ul`
   position: absolute;
-  display: ${({ open }) => open ? 'block' : 'none'};
+  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+  opacity: ${({ open }) => open ? '1' : '0'};
+  transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
+  transform-origin: center top;
+  transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};
   background: ${SecondaryColor.white};
   width: 100%;
   height: auto;

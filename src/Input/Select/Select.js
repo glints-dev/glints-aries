@@ -185,7 +185,7 @@ class Select extends Component <Props, State> {
 
     return (
       <SelectContainer className={className}>
-        <SelectWrapper>
+        <SelectWrapper isFocus={isFocus}>
           <SelectInput
             type="text"
             role="combobox"
@@ -210,7 +210,10 @@ class Select extends Component <Props, State> {
           >
             {label}
           </SelectLabel>
-          <div className="select-icon" aria-label="show options">
+          <div
+            className="select-icon"
+            aria-label="show options"
+          >
             <Icon name="arrow-down" color="#777777" />
           </div>
         </SelectWrapper>

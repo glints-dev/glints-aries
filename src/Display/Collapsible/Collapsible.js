@@ -64,7 +64,7 @@ class Collapsible extends Component <Props, State> {
             isOpen={isOpen}
           >
             {label}
-            <Icon name="arrow-up" color="#000000" />
+            <Icon name="arrow-down" color="#000000" />
           </CollapsibleHeader>
           {isOpen && (
             <CollapsibleBody

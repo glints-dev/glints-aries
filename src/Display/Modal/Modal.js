@@ -63,35 +63,33 @@ class Modal extends Component <Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <Fragment>
-        {isOpen && (
-          <ModalContainer
-            className={className}
+      <ModalContainer
+        className={className}
+        centering={centering}
+        onClick={() => onClose()}
+        isOpen={isOpen}
+      >
+        <ModalDialog>
+          <ModalContentArea
+            className="aries-modal-content"
+            role="dialog"
+            aria-modal="true"
+            hideContentArea={hideContentArea}
             centering={centering}
-            onClick={() => onClose()}
+            onClick={e => e.stopPropagation()}
+            tabIndex={0}
+            isOpen={isOpen}
+            {...defaultProps}
           >
-            <ModalDialog>
-              <ModalContentArea
-                className="aries-modal-content"
-                role="dialog"
-                aria-modal="true"
-                hideContentArea={hideContentArea}
-                centering={centering}
-                onClick={e => e.stopPropagation()}
-                tabIndex={0}
-                {...defaultProps}
-              >
-                <ModalHeader>
-                  <button type="button" onClick={() => onClose()}>
-                    <Icon name="close" color={hideContentArea ? 'white' : 'black'} />
-                  </button>
-                </ModalHeader>
-                {children}
-              </ModalContentArea>
-            </ModalDialog>
-          </ModalContainer>
-        )}
-      </Fragment>
+            <ModalHeader>
+              <button type="button" onClick={() => onClose()}>
+                <Icon name="close" color={hideContentArea ? 'white' : 'black'} />
+              </button>
+            </ModalHeader>
+            {children}
+          </ModalContentArea>
+        </ModalDialog>
+      </ModalContainer>
     );
   }
 }

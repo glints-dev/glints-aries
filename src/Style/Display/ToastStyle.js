@@ -5,6 +5,10 @@ import { Device } from '../../Utils/StyleConfig';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
 export const ToastContainer = styled.div`
+  visibility: ${({ isVisible }) => isVisible ? 'visible' : 'hidden'};
+  opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+  transform: ${({ isVisible }) => isVisible ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)' : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'};
+  transition: ${({ isVisible }) => isVisible ? 'all .25s ease-in' : 'all .25s ease-out'};
   position: fixed;
   bottom: 4em;
   right: 4em;

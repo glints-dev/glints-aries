@@ -178,15 +178,7 @@ export const IconWrapper = styled.span`
   padding-top: 0.6em;
 
   svg {
-    transform: rotate(0);
-    transition: transform .5s;
-    ${({ isOpen }) => {
-    if (isOpen) {
-      return `
-        transform: rotate(180deg);
-        transition: transform .5s;
-      `;
-    }
-  }}
+    transform: ${({ isOpen }) => isOpen ? 'rotate(180deg)' : 'rotate(0)'};
+    transition: ${({ isOpen }) => isOpen ? 'transform .5s;' : 'transform .5s'};
   }
 `;
