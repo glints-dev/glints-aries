@@ -10,7 +10,7 @@ const BlockquoteOrigin = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteOriginWrapper className={className}>
+    <BlockquoteOriginWrapper id="blockquote-origin" className={className}>
       {children}
     </BlockquoteOriginWrapper>
   );

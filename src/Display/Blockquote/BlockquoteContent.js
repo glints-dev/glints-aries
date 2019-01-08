@@ -10,7 +10,7 @@ const BlockquoteContent = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteContentWrapper className={className}>
+    <BlockquoteContentWrapper id="blockquote-contentwrapper" className={className}>
       {children}
     </BlockquoteContentWrapper>
   );

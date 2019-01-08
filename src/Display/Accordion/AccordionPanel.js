@@ -30,7 +30,7 @@ const AccordionPanel = (props: Props) => {
       tabIndex="0"
       {...defaultProps}
     >
-      <AccordionContentWrapper tabIndex="-1">
+      <AccordionContentWrapper className="accordion-content" tabIndex="-1">
         <AccordionIconWrapper>
           <Icon name="add" color={SecondaryColor.lightblack} />
         </AccordionIconWrapper>

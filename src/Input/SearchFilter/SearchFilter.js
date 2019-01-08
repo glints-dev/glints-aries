@@ -28,12 +28,13 @@ class SearchFilter extends Component <Props, State> {
 
     return (
       <SearchFilterContainer
+        id="aries-searchfilter"
         className={className}
         role="search"
         aria-expanded={isOpen}
         aria-label={label}
       >
-        <SearchFilterBar>
+        <SearchFilterBar id="searchfilter-inputwrapper">
           <input
             type="text"
             placeholder={label}
@@ -45,6 +46,7 @@ class SearchFilter extends Component <Props, State> {
           {content}
         </SearchFilterBar>
         <SearchFilterBody
+          id="searchfilter-content"
           role="menuitem"
           aria-hidden={!isOpen && true}
           open={isOpen}

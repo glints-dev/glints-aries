@@ -13,13 +13,14 @@ const SecondaryButton = ({
 }: Props) => (
 
   <SecondaryContainer
+    id="aries-secondarybtn"
     className={className}
     block={block}
     small={small}
     disabled={disabled}
   >
     <SecondaryBtn
-      className={`${className} secondaryButton`}
+      id="secondarybtn-content"
       block={block}
       small={small}
       disabled={disabled}

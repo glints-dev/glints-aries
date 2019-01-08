@@ -22,6 +22,7 @@ class Blockquote extends Component <Props, State> {
 
     return (
       <BlockquoteContainer
+        id="aries-blockquote"
         className={className}
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}

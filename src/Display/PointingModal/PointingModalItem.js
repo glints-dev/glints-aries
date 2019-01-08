@@ -12,7 +12,7 @@ const PointingModalItem = (props: Props) => {
 
   return (
     <PointingModalItemWrapper
-      className={className}
+      className="pointingmodal-item"
       {...defaultProps}
     >
       {children}

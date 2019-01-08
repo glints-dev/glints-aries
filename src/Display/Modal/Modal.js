@@ -39,7 +39,7 @@ class Modal extends Component <Props, State> {
   componentDidUpdate(prevProps) {
     const { isVisible } = this.props;
     if (!prevProps.isVisible && isVisible) {
-      document.getElementsByClassName('aries-modal-content')[0].focus();
+      document.getElementById('modal-content').focus();
     }
   }
 
@@ -65,15 +65,16 @@ class Modal extends Component <Props, State> {
 
     return (
       <ModalContainer
+        id="aries-modal"
         className={className}
         centering={centering}
         onClick={() => onClose()}
         isOpen={isOpen}
         removeAnimation={removeAnimation}
       >
-        <ModalDialog>
+        <ModalDialog id="modal-dialogarea">
           <ModalContentArea
-            className="aries-modal-content"
+            id="modal-content"
             role="dialog"
             aria-modal="true"
             hideContentArea={hideContentArea}
@@ -105,6 +106,7 @@ type Props = {
   className: string,
   hideContentArea: boolean,
   centering: boolean,
+  removeAnimation: boolean,
 }
 
 type State = {

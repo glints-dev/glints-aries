@@ -4,7 +4,10 @@ import React from 'react';
 import { LinkBtn } from '../../Style/General/ButtonStyle';
 
 const LinkButton = ({ children, ...defaultProps }: Props) => (
-  <LinkBtn {...defaultProps}>
+  <LinkBtn
+    id="aries-linkbtn"
+    {...defaultProps}
+  >
     {children}
   </LinkBtn>
 );

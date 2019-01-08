@@ -4,7 +4,10 @@ import React from 'react';
 import { GhostBtn } from '../../Style/General/ButtonStyle';
 
 const GhostButton = ({ children, ...defaultProps }: Props) => (
-  <GhostBtn {...defaultProps}>
+  <GhostBtn
+    id="aries-ghostbtn"
+    {...defaultProps}
+  >
     {children}
   </GhostBtn>
 );

@@ -68,7 +68,7 @@ class TextField extends Component <Props, State> {
     const { floating, inputType } = this.state;
 
     return (
-      <TextFieldContainer className={className}>
+      <TextFieldContainer id="aries-textfield" className={className}>
         <TextFieldInput
           type={inputType}
           status={status}

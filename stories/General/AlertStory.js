@@ -48,7 +48,6 @@ class AlertStory extends Component {
             message="You have successfully applied to Glints as Software Engineer."
             isOpen={isOpen}
             onClose={this.handleOnClose}
-            autoClose={3000}
           />
         </div>
 

@@ -11,6 +11,7 @@ const Loading = (props: Props) => {
 
   return (
     <LoadingContainer
+      id="aries-loading"
       className={className}
       role="alert"
       aria-busy="true"

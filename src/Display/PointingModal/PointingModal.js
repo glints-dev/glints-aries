@@ -12,6 +12,7 @@ const PointingModal = (props: Props) => {
 
   return (
     <PointingModalContainer
+      id="aries-pointingmodal"
       className={className}
       role="dialog"
       aria-modal="true"

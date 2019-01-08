@@ -12,7 +12,11 @@ const BreadcrumbItem = (props: Props) => {
   } = props;
 
   return (
-    <BreadcrumbItemWrapper className={className} active={active} {...defaultProps}>
+    <BreadcrumbItemWrapper
+      className={className}
+      active={active}
+      {...defaultProps}
+    >
       {children}
       <span>/</span>
     </BreadcrumbItemWrapper>

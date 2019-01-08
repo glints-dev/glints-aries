@@ -12,6 +12,7 @@ const PointingModalHeader = (props: Props) => {
 
   return (
     <PointingModalHeaderWrapper
+      id="pointingmodal-header"
       className={className}
       role="group"
       {...defaultProps}

@@ -23,22 +23,23 @@ const Blockquote = (props: Props) => {
 
   return (
     <BlockquoteContainer
+      id="aries-empblockquote"
       className={className}
       tabIndex="0"
       role="presentation"
       {...defaultProps}
     >
-      <BlockquoteWrapper tabIndex="-1">
-        <BlockquoteContent>
+      <BlockquoteWrapper id="empblockquote-wrapper" tabIndex="-1">
+        <BlockquoteContent id="empblockquote-testimony">
           {children}
         </BlockquoteContent>
-        <BlockquoteProfileWrapper>
-          <BlockquoteProfilePicture>
+        <BlockquoteProfileWrapper id="empblockquote-profilewrapper">
+          <BlockquoteProfilePicture id="empblockquote-profile">
             <img src={profileURL} alt={alt} aria-hidden="true" />
           </BlockquoteProfilePicture>
           <BlockquoteIdentity>
-            <p>{profileName}</p>
-            <span>{additionalInfo}</span>
+            <p id="empblockquote-author">{profileName}</p>
+            <span id="empblockquote-origin">{additionalInfo}</span>
           </BlockquoteIdentity>
         </BlockquoteProfileWrapper>
       </BlockquoteWrapper>

@@ -10,7 +10,7 @@ const BlockquoteTestimony = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteTestimonyWrapper className={className}>
+    <BlockquoteTestimonyWrapper id="blockquote-testimony" className={className}>
       {children}
     </BlockquoteTestimonyWrapper>
   );

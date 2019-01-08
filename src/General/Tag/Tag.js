@@ -16,6 +16,7 @@ const Tag = (props: Props) => {
   return (
     <Fragment>
       <TagContainer
+        id="aries-tag"
         className={className}
         role="presentation"
         tabIndex="0"
@@ -24,7 +25,10 @@ const Tag = (props: Props) => {
         outline={outline}
         {...defaultProps}
       >
-        <TagContent tabIndex="-1">
+        <TagContent
+          id="tag-content"
+          tabIndex="-1"
+        >
           {children}
         </TagContent>
       </TagContainer>

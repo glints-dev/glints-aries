@@ -184,8 +184,8 @@ class Select extends Component <Props, State> {
     } = this.state;
 
     return (
-      <SelectContainer className={className}>
-        <SelectWrapper isFocus={isFocus}>
+      <SelectContainer id="aries-select" className={className}>
+        <SelectWrapper id="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
             role="combobox"
@@ -218,6 +218,7 @@ class Select extends Component <Props, State> {
           </div>
         </SelectWrapper>
         <SelectListWrapper
+          id="select-listbox"
           role="listbox"
           aria-hidden={!isFocus && true}
           open={isFocus}

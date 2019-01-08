@@ -51,14 +51,15 @@ class Collapsible extends Component <Props, State> {
 
     return (
       <CollapsibleContainer
-        className="collapsible"
+        id="aries-collapsible"
+        className={className}
         tabIndex="0"
         onClick={this.handleOpen}
         {...defaultProps}
       >
         <CollapsibleContent tabIndex="-1">
           <CollapsibleHeader
-            className="head"
+            id="collapsible-title"
             role="tab"
             aria-expanded={isOpen}
             isOpen={isOpen}
@@ -68,7 +69,7 @@ class Collapsible extends Component <Props, State> {
           </CollapsibleHeader>
           {isOpen && (
             <CollapsibleBody
-              className="body"
+              id="collapsible-content"
               onClick={e => e.stopPropagation()}
             >
               {children}
