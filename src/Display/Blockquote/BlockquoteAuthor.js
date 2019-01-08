@@ -10,7 +10,7 @@ const BlockquoteAuthor = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteAuthorWrapper className={className}>
+    <BlockquoteAuthorWrapper id="blockquote-author" className={className}>
       {children}
     </BlockquoteAuthorWrapper>
   );

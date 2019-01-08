@@ -147,7 +147,8 @@ class Dropdown extends Component <Props, State> {
 
     return (
       <DropdownContainer
-        className="aries-dropdown"
+        id="aries-dropdown"
+        className={className}
         tabIndex="0"
         onClick={this.handleOpen}
         onMouseEnter={this.hoverOpen}
@@ -159,8 +160,9 @@ class Dropdown extends Component <Props, State> {
         aria-haspopup="true"
         {...defaultProps}
       >
-        <DropdownWrapper tabIndex="-1">
+        <DropdownWrapper id="dropdown-contentwrapper" tabIndex="-1">
           <DropdownHeader
+            id="dropdown-content"
             isOpen={isOpen}
             disabled={disabled}
             showHoverLine={showHoverLine}
@@ -182,7 +184,7 @@ class Dropdown extends Component <Props, State> {
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody
-            className="aries-dropdown-content"
+            id="dropdown-listbox"
             role="listbox"
             aria-hidden={!isOpen && true}
             onClick={e => e.stopPropagation()}

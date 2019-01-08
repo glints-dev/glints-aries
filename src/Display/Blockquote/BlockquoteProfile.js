@@ -10,7 +10,7 @@ const BlockquoteProfile = (props: Props) => {
   } = props;
 
   return (
-    <BlockquoteProfileWrapper className={className}>
+    <BlockquoteProfileWrapper id="blockquote-profile" className={className}>
       {children}
     </BlockquoteProfileWrapper>
   );

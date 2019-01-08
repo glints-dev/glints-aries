@@ -13,6 +13,7 @@ const SearchFilterList = (props: Props) => {
 
   return (
     <SearchFilterListWrapper
+      id="searchfilter-listitem"
       className={className}
       role="list"
       {...defaultProps}

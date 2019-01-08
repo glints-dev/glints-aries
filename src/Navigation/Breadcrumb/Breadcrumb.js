@@ -11,7 +11,11 @@ const Breadcrumb = (props: Props) => {
   } = props;
 
   return (
-    <BreadcrumbContainer className={className} {...defaultProps}>
+    <BreadcrumbContainer
+      id="aries-breadcrumb"
+      className={className}
+      {...defaultProps}
+    >
       {children}
     </BreadcrumbContainer>
   );

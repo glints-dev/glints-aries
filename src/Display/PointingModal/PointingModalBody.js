@@ -12,6 +12,7 @@ const PointingModalBody = (props: Props) => {
 
   return (
     <PointingModalBodyWrapper
+      id="pointingmodal-body"
       className={className}
       role="list"
       {...defaultProps}

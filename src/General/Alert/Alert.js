@@ -40,7 +40,7 @@ class Alert extends Component <State, Props> {
     }
 
     if (isOpen) {
-      document.getElementsByClassName('aries-alert')[0].focus();
+      document.getElementById('aries-alert').focus();
     }
   }
 
@@ -97,7 +97,7 @@ class Alert extends Component <State, Props> {
     const { message } = this.props;
 
     return (
-      <AlertMessage className="aries-alert-message">
+      <AlertMessage id="alert-message">
         {message}
       </AlertMessage>
     );
@@ -108,6 +108,7 @@ class Alert extends Component <State, Props> {
 
     return (
       <AlertIcon
+        id="alert-close"
         role="button"
         aria-label="Press Escape or Enter button to close alert"
         title="Close alert"
@@ -123,24 +124,26 @@ class Alert extends Component <State, Props> {
       type,
       isOpen,
       onClose,
+      className,
     } = this.props;
     const { isVisible } = this.state;
 
     return (
       <If condition={isVisible}>
         <AlertContainer
-          className="aries-alert"
+          id="aries-alert"
+          className={className}
           type={type}
           role="alertdialog"
           aria-hidden={isVisible ? 'false' : 'true'}
-          aria-describedby="aries-alert-message"
+          aria-describedby="alert-message"
           isOpen={isOpen}
           isVisible={isVisible}
           tabIndex={0}
           onKeyDown={this.handleKeyDown(onClose)}
         >
           {this.renderAlertTypeIcon()}
-          <AlertContent>
+          <AlertContent id="alert-content">
             {this.renderMessage()}
             {this.renderIcon()}
           </AlertContent>

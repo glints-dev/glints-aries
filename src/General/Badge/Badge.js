@@ -16,11 +16,12 @@ const Badge = (props: Props) => {
       {label
         && (
           <BadgeContainer
+            id="aries-badge"
             className={className}
             sup={sup}
             {...defaultProps}
           >
-            <span>
+            <span id="badge-content">
               {label}
             </span>
           </BadgeContainer>

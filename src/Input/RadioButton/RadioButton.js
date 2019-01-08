@@ -15,11 +15,13 @@ const RadioButton = (props: Props) => {
   return (
     <Fragment>
       <RadioContainer
+        id="aries-radiobtn"
         className={className}
         tabIndex="0"
       >
         <input type="radio" {...defaultProps} />
         <RadioLabel
+          id="radiobtn-content"
           theme={theme}
           tabIndex="-1"
         >

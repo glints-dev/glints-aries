@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import { OmniSearchContainer, OmniSearchBar, OmniSearchBody } from '../../Style/Input/OmniSearchStyle';
 
@@ -27,12 +27,13 @@ class OmniSearch extends Component <Props, State> {
 
     return (
       <OmniSearchContainer
+        id="aries-omnisearch"
         className={className}
         role="search"
         aria-expanded={isOpen}
         aria-label={label}
       >
-        <OmniSearchBar>
+        <OmniSearchBar id="omnisearch-inputwrapper">
           <input
             type="text"
             placeholder={label}
@@ -44,6 +45,7 @@ class OmniSearch extends Component <Props, State> {
           { content }
         </OmniSearchBar>
         <OmniSearchBody
+          id="omnisearch-content"
           role="menuitem"
           aria-hidden={!isOpen && true}
           open={isOpen}

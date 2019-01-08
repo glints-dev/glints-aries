@@ -48,10 +48,12 @@ class Popover extends Component <Props, State> {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, className } = this.props;
 
     return (
       <PopoverContainer
+        id="aries-popover"
+        className={className}
         onBlur={this.handleClickOutside}
         aria-haspopup="true"
         aria-busy="false"
@@ -69,6 +71,7 @@ class Popover extends Component <Props, State> {
 }
 
 type Props = {
+  className: string,
   children: React$Node,
   content: React$Node,
 };

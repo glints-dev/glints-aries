@@ -39,6 +39,7 @@ class ProfilePicture extends Component <Props, State> {
 
     return (
       <ProfilePictureContainer
+        id="aries-profile"
         className={className}
         role={editable ? 'button' : 'presentation'}
         aria-label="Profile Picture"
@@ -48,6 +49,7 @@ class ProfilePicture extends Component <Props, State> {
         {...defaultProps}
       >
         <ProfilePictureContent
+          id="profile-wrapper"
           editable={editable}
           tabIndex={editable && '-1'}
         >

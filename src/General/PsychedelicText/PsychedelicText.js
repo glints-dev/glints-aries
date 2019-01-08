@@ -13,13 +13,22 @@ const renderPsychedelicText = ({
   switch (type) {
     case 'heading':
       return (
-        <Heading className={className} {...defaultProps}>
+        <Heading
+          id="aries-psyctext"
+          className={className}
+          {...defaultProps}
+        >
           {children}
         </Heading>
       );
     case 'subheading':
       return (
-        <SubHeading className={className} psychTheme={psychTheme} {...defaultProps}>
+        <SubHeading
+          id="aries-psyctext"
+          className={className}
+          psychTheme={psychTheme}
+          {...defaultProps}
+        >
           {children}
         </SubHeading>
       );

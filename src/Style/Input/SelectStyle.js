@@ -175,6 +175,7 @@ export const SelectListWrapper = styled.ul`
 
 export const SelectItemWrapper = styled.li`
   display: flex;
+  align-items: center;
   cursor: pointer;
   padding: .5em 1em;
   list-style-type: none;

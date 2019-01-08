@@ -35,6 +35,7 @@ class Accordion extends Component <Props, State> {
     return (
       children.map((data, index) => (
         <AccordionPanel
+          className="accordion-contentwrapper"
           key={index}
           label={data.props.label}
           content={data.props.content}
@@ -51,6 +52,7 @@ class Accordion extends Component <Props, State> {
 
     return (
       <AccordionPanel
+        className="accordion-contentwrapper"
         label={children.props.label}
         content={children.props.content}
         active={isOpenSingleItem}
@@ -63,7 +65,7 @@ class Accordion extends Component <Props, State> {
     const { children, className } = this.props;
 
     return (
-      <AccordionContainer className={className}>
+      <AccordionContainer id="aries-accordion" className={className}>
         <Choose>
           <When condition={children.length > 1}>
             {this.renderMultipleItem()}

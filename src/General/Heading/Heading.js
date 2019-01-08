@@ -15,12 +15,13 @@ const Heading = (props: Props) => {
   return (
     <Fragment>
       <HeadingContainer
+        id="aries-heading"
         className={className}
         inline={inline}
         uppercaseText={uppercaseText}
         {...defaultProps}
       >
-        <span>
+        <span id="heading-text">
           {children}
         </span>
       </HeadingContainer>

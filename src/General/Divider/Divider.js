@@ -11,6 +11,7 @@ const Divider = (props: Props) => {
 
   return (
     <DividerContainer
+      id="aries-divider"
       className={className}
       theme={theme}
     />

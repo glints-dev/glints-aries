@@ -95,7 +95,7 @@ class Textarea extends Component <Props, State> {
     } = this.state;
 
     return (
-      <TextareaContainer className={className}>
+      <TextareaContainer id="aries-textarea" className={className}>
         <TextareaInput
           rows={rows}
           status={status}

@@ -38,6 +38,7 @@ class Switch extends Component <Props, State> {
 
     return (
       <SwitchContainer
+        id="aries-switch"
         className={className}
         role="switch"
         aria-checked="true"
@@ -46,7 +47,7 @@ class Switch extends Component <Props, State> {
         defaultValue={initialValue}
         items={value}
       >
-        <SwitchItemWrapper>
+        <SwitchItemWrapper id="switch-left">
           <RadioButton
             id={value[0]}
             aria-label={label[0]}
@@ -58,7 +59,7 @@ class Switch extends Component <Props, State> {
             onClick={this.handleClick}
           />
         </SwitchItemWrapper>
-        <SwitchItemWrapper>
+        <SwitchItemWrapper id="switch-right">
           <RadioButton
             id={value[1]}
             aria-label={label[1]}

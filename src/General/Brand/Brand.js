@@ -18,7 +18,7 @@ class Brand extends Component <Props> {
       onContextMenu();
     }
 
-    console.log(rightClickURL);
+    window.location.href = rightClickURL;
   }
 
   render() {
@@ -40,6 +40,8 @@ class Brand extends Component <Props> {
 
     return (
       <BrandContainer
+        id="aries-brand"
+        className={className}
         role="presentation"
         focusable="false"
         tabIndex="0"
@@ -47,7 +49,7 @@ class Brand extends Component <Props> {
         {...defaultProps}
       >
         <BrandImage
-          className={className}
+          id="brand-image"
           src={srcAsset}
           tabIndex="-1"
         />

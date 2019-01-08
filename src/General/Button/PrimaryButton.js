@@ -13,6 +13,7 @@ const PrimaryButton = ({
   ...defaultProps
 }: Props) => (
   <PrimaryContainer
+    id="aries-primarybtn"
     className={className}
     theme={theme}
     disabled={disabled}
@@ -20,7 +21,7 @@ const PrimaryButton = ({
     small={small}
   >
     <PrimaryBtn
-      className={`primaryButton ${className}`}
+      id="primarybtn-content"
       theme={theme}
       disabled={disabled}
       block={block}

@@ -13,6 +13,7 @@ const OmniSearchList = (props: Props) => {
 
   return (
     <OmniSearchListItem
+      id="omnisearch-listitem"
       className={className}
       role="list"
       {...defaultProps}

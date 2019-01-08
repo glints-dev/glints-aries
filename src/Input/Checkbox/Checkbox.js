@@ -36,6 +36,7 @@ class Checkbox extends Component <Props, State> {
 
     return (
       <CheckboxContainer
+        id="aries-checkbox"
         className={className}
         role="checkbox"
         aria-labelledby={id}
