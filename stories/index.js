@@ -28,7 +28,7 @@ import DividerStory from './General/DividerStory';
 import DropdownStory from './Navigation/DropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Application/GalleryStory';
-import GridStory from './Layout/GridLayout';
+import GridStory from './Layout/GridStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
 import IconStory from './General/IconStory';
