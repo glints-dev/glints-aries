@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Layout from '../../src/Layout/Layout';
-import GlintsContainer from '../../src/Style/GlintsContainerStyle';
 
 class LayoutStory extends Component {
   renderHeader() {
