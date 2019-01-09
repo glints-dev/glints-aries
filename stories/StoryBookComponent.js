@@ -13,15 +13,13 @@ const propsColumnName = [
 ];
 
 class StoryBookComponent extends Component <Props> {
-  renderTitle() {
-    const { title } = this.props;
+  renderTitle(title) {
     return (
       <h1>{title}</h1>
     );
   }
 
-  renderCodeSnippet() {
-    const { code } = this.props;
+  renderCodeSnippet(code) {
     return (
       <p>
         <code>
@@ -31,11 +29,18 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderUsage() {
-    const { children } = this.props;
+  renderUsage(children) {
     return (
       <pre>
         {jsxToString(children)}
+      </pre>
+    );
+  }
+
+  renderStringComponent(stringComponent) {
+    return (
+      <pre>
+        {stringComponent}
       </pre>
     );
   }
@@ -68,8 +73,7 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderTable() {
-    const { propsObject } = this.props;
+  renderTable(propsObject) {
     const propsObjectKey = Object.keys(propsObject);
     return propsObjectKey.map(key => (
       <table className="doc-table" key={key}>
@@ -86,23 +90,32 @@ class StoryBookComponent extends Component <Props> {
   }
 
   render() {
-    const { children } = this.props;
+    const {
+      children, stringComponent, code, title, propsObject,
+    } = this.props;
     return (
       <div className="doc-mainbar">
         <div style={{ marginBottom: '2em' }}>
-          {this.renderTitle()}
-          {this.renderCodeSnippet()}
+          {this.renderTitle(title)}
+          {this.renderCodeSnippet(code)}
         </div>
         <div style={{ marginBottom: '2em' }}>
           {children}
         </div>
         <div style={{ marginBottom: '2em' }}>
           <Collapsible label="Usage" isOpen={false}>
-            {this.renderUsage()}
+            <Choose>
+              <When condition={stringComponent}>
+                {this.renderStringComponent(stringComponent)}
+              </When>
+              <Otherwise>
+                {this.renderUsage(children)}
+              </Otherwise>
+            </Choose>
           </Collapsible>
         </div>
         <div style={{ marginBottom: '4em' }}>
-          {this.renderTable()}
+          {this.renderTable(propsObject)}
         </div>
       </div>
     );
@@ -113,7 +126,8 @@ type Props = {
   children: React$Node,
   title: string,
   code: string,
-  propsObject: Object;
-  }
+  propsObject: Object,
+  stringComponent: string
+}
 
 export default StoryBookComponent;
