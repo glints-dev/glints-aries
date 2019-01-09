@@ -131,12 +131,14 @@ class Slider extends Component <Props, State> {
     return (
       <SliderContainer
         ref={(node) => { this.sliderContainer = node; }}
+        id="aries-slider"
         className={className}
         onKeyDown={this.handleKeyDown}
         fullContent={fullContent}
         tabIndex="0"
       >
         <SliderContentWrapper
+          id="slider-wrapper"
           style={{
             transform: `translateX(${translateValue}px)`,
             transition: 'transform ease-out 0.45s',

@@ -27,6 +27,7 @@ const JobCardHeader = (props: Props) => {
 
   return (
     <JobcardHeaderWrapper
+      id="jobcard-header"
       className={className}
       role="presentation"
       aria-label="Job Card Header"

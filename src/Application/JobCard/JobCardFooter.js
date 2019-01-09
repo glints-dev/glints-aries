@@ -11,6 +11,7 @@ const JobCardFooter = (props: Props) => {
 
   return (
     <JobcardFooterWrapper
+      id="jobcard-footer"
       className={className}
       role="presentation"
       aria-label="Job Card Footer"

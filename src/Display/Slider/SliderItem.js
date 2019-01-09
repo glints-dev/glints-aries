@@ -7,7 +7,7 @@ const SliderItem = (props: Props) => {
   const { children } = props;
 
   return (
-    <SliderItemWrapper className="item">
+    <SliderItemWrapper className="slider-item">
       {children}
     </SliderItemWrapper>
   );

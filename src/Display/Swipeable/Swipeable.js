@@ -10,7 +10,7 @@ const Swipeable = (props: Props) => {
   } = props;
 
   return (
-    <SwipeableContainer className={className}>
+    <SwipeableContainer id="aries-swipeable" className={className}>
       { children }
     </SwipeableContainer>
   );

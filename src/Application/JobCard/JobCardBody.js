@@ -11,6 +11,7 @@ const JobCardBody = (props: Props) => {
 
   return (
     <JobcardBodyWrapper
+      id="jobcard-body"
       className={className}
       role="presentation"
       aria-label="Job Card Body"

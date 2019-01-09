@@ -19,6 +19,7 @@ const Progress = (props: Props) => {
     <Fragment>
       {percentage >= 0 && (
         <ProgressContainer
+          id="aries-progress"
           className={className}
           progress={progressValue}
           role="progressbar"
