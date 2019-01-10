@@ -171,6 +171,7 @@ class Select extends Component <Props, State> {
       children,
       small,
       disableTyping,
+      removeFloatingLabel,
       ...defaultProps
     } = this.props;
 
@@ -188,6 +189,7 @@ class Select extends Component <Props, State> {
         <SelectWrapper id="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
+            placeholder={removeFloatingLabel && label}
             role="combobox"
             aria-expanded={isFocus}
             aria-autocomplete="list"
@@ -203,13 +205,15 @@ class Select extends Component <Props, State> {
             disableTyping={disableTyping}
             {...defaultProps}
           />
-          <SelectLabel
-            floating={floating}
-            status={status}
-            small={small}
-          >
-            {label}
-          </SelectLabel>
+          <If condition={!removeFloatingLabel}>
+            <SelectLabel
+              floating={floating}
+              status={status}
+              small={small}
+            >
+              {label}
+            </SelectLabel>
+          </If>
           <div
             className="select-icon"
             aria-label="show options"
@@ -263,6 +267,7 @@ type Props = {
   children: React$Node,
   small: boolean,
   disableTyping: boolean,
+  removeFloatingLabel: boolean,
 }
 
 type State = {

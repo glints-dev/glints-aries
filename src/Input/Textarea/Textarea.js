@@ -85,6 +85,7 @@ class Textarea extends Component <Props, State> {
       className,
       onBlur,
       onChange,
+      removeFloatingLabel,
       ...defaultProps
     } = this.props;
 
@@ -97,6 +98,7 @@ class Textarea extends Component <Props, State> {
     return (
       <TextareaContainer id="aries-textarea" className={className}>
         <TextareaInput
+          placeholder={removeFloatingLabel && label}
           rows={rows}
           status={status}
           disabled={disabled}
@@ -110,9 +112,11 @@ class Textarea extends Component <Props, State> {
             maxHeight: `${textareaMaxHeight}px`,
           }}
         />
-        <TextareaLabel floating={floating} status={status}>
-          {label}
-        </TextareaLabel>
+        <If condition={!removeFloatingLabel}>
+          <TextareaLabel floating={floating} status={status}>
+            {label}
+          </TextareaLabel>
+        </If>
       </TextareaContainer>
     );
   }
@@ -126,6 +130,7 @@ type Props = {
   value: string,
   onBlur: Function,
   onChange: Function,
+  removeFloatingLabel: boolean,
 }
 
 type State = {
