@@ -36,9 +36,9 @@ class Tabs extends Component <Props, State> {
     const { currentIndex } = this.state;
 
     return (
-      <TabsContainer className={className}>
-        <TabsHeader>
-          <ul role="tablist">
+      <TabsContainer id="aries-tabs" className={className}>
+        <TabsHeader id="tabs-header">
+          <ul id="tabs-list" role="tablist">
             {children.map((data, index) => (
               <li
                 id={`tab-${index}`}
@@ -60,10 +60,10 @@ class Tabs extends Component <Props, State> {
             ))}
           </ul>
         </TabsHeader>
-        <TabsBody tabIndex="0">
+        <TabsBody id="tabs-body" tabIndex="0">
           <TabPane
             id={`tab-item-${currentIndex}`}
-            className={className}
+            className="tabs-item"
             role="tabpanel"
             aria-labelledby={`tab-${currentIndex}`}
             tabIndex="-1"

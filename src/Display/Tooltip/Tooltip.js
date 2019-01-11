@@ -22,6 +22,7 @@ class Tooltip extends Component <Props, State> {
 
     return (
       <TooltipContainer
+        id="aries-tooltip"
         className={className}
         text={text}
         role="tooltip"

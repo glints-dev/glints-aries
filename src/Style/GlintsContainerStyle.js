@@ -4,7 +4,6 @@ import { ScreenSize, Device } from '../Utils/StyleConfig';
 const GlintsContainer = styled.div`
   position: relative;
   margin: 0 auto;
-  width: 100vw;
 
   @media ${`(min-width: ${ScreenSize.desktopL}px)`} { 
     width: 1400px;

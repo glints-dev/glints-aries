@@ -62,6 +62,7 @@ class TextField extends Component <Props, State> {
       className,
       onBlur,
       small,
+      removeFloatingLabel,
       ...defaultProps
     } = this.props;
 
@@ -71,6 +72,7 @@ class TextField extends Component <Props, State> {
       <TextFieldContainer id="aries-textfield" className={className}>
         <TextFieldInput
           type={inputType}
+          placeholder={removeFloatingLabel && label}
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange(onBlur)}
@@ -80,13 +82,15 @@ class TextField extends Component <Props, State> {
           small={small}
           {...defaultProps}
         />
-        <TextFieldLabel
-          floating={floating}
-          status={status}
-          small={small}
-        >
-          {label}
-        </TextFieldLabel>
+        <If condition={!removeFloatingLabel}>
+          <TextFieldLabel
+            floating={floating}
+            status={status}
+            small={small}
+          >
+            {label}
+          </TextFieldLabel>
+        </If>
         {type === 'password'
           && (
             <div className="see-password" onClick={this.handleShowPassword}>
@@ -110,6 +114,7 @@ type Props = {
   disabled: boolean,
   className: string,
   small: boolean,
+  removeFloatingLabel: boolean,
 }
 
 type State = {

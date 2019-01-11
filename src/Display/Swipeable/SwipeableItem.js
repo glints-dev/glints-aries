@@ -11,7 +11,7 @@ const SwipeableItem = (props: Props) => {
   } = props;
 
   return (
-    <SwipeableItemWrapper className={className} {...defaultProps}>
+    <SwipeableItemWrapper className="swipeable-itemwrapper" {...defaultProps}>
       { children }
     </SwipeableItemWrapper>
   );

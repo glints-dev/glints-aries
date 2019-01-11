@@ -141,6 +141,30 @@ const TextareaStory = () => (
             Disable Textarea.
           </td>
         </tr>
+        <tr>
+          <td>
+            removeFloatingLabel
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Removes floating effect for placeholder.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

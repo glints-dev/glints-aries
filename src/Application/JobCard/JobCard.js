@@ -40,7 +40,7 @@ class JobCard extends Component <Props> {
       ...defaultProps
     } = this.props;
     return (
-      <JobcardContainer>
+      <JobcardContainer id="aries-jobcard">
         <JobCardWrapper
           className={className}
           role="presentation"

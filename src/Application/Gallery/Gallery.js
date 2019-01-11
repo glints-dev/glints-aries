@@ -69,10 +69,11 @@ class Gallery extends Component <Props, State> {
     const { visible, currentIndex, imageLeft } = this.state;
 
     return (
-      <GalleryContainer>
-        <GalleryItemWrapper>
+      <GalleryContainer id="aries-gallery">
+        <GalleryItemWrapper id="gallery-wrapper">
           { children.slice(0, 8).map((data, index) => (
             <GalleryItem
+              className="gallery-item"
               key={`${data.props.src}_${index}`}
               imageLeft={imageLeft}
               onClick={() => this.handleClick(index)}
