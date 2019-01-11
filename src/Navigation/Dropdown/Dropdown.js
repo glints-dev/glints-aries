@@ -171,14 +171,16 @@ class Dropdown extends Component <Props, State> {
             <If condition={leftIconName}>
               <Icon name={leftIconName} color={!disabled ? iconDefaultColor : '#777777'} />
             </If>
-            <Choose>
-              <When condition={itemElement}>
-                {itemElement}
-              </When>
-              <Otherwise>
-                {dropdownLabel}
-              </Otherwise>
-            </Choose>
+            <span>
+              <Choose>
+                <When condition={itemElement}>
+                  {itemElement}
+                </When>
+                <Otherwise>
+                  {dropdownLabel}
+                </Otherwise>
+              </Choose>
+            </span>
             <IconWrapper isOpen={isOpen}>
               <Icon name="arrow-down" color={!disabled ? iconDefaultColor : '#777777'} />
             </IconWrapper>

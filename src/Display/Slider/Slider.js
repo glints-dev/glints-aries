@@ -81,7 +81,8 @@ class Slider extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { initialItem, children } = this.props;
+    const { initialItem, autoplay, children } = this.props;
+    const { index, screenSize } = this.state;
     const windowWidth = ReactDOM.findDOMNode(this.sliderContainer).getBoundingClientRect().width;
 
     this.setState({
@@ -102,6 +103,22 @@ class Slider extends Component <Props, State> {
       }
     }
 
+    if (autoplay) {
+      this.interval = setInterval(() => {
+        // eslint-disable-next-line react/destructuring-assignment
+        if (this.state.index != this.props.children.length) {
+          this.setState(prevState => ({
+            index: prevState.index + 1,
+            translateValue: -(prevState.screenSize * prevState.index),
+          }));
+        } else {
+          this.setState(() => ({
+            index: 1,
+            translateValue: -(screenSize * index),
+          }));
+        }
+      }, 6000);
+    }
     window.addEventListener('resize', this.setSize);
   }
 
@@ -116,6 +133,7 @@ class Slider extends Component <Props, State> {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.setSize);
+    clearInterval(this.interval);
   }
 
   render() {
@@ -182,6 +200,7 @@ type Props = {
   arrowWhite: boolean,
   removeDots: boolean,
   afterChange: Function,
+  autoplay: boolean,
 };
 
 type State = {

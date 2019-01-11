@@ -175,7 +175,7 @@ export const DropdownItemWrapper = styled.li`
 `;
 
 export const IconWrapper = styled.span`
-  padding-top: 0.6em;
+  display: flex;
 
   svg {
     transform: ${({ isOpen }) => isOpen ? 'rotate(180deg)' : 'rotate(0)'};
