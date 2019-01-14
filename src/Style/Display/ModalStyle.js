@@ -32,10 +32,20 @@ export const ModalDialog = styled.div`
   position: relative;
 `;
 
+export const ModalContentStyle = styled.div`
+  position: relative;
+`;
+
+export const ModalFooterStyle = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: .8em;
+`;
+
 export const ModalContentArea = styled.div`
   position: relative;
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
-  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em'};
   margin: 2.5em auto;
   max-width: 95vw;
   outline: none;
@@ -62,13 +72,23 @@ export const ModalContentArea = styled.div`
   @media ${Device.mobileM} {
     padding: 1em;
   }
+
+  ${ModalContentStyle} {
+    padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em'};
+  }
 `;
 
 export const ModalHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1em;
+  justify-content: space-between;
+  padding: .8em;
   font-size: 1.2em;
+
+  h3 {
+    margin: 0;
+    padding-right: 24px;
+    text-transform: uppercase;
+  }
   
   button {
     display: flex;
@@ -77,4 +97,8 @@ export const ModalHeader = styled.div`
     cursor: pointer;
     padding: 0;
   }
+`;
+
+export const ModalBodyWrapper = styled.div`
+  position: relative;
 `;

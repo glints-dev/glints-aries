@@ -1,16 +1,19 @@
 /* @flow */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import Icon from '../../General/Icon';
+import Divider from '../../General/Divider';
 
 import { escEvent } from '../../Utils/DomUtils';
 
 import {
   ModalContainer,
   ModalDialog,
-  ModalHeader,
   ModalContentArea,
+  ModalHeader,
+  ModalBodyWrapper,
+  ModalBody,
 } from '../../Style/Display/ModalStyle';
 
 class Modal extends Component <Props, State> {
@@ -58,6 +61,7 @@ class Modal extends Component <Props, State> {
       hideContentArea,
       centering,
       removeAnimation,
+      headerTitle,
       ...defaultProps
     } = this.props;
 
@@ -86,6 +90,7 @@ class Modal extends Component <Props, State> {
             {...defaultProps}
           >
             <ModalHeader>
+              <h3>{headerTitle}</h3>
               <button type="button" onClick={() => onClose()}>
                 <Icon name="close" color={hideContentArea ? 'white' : 'black'} />
               </button>
