@@ -1,8 +1,13 @@
 import React from 'react';
 import { RowContainer } from '../../Style/Layout/GridStyle';
 
-const Col = ({ children, alignContent, justifyContent }: Props) => (
-  <RowContainer alignContent={alignContent} justifyContent={justifyContent}>
+const Col = ({
+  children,
+  alignContent,
+  justifyContent,
+  ...defaultProps
+}: Props) => (
+  <RowContainer alignContent={alignContent} justifyContent={justifyContent} {...defaultProps}>
     {children}
   </RowContainer>
 );

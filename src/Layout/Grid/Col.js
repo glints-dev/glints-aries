@@ -2,9 +2,24 @@ import React from 'react';
 import { ColumnContainer } from '../../Style/Layout/GridStyle';
 
 const Col = ({
-  xs, sm, md, xsOrder, smOrder, mdOrder, children,
+  xs,
+  sm,
+  md,
+  xsOrder,
+  smOrder,
+  mdOrder,
+  children,
+  ...defaultProps
 }: Props) => (
-  <ColumnContainer xs={xs} sm={sm} md={md} xsOrder={xsOrder} smOrder={smOrder} mdOrder={mdOrder}>
+  <ColumnContainer
+    xs={xs}
+    sm={sm}
+    md={md}
+    xsOrder={xsOrder}
+    smOrder={smOrder}
+    mdOrder={mdOrder}
+    {...defaultProps}
+  >
     {children}
   </ColumnContainer>
 );
