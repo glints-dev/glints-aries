@@ -242,6 +242,26 @@ const SliderStory = () => (
         </tr>
         <tr>
           <td>
+            autoplay
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets slider to slide automatically.
+          </td>
+        </tr>
+        <tr>
+          <td>
             afterChange
           </td>
           <td>
