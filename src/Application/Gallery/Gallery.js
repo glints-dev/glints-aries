@@ -56,12 +56,12 @@ class Gallery extends Component <Props, State> {
 
   componentDidUpdate(prevProps, nextState) {
     if (!nextState.visible) {
-      document.getElementsByClassName('aries-slider')[0].focus();
+      document.getElementById('aries-slider').focus();
     }
   }
 
   componentWillUnmount() {
-    document.getElementsByClassName('aries-slider')[0].blur();
+    document.getElementById('aries-slider').blur();
   }
 
   render() {
@@ -89,7 +89,6 @@ class Gallery extends Component <Props, State> {
           removeAnimation
         >
           <Slider
-            className="aries-slider"
             initialItem={currentIndex + 1}
             arrowWhite
             removeDots

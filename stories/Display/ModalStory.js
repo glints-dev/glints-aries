@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Modal from '../../src/Display/Modal';
 import Button from '../../src/General/Button';
-import Divider from '../../src/General/Divider';
 import Collapsible from '../../src/Display/Collapsible';
 
 class ModalStory extends Component {
@@ -35,37 +34,30 @@ class ModalStory extends Component {
         </div>
 
         <div style={{ marginBottom: '2em' }}>
-          <Button variant="default" theme="blue" onClick={this.handleOpen}>
+          <Button type="default" theme="blue" onClick={this.handleOpen}>
             Open Modal
           </Button>
           <Modal
+            title="What is Lorem Ipsum?"
             isVisible={visible}
             onClose={this.handleClose}
-            headerTitle="What is Lorem Ipsum?"
-          >
-            <Modal.Body>
-              <Divider theme="grey" />
-              <Modal.Content>
-                <span>
-                  {'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
-                </span>
-              </Modal.Content>
-              <Divider theme="grey" />
-            </Modal.Body>
-            <Modal.Footer>
+            footer={[
+              <Button variant="ghost" theme="blue" onClick={this.handleClose}>
+                Cancel
+              </Button>,
               <Button variant="default" theme="blue" onClick={this.handleClose}>
                 Save
-              </Button>
-            </Modal.Footer>
+              </Button>,
+            ]}
+          >
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </Modal>
         </div>
 
         <div style={{ marginBottom: '2em' }}>
           <Collapsible label="Usage" isOpen={false}>
             <pre>
-              {`import { Divider } from 'glints-aries';
-
-state = {
+              {`state = {
   visible: false,
 }
 
@@ -77,33 +69,24 @@ handleClose = () => {
   this.setState({ visible: false });
 }
 
-<Button 
-  type="default"
-  theme="blue"
-  onClick={this.handleOpen}
->
+<Button type="default" theme="blue" onClick={this.handleOpen}>
   Open Modal
 </Button>
 
 <Modal
+  title="What is Lorem Ipsum?"
   isVisible={visible}
   onClose={this.handleClose}
-  headerTitle="What is Lorem Ipsum?"
->
-  <Modal.Body>
-    <Divider theme="grey" />
-      <Modal.Content>
-        <span>
-          {'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
-        </span>
-      </Modal.Content>
-    <Divider theme="grey" />
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="default" theme="blue">
+  footer={[
+    <Button variant="ghost" theme="blue" onClick={this.handleClose}>
+      Cancel
+    </Button>,
+    <Button variant="default" theme="blue" onClick={this.handleClose}>
       Save
-    </Button>
-  </Modal.Footer>
+    </Button>,
+  ]}
+>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 </Modal>`}
             </pre>
           </Collapsible>
@@ -142,7 +125,7 @@ handleClose = () => {
           <tbody>
             <tr>
               <td>
-                headerTitle
+                title
               </td>
               <td>
                 string
@@ -153,7 +136,7 @@ handleClose = () => {
                 no
               </td>
               <td>
-                Sets title for Modal.
+                Sets title of Modal.
               </td>
             </tr>
             <tr>
