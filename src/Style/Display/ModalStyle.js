@@ -36,8 +36,32 @@ export const ModalContentArea = styled.div`
   position: relative;
   background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
   margin: 2.5em auto;
-  max-width: 95vw;
   outline: none;
+
+  ${({ size }) => {
+    switch (size) {
+      case 's':
+        return `
+          width: 300px;
+        `;
+      case 'm':
+        return `
+          width: 500px;
+        `;
+      case 'l':
+        return `
+          width: 800px;
+        `;
+      case 'xl':
+        return `
+          width: 920px;
+        `;
+      default:
+        return `
+          width: 500px;
+        `;
+    }
+  }}
 
   ${({ centering }) => {
     if (centering) {
@@ -50,6 +74,7 @@ export const ModalContentArea = styled.div`
     
   @media ${Device.mobileM} {
     padding: 1em;
+    width: 95vw;
   }
 
   ${({ removeAnimation, isOpen }) => {

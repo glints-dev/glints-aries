@@ -50,7 +50,7 @@ class ModalStory extends Component {
               </Button>,
             ]}
           >
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p>{'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}</p>
           </Modal>
         </div>
 
@@ -179,6 +179,31 @@ handleClose = () => {
               </td>
               <td>
                 Sets to close Modal.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                size
+              </td>
+              <td>
+                string
+              </td>
+              <td>
+                <code>m</code>
+              </td>
+              <td>
+                <code>s | m | l | xl</code>
+              </td>
+              <td>
+                no
+              </td>
+              <td>
+                Sets size of Modal. Default size is medium.
+                <p style={{ marginBottom: '0', marginTop: '1em', fontWeight: 'bold' }}>Size chart:</p>
+                <p style={{ margin: '0' }}>Small: 300px</p>
+                <p style={{ margin: '0' }}>Medium: 500px</p>
+                <p style={{ margin: '0' }}>Large: 800px</p>
+                <p style={{ margin: '0' }}>Extra Large: 920px</p>
               </td>
             </tr>
             <tr>

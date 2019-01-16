@@ -62,6 +62,7 @@ class Modal extends Component <Props, State> {
       centering,
       removeAnimation,
       footer,
+      size,
       ...defaultProps
     } = this.props;
 
@@ -87,6 +88,7 @@ class Modal extends Component <Props, State> {
             tabIndex={0}
             isOpen={isOpen}
             removeAnimation={removeAnimation}
+            size={size}
             {...defaultProps}
           >
             <ModalHeader id="modal-header">
@@ -122,7 +124,9 @@ type Props = {
   className: string,
   hideContentArea: boolean,
   centering: boolean,
+  removeAnimation: boolean,
   footer: React$Node,
+  size: string,
 }
 
 type State = {
