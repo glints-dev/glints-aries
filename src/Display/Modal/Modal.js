@@ -60,6 +60,7 @@ class Modal extends Component <Props, State> {
       className,
       hideContentArea,
       centering,
+      removeAnimation,
       footer,
       ...defaultProps
     } = this.props;
@@ -73,6 +74,7 @@ class Modal extends Component <Props, State> {
         centering={centering}
         onClick={() => onClose()}
         isOpen={isOpen}
+        removeAnimation={removeAnimation}
       >
         <ModalDialog id="modal-dialog">
           <ModalContentArea
@@ -84,6 +86,7 @@ class Modal extends Component <Props, State> {
             onClick={e => e.stopPropagation()}
             tabIndex={0}
             isOpen={isOpen}
+            removeAnimation={removeAnimation}
             {...defaultProps}
           >
             <ModalHeader id="modal-header">

@@ -19,7 +19,7 @@ const SliderStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Slider>
+      <Slider autoplay>
         <Slider.Item>
           <Blockquote>
             <Blockquote.Profile>
@@ -118,6 +118,7 @@ const SliderStory = () => (
 
 <Slider
   afterChange={this.getCurrentIndex}
+  autoplay
 >
   <Slider.Item>
     <Component />
