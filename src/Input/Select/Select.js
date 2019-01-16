@@ -51,14 +51,22 @@ class Select extends Component <Props, State> {
     return listener;
   }
 
-  handleChange = (e) => {
-    const { children } = this.props;
+  handleChange = (onChange) => {
+    const listener = (e) => {
+      const { children } = this.props;
 
-    this.setState({
-      selectedValue: e.target.value,
-      filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
-      cursor: 0,
-    });
+      this.setState({
+        selectedValue: e.target.value,
+        filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
+        cursor: 0,
+      });
+
+      if (onChange !== undefined) {
+        return onChange();
+      }
+    };
+
+    return listener;
   }
 
   handleClick = (onOptionClick) => {
@@ -167,6 +175,7 @@ class Select extends Component <Props, State> {
       className,
       onFocus,
       onBlur,
+      onChange,
       noOptionResult,
       children,
       small,
@@ -197,7 +206,7 @@ class Select extends Component <Props, State> {
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
             onBlur={this.handleFocusOut(onBlur)}
-            onChange={this.handleChange}
+            onChange={this.handleChange(onChange)}
             onKeyDown={this.handleKeyDown}
             floating={floating}
             value={selectedValue}
