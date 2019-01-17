@@ -223,6 +223,54 @@ const SelectStory = () => (
             Sets Select to be smaller.
           </td>
         </tr>
+        <tr>
+          <td>
+            removeFloatingLabel
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Removes floating effect for placeholder.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            removeDropIcon
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Removes drop icon.
+          </td>
+        </tr>
       </tbody>
     </table>
 
@@ -293,30 +341,6 @@ const SelectStory = () => (
           </td>
           <td>
             Sets onClick for Option.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            removeFloatingLabel
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Removes floating effect for placeholder.
           </td>
         </tr>
       </tbody>

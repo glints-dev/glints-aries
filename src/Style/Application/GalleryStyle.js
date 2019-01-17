@@ -4,11 +4,12 @@ import { SecondaryColor } from '../Colors';
 export const GalleryContainer = styled.div`
   position: relative;
 
-  .modal-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  #modal-content {
+    width: 95vw;
+
+    #modal-header {
+      border-bottom: none;
+    }
   }
 `;
 

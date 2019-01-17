@@ -1,9 +1,8 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Icon from '../../General/Icon';
-import Divider from '../../General/Divider';
 
 import { escEvent } from '../../Utils/DomUtils';
 
@@ -12,8 +11,8 @@ import {
   ModalDialog,
   ModalContentArea,
   ModalHeader,
-  ModalBodyWrapper,
   ModalBody,
+  ModalFooter,
 } from '../../Style/Display/ModalStyle';
 
 class Modal extends Component <Props, State> {
@@ -54,6 +53,7 @@ class Modal extends Component <Props, State> {
 
   render() {
     const {
+      title,
       onClose,
       type,
       children,
@@ -61,7 +61,8 @@ class Modal extends Component <Props, State> {
       hideContentArea,
       centering,
       removeAnimation,
-      headerTitle,
+      footer,
+      size,
       ...defaultProps
     } = this.props;
 
@@ -76,7 +77,7 @@ class Modal extends Component <Props, State> {
         isOpen={isOpen}
         removeAnimation={removeAnimation}
       >
-        <ModalDialog id="modal-dialogarea">
+        <ModalDialog id="modal-dialog">
           <ModalContentArea
             id="modal-content"
             role="dialog"
@@ -87,15 +88,26 @@ class Modal extends Component <Props, State> {
             tabIndex={0}
             isOpen={isOpen}
             removeAnimation={removeAnimation}
+            size={size}
             {...defaultProps}
           >
-            <ModalHeader>
-              <h3>{headerTitle}</h3>
+            <ModalHeader id="modal-header">
+              <h3>{ title }</h3>
               <button type="button" onClick={() => onClose()}>
                 <Icon name="close" color={hideContentArea ? 'white' : 'black'} />
               </button>
             </ModalHeader>
-            {children}
+            <ModalBody
+              id="modal-body"
+              hideContentArea={hideContentArea}
+            >
+              {children}
+            </ModalBody>
+            <If condition={footer !== undefined}>
+              <ModalFooter id="modal-footer">
+                { footer.map(data => React.cloneElement(data, { key: data.props.children })) }
+              </ModalFooter>
+            </If>
           </ModalContentArea>
         </ModalDialog>
       </ModalContainer>
@@ -105,6 +117,7 @@ class Modal extends Component <Props, State> {
 
 type Props = {
   children: React$Node,
+  title: string,
   isVisible: boolean,
   type: string,
   onClose: Function,
@@ -112,6 +125,8 @@ type Props = {
   hideContentArea: boolean,
   centering: boolean,
   removeAnimation: boolean,
+  footer: React$Node,
+  size: string,
 }
 
 type State = {
