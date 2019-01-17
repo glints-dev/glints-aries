@@ -181,6 +181,7 @@ class Select extends Component <Props, State> {
       small,
       disableTyping,
       removeFloatingLabel,
+      removeDropIcon,
       ...defaultProps
     } = this.props;
 
@@ -223,12 +224,14 @@ class Select extends Component <Props, State> {
               {label}
             </SelectLabel>
           </If>
-          <div
-            className="select-icon"
-            aria-label="show options"
-          >
-            <Icon name="arrow-down" color="#777777" />
-          </div>
+          <If condition={!removeDropIcon}>
+            <div
+              className="select-icon"
+              aria-label="show options"
+            >
+              <Icon name="arrow-down" color="#777777" />
+            </div>
+          </If>
         </SelectWrapper>
         <SelectListWrapper
           id="select-listbox"
@@ -277,6 +280,7 @@ type Props = {
   small: boolean,
   disableTyping: boolean,
   removeFloatingLabel: boolean,
+  removeDropIcon: boolean,
 }
 
 type State = {
