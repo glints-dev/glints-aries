@@ -109,7 +109,7 @@ class Select extends Component <Props, State> {
     } else if (e.keyCode === 13) {
       e.target.blur();
       this.setState({
-        selectedValue: document.querySelector('.active').innerHTML,
+        selectedValue: document.querySelector('.active').innerText,
         filterValue: children.map(data => data),
         floating: true,
         isFocus: false,
