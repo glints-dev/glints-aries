@@ -2,7 +2,11 @@
 
 import React, { Component } from 'react';
 
-import { TooltipContainer } from '../../Style/Display/TooltipStyle';
+import {
+  TooltipContainer,
+  TooltipContent,
+  TooltipMessage,
+} from '../../Style/Display/TooltipStyle';
 
 class Tooltip extends Component <Props, State> {
   state = {
@@ -24,16 +28,24 @@ class Tooltip extends Component <Props, State> {
       <TooltipContainer
         id="aries-tooltip"
         className={className}
-        text={text}
         role="tooltip"
         aria-hidden={isHover ? 'false' : 'true'}
         aria-label={text}
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
-        position={position}
         {...defaultProps}
       >
-        {children}
+        <If condition={isHover}>
+          <TooltipContent
+            text={text}
+            position={position}
+          >
+            <TooltipMessage>
+              {text}
+            </TooltipMessage>
+          </TooltipContent>
+        </If>
+        { children }
       </TooltipContainer>
     );
   }

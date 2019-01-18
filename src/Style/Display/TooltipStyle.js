@@ -4,67 +4,72 @@ import { SecondaryColor } from '../Colors';
 export const TooltipContainer = styled.div`
   position: relative;
   display: inline-flex;
+`;
 
-  &:before,
+export const TooltipContent = styled.div`
+  position: absolute;
+  z-index: 10;
+
+  ${({ text }) => {
+    if (text.length > 150) {
+      return `
+        width: ${text.length + 20}px;
+      `;
+    }
+    return `
+      width: 150px;
+    `;
+  }}
+
+  ${({ position }) => {
+    switch (position) {
+      case 'bottom':
+        return `
+          top: 100%;
+          left: 50%;
+          padding-top: 9px;
+          transform: translateX(-50%);
+
+          &:after {
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-bottom: 9px solid ${SecondaryColor.black};
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        `;
+      default:
+        return `
+          bottom: 100%;
+          left: 50%;
+          padding-bottom: 9px;
+          transform: translateX(-50%);
+
+          &:after {
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 9px solid ${SecondaryColor.black};
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        `;
+    }
+  }}
+
   &:after {
+    content: '';
     position: absolute;
-    opacity: 0;
-    transition: all 500ms;
-    visibility: hidden;
   }
+`;
 
-  &:before {
-    content: '${({ text }) => text}';
-    width: 100%;
-    text-align: center;
-    background-color: ${SecondaryColor.black};
-    color: ${SecondaryColor.white};
-    font-size: .8em;
-    border-radius: 5px;
-    padding: 5px;
-    left: 0;
-    z-index: 100;
-
-    ${({ position }) => {
-    switch (position) {
-      case 'bottom':
-        return `
-          top: 45px;
-        `;
-      default:
-        return `
-          bottom: 45px;
-        `;
-    }
-  }}
-  }
-
-  &:hover:before,
-  &:hover:after {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    left: calc(50% - 10px);
-
-    ${({ position }) => {
-    switch (position) {
-      case 'bottom':
-        return `
-          border-bottom-color: ${SecondaryColor.black};
-          top: 25px;
-        `;
-      default:
-        return `
-          border-top-color: ${SecondaryColor.black};
-          bottom: 25px;
-        `;
-    }
-  }}
-  }
+export const TooltipMessage = styled.div`
+  background: ${SecondaryColor.black};
+  border-radius: 3px;
+  color: ${SecondaryColor.white};
+  line-height: 1.5;
+  font-size: .8em;
+  padding: 5px;
+  text-align: center;
 `;
