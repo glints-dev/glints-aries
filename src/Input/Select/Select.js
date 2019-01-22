@@ -20,6 +20,7 @@ class Select extends Component <Props, State> {
     filterValue: [],
     cursor: 0,
     notMatch: false,
+    childrenLength: 0,
   }
 
   handleFocusOut = (onBlur) => {
@@ -136,6 +137,7 @@ class Select extends Component <Props, State> {
     // Checking if children data is exist or not.
     if (children.length !== 0) {
       this.setState({
+        childrenLength: children.length,
         filterValue: children.map(data => data),
       });
     } else {
@@ -155,15 +157,18 @@ class Select extends Component <Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.children.length !== prevState.childrenLength) {
+      return {
+        filterValue: nextProps.children.map(data => data),
+        childrenLength: nextProps.children.length,
+      };
+    }
+
     if (prevState.filterValue.length === 0) {
       return { notMatch: true };
     }
 
-    if (prevState.filterValue.length !== 0) {
-      return { notMatch: false };
-    }
-
-    return { filterValue: nextProps.children.map(data => data) };
+    return { notMatch: false };
   }
 
   render() {
@@ -290,6 +295,7 @@ type State = {
   filterValue: array,
   cursor: number,
   notMatch: boolean,
+  childrenLength: number,
 };
 
 export default Select;

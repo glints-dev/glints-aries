@@ -19,7 +19,7 @@ const TooltipStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <Tooltip
-        text="Click here to apply as Software Engginer at Glints"
+        text="Click here to apply as Software Engineer at Glints"
       >
         <Tag theme="black">
           Software Engineer
@@ -30,7 +30,7 @@ const TooltipStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`<Tooltip text="Click here to apply as Software Engginer at Glints">
+          {`<Tooltip text="Click here to apply as Software Engineer at Glints">
   <Component />
 </Tooltip>`}
         </pre>
