@@ -1,51 +1,31 @@
 import React from 'react';
 
-import TextField from '../../src/Input/TextField';
-import Heading from '../../src/General/Heading';
+import AutoComplete from '../../src/Input/AutoComplete';
 import Collapsible from '../../src/Display/Collapsible';
-import Divider from '../../src/General/Divider';
 
-const TextFieldStory = () => (
+const AutoCompleteStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        Text Field
+        AutoComplete
       </h1>
       <p>
         <code>
-          {'import { TextField } from \'glints-aries\''}
+          {'import { AutoComplete } from \'glints-aries\''}
         </code>
       </p>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Text</Heading>
       <div style={{ width: '300px' }}>
-        <TextField type="text" label="Username" />
-      </div>
-    </div>
-
-    <div style={{ marginBottom: '4em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {'<TextField type="text" label="Username" value="..." />'}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <Divider theme="grey" />
-
-    <div style={{ marginTop: '4em', marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Password</Heading>
-      <div style={{ width: '300px' }}>
-        <TextField type="password" label="Password" />
+        <AutoComplete label="Location" />
       </div>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {'<TextField type="password" label="Password" value="..." />'}
+          {'<AutoComplete />'}
         </pre>
       </Collapsible>
     </div>
@@ -55,7 +35,9 @@ const TextFieldStory = () => (
         <tr style={{ borderBottom: '1px solid lightgrey' }}>
           <th colSpan="6">
             <h3 style={{ margin: '.8em 0' }}>
-              Props
+              <span style={{ fontWeight: '100' }}>Props for</span>
+              {' '}
+              AutoComplete
             </h3>
           </th>
         </tr>
@@ -83,30 +65,6 @@ const TextFieldStory = () => (
       <tbody>
         <tr>
           <td>
-            type
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            <code>
-              text
-            </code>
-          </td>
-          <td>
-            <code>
-              text | password
-            </code>
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets the type of Text Field.
-          </td>
-        </tr>
-        <tr>
-          <td>
             label
           </td>
           <td>
@@ -117,7 +75,7 @@ const TextFieldStory = () => (
             any
           </td>
           <td>
-            yes
+            no
           </td>
           <td>
             Sets placeholder value for the Text Field.
@@ -138,7 +96,7 @@ const TextFieldStory = () => (
             no
           </td>
           <td>
-            Sets value of Text Field.
+            Sets value for Input.
           </td>
         </tr>
         <tr>
@@ -158,7 +116,27 @@ const TextFieldStory = () => (
             no
           </td>
           <td>
-            Sets different style for the Text Field based on status.
+            Sets different style for Select based on status.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            disableTyping
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>false</code>
+          </td>
+          <td>
+            <code>true | false</code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            {'Disable typing on Select input, so the option can\'t be searched.'}
           </td>
         </tr>
         <tr>
@@ -187,6 +165,24 @@ const TextFieldStory = () => (
         </tr>
         <tr>
           <td>
+            onChange
+          </td>
+          <td>
+            function
+          </td>
+          <td></td>
+          <td>
+            function
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Called when select an option or value of input is changed.
+          </td>
+        </tr>
+        <tr>
+          <td>
             small
           </td>
           <td>
@@ -206,7 +202,7 @@ const TextFieldStory = () => (
             no
           </td>
           <td>
-            Sets TextField to be smaller.
+            Sets Select to be smaller.
           </td>
         </tr>
         <tr>
@@ -233,9 +229,105 @@ const TextFieldStory = () => (
             Removes floating effect for placeholder.
           </td>
         </tr>
+        <tr>
+          <td>
+            removeDropIcon
+          </td>
+          <td>
+            boolean
+          </td>
+          <td>
+            <code>
+              false
+            </code>
+          </td>
+          <td>
+            <code>
+              true | false
+            </code>
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Removes drop icon.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table className="doc-table">
+      <thead>
+        <tr style={{ borderBottom: '1px solid lightgrey' }}>
+          <th colSpan="6">
+            <h3 style={{ margin: '.8em 0' }}>
+              <span style={{ fontWeight: '100' }}>Props for</span>
+              {' '}
+              Select.Option
+            </h3>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Default Value
+          </th>
+          <th>
+            Possible Value
+          </th>
+          <th>
+            Required
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            value
+          </td>
+          <td>
+            string
+          </td>
+          <td></td>
+          <td>
+            any
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets value for Option.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            onOptionClick
+          </td>
+          <td>
+            function
+          </td>
+          <td></td>
+          <td>
+            function
+          </td>
+          <td>
+            no
+          </td>
+          <td>
+            Sets onClick for Option.
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
 );
 
-export default TextFieldStory;
+export default AutoCompleteStory;
