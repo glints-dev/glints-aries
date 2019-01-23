@@ -21,6 +21,7 @@ class Select extends Component <Props, State> {
     cursor: 0,
     notMatch: false,
     childrenLength: 0,
+    defaultValue: '',
   }
 
   handleFocusOut = (onBlur) => {
@@ -151,6 +152,7 @@ class Select extends Component <Props, State> {
         this.setState({
           floating: true,
           selectedValue: value,
+          defaultValue: value,
         });
       }
     }
@@ -166,6 +168,13 @@ class Select extends Component <Props, State> {
 
     if (prevState.filterValue.length === 0) {
       return { notMatch: true };
+    }
+
+    if (nextProps.value && nextProps.value !== prevState.defaultValue) {
+      return {
+        selectedValue: nextProps.value,
+        defaultValue: nextProps.value,
+      };
     }
 
     return { notMatch: false };
@@ -286,6 +295,7 @@ type Props = {
   disableTyping: boolean,
   removeFloatingLabel: boolean,
   removeDropIcon: boolean,
+  defaultValue: string,
 }
 
 type State = {
