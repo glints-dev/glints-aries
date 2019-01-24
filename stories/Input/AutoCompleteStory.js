@@ -7,7 +7,7 @@ const AutoCompleteStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        AutoComplete
+        AutoComplete - Unfinished
       </h1>
       <p>
         <code>

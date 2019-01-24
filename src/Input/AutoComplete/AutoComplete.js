@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 import {
   AutoCompleteContainer,
+  AutoCompleteWrapper,
   AutoCompleteLabel,
   AutoCompleteInput,
+  AutoCompleteListWrapper,
+  AutoCompleteItemWrapper,
 } from '../../Style/Input/AutoCompleteStyle';
 
 class AutoComplete extends Component <Props, State> {
@@ -56,28 +59,38 @@ class AutoComplete extends Component <Props, State> {
     const { floating } = this.state;
 
     return (
-      <AutoCompleteContainer id="aries-textfield" className={className}>
-        <AutoCompleteInput
-          type="text"
-          placeholder={removeFloatingLabel && label}
-          status={status}
-          disabled={disabled}
-          onBlur={this.handleFocusChange(onBlur)}
-          floating={floating}
-          value={value}
-          aria-label={label}
-          small={small}
-          {...defaultProps}
-        />
-        <If condition={!removeFloatingLabel}>
-          <AutoCompleteLabel
-            floating={floating}
+      <AutoCompleteContainer id="aries-autocomplete" className={className}>
+        <AutoCompleteWrapper>
+          <AutoCompleteInput
+            type="text"
+            placeholder={removeFloatingLabel && label}
             status={status}
+            disabled={disabled}
+            onBlur={this.handleFocusChange(onBlur)}
+            floating={floating}
+            value={value}
+            aria-label={label}
             small={small}
-          >
-            {label}
-          </AutoCompleteLabel>
-        </If>
+            {...defaultProps}
+          />
+          <If condition={!removeFloatingLabel}>
+            <AutoCompleteLabel
+              floating={floating}
+              status={status}
+              small={small}
+            >
+              {label}
+            </AutoCompleteLabel>
+          </If>
+        </AutoCompleteWrapper>
+        <AutoCompleteListWrapper
+          id="select-listbox"
+          role="listbox"
+          small={small}
+        >
+          <AutoCompleteItemWrapper>1</AutoCompleteItemWrapper>
+          <AutoCompleteItemWrapper>2</AutoCompleteItemWrapper>
+        </AutoCompleteListWrapper>
       </AutoCompleteContainer>
     );
   }

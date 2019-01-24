@@ -3,15 +3,11 @@ import { PrimaryColor, SecondaryColor } from '../Colors';
 
 export const AutoCompleteContainer = styled.div`
   position: relative;
+`;
+
+export const AutoCompleteWrapper = styled.div`
   display: flex;
   align-items: center;
-
-  .see-password {
-    position: absolute;
-    display: flex;
-    right: 1em;
-    cursor: pointer;
-  }
 `;
 
 export const AutoCompleteLabel = styled.label`
@@ -142,4 +138,52 @@ export const AutoCompleteInput = styled.input`
   }}
     }
   }
+`;
+
+export const AutoCompleteListWrapper = styled.ul`
+  position: absolute;
+  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+  opacity: ${({ open }) => open ? '1' : '0'};
+  transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
+  transform-origin: center top;
+  transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};
+  background: ${SecondaryColor.white};
+  width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow: auto;
+  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  padding: 0;
+  margin: 0;
+`;
+
+export const AutoCompleteItemWrapper = styled.li`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: .5em 1em;
+  list-style-type: none;
+  
+  &:first-child {
+    margin-top: .5em;
+  }
+  &:last-child {
+    margin-bottom: .5em;
+  }
+  &.active {
+    color: ${SecondaryColor.actionblue};
+    background: ${SecondaryColor.lightergrey};
+  }
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        cursor: not-allowed;
+        background: ${SecondaryColor.lightergrey};
+        color: ${SecondaryColor.grey};
+        font-style: italic;
+      `;
+    }
+  }}
 `;
