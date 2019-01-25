@@ -201,6 +201,7 @@ export const JobcardFooterWrapper = styled.footer`
   position: absolute;
   bottom: 0;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   outline: none;
 `;

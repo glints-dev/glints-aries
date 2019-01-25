@@ -99,7 +99,6 @@ class AutoComplete extends Component <Props, State> {
     if (children.length !== 0) {
       this.setState({
         childrenLength: children.length,
-        filterValue: children.map(data => data),
       });
     } else {
       this.setState({
