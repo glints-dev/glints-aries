@@ -34,9 +34,9 @@ const JobCardStory = () => (
           />
         </JobCard.Body>
         <JobCard.Footer>
-          <Button>Save</Button>
-          <Button>Apply</Button>
-          <Button variant="secondary">Detail</Button>
+          <Button small>Save</Button>
+          <Button small>Apply</Button>
+          <Button small variant="secondary">Detail</Button>
         </JobCard.Footer>
       </JobCard>
     </div>

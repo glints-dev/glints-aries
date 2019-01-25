@@ -18,7 +18,13 @@ const AutoCompleteStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <div style={{ width: '300px' }}>
-        <AutoComplete label="Location" />
+        <AutoComplete label="Location">
+          <AutoComplete.Option value="accountant">Accountant</AutoComplete.Option>
+          <AutoComplete.Option value="architecture">Architecture</AutoComplete.Option>
+          <AutoComplete.Option value="business development">Business Development</AutoComplete.Option>
+          <AutoComplete.Option value="product manager">Product Manager</AutoComplete.Option>
+          <AutoComplete.Option value="project manager">Project Manager</AutoComplete.Option>
+        </AutoComplete>
       </div>
     </div>
 

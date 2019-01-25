@@ -13,7 +13,7 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: bold;
   font-size: 1em;
-  min-width: 8.6em;
+  line-height: 1.5;
   padding: ${({ small }) => small ? '10px 20px' : '15px 40px'};
   background: transparent;
   transition: all .2s;
