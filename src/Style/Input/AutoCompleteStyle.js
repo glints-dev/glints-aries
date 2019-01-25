@@ -142,8 +142,8 @@ export const AutoCompleteInput = styled.input`
 
 export const AutoCompleteListWrapper = styled.ul`
   position: absolute;
-  visibility: ${({ open }) => open ? 'visible' : 'visible'};
-  opacity: ${({ open }) => open ? '1' : '1'};
+  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+  opacity: ${({ open }) => open ? '1' : '0'};
   transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
   transform-origin: center top;
   transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};

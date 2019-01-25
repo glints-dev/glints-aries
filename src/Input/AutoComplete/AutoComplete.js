@@ -16,11 +16,10 @@ class AutoComplete extends Component <Props, State> {
 
     this.state = {
       floating: false,
+      isOpen: false,
       selectedValue: '',
       filterValue: [],
       cursor: 0,
-      childrenLength: 0,
-      notMatch: false,
       defaultValue: '',
     };
   }
@@ -85,29 +84,32 @@ class AutoComplete extends Component <Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.filterValue.length === 0) {
-      return { notMatch: true };
+    if (prevState.selectedValue === '' || prevState.filterValue.length === 0) {
+      return {
+        isOpen: false,
+        filterValue: [],
+      };
     }
 
-    return { notMatch: false };
+    if (prevState.filterValue.length !== 0) {
+      return { isOpen: true };
+    }
+
+    if (nextProps.value && nextProps.value !== prevState.defaultValue) {
+      return {
+        selectedValue: nextProps.value,
+        defaultValue: nextProps.value,
+      };
+    }
+
+    return null;
   }
 
   componentDidMount() {
-    const { value, children } = this.props;
-
-    // Checking if children data is exist or not.
-    if (children.length !== 0) {
-      this.setState({
-        childrenLength: children.length,
-      });
-    } else {
-      this.setState({
-        notMatch: true,
-      });
-    }
+    const { value } = this.props;
 
     if (value !== undefined) {
-      if (value !== '') {
+      if (value !== '' || value !== null) {
         this.setState({
           floating: true,
           selectedValue: value,
@@ -133,6 +135,7 @@ class AutoComplete extends Component <Props, State> {
     } = this.props;
 
     const {
+      isOpen,
       floating,
       cursor,
       selectedValue,
@@ -168,6 +171,7 @@ class AutoComplete extends Component <Props, State> {
         <AutoCompleteListWrapper
           id="select-listbox"
           role="listbox"
+          open={isOpen}
           small={small}
         >
           {filterValue.map((data, index) => (
@@ -201,10 +205,9 @@ type Props = {
 }
 
 type State = {
+  isOpen: boolean,
   floating: boolean,
   cursor: number,
-  childrenLength: number,
-  notMatch: boolean,
   defaultValue: string,
 };
 
