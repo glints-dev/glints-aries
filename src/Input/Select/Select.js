@@ -163,6 +163,8 @@ class Select extends Component <Props, State> {
       return {
         filterValue: nextProps.children.map(data => data),
         childrenLength: nextProps.children.length,
+        selectedValue: nextProps.value,
+        defaultValue: nextProps.value,
       };
     }
 
