@@ -170,7 +170,7 @@ class Select extends Component <Props, State> {
       return { notMatch: true };
     }
 
-    if (nextProps.value && nextProps.value !== prevState.defaultValue) {
+    if (nextProps.value !== undefined && nextProps.value !== prevState.defaultValue) {
       return {
         selectedValue: nextProps.value,
         defaultValue: nextProps.value,
