@@ -56,13 +56,13 @@ class AutoComplete extends Component <Props, State> {
     return listener;
   }
 
-  handleClick = () => {
+  handleClick = (onOptionClick) => {
     const listener = (e) => {
-      const { children, onChange } = this.props;
+      const { onChange } = this.props;
 
       this.setState({
         selectedValue: e.currentTarget.innerText,
-        filterValue: children.map(data => data),
+        filterValue: [],
       });
 
       if (onChange !== undefined) {
@@ -75,6 +75,36 @@ class AutoComplete extends Component <Props, State> {
     };
 
     return listener;
+  }
+
+  handleKeyDown = (e) => {
+    const { onChange } = this.props;
+    const { cursor, filterValue } = this.state;
+
+    if (e.keyCode === 38 && cursor > 0) {
+      this.setState({
+        cursor: cursor - 1,
+      });
+    } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
+      this.setState({
+        cursor: cursor + 1,
+      });
+    } else if (e.keyCode === 13) {
+      e.target.blur();
+      this.setState({
+        selectedValue: document.querySelector('.active').innerText,
+        filterValue: [],
+        floating: true,
+      });
+
+      if (onChange !== undefined) {
+        const itemValue = document.querySelector('.active').dataset.value;
+        onChange(itemValue);
+      }
+    } else if (e.keyCode === 27) {
+      e.target.blur();
+      this.setState({ isOpen: false });
+    }
   }
 
   handleMouseEnter = (e) => {
@@ -152,6 +182,7 @@ class AutoComplete extends Component <Props, State> {
             disabled={disabled}
             onBlur={this.handleFocusChange(onBlur)}
             onChange={this.handleChange(onChange)}
+            onKeyDown={this.handleKeyDown}
             floating={floating}
             value={selectedValue}
             aria-label={label}
@@ -181,7 +212,7 @@ class AutoComplete extends Component <Props, State> {
               role="option"
               data-id={index}
               data-value={data.props.value}
-              onClick={this.handleClick}
+              onClick={this.handleClick(data.props.onOptionClick)}
               onMouseEnter={this.handleMouseEnter}
               tabIndex="0"
             >

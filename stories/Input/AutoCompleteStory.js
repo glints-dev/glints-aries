@@ -18,7 +18,7 @@ const AutoCompleteStory = () => (
 
     <div style={{ marginBottom: '2em' }}>
       <div style={{ width: '300px' }}>
-        <AutoComplete label="Location" value="Accountant">
+        <AutoComplete label="Location">
           <AutoComplete.Option value="accountant">Accountant</AutoComplete.Option>
           <AutoComplete.Option value="architecture">Architecture</AutoComplete.Option>
           <AutoComplete.Option value="business development">Business Development</AutoComplete.Option>
@@ -123,26 +123,6 @@ const AutoCompleteStory = () => (
           </td>
           <td>
             Sets different style for Select based on status.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            disableTyping
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            {'Disable typing on Select input, so the option can\'t be searched.'}
           </td>
         </tr>
         <tr>
