@@ -1,351 +1,145 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
+import StoryBookComponent from '../StoryBookComponent';
 
 import Select from '../../src/Input/Select';
-import Collapsible from '../../src/Display/Collapsible';
 
-const SelectStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Select
-      </h1>
-      <p>
-        <code>
-          {'import { Select } from \'glints-aries\''}
-        </code>
-      </p>
-    </div>
+const props = {
+  Select: [
+    {
+      name: 'label',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets placeholder value for the Text Field.',
+    },
+    {
+      name: 'value',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Sets value for Input.',
+    },
+    {
+      name: 'status',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: <code>success | error</code>,
+      require: 'no',
+      description: 'Sets different style for Select based on status.',
+    },
+    {
+      name: 'disableTyping',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: "Disable typing on Select input, so the option can't be searched.",
+    },
+    {
+      name: 'disabled',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Disable the Text Field.',
+    },
+    {
+      name: 'onChange',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Called when select an option or value of input is changed.',
+    },
+    {
+      name: 'small',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets Select to be smaller.',
+    },
+    {
+      name: 'removeFloatingLabel',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Removes floating effect for placeholder.',
+    },
+    {
+      name: 'removeDropIcon',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Removes drop icon.',
+    },
+  ],
+  'Select.Option': [
+    {
+      name: 'value',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets value for Option.',
+    },
+    {
+      name: 'onOptionClick',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Sets onClick for Option.',
+    },
+  ],
+};
 
-    <div style={{ marginBottom: '2em' }}>
-      <div style={{ width: '300px' }}>
-        <Select
-          label="Jobs"
-          noOptionResult="No Result Found."
+class SelectStory extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(async () => {
+      await this.setState({
+        value: 'something',
+      });
+    }, 1000);
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <Fragment>
+        <button type="button" onClick={() => this.setState({ value: '' })}>Click</button>
+        <StoryBookComponent
+          title="Select"
+          code="import { Select } from 'glints-aries'"
+          propsObject={props}
         >
-          <Select.Option value="accountant">Accountant</Select.Option>
-          <Select.Option value="business development">Business Development</Select.Option>
-          <Select.Option value="finance">Finance</Select.Option>
-          <Select.Option value="software engineer">Software Engineer</Select.Option>
-        </Select>
-      </div>
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`handleChange = (value) => {
-  console.log('selected value: ', value);
-}
-
-<Select
-  label="Jobs"
-  onChange={this.handleChange}
->
-  <Select.Option value="accountant">Accountant</Select.Option>
-  <Select.Option value="finance">Finance</Select.Option>
-</Select>`}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              Select
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            label
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets placeholder value for the Text Field.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            value
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets value for Input.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            status
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            <code>
-              success | error
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets different style for Select based on status.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            disableTyping
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            {'Disable typing on Select input, so the option can\'t be searched.'}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            disabled
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Disable the Text Field.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            onChange
-          </td>
-          <td>
-            function
-          </td>
-          <td></td>
-          <td>
-            function
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Called when select an option or value of input is changed.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            small
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets Select to be smaller.
-          </td>
-        </tr>
-        <tr>
-          <td>
+          <Select
+            value={value}
+            label="Jobs"
+            noOptionResult="No Result Found."
             removeFloatingLabel
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Removes floating effect for placeholder.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            removeDropIcon
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Removes drop icon.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              Select.Option
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            value
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets value for Option.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            onOptionClick
-          </td>
-          <td>
-            function
-          </td>
-          <td></td>
-          <td>
-            function
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets onClick for Option.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-);
+          >
+            <Select.Option value="accountant">Accountant</Select.Option>
+            <Select.Option value="business development">Business Development</Select.Option>
+            <Select.Option value="finance">Finance</Select.Option>
+            <Select.Option value="software engineer">Software Engineer</Select.Option>
+          </Select>
+        </StoryBookComponent>
+      </Fragment>
+    );
+  }
+}
 
 export default SelectStory;
