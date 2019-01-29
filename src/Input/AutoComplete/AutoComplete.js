@@ -24,6 +24,35 @@ class AutoComplete extends Component <Props, State> {
     };
   }
 
+  handleFocus = (onFocus) => {
+    const listener = (e) => {
+      this.setState({
+        isOpen: true,
+      });
+
+      if (onFocus !== undefined) {
+        return onFocus(e);
+      }
+    };
+
+    return listener;
+  }
+
+  handleFocusOut = (onBlur) => {
+    const listener = (e) => {
+      this.setState({
+        floating: e.target.value.length > 0,
+        isOpen: false,
+      });
+
+      if (onBlur !== undefined) {
+        return onBlur();
+      }
+    };
+
+    return listener;
+  }
+
   handleChange = (onChange) => {
     const listener = (e) => {
       const { children } = this.props;
@@ -36,20 +65,6 @@ class AutoComplete extends Component <Props, State> {
 
       if (onChange !== undefined) {
         return onChange();
-      }
-    };
-
-    return listener;
-  }
-
-  handleFocusChange = (onBlur) => {
-    const listener = (e) => {
-      this.setState({
-        floating: e.target.value.length > 0,
-      });
-
-      if (onBlur !== undefined) {
-        return onBlur();
       }
     };
 
@@ -121,7 +136,7 @@ class AutoComplete extends Component <Props, State> {
       };
     }
 
-    if (prevState.filterValue.length !== 0) {
+    if (prevState.filterValue.length !== 0 && !prevState.isOpen) {
       return { isOpen: true };
     }
 
@@ -157,6 +172,7 @@ class AutoComplete extends Component <Props, State> {
       status,
       disabled,
       className,
+      onFocus,
       onBlur,
       onChange,
       small,
@@ -180,7 +196,8 @@ class AutoComplete extends Component <Props, State> {
             placeholder={removeFloatingLabel && label}
             status={status}
             disabled={disabled}
-            onBlur={this.handleFocusChange(onBlur)}
+            onFocus={this.handleFocus(onFocus)}
+            onBlur={this.handleFocusOut(onBlur)}
             onChange={this.handleChange(onChange)}
             onKeyDown={this.handleKeyDown}
             floating={floating}
