@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import StoryBookComponent from '../StoryBookComponent';
 
 import Select from '../../src/Input/Select';
+import { width } from 'window-size';
 
 const props = {
   Select: [
@@ -119,23 +120,24 @@ class SelectStory extends React.Component {
     const { value } = this.state;
     return (
       <Fragment>
-        <button type="button" onClick={() => this.setState({ value: '' })}>Click</button>
         <StoryBookComponent
           title="Select"
           code="import { Select } from 'glints-aries'"
           propsObject={props}
         >
-          <Select
-            value={value}
-            label="Jobs"
-            noOptionResult="No Result Found."
-            removeFloatingLabel
-          >
-            <Select.Option value="accountant">Accountant</Select.Option>
-            <Select.Option value="business development">Business Development</Select.Option>
-            <Select.Option value="finance">Finance</Select.Option>
-            <Select.Option value="software engineer">Software Engineer</Select.Option>
-          </Select>
+          <div style={{ width: '300px' }}>
+            <Select
+              value={value}
+              label="Jobs"
+              noOptionResult="No Result Found."
+              removeFloatingLabel
+            >
+              <Select.Option value="accountant">Accountant</Select.Option>
+              <Select.Option value="business development">Business Development</Select.Option>
+              <Select.Option value="finance">Finance</Select.Option>
+              <Select.Option value="software engineer">Software Engineer</Select.Option>
+            </Select>
+          </div>
         </StoryBookComponent>
       </Fragment>
     );
