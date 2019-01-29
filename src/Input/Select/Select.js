@@ -64,7 +64,7 @@ class Select extends Component <Props, State> {
       });
 
       if (onChange !== undefined) {
-        return onChange();
+        return onChange(e);
       }
     };
 
