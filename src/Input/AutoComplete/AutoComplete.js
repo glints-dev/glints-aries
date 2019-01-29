@@ -26,9 +26,13 @@ class AutoComplete extends Component <Props, State> {
 
   handleFocus = (onFocus) => {
     const listener = (e) => {
-      this.setState({
-        isOpen: true,
-      });
+      const { children } = this.props;
+
+      if (e.target.value !== '') {
+        this.setState({
+          filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
+        });
+      }
 
       if (onFocus !== undefined) {
         return onFocus(e);
@@ -42,7 +46,7 @@ class AutoComplete extends Component <Props, State> {
     const listener = (e) => {
       this.setState({
         floating: e.target.value.length > 0,
-        isOpen: false,
+        filterValue: [],
       });
 
       if (onBlur !== undefined) {
@@ -136,7 +140,7 @@ class AutoComplete extends Component <Props, State> {
       };
     }
 
-    if (prevState.filterValue.length !== 0 && !prevState.isOpen) {
+    if (prevState.filterValue.length !== 0) {
       return { isOpen: true };
     }
 
@@ -149,6 +153,11 @@ class AutoComplete extends Component <Props, State> {
 
     return null;
   }
+
+  // componentDidUpdate(prevProps, nextState) {
+  //   console.log(prevProps);
+  //   console.log(nextState);
+  // }
 
   componentDidMount() {
     const { value } = this.props;
