@@ -7,7 +7,7 @@ const AutoCompleteStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        AutoComplete - Unfinished
+        AutoComplete
       </h1>
       <p>
         <code>
@@ -31,7 +31,20 @@ const AutoCompleteStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {'<AutoComplete />'}
+          {`handleChange = (value) => {
+  console.log('selected value: ', value);
+}
+
+<AutoComplete
+  label="Location"
+  onChange={this.handleChange}
+>
+  <AutoComplete.Option value="accountant">Accountant</AutoComplete.Option>
+  <AutoComplete.Option value="architecture">Architecture</AutoComplete.Option>
+  <AutoComplete.Option value="business development">Business Development</AutoComplete.Option>
+  <AutoComplete.Option value="product manager">Product Manager</AutoComplete.Option>
+  <AutoComplete.Option value="project manager">Project Manager</AutoComplete.Option>
+</AutoComplete>`}
         </pre>
       </Collapsible>
     </div>
@@ -213,30 +226,6 @@ const AutoCompleteStory = () => (
           </td>
           <td>
             Removes floating effect for placeholder.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            removeDropIcon
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              false
-            </code>
-          </td>
-          <td>
-            <code>
-              true | false
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Removes drop icon.
           </td>
         </tr>
       </tbody>

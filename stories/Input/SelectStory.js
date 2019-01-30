@@ -100,48 +100,26 @@ const props = {
   ],
 };
 
-class SelectStory extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      value: '',
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(async () => {
-      await this.setState({
-        value: 'something',
-      });
-    }, 1000);
-  }
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Fragment>
-        <StoryBookComponent
-          title="Select"
-          code="import { Select } from 'glints-aries'"
-          propsObject={props}
+const SelectStory = () => (
+  <Fragment>
+    <StoryBookComponent
+      title="Select"
+      code="import { Select } from 'glints-aries'"
+      propsObject={props}
+    >
+      <div style={{ width: '300px' }}>
+        <Select
+          label="Jobs"
+          noOptionResult="No Result Found."
         >
-          <div style={{ width: '300px' }}>
-            <Select
-              value={value}
-              label="Jobs"
-              noOptionResult="No Result Found."
-              removeFloatingLabel
-            >
-              <Select.Option value="accountant">Accountant</Select.Option>
-              <Select.Option value="business development">Business Development</Select.Option>
-              <Select.Option value="finance">Finance</Select.Option>
-              <Select.Option value="software engineer">Software Engineer</Select.Option>
-            </Select>
-          </div>
-        </StoryBookComponent>
-      </Fragment>
-    );
-  }
-}
+          <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">Business Development</Select.Option>
+          <Select.Option value="finance">Finance</Select.Option>
+          <Select.Option value="software engineer">Software Engineer</Select.Option>
+        </Select>
+      </div>
+    </StoryBookComponent>
+  </Fragment>
+);
 
 export default SelectStory;

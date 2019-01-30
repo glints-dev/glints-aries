@@ -160,11 +160,16 @@ class Select extends Component <Props, State> {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.children.length !== prevState.childrenLength) {
+      if (nextProps.value) {
+        return {
+          selectedValue: nextProps.value,
+          defaultValue: nextProps.value,
+        };
+      }
+
       return {
         filterValue: nextProps.children.map(data => data),
         childrenLength: nextProps.children.length,
-        selectedValue: nextProps.value,
-        defaultValue: nextProps.value,
       };
     }
 
@@ -172,7 +177,7 @@ class Select extends Component <Props, State> {
       return { notMatch: true };
     }
 
-    if (nextProps.value !== undefined && nextProps.value !== prevState.defaultValue) {
+    if (nextProps.value && nextProps.value !== prevState.defaultValue) {
       return {
         selectedValue: nextProps.value,
         defaultValue: nextProps.value,

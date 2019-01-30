@@ -68,7 +68,7 @@ class AutoComplete extends Component <Props, State> {
       });
 
       if (onChange !== undefined) {
-        return onChange();
+        return onChange(e);
       }
     };
 
@@ -154,11 +154,6 @@ class AutoComplete extends Component <Props, State> {
     return null;
   }
 
-  // componentDidUpdate(prevProps, nextState) {
-  //   console.log(prevProps);
-  //   console.log(nextState);
-  // }
-
   componentDidMount() {
     const { value } = this.props;
 
@@ -199,7 +194,7 @@ class AutoComplete extends Component <Props, State> {
 
     return (
       <AutoCompleteContainer id="aries-autocomplete" className={className}>
-        <AutoCompleteWrapper>
+        <AutoCompleteWrapper id="autocomplete-inputwrapper">
           <AutoCompleteInput
             type="text"
             placeholder={removeFloatingLabel && label}
@@ -226,8 +221,9 @@ class AutoComplete extends Component <Props, State> {
           </If>
         </AutoCompleteWrapper>
         <AutoCompleteListWrapper
-          id="select-listbox"
+          id="autocomplete-listbox"
           role="listbox"
+          aria-hidden={!isOpen && true}
           open={isOpen}
           small={small}
         >
