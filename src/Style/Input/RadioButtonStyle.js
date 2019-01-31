@@ -26,7 +26,7 @@ export const RadioLabel = styled.span`
     display: block; 
     width: 1em;
     height: 1em;
-    background: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+    background: ${({ theme }) => theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.darkgreen}`};
     position: absolute;
     border-radius: 50%;
     top: .2em;

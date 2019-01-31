@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import StoryBookComponent from '../StoryBookComponent';
 
 import Select from '../../src/Input/Select';
-import { width } from 'window-size';
 
 const props = {
   Select: [
@@ -100,26 +99,45 @@ const props = {
   ],
 };
 
-const SelectStory = () => (
-  <Fragment>
-    <StoryBookComponent
-      title="Select"
-      code="import { Select } from 'glints-aries'"
-      propsObject={props}
-    >
-      <div style={{ width: '300px' }}>
-        <Select
-          label="Jobs"
-          noOptionResult="No Result Found."
+class SelectStory extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ value: 'something' });
+    }, 500);
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <Fragment>
+        <StoryBookComponent
+          title="Select"
+          code="import { Select } from 'glints-aries'"
+          propsObject={props}
         >
-          <Select.Option value="accountant">Accountant</Select.Option>
-          <Select.Option value="business development">Business Development</Select.Option>
-          <Select.Option value="finance">Finance</Select.Option>
-          <Select.Option value="software engineer">Software Engineer</Select.Option>
-        </Select>
-      </div>
-    </StoryBookComponent>
-  </Fragment>
-);
+          <div style={{ width: '300px' }}>
+            <Select
+              label="Jobs"
+              noOptionResult="No Result Found."
+              value={value}
+            >
+              <Select.Option value="accountant">Accountant</Select.Option>
+              <Select.Option value="business development">Business Development</Select.Option>
+              <Select.Option value="finance">Finance</Select.Option>
+              <Select.Option value="software engineer">Software Engineer</Select.Option>
+            </Select>
+          </div>
+        </StoryBookComponent>
+      </Fragment>
+    );
+  }
+}
 
 export default SelectStory;

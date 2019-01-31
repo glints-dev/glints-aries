@@ -15,7 +15,7 @@ export const TabsHeader = styled.div`
     display: flex;
     white-space: nowrap;
     overflow: auto;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 0;
     margin: 0;
     
@@ -43,6 +43,7 @@ export const TabsHeader = styled.div`
 
         button {
           font-weight: bold;
+          text-transform: uppercase;
         }
       }
 
@@ -60,6 +61,7 @@ export const TabsHeader = styled.div`
         border: none;
         cursor: pointer;
         outline: none;
+        text-transform: uppercase;
       }
     }
   }

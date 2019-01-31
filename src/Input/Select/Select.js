@@ -164,6 +164,7 @@ class Select extends Component <Props, State> {
         return {
           selectedValue: nextProps.value,
           defaultValue: nextProps.value,
+          floating: true,
         };
       }
 
@@ -181,6 +182,7 @@ class Select extends Component <Props, State> {
       return {
         selectedValue: nextProps.value,
         defaultValue: nextProps.value,
+        floating: true,
       };
     }
 

@@ -73,7 +73,6 @@ export const ModalContentArea = styled.div`
   }}
     
   @media ${Device.mobileM} {
-    padding: 1em;
     width: 95vw;
   }
 
@@ -91,11 +90,14 @@ export const ModalContentArea = styled.div`
 export const ModalHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  font-size: 1.2em;
+  align-items: center;
+  align-content: center;
+  font-size: 1.6em;
   border-bottom: 1px solid ${SecondaryColor.lightgrey};
   padding: .8em;
 
   h3 {
+    font-size: 1em;
     text-transform: uppercase;
     margin: 0;
     margin-right: 36px;
@@ -107,23 +109,24 @@ export const ModalHeader = styled.header`
     border: none;
     cursor: pointer;
     padding: 0;
+    width: 15px;
   }
 `;
 
 export const ModalBody = styled.section`
   position: relative;
-  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em'};
+  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em 2em'};
 `;
 
 export const ModalFooter = styled.footer`
   position: relative;
   display: flex;
-  padding: .8em;
+  padding: 1em 2em;
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
 
   * {
-    margin-left: 12px;
+    margin-left: 10px;
 
     &:first-child {
       margin-left: 0;
