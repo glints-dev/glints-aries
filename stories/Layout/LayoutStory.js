@@ -42,16 +42,14 @@ class LayoutStory extends Component {
             </code>
           </p>
         </div>
-
         <Layout>
           <Body>
-              Body
+            Body
           </Body>
           <Footer>
-              Footer
+            Footer
           </Footer>
         </Layout>
-
         <table className="doc-table">
           <thead>
             <tr>

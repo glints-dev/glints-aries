@@ -4,7 +4,7 @@ import { PrimaryColor, SecondaryColor } from '../Colors';
 export const TagContent = styled.label`
   display: flex;
   align-items: center;
-  padding: .4em 1em;
+  padding: .4em .9em;
   outline: none;
 `;
 
@@ -40,7 +40,7 @@ export const TagContainer = styled.div`
           `;
         default:
           return `
-            background: ${SecondaryColor.lightgrey};
+            background: ${SecondaryColor.lightergrey};
           `;
       }
     } else {

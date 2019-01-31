@@ -37,8 +37,8 @@ export const CheckboxContainer = styled.div`
     }
 
     &:checked + label:before {
-      background: ${SecondaryColor.green};
-      border: 2px solid ${SecondaryColor.green};
+      background: ${SecondaryColor.darkgreen};
+      border: 2px solid ${SecondaryColor.darkgreen};
     }
   }
 

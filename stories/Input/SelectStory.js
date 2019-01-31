@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import StoryBookComponent from '../StoryBookComponent';
 
 import Select from '../../src/Input/Select';
-import { width } from 'window-size';
 
 const props = {
   Select: [
@@ -101,25 +100,23 @@ const props = {
 };
 
 const SelectStory = () => (
-  <Fragment>
-    <StoryBookComponent
-      title="Select"
-      code="import { Select } from 'glints-aries'"
-      propsObject={props}
-    >
-      <div style={{ width: '300px' }}>
-        <Select
-          label="Jobs"
-          noOptionResult="No Result Found."
-        >
-          <Select.Option value="accountant">Accountant</Select.Option>
-          <Select.Option value="business development">Business Development</Select.Option>
-          <Select.Option value="finance">Finance</Select.Option>
-          <Select.Option value="software engineer">Software Engineer</Select.Option>
-        </Select>
-      </div>
-    </StoryBookComponent>
-  </Fragment>
+  <StoryBookComponent
+    title="Select"
+    code="import { Select } from 'glints-aries'"
+    propsObject={props}
+  >
+    <div style={{ width: '300px' }}>
+      <Select
+        label="Jobs"
+        noOptionResult="No Result Found."
+      >
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">Business Development</Select.Option>
+        <Select.Option value="finance">Finance</Select.Option>
+        <Select.Option value="software engineer">Software Engineer</Select.Option>
+      </Select>
+    </div>
+  </StoryBookComponent>
 );
 
 export default SelectStory;
