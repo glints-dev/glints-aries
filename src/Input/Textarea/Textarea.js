@@ -76,6 +76,15 @@ class Textarea extends Component <Props, State> {
     });
   }
 
+  componentDidUpdate() {
+    const { value } = this.props;
+    const { floating } = this.state;
+    console.log('value', value);
+    if (value && value !== '' && !floating) {
+      this.setState({ floating: true });
+    }
+  }
+
   render() {
     const {
       label,
