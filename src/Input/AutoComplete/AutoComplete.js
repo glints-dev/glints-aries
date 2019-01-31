@@ -157,14 +157,12 @@ class AutoComplete extends Component <Props, State> {
   componentDidMount() {
     const { value } = this.props;
 
-    if (value !== undefined) {
-      if (value !== '' || value !== null) {
-        this.setState({
-          floating: true,
-          selectedValue: value,
-          defaultValue: value,
-        });
-      }
+    if (value !== undefined && value !== '' && value !== null) {
+      this.setState({
+        floating: true,
+        selectedValue: value,
+        defaultValue: value,
+      });
     }
   }
 

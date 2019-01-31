@@ -147,14 +147,12 @@ class Select extends Component <Props, State> {
       });
     }
 
-    if (value !== undefined) {
-      if (value !== '') {
-        this.setState({
-          floating: true,
-          selectedValue: value,
-          defaultValue: value,
-        });
-      }
+    if (value !== undefined && value !== '' && value !== null) {
+      this.setState({
+        floating: true,
+        selectedValue: value,
+        defaultValue: value,
+      });
     }
   }
 

@@ -1,20 +1,45 @@
 /* @flow */
 
 import React from 'react';
-import { DefaultBtn } from '../../Style/General/ButtonStyle';
+import { DefaultBtnContainer, DefaultBtn } from '../../Style/General/ButtonStyle';
 
-const DefaultButton = ({ children, ...defaultProps }: Props) => (
-  <DefaultBtn
+const DefaultButton = ({
+  children,
+  className,
+  theme,
+  disabled,
+  block,
+  small,
+  ...defaultProps
+}: Props) => (
+  <DefaultBtnContainer
     id="aries-defaultbtn"
-    {...defaultProps}
+    className={className}
+    theme={theme}
+    disabled={disabled}
+    block={block}
+    small={small}
   >
-    { children }
-  </DefaultBtn>
+    <DefaultBtn
+      id="defaultbtn-content"
+      theme={theme}
+      disabled={disabled}
+      block={block}
+      small={small}
+      {...defaultProps}
+    >
+      {children}
+    </DefaultBtn>
+  </DefaultBtnContainer>
 );
 
 type Props = {
   children: React$Node,
   className: string,
+  theme: string,
+  disabled: boolean,
+  block: boolean,
+  small: boolean,
 }
 
 export default DefaultButton;

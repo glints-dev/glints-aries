@@ -1,20 +1,45 @@
 /* @flow */
 
 import React from 'react';
-import { GhostBtn } from '../../Style/General/ButtonStyle';
+import { GhostBtnContainer, GhostBtn } from '../../Style/General/ButtonStyle';
 
-const GhostButton = ({ children, ...defaultProps }: Props) => (
-  <GhostBtn
+const GhostButton = ({
+  children,
+  className,
+  theme,
+  disabled,
+  block,
+  small,
+  ...defaultProps
+}: Props) => (
+  <GhostBtnContainer
     id="aries-ghostbtn"
-    {...defaultProps}
+    className={className}
+    theme={theme}
+    disabled={disabled}
+    block={block}
+    small={small}
   >
-    {children}
-  </GhostBtn>
+    <GhostBtn
+      id="ghostbtn-content"
+      theme={theme}
+      disabled={disabled}
+      block={block}
+      small={small}
+      {...defaultProps}
+    >
+      {children}
+    </GhostBtn>
+  </GhostBtnContainer>
 );
 
 type Props = {
   children: React$Node,
   className: string,
+  theme: string,
+  disabled: boolean,
+  block: boolean,
+  small: boolean,
 }
 
 export default GhostButton;

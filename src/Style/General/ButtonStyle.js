@@ -23,6 +23,48 @@ const Button = styled.button`
  * Default Button
  */
 
+export const DefaultBtnContainer = styled.div`
+  position: relative;
+  display: ${({ block }) => block ? 'flex' : 'inline-flex'};
+  z-index: 1;
+
+  ${({ disabled }) => {
+    if (!disabled) {
+      return `
+      &:active {
+        background: ${SecondaryColor.black};
+        color: ${SecondaryColor.white};
+        transform: translate3d(2px, 2px, 0);
+        transition: all .2s;
+      }
+
+      &:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
+        top: 6px;
+        left: 6px;
+        z-index: -1;
+        transition: all .2s;
+      }
+
+      &:hover:after {
+        opacity: 1;
+        transition: all .2s;
+      }
+
+      &:active:after {
+        transform: translate3d(-6px, -6px, 0);
+        transition: all .2s;
+      }
+      `;
+    }
+  }}
+`;
+
 export const DefaultBtn = styled(Button)`
   width: ${({ block }) => block && '100%'};
 
@@ -56,39 +98,6 @@ export const DefaultBtn = styled(Button)`
       return `
         background-color: ${SecondaryColor.lightgrey};
         cursor: not-allowed;
-      `;
-    }
-    if (!disabled) {
-      return `
-      &:active {
-        background: ${SecondaryColor.black};
-        color: ${SecondaryColor.white};
-        transform: translate3d(2px, 2px, 0);
-        transition: all .2s;
-      }
-
-      &:after {
-        content: '';
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
-        top: 6px;
-        left: 6px;
-        z-index: -1;
-        transition: all .2s;
-      }
-
-      &:hover:after {
-        opacity: 1;
-        transition: all .2s;
-      }
-
-      &:active:after {
-        transform: translate3d(-6px, -6px, 0);
-        transition: all .2s;
-      }
       `;
     }
   }}
@@ -322,6 +331,7 @@ export const SecondaryContainer = styled.div`
 export const GhostBtn = styled(Button)`
   transition: background-color .5s;
   width: ${({ block }) => block && '100%'};
+  background: ${SecondaryColor.white};
 
   ${(props) => {
     switch (props.theme) {
@@ -393,12 +403,18 @@ export const GhostBtn = styled(Button)`
         cursor: not-allowed;
       `;
     }
+  }}
+`;
+
+export const GhostBtnContainer = styled.div`
+  position: relative;
+  display: ${({ block }) => block ? 'flex' : 'inline-flex'};
+  z-index: 1;
+
+  ${({ disabled }) => {
     if (!disabled) {
       return `
         &:active {
-          background-color: ${SecondaryColor.black};
-          color: ${SecondaryColor.white};
-          border: 2px solid ${SecondaryColor.black};
           transition: background-color .5s; 
           transform: translate3d(2px, 2px, 0);
           transition: all .2s;
@@ -429,6 +445,20 @@ export const GhostBtn = styled(Button)`
         `;
     }
   }}
+
+  ${GhostBtn} {
+    ${({ disabled }) => {
+    if (!disabled) {
+      return `
+        &:active {
+          background-color: ${SecondaryColor.black};
+          color: ${SecondaryColor.white};
+          border: 2px solid ${SecondaryColor.black};
+        }
+      `;
+    }
+  }}
+  }
 `;
 
 /*
