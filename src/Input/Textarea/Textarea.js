@@ -61,16 +61,14 @@ class Textarea extends Component <Props, State> {
   }
 
   componentDidMount() {
-    const { value } = this.props;
-    const textarea = document.getElementsByTagName('textarea')[0];
+    const textarea = document.getElementById('textarea-input');
 
-    if (value !== undefined) {
-      if (value !== '') {
-        this.setState({
-          floating: true,
-        });
-      }
+    if (textarea.value.length > 0) {
+      this.setState({
+        floating: true,
+      });
     }
+
     this.setState({
       textareaMaxHeight: ~~((textarea.offsetHeight * 3.7) + (23 * 8) + 1),
     });
@@ -79,7 +77,7 @@ class Textarea extends Component <Props, State> {
   componentDidUpdate() {
     const { value } = this.props;
     const { floating } = this.state;
-    console.log('value', value);
+
     if (value && value !== '' && !floating) {
       this.setState({ floating: true });
     }
@@ -107,6 +105,7 @@ class Textarea extends Component <Props, State> {
     return (
       <TextareaContainer id="aries-textarea" className={className}>
         <TextareaInput
+          id="textarea-input"
           placeholder={removeFloatingLabel && label}
           rows={rows}
           status={status}

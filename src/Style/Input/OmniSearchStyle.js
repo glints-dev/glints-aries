@@ -40,17 +40,21 @@ export const OmniSearchBar = styled.div`
     }
   }
 
-  button {
+  #aries-defaultbtn {
     position: absolute;
-    padding: 30px 0;
     right: 3px;
     font-size: 1.5em;
     font-weight: normal;
+    height: 100%;
 
     @media ${Device.mobileL} {
       top: 5em;
       right: 0;
       width: 100%;
+
+      button {
+        width: 100%;
+      }
     }
 
     svg {

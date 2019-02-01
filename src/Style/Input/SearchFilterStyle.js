@@ -36,11 +36,10 @@ export const SearchFilterBar = styled.div`
     }
   }
 
-  button {
+  #aries-defaultbtn {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 0 1em;
     font-size: 1.5em;
     height: 100%;
   }
