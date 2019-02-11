@@ -52,6 +52,17 @@ class TextField extends Component <Props, State> {
     }
   }
 
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.value) {
+      return {
+        floating: true,
+      };
+    }
+    return {
+      floating: false,
+    };
+  }
+
   render() {
     const {
       type,

@@ -107,6 +107,7 @@ const SelectStory = () => (
   >
     <div style={{ width: '300px' }}>
       <Select
+        value={value}
         label="Jobs"
         noOptionResult="No Result Found."
       >
