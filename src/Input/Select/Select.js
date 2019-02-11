@@ -184,6 +184,14 @@ class Select extends Component <Props, State> {
       };
     }
 
+    if (nextProps.value === '') {
+      return {
+        selectedValue: nextProps.value,
+        defaultValue: nextProps.value,
+        floating: false,
+      };
+    }
+
     return { notMatch: false };
   }
 
