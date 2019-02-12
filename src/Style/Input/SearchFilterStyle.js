@@ -56,7 +56,7 @@ export const SearchFilterResultContainer = styled.div`
   width: 100%;
   display: grid;
   font-size: 1.1em;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   padding: 25px 30px;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};

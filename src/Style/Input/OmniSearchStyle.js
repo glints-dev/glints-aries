@@ -73,7 +73,7 @@ export const OmniSearchResultContainer = styled.div`
   position: absolute;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   padding: 25px 30px;
   font-size: 1.1em;
   background: ${SecondaryColor.white};
