@@ -66,7 +66,7 @@ export const OmniSearchBar = styled.div`
 export const OmniSearchBody = styled.div`
   position: relative;
   display: ${({ open }) => open ? 'block' : 'none'};
-  z-index: 9999;
+  z-index: 50;
 `;
 
 export const OmniSearchResultContainer = styled.div`
