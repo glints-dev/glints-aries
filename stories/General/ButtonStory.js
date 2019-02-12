@@ -181,6 +181,28 @@ const ButtonStories = () => (
           </tr>
           <tr>
             <td>
+              removeHoverEffect
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>{'Removes Button\'s effect when hovered'}</td>
+          </tr>
+          <tr>
+            <td>
               onClick
             </td>
             <td>
@@ -699,6 +721,28 @@ const ButtonStories = () => (
               no
             </td>
             <td>Sets Button to small version.</td>
+          </tr>
+          <tr>
+            <td>
+              removeHoverEffect
+            </td>
+            <td>
+              boolean
+            </td>
+            <td>
+              <code>
+                false
+              </code>
+            </td>
+            <td>
+              <code>
+                true | false
+              </code>
+            </td>
+            <td>
+              no
+            </td>
+            <td>{'Removes Button\'s effect when hovered'}</td>
           </tr>
           <tr>
             <td>

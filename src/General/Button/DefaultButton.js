@@ -10,6 +10,7 @@ const DefaultButton = ({
   disabled,
   block,
   small,
+  removeHoverEffect,
   ...defaultProps
 }: Props) => (
   <DefaultBtnContainer
@@ -19,6 +20,7 @@ const DefaultButton = ({
     disabled={disabled}
     block={block}
     small={small}
+    removeHoverEffect={removeHoverEffect}
   >
     <DefaultBtn
       id="defaultbtn-content"

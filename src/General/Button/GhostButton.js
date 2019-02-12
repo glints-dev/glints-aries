@@ -10,6 +10,7 @@ const GhostButton = ({
   disabled,
   block,
   small,
+  removeHoverEffect,
   ...defaultProps
 }: Props) => (
   <GhostBtnContainer
@@ -19,6 +20,7 @@ const GhostButton = ({
     disabled={disabled}
     block={block}
     small={small}
+    removeHoverEffect={removeHoverEffect}
   >
     <GhostBtn
       id="ghostbtn-content"

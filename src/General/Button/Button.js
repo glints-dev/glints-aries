@@ -18,6 +18,7 @@ const renderButton = ({
   block,
   small,
   className,
+  removeHoverEffect,
   ...defaultProps
 }: Props) => {
   switch (variant) {
@@ -54,6 +55,7 @@ const renderButton = ({
           onClick={onClick}
           block={block}
           small={small}
+          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {children}
@@ -80,6 +82,7 @@ const renderButton = ({
           onClick={onClick}
           block={block}
           small={small}
+          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {children}
@@ -102,6 +105,7 @@ type Props = {
   small: boolean,
   children: React$Node,
   className: string,
+  removeHoverEffect: boolean,
 }
 
 export default Button;

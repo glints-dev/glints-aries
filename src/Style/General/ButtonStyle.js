@@ -28,8 +28,8 @@ export const DefaultBtnContainer = styled.div`
   display: ${({ block }) => block ? 'flex' : 'inline-flex'};
   z-index: 1;
 
-  ${({ disabled }) => {
-    if (!disabled) {
+  ${({ disabled, removeHoverEffect }) => {
+    if (!disabled && !removeHoverEffect) {
       return `
       &:active {
         background: ${SecondaryColor.black};
@@ -411,8 +411,8 @@ export const GhostBtnContainer = styled.div`
   display: ${({ block }) => block ? 'flex' : 'inline-flex'};
   z-index: 1;
 
-  ${({ disabled }) => {
-    if (!disabled) {
+  ${({ disabled, removeHoverEffect }) => {
+    if (!disabled && !removeHoverEffect) {
       return `
         &:active {
           transition: background-color .5s; 

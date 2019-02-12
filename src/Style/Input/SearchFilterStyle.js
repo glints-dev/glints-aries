@@ -48,6 +48,7 @@ export const SearchFilterBar = styled.div`
 export const SearchFilterBody = styled.div`
   position: relative;
   display: ${({ open }) => open ? 'block' : 'none'};
+  z-index: 9999;
 `;
 
 export const SearchFilterResultContainer = styled.div`
@@ -59,7 +60,6 @@ export const SearchFilterResultContainer = styled.div`
   padding: 25px 30px;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
-  z-index: 9999;
   
   @media ${Device.mobileL} {
     grid-template-columns: auto;

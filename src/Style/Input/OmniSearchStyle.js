@@ -66,17 +66,19 @@ export const OmniSearchBar = styled.div`
 export const OmniSearchBody = styled.div`
   position: relative;
   display: ${({ open }) => open ? 'block' : 'none'};
+  z-index: 9999;
 `;
 
 export const OmniSearchResultContainer = styled.div`
-  position: relative;
+  position: absolute;
+  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 25px 30px;
   font-size: 1.1em;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
-  z-index: 9999;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
   
   @media ${Device.mobileL} {
     grid-template-columns: auto;

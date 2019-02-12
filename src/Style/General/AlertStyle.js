@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { Device } from '../../Utils/StyleConfig';
+
 import { SecondaryColor, PrimaryColor } from '../Colors';
 
 const fadeDown = keyframes`
@@ -38,6 +40,10 @@ export const AlertContainer = styled.div`
   outline: none;
   line-height: 1.5;
   font-size: 1em;
+
+  @media ${Device.mobileM} {
+    min-width: 100%;
+  }
 
   ${({ type }) => {
     switch (type) {
