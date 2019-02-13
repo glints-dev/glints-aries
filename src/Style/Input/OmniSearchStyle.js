@@ -66,14 +66,14 @@ export const OmniSearchBar = styled.div`
 export const OmniSearchBody = styled.div`
   position: relative;
   display: ${({ open }) => open ? 'block' : 'none'};
-  z-index: 9999;
+  z-index: 50;
 `;
 
 export const OmniSearchResultContainer = styled.div`
   position: absolute;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   padding: 25px 30px;
   font-size: 1.1em;
   background: ${SecondaryColor.white};
