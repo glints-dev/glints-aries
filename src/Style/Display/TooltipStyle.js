@@ -39,6 +39,38 @@ export const TooltipContent = styled.div`
             transform: translateX(-50%);
           }
         `;
+      case 'left':
+        return `
+          top: 50%;
+          right: 100%;
+          padding-right: 9px;
+          transform: translateY(-50%);
+          
+          &:after {
+            border-left: 9px solid ${SecondaryColor.black};
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        `;
+      case 'right':
+        return `
+          top: 50%;
+          left: 100%;
+          padding-left: 9px;
+          transform: translateY(-50%);
+          
+          &::after {
+            border-right: 9px solid ${SecondaryColor.black};
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+          }
+        `;
       default:
         return `
           bottom: 100%;

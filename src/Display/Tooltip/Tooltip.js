@@ -32,7 +32,7 @@ class Tooltip extends Component <Props, State> {
         aria-hidden={isHover ? 'false' : 'true'}
         aria-label={text}
         onMouseEnter={() => this.setState({ isHover: true })}
-        onMouseLeave={() => this.setState({ isHover: false })}
+        onMouseLeave={() => this.setState({ isHover: true })}
         {...defaultProps}
       >
         <If condition={isHover}>

@@ -90,7 +90,7 @@ const TooltipStory = () => (
             string
           </td>
           <td></td>
-          <td><code>bottom</code></td>
+          <td><code>bottom | left | right</code></td>
           <td>
             no
           </td>
