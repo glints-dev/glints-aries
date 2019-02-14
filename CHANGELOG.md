@@ -1,3 +1,9 @@
+#### 3.0.16 (2019-02-14)
+
+##### Other Changes
+
+*  Wrap keyframes interpolation with `css` template processor. ([9cdd2a90](https://github.com/glints-dev/glints-aries/commit/9cdd2a9045b5b442fb5d84a5d76d151662d9f069))
+
 #### 3.0.15 (2019-02-13)
 
 #### 3.0.14 (2019-02-12)
