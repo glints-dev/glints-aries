@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 import { Theme } from '../../Utils/StyleConfig';
 
@@ -313,7 +313,7 @@ export const SecondaryContainer = styled.div`
 
   ${({ disabled }) => {
     if (!disabled) {
-      return `
+      return css`
         &:hover:after {
           opacity: 1;
           transition: opacity .8s linear;
