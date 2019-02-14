@@ -19,7 +19,7 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderCodeSnippet(code) {
+  renderImportCode(code) {
     return (
       <p>
         <code>
@@ -29,7 +29,7 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderUsage(children) {
+  renderDefaultUsage(children) {
     return (
       <pre>
         {jsxToString(children)}
@@ -37,10 +37,10 @@ class StoryBookComponent extends Component <Props> {
     );
   }
 
-  renderStringComponent(stringComponent) {
+  renderUsage(usage) {
     return (
       <pre>
-        {stringComponent}
+        {usage}
       </pre>
     );
   }
@@ -91,29 +91,38 @@ class StoryBookComponent extends Component <Props> {
 
   render() {
     const {
-      children, stringComponent, code, title, propsObject,
+      title, code, usage, children, propsObject,
     } = this.props;
     return (
       <div className="doc-mainbar">
-        <div style={{ marginBottom: '2em' }}>
-          {this.renderTitle(title)}
-          {this.renderCodeSnippet(code)}
-        </div>
+        <If condition={title || code}>
+          <div style={{ marginBottom: '2em' }}>
+            <If condition={title}>
+              {this.renderTitle(title)}
+            </If>
+            <If condition={code}>
+              {this.renderImportCode(code)}
+            </If>
+          </div>
+        </If>
+
         <div style={{ marginBottom: '2em' }}>
           {children}
         </div>
+
         <div style={{ marginBottom: '2em' }}>
           <Collapsible label="Usage" isOpen={false}>
             <Choose>
-              <When condition={stringComponent}>
-                {this.renderStringComponent(stringComponent)}
+              <When condition={usage}>
+                {this.renderUsage(usage)}
               </When>
               <Otherwise>
-                {this.renderUsage(children)}
+                {this.renderDefaultUsage(children)}
               </Otherwise>
             </Choose>
           </Collapsible>
         </div>
+
         <div style={{ marginBottom: '4em' }}>
           {this.renderTable(propsObject)}
         </div>
@@ -123,11 +132,11 @@ class StoryBookComponent extends Component <Props> {
 }
 
 type Props = {
-  children: React$Node,
   title: string,
   code: string,
+  usage: string,
+  children: React$Node,
   propsObject: Object,
-  stringComponent: string
 }
 
 export default StoryBookComponent;

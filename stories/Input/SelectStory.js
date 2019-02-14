@@ -104,10 +104,20 @@ const SelectStory = () => (
     title="Select"
     code="import { Select } from 'glints-aries'"
     propsObject={props}
+    usage={`handleChange = (value) => {
+  console.log('selected value: ', value);
+}
+
+<Select
+  label="Jobs"
+  onChange={this.handleChange}
+>
+  <Select.Option value="accountant">Accountant</Select.Option>
+  <Select.Option value="finance">Finance</Select.Option>
+</Select>`}
   >
     <div style={{ width: '300px' }}>
       <Select
-        value="Accountant"
         label="Jobs"
         noOptionResult="No Result Found."
       >
