@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StoryBookComponent from '../StoryBookComponent';
+import StorybookComponent from '../StorybookComponent';
 
 import Textarea from '../../src/Input/Textarea';
 
@@ -50,7 +50,7 @@ const props = {
 };
 
 const TextareaStory = () => (
-  <StoryBookComponent
+  <StorybookComponent
     title="Textarea"
     code="import { Textarea } from 'glints-aries'"
     propsObject={props}
@@ -58,7 +58,7 @@ const TextareaStory = () => (
     <div style={{ width: '300px' }}>
       <Textarea label="Job" />
     </div>
-  </StoryBookComponent>
+  </StorybookComponent>
 );
 
 export default TextareaStory;

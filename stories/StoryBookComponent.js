@@ -12,7 +12,7 @@ const propsColumnName = [
   'description',
 ];
 
-class StoryBookComponent extends Component <Props> {
+class StorybookComponent extends Component <Props> {
   renderTitle(title) {
     return (
       <h1>{title}</h1>
@@ -139,4 +139,4 @@ type Props = {
   propsObject: Object,
 }
 
-export default StoryBookComponent;
+export default StorybookComponent;

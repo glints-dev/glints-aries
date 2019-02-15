@@ -49,7 +49,7 @@ import RadioButtonStory from './Input/RadioButtonStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
-import StoryBookComponentStory from './Utilities/StoryBookComponentStory';
+import StorybookComponentStory from './Utilities/StorybookComponentStory';
 import SwipeableStory from './Display/SwipeableStory';
 import SwitchStory from './Input/SwitchStory';
 import TabsStory from './Display/TabsStory';
@@ -179,4 +179,4 @@ storiesOf('Utilities', module)
   .add('Colors', () => <ColorStory />)
   .add('Device Size', () => <DeviceStory />)
   .add('Glints Container', () => <GlintsContainerStory />)
-  .add('Story Book Component', () => <StoryBookComponentStory />);
+  .add('Storybook Template', () => <StorybookComponentStory />);

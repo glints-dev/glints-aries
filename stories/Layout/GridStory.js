@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Grid from '../../src/Layout/Grid';
-import StoryBookComponent from '../StoryBookComponent';
+import StorybookComponent from '../StorybookComponent';
 
 const props = {
   'Grid.Col': [
@@ -46,7 +46,7 @@ Content
 );
 
 const GridStory = () => (
-  <StoryBookComponent
+  <StorybookComponent
     title="Grid"
     code="import { Grid } from 'glints-aries'"
     propsObject={props}
@@ -73,7 +73,7 @@ const GridStory = () => (
         </Grid.Col>
       </Grid.Row>
     </Grid>
-  </StoryBookComponent>
+  </StorybookComponent>
 );
 
 export default GridStory;

@@ -11,15 +11,15 @@ const object = `tableName: {
   description: "description",
 }`;
 
-const StoryBookComponentStory = () => (
+const StorybookComponentStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
       <h1>
-        StoryBookComponent
+        StorybookComponent
       </h1>
       <p>
         <code>
-          {'import { StoryBookComponent } from \'glints-aries\''}
+          {'import { StorybookComponent } from \'glints-aries\''}
         </code>
       </p>
     </div>
@@ -29,7 +29,7 @@ const StoryBookComponentStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`<StoryBookComponent
+          {`<StorybookComponent
     title="title"
     code="import { component} from 'glints-aries'"
     propsObject={
@@ -46,7 +46,7 @@ const StoryBookComponentStory = () => (
     }
 >
   <Component/>
-</StoryBookComponent>`}
+</StorybookComponent>`}
         </pre>
       </Collapsible>
     </div>
@@ -143,4 +143,4 @@ const StoryBookComponentStory = () => (
   </div>
 );
 
-export default StoryBookComponentStory;
+export default StorybookComponentStory;

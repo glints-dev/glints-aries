@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StoryBookComponent from '../StoryBookComponent';
+import StorybookComponent from '../StorybookComponent';
 
 import Select from '../../src/Input/Select';
 
@@ -100,7 +100,7 @@ const props = {
 };
 
 const SelectStory = () => (
-  <StoryBookComponent
+  <StorybookComponent
     title="Select"
     code="import { Select } from 'glints-aries'"
     propsObject={props}
@@ -127,7 +127,7 @@ const SelectStory = () => (
         <Select.Option value="software engineer">Software Engineer</Select.Option>
       </Select>
     </div>
-  </StoryBookComponent>
+  </StorybookComponent>
 );
 
 export default SelectStory;

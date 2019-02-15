@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Dropdown from '../../src/Navigation/Dropdown';
-import StoryBookComponent from '../StoryBookComponent';
+import StorybookComponent from '../StorybookComponent';
 
 const props = {
   Dropdown: [
@@ -115,7 +115,7 @@ const props = {
 };
 
 const DropdownStory = () => (
-  <StoryBookComponent
+  <StorybookComponent
     title="Dropdown"
     code="import { Dropdown} from 'glints-aries'"
     propsObject={props}
@@ -124,7 +124,7 @@ const DropdownStory = () => (
       <Dropdown.Item value="Product Manager">Product Manager</Dropdown.Item>
       <Dropdown.Item value="Software Engineer">Software Engineer</Dropdown.Item>
     </Dropdown>
-  </StoryBookComponent>
+  </StorybookComponent>
 );
 
 export default DropdownStory;
