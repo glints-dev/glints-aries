@@ -4,6 +4,7 @@ import { ScreenSize, Device } from '../Utils/StyleConfig';
 const GlintsContainer = styled.div`
   position: relative;
   margin: 0 auto;
+  font-family: 'Poppins';
 
   @media ${`(min-width: ${ScreenSize.desktopL}px)`} { 
     width: 1400px;
@@ -43,7 +44,6 @@ const GlintsContainer = styled.div`
   *:before,
   *:after {
     box-sizing: border-box;
-    font-family: 'Poppins';
   }
 `;
 
