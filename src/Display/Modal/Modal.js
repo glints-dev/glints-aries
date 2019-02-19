@@ -63,6 +63,7 @@ class Modal extends Component <Props, State> {
       removeAnimation,
       footer,
       size,
+      hideHeader,
       ...defaultProps
     } = this.props;
 
@@ -91,12 +92,14 @@ class Modal extends Component <Props, State> {
             size={size}
             {...defaultProps}
           >
-            <ModalHeader id="modal-header">
-              <h3>{ title }</h3>
-              <button type="button" onClick={() => onClose()}>
-                <Icon name="close" color={hideContentArea ? 'white' : 'grey'} />
-              </button>
-            </ModalHeader>
+            <If condition={!hideHeader}>
+              <ModalHeader id="modal-header">
+                <h3>{ title }</h3>
+                <button type="button" onClick={() => onClose()}>
+                  <Icon name="close" color={hideContentArea ? 'white' : 'grey'} />
+                </button>
+              </ModalHeader>
+            </If>
             <ModalBody
               id="modal-body"
               hideContentArea={hideContentArea}
@@ -127,6 +130,7 @@ type Props = {
   removeAnimation: boolean,
   footer: React$Node,
   size: string,
+  hideHeader: boolean,
 }
 
 type State = {

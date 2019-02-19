@@ -46,6 +46,7 @@ import ProfilePictureStory from './General/ProfilePictureStory';
 import ProgressStory from './Display/ProgressStory';
 import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
+import RangeStory from './Input/RangeStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
@@ -115,6 +116,7 @@ storiesOf('Input', module)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Radio Button', () => <RadioButtonStory />)
+  .add('Range', () => <RangeStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Switch', () => <SwitchStory />)

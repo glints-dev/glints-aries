@@ -232,6 +232,30 @@ handleClose = () => {
             </tr>
             <tr>
               <td>
+                hideHeader
+              </td>
+              <td>
+                boolean
+              </td>
+              <td>
+                <code>
+                  false
+                </code>
+              </td>
+              <td>
+                <code>
+                  true | false
+                </code>
+              </td>
+              <td>
+                no
+              </td>
+              <td>
+                Hides header area.
+              </td>
+            </tr>
+            <tr>
+              <td>
                 hideContentArea
               </td>
               <td>

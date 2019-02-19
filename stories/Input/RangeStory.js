@@ -1,152 +1,67 @@
 import React from 'react';
+
+import StorybookComponent from '../StorybookComponent';
+
 import Range from '../../src/Input/Range';
 
+const props = {
+  Range: [
+    {
+      name: 'min',
+      type: 'number',
+      defaultValue: 0,
+      possibleValue: '>= 0',
+      require: 'yes',
+      description: 'Sets min value of Range.',
+    },
+    {
+      name: 'max',
+      type: 'number',
+      defaultValue: 100,
+      possibleValue: 'number should higher than min',
+      require: 'yes',
+      description: 'Sets max value of Range.',
+    },
+    {
+      name: 'value',
+      type: 'number',
+      defaultValue: 0,
+      possibleValue: 'number should be in the range of min and max',
+      require: 'no',
+      description: 'Sets value of Range.',
+    },
+    {
+      name: 'onChange',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Called when Range dot is slid.',
+    },
+    {
+      name: 'block',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets Range to have full width',
+    },
+  ],
+};
+
 const RangeStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Range
-      </h1>
-      <p>
-        <code>
-          {'import { Range } from \'glints-aries\''}
-        </code>
-      </p>
-    </div>
+  <StorybookComponent
+    title="Range"
+    code="import { Range } from 'glints-aries'"
+    propsObject={props}
+    usage={`handleChange = (value) => {
+  console.log('Get current value: ', value);
+}
 
-    <div style={{ marginBottom: '2em' }}>
-      <Range />
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Usage
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre>
-              {'<Range />'}
-            </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h1>
-      Props
-    </h1>
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            label
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets the label of radio button.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            name
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>
-            value
-          </td>
-          <td>
-            string
-          </td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>
-            checked
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <pre>
-              true | false
-            </pre>
-          </td>
-          <td>
-            no
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>
-            theme
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>
-              white
-            </code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Default theme is black.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<Range min={0} max={100} onChange={this.handleChange}/>`}
+  >
+    <Range min={0} max={100} />
+  </StorybookComponent>
 );
 
 export default RangeStory;
