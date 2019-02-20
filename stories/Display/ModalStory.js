@@ -42,10 +42,10 @@ class ModalStory extends Component {
             isVisible={visible}
             onClose={this.handleClose}
             footer={[
-              <Button variant="ghost" theme="blue" onClick={this.handleClose}>
+              <Button variant="ghost" theme="blue" small onClick={this.handleClose}>
                 Cancel
               </Button>,
-              <Button variant="default" theme="blue" onClick={this.handleClose}>
+              <Button variant="default" theme="blue" small onClick={this.handleClose}>
                 Save
               </Button>,
             ]}
@@ -78,10 +78,10 @@ handleClose = () => {
   isVisible={visible}
   onClose={this.handleClose}
   footer={[
-    <Button variant="ghost" theme="blue" onClick={this.handleClose}>
+    <Button variant="ghost" theme="blue" small onClick={this.handleClose}>
       Cancel
     </Button>,
-    <Button variant="default" theme="blue" onClick={this.handleClose}>
+    <Button variant="default" theme="blue" small onClick={this.handleClose}>
       Save
     </Button>,
   ]}

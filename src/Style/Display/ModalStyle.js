@@ -94,10 +94,10 @@ export const ModalHeader = styled.header`
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid ${SecondaryColor.lightgrey};
-  padding: .8em;
+  padding: 15px;
 
   h3 {
-    font-size: 1em;
+    font-size: .8em;
     text-transform: uppercase;
     margin: 0;
     margin-right: 36px;
@@ -115,15 +115,23 @@ export const ModalHeader = styled.header`
 
 export const ModalBody = styled.section`
   position: relative;
-  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '1em 2em 2em'};
+  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '20px 30px'};
+
+  @media ${Device.mobileM} {
+    padding: ${({ hideContentArea }) => hideContentArea ? '0' : '20px 15px'};
+  }
 `;
 
 export const ModalFooter = styled.footer`
   position: relative;
   display: flex;
-  padding: 1em 2em;
+  padding: 15px 30px;
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
+
+  @media ${Device.mobileM} {
+    padding: 15px;
+  }
 
   * {
     margin-left: 10px;

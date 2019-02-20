@@ -14,9 +14,8 @@ export const GalleryContainer = styled.div`
 `;
 
 export const GalleryItemWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: .5em;
+  display: flex;
+  flex-wrap: wrap;
 
   img {
     height: 5em;
@@ -28,6 +27,7 @@ export const GalleryItemWrapper = styled.div`
 
 export const GalleryItem = styled.div`
   position: relative;
+  margin: 5px;
 
   ${({ imageLeft }) => {
     if (imageLeft !== 0) {

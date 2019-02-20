@@ -57,12 +57,12 @@ export const SliderContainer = styled.div`
 
     li {
       display: inline-flex;
-      width: 1em;
-      height: 1em;
+      width: 12px;
+      height: 12px;
       background: ${SecondaryColor.lightgrey};
       border-radius: 50%;
       box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-      margin: 0 6px;
+      margin: 0 4px;
       cursor: pointer;
 
       &.active {
