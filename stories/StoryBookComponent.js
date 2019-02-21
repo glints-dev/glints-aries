@@ -50,7 +50,19 @@ class StorybookComponent extends Component <Props> {
       <thead>
         <tr style={{ borderBottom: '1px solid lightgrey' }}>
           <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>{tableName}</h3>
+            <h3 style={{ margin: '.8em 0' }}>
+              <span
+                style={{
+                  fontWeight: 'normal',
+                  fontSize: '14px',
+                  color: '#777',
+                  marginRight: '6px',
+                }}
+              >
+                Props for
+              </span>
+              {tableName}
+            </h3>
           </th>
         </tr>
         <tr>
@@ -123,9 +135,11 @@ class StorybookComponent extends Component <Props> {
           </Collapsible>
         </div>
 
-        <div style={{ marginBottom: '4em' }}>
-          {this.renderTable(propsObject)}
-        </div>
+        <If condition={propsObject}>
+          <div style={{ marginBottom: '4em' }}>
+            {this.renderTable(propsObject)}
+          </div>
+        </If>
       </div>
     );
   }

@@ -36,7 +36,6 @@ import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
 import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
-import LayoutStory from './Layout/LayoutStory';
 import LoadingStory from './General/LoadingStory';
 import ModalStory from './Display/ModalStory';
 import OmniSearchStory from './Input/OmniSearchStory';
@@ -101,7 +100,6 @@ storiesOf('Layout', module)
       </StorybookStyle>
     </Provider>
   ))
-  .add('Layout', () => <LayoutStory />)
   .add('Grid', () => <GridStory />);
 
 storiesOf('Input', module)

@@ -50,18 +50,17 @@ const GridStory = () => (
     title="Grid"
     code="import { Grid } from 'glints-aries'"
     propsObject={props}
-    stringComponent={`
-    <Grid>
-      <Grid.Row>
-        <Grid.Col xs={12} sm={9} md={3}>
-          {Component}
-        </Grid.Col>
-        <Grid.Col xs={12} sm={3} md={9}>
-          {Component}
-        </Grid.Col>
-      </Grid.Row>
-    </Grid>
-    `}
+    usage={`<Grid>
+  <Grid.Row>
+    <Grid.Col xs={12} sm={9} md={3}>
+      {Component}
+    </Grid.Col>
+    <Grid.Col xs={12} sm={3} md={9}>
+      {Component}
+    </Grid.Col>
+  </Grid.Row>
+</Grid>
+`}
   >
     <Grid>
       <Grid.Row>
