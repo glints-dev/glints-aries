@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Dropdown from '../../src/Navigation/Dropdown';
 import StorybookComponent from '../StorybookComponent';
+
+import Dropdown from '../../src/Navigation/Dropdown';
 
 const props = {
   Dropdown: [
