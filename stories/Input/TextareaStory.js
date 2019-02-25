@@ -5,7 +5,7 @@ import StorybookComponent from '../StorybookComponent';
 import Textarea from '../../src/Input/Textarea';
 
 const props = {
-  Props: [
+  Textarea: [
     {
       name: 'label',
       type: 'string',
@@ -54,6 +54,7 @@ const TextareaStory = () => (
     title="Textarea"
     code="import { Textarea } from 'glints-aries'"
     propsObject={props}
+    usage={'<Textarea label="Job" />'}
   >
     <div style={{ width: '300px' }}>
       <Textarea label="Job" />
