@@ -1,20 +1,149 @@
 import React from 'react';
 
+import StorybookComponent from '../StorybookComponent';
+
 import JobCard from '../../src/Application/JobCard';
 import Button from '../../src/General/Button';
-import Collapsible from '../../src/Display/Collapsible';
+
+const props = {
+  JobCard: [
+    {
+      name: 'targetUrl',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any valid url',
+      require: 'no',
+      description: 'Redirect URL when it\'s clicked.',
+    },
+    {
+      name: 'target',
+      type: 'string',
+      defaultValue: <code>_self</code>,
+      possibleValue: <code>_blank | _self | _parent | _top | framename</code>,
+      require: 'no',
+      description: 'Specifies where to open the linked document.',
+    },
+  ],
+  'JobCard.Header': [
+    {
+      name: 'title',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets title for job card.',
+    },
+    {
+      name: 'tag',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Highlighted tag fro job card.',
+    },
+    {
+      name: 'subtitle',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Subtitle for job card.',
+    },
+    {
+      name: 'imgUrl',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Image URL for job card.',
+    },
+    {
+      name: 'isLinkAble',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Should the component be included in link.',
+    },
+    {
+      name: 'onClickSubtitle',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: '',
+    },
+  ],
+  'JobCard.Body': [
+    {
+      name: 'isLinkAble',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Should the component be included in link.',
+    },
+  ],
+  'JobCard.Detail': [
+    {
+      name: 'details',
+      type: 'array',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets detail for Job Card detail.',
+    },
+  ],
+  'JobCard.Description': [
+    {
+      name: 'description',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets description for Job Card description.',
+    },
+    {
+      name: 'time',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets time to show in Job Card description.',
+    },
+  ],
+};
 
 const JobCardStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>Job Card</h1>
-      <div>
-        <code>
-          {'import { JobCard } from \'glints-aries\''}
-        </code>
-      </div>
-    </div>
-
+  <StorybookComponent
+    title="Job Card"
+    code="import { JobCard } from 'glints-aries'"
+    propsObject={props}
+    usage={`<JobCard targetUrl="..." target="...">
+  <JobCard.Header
+    title="Item title"
+    tag="Special"
+    subtitle="Item subtitle"
+    imgUrl="imageUrl | imageComponent"
+    onClickSubtitle={() => ...}
+    isLinkAble={true}
+  />
+  <JobCard.Body isLinkAble={true}>
+    <JobCard.Detail
+      details={['...', '...', '...', '...']}
+    />
+    <JobCard.Description 
+      description={'...'} 
+      time="5 days ago"
+    />
+  </JobCard.Body>
+  <JobCard.Footer>
+    <Button>Save</Button>
+    <Button>Apply</Button>
+    <Button variant="secondary">Detail</Button>
+  </JobCard.Footer>
+</JobCard>`}
+  >
     <div style={{ marginBottom: '2em', width: '300px' }}>
       <JobCard
         targetUrl="https://glints.com/"
@@ -40,258 +169,7 @@ const JobCardStory = () => (
         </JobCard.Footer>
       </JobCard>
     </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`<JobCard targetUrl="..." target="...">
-  <JobCard.Header
-    title="Item title"
-    tag="Special"
-    subtitle="Item subtitle"
-    imgUrl="imageUrl | imageComponent"
-    onClickSubtitle={() => ...}
-    isLinkAble={true}
-  />
-  <JobCard.Body isLinkAble={true}>
-    <JobCard.Detail
-      details={['...', '...', '...', '...']}
-    />
-    <JobCard.Description 
-      description={'...'} 
-      time="5 days ago"
-    />
-  </JobCard.Body>
-  <JobCard.Footer>
-    <Button>Save</Button>
-    <Button>Apply</Button>
-    <Button variant="secondary">Detail</Button>
-  </JobCard.Footer>
-</JobCard>`}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              JobCard
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
-          <th>Possible Values</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>targetUrl</td>
-          <td>string</td>
-          <td></td>
-          <td>any valid url</td>
-          <td>no</td>
-          <td>{'Redirect URL when it\'s clicked.'}</td>
-        </tr>
-        <tr>
-          <td>target</td>
-          <td>string</td>
-          <td><code>_self</code></td>
-          <td>
-            <code>
-              _blank | _self | _parent | _top | framename
-            </code>
-          </td>
-          <td>no</td>
-          <td>Specifies where to open the linked document.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              JobCard.Header
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
-          <th>Possible Value</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>title</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Sets title for job card.</td>
-        </tr>
-        <tr>
-          <td>tag</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Highlighted tag fro job card.</td>
-        </tr>
-        <tr>
-          <td>subtitle</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Subtitle for job card.</td>
-        </tr>
-        <tr>
-          <td>imgUrl</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Image URL for job card.</td>
-        </tr>
-        <tr>
-          <td>isLinkAble</td>
-          <td>boolean</td>
-          <td><code>false</code></td>
-          <td><code>true | false</code></td>
-          <td>no</td>
-          <td>Should the component be included in link.</td>
-        </tr>
-        <tr>
-          <td>onClickSubtitle</td>
-          <td>function</td>
-          <td></td>
-          <td>function</td>
-          <td>no</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              JobCard.Body
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
-          <th>Possible Value</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>isLinkAble</td>
-          <td>boolean</td>
-          <td><code>false</code></td>
-          <td><code>true | false</code></td>
-          <td>no</td>
-          <td>Should the component be included in link.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              JobCard.Detail
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
-          <th>Possible Value</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>details</td>
-          <td>array</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Sets detail for Job Card detail.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              <span style={{ fontWeight: '100' }}>Props for</span>
-              {' '}
-              JobCard.Description
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Default Value</th>
-          <th>Possible Value</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>description</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Sets description for Job Card description.</td>
-        </tr>
-        <tr>
-          <td>time</td>
-          <td>string</td>
-          <td></td>
-          <td>any</td>
-          <td>yes</td>
-          <td>Sets time to show in Job Card description.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  </StorybookComponent>
 );
 
 export default JobCardStory;
