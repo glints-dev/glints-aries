@@ -1,118 +1,70 @@
 import React from 'react';
 
+import StorybookComponent from '../StorybookComponent';
+
 import Slider from '../../src/Display/Slider';
 import Blockquote from '../../src/Display/Blockquote';
 import ProfilePicture from '../../src/General/ProfilePicture';
-import Collapsible from '../../src/Display/Collapsible';
+
+const props = {
+  Slider: [
+    {
+      name: 'initialItem',
+      type: 'number',
+      defaultValue: '1',
+      possibleValue: 'index of item',
+      require: 'no',
+      description: 'Sets initial item to show. Index starts from 1 until so on.',
+    },
+    {
+      name: 'fullContent',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets content to fill all area.',
+    },
+    {
+      name: 'arrowWhite',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Changes arrow color to white.',
+    },
+    {
+      name: 'removeDots',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Remove dots.',
+    },
+    {
+      name: 'autoplay',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets slider to slide automatically.',
+    },
+    {
+      name: 'afterChange',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Gets current index of item.',
+    },
+  ],
+};
 
 const SliderStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Slider
-      </h1>
-      <p>
-        <code>
-          {'import { Slider } from \'glints-aries\''}
-        </code>
-      </p>
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Slider autoplay>
-        <Slider.Item>
-          <Blockquote>
-            <Blockquote.Profile>
-              <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-            </Blockquote.Profile>
-            <Blockquote.Content>
-              <Blockquote.Testimony>
-                {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
-              </Blockquote.Testimony>
-              <Blockquote.Author>
-                        Fredy Yanto
-              </Blockquote.Author>
-              <Blockquote.Origin>
-                        National University of Singapore (NUS)
-              </Blockquote.Origin>
-            </Blockquote.Content>
-          </Blockquote>
-          <Blockquote>
-            <Blockquote.Profile>
-              <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-            </Blockquote.Profile>
-            <Blockquote.Content>
-              <Blockquote.Testimony>
-                {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
-              </Blockquote.Testimony>
-              <Blockquote.Author>
-                        Fredy Yanto
-              </Blockquote.Author>
-              <Blockquote.Origin>
-                        National University of Singapore (NUS)
-              </Blockquote.Origin>
-            </Blockquote.Content>
-          </Blockquote>
-        </Slider.Item>
-        <Slider.Item>
-          <Blockquote>
-            <Blockquote.Profile>
-              <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-            </Blockquote.Profile>
-            <Blockquote.Content>
-              <Blockquote.Testimony>
-                        The platform is really convenient to reach out to companies & I have managed to secure 2 interviews already!
-              </Blockquote.Testimony>
-              <Blockquote.Author>
-                        Jia Ann
-              </Blockquote.Author>
-              <Blockquote.Origin>
-                        Nanyang Technological University  (NTU)
-              </Blockquote.Origin>
-            </Blockquote.Content>
-          </Blockquote>
-          <Blockquote>
-            <Blockquote.Profile>
-              <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-            </Blockquote.Profile>
-            <Blockquote.Content>
-              <Blockquote.Testimony>
-                {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
-              </Blockquote.Testimony>
-              <Blockquote.Author>
-                        Fredy Yanto
-              </Blockquote.Author>
-              <Blockquote.Origin>
-                        National University of Singapore (NUS)
-              </Blockquote.Origin>
-            </Blockquote.Content>
-          </Blockquote>
-        </Slider.Item>
-        <Slider.Item>
-          <Blockquote>
-            <Blockquote.Profile>
-              <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
-            </Blockquote.Profile>
-            <Blockquote.Content>
-              <Blockquote.Testimony>
-                        Glints has been amazing in helping me out with my skills development through personalised recommendations!
-              </Blockquote.Testimony>
-              <Blockquote.Author>
-                        Woon Yong Xin
-              </Blockquote.Author>
-              <Blockquote.Origin>
-                        SIM University
-              </Blockquote.Origin>
-            </Blockquote.Content>
-          </Blockquote>
-        </Slider.Item>
-      </Slider>
-    </div>
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`getCurrentIndex = (index) => {
+  <StorybookComponent
+    title="Slider"
+    code="import { Slider } from 'glints-aries'"
+    propsObject={props}
+    usage={`getCurrentIndex = (index) => {
   console.log(index);
 }
 
@@ -128,157 +80,95 @@ const SliderStory = () => (
     <Component />
   </Slider.Item>
 </Slider>`}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              Props
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            initialItem
-          </td>
-          <td>
-            number
-          </td>
-          <td>1</td>
-          <td>
-            index of item
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets initial item to show. Index starts from 1 until so on.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            fullContent
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets content to fill all area.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            arrowWhite
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Changes arrow color to white.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            removeDots
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Remove dots.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            autoplay
-          </td>
-          <td>
-            boolean
-          </td>
-          <td>
-            <code>false</code>
-          </td>
-          <td>
-            <code>true | false</code>
-          </td>
-          <td>
-            no
-          </td>
-          <td>
-            Sets slider to slide automatically.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            afterChange
-          </td>
-          <td>
-            function
-          </td>
-          <td></td>
-          <td>function</td>
-          <td>
-            no
-          </td>
-          <td>
-            {'It\'s used to get current index of item.'}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  >
+    <Slider autoplay>
+      <Slider.Item>
+        <Blockquote>
+          <Blockquote.Profile>
+            <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+          </Blockquote.Profile>
+          <Blockquote.Content>
+            <Blockquote.Testimony>
+              {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
+            </Blockquote.Testimony>
+            <Blockquote.Author>
+                      Fredy Yanto
+            </Blockquote.Author>
+            <Blockquote.Origin>
+                      National University of Singapore (NUS)
+            </Blockquote.Origin>
+          </Blockquote.Content>
+        </Blockquote>
+        <Blockquote>
+          <Blockquote.Profile>
+            <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+          </Blockquote.Profile>
+          <Blockquote.Content>
+            <Blockquote.Testimony>
+              {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
+            </Blockquote.Testimony>
+            <Blockquote.Author>
+                      Fredy Yanto
+            </Blockquote.Author>
+            <Blockquote.Origin>
+                      National University of Singapore (NUS)
+            </Blockquote.Origin>
+          </Blockquote.Content>
+        </Blockquote>
+      </Slider.Item>
+      <Slider.Item>
+        <Blockquote>
+          <Blockquote.Profile>
+            <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+          </Blockquote.Profile>
+          <Blockquote.Content>
+            <Blockquote.Testimony>
+                      The platform is really convenient to reach out to companies & I have managed to secure 2 interviews already!
+            </Blockquote.Testimony>
+            <Blockquote.Author>
+                      Jia Ann
+            </Blockquote.Author>
+            <Blockquote.Origin>
+                      Nanyang Technological University  (NTU)
+            </Blockquote.Origin>
+          </Blockquote.Content>
+        </Blockquote>
+        <Blockquote>
+          <Blockquote.Profile>
+            <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+          </Blockquote.Profile>
+          <Blockquote.Content>
+            <Blockquote.Testimony>
+              {'I didn\'t really know what I wanted to do and what were all the career paths out there!'}
+            </Blockquote.Testimony>
+            <Blockquote.Author>
+                      Fredy Yanto
+            </Blockquote.Author>
+            <Blockquote.Origin>
+                      National University of Singapore (NUS)
+            </Blockquote.Origin>
+          </Blockquote.Content>
+        </Blockquote>
+      </Slider.Item>
+      <Slider.Item>
+        <Blockquote>
+          <Blockquote.Profile>
+            <ProfilePicture size="large" assetUrl="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80" />
+          </Blockquote.Profile>
+          <Blockquote.Content>
+            <Blockquote.Testimony>
+                      Glints has been amazing in helping me out with my skills development through personalised recommendations!
+            </Blockquote.Testimony>
+            <Blockquote.Author>
+                      Woon Yong Xin
+            </Blockquote.Author>
+            <Blockquote.Origin>
+                      SIM University
+            </Blockquote.Origin>
+          </Blockquote.Content>
+        </Blockquote>
+      </Slider.Item>
+    </Slider>
+  </StorybookComponent>
 );
 export default SliderStory;
