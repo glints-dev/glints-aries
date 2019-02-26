@@ -12,7 +12,7 @@ export const ModalContainer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1001;
   background: rgba(0, 0, 0, 0.65);
   overflow: auto;
 
