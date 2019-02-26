@@ -1,3 +1,9 @@
+#### 3.0.20 (2019-02-26)
+
+##### Other Changes
+
+* **style:**  increase z-index of modal ([7c5d7cdc](https://github.com/glints-dev/glints-aries/commit/7c5d7cdc1c5b89814f2549bfc2b6b67a496d9303))
+
 #### 3.0.19 (2019-02-20)
 
 #### 3.0.18 (2019-02-19)
