@@ -1,146 +1,80 @@
 import React from 'react';
 
-import Collapsible from '../../src/Display/Collapsible';
+import StorybookComponent from '../StorybookComponent';
 
-const object = `tableName: {
+const props = {
+  StorybookComponent: [
+    {
+      name: 'title',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Sets the title of storybook.',
+    },
+    {
+      name: 'code',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'yes',
+      description: 'Import rule.',
+    },
+    {
+      name: 'propsObject',
+      type: 'array',
+      defaultValue: '',
+      possibleValue: <pre>
+        {`tableName: {
   name: "name",
   type: "type",
   defaultValue: "defaultValue",
   possibleValue: "possibleValue",
   require: "require",
   description: "description",
-}`;
+}`}
+      </pre>,
+      require: 'yes',
+      description: 'Array of object to populate props name and description in the table.',
+    },
+    {
+      name: 'usage',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: '<ComponentUsage />',
+      require: 'yes',
+      description: 'Shows the usage of component.',
+    },
+  ],
+};
 
 const StorybookComponentStory = () => (
-  <div className="doc-mainbar">
-    <div style={{ marginBottom: '2em' }}>
-      <h1>
-        StorybookComponent
-      </h1>
-      <p>
-        <code>
-          {'import { StorybookComponent } from \'glints-aries\''}
-        </code>
-      </p>
-    </div>
+  <StorybookComponent
+    title="Storybook Template"
+    code="import { StorybookComponent } from 'glints-aries'"
+    propsObject={props}
+    usage={`const props = {
+  Divider: [
+    {
+      name: 'theme',
+      type: 'string',
+      defaultValue: <code>black</code>,
+      possibleValue: <code>red | blue | yellow | white | grey</code>,
+      require: 'no',
+      description: 'Sets Divider\'s color.',
+    },
+  ],
+};
 
-    <div style={{ marginBottom: '2em' }} />
-
-    <div style={{ marginBottom: '2em' }}>
-      <Collapsible label="Usage" isOpen={false}>
-        <pre>
-          {`<StorybookComponent
-    title="title"
-    code="import { component} from 'glints-aries'"
-    propsObject={
-      TableName:[
-        {
-          name:'name',
-          type:'type',
-          defaultValue:'defaultValue',
-          possibleValue:'possibleValue',
-          require:'require',
-          description:'description',
-        },
-      ]
-    }
+<StorybookComponent
+  title="Divider"
+  code="import { Divider } from 'glints-aries'"
+  propsObject={props}
+  usage={'<Divider />'}
 >
-  <Component/>
+  <Divider />
 </StorybookComponent>`}
-        </pre>
-      </Collapsible>
-    </div>
-
-    <table className="doc-table">
-      <thead>
-        <tr style={{ borderBottom: '1px solid lightgrey' }}>
-          <th colSpan="6">
-            <h3 style={{ margin: '.8em 0' }}>
-              Props
-            </h3>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Type
-          </th>
-          <th>
-            Default Value
-          </th>
-          <th>
-            Possible Value
-          </th>
-          <th>
-            Required
-          </th>
-          <th>
-            Description
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            title
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Sets the title of storybook.
-          </td>
-        </tr>
-        <tr>
-          <td>
-          code
-          </td>
-          <td>
-            string
-          </td>
-          <td></td>
-          <td>
-            any
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Snippet code
-          </td>
-        </tr>
-        <tr>
-          <td>
-            propsObject
-          </td>
-          <td>
-            array
-          </td>
-          <td></td>
-          <td>
-            <pre>
-              {object}
-            </pre>
-          </td>
-          <td>
-            yes
-          </td>
-          <td>
-            Array of object to populate props name and description in the table.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  />
 );
 
 export default StorybookComponentStory;

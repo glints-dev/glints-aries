@@ -14,7 +14,7 @@ export const SearchFilterBar = styled.div`
   position: relative;
 
   input { 
-    padding: 25px 4em 25px 30px;
+    padding: 25px 6em 25px 30px;
     background: ${SecondaryColor.white};
     border: 3px solid ${SecondaryColor.darkgrey};
     font-size: 1.4em;
@@ -24,6 +24,7 @@ export const SearchFilterBar = styled.div`
 
     @media ${Device.mobileL} {
       padding: 1em 5em 1em 1em;
+      font-size: 1em;
     }
 
     &:focus {
@@ -42,6 +43,12 @@ export const SearchFilterBar = styled.div`
     top: 0;
     font-size: 1.5em;
     height: 100%;
+
+    button {
+      @media ${Device.mobileL} {
+        padding: 15px 20px;
+      }
+    }
   }
 `;
 

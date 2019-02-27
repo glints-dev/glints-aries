@@ -44,9 +44,9 @@ export const DefaultBtnContainer = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
-        top: 6px;
-        left: 6px;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
+        top: 5px;
+        left: 5px;
         z-index: -1;
         transition: all .2s;
       }
@@ -57,7 +57,7 @@ export const DefaultBtnContainer = styled.div`
       }
 
       &:active:after {
-        transform: translate3d(-6px, -6px, 0);
+        transform: translate3d(-5px, -5px, 0);
         transition: all .2s;
       }
       `;
@@ -426,9 +426,9 @@ export const GhostBtnContainer = styled.div`
           position: absolute;
           width: 100%;
           height: 100%;
-          background: repeating-linear-gradient(-50deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
-          top: 6px;
-          left: 6px;
+          background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
+          top: 5px;
+          left: 5px;
           z-index: -1;
           transition: all .2s;
         }
@@ -439,7 +439,7 @@ export const GhostBtnContainer = styled.div`
         }
 
         &:active:after {
-          transform: translate3d(-6px, -6px, 0);
+          transform: translate3d(-5px, -5px, 0);
           transition: all .2s;
         }
         `;
