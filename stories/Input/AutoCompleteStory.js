@@ -73,6 +73,14 @@ const props = {
       description: 'Sets value for Option.',
     },
     {
+      name: 'additionalInfo',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Sets another info beside Option main value.',
+    },
+    {
       name: 'onOptionClick',
       type: 'function',
       defaultValue: '',
@@ -96,20 +104,20 @@ const AutoCompleteStory = () => (
   label="Location"
   onChange={this.handleChange}
 >
-  <AutoComplete.Option value="accountant">Accountant</AutoComplete.Option>
-  <AutoComplete.Option value="architecture">Architecture</AutoComplete.Option>
-  <AutoComplete.Option value="business development">Business Development</AutoComplete.Option>
-  <AutoComplete.Option value="product manager">Product Manager</AutoComplete.Option>
-  <AutoComplete.Option value="project manager">Project Manager</AutoComplete.Option>
+  <AutoComplete.Option value="accountant" additionalInfo="3000">Accountant</AutoComplete.Option>
+  <AutoComplete.Option value="architecture" additionalInfo="800">Architecture</AutoComplete.Option>
+  <AutoComplete.Option value="business development" additionalInfo="1203">Business Development</AutoComplete.Option>
+  <AutoComplete.Option value="product manager" additionalInfo="200">Product Manager</AutoComplete.Option>
+  <AutoComplete.Option value="project manager" additionalInfo="50">Project Manager</AutoComplete.Option>
 </AutoComplete>`}
   >
     <div style={{ width: '300px' }}>
       <AutoComplete label="Location" value={null}>
-        <AutoComplete.Option value="accountant">Accountant</AutoComplete.Option>
-        <AutoComplete.Option value="architecture">Architecture</AutoComplete.Option>
-        <AutoComplete.Option value="business development">Business Development</AutoComplete.Option>
-        <AutoComplete.Option value="product manager">Product Manager</AutoComplete.Option>
-        <AutoComplete.Option value="project manager">Project Manager</AutoComplete.Option>
+        <AutoComplete.Option value="accountant" additionalInfo="3000">Accountant</AutoComplete.Option>
+        <AutoComplete.Option value="architecture" additionalInfo="800">Architecture</AutoComplete.Option>
+        <AutoComplete.Option value="business development" additionalInfo="1203">Business Development</AutoComplete.Option>
+        <AutoComplete.Option value="product manager" additionalInfo="200">Product Manager</AutoComplete.Option>
+        <AutoComplete.Option value="project manager" additionalInfo="50">Project Manager</AutoComplete.Option>
       </AutoComplete>
     </div>
   </StorybookComponent>

@@ -80,12 +80,13 @@ class AutoComplete extends Component <Props, State> {
       const { onChange } = this.props;
 
       this.setState({
-        selectedValue: e.currentTarget.innerText,
+        selectedValue: e.currentTarget.children[0].innerText,
         filterValue: [],
       });
 
       if (onChange !== undefined) {
-        onChange(e.target.dataset.value);
+        const itemValue = document.querySelector('.active').dataset.value;
+        onChange(itemValue);
       }
 
       if (onOptionClick !== undefined) {
@@ -111,7 +112,7 @@ class AutoComplete extends Component <Props, State> {
     } else if (e.keyCode === 13) {
       e.target.blur();
       this.setState({
-        selectedValue: document.querySelector('.active').innerText,
+        selectedValue: document.querySelector('.active').children[0].innerText,
         filterValue: [],
         floating: true,
       });
@@ -236,7 +237,8 @@ class AutoComplete extends Component <Props, State> {
               onMouseEnter={this.handleMouseEnter}
               tabIndex="0"
             >
-              {data.props.children}
+              <span id="autocomplete-value">{data.props.children}</span>
+              <span id="autocomplete-additionalinfo">{data.props.additionalInfo}</span>
             </AutoCompleteItem>
           ))}
         </AutoCompleteListWrapper>
