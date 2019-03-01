@@ -89,6 +89,15 @@ export const DefaultBtn = styled(Button)`
         return `
           background-color: ${SecondaryColor.white};
           color: ${SecondaryColor.black};
+
+          &:hover {
+            background-color: ${SecondaryColor.lightergrey};
+          }
+
+          &:active {
+            background-color: ${SecondaryColor.black};
+            color: ${SecondaryColor.white};
+          }
         `;
     }
   }}
