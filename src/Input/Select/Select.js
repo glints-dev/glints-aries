@@ -163,6 +163,7 @@ class Select extends Component <Props, State> {
           selectedValue: nextProps.value,
           defaultValue: nextProps.value,
           floating: true,
+          filterValue: nextProps.children.map(data => data),
         };
       }
 
@@ -269,30 +270,34 @@ class Select extends Component <Props, State> {
           open={isFocus}
           small={small}
         >
-          {filterValue.map((data, index) => (
-            <SelectItem
-              className={cursor === index ? 'active' : null}
-              key={data.props.value}
-              role="option"
-              data-id={index}
-              data-value={data.props.value}
-              onClick={this.handleClick(data.props.onOptionClick)}
-              onMouseEnter={this.handleMouseEnter}
-              tabIndex="0"
-            >
-              {data.props.children}
-            </SelectItem>
-          ))}
-          {notMatch && (
-            <SelectItem
-              disabled
-              role="option"
-              aria-hidden={false}
-              aria-disabled="true"
-            >
-              {noOptionResult}
-            </SelectItem>
-          )}
+          <Choose>
+            <When condition={filterValue.length !== 0}>
+              <For each="data" of={filterValue}>
+                <SelectItem
+                  className={cursor === index ? 'active' : null}
+                  key={data.props.value}
+                  role="option"
+                  data-id={index}
+                  data-value={data.props.value}
+                  onClick={this.handleClick(data.props.onOptionClick)}
+                  onMouseEnter={this.handleMouseEnter}
+                  tabIndex="0"
+                >
+                  {data.props.children}
+                </SelectItem>
+              </For>
+            </When>
+            <Otherwise>
+              <SelectItem
+                disabled
+                role="option"
+                aria-hidden={false}
+                aria-disabled="true"
+              >
+                {noOptionResult}
+              </SelectItem>
+            </Otherwise>
+          </Choose>
         </SelectListWrapper>
       </SelectContainer>
     );
