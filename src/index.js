@@ -1,4 +1,5 @@
 // @flow
+// developed by Fredy Yanto (https://github.com/fredyyanto)
 
 import './Style/GlobalStyle.css';
 

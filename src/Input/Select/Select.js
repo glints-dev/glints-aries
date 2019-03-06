@@ -201,10 +201,6 @@ class Select extends Component <Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.isLoading !== prevState.isLoading) {
-      return { isLoading: nextProps.isLoading };
-    }
-
     if (nextProps.children.length !== prevState.childrenLength) {
       if (nextProps.value) {
         return {
@@ -239,6 +235,10 @@ class Select extends Component <Props, State> {
         defaultValue: nextProps.value,
         floating: false,
       };
+    }
+
+    if (nextProps.isLoading !== prevState.isLoading) {
+      return { isLoading: nextProps.isLoading };
     }
 
     return { notMatch: false };
