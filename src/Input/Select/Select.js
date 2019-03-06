@@ -23,42 +23,13 @@ class Select extends Component <Props, State> {
     childrenLength: 0,
     defaultValue: '',
     notMatch: false, // for checking a string included in array
-    notExist: false, // for checking if a whole string match with string in array
     isLoading: false,
-  }
-
-  handleReset() {
-    const { selectedValue, filterValue } = this.state;
-
-    filterValue.map((data) => {
-      if (selectedValue.toLowerCase() !== data.props.children.toLowerCase()) {
-        this.setState({
-          notExist: true,
-        });
-      } else {
-        this.setState({
-          selectedValue: data.props.children,
-          notExist: false,
-          floating: true,
-        });
-      }
-    });
   }
 
   handleFocusOut = (onBlur) => {
     const listener = (e) => {
-      const { children } = this.props;
-      const { notExist } = this.state;
-
-      if (notExist) {
-        this.setState({
-          selectedValue: '',
-          filterValue: children.map(data => data),
-          floating: false,
-        });
-      }
-
       this.setState({
+        floating: e.target.value.length > 0,
         isFocus: false,
       });
 
@@ -87,22 +58,12 @@ class Select extends Component <Props, State> {
   handleChange = (onChange) => {
     const listener = (e) => {
       const { children } = this.props;
-      const { notMatch } = this.state;
 
       this.setState({
         selectedValue: e.target.value,
         filterValue: children.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
         cursor: 0,
       });
-
-      clearTimeout(this.inputTimer);
-      this.inputTimer = setTimeout(() => {
-        this.handleReset();
-
-        if (notMatch) {
-          this.setState({ notExist: true });
-        }
-      }, 500);
 
       if (onChange !== undefined) {
         return onChange(e);
@@ -119,8 +80,6 @@ class Select extends Component <Props, State> {
       this.setState({
         selectedValue: e.currentTarget.children[0].innerText,
         filterValue: children.map(data => data),
-        notExist: false,
-        floating: true,
       });
 
       if (onChange !== undefined) {
@@ -381,7 +340,6 @@ type State = {
   cursor: number,
   notMatch: boolean,
   childrenLength: number,
-  notExist: boolean,
   isLoading: boolean,
 };
 
