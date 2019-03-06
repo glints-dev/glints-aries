@@ -31,6 +31,14 @@ const props = {
       description: 'Sets different style for Select based on status.',
     },
     {
+      name: 'isLoading',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Shows loading spinner.',
+    },
+    {
       name: 'disableTyping',
       type: 'boolean',
       defaultValue: <code>false</code>,

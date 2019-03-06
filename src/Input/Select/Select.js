@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SelectItem from './SelectItem';
 
 import Icon from '../../General/Icon';
+import Loading from '../../General/Loading';
 
 import {
   SelectContainer,
@@ -23,6 +24,7 @@ class Select extends Component <Props, State> {
     defaultValue: '',
     notMatch: false, // for checking a string included in array
     notExist: false, // for checking if a whole string match with string in array
+    isLoading: false,
   }
 
   handleReset() {
@@ -199,6 +201,10 @@ class Select extends Component <Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isLoading !== prevState.isLoading) {
+      return { isLoading: nextProps.isLoading };
+    }
+
     if (nextProps.children.length !== prevState.childrenLength) {
       if (nextProps.value) {
         return {
@@ -264,6 +270,7 @@ class Select extends Component <Props, State> {
       filterValue,
       cursor,
       notMatch,
+      isLoading,
     } = this.state;
 
     return (
@@ -313,7 +320,7 @@ class Select extends Component <Props, State> {
           small={small}
         >
           <Choose>
-            <When condition={filterValue.length !== 0}>
+            <When condition={filterValue.length !== 0 && !isLoading}>
               <For each="data" of={filterValue}>
                 <SelectItem
                   className={cursor === index ? 'active' : null}
@@ -329,6 +336,11 @@ class Select extends Component <Props, State> {
                   <span id="select-additionalinfo">{data.props.additionalInfo}</span>
                 </SelectItem>
               </For>
+            </When>
+            <When condition={isLoading}>
+              <SelectItem id="select-loading" role="option">
+                <Loading />
+              </SelectItem>
             </When>
             <Otherwise>
               <SelectItem
@@ -370,6 +382,7 @@ type State = {
   notMatch: boolean,
   childrenLength: number,
   notExist: boolean,
+  isLoading: boolean,
 };
 
 export default Select;

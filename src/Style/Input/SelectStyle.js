@@ -198,6 +198,10 @@ export const SelectItemWrapper = styled.li`
     color: ${SecondaryColor.lighterblack};
   }
 
+  &#select-loading {
+    justify-content: center;
+  }
+
   ${({ disabled }) => {
     if (disabled) {
       return `
