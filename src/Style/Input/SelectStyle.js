@@ -8,14 +8,12 @@ export const SelectContainer = styled.div`
 export const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
-
   .select-icon {
     position: absolute;
     right: 1em;
     display: flex;
     align-items: center;
     pointer-events: none;
-
     svg {
       transform: ${({ isFocus }) => isFocus ? 'rotate(180deg)' : 'rotate(0)'};
       transition: ${({ isFocus }) => isFocus ? 'transform .5s' : 'transform .5s'};
@@ -44,7 +42,6 @@ export const SelectLabel = styled.label`
       `;
     }
   }}
-
   ${({ floating, small }) => {
     if (floating && small) {
       return `
@@ -52,7 +49,6 @@ export const SelectLabel = styled.label`
       `;
     }
   }}
-
   ${({ status, floating }) => {
     if (status === 'error' && floating) {
       return `
@@ -71,7 +67,6 @@ export const SelectInput = styled.input`
   transition: all .5s;
   font-size: ${({ small }) => small ? '1em' : '1.1em'};
   line-height: 1.5;
-
   /* Styling for disableTyping */
   ${({ disableTyping }) => {
     if (disableTyping) {
@@ -82,7 +77,6 @@ export const SelectInput = styled.input`
       `;
     }
   }}
-
   ${({ status, floating }) => {
     if (status === 'error') {
       if (floating) {
@@ -107,7 +101,6 @@ export const SelectInput = styled.input`
   &:hover {
     border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
-
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -128,7 +121,6 @@ export const SelectInput = styled.input`
   }
   &:focus {
     border: 2px solid ${SecondaryColor.actionblue};
-
     ${({ status }) => {
     if (status === 'error') {
       return `
@@ -176,7 +168,6 @@ export const SelectListWrapper = styled.ul`
 export const SelectItemWrapper = styled.li`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   cursor: pointer;
   padding: .5em 1em;
   list-style-type: none;
@@ -184,24 +175,13 @@ export const SelectItemWrapper = styled.li`
   &:first-child {
     margin-top: .5em;
   }
-
   &:last-child {
     margin-bottom: .5em;
   }
-
   &.active {
     color: ${SecondaryColor.actionblue};
     background: ${SecondaryColor.lightergrey};
   }
-
-  #select-additionalinfo {
-    color: ${SecondaryColor.lighterblack};
-  }
-
-  &#select-loading {
-    justify-content: center;
-  }
-
   ${({ disabled }) => {
     if (disabled) {
       return `

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import SelectItem from './SelectItem';
 
 import Icon from '../../General/Icon';
-import Loading from '../../General/Loading';
 
 import {
   SelectContainer,
@@ -20,10 +19,9 @@ class Select extends Component <Props, State> {
     selectedValue: '',
     filterValue: [],
     cursor: 0,
+    notMatch: false,
     childrenLength: 0,
     defaultValue: '',
-    notMatch: false, // for checking a string included in array
-    isLoading: false,
   }
 
   handleFocusOut = (onBlur) => {
@@ -78,13 +76,12 @@ class Select extends Component <Props, State> {
       const { children, onChange } = this.props;
 
       this.setState({
-        selectedValue: e.currentTarget.children[0].innerText,
+        selectedValue: e.currentTarget.innerText,
         filterValue: children.map(data => data),
       });
 
       if (onChange !== undefined) {
-        const itemValue = document.querySelector('.active').dataset.value;
-        onChange(itemValue);
+        onChange(e.target.dataset.value);
       }
 
       if (onOptionClick !== undefined) {
@@ -114,7 +111,7 @@ class Select extends Component <Props, State> {
     } else if (e.keyCode === 13) {
       e.target.blur();
       this.setState({
-        selectedValue: document.querySelector('.active').children[0].innerText,
+        selectedValue: document.querySelector('.active').innerText,
         filterValue: children.map(data => data),
         floating: true,
         isFocus: false,
@@ -196,10 +193,6 @@ class Select extends Component <Props, State> {
       };
     }
 
-    if (nextProps.isLoading !== prevState.isLoading) {
-      return { isLoading: nextProps.isLoading };
-    }
-
     return { notMatch: false };
   }
 
@@ -229,7 +222,6 @@ class Select extends Component <Props, State> {
       filterValue,
       cursor,
       notMatch,
-      isLoading,
     } = this.state;
 
     return (
@@ -279,7 +271,7 @@ class Select extends Component <Props, State> {
           small={small}
         >
           <Choose>
-            <When condition={filterValue.length !== 0 && !isLoading}>
+            <When condition={filterValue.length !== 0}>
               <For each="data" of={filterValue}>
                 <SelectItem
                   className={cursor === index ? 'active' : null}
@@ -291,15 +283,9 @@ class Select extends Component <Props, State> {
                   onMouseEnter={this.handleMouseEnter}
                   tabIndex="0"
                 >
-                  <span id="select-value">{data.props.children}</span>
-                  <span id="select-additionalinfo">{data.props.additionalInfo}</span>
+                  {data.props.children}
                 </SelectItem>
               </For>
-            </When>
-            <When condition={isLoading}>
-              <SelectItem id="select-loading" role="option">
-                <Loading />
-              </SelectItem>
             </When>
             <Otherwise>
               <SelectItem
@@ -340,7 +326,6 @@ type State = {
   cursor: number,
   notMatch: boolean,
   childrenLength: number,
-  isLoading: boolean,
 };
 
 export default Select;
