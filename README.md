@@ -1,18 +1,21 @@
 # Introduction
 We proudly present to you Glints Aries made by Front End Engineers of Glints. It is a Frontend framework to simplify and speed up your development. This project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a ton of amazing components to be built.
 
-## Installation
+### Requirement
+1. React v16 or above.
+
+### Installation
 ```bash
 npm install -S glints-aries
 ```
 
-## Basic usage
+### Basic usage
 Import the component into your file.
 ```bash
 import { ... } from 'glints-aries'
 ```
 
-Before you start implementing the component, it's always a good start to always wrap your root component with <GlintsContainer />.
+Before you start implementing the component, it's always a good start to always wrap your root component with `<GlintsContainer />`.
 We created that Container to adapt with every screen sizes, so Users will always have best experience whenever they visit your site from their devices.
 GlintsContainer also consists global style of glints-aries, so that it becomes a complement to the components.
 For more details, you can read this at Utilities, then GlintsContainer section.
@@ -24,16 +27,16 @@ import { GlintsContainer } from 'glints-aries'
 </GlintsContainer>
 ```
 
-## Demo
+### Demo
 [http://glints-aries.surge.sh](http://glints-aries.surge.sh)
 
-## Development
+### Development
 ```bash
 yarn storybook
 ```
 then open your browser on port 9001
 
-## How to test local changes in glints-aries in your project
+### How to test local changes in glints-aries in your project
 1. Open terminal in `glints-aries`.
 2. Run `yarn link`.
 3. Open terminal in your project.
@@ -42,7 +45,7 @@ then open your browser on port 9001
 
 Run `yarn unlink glints-aries` and re-install `glints-aries` when you want to stop using local `glints-aries`
 
-## Code structure in glints-aries
+### Code structure in glints-aries
 1. Always do alphabetically when importing file.
 2. Put file on proper folder based on each respective uses.
 3. Use 2 Indent Spaces and Tab on the code.
@@ -82,7 +85,7 @@ const {
  } = this.props;
 ```
 
-## Code procedure in glints-aries
+### Code procedure in glints-aries
 1. Use Color library instead of writing hex color.
 ```bash
 background-color: #EC272B; // Wrong
@@ -127,23 +130,50 @@ JobcardImageWrapper
 7. Use proper naming for interface, like isOpen or onClose.
 8. Always fix eslint before push your code.
 
-## Glints Aries future improvements
+# What is Component?
+A standalone piece of software that has a clear boundary that is accessible via an API and contains all of the application dependencies.
+
+### Why we need component-based design system?
+1. Create consistent experience wherever they’re used through reusability.
+2. Component accelerates development.
+
+### What we need to prepare for constructing a design system?
+1. Identify company culture/ mission
+2. Base Color
+3. Type scale
+4. Border radius (rounding corner or sharp corner)
+5. Spacing scale (line-height)
+6. Letter spacing
+7. Shadow (how our shadow look like on every component)
+
+**Creating and maintaining a consistent UI and UX across every part of our product.**
+It helps users intuitively navigate and successfully interact with different sections of your applications without confusion. It also creates sense of branding.
+
+If you design a component, you should pay attention to
+1. Functional Consistency
+2. Visual Consistency
+
+### What defines a great component?
+1. Interface defines the component so component should respect the context. It means that Interface should be able to work in any possible context.
+2. Interface should have clear usability.
+3. Component should be flexible but still consistent.
+4. Only support functional interaction, not style.
+5. Great component supports accessibility.
+
+### How can we improve glints-aries?
+1. Always leave room for component to be flexible but still consistent.
+2. Component size should be flexible in every environment.
+3. Glints Aries’s interface should be able handle any possibilities.
+4. The name of the component must be easy to understand and clear based on the usage.
+5. Differentiate between component that should have children and self-closing tag.
+6. Improve accessibility.
+7. Always checking your code whether it's having clash with existing code.
+   - Do manual test.
+   - Remove all warnings and errors before push it to Github.
+
+# Glints Aries Roadmap
 1. Using ThemeProvider for distributing color.
-2. Improve every aspects of component, like
-   - Code structure
-   - Interface name into proper one
-   - Component name into proper one
-   - Accessibility
-   - Remove styling props
-3. Remove component that shouldn't be a component.
-4. Improve accessibility.
-5. Fix all of eslint problem.
-6. Improve keyboard events on components.
-7. Improve flexibility of component.
-8. Delete unused assets.
-9. Improve interface documentation on each component section.
-10. Handle multiple same events inside component.
-11. Glints Aries should be able handle any possible case.
-12. Doing Accessibility Testing in storybook.
-13. Doing Component Testing.
-14. Trying Knobs.
+2. Doing Accessibility Testing in storybook.
+3. Doing Component Testing.
+4. Trying Knobs.
+5. Updating styled-component v4.
