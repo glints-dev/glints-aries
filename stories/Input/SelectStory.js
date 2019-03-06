@@ -89,6 +89,14 @@ const props = {
       description: 'Sets value for Option.',
     },
     {
+      name: 'additionalInfo',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Sets another info beside Option main value.',
+    },
+    {
       name: 'onOptionClick',
       type: 'function',
       defaultValue: '',
@@ -112,8 +120,8 @@ const SelectStory = () => (
   label="Jobs"
   onChange={this.handleChange}
 >
-  <Select.Option value="accountant">Accountant</Select.Option>
-  <Select.Option value="finance">Finance</Select.Option>
+  <Select.Option value="accountant" additionalInfo="150">Accountant</Select.Option>
+  <Select.Option value="business development" additionalInfo="21">Business Development</Select.Option>
 </Select>`}
   >
     <div style={{ width: '300px' }}>
@@ -121,10 +129,10 @@ const SelectStory = () => (
         label="Jobs"
         noOptionResult="No Result Found."
       >
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">Business Development</Select.Option>
-        <Select.Option value="finance">Finance</Select.Option>
-        <Select.Option value="software engineer">Software Engineer</Select.Option>
+        <Select.Option value="accountant" additionalInfo="150">Accountant</Select.Option>
+        <Select.Option value="business development" additionalInfo="21">Business Development</Select.Option>
+        <Select.Option value="finance" additionalInfo="1200">Finance</Select.Option>
+        <Select.Option value="software engineer" additionalInfo="7320">Software Engineer</Select.Option>
       </Select>
     </div>
   </StorybookComponent>

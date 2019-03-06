@@ -176,6 +176,7 @@ export const SelectListWrapper = styled.ul`
 export const SelectItemWrapper = styled.li`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
   padding: .5em 1em;
   list-style-type: none;
@@ -183,13 +184,20 @@ export const SelectItemWrapper = styled.li`
   &:first-child {
     margin-top: .5em;
   }
+
   &:last-child {
     margin-bottom: .5em;
   }
+
   &.active {
     color: ${SecondaryColor.actionblue};
     background: ${SecondaryColor.lightergrey};
   }
+
+  #select-additionalinfo {
+    color: ${SecondaryColor.lighterblack};
+  }
+
   ${({ disabled }) => {
     if (disabled) {
       return `

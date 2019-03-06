@@ -19,10 +19,10 @@ class Select extends Component <Props, State> {
     selectedValue: '',
     filterValue: [],
     cursor: 0,
-    notMatch: false,
     childrenLength: 0,
     defaultValue: '',
-    notExist: false,
+    notMatch: false, // for checking a string included in array
+    notExist: false, // for checking if a whole string match with string in array
   }
 
   handleReset() {
@@ -115,14 +115,15 @@ class Select extends Component <Props, State> {
       const { children, onChange } = this.props;
 
       this.setState({
-        selectedValue: e.currentTarget.innerText,
+        selectedValue: e.currentTarget.children[0].innerText,
         filterValue: children.map(data => data),
         notExist: false,
         floating: true,
       });
 
       if (onChange !== undefined) {
-        onChange(e.target.dataset.value);
+        const itemValue = document.querySelector('.active').dataset.value;
+        onChange(itemValue);
       }
 
       if (onOptionClick !== undefined) {
@@ -152,7 +153,7 @@ class Select extends Component <Props, State> {
     } else if (e.keyCode === 13) {
       e.target.blur();
       this.setState({
-        selectedValue: document.querySelector('.active').innerText,
+        selectedValue: document.querySelector('.active').children[0].innerText,
         filterValue: children.map(data => data),
         floating: true,
         isFocus: false,
@@ -324,7 +325,8 @@ class Select extends Component <Props, State> {
                   onMouseEnter={this.handleMouseEnter}
                   tabIndex="0"
                 >
-                  {data.props.children}
+                  <span id="select-value">{data.props.children}</span>
+                  <span id="select-additionalinfo">{data.props.additionalInfo}</span>
                 </SelectItem>
               </For>
             </When>
