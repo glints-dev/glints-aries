@@ -1,9 +1,6 @@
 # Introduction
 We proudly present to you Glints Aries made by Front End Engineers of Glints. It is a Frontend framework to simplify and speed up your development. This project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a ton of amazing components to be built.
 
-### Requirement
-1. React v16 or above.
-
 ### Installation
 ```bash
 npm install -S glints-aries
