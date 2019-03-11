@@ -5,11 +5,10 @@ const IntroStory = () => (
     <div style={{ marginBottom: '2.5em' }}>
       <h1>
         Glints Aries
+        <span style={{ fontWeight: 'normal', fontSize: '14px', marginLeft: '.6em' }}>v3.0.26</span>
       </h1>
       <p style={{ paddingRight: '25%' }}>
-        We proudly present to you Glints-aries made by Front End Engineers of Glints. It is a Frontend framework to simplify and speed up your development. This project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a lot of amazing components to be built.
-        <br />
-        We also make sure to make this project as flexible as we can, so that you can also customize the styling with your own style!
+        We proudly present to you Glints Aries made by Front End Engineers of Glints. It is a Frontend framework to simplify and speed up your development. This project rebuilt with React and Styled Components. We are still actively develop this project day by day. So there are still a ton of amazing components to be built.
       </p>
     </div>
 
@@ -30,7 +29,7 @@ const IntroStory = () => (
       </h3>
       <div style={{ marginBottom: '1em' }}>
         <p>
-        Import the component into your file and follow the instruction on the component section.
+        Import the component into your file.
           <br />
           <code>
             {'import { ... } from \'glints-aries\''}

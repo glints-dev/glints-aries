@@ -58,9 +58,7 @@ class TextField extends Component <Props, State> {
         floating: true,
       };
     }
-    return {
-      floating: false,
-    };
+    return false;
   }
 
   render() {
