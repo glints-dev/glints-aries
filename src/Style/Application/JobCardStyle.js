@@ -24,7 +24,7 @@ export const JobcardContainer = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(-45deg, transparent, transparent 5px, ${SecondaryColor.lightgrey} 7px);
+    background: repeating-linear-gradient(-45deg, transparent, transparent 3px, ${SecondaryColor.lightgrey} 5px);
     top: .5em;
     left: .5em;
     z-index: 0;

@@ -163,8 +163,8 @@ const JobCardStory = () => (
           />
         </JobCard.Body>
         <JobCard.Footer>
-          <Button small>Save</Button>
-          <Button small>Apply</Button>
+          <Button small removeHoverEffect>Save</Button>
+          <Button small removeHoverEffect>Apply</Button>
           <Button small variant="secondary">Detail</Button>
         </JobCard.Footer>
       </JobCard>

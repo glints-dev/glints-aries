@@ -92,6 +92,7 @@ export const DefaultBtn = styled(Button)`
 
           &:hover {
             background-color: ${SecondaryColor.lightergrey};
+            color: ${SecondaryColor.blue};
           }
 
           &:active {
