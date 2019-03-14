@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SelectItem from './SelectItem';
 
 import Icon from '../../General/Icon';
+import Loading from '../../General/Loading';
 
 import {
   SelectContainer,
@@ -22,6 +23,7 @@ class Select extends Component <Props, State> {
     notMatch: false,
     childrenLength: 0,
     defaultValue: '',
+    isLoading: false,
   }
 
   handleFocusOut = (onBlur) => {
@@ -193,6 +195,10 @@ class Select extends Component <Props, State> {
       };
     }
 
+    if (nextProps.isLoading !== undefined) {
+      return { isLoading: nextProps.isLoading };
+    }
+
     return { notMatch: false };
   }
 
@@ -222,6 +228,7 @@ class Select extends Component <Props, State> {
       filterValue,
       cursor,
       notMatch,
+      isLoading,
     } = this.state;
 
     return (
@@ -271,7 +278,7 @@ class Select extends Component <Props, State> {
           small={small}
         >
           <Choose>
-            <When condition={filterValue.length !== 0}>
+            <When condition={filterValue.length !== 0 && !isLoading}>
               <For each="data" of={filterValue}>
                 <SelectItem
                   className={cursor === index ? 'active' : null}
@@ -286,6 +293,11 @@ class Select extends Component <Props, State> {
                   {data.props.children}
                 </SelectItem>
               </For>
+            </When>
+            <When condition={isLoading}>
+              <SelectItem id="select-loading" role="option">
+                <Loading />
+              </SelectItem>
             </When>
             <Otherwise>
               <SelectItem
@@ -326,6 +338,7 @@ type State = {
   cursor: number,
   notMatch: boolean,
   childrenLength: number,
+  isLoading: boolean,
 };
 
 export default Select;

@@ -175,13 +175,20 @@ export const SelectItemWrapper = styled.li`
   &:first-child {
     margin-top: .5em;
   }
+
   &:last-child {
     margin-bottom: .5em;
   }
+
   &.active {
     color: ${SecondaryColor.actionblue};
     background: ${SecondaryColor.lightergrey};
   }
+
+  &#select-loading {
+    justify-content: center;
+  }
+
   ${({ disabled }) => {
     if (disabled) {
       return `
