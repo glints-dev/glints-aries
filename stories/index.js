@@ -24,6 +24,7 @@ import ButtonStory from './General/ButtonStory';
 import CheckboxStory from './Input/CheckboxStory';
 import CollapsibleStory from './Display/CollapsibleStory';
 import ColorStory from './Utilities/ColorStory';
+import DatePickerStory from './Application/DatePickerStory';
 import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
 import DropdownStory from './Navigation/DropdownStory';
@@ -163,6 +164,7 @@ storiesOf('Application', module)
       </StorybookStyle>
     </Provider>
   ))
+  .add('DatePicker', () => <DatePickerStory />)
   .add('Gallery', () => <GalleryStory />)
   .add('Information', () => <InformationStory />)
   .add('Job Card', () => <JobCardStory />)
