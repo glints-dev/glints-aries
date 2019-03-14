@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const DatepickerContainer = styled.div`
     position: relative;
 `;
 
-export const DatePickerContainer = styled.div`
+export const DatepickerWrapper = styled.div`
     position: absolute;
     width: 280px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);

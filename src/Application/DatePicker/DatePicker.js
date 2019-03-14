@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 
 import {
-  Container,
-  DatePickerContainer,
+  DatepickerContainer,
+  DatepickerWrapper,
   SectionContainer,
   FlexCenter,
   IconHolder,
@@ -265,9 +265,9 @@ class DatePicker extends Component <State, Props> {
   render() {
     const { currentYear, currentMonth } = this.state;
     return (
-      <Container>
+      <DatepickerContainer>
         <input type="input" />
-        <DatePickerContainer>
+        <DatepickerWrapper>
           <SectionContainer border>
             <FlexCenter justify="space-between">
               {this.renderLeftSideIcon()}
@@ -292,8 +292,8 @@ class DatePicker extends Component <State, Props> {
               Today
             </FlexCenter>
           </SectionContainer>
-        </DatePickerContainer>
-      </Container>
+        </DatepickerWrapper>
+      </DatepickerContainer>
     );
   }
 }
