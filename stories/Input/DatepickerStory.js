@@ -1,15 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import StorybookComponent from '../StorybookComponent';
 
 import Datepicker from '../../src/Input/Datepicker';
 
-class DatepickerStory extends Component {
-  render() {
-    return (
-      <div>
-        <Datepicker />
-      </div>
-    );
-  }
-}
+const props = {
+  Datepicker: [
+    {
+      name: 'label',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Sets input label for Datepicker.',
+    },
+  ],
+};
+
+const DatepickerStory = () => (
+  <StorybookComponent
+    title="Datepicker"
+    code="import { Datepicker } from 'glints-aries'"
+    propsObject={props}
+    usage={'<Datepicker />'}
+  >
+    <div style={{ width: '300px' }}>
+      <Datepicker />
+    </div>
+  </StorybookComponent>
+);
 
 export default DatepickerStory;

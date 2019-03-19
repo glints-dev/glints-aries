@@ -12,10 +12,12 @@ export const DatepickerWrapper = styled.div`
   transform: ${({ isOpen }) => isOpen ? 'scaleY(1)' : 'scaleY(0.9)'};
   transform-origin: center top;
   transition: ${({ isOpen }) => isOpen ? 'all .2s ease' : 'all .1s ease'};
+  background: ${SecondaryColor.white};
   width: 280px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   margin-top: .5em;
   outline: none;
+  z-index: 1000;
 `;
 
 export const DatepickerSection = styled.div`
