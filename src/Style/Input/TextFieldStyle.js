@@ -64,6 +64,16 @@ export const TextFieldInput = styled.input`
   border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
 
+  ${({ disableTyping }) => {
+    if (disableTyping) {
+      return `
+        color: transparent;
+        text-shadow: 0 0 0 black;
+        cursor: pointer;
+      `;
+    }
+  }}
+
   ${({ status, floating }) => {
     if (status === 'error') {
       if (floating) {

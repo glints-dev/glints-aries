@@ -57,6 +57,14 @@ const props = {
       description: 'Sets TextField to be smaller.',
     },
     {
+      name: 'disableTyping',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Disable from typing on input field.',
+    },
+    {
       name: 'removeFloatingLabel',
       type: 'boolean',
       defaultValue: <code>false</code>,

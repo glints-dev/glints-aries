@@ -26,7 +26,7 @@ class TextField extends Component <Props, State> {
       });
 
       if (onBlur !== undefined) {
-        return onBlur();
+        return onBlur(e);
       }
     };
 
@@ -39,6 +39,18 @@ class TextField extends Component <Props, State> {
     this.setState({
       inputType: inputType === 'password' ? 'text' : 'password',
     });
+  }
+
+  handleKeyDown = (e) => {
+    const { disableTyping, onKeyDown } = this.props;
+
+    if (disableTyping) {
+      e.preventDefault();
+    }
+
+    if (onKeyDown !== undefined) {
+      return onKeyDown(e);
+    }
   }
 
   componentDidMount() {
@@ -72,6 +84,7 @@ class TextField extends Component <Props, State> {
       onBlur,
       small,
       removeFloatingLabel,
+      disableTyping,
       ...defaultProps
     } = this.props;
 
@@ -85,14 +98,17 @@ class TextField extends Component <Props, State> {
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange(onBlur)}
+          onKeyDown={this.handleKeyDown}
           floating={floating}
           value={value}
           aria-label={label}
           small={small}
+          disableTyping={disableTyping}
           {...defaultProps}
         />
         <If condition={!removeFloatingLabel}>
           <TextFieldLabel
+            id="textfield-label"
             floating={floating}
             status={status}
             small={small}
@@ -124,6 +140,7 @@ type Props = {
   className: string,
   small: boolean,
   removeFloatingLabel: boolean,
+  disableTyping: boolean,
 }
 
 type State = {

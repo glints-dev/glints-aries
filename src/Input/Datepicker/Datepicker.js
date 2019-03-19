@@ -1,19 +1,22 @@
-/* eslint-disable no-plusplus  */
 import React, { Component } from 'react';
+
+import moment from 'moment';
 
 import {
   DatepickerContainer,
   DatepickerWrapper,
-  SectionContainer,
-  FlexCenter,
-  IconHolder,
-  Table,
+  DatepickerSection,
+  DatepickerContent,
+  DatepickerIconWrapper,
+  DatepickerTable,
   Td,
   Th,
   HoverContent,
-  GridBox,
-} from '../../Style/Application/DatePickerStyle';
+  DatepickerGridBox,
+  DatepickerTodayBtn,
+} from '../../Style/Input/DatepickerStyle';
 
+import TextField from '../TextField';
 import Icon from '../../General/Icon';
 
 const months = [
@@ -31,13 +34,15 @@ const months = [
   'December',
 ];
 
-class DatePicker extends Component <State, Props> {
+class Datepicker extends Component <State, Props> {
   constructor() {
     super();
     const currentYear = new Date().getFullYear().toString();
     const currentMonth = new Date().getMonth();
     this.state = {
       selectedDate: null,
+      previousFullDate: null,
+      getFullDate: '',
       currentYear,
       currentMonth,
       firstDay: new Date(
@@ -50,7 +55,59 @@ class DatePicker extends Component <State, Props> {
         currentMonth + 1,
         0
       ).getDate(),
+      isOpen: false,
+      isDatepickerFocus: false,
     };
+  }
+
+  handleOnFocus = (e) => {
+    const isFocus = e.currentTarget === document.activeElement;
+    this.setState({ isOpen: isFocus });
+  }
+
+  handleOnInputBlur = (e) => {
+    const isBlur = e.currentTarget === document.activeElement;
+    this.setState({ isOpen: isBlur });
+  }
+
+  handleOnDateBlur = (e) => {
+    const isBlur = e.currentTarget === document.activeElement;
+    this.setState({
+      isOpen: isBlur,
+      isDatepickerFocus: false,
+    });
+  }
+
+  handleMouseDownDate = (e) => {
+    e.currentTarget.focus();
+    this.setState({ isDatepickerFocus: true });
+  }
+
+  handleClickToday = () => {
+    this.setState({
+      getFullDate: moment(new Date()).format('LL'),
+      isOpen: false,
+    });
+  }
+
+  handleOnClickSelectedDate = (date) => {
+    const { currentMonth, currentYear } = this.state;
+    const tempDate = Number(date.toString().length) === 1 ? `0${date}` : `${date}`;
+    const tempMonth = Number((currentMonth + 1).toString().length) === 1 ? `0${currentMonth + 1}` : `${currentMonth + 1}`;
+
+    this.setState({
+      getFullDate: moment(`${currentYear}-${tempMonth}-${tempDate}`).format('LL'),
+      selectedDate: date,
+      isOpen: false,
+    });
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.isDatepickerFocus) {
+      return { isOpen: true };
+    }
+
+    return null;
   }
 
   setYearBack = () => {
@@ -115,6 +172,7 @@ class DatePicker extends Component <State, Props> {
   setMonthNext = () => {
     const { currentMonth, currentYear } = this.state;
     const checkCurrentMonth = currentMonth;
+
     if (checkCurrentMonth < 11) {
       this.setState({
         currentMonth: currentMonth + 1,
@@ -133,12 +191,6 @@ class DatePicker extends Component <State, Props> {
       this.setYearNext();
       this.setState({ currentMonth: 0 });
     }
-  }
-
-  handleOnClickSelectedDate = (date) => {
-    this.setState({
-      selectedDate: date,
-    });
   }
 
   renderTHead = () => {
@@ -178,7 +230,7 @@ class DatePicker extends Component <State, Props> {
         <Td
           role="gridcell"
           key={i}
-          onClick={() => this.handleOnClickSelectedDate(i)}
+          onMouseDown={() => this.handleOnClickSelectedDate(i)}
         >
           <HoverContent
             selectedDate={selectedDate}
@@ -208,7 +260,7 @@ class DatePicker extends Component <State, Props> {
           <Td
             role="gridcell"
             key={i}
-            onClick={() => this.handleOnClickSelectedDate(i)}
+            onMouseDown={() => this.handleOnClickSelectedDate(i)}
           >
             <HoverContent
               selectedDate={selectedDate}
@@ -241,57 +293,81 @@ class DatePicker extends Component <State, Props> {
   }
 
   renderLeftSideIcon = () => (
-    <GridBox>
-      <IconHolder onClick={this.setYearBack}>
+    <DatepickerGridBox>
+      <DatepickerIconWrapper onMouseDown={this.setYearBack}>
+        <Icon name="arrow-back-double" color="grey" />
+      </DatepickerIconWrapper>
+      <DatepickerIconWrapper onMouseDown={this.setMonthBack}>
         <Icon name="arrow-back" color="grey" />
-      </IconHolder>
-      <IconHolder onClick={this.setMonthBack}>
-        <Icon name="arrow-back" color="grey" />
-      </IconHolder>
-    </GridBox>
+      </DatepickerIconWrapper>
+    </DatepickerGridBox>
   )
 
   renderRightSideIcon = () => (
-    <GridBox>
-      <IconHolder onClick={this.setMonthNext}>
+    <DatepickerGridBox>
+      <DatepickerIconWrapper onMouseDown={this.setMonthNext}>
         <Icon name="arrow-next" color="grey" />
-      </IconHolder>
-      <IconHolder onClick={this.setYearNext}>
-        <Icon name="arrow-next" color="grey" />
-      </IconHolder>
-    </GridBox>
+      </DatepickerIconWrapper>
+      <DatepickerIconWrapper onMouseDown={this.setYearNext}>
+        <Icon name="arrow-next-double" color="grey" />
+      </DatepickerIconWrapper>
+    </DatepickerGridBox>
   )
 
   render() {
-    const { currentYear, currentMonth } = this.state;
+    const { label } = this.props;
+    const {
+      getFullDate,
+      currentYear,
+      currentMonth,
+      isOpen,
+    } = this.state;
+    // console.log(moment('2016-07-01').format('LL'));
     return (
-      <DatepickerContainer>
-        <input type="input" />
-        <DatepickerWrapper>
-          <SectionContainer border>
-            <FlexCenter justify="space-between">
+      <DatepickerContainer id="aries-datepicker">
+        <TextField
+          type="text"
+          label={label || 'Select date'}
+          value={getFullDate}
+          removeFloatingLabel
+          onFocus={this.handleOnFocus}
+          onBlur={this.handleOnInputBlur}
+        />
+        <DatepickerWrapper
+          isOpen={isOpen}
+          onBlur={this.handleOnDateBlur}
+          onMouseDown={this.handleMouseDownDate}
+          tabIndex="0"
+        >
+          <DatepickerSection border>
+            <DatepickerContent justify="space-between">
               {this.renderLeftSideIcon()}
-              <FlexCenter>
+              <DatepickerContent>
                 {months[currentMonth]}
                 &nbsp;&nbsp;
                 {currentYear}
-              </FlexCenter>
+              </DatepickerContent>
               {this.renderRightSideIcon()}
-            </FlexCenter>
-          </SectionContainer>
-          <SectionContainer border>
-            <FlexCenter>
-              <Table cellSpacing="0" role="grid">
+            </DatepickerContent>
+          </DatepickerSection>
+          <DatepickerSection border>
+            <DatepickerContent>
+              <DatepickerTable cellSpacing="0" role="grid">
                 {this.renderTHead()}
                 {this.renderTBody()}
-              </Table>
-            </FlexCenter>
-          </SectionContainer>
-          <SectionContainer>
-            <FlexCenter>
-              Today
-            </FlexCenter>
-          </SectionContainer>
+              </DatepickerTable>
+            </DatepickerContent>
+          </DatepickerSection>
+          <DatepickerSection>
+            <DatepickerContent>
+              <DatepickerTodayBtn
+                type="button"
+                onMouseDown={this.handleClickToday}
+              >
+                Today
+              </DatepickerTodayBtn>
+            </DatepickerContent>
+          </DatepickerSection>
         </DatepickerWrapper>
       </DatepickerContainer>
     );
@@ -299,10 +375,14 @@ class DatePicker extends Component <State, Props> {
 }
 
 type State = {
-  currentYear: string;
-  currentMonth: number;
-  firstDay: number;
-  lastDate: number;
+  previousFullDate: string,
+  getFullDate: string,
+  currentYear: string,
+  currentMonth: number,
+  firstDay: number,
+  lastDate: number,
+  isOpen: boolean,
+  isDatepickerFocus: boolean,
 }
 
-export default DatePicker;
+export default Datepicker;
