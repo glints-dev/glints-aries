@@ -31,6 +31,18 @@ export const DatepickerContent = styled.div`
   align-items: center;
 `;
 
+export const DatepickerMonthYearBtn = styled.button`
+  border: none;
+  background: ${SecondaryColor.white};
+  padding: 0;
+  cursor: pointer;
+  margin: 0 4px;
+
+  &:hover {
+    color: ${SecondaryColor.blue};
+  }
+`;
+
 export const DatepickerTodayBtn = styled.button`
   display: flex;
   align-items: center;
@@ -45,9 +57,15 @@ export const DatepickerTodayBtn = styled.button`
   }
 `;
 
+export const DatepickerNavigation = styled.div`
+  display: flex;
+`;
+
 export const DatepickerIconWrapper = styled.div`
+  display: flex;
   font-size: 8px;
   cursor: pointer;
+  margin: ${({ needMargin }) => needMargin && '0 8px'};
 `;
 
 export const DatepickerTable = styled.table`
@@ -56,25 +74,24 @@ export const DatepickerTable = styled.table`
 `;
 
 export const Td = styled.td`
-  padding: 3px 0;
-  text-align: center;
+  padding: 0;
 `;
 
 export const Th = styled.th`
-  padding: 3px 0;
-  text-align: center;
+  padding: 0;
 `;
 
 export const HoverContent = styled.div`
-  display: block;
-  margin: 0 auto;
-  width: 24px;
-  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${({ biggerSize }) => !biggerSize ? '35px' : 'auto'};
+  height: ${({ biggerSize }) => !biggerSize ? '35px' : '50px'};
   border-radius: 2px;
   transition: background .3s ease;
   background-color: transparent;
   line-height: 22px;
-  ${({ selectedDate, index }) => selectedDate && selectedDate === index
+  ${({ currentActiveDate, index }) => currentActiveDate && currentActiveDate === index
     ? `
       background-color: #1890ff;
       color: white;
@@ -90,8 +107,3 @@ export const HoverContent = styled.div`
     : null}
 `;
 
-export const DatepickerGridBox = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: .5em;
-`;

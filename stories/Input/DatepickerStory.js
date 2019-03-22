@@ -19,7 +19,7 @@ const props = {
 
 const DatepickerStory = () => (
   <StorybookComponent
-    title="Datepicker"
+    title="Datepicker - Unfinished"
     code="import { Datepicker } from 'glints-aries'"
     propsObject={props}
     usage={'<Datepicker />'}

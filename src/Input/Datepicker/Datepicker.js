@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/* eslint-disable no-plusplus */
+import React, { Fragment, Component } from 'react';
 
 import moment from 'moment';
 
@@ -7,12 +8,13 @@ import {
   DatepickerWrapper,
   DatepickerSection,
   DatepickerContent,
+  DatepickerMonthYearBtn,
   DatepickerIconWrapper,
   DatepickerTable,
   Td,
   Th,
   HoverContent,
-  DatepickerGridBox,
+  DatepickerNavigation,
   DatepickerTodayBtn,
 } from '../../Style/Input/DatepickerStyle';
 
@@ -40,11 +42,12 @@ class Datepicker extends Component <State, Props> {
     const currentYear = new Date().getFullYear().toString();
     const currentMonth = new Date().getMonth();
     this.state = {
-      selectedDate: null,
-      previousFullDate: null,
+      previousFullDate: '',
       getFullDate: '',
+      currentActiveDate: '',
       currentYear,
       currentMonth,
+      monthValue: currentMonth,
       firstDay: new Date(
         currentYear,
         currentMonth + 1,
@@ -57,12 +60,16 @@ class Datepicker extends Component <State, Props> {
       ).getDate(),
       isOpen: false,
       isDatepickerFocus: false,
+      showMonths: false,
     };
   }
 
   handleOnFocus = (e) => {
     const isFocus = e.currentTarget === document.activeElement;
-    this.setState({ isOpen: isFocus });
+    this.setState({
+      isOpen: isFocus,
+      showMonths: false,
+    });
   }
 
   handleOnInputBlur = (e) => {
@@ -91,20 +98,38 @@ class Datepicker extends Component <State, Props> {
   }
 
   handleOnClickSelectedDate = (date) => {
-    const { currentMonth, currentYear } = this.state;
+    const { monthValue, currentYear } = this.state;
     const tempDate = Number(date.toString().length) === 1 ? `0${date}` : `${date}`;
-    const tempMonth = Number((currentMonth + 1).toString().length) === 1 ? `0${currentMonth + 1}` : `${currentMonth + 1}`;
+    const tempMonth = Number((monthValue + 1).toString().length) === 1 ? `0${monthValue + 1}` : `${monthValue + 1}`;
+    const activeDate = `${currentYear}${monthValue}${date}`;
 
     this.setState({
       getFullDate: moment(`${currentYear}-${tempMonth}-${tempDate}`).format('LL'),
-      selectedDate: date,
+      currentActiveDate: activeDate,
       isOpen: false,
     });
   }
 
+  handleShowMonths = (e) => {
+    e.preventDefault();
+    this.setState({ showMonths: true });
+  }
+
+  handleChooseMonth = (e, month, tempMonth) => {
+    e.preventDefault();
+    this.setState({
+      monthValue: tempMonth.indexOf(month),
+      showMonths: false,
+    });
+  }
+
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.isDatepickerFocus) {
+    if (prevState.isDatepickerFocus && prevState.previousFullDate === prevState.getFullDate) {
       return { isOpen: true };
+    }
+
+    if (prevState.previousFullDate !== prevState.getFullDate) {
+      return { previousFullDate: prevState.getFullDate };
     }
 
     return null;
@@ -147,49 +172,49 @@ class Datepicker extends Component <State, Props> {
   }
 
   setMonthBack = () => {
-    const { currentMonth, currentYear } = this.state;
-    const checkCurrentMonth = currentMonth;
+    const { monthValue, currentYear } = this.state;
+    const checkCurrentMonth = monthValue;
     if (checkCurrentMonth > 0) {
       this.setState({
-        currentMonth: currentMonth - 1,
+        monthValue: monthValue - 1,
         firstDay: new Date(
           currentYear,
-          currentMonth,
+          monthValue,
           1
         ).getDay(),
         lastDate: new Date(
           currentYear,
-          currentMonth,
+          monthValue,
           0
         ).getDate(),
       });
     } else {
       this.setYearBack();
-      this.setState({ currentMonth: 11 });
+      this.setState({ monthValue: 11 });
     }
   }
 
   setMonthNext = () => {
-    const { currentMonth, currentYear } = this.state;
-    const checkCurrentMonth = currentMonth;
+    const { monthValue, currentYear } = this.state;
+    const checkCurrentMonth = monthValue;
 
     if (checkCurrentMonth < 11) {
       this.setState({
-        currentMonth: currentMonth + 1,
+        monthValue: monthValue + 1,
         firstDay: new Date(
           currentYear,
-          currentMonth + 2,
+          monthValue + 2,
           1
         ).getDay(),
         lastDate: new Date(
           currentYear,
-          currentMonth + 2,
+          monthValue + 2,
           0
         ).getDate(),
       });
     } else {
       this.setYearNext();
-      this.setState({ currentMonth: 0 });
+      this.setState({ monthValue: 0 });
     }
   }
 
@@ -222,7 +247,12 @@ class Datepicker extends Component <State, Props> {
   }
 
   renderFirstWeekRow = () => {
-    const { firstDay, selectedDate } = this.state;
+    const {
+      firstDay,
+      currentMonth,
+      currentYear,
+      currentActiveDate,
+    } = this.state;
     let tempArray = [];
     tempArray = this.renderOffSetDay();
     for (let i = 1; i <= 7 - firstDay; i++) {
@@ -233,8 +263,8 @@ class Datepicker extends Component <State, Props> {
           onMouseDown={() => this.handleOnClickSelectedDate(i)}
         >
           <HoverContent
-            selectedDate={selectedDate}
-            index={i}
+            index={`${currentYear}${currentMonth}${i}`}
+            currentActiveDate={`${currentYear}${currentMonth}${i}` === currentActiveDate && currentActiveDate}
             hoverAble
           >
             {i}
@@ -246,7 +276,13 @@ class Datepicker extends Component <State, Props> {
   }
 
   renderDayRow = (array = [], startingCount = 0) => {
-    const { firstDay, lastDate, selectedDate } = this.state;
+    const {
+      firstDay,
+      lastDate,
+      currentMonth,
+      currentYear,
+      currentActiveDate,
+    } = this.state;
     const functionArray = array;
     const functionStartingCount = startingCount === 0
       ? (8 - firstDay)
@@ -263,8 +299,8 @@ class Datepicker extends Component <State, Props> {
             onMouseDown={() => this.handleOnClickSelectedDate(i)}
           >
             <HoverContent
-              selectedDate={selectedDate}
-              index={i}
+              index={`${currentYear}${currentMonth}${i}`}
+              currentActiveDate={`${currentYear}${currentMonth}${i}` === currentActiveDate && currentActiveDate}
               hoverAble
             >
               {i}
@@ -292,37 +328,66 @@ class Datepicker extends Component <State, Props> {
     return tempArray;
   }
 
-  renderLeftSideIcon = () => (
-    <DatepickerGridBox>
+  renderLeftSideIcon = showMonths => (
+    <DatepickerNavigation>
       <DatepickerIconWrapper onMouseDown={this.setYearBack}>
         <Icon name="arrow-back-double" color="grey" />
       </DatepickerIconWrapper>
-      <DatepickerIconWrapper onMouseDown={this.setMonthBack}>
-        <Icon name="arrow-back" color="grey" />
-      </DatepickerIconWrapper>
-    </DatepickerGridBox>
+      <If condition={!showMonths}>
+        <DatepickerIconWrapper needMargin onMouseDown={this.setMonthBack}>
+          <Icon name="arrow-back" color="grey" />
+        </DatepickerIconWrapper>
+      </If>
+    </DatepickerNavigation>
   )
 
-  renderRightSideIcon = () => (
-    <DatepickerGridBox>
-      <DatepickerIconWrapper onMouseDown={this.setMonthNext}>
-        <Icon name="arrow-next" color="grey" />
-      </DatepickerIconWrapper>
+  renderRightSideIcon = showMonths => (
+    <DatepickerNavigation>
+      <If condition={!showMonths}>
+        <DatepickerIconWrapper needMargin onMouseDown={this.setMonthNext}>
+          <Icon name="arrow-next" color="grey" />
+        </DatepickerIconWrapper>
+      </If>
       <DatepickerIconWrapper onMouseDown={this.setYearNext}>
         <Icon name="arrow-next-double" color="grey" />
       </DatepickerIconWrapper>
-    </DatepickerGridBox>
+    </DatepickerNavigation>
   )
+
+  renderShowMonths = () => {
+    const tempMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const rows = [];
+    for (let i = 0; i < 4; i++) {
+      rows.push(
+        <tr role="row" key={tempMonth[i]}>
+          {tempMonth.slice(i * 3, 3 + (i * 3)).map(data => (
+            <Td role="gridcell" key={data}>
+              <HoverContent hoverAble biggerSize onMouseDown={e => this.handleChooseMonth(e, data, tempMonth)}>
+                {data}
+              </HoverContent>
+            </Td>
+          ))}
+        </tr>
+      );
+    }
+
+    return (
+      <tbody>
+        {rows}
+      </tbody>
+    );
+  }
 
   render() {
     const { label } = this.props;
     const {
       getFullDate,
       currentYear,
-      currentMonth,
+      monthValue,
       isOpen,
+      showMonths,
     } = this.state;
-    // console.log(moment('2016-07-01').format('LL'));
+
     return (
       <DatepickerContainer id="aries-datepicker">
         <TextField
@@ -330,6 +395,7 @@ class Datepicker extends Component <State, Props> {
           label={label || 'Select date'}
           value={getFullDate}
           removeFloatingLabel
+          disableTyping
           onFocus={this.handleOnFocus}
           onBlur={this.handleOnInputBlur}
         />
@@ -341,20 +407,34 @@ class Datepicker extends Component <State, Props> {
         >
           <DatepickerSection border>
             <DatepickerContent justify="space-between">
-              {this.renderLeftSideIcon()}
+              {this.renderLeftSideIcon(showMonths)}
               <DatepickerContent>
-                {months[currentMonth]}
-                &nbsp;&nbsp;
-                {currentYear}
+
+                <If condition={!showMonths}>
+                  <DatepickerMonthYearBtn onMouseDown={this.handleShowMonths}>
+                    {months[monthValue]}
+                  </DatepickerMonthYearBtn>
+                </If>
+
+                <DatepickerMonthYearBtn>
+                  {currentYear}
+                </DatepickerMonthYearBtn>
               </DatepickerContent>
-              {this.renderRightSideIcon()}
+              {this.renderRightSideIcon(showMonths)}
             </DatepickerContent>
           </DatepickerSection>
           <DatepickerSection border>
             <DatepickerContent>
               <DatepickerTable cellSpacing="0" role="grid">
-                {this.renderTHead()}
-                {this.renderTBody()}
+                <Choose>
+                  <When condition={!showMonths}>
+                    {this.renderTHead()}
+                    {this.renderTBody()}
+                  </When>
+                  <Otherwise>
+                    {this.renderShowMonths()}
+                  </Otherwise>
+                </Choose>
               </DatepickerTable>
             </DatepickerContent>
           </DatepickerSection>
@@ -377,8 +457,10 @@ class Datepicker extends Component <State, Props> {
 type State = {
   previousFullDate: string,
   getFullDate: string,
+  currentActiveDate: string,
   currentYear: string,
   currentMonth: number,
+  monthValue: number,
   firstDay: number,
   lastDate: number,
   isOpen: boolean,
