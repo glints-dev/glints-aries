@@ -1,3 +1,14 @@
+#### 3.0.28 (2019-03-29)
+
+##### Bug Fixes
+
+* **defaultValue:**  fix floating label when textfield supplied with defaultValue ([b7307d4f](https://github.com/glints-dev/glints-aries/commit/b7307d4fbb4dcf5235893262a9b7bd47c4e8568c))
+
+##### Other Changes
+
+* **style:**  increase z-index of modal ([7c5d7cdc](https://github.com/glints-dev/glints-aries/commit/7c5d7cdc1c5b89814f2549bfc2b6b67a496d9303))
+*  Wrap keyframes interpolation with `css` template processor. ([9cdd2a90](https://github.com/glints-dev/glints-aries/commit/9cdd2a9045b5b442fb5d84a5d76d151662d9f069))
+
 #### 3.0.27 (2019-03-14)
 
 #### 3.0.26 (2019-03-06)
