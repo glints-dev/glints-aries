@@ -2,6 +2,9 @@ import styled, { css, keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 import { Theme } from '../../Utils/StyleConfig';
 
+const generalButtonPadding = [15, 40];
+const smallButtonPadding = [10, 20];
+
 const Button = styled.button`
   display: flex;
   position: relative;
@@ -14,7 +17,9 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 1em;
   line-height: 1.5;
-  padding: ${({ small }) => small ? '10px 20px' : '15px 40px'};
+  padding: ${({ small }) => small ?
+    `${smallButtonPadding[0]}px ${smallButtonPadding[1]}px` :
+    `${generalButtonPadding[0]}px ${generalButtonPadding[1]}px`};
   background: transparent;
   transition: all .2s;
 `;
@@ -342,6 +347,10 @@ export const GhostBtn = styled(Button)`
   transition: background-color .5s;
   width: ${({ block }) => block && '100%'};
   background: ${SecondaryColor.white};
+  padding: ${({ small }) => small ?
+    `${smallButtonPadding[0] - 2}px ${smallButtonPadding[1] - 2}px` :
+    `${generalButtonPadding[0] - 2}px ${generalButtonPadding[1] - 2}px`};
+  }
 
   ${(props) => {
     switch (props.theme) {
