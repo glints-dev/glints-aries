@@ -5,9 +5,6 @@ import React, { Component, Children } from 'react';
 import { JobcardContainer, JobCardWrapper, CustomLink } from '../../Style/Application/JobCardStyle';
 
 class JobCard extends Component <Props> {
-  static defaultProps = {
-    target: '_self',
-  }
 
   renderLinkChild = () => {
     const { children, targetUrl, ...defaultProps } = this.props;
