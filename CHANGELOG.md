@@ -1,3 +1,9 @@
+#### 3.0.30 (2019-04-16)
+
+##### Other Changes
+
+*  Remove default prop `target` to leave it undefined when not provided ([413ece8a](https://github.com/glints-dev/glints-aries/commit/413ece8a7212285754b7b700c11213b3292e7850))
+
 #### 3.0.28 (2019-03-29)
 
 ##### Bug Fixes
