@@ -140,6 +140,7 @@ export const PrimaryContainer = styled.div`
     ${(props) => {
     const themeBackgrounds = {
       [Theme.BLUE_RED]: PrimaryColor.glintsred,
+      [Theme.YELLOW]: PrimaryColor.glintsred,
     };
     if (props.disabled) {
       return 'background-color: none';
@@ -203,6 +204,9 @@ export const PrimaryBtn = styled(Button)`
       [Theme.BLUE_RED]: `
         background-color: ${PrimaryColor.glintsblue};
         color: ${SecondaryColor.white};
+      `,
+      [Theme.YELLOW]: `
+        background-color: ${PrimaryColor.glintsyellow};
       `,
     };
 
