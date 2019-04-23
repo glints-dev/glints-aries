@@ -7,6 +7,7 @@ export const ProfilePictureContent = styled.div`
   z-index: 1;
   width: 5em;
   height: 5em;
+  border-radius: 50%;
 
   svg {
     position: absolute;
@@ -27,6 +28,8 @@ export const ProfilePictureContent = styled.div`
           background-color: rgba(0, 0, 0, .5);
           height: 100%;
           width: 100%;
+          top: 0
+          left: 0;
           border-radius: 50%;
         }
       `;
