@@ -225,7 +225,7 @@ const ButtonStories = () => (
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Primary Button</Heading>
-      <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED} onClick={action('Primary Button')}>
+      <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} onClick={action('Primary Button')}>
         Primary
       </Button>
     </div>
@@ -235,7 +235,7 @@ const ButtonStories = () => (
         <pre>
           {`<Button
   variant="primary"
-  theme="red"
+  theme="yellow"
 >
   Primary
 </Button>`}
@@ -309,7 +309,7 @@ const ButtonStories = () => (
             </td>
             <td>
               <code>
-                red | blue | blue-red
+                red | blue | blue-red | yellow
               </code>
             </td>
             <td>
