@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import SelectItem from './SelectItem';
 
@@ -26,11 +27,53 @@ class Select extends Component <Props, State> {
     isLoading: false,
   }
 
+  constructor() {
+    super();
+    this.node = React.createRef();
+  }
+
+  componentDidMount() {
+    const { value, children } = this.props;
+
+    // Checking if children data is exist or not.
+    if (children.length !== 0) {
+      this.setState({
+        childrenLength: children.length,
+        filterValue: children.map(data => data),
+      });
+    } else {
+      this.setState({
+        notMatch: true,
+      });
+    }
+
+    if (value !== undefined && value !== '' && value !== null) {
+      this.setState({
+        floating: true,
+        selectedValue: value,
+        defaultValue: value,
+      });
+    }
+
+    document.addEventListener('click', this.handleOnBlur, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOnBlur, false);
+  }
+
+  handleOnBlur = (event) => {
+    if (!ReactDOM.findDOMNode(this.node.current).contains(event.target)) {
+      this.setState({
+        isFocus: false,
+      });
+    }
+  }
+
   handleFocusOut = (onBlur) => {
     const listener = (e) => {
       this.setState({
         floating: e.target.value.length > 0,
-        isFocus: false,
       });
 
       if (onBlur !== undefined) {
@@ -76,10 +119,10 @@ class Select extends Component <Props, State> {
   handleClick = (onOptionClick) => {
     const listener = (e) => {
       const { children, onChange } = this.props;
-
       this.setState({
         selectedValue: e.currentTarget.innerText,
         filterValue: children.map(data => data),
+        isFocus: false,
       });
 
       if (onChange !== undefined) {
@@ -132,30 +175,6 @@ class Select extends Component <Props, State> {
     this.setState({
       cursor: Number(e.target.dataset.id),
     });
-  }
-
-  componentDidMount() {
-    const { value, children } = this.props;
-
-    // Checking if children data is exist or not.
-    if (children.length !== 0) {
-      this.setState({
-        childrenLength: children.length,
-        filterValue: children.map(data => data),
-      });
-    } else {
-      this.setState({
-        notMatch: true,
-      });
-    }
-
-    if (value !== undefined && value !== '' && value !== null) {
-      this.setState({
-        floating: true,
-        selectedValue: value,
-        defaultValue: value,
-      });
-    }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -232,7 +251,11 @@ class Select extends Component <Props, State> {
     } = this.state;
 
     return (
-      <SelectContainer id="aries-select" className={className}>
+      <SelectContainer
+        id="aries-select"
+        className={className}
+        ref={this.node}
+      >
         <SelectWrapper id="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
