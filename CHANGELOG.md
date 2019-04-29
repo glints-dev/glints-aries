@@ -1,3 +1,10 @@
+#### 3.0.32 (2019-04-29)
+
+##### Other Changes
+
+*  added event listener to close drop down when not focus ([0780690c](https://github.com/glints-dev/glints-aries/commit/0780690c0d7b6f57f836aa359e155b1c978155f0))
+* **Icon:**  adding external-link Icon ([f5961386](https://github.com/glints-dev/glints-aries/commit/f5961386ef32bf7d9ab5e2d5098f535ff8ea8619))
+
 #### 3.0.31 (2019-04-23)
 
 ##### Refactors
