@@ -49,7 +49,6 @@ class ProfilePicture extends Component <Props, State> {
         {...defaultProps}
       >
         <ProfilePictureContent
-          className="profile-wrapper"
           editable={editable}
           tabIndex={editable && '-1'}
         >
