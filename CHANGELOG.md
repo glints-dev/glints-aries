@@ -1,3 +1,9 @@
+#### 3.0.33 (2019-04-30)
+
+##### Other Changes
+
+*  remove unnecessary className ([174afaec](https://github.com/glints-dev/glints-aries/commit/174afaec1778eead88d0fd576ed3867dcd8412fd))
+
 #### 3.0.32 (2019-04-29)
 
 ##### Other Changes
