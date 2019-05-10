@@ -1,6 +1,8 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+
+import { isFunction } from 'lodash';
 import {
   TextareaContainer,
   TextareaInput,
@@ -51,7 +53,7 @@ class Textarea extends PureComponent <Props, State> {
       rows: currentRows < maxRows ? currentRows : maxRows,
     });
 
-    if (this.props.onChange !== undefined) {
+    if (isFunction(this.props.onChange)) {
       return this.props.onChange(e);
     }
   };
