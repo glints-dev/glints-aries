@@ -1,13 +1,13 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   TextareaContainer,
   TextareaInput,
   TextareaLabel,
 } from '../../Style/Input/TextareaStyle';
 
-class Textarea extends Component <Props, State> {
+class Textarea extends PureComponent <Props, State> {
   state = {
     floating: false,
     rows: 4,
@@ -30,35 +30,31 @@ class Textarea extends Component <Props, State> {
     return listener;
   }
 
-  handleChange = (onChange) => {
-    const listener = (e) => {
-      const { minRows, maxRows } = this.state;
+  handleChange = e => {
+    const { minRows, maxRows } = this.state;
 
-      const previousRows = e.target.rows;
-      e.target.rows = minRows;
+    const previousRows = e.target.rows;
+    e.target.rows = minRows;
 
-      const currentRows = ~~(e.target.scrollHeight / 30);
+    const currentRows = ~~(e.target.scrollHeight / 30);
 
-      if (currentRows === previousRows) {
-        e.target.rows = currentRows;
-      }
+    if (currentRows === previousRows) {
+      e.target.rows = currentRows;
+    }
 
-      if (currentRows >= maxRows) {
-        e.target.rows = maxRows;
-        e.target.scrollTop = e.target.scrollHeight;
-      }
+    if (currentRows >= maxRows) {
+      e.target.rows = maxRows;
+      e.target.scrollTop = e.target.scrollHeight;
+    }
 
-      this.setState({
-        rows: currentRows < maxRows ? currentRows : maxRows,
-      });
+    this.setState({
+      rows: currentRows < maxRows ? currentRows : maxRows,
+    });
 
-      if (onChange !== undefined) {
-        return onChange(e);
-      }
-    };
-
-    return listener;
-  }
+    if (this.props.onChange !== undefined) {
+      return this.props.onChange(e);
+    }
+  };
 
   componentDidMount() {
     const textarea = document.getElementById('textarea-input');
@@ -111,7 +107,7 @@ class Textarea extends Component <Props, State> {
           status={status}
           disabled={disabled}
           onBlur={this.handleFocusChange(onBlur)}
-          onChange={this.handleChange(onChange)}
+          onChange={this.handleChange}
           floating={floating}
           value={value}
           aria-label={label}
