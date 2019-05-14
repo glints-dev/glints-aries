@@ -45,12 +45,12 @@ class ProfilePicture extends Component <Props, State> {
         aria-label="Profile Picture"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
-        tabIndex={editable && '0'}
+        tabIndex={editable ? '0' : undefined}
         {...defaultProps}
       >
         <ProfilePictureContent
           editable={editable}
-          tabIndex={editable && '-1'}
+          tabIndex={editable ? '-1' : undefined}
         >
           {isHover && <Icon name="edit" color="white" />}
           {children}
