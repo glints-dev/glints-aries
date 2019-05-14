@@ -64,39 +64,36 @@ class Dropdown extends Component <Props, State> {
     });
   };
 
-  handleClickItem = (onClick) => {
-    const listener = (e) => {
-      const { onChange } = this.props;
+  handleClickItem = onClick => e => {
+    const { onChange } = this.props;
 
-      if (e.target.dataset.value) {
-        this.setState({
-          dropdownLabel: e.target.dataset.value,
-          isOpen: false,
-        });
+    if (e.target.dataset.value) {
+      this.setState({
+        dropdownLabel: e.target.dataset.value,
+        isOpen: false,
+      });
 
-        if (onChange !== undefined) {
-          onChange(e.target.dataset.value);
-        }
-      } else {
-        this.setState({
-          isOpen: false,
-        });
+      if (onChange !== undefined) {
+        onChange(e.target.dataset.value);
       }
+    } else {
+      this.setState({
+        isOpen: false,
+      });
+    }
 
-      if (onClick !== undefined) {
-        onClick();
-      }
-    };
-    return listener;
+    if (onClick !== undefined) {
+      onClick();
+    }
   }
 
-  handleMouseEnter = (index) => {
+  handleMouseEnter = index => {
     this.setState({
       cursor: Number(index),
     });
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = e => {
     e.preventDefault();
 
     const { children } = this.props;
@@ -196,18 +193,18 @@ class Dropdown extends Component <Props, State> {
             showFullWidth={showFullWidth}
             showHoverLine={showHoverLine}
           >
-            {children.map((data, index) => (
+            {children.map((item, index) => (
               <DropdownItemWrapper
                 className={cursor === index ? 'active' : undefined}
                 role="option"
-                data-value={data.props.value}
-                key={data.props.value}
-                onMouseDown={this.handleClickItem(data.props.onClick)}
+                data-value={item.props.value}
+                key={item.key}
+                onMouseDown={this.handleClickItem(item.props.onClick)}
                 onMouseEnter={() => this.handleMouseEnter(index)}
                 tabIndex="0"
                 showFullWidth={showFullWidth}
               >
-                {data.props.children}
+                {item.props.children}
               </DropdownItemWrapper>
             ))}
           </DropdownBody>
