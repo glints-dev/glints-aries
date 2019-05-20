@@ -5,7 +5,6 @@ const GlintsContainer = styled.div`
   position: relative;
   margin: 0 auto;
   font-family: 'Poppins';
-  width: 100vm;
   padding: 0 30px;
 `;
 
