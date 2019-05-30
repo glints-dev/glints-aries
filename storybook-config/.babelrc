@@ -1,21 +1,20 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "targets": {
         "browsers": ["> 99.5%"]
       }
     }],
-    "react",
-    "flow"
+    "@babel/react",
+    "@babel/flow"
   ],
   "plugins": [
     "jsx-control-statements",
-    ["transform-runtime", {
-      "polyfill": false,
+    ["@babel/plugin-transform-runtime", {
       "regenerator": true
     }],
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
     "syntax-dynamic-import"
   ]
 }

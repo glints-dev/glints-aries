@@ -5,6 +5,7 @@ export const ColumnContainer = styled.div`
     ${({
     xs, sm, md, xsOrder, smOrder, mdOrder,
   }) => `
+        max-width: 100%;
         flex-basis: calc(100% / 12 * ${xs});
         order: ${xsOrder || 0};
         @media (min-width: ${ScreenSize.mobileS}px) {
