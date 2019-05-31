@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "assets:build": "webpack && cp -R assets/fonts/ dist/public/assets/fonts/",
-    "build": "rm -rf dist && && babel -d dist --copy-files --extensions .ts,.tsx src && tsc -d && npm run assets:build",
+    "build": "rm -rf dist && babel -d dist --copy-files --extensions .ts,.tsx src && tsc -d && npm run assets:build",
     "prepublishOnly": "npm run build",
     "storybook": "npm run assets:build && start-storybook -p 9001 -c storybook-config -s dist/public",
     "storybook:build": "rm -rf .out && npm run assets:build && build-storybook -c storybook-config -o .out -s dist/public",
