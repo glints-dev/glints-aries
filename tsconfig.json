@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "lib": ["dom"],
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

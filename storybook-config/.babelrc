@@ -1,15 +1,17 @@
 {
   "presets": [
+    ["@babel/preset-typescript", {
+      "isTSX": true,
+      "allExtensions": true
+    }],
     ["@babel/env", {
       "targets": {
         "browsers": ["> 99.5%"]
       }
     }],
-    "@babel/react",
-    "@babel/flow"
+    "@babel/react"
   ],
   "plugins": [
-    "jsx-control-statements",
     ["@babel/plugin-transform-runtime", {
       "regenerator": true
     }],

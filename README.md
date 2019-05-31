@@ -53,7 +53,7 @@ Run `yarn unlink glints-aries` and re-install `glints-aries` when you want to st
    - Fourth: glints-aries utilities.
    - Fifth: styling.
 ```bash
-import React from 'react'; // React
+import * as React from 'react'; // React
 
 import classNames from 'classnames'; // Third-party
 import PropTypes from 'prop-types'; // Third-party
