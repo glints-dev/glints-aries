@@ -250,7 +250,7 @@ class AutoComplete extends React.Component<Props, State> {
               className={cursor === index ? 'active' : null}
               key={data.props.value}
               role="option"
-              data-className={index}
+              data-id={index}
               data-value={data.props.value}
               onClick={this.handleClick(data.props.onOptionClick)}
               onMouseEnter={this.handleMouseEnter}
