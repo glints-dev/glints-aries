@@ -4,10 +4,10 @@ import { SecondaryColor } from '../Colors';
 export const GalleryContainer = styled.div`
   position: relative;
 
-  #modal-content {
+  .modal-content {
     width: 95vw;
 
-    #modal-header {
+    .modal-header {
       border-bottom: none;
     }
   }
