@@ -5,14 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "assets:build": "webpack && cp -R assets/fonts/ dist/public/assets/fonts/",
-    "babelrc:load": "cp storybook-config/.babelrc .babelrc",
-    "babelrc:unload": "rm .babelrc",
-    "build": "rm -rf dist && npm run babelrc:load && babel -d dist --copy-files --extensions .ts,.tsx src && tsc -d && npm run assets:build && (npm run babelrc:unload) || (npm run babelrc:unload)",
+    "build": "rm -rf dist && && babel -d dist --copy-files --extensions .ts,.tsx src && tsc -d && npm run assets:build",
     "prepublishOnly": "npm run build",
     "storybook": "npm run assets:build && start-storybook -p 9001 -c storybook-config -s dist/public",
     "storybook:build": "rm -rf .out && npm run assets:build && build-storybook -c storybook-config -o .out -s dist/public",
-    "test:update": "npm run babelrc:load && jest -u && npm run babelrc:unload || npm run babelrc:unload",
-    "test": "npm run babelrc:load && jest && npm run babelrc:unload || npm run babelrc:unload",
+    "test:update": "jest -u",
+    "test": "jest",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'"
   },
   "author": "Glints",
