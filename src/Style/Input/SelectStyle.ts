@@ -207,7 +207,7 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
     background: ${SecondaryColor.lightergrey};
   }
 
-  &#select-loading {
+  &.select-loading {
     justify-content: center;
   }
 
