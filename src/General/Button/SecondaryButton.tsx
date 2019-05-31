@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { SecondaryContainer, SecondaryBtn } from '../../Style/General/ButtonStyle';
 
 const SecondaryButton: React.FunctionComponent<Props> = ({
@@ -11,13 +12,12 @@ const SecondaryButton: React.FunctionComponent<Props> = ({
 }) => (
 
   <SecondaryContainer
-    id="aries-secondarybtn"
-    className={className}
+    className={classNames('aries-secondarybtn', className)}
     block={block}
     disabled={disabled}
   >
     <SecondaryBtn
-      id="secondarybtn-content"
+      className="secondarybtn-content"
       block={block}
       small={small}
       disabled={disabled}

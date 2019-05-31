@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { ProgressContainer, ProgressContent, ProgressLabelWrapper } from '../../Style/Display/ProgressStyle';
 import { SecondaryColor } from '../../Style/Colors';
 
@@ -17,8 +19,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
     <React.Fragment>
       {percentage >= 0 && (
         <ProgressContainer
-          id="aries-progress"
-          className={className}
+          className={classNames('aries-progress', className)}
           progress={progressValue}
           role="progressbar"
           aria-valuenow={percentage}

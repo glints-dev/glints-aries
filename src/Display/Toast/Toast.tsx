@@ -35,16 +35,16 @@ class Toast extends React.Component<Props> {
 
     return (
       <ToastContainer
-        id="aries-toast"
+        className="aries-toast"
         theme={theme}
         isVisible={isVisible}
       >
-        <ToastTopWrapper id="toast-header">
+        <ToastTopWrapper className="toast-header">
           <ToastIcon onClick={onClose}>
             <Icon name="close" color={theme === 'black' ? 'white' : 'black'} />
           </ToastIcon>
         </ToastTopWrapper>
-        <ToastBodyWrapper id="toast-body">
+        <ToastBodyWrapper className="toast-body">
           { children }
         </ToastBodyWrapper>
       </ToastContainer>

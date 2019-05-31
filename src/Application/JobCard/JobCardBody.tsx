@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { JobcardBodyWrapper } from '../../Style/Application/JobCardStyle';
 
 const JobCardBody: React.FunctionComponent<Props> = (props) => {
@@ -11,8 +13,7 @@ const JobCardBody: React.FunctionComponent<Props> = (props) => {
 
   return (
     <JobcardBodyWrapper
-      id="jobcard-body"
-      className={className}
+      className={classNames('jobcard-body', className)}
       role="presentation"
       aria-label="Job Card Body"
       tabIndex={0}

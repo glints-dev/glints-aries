@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { PrimaryContainer, PrimaryBtn } from '../../Style/General/ButtonStyle';
 
 const PrimaryButton: React.FunctionComponent<Props> = ({
@@ -11,14 +12,13 @@ const PrimaryButton: React.FunctionComponent<Props> = ({
   ...defaultProps
 }) => (
   <PrimaryContainer
-    id="aries-primarybtn"
-    className={className}
+    className={classNames('aries-primarybtn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
   >
     <PrimaryBtn
-      id="primarybtn-content"
+      className="primarybtn-content"
       theme={theme}
       disabled={disabled}
       block={block}

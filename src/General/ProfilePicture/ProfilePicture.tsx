@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../Icon';
 
 import { ProfilePictureContainer, ProfilePictureContent } from '../../Style/General/ProfilePictureStyle';
@@ -37,8 +39,7 @@ class ProfilePicture extends React.Component<Props, State> {
 
     return (
       <ProfilePictureContainer
-        id="aries-profile"
-        className={className}
+        className={classNames('aries-profile', className)}
         role={editable ? 'button' : 'presentation'}
         aria-label="Profile Picture"
         onMouseEnter={this.handleMouseEnter}

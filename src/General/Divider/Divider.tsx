@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { DividerContainer } from '../../Style/General/DividerStyle';
 
 const Divider: React.FunctionComponent<Props> = (props) => {
@@ -10,8 +11,7 @@ const Divider: React.FunctionComponent<Props> = (props) => {
 
   return (
     <DividerContainer
-      id="aries-divider"
-      className={className}
+      className={classNames('aries-divider', className)}
       style={style}
       theme={theme}
     />

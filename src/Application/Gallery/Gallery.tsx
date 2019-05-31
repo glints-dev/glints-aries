@@ -68,8 +68,8 @@ class Gallery extends React.Component<Props, State> {
     const { visible, currentIndex, imageLeft } = this.state;
 
     return (
-      <GalleryContainer id="aries-gallery">
-        <GalleryItemWrapper id="gallery-wrapper">
+      <GalleryContainer className="aries-gallery">
+        <GalleryItemWrapper className="gallery-wrapper">
           { React.Children.toArray(children).slice(0, 8).map((data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
             <GalleryItem
               className="gallery-item"

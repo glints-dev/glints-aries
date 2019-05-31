@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { GhostBtnContainer, GhostBtn } from '../../Style/General/ButtonStyle';
 
 const GhostButton: React.FunctionComponent<Props> = ({
@@ -12,15 +13,14 @@ const GhostButton: React.FunctionComponent<Props> = ({
   ...defaultProps
 }) => (
   <GhostBtnContainer
-    id="aries-ghostbtn"
-    className={className}
+    className={classNames('aries-ghostbtn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
     removeHoverEffect={removeHoverEffect}
   >
     <GhostBtn
-      id="ghostbtn-content"
+      className="ghostbtn-content"
       theme={theme}
       disabled={disabled}
       block={block}

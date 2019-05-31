@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Heading, SubHeading } from '../../Style/General/PsychedelicTextStyle';
 
 const renderPsychedelicText: React.FunctionComponent<Props> = ({
@@ -12,8 +13,7 @@ const renderPsychedelicText: React.FunctionComponent<Props> = ({
     case 'heading':
       return (
         <Heading
-          id="aries-psyctext"
-          className={className}
+          className={classNames('aries-psyctext', className)}
           {...defaultProps}
         >
           {children}
@@ -22,8 +22,7 @@ const renderPsychedelicText: React.FunctionComponent<Props> = ({
     case 'subheading':
       return (
         <SubHeading
-          id="aries-psyctext"
-          className={className}
+          className={classNames('aries-psyctext', className)}
           psychTheme={psychTheme}
           {...defaultProps}
         >

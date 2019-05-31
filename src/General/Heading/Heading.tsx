@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { HeadingContainer } from '../../Style/General/HeadingStyle';
 
 const Heading: React.FunctionComponent<Props> = (props) => {
@@ -13,13 +14,12 @@ const Heading: React.FunctionComponent<Props> = (props) => {
   return (
     <React.Fragment>
       <HeadingContainer
-        id="aries-heading"
-        className={className}
+        className={classNames('aries-heading', className)}
         inline={inline}
         uppercaseText={uppercaseText}
         {...defaultProps}
       >
-        <span id="heading-text">
+        <span className="heading-text">
           {children}
         </span>
       </HeadingContainer>

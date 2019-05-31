@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../../General/Icon';
 
 import { escEvent } from '../../Utils/DomUtils';
@@ -157,8 +159,7 @@ class Dropdown extends React.Component<Props, State> {
 
     return (
       <DropdownContainer
-        id="aries-dropdown"
-        className={className}
+        className={classNames('aries-dropdown', className)}
         tabIndex={0}
         onClick={this.handleOpen}
         onMouseEnter={this.hoverOpen}
@@ -170,9 +171,9 @@ class Dropdown extends React.Component<Props, State> {
         aria-haspopup="true"
         {...defaultProps}
       >
-        <DropdownWrapper id="dropdown-contentwrapper" tabIndex={-1}>
+        <DropdownWrapper className="dropdown-contentwrapper" tabIndex={-1}>
           <DropdownHeader
-            id="dropdown-content"
+            className="dropdown-content"
             isOpen={isOpen}
             disabled={disabled}
             showHoverLine={showHoverLine}
@@ -191,7 +192,7 @@ class Dropdown extends React.Component<Props, State> {
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody
-            id="dropdown-listbox"
+            className="dropdown-listbox"
             role="listbox"
             aria-hidden={!isOpen && true}
             onClick={e => e.stopPropagation()}

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { BrandContainer, BrandImage } from '../../Style/General/BrandStyle';
 
 const GlintsBlack = require('../../../assets/image/glints-logo-black.svg');
@@ -40,15 +42,14 @@ class Brand extends React.Component<Props> {
 
     return (
       <BrandContainer
-        id="aries-brand"
-        className={className}
+        className={classNames('aries-brand', className)}
         role="presentation"
         tabIndex={0}
         onContextMenu={this.handleRightClick}
         {...defaultProps}
       >
         <BrandImage
-          id="brand-image"
+          className="brand-image"
           src={srcAsset}
           alt={alt}
           tabIndex={-1}

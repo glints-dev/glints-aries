@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { OmniSearchContainer, OmniSearchBar, OmniSearchBodyWrapper } from '../../Style/Input/OmniSearchStyle';
 import OmniSearchBody from './OmniSearchBody';
 import OmniSearchList from './OmniSearchList';
@@ -32,13 +34,12 @@ class OmniSearch extends React.Component<Props, State> {
 
     return (
       <OmniSearchContainer
-        id="aries-omnisearch"
-        className={className}
+        className={classNames('aries-omnisearch', className)}
         role="search"
         aria-expanded={isOpen}
         aria-label={label}
       >
-        <OmniSearchBar id="omnisearch-inputwrapper">
+        <OmniSearchBar className="omnisearch-inputwrapper">
           <input
             type="text"
             placeholder={label}
@@ -50,7 +51,7 @@ class OmniSearch extends React.Component<Props, State> {
           { content }
         </OmniSearchBar>
         <OmniSearchBodyWrapper
-          id="omnisearch-content"
+          className="omnisearch-content"
           role="menuitem"
           aria-hidden={!isOpen && true}
           open={isOpen}

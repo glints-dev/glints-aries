@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import AutoCompleteItem from './AutoCompleteItem';
 
 import {
@@ -208,10 +210,9 @@ class AutoComplete extends React.Component<Props, State> {
 
     return (
       <AutoCompleteContainer
-        id="aries-autocomplete"
-        className={className}
+        className={classNames('aries-autocomplete', className)}
         ref={this.autoCompleteContainerRef}>
-        <AutoCompleteWrapper id="autocomplete-inputwrapper">
+        <AutoCompleteWrapper className="autocomplete-inputwrapper">
           <AutoCompleteInput
             type="text"
             placeholder={removeFloatingLabel && label}
@@ -238,7 +239,7 @@ class AutoComplete extends React.Component<Props, State> {
           }
         </AutoCompleteWrapper>
         <AutoCompleteListWrapper
-          id="autocomplete-listbox"
+          className="autocomplete-listbox"
           role="listbox"
           aria-hidden={!isOpen && true}
           open={isOpen}
@@ -249,14 +250,14 @@ class AutoComplete extends React.Component<Props, State> {
               className={cursor === index ? 'active' : null}
               key={data.props.value}
               role="option"
-              data-id={index}
+              data-className={index}
               data-value={data.props.value}
               onClick={this.handleClick(data.props.onOptionClick)}
               onMouseEnter={this.handleMouseEnter}
               tabIndex={0}
             >
-              <span id="autocomplete-value">{data.props.children}</span>
-              <span id="autocomplete-additionalinfo">{data.props.additionalInfo}</span>
+              <span className="autocomplete-value">{data.props.children}</span>
+              <span className="autocomplete-additionalinfo">{data.props.additionalInfo}</span>
             </AutoCompleteItem>
           ))}
         </AutoCompleteListWrapper>

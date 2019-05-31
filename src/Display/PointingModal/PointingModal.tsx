@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { PointingModalContainer, PointingModalHeaderArrow } from '../../Style/Display/PointingModalStyle';
 
 import PointingModalHeader from './PointingModalHeader';
@@ -15,8 +16,7 @@ const PointingModal: PointingModal = (props) => {
 
   return (
     <PointingModalContainer
-      id="aries-pointingmodal"
-      className={className}
+      className={classNames('aries-pointingmodal', className)}
       role="dialog"
       aria-modal="true"
       {...defaultProps}

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BlockquoteOriginWrapper } from '../../Style/Display/BlockquoteStyle';
 
 const BlockquoteOrigin: React.FunctionComponent<Props> = (props) => {
@@ -8,7 +9,7 @@ const BlockquoteOrigin: React.FunctionComponent<Props> = (props) => {
   } = props;
 
   return (
-    <BlockquoteOriginWrapper id="blockquote-origin" className={className}>
+    <BlockquoteOriginWrapper className={classNames('blockquote-origin', className)}>
       {children}
     </BlockquoteOriginWrapper>
   );

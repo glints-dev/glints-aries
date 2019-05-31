@@ -3,7 +3,7 @@ import { LinkBtn } from '../../Style/General/ButtonStyle';
 
 const LinkButton: React.FunctionComponent<Props> = ({ children, ...defaultProps }) => (
   <LinkBtn
-    id="aries-linkbtn"
+    className="aries-linkbtn"
     {...defaultProps}
   >
     {children}

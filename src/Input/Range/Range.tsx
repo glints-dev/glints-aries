@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { RangeContainer } from '../../Style/Input/RangeStyle';
 
 class Range extends React.Component<Props, State> {
@@ -53,9 +55,8 @@ class Range extends React.Component<Props, State> {
     return (
       <React.Fragment>
         <RangeContainer
-          id="aries-range"
           type="range"
-          className={className}
+          className={classNames('aries-range', className)}
           min={minVal}
           max={maxVal}
           value={val}

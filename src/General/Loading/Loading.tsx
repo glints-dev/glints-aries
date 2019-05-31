@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { LoadingContainer, Spinner } from '../../Style/General/LoadingStyle';
 
 const Loading: React.FunctionComponent<Props> = (props) => {
@@ -8,8 +9,7 @@ const Loading: React.FunctionComponent<Props> = (props) => {
 
   return (
     <LoadingContainer
-      id="aries-loading"
-      className={className}
+      className={classNames('aries-loading', className)}
       role="alert"
       aria-busy="true"
       aria-live="polite"

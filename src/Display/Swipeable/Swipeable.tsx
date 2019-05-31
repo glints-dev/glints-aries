@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { SwipeableContainer } from '../../Style/Display/SwipeableStyle';
 
 import SwipeableItem from './SwipeableItem';
@@ -10,7 +11,7 @@ const Swipeable: Swipeable = (props) => {
   } = props;
 
   return (
-    <SwipeableContainer id="aries-swipeable" className={className}>
+    <SwipeableContainer className={classNames('aries-swipeable', className)}>
       { children }
     </SwipeableContainer>
   );

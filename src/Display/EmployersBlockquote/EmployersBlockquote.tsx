@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {
   BlockquoteContainer,
   BlockquoteWrapper,
@@ -21,23 +22,22 @@ const Blockquote = (props: Props) => {
 
   return (
     <BlockquoteContainer
-      id="aries-empblockquote"
-      className={className}
+      className={classNames('aries-empblockquote', className)}
       tabIndex={0}
       role="presentation"
       {...defaultProps}
     >
-      <BlockquoteWrapper id="empblockquote-wrapper" tabIndex={-1}>
-        <BlockquoteContent id="empblockquote-testimony">
+      <BlockquoteWrapper className="empblockquote-wrapper" tabIndex={-1}>
+        <BlockquoteContent className="empblockquote-testimony">
           {children}
         </BlockquoteContent>
-        <BlockquoteProfileWrapper id="empblockquote-profilewrapper">
-          <BlockquoteProfilePicture id="empblockquote-profile">
+        <BlockquoteProfileWrapper className="empblockquote-profilewrapper">
+          <BlockquoteProfilePicture className="empblockquote-profile">
             <img src={profileURL} alt={alt} aria-hidden="true" />
           </BlockquoteProfilePicture>
           <BlockquoteIdentity>
-            <p id="empblockquote-author">{profileName}</p>
-            <span id="empblockquote-origin">{additionalInfo}</span>
+            <p className="empblockquote-author">{profileName}</p>
+            <span className="empblockquote-origin">{additionalInfo}</span>
           </BlockquoteIdentity>
         </BlockquoteProfileWrapper>
       </BlockquoteWrapper>

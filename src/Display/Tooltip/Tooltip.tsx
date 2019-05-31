@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import {
   TooltipContainer,
   TooltipContent,
@@ -24,8 +26,7 @@ class Tooltip extends React.Component<Props, State> {
 
     return (
       <TooltipContainer
-        id="aries-tooltip"
-        className={className}
+        className={classNames('aries-tooltip', className)}
         role="tooltip"
         aria-hidden={isHover ? 'false' : 'true'}
         aria-label={text}

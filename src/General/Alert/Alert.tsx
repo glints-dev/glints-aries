@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../Icon';
 
 import {
@@ -99,7 +101,7 @@ class Alert extends React.Component<Props, State> {
     const { message } = this.props;
 
     return (
-      <AlertMessage id="alert-message">
+      <AlertMessage className="alert-message">
         {message}
       </AlertMessage>
     );
@@ -110,7 +112,7 @@ class Alert extends React.Component<Props, State> {
 
     return (
       <AlertIcon
-        id="alert-close"
+        className="alert-close"
         role="button"
         aria-label="Press Escape or Enter button to close alert"
         title="Close alert"
@@ -133,8 +135,7 @@ class Alert extends React.Component<Props, State> {
     return isVisible
       ? (
         <AlertContainer
-          id="aries-alert"
-          className={className}
+          className={classNames('aries-alert', className)}
           type={type}
           role="alertdialog"
           aria-hidden={isVisible ? 'false' : 'true'}
@@ -145,7 +146,7 @@ class Alert extends React.Component<Props, State> {
           onKeyDown={this.handleKeyDown(onClose)}
         >
           {this.renderAlertTypeIcon()}
-          <AlertContent id="alert-content">
+          <AlertContent className="alert-content">
             {this.renderMessage()}
             {this.renderIcon()}
           </AlertContent>

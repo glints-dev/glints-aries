@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 
 class Checkbox extends React.Component<Props, State> {
@@ -34,8 +35,7 @@ class Checkbox extends React.Component<Props, State> {
 
     return (
       <CheckboxContainer
-        id="aries-checkbox"
-        className={className}
+        className={classNames('aries-checkbox', className)}
         role="checkbox"
         aria-labelledby={id}
         aria-checked={checked}
@@ -43,7 +43,7 @@ class Checkbox extends React.Component<Props, State> {
       >
         <input
           type="checkbox"
-          id={id}
+          className={id}
           value={value}
           onClick={this.handleClick(onClick)}
           {...defaultProps}

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BreadcrumbContainer } from '../../Style/Navigation/BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
@@ -11,8 +12,7 @@ const Breadcrumb: Breadcrumb = (props) => {
 
   return (
     <BreadcrumbContainer
-      id="aries-breadcrumb"
-      className={className}
+      className={classNames('aries-breadcrumb', className)}
       {...defaultProps}
     >
       {children}

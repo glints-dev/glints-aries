@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import {
@@ -39,14 +41,13 @@ class Tabs extends React.Component<Props, State> {
     const currentChild = childrenArray[currentIndex];
 
     return (
-      <TabsContainer id="aries-tabs" className={className}>
-        <TabsHeader id="tabs-header">
-          <ul id="tabs-list" role="tablist">
+      <TabsContainer className={classNames('aries-tabs', className)}>
+        <TabsHeader className="tabs-header">
+          <ul className="tabs-list" role="tablist">
             {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => (
               <li
-                id={`tab-${index}`}
+                className={classNames(`tab-${index}`, { active: currentIndex === index })}
                 key={data.props.tab}
-                className={currentIndex === index ? 'active' : undefined}
                 role="tab"
                 aria-selected={currentIndex === index && true}
                 aria-controls={`tab-item-${index}`}
@@ -63,10 +64,9 @@ class Tabs extends React.Component<Props, State> {
             ))}
           </ul>
         </TabsHeader>
-        <TabsBody id="tabs-body" tabIndex={0}>
+        <TabsBody className="tabs-body" tabIndex={0}>
           <TabPane
-            id={`tab-item-${currentIndex}`}
-            className="tabs-item"
+            className={classNames('tabs-item', `tab-item-${currentIndex}`)}
             role="tabpanel"
             aria-labelledby={`tab-${currentIndex}`}
             tabIndex={-1}

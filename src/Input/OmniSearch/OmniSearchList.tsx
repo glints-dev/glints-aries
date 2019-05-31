@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { OmniSearchListItem } from '../../Style/Input/OmniSearchStyle';
 
 const OmniSearchList: React.FunctionComponent<Props> = (props) => {
@@ -11,8 +12,7 @@ const OmniSearchList: React.FunctionComponent<Props> = (props) => {
 
   return (
     <OmniSearchListItem
-      id="omnisearch-listitem"
-      className={className}
+      className={classNames('omnisearch-listitem', className)}
       role="list"
       {...defaultProps}
     >

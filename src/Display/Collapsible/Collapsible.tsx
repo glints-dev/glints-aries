@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import Icon from '../../General/Icon';
 
 import {
@@ -51,15 +52,14 @@ class Collapsible extends React.Component<Props, State> {
 
     return (
       <CollapsibleContainer
-        id="aries-collapsible"
-        className={className}
+        className={classNames('aries-collapsible', className)}
         tabIndex={0}
         onClick={this.handleOpen}
         {...defaultProps}
       >
         <CollapsibleContent tabIndex={-1}>
           <CollapsibleHeader
-            id="collapsible-title"
+            className="collapsible-title"
             role="tab"
             aria-expanded={isOpen}
             isOpen={isOpen}
@@ -69,7 +69,7 @@ class Collapsible extends React.Component<Props, State> {
           </CollapsibleHeader>
           {isOpen && (
             <CollapsibleBody
-              id="collapsible-content"
+              className="collapsible-content"
               onClick={e => e.stopPropagation()}
             >
               {children}

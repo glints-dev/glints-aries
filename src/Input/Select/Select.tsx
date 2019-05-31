@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import classNames from 'classnames';
+
 import SelectItem from './SelectItem';
 
 import Icon from '../../General/Icon';
@@ -262,11 +264,10 @@ class Select extends React.Component<Props, State> {
 
     return (
       <SelectContainer
-        id="aries-select"
-        className={className}
+        className={classNames('aries-select', className)}
         ref={this.node}
       >
-        <SelectWrapper id="select-inputwrapper" isFocus={isFocus}>
+        <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
             placeholder={removeFloatingLabel && label}
@@ -304,7 +305,7 @@ class Select extends React.Component<Props, State> {
           }
         </SelectWrapper>
         <SelectListWrapper
-          id="select-listbox"
+          className="select-listbox"
           role="listbox"
           aria-hidden={!isFocus && true}
           open={isFocus}
@@ -316,7 +317,7 @@ class Select extends React.Component<Props, State> {
                   className={cursor === index ? 'active' : null}
                   key={data.props.value}
                   role="option"
-                  data-id={index}
+                  data-className={index}
                   data-value={data.props.value}
                   onClick={this.handleClick(data.props.onOptionClick)}
                   onMouseEnter={this.handleMouseEnter}
@@ -327,7 +328,7 @@ class Select extends React.Component<Props, State> {
               ))
             : !isLoading
               ? (
-                  <SelectItem id="select-loading" role="option">
+                  <SelectItem className="select-loading" role="option">
                     <Loading />
                   </SelectItem>
                 )

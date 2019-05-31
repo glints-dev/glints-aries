@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { JobCardFooterWrapper } from '../../Style/Application/JobCardStyle';
 
 const JobCardFooter: React.FunctionComponent<Props> = (props) => {
@@ -11,8 +13,7 @@ const JobCardFooter: React.FunctionComponent<Props> = (props) => {
 
   return (
     <JobCardFooterWrapper
-      id="jobcard-footer"
-      className={className}
+      className={classNames('jobcard-footer', className)}
       role="presentation"
       aria-label="Job Card Footer"
       tabIndex={0}

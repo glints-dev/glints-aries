@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import AccordionPanel, { Props as AccordionPanelProps } from './AccordionPanel';
 
 import { AccordionContainer } from '../../Style/Display/AccordionStyle';
@@ -67,7 +69,7 @@ class Accordion extends React.Component<Props, State> {
     const { children, className } = this.props;
 
     return (
-      <AccordionContainer id="aries-accordion" className={className}>
+      <AccordionContainer className={classNames('aries-accordion', className)}>
         {React.Children.count(children) > 1
           ? this.renderMultipleItem()
           : this.renderSingleItem()}

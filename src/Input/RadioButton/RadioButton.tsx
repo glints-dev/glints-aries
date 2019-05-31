@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { RadioContainer, RadioLabel } from '../../Style/Input/RadioButtonStyle';
 
 const RadioButton: React.FunctionComponent<Props> = (props) => {
@@ -13,13 +15,12 @@ const RadioButton: React.FunctionComponent<Props> = (props) => {
   return (
     <React.Fragment>
       <RadioContainer
-        id="aries-radiobtn"
-        className={className}
+        className={classNames('aries-radiobtn', className)}
         tabIndex={0}
       >
         <input type="radio" {...defaultProps} />
         <RadioLabel
-          id="radiobtn-content"
+          className="radiobtn-content"
           theme={theme}
           tabIndex={-1}
         >

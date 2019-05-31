@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import classNames from 'classnames';
+
 import { SliderContainer, SliderContentWrapper } from '../../Style/Display/SliderStyle';
 
 import LeftArrow from './LeftArrow';
@@ -160,14 +162,13 @@ class Slider extends React.Component<Props, State> {
     return (
       <SliderContainer
         ref={this.sliderContainerRef}
-        id="aries-slider"
-        className={className}
+        className={classNames('aries-slider', className)}
         onKeyDown={this.handleKeyDown}
         fullContent={fullContent}
         tabIndex={0}
       >
         <SliderContentWrapper
-          id="slider-wrapper"
+          className="slider-wrapper"
           style={{
             transform: `translateX(${translateValue}px)`,
             transition: 'transform ease-out 0.45s'

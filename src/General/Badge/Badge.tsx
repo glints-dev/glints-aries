@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BadgeContainer } from '../../Style/General/BadgeStyle';
 
 const Badge: React.FunctionComponent<Props> = (props) => {
@@ -14,12 +15,11 @@ const Badge: React.FunctionComponent<Props> = (props) => {
       {label
         && (
           <BadgeContainer
-            id="aries-badge"
-            className={className}
+            className={classNames('aries-badge', className)}
             sup={sup}
             {...defaultProps}
           >
-            <span id="badge-content">
+            <span className="badge-content">
               {label}
             </span>
           </BadgeContainer>

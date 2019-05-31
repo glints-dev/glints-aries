@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BlockquoteAuthorWrapper } from '../../Style/Display/BlockquoteStyle';
 
 const BlockquoteAuthor: React.FunctionComponent<Props> = (props) => {
@@ -8,7 +9,7 @@ const BlockquoteAuthor: React.FunctionComponent<Props> = (props) => {
   } = props;
 
   return (
-    <BlockquoteAuthorWrapper id="blockquote-author" className={className}>
+    <BlockquoteAuthorWrapper className={classNames('blockquote-author', className)}>
       {children}
     </BlockquoteAuthorWrapper>
   );

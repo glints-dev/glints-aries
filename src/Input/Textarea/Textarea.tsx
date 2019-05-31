@@ -1,6 +1,8 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
 import { isFunction } from 'lodash';
+
 import {
   TextareaContainer,
   TextareaInput,
@@ -106,7 +108,7 @@ class Textarea extends React.PureComponent<Props, State> {
     } = this.state;
 
     return (
-      <TextareaContainer id="aries-textarea" className={className}>
+      <TextareaContainer className={classNames('aries-textarea', className)}>
         <TextareaInput
           ref={this.textareaInputRef}
           placeholder={removeFloatingLabel && label}

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../../General/Icon';
 
 import { escEvent } from '../../Utils/DomUtils';
@@ -69,16 +71,15 @@ class Modal extends React.Component<Props, State> {
 
     return (
       <ModalContainer
-        id="aries-modal"
-        className={className}
+        className={classNames('aries-modal', className)}
         centering={centering}
         onClick={() => onClose()}
         isOpen={isOpen}
         removeAnimation={removeAnimation}
       >
-        <ModalDialog id="modal-dialog">
+        <ModalDialog className="modal-dialog">
           <ModalContentArea
-            id="modal-content"
+            className="modal-content"
             role="dialog"
             aria-modal="true"
             hideContentArea={hideContentArea}
@@ -91,7 +92,7 @@ class Modal extends React.Component<Props, State> {
             {...defaultProps}
           >
             {!hideHeader &&
-              <ModalHeader id="modal-header">
+              <ModalHeader className="modal-header">
                 <h3>{ title }</h3>
                 <button type="button" onClick={() => onClose()}>
                   <Icon name="close" color={hideContentArea ? 'white' : 'grey'} />
@@ -99,13 +100,13 @@ class Modal extends React.Component<Props, State> {
               </ModalHeader>
             }
             <ModalBody
-              id="modal-body"
+              className="modal-body"
               hideContentArea={hideContentArea}
             >
               {children}
             </ModalBody>
             {footer !== undefined &&
-              <ModalFooter id="modal-footer">
+              <ModalFooter className="modal-footer">
                 { footer.map(data => React.cloneElement(data, { key: data.props.children })) }
               </ModalFooter>
             }

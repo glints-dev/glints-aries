@@ -38,6 +38,7 @@
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/react": "^5.0.11",
+    "@types/classnames": "^2.2.8",
     "@types/lodash": "^4.14.132",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
@@ -77,6 +78,7 @@
   },
   "dependencies": {
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "classnames": "^2.2.6",
     "create-react-context": "^0.2.3",
     "jsx-to-string": "^1.4.0",
     "moment": "^2.24.0",

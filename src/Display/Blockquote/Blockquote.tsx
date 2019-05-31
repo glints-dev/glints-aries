@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../../General/Icon';
 
 import { BlockquoteContainer } from '../../Style/Display/BlockquoteStyle';
@@ -32,8 +34,7 @@ class Blockquote extends React.Component<Props, State> {
 
     return (
       <BlockquoteContainer
-        id="aries-blockquote"
-        className={className}
+        className={classNames('aries-blockquote', className)}
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
       >

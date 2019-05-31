@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../../General/Icon';
 
 import {
@@ -91,7 +93,7 @@ class TextField extends React.Component<Props, State> {
     const { floating, inputType } = this.state;
 
     return (
-      <TextFieldContainer id="aries-textfield" className={className}>
+      <TextFieldContainer className={classNames('aries-textfield', className)}>
         <TextFieldInput
           type={inputType}
           placeholder={removeFloatingLabel && label}
@@ -108,7 +110,7 @@ class TextField extends React.Component<Props, State> {
         />
         {!removeFloatingLabel &&
           <TextFieldLabel
-            id="textfield-label"
+            className="textfield-label"
             floating={floating}
             status={status}
             small={small}

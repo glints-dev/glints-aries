@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BlockquoteContentWrapper } from '../../Style/Display/BlockquoteStyle';
 
 const BlockquoteContent: React.FunctionComponent<Props> = (props) => {
@@ -8,7 +9,7 @@ const BlockquoteContent: React.FunctionComponent<Props> = (props) => {
   } = props;
 
   return (
-    <BlockquoteContentWrapper id="blockquote-contentwrapper" className={className}>
+    <BlockquoteContentWrapper className={classNames('blockquote-contentwrapper', className)}>
       {children}
     </BlockquoteContentWrapper>
   );

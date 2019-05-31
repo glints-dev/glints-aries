@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { RadioButton } from '../RadioButton';
 import { SwitchContainer, SwitchItemWrapper } from '../../Style/Input/SwitchStyle';
 
@@ -37,8 +38,7 @@ class Switch extends React.Component<Props, State> {
 
     return (
       <SwitchContainer
-        id="aries-switch"
-        className={className}
+        className={classNames('aries-switch', className)}
         role="switch"
         aria-checked="true"
         {...defaultProps}
@@ -46,9 +46,9 @@ class Switch extends React.Component<Props, State> {
         defaultValue={initialValue}
         items={value}
       >
-        <SwitchItemWrapper id="switch-left">
+        <SwitchItemWrapper className="switch-left">
           <RadioButton
-            id={value[0]}
+            className={value[0]}
             aria-label={label[0]}
             label={label[0]}
             name={name[0]}
@@ -58,9 +58,9 @@ class Switch extends React.Component<Props, State> {
             onClick={this.handleClick}
           />
         </SwitchItemWrapper>
-        <SwitchItemWrapper id="switch-right">
+        <SwitchItemWrapper className="switch-right">
           <RadioButton
-            id={value[1]}
+            className={value[1]}
             aria-label={label[1]}
             label={label[1]}
             name={name[1]}

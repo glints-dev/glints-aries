@@ -30,9 +30,9 @@ const CheckboxStory = () => (
     title="Checkbox"
     code="import { Checkbox } from 'glints-aries'"
     propsObject={props}
-    usage={'<Checkbox id="software-engineer" value="Software Engineer" />'}
+    usage={'<Checkbox className="software-engineer" value="Software Engineer" />'}
   >
-    <Checkbox id="software-engineer" value="Software Engineer" />
+    <Checkbox className="software-engineer" value="Software Engineer" />
   </StorybookComponent>
 );
 

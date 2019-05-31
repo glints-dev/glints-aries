@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { SearchFilterListWrapper } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterList = (props: Props) => {
@@ -11,8 +12,7 @@ const SearchFilterList = (props: Props) => {
 
   return (
     <SearchFilterListWrapper
-      id="searchfilter-listitem"
-      className={className}
+      className={classNames('searchfilter-listitem', className)}
       role="list"
       {...defaultProps}
     >

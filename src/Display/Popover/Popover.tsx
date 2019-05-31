@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import Icon from '../../General/Icon';
 
 import {
@@ -52,8 +54,7 @@ class Popover extends React.Component<Props, State> {
 
     return (
       <PopoverContainer
-        id="aries-popover"
-        className={className}
+        className={classNames('aries-popover', className)}
         onBlur={this.handleClickOutside}
         aria-haspopup="true"
         aria-busy="false"

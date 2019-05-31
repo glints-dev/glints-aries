@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {
   JobcardHeaderWrapper,
   JobcardHeaderImage,
@@ -25,8 +26,7 @@ const JobCardHeader: React.FunctionComponent<Props> = (props) => {
 
   return (
     <JobcardHeaderWrapper
-      id="jobcard-header"
-      className={className}
+      className={classNames('jobcard-header', className)}
       role="presentation"
       aria-label="Job Card Header"
       tabIndex={0}

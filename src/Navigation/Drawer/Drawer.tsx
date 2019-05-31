@@ -44,7 +44,7 @@ class Drawer extends React.Component<Props, State> {
 
     return (
       <DrawerContainer
-        id="aries-drawer"
+        className="aries-drawer"
         aria-modal="true"
         aria-hidden={isDisplay ? 'false' : 'true'}
         isDisplay={isDisplay}
@@ -54,7 +54,7 @@ class Drawer extends React.Component<Props, State> {
         onClick={() => onClose()}
       >
         <DrawerWrapper
-          id="drawer-contentwrapper"
+          className="drawer-contentwrapper"
           role="dialog"
           open={isOpen}
           tabIndex={0}

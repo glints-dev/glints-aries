@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { DefaultBtnContainer, DefaultBtn } from '../../Style/General/ButtonStyle';
 
 const DefaultButton: React.FunctionComponent<Props> = ({
@@ -12,15 +13,14 @@ const DefaultButton: React.FunctionComponent<Props> = ({
   ...defaultProps
 }) => (
   <DefaultBtnContainer
-    id="aries-defaultbtn"
-    className={className}
+    className={classNames('aries-defaultbtn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
     removeHoverEffect={removeHoverEffect}
   >
     <DefaultBtn
-      id="defaultbtn-content"
+      className="defaultbtn-content"
       theme={theme}
       disabled={disabled}
       block={block}

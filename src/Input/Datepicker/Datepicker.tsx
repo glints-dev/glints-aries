@@ -389,7 +389,7 @@ class Datepicker extends React.Component<Props, State> {
     } = this.state;
 
     return (
-      <DatepickerContainer id="aries-datepicker">
+      <DatepickerContainer className="aries-datepicker">
         <TextField
           type="text"
           label={label || 'Select date'}

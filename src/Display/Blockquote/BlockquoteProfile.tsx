@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { BlockquoteProfileWrapper } from '../../Style/Display/BlockquoteStyle';
 
 const BlockquoteProfile: React.FunctionComponent<Props> = (props) => {
@@ -8,7 +9,7 @@ const BlockquoteProfile: React.FunctionComponent<Props> = (props) => {
   } = props;
 
   return (
-    <BlockquoteProfileWrapper id="blockquote-profile" className={className}>
+    <BlockquoteProfileWrapper className={classNames('blockquote-profile', className)}>
       {children}
     </BlockquoteProfileWrapper>
   );

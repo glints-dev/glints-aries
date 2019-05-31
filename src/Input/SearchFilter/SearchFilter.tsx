@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import classNames from 'classnames';
+
 import { SearchFilterContainer, SearchFilterBar, SearchFilterBodyWrapper } from '../../Style/Input/SearchFilterStyle';
 import SearchFilterBody from './SearchFilterBody';
 import SearchFilterList from './SearchFilterList';
@@ -33,13 +35,12 @@ class SearchFilter extends React.Component<Props, State> {
 
     return (
       <SearchFilterContainer
-        id="aries-searchfilter"
-        className={className}
+        className={classNames('aries-searchfilter', className)}
         role="search"
         aria-expanded={isOpen}
         aria-label={label}
       >
-        <SearchFilterBar id="searchfilter-inputwrapper">
+        <SearchFilterBar className="searchfilter-inputwrapper">
           <input
             type="text"
             placeholder={label}
@@ -51,7 +52,7 @@ class SearchFilter extends React.Component<Props, State> {
           {content}
         </SearchFilterBar>
         <SearchFilterBodyWrapper
-          id="searchfilter-content"
+          className="searchfilter-content"
           role="menuitem"
           aria-hidden={!isOpen && true}
           open={isOpen}
