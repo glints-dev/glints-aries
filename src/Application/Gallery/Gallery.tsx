@@ -14,10 +14,17 @@ import {
 } from '../../Style/Application/GalleryStyle';
 
 class Gallery extends React.Component<Props, State> {
+  sliderRef: React.RefObject<Slider>;
+
   state = {
     visible: false,
     currentIndex: 1,
     imageLeft: 0,
+  }
+
+  constructor(props: Props) {
+    super(props);
+    this.sliderRef = React.createRef();
   }
 
   closeModal = () => {
@@ -55,12 +62,12 @@ class Gallery extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props, nextState: State) {
     if (!nextState.visible) {
-      document.getElementById('aries-slider').focus();
+      this.sliderRef.current.sliderContainerRef.current.focus();
     }
   }
 
   componentWillUnmount() {
-    document.getElementById('aries-slider').blur();
+    this.sliderRef.current.sliderContainerRef.current.blur();
   }
 
   render() {
@@ -92,6 +99,7 @@ class Gallery extends React.Component<Props, State> {
             arrowWhite
             removeDots
             afterChange={this.getCurrentIndex}
+            ref={this.sliderRef}
           >
             { React.Children.map(children, (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
               <Slider.Item key={`${data.props.src}_${index}`}>

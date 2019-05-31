@@ -16,8 +16,15 @@ import {
 } from '../../Style/Display/ModalStyle';
 
 class Modal extends React.Component<Props, State> {
+  modalContentAreaRef: React.RefObject<HTMLDivElement>;
+
   state = {
     isOpen: false,
+  }
+
+  constructor(props: Props) {
+    super(props);
+    this.modalContentAreaRef = React.createRef();
   }
 
   componentDidMount() {
@@ -41,7 +48,7 @@ class Modal extends React.Component<Props, State> {
   componentDidUpdate(prevProps: Props) {
     const { isVisible } = this.props;
     if (!prevProps.isVisible && isVisible) {
-      document.getElementById('modal-content').focus();
+      this.modalContentAreaRef.current.focus();
     }
   }
 
@@ -89,6 +96,7 @@ class Modal extends React.Component<Props, State> {
             isOpen={isOpen}
             removeAnimation={removeAnimation}
             size={size}
+            ref={this.modalContentAreaRef}
             {...defaultProps}
           >
             {!hideHeader &&

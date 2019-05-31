@@ -14,10 +14,12 @@ import {
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
 class Alert extends React.Component<Props, State> {
+  alertContainerRef: React.RefObject<HTMLDivElement>;
   autoCloseTimeout: ReturnType<typeof setTimeout>;
 
   constructor(props: Props) {
     super(props);
+    this.alertContainerRef = React.createRef();
     this.state = {
       isVisible: props.isOpen,
     };
@@ -44,7 +46,7 @@ class Alert extends React.Component<Props, State> {
     }
 
     if (isOpen) {
-      document.getElementById('aries-alert').focus();
+      this.alertContainerRef.current.focus();
     }
   }
 
@@ -144,6 +146,7 @@ class Alert extends React.Component<Props, State> {
           isVisible={isVisible}
           tabIndex={0}
           onKeyDown={this.handleKeyDown(onClose)}
+          ref={this.alertContainerRef}
         >
           {this.renderAlertTypeIcon()}
           <AlertContent className="alert-content">

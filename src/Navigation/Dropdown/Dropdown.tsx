@@ -28,8 +28,11 @@ class Dropdown extends React.Component<Props, State> {
     showFullWidth: false,
   };
 
+  dropdownBodyRef: React.RefObject<HTMLUListElement>;
+
   constructor(props: Props) {
     super(props);
+    this.dropdownBodyRef = React.createRef();
     this.state = {
       dropdownLabel: props.label,
       isOpen: false,
@@ -123,7 +126,7 @@ class Dropdown extends React.Component<Props, State> {
       });
     } else if (e.keyCode === 13) {
       this.setState({
-        dropdownLabel: document.querySelector('.active').innerHTML,
+        dropdownLabel: this.dropdownBodyRef.current.querySelector('.active').innerHTML,
         isOpen: false,
       });
     }
@@ -201,10 +204,11 @@ class Dropdown extends React.Component<Props, State> {
             noLineBreak={noLineBreak}
             showFullWidth={showFullWidth}
             showHoverLine={showHoverLine}
+            ref={this.dropdownBodyRef}
           >
             {React.Children.map(children, (item: React.ReactElement<DropdownItemProps>, index) => (
               <DropdownItemWrapper
-                className={cursor === index ? 'active' : undefined}
+                className={classNames({ active: cursor === index })}
                 role="option"
                 data-value={item.props.value}
                 key={item.key}
