@@ -197,7 +197,7 @@ export const AutoCompleteItemWrapper = styled.li<AutoCompleteItemWrapperProps>`
     background: ${SecondaryColor.lightergrey};
   }
 
-  #autocomplete-additionalinfo {
+  .autocomplete-additionalinfo {
     color: ${SecondaryColor.lighterblack};
   }
 
