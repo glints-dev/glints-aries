@@ -93,9 +93,9 @@ const SearchFilterStory = () => (
     <SearchFilter
       label="Search for job title, location, or company"
       content={(
-        <Button theme="blue">
+        <SearchFilter.Button theme="blue">
           <Icon name="search" color="white" />
-        </Button>
+        </SearchFilter.Button>
       )}
     >
       <SearchFilter.Body>

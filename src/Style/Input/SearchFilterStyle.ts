@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Button from '../../General/Button';
 import { Device } from '../../Utils/StyleConfig';
 
 import { SecondaryColor } from '../Colors';
@@ -36,18 +37,18 @@ export const SearchFilterBar = styled.div`
       border: 3px solid ${SecondaryColor.actionblue};
     }
   }
+`;
 
-  #aries-defaultbtn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 1.5em;
-    height: 100%;
+export const SearchFilterButton = styled(Button)`
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5em;
+  height: 100%;
 
-    button {
-      @media ${Device.mobileL} {
-        padding: 15px 20px;
-      }
+  button {
+    @media ${Device.mobileL} {
+      padding: 15px 20px;
     }
   }
 `;

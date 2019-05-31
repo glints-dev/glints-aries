@@ -4,7 +4,6 @@ import StorybookComponent from '../StorybookComponent';
 
 import OmniSearch from '../../src/Input/OmniSearch';
 import Icon from '../../src/General/Icon';
-import Button from '../../src/General/Button';
 
 const props = {
   OmniSearch: [
@@ -95,11 +94,11 @@ const OmniSearchStory = () => (
       <OmniSearch
         label="Find Internships, Locations, and Companies"
         content={(
-          <Button theme="blue">
+          <OmniSearch.Button theme="blue">
                     Go!
             {' '}
             <Icon name="arrow-round-forward" color="white" />
-          </Button>
+          </OmniSearch.Button>
         )}
       >
         <OmniSearch.Body>

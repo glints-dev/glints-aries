@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Button from '../../General/Button';
 import { Device } from '../../Utils/StyleConfig';
 
 import { SecondaryColor } from '../Colors';
@@ -39,27 +40,27 @@ export const OmniSearchBar = styled.div`
       border: 3px solid ${SecondaryColor.actionblue};
     }
   }
+`;
 
-  #aries-defaultbtn {
-    position: absolute;
-    right: 3px;
-    font-size: 1.5em;
-    font-weight: normal;
-    height: 100%;
+export const OmniSearchButton = styled(Button)`
+  position: absolute;
+  right: 3px;
+  font-size: 1.5em;
+  font-weight: normal;
+  height: 100%;
 
-    @media ${Device.mobileL} {
-      top: 5em;
-      right: 0;
+  @media ${Device.mobileL} {
+    top: 5em;
+    right: 0;
+    width: 100%;
+
+    button {
       width: 100%;
-
-      button {
-        width: 100%;
-      }
     }
+  }
 
-    svg {
-      margin-left: 1em;
-    }
+  svg {
+    margin-left: 1em;
   }
 `;
 

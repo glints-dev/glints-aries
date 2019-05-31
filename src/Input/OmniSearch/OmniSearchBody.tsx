@@ -20,7 +20,6 @@ const OmniSearchBody: React.FunctionComponent<Props> = (props) => {
 
 export interface Props extends React.ComponentPropsWithoutRef<typeof OmniSearchResultContainer> {
   children: React.ReactNode;
-  className: string;
 }
 
 export default OmniSearchBody;

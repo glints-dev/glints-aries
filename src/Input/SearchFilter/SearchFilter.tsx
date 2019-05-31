@@ -2,13 +2,19 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { SearchFilterContainer, SearchFilterBar, SearchFilterBodyWrapper } from '../../Style/Input/SearchFilterStyle';
+import {
+  SearchFilterContainer,
+  SearchFilterBar,
+  SearchFilterBodyWrapper,
+  SearchFilterButton,
+} from '../../Style/Input/SearchFilterStyle';
 import SearchFilterBody from './SearchFilterBody';
 import SearchFilterList from './SearchFilterList';
 import SearchFilterItem from './SearchFilterItem';
 
 class SearchFilter extends React.Component<Props, State> {
   static Body = SearchFilterBody;
+  static Button = SearchFilterButton;
   static List = SearchFilterList;
   static Item = SearchFilterItem;
 

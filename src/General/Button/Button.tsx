@@ -95,7 +95,7 @@ const Button: React.FunctionComponent<Props> = (props) => (
   </React.Fragment>
 );
 
-interface Props {
+export interface Props {
   variant?: string;
   theme?: string;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;

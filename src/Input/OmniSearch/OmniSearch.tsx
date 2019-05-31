@@ -2,13 +2,19 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { OmniSearchContainer, OmniSearchBar, OmniSearchBodyWrapper } from '../../Style/Input/OmniSearchStyle';
+import {
+  OmniSearchContainer,
+  OmniSearchBar,
+  OmniSearchBodyWrapper,
+  OmniSearchButton,
+} from '../../Style/Input/OmniSearchStyle';
 import OmniSearchBody from './OmniSearchBody';
 import OmniSearchList from './OmniSearchList';
 import OmniSearchItem from './OmniSearchItem';
 
 class OmniSearch extends React.Component<Props, State> {
   static Body = OmniSearchBody;
+  static Button = OmniSearchButton;
   static List = OmniSearchList;
   static Item = OmniSearchItem;
 
