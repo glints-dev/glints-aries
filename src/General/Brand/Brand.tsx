@@ -3,7 +3,7 @@ import * as React from 'react';
 import { BrandContainer, BrandImage } from '../../Style/General/BrandStyle';
 
 const GlintsBlack = require('../../../assets/image/glints-logo-black.svg');
-const GlintsWhite = require('../../../assets/image/glints-logo-black.svg');
+const GlintsWhite = require('../../../assets/image/glints-logo-white.svg');
 
 class Brand extends React.Component<Props> {
   handleRightClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
