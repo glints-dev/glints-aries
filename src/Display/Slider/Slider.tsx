@@ -57,7 +57,6 @@ class Slider extends React.Component<Props, State> {
 
   setSize = () => {
     const { index } = this.state;
-    console.error(this.getSliderContainerDOMNode());
     
     const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect().width;
     this.setState({
