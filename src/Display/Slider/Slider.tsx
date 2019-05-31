@@ -57,6 +57,8 @@ class Slider extends React.Component<Props, State> {
 
   setSize = () => {
     const { index } = this.state;
+    console.error(this.getSliderContainerDOMNode());
+    
     const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect().width;
     this.setState({
       screenSize: this.getSliderContainerDOMNode().getBoundingClientRect().width,
@@ -158,7 +160,7 @@ class Slider extends React.Component<Props, State> {
 
     return (
       <SliderContainer
-        innerRef={this.sliderContainerRef}
+        ref={this.sliderContainerRef}
         id="aries-slider"
         className={className}
         onKeyDown={this.handleKeyDown}

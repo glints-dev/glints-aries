@@ -264,7 +264,7 @@ class Select extends React.Component<Props, State> {
       <SelectContainer
         id="aries-select"
         className={className}
-        innerRef={this.node}
+        ref={this.node}
       >
         <SelectWrapper id="select-inputwrapper" isFocus={isFocus}>
           <SelectInput

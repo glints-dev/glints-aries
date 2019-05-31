@@ -210,7 +210,7 @@ class AutoComplete extends React.Component<Props, State> {
       <AutoCompleteContainer
         id="aries-autocomplete"
         className={className}
-        innerRef={this.autoCompleteContainerRef}>
+        ref={this.autoCompleteContainerRef}>
         <AutoCompleteWrapper id="autocomplete-inputwrapper">
           <AutoCompleteInput
             type="text"

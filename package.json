@@ -45,6 +45,7 @@
     "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
+    "@types/styled-components": "^4.1.15",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "create-index": "^2.4.0",
@@ -64,7 +65,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "4.3.1",
     "react-test-renderer": "^16.8.6",
-    "styled-components": "^3.3.3",
+    "styled-components": "^4.2.1",
     "stylelint": "^10.0.1",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -85,8 +86,8 @@
     "react-responsive": "^6.1.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^3.3.3"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^4.0.0"
   }
 }

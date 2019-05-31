@@ -108,7 +108,7 @@ class Textarea extends React.PureComponent<Props, State> {
     return (
       <TextareaContainer id="aries-textarea" className={className}>
         <TextareaInput
-          innerRef={this.textareaInputRef}
+          ref={this.textareaInputRef}
           placeholder={removeFloatingLabel && label}
           rows={rows}
           status={status}

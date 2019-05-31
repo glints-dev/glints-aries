@@ -4,10 +4,20 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "jsx": "preserve",
-    "lib": ["dom"],
+    "lib": ["dom", "es6"],
     "noImplicitAny": true,
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "types": [
+      "lodash",
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "storybook__addon-actions",
+      "storybook__addon-knobs",
+      "storybook__react",
+      "styled-components"
+    ]
   },
   "include": [
     "src/**/*"
