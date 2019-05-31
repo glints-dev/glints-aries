@@ -1,17 +1,14 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
-        "jsx-control-statements/jsx-control-statements": true
+        "es6": true
     },
     "extends": [
-        "airbnb",
-        "plugin:jsx-control-statements/recommended"
+        "airbnb"
     ],
     "plugins": [
         "react", 
-        "jsx-a11y",
-        "jsx-control-statements"
+        "jsx-a11y"
     ],
     "parserOptions": {
         "ecmaVersion": 2015,
@@ -64,14 +61,6 @@
         "react/self-closing-comp": 0,
         "react/sort-comp": 0,
         "react/jsx-no-undef": ["error", { "allowGlobals": true }],
-        "jsx-control-statements/jsx-choose-not-empty": 1,
-        "jsx-control-statements/jsx-for-require-each": 1,
-        "jsx-control-statements/jsx-for-require-of": 1,
-        "jsx-control-statements/jsx-if-require-condition": 1,
-        "jsx-control-statements/jsx-otherwise-once-last": 1,
-        "jsx-control-statements/jsx-use-if-tag": 1,
-        "jsx-control-statements/jsx-when-require-condition": 1,
-        "jsx-control-statements/jsx-jcs-no-undef": 0,
         "jsx-a11y/no-static-element-interactions": 0,
         "jsx-a11y/click-events-have-key-events": 0
     }

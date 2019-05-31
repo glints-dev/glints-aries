@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { PointingModalHeaderWrapper } from '../../Style/Display/PointingModalStyle';
+
+const PointingModalHeader: React.FunctionComponent<Props> = (props) => {
+  const {
+    children,
+    className,
+    ...defaultProps
+  } = props;
+
+  return (
+    <PointingModalHeaderWrapper
+      id="pointingmodal-header"
+      className={className}
+      role="group"
+      {...defaultProps}
+    >
+      {children}
+    </PointingModalHeaderWrapper>
+  );
+};
+
+interface Props extends React.ComponentPropsWithoutRef<typeof PointingModalHeaderWrapper> {
+  children: React.ReactNode;
+}
+
+export default PointingModalHeader;
