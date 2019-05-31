@@ -9,13 +9,15 @@ class Brand extends React.Component<Props> {
   handleRightClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { rightClickURL, onContextMenu } = this.props;
 
-    e.preventDefault();
-
-    if (onContextMenu !== undefined) {
-      onContextMenu();
+    if (rightClickURL) {
+      e.preventDefault();
+  
+      if (onContextMenu !== undefined) {
+        onContextMenu();
+      }
+  
+      window.location.href = rightClickURL;
     }
-
-    window.location.href = rightClickURL;
   }
 
   render() {
@@ -60,7 +62,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof BrandContainer> {
   asset: string;
   alt: HTMLImageElement['alt'];
   className?: string;
-  rightClickURL: string;
+  rightClickURL?: string;
   onContextMenu?(): void;
 }
 
