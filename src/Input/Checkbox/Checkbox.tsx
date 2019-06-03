@@ -2,24 +2,21 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 
-class Checkbox extends React.Component<Props, State> {
+class Checkbox extends React.PureComponent<Props, State> {
   state = {
     checked: false,
   }
 
-  handleClick = (onClick: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => void) => {
-    const listener = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
-      const { checked } = this.state;
-      this.setState({
-        checked: !checked,
-      });
+  handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+    const { onClick } = this.props;
+    const { checked } = this.state;
+    this.setState({
+      checked: !checked,
+    });
 
-      if (onClick !== undefined) {
-        return onClick(e);
-      }
-    };
-
-    return listener;
+    if (onClick !== undefined) {
+      return onClick(e);
+    }
   }
 
   render() {
@@ -43,9 +40,8 @@ class Checkbox extends React.Component<Props, State> {
       >
         <input
           type="checkbox"
-          className={id}
-          value={value}
-          onClick={this.handleClick(onClick)}
+          id={id}
+          onClick={this.handleClick}
           {...defaultProps}
         />
         <label
