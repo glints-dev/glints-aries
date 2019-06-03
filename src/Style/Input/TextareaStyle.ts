@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
 export const TextareaContainer = styled.div`
+  flex-grow: 1;
   position: relative;
   display: flex;
 `;
