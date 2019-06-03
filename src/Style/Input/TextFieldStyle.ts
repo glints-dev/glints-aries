@@ -5,6 +5,7 @@ export const TextFieldContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 
   .see-password {
     position: absolute;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
 export const DatepickerContainer = styled.div`
+  flex-grow: 1;
   position: relative;
 `;
 

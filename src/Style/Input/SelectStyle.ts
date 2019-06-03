@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../Colors';
 
 export const SelectContainer = styled.div`
+  flex-grow: 1;
   position: relative;
 `;
 
