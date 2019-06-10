@@ -18,14 +18,39 @@ class SearchFilter extends React.Component<Props, State> {
   static List = SearchFilterList;
   static Item = SearchFilterItem;
 
-  state = {
-    isOpen: false,
-  };
+  state = { isOpen: false };
+  searchFilterRef = React.createRef() as React.RefObject<HTMLDivElement>;
+  inputRef = React.createRef() as React.RefObject<HTMLInputElement>;
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleMouseDown, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleMouseDown, false);
+  }
 
   handleOpen = () => {
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
+    this.setState({ isOpen: true });
   };
+
+  handleClose = () => {
+    this.setState({ isOpen: false });
+  }
+
+  handleMouseDown = (event: MouseEvent) => {
+    const element = event.target as HTMLElement;
+    const hasClickedOnInput = element === this.inputRef.current;
+    const hasClickedInsideSearchFilter = this.searchFilterRef.current.contains(element);
+    const hasClickedOnScrollBar = hasClickedInsideSearchFilter &&
+      (event.offsetX > element.clientWidth || event.offsetY > element.clientHeight);
+
+    if (hasClickedOnInput || hasClickedOnScrollBar) {
+      return;
+    } else {
+      this.handleClose();
+    }
+  }
 
   render() {
     const {
@@ -45,14 +70,15 @@ class SearchFilter extends React.Component<Props, State> {
         role="search"
         aria-expanded={isOpen}
         aria-label={label}
+        ref={this.searchFilterRef}
       >
         <SearchFilterBar className="searchfilter-inputwrapper">
           <input
             type="text"
             placeholder={label}
             onFocus={this.handleOpen}
-            onBlur={this.handleOpen}
             value={value}
+            ref={this.inputRef}
             {...defaultProps}
           />
           {content}
