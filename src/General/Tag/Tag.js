@@ -16,7 +16,7 @@ const Tag = (props: Props) => {
   return (
     <Fragment>
       <TagContainer
-        id="aries-tag"
+        data-id="aries-tag"
         className={className}
         role="presentation"
         tabIndex="0"
