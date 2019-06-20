@@ -13,6 +13,7 @@ export const TagContainer = styled.div<TagContainerProps>`
   border-radius: ${({ block }) => !block && '20px'};
   font-size: 1em;
   line-height: 1.5;
+  margin-bottom: 10px;
   color: ${SecondaryColor.white};
 
   ${({ theme, outline }) => {
