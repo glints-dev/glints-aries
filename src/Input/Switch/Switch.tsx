@@ -9,7 +9,7 @@ class Switch extends React.Component<Props, State> {
     initialValue: '',
   };
 
-  handleChange = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const radioButton = e.target as HTMLInputElement;
     const { value } = radioButton;
 
