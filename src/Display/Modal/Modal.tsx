@@ -115,7 +115,7 @@ class Modal extends React.Component<Props, State> {
             </ModalBody>
             {footer !== undefined &&
               <ModalFooter className="modal-footer">
-                { footer.map(data => React.cloneElement(data, { key: data.props.children })) }
+                { footer }
               </ModalFooter>
             }
           </ModalContentArea>

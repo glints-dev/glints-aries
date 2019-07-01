@@ -9,11 +9,13 @@ class Switch extends React.Component<Props, State> {
     initialValue: '',
   };
 
-  handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const radioButton = e.target as HTMLInputElement;
+    const { value } = radioButton;
+
     this.setState({
-      clickID: radioButton.id,
-      initialValue: radioButton.value,
+      clickID: value,
+      initialValue: value,
     });
   }
 
@@ -55,7 +57,7 @@ class Switch extends React.Component<Props, State> {
             value={value[0]}
             theme="white"
             checked={initialValue === `${value[0]}` && true}
-            onClick={this.handleClick}
+            onChange={this.handleChange}
           />
         </SwitchItemWrapper>
         <SwitchItemWrapper className="switch-right">
@@ -67,7 +69,7 @@ class Switch extends React.Component<Props, State> {
             value={value[1]}
             theme="white"
             checked={initialValue === `${value[1]}` && true}
-            onClick={this.handleClick}
+            onChange={this.handleChange}
           />
         </SwitchItemWrapper>
       </SwitchContainer>
