@@ -262,6 +262,7 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
         transform: translate3d(4px, 4px, 0);
         transition: all .2s;
         background-color: ${SecondaryColor.black};
+        color: ${SecondaryColor.white};
       `;
     }
 
