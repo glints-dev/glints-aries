@@ -12,16 +12,12 @@ const spinning = keyframes`
 `;
 
 export const ProgressContent = styled.div<ProgressContentProps>`
-  size: ${((props: ProgressContentProps) => props.size) as any};  
-
   position: relative;
   outline: none;
   font-size: ${props => `${props.size}em`};
 `;
 
 export const ProgressContainer = styled.div<ProgressContainerProps>`
-  size: ${((props: ProgressContentProps) => props.size) as any}; 
-
   position: relative;
   display: flex;
   background: transparent;

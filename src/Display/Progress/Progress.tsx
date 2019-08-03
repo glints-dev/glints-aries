@@ -14,36 +14,43 @@ import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 const Progress: React.FunctionComponent<Props> = (props) => {
   const {
     className,
-    percentage,
+    percentage = 100,
     percentageRange = [50],
     size = 8,
     content,
     ...defaultProps
   } = props;
-  
+
+  let normalizedPercentage;
+  let normalizedSize;
+
   if (percentage < 0 || percentage > 100) {
-    throw new Error(`Error: percentage prop on Progress component expected a value between 0-100. Received ${percentage} instead.`)
-  }  
-
+    normalizedPercentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
+    console.warn(`Invalid prop value on Progress component: percentage prop expected a value between 0-100. Received ${percentage} instead.`)
+  } else {
+    normalizedPercentage = percentage;
+  }
   if (percentageRange.length > 2) {
-    throw new Error(`Error: percentageRange prop on Progress component expected a maximum of 2 numbers. Received [${percentageRange}] instead.`)
+    console.warn(`Invalid prop value on Progress component: percentageRange prop expected an array with a maximum of 2 numbers. Received [${percentageRange}] instead.`)
+  }
+  if (size < 1|| size > 10) {
+    normalizedSize = size < 1 ? 1 : size > 10 ? 10 : size;
+    console.warn(`Invalid prop value on Progress component: size prop expected a value between 1-10. Received ${size} instead.`)
+  } else {
+    normalizedSize = size;
   }
 
-  if (size > 10 || size < 1) {
-    throw new Error(`Error: size prop on Progress component expected a number between 1 - 10. Received ${size} instead.`)
-  }
-
-  const progressValue = percentage > 100 ? 282.6 * (1 - (100 / 100)) : 282.6 * (1 - (percentage / 100));
-  const sizeInEm = (size + 2) / 10;
-  
+  const progressValue = normalizedPercentage > 100 ? 282.6 * (1 - (100 / 100)) : 282.6 * (1 - (normalizedPercentage / 100));
+  const sizeInEm = (normalizedSize + 2) / 10;
   let color;
-  if (percentageRange.length === 2) {
+  
+  if (percentageRange.length >= 2) {
     const [firstRange, secondRange] = percentageRange;
-    color = percentage > secondRange ? SecondaryColor.green : 
-      (percentage > firstRange ? SecondaryColor.orange : PrimaryColor.glintsred);
+    color = normalizedPercentage > secondRange ? SecondaryColor.green : 
+      (normalizedPercentage > firstRange ? SecondaryColor.orange : PrimaryColor.glintsred);
   } else if (percentageRange.length === 1) {
     const [firstRange] = percentageRange;
-    color = percentage > firstRange ? SecondaryColor.green : SecondaryColor.orange
+    color = normalizedPercentage > firstRange ? SecondaryColor.green : SecondaryColor.orange
   } else {
     color = SecondaryColor.green
   }
@@ -55,7 +62,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
         progress={progressValue}
         size={sizeInEm}
         role="progressbar"
-        aria-valuenow={percentage}
+        aria-valuenow={normalizedPercentage}
         aria-valuemin={0}
         aria-valuemax={100}
         tabIndex={0}
@@ -67,7 +74,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
             <circle className="progress-circle__value" cx="50" cy="50" r="45" fill="none" stroke={color} strokeWidth="8" />
           </svg>
           <ProgressLabelWrapper aria-hidden="true">
-            {content || <PercentageCompletion>{`${percentage > 100 ? 100 : percentage}%`}</PercentageCompletion>}
+            {content || <PercentageCompletion>{`${normalizedPercentage > 100 ? 100 : normalizedPercentage}%`}</PercentageCompletion>}
             {content ? null : <LabelText>COMPLETE</LabelText>}
           </ProgressLabelWrapper>
         </ProgressContent>
@@ -78,8 +85,8 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 
 interface Props extends Omit<React.ComponentPropsWithoutRef<typeof ProgressContainer>, 'progress'> {
   percentage: number;
-  percentageRange?: Array<number>;
-  size?: number;
+  percentageRange?: [] | [number] | [number, number];
+  size?: 1|2|3|4|5|6|7|8|9|10;
   content?: React.ReactNode;
 }
 
