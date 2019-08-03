@@ -86,7 +86,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 interface Props extends Omit<React.ComponentPropsWithoutRef<typeof ProgressContainer>, 'progress'> {
   percentage: number;
   percentageRange?: [] | [number] | [number, number];
-  size?: 1|2|3|4|5|6|7|8|9|10;
+  size?: number;
   content?: React.ReactNode;
 }
 
