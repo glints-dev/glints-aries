@@ -11,9 +11,10 @@ const spinning = keyframes`
   }
 `;
 
-export const ProgressContent = styled.div`
+export const ProgressContent = styled.div<ProgressContentProps>`
   position: relative;
   outline: none;
+  font-size: ${props => `${props.size}em`};
 `;
 
 export const ProgressContainer = styled.div<ProgressContainerProps>`
@@ -39,11 +40,12 @@ export const ProgressContainer = styled.div<ProgressContainerProps>`
     width: 7.2em;
     height: 7.2em;
     border-radius: 50%;
+    font-size: ${props => `${props.size}em`};
     background: ${SecondaryColor.whitesmoke};
     z-index: -1;
   }
 
-  svg {
+  > div > svg {
     transform: rotate(-90deg);
 
     .progress-circle__value {
@@ -56,25 +58,33 @@ export const ProgressContainer = styled.div<ProgressContainerProps>`
 
 interface ProgressContainerProps {
   progress: number;
+  size?: number;
+}
+
+interface ProgressContentProps {
+  size?: number;
 }
 
 export const ProgressLabelWrapper = styled.label`
-  display: block;
   position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
   width: 100%;
   text-align: center;
   line-height: 1;
-  top: 50%;
+  font-size: inherit;
   transform: translateY(-50%);
-  left: 0;
+`;
+
+export const PercentageCompletion = styled.h1`
   margin: 0;
   font-size: 1.5em;
   font-weight: 900;
+`;
 
-  p {
-    margin: 0;
-    margin-top: .6em;
-    font-size: .5em;
-    font-weight: 500;
-  }
+export const LabelText = styled.p`
+  margin: .6em 0 0;
+  font-size: .75em;
+  font-weight: 500;
 `;
