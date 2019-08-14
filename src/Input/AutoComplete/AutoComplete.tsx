@@ -96,7 +96,8 @@ class AutoComplete extends React.Component<Props, State> {
       });
 
       if (onChange !== undefined) {
-        const activeItemElement = this.autoCompleteContainerRef.current;
+        const containerElement = this.autoCompleteContainerRef.current;
+        const activeItemElement = containerElement.querySelector('.active') as HTMLLIElement;
         const itemValue = activeItemElement.dataset.value;
         onChange(itemValue);
       }
