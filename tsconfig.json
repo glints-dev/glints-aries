@@ -9,6 +9,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "types": [
+      "jest",
       "lodash",
       "react",
       "react-dom",
