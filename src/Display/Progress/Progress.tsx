@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { isNumber } from 'lodash'
 import classNames from 'classnames';
 
 import { 
@@ -14,7 +14,7 @@ import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 const Progress: React.FunctionComponent<Props> = (props) => {
   const {
     className,
-    percentage = 100,
+    percentage,
     percentageRange = [50],
     size = 8,
     content,
@@ -23,10 +23,12 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 
   let normalizedPercentage;
   let normalizedSize;
-
-  if (percentage < 0 || percentage > 100) {
+  if (isNumber(percentage) && percentage < 0 || percentage > 100) {
     normalizedPercentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
-    console.warn(`Invalid prop value on Progress component: percentage prop expected a value between 0-100. Received ${percentage} instead.`)
+    console.warn(`Invalid prop value on Progress component: percentage prop expected a number between 0-100. Received ${percentage} instead.`)
+  } else if (!isNumber(percentage)) {
+    normalizedPercentage = 0;
+    console.warn(`Invalid prop value on Progress component: percentage prop expected a number between 0-100. Received ${percentage} instead.`)
   } else {
     normalizedPercentage = percentage;
   }
@@ -71,11 +73,15 @@ const Progress: React.FunctionComponent<Props> = (props) => {
         <ProgressContent tabIndex={-1} size={sizeInEm}>
           <svg width="8em" height="8em" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke={SecondaryColor.lighterblack} strokeWidth="8" />
-            <circle className="progress-circle__value" cx="50" cy="50" r="45" fill="none" stroke={color} strokeWidth="8" />
+            <circle className="progress-circle-value" aria-label="progress-circle-value" cx="50" cy="50" r="45" fill="none" stroke={color} strokeWidth="8" />
           </svg>
           <ProgressLabelWrapper aria-hidden="true">
-            {content || <PercentageCompletion>{`${normalizedPercentage > 100 ? 100 : normalizedPercentage}%`}</PercentageCompletion>}
-            {content ? null : <LabelText>COMPLETE</LabelText>}
+            {content || (
+              <PercentageCompletion aria-label="percentage-completion">
+                {`${normalizedPercentage > 100 ? 100 : normalizedPercentage}%`}
+              </PercentageCompletion>
+            )}
+            {!content && <LabelText>COMPLETE</LabelText>}
           </ProgressLabelWrapper>
         </ProgressContent>
       </ProgressContainer>
@@ -85,7 +91,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 
 interface Props extends Omit<React.ComponentPropsWithoutRef<typeof ProgressContainer>, 'progress'> {
   percentage: number;
-  percentageRange?: [] | [number] | [number, number];
+  percentageRange?: number[];
   size?: number;
   content?: React.ReactNode;
 }
