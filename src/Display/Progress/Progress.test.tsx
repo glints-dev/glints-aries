@@ -2,8 +2,16 @@ import * as React from 'react';
 import Progress from './Progress'
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
+import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
+
+test(`<Progress> should render 51% with a stroke color of ${SecondaryColor.orange}`, () => {
+  const ProgressSnapshot = renderer
+    .create(<Progress percentage={51} percentageRange={[15, 60]}/>)
+    .toJSON();
+  expect(ProgressSnapshot).toMatchSnapshot();
+});
 
 test('shows percentage completion rate when it renders with a valid percentage', () => {
   const percentage = 51
