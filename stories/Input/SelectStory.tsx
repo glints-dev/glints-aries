@@ -55,6 +55,14 @@ const props = {
       description: 'Disable the Text Field.',
     },
     {
+      name: 'noOptionResult',
+      type: 'string',
+      defaultValue: 'No results found',
+      possibleValue: 'any',
+      require: 'no',
+      description: 'Sets value to display when no options are returned.',
+    },
+    {
       name: 'onChange',
       type: 'function',
       defaultValue: '',
@@ -112,25 +120,23 @@ const SelectStory = () => (
     title="Select"
     code="import { Select } from 'glints-aries'"
     propsObject={props}
-    usage={`handleChange = (value) => {
+    usage={`handleChange = value => {
   console.log('selected value: ', value);
 }
+
 <Select
   label="Jobs"
   onChange={this.handleChange}
 >
   <Select.Option value="accountant">Accountant</Select.Option>
-  <Select.Option value="finance">Finance</Select.Option>
+  <Select.Option value="business development">Business Development</Select.Option>
+  <Select.Option value="software engineer">Software Engineer</Select.Option>
 </Select>`}
   >
     <div style={{ width: '300px' }}>
-      <Select
-        label="Jobs"
-        noOptionResult="No Result Found."
-      >
+      <Select label="Jobs">
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">Business Development</Select.Option>
-        <Select.Option value="finance">Finance</Select.Option>
         <Select.Option value="software engineer">Software Engineer</Select.Option>
       </Select>
     </div>

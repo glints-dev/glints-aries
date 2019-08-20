@@ -3,17 +3,14 @@ import * as ReactDOM from 'react-dom';
 
 import classNames from 'classnames';
 
-import SelectItem from './SelectItem';
+import SelectList, { SelectItemProps } from './SelectList'
 
 import Icon from '../../General/Icon';
-import Loading from '../../General/Loading';
-
 import {
   SelectContainer,
   SelectWrapper,
   SelectInput,
   SelectLabel,
-  SelectListWrapper,
 } from '../../Style/Input/SelectStyle';
 
 class Select extends React.Component<Props, State> {
@@ -243,7 +240,7 @@ class Select extends React.Component<Props, State> {
       onFocus,
       onBlur,
       onChange,
-      noOptionResult,
+      noOptionResult = 'No results found',
       children,
       small,
       disableTyping,
@@ -258,7 +255,6 @@ class Select extends React.Component<Props, State> {
       selectedValue,
       filterValue,
       cursor,
-      notMatch,
       isLoading,
     } = this.state;
 
@@ -304,45 +300,16 @@ class Select extends React.Component<Props, State> {
             </div>
           }
         </SelectWrapper>
-        <SelectListWrapper
-          className="select-listbox"
-          role="listbox"
-          aria-hidden={!isFocus && true}
-          open={isFocus}
+        <SelectList
+          cursor={cursor}
+          filterValue={filterValue}
+          isFocus={isFocus}
+          isLoading={isLoading}
+          noOptionResult={noOptionResult}
           small={small}
-        >
-          {(filterValue.length !== 0 && !isLoading)
-            ? filterValue.map((data: React.ReactElement<SelectItemProps>, index) => (
-                <SelectItem
-                  className={cursor === index ? 'active' : null}
-                  key={data.props.value}
-                  role="option"
-                  data-className={index}
-                  data-value={data.props.value}
-                  onClick={this.handleClick(data.props.onOptionClick)}
-                  onMouseEnter={this.handleMouseEnter}
-                  tabIndex={0}
-                >
-                  {data.props.children}
-                </SelectItem>
-              ))
-            : !isLoading
-              ? (
-                  <SelectItem className="select-loading" role="option">
-                    <Loading />
-                  </SelectItem>
-                )
-              : (
-                  <SelectItem
-                    disabled
-                    role="option"
-                    aria-hidden={false}
-                    aria-disabled="true"
-                  >
-                    {noOptionResult}
-                  </SelectItem>
-                )}
-        </SelectListWrapper>
+          handleClick={this.handleClick}
+          handleMouseEnter={this.handleMouseEnter}
+        />
       </SelectContainer>
     );
   }
@@ -371,12 +338,6 @@ interface State {
   notMatch: boolean;
   childrenLength: number;
   isLoading: boolean;
-}
-
-interface SelectItemProps {
-  children: string;
-  value?: string;
-  onOptionClick?(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
 }
 
 export default Select;
