@@ -27,7 +27,11 @@ const Progress: React.FunctionComponent<Props> = (props) => {
   const isPercentageWithinCorrectRange = isNumber(percentage) && (percentage < 0 || percentage > 100)
   
   if (isPercentageWithinCorrectRange) {
-    normalizedPercentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
+    if (percentage < 0) {
+      normalizedPercentage = 0
+    } else {
+      normalizedPercentage = 100
+    }
     warningMessages.percentageValueOutsideRange({ 
       propName: 'percentage',
       expectedPropTypeAndValue: 'number between 0-100',
