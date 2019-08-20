@@ -10,6 +10,7 @@ import {
   LabelText 
 } from '../../Style/Display/ProgressStyle';
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+import { warningMessages } from './WarningMessages'
 
 const Progress: React.FunctionComponent<Props> = (props) => {
   const {
@@ -23,21 +24,43 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 
   let normalizedPercentage;
   let normalizedSize;
-  if (isNumber(percentage) && percentage < 0 || percentage > 100) {
+  const isPercentageWithinCorrectRange = isNumber(percentage) && (percentage < 0 || percentage > 100)
+  
+  if (isPercentageWithinCorrectRange) {
     normalizedPercentage = percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
-    console.warn(`Invalid prop value on Progress component: percentage prop expected a number between 0-100. Received ${percentage} instead.`)
+    warningMessages.percentageValueOutsideRange({ 
+      propName: 'percentage',
+      expectedPropTypeAndValue: 'number between 0-100',
+      actualProp: percentage,
+      resolvedPropValue: normalizedPercentage,
+    })
   } else if (!isNumber(percentage)) {
     normalizedPercentage = 0;
-    console.warn(`Invalid prop value on Progress component: percentage prop expected a number between 0-100. Received ${percentage} instead.`)
+    warningMessages.percentageTypeInvalid({ 
+      propName: 'percentage',
+      expectedPropTypeAndValue: 'number between 0-100',
+      actualProp: percentage,
+      resolvedPropValue: normalizedPercentage,
+    })
   } else {
     normalizedPercentage = percentage;
   }
   if (percentageRange.length > 2) {
-    console.warn(`Invalid prop value on Progress component: percentageRange prop expected an array with a maximum of 2 numbers. Received [${percentageRange}] instead.`)
+    warningMessages.percentageRangeExceedsValidLength({ 
+      propName: 'percentageRange',
+      expectedPropTypeAndValue: 'number between 0-100',
+      actualProp: percentageRange,
+      resolvedPropValue: [percentageRange[0], percentageRange[1]],
+    })
   }
   if (size < 1|| size > 10) {
     normalizedSize = size < 1 ? 1 : size > 10 ? 10 : size;
-    console.warn(`Invalid prop value on Progress component: size prop expected a value between 1-10. Received ${size} instead.`)
+    warningMessages.percentageRangeExceedsValidLength({ 
+      propName: 'size',
+      expectedPropTypeAndValue: 'number between 1-10',
+      actualProp: size,
+      resolvedPropValue: normalizedSize,
+    })
   } else {
     normalizedSize = size;
   }
@@ -78,7 +101,7 @@ const Progress: React.FunctionComponent<Props> = (props) => {
           <ProgressLabelWrapper aria-hidden="true">
             {content || (
               <PercentageCompletion aria-label="percentage-completion">
-                {`${normalizedPercentage > 100 ? 100 : normalizedPercentage}%`}
+                {`${normalizedPercentage}%`}
               </PercentageCompletion>
             )}
             {!content && <LabelText>COMPLETE</LabelText>}
