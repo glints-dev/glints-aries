@@ -40,8 +40,7 @@ const makeReducerToPairWarningMessagesWithShowMessageFn = (defaultMessageProps: 
 
 export const generateWarningMessages = (warningMessageTypes: string[], defaultWarningMessageProps: IDefaultMessageProps) => {
   const pairWarningMessagesWithShowMessageFn = makeReducerToPairWarningMessagesWithShowMessageFn(defaultWarningMessageProps)
-  const warningMessages = warningMessageTypes.reduce(pairWarningMessagesWithShowMessageFn, {})
-  return warningMessages
+  return warningMessageTypes.reduce(pairWarningMessagesWithShowMessageFn, {})
 }
 
 interface IMessageProps { 
