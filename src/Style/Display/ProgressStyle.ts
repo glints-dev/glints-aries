@@ -48,7 +48,7 @@ export const ProgressContainer = styled.div<ProgressContainerProps>`
   > div > svg {
     transform: rotate(-90deg);
 
-    .progress-circle__value {
+    .progress-circle-value {
       stroke-dasharray: 282.6;
       stroke-dashoffset: ${props => props.progress};
       animation: ${spinning} 1s ease-in-out;
