@@ -10,7 +10,7 @@ export const ToastContainer = styled.div<ToastContainerProps>`
   transform: ${({ isVisible }) => isVisible ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)' : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'};
   transition: ${({ isVisible }) => isVisible ? 'all .25s ease-in' : 'all .25s ease-out'};
   position: fixed;
-  bottom: 4em;
+  bottom: 7em;
   right: 4em;
   min-width: 300px;
   max-width: 500px;
