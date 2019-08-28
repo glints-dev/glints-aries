@@ -35,11 +35,11 @@ export const JobOverviewHeadingStyle = styled.h1`
   line-height: normal;
   letter-spacing: normal;
   color: #000000;
-  margin-bottom: 10px !important;
+  margin-bottom: 5px !important;
 `;
 
 export const JobOverviewLinkStyle = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   a {
     display: block;
     font-size: 14px;
