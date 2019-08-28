@@ -39,10 +39,10 @@ class Alert extends React.Component<Props, State> {
 
     if (prevProps.isOpen && !isOpen) {
       setTimeout(() => this.setState({ isVisible: false }), 300);
-    } else if (isOpen && prevProps.autoClose) {
+    } else if (isOpen && this.props.autoClose) {
       this.autoCloseTimeout = setTimeout(() => {
         prevProps.onClose();
-      }, prevProps.autoClose);
+      }, this.props.autoClose);
     }
 
     if (isOpen) {
