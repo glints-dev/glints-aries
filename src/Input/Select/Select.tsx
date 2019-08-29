@@ -1,3 +1,4 @@
+import { isEqual } from 'lodash';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
@@ -24,8 +25,6 @@ class Select extends React.Component<Props, State> {
     selectedValue: '',
     filterValue: [] as React.ReactNode[],
     cursor: 0,
-    notMatch: false,
-    childrenLength: 0,
     defaultValue: '',
     isLoading: false,
   }
@@ -41,12 +40,7 @@ class Select extends React.Component<Props, State> {
     // Checking if children data is exist or not.
     if (React.Children.count(children) !== 0) {
       this.setState({
-        childrenLength: React.Children.count(children),
         filterValue: React.Children.map(children, data => data),
-      });
-    } else {
-      this.setState({
-        notMatch: true,
       });
     }
 
@@ -59,6 +53,42 @@ class Select extends React.Component<Props, State> {
     }
 
     document.addEventListener('click', this.handleOnBlur, false);
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const {
+      children,
+      isLoading,
+      value,
+    } = this.props;
+
+    const hasDifferentChildren = !isEqual(children,  prevProps.children);
+    if (hasDifferentChildren) {
+      this.setState({
+        selectedValue: value as string,
+        defaultValue: value as string,
+        floating: Boolean(value),
+        filterValue: React.Children.map(children, data => data),
+      });
+    } else if (value !== prevProps.value) {
+      if (value && value !== this.state.defaultValue) {
+        this.setState({
+          selectedValue: value as string,
+          defaultValue: value as string,
+          floating: true,
+        });
+      } else if (value === '') {
+        this.setState({
+          selectedValue: value,
+          defaultValue: value,
+          floating: false,
+        });
+      }
+    } else if (isLoading && isLoading !== prevProps.isLoading) {
+      this.setState({
+        isLoading: isLoading,
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -186,50 +216,6 @@ class Select extends React.Component<Props, State> {
     });
   }
 
-  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-    if (React.Children.count(nextProps.children) !== prevState.childrenLength) {
-      if (nextProps.value) {
-        return {
-          selectedValue: nextProps.value,
-          defaultValue: nextProps.value,
-          floating: true,
-          filterValue: React.Children.map(nextProps.children, data => data),
-        };
-      }
-
-      return {
-        filterValue: React.Children.map(nextProps.children, data => data),
-        childrenLength: React.Children.count(nextProps.children),
-      };
-    }
-
-    if (prevState.filterValue.length === 0) {
-      return { notMatch: true };
-    }
-
-    if (nextProps.value && nextProps.value !== prevState.defaultValue) {
-      return {
-        selectedValue: nextProps.value,
-        defaultValue: nextProps.value,
-        floating: true,
-      };
-    }
-
-    if (nextProps.value === '') {
-      return {
-        selectedValue: nextProps.value,
-        defaultValue: nextProps.value,
-        floating: false,
-      };
-    }
-
-    if (nextProps.isLoading !== undefined) {
-      return { isLoading: nextProps.isLoading };
-    }
-
-    return { notMatch: false };
-  }
-
   render() {
     const {
       label,
@@ -335,8 +321,6 @@ interface State {
   filterValue: React.ReactNode[];
   defaultValue: string;
   cursor: number;
-  notMatch: boolean;
-  childrenLength: number;
   isLoading: boolean;
 }
 
