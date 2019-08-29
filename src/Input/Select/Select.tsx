@@ -56,31 +56,37 @@ class Select extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const hasDifferentChildren = !isEqual(this.props.children,  prevProps.children);
+    const {
+      children,
+      isLoading,
+      value,
+    } = this.props;
+
+    const hasDifferentChildren = !isEqual(children,  prevProps.children);
     if (hasDifferentChildren) {
       this.setState({
-        selectedValue: this.props.value as string,
-        defaultValue: this.props.value as string,
-        floating: !!this.props.value,
-        filterValue: React.Children.map(this.props.children, data => data),
+        selectedValue: value as string,
+        defaultValue: value as string,
+        floating: !!value,
+        filterValue: React.Children.map(children, data => data),
       });
-    } else if (this.props.value !== prevProps.value) {
-      if (this.props.value && this.props.value !== this.state.defaultValue) {
+    } else if (value !== prevProps.value) {
+      if (value && value !== this.state.defaultValue) {
         this.setState({
-          selectedValue: this.props.value as string,
-          defaultValue: this.props.value as string,
+          selectedValue: value as string,
+          defaultValue: value as string,
           floating: true,
         });
-      } else if (this.props.value === '') {
+      } else if (value === '') {
         this.setState({
-          selectedValue: this.props.value,
-          defaultValue: this.props.value,
+          selectedValue: value,
+          defaultValue: value,
           floating: false,
         });
       }
-    } else if (this.props.isLoading && this.props.isLoading !== prevProps.isLoading) {
+    } else if (isLoading && isLoading !== prevProps.isLoading) {
       this.setState({
-        isLoading: this.props.isLoading,
+        isLoading: isLoading,
       });
     }
   }
