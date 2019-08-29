@@ -78,12 +78,10 @@ class Select extends React.Component<Props, State> {
           floating: false,
         });
       }
-    } else if (this.props.isLoading !== prevProps.isLoading) {
-      if (this.props.isLoading !== undefined) {
-        this.setState({
-          isLoading: this.props.isLoading,
-        });
-      }
+    } else if (this.props.isLoading && this.props.isLoading !== prevProps.isLoading) {
+      this.setState({
+        isLoading: this.props.isLoading,
+      });
     }
   }
 
