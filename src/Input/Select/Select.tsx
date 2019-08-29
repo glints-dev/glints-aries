@@ -67,7 +67,7 @@ class Select extends React.Component<Props, State> {
       this.setState({
         selectedValue: value as string,
         defaultValue: value as string,
-        floating: !!value,
+        floating: Boolean(value),
         filterValue: React.Children.map(children, data => data),
       });
     } else if (value !== prevProps.value) {
