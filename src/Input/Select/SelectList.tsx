@@ -28,7 +28,7 @@ const SelectList: React.FunctionComponent<Props> = ({
             className={cursor === index ? 'active' : null}
             key={data.props.value}
             role="option"
-            data-classname={index}
+            data-id={index}
             data-value={data.props.value}
             onClick={handleClick(data.props.onOptionClick)}
             onMouseEnter={handleMouseEnter}
