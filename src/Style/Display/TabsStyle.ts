@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { SecondaryColor } from '../Colors';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 export const TabsContainer = styled.div`
   position: relative;
@@ -26,7 +27,7 @@ export const TabsHeader = styled.div`
     li {
       display: inline-flex;
       padding: 1.2em 0;
-      margin: 0 .6em;
+      margin: 0 10px;
       text-transform: uppercase;
       list-style-type: none;
 
@@ -62,6 +63,12 @@ export const TabsHeader = styled.div`
         cursor: pointer;
         outline: none;
         text-transform: uppercase;
+      }
+    }
+
+    @media ${`(min-width: ${ScreenSize.desktopS}px)`} {
+      li {
+        margin: 0 15px;
       }
     }
   }
