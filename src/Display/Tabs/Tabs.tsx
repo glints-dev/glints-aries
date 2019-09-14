@@ -10,84 +10,70 @@ import {
   TabsBody,
 } from '../../Style/Display/TabsStyle';
 
-class Tabs extends React.Component<Props, State> {
-  static Pane = TabPane;
+const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const activeTabOrIndex: any = activeTab || currentIndex;
+  const onClick = onTabClick || setCurrentIndex;
 
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      currentIndex: 0,
-    };
-  }
+  const childrenArray = React.Children.toArray(children);
+  const currentChild = childrenArray[activeTabOrIndex];
 
-  handleClickTab = (index: number) => {
-    const listener = () => {
-      this.setState({
-        currentIndex: index,
-      });
-    };
+  const handleTabClick = (tab: any) => {
+    const listener = () => onClick(tab);
     return listener;
-  }
+  };
 
-  render() {
-    const {
-      children,
-      className,
-    } = this.props;
-
-    const { currentIndex } = this.state;
-
-    const childrenArray = React.Children.toArray(children);
-    const currentChild = childrenArray[currentIndex];
-
-    return (
-      <TabsContainer className={classNames('aries-tabs', className)}>
-        <TabsHeader className="tabs-header">
-          <ul className="tabs-list" role="tablist">
-            {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => (
-              <li
-                className={classNames(`tab-${index}`, { active: currentIndex === index })}
-                key={data.props.tab}
-                role="tab"
-                aria-selected={currentIndex === index && true}
-                aria-controls={`tab-item-${index}`}
-                tabIndex={currentIndex === index ? 0 : -1}
+  return (
+    <TabsContainer className={classNames('aries-tabs', className)}>
+      <TabsHeader className="tabs-header">
+        <ul className="tabs-list" role="tablist">
+          {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => {
+            const tabLabel = data.props.label || index;
+            return(
+            <li
+              className={classNames(`tab-${tabLabel}`, { active: activeTabOrIndex === tabLabel })}
+              key={data.props.tab}
+              role="tab"
+              aria-selected={activeTabOrIndex === tabLabel && true}
+              aria-controls={`tab-item-${tabLabel}`}
+              tabIndex={-1}
+            >
+              <button
+                type="button"
+                onClick={handleTabClick(tabLabel)}
               >
-                <button
-                  type="button"
-                  onClick={this.handleClickTab(index)}
-                  tabIndex={-1}
-                >
-                  {data.props.tab}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </TabsHeader>
-        <TabsBody className="tabs-body" tabIndex={0}>
-          <TabPane
-            className={classNames('tabs-item', `tab-item-${currentIndex}`)}
-            role="tabpanel"
-            aria-labelledby={`tab-${currentIndex}`}
-            tabIndex={-1}
-          >
-            {React.isValidElement<TabPaneProps>(currentChild) &&
-              currentChild.props.children}
-          </TabPane>
-        </TabsBody>
-      </TabsContainer>
-    );
-  }
+                {data.props.tab}
+              </button>
+            </li>
+          )})}
+        </ul>
+      </TabsHeader>
+      <TabsBody className="tabs-body" tabIndex={0}>
+        <TabPane
+          className={classNames('tabs-item', `tab-item-${activeTabOrIndex}`)}
+          role="tabpanel"
+          aria-labelledby={`tab-${activeTabOrIndex}`}
+          tabIndex={-1}
+        >
+          {React.isValidElement<TabPaneProps>(currentChild) &&
+            currentChild.props.children}
+        </TabPane>
+      </TabsBody>
+    </TabsContainer>
+  );
 }
+
+type Tabs = React.FunctionComponent<Props> & {
+  Pane: typeof TabPane;
+}
+
+Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
-  label?: string;
+  activeTab?: string;
+  onTabClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   className?: string;
-}
-
-interface State {
-  currentIndex: number;
 }
 
 export default Tabs;
