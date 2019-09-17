@@ -12,14 +12,17 @@ import {
 
 const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const activeTabOrIndex: any = activeTab || currentIndex;
-  const onClick = onTabClick || setCurrentIndex;
-
+  const activeTabOrIndex: string | number = activeTab || currentIndex;
   const childrenArray = React.Children.toArray(children);
-  const currentChild = childrenArray[activeTabOrIndex];
+  const currentChild = childrenArray[currentIndex];
 
-  const handleTabClick = (tab: any) => {
-    const listener = () => onClick(tab);
+  const handleTabClick = (index: number, tab: React.ReactText) => {
+    const listener = () => {
+      setCurrentIndex(index);
+      if (onTabClick) {
+        onTabClick(tab);
+      }
+    };
     return listener;
   };
 
@@ -40,7 +43,7 @@ const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
             >
               <button
                 type="button"
-                onClick={handleTabClick(tabLabel)}
+                onClick={handleTabClick(index, tabLabel)}
               >
                 {data.props.tab}
               </button>
@@ -72,7 +75,7 @@ Tabs.Pane = TabPane;
 interface Props {
   children: React.ReactNode;
   activeTab?: string;
-  onTabClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
+  onTabClick?(tab: React.ReactText): void;
   className?: string;
 }
 
