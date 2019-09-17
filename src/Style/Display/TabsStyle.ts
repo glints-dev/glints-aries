@@ -19,14 +19,13 @@ export const TabsHeader = styled.div`
     font-size: 1em;
     padding: 0;
     margin: 0;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
 
     li {
-      display: inline-flex;
-      padding: 1.2em 0;
+      display: inline-flex;    
       margin: 0 10px;
       text-transform: uppercase;
       list-style-type: none;
@@ -52,12 +51,8 @@ export const TabsHeader = styled.div`
         outline: none;
       }
 
-      &:focus > button {
-        outline: 5px auto -webkit-focus-ring-color;
-      }
-
       button {
-        padding: 0;
+        padding: 20px 0;
         background: transparent;
         border: none;
         cursor: pointer;

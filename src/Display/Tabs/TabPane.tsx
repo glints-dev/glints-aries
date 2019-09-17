@@ -21,6 +21,7 @@ const TabPane: React.FunctionComponent<Props> = (props) => {
 export interface Props extends React.ComponentPropsWithoutRef<typeof TabsContent> {
   children: React.ReactNode;
   tab?: string;
+  label?: string | number;
 }
 
 export default TabPane;
