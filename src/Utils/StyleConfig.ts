@@ -5,6 +5,11 @@ export const Variant = {
   LINK: 'link',
 };
 
+export const TabVariant = {
+  HORIZONTAL: 'horizontal',
+  VERTICAL: 'vertical',
+};
+
 export const PsychedelicTheme = {
   BLUE_DOMINANT: 'blue-dominant',
   BLUE_DEFAULT: 'blue-default',

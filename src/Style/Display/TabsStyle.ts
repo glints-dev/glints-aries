@@ -9,11 +9,21 @@ export const TabsContainer = styled.div`
 
 export const TabsHeader = styled.div`
   position: relative;
-  border-bottom: 1px solid ${SecondaryColor.lightergrey};
-
+  
+  .tabs-list-horizontal {
+    border-bottom: 1px solid ${SecondaryColor.lightergrey};
+    display: flex;
+  }
+  
+  .tabs-list-vertical {
+    border-right: 1px solid ${SecondaryColor.lightergrey};
+    display: flex;
+    flex-direction: column;
+    margin-right: 800px;
+  }
+  
   ul {
     position: relative;
-    display: flex;
     white-space: nowrap;
     overflow: auto;
     font-size: 1em;
@@ -30,16 +40,37 @@ export const TabsHeader = styled.div`
       text-transform: uppercase;
       list-style-type: none;
 
-      &:first-child {
+      &:first-child
+      .tabHorizontal {
         margin-left: 0;
       }
-
-      &:last-child {
+      
+      &:last-child
+      .tabHorizontal {
         margin-right: 0;
       }
+      
+      &:first-child
+      .tabVertical {
+        margin-top: 0;
+      }
 
-      &.active {
+      &:last-child
+      .tabVertical {
+        margin-bottom: 0;
+      }
+
+      &.activeHorizontal {
         border-bottom: 2px solid ${SecondaryColor.black};
+
+        button {
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+      
+      &.activeVertical {
+        border-right: 2px solid ${SecondaryColor.black};
 
         button {
           font-weight: bold;
@@ -64,6 +95,9 @@ export const TabsHeader = styled.div`
     @media ${`(min-width: ${ScreenSize.desktopS}px)`} {
       li {
         margin: 0 15px;
+      }
+      .tabVertical {
+        margin-right: 0;
       }
     }
   }
