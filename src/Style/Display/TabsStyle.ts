@@ -10,8 +10,13 @@ export const TabsContainer = styled.div`
 export const TabsHeader = styled.div`
   position: relative;
   
-  .tabs-list-horizontal {
+  .tabs-list-horizontal.white {
     border-bottom: 1px solid ${SecondaryColor.lightergrey};
+    display: flex;
+  }
+  .tabs-list-horizontal.grey {
+    border-bottom: 1px solid ${SecondaryColor.lightergrey};
+    border-top: 1px solid ${SecondaryColor.lightergrey};
     display: flex;
   }
   
@@ -33,13 +38,29 @@ export const TabsHeader = styled.div`
     &::-webkit-scrollbar {
       display: none;
     }
-
-    li {
-      display: inline-flex;    
+    
+    .horizontal-tab.grey {
+      width: 100%;
+      text-align:center;
+      display: block;
+      margin: 0;
+    }
+    
+    .horizontal-tab.grey:hover {
+      background-color: #f3f3f3;
+      color: #017eb7;
+      margin: 0;
+    }
+    
+    .horizontal-tab.white,
+    .vertical-tab {
       margin: 0 10px;
+    }
+    
+    li {
+      display: inline-flex;
       text-transform: uppercase;
       list-style-type: none;
-
       &:first-child
       .tabHorizontal {
         margin-left: 0;
@@ -60,9 +81,18 @@ export const TabsHeader = styled.div`
         margin-bottom: 0;
       }
 
-      &.activeHorizontal {
+      &.white.activeHorizontal {
         border-bottom: 2px solid ${SecondaryColor.black};
 
+        button {
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+      
+      &.grey.activeHorizontal {
+        background-color: #f3f3f3;
+        
         button {
           font-weight: bold;
           text-transform: uppercase;
@@ -96,7 +126,7 @@ export const TabsHeader = styled.div`
       li {
         margin: 0 15px;
       }
-      .tabVertical {
+      .tab-vertical {
         margin-right: 0;
       }
     }

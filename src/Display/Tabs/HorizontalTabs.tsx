@@ -10,7 +10,7 @@ import {
   TabsBody,
 } from '../../Style/Display/TabsStyle';
 
-const HorizontalTabs: Tabs = ({activeTab, onTabClick, children, className}) => {
+const HorizontalTabs: Tabs = ({activeTab, onTabClick, children, theme, className}) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const activeTabOrIndex: string | number = activeTab || currentIndex;
   const childrenArray = React.Children.toArray(children);
@@ -29,12 +29,21 @@ const HorizontalTabs: Tabs = ({activeTab, onTabClick, children, className}) => {
   return (
     <TabsContainer className={classNames('aries-tabs-horizontal', className)}>
       <TabsHeader className="tabs-header">
-        <ul className="tabs-list-horizontal" role="tablist">
+        <ul
+          className={classNames("tabs-list-horizontal", `${theme}`)}
+          role="tablist">
           {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => {
             const tabLabel = data.props.label || index;
             return(
             <li
-              className={classNames(`tab-${tabLabel}`, { activeHorizontal: activeTabOrIndex === tabLabel }, 'horizontalTab')}
+              className={
+                classNames(
+                  `tab-${tabLabel}`,
+                  { activeHorizontal: activeTabOrIndex === tabLabel },
+                  "horizontal-tab",
+                  `${theme}`
+                )
+              }
               key={data.props.tab}
               role="tab"
               aria-selected={activeTabOrIndex === tabLabel && true}
@@ -74,6 +83,7 @@ HorizontalTabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
+  theme?:string;
   activeTab?: string;
   onTabClick?(tab: React.ReactText): void;
   className?: string;

@@ -34,7 +34,9 @@ const VerticalTabs: Tabs = ({activeTab, onTabClick, children, className}) => {
             const tabLabel = data.props.label || index;
             return(
               <li
-                className={classNames(`tab-${tabLabel}`, { activeVertical: activeTabOrIndex === tabLabel }, 'tabVertical')}
+                className={
+                  classNames(`tab-${tabLabel}`, { activeVertical: activeTabOrIndex === tabLabel }, "tab-vertical")
+                }
                 key={data.props.tab}
                 role="tab"
                 aria-selected={activeTabOrIndex === tabLabel && true}

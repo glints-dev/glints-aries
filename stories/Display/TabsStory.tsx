@@ -6,20 +6,7 @@ import Divider from '../../src/General/Divider';
 import Heading from '../../src/General/Heading';
 import Collapsible from '../../src/Display/Collapsible';
 
-import { TabVariant } from '../../src/Utils/StyleConfig';
-
-const props = {
-  Tabs: [
-    {
-      name: 'tab',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'any',
-      require: 'yes',
-      description: 'Sets title of Tab',
-    },
-  ],
-};
+import { TabVariant, HorizontalTabTheme } from '../../src/Utils/StyleConfig';
 
 const TabsStory = () => (
   <div className="doc-mainbar">
@@ -35,7 +22,7 @@ const TabsStory = () => (
     </div>
     <div style={{ marginBottom: '2em' }}>
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Horizontal Navigation Tabs</Heading>
-      <Tabs variant={TabVariant.HORIZONTAL}>
+      <Tabs variant={TabVariant.HORIZONTAL} theme={HorizontalTabTheme.WHITE}>
         <Tabs.Pane tab="Job">Software Engineer <Badge label="1" /></Tabs.Pane>
         <Tabs.Pane tab="Company">Glints</Tabs.Pane>
         <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
@@ -45,7 +32,7 @@ const TabsStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <Collapsible label="Usage" isOpen={false}>
         <pre>
-          {`<Tabs variant="horizontal">
+          {`<Tabs variant="horizontal" theme="white">
          <Tabs.Pane tab="Location Tab">Tab Location</Tabs.Pane>
          <Tabs.Pane tab="Salary">Tab Salary</Tabs.Pane>
          <Tabs.Pane tab="Job">Tab Job</Tabs.Pane>
@@ -120,6 +107,22 @@ const TabsStory = () => (
             </td>
             <td>
               Sets title of Tab
+            </td>
+          </tr>
+          <tr>
+            <td>
+              theme
+            </td>
+            <td>
+              string
+            </td>
+            <td></td>
+            <td>white | grey</td>
+            <td>
+              yes
+            </td>
+            <td>
+              Sets theme color for Hovering Tabs
             </td>
           </tr>
         </tbody>

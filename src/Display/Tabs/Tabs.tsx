@@ -4,19 +4,25 @@ import VerticalTabs from "./VerticalTabs";
 import { TabVariant } from '../../Utils/StyleConfig';
 
 const renderTabs: React.FunctionComponent<Props> = ({
-    variant,
-    children,
-    ...defaultProps
- }) => {
+  variant,
+  theme,
+  children,
+  ...defaultProps
+}) => {
   if (variant === TabVariant.VERTICAL) {
     return (
-    <VerticalTabs {...defaultProps}>
-      {children}
-    </VerticalTabs>
+      <VerticalTabs
+        {...defaultProps}
+      >
+        {children}
+      </VerticalTabs>
     );
   } else {
     return (
-      <HorizontalTabs {...defaultProps}>
+      <HorizontalTabs
+        theme={theme}
+        {...defaultProps}
+      >
         {children}
       </HorizontalTabs>
     );
@@ -31,6 +37,7 @@ const Tabs: React.FunctionComponent<Props> = (props) => (
 
 export interface Props {
   variant?: string;
+  theme?:string;
   children: React.ReactNode;
 }
 

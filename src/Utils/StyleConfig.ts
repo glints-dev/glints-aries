@@ -28,6 +28,11 @@ export const Theme = {
   GREY: 'grey',
 };
 
+export const HorizontalTabTheme = {
+  WHITE: 'white',
+  GREY: 'grey',
+};
+
 /* Screen size library of Glints
  * Usage:
  * @media ${Device.mobileL} { ... }
