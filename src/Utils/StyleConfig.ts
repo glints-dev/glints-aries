@@ -5,6 +5,11 @@ export const Variant = {
   LINK: 'link',
 };
 
+export const TabAlignment = {
+  HORIZONTAL: 'horizontal',
+  VERTICAL: 'vertical',
+};
+
 export const PsychedelicTheme = {
   BLUE_DOMINANT: 'blue-dominant',
   BLUE_DEFAULT: 'blue-default',
@@ -21,6 +26,11 @@ export const Theme = {
   BLUE_RED: 'blue-red',
   WHITE: 'white',
   GREY: 'grey',
+};
+
+export const HorizontalTabVariant = {
+  UNDERLINED: 'underlined',
+  COLORED: 'colored',
 };
 
 /* Screen size library of Glints
