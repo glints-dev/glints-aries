@@ -9,17 +9,8 @@ export const TooltipContainer = styled.div`
 export const TooltipContent = styled.div<TooltipContentProps>`
   position: absolute;
   z-index: 10;
-
-  ${({ text }) => {
-    if (text.length > 150) {
-      return `
-        width: ${text.length + 20}px;
-      `;
-    }
-    return `
-      width: 150px;
-    `;
-  }}
+  width: inherit;
+  min-width: 150px;
 
   ${({ position }) => {
     switch (position) {
