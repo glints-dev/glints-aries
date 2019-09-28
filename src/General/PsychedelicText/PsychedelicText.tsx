@@ -30,18 +30,12 @@ const renderPsychedelicText: React.FunctionComponent<Props> = ({
         </SubHeading>
       );
     default:
-      return (
-        <h3>
-          {children}
-        </h3>
-      );
+      return <h3>{children}</h3>;
   }
 };
 
-const PsychedelicText: React.FunctionComponent<Props> = (props) => (
-  <React.Fragment>
-    {renderPsychedelicText(props)}
-  </React.Fragment>
+const PsychedelicText: React.FunctionComponent<Props> = props => (
+  <React.Fragment>{renderPsychedelicText(props)}</React.Fragment>
 );
 
 interface Props {
@@ -49,6 +43,6 @@ interface Props {
   type?: string;
   psychTheme?: string;
   className?: string;
-};
+}
 
 export default PsychedelicText;

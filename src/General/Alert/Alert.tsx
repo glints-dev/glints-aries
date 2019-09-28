@@ -62,7 +62,7 @@ class Alert extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   renderAlertTypeIcon() {
     const { type } = this.props;
@@ -102,11 +102,7 @@ class Alert extends React.Component<Props, State> {
   renderMessage() {
     const { message } = this.props;
 
-    return (
-      <AlertMessage className="alert-message">
-        {message}
-      </AlertMessage>
-    );
+    return <AlertMessage className="alert-message">{message}</AlertMessage>;
   }
 
   renderIcon() {
@@ -126,36 +122,29 @@ class Alert extends React.Component<Props, State> {
   }
 
   render() {
-    const {
-      type,
-      isOpen,
-      onClose,
-      className,
-    } = this.props;
+    const { type, isOpen, onClose, className } = this.props;
     const { isVisible } = this.state;
 
-    return isVisible
-      ? (
-        <AlertContainer
-          className={classNames('aries-alert', className)}
-          type={type}
-          role="alertdialog"
-          aria-hidden={isVisible ? 'false' : 'true'}
-          aria-describedby="alert-message"
-          isOpen={isOpen}
-          isVisible={isVisible}
-          tabIndex={0}
-          onKeyDown={this.handleKeyDown(onClose)}
-          ref={this.alertContainerRef}
-        >
-          {this.renderAlertTypeIcon()}
-          <AlertContent className="alert-content">
-            {this.renderMessage()}
-            {this.renderIcon()}
-          </AlertContent>
-        </AlertContainer>
-      )
-      : null
+    return isVisible ? (
+      <AlertContainer
+        className={classNames('aries-alert', className)}
+        type={type}
+        role="alertdialog"
+        aria-hidden={isVisible ? 'false' : 'true'}
+        aria-describedby="alert-message"
+        isOpen={isOpen}
+        isVisible={isVisible}
+        tabIndex={0}
+        onKeyDown={this.handleKeyDown(onClose)}
+        ref={this.alertContainerRef}
+      >
+        {this.renderAlertTypeIcon()}
+        <AlertContent className="alert-content">
+          {this.renderMessage()}
+          {this.renderIcon()}
+        </AlertContent>
+      </AlertContainer>
+    ) : null;
   }
 }
 

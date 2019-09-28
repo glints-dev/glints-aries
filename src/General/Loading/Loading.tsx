@@ -2,10 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { LoadingContainer, Spinner } from '../../Style/General/LoadingStyle';
 
-const Loading: React.FunctionComponent<Props> = (props) => {
-  const {
-    className,
-  } = props;
+const Loading: React.FunctionComponent<Props> = props => {
+  const { className } = props;
 
   return (
     <LoadingContainer

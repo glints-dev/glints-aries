@@ -1,6 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { DefaultBtnContainer, DefaultBtn } from '../../Style/General/ButtonStyle';
+import {
+  DefaultBtnContainer,
+  DefaultBtn,
+} from '../../Style/General/ButtonStyle';
 
 const DefaultButton: React.FunctionComponent<Props> = ({
   children,

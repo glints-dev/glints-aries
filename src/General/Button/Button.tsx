@@ -89,10 +89,8 @@ const renderButton: React.FunctionComponent<Props> = ({
   }
 };
 
-const Button: React.FunctionComponent<Props> = (props) => (
-  <React.Fragment>
-    {renderButton(props)}
-  </React.Fragment>
+const Button: React.FunctionComponent<Props> = props => (
+  <React.Fragment>{renderButton(props)}</React.Fragment>
 );
 
 export interface Props {

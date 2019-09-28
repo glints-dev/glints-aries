@@ -4,12 +4,15 @@ import classNames from 'classnames';
 
 import Icon from '../Icon';
 
-import { ProfilePictureContainer, ProfilePictureContent } from '../../Style/General/ProfilePictureStyle';
+import {
+  ProfilePictureContainer,
+  ProfilePictureContent,
+} from '../../Style/General/ProfilePictureStyle';
 
 class ProfilePicture extends React.Component<Props, State> {
   state = {
     isHover: false,
-  }
+  };
 
   handleMouseEnter = () => {
     const { editable } = this.props;
@@ -17,7 +20,7 @@ class ProfilePicture extends React.Component<Props, State> {
     if (editable) {
       this.setState({ isHover: true });
     }
-  }
+  };
 
   handleMouseLeave = () => {
     const { editable } = this.props;
@@ -25,15 +28,10 @@ class ProfilePicture extends React.Component<Props, State> {
     if (editable) {
       this.setState({ isHover: false });
     }
-  }
+  };
 
   render() {
-    const {
-      editable,
-      children,
-      className,
-      ...defaultProps
-    } = this.props;
+    const { editable, children, className, ...defaultProps } = this.props;
 
     const { isHover } = this.state;
 
@@ -59,10 +57,11 @@ class ProfilePicture extends React.Component<Props, State> {
   }
 }
 
-interface Props extends React.ComponentPropsWithoutRef<typeof ProfilePictureContainer> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof ProfilePictureContainer> {
   editable?: boolean;
   children: React.ReactNode;
-};
+}
 
 interface State {
   isHover: boolean;

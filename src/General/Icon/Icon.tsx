@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ICONS } from '../../Utils/IconLibrary';
 
-const Icon: React.FunctionComponent<Props> = (props) => {
+const Icon: React.FunctionComponent<Props> = props => {
   const { name, color } = props;
   const iconName = name.replace(/-/g, '_');
 
