@@ -4,12 +4,8 @@ import classNames from 'classnames';
 
 import { JobCardFooterWrapper } from '../../Style/Application/JobCardStyle';
 
-const JobCardFooter: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    ...defaultProps
-  } = props;
+const JobCardFooter: React.FunctionComponent<Props> = props => {
+  const { children, className, ...defaultProps } = props;
 
   return (
     <JobCardFooterWrapper
@@ -18,13 +14,15 @@ const JobCardFooter: React.FunctionComponent<Props> = (props) => {
       aria-label="Job Card Footer"
       tabIndex={0}
       // totalItems={React.Children.count(children)}
-      {...defaultProps}>
+      {...defaultProps}
+    >
       {children}
     </JobCardFooterWrapper>
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof JobCardFooterWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof JobCardFooterWrapper> {
   children: React.ReactNode;
   isLinkAble?: boolean;
 }
