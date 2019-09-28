@@ -18,7 +18,7 @@ class Textarea extends React.PureComponent<Props, State> {
     minRows: 4,
     maxRows: 12,
     textareaMaxHeight: 0,
-  }
+  };
 
   constructor(props: Props) {
     super(props);
@@ -37,7 +37,7 @@ class Textarea extends React.PureComponent<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { minRows, maxRows } = this.state;
@@ -75,7 +75,7 @@ class Textarea extends React.PureComponent<Props, State> {
     }
 
     this.setState({
-      textareaMaxHeight: ~~((textarea.offsetHeight * 3.7) + (23 * 8) + 1),
+      textareaMaxHeight: ~~(textarea.offsetHeight * 3.7 + 23 * 8 + 1),
     });
   }
 
@@ -101,11 +101,7 @@ class Textarea extends React.PureComponent<Props, State> {
       ...defaultProps
     } = this.props;
 
-    const {
-      floating,
-      rows,
-      textareaMaxHeight,
-    } = this.state;
+    const { floating, rows, textareaMaxHeight } = this.state;
 
     return (
       <TextareaContainer className={classNames('aries-textarea', className)}>
@@ -125,11 +121,11 @@ class Textarea extends React.PureComponent<Props, State> {
             maxHeight: `${textareaMaxHeight}px`,
           }}
         />
-        {!removeFloatingLabel &&
+        {!removeFloatingLabel && (
           <TextareaLabel floating={floating} status={status}>
             {label}
           </TextareaLabel>
-        }
+        )}
       </TextareaContainer>
     );
   }

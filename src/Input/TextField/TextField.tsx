@@ -21,7 +21,9 @@ class TextField extends React.Component<Props, State> {
     };
   }
 
-  handleFocusChange = (onBlur: (e: React.FocusEvent<HTMLInputElement>) => void) => {
+  handleFocusChange = (
+    onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+  ) => {
     const listener = (e: React.FocusEvent<HTMLInputElement>) => {
       this.setState({
         floating: e.target.value.length > 0,
@@ -33,7 +35,7 @@ class TextField extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleShowPassword = () => {
     const { inputType } = this.state;
@@ -41,7 +43,7 @@ class TextField extends React.Component<Props, State> {
     this.setState({
       inputType: inputType === 'password' ? 'text' : 'password',
     });
-  }
+  };
 
   handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const { disableTyping, onKeyDown } = this.props;
@@ -53,7 +55,7 @@ class TextField extends React.Component<Props, State> {
     if (onKeyDown !== undefined) {
       return onKeyDown(e);
     }
-  }
+  };
 
   componentDidMount() {
     const { value, defaultValue } = this.props;
@@ -108,7 +110,7 @@ class TextField extends React.Component<Props, State> {
           disableTyping={disableTyping}
           {...defaultProps}
         />
-        {!removeFloatingLabel &&
+        {!removeFloatingLabel && (
           <TextFieldLabel
             className="textfield-label"
             floating={floating}
@@ -117,17 +119,15 @@ class TextField extends React.Component<Props, State> {
           >
             {label}
           </TextFieldLabel>
-        }
-        {type === 'password'
-          && (
-            <div className="see-password" onClick={this.handleShowPassword}>
-              <Icon
-                name={inputType === 'password' ? 'eye' : 'eye-slashed'}
-                color={inputType === 'password' ? 'black' : '#777777'}
-              />
-            </div>
-          )
-        }
+        )}
+        {type === 'password' && (
+          <div className="see-password" onClick={this.handleShowPassword}>
+            <Icon
+              name={inputType === 'password' ? 'eye' : 'eye-slashed'}
+              color={inputType === 'password' ? 'black' : '#777777'}
+            />
+          </div>
+        )}
       </TextFieldContainer>
     );
   }

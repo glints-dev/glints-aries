@@ -5,7 +5,7 @@ import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 class Checkbox extends React.PureComponent<Props, State> {
   state = {
     checked: false,
-  }
+  };
 
   handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     const { onClick } = this.props;
@@ -17,16 +17,10 @@ class Checkbox extends React.PureComponent<Props, State> {
     if (onClick !== undefined) {
       return onClick(e);
     }
-  }
+  };
 
   render() {
-    const {
-      id,
-      value,
-      onClick,
-      className,
-      ...defaultProps
-    } = this.props;
+    const { id, value, onClick, className, ...defaultProps } = this.props;
 
     const { checked } = this.state;
 
@@ -44,10 +38,7 @@ class Checkbox extends React.PureComponent<Props, State> {
           onClick={this.handleClick}
           {...defaultProps}
         />
-        <label
-          htmlFor={id}
-          tabIndex={-1}
-        >
+        <label htmlFor={id} tabIndex={-1}>
           {value}
         </label>
       </CheckboxContainer>
