@@ -11,6 +11,7 @@ export const TooltipContent = styled.div<TooltipContentProps>`
   z-index: 10;
   width: inherit;
   min-width: 150px;
+  max-width: 225px;
 
   ${({ position }) => {
     switch (position) {
@@ -97,7 +98,7 @@ export const TooltipMessage = styled.div`
   border-radius: 3px;
   color: ${SecondaryColor.white};
   line-height: 1.5;
-  font-size: 0.8em;
-  padding: 5px;
+  font-size: 12px;
+  padding: 10px;
   text-align: center;
 `;
