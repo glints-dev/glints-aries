@@ -20,7 +20,7 @@ class Modal extends React.Component<Props, State> {
 
   state = {
     isOpen: false,
-  }
+  };
 
   constructor(props: Props) {
     super(props);
@@ -99,25 +99,23 @@ class Modal extends React.Component<Props, State> {
             ref={this.modalContentAreaRef}
             {...defaultProps}
           >
-            {!hideHeader &&
+            {!hideHeader && (
               <ModalHeader className="modal-header">
-                <h3>{ title }</h3>
+                <h3>{title}</h3>
                 <button type="button" onClick={() => onClose()}>
-                  <Icon name="close" color={hideContentArea ? 'white' : 'grey'} />
+                  <Icon
+                    name="close"
+                    color={hideContentArea ? 'white' : 'grey'}
+                  />
                 </button>
               </ModalHeader>
-            }
-            <ModalBody
-              className="modal-body"
-              hideContentArea={hideContentArea}
-            >
+            )}
+            <ModalBody className="modal-body" hideContentArea={hideContentArea}>
               {children}
             </ModalBody>
-            {footer !== undefined &&
-              <ModalFooter className="modal-footer">
-                { footer }
-              </ModalFooter>
-            }
+            {footer !== undefined && (
+              <ModalFooter className="modal-footer">{footer}</ModalFooter>
+            )}
           </ModalContentArea>
         </ModalDialog>
       </ModalContainer>
@@ -125,7 +123,8 @@ class Modal extends React.Component<Props, State> {
   }
 }
 
-interface Props extends React.ComponentPropsWithoutRef<typeof ModalContentArea> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof ModalContentArea> {
   children: React.ReactNode;
   title?: string;
   isVisible?: boolean;

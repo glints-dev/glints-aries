@@ -7,13 +7,12 @@ import AccordionPanel, { Props as AccordionPanelProps } from './AccordionPanel';
 import { AccordionContainer } from '../../Style/Display/AccordionStyle';
 
 class Accordion extends React.Component<Props, State> {
-
   static Panel = AccordionPanel;
 
   state = {
     currIndex: -1,
     isOpenSingleItem: false,
-  }
+  };
 
   handleOpen = (index: number) => {
     const { currIndex } = this.state;
@@ -21,7 +20,7 @@ class Accordion extends React.Component<Props, State> {
     this.setState({
       currIndex: currIndex === index ? -1 : index,
     });
-  }
+  };
 
   handleOpenSingleItem = () => {
     const { isOpenSingleItem } = this.state;
@@ -29,14 +28,15 @@ class Accordion extends React.Component<Props, State> {
     this.setState({
       isOpenSingleItem: !isOpenSingleItem,
     });
-  }
+  };
 
   renderMultipleItem() {
     const { children } = this.props;
     const { currIndex } = this.state;
 
-    return (
-      React.Children.map(children, (data: React.ReactElement<AccordionPanelProps>, index) => (
+    return React.Children.map(
+      children,
+      (data: React.ReactElement<AccordionPanelProps>, index) => (
         <AccordionPanel
           className="accordion-contentwrapper"
           key={index}
@@ -45,7 +45,7 @@ class Accordion extends React.Component<Props, State> {
           active={currIndex === index}
           onClick={() => this.handleOpen(index)}
         />
-      ))
+      )
     );
   }
 
@@ -53,7 +53,8 @@ class Accordion extends React.Component<Props, State> {
     const { children } = this.props;
     const { isOpenSingleItem } = this.state;
 
-    const childProps = (children as React.ReactElement<AccordionPanelProps>).props;
+    const childProps = (children as React.ReactElement<AccordionPanelProps>)
+      .props;
     return (
       <AccordionPanel
         className="accordion-contentwrapper"

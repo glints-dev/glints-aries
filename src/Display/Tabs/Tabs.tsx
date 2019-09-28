@@ -92,7 +92,7 @@ const Tabs: Tabs = (
 
 type Tabs = React.FunctionComponent<Props> & {
   Pane: typeof TabPane;
-}
+};
 
 Tabs.Pane = TabPane;
 

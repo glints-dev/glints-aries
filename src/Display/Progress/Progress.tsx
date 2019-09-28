@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { isNumber } from 'lodash'
+import { isNumber } from 'lodash';
 import classNames from 'classnames';
 
-import { 
-  ProgressContainer, 
-  ProgressContent, 
-  ProgressLabelWrapper, 
-  PercentageCompletion, 
-  LabelText 
+import {
+  ProgressContainer,
+  ProgressContent,
+  ProgressLabelWrapper,
+  PercentageCompletion,
+  LabelText,
 } from '../../Style/Display/ProgressStyle';
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
-import { warningMessages } from './WarningMessages'
+import { warningMessages } from './WarningMessages';
 
-const Progress: React.FunctionComponent<Props> = (props) => {
+const Progress: React.FunctionComponent<Props> = props => {
   const {
     className,
     percentage,
@@ -24,66 +24,77 @@ const Progress: React.FunctionComponent<Props> = (props) => {
 
   let normalizedPercentage;
   let normalizedSize;
-  const isPercentageWithinCorrectRange = isNumber(percentage) && (percentage < 0 || percentage > 100)
-  
+  const isPercentageWithinCorrectRange =
+    isNumber(percentage) && (percentage < 0 || percentage > 100);
+
   if (isPercentageWithinCorrectRange) {
     if (percentage < 0) {
-      normalizedPercentage = 0
+      normalizedPercentage = 0;
     } else {
-      normalizedPercentage = 100
+      normalizedPercentage = 100;
     }
-    warningMessages.percentageValueOutsideRange({ 
+    warningMessages.percentageValueOutsideRange({
       propName: 'percentage',
       expectedPropTypeAndValue: 'number between 0-100',
       actualProp: percentage,
       resolvedPropValue: normalizedPercentage,
-    })
+    });
   } else if (!isNumber(percentage)) {
     normalizedPercentage = 0;
-    warningMessages.percentageTypeInvalid({ 
+    warningMessages.percentageTypeInvalid({
       propName: 'percentage',
       expectedPropTypeAndValue: 'number between 0-100',
       actualProp: percentage,
       resolvedPropValue: normalizedPercentage,
-    })
+    });
   } else {
     normalizedPercentage = percentage;
   }
   if (percentageRange.length > 2) {
-    warningMessages.percentageRangeExceedsValidLength({ 
+    warningMessages.percentageRangeExceedsValidLength({
       propName: 'percentageRange',
       expectedPropTypeAndValue: 'number between 0-100',
       actualProp: percentageRange,
       resolvedPropValue: [percentageRange[0], percentageRange[1]],
-    })
+    });
   }
-  if (size < 1|| size > 10) {
+  if (size < 1 || size > 10) {
     normalizedSize = size < 1 ? 1 : size > 10 ? 10 : size;
-    warningMessages.percentageRangeExceedsValidLength({ 
+    warningMessages.percentageRangeExceedsValidLength({
       propName: 'size',
       expectedPropTypeAndValue: 'number between 1-10',
       actualProp: size,
       resolvedPropValue: normalizedSize,
-    })
+    });
   } else {
     normalizedSize = size;
   }
 
-  const progressValue = normalizedPercentage > 100 ? 282.6 * (1 - (100 / 100)) : 282.6 * (1 - (normalizedPercentage / 100));
+  const progressValue =
+    normalizedPercentage > 100
+      ? 282.6 * (1 - 100 / 100)
+      : 282.6 * (1 - normalizedPercentage / 100);
   const sizeInEm = (normalizedSize + 2) / 10;
   let color;
-  
+
   if (percentageRange.length >= 2) {
     const [firstRange, secondRange] = percentageRange;
-    color = normalizedPercentage > secondRange ? SecondaryColor.green : 
-      (normalizedPercentage > firstRange ? SecondaryColor.orange : PrimaryColor.glintsred);
+    color =
+      normalizedPercentage > secondRange
+        ? SecondaryColor.green
+        : normalizedPercentage > firstRange
+        ? SecondaryColor.orange
+        : PrimaryColor.glintsred;
   } else if (percentageRange.length === 1) {
     const [firstRange] = percentageRange;
-    color = normalizedPercentage > firstRange ? SecondaryColor.green : SecondaryColor.orange
+    color =
+      normalizedPercentage > firstRange
+        ? SecondaryColor.green
+        : SecondaryColor.orange;
   } else {
-    color = SecondaryColor.green
+    color = SecondaryColor.green;
   }
-  
+
   return (
     <React.Fragment>
       <ProgressContainer
@@ -99,8 +110,24 @@ const Progress: React.FunctionComponent<Props> = (props) => {
       >
         <ProgressContent tabIndex={-1} size={sizeInEm}>
           <svg width="8em" height="8em" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="none" stroke={SecondaryColor.lighterblack} strokeWidth="8" />
-            <circle className="progress-circle-value" aria-label="progress-circle-value" cx="50" cy="50" r="45" fill="none" stroke={color} strokeWidth="8" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke={SecondaryColor.lighterblack}
+              strokeWidth="8"
+            />
+            <circle
+              className="progress-circle-value"
+              aria-label="progress-circle-value"
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke={color}
+              strokeWidth="8"
+            />
           </svg>
           <ProgressLabelWrapper aria-hidden="true">
             {content || (
@@ -116,7 +143,11 @@ const Progress: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-interface Props extends Omit<React.ComponentPropsWithoutRef<typeof ProgressContainer>, 'progress'> {
+interface Props
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof ProgressContainer>,
+    'progress'
+  > {
   percentage: number;
   percentageRange?: number[];
   size?: number;

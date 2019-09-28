@@ -3,7 +3,10 @@ import * as ReactDOM from 'react-dom';
 
 import classNames from 'classnames';
 
-import { SliderContainer, SliderContentWrapper } from '../../Style/Display/SliderStyle';
+import {
+  SliderContainer,
+  SliderContentWrapper,
+} from '../../Style/Display/SliderStyle';
 
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
@@ -39,7 +42,7 @@ class Slider extends React.Component<Props, State> {
         afterChange(index - 1);
       }
     }
-  }
+  };
 
   nextSlide = () => {
     const { children, afterChange } = this.props;
@@ -55,17 +58,19 @@ class Slider extends React.Component<Props, State> {
         afterChange(index + 1);
       }
     }
-  }
+  };
 
   setSize = () => {
     const { index } = this.state;
-    
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect().width;
+
+    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
+      .width;
     this.setState({
-      screenSize: this.getSliderContainerDOMNode().getBoundingClientRect().width,
+      screenSize: this.getSliderContainerDOMNode().getBoundingClientRect()
+        .width,
       translateValue: -(windowWidth * (index - 1)),
     });
-  }
+  };
 
   handleDotClick = (idx: number) => {
     const { afterChange } = this.props;
@@ -79,7 +84,7 @@ class Slider extends React.Component<Props, State> {
     if (afterChange !== undefined) {
       afterChange(idx + 1);
     }
-  }
+  };
 
   handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.keyCode === 37) {
@@ -87,7 +92,7 @@ class Slider extends React.Component<Props, State> {
     } else if (e.keyCode === 39) {
       this.nextSlide();
     }
-  }
+  };
 
   getSliderContainerDOMNode() {
     return ReactDOM.findDOMNode(this.sliderContainerRef.current) as Element;
@@ -96,7 +101,8 @@ class Slider extends React.Component<Props, State> {
   componentDidMount() {
     const { initialItem, autoplay, children } = this.props;
     const { index, screenSize } = this.state;
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect().width;
+    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
+      .width;
 
     this.setState({
       screenSize: windowWidth,
@@ -136,7 +142,8 @@ class Slider extends React.Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props) {
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect().width;
+    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
+      .width;
 
     this.setState({
       translateValue: -(windowWidth * (nextProps.initialItem - 1)),
@@ -171,10 +178,10 @@ class Slider extends React.Component<Props, State> {
           className="slider-wrapper"
           style={{
             transform: `translateX(${translateValue}px)`,
-            transition: 'transform ease-out 0.45s'
+            transition: 'transform ease-out 0.45s',
           }}
         >
-          { children }
+          {children}
         </SliderContentWrapper>
         <LeftArrow
           previousSlide={this.previousSlide}
