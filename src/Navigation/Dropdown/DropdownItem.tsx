@@ -2,12 +2,8 @@ import * as React from 'react';
 
 import { DropdownItemWrapper } from '../../Style/Navigation/DropdownStyle';
 
-const DropdownItem: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    ...defaultProps
-  } = props;
+const DropdownItem: React.FunctionComponent<Props> = props => {
+  const { children, className, ...defaultProps } = props;
 
   return (
     <DropdownItemWrapper className={className} {...defaultProps}>
@@ -16,7 +12,8 @@ const DropdownItem: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof DropdownItemWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof DropdownItemWrapper> {
   children: React.ReactNode;
 }
 

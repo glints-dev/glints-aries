@@ -49,7 +49,7 @@ class Dropdown extends React.Component<Props, State> {
         isOpen: !isOpen,
       });
     }
-  }
+  };
 
   hoverOpen = () => {
     const { hoverToOpen } = this.props;
@@ -59,7 +59,7 @@ class Dropdown extends React.Component<Props, State> {
         isOpen: true,
       });
     }
-  }
+  };
 
   hoverClose = () => {
     const { hoverToOpen } = this.props;
@@ -70,7 +70,7 @@ class Dropdown extends React.Component<Props, State> {
         cursor: 0,
       });
     }
-  }
+  };
 
   handleClose = () => {
     this.setState({
@@ -79,36 +79,37 @@ class Dropdown extends React.Component<Props, State> {
     });
   };
 
-  handleClickItem = (onClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void) =>
-    (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-      const { onChange } = this.props;
-      const itemElement = e.target as HTMLLIElement;
+  handleClickItem = (
+    onClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
+  ) => (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    const { onChange } = this.props;
+    const itemElement = e.target as HTMLLIElement;
 
-      if (itemElement.dataset.value) {
-        this.setState({
-          dropdownLabel: itemElement.dataset.value,
-          isOpen: false,
-        });
+    if (itemElement.dataset.value) {
+      this.setState({
+        dropdownLabel: itemElement.dataset.value,
+        isOpen: false,
+      });
 
-        if (onChange !== undefined) {
-          onChange(itemElement.dataset.value);
-        }
-      } else {
-        this.setState({
-          isOpen: false,
-        });
+      if (onChange !== undefined) {
+        onChange(itemElement.dataset.value);
       }
-
-      if (onClick !== undefined) {
-        onClick(e);
-      }
+    } else {
+      this.setState({
+        isOpen: false,
+      });
     }
+
+    if (onClick !== undefined) {
+      onClick(e);
+    }
+  };
 
   handleMouseEnter = (index: number) => {
     this.setState({
       cursor: index,
     });
-  }
+  };
 
   handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -120,17 +121,21 @@ class Dropdown extends React.Component<Props, State> {
       this.setState({
         cursor: cursor - 1,
       });
-    } else if (e.keyCode === 40 && cursor < React.Children.count(children) - 1) {
+    } else if (
+      e.keyCode === 40 &&
+      cursor < React.Children.count(children) - 1
+    ) {
       this.setState({
         cursor: cursor + 1,
       });
     } else if (e.keyCode === 13) {
       this.setState({
-        dropdownLabel: this.dropdownBodyRef.current.querySelector('.active').innerHTML,
+        dropdownLabel: this.dropdownBodyRef.current.querySelector('.active')
+          .innerHTML,
         isOpen: false,
       });
     }
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('keydown', escEvent(this.handleClose), false);
@@ -182,16 +187,18 @@ class Dropdown extends React.Component<Props, State> {
             showHoverLine={showHoverLine}
             showFullWidth={showFullWidth}
           >
-            {leftIconName &&
-              <Icon name={leftIconName} color={!disabled ? iconDefaultColor : '#777777'} />
-            }
-            <span>
-              {itemElement
-                ? itemElement
-                : dropdownLabel}
-            </span>
+            {leftIconName && (
+              <Icon
+                name={leftIconName}
+                color={!disabled ? iconDefaultColor : '#777777'}
+              />
+            )}
+            <span>{itemElement ? itemElement : dropdownLabel}</span>
             <IconWrapper isOpen={isOpen}>
-              <Icon name="arrow-down" color={!disabled ? iconDefaultColor : '#777777'} />
+              <Icon
+                name="arrow-down"
+                color={!disabled ? iconDefaultColor : '#777777'}
+              />
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody
@@ -206,20 +213,23 @@ class Dropdown extends React.Component<Props, State> {
             showHoverLine={showHoverLine}
             ref={this.dropdownBodyRef}
           >
-            {React.Children.map(children, (item: React.ReactElement<DropdownItemProps>, index) => (
-              <DropdownItemWrapper
-                className={classNames({ active: cursor === index })}
-                role="option"
-                data-value={item.props.value}
-                key={item.key}
-                onMouseDown={this.handleClickItem(item.props.onClick)}
-                onMouseEnter={() => this.handleMouseEnter(index)}
-                tabIndex={0}
-                showFullWidth={showFullWidth}
-              >
-                {item.props.children}
-              </DropdownItemWrapper>
-            ))}
+            {React.Children.map(
+              children,
+              (item: React.ReactElement<DropdownItemProps>, index) => (
+                <DropdownItemWrapper
+                  className={classNames({ active: cursor === index })}
+                  role="option"
+                  data-value={item.props.value}
+                  key={item.key}
+                  onMouseDown={this.handleClickItem(item.props.onClick)}
+                  onMouseEnter={() => this.handleMouseEnter(index)}
+                  tabIndex={0}
+                  showFullWidth={showFullWidth}
+                >
+                  {item.props.children}
+                </DropdownItemWrapper>
+              )
+            )}
           </DropdownBody>
         </DropdownWrapper>
       </DropdownContainer>
@@ -242,7 +252,10 @@ type PropsFromDropdownBody = Pick<
   'dropDownPlacement' | 'noLineBreak' | 'showFullWidth' | 'showHoverLine'
 >;
 
-interface Props extends PropsFromDropdownContainer, PropsFromDropdownHeader, PropsFromDropdownBody {
+interface Props
+  extends PropsFromDropdownContainer,
+    PropsFromDropdownHeader,
+    PropsFromDropdownBody {
   children: React.ReactNode;
   label: string;
   hoverToOpen?: boolean;

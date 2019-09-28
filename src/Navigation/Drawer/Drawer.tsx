@@ -15,11 +15,11 @@ class Drawer extends React.Component<Props, State> {
 
   handleAnimationStart = () => {
     this.setState({ isDisplay: true });
-  }
+  };
 
   handleAnimationEnd = () => {
     this.setState({ isDisplay: false });
-  }
+  };
 
   componentDidUpdate() {
     const { isDisplay } = this.state;
@@ -31,16 +31,9 @@ class Drawer extends React.Component<Props, State> {
   }
 
   render() {
-    const {
-      children,
-      isOpen,
-      onClose,
-      ...defaultProps
-    } = this.props;
+    const { children, isOpen, onClose, ...defaultProps } = this.props;
 
-    const {
-      isDisplay,
-    } = this.state;
+    const { isDisplay } = this.state;
 
     return (
       <DrawerContainer
