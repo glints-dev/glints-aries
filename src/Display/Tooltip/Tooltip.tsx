@@ -8,46 +8,45 @@ import {
   TooltipMessage,
 } from '../../Style/Display/TooltipStyle';
 
-class Tooltip extends React.Component<Props, State> {
-  state = {
-    isHover: false,
-  };
+const Tooltip: React.FunctionComponent<Props> = ({
+  className,
+  children,
+  text,
+  position,
+  ...defaultProps
+}) => {
+  const [isHover, setIsHover] = React.useState(false)
 
-  render() {
-    const { className, children, text, position, ...defaultProps } = this.props;
-
-    const { isHover } = this.state;
-
-    return (
-      <TooltipContainer
-        className={classNames('aries-tooltip', className)}
-        role="tooltip"
-        aria-hidden={isHover ? 'false' : 'true'}
-        aria-label={text}
-        onMouseEnter={() => this.setState({ isHover: true })}
-        onMouseLeave={() => this.setState({ isHover: false })}
-        {...defaultProps}
-      >
-        {isHover && (
-          <TooltipContent text={text} position={position}>
-            <TooltipMessage>{text}</TooltipMessage>
-          </TooltipContent>
-        )}
-        {children}
-      </TooltipContainer>
-    );
-  }
+  return (
+    <TooltipContainer
+      className={classNames('aries-tooltip', className)}
+      role="tooltip"
+      aria-hidden={isHover ? 'false' : 'true'}
+      aria-label={text}
+      onMouseOver={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      {...defaultProps}
+    >
+      {isHover &&
+        <TooltipContent
+          text={text}
+          position={position}
+        >
+          <TooltipMessage>
+            {text}
+          </TooltipMessage>
+        </TooltipContent>
+      }
+      { children }
+    </TooltipContainer>
+  );
 }
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
+interface Props extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
+  className?: string;
   children: React.ReactNode;
   text: string;
   position?: string;
-}
-
-interface State {
-  isHover: boolean;
 }
 
 export default Tooltip;
