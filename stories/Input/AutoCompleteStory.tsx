@@ -12,7 +12,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'no',
-      description: 'Sets AutoComplete\'s placeholder',
+      description: "Sets AutoComplete's placeholder",
     },
     {
       name: 'value',
@@ -36,7 +36,7 @@ const props = {
       defaultValue: <code>false</code>,
       possibleValue: <code>true | false</code>,
       require: 'no',
-      description: 'Disable AutoComplete\'s input',
+      description: "Disable AutoComplete's input",
     },
     {
       name: 'onChange',
@@ -44,7 +44,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'function',
       require: 'no',
-      description: 'Called when select an option or input\'s value is changed.',
+      description: "Called when select an option or input's value is changed.",
     },
     {
       name: 'small',
@@ -113,11 +113,21 @@ const AutoCompleteStory = () => (
   >
     <div style={{ width: '300px' }}>
       <AutoComplete label="Location">
-        <AutoComplete.Option value="accountant" additionalInfo="3000">Accountant</AutoComplete.Option>
-        <AutoComplete.Option value="architecture" additionalInfo="800">Architecture</AutoComplete.Option>
-        <AutoComplete.Option value="business development" additionalInfo="1203">Business Development</AutoComplete.Option>
-        <AutoComplete.Option value="product manager" additionalInfo="200">Product Manager</AutoComplete.Option>
-        <AutoComplete.Option value="project manager" additionalInfo="50">Project Manager</AutoComplete.Option>
+        <AutoComplete.Option value="accountant" additionalInfo="3000">
+          Accountant
+        </AutoComplete.Option>
+        <AutoComplete.Option value="architecture" additionalInfo="800">
+          Architecture
+        </AutoComplete.Option>
+        <AutoComplete.Option value="business development" additionalInfo="1203">
+          Business Development
+        </AutoComplete.Option>
+        <AutoComplete.Option value="product manager" additionalInfo="200">
+          Product Manager
+        </AutoComplete.Option>
+        <AutoComplete.Option value="project manager" additionalInfo="50">
+          Project Manager
+        </AutoComplete.Option>
       </AutoComplete>
     </div>
   </StorybookComponent>

@@ -94,7 +94,9 @@ const TextFieldStory = () => (
       propsObject={props}
       usage={'<TextField type="password" label="Password" value="..." />'}
     >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Password</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Password
+      </Heading>
       <div style={{ width: '300px' }}>
         <TextField type="password" label="Password" />
       </div>

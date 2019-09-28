@@ -8,15 +8,15 @@ import Button from '../../src/General/Button';
 class ModalStory extends React.Component {
   state = {
     visible: false,
-  }
+  };
 
   handleOpen = () => {
     this.setState({ visible: true });
-  }
+  };
 
   handleClose = () => {
     this.setState({ visible: false });
-  }
+  };
 
   render() {
     const { visible } = this.state;
@@ -53,7 +53,31 @@ class ModalStory extends React.Component {
           defaultValue: <code>m</code>,
           possibleValue: <code>s | m | l | xl</code>,
           require: 'no',
-          description: ['Sets size of Modal. Default size is medium.', <p key ="sizeChart" style={{ marginBottom: '0', marginTop: '1em', fontWeight: 'bold' }}>Size chart:</p>, <p key ="small" style={{ margin: '0' }}>Small: 300px</p>, <p key ="medium" style={{ margin: '0' }}>Medium: 500px</p>, <p key ="large" style={{ margin: '0' }}>Large: 800px</p>, <p key ="extraLarge" style={{ margin: '0' }}>Extra Large: 920px</p>],
+          description: [
+            'Sets size of Modal. Default size is medium.',
+            <p
+              key="sizeChart"
+              style={{
+                marginBottom: '0',
+                marginTop: '1em',
+                fontWeight: 'bold',
+              }}
+            >
+              Size chart:
+            </p>,
+            <p key="small" style={{ margin: '0' }}>
+              Small: 300px
+            </p>,
+            <p key="medium" style={{ margin: '0' }}>
+              Medium: 500px
+            </p>,
+            <p key="large" style={{ margin: '0' }}>
+              Large: 800px
+            </p>,
+            <p key="extraLarge" style={{ margin: '0' }}>
+              Extra Large: 920px
+            </p>,
+          ],
         },
         {
           name: 'centering',
@@ -87,8 +111,7 @@ class ModalStory extends React.Component {
         title="Modal"
         code="import { Modal } from 'glints-aries'"
         propsObject={props}
-        usage={
-          `state = {
+        usage={`state = {
             visible: false,
           }
 
@@ -118,8 +141,7 @@ class ModalStory extends React.Component {
             ]}
           >
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          </Modal>`
-        }
+          </Modal>`}
       >
         <Button theme="blue" onClick={this.handleOpen}>
           Open Modal
@@ -129,15 +151,32 @@ class ModalStory extends React.Component {
           isVisible={visible}
           onClose={this.handleClose}
           footer={[
-            <Button key="cancel" variant="ghost" theme="blue" small onClick={this.handleClose}>
+            <Button
+              key="cancel"
+              variant="ghost"
+              theme="blue"
+              small
+              onClick={this.handleClose}
+            >
               Cancel
             </Button>,
-            <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
+            <Button
+              key="save"
+              variant="default"
+              theme="blue"
+              small
+              onClick={this.handleClose}
+            >
               Save
             </Button>,
           ]}
         >
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry\'s standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
         </Modal>
       </StorybookComponent>
     );

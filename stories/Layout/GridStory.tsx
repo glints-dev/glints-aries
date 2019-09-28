@@ -11,7 +11,8 @@ const props = {
       defaultValue: '12',
       possibleValue: '0 to 12',
       require: 'no',
-      description: 'Set number of columns you wish to span for extra small devices like phone (<=640px)',
+      description:
+        'Set number of columns you wish to span for extra small devices like phone (<=640px)',
     },
     {
       name: 'sm',
@@ -19,7 +20,8 @@ const props = {
       defaultValue: '12',
       possibleValue: '0 to 12',
       require: 'no',
-      description: 'Set number of columns you wish to span for small devices like tablet (<=768px)',
+      description:
+        'Set number of columns you wish to span for small devices like tablet (<=768px)',
     },
     {
       name: 'md',
@@ -27,7 +29,8 @@ const props = {
       defaultValue: '12',
       possibleValue: '0 to 12',
       require: 'no',
-      description: 'Set number of columns you wish to span for medium devices like phone (>=1024px)',
+      description:
+        'Set number of columns you wish to span for medium devices like phone (>=1024px)',
     },
   ],
 };
@@ -41,7 +44,7 @@ const Component = (
       margin: '5px',
     }}
   >
-Content
+    Content
   </div>
 );
 

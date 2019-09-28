@@ -8,15 +8,15 @@ import Toast from '../../src/Display/Toast';
 class ToastStory extends React.Component {
   state = {
     isOpen: false,
-  }
+  };
 
   handleOpen = () => {
     this.setState({ isOpen: true });
-  }
+  };
 
   handleClose = () => {
     this.setState({ isOpen: false });
-  }
+  };
 
   render() {
     const { isOpen } = this.state;
@@ -45,7 +45,7 @@ class ToastStory extends React.Component {
           defaultValue: <code>blue</code>,
           possibleValue: <code>blue | black</code>,
           require: 'no',
-          description: 'Sets Toast\'s theme.',
+          description: "Sets Toast's theme.",
         },
       ],
     };
@@ -84,10 +84,7 @@ handleClose = () => {
         <Button theme="red" onClick={this.handleOpen}>
           Open Toast
         </Button>
-        <Toast
-          isVisible={isOpen}
-          onClose={this.handleClose}
-        >
+        <Toast isVisible={isOpen} onClose={this.handleClose}>
           <h3>Glints is looking for you!</h3>
           <p>Glints is hiring for a talented Software Engineer.</p>
           <p>Click button below for more details</p>

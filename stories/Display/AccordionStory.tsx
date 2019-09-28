@@ -12,7 +12,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'yes',
-      description: 'Sets Panel\'s title.',
+      description: "Sets Panel's title.",
     },
     {
       name: 'content',

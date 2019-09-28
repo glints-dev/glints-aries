@@ -12,7 +12,8 @@ const props = {
       defaultValue: '',
       possibleValue: <code>glints-black | glints-white | url / path</code>,
       require: 'yes',
-      description: 'There are 3 available values for asset props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo.',
+      description:
+        'There are 3 available values for asset props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo.',
     },
     {
       name: 'rightClickURL',

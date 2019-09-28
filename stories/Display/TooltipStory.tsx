@@ -26,7 +26,6 @@ const props = {
   ],
 };
 
-
 const TooltipStory = () => (
   <StorybookComponent
     title="Tooltip"
@@ -36,12 +35,8 @@ const TooltipStory = () => (
   <Component />
 </Tooltip>`}
   >
-    <Tooltip
-      text="Click here to apply as Software Engineer at Glints"
-    >
-      <Tag theme="black">
-        Software Engineer
-      </Tag>
+    <Tooltip text="Click here to apply as Software Engineer at Glints">
+      <Tag theme="black">Software Engineer</Tag>
     </Tooltip>
   </StorybookComponent>
 );

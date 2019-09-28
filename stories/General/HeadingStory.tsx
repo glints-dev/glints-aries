@@ -34,9 +34,7 @@ const HeadingStory = () => (
   This is Heading
 </Heading>`}
   >
-    <Heading>
-      This is Heading
-    </Heading>
+    <Heading>This is Heading</Heading>
   </StorybookComponent>
 );
 

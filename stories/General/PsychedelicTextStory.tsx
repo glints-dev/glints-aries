@@ -14,22 +14,28 @@ const props = {
       defaultValue: '',
       possibleValue: <code>heading | subheading</code>,
       require: 'yes',
-      description: 'It\'s used to display two different styles.',
+      description: "It's used to display two different styles.",
     },
     {
       name: 'psychTheme',
       type: 'string',
       defaultValue: '',
-      possibleValue: <pre>
-        {`blue-dominant |
+      possibleValue: (
+        <pre>
+          {`blue-dominant |
 blue-default |
 red-dominant |
 red-default |
 yellow-dominant |
 yellow-default`}
-      </pre>,
+        </pre>
+      ),
       require: 'yes',
-      description: ['This props is only available along with ', <b>subheading</b>, ' type. It\'s a required props to display Psychedelic Effect on the text.'],
+      description: [
+        'This props is only available along with ',
+        <b>subheading</b>,
+        " type. It's a required props to display Psychedelic Effect on the text.",
+      ],
     },
   ],
 };
@@ -43,10 +49,10 @@ const PsychedelicTextStory = () => (
   Glints
 </PsychedelicText>`}
     >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Heading</Heading>
-      <PsychedelicText type="heading">
-        Glints
-      </PsychedelicText>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Heading
+      </Heading>
+      <PsychedelicText type="heading">Glints</PsychedelicText>
     </StorybookComponent>
 
     <Divider theme="grey" />
@@ -60,7 +66,9 @@ const PsychedelicTextStory = () => (
   Glints
 </PsychedelicText>`}
     >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Subheading</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Subheading
+      </Heading>
       <PsychedelicText type="subheading" psychTheme="yellow-dominant">
         Glints
       </PsychedelicText>

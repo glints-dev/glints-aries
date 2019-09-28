@@ -64,23 +64,17 @@ const JobOverviewStory = () => (
           height="90"
           width="90"
           alt=""
-          src="https://cdn.zeplin.io/5a99106ac26df76756166bac/assets/7798CA38-0D5C-4FDC-ACFC-2EE3781D2062.png" 
+          src="https://cdn.zeplin.io/5a99106ac26df76756166bac/assets/7798CA38-0D5C-4FDC-ACFC-2EE3781D2062.png"
         />
       </JobOverview.Header>
 
       <JobOverview.Body>
-        <JobOverview.Label>
-          Sangat Spesial
-        </JobOverview.Label>
+        <JobOverview.Label>Sangat Spesial</JobOverview.Label>
 
-        <JobOverview.Heading>
-          Sales & Marketing Supervisor
-        </JobOverview.Heading>
-        
+        <JobOverview.Heading>Sales & Marketing Supervisor</JobOverview.Heading>
+
         <JobOverview.Link>
-          <a href="https://facebook.com">
-            Berkis Company
-          </a>
+          <a href="https://facebook.com">Berkis Company</a>
         </JobOverview.Link>
 
         <JobOverview.Info>

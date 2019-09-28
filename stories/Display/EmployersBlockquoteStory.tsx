@@ -62,7 +62,9 @@ const EmployersBlockquoteStory = () => (
         profileName="Jia Ann"
         additionalInfo="Nanyang Technological University"
       >
-        The whole hiring process took less than 1 week. We had quite a lot of resumes coming in over a 24 hour period. We found our candidate 1 day later and the whole hiring process was completed quickly.
+        The whole hiring process took less than 1 week. We had quite a lot of
+        resumes coming in over a 24 hour period. We found our candidate 1 day
+        later and the whole hiring process was completed quickly.
       </EmployersBlockquote>
     </div>
   </StorybookComponent>

@@ -20,7 +20,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'function',
       require: 'no',
-      description: 'To get value of Dropdown\'s item.',
+      description: "To get value of Dropdown's item.",
     },
     {
       name: 'disabled',
@@ -102,7 +102,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'yes',
-      description: 'Sets Dropdown\'s item value',
+      description: "Sets Dropdown's item value",
     },
     {
       name: 'onClick',

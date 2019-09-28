@@ -18,9 +18,11 @@ const props = {
       name: 'percentageRange',
       type: 'array',
       defaultValue: '[50]',
-      possibleValue: '[], [50] or [15,60]. The numbers in the array can be any integer between 0-100. The maximum number of items in the array is 2.',
+      possibleValue:
+        '[], [50] or [15,60]. The numbers in the array can be any integer between 0-100. The maximum number of items in the array is 2.',
       require: 'No',
-      description: 'Sets the percentage range to display a different color on the progress component.\n[] sets values from 0-100 to green.\n[50] sets values from 0-50 to orange, 51-100 to green.\n[15,60] sets values from 0-15 to red, 16-60 to orange, 61-100 to green.',
+      description:
+        'Sets the percentage range to display a different color on the progress component.\n[] sets values from 0-100 to green.\n[50] sets values from 0-50 to orange, 51-100 to green.\n[15,60] sets values from 0-15 to red, 16-60 to orange, 61-100 to green.',
     },
     {
       name: 'size',
