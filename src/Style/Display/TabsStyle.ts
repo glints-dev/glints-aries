@@ -5,7 +5,7 @@ import { ScreenSize } from '../../Utils/StyleConfig';
 
 export const TabsContainer = styled.div`
   position: relative;
-  
+
   &.vertical-aries-tabs {
     @media (min-width: ${ScreenSize.tablet}px) {
       display: flex;

@@ -42,15 +42,15 @@ const fadeOut = keyframes`
 
 export const DrawerContainer = styled.div<DrawerContainerProps>`
   position: fixed;
-  display: ${({ isDisplay }) => isDisplay ? 'block' : 'none'};
+  display: ${({ isDisplay }) => (isDisplay ? 'block' : 'none')};
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
   top: 0px;
   left: 0px;
   background-color: rgba(0, 0, 0, 0.5);
-  animation: ${({ open }) => open ? fadeIn : fadeOut} .3s ease-in-out;
-  z-index: ${({ isDisplay }) => isDisplay ? '9999' : '-1'};
+  animation: ${({ open }) => (open ? fadeIn : fadeOut)} 0.3s ease-in-out;
+  z-index: ${({ isDisplay }) => (isDisplay ? '9999' : '-1')};
 `;
 
 interface DrawerContainerProps {
@@ -66,8 +66,8 @@ export const DrawerWrapper = styled.div<DrawerWrapperProps>`
   top: 0px;
   right: 0px;
   background-color: white;
-  animation: ${({ open }) => open ? sideToLeft : sideToRight} .3s ease-in-out;
-  transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
+  animation: ${({ open }) => (open ? sideToLeft : sideToRight)} 0.3s ease-in-out;
+  transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(100%)')};
   outline: none;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   overflow-y: auto;

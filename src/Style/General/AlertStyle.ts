@@ -27,8 +27,9 @@ const fadeUp = keyframes`
 export const AlertContainer = styled.div<AlertContainerProps>`
   position: fixed;
   left: 50%;
-  top: ${({ isVisible }) => isVisible ? '10px' : '0px'};
-  transform: ${({ isVisible }) => isVisible ? 'translate(-50%, 0%)' : 'translate(-50%, -100%)'};
+  top: ${({ isVisible }) => (isVisible ? '10px' : '0px')};
+  transform: ${({ isVisible }) =>
+    isVisible ? 'translate(-50%, 0%)' : 'translate(-50%, -100%)'};
   display: flex;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12);
   padding: 10px;
@@ -36,7 +37,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
   z-index: 5000;
   min-width: 500px;
   max-width: 800px;
-  animation: ${({ isOpen }) => isOpen ? fadeDown : fadeUp} .3s ease-in-out;
+  animation: ${({ isOpen }) => (isOpen ? fadeDown : fadeUp)} 0.3s ease-in-out;
   outline: none;
   line-height: 1.5;
   font-size: 1em;

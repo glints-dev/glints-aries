@@ -21,16 +21,21 @@ export const BlockquoteContainer = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(-45deg, transparent, transparent 5px, ${SecondaryColor.black} 7px);
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      ${SecondaryColor.black} 7px
+    );
     top: 12px;
     left: 12px;
     z-index: -1;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   &:hover:after {
     opacity: 1;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   &:focus {
@@ -64,8 +69,8 @@ export const BlockquoteProfilePicture = styled.div`
   width: 5em;
   height: 5em;
   background: white;
-  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.2);
-  padding: .2em;
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.2em;
 
   img {
     border-radius: 50%;

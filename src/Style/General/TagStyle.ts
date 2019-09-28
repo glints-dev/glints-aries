@@ -4,7 +4,7 @@ import { PrimaryColor, SecondaryColor } from '../Colors';
 export const TagContent = styled.label`
   display: flex;
   align-items: center;
-  padding: .4em .9em;
+  padding: 0.4em 0.9em;
   outline: none;
 `;
 
@@ -73,7 +73,7 @@ export const TagContainer = styled.div<TagContainerProps>`
       }
     }
   }}
-  
+
   &:focus {
     outline: none;
   }

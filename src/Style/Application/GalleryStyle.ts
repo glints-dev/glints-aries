@@ -80,7 +80,7 @@ export const GalleryThumbnailWrapper = styled.div`
     width: 4em;
     object-fit: cover;
     cursor: pointer;
-    margin: .3em;
+    margin: 0.3em;
 
     &.active {
       border: 1px solid ${SecondaryColor.white};

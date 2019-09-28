@@ -13,9 +13,10 @@ export const AutoCompleteWrapper = styled.div`
 
 export const AutoCompleteLabel = styled.label<AutoCompleteLabelProps>`
   position: absolute;
-  left: ${({ small }) => small ? '16px' : '22px'};
+  left: ${({ small }) => (small ? '16px' : '22px')};
   background: ${SecondaryColor.white};
-  color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+  color: ${({ floating }) =>
+    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
@@ -61,10 +62,13 @@ export const AutoCompleteInput = styled.input<AutoCompleteInputProps>`
   width: 100%;
   border: none;
   outline: none;
-  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
-  padding: ${({ small }) => small ? '13px 15px' : '15px 20px'};
-  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
+  padding: ${({ small }) => (small ? '13px 15px' : '15px 20px')};
+  border: ${({ status }) =>
+    status === 'error'
+      ? `2px solid ${PrimaryColor.glintsred}`
+      : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
 
   ${({ status, floating }) => {
@@ -97,23 +101,23 @@ export const AutoCompleteInput = styled.input<AutoCompleteInputProps>`
     transition: all .5s;
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${AutoCompleteLabel} {
       color: ${SecondaryColor.black};
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 
@@ -121,28 +125,31 @@ export const AutoCompleteInput = styled.input<AutoCompleteInputProps>`
     border: 2px solid ${SecondaryColor.actionblue};
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${AutoCompleteLabel} {
       padding: 0 5px;
       top: 1em;
-      transform: ${({ small }) => small ? 'translate3d(-10px, -20px, 0)' : 'translate3d(-15px, -20px, 0)'};
+      transform: ${({ small }) =>
+        small
+          ? 'translate3d(-10px, -20px, 0)'
+          : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 `;
@@ -155,11 +162,11 @@ interface AutoCompleteInputProps {
 
 export const AutoCompleteListWrapper = styled.ul<AutoCompleteListWrapperProps>`
   position: absolute;
-  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
-  opacity: ${({ open }) => open ? '1' : '0'};
-  transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
+  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
+  opacity: ${({ open }) => (open ? '1' : '0')};
+  transform: ${({ open }) => (open ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
-  transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};
+  transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
   background: ${SecondaryColor.white};
   width: 100%;
   height: auto;
@@ -167,7 +174,7 @@ export const AutoCompleteListWrapper = styled.ul<AutoCompleteListWrapperProps>`
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
-  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   padding: 0;
   margin: 0;
 `;
@@ -182,15 +189,15 @@ export const AutoCompleteItemWrapper = styled.li<AutoCompleteItemWrapperProps>`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   list-style-type: none;
-  
+
   &:first-child {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 
   &:last-child {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   &.active {

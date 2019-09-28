@@ -10,7 +10,7 @@ export const CheckboxContainer = styled.div`
   &:focus {
     outline: none;
   }
-  
+
   &:focus > label {
     outline: 5px auto -webkit-focus-ring-color;
   }
@@ -27,12 +27,12 @@ export const CheckboxContainer = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: .2em;
-      left: .5em;
-      width: .4em;
-      height: .85em;
+      top: 0.2em;
+      left: 0.5em;
+      width: 0.4em;
+      height: 0.85em;
       border: solid ${SecondaryColor.white};
-      border-width: 0 .15em .15em 0;
+      border-width: 0 0.15em 0.15em 0;
       transform: rotate(45deg);
     }
 
@@ -50,18 +50,19 @@ export const CheckboxContainer = styled.div`
     cursor: pointer;
     outline: none;
 
-    &:before{
-      content:'';
+    &:before {
+      content: '';
       -webkit-appearance: none;
       background-color: transparent;
       border: 2px solid ${SecondaryColor.lightblack};
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: .6em;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+      padding: 0.6em;
       display: inline-block;
       position: relative;
       vertical-align: middle;
       cursor: pointer;
-      margin-right: .5em;
+      margin-right: 0.5em;
       border-radius: 4px;
       height: 1em;
       width: 1em;

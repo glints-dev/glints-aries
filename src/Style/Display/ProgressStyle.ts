@@ -7,7 +7,8 @@ const spinning = keyframes`
   }
 
   to {
-    stroke-dashoffset: ${((props: ProgressContainerProps) => props.progress) as any};
+    stroke-dashoffset: ${((props: ProgressContainerProps) =>
+      props.progress) as any};
   }
 `;
 
@@ -84,7 +85,7 @@ export const PercentageCompletion = styled.h1`
 `;
 
 export const LabelText = styled.p`
-  margin: .6em 0 0;
-  font-size: .75em;
+  margin: 0.6em 0 0;
+  font-size: 0.75em;
   font-weight: 500;
 `;

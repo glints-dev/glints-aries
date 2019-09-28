@@ -16,8 +16,9 @@ export const SelectWrapper = styled.div<SelectWrapperProps>`
     align-items: center;
     pointer-events: none;
     svg {
-      transform: ${({ isFocus }) => isFocus ? 'rotate(180deg)' : 'rotate(0)'};
-      transition: ${({ isFocus }) => isFocus ? 'transform .5s' : 'transform .5s'};
+      transform: ${({ isFocus }) => (isFocus ? 'rotate(180deg)' : 'rotate(0)')};
+      transition: ${({ isFocus }) =>
+        isFocus ? 'transform .5s' : 'transform .5s'};
     }
   }
 `;
@@ -28,9 +29,10 @@ interface SelectWrapperProps {
 
 export const SelectLabel = styled.label<SelectLabelProps>`
   position: absolute;
-  left: ${({ small }) => small ? '16px' : '22px'};
+  left: ${({ small }) => (small ? '16px' : '22px')};
   background: ${SecondaryColor.white};
-  color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+  color: ${({ floating }) =>
+    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
@@ -73,10 +75,14 @@ export const SelectInput = styled.input<SelectInputProps>`
   width: 100%;
   border: none;
   outline: none;
-  padding: ${({ small }) => small ? '13px 2.5em 13px 15px' : '15px 2.5em 15px 20px'};
-  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
+  padding: ${({ small }) =>
+    small ? '13px 2.5em 13px 15px' : '15px 2.5em 15px 20px'};
+  border: ${({ status }) =>
+    status === 'error'
+      ? `2px solid ${PrimaryColor.glintsred}`
+      : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
-  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
   /* Styling for disableTyping */
   ${({ disableTyping }) => {
@@ -113,46 +119,49 @@ export const SelectInput = styled.input<SelectInputProps>`
     border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
     + ${SelectLabel} {
       color: ${SecondaryColor.black};
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
   &:focus {
     border: 2px solid ${SecondaryColor.actionblue};
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
     + ${SelectLabel} {
       padding: 0 5px;
       top: 1em;
-      transform: ${({ small }) => small ? 'translate3d(-10px, -20px, 0)' : 'translate3d(-15px, -20px, 0)'};
+      transform: ${({ small }) =>
+        small
+          ? 'translate3d(-10px, -20px, 0)'
+          : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 `;
@@ -166,11 +175,11 @@ interface SelectInputProps {
 
 export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   position: absolute;
-  visibility: ${({ open }) => open ? 'visible' : 'hidden'};
-  opacity: ${({ open }) => open ? '1' : '0'};
-  transform: ${({ open }) => open ? 'scaleY(1)' : 'scaleY(0.9)'};
+  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
+  opacity: ${({ open }) => (open ? '1' : '0')};
+  transform: ${({ open }) => (open ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
-  transition: ${({ open }) => open ? 'all .2s ease' : 'all .1s ease'};
+  transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
   background: ${SecondaryColor.white};
   width: 100%;
   height: auto;
@@ -178,7 +187,7 @@ export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
-  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   padding: 0;
   margin: 0;
 `;
@@ -192,15 +201,15 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   list-style-type: none;
-  
+
   &:first-child {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 
   &:last-child {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   &.active {

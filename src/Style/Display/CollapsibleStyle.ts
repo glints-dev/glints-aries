@@ -47,21 +47,21 @@ export const CollapsibleHeader = styled.div<{ isOpen: boolean }>`
 
   svg {
     transform: rotate(0);
-    transition: transform .5s;
+    transition: transform 0.5s;
     ${({ isOpen }) => {
-    if (isOpen) {
-      return `
+      if (isOpen) {
+        return `
         transform: rotate(180deg);
         transition: transform .5s;
       `;
-    }
-  }}
+      }
+    }}
   }
 `;
 
 export const CollapsibleBody = styled.div`
   padding: 0 1.2em 1.2em 1.2em;
   margin-bottom: 0;
-  animation: ${animateCollapsible} .3s linear;
+  animation: ${animateCollapsible} 0.3s linear;
   cursor: default;
 `;

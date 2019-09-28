@@ -13,12 +13,12 @@ export const OmniSearchContainer = styled.div`
 export const OmniSearchBar = styled.div`
   display: flex;
   align-items: center;
-  
+
   @media ${Device.mobileL} {
     flex-direction: column;
   }
 
-  input { 
+  input {
     padding: 25px 8em 25px 30px;
     background: ${SecondaryColor.white};
     border: 3px solid ${SecondaryColor.darkgrey};
@@ -26,7 +26,7 @@ export const OmniSearchBar = styled.div`
     line-height: 1.5;
     color: ${SecondaryColor.lightblack};
     width: 100%;
-    
+
     @media ${Device.mobileL} {
       padding: 1em;
     }
@@ -66,7 +66,7 @@ export const OmniSearchButton = styled(Button)`
 
 export const OmniSearchBodyWrapper = styled.div<OmniSearchBodyWrapperProps>`
   position: relative;
-  display: ${({ open }) => open ? 'block' : 'none'};
+  display: ${({ open }) => (open ? 'block' : 'none')};
   z-index: 50;
 `;
 
@@ -84,7 +84,7 @@ export const OmniSearchResultContainer = styled.div`
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
-  
+
   @media ${Device.mobileL} {
     grid-template-columns: auto;
     grid-gap: 2em;
@@ -98,7 +98,7 @@ export const OmniSearchListItem = styled.div`
     color: ${SecondaryColor.lightblack};
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: .3px;
+    letter-spacing: 0.3px;
   }
 
   ul {
@@ -108,12 +108,12 @@ export const OmniSearchListItem = styled.div`
     li {
       display: flex;
       align-items: center;
-      margin-bottom: .6em;
+      margin-bottom: 0.6em;
       cursor: pointer;
       list-style-type: none;
 
       &:first-child {
-        margin-top: .5em;
+        margin-top: 0.5em;
       }
 
       &:last-child {

@@ -6,7 +6,7 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   -webkit-appearance: none;
   outline: none;
   background: ${SecondaryColor.lighterblack};
-  height: .4rem;
+  height: 0.4rem;
   width: ${({ block }) => block && '100%'};
   border-radius: 5px;
 

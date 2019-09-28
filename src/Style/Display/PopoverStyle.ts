@@ -40,8 +40,8 @@ export const PopOverContent = styled.div`
   position: absolute;
   right: 50%;
   top: 2.5em;
-  animation: ${opacityAnimation} .2s linear;
+  animation: ${opacityAnimation} 0.2s linear;
   z-index: 10;
   min-width: 250px;
-  transform: translateX(calc(1em + .7em)) translateY(.5em);
+  transform: translateX(calc(1em + 0.7em)) translateY(0.5em);
 `;

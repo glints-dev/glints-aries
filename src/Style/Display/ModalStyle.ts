@@ -3,7 +3,7 @@ import { Device } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../Colors';
 
 export const ModalContainer = styled.div<ModalContainerProps>`
-  visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   position: fixed;
   display: flex;
   justify-content: center;
@@ -40,7 +40,8 @@ export const ModalDialog = styled.div`
 
 export const ModalContentArea = styled.div<ModalContentAreaProps>`
   position: relative;
-  background: ${({ hideContentArea }) => hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
+  background: ${({ hideContentArea }) =>
+    hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
   margin: 2.5em auto;
   outline: none;
 
@@ -86,7 +87,11 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
     if (!removeAnimation) {
       return `
         opacity: ${isOpen ? '1' : '0'};
-        transform: ${isOpen ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)' : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'};
+        transform: ${
+          isOpen
+            ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)'
+            : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'
+        };
         transition: ${isOpen ? 'all .25s ease-in' : 'all .25s ease-out'};
       `;
     }
@@ -111,12 +116,12 @@ export const ModalHeader = styled.header`
   padding: 15px;
 
   h3 {
-    font-size: .8em;
+    font-size: 0.8em;
     text-transform: uppercase;
     margin: 0;
     margin-right: 36px;
   }
-  
+
   button {
     display: flex;
     background: transparent;
@@ -129,10 +134,10 @@ export const ModalHeader = styled.header`
 
 export const ModalBody = styled.section<ModalBodyProps>`
   position: relative;
-  padding: ${({ hideContentArea }) => hideContentArea ? '0' : '20px 30px'};
+  padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 30px')};
 
   @media ${Device.mobileM} {
-    padding: ${({ hideContentArea }) => hideContentArea ? '0' : '20px 15px'};
+    padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 15px')};
   }
 `;
 

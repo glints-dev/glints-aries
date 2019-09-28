@@ -8,15 +8,15 @@ export const DatepickerContainer = styled.div`
 
 export const DatepickerWrapper = styled.div<DatepickerWrapperProps>`
   position: absolute;
-  visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
-  opacity: ${({ isOpen }) => isOpen ? '1' : '0'};
-  transform: ${({ isOpen }) => isOpen ? 'scaleY(1)' : 'scaleY(0.9)'};
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+  transform: ${({ isOpen }) => (isOpen ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
-  transition: ${({ isOpen }) => isOpen ? 'all .2s ease' : 'all .1s ease'};
+  transition: ${({ isOpen }) => (isOpen ? 'all .2s ease' : 'all .1s ease')};
   background: ${SecondaryColor.white};
   width: 280px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  margin-top: .5em;
+  margin-top: 0.5em;
   outline: none;
   z-index: 1000;
 `;
@@ -102,26 +102,28 @@ export const HoverContent = styled.div<HoverContentProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${({ biggerSize }) => !biggerSize ? '35px' : 'auto'};
-  height: ${({ biggerSize }) => !biggerSize ? '35px' : '50px'};
+  width: ${({ biggerSize }) => (!biggerSize ? '35px' : 'auto')};
+  height: ${({ biggerSize }) => (!biggerSize ? '35px' : '50px')};
   border-radius: 2px;
-  transition: background .3s ease;
+  transition: background 0.3s ease;
   background-color: transparent;
   line-height: 22px;
-  ${({ currentActiveDate, index }) => currentActiveDate && currentActiveDate === index
-    ? `
+  ${({ currentActiveDate, index }) =>
+    currentActiveDate && currentActiveDate === index
+      ? `
       background-color: #1890ff;
       color: white;
   `
-    : null}
-  ${({ hoverAble }) => hoverAble
-    ? `
+      : null}
+  ${({ hoverAble }) =>
+    hoverAble
+      ? `
       cursor: pointer;
       &:hover { 
           background-color: #E5F7FF;
       }
   `
-    : null}
+      : null}
 `;
 
 interface HoverContentProps {
@@ -130,4 +132,3 @@ interface HoverContentProps {
   index?: string;
   hoverAble?: boolean;
 }
-

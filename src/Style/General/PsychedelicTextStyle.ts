@@ -3,11 +3,12 @@ import { PrimaryColor } from '../Colors';
 import { PsychedelicTheme } from '../../Utils/StyleConfig';
 
 export const Heading = styled.h1`
-  text-shadow: 2px 0 0 ${PrimaryColor.glintsblue}, -2px 0 0 ${PrimaryColor.glintsyellow}, 0 2px 0 ${PrimaryColor.glintsred};
+  text-shadow: 2px 0 0 ${PrimaryColor.glintsblue},
+    -2px 0 0 ${PrimaryColor.glintsyellow}, 0 2px 0 ${PrimaryColor.glintsred};
 `;
 
 export const SubHeading = styled.h3<SubHeadingProps>`
-  ${(props) => {
+  ${props => {
     switch (props.psychTheme) {
       case `${PsychedelicTheme.BLUE_DOMINANT}`:
         return `

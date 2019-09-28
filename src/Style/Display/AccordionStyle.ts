@@ -9,7 +9,7 @@ export const AccordionContentWrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-gap: .6em;
+  grid-gap: 0.6em;
   font-size: 1em;
   line-height: 1.5;
   padding: 1.5em 0;
@@ -37,7 +37,7 @@ export const AccordionContentWrapper = styled.div`
 
 export const AccordionPanelWrapper = styled.div`
   position: relative;
-  
+
   &:focus {
     outline: none;
   }

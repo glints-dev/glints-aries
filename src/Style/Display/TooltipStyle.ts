@@ -106,7 +106,7 @@ export const TooltipMessage = styled.div`
   border-radius: 3px;
   color: ${SecondaryColor.white};
   line-height: 1.5;
-  font-size: .8em;
+  font-size: 0.8em;
   padding: 5px;
   text-align: center;
 `;
