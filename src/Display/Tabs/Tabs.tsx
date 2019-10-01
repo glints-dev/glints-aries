@@ -10,7 +10,15 @@ import {
   TabsBody,
 } from '../../Style/Display/TabsStyle';
 
-const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
+const Tabs: Tabs = (
+  {
+    activeTab,
+    onTabClick,
+    children,
+    variant='underlined',
+    className,
+    alignment='horizontal'
+  }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const activeTabOrIndex: string | number = activeTab || currentIndex;
   const childrenArray = React.Children.toArray(children);
@@ -27,33 +35,48 @@ const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
   };
 
   return (
-    <TabsContainer className={classNames('aries-tabs', className)}>
-      <TabsHeader className="tabs-header">
-        <ul className="tabs-list" role="tablist">
+    <TabsContainer className={classNames(`${alignment}-aries-tabs`, className)}>
+      <TabsHeader className={`${alignment}-tabs-header`}>
+        <ul
+          className={classNames(`${alignment}-tabs-list`, `${variant}`)}
+          role="tablist">
           {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => {
             const tabLabel = data.props.label || index;
             return(
-            <li
-              className={classNames(`tab-${tabLabel}`, { active: activeTabOrIndex === tabLabel })}
-              key={data.props.tab}
-              role="tab"
-              aria-selected={activeTabOrIndex === tabLabel && true}
-              aria-controls={`tab-item-${tabLabel}`}
-              tabIndex={-1}
-            >
-              <button
-                type="button"
-                onClick={handleTabClick(index, tabLabel)}
+              <li
+                className={
+                  classNames(
+                    `tab-${tabLabel}`,
+                    { active: activeTabOrIndex === tabLabel },
+                    `${alignment}-tab`,
+                    `${variant}`
+                  )
+                }
+                key={data.props.tab}
+                role="tab"
+                aria-selected={activeTabOrIndex === tabLabel && true}
+                aria-controls={`tab-item-${tabLabel}`}
+                tabIndex={-1}
               >
-                {data.props.tab}
-              </button>
-            </li>
-          )})}
+                <button
+                  type="button"
+                  onClick={handleTabClick(index, tabLabel)}
+                >
+                  {data.props.tab}
+                </button>
+              </li>
+            )})}
         </ul>
       </TabsHeader>
       <TabsBody className="tabs-body" tabIndex={0}>
         <TabPane
-          className={classNames('tabs-item', `tab-item-${activeTabOrIndex}`)}
+          className={
+            classNames(
+              'tabs-item',
+              `tab-item-${activeTabOrIndex}`,
+              `tabs-item-${alignment}`
+            )
+          }
           role="tabpanel"
           aria-labelledby={`tab-${activeTabOrIndex}`}
           tabIndex={-1}
@@ -64,7 +87,7 @@ const Tabs: Tabs = ({activeTab, onTabClick, children, className}) => {
       </TabsBody>
     </TabsContainer>
   );
-}
+};
 
 type Tabs = React.FunctionComponent<Props> & {
   Pane: typeof TabPane;
@@ -74,6 +97,8 @@ Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
+  variant?:string;
+  alignment?:string;
   activeTab?: string;
   onTabClick?(tab: React.ReactText): void;
   className?: string;
