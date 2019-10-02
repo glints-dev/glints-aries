@@ -1,36 +1,22 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { isNil } from 'lodash';
 import { BadgeContainer } from '../../Style/General/BadgeStyle';
 
-const Badge: React.FunctionComponent<Props> = (props) => {
-  const {
-    label,
-    sup,
-    className,
-    ...defaultProps
-  } = props;
-
-  return (
-    <React.Fragment>
-      {label
-        && (
-          <BadgeContainer
-            className={classNames('aries-badge', className)}
-            sup={sup}
-            {...defaultProps}
-          >
-            <span className="badge-content">
-              {label}
-            </span>
-          </BadgeContainer>
-        )
-      }
-    </React.Fragment>
-  );
-};
+const Badge: React.FunctionComponent<Props> = ({
+  label, sup, className, ...defaultProps
+}) => (
+  <React.Fragment>
+    {!isNil(label) && (
+      <BadgeContainer className={classNames('aries-badge', className)} sup={sup} {...defaultProps}>
+        <span className="badge-content">{label}</span>
+      </BadgeContainer>
+    )}
+  </React.Fragment>
+);
 
 interface Props extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
-  label: string;
+  label: string | number;
   sup?: boolean;
 }
 

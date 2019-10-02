@@ -8,7 +8,7 @@ const props = {
   Badge: [
     {
       name: 'label',
-      type: 'string',
+      type: 'string | number',
       defaultValue: '',
       possibleValue: 'any',
       require: 'yes',
