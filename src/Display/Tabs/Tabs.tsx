@@ -35,10 +35,10 @@ const Tabs: Tabs = (
   };
 
   return (
-    <TabsContainer className={classNames(`${alignment}-aries-tabs`, className)}>
-      <TabsHeader className={`${alignment}-tabs-header`}>
+    <TabsContainer className={classNames(`${alignment}-aries-tabs`, 'aries-tabs', className)}>
+      <TabsHeader className={classNames(`${alignment}-tabs-header`, 'tabs-header')}>
         <ul
-          className={classNames(`${alignment}-tabs-list`, `${variant}`)}
+          className={classNames(`${alignment}-tabs-list`, 'tabs-list', `${variant}`)}
           role="tablist">
           {React.Children.map(children, (data: React.ReactElement<TabPaneProps>, index) => {
             const tabLabel = data.props.label || index;
@@ -74,7 +74,8 @@ const Tabs: Tabs = (
             classNames(
               'tabs-item',
               `tab-item-${activeTabOrIndex}`,
-              `tabs-item-${alignment}`
+              `tabs-item-${alignment}`,
+              'tabs-item'
             )
           }
           role="tabpanel"
