@@ -12,7 +12,7 @@ const props = {
       defaultValue: <code>black</code>,
       possibleValue: <code>red | blue | yellow | white | grey</code>,
       require: 'no',
-      description: 'Sets Divider\'s color.',
+      description: "Sets Divider's color.",
     },
   ],
 };

@@ -20,7 +20,7 @@ class Gallery extends React.Component<Props, State> {
     visible: false,
     currentIndex: 1,
     imageLeft: 0,
-  }
+  };
 
   constructor(props: Props) {
     super(props);
@@ -31,26 +31,26 @@ class Gallery extends React.Component<Props, State> {
     this.setState({
       visible: false,
     });
-  }
+  };
 
   handleClick = (index: number) => {
     this.setState({
       visible: true,
       currentIndex: index,
     });
-  }
+  };
 
   handleClickThumbs = (index: number) => {
     this.setState({
       currentIndex: index,
     });
-  }
+  };
 
   getCurrentIndex = (index: number) => {
     this.setState({
       currentIndex: index - 1,
     });
-  }
+  };
 
   componentDidMount() {
     const { children } = this.props;
@@ -77,16 +77,18 @@ class Gallery extends React.Component<Props, State> {
     return (
       <GalleryContainer className="aries-gallery">
         <GalleryItemWrapper className="gallery-wrapper">
-          { React.Children.toArray(children).slice(0, 8).map((data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
-            <GalleryItem
-              className="gallery-item"
-              key={`${data.props.src}_${index}`}
-              imageLeft={imageLeft}
-              onClick={() => this.handleClick(index)}
-            >
-              <img src={data.props.src} alt={index.toString(10)} />
-            </GalleryItem>
-          ))}
+          {React.Children.toArray(children)
+            .slice(0, 8)
+            .map((data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+              <GalleryItem
+                className="gallery-item"
+                key={`${data.props.src}_${index}`}
+                imageLeft={imageLeft}
+                onClick={() => this.handleClick(index)}
+              >
+                <img src={data.props.src} alt={index.toString(10)} />
+              </GalleryItem>
+            ))}
         </GalleryItemWrapper>
         <Modal
           isVisible={visible}
@@ -101,27 +103,37 @@ class Gallery extends React.Component<Props, State> {
             afterChange={this.getCurrentIndex}
             ref={this.sliderRef}
           >
-            { React.Children.map(children, (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
-              <Slider.Item key={`${data.props.src}_${index}`}>
-                <GalleryImageWrapper
-                  role="banner"
-                  tabIndex={0}
-                >
-                  <img src={data.props.src} key={`${data.props.src}_${index}`} alt={index.toString(10)} />
-                </GalleryImageWrapper>
-              </Slider.Item>
-            ))}
+            {React.Children.map(
+              children,
+              (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+                <Slider.Item key={`${data.props.src}_${index}`}>
+                  <GalleryImageWrapper role="banner" tabIndex={0}>
+                    <img
+                      src={data.props.src}
+                      key={`${data.props.src}_${index}`}
+                      alt={index.toString(10)}
+                    />
+                  </GalleryImageWrapper>
+                </Slider.Item>
+              )
+            )}
           </Slider>
           <GalleryThumbnailWrapper>
-            { React.Children.map(children, (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
-              <div key={`${data.props.src}_${index}`} onClick={() => this.handleClickThumbs(index)}>
-                <img
-                  src={data.props.src}
-                  alt={index.toString(10)}
-                  className={index === currentIndex ? 'active' : null}
-                />
-              </div>
-            ))}
+            {React.Children.map(
+              children,
+              (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+                <div
+                  key={`${data.props.src}_${index}`}
+                  onClick={() => this.handleClickThumbs(index)}
+                >
+                  <img
+                    src={data.props.src}
+                    alt={index.toString(10)}
+                    className={index === currentIndex ? 'active' : null}
+                  />
+                </div>
+              )
+            )}
           </GalleryThumbnailWrapper>
         </Modal>
       </GalleryContainer>
@@ -131,12 +143,12 @@ class Gallery extends React.Component<Props, State> {
 
 interface Props {
   children?: React.ReactNode;
-};
+}
 
 interface State {
   visible: boolean;
   currentIndex: number;
   imageLeft: number;
-};
+}
 
 export default Gallery;

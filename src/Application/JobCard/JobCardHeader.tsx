@@ -10,7 +10,7 @@ import {
   LabelTag,
 } from '../../Style/Application/JobCardStyle';
 
-const JobCardHeader: React.FunctionComponent<Props> = (props) => {
+const JobCardHeader: React.FunctionComponent<Props> = props => {
   const {
     title,
     tag,
@@ -33,20 +33,17 @@ const JobCardHeader: React.FunctionComponent<Props> = (props) => {
       {...defaultProps}
     >
       <JobcardHeaderImage aria-hidden="true">
-        {typeof imgUrl === 'string'
-          ? <Image src={imgUrl} alt="" />
-          : imgUrl}
+        {typeof imgUrl === 'string' ? <Image src={imgUrl} alt="" /> : imgUrl}
       </JobcardHeaderImage>
       <JobcardHeaderContent>
         {tag && <LabelTag>{tag}</LabelTag>}
-        <Title className={jobTitleClass}>
-          {`${title.slice(0, 50)}`}
-        </Title>
+        <Title className={jobTitleClass}>{`${title.slice(0, 50)}`}</Title>
         <SubtitleTitle
           onClick={onClickSubtitle}
           className={companyNameClass}
           role="link"
-          tabIndex={0}>
+          tabIndex={0}
+        >
           {subtitle}
         </SubtitleTitle>
       </JobcardHeaderContent>
@@ -54,7 +51,8 @@ const JobCardHeader: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof JobcardHeaderWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof JobcardHeaderWrapper> {
   companyNameClass?: string;
   title: string;
   tag: string;
@@ -64,7 +62,7 @@ export interface Props extends React.ComponentPropsWithoutRef<typeof JobcardHead
   url?: string;
   onClickSubtitle?: React.MouseEventHandler<HTMLParagraphElement>;
   isLinkAble?: boolean;
-};
+}
 
 JobCardHeader.defaultProps = {
   jobTitleClass: '',

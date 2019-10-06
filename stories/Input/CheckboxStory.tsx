@@ -12,7 +12,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'yes',
-      description: 'It\'s a must to always put ID into checkbox to be clicked.',
+      description: "It's a must to always put ID into checkbox to be clicked.",
     },
     {
       name: 'value',

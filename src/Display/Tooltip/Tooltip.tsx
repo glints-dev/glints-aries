@@ -11,16 +11,10 @@ import {
 class Tooltip extends React.Component<Props, State> {
   state = {
     isHover: false,
-  }
+  };
 
   render() {
-    const {
-      className,
-      children,
-      text,
-      position,
-      ...defaultProps
-    } = this.props;
+    const { className, children, text, position, ...defaultProps } = this.props;
 
     const { isHover } = this.state;
 
@@ -34,23 +28,19 @@ class Tooltip extends React.Component<Props, State> {
         onMouseLeave={() => this.setState({ isHover: false })}
         {...defaultProps}
       >
-        {isHover &&
-          <TooltipContent
-            text={text}
-            position={position}
-          >
-            <TooltipMessage>
-              {text}
-            </TooltipMessage>
+        {isHover && (
+          <TooltipContent text={text} position={position}>
+            <TooltipMessage>{text}</TooltipMessage>
           </TooltipContent>
-        }
-        { children }
+        )}
+        {children}
       </TooltipContainer>
     );
   }
 }
 
-interface Props extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
   children: React.ReactNode;
   text: string;
   position?: string;

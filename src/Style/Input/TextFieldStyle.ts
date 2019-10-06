@@ -17,9 +17,10 @@ export const TextFieldContainer = styled.div`
 
 export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   position: absolute;
-  left: ${({ small }) => small ? '16px' : '22px'};
+  left: ${({ small }) => (small ? '16px' : '22px')};
   background: ${SecondaryColor.white};
-  color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+  color: ${({ floating }) =>
+    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
@@ -65,10 +66,13 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   width: 100%;
   border: none;
   outline: none;
-  font-size: ${({ small }) => small ? '1em' : '1.1em'};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
-  padding: ${({ small }) => small ? '13px 15px' : '15px 20px'};
-  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
+  padding: ${({ small }) => (small ? '13px 15px' : '15px 20px')};
+  border: ${({ status }) =>
+    status === 'error'
+      ? `2px solid ${PrimaryColor.glintsred}`
+      : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
 
   ${({ disableTyping }) => {
@@ -111,23 +115,23 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
     transition: all .5s;
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${TextFieldLabel} {
       color: ${SecondaryColor.black};
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 
@@ -135,28 +139,31 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
     border: 2px solid ${SecondaryColor.actionblue};
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${TextFieldLabel} {
       padding: 0 5px;
       top: 1em;
-      transform: ${({ small }) => small ? 'translate3d(-10px, -20px, 0)' : 'translate3d(-15px, -20px, 0)'};
+      transform: ${({ small }) =>
+        small
+          ? 'translate3d(-10px, -20px, 0)'
+          : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 `;

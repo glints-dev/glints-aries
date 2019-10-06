@@ -12,7 +12,7 @@ export const LayoutHeaderWrapper = styled.div`
   background-color: ${SecondaryColor.white};
   width: 100vw;
   z-index: 100;
-  border-bottom: 3px solid #E3E3E3;
+  border-bottom: 3px solid #e3e3e3;
 `;
 
 export const LayoutBodyWrapper = styled.div`

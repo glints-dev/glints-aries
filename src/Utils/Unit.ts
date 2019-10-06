@@ -19,13 +19,15 @@ export default class Unit {
     (num: number): string => `${(num * 0.1).toFixed(1)}rem`
   );
 
-  static formatDate = (date: Date): string => moment(date).diff(Date.now(), 'days') === 0
-    ? moment(date)
-      .locale('id')
-      .fromNow()
-    : moment(date)
-      .locale('id')
-      .format('D MMMM');
+  static formatDate = (date: Date): string =>
+    moment(date).diff(Date.now(), 'days') === 0
+      ? moment(date)
+          .locale('id')
+          .fromNow()
+      : moment(date)
+          .locale('id')
+          .format('D MMMM');
 
-  static deltaDate = (date: moment.Moment): number => date.diff(moment(), 'days');
+  static deltaDate = (date: moment.Moment): number =>
+    date.diff(moment(), 'days');
 }

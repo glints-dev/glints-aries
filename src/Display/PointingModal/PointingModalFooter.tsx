@@ -2,12 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { PointingModalFooterWrapper } from '../../Style/Display/PointingModalStyle';
 
-const PointingModalFooter: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    ...defaultProps
-  } = props;
+const PointingModalFooter: React.FunctionComponent<Props> = props => {
+  const { children, className, ...defaultProps } = props;
 
   return (
     <PointingModalFooterWrapper

@@ -12,18 +12,16 @@ import { Variant, Theme } from '../../src/Utils/StyleConfig';
 const ButtonStories = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Button
-      </h1>
+      <h1>Button</h1>
       <p>
-        <code>
-          {'import { Button } from \'glints-aries\''}
-        </code>
+        <code>{"import { Button } from 'glints-aries'"}</code>
       </p>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Default Button</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Default Button
+      </Heading>
       <Button theme="blue" onClick={action('Default Button')}>
         Default
       </Button>
@@ -46,175 +44,93 @@ const ButtonStories = () => (
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
             <th colSpan={6}>
-              <h3 style={{ margin: '.8em 0' }}>
-                Props
-              </h3>
+              <h3 style={{ margin: '.8em 0' }}>Props</h3>
             </th>
           </tr>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Default Value
-            </th>
-            <th>
-              Possible Value
-            </th>
-            <th>
-              Required
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default Value</th>
+            <th>Possible Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>variant</td>
+            <td>string</td>
             <td>
-              variant
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <code>
-                default
-              </code>
+              <code>default</code>
             </td>
             <td></td>
-            <td>
-              yes
-            </td>
-            <td>
-              Sets the Default Button.
-            </td>
+            <td>yes</td>
+            <td>Sets the Default Button.</td>
           </tr>
           <tr>
-            <td>
-              theme
-            </td>
-            <td>
-              string
-            </td>
+            <td>theme</td>
+            <td>string</td>
             <td></td>
             <td>
-              <code>
-                red | blue | yellow
-              </code>
+              <code>red | blue | yellow</code>
             </td>
-            <td>
-              no
-            </td>
-            <td>
-              Default theme is white.
-            </td>
+            <td>no</td>
+            <td>Default theme is white.</td>
           </tr>
           <tr>
+            <td>disabled</td>
+            <td>boolean</td>
             <td>
-              disabled
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to disable state.</td>
           </tr>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
             <td>
-              block
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to block type.</td>
           </tr>
           <tr>
+            <td>small</td>
+            <td>boolean</td>
             <td>
-              small
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to small version.</td>
           </tr>
           <tr>
+            <td>removeHoverEffect</td>
+            <td>boolean</td>
             <td>
-              removeHoverEffect
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
-            <td>{'Removes Button\'s effect when hovered'}</td>
+            <td>no</td>
+            <td>{"Removes Button's effect when hovered"}</td>
           </tr>
           <tr>
-            <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
+            <td>onClick</td>
+            <td>function</td>
             <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
+            <td>function</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>
@@ -224,8 +140,14 @@ const ButtonStories = () => (
     <Divider theme="grey" />
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Primary Button</Heading>
-      <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} onClick={action('Primary Button')}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Primary Button
+      </Heading>
+      <Button
+        variant={Variant.PRIMARY}
+        theme={Theme.YELLOW}
+        onClick={action('Primary Button')}
+      >
         Primary
       </Button>
     </div>
@@ -248,157 +170,83 @@ const ButtonStories = () => (
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
             <th colSpan={6}>
-              <h3 style={{ margin: '.8em 0' }}>
-                Props
-              </h3>
+              <h3 style={{ margin: '.8em 0' }}>Props</h3>
             </th>
           </tr>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Default Value
-            </th>
-            <th>
-              Possible Value
-            </th>
-            <th>
-              Required
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default Value</th>
+            <th>Possible Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>variant</td>
+            <td>string</td>
             <td>
-              variant
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <code>
-                primary
-              </code>
+              <code>primary</code>
             </td>
             <td></td>
-            <td>
-              yes
-            </td>
-            <td>
-              Sets the Primary Button.
-            </td>
+            <td>yes</td>
+            <td>Sets the Primary Button.</td>
           </tr>
           <tr>
+            <td>theme</td>
+            <td>string</td>
             <td>
-              theme
+              <code>white</code>
             </td>
             <td>
-              string
+              <code>red | blue | blue-red | yellow</code>
             </td>
-            <td>
-              <code>
-                white
-              </code>
-            </td>
-            <td>
-              <code>
-                red | blue | blue-red | yellow
-              </code>
-            </td>
-            <td>
-              no
-            </td>
-            <td>
-              Sets theme color for Primary Button.
-            </td>
+            <td>no</td>
+            <td>Sets theme color for Primary Button.</td>
           </tr>
           <tr>
+            <td>disabled</td>
+            <td>boolean</td>
             <td>
-              disabled
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to disable state.</td>
           </tr>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
             <td>
-              block
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to block type.</td>
           </tr>
           <tr>
+            <td>small</td>
+            <td>boolean</td>
             <td>
-              small
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to small version.</td>
           </tr>
           <tr>
-            <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
+            <td>onClick</td>
+            <td>function</td>
             <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
+            <td>function</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>
@@ -408,7 +256,9 @@ const ButtonStories = () => (
     <Divider theme="grey" />
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Secondary Button</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Secondary Button
+      </Heading>
       <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
         Secondary
       </Button>
@@ -431,133 +281,71 @@ const ButtonStories = () => (
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
             <th colSpan={6}>
-              <h3 style={{ margin: '.8em 0' }}>
-                Props
-              </h3>
+              <h3 style={{ margin: '.8em 0' }}>Props</h3>
             </th>
           </tr>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Default Value
-            </th>
-            <th>
-              Possible Value
-            </th>
-            <th>
-              Required
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default Value</th>
+            <th>Possible Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>variant</td>
+            <td>string</td>
             <td>
-              variant
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <code>
-                secondary
-              </code>
+              <code>secondary</code>
             </td>
             <td></td>
-            <td>
-              yes
-            </td>
-            <td>
-              Sets the Secondary Button.
-            </td>
+            <td>yes</td>
+            <td>Sets the Secondary Button.</td>
           </tr>
           <tr>
+            <td>disabled</td>
+            <td>boolean</td>
             <td>
-              disabled
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to disable state.</td>
           </tr>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
             <td>
-              block
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to block type.</td>
           </tr>
           <tr>
+            <td>small</td>
+            <td>boolean</td>
             <td>
-              small
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to small version.</td>
           </tr>
           <tr>
-            <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
+            <td>onClick</td>
+            <td>function</td>
             <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
+            <td>function</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>
@@ -567,8 +355,14 @@ const ButtonStories = () => (
     <Divider theme="grey" />
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Ghost Button</Heading>
-      <Button variant={Variant.GHOST} theme={Theme.BLUE} onClick={action('Ghost Button')}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Ghost Button
+      </Heading>
+      <Button
+        variant={Variant.GHOST}
+        theme={Theme.BLUE}
+        onClick={action('Ghost Button')}
+      >
         Ghost
       </Button>
     </div>
@@ -591,173 +385,93 @@ const ButtonStories = () => (
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
             <th colSpan={6}>
-              <h3 style={{ margin: '.8em 0' }}>
-                Props
-              </h3>
+              <h3 style={{ margin: '.8em 0' }}>Props</h3>
             </th>
           </tr>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Default Value
-            </th>
-            <th>
-              Possible Value
-            </th>
-            <th>
-              Required
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default Value</th>
+            <th>Possible Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>variant</td>
+            <td>string</td>
             <td>
-              variant
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <code>
-                ghost
-              </code>
+              <code>ghost</code>
             </td>
             <td></td>
-            <td>
-              yes
-            </td>
-            <td>
-              Sets the Ghost Button.
-            </td>
+            <td>yes</td>
+            <td>Sets the Ghost Button.</td>
           </tr>
           <tr>
-            <td>
-              theme
-            </td>
-            <td>
-              string
-            </td>
+            <td>theme</td>
+            <td>string</td>
             <td></td>
             <td>
-              <code>
-                red | blue | yellow | white
-              </code>
+              <code>red | blue | yellow | white</code>
             </td>
-            <td>
-              yes
-            </td>
+            <td>yes</td>
             <td></td>
           </tr>
           <tr>
+            <td>disabled</td>
+            <td>boolean</td>
             <td>
-              disabled
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to disable state.</td>
           </tr>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
             <td>
-              block
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to block type.</td>
           </tr>
           <tr>
+            <td>small</td>
+            <td>boolean</td>
             <td>
-              small
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to small version.</td>
           </tr>
           <tr>
+            <td>removeHoverEffect</td>
+            <td>boolean</td>
             <td>
-              removeHoverEffect
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
-            <td>{'Removes Button\'s effect when hovered'}</td>
+            <td>no</td>
+            <td>{"Removes Button's effect when hovered"}</td>
           </tr>
           <tr>
-            <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
+            <td>onClick</td>
+            <td>function</td>
             <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
+            <td>function</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>
@@ -767,8 +481,14 @@ const ButtonStories = () => (
     <Divider theme="grey" />
 
     <div style={{ marginTop: '4em', marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Link Button</Heading>
-      <Button variant={Variant.LINK} theme={Theme.RED} onClick={action('Link Button')}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Link Button
+      </Heading>
+      <Button
+        variant={Variant.LINK}
+        theme={Theme.RED}
+        onClick={action('Link Button')}
+      >
         Link
       </Button>
     </div>
@@ -791,157 +511,86 @@ const ButtonStories = () => (
         <thead>
           <tr style={{ borderBottom: '1px solid lightgrey' }}>
             <th colSpan={6}>
-              <h3 style={{ margin: '.8em 0' }}>
-                Props
-              </h3>
+              <h3 style={{ margin: '.8em 0' }}>Props</h3>
             </th>
           </tr>
           <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Default Value
-            </th>
-            <th>
-              Possible Value
-            </th>
-            <th>
-              Required
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default Value</th>
+            <th>Possible Value</th>
+            <th>Required</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>variant</td>
+            <td>string</td>
             <td>
-              variant
-            </td>
-            <td>
-              string
-            </td>
-            <td>
-              <code>
-                link
-              </code>
+              <code>link</code>
             </td>
             <td></td>
-            <td>
-              yes
-            </td>
-            <td>
-              Sets the Link Button.
-            </td>
+            <td>yes</td>
+            <td>Sets the Link Button.</td>
           </tr>
           <tr>
-            <td>
-              theme
-            </td>
-            <td>
-              string
-            </td>
+            <td>theme</td>
+            <td>string</td>
             <td></td>
             <td>
-              <code>
-                red | yellow | blue | grey | white
-              </code>
+              <code>red | yellow | blue | grey | white</code>
             </td>
-            <td>
-              yes
-            </td>
+            <td>yes</td>
             <td></td>
           </tr>
           <tr>
+            <td>disabled</td>
+            <td>boolean</td>
             <td>
-              disabled
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to disable state.</td>
           </tr>
           <tr>
+            <td>block</td>
+            <td>boolean</td>
             <td>
-              block
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to block type.</td>
           </tr>
           <tr>
+            <td>small</td>
+            <td>boolean</td>
             <td>
-              small
+              <code>false</code>
             </td>
             <td>
-              boolean
+              <code>true | false</code>
             </td>
-            <td>
-              <code>
-                false
-              </code>
-            </td>
-            <td>
-              <code>
-                true | false
-              </code>
-            </td>
-            <td>
-              no
-            </td>
+            <td>no</td>
             <td>Sets Button to small version.</td>
           </tr>
           <tr>
-            <td>
-              onClick
-            </td>
-            <td>
-              function
-            </td>
+            <td>onClick</td>
+            <td>function</td>
             <td></td>
-            <td>
-              function
-            </td>
-            <td>
-              no
-            </td>
+            <td>function</td>
+            <td>no</td>
             <td></td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 );
 

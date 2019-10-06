@@ -13,22 +13,17 @@ class Brand extends React.Component<Props> {
 
     if (rightClickURL) {
       e.preventDefault();
-  
+
       if (onContextMenu !== undefined) {
         onContextMenu();
       }
-  
+
       window.location.href = rightClickURL;
     }
-  }
+  };
 
   render() {
-    const {
-      alt,
-      asset,
-      className,
-      ...defaultProps
-    } = this.props;
+    const { alt, asset, className, ...defaultProps } = this.props;
 
     let srcAsset = '';
 

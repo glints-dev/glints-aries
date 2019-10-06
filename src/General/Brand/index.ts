@@ -1,5 +1,5 @@
 import Brand from './Brand';
 
-export {Brand};
+export { Brand };
 
 export default Brand;

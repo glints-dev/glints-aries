@@ -4,12 +4,8 @@ import classNames from 'classnames';
 
 import { JobcardBodyWrapper } from '../../Style/Application/JobCardStyle';
 
-const JobCardBody: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    ...defaultProps
-  } = props;
+const JobCardBody: React.FunctionComponent<Props> = props => {
+  const { children, className, ...defaultProps } = props;
 
   return (
     <JobcardBodyWrapper
@@ -24,7 +20,8 @@ const JobCardBody: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof JobcardBodyWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof JobcardBodyWrapper> {
   children: React.ReactNode;
   isLinkAble?: boolean;
 }

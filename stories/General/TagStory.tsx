@@ -55,7 +55,9 @@ const TagStory = () => (
       <div style={{ textAlign: 'center', marginRight: '2em' }}>
         <h3>Default</h3>
         <Tag theme="grey">
-          <span style={{ marginRight: '12px', color: 'black' }}>Software Engineer</span>
+          <span style={{ marginRight: '12px', color: 'black' }}>
+            Software Engineer
+          </span>
           <Icon name="close" color="black" />
         </Tag>
       </div>

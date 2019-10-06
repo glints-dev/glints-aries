@@ -92,29 +92,30 @@ const SearchFilterStory = () => (
   >
     <SearchFilter
       label="Search for job title, location, or company"
-      content={(
+      content={
         <SearchFilter.Button theme="blue">
           <Icon name="search" color="white" />
         </SearchFilter.Button>
-      )}
+      }
     >
       <SearchFilter.Body>
         <SearchFilter.List title="Karir Populer">
-          <SearchFilter.Item>
-            Business Development/ Sales
-          </SearchFilter.Item>
+          <SearchFilter.Item>Business Development/ Sales</SearchFilter.Item>
         </SearchFilter.List>
         <SearchFilter.List title="Lokasi Populer">
           <SearchFilter.Item>
-            <Icon name="location" color="#AAAAAA" />
-            {' '}
-            Lowongan Pekerjaan di Jakarta
+            <Icon name="location" color="#AAAAAA" /> Lowongan Pekerjaan di
+            Jakarta
           </SearchFilter.Item>
         </SearchFilter.List>
         <SearchFilter.List title="Perusahaan Populer">
           <SearchFilter.Item>
-            <img src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg" width="40" height="40" alt="gojek" />
-            {' '}
+            <img
+              src="https://cdn-images-1.medium.com/max/1600/1*5fCAiEdtIXD53sM90gn5JA.jpeg"
+              width="40"
+              height="40"
+              alt="gojek"
+            />{' '}
             Gojek
           </SearchFilter.Item>
         </SearchFilter.List>

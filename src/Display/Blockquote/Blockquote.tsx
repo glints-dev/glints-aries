@@ -22,13 +22,10 @@ class Blockquote extends React.Component<Props, State> {
 
   state = {
     isHover: false,
-  }
+  };
 
   render() {
-    const {
-      children,
-      className,
-    } = this.props;
+    const { children, className } = this.props;
 
     const { isHover } = this.state;
 
@@ -38,7 +35,10 @@ class Blockquote extends React.Component<Props, State> {
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
       >
-        <Icon name="quotation" color={isHover ? PrimaryColor.glintsred : PrimaryColor.glintsblue} />
+        <Icon
+          name="quotation"
+          color={isHover ? PrimaryColor.glintsred : PrimaryColor.glintsblue}
+        />
         {children}
       </BlockquoteContainer>
     );

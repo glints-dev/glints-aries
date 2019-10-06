@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { JobOverviewHeadingStyle } from '../../Style/Application/JobOverviewStyle';
 
-const JobOverviewHeading: React.FunctionComponent<Props> = (props) => {
+const JobOverviewHeading: React.FunctionComponent<Props> = props => {
   const { children, style } = props;
   return (
-    <JobOverviewHeadingStyle style={style}>
-      {children}
-    </JobOverviewHeadingStyle>
+    <JobOverviewHeadingStyle style={style}>{children}</JobOverviewHeadingStyle>
   );
 };
 

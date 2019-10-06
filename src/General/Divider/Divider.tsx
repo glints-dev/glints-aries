@@ -2,12 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { DividerContainer } from '../../Style/General/DividerStyle';
 
-const Divider: React.FunctionComponent<Props> = (props) => {
-  const {
-    theme,
-    className,
-    style,
-  } = props;
+const Divider: React.FunctionComponent<Props> = props => {
+  const { theme, className, style } = props;
 
   return (
     <DividerContainer

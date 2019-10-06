@@ -7,7 +7,11 @@ const Row: React.FunctionComponent<Props> = ({
   justifyContent,
   ...defaultProps
 }: Props) => (
-  <RowContainer alignContent={alignContent} justifyContent={justifyContent} {...defaultProps}>
+  <RowContainer
+    alignContent={alignContent}
+    justifyContent={justifyContent}
+    {...defaultProps}
+  >
     {children}
   </RowContainer>
 );

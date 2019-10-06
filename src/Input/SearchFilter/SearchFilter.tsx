@@ -36,21 +36,25 @@ class SearchFilter extends React.Component<Props, State> {
 
   handleClose = () => {
     this.setState({ isOpen: false });
-  }
+  };
 
   handleMouseDown = (event: MouseEvent) => {
     const element = event.target as HTMLElement;
     const hasClickedOnInput = element === this.inputRef.current;
-    const hasClickedInsideSearchFilter = this.searchFilterRef.current.contains(element);
-    const hasClickedOnScrollBar = hasClickedInsideSearchFilter &&
-      (event.offsetX > element.clientWidth || event.offsetY > element.clientHeight);
+    const hasClickedInsideSearchFilter = this.searchFilterRef.current.contains(
+      element
+    );
+    const hasClickedOnScrollBar =
+      hasClickedInsideSearchFilter &&
+      (event.offsetX > element.clientWidth ||
+        event.offsetY > element.clientHeight);
 
     if (hasClickedOnInput || hasClickedOnScrollBar) {
       return;
     } else {
       this.handleClose();
     }
-  }
+  };
 
   render() {
     const {
@@ -89,7 +93,7 @@ class SearchFilter extends React.Component<Props, State> {
           aria-hidden={!isOpen && true}
           open={isOpen}
         >
-          { children }
+          {children}
         </SearchFilterBodyWrapper>
       </SearchFilterContainer>
     );
@@ -100,7 +104,7 @@ interface Props extends Omit<React.HTMLProps<HTMLInputElement>, 'content'> {
   children: React.ReactNode;
   content: React.ReactNode;
   label: string;
-};
+}
 
 interface State {
   isOpen: boolean;

@@ -35,12 +35,16 @@ class AutoComplete extends React.Component<Props, State> {
   handleFocus = (onFocus: (e: React.FocusEvent<HTMLInputElement>) => void) => {
     const listener = (e: React.FocusEvent<HTMLInputElement>) => {
       const { children } = this.props;
-      const childrenArray = React.Children.toArray(children) as React.ReactElement<AutoCompleteItemProps>[];
+      const childrenArray = React.Children.toArray(
+        children
+      ) as React.ReactElement<AutoCompleteItemProps>[];
       const inputValue = e.target.value;
 
       if (e.target.value !== '') {
         this.setState({
-          filterValue: childrenArray.filter(data => data.props.children.toLowerCase().includes(inputValue.toLowerCase())),
+          filterValue: childrenArray.filter(data =>
+            data.props.children.toLowerCase().includes(inputValue.toLowerCase())
+          ),
         });
       }
 
@@ -50,7 +54,7 @@ class AutoComplete extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleFocusOut = (onBlur: () => void) => {
     const listener = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -65,16 +69,24 @@ class AutoComplete extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
-  handleChange = (onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) => {
+  handleChange = (
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  ) => {
     const listener = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { children } = this.props;
-      const childrenArray = React.Children.toArray(children) as React.ReactElement<AutoCompleteItemProps>[];
+      const childrenArray = React.Children.toArray(
+        children
+      ) as React.ReactElement<AutoCompleteItemProps>[];
 
       this.setState({
         selectedValue: e.target.value,
-        filterValue: childrenArray.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
+        filterValue: childrenArray.filter(data =>
+          data.props.children
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
+        ),
         cursor: 0,
       });
 
@@ -84,9 +96,11 @@ class AutoComplete extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
-  handleClick = (onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void) => {
+  handleClick = (
+    onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
+  ) => {
     const listener = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
       const { onChange } = this.props;
 
@@ -97,7 +111,9 @@ class AutoComplete extends React.Component<Props, State> {
 
       if (onChange !== undefined) {
         const containerElement = this.autoCompleteContainerRef.current;
-        const activeItemElement = containerElement.querySelector('.active') as HTMLLIElement;
+        const activeItemElement = containerElement.querySelector(
+          '.active'
+        ) as HTMLLIElement;
         const itemValue = activeItemElement.dataset.value;
         onChange(itemValue);
       }
@@ -108,7 +124,7 @@ class AutoComplete extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const { onChange } = this.props;
@@ -126,7 +142,9 @@ class AutoComplete extends React.Component<Props, State> {
       });
     } else if (e.keyCode === 13) {
       const containerElement = this.autoCompleteContainerRef.current;
-      const activeItemElement = containerElement.querySelector('.active') as HTMLLIElement;
+      const activeItemElement = containerElement.querySelector(
+        '.active'
+      ) as HTMLLIElement;
       inputElement.blur();
       this.setState({
         selectedValue: (activeItemElement.children[0] as HTMLElement).innerText,
@@ -142,16 +160,19 @@ class AutoComplete extends React.Component<Props, State> {
       inputElement.blur();
       this.setState({ isOpen: false });
     }
-  }
+  };
 
   handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
     const itemElement = e.target as HTMLLIElement;
     this.setState({
       cursor: Number(itemElement.dataset.id),
     });
-  }
+  };
 
-  static getDerivedStateFromProps(nextProps: Props, prevState: State): Partial<State> {
+  static getDerivedStateFromProps(
+    nextProps: Props,
+    prevState: State
+  ): Partial<State> {
     if (prevState.selectedValue === '' || prevState.filterValue.length === 0) {
       return {
         isOpen: false,
@@ -201,18 +222,13 @@ class AutoComplete extends React.Component<Props, State> {
       ...defaultProps
     } = this.props;
 
-    const {
-      isOpen,
-      floating,
-      cursor,
-      selectedValue,
-      filterValue,
-    } = this.state;
+    const { isOpen, floating, cursor, selectedValue, filterValue } = this.state;
 
     return (
       <AutoCompleteContainer
         className={classNames('aries-autocomplete', className)}
-        ref={this.autoCompleteContainerRef}>
+        ref={this.autoCompleteContainerRef}
+      >
         <AutoCompleteWrapper className="autocomplete-inputwrapper">
           <AutoCompleteInput
             type="text"
@@ -229,7 +245,7 @@ class AutoComplete extends React.Component<Props, State> {
             small={small}
             {...defaultProps}
           />
-          {!removeFloatingLabel &&
+          {!removeFloatingLabel && (
             <AutoCompleteLabel
               floating={floating}
               status={status}
@@ -237,7 +253,7 @@ class AutoComplete extends React.Component<Props, State> {
             >
               {label}
             </AutoCompleteLabel>
-          }
+          )}
         </AutoCompleteWrapper>
         <AutoCompleteListWrapper
           className="autocomplete-listbox"
@@ -258,7 +274,9 @@ class AutoComplete extends React.Component<Props, State> {
               tabIndex={0}
             >
               <span className="autocomplete-value">{data.props.children}</span>
-              <span className="autocomplete-additionalinfo">{data.props.additionalInfo}</span>
+              <span className="autocomplete-additionalinfo">
+                {data.props.additionalInfo}
+              </span>
             </AutoCompleteItem>
           ))}
         </AutoCompleteListWrapper>
@@ -274,7 +292,8 @@ interface AutoCompleteItemProps {
   additionalInfo: React.ReactNode;
 }
 
-interface Props extends React.ComponentPropsWithoutRef<typeof AutoCompleteInput> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof AutoCompleteInput> {
   children: React.ReactNode;
   label: string;
   removeFloatingLabel?: boolean;

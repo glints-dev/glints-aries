@@ -29,7 +29,7 @@ export const SwipeableCardExample = styled.div`
   width: 150px;
   height: 150px;
   background: ${SecondaryColor.white};
-  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;

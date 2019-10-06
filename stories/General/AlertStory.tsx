@@ -15,11 +15,11 @@ class AlertStory extends React.Component<{}, State> {
 
   handleOnClick = () => {
     this.setState({ isOpen: true });
-  }
+  };
 
   handleOnClose = () => {
     this.setState({ isOpen: false });
-  }
+  };
 
   render() {
     const { isOpen } = this.state;
@@ -31,7 +31,7 @@ class AlertStory extends React.Component<{}, State> {
           defaultValue: <code>info</code>,
           possibleValue: <code>success | warning | danger | info</code>,
           require: 'yes',
-          description: 'Sets Alert\'s style.',
+          description: "Sets Alert's style.",
         },
         {
           name: 'message',
@@ -63,7 +63,8 @@ class AlertStory extends React.Component<{}, State> {
           defaultValue: '',
           possibleValue: 'number in millisecond',
           require: 'no',
-          description: 'Sets Alert to close by itself. The value is in millisecond.',
+          description:
+            'Sets Alert to close by itself. The value is in millisecond.',
         },
       ],
     };
@@ -89,11 +90,8 @@ handleOnClose = () => {
   autoClose={3000}
 />`}
       >
-        <Button
-          theme="blue"
-          onClick={this.handleOnClick}
-        >
-            Open Alert
+        <Button theme="blue" onClick={this.handleOnClick}>
+          Open Alert
         </Button>
         <Alert
           type="success"

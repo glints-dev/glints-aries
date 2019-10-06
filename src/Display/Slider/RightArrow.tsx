@@ -2,13 +2,8 @@ import * as React from 'react';
 import { Icon } from '../../General/Icon';
 import { RightArrowContainer } from '../../Style/Display/SliderStyle';
 
-const RightArrow: React.FunctionComponent<Props> = (props) => {
-  const {
-    index,
-    limit,
-    nextSlide,
-    arrowWhite,
-  } = props;
+const RightArrow: React.FunctionComponent<Props> = props => {
+  const { index, limit, nextSlide, arrowWhite } = props;
 
   let arrowColor = 'black';
 

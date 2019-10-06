@@ -24,8 +24,9 @@ const props = {
       name: 'propsObject',
       type: 'array',
       defaultValue: '',
-      possibleValue: <pre>
-        {`tableName: {
+      possibleValue: (
+        <pre>
+          {`tableName: {
   name: "name",
   type: "type",
   defaultValue: "defaultValue",
@@ -33,9 +34,11 @@ const props = {
   require: "require",
   description: "description",
 }`}
-      </pre>,
+        </pre>
+      ),
       require: 'yes',
-      description: 'Array of object to populate props name and description in the table.',
+      description:
+        'Array of object to populate props name and description in the table.',
     },
     {
       name: 'usage',

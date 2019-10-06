@@ -3,12 +3,7 @@ import classNames from 'classnames';
 import { SearchFilterListWrapper } from '../../Style/Input/SearchFilterStyle';
 
 const SearchFilterList = (props: Props) => {
-  const {
-    title,
-    children,
-    className,
-    ...defaultProps
-  } = props;
+  const { title, children, className, ...defaultProps } = props;
 
   return (
     <SearchFilterListWrapper
@@ -16,17 +11,14 @@ const SearchFilterList = (props: Props) => {
       role="list"
       {...defaultProps}
     >
-      <label>
-        {title}
-      </label>
-      <ul>
-        {children}
-      </ul>
+      <label>{title}</label>
+      <ul>{children}</ul>
     </SearchFilterListWrapper>
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof SearchFilterListWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof SearchFilterListWrapper> {
   children: React.ReactNode;
   title: HTMLDivElement['title'];
 }

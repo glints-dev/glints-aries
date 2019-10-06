@@ -4,22 +4,19 @@ import { SwipeableContainer } from '../../Style/Display/SwipeableStyle';
 
 import SwipeableItem from './SwipeableItem';
 
-const Swipeable: Swipeable = (props) => {
-  const {
-    children,
-    className,
-  } = props;
+const Swipeable: Swipeable = props => {
+  const { children, className } = props;
 
   return (
     <SwipeableContainer className={classNames('aries-swipeable', className)}>
-      { children }
+      {children}
     </SwipeableContainer>
   );
 };
 
 type Swipeable = React.FunctionComponent<Props> & {
   Item: typeof SwipeableItem;
-}
+};
 
 Swipeable.Item = SwipeableItem;
 

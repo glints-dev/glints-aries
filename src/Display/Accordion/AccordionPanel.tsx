@@ -11,14 +11,8 @@ import {
 
 import { SecondaryColor } from '../../Style/Colors';
 
-const AccordionPanel: React.FunctionComponent<Props> = (props) => {
-  const {
-    className,
-    label,
-    content,
-    active,
-    ...defaultProps
-  } = props;
+const AccordionPanel: React.FunctionComponent<Props> = props => {
+  const { className, label, content, active, ...defaultProps } = props;
 
   return (
     <AccordionPanelWrapper
@@ -34,9 +28,7 @@ const AccordionPanel: React.FunctionComponent<Props> = (props) => {
         </AccordionIconWrapper>
         <p>{label}</p>
         {active && (
-          <AccordionContent
-            onClick={e => e.stopPropagation()}
-          >
+          <AccordionContent onClick={e => e.stopPropagation()}>
             {content}
           </AccordionContent>
         )}
@@ -45,7 +37,8 @@ const AccordionPanel: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof AccordionPanelWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof AccordionPanelWrapper> {
   label: string;
   content: string;
   active?: boolean;

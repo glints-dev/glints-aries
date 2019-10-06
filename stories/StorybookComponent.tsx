@@ -14,35 +14,23 @@ const propsColumnName = [
 
 class StorybookComponent extends React.Component<Props> {
   renderTitle(title: React.ReactNode) {
-    return (
-      <h1>{title}</h1>
-    );
+    return <h1>{title}</h1>;
   }
 
   renderImportCode(code: React.ReactNode) {
     return (
       <p>
-        <code>
-          {code}
-        </code>
+        <code>{code}</code>
       </p>
     );
   }
 
   renderDefaultUsage(children: React.ReactNode) {
-    return (
-      <pre>
-        {jsxToString(children)}
-      </pre>
-    );
+    return <pre>{jsxToString(children)}</pre>;
   }
 
   renderUsage(usage: React.ReactNode) {
-    return (
-      <pre>
-        {usage}
-      </pre>
-    );
+    return <pre>{usage}</pre>;
   }
 
   renderTHead(tableName: string) {
@@ -80,7 +68,9 @@ class StorybookComponent extends React.Component<Props> {
   renderTBody(object: any, index: number) {
     return (
       <tr key={object.name}>
-        {propsColumnName.map(columnName => <td key={`${columnName}_${index}`}>{object[columnName]}</td>)}
+        {propsColumnName.map(columnName => (
+          <td key={`${columnName}_${index}`}>{object[columnName]}</td>
+        ))}
       </tr>
     );
   }
@@ -91,20 +81,16 @@ class StorybookComponent extends React.Component<Props> {
       <table className="doc-table" key={key}>
         {this.renderTHead(key)}
         <tbody key={key}>
-          {
-            propsObject[key].map((object: any, index: number) => (
-              this.renderTBody(object, index)
-            ))
-          }
+          {propsObject[key].map((object: any, index: number) =>
+            this.renderTBody(object, index)
+          )}
         </tbody>
       </table>
     ));
   }
 
   render() {
-    const {
-      title, code, usage, children, propsObject,
-    } = this.props;
+    const { title, code, usage, children, propsObject } = this.props;
     return (
       <div className="doc-mainbar">
         {(title || code) && (
@@ -114,9 +100,7 @@ class StorybookComponent extends React.Component<Props> {
           </div>
         )}
 
-        <div style={{ marginBottom: '2em' }}>
-          {children}
-        </div>
+        <div style={{ marginBottom: '2em' }}>{children}</div>
 
         <div style={{ marginBottom: '2em' }}>
           <Collapsible label="Usage" isOpen={false}>

@@ -37,30 +37,22 @@ const SwipeableStory = () => (
     <Swipeable>
       <Swipeable.Item>
         <SwipeableCardExample>
-          <h1>
-            Card.
-          </h1>
+          <h1>Card.</h1>
         </SwipeableCardExample>
       </Swipeable.Item>
       <Swipeable.Item>
         <SwipeableCardExample>
-          <h1>
-            Card.
-          </h1>
+          <h1>Card.</h1>
         </SwipeableCardExample>
       </Swipeable.Item>
       <Swipeable.Item>
         <SwipeableCardExample>
-          <h1>
-            Card.
-          </h1>
+          <h1>Card.</h1>
         </SwipeableCardExample>
       </Swipeable.Item>
       <Swipeable.Item>
         <SwipeableCardExample>
-          <h1>
-            Card.
-          </h1>
+          <h1>Card.</h1>
         </SwipeableCardExample>
       </Swipeable.Item>
     </Swipeable>

@@ -2,13 +2,8 @@ import * as React from 'react';
 
 import { OmniSearchItemWrapper } from '../../Style/Input/OmniSearchStyle';
 
-const OmniSearchItem: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    onClick,
-    ...defaultProps
-  } = props;
+const OmniSearchItem: React.FunctionComponent<Props> = props => {
+  const { children, className, onClick, ...defaultProps } = props;
 
   return (
     <React.Fragment>
@@ -24,7 +19,8 @@ const OmniSearchItem: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export interface Props extends React.ComponentPropsWithoutRef<typeof OmniSearchItemWrapper> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof OmniSearchItemWrapper> {
   children: React.ReactNode;
   onClick?(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
 }

@@ -20,12 +20,12 @@ export const BadgeContainer = styled.div<BadgeContainerProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: ${({ sup }) => sup ? '1.6em' : '2em'};
-    min-width: ${({ sup }) => sup ? '1.6em' : '2em'};
-    font-size: ${({ sup }) => sup ? '.7em' : '1em'};
+    height: ${({ sup }) => (sup ? '1.6em' : '2em')};
+    min-width: ${({ sup }) => (sup ? '1.6em' : '2em')};
+    font-size: ${({ sup }) => (sup ? '.7em' : '1em')};
     line-height: 1.5;
     font-weight: 600;
-    padding: .4em;
+    padding: 0.4em;
   }
 `;
 

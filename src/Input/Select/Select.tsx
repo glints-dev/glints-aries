@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 
 import classNames from 'classnames';
 
-import SelectList, { SelectItemProps } from './SelectList'
+import SelectList, { SelectItemProps } from './SelectList';
 
 import Icon from '../../General/Icon';
 import {
@@ -27,7 +27,7 @@ class Select extends React.Component<Props, State> {
     cursor: 0,
     defaultValue: '',
     isLoading: false,
-  }
+  };
 
   constructor(props: Props) {
     super(props);
@@ -56,13 +56,9 @@ class Select extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const {
-      children,
-      isLoading,
-      value,
-    } = this.props;
+    const { children, isLoading, value } = this.props;
 
-    const hasDifferentChildren = !isEqual(children,  prevProps.children);
+    const hasDifferentChildren = !isEqual(children, prevProps.children);
     if (hasDifferentChildren) {
       this.setState({
         selectedValue: value as string,
@@ -102,9 +98,11 @@ class Select extends React.Component<Props, State> {
         isFocus: false,
       });
     }
-  }
+  };
 
-  handleFocusOut = (onBlur: (e: React.FocusEvent<HTMLInputElement>) => void) => {
+  handleFocusOut = (
+    onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+  ) => {
     const listener = (e: React.FocusEvent<HTMLInputElement>) => {
       this.setState({
         floating: e.target.value.length > 0,
@@ -116,7 +114,7 @@ class Select extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleFocus = (onFocus: (e: React.FocusEvent<HTMLInputElement>) => void) => {
     const listener = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -130,16 +128,24 @@ class Select extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
-  handleChange = (onChange: (e: React.ChangeEvent<HTMLInputElement>) => void) => {
+  handleChange = (
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  ) => {
     const listener = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { children } = this.props;
-      const childrenArray = React.Children.toArray(children) as Array<React.ReactElement<SelectItemProps>>;
+      const childrenArray = React.Children.toArray(children) as Array<
+        React.ReactElement<SelectItemProps>
+      >;
 
       this.setState({
         selectedValue: e.target.value,
-        filterValue: childrenArray.filter(data => data.props.children.toLowerCase().includes(e.target.value.toLowerCase())),
+        filterValue: childrenArray.filter(data =>
+          data.props.children
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
+        ),
         cursor: 0,
       });
 
@@ -149,9 +155,11 @@ class Select extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
-  handleClick = (onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void) => {
+  handleClick = (
+    onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
+  ) => {
     const listener = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
       const { children, onChange } = this.props;
       this.setState({
@@ -171,7 +179,7 @@ class Select extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const { children, onChange, disableTyping } = this.props;
@@ -192,7 +200,9 @@ class Select extends React.Component<Props, State> {
       });
     } else if (e.keyCode === 13) {
       inputElement.blur();
-      const activeElement = this.node.current.querySelector('.active') as HTMLLIElement;
+      const activeElement = this.node.current.querySelector(
+        '.active'
+      ) as HTMLLIElement;
       this.setState({
         selectedValue: activeElement.innerText,
         filterValue: React.Children.map(children, data => data),
@@ -207,14 +217,14 @@ class Select extends React.Component<Props, State> {
       inputElement.blur();
       this.setState({ isFocus: false });
     }
-  }
+  };
 
   handleMouseEnter = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     const listItemElement = e.target as HTMLLIElement;
     this.setState({
       cursor: Number(listItemElement.dataset.id),
     });
-  }
+  };
 
   render() {
     const {
@@ -268,23 +278,16 @@ class Select extends React.Component<Props, State> {
             disableTyping={disableTyping}
             {...defaultProps}
           />
-          {!removeFloatingLabel &&
-            <SelectLabel
-              floating={floating}
-              status={status}
-              small={small}
-            >
+          {!removeFloatingLabel && (
+            <SelectLabel floating={floating} status={status} small={small}>
               {label}
             </SelectLabel>
-          }
-          {!removeDropIcon &&
-            <div
-              className="select-icon"
-              aria-label="show options"
-            >
+          )}
+          {!removeDropIcon && (
+            <div className="select-icon" aria-label="show options">
               <Icon name="arrow-down" color="#777777" />
             </div>
-          }
+          )}
         </SelectWrapper>
         <SelectList
           cursor={cursor}

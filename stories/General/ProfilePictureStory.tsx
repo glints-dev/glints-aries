@@ -12,7 +12,7 @@ const props = {
       defaultValue: <code>false</code>,
       possibleValue: <code>true | false</code>,
       require: 'no',
-      description: 'Showing edit icon when it\'s hovered.',
+      description: "Showing edit icon when it's hovered.",
     },
   ],
 };
@@ -27,7 +27,10 @@ const ProfilePictureStory = () => (
 </ProfilePicture>`}
   >
     <ProfilePicture editable>
-      <img src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80" alt="Ying Cong" />
+      <img
+        src="https://images.unsplash.com/photo-1537530360953-3b8b369e01fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ecc5073c4eb34e6c480e32b48e6208db&auto=format&fit=crop&w=750&q=80"
+        alt="Ying Cong"
+      />
     </ProfilePicture>
   </StorybookComponent>
 );

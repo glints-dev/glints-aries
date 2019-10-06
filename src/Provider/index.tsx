@@ -10,14 +10,22 @@ export class Uikit {
     this.publicPath = publicPath;
     this.Link = LinkComponent;
     this.assetsMap = new Map(
-      Object.keys(uikitAssets).map(asset => [asset, uikitAssets[asset as keyof typeof uikitAssets]])
+      Object.keys(uikitAssets).map(asset => [
+        asset,
+        uikitAssets[asset as keyof typeof uikitAssets],
+      ])
     );
   }
   getUrl = (assetPath: string): string =>
     `${this.publicPath}${this.assetsMap.get(assetPath) || 'notfound'}`;
 }
 
-const DefaultLink = (props: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => <a {...props} />;
+const DefaultLink = (
+  props: React.DetailedHTMLProps<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >
+) => <a {...props} />;
 
 const UikitContext: Context<Uikit> = createContext(new Uikit('/', DefaultLink));
 

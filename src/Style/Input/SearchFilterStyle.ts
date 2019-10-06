@@ -14,7 +14,7 @@ export const SearchFilterBar = styled.div`
   align-items: center;
   position: relative;
 
-  input { 
+  input {
     padding: 25px 6em 25px 30px;
     background: ${SecondaryColor.white};
     border: 3px solid ${SecondaryColor.darkgrey};
@@ -55,7 +55,7 @@ export const SearchFilterButton = styled(Button)`
 
 export const SearchFilterBodyWrapper = styled.div<SearchFilterBodyWrapperProps>`
   position: relative;
-  display: ${({ open }) => open ? 'block' : 'none'};
+  display: ${({ open }) => (open ? 'block' : 'none')};
   z-index: 9999;
 `;
 
@@ -72,7 +72,7 @@ export const SearchFilterResultContainer = styled.div`
   padding: 25px 30px;
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
-  
+
   @media ${Device.mobileL} {
     grid-template-columns: auto;
     grid-gap: 2em;
@@ -86,7 +86,7 @@ export const SearchFilterListWrapper = styled.div`
     color: ${SecondaryColor.lightblack};
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: .3px;
+    letter-spacing: 0.3px;
   }
 
   ul {
@@ -96,12 +96,12 @@ export const SearchFilterListWrapper = styled.div`
     li {
       display: flex;
       align-items: center;
-      margin-bottom: .6em;
+      margin-bottom: 0.6em;
       cursor: pointer;
       list-style-type: none;
 
       &:first-child {
-        margin-top: .5em;
+        margin-top: 0.5em;
       }
 
       &:last-child {

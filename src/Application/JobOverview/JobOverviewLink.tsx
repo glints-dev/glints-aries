@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { JobOverviewLinkStyle } from '../../Style/Application/JobOverviewStyle';
 
-const JobOverviewLink: React.FunctionComponent<Props> = (props) => {
+const JobOverviewLink: React.FunctionComponent<Props> = props => {
   const { children, style, ...defaultProps } = props;
   return (
     <JobOverviewLinkStyle style={style} {...defaultProps}>
@@ -10,7 +10,8 @@ const JobOverviewLink: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-interface Props extends React.ComponentPropsWithoutRef<typeof JobOverviewLinkStyle> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof JobOverviewLinkStyle> {
   children: React.ReactNode;
   style?: React.CSSProperties;
 }

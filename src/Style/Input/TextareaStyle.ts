@@ -12,12 +12,13 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
   left: 22px;
   top: 1em;
   background: ${SecondaryColor.white};
-  color: ${({ floating }) => floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
-  transition: all .2s;
+  color: ${({ floating }) =>
+    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+  transition: all 0.2s;
   pointer-events: none;
   font-weight: 300;
   font-size: 1.1em;
-  
+
   ${({ floating }) => {
     if (floating) {
       return `
@@ -51,7 +52,10 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
   font-size: 1.1em;
   line-height: 1.5;
   padding: 15px 20px;
-  border: ${({ status }) => status === 'error' ? `2px solid ${PrimaryColor.glintsred}` : `2px solid ${SecondaryColor.lightblack}`};
+  border: ${({ status }) =>
+    status === 'error'
+      ? `2px solid ${PrimaryColor.glintsred}`
+      : `2px solid ${SecondaryColor.lightblack}`};
   transition: border .5s;
   resize: vertical;
   overflow: auto;
@@ -87,23 +91,23 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
     transition: border .5s;
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${TextareaLabel} {
       color: ${SecondaryColor.black};
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 
@@ -111,12 +115,12 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
     border: 2px solid ${SecondaryColor.actionblue};
 
     ${({ status }) => {
-    if (status === 'error') {
-      return `
+      if (status === 'error') {
+        return `
           border: 2px solid ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+      }
+    }}
 
     + ${TextareaLabel} {
       padding: 0 5px;
@@ -126,12 +130,12 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
       font-size: 12px;
 
       ${({ status }) => {
-    if (status === 'error') {
-      return `
+        if (status === 'error') {
+          return `
           color: ${PrimaryColor.glintsred};
         `;
-    }
-  }}
+        }
+      }}
     }
   }
 `;

@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { BreadcrumbItemWrapper } from '../../Style/Navigation/BreadcrumbStyle';
 
-const BreadcrumbItem: React.FunctionComponent<Props> = (props) => {
-  const {
-    active,
-    className,
-    children,
-    ...defaultProps
-  } = props;
+const BreadcrumbItem: React.FunctionComponent<Props> = props => {
+  const { active, className, children, ...defaultProps } = props;
 
   return (
     <BreadcrumbItemWrapper
@@ -21,7 +16,8 @@ const BreadcrumbItem: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-interface Props extends React.ComponentPropsWithoutRef<typeof BreadcrumbItemWrapper> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof BreadcrumbItemWrapper> {
   children: React.ReactNode;
 }
 

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SecondaryContainer, SecondaryBtn } from '../../Style/General/ButtonStyle';
+import {
+  SecondaryContainer,
+  SecondaryBtn,
+} from '../../Style/General/ButtonStyle';
 
 const SecondaryButton: React.FunctionComponent<Props> = ({
   children,
@@ -10,7 +13,6 @@ const SecondaryButton: React.FunctionComponent<Props> = ({
   disabled,
   ...defaultProps
 }) => (
-
   <SecondaryContainer
     className={classNames('aries-secondarybtn', className)}
     block={block}

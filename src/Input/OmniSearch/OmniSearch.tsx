@@ -54,7 +54,7 @@ class OmniSearch extends React.Component<Props, State> {
             value={value}
             {...defaultProps}
           />
-          { content }
+          {content}
         </OmniSearchBar>
         <OmniSearchBodyWrapper
           className="omnisearch-content"
@@ -62,7 +62,7 @@ class OmniSearch extends React.Component<Props, State> {
           aria-hidden={!isOpen && true}
           open={isOpen}
         >
-          { children }
+          {children}
         </OmniSearchBodyWrapper>
       </OmniSearchContainer>
     );

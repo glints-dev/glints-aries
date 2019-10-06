@@ -57,7 +57,6 @@ export const JobOverviewInfostyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
-  
 
   @media ${Device.tablet} {
     display: block;
@@ -75,7 +74,7 @@ export const JobOverviewInfostyle = styled.div`
     letter-spacing: normal;
     color: #000000;
     display: flex;
-    
+
     span svg {
       margin-top: 0;
     }

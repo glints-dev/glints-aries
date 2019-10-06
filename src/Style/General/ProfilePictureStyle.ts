@@ -35,7 +35,7 @@ export const ProfilePictureContent = styled.div<ProfilePictureContentProps>`
       `;
     }
   }}
-    
+
   &:after {
     content: '';
     position: absolute;

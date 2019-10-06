@@ -8,9 +8,9 @@ export const InformationContainer = styled.div`
 `;
 
 export const TitleWrapper = styled.p<TitleWrapperProps>`
-  text-transform: ${({ bold }) => bold ? 'uppercase' : null};
-  font-weight: ${({ bold }) => bold ? 'bold' : null};
-  font-size: ${({ bold }) => bold ? '30px' : '18px'};
+  text-transform: ${({ bold }) => (bold ? 'uppercase' : null)};
+  font-weight: ${({ bold }) => (bold ? 'bold' : null)};
+  font-size: ${({ bold }) => (bold ? '30px' : '18px')};
   margin-bottom: 15px;
 `;
 
@@ -28,12 +28,12 @@ export const DescriptionWrapper = styled.p`
 
 export const DetailWrapper = styled.div`
   position: relative;
-    
+
   li {
     color: ${SecondaryColor.lightgrey};
     font-size: 12px;
     font-weight: 100;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 
     &:last-child {
       margin-bottom: 0;
@@ -41,7 +41,7 @@ export const DetailWrapper = styled.div`
 
     span {
       font-weight: 500;
-      color: rgba(0, 0, 0, .4);
+      color: rgba(0, 0, 0, 0.4);
     }
   }
 `;

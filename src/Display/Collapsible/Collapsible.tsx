@@ -12,12 +12,12 @@ import {
 class Collapsible extends React.Component<Props, State> {
   state = {
     isOpen: true,
-  }
+  };
 
   handleOpen = () => {
     const { isOpen } = this.state;
     this.setState({ isOpen: !isOpen });
-  }
+  };
 
   shouldComponentUpdate(nextProps: Props, nextState: State) {
     const { isOpen } = this.state;
@@ -41,12 +41,7 @@ class Collapsible extends React.Component<Props, State> {
   }
 
   render() {
-    const {
-      label,
-      children,
-      className,
-      ...defaultProps
-    } = this.props;
+    const { label, children, className, ...defaultProps } = this.props;
 
     const { isOpen } = this.state;
 
@@ -81,7 +76,8 @@ class Collapsible extends React.Component<Props, State> {
   }
 }
 
-interface Props extends React.ComponentPropsWithoutRef<typeof CollapsibleContainer> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof CollapsibleContainer> {
   label: string;
   isOpen?: boolean;
 }

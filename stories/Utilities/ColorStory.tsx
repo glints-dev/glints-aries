@@ -7,23 +7,27 @@ import { PrimaryColor, SecondaryColor } from '../../src/Style/Colors';
 const ColorStory = () => (
   <div className="doc-mainbar">
     <div style={{ marginBottom: '2em' }}>
-      <h1>
-        Colors
-      </h1>
+      <h1>Colors</h1>
       <p>
         <code>
-          {'import { PrimaryColor, SecondaryColor } from \'glints-aries\''}
+          {"import { PrimaryColor, SecondaryColor } from 'glints-aries'"}
         </code>
       </p>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Primary Color</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Primary Color
+      </Heading>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ margin: '1em', flex: '1 25%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${PrimaryColor.glintsred}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${PrimaryColor.glintsred}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -33,7 +37,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 25%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${PrimaryColor.glintsblue}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${PrimaryColor.glintsblue}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -43,7 +51,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 25%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${PrimaryColor.glintsyellow}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${PrimaryColor.glintsyellow}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -54,12 +66,18 @@ const ColorStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Secondary Color</Heading>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Secondary Color
+      </Heading>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.white}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.white}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -69,7 +87,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.whitesmoke}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.whitesmoke}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -79,7 +101,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.ivory}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.ivory}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -89,7 +115,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.black}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.black}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -99,7 +129,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.lighterblack}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.lighterblack}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -109,7 +143,11 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.grey}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.grey}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
@@ -119,96 +157,131 @@ const ColorStory = () => (
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.lightgrey}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.lightgrey}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.lightgrey
+            SecondaryColor.lightgrey
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.lightergrey}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.lightergrey}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.lightergrey
+            SecondaryColor.lightergrey
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.purplepizza}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.purplepizza}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.purplepizza
+            SecondaryColor.purplepizza
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.blue}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.blue}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.blue
+            SecondaryColor.blue
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.actionblue}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.actionblue}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.actionblue
+            SecondaryColor.actionblue
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.bluegem}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.bluegem}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.bluegem
+            SecondaryColor.bluegem
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.green}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.green}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.green
+            SecondaryColor.green
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.lightgreen}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.lightgreen}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.lightgreen
+            SecondaryColor.lightgreen
           </code>
         </div>
         <div style={{ margin: '1em', flex: '1 20%' }}>
           <div
             style={{
-              width: '150px', height: '150px', backgroundColor: `${SecondaryColor.orange}`, margin: '2em auto', boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: `${SecondaryColor.orange}`,
+              margin: '2em auto',
+              boxShadow: '0 6px 10px 0 rgba(0,0,0,0.15)',
             }}
           />
           <code style={{ display: 'flex', justifyContent: 'center' }}>
-              SecondaryColor.orange
+            SecondaryColor.orange
           </code>
         </div>
       </div>
     </div>
-
   </div>
 );
 

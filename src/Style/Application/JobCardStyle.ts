@@ -24,16 +24,21 @@ export const JobcardContainer = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(-45deg, transparent, transparent 3px, ${SecondaryColor.lightgrey} 5px);
-    top: .5em;
-    left: .5em;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 3px,
+      ${SecondaryColor.lightgrey} 5px
+    );
+    top: 0.5em;
+    left: 0.5em;
     z-index: 0;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   &:hover:after {
     opacity: 1;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   @media ${Device.mobileM} {
@@ -64,8 +69,8 @@ export const JobcardHeaderImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .2em;
-  border: 1px solid #C6C6C6;
+  padding: 0.2em;
+  border: 1px solid #c6c6c6;
   overflow: hidden;
   margin: auto;
 `;
@@ -78,10 +83,10 @@ export const JobcardHeaderContent = styled.div`
     background: ${PrimaryColor.glintsblue};
     color: ${SecondaryColor.white};
     text-transform: uppercase;
-    padding: .2em .6em;
+    padding: 0.2em 0.6em;
     font-size: 12px;
     letter-spacing: 1px;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   h3 {
@@ -96,7 +101,7 @@ export const JobcardHeaderContent = styled.div`
 
     &:hover {
       text-decoration: none;
-      opacity: .75;
+      opacity: 0.75;
     }
   }
 `;
@@ -120,13 +125,13 @@ export const JobcardBodyWrapper = styled.div`
   }
 `;
 
-export const JobcardDetailWrapper = styled.div`  
+export const JobcardDetailWrapper = styled.div`
   padding-top: 1.5em;
 
   ul {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: .4em;
+    grid-gap: 0.4em;
     margin: 0;
     padding: 0;
     li {
@@ -136,7 +141,7 @@ export const JobcardDetailWrapper = styled.div`
       list-style-type: none;
 
       svg {
-        margin: .5em;
+        margin: 0.5em;
       }
     }
 
@@ -173,17 +178,21 @@ export const JobcardDescriptionWrapper = styled.div`
       right: 0;
       width: 10em;
       height: 1.428571429em;
-      background: linear-gradient(90deg, rgba(256, 256, 256, 0.0), rgba(256, 256, 256, 1.0) 75%);
+      background: linear-gradient(
+        90deg,
+        rgba(256, 256, 256, 0),
+        rgba(256, 256, 256, 1) 75%
+      );
     }
   }
 
   span {
     display: flex;
     align-items: center;
-    margin-top: .5em;
+    margin-top: 0.5em;
 
     svg {
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
   }
 `;
@@ -217,10 +226,10 @@ export const LabelTag = styled.span`
   display: inline-block;
   color: ${SecondaryColor.white};
   background-color: ${PrimaryColor.glintsblue};
-  padding: .2em .6em;
+  padding: 0.2em 0.6em;
   font-size: 12px;
   letter-spacing: 1px;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   text-transform: uppercase;
 `;
 
@@ -233,6 +242,6 @@ export const CustomLink = styled(Link)`
 `;
 
 export const IconHolder = styled.div`
-  width: .5em;
-  height: .5em;
+  width: 0.5em;
+  height: 0.5em;
 `;

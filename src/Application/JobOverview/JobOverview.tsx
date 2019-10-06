@@ -9,9 +9,7 @@ import JobOverviewLink from './JobOverviewLink';
 import JobOverviewInfo from './JobOverviewInfo';
 
 const JobOverview: JobOverview = ({ children }) => (
-  <JobOverviewContainer>
-    {children}
-  </JobOverviewContainer>
+  <JobOverviewContainer>{children}</JobOverviewContainer>
 );
 
 type JobOverview = React.FunctionComponent<Props> & {

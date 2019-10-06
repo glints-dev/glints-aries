@@ -1,7 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { RadioButton } from '../RadioButton';
-import { SwitchContainer, SwitchItemWrapper } from '../../Style/Input/SwitchStyle';
+import {
+  SwitchContainer,
+  SwitchItemWrapper,
+} from '../../Style/Input/SwitchStyle';
 
 class Switch extends React.Component<Props, State> {
   state = {
@@ -17,7 +20,7 @@ class Switch extends React.Component<Props, State> {
       clickID: value,
       initialValue: value,
     });
-  }
+  };
 
   componentDidMount() {
     const { value, defaultValue } = this.props;
@@ -28,13 +31,7 @@ class Switch extends React.Component<Props, State> {
   }
 
   render() {
-    const {
-      label,
-      name,
-      value,
-      className,
-      ...defaultProps
-    } = this.props;
+    const { label, name, value, className, ...defaultProps } = this.props;
 
     const { clickID, initialValue } = this.state;
 
@@ -77,7 +74,11 @@ class Switch extends React.Component<Props, State> {
   }
 }
 
-interface Props extends Omit<React.ComponentPropsWithoutRef<typeof SwitchContainer>, 'ID' | 'items'> {
+interface Props
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof SwitchContainer>,
+    'ID' | 'items'
+  > {
   label: string[];
   name: string[];
   value: string[];

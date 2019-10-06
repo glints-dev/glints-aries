@@ -34,10 +34,9 @@ const CollapsibleStory = () => (
   ...
 </Collapsible>`}
   >
-    <Collapsible
-      label="Personal Detail"
-    >
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+    <Collapsible label="Personal Detail">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout.
     </Collapsible>
   </StorybookComponent>
 );

@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
 export const BreadcrumbItemWrapper = styled.label<BreadcrumbItemWrapper>`
-  cursor: ${({ active }) => active ? 'default' : 'pointer'};
+  cursor: ${({ active }) => (active ? 'default' : 'pointer')};
   font-size: 1em;
   line-height: 1.5;
-  
+
   * {
-    color: ${({ active }) => active ? `${SecondaryColor.grey}` : `${SecondaryColor.black}`};
+    color: ${({ active }) =>
+      active ? `${SecondaryColor.grey}` : `${SecondaryColor.black}`};
   }
 
   span {
@@ -30,4 +31,3 @@ export const BreadcrumbContainer = styled.div`
     display: none;
   }
 `;
-

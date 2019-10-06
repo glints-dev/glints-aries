@@ -44,7 +44,8 @@ const props = {
       defaultValue: <code>false</code>,
       possibleValue: <code>true | false</code>,
       require: 'no',
-      description: "Disable typing on Select input, so the option can't be searched.",
+      description:
+        "Disable typing on Select input, so the option can't be searched.",
     },
     {
       name: 'disabled',
@@ -136,8 +137,12 @@ const SelectStory = () => (
     <div style={{ width: '300px' }}>
       <Select label="Jobs">
         <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">Business Development</Select.Option>
-        <Select.Option value="software engineer">Software Engineer</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
       </Select>
     </div>
   </StorybookComponent>

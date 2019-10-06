@@ -2,13 +2,8 @@ import * as React from 'react';
 
 import { AutoCompleteItemWrapper } from '../../Style/Input/AutoCompleteStyle';
 
-const AutoCompleteItem: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-    onClick,
-    ...defaultProps
-  } = props;
+const AutoCompleteItem: React.FunctionComponent<Props> = props => {
+  const { children, className, onClick, ...defaultProps } = props;
 
   return (
     <React.Fragment>
@@ -23,9 +18,10 @@ const AutoCompleteItem: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-interface Props extends React.ComponentPropsWithoutRef<typeof AutoCompleteItemWrapper> {
+interface Props
+  extends React.ComponentPropsWithoutRef<typeof AutoCompleteItemWrapper> {
   children: React.ReactNode;
   onClick?(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
-};
+}
 
 export default AutoCompleteItem;

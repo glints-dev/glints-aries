@@ -14,11 +14,7 @@ jest.mock('react-dom', () => ({
 
 test('Render Intor story correctly', () => {
   const mockUikitManifest = UikitManifest.getManifest();
-  const tree = renderer
-    .create(
-      <IntroStories />
-    )
-    .toJSON();
+  const tree = renderer.create(<IntroStories />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

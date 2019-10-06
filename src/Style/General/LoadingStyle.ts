@@ -12,12 +12,12 @@ const spin = keyframes`
 `;
 
 const spinnerGlobal = css`
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: .35em solid transparent;
+  border: 0.35em solid transparent;
   border-top-color: ${SecondaryColor.white};
 `;
 
@@ -41,6 +41,6 @@ export const Spinner = styled.div`
   }
   &:after {
     ${spinnerGlobal};
-    border: .35em solid ${SecondaryColor.actionblue};
+    border: 0.35em solid ${SecondaryColor.actionblue};
   }
 `;

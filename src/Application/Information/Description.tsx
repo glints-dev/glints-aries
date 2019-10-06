@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { DescriptionWrapper } from '../../Style/Application/InformationStyle';
 
-const Description: React.FunctionComponent<Props> = (props) => {
-  const {
-    children,
-    className,
-  } = props;
+const Description: React.FunctionComponent<Props> = props => {
+  const { children, className } = props;
 
   return (
     <React.Fragment>
-      <DescriptionWrapper className={className}>
-        {children}
-      </DescriptionWrapper>
+      <DescriptionWrapper className={className}>{children}</DescriptionWrapper>
     </React.Fragment>
   );
 };

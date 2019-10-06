@@ -27,7 +27,7 @@ export const SliderItemWrapper = styled.div`
 export const LeftArrowContainer = styled.div<LeftArrowContainerProps>`
   ${arrow};
   left: 0;
-  cursor: ${({ index }) => index === 1 ? 'not-allowed' : 'pointer'};
+  cursor: ${({ index }) => (index === 1 ? 'not-allowed' : 'pointer')};
 `;
 
 interface LeftArrowContainerProps {
@@ -37,7 +37,8 @@ interface LeftArrowContainerProps {
 export const RightArrowContainer = styled.div<RightArrowContainerProps>`
   ${arrow};
   right: 0;
-  cursor: ${({ index, limit }) => index === limit ? 'not-allowed' : 'pointer'};
+  cursor: ${({ index, limit }) =>
+    index === limit ? 'not-allowed' : 'pointer'};
 `;
 
 interface RightArrowContainerProps {
@@ -70,7 +71,7 @@ export const SliderContainer = styled.div<SliderContainerProps>`
       height: 12px;
       background: ${SecondaryColor.lightgrey};
       border-radius: 50%;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
       margin: 0 4px;
       cursor: pointer;
 

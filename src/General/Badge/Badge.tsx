@@ -4,11 +4,18 @@ import { isNil } from 'lodash';
 import { BadgeContainer } from '../../Style/General/BadgeStyle';
 
 const Badge: React.FunctionComponent<Props> = ({
-  label, sup, className, ...defaultProps
+  label,
+  sup,
+  className,
+  ...defaultProps
 }) => (
   <React.Fragment>
     {!isNil(label) && (
-      <BadgeContainer className={classNames('aries-badge', className)} sup={sup} {...defaultProps}>
+      <BadgeContainer
+        className={classNames('aries-badge', className)}
+        sup={sup}
+        {...defaultProps}
+      >
         <span className="badge-content">{label}</span>
       </BadgeContainer>
     )}

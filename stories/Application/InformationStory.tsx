@@ -29,7 +29,7 @@ const props = {
       defaultValue: '',
       possibleValue: <code>large | medium | small</code>,
       require: 'yes',
-      description: 'Sets Divider\'s width.',
+      description: "Sets Divider's width.",
     },
     {
       name: 'hoverTextColor',
@@ -71,28 +71,19 @@ const InformationStory = () => (
 </Information>`}
   >
     <Information>
-      <Information.Title bold>
-        Business Development
-      </Information.Title>
+      <Information.Title bold>Business Development</Information.Title>
       <Information.Description>
-        Business development entails tasks and processes to develop and implement growth opportunities within and between organizations.
+        Business development entails tasks and processes to develop and
+        implement growth opportunities within and between organizations.
       </Information.Description>
       <Divider theme="yellow" />
       <Information.Detail>
         <ul>
           <li>
-            <span>
-              15
-            </span>
-            {' '}
-            occupations
+            <span>15</span> occupations
           </li>
           <li>
-            <span>
-              20
-            </span>
-            {' '}
-            opportunities
+            <span>20</span> opportunities
           </li>
         </ul>
       </Information.Detail>

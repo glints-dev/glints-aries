@@ -3,11 +3,7 @@ import { Icon } from '../../General/Icon';
 import { LeftArrowContainer } from '../../Style/Display/SliderStyle';
 
 const LeftArrow = (props: Props) => {
-  const {
-    index,
-    previousSlide,
-    arrowWhite,
-  } = props;
+  const { index, previousSlide, arrowWhite } = props;
 
   let arrowColor = 'black';
 

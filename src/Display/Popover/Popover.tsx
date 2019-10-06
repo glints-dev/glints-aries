@@ -25,11 +25,11 @@ class Popover extends React.Component<Props, State> {
     const { isOpen } = this.state;
 
     this.setState({ isOpen: !isOpen });
-  }
+  };
 
   handleClickOutside = () => {
     this.setState({ isOpen: false });
-  }
+  };
 
   renderChildren = () => {
     const { content } = this.props;
@@ -40,14 +40,10 @@ class Popover extends React.Component<Props, State> {
         <PopoverIcon>
           <Icon name="arrow-down" color="black" />
         </PopoverIcon>
-        {isOpen &&
-          <PopOverContent>
-            {content}
-          </PopOverContent>
-        }
+        {isOpen && <PopOverContent>{content}</PopOverContent>}
       </PopoverItemWrapper>
     );
-  }
+  };
 
   render() {
     const { children, className } = this.props;

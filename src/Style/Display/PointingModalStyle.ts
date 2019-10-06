@@ -11,7 +11,7 @@ export const PointingModalContainer = styled.div`
 export const PointingModalHeaderArrow = styled.div`
   position: absolute;
   right: 1em;
-  top: -.7em;
+  top: -0.7em;
   width: 1.5em;
   height: 1.5em;
   transform: rotate(45deg);
@@ -33,8 +33,8 @@ export const PointingModalHeaderWrapper = styled.div`
   }
 
   > * {
-    margin-left: .5em;
-    margin-right: .5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 
   .aries-modal-profile {
@@ -68,7 +68,7 @@ export const PointingModalBodyWrapper = styled.div`
 export const PointingModalItemWrapper = styled.li`
   font-weight: 600;
   cursor: pointer;
-  padding: .5em 1.2em;
+  padding: 0.5em 1.2em;
   list-style-type: none;
 
   &:last-child {

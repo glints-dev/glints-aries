@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import { ScreenSize } from '../../Utils/StyleConfig';
 
 export const ColumnContainer = styled.div<ColumnContainerProps>`
-  ${({
-    xs, sm, md, xsOrder, smOrder, mdOrder,
-  }) => `
+  ${({ xs, sm, md, xsOrder, smOrder, mdOrder }) => `
     max-width: 100%;
     flex-basis: calc(100% / 12 * ${xs});
     order: ${xsOrder || 0};
@@ -55,12 +53,12 @@ interface ColumnContainerProps {
 }
 
 export const RowContainer = styled.div<RowContainerProps>`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-        
-    ${({ alignContent }) => {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+
+  ${({ alignContent }) => {
     if (alignContent) {
       return `
         align-content: ${alignContent};
@@ -69,7 +67,7 @@ export const RowContainer = styled.div<RowContainerProps>`
     }
     return null;
   }}
-    ${({ justifyContent }) => {
+  ${({ justifyContent }) => {
     if (justifyContent) {
       return `
         justify-content: ${justifyContent};

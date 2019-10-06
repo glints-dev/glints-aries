@@ -2,15 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { TagContainer, TagContent } from '../../Style/General/TagStyle';
 
-const Tag: React.FunctionComponent<Props> = (props) => {
-  const {
-    className,
-    children,
-    theme,
-    block,
-    outline,
-    ...defaultProps
-  } = props;
+const Tag: React.FunctionComponent<Props> = props => {
+  const { className, children, theme, block, outline, ...defaultProps } = props;
 
   return (
     <React.Fragment>
@@ -23,10 +16,7 @@ const Tag: React.FunctionComponent<Props> = (props) => {
         outline={outline}
         {...defaultProps}
       >
-        <TagContent
-          className="tag-content"
-          tabIndex={-1}
-        >
+        <TagContent className="tag-content" tabIndex={-1}>
           {children}
         </TagContent>
       </TagContainer>

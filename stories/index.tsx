@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  withKnobs, text, boolean, number, select,
+  withKnobs,
+  text,
+  boolean,
+  number,
+  select,
 } from '@storybook/addon-knobs';
 import Provider from './Provider';
 
@@ -64,9 +68,7 @@ import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
 storiesOf('Introduction', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Getting started', () => <IntroStory />);
@@ -74,9 +76,7 @@ storiesOf('Introduction', module)
 storiesOf('General', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Alert', () => <AlertStory />)
@@ -94,9 +94,7 @@ storiesOf('General', module)
 storiesOf('Layout', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Grid', () => <GridStory />);
@@ -104,9 +102,7 @@ storiesOf('Layout', module)
 storiesOf('Input', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Auto Complete', () => <AutoCompleteStory />)
@@ -124,9 +120,7 @@ storiesOf('Input', module)
 storiesOf('Navigation', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Breadcrumb', () => <BreadcrumbStory />)
@@ -136,9 +130,7 @@ storiesOf('Navigation', module)
 storiesOf('Display', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Accordion', () => <AccordionStory />)
@@ -158,9 +150,7 @@ storiesOf('Display', module)
 storiesOf('Application', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Gallery', () => <GalleryStory />)
@@ -171,9 +161,7 @@ storiesOf('Application', module)
 storiesOf('Utilities', module)
   .addDecorator(story => (
     <Provider>
-      <StorybookStyle>
-        {story()}
-      </StorybookStyle>
+      <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
   .add('Colors', () => <ColorStory />)

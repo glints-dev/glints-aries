@@ -9,7 +9,7 @@ class Range extends React.Component<Props, State> {
     minVal: 0,
     maxVal: 100,
     val: 0,
-  }
+  };
 
   handleChange = (onChange: (newValue: string) => void) => {
     const listener = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,7 @@ class Range extends React.Component<Props, State> {
     };
 
     return listener;
-  }
+  };
 
   componentDidMount() {
     const { min, max, value } = this.props;
@@ -39,18 +39,9 @@ class Range extends React.Component<Props, State> {
   }
 
   render() {
-    const {
-      className,
-      onChange,
-      block,
-      ...defaultProps
-    } = this.props;
+    const { className, onChange, block, ...defaultProps } = this.props;
 
-    const {
-      minVal,
-      maxVal,
-      val,
-    } = this.state;
+    const { minVal, maxVal, val } = this.state;
 
     return (
       <React.Fragment>
