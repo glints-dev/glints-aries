@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select> when it is rendered should render correctly 1`] = `
+exports[`<Select> should render with 3 options 1`] = `
 <div
   className="aries-select sc-bdVaJa gyioBc"
 >

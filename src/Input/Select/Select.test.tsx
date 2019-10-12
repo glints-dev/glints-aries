@@ -61,84 +61,82 @@ function setupSelectOptionFromMenu() {
   };
 }
 
-describe('<Select>', () => {
-  describe('when it is rendered', () => {
-    it('should render correctly', () => {
-      const SelectSnapshot = renderer
-        .create(SelectComponent)
-        .toJSON();
-      expect(SelectSnapshot).toMatchSnapshot();
-    });
+it('<Select> should render with 3 options', () => {
+  const SelectSnapshot = renderer
+    .create(SelectComponent)
+    .toJSON();
+  expect(SelectSnapshot).toMatchSnapshot();
+});
 
-    it('should display the correct input label', () => {
-      const { getByLabelText } = render(SelectComponent);
-      const selectLabel = getByLabelText(props.label);
-      expect(selectLabel).toHaveTextContent(props.label);
-    });
-
-    it('should display an empty input', async () => {
-      const { getByRole } = render(SelectComponent);
-      const selectInput = getByRole('combobox');
-      expect(selectInput).toHaveTextContent('');
-    });
+describe('when it is rendered', () => {
+  it('should display the correct input label', () => {
+    const { getByLabelText } = render(SelectComponent);
+    const selectLabel = getByLabelText(props.label);
+    expect(selectLabel).toHaveTextContent(props.label);
   });
 
-  describe('when it is clicked', () => {
-    it('should open the option menu', () => {
-      const { selectList } = setupOpenSelectMenu();
-      expect(selectList.hasAttribute('open')).toEqual(true);
-    });
+  it('should display an empty input', async () => {
+    const { getByRole } = render(SelectComponent);
+    const selectInput = getByRole('combobox');
+    expect(selectInput).toHaveTextContent('');
+  });
+});
 
-    it('should display all options with the correct value', () => {
-      const { displayedOptions } = setupOpenSelectMenu();
-      displayedOptions.forEach((option, index) => {
-        expect(option).toHaveTextContent(props.options[index].name);
-        expect(option.getAttribute('data-value')).toEqual(props.options[index].value);
-      });
-    });
+describe('when it is clicked', () => {
+  it('should open the option menu', () => {
+    const { selectList } = setupOpenSelectMenu();
+    expect(selectList.hasAttribute('open')).toEqual(true);
   });
 
-  describe('when an option is clicked', () => {
-    it('should call the onOptionClick function', () => {
-      setupSelectOptionFromMenu();
-      expect(props.onOptionClick).toHaveBeenCalledTimes(1);
-    });
-
-    it('should show the value of the option on the select input', () => {
-      const { selectInput, randomOption } = setupSelectOptionFromMenu();
-      expect(selectInput.value).toEqual(randomOption.textContent);
-    });
-
-    it('should close the option menu', () => {
-      const { selectList } = setupSelectOptionFromMenu();
-      expect(selectList.hasAttribute('open')).toBe(false);
+  it('should display all options with the correct value', () => {
+    const { displayedOptions } = setupOpenSelectMenu();
+    displayedOptions.forEach((option, index) => {
+      expect(option).toHaveTextContent(props.options[index].name);
+      expect(option.getAttribute('data-value')).toEqual(props.options[index].value);
     });
   });
+});
 
-  describe('when no results are found', () => {
-    it('should display "No results found"', () => {
-      const { selectInput, selectList } = setupOpenSelectMenu();
-      fireEvent.change(selectInput, {
-        target: { value: 'z' },
-      });
-      expect(selectList).toHaveTextContent(/^No results found$/);
-    });
+describe('when an option is clicked', () => {
+  it('should call the onOptionClick function', () => {
+    setupSelectOptionFromMenu();
+    expect(props.onOptionClick).toHaveBeenCalledTimes(1);
   });
 
-  describe("when status = 'error'", () => {
-    it('should show a red border', () => {
-      const { getByRole } = render(<Select status="error">{SelectChildren}</Select>);
-      const selectInput = getByRole('combobox');
-      expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
-    });
+  it('should show the value of the option on the select input', () => {
+    const { selectInput, randomOption } = setupSelectOptionFromMenu();
+    expect(selectInput.value).toEqual(randomOption.textContent);
   });
 
-  describe('when isLoading = true', () => {
-    it('should show a loading spinner', () => {
-      const { getByRole } = render(<Select isLoading>{SelectChildren}</Select>);
-      const selectContainer = getByRole('combobox').parentElement.parentElement;
-      const loadingSpinner = getByRole('alert');
-      expect(selectContainer).toContainElement(loadingSpinner);
+  it('should close the option menu', () => {
+    const { selectList } = setupSelectOptionFromMenu();
+    expect(selectList.hasAttribute('open')).toBe(false);
+  });
+});
+
+describe('when no results are found', () => {
+  it('should display "No results found"', () => {
+    const { selectInput, selectList } = setupOpenSelectMenu();
+    fireEvent.change(selectInput, {
+      target: { value: 'z' },
     });
+    expect(selectList).toHaveTextContent(/^No results found$/);
+  });
+});
+
+describe("when status = 'error'", () => {
+  it('should show a red border', () => {
+    const { getByRole } = render(<Select status="error">{SelectChildren}</Select>);
+    const selectInput = getByRole('combobox');
+    expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+  });
+});
+
+describe('when isLoading = true', () => {
+  it('should show a loading spinner', () => {
+    const { getByRole } = render(<Select isLoading>{SelectChildren}</Select>);
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    const loadingSpinner = getByRole('alert');
+    expect(selectContainer).toContainElement(loadingSpinner);
   });
 });
