@@ -9,17 +9,7 @@ export const TooltipContainer = styled.div`
 export const TooltipContent = styled.div<TooltipContentProps>`
   position: absolute;
   z-index: 10;
-
-  ${({ text }) => {
-    if (text.length > 150) {
-      return `
-        width: ${text.length + 20}px;
-      `;
-    }
-    return `
-      width: 150px;
-    `;
-  }}
+  width: 100%;
 
   ${({ position }) => {
     switch (position) {
@@ -106,7 +96,7 @@ export const TooltipMessage = styled.div`
   border-radius: 3px;
   color: ${SecondaryColor.white};
   line-height: 1.5;
-  font-size: 0.8em;
-  padding: 5px;
+  font-size: 12px;
+  padding: 10px;
   text-align: center;
 `;
