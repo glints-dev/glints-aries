@@ -6,11 +6,10 @@ export const TooltipContainer = styled.div`
   display: inline-flex;
 `;
 
-export const TooltipContent = styled.div < TooltipContentProps > `
+export const TooltipContent = styled.div<TooltipContentProps>`
   position: absolute;
   z-index: 10;
-  width: inherit;
-  min-width: 150px;
+  width: 100%;
 
   ${({ position }) => {
     switch (position) {
