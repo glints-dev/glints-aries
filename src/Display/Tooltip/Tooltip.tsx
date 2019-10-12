@@ -9,7 +9,7 @@ import {
 } from '../../Style/Display/TooltipStyle';
 
 const Tooltip: React.FunctionComponent<Props> = ({
-  className,
+  classes = {},
   children,
   text,
   position,
@@ -19,7 +19,7 @@ const Tooltip: React.FunctionComponent<Props> = ({
 
   return (
     <TooltipContainer
-      className={classNames('aries-tooltip', className)}
+      className={classNames('aries-tooltip', classes.container)}
       role="tooltip"
       aria-hidden={isHover ? 'false' : 'true'}
       aria-label={text}
@@ -29,10 +29,11 @@ const Tooltip: React.FunctionComponent<Props> = ({
     >
       {isHover &&
         <TooltipContent
+          className={classNames("aries-tooltip-content", classes.content)}
           text={text}
           position={position}
         >
-          <TooltipMessage>
+          <TooltipMessage className={classNames("aries-tooltip-message", classes.message)}>
             {text}
           </TooltipMessage>
         </TooltipContent>
@@ -42,8 +43,14 @@ const Tooltip: React.FunctionComponent<Props> = ({
   );
 }
 
+interface Classes {
+  container?: string
+  content?: string
+  message?: string
+}
+
 interface Props extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
-  className?: string;
+  classes?: Classes;
   children: React.ReactNode;
   text: string;
   position?: string;
