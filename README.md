@@ -4,6 +4,9 @@ We proudly present to you Glints Aries made by Front End Engineers of Glints. It
 # Contributing
 [Find out more at the wiki.](https://github.com/glints-dev/glints-aries/wiki/Contributing)
 
+# Testing
+[Find out more at the wiki.](https://github.com/glints-dev/glints-aries/wiki/Testing)
+
 ### Installation
 ```bash
 npm install -S glints-aries
