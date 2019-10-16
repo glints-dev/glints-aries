@@ -45,10 +45,12 @@ export { default as Textarea } from './Input/Textarea';
 export { default as TextField } from './Input/TextField';
 export { default as Toast } from './Display/Toast';
 export { default as Tooltip } from './Display/Tooltip';
+export { default as Typography } from './General/Typography';
 export { Uikit as default, UikitConsumer, UikitProvider } from './Provider';
 
 // Employers
 export { default as EmployersBlockquote } from './Display/EmployersBlockquote';
+export { default as ToggleSwitch } from './Input/ToggleSwitch';
 
 // Utilities
 export { Device, ScreenSize } from './Utils/StyleConfig';

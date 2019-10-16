@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-  withKnobs,
-  text,
-  boolean,
-  number,
-  select,
-} from '@storybook/addon-knobs';
+
 import Provider from './Provider';
 
 import StorybookStyle from '../src/Style/StorybookStyle';
@@ -65,6 +59,7 @@ import TypographyStory from '../src/General/Typography/TypographyStory';
 
 // Employers
 import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
+import ToggleSwitchStory from '../src/Input/ToggleSwitch/ToggleSwitchStory';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
@@ -116,6 +111,7 @@ storiesOf('Input', module)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Switch', () => <SwitchStory />)
+  .add('Toggle Switch', () => <ToggleSwitchStory />)
   .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />);
 

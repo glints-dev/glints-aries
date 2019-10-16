@@ -48,7 +48,7 @@ exports[`<Select> should render with 3 options 1`] = `
     role="listbox"
   >
     <li
-      className="active sc-EHOje bWjUel"
+      className="active sc-EHOje eoZeEM"
       data-id={0}
       data-value="accountant"
       onMouseDown={[Function]}
@@ -59,7 +59,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Accountant
     </li>
     <li
-      className="sc-EHOje bWjUel"
+      className="sc-EHOje eoZeEM"
       data-id={1}
       data-value="business development"
       onMouseDown={[Function]}
@@ -70,7 +70,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Business Development
     </li>
     <li
-      className="sc-EHOje bWjUel"
+      className="sc-EHOje eoZeEM"
       data-id={2}
       data-value="software engineer"
       onMouseDown={[Function]}

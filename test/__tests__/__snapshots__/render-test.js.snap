@@ -95,14 +95,11 @@ exports[`Render Intor story correctly 1`] = `
         &lt;GlintsContainer/&gt;
         .
         <br />
-         
-        We created that Container to adapt with every screen sizes, so Users will always have best experience whenever they visit your site from their devices.
+         We created that Container to adapt with every screen sizes, so Users will always have best experience whenever they visit your site from their devices.
         <br />
         GlintsContainer is also the global style for glints-aries component.
         <br />
-         
-        For more details, you can read this at
-         
+         For more details, you can read this at 
         <b>
           Utilities
         </b>
@@ -111,8 +108,7 @@ exports[`Render Intor story correctly 1`] = `
         <b>
           GlintsContainer
         </b>
-         
-        section.
+         section.
       </p>
       <pre
         style={
