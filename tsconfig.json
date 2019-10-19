@@ -4,7 +4,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "jsx": "preserve",
-    "lib": ["dom", "es6"],
+    "lib": ["dom", "es6", "es2017"],
     "noImplicitAny": true,
     "outDir": "dist",
     "sourceMap": true,
@@ -20,7 +20,5 @@
       "styled-components"
     ]
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }
