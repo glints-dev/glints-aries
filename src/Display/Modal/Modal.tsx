@@ -78,6 +78,7 @@ class Modal extends React.Component<Props, State> {
 
     return (
       <ModalContainer
+        data-testid="modal-container"
         className={classNames('aries-modal', className)}
         centering={centering}
         onClick={() => onClose()}
