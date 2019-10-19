@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> should render with text "click me" and an onClick handler 1`] = `
+<div
+  className="aries-defaultbtn sc-bwzfXH kqZtLE"
+>
+  <button
+    className="sc-bdVaJa defaultbtn-content sc-htpNat cyXKnd"
+    onClick={[MockFunction]}
+  >
+    click me
+  </button>
+</div>
+`;
