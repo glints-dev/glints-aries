@@ -41,13 +41,6 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
   ${({ disabled, removeHoverEffect }) => {
     if (!disabled && !removeHoverEffect) {
       return `
-      &:active {
-        background: ${SecondaryColor.black};
-        color: ${SecondaryColor.white};
-        transform: translate3d(2px, 2px, 0);
-        transition: all .2s;
-      }
-
       &:after {
         content: '';
         opacity: 0;
@@ -65,11 +58,6 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
         opacity: 1;
         transition: all .2s;
       }
-
-      &:active:after {
-        transform: translate3d(-5px, -5px, 0);
-        transition: all .2s;
-      }
       `;
     }
   }}
@@ -83,6 +71,13 @@ interface DefaultBtnContainerProps {
 
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
+
+  &:active {
+    background: ${SecondaryColor.black};
+    color: ${SecondaryColor.white};
+    transform: translate3d(2px, 2px, 0);
+    transition: all .2s;
+  }
 
   ${props => {
     switch (props.theme) {
