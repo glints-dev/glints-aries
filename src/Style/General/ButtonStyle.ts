@@ -331,21 +331,6 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
     }
   }
 
-  &:active {
-    ${SecondaryBtn} {
-      background-color: ${SecondaryColor.black};
-      color: ${SecondaryColor.white};
-      transition: all 0.2s;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  &:active:after {
-    background-color: ${SecondaryColor.black};
-    transform: translate3d(-6px, -6px, 0);
-    transition: all 0.2s;
-  }
-
   ${({ disabled }) => {
     if (!disabled) {
       return css`
