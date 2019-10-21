@@ -470,11 +470,6 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
           opacity: 1;
           transition: all .2s;
         }
-
-        &:active:after {
-          transform: translate3d(-5px, -5px, 0);
-          transition: all .2s;
-        }
         `;
     }
   }}
