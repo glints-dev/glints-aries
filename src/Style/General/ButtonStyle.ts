@@ -179,19 +179,6 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     `;
     }}
   }
-
-  &:active:after {
-    ${props => {
-      if (!props.disabled) {
-        return `
-        transform: translate3d(-4px, -4px, 0);
-        transition: all .2s;
-      `;
-      }
-
-      return false;
-    }}
-  }
 `;
 
 interface PrimaryContainerProps {
