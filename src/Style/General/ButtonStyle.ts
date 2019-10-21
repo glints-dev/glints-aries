@@ -390,6 +390,12 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
     }
   }}
 
+  &:active {
+    transition: background-color .5s; 
+    transform: translate3d(2px, 2px, 0);
+    transition: all .2s;
+  }
+
   &:hover {
     transition: background-color .5s;
   
@@ -447,11 +453,6 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
   ${({ disabled, removeHoverEffect }) => {
     if (!disabled && !removeHoverEffect) {
       return `
-        &:active {
-          transition: background-color .5s; 
-          transform: translate3d(2px, 2px, 0);
-          transition: all .2s;
-        }
 
         &:after {
           content: '';
