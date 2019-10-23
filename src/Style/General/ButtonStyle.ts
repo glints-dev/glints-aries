@@ -59,6 +59,7 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
         left: 5px;
         z-index: -1;
         transition: all .2s;
+        cursor: pointer;
       }
 
       &:hover:after {
@@ -151,6 +152,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     top: 8px;
     left: 8px;
     transition: all 0.2s;
+    cursor: pointer;
 
     ${props => {
       const themeBackgrounds = {
@@ -328,6 +330,7 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
     transition: all 0.2s;
     transform: translate3d(-4px, -4px, 0);
     z-index: 1;
+    cursor: pointer;
   }
 
   &:hover {
@@ -492,6 +495,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
           left: 5px;
           z-index: -1;
           transition: all .2s;
+          cursor: pointer;
         }
 
         &:hover:after {
