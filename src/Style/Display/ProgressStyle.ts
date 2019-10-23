@@ -1,9 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
+export const CIRCLE_CIRCUMFERENCE = 282.6
+
 const spinning = keyframes`
   from {
-    stroke-dashoffset: 282.6;
+    stroke-dashoffset: ${CIRCLE_CIRCUMFERENCE};
   }
 
   to {
@@ -50,7 +52,7 @@ export const ProgressContainer = styled.div<ProgressContainerProps>`
     transform: rotate(-90deg);
 
     .progress-circle-value {
-      stroke-dasharray: 282.6;
+      stroke-dasharray: ${CIRCLE_CIRCUMFERENCE};
       stroke-dashoffset: ${props => props.progress};
       animation: ${spinning} 1s ease-in-out;
     }

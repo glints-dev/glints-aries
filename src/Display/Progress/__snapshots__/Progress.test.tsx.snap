@@ -5,7 +5,7 @@ exports[`<Progress> should render 51% with a stroke color of #F5A623 1`] = `
   aria-valuemax={100}
   aria-valuemin={0}
   aria-valuenow={51}
-  className="aries-progress sc-bwzfXH KxDPz"
+  className="aries-progress sc-bwzfXH kcNZuC"
   role="progressbar"
   size={1}
   tabIndex={0}
@@ -50,7 +50,7 @@ exports[`<Progress> should render 51% with a stroke color of #F5A623 1`] = `
         51%
       </h1>
       <p
-        className="sc-ifAKCX iGJxth"
+        className="sc-ifAKCX kzFmYB"
       >
         COMPLETE
       </p>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isNumber } from 'lodash';
+import { isNumber, isNaN } from 'lodash';
 import classNames from 'classnames';
 
 import {
@@ -8,6 +8,7 @@ import {
   ProgressLabelWrapper,
   PercentageCompletion,
   LabelText,
+  CIRCLE_CIRCUMFERENCE,
 } from '../../Style/Display/ProgressStyle';
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 import { warningMessages } from './WarningMessages';
@@ -39,7 +40,7 @@ const Progress: React.FunctionComponent<Props> = props => {
       actualProp: percentage,
       resolvedPropValue: normalizedPercentage,
     });
-  } else if (!isNumber(percentage)) {
+  } else if (!isNumber(percentage) || isNaN(percentage)) {
     normalizedPercentage = 0;
     warningMessages.percentageTypeInvalid({
       propName: 'percentage',
@@ -72,8 +73,8 @@ const Progress: React.FunctionComponent<Props> = props => {
 
   const progressValue =
     normalizedPercentage > 100
-      ? 282.6 * (1 - 100 / 100)
-      : 282.6 * (1 - normalizedPercentage / 100);
+      ? CIRCLE_CIRCUMFERENCE * (1 - 100 / 100)
+      : CIRCLE_CIRCUMFERENCE * (1 - normalizedPercentage / 100);
   const sizeInEm = (normalizedSize + 2) / 10;
   let color;
 
