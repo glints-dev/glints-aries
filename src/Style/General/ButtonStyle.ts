@@ -85,6 +85,11 @@ interface DefaultBtnContainerProps {
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
 
+  &:active {
+    background-color: ${SecondaryColor.black};
+    color: ${SecondaryColor.white};
+  }
+
   ${props => {
     switch (props.theme) {
       case `${Theme.RED}`:
