@@ -140,6 +140,21 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
     }
   }}
 
+  &:hover {
+    ${DefaultBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
+        return `
+          background-color: ${SecondaryColor.lightergrey};
+          color: ${SecondaryColor.blue};
+        `;
+      }
+    }}
+
   &:active {
     ${DefaultBtn} {
       ${props => {
