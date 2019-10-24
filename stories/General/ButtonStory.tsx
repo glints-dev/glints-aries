@@ -22,9 +22,48 @@ const ButtonStories = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Default Button
       </Heading>
-      <Button theme="blue" onClick={action('Default Button')}>
+      {/* <Button theme="blue" onClick={action('Default Button')}>
         Default
-      </Button>
+      </Button> */}
+
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button onClick={action('Default Button')}>
+            Default
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button theme={Theme.RED}  onClick={action('Default Button')}>
+            Red
+          </Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em'  }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button theme={Theme.BLUE} onClick={action('Default Button')}>
+            Blue
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button theme={Theme.YELLOW} onClick={action('Default Button')}>
+            Yellow
+          </Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em' }}>
+        <div style={{ flex: '0 0 40%'}}>
+          <Button theme={Theme.YELLOW} block onClick={action('Default Button')}>
+            Block
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center'}}>
+          <Button theme={Theme.BLUE} disabled onClick={action('Default Button')}>
+            Disabled
+          </Button>
+        </div>
+      </div>
+
+
     </div>
 
     <div style={{ marginBottom: '2em' }}>
