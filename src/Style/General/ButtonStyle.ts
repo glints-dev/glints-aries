@@ -138,72 +138,20 @@ interface DefaultBtnProps {
  * Primary Button
  */
 
-export const PrimaryContainer = styled.div<PrimaryContainerProps>`
-  position: relative;
-  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
-  z-index: 1;
-
-  &:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 8px;
-    left: 8px;
-    transition: all 0.2s;
-    cursor: pointer;
-
-    ${props => {
-      const themeBackgrounds = {
-        [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.YELLOW]: PrimaryColor.glintsred,
-      };
-      if (props.disabled) {
-        return 'background-color: none';
-      }
-      if (props.theme && themeBackgrounds[props.theme]) {
-        return `background-color: ${themeBackgrounds[props.theme]};`;
-      }
-      return `background-color: ${PrimaryColor.glintsyellow};`;
-    }}
-  }
-
-  &:hover:after {
-    ${props => {
-      if (props.disabled) {
-        return 'background-color: none;';
-      }
-      return `
-      background: ${SecondaryColor.black};
-      transform: translate3d(-2px, -2px, 0);
-      transition: all .2s;
-    `;
-    }}
-  }
-
-  &:active:after {
-    ${props => {
-      if (!props.disabled) {
-        return `
-        transform: translate3d(-4px, -4px, 0);
-        transition: all .2s;
-      `;
-      }
-
-      return false;
-    }}
-  }
-`;
-
 interface PrimaryContainerProps {
   block?: boolean;
   disabled?: boolean;
 }
 
+interface PrimaryBtnProps {
+  block?: boolean;
+}
+
 export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
   transition: all 0.2s;
-  width: ${({ block }) => block && '100%'};
+  cursor: pointer;
+  position: relative;
+  width: 100%;
 
   ${props => {
     if (props.disabled) {
@@ -246,13 +194,21 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     `;
   }}
 
+`;
+
+export const PrimaryContainer = styled.div<PrimaryContainerProps>`
+  position: relative;
+  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
+  z-index: 1;
+  cursor: pointer;
+
   &:hover {
     ${props => {
       if (props.disabled) {
         return 'transform: none';
       }
       return `
-      transform: translate3d(2px, 2px, 0);
+      transform: translate(2px, 2px);
       transition: all .2s;
     `;
     }}
@@ -262,9 +218,8 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     ${props => {
       if (!props.disabled) {
         return `
-        transform: translate3d(4px, 4px, 0);
+        transform: translate(4px, 4px);
         transition: all .2s;
-        background-color: ${SecondaryColor.black};
         color: ${SecondaryColor.white};
       `;
       }
@@ -272,11 +227,77 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
       return 'transform: none';
     }}
   }
-`;
 
-interface PrimaryBtnProps {
-  block?: boolean;
-}
+  &:active {
+    ${PrimaryBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
+        return `
+          background-color: ${SecondaryColor.black};
+          color: ${SecondaryColor.white};
+        `;
+      }
+    }}
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transition: all 0.2s;
+
+    ${props => {
+      const themeBackgrounds = {
+        [Theme.BLUE_RED]: PrimaryColor.glintsred,
+        [Theme.YELLOW]: PrimaryColor.glintsred,
+      };
+      if (props.disabled) {
+        return 'background-color: none';
+        
+      }
+      if (props.theme && themeBackgrounds[props.theme]) {
+        return `background-color: ${themeBackgrounds[props.theme]};`;
+      }
+      return `background-color: ${PrimaryColor.glintsyellow};`;
+    }}
+  }
+
+  &:hover:before {
+    ${props => {
+      if (props.disabled) {
+        return `
+          cursor: default;
+          background-color: none;
+        `;
+      }
+      return `
+      background: ${SecondaryColor.black};
+      transform: translate(-4px, -4px);
+      transition: all .2s;
+    `;
+    }}
+  }
+
+  &:active:before {
+    ${props => {
+      if (!props.disabled) {
+        return `
+        transform: translate(-8px, -8px);
+        transition: all .2s;
+      `;
+      }
+
+      return false;
+    }}
+  }
+`;
 
 /*
  * Secondary Button
@@ -338,7 +359,7 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
       ${({ disabled }) => {
         if (!disabled) {
           return `
-          background-color: ${PrimaryColor.glintsyellow};
+          background-color: ${PrimaryColor.glintsblue};
           transform: translate3d(-4px, -4px, 0);
           transition: transform .2s;
         `;
