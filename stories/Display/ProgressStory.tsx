@@ -17,7 +17,7 @@ const props = {
     {
       name: 'percentageRange',
       type: 'array',
-      defaultValue: '[50]',
+      defaultValue: <code>[50]</code>,
       possibleValue:
         '[], [50] or [15,60]. The numbers in the array can be any integer between 0-100. The maximum number of items in the array is 2.',
       require: 'No',
@@ -27,7 +27,7 @@ const props = {
     {
       name: 'size',
       type: 'number',
-      defaultValue: '8',
+      defaultValue: <code>8</code>,
       possibleValue: '1 - 10',
       require: 'No',
       description: 'Sets the size of the progress component.',

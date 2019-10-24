@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 
+import { ETooltipPosition } from '../../src/Utils/StyleConfig';
 import Tooltip from '../../src/Display/Tooltip';
 import Tag from '../../src/General/Tag';
 
@@ -18,8 +19,13 @@ const props = {
     {
       name: 'position',
       type: 'string',
-      defaultValue: '',
-      possibleValue: <code>bottom | left | right</code>,
+      defaultValue: <code>{ETooltipPosition.TOP}</code>,
+      possibleValue: (
+        <code>
+          {ETooltipPosition.BOTTOM} | {ETooltipPosition.LEFT} |{' '}
+          {ETooltipPosition.RIGHT}
+        </code>
+      ),
       require: 'no',
       description: 'Sets position of Tooltip to be shown. ',
     },
@@ -35,7 +41,10 @@ const TooltipStory = () => (
   <Component />
 </Tooltip>`}
   >
-    <Tooltip text="Click here to apply as Software Engineer at Glints">
+    <Tooltip
+      text="Click here to apply as Software Engineer at Glints"
+      position={ETooltipPosition.BOTTOM}
+    >
       <Tag theme="black">Software Engineer</Tag>
     </Tooltip>
   </StorybookComponent>

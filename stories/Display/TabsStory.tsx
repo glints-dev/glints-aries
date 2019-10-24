@@ -7,12 +7,21 @@ import Heading from '../../src/General/Heading';
 import StorybookComponent from '../StorybookComponent';
 
 import {
-  TabAlignment,
-  HorizontalTabVariant,
+  ETabAlignment,
+  EHorizontalTabVariant,
 } from '../../src/Utils/StyleConfig';
 
 const props = {
   Tabs: [
+    {
+      name: 'variant',
+      type: 'string',
+      defaultValue: 'underlined',
+      possibleValue: 'underlined, colored',
+      require: 'no',
+      description:
+        'Set the change in the color pattern only for Horizontal tabs',
+    },
     {
       name: 'alignment',
       type: 'string',
@@ -23,18 +32,24 @@ const props = {
         'Sets alignment of Tab. The vertical tabs are changed to horizontal ones for screen size below 768',
     },
     {
-      name: 'variant',
+      name: 'activeTab',
       type: 'string',
-      defaultValue: 'underlined',
-      possibleValue: 'underlined, colored',
+      defaultValue: '',
+      possibleValue: 'any',
       require: 'no',
-      description:
-        'Set the change in the color pattern only for Horizontal tabs',
+      description: 'Sets the active tab.',
+    },
+    {
+      name: 'onTabClick',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Gets the active tab',
     },
   ],
 };
 
-// @ts-ignore
 const TabsStory = () => (
   <React.Fragment>
     <StorybookComponent
@@ -52,8 +67,8 @@ const TabsStory = () => (
         Underlined Horizontal Navigation Tabs
       </Heading>
       <Tabs
-        alignment={TabAlignment.HORIZONTAL}
-        variant={HorizontalTabVariant.UNDERLINED}
+        alignment={ETabAlignment.HORIZONTAL}
+        variant={EHorizontalTabVariant.UNDERLINED}
       >
         <Tabs.Pane tab="Job">
           Software Engineer <Badge label="1" />
@@ -80,8 +95,8 @@ const TabsStory = () => (
         Colored Horizontal Navigation Tabs
       </Heading>
       <Tabs
-        alignment={TabAlignment.HORIZONTAL}
-        variant={HorizontalTabVariant.COLORED}
+        alignment={ETabAlignment.HORIZONTAL}
+        variant={EHorizontalTabVariant.COLORED}
       >
         <Tabs.Pane tab="Job">
           Software Engineer <Badge label="1" />
@@ -108,8 +123,8 @@ const TabsStory = () => (
         Vertical Navigation Tabs
       </Heading>
       <Tabs
-        alignment={TabAlignment.VERTICAL}
-        variant={HorizontalTabVariant.UNDERLINED}
+        alignment={ETabAlignment.VERTICAL}
+        variant={EHorizontalTabVariant.UNDERLINED}
       >
         <Tabs.Pane tab="Job">
           Software Engineer <Badge label="1" />

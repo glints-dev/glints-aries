@@ -4,29 +4,14 @@ import StorybookComponent from '../StorybookComponent';
 
 import Swipeable from '../../src/Display/Swipeable';
 
-// Example
 import { SwipeableCardExample } from '../../src/Style/Display/SwipeableStyle';
-
-const props = {
-  'Swipeable.Item': [
-    {
-      name: 'onClick',
-      type: 'function',
-      defaultValue: '',
-      possibleValue: 'function',
-      require: 'no',
-      description: '',
-    },
-  ],
-};
 
 const SwipeableStory = () => (
   <StorybookComponent
     title="Swipeable"
     code="import { Swipeable } from 'glints-aries'"
-    propsObject={props}
     usage={`<Swipeable>
-  <Swipeable.Item onClick={...}>
+  <Swipeable.Item>
     <Component />
   </Swipeable.Item>
   <Swipeable.Item>

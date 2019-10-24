@@ -62,7 +62,6 @@ class Modal extends React.Component<Props, State> {
     const {
       title,
       onClose,
-      type,
       children,
       className,
       hideContentArea,
@@ -127,14 +126,13 @@ interface Props
   extends React.ComponentPropsWithoutRef<typeof ModalContentArea> {
   children: React.ReactNode;
   title?: string;
-  isVisible?: boolean;
-  type?: string;
-  onClose?(): void;
+  isVisible: boolean;
+  onClose(): void;
   hideContentArea?: boolean;
   centering?: boolean;
   removeAnimation?: boolean;
   footer?: React.ReactElement[];
-  size?: string;
+  size?: 's' | 'm' | 'l' | 'xl';
   hideHeader?: boolean;
 }
 

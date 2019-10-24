@@ -8,24 +8,10 @@ import PointingModal from '../../src/Display/PointingModal';
 import ProfilePicture from '../../src/General/ProfilePicture';
 import Divider from '../../src/General/Divider';
 
-const props = {
-  'Pointing Modal': [
-    {
-      name: 'onClick',
-      type: 'function',
-      defaultValue: '',
-      possibleValue: 'function',
-      require: 'no',
-      description: '',
-    },
-  ],
-};
-
 const PointingModalStory = () => (
   <StorybookComponent
     title="Pointing Modal"
     code="import { PointingModal } from 'glints-aries'"
-    propsObject={props}
     usage={`import { PointingModal, ProfilePicture } from 'glints-aries';
 
 <PointingModal>

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
+import { EHorizontalTabVariant, ETabAlignment } from '../../Utils/StyleConfig';
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import {
@@ -106,7 +107,7 @@ Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
-  variant?: string;
+  variant?: EHorizontalTabVariant;
   alignment?: string;
   activeTab?: string;
   onTabClick?(tab: React.ReactText): void;

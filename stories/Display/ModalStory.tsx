@@ -103,6 +103,22 @@ class ModalStory extends React.Component {
           require: 'no',
           description: 'Hides content area.',
         },
+        {
+          name: 'removeAnimation',
+          type: 'boolean',
+          defaultValue: <code>false</code>,
+          possibleValue: <code>true | false</code>,
+          require: 'no',
+          description: 'Removes animation when opening and closing the modal.',
+        },
+        {
+          name: 'footer',
+          type: 'array',
+          defaultValue: '',
+          possibleValue: 'an array of React Elements',
+          require: 'no',
+          description: 'Sets the footer of the modal',
+        },
       ],
     };
 
