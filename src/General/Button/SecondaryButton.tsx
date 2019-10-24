@@ -32,9 +32,9 @@ const SecondaryButton: React.FunctionComponent<Props> = ({
 
 interface Props extends React.ComponentPropsWithoutRef<typeof SecondaryBtn> {
   children: React.ReactNode;
-  className: string;
-  block: boolean;
-  small: boolean;
+  className?: string;
+  block?: boolean;
+  small?: boolean;
   disabled?: boolean;
 }
 

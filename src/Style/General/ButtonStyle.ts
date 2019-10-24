@@ -76,9 +76,9 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
 `;
 
 interface DefaultBtnContainerProps {
-  block: boolean;
-  disabled: boolean;
-  removeHoverEffect: boolean;
+  block?: boolean;
+  disabled?: boolean;
+  removeHoverEffect?: boolean;
 }
 
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
@@ -130,7 +130,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
 `;
 
 interface DefaultBtnProps {
-  block: boolean;
+  block?: boolean;
 }
 
 /*
@@ -195,8 +195,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
 `;
 
 interface PrimaryContainerProps {
-  block: boolean;
-  disabled: boolean;
+  block?: boolean;
+  disabled?: boolean;
 }
 
 export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
@@ -273,7 +273,7 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
 `;
 
 interface PrimaryBtnProps {
-  block: boolean;
+  block?: boolean;
 }
 
 /*
@@ -308,7 +308,7 @@ export const SecondaryBtn = styled(Button)<SecondaryBtnProps>`
 `;
 
 interface SecondaryBtnProps {
-  block: boolean;
+  block?: boolean;
 }
 
 export const SecondaryContainer = styled.div<SecondaryContainerProps>`
@@ -373,8 +373,8 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
 `;
 
 interface SecondaryContainerProps {
-  block: boolean;
-  disabled: boolean;
+  block?: boolean;
+  disabled?: boolean;
 }
 
 /*
@@ -464,7 +464,7 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
 `;
 
 interface GhostBtnProps {
-  block: boolean;
+  block?: boolean;
 }
 
 export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
@@ -523,9 +523,9 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
 `;
 
 interface GhostBtnContainerProps {
-  block: boolean;
-  disabled: boolean;
-  removeHoverEffect: boolean;
+  block?: boolean;
+  disabled?: boolean;
+  removeHoverEffect?: boolean;
 }
 
 /*
