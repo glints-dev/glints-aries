@@ -15,38 +15,6 @@ const props = {
       require: 'no',
       description: 'Emphasizes the Title text.',
     },
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: <code>red | blue | yellow</code>,
-      require: 'no',
-      description: 'Sets color for the Divider.',
-    },
-    {
-      name: 'size',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: <code>large | medium | small</code>,
-      require: 'yes',
-      description: "Sets Divider's width.",
-    },
-    {
-      name: 'hoverTextColor',
-      type: 'string',
-      defaultValue: <code>white</code>,
-      possibleValue: <code>hex-value | rba-value | string-value</code>,
-      require: 'no',
-      description: 'Sets text-color when hovered.',
-    },
-    {
-      name: 'onClick',
-      type: 'function',
-      defaultValue: '',
-      possibleValue: 'any',
-      require: 'no',
-      description: '',
-    },
   ],
 };
 
@@ -55,11 +23,8 @@ const InformationStory = () => (
     title="Information"
     code="import { Information, Divider } from 'glints-aries'"
     propsObject={props}
-    usage={`<Information 
-  backGroundImageURL={...} 
-  hoverTextColor={"white"} 
-  onClick={...}>
-  <Information.Title bold onClick={...}>...</Information.Title>
+    usage={`<Information>
+  <Information.Title bold>...</Information.Title>
   <Information.Description>...</Information.Description>
   <Divider theme="yellow" />
   <Information.Detail>
