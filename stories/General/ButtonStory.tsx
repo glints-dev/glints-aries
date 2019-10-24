@@ -22,9 +22,6 @@ const ButtonStories = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Default Button
       </Heading>
-      {/* <Button theme="blue" onClick={action('Default Button')}>
-        Default
-      </Button> */}
 
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
