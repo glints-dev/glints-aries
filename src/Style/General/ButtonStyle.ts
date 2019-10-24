@@ -5,6 +5,11 @@ import { Theme } from '../../Utils/StyleConfig';
 const generalButtonPadding = [15, 40];
 const smallButtonPadding = [10, 20];
 
+
+interface ButtonProps {
+  small?: boolean;
+}
+
 const Button = styled.button<ButtonProps>`
   display: flex;
   position: relative;
@@ -25,61 +30,19 @@ const Button = styled.button<ButtonProps>`
   transition: all 0.2s;
 `;
 
-interface ButtonProps {
-  small?: boolean;
-}
 
 /*
  * Default Button
  */
 
-export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
-  position: relative;
-  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
-  z-index: 1;
-
-  ${({ disabled, removeHoverEffect }) => {
-    if (!disabled && !removeHoverEffect) {
-      return `
-      &:active {
-        background: ${SecondaryColor.black};
-        color: ${SecondaryColor.white};
-        transform: translate3d(2px, 2px, 0);
-        transition: all .2s;
-      }
-
-      &:after {
-        content: '';
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
-        top: 5px;
-        left: 5px;
-        z-index: -1;
-        transition: all .2s;
-        cursor: pointer;
-      }
-
-      &:hover:after {
-        opacity: 1;
-        transition: all .2s;
-      }
-
-      &:active:after {
-        transform: translate3d(-5px, -5px, 0);
-        transition: all .2s;
-      }
-      `;
-    }
-  }}
-`;
-
 interface DefaultBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
   removeHoverEffect?: boolean;
+}
+
+interface DefaultBtnProps {
+  block?: boolean;
 }
 
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
@@ -135,9 +98,49 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   }}
 `;
 
-interface DefaultBtnProps {
-  block?: boolean;
-}
+export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
+  position: relative;
+  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
+  z-index: 1;
+
+  ${({ disabled, removeHoverEffect }) => {
+    if (!disabled && !removeHoverEffect) {
+      return `
+      &:active {
+        background: ${SecondaryColor.black};
+        color: ${SecondaryColor.white};
+        transform: translate3d(2px, 2px, 0);
+        transition: all .2s;
+      }
+
+      &:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
+        top: 5px;
+        left: 5px;
+        z-index: -1;
+        transition: all .2s;
+        cursor: pointer;
+      }
+
+      &:hover:after {
+        opacity: 1;
+        transition: all .2s;
+      }
+
+      &:active:after {
+        transform: translate3d(-5px, -5px, 0);
+        transition: all .2s;
+      }
+      `;
+    }
+  }}
+`;
+
 
 /*
  * Primary Button
