@@ -143,13 +143,49 @@ const ButtonStories = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Primary Button
       </Heading>
-      <Button
-        variant={Variant.PRIMARY}
-        theme={Theme.YELLOW}
-        onClick={action('Primary Button')}
-      >
-        Primary
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} onClick={action('Primary Button')}>
+            Yellow
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} theme={Theme.RED}  onClick={action('Primary Button')}>
+            Red
+          </Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em'  }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} theme={Theme.BLUE} onClick={action('Primary Button')}>
+            Blue
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED} onClick={action('Primary Button')}>
+            Blue-Red
+          </Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em'  }}>
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} disabled onClick={action('Primary Button')}>
+            Disabled
+          </Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em' }}>
+        <div style={{ flex: '0 0 40%'}}>
+          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block onClick={action('Primary Button')}>
+            Block
+          </Button>
+        </div>
+        <div style={{ flex: '0 0 40%'}}>
+          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block disabled onClick={action('Primary Button')}>
+            Block disabled
+          </Button>
+        </div>
+      </div>
     </div>
 
     <div style={{ marginBottom: '2em' }}>
