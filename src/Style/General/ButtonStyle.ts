@@ -139,6 +139,22 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
       `;
     }
   }}
+
+  &:active {
+    ${DefaultBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
+        return `
+          background-color: ${SecondaryColor.black};
+          color: ${SecondaryColor.white};
+        `;
+      }
+    }}
+  }
 `;
 
 
