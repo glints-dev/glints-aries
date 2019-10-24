@@ -206,22 +206,15 @@ const ButtonStories = () => (
           </Button>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em'  }}>
-        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
-          <Button variant={Variant.PRIMARY} disabled onClick={action('Primary Button')}>
-            Disabled
-          </Button>
-        </div>
-      </div>
       <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '2em' }}>
         <div style={{ flex: '0 0 40%'}}>
           <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block onClick={action('Primary Button')}>
             Block
           </Button>
         </div>
-        <div style={{ flex: '0 0 40%'}}>
-          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block disabled onClick={action('Primary Button')}>
-            Block disabled
+        <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant={Variant.PRIMARY} disabled onClick={action('Primary Button')}>
+            Disabled
           </Button>
         </div>
       </div>
