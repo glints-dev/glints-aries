@@ -73,7 +73,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
       default:
         return `
           background-color: ${SecondaryColor.white};
-          color: ${SecondaryColor.white};
+          color: ${SecondaryColor.black};
 
           &:hover {
             background-color: ${SecondaryColor.lightergrey};
