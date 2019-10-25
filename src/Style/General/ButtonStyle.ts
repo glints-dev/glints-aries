@@ -410,7 +410,7 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
       ${({ disabled }) => {
         if (!disabled) {
           return `
-          background-color: ${PrimaryColor.glintsblue};
+          background-color: ${PrimaryColor.glintsyellow};
           transform: translate3d(-4px, -4px, 0);
           transition: transform .2s;
         `;
