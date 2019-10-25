@@ -102,7 +102,7 @@ class SearchFilter extends React.Component<Props, State> {
 
 interface Props extends Omit<React.HTMLProps<HTMLInputElement>, 'content'> {
   children: React.ReactNode;
-  content: React.ReactNode;
+  content?: React.ReactNode;
   label: string;
 }
 

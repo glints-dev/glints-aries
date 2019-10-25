@@ -48,7 +48,7 @@ const props = {
       type: 'function',
       defaultValue: '',
       possibleValue: 'any',
-      require: 'yes',
+      require: 'no',
       description: 'Called when List Item is clicked.',
     },
   ],

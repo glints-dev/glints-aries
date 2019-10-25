@@ -23,6 +23,14 @@ const props = {
       require: 'no',
       description: 'Redirect to url when right click is triggered.',
     },
+    {
+      name: 'onContextMenu',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Executes when the user right-clicks on the component',
+    },
   ],
 };
 

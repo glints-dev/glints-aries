@@ -15,7 +15,7 @@ export const TitleWrapper = styled.p<TitleWrapperProps>`
 `;
 
 interface TitleWrapperProps {
-  bold: boolean;
+  bold?: boolean;
 }
 
 export const DescriptionWrapper = styled.p`

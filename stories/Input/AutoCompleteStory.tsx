@@ -74,7 +74,7 @@ const props = {
     },
     {
       name: 'additionalInfo',
-      type: 'string',
+      type: 'element',
       defaultValue: '',
       possibleValue: 'any',
       require: 'no',

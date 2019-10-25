@@ -34,9 +34,9 @@ interface Props {
   xs: number;
   sm: number;
   md: number;
-  xsOrder: number;
-  smOrder: number;
-  mdOrder: number;
+  xsOrder?: number;
+  smOrder?: number;
+  mdOrder?: number;
   children: React.ReactNode;
 }
 

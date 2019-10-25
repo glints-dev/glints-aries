@@ -13,7 +13,7 @@ const Title: React.FunctionComponent<Props> = props => {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TitleWrapper> {
   children: React.ReactNode;
-  bold: boolean;
+  bold?: boolean;
 }
 
 export default Title;

@@ -37,12 +37,12 @@ const DefaultButton: React.FunctionComponent<Props> = ({
 
 interface Props extends React.ComponentPropsWithoutRef<typeof DefaultBtn> {
   children: React.ReactNode;
-  className: string;
-  theme: string;
+  className?: string;
+  theme?: string;
   disabled?: boolean;
-  block: boolean;
-  small: boolean;
-  removeHoverEffect: boolean;
+  block?: boolean;
+  small?: boolean;
+  removeHoverEffect?: boolean;
 }
 
 export default DefaultButton;

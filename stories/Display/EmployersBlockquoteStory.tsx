@@ -19,7 +19,7 @@ const props = {
       type: 'string',
       defaultValue: '',
       possibleValue: 'any',
-      require: 'yes',
+      require: 'no',
       description: 'Sets alt info for profile picture.',
     },
     {

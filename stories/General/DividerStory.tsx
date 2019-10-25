@@ -22,9 +22,9 @@ const DividerStory = () => (
     title="Divider"
     code="import { Divider } from 'glints-aries'"
     propsObject={props}
-    usage={'<Divider />'}
+    usage={'<Divider theme="grey" />'}
   >
-    <Divider />
+    <Divider theme="grey" />
   </StorybookComponent>
 );
 

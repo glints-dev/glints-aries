@@ -9,25 +9,26 @@ import LinkButton from './LinkButton';
 import { Variant } from '../../Utils/StyleConfig';
 
 const renderButton: React.FunctionComponent<Props> = ({
+  className,
   variant,
   theme,
   children,
-  onClick,
   block,
   small,
-  className,
   removeHoverEffect,
+  onClick,
   ...defaultProps
 }) => {
   switch (variant) {
     case Variant.PRIMARY:
       return (
         <PrimaryButton
-          theme={theme}
           className={className}
+          theme={theme}
           onClick={onClick}
           block={block}
           small={small}
+          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {children}
@@ -48,8 +49,8 @@ const renderButton: React.FunctionComponent<Props> = ({
     case Variant.GHOST:
       return (
         <GhostButton
-          theme={theme}
           className={className}
+          theme={theme}
           onClick={onClick}
           block={block}
           small={small}
@@ -62,11 +63,9 @@ const renderButton: React.FunctionComponent<Props> = ({
     case Variant.LINK:
       return (
         <LinkButton
-          theme={theme}
           className={className}
           onClick={onClick}
           block={block}
-          small={small}
           {...defaultProps}
         >
           {children}

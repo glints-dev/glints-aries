@@ -32,6 +32,53 @@ const props = {
       description:
         'Set number of columns you wish to span for medium devices like phone (>=1024px)',
     },
+    {
+      name: 'xsOrder',
+      type: 'number',
+      defaultValue: '0',
+      possibleValue: '>= 0',
+      require: 'no',
+      description:
+        'Sets the order of the column for extra small devices like phone (<=640px)',
+    },
+    {
+      name: 'smOrder',
+      type: 'number',
+      defaultValue: '0',
+      possibleValue: '>= 0',
+      require: 'no',
+      description:
+        'Sets the order of the column for small devices like tablet (<=768px)',
+    },
+    {
+      name: 'mdOrder',
+      type: 'number',
+      defaultValue: '0',
+      possibleValue: '>= 0',
+      require: 'no',
+      description:
+        'Sets the order of the column for medium devices like phone (>=1024px)',
+    },
+  ],
+  'Grid.Row': [
+    {
+      name: 'alignContent',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: '',
+      require: 'no',
+      description:
+        'Sets the align-content and align-items css properties for the row.',
+    },
+    {
+      name: 'justifyContent',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: '',
+      require: 'no',
+      description:
+        'Sets the justfiy-content and justfiy-items css properties for the row.',
+    },
   ],
 };
 

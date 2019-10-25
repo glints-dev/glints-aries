@@ -1,13 +1,25 @@
+export enum ETabAlignment {
+  HORIZONTAL = 'horizontal',
+  VERTICAL = 'vertical',
+}
+
+export enum EHorizontalTabVariant {
+  UNDERLINED = 'underlined',
+  COLORED = 'colored',
+}
+
+export enum ETooltipPosition {
+  TOP = 'top',
+  BOTTOM = 'bottom',
+  LEFT = 'left',
+  RIGHT = 'right',
+}
+
 export const Variant = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   GHOST: 'ghost',
   LINK: 'link',
-};
-
-export const TabAlignment = {
-  HORIZONTAL: 'horizontal',
-  VERTICAL: 'vertical',
 };
 
 export const PsychedelicTheme = {
@@ -26,11 +38,6 @@ export const Theme = {
   BLUE_RED: 'blue-red',
   WHITE: 'white',
   GREY: 'grey',
-};
-
-export const HorizontalTabVariant = {
-  UNDERLINED: 'underlined',
-  COLORED: 'colored',
 };
 
 /* Screen size library of Glints

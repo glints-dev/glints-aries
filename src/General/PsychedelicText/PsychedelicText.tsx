@@ -40,7 +40,7 @@ const PsychedelicText: React.FunctionComponent<Props> = props => (
 
 interface Props {
   children: React.ReactNode;
-  type?: string;
+  type: string;
   psychTheme?: string;
   className?: string;
 }

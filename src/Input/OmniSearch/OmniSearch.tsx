@@ -72,7 +72,7 @@ class OmniSearch extends React.Component<Props, State> {
 interface Props extends Omit<React.HTMLProps<HTMLInputElement>, 'content'> {
   label: string;
   children: React.ReactNode;
-  content: React.ReactNode;
+  content?: React.ReactNode;
 }
 
 interface State {

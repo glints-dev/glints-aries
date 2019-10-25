@@ -42,7 +42,7 @@ const props = {
       name: 'theme',
       type: 'boolean',
       defaultValue: <code>black</code>,
-      possibleValue: <code>white</code>,
+      possibleValue: <code>black | white</code>,
       require: 'no',
       description: 'Sets theme for Radio Button.',
     },

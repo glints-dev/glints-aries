@@ -56,7 +56,7 @@ class Brand extends React.Component<Props> {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof BrandContainer> {
   asset: string;
-  alt: HTMLImageElement['alt'];
+  alt?: HTMLImageElement['alt'];
   className?: string;
   rightClickURL?: string;
   onContextMenu?(): void;
