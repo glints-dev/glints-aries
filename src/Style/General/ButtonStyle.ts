@@ -96,6 +96,17 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
       `;
     }
   }}
+
+  &:hover {
+    ${({ disabled }) => {
+      if (disabled) {
+        return `
+          background-color: ${SecondaryColor.lightgrey};
+          color: ${SecondaryColor.white};
+        `;
+      }
+    }}
+  }
 `;
 
 export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
@@ -150,10 +161,11 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
         }
         return `
           background-color: ${SecondaryColor.lightergrey};
-          color: ${SecondaryColor.blue};
+          color: ${SecondaryColor.black};
         `;
       }
     }}
+  }
 
   &:active {
     ${DefaultBtn} {
