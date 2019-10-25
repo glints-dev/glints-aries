@@ -136,9 +136,37 @@ Default
     <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
       Default Button
     </Heading>
-    <Button theme="blue" onClick={action('Default Button')}>
-      Default
-    </Button>
+    <ButtonRow>
+      <ButtonContainer>
+        <Button theme={Theme.YELLOW} onClick={action('Default Button')}>
+          Yellow
+        </Button>
+      </ButtonContainer>
+      <ButtonContainer>
+        <Button theme={Theme.RED}  onClick={action('Default Button')}>
+          Red
+        </Button>
+      </ButtonContainer>
+    </ButtonRow>
+    <ButtonRow>
+      <ButtonContainer>
+        <Button theme={Theme.BLUE} onClick={action('Default Button')}>
+          Blue
+        </Button>
+      </ButtonContainer>
+      <ButtonContainer>
+        <Button disabled onClick={action('Default Button')}>
+          Disabled
+        </Button>
+      </ButtonContainer>
+    </ButtonRow>
+    <ButtonRow>
+      <BlockButtonContainer>
+        <Button theme={Theme.YELLOW} block onClick={action('Default Button')}>
+          Block
+        </Button>
+      </BlockButtonContainer>
+    </ButtonRow>
   </div>
 </StorybookComponent>
 )
@@ -157,13 +185,42 @@ Primary
     <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
       Primary Button
     </Heading>
-    <Button
-      variant={Variant.PRIMARY}
-      theme={Theme.YELLOW}
-      onClick={action('Primary Button')}
-    >
-      Primary
-    </Button>
+    <ButtonRow>
+      <ButtonContainer>
+        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} onClick={action('Primary Button')}>
+          Yellow
+        </Button>
+      </ButtonContainer>
+      <ButtonContainer>
+        <Button variant={Variant.PRIMARY} theme={Theme.RED}  onClick={action('Primary Button')}>
+          Red
+        </Button>
+      </ButtonContainer>
+    </ButtonRow>
+    <ButtonRow>
+      <ButtonContainer>
+        <Button variant={Variant.PRIMARY} theme={Theme.BLUE} onClick={action('Primary Button')}>
+          Blue
+        </Button>
+      </ButtonContainer>
+      <ButtonContainer>
+        <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED}  onClick={action('Primary Button')}>
+          Blue-Red
+        </Button>
+      </ButtonContainer>
+    </ButtonRow>
+    <ButtonRow>
+      <BlockButtonContainer>
+        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block onClick={action('Primary Button')}>
+          Block
+        </Button>
+      </BlockButtonContainer>
+      <ButtonContainer>
+        <Button variant={Variant.PRIMARY} disabled onClick={action('Primary Button')}>
+          Disabled
+        </Button>
+      </ButtonContainer>
+    </ButtonRow>
   </div>
 </StorybookComponent>
 )
@@ -235,6 +292,24 @@ const LinkButtonStory = () => (
         </Button>
       </div>
     </StorybookComponent>
+)
+
+const ButtonRow = ({children}) => (
+  <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '2em' }}>
+    {children}
+  </div>
+)
+
+const BlockButtonContainer = ({children}) => (
+  <div style={{ flex: '0 0 40%' }}>
+    {children}
+  </div>
+)
+
+const ButtonContainer = ({children}) => (
+  <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
+    {children}
+  </div>
 )
 
 export default ButtonStories;
