@@ -14,7 +14,7 @@ const Icon: React.FunctionComponent<Props> = props => {
 
 interface Props {
   name: string;
-  color: string;
+  color?: string;
 }
 
 export default Icon;

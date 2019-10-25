@@ -26,7 +26,7 @@ const Tag: React.FunctionComponent<Props> = props => {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {
   children: React.ReactNode;
-  theme: string;
+  theme?: string;
 }
 
 export default Tag;
