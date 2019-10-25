@@ -36,9 +36,13 @@ function setupModal(isVisible: boolean) {
     </Modal>
   );
   const { getByTestId, getByRole } = render(ModalComponent);
-  const modalContainer = getByTestId('modal-container');
-  const modalDialog = getByRole('dialog');
-  return [modalContainer, onClose, modalDialog];
+
+  return {
+    modalContainer: getByTestId('modal-container'),
+    modalDialog: getByRole('dialog'),
+    closeButton: getByTestId('close-button'),
+    onClose,
+  };
 }
 
 it('<Modal> should render with a title, content, footer and an onClick handler', () => {
@@ -48,18 +52,16 @@ it('<Modal> should render with a title, content, footer and an onClick handler',
 
 describe('when modal is opened', () => {
   it('should be visible', () => {
-    const [modalContainer] = setupModal(true);
+    const { modalContainer } = setupModal(true);
     expect(modalContainer).toHaveStyle('visibility: visible');
   });
 
   it('should not be closed if the modal is clicked', () => {
-    const [, onClose, modalDialog] = setupModal(true);
+    const { modalDialog, onClose } = setupModal(true);
     fireEvent.click(modalDialog as Element);
     expect(onClose).toHaveBeenCalledTimes(0);
   });
-});
 
-describe('when modal is opened', () => {
   it('should display the title', () => {
     const { getByText } = render(OpenedModal);
     const modalHeader = getByText(props.title);
@@ -75,26 +77,32 @@ describe('when modal is opened', () => {
   it('should display the footer', () => {
     const { getByText } = render(OpenedModal);
     const modalFooter = getByText(props.footer);
-    expect(modalFooter).toHaveTextContent(props.footer);
+    expect(modalFooter).toContainHTML(`<button>${props.footer}</button>`);
   });
 });
 
 describe('when modal is closed', () => {
   it('should not be visible', () => {
-    const [modalContainer] = setupModal(false);
+    const { modalContainer } = setupModal(false);
     expect(modalContainer).toHaveStyle('visibility: hidden');
   });
 });
 
 describe('onClose should be called once when:', () => {
+  it('close icon is clicked', () => {
+    const { closeButton, onClose } = setupModal(true);
+    fireEvent.click(closeButton as Element);
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
   it('area outside modal is clicked', () => {
-    const [modalContainer, onClose] = setupModal(true);
+    const { modalContainer, onClose } = setupModal(true);
     fireEvent.click(modalContainer as Element);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   it('escape key is pressed', () => {
-    const [modalContainer, onClose] = setupModal(true);
+    const { modalContainer, onClose } = setupModal(true);
     fireEvent.keyDown(modalContainer as Element, {
       key: 'Escape',
       keyCode: 27,
