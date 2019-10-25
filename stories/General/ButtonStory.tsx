@@ -138,8 +138,8 @@ Default
     </Heading>
     <ButtonRow>
       <ButtonContainer>
-        <Button theme={Theme.YELLOW} onClick={action('Default Button')}>
-          Yellow
+        <Button theme={Theme.WHITE} onClick={action('Default Button')}>
+          Default
         </Button>
       </ButtonContainer>
       <ButtonContainer>
@@ -155,12 +155,17 @@ Default
         </Button>
       </ButtonContainer>
       <ButtonContainer>
-        <Button disabled onClick={action('Default Button')}>
-          Disabled
+        <Button theme={Theme.YELLOW} onClick={action('Default Button')}>
+          Yellow
         </Button>
       </ButtonContainer>
     </ButtonRow>
     <ButtonRow>
+      <ButtonContainer>
+        <Button disabled onClick={action('Default Button')}>
+          Disabled
+        </Button>
+      </ButtonContainer>
       <BlockButtonContainer>
         <Button theme={Theme.YELLOW} block onClick={action('Default Button')}>
           Block
