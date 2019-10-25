@@ -109,54 +109,67 @@ const linkButtonProps = {
 
 const ButtonStories = () => (
   <React.Fragment>
-    <StorybookComponent
-      title="Button"
-      code="import { Button } from 'glints-aries'"
-      propsObject={defaultButtonProps}
-      usage={`<Button
-  theme="blue"
->
-  Default
-</Button>`}
-    >
-      <div style={{ marginBottom: '2em' }}>
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Default Button
-        </Heading>
-        <Button theme="blue" onClick={action('Default Button')}>
-          Default
-        </Button>
-      </div>
-    </StorybookComponent>
-
+    <DefaultButtonStory/>
     <Divider theme="grey" />
-
-    <StorybookComponent
-      propsObject={primaryButtonProps}
-      usage={`<Button
-  variant='primary'
-  theme='yellow'
->
-  Primary
-</Button>`}
-    >
-      <div style={{ marginBottom: '2em' }}>
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Primary Button
-        </Heading>
-        <Button
-          variant={Variant.PRIMARY}
-          theme={Theme.YELLOW}
-          onClick={action('Primary Button')}
-        >
-          Primary
-        </Button>
-      </div>
-    </StorybookComponent>
-
+    <PrimaryButtonStory/>
     <Divider theme="grey" />
+    <SecondaryButtonStory/>
+    <Divider theme="grey" />
+    <GhostButtonStory/>
+    <Divider theme="grey" />
+    <LinkButtonStory/>
+  </React.Fragment>
+);
 
-    <StorybookComponent
+const DefaultButtonStory = () => (
+  <StorybookComponent
+  title="Button"
+  code="import { Button } from 'glints-aries'"
+  propsObject={defaultButtonProps}
+  usage={`<Button
+theme="blue"
+>
+Default
+</Button>`}
+>
+  <div style={{ marginBottom: '2em' }}>
+    <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+      Default Button
+    </Heading>
+    <Button theme="blue" onClick={action('Default Button')}>
+      Default
+    </Button>
+  </div>
+</StorybookComponent>
+)
+
+const PrimaryButtonStory = () => (
+  <StorybookComponent
+  propsObject={primaryButtonProps}
+  usage={`<Button
+variant='primary'
+theme='yellow'
+>
+Primary
+</Button>`}
+>
+  <div style={{ marginBottom: '2em' }}>
+    <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+      Primary Button
+    </Heading>
+    <Button
+      variant={Variant.PRIMARY}
+      theme={Theme.YELLOW}
+      onClick={action('Primary Button')}
+    >
+      Primary
+    </Button>
+  </div>
+</StorybookComponent>
+)
+
+const SecondaryButtonStory = () => (
+  <StorybookComponent
       propsObject={secondaryButtonProps}
       usage={`<Button
   variant="secondary"
@@ -176,10 +189,10 @@ const ButtonStories = () => (
         </Button>
       </div>
     </StorybookComponent>
+)
 
-    <Divider theme="grey" />
-
-    <StorybookComponent
+const GhostButtonStory = () => (
+  <StorybookComponent
       propsObject={ghostButtonProps}
       usage={`<Button
   variant="ghost"
@@ -201,10 +214,10 @@ const ButtonStories = () => (
         </Button>
       </div>
     </StorybookComponent>
+)
 
-    <Divider theme="grey" />
-
-    <StorybookComponent
+const LinkButtonStory = () => (
+  <StorybookComponent
       propsObject={linkButtonProps}
       usage={`<Button
   variant="link"
@@ -222,7 +235,6 @@ const ButtonStories = () => (
         </Button>
       </div>
     </StorybookComponent>
-  </React.Fragment>
-);
+)
 
 export default ButtonStories;
