@@ -295,7 +295,7 @@ interface AutoCompleteItemProps {
 interface Props
   extends React.ComponentPropsWithoutRef<typeof AutoCompleteInput> {
   children: React.ReactNode;
-  label: string;
+  label?: string;
   removeFloatingLabel?: boolean;
   value?: string;
 

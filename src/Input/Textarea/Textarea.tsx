@@ -132,7 +132,7 @@ class Textarea extends React.PureComponent<Props, State> {
 }
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
-  label: string;
+  label?: string;
   onBlur?(): void;
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;

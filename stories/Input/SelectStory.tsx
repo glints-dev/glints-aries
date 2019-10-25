@@ -11,7 +11,7 @@ const props = {
       type: 'string',
       defaultValue: '',
       possibleValue: 'any',
-      require: 'yes',
+      require: 'no',
       description: 'Sets placeholder value for the Text Field.',
     },
     {

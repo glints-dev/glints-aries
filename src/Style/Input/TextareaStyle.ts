@@ -41,7 +41,7 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
 
 interface TextareaLabelProps {
   floating: boolean;
-  status: string;
+  status?: string;
 }
 
 export const TextareaInput = styled.textarea<TextareaInputProps>`
