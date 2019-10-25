@@ -101,6 +101,7 @@ export interface Props {
   children: React.ReactNode;
   className?: string;
   removeHoverEffect?: boolean;
+  disabled?: boolean;
 }
 
 export default Button;
