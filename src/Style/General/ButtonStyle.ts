@@ -45,10 +45,6 @@ interface DefaultBtnProps {
   block?: boolean;
 }
 
-interface DefaultBtnProps {
-  block: boolean;
-}
-
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
 
