@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Typography> should contain the Title and Paragraph components: <Typography.Paragraph> should render a p tag with the text Glints Aries 1`] = `
+<p
+  className="aries-typography-paragraph sc-bwzfXH iZfUBB"
+>
+  Glints Aries
+</p>
+`;
+
+exports[`<Typography> should contain the Title and Paragraph components: <Typography.Title> should render a h1 tag with the text Glints Aries 1`] = `
+<h1
+  className="aries-typography-title sc-bdVaJa jsMYET"
+>
+  Glints Aries
+</h1>
+`;
