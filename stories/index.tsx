@@ -61,6 +61,7 @@ import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
 import ToastStory from './Display/ToastStory';
 import TooltipStory from './Display/TooltipStory';
+import TypographyStory from '../src/General/Typography/TypographyStory';
 
 // Employers
 import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
@@ -89,7 +90,8 @@ storiesOf('General', module)
   .add('Loading', () => <LoadingStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
   .add('Psychedelic Text', () => <PsychedelicTextStory />)
-  .add('Tag', () => <TagStory />);
+  .add('Tag', () => <TagStory />)
+  .add('Typography', () => <TypographyStory />);
 
 storiesOf('Layout', module)
   .addDecorator(story => (
