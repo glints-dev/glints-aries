@@ -5,6 +5,11 @@ import { Theme } from '../../Utils/StyleConfig';
 const generalButtonPadding = [15, 40];
 const smallButtonPadding = [10, 20];
 
+
+interface ButtonProps {
+  small?: boolean;
+}
+
 const Button = styled.button<ButtonProps>`
   display: flex;
   position: relative;
@@ -25,55 +30,10 @@ const Button = styled.button<ButtonProps>`
   transition: all 0.2s;
 `;
 
-interface ButtonProps {
-  small?: boolean;
-}
 
 /*
  * Default Button
  */
-
-export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
-  position: relative;
-  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
-  z-index: 1;
-
-  ${({ disabled, removeHoverEffect }) => {
-    if (!disabled && !removeHoverEffect) {
-      return `
-      &:active {
-        background: ${SecondaryColor.black};
-        color: ${SecondaryColor.white};
-        transform: translate3d(2px, 2px, 0);
-        transition: all .2s;
-      }
-
-      &:after {
-        content: '';
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
-        top: 5px;
-        left: 5px;
-        z-index: -1;
-        transition: all .2s;
-      }
-
-      &:hover:after {
-        opacity: 1;
-        transition: all .2s;
-      }
-
-      &:active:after {
-        transform: translate3d(-5px, -5px, 0);
-        transition: all .2s;
-      }
-      `;
-    }
-  }}
-`;
 
 interface DefaultBtnContainerProps {
   block?: boolean;
@@ -81,8 +41,17 @@ interface DefaultBtnContainerProps {
   removeHoverEffect?: boolean;
 }
 
+interface DefaultBtnProps {
+  block?: boolean;
+}
+
 export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
+
+  &:active {
+    background-color: ${SecondaryColor.black};
+    color: ${SecondaryColor.white};
+  }
 
   ${props => {
     switch (props.theme) {
@@ -127,81 +96,113 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
       `;
     }
   }}
+
+  &:hover {
+    ${({ disabled }) => {
+      if (disabled) {
+        return `
+          background-color: ${SecondaryColor.lightgrey};
+          color: ${SecondaryColor.white};
+        `;
+      }
+    }}
+  }
 `;
 
-interface DefaultBtnProps {
-  block?: boolean;
-}
-
-/*
- * Primary Button
- */
-
-export const PrimaryContainer = styled.div<PrimaryContainerProps>`
+export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
 
-  &:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 8px;
-    left: 8px;
-    transition: all 0.2s;
-
-    ${props => {
-      const themeBackgrounds = {
-        [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.YELLOW]: PrimaryColor.glintsred,
-      };
-      if (props.disabled) {
-        return 'background-color: none';
-      }
-      if (props.theme && themeBackgrounds[props.theme]) {
-        return `background-color: ${themeBackgrounds[props.theme]};`;
-      }
-      return `background-color: ${PrimaryColor.glintsyellow};`;
-    }}
-  }
-
-  &:hover:after {
-    ${props => {
-      if (props.disabled) {
-        return 'background-color: none;';
-      }
+  ${({ disabled, removeHoverEffect }) => {
+    if (!disabled && !removeHoverEffect) {
       return `
-      background: ${SecondaryColor.black};
-      transform: translate3d(-2px, -2px, 0);
-      transition: all .2s;
-    `;
+      &:active {
+        background: ${SecondaryColor.black};
+        color: ${SecondaryColor.white};
+        transform: translate3d(2px, 2px, 0);
+        transition: all .2s;
+      }
+
+      &:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(0, 0, 0, 0.5) 5px);
+        top: 5px;
+        left: 5px;
+        z-index: -1;
+        transition: all .2s;
+        cursor: pointer;
+      }
+
+      &:hover:after {
+        opacity: 1;
+        transition: all .2s;
+      }
+
+      &:active:after {
+        transform: translate3d(-5px, -5px, 0);
+        transition: all .2s;
+      }
+      `;
+    }
+  }}
+
+  &:hover {
+    ${DefaultBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
+        return `
+          background-color: ${SecondaryColor.lightergrey};
+          color: ${SecondaryColor.black};
+        `;
+      }
     }}
   }
 
-  &:active:after {
-    ${props => {
-      if (!props.disabled) {
+  &:active {
+    ${DefaultBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
         return `
-        transform: translate3d(-4px, -4px, 0);
-        transition: all .2s;
-      `;
+          background-color: ${SecondaryColor.black};
+          color: ${SecondaryColor.white};
+        `;
       }
-
-      return false;
     }}
   }
 `;
+
+
+/*
+ * Primary Button
+ */
 
 interface PrimaryContainerProps {
   block?: boolean;
   disabled?: boolean;
 }
 
+interface PrimaryBtnProps {
+  block?: boolean;
+}
+
 export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
   transition: all 0.2s;
-  width: ${({ block }) => block && '100%'};
+  cursor: pointer;
+  position: relative;
+  width: 100%;
 
   ${props => {
     if (props.disabled) {
@@ -244,13 +245,21 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     `;
   }}
 
+`;
+
+export const PrimaryContainer = styled.div<PrimaryContainerProps>`
+  position: relative;
+  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
+  z-index: 1;
+  cursor: pointer;
+
   &:hover {
     ${props => {
       if (props.disabled) {
         return 'transform: none';
       }
       return `
-      transform: translate3d(2px, 2px, 0);
+      transform: translate(2px, 2px);
       transition: all .2s;
     `;
     }}
@@ -260,9 +269,8 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     ${props => {
       if (!props.disabled) {
         return `
-        transform: translate3d(4px, 4px, 0);
+        transform: translate(4px, 4px);
         transition: all .2s;
-        background-color: ${SecondaryColor.black};
         color: ${SecondaryColor.white};
       `;
       }
@@ -270,11 +278,77 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
       return 'transform: none';
     }}
   }
-`;
 
-interface PrimaryBtnProps {
-  block?: boolean;
-}
+  &:active {
+    ${PrimaryBtn} {
+      ${props => {
+        if (props.disabled) {
+          return `
+            background-color: none;
+          `;
+        }
+        return `
+          background-color: ${SecondaryColor.black};
+          color: ${SecondaryColor.white};
+        `;
+      }
+    }}
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transition: all 0.2s;
+
+    ${props => {
+      const themeBackgrounds = {
+        [Theme.BLUE_RED]: PrimaryColor.glintsred,
+        [Theme.YELLOW]: PrimaryColor.glintsred,
+      };
+      if (props.disabled) {
+        return 'background-color: none';
+        
+      }
+      if (props.theme && themeBackgrounds[props.theme]) {
+        return `background-color: ${themeBackgrounds[props.theme]};`;
+      }
+      return `background-color: ${PrimaryColor.glintsyellow};`;
+    }}
+  }
+
+  &:hover:before {
+    ${props => {
+      if (props.disabled) {
+        return `
+          cursor: default;
+          background-color: none;
+        `;
+      }
+      return `
+      background: ${SecondaryColor.black};
+      transform: translate(-4px, -4px);
+      transition: all .2s;
+    `;
+    }}
+  }
+
+  &:active:before {
+    ${props => {
+      if (!props.disabled) {
+        return `
+        transform: translate(-8px, -8px);
+        transition: all .2s;
+      `;
+      }
+
+      return false;
+    }}
+  }
+`;
 
 /*
  * Secondary Button
@@ -328,6 +402,7 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
     transition: all 0.2s;
     transform: translate3d(-4px, -4px, 0);
     z-index: 1;
+    cursor: pointer;
   }
 
   &:hover {
@@ -492,6 +567,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
           left: 5px;
           z-index: -1;
           transition: all .2s;
+          cursor: pointer;
         }
 
         &:hover:after {
