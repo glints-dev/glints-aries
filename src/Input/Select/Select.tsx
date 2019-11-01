@@ -1,18 +1,13 @@
-import { isEqual } from 'lodash';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { isEqual } from 'lodash';
 
 import classNames from 'classnames';
 
 import SelectList, { SelectItemProps } from './SelectList';
 
 import Icon from '../../General/Icon';
-import {
-  SelectContainer,
-  SelectWrapper,
-  SelectInput,
-  SelectLabel,
-} from '../../Style/Input/SelectStyle';
+import { SelectContainer, SelectWrapper, SelectInput, SelectLabel } from '../../Style/Input/SelectStyle';
 
 class Select extends React.Component<Props, State> {
   static Option: React.FunctionComponent<SelectItemProps> = () => null;
@@ -26,7 +21,7 @@ class Select extends React.Component<Props, State> {
     filterValue: [] as React.ReactNode[],
     cursor: 0,
     defaultValue: '',
-    isLoading: false,
+    isLoading: this.props.isLoading,
   };
 
   constructor(props: Props) {
@@ -245,20 +240,10 @@ class Select extends React.Component<Props, State> {
       ...defaultProps
     } = this.props;
 
-    const {
-      floating,
-      isFocus,
-      selectedValue,
-      filterValue,
-      cursor,
-      isLoading,
-    } = this.state;
+    const { floating, isFocus, selectedValue = '', filterValue, cursor, isLoading } = this.state;
 
     return (
-      <SelectContainer
-        className={classNames('aries-select', className)}
-        ref={this.node}
-      >
+      <SelectContainer className={classNames('aries-select', className)} ref={this.node}>
         <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
@@ -279,7 +264,7 @@ class Select extends React.Component<Props, State> {
             {...defaultProps}
           />
           {!removeFloatingLabel && (
-            <SelectLabel floating={floating} status={status} small={small}>
+            <SelectLabel aria-label={label} floating={floating} status={status} small={small}>
               {label}
             </SelectLabel>
           )}
@@ -290,6 +275,7 @@ class Select extends React.Component<Props, State> {
           )}
         </SelectWrapper>
         <SelectList
+          aria-label="select-list"
           cursor={cursor}
           filterValue={filterValue}
           isFocus={isFocus}
@@ -305,12 +291,12 @@ class Select extends React.Component<Props, State> {
 }
 
 interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
+  children: React.ReactNode;
+  isLoading?: boolean;
   label?: string;
   noOptionResult?: string;
-  children: React.ReactNode;
-  removeFloatingLabel?: boolean;
   removeDropIcon?: boolean;
-  isLoading?: boolean;
+  removeFloatingLabel?: boolean;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;

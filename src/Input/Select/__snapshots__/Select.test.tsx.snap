@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select> should render with 3 options 1`] = `
+<div
+  className="aries-select sc-bdVaJa gyioBc"
+>
+  <div
+    className="select-inputwrapper sc-bwzfXH diPLjv"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-expanded={false}
+      className="sc-bxivhb jbuuPN"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      role="combobox"
+      type="text"
+      value=""
+    />
+    <label
+      aria-label="Jobs"
+      className="sc-htpNat MTgpk"
+    >
+      Jobs
+    </label>
+    <div
+      aria-label="show options"
+      className="select-icon"
+    >
+      <svg
+        fill="#777777"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <polygon
+          points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+        />
+      </svg>
+    </div>
+  </div>
+  <ul
+    aria-hidden={true}
+    className="select-listbox sc-ifAKCX krCAU"
+    open={false}
+    role="listbox"
+  >
+    <li
+      className="active sc-EHOje bWjUel"
+      data-id={0}
+      data-value="accountant"
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      role="option"
+      tabIndex={0}
+    >
+      Accountant
+    </li>
+    <li
+      className="sc-EHOje bWjUel"
+      data-id={1}
+      data-value="business development"
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      role="option"
+      tabIndex={0}
+    >
+      Business Development
+    </li>
+    <li
+      className="sc-EHOje bWjUel"
+      data-id={2}
+      data-value="software engineer"
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      role="option"
+      tabIndex={0}
+    >
+      Software Engineer
+    </li>
+  </ul>
+</div>
+`;
