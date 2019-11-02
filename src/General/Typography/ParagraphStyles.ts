@@ -1,12 +1,26 @@
 import styled from 'styled-components';
 
-import { SecondaryColor } from '../../Style/Colors';
+export const PARAGRAPH_VARIANTS = {
+  subtitle: 'subtitle',
+  regular: 'regular',
+  caption: 'caption',
+  smallest: 'smallest',
+};
+
+export const PARAGRAPH_FONT_SIZES = {
+  [PARAGRAPH_VARIANTS.subtitle]: 18,
+  [PARAGRAPH_VARIANTS.regular]: 16,
+  [PARAGRAPH_VARIANTS.caption]: 14,
+  [PARAGRAPH_VARIANTS.smallest]: 12,
+};
+
+export type paragraphType = 'subtitle' | 'regular' | 'caption' | 'smallest';
 
 export interface ParagraphProps {
   bold?: boolean;
   color?: string;
   ellipsis?: boolean;
-  variant?: 'subtitle' | 'regular' | 'caption' | 'smallest';
+  variant?: paragraphType;
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
@@ -16,29 +30,29 @@ export const Paragraph = styled.p<ParagraphProps>`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: ${props => props.color || SecondaryColor.black};
+  color: ${props => props.color};
 
   ${props => {
     switch (props.variant) {
-      case 'subtitle':
+      case PARAGRAPH_VARIANTS.subtitle:
         return `
-          font-size: 18px;
+          font-size: ${PARAGRAPH_FONT_SIZES.subtitle}px;
         `;
-      case 'regular':
+      case PARAGRAPH_VARIANTS.regular:
         return `
-          font-size: 16px;
+          font-size: ${PARAGRAPH_FONT_SIZES.regular}px;
         `;
-      case 'caption':
+      case PARAGRAPH_VARIANTS.caption:
         return `
-          font-size: 14px;
+          font-size: ${PARAGRAPH_FONT_SIZES.caption}px;
         `;
-      case 'smallest':
+      case PARAGRAPH_VARIANTS.smallest:
         return `
-          font-size: 12px;
+          font-size: ${PARAGRAPH_FONT_SIZES.smallest}px;
         `;
       default:
         return `
-          font-size: 16px;
+          font-size: ${PARAGRAPH_FONT_SIZES.regular}px;
         `;
     }
   }};

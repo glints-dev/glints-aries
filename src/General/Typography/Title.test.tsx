@@ -1,22 +1,26 @@
 import * as React from 'react';
-import Title from './Title';
-import { PrimaryColor } from '../../Style/Colors';
-
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
+import Title, { tagType } from './Title';
+import { TITLE_VARIANTS, TITLE_FONT_SIZES } from './TitleStyles';
+import { PrimaryColor } from '../../Style/Colors';
+
 const titleText = 'Glints Aries';
 
-describe('displays the correct text and uses the correct html tag for each tag:', () => {
-  const tags: any[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+describe('displays the correct text, uses the correct html tag and font-size for each tag:', () => {
+  const tags: tagType[] = Object.values(TITLE_VARIANTS);
+
   tags.forEach(tag => {
+    const fontSize = TITLE_FONT_SIZES[tag];
     it(`${tag}`, () => {
       const { container, getByText } = render(
         <Title tag={tag}>{titleText}</Title>
       );
       const heading = getByText(titleText);
-      expect(heading).toHaveTextContent(titleText);
+      expect(heading).toBeTruthy();
       expect(container).toContainHTML(tag);
+      expect(heading).toHaveStyle(`font-size: ${fontSize}px`);
     });
   });
 });

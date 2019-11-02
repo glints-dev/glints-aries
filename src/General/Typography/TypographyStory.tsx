@@ -2,8 +2,10 @@ import * as React from 'react';
 
 import StorybookComponent from '../../../stories/StorybookComponent';
 
+import Typography from '.';
+import { TITLE_VARIANTS } from './TitleStyles';
+import { PARAGRAPH_VARIANTS } from './ParagraphStyles';
 import Heading from '../Heading';
-import Typography from '../Typography';
 import { PrimaryColor } from '../../Style/Colors';
 
 const { Title, Paragraph } = Typography;
@@ -30,7 +32,12 @@ const titleProps = {
       name: 'tag',
       type: 'string',
       defaultValue: <code>h1</code>,
-      possibleValue: <code>h1 | h2 | h3 | h4 | h5 | h6</code>,
+      possibleValue: (
+        <code>
+          {TITLE_VARIANTS.h1} | {TITLE_VARIANTS.h2} | {TITLE_VARIANTS.h3} |{' '}
+          {TITLE_VARIANTS.h4} | {TITLE_VARIANTS.h5} | {TITLE_VARIANTS.h6}
+        </code>
+      ),
       require: 'no',
       description: 'Sets the title tag to one of the <h1> - <h6> tags.',
     },
@@ -67,7 +74,12 @@ const paragraphProps = {
       name: 'variant',
       type: 'string',
       defaultValue: <code>regular</code>,
-      possibleValue: <code>subtitle | regular | caption | smallest</code>,
+      possibleValue: (
+        <code>
+          {PARAGRAPH_VARIANTS.subtitle} | {PARAGRAPH_VARIANTS.regular} |{' '}
+          {PARAGRAPH_VARIANTS.caption} | {PARAGRAPH_VARIANTS.smallest}
+        </code>
+      ),
       require: 'no',
       description: "Sets the Paragraph's variant.",
     },

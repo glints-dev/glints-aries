@@ -5,18 +5,26 @@ import { PrimaryColor } from '../../Style/Colors';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
+import {
+  PARAGRAPH_FONT_SIZES,
+  PARAGRAPH_VARIANTS,
+  paragraphType,
+} from './ParagraphStyles';
+
 const paragraphText =
   'As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything - from work to social gatherings.';
 
-describe('displays the correct text for each variant:', () => {
-  const variants: any[] = ['subtitle', 'regular', 'caption', 'smallest'];
+describe('displays the correct text and font-size for each variant:', () => {
+  const variants: paragraphType[] = Object.values(PARAGRAPH_VARIANTS);
   variants.forEach(variant => {
-    it(`${variant}`, () => {
+    const fontSize = PARAGRAPH_FONT_SIZES[variant];
+    it(`${variant}: ${fontSize}px`, () => {
       const { getByText } = render(
         <Paragraph variant={variant}>{paragraphText}</Paragraph>
       );
       const paragraphTag = getByText(paragraphText);
-      expect(paragraphTag).toHaveTextContent(paragraphText);
+      expect(paragraphTag).toBeTruthy();
+      expect(paragraphTag).toHaveStyle(`font-size: ${fontSize}px`);
     });
   });
 });
