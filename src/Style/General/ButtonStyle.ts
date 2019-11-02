@@ -5,7 +5,6 @@ import { Theme } from '../../Utils/StyleConfig';
 const generalButtonPadding = [15, 40];
 const smallButtonPadding = [10, 20];
 
-
 interface ButtonProps {
   small?: boolean;
 }
@@ -29,7 +28,6 @@ const Button = styled.button<ButtonProps>`
   background: transparent;
   transition: all 0.2s;
 `;
-
 
 /*
  * Default Button
@@ -75,11 +73,6 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
           background-color: ${SecondaryColor.white};
           color: ${SecondaryColor.black};
 
-          &:hover {
-            background-color: ${SecondaryColor.lightergrey};
-            color: ${SecondaryColor.blue};
-          }
-
           &:active {
             background-color: ${SecondaryColor.black};
             color: ${SecondaryColor.white};
@@ -92,6 +85,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
     if (disabled) {
       return `
         background-color: ${SecondaryColor.lightgrey};
+        color: ${SecondaryColor.white};
         cursor: not-allowed;
       `;
     }
@@ -159,12 +153,8 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
             background-color: none;
           `;
         }
-        return `
-          background-color: ${SecondaryColor.lightergrey};
-          color: ${SecondaryColor.black};
-        `;
-      }
-    }}
+      }}
+    }
   }
 
   &:active {
@@ -179,11 +169,10 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
         `;
-      }
-    }}
+      }}
+    }
   }
 `;
-
 
 /*
  * Primary Button
@@ -244,7 +233,6 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
       }
     `;
   }}
-
 `;
 
 export const PrimaryContainer = styled.div<PrimaryContainerProps>`
@@ -291,8 +279,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
         `;
-      }
-    }}
+      }}
+    }
   }
 
   &:before {
@@ -311,7 +299,6 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
       };
       if (props.disabled) {
         return 'background-color: none';
-        
       }
       if (props.theme && themeBackgrounds[props.theme]) {
         return `background-color: ${themeBackgrounds[props.theme]};`;
