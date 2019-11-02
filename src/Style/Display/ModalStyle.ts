@@ -2,6 +2,14 @@ import styled from 'styled-components';
 import { Device } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../Colors';
 
+export const SIZES: { [s: string]: number } = {
+  s: 300,
+  m: 500,
+  l: 800,
+  xl: 920,
+  default: 500,
+};
+
 export const ModalContainer = styled.div<ModalContainerProps>`
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   position: fixed;
@@ -49,23 +57,23 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
     switch (size) {
       case 's':
         return `
-          width: 300px;
+          width: ${SIZES.s}px;
         `;
       case 'm':
         return `
-          width: 500px;
+          width: ${SIZES.m}px;
         `;
       case 'l':
         return `
-          width: 800px;
+          width: ${SIZES.l}px;
         `;
       case 'xl':
         return `
-          width: 920px;
+          width: ${SIZES.xl}px;
         `;
       default:
         return `
-          width: 500px;
+          width: ${SIZES.default}px;
         `;
     }
   }}
