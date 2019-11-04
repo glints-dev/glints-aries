@@ -25,37 +25,13 @@ export interface ParagraphProps {
 
 export const Paragraph = styled.p<ParagraphProps>`
   margin: 0;
+  font-size: ${props => PARAGRAPH_FONT_SIZES[props.variant]}px;
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: ${props => props.color};
-
-  ${props => {
-    switch (props.variant) {
-      case PARAGRAPH_VARIANTS.subtitle:
-        return `
-          font-size: ${PARAGRAPH_FONT_SIZES.subtitle}px;
-        `;
-      case PARAGRAPH_VARIANTS.regular:
-        return `
-          font-size: ${PARAGRAPH_FONT_SIZES.regular}px;
-        `;
-      case PARAGRAPH_VARIANTS.caption:
-        return `
-          font-size: ${PARAGRAPH_FONT_SIZES.caption}px;
-        `;
-      case PARAGRAPH_VARIANTS.smallest:
-        return `
-          font-size: ${PARAGRAPH_FONT_SIZES.smallest}px;
-        `;
-      default:
-        return `
-          font-size: ${PARAGRAPH_FONT_SIZES.regular}px;
-        `;
-    }
-  }};
 
   ${props => {
     if (props.ellipsis) {

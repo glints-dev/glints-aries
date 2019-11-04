@@ -9,7 +9,7 @@ import { PrimaryColor } from '../../Style/Colors';
 const titleText = 'Glints Aries';
 
 describe('displays the correct text, uses the correct html tag and font-size for each tag:', () => {
-  const tags: tagType[] = Object.values(TITLE_VARIANTS);
+  const tags = Object.values(TITLE_VARIANTS) as tagType[];
 
   tags.forEach(tag => {
     const fontSize = TITLE_FONT_SIZES[tag];
