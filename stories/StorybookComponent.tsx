@@ -1,7 +1,8 @@
 import * as React from 'react';
-import jsxToString from 'jsx-to-string';
 
 import Collapsible from '../src/Display/Collapsible';
+
+const jsxToString = require('jsx-to-string');
 
 const propsColumnName = [
   'name',
