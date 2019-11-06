@@ -40,38 +40,38 @@ export const Title = styled.h1<TitleProps>`
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: 1.2;
+        line-height: 1.2em;
       `;
       case TITLE_VARIANTS.h2:
         return `
         font-size: ${TITLE_FONT_SIZES.h2}px;
-        line-height: 1.2;
+        line-height: 1.2em;
       `;
       case TITLE_VARIANTS.h3:
         return `
         font-size: ${TITLE_FONT_SIZES.h3}px;
-        line-height: 1.4;
+        line-height: 1.4em;
       `;
       case TITLE_VARIANTS.h4:
         return `
         font-size: ${TITLE_FONT_SIZES.h4}px;
-        line-height: 1.4;
+        line-height: 1.4em;
       `;
       case TITLE_VARIANTS.h5:
         return `
         font-size: ${TITLE_FONT_SIZES.h5}px;
-        line-height: 1.4;
+        line-height: 1.4em;
       `;
       case TITLE_VARIANTS.h6:
         return `
         font-size: ${TITLE_FONT_SIZES.h6}px;
-        line-height: 1.4;
+        line-height: 1.4em;
       `;
       default:
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: 1.2;
+        line-height: 1.2em;
     `;
     }
   }};
