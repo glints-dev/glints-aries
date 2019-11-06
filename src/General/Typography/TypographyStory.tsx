@@ -3,8 +3,8 @@ import * as React from 'react';
 import StorybookComponent from '../../../stories/StorybookComponent';
 
 import Typography from '.';
-import { TITLE_VARIANTS } from './TitleStyles';
-import { PARAGRAPH_VARIANTS } from './ParagraphStyles';
+import { TITLE_VARIANTS, TITLE_FONT_SIZES } from './TitleStyles';
+import { PARAGRAPH_VARIANTS, PARAGRAPH_FONT_SIZES } from './ParagraphStyles';
 import Heading from '../Heading';
 import { PrimaryColor } from '../../Style/Colors';
 
@@ -120,12 +120,12 @@ ReactDOM.render(
       Typography.Title
     </Heading>
     <div style={{ display: 'grid', gridRowGap: '15px' }}>
-      <Title tag="h1">Heading 1</Title>
-      <Title tag="h2">Heading 2</Title>
-      <Title tag="h3">Heading 3</Title>
-      <Title tag="h4">Heading 4</Title>
-      <Title tag="h5">Heading 5</Title>
-      <Title tag="h6">Heading 6</Title>
+      <Title tag="h1">Heading 1 - {TITLE_FONT_SIZES.h1}px</Title>
+      <Title tag="h2">Heading 2 - {TITLE_FONT_SIZES.h2}px</Title>
+      <Title tag="h3">Heading 3 - {TITLE_FONT_SIZES.h3}px</Title>
+      <Title tag="h4">Heading 4 - {TITLE_FONT_SIZES.h4}px</Title>
+      <Title tag="h5">Heading 5 - {TITLE_FONT_SIZES.h5}px</Title>
+      <Title tag="h6">Heading 6 - {TITLE_FONT_SIZES.h6}px</Title>
       <Title tag="h5" color={PrimaryColor.glintsred}>
         Colored Title
       </Title>
@@ -194,22 +194,26 @@ ReactDOM.render(
     </Heading>
     <div style={{ display: 'grid', gridRowGap: '15px' }}>
       <Paragraph variant="subtitle">
-        Subtitle <br />
+        Subtitle - {PARAGRAPH_FONT_SIZES.subtitle}px
+        <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
       <Paragraph variant="regular">
-        Regular <br />
+        Regular - {PARAGRAPH_FONT_SIZES.regular}px
+        <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
       <Paragraph variant="caption">
-        Caption <br />
+        Caption - {PARAGRAPH_FONT_SIZES.caption}px
+        <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
       <Paragraph variant="smallest">
-        Smallest <br />
+        Smallest - {PARAGRAPH_FONT_SIZES.smallest}px
+        <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
