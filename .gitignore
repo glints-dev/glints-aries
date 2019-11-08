@@ -1,5 +1,7 @@
 node_modules
 dist
+es
+lib
 *.log
 .out
 .DS_Store
