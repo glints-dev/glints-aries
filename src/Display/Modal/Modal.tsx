@@ -77,6 +77,7 @@ class Modal extends React.Component<Props, State> {
 
     return (
       <ModalContainer
+        data-testid="modal-container"
         className={classNames('aries-modal', className)}
         centering={centering}
         onClick={() => onClose()}
@@ -101,7 +102,11 @@ class Modal extends React.Component<Props, State> {
             {!hideHeader && (
               <ModalHeader className="modal-header">
                 <h3>{title}</h3>
-                <button type="button" onClick={() => onClose()}>
+                <button
+                  data-testid="close-button"
+                  type="button"
+                  onClick={() => onClose()}
+                >
                   <Icon
                     name="close"
                     color={hideContentArea ? 'white' : 'grey'}
