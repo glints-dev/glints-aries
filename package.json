@@ -4,18 +4,16 @@
   "description": "Glints ui-kit for frontend",
   "main": "./lib/index.js",
   "module": "./es/index.js",
-  "modules.root": "./es",
-  "jsnext:main": "./es/index.js",
   "sideEffects": false,
   "scripts": {
-    "assets:build": "webpack && cp -R assets/fonts/ dist/public/assets/fonts/",
-    "build": "npm run build:lib && npm run build:es && npm run assets:build && npm run build:ts",
-    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore 'src/**/*.test.tsx'",
-    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore 'src/**/*.test.tsx'",
+    "build": "npm run build:lib && npm run build:es && npm run build:ts",
+    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore src/**/*.test.tsx && cp src/Style/GlobalStyle.css lib/Style/GlobalStyle.css",
+    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore src/**/*.test.tsx && cp src/Style/GlobalStyle.css es/Style/GlobalStyle.css",
     "build:ts": "tsc --rootDir src -d --declarationDir lib && tsc --rootDir src -d --declarationDir es",
     "prepublishOnly": "npm run build",
-    "storybook": "npm run assets:build && start-storybook -p 9001 -c storybook-config -s dist/public",
-    "storybook:build": "rm -rf .out && npm run assets:build && build-storybook -c storybook-config -o .out -s dist/public",
+    "storybook": "npm run storybook:build:assets && start-storybook -p 9001 -c storybook-config -s dist/public",
+    "storybook:build": "rm -rf .out && npm run storybook:build:assets && build-storybook -c storybook-config -o .out -s dist/public",
+    "storybook:build:assets": "webpack",
     "test:update": "jest -u",
     "test": "jest",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'"
@@ -32,6 +30,13 @@
     "url": "https://github.com/glints-dev/glints-aries/issues"
   },
   "homepage": "http://aries.glints.design",
+  "files": [
+    "assets",
+    "es",
+    "lib",
+    "dist",
+    "*.d.ts"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -108,12 +113,5 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "styled-components": "^4.0.0"
-  },
-  "files": [
-    "README.md",
-    "es",
-    "lib",
-    "dist",
-    "*.d.ts"
-  ]
+  }
 }
