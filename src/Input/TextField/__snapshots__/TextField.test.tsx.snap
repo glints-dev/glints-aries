@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField> should render with a label of Username and type of text 1`] = `
+<div
+  className="aries-textfield sc-bdVaJa ktXGUd"
+>
+  <input
+    aria-label="Username"
+    className="sc-htpNat evWPXU"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    type="text"
+  />
+  <label
+    className="textfield-label sc-bwzfXH gtXjtR"
+    data-testid="textfield-label"
+  >
+    Username
+  </label>
+</div>
+`;

@@ -112,6 +112,7 @@ class TextField extends React.Component<Props, State> {
         />
         {!removeFloatingLabel && (
           <TextFieldLabel
+            data-testid="textfield-label"
             className="textfield-label"
             floating={floating}
             status={status}
@@ -133,8 +134,10 @@ class TextField extends React.Component<Props, State> {
   }
 }
 
+export type textFieldType = 'text' | 'password';
+
 interface Props extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
-  type: 'text' | 'password';
+  type: textFieldType;
   label: string;
   disabled?: boolean;
   className?: string;
