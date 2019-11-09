@@ -127,6 +127,8 @@ class Modal extends React.Component<Props, State> {
   }
 }
 
+export type sizeType = 's' | 'm' | 'l' | 'xl';
+
 interface Props
   extends React.ComponentPropsWithoutRef<typeof ModalContentArea> {
   children: React.ReactNode;
@@ -137,7 +139,7 @@ interface Props
   centering?: boolean;
   removeAnimation?: boolean;
   footer?: React.ReactElement[];
-  size?: 's' | 'm' | 'l' | 'xl';
+  size?: sizeType;
   hideHeader?: boolean;
 }
 
