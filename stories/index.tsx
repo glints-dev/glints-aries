@@ -55,11 +55,11 @@ import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
 import ToastStory from './Display/ToastStory';
 import TooltipStory from './Display/TooltipStory';
-import TypographyStory from '../src/General/Typography/TypographyStory';
+import TypographyStory from './General/TypographyStory';
 
 // Employers
 import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
-import ToggleSwitchStory from '../src/Input/ToggleSwitch/ToggleSwitchStory';
+import ToggleSwitchStory from './Input/ToggleSwitchStory';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (

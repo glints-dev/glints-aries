@@ -12,7 +12,7 @@
     "build": "npm run build:lib && npm run build:es && npm run assets:build && npm run build:ts",
     "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore 'src/**/*.test.tsx'",
     "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore 'src/**/*.test.tsx'",
-    "build:ts": "tsc --baseUrl -d --declarationDir lib && tsc -d --declarationDir es",
+    "build:ts": "tsc --rootDir src -d --declarationDir lib && tsc --rootDir src -d --declarationDir es",
     "prepublishOnly": "npm run build",
     "storybook": "npm run assets:build && start-storybook -p 9001 -c storybook-config -s dist/public",
     "storybook:build": "rm -rf .out && npm run assets:build && build-storybook -c storybook-config -o .out -s dist/public",
