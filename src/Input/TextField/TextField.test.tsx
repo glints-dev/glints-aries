@@ -111,7 +111,7 @@ describe('when small is:', () => {
   });
 
   it('false, it should display the correct size', () => {
-    const { textFieldInput } = setupTextField({ disabled: true });
+    const { textFieldInput } = setupTextField();
     expect(textFieldInput).toHaveStyle('padding: 15px 20px;');
   });
 });
