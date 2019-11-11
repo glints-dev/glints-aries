@@ -4,5 +4,9 @@ dist
 .out
 .DS_Store
 flow-typed
-.vscode
+
+# Visual Studio Code
+.vscode/*
+!.vscode/launch.json
+
 .idea
