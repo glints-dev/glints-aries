@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox> should render an input with id, value and onClick props and a label with the text Software Engineer 1`] = `
+<div
+  aria-checked={false}
+  aria-labelledby="software-engineer"
+  className="aries-checkbox sc-bdVaJa bptVgQ"
+  role="checkbox"
+  tabIndex={0}
+>
+  <input
+    id="software-engineer"
+    onClick={[Function]}
+    type="checkbox"
+    value="Software Engineer"
+  />
+  <label
+    htmlFor="software-engineer"
+    tabIndex={-1}
+  >
+    Software Engineer
+  </label>
+</div>
+`;
