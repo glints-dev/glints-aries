@@ -11,7 +11,7 @@ exports[`<Typography> should contain the Title and Paragraph components: <Typogr
 
 exports[`<Typography> should contain the Title and Paragraph components: <Typography.Title> should render a h1 tag with the text Glints Aries 1`] = `
 <h1
-  className="aries-typography-title sc-bdVaJa jsMYET"
+  className="aries-typography-title sc-bdVaJa eiimym"
   color="#000000"
 >
   Glints Aries

@@ -55,10 +55,12 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   }}
 `;
 
+type statusType = 'success' | 'error';
+
 interface TextFieldLabelProps {
   small: boolean;
   floating: boolean;
-  status: string;
+  status: statusType;
 }
 
 export const TextFieldInput = styled.input<TextFieldInputProps>`
@@ -168,9 +170,9 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   }
 `;
 
-interface TextFieldInputProps {
+export interface TextFieldInputProps {
   small?: boolean;
-  status?: string;
+  status?: statusType;
   disableTyping?: boolean;
   floating?: boolean;
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Modal from '.';
 
 import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
+import Modal, { sizeType } from './Modal';
 import { SIZES } from '../../Style/Display/ModalStyle';
 
 const props = {
@@ -114,12 +114,13 @@ describe('onClose should be called once when:', () => {
 });
 
 describe('displays the correct size', () => {
-  Object.keys(SIZES).forEach(size => {
+  const sizes = Object.keys(SIZES) as sizeType[];
+  sizes.forEach(size => {
     const width = SIZES[size];
 
     it(`${size}: ${width}`, () => {
       const { getByRole } = render(
-        <Modal size={size} isVisible={true}>
+        <Modal size={size} isVisible={true} onClose={props.onClose}>
           <p>{props.content}</p>
         </Modal>
       );
@@ -131,7 +132,12 @@ describe('displays the correct size', () => {
 
 it('should not show the header when hideHeader is true', () => {
   const { getByTestId } = render(
-    <Modal hideHeader title={props.title} isVisible={true}>
+    <Modal
+      hideHeader
+      title={props.title}
+      isVisible={true}
+      onClose={props.onClose}
+    >
       <p>{props.content}</p>
     </Modal>
   );
@@ -141,7 +147,7 @@ it('should not show the header when hideHeader is true', () => {
 
 it('should center the Modal vertically when centering is true', () => {
   const { getByTestId } = render(
-    <Modal centering isVisible={true}>
+    <Modal centering isVisible={true} onClose={props.onClose}>
       <p>{props.content}</p>
     </Modal>
   );

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Device } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../Colors';
+import { sizeType } from '../../Display/Modal/Modal';
 
 export const SIZES: { [s: string]: number } = {
   s: 300,
@@ -108,7 +109,7 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
 
 interface ModalContentAreaProps {
   hideContentArea?: boolean;
-  size?: string;
+  size?: sizeType;
   centering?: boolean;
   removeAnimation?: boolean;
   isOpen?: boolean;
