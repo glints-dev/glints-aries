@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Heading from '../../src/General/Heading';
 
-import { PrimaryColor, SecondaryColor } from '../../src/Style/Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../src';
 
 const ColoredSquare = ({ bgColor, fontColor, name }) => (
   <div style={{ margin: '1em', flex: '1 20%' }}>
@@ -33,7 +33,9 @@ const ColorStory = () => (
       <h1>Colors</h1>
       <p>
         <code>
-          {"import { PrimaryColor, SecondaryColor } from 'glints-aries'"}
+          {
+            "import { PrimaryColor, SecondaryColor, Greyscale } from 'glints-aries'"
+          }
         </code>
       </p>
     </div>
@@ -44,6 +46,11 @@ const ColorStory = () => (
       </Heading>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <ColoredSquare
+          bgColor={PrimaryColor.glintsyellow}
+          fontColor="black"
+          name="PrimaryColor.glintsyellow"
+        />
+        <ColoredSquare
           bgColor={PrimaryColor.glintsred}
           fontColor="white"
           name="PrimaryColor.glintsred"
@@ -52,11 +59,6 @@ const ColorStory = () => (
           bgColor={PrimaryColor.glintsblue}
           fontColor="white"
           name="PrimaryColor.glintsblue"
-        />
-        <ColoredSquare
-          bgColor={PrimaryColor.glintsyellow}
-          fontColor="black"
-          name="PrimaryColor.glintsyellow"
         />
       </div>
     </div>
@@ -67,70 +69,9 @@ const ColorStory = () => (
       </Heading>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <ColoredSquare
-          bgColor={SecondaryColor.white}
-          fontColor="black"
-          name="SecondaryColor.white"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.whitesmoke}
-          fontColor="black"
-          name="SecondaryColor.whitesmoke"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.ivory}
-          fontColor="black"
-          name="SecondaryColor.ivory"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.black}
-          fontColor="white"
-          name="SecondaryColor.black"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.lighterblack}
-          fontColor="white"
-          name="SecondaryColor.lighterblack"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.grey}
-          fontColor="white"
-          name="SecondaryColor.grey"
-        />
-
-        <ColoredSquare
-          bgColor={SecondaryColor.lightgrey}
-          fontColor="black"
-          name="SecondaryColor.lightgrey"
-        />
-        <ColoredSquare
-          bgColor={SecondaryColor.lightergrey}
-          fontColor="black"
-          name="SecondaryColor.lightergrey"
-        />
-        <ColoredSquare
-          bgColor={SecondaryColor.purplepizza}
-          fontColor="white"
-          name="SecondaryColor.purplepizza"
-        />
-        <ColoredSquare
-          bgColor={SecondaryColor.blue}
-          fontColor="white"
-          name="SecondaryColor.blue"
-        />
-        <ColoredSquare
           bgColor={SecondaryColor.actionblue}
           fontColor="white"
           name="SecondaryColor.actionblue"
-        />
-        <ColoredSquare
-          bgColor={SecondaryColor.bluegem}
-          fontColor="white"
-          name="SecondaryColor.bluegem"
         />
         <ColoredSquare
           bgColor={SecondaryColor.green}
@@ -138,14 +79,57 @@ const ColorStory = () => (
           name="SecondaryColor.green"
         />
         <ColoredSquare
-          bgColor={SecondaryColor.lightgreen}
-          fontColor="black"
-          name="SecondaryColor.lightgreen"
+          bgColor={SecondaryColor.darkgreen}
+          fontColor="white"
+          name="SecondaryColor.darkgreen"
+        />
+        <ColoredSquare
+          bgColor={SecondaryColor.magenta}
+          fontColor="white"
+          name="SecondaryColor.magenta"
+        />
+        <ColoredSquare
+          bgColor={SecondaryColor.violet}
+          fontColor="white"
+          name="SecondaryColor.violet"
         />
         <ColoredSquare
           bgColor={SecondaryColor.orange}
           fontColor="black"
           name="SecondaryColor.orange"
+        />
+      </div>
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Greyscale
+      </Heading>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <ColoredSquare
+          bgColor={Greyscale.black}
+          fontColor="white"
+          name="Greyscale.black"
+        />
+        <ColoredSquare
+          bgColor={Greyscale.grey}
+          fontColor="white"
+          name="Greyscale.grey"
+        />
+        <ColoredSquare
+          bgColor={Greyscale.lightgrey}
+          fontColor="black"
+          name="Greyscale.lightgrey"
+        />
+        <ColoredSquare
+          bgColor={Greyscale.softgrey}
+          fontColor="black"
+          name="Greyscale.softgrey"
+        />
+        <ColoredSquare
+          bgColor={Greyscale.white}
+          fontColor="black"
+          name="Greyscale.white"
         />
       </div>
     </div>

@@ -1,31 +1,47 @@
 export const PrimaryColor = {
+  glintsyellow: '#FFF240',
   glintsred: '#EC272B',
   glintsblue: '#0BAEEC',
-  glintsyellow: '#FFF240',
 };
 
 export const SecondaryColor = {
-  white: '#FFFFFF',
-  whitesmoke: '#F3F3F3',
+  actionblue: '#017EB7',
+  green: '#93BD49',
+  darkgreen: '#008464',
+  magenta: '#FF00E5',
+  violet: '#9013FE',
+  orange: '#F5A623',
+
+  // deprecated
   ivory: '#FFFAEA',
-  black: '#000000',
   lighterblack: '#AAAAAA',
-  lightblack: '#777777',
-  grey: '#777777',
-  darkgrey: '#777777',
-  lightgrey: '#C6C6C6',
   lightergrey: '#EEEEEE',
-  purplepizza: '#FF00E5',
   blue: '#0869C2',
   darkerblue: '#027EB7',
-  bluegem: '#9013FE',
-  actionblue: '#017EB7',
-  green: '#93bd49',
   lightgreen: '#EEF6F4',
-  darkgreen: '#008464',
-  orange: '#F5A623',
   lightorange: '#FFF6E8',
   lightred: '#FFF2F3',
   lightblue: '#D6F4FF',
   darkblue: '#004b68',
+
+  // renamed
+  purplepizza: '#FF00E5',
+  bluegem: '#9013FE',
+
+  // moved to Greyscale
+  white: '#FFFFFF',
+  whitesmoke: '#F3F3F3',
+  black: '#000000',
+  lightblack: '#777777',
+  grey: '#777777',
+  darkgrey: '#777777',
+  lightgrey: '#C6C6C6',
+};
+
+export const Greyscale = {
+  black: '#000000',
+  grey: '#777777',
+  lightgrey: '#C6C6C6',
+  softgrey: '#F3F3F3',
+  white: '#FFFFFF',
 };
