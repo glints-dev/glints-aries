@@ -28,7 +28,7 @@ const IconStory = () => (
         .sort()
         .map(Icon => (
           <div style={{ flex: '1 1 20%', margin: '1em' }} key={Icon.name}>
-            {Icon({})}
+            <Icon />
             <p style={{ marginTop: '1em', fontSize: '12px' }}>
               <code style={{ fontSize: '14px' }}>{Icon.name}</code>
             </p>
