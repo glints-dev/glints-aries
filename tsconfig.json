@@ -9,8 +9,11 @@
     "outDir": "dist",
     "sourceMap": true,
     "types": [
+      "classnames",
       "jest",
       "lodash",
+      "moment",
+      "node",
       "react",
       "react-dom",
       "react-router-dom",

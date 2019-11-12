@@ -4,13 +4,11 @@ import { camelCase, upperFirst } from 'lodash';
 
 import { ICONS } from './IconLibrary';
 
-// const fs = require('fs');
-
 const iconsDir = './src/General/Icon/components';
+
 if (!fs.existsSync(iconsDir)) {
   fs.mkdirSync(iconsDir);
 }
-
 const indexContent = Object.keys(ICONS).reduce((content, name) => {
   const camelCaseName = upperFirst(camelCase(name));
   const componentName = `${camelCaseName}Icon`;
