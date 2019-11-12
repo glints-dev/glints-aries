@@ -37,7 +37,7 @@ export default ${componentName};
   { srcIndex: iconHeading, componentsIndex: '' }
 );
 
-fs.writeFileSync(`${iconsDir}/index.ts`, iconExportsContent.componentsIndex);
+fs.writeFileSync(`${iconsDir}/index.tsx`, iconExportsContent.componentsIndex);
 
 const prevSrcIndexContent = fs.readFileSync(indexFile, 'utf8');
 const iconHeadingIndex = prevSrcIndexContent.indexOf(iconHeading);
