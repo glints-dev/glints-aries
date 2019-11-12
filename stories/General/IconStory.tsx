@@ -6,14 +6,6 @@ import * as AllIcons from '../../src/General/Icon/components';
 const props = {
   Icon: [
     {
-      name: 'name',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'based on the list above',
-      require: 'yes',
-      description: '',
-    },
-    {
       name: 'color',
       type: 'string',
       defaultValue: <code>black</code>,
@@ -27,9 +19,9 @@ const props = {
 const IconStory = () => (
   <StorybookComponent
     title="Icon"
-    code="import { Icon } from 'glints-aries'"
+    code="import { AddCircleOutlineIcon } from 'glints-aries'"
     propsObject={props}
-    usage={'<AddIcon />'}
+    usage={'<AddCircleOutlineIcon />'}
   >
     <div style={{ display: 'flex', flexWrap: 'wrap', fontSize: '20px' }}>
       {Object.values(AllIcons)
