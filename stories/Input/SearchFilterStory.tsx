@@ -3,7 +3,7 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import SearchFilter from '../../src/Input/SearchFilter';
-import Icon from '../../src/General/Icon';
+import { LocationIcon, SearchIcon } from '../../src/General/Icon/components';
 import Button from '../../src/General/Button';
 
 const props = {
@@ -65,7 +65,7 @@ const SearchFilterStory = () => (
   value="Gojek"
   content={(
     <Button theme="blue">
-      <Icon name="search" color="white" />
+      <SearchIcon color="white" />
     </Button>
   )}
 >
@@ -77,7 +77,7 @@ const SearchFilterStory = () => (
     </SearchFilter.List>
     <SearchFilter.List title="Lokasi Populer">
       <SearchFilter.Item>
-        <Icon name="location" color="#AAAAAA" />
+        <LocationIcon color="#AAAAAA" />
         Lowongan Pekerjaan di Jakarta
       </SearchFilter.Item>
     </SearchFilter.List>
@@ -94,7 +94,7 @@ const SearchFilterStory = () => (
       label="Search for job title, location, or company"
       content={
         <SearchFilter.Button theme="blue">
-          <Icon name="search" color="white" />
+          <SearchIcon color="white" />
         </SearchFilter.Button>
       }
     >
@@ -104,8 +104,7 @@ const SearchFilterStory = () => (
         </SearchFilter.List>
         <SearchFilter.List title="Lokasi Populer">
           <SearchFilter.Item>
-            <Icon name="location" color="#AAAAAA" /> Lowongan Pekerjaan di
-            Jakarta
+            <LocationIcon color="#AAAAAA" /> Lowongan Pekerjaan di Jakarta
           </SearchFilter.Item>
         </SearchFilter.List>
         <SearchFilter.List title="Perusahaan Populer">

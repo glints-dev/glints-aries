@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../../General/Icon';
+import { ArrowDownIcon } from '../../General/Icon/components';
 
 import {
   PopoverContainer,
@@ -38,7 +38,7 @@ class Popover extends React.Component<Props, State> {
     return (
       <PopoverItemWrapper>
         <PopoverIcon>
-          <Icon name="arrow-down" color="black" />
+          <ArrowDownIcon color="black" />
         </PopoverIcon>
         {isOpen && <PopOverContent>{content}</PopOverContent>}
       </PopoverItemWrapper>

@@ -1,9 +1,10 @@
+import * as fs from 'fs';
 import * as ReactDOMServer from 'react-dom/server';
 import { camelCase, upperFirst } from 'lodash';
 
 import { ICONS } from './IconLibrary';
 
-const fs = require('fs');
+// const fs = require('fs');
 
 const iconsDir = './src/General/Icon/components';
 if (!fs.existsSync(iconsDir)) {
@@ -23,7 +24,7 @@ import * as React from 'react';
 import Icon, { Props } from '../Icon';
 
 const svg = ${ReactDOMServer.renderToStaticMarkup((ICONS as any)[name])};
-const ${componentName} = (props: Props) => <Icon children={svg} />;
+const ${componentName} = (props: Partial<Props>) => <Icon {...props} children={svg} />;
 export default ${componentName};
 `
   );

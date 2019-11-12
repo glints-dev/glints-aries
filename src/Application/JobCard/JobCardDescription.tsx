@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Icon } from '../../General/Icon';
+import { ClockIcon } from '../../General/Icon/components';
 
 import { JobcardDescriptionWrapper } from '../../Style/Application/JobCardStyle';
 
@@ -12,7 +12,7 @@ const JobCardDescription: React.FunctionComponent<Props> = ({
   <JobcardDescriptionWrapper {...defaultProps}>
     <p>{`${description}`}</p>
     <span>
-      <Icon name="clock" color="#646464" />
+      <ClockIcon color="#646464" />
       {time}
     </span>
   </JobcardDescriptionWrapper>

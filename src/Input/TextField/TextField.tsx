@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../../General/Icon';
+import { EyeIcon, EyeSlashedIcon } from '../../General/Icon/components';
 
 import {
   TextFieldContainer,
@@ -123,10 +123,11 @@ class TextField extends React.Component<Props, State> {
         )}
         {type === 'password' && (
           <div className="see-password" onClick={this.handleShowPassword}>
-            <Icon
-              name={inputType === 'password' ? 'eye' : 'eye-slashed'}
-              color={inputType === 'password' ? 'black' : '#777777'}
-            />
+            {inputType === 'password' ? (
+              <EyeIcon color="black" />
+            ) : (
+              <EyeSlashedIcon color="#777777" />
+            )}
           </div>
         )}
       </TextFieldContainer>

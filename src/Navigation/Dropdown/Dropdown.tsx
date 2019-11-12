@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../../General/Icon';
+import { ArrowDownIcon } from '../../General/Icon/components';
 
 import { escEvent } from '../../Utils/DomUtils';
 
@@ -152,7 +152,7 @@ class Dropdown extends React.Component<Props, State> {
       label,
       disabled,
       showHoverLine,
-      leftIconName,
+      LeftIcon,
       dropDownPlacement,
       noLineBreak,
       itemElement,
@@ -187,18 +187,12 @@ class Dropdown extends React.Component<Props, State> {
             showHoverLine={showHoverLine}
             showFullWidth={showFullWidth}
           >
-            {leftIconName && (
-              <Icon
-                name={leftIconName}
-                color={!disabled ? iconDefaultColor : '#777777'}
-              />
+            {LeftIcon && (
+              <LeftIcon color={!disabled ? iconDefaultColor : '#777777'} />
             )}
             <span>{itemElement ? itemElement : dropdownLabel}</span>
             <IconWrapper isOpen={isOpen}>
-              <Icon
-                name="arrow-down"
-                color={!disabled ? iconDefaultColor : '#777777'}
-              />
+              <ArrowDownIcon color={!disabled ? iconDefaultColor : '#777777'} />
             </IconWrapper>
           </DropdownHeader>
           <DropdownBody
@@ -259,7 +253,7 @@ interface Props
   children: React.ReactNode;
   label: string;
   hoverToOpen?: boolean;
-  leftIconName?: React.ComponentPropsWithoutRef<typeof Icon>['name'];
+  LeftIcon?: React.ReactType;
   itemElement?: React.ReactNode;
   iconDefaultColor: string;
   onChange?(value: string): void;

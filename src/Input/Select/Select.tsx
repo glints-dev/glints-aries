@@ -6,8 +6,13 @@ import classNames from 'classnames';
 
 import SelectList, { SelectItemProps } from './SelectList';
 
-import Icon from '../../General/Icon';
-import { SelectContainer, SelectWrapper, SelectInput, SelectLabel } from '../../Style/Input/SelectStyle';
+import { ArrowDownIcon } from '../../General/Icon/components';
+import {
+  SelectContainer,
+  SelectWrapper,
+  SelectInput,
+  SelectLabel,
+} from '../../Style/Input/SelectStyle';
 
 class Select extends React.Component<Props, State> {
   static Option: React.FunctionComponent<SelectItemProps> = () => null;
@@ -240,10 +245,20 @@ class Select extends React.Component<Props, State> {
       ...defaultProps
     } = this.props;
 
-    const { floating, isFocus, selectedValue = '', filterValue, cursor, isLoading } = this.state;
+    const {
+      floating,
+      isFocus,
+      selectedValue = '',
+      filterValue,
+      cursor,
+      isLoading,
+    } = this.state;
 
     return (
-      <SelectContainer className={classNames('aries-select', className)} ref={this.node}>
+      <SelectContainer
+        className={classNames('aries-select', className)}
+        ref={this.node}
+      >
         <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
           <SelectInput
             type="text"
@@ -264,13 +279,18 @@ class Select extends React.Component<Props, State> {
             {...defaultProps}
           />
           {!removeFloatingLabel && (
-            <SelectLabel aria-label={label} floating={floating} status={status} small={small}>
+            <SelectLabel
+              aria-label={label}
+              floating={floating}
+              status={status}
+              small={small}
+            >
               {label}
             </SelectLabel>
           )}
           {!removeDropIcon && (
             <div className="select-icon" aria-label="show options">
-              <Icon name="arrow-down" color="#777777" />
+              <ArrowDownIcon color="#777777" />
             </div>
           )}
         </SelectWrapper>

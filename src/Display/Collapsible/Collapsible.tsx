@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import Icon from '../../General/Icon';
+import { ArrowDownIcon } from '../../General/Icon/components';
 
 import {
   CollapsibleContainer,
@@ -60,7 +60,7 @@ class Collapsible extends React.Component<Props, State> {
             isOpen={isOpen}
           >
             {label}
-            <Icon name="arrow-down" color="#000000" />
+            <ArrowDownIcon color="#000000" />
           </CollapsibleHeader>
           {isOpen && (
             <CollapsibleBody

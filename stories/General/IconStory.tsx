@@ -29,7 +29,7 @@ const IconStory = () => (
     title="Icon"
     code="import { Icon } from 'glints-aries'"
     propsObject={props}
-    usage={'<Icon name="add" />'}
+    usage={'<AddIcon />'}
   >
     <div style={{ display: 'flex', flexWrap: 'wrap', fontSize: '20px' }}>
       {Object.values(AllIcons)

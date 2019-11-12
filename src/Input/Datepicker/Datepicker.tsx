@@ -19,7 +19,12 @@ import {
 } from '../../Style/Input/DatepickerStyle';
 
 import TextField from '../TextField';
-import Icon from '../../General/Icon';
+import {
+  ArrowBackIcon,
+  ArrowBackDoubleIcon,
+  ArrowNextIcon,
+  ArrowNextDoubleIcon,
+} from '../../General/Icon/components';
 
 const months = [
   'January',
@@ -314,11 +319,11 @@ class Datepicker extends React.Component<Props, State> {
   renderLeftSideIcon = (showMonths: boolean) => (
     <DatepickerNavigation>
       <DatepickerIconWrapper onMouseDown={this.setYearBack}>
-        <Icon name="arrow-back-double" color="grey" />
+        <ArrowBackDoubleIcon color="grey" />
       </DatepickerIconWrapper>
       {!showMonths && (
         <DatepickerIconWrapper needMargin onMouseDown={this.setMonthBack}>
-          <Icon name="arrow-back" color="grey" />
+          <ArrowBackIcon color="grey" />
         </DatepickerIconWrapper>
       )}
     </DatepickerNavigation>
@@ -328,11 +333,11 @@ class Datepicker extends React.Component<Props, State> {
     <DatepickerNavigation>
       {!showMonths && (
         <DatepickerIconWrapper needMargin onMouseDown={this.setMonthNext}>
-          <Icon name="arrow-next" color="grey" />
+          <ArrowNextIcon color="grey" />
         </DatepickerIconWrapper>
       )}
       <DatepickerIconWrapper onMouseDown={this.setYearNext}>
-        <Icon name="arrow-next-double" color="grey" />
+        <ArrowNextDoubleIcon color="grey" />
       </DatepickerIconWrapper>
     </DatepickerNavigation>
   );

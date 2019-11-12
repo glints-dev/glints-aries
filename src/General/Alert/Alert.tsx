@@ -2,8 +2,12 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../Icon';
-
+import {
+  CheckmarkSolidIcon,
+  WarningSolidIcon,
+  InfoSolidIcon,
+  CloseIcon,
+} from '../Icon/components';
 import {
   AlertContainer,
   AlertContent,
@@ -66,35 +70,35 @@ class Alert extends React.Component<Props, State> {
 
   renderAlertTypeIcon() {
     const { type } = this.props;
-    let alertType = null;
+    let AlertTypeIcon = null;
     let alertColor = null;
 
     switch (type) {
       case 'success':
-        alertType = 'checkmark-solid';
+        AlertTypeIcon = CheckmarkSolidIcon;
         alertColor = SecondaryColor.darkgreen;
         break;
       case 'warning':
-        alertType = 'warning-solid';
+        AlertTypeIcon = WarningSolidIcon;
         alertColor = SecondaryColor.orange;
         break;
       case 'danger':
-        alertType = 'warning-solid';
+        AlertTypeIcon = WarningSolidIcon;
         alertColor = PrimaryColor.glintsred;
         break;
       case 'info':
-        alertType = 'info-solid';
+        AlertTypeIcon = InfoSolidIcon;
         alertColor = PrimaryColor.glintsblue;
         break;
       default:
-        alertType = 'info-solid';
+        AlertTypeIcon = InfoSolidIcon;
         alertColor = PrimaryColor.glintsblue;
         break;
     }
 
     return (
       <React.Fragment>
-        <Icon name={alertType} color={alertColor} />
+        <AlertTypeIcon color={alertColor} />
       </React.Fragment>
     );
   }
@@ -116,7 +120,7 @@ class Alert extends React.Component<Props, State> {
         title="Close alert"
         onClick={onClose}
       >
-        <Icon name="close" color={SecondaryColor.grey} />
+        <CloseIcon color={SecondaryColor.grey} />
       </AlertIcon>
     );
   }
