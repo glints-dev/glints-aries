@@ -47,8 +47,8 @@ const props = {
       description: 'Show underline when hovered.',
     },
     {
-      name: 'leftIconName',
-      type: 'string',
+      name: 'leftIcon',
+      type: 'element',
       defaultValue: '',
       possibleValue: 'based on the Icon list',
       require: 'no',

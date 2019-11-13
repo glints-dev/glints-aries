@@ -152,7 +152,7 @@ class Dropdown extends React.Component<Props, State> {
       label,
       disabled,
       showHoverLine,
-      LeftIcon,
+      leftIcon,
       dropDownPlacement,
       noLineBreak,
       itemElement,
@@ -164,6 +164,8 @@ class Dropdown extends React.Component<Props, State> {
     } = this.props;
 
     const { isOpen, dropdownLabel, cursor } = this.state;
+
+    const LeftIcon = leftIcon;
 
     return (
       <DropdownContainer
@@ -253,7 +255,7 @@ interface Props
   children: React.ReactNode;
   label: string;
   hoverToOpen?: boolean;
-  LeftIcon?: React.ReactType;
+  leftIcon?: React.ReactType;
   itemElement?: React.ReactNode;
   iconDefaultColor: string;
   onChange?(value: string): void;
