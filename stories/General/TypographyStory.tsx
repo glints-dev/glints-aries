@@ -3,8 +3,14 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import Typography from '../../src/General/Typography';
-import { TITLE_VARIANTS } from '../../src/General/Typography/TitleStyles';
-import { PARAGRAPH_VARIANTS } from '../../src/General/Typography/ParagraphStyles';
+import {
+  TITLE_VARIANTS,
+  TITLE_FONT_SIZES,
+} from '../../src/General/Typography/TitleStyles';
+import {
+  PARAGRAPH_VARIANTS,
+  PARAGRAPH_FONT_SIZES,
+} from '../../src/General/Typography/ParagraphStyles';
 import Heading from '../../src/General/Heading';
 import { PrimaryColor } from '../../src/Style/Colors';
 
