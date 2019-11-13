@@ -1,9 +1,7 @@
 import * as React from 'react';
-
 import classNames from 'classnames';
 
 import Icon from '../../General/Icon';
-
 import { escEvent } from '../../Utils/DomUtils';
 
 import {
@@ -17,6 +15,7 @@ import {
 
 class Modal extends React.Component<Props, State> {
   modalContentAreaRef: React.RefObject<HTMLDivElement>;
+  mouseDownTarget: HTMLElement;
 
   state = {
     isOpen: false,
@@ -58,6 +57,21 @@ class Modal extends React.Component<Props, State> {
     document.body.removeAttribute('style');
   }
 
+  // To prevent the modal from closing
+  // when a mousedown event occurs inside the ModalContentArea
+  // but the subsequent mouseup event occurs outside
+  handleMouseDown = (e: React.MouseEvent) => {
+    const element = e.target as HTMLElement;
+    this.mouseDownTarget = element;
+  };
+
+  handleClick = (e: React.MouseEvent) => {
+    const element = e.target as HTMLElement;
+    if (this.mouseDownTarget === element) {
+      this.props.onClose();
+    }
+  };
+
   render() {
     const {
       title,
@@ -70,7 +84,7 @@ class Modal extends React.Component<Props, State> {
       footer,
       size,
       hideHeader,
-      ...defaultProps
+      ...restProps
     } = this.props;
 
     const { isOpen } = this.state;
@@ -80,9 +94,10 @@ class Modal extends React.Component<Props, State> {
         data-testid="modal-container"
         className={classNames('aries-modal', className)}
         centering={centering}
-        onClick={() => onClose()}
         isOpen={isOpen}
         removeAnimation={removeAnimation}
+        onMouseDown={this.handleMouseDown}
+        onClick={this.handleClick}
       >
         <ModalDialog className="modal-dialog">
           <ModalContentArea
@@ -97,7 +112,7 @@ class Modal extends React.Component<Props, State> {
             removeAnimation={removeAnimation}
             size={size}
             ref={this.modalContentAreaRef}
-            {...defaultProps}
+            {...restProps}
           >
             {!hideHeader && (
               <ModalHeader className="modal-header">
@@ -105,7 +120,7 @@ class Modal extends React.Component<Props, State> {
                 <button
                   data-testid="close-button"
                   type="button"
-                  onClick={() => onClose()}
+                  onClick={onClose}
                 >
                   <Icon
                     name="close"

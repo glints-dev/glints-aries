@@ -5,6 +5,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
   className="aries-modal sc-bdVaJa aauuo"
   data-testid="modal-container"
   onClick={[Function]}
+  onMouseDown={[Function]}
 >
   <div
     className="modal-dialog sc-bwzfXH ghuPdm"
@@ -24,7 +25,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
         </h3>
         <button
           data-testid="close-button"
-          onClick={[Function]}
+          onClick={[MockFunction]}
           type="button"
         >
           <svg
