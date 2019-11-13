@@ -40,9 +40,9 @@ function setupModal(isVisible: boolean) {
   const { getByTestId, getByRole } = render(ModalComponent);
 
   return {
-    modalContainer: getByTestId('modal-container'),
-    modalDialog: getByRole('dialog'),
-    closeButton: getByTestId('close-button'),
+    modalContainer: getByTestId('modal-container') as Element,
+    modalDialog: getByRole('dialog') as Element,
+    closeButton: getByTestId('close-button') as Element,
     onClose,
   };
 }
@@ -60,7 +60,7 @@ describe('when modal is opened', () => {
 
   it('should not be closed if the modal is clicked', () => {
     const { modalDialog, onClose } = setupModal(true);
-    fireEvent.click(modalDialog as Element);
+    fireEvent.click(modalDialog);
     expect(onClose).toHaveBeenCalledTimes(0);
   });
 
@@ -93,19 +93,23 @@ describe('when modal is closed', () => {
 describe('onClose should be called once when:', () => {
   it('close icon is clicked', () => {
     const { closeButton, onClose } = setupModal(true);
-    fireEvent.click(closeButton as Element);
+    fireEvent.click(closeButton);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   it('area outside modal is clicked', () => {
     const { modalContainer, onClose } = setupModal(true);
-    fireEvent.click(modalContainer as Element);
+    // mousedown needs to be fired because
+    // handleClick checks if the mousedown target element
+    // is the modal container before calling onClose
+    fireEvent.mouseDown(modalContainer);
+    fireEvent.click(modalContainer);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   it('escape key is pressed', () => {
     const { modalContainer, onClose } = setupModal(true);
-    fireEvent.keyDown(modalContainer as Element, {
+    fireEvent.keyDown(modalContainer, {
       key: 'Escape',
       keyCode: 27,
     });
