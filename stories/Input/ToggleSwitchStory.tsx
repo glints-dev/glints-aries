@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import ToggleSwitch from './ToggleSwitch';
-import StorybookComponent from '../../../stories/StorybookComponent';
-import { SecondaryColor } from '../../Style/Colors';
+import ToggleSwitch from '../../src/Input/ToggleSwitch/ToggleSwitch';
+import StorybookComponent from '../StorybookComponent';
+import { SecondaryColor } from '../../src/Style/Colors';
 
 const propsObject = {
   ToggleSwitch: [

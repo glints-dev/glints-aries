@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import StorybookComponent from '../../../stories/StorybookComponent';
+import StorybookComponent from '../StorybookComponent';
 
-import Typography from '.';
-import { TITLE_VARIANTS, TITLE_FONT_SIZES } from './TitleStyles';
-import { PARAGRAPH_VARIANTS, PARAGRAPH_FONT_SIZES } from './ParagraphStyles';
-import Heading from '../Heading';
-import { PrimaryColor } from '../../Style/Colors';
+import Typography from '../../src/General/Typography';
+import { TITLE_VARIANTS } from '../../src/General/Typography/TitleStyles';
+import { PARAGRAPH_VARIANTS } from '../../src/General/Typography/ParagraphStyles';
+import Heading from '../../src/General/Heading';
+import { PrimaryColor } from '../../src/Style/Colors';
 
 const { Title, Paragraph } = Typography;
 

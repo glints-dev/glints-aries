@@ -3,6 +3,7 @@ const entry = require('webpack-glob-entry');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 module.exports = {
+  mode: 'production',
   entry: entry('./assets/image/*.*'),
   output: {
     path: path.resolve('./dist/public/'),
