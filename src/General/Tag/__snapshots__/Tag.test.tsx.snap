@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tag> should render a label with the text "Glints Aries" 1`] = `
+<div
+  className="aries-tag sc-bwzfXH gyEtYh"
+  role="presentation"
+  tabIndex={0}
+>
+  <label
+    className="tag-content sc-bdVaJa kxQGlq"
+    tabIndex={-1}
+  >
+    Glints Aries
+  </label>
+</div>
+`;
