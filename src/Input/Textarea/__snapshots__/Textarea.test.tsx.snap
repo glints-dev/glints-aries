@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textarea> should render with a label of Description 1`] = `
+<div
+  className="aries-textarea sc-bdVaJa kFaXzJ"
+>
+  <textarea
+    aria-label="Description"
+    className="sc-htpNat iocmsl"
+    onBlur={[Function]}
+    onChange={[Function]}
+    rows={4}
+    style={
+      Object {
+        "maxHeight": "310px",
+      }
+    }
+  />
+  <label
+    className="sc-bwzfXH efukqU"
+    data-testid="textarea-label"
+  >
+    Description
+  </label>
+</div>
+`;

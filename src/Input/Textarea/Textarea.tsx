@@ -100,7 +100,7 @@ class Textarea extends React.PureComponent<Props, State> {
       onBlur,
       onChange,
       removeFloatingLabel,
-      ...defaultProps
+      ...restProps
     } = this.props;
 
     const { floating, rows, textareaMaxHeight } = this.state;
@@ -118,13 +118,17 @@ class Textarea extends React.PureComponent<Props, State> {
           floating={floating}
           value={value}
           aria-label={label}
-          {...defaultProps}
+          {...restProps}
           style={{
             maxHeight: `${textareaMaxHeight}px`,
           }}
         />
         {!removeFloatingLabel && (
-          <TextareaLabel floating={floating} status={status}>
+          <TextareaLabel
+            data-testid="textarea-label"
+            floating={floating}
+            status={status}
+          >
             {label}
           </TextareaLabel>
         )}
