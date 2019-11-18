@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import Icon from '../../General/Icon';
+import { CloseIcon } from '../../General/Icon/components';
 import { escEvent } from '../../Utils/DomUtils';
 
 import {
@@ -122,10 +122,7 @@ class Modal extends React.Component<Props, State> {
                   type="button"
                   onClick={onClose}
                 >
-                  <Icon
-                    name="close"
-                    color={hideContentArea ? 'white' : 'grey'}
-                  />
+                  <CloseIcon color={hideContentArea ? 'white' : 'grey'} />
                 </button>
               </ModalHeader>
             )}

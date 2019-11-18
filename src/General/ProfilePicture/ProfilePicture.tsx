@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../Icon';
+import { EditIcon } from '../Icon/components';
 
 import {
   ProfilePictureContainer,
@@ -49,7 +49,7 @@ class ProfilePicture extends React.Component<Props, State> {
           editable={editable}
           tabIndex={editable ? -1 : undefined}
         >
-          {isHover && <Icon name="edit" color="white" />}
+          {isHover && <EditIcon color="white" />}
           {children}
         </ProfilePictureContent>
       </ProfilePictureContainer>

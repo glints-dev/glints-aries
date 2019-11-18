@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Icon from '../../General/Icon';
+import { AddIcon } from '../../General/Icon/components';
 
 import {
   AccordionPanelWrapper,
@@ -24,7 +24,7 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
     >
       <AccordionContentWrapper className="accordion-content" tabIndex={-1}>
         <AccordionIconWrapper>
-          <Icon name="add" color={SecondaryColor.lightblack} />
+          <AddIcon color={SecondaryColor.lightblack} />
         </AccordionIconWrapper>
         <p>{label}</p>
         {active && (

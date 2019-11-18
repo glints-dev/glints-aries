@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from '../../General/Icon';
+import { DotIcon } from '../../General/Icon/components';
 
 import {
   JobcardDetailWrapper,
@@ -18,7 +18,7 @@ const JobCardDetail: React.FunctionComponent<Props> = ({
         .map((detail, index) => (
           <div key={`${detail.key}-${id}-${index}`}>
             <IconHolder>
-              <Icon name="dot" color="#c6c6c6" />
+              <DotIcon color="#c6c6c6" />
             </IconHolder>
             <li>{detail}</li>
           </div>

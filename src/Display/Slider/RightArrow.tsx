@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from '../../General/Icon';
+import { ArrowNextIcon } from '../../General/Icon/components';
 import { RightArrowContainer } from '../../Style/Display/SliderStyle';
 
 const RightArrow: React.FunctionComponent<Props> = props => {
@@ -11,7 +11,7 @@ const RightArrow: React.FunctionComponent<Props> = props => {
 
   return (
     <RightArrowContainer index={index} limit={limit} onClick={nextSlide}>
-      <Icon name="arrow-next" color={arrowWhite ? '#FFFFFF' : arrowColor} />
+      <ArrowNextIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
     </RightArrowContainer>
   );
 };

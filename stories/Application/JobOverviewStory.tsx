@@ -3,7 +3,7 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import JobOverview from '../../src/Application/JobOverview';
-import Icon from '../../src/General/Icon';
+import { DotIcon } from '../../src/General/Icon/components';
 import Divider from '../../src/General/Divider';
 
 const JobOverviewStory = () => (
@@ -37,19 +37,19 @@ const JobOverviewStory = () => (
 
     <JobOverview.Info>
       <p>
-        <Icon name="dot" color="#c6c6c6" />
+        <DotIcon color="#c6c6c6" />
         <span>HR Recruitment</span>
       </p>
       <p>
-        <Icon name="dot" color="#c6c6c6" />
+        <DotIcon color="#c6c6c6" />
         <span>Jakarta Selatan, Indonesia</span>
       </p>
       <p>
-        <Icon name="dot" color="#c6c6c6" />
+        <DotIcon color="#c6c6c6" />
         <span>IDR 7,000,000 - 14,000,000</span>
       </p>
       <p>
-        <Icon name="dot" color="#c6c6c6" />
+        <DotIcon color="#c6c6c6" />
         <span>Magang: 3 bulan</span>
       </p>
     </JobOverview.Info>
@@ -80,20 +80,20 @@ const JobOverviewStory = () => (
         <JobOverview.Info>
           <p>
             <span>
-              <Icon name="dot" color="#c6c6c6" />
+              <DotIcon color="#c6c6c6" />
               <span>HR Recruitment</span>
             </span>
           </p>
           <p>
-            <Icon name="dot" color="#c6c6c6" />
+            <DotIcon color="#c6c6c6" />
             <span>Jakarta Selatan, Indonesia</span>
           </p>
           <p>
-            <Icon name="dot" color="#c6c6c6" />
+            <DotIcon color="#c6c6c6" />
             <span>IDR 7,000,000 - IDR 14,000,000</span>
           </p>
           <p>
-            <Icon name="dot" color="#c6c6c6" />
+            <DotIcon color="#c6c6c6" />
             <span>Magang: 3 bulan</span>
           </p>
         </JobOverview.Info>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Icon from '../../General/Icon';
+import { CloseIcon } from '../../General/Icon/components';
 
 import { escEvent } from '../../Utils/DomUtils';
 
@@ -35,7 +35,7 @@ class Toast extends React.Component<Props> {
       >
         <ToastTopWrapper className="toast-header">
           <ToastIcon onClick={onClose}>
-            <Icon name="close" color={theme === 'black' ? 'white' : 'black'} />
+            <CloseIcon color={theme === 'black' ? 'white' : 'black'} />
           </ToastIcon>
         </ToastTopWrapper>
         <ToastBodyWrapper className="toast-body">{children}</ToastBodyWrapper>

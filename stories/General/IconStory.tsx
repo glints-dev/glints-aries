@@ -1,21 +1,10 @@
 import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
-
-import Icon from '../../src/General/Icon';
-
-import { ICONS } from '../../src/Utils/IconLibrary';
+import * as AllIcons from '../../src/General/Icon/components';
 
 const props = {
   Icon: [
-    {
-      name: 'name',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'based on the list above',
-      require: 'yes',
-      description: '',
-    },
     {
       name: 'color',
       type: 'string',
@@ -30,20 +19,18 @@ const props = {
 const IconStory = () => (
   <StorybookComponent
     title="Icon"
-    code="import { Icon } from 'glints-aries'"
+    code="import { AddCircleOutlineIcon } from 'glints-aries'"
     propsObject={props}
-    usage={'<Icon name="add" />'}
+    usage={'<AddCircleOutlineIcon />'}
   >
     <div style={{ display: 'flex', flexWrap: 'wrap', fontSize: '20px' }}>
-      {Object.keys(ICONS)
+      {Object.values(AllIcons)
         .sort()
-        .map(data => (
-          <div style={{ flex: '1 1 20%', margin: '1em' }} key={data}>
-            <Icon name={data.toLowerCase().replace(/-/g, '_')} />
+        .map(Icon => (
+          <div style={{ flex: '1 1 20%', margin: '1em' }} key={Icon.name}>
+            <Icon />
             <p style={{ marginTop: '1em', fontSize: '12px' }}>
-              <code style={{ fontSize: '14px' }}>
-                {data.toLowerCase().replace(/_/g, '-')}
-              </code>
+              <code style={{ fontSize: '14px' }}>{Icon.name}</code>
             </p>
           </div>
         ))}

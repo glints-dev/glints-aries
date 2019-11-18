@@ -2,6 +2,7 @@ node_modules
 dist
 es
 lib
+src/General/Icon/components
 *.log
 .out
 .DS_Store

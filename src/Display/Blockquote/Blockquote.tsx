@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import Icon from '../../General/Icon';
+import { QuotationIcon } from '../../General/Icon/components';
 
 import { BlockquoteContainer } from '../../Style/Display/BlockquoteStyle';
 import { PrimaryColor } from '../../Style/Colors';
@@ -35,8 +35,7 @@ class Blockquote extends React.Component<Props, State> {
         onMouseEnter={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
       >
-        <Icon
-          name="quotation"
+        <QuotationIcon
           color={isHover ? PrimaryColor.glintsred : PrimaryColor.glintsblue}
         />
         {children}

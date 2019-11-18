@@ -3,7 +3,7 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import Tag from '../../src/General/Tag';
-import Icon from '../../src/General/Icon';
+import { CloseIcon } from '../../src/General/Icon/components';
 
 const props = {
   Tag: [
@@ -41,7 +41,7 @@ const TagStory = () => (
     propsObject={props}
     usage={`<Tag theme="blue">
   Software Engineer
-  <Icon name="close" color="white" />
+  <CloseIcon color="white" />
 </Tag>`}
   >
     <div style={{ display: 'flex' }}>
@@ -49,7 +49,7 @@ const TagStory = () => (
         <h3>Block</h3>
         <Tag theme="orange" block>
           <span style={{ marginRight: '12px' }}>Software Engineer</span>
-          <Icon name="close" color="white" />
+          <CloseIcon color="white" />
         </Tag>
       </div>
       <div style={{ textAlign: 'center', marginRight: '2em' }}>
@@ -58,14 +58,14 @@ const TagStory = () => (
           <span style={{ marginRight: '12px', color: 'black' }}>
             Software Engineer
           </span>
-          <Icon name="close" color="black" />
+          <CloseIcon color="black" />
         </Tag>
       </div>
       <div style={{ textAlign: 'center', marginRight: '2em' }}>
         <h3>Outline</h3>
         <Tag theme="green" outline>
           <span style={{ marginRight: '12px' }}>Software Engineer</span>
-          <Icon name="close" color="#93bd49" />
+          <CloseIcon color="#93bd49" />
         </Tag>
       </div>
       <div style={{ textAlign: 'center' }}>

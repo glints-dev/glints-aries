@@ -3,7 +3,10 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import OmniSearch from '../../src/Input/OmniSearch';
-import Icon from '../../src/General/Icon';
+import {
+  LocationIcon,
+  ArrowRoundForwardIcon,
+} from '../../src/General/Icon/components';
 
 const props = {
   OmniSearch: [
@@ -65,7 +68,7 @@ const OmniSearchStory = () => (
   content={(
     <Button theme="blue">
       Go!
-      <Icon name="arrow-round-forward" color="white" />
+      <ArrowRoundForwardIcon color="white" />
     </Button>
   )}
 >
@@ -77,7 +80,7 @@ const OmniSearchStory = () => (
     </OmniSearch.List>
     <OmniSearch.List title="Lokasi Populer">
       <OmniSearch.Item>
-        <Icon name="location" color="#AAAAAA" />
+        <LocationIcon color="#AAAAAA" />
         Lowongan Pekerjaan di Jakarta
       </OmniSearch.Item>
     </OmniSearch.List>
@@ -95,7 +98,7 @@ const OmniSearchStory = () => (
         label="Find Internships, Locations, and Companies"
         content={
           <OmniSearch.Button theme="blue">
-            Go! <Icon name="arrow-round-forward" color="white" />
+            Go! <ArrowRoundForwardIcon color="white" />
           </OmniSearch.Button>
         }
       >
@@ -107,16 +110,13 @@ const OmniSearchStory = () => (
           </OmniSearch.List>
           <OmniSearch.List title="Lokasi Populer">
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" /> Lowongan Pekerjaan di
-              Jakarta
+              <LocationIcon color="#AAAAAA" /> Lowongan Pekerjaan di Jakarta
             </OmniSearch.Item>
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" /> Lowongan Pekerjaan di
-              Bogor
+              <LocationIcon color="#AAAAAA" /> Lowongan Pekerjaan di Bogor
             </OmniSearch.Item>
             <OmniSearch.Item>
-              <Icon name="location" color="#AAAAAA" /> Lowongan Pekerjaan di
-              Bandung
+              <LocationIcon color="#AAAAAA" /> Lowongan Pekerjaan di Bandung
             </OmniSearch.Item>
           </OmniSearch.List>
           <OmniSearch.List title="Perusahaan Populer">

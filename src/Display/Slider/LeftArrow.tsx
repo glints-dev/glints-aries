@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from '../../General/Icon';
+import { ArrowBackIcon } from '../../General/Icon/components';
 import { LeftArrowContainer } from '../../Style/Display/SliderStyle';
 
 const LeftArrow = (props: Props) => {
@@ -11,7 +11,7 @@ const LeftArrow = (props: Props) => {
 
   return (
     <LeftArrowContainer index={index} onClick={previousSlide}>
-      <Icon name="arrow-back" color={arrowWhite ? '#FFFFFF' : arrowColor} />
+      <ArrowBackIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
     </LeftArrowContainer>
   );
 };
