@@ -81,6 +81,7 @@ export { default as ChecklistIcon } from './General/Icon/components/ChecklistIco
 export { default as CheckmarkIcon } from './General/Icon/components/CheckmarkIcon';
 export { default as CheckmarkSolidIcon } from './General/Icon/components/CheckmarkSolidIcon';
 export { default as CheckmarkThickIcon } from './General/Icon/components/CheckmarkThickIcon';
+export { default as CircleIcon } from './General/Icon/components/CircleIcon';
 export { default as ClockIcon } from './General/Icon/components/ClockIcon';
 export { default as CloseIcon } from './General/Icon/components/CloseIcon';
 export { default as CloseCircleSolidIcon } from './General/Icon/components/CloseCircleSolidIcon';
@@ -127,6 +128,7 @@ export { default as InfoSolidIcon } from './General/Icon/components/InfoSolidIco
 export { default as InstagramIcon } from './General/Icon/components/InstagramIcon';
 export { default as LightbulbIcon } from './General/Icon/components/LightbulbIcon';
 export { default as LinkedinIcon } from './General/Icon/components/LinkedinIcon';
+export { default as LoadingIcon } from './General/Icon/components/LoadingIcon';
 export { default as LocationIcon } from './General/Icon/components/LocationIcon';
 export { default as MailIcon } from './General/Icon/components/MailIcon';
 export { default as MailSolidIcon } from './General/Icon/components/MailSolidIcon';
@@ -173,7 +175,8 @@ export { default as UserIcon } from './General/Icon/components/UserIcon';
 export { default as ViewIcon } from './General/Icon/components/ViewIcon';
 export { default as VimeoIcon } from './General/Icon/components/VimeoIcon';
 export { default as WarningIcon } from './General/Icon/components/WarningIcon';
-export { default as WarningSolidIcon } from './General/Icon/components/WarningSolidIcon';
+export { default as WarningCircleSolidIcon } from './General/Icon/components/WarningCircleSolidIcon';
 export { default as WarningOutlineIcon } from './General/Icon/components/WarningOutlineIcon';
+export { default as WarningSolidIcon } from './General/Icon/components/WarningSolidIcon';
 export { default as WhatsappIcon } from './General/Icon/components/WhatsappIcon';
 export { default as YoutubeIcon } from './General/Icon/components/YoutubeIcon';
