@@ -85,6 +85,6 @@ export const TagContainer = styled.div<TagContainerProps>`
 `;
 
 interface TagContainerProps {
-  block: boolean;
-  outline: boolean;
+  block?: boolean;
+  outline?: boolean;
 }
