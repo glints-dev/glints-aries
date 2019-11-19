@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import ToggleSwitch from '../../src/Input/ToggleSwitch/ToggleSwitch';
+import { EyeIcon, EyeSlashedIcon } from '../../src/General/Icon/components';
 import StorybookComponent from '../StorybookComponent';
-import { SecondaryColor } from '../../src/Style/Colors';
 
 const propsObject = {
   ToggleSwitch: [
@@ -20,10 +20,10 @@ const propsObject = {
       type: 'object',
       require: 'No',
       possibleValue: (
-        <code>{'{ active: "eye", inactive: "eye-slashed" }'}</code>
+        <code>{'{ active: EyeIcon, inactive: EyeSlashedIcon }'}</code>
       ),
       description:
-        'The name of icons that will be used in both active ' +
+        'The icon components that will be used in both active ' +
         'and inactive states. Both icons have to be defined when opting to use ' +
         'this.',
     },
@@ -48,8 +48,8 @@ const ToggleSwitchStory = () => (
       <ToggleSwitch
         defaultActive={false}
         iconOptions={{
-          active: 'eye',
-          inactive: 'eye-slashed',
+          active: EyeIcon,
+          inactive: EyeSlashedIcon,
         }}
       />
     `}
@@ -57,8 +57,8 @@ const ToggleSwitchStory = () => (
     <ToggleSwitch
       defaultActive={false}
       iconOptions={{
-        active: 'eye',
-        inactive: 'eye-slashed',
+        active: EyeIcon,
+        inactive: EyeSlashedIcon,
       }}
     />
   </StorybookComponent>
