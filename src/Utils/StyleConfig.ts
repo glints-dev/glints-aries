@@ -20,6 +20,11 @@ export const Variant = {
   SECONDARY: 'secondary',
   GHOST: 'ghost',
   LINK: 'link',
+  ICON: 'icon',
+};
+
+export const Shape = {
+  SQUARE: 'square',
 };
 
 export const PsychedelicTheme = {

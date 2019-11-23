@@ -5,6 +5,7 @@ import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
+import IconButton from './IconButton';
 
 import { Variant } from '../../Utils/StyleConfig';
 
@@ -18,6 +19,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   small,
   theme,
   variant,
+  shape = 'default',
   ...defaultProps
 }) => {
   switch (variant) {
@@ -76,6 +78,19 @@ const renderButton: React.FunctionComponent<Props> = ({
           {children}
         </LinkButton>
       );
+    case Variant.ICON:
+      return (
+        <IconButton
+          className={className}
+          disabled={disabled}
+          onClick={onClick}
+          block={block}
+          shape={shape}
+          {...defaultProps}
+        >
+          {children}
+        </IconButton>
+      );
     default:
       return (
         <DefaultButton
@@ -108,6 +123,7 @@ export interface Props {
   small?: boolean;
   theme?: string;
   variant?: string;
+  shape?: string;
 }
 
 export default Button;

@@ -6,8 +6,11 @@ import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
+import { CloseIcon } from '../../src/General/Icon/components'
 
-import { Variant, Theme } from '../../src/Utils/StyleConfig';
+import { SecondaryColor } from '../../src/Style/Colors'
+
+import { Variant, Theme, Shape } from '../../src/Utils/StyleConfig';
 
 const blockProp = {
   name: 'block',
@@ -18,12 +21,21 @@ const blockProp = {
   description: '	Sets Button to block type.',
 };
 
+const shapeProp = {
+  name: 'shape',
+  type: 'string',
+  defaultValue: <code>default</code>,
+  possibleValue: <code>default | square</code>,
+  require: 'no',
+  description: '	Sets a border to the icon button',
+};
+
 const buttonProps = [
   {
     name: 'variant',
     type: 'string',
     defaultValue: 'default',
-    possibleValue: <code>default | primary | secondary | ghost | link</code>,
+    possibleValue: <code>default | primary | secondary | ghost | link | icon</code>,
     require: 'no',
     description: 'Sets the Default Button.',
   },
@@ -107,6 +119,10 @@ const linkButtonProps = {
   'Link Button': [blockProp],
 };
 
+const iconButtonProps = {
+  'Icon Button': [shapeProp],
+};
+
 const ButtonStories = () => (
   <React.Fragment>
     <DefaultButtonStory />
@@ -118,6 +134,8 @@ const ButtonStories = () => (
     <GhostButtonStory />
     <Divider theme="grey" />
     <LinkButtonStory />
+    <Divider theme="grey" />
+    <IconButtonStory />
   </React.Fragment>
 );
 
@@ -317,6 +335,35 @@ const LinkButtonStory = () => (
       <Button variant={Variant.LINK} onClick={action('Link Button')}>
         Link
       </Button>
+    </div>
+  </StorybookComponent>
+);
+
+const IconButtonStory = () => (
+  <StorybookComponent
+    propsObject={iconButtonProps}
+    usage={`<Button
+  variant="icon"
+>
+  <CloseIcon />
+</Button>`}
+  >
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Icon Button
+      </Heading>
+      <ButtonRow>
+        <ButtonContainer>
+          <Button variant={Variant.ICON} onClick={action('Icon Button')}>
+            <CloseIcon color={SecondaryColor.grey} />
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button variant={Variant.ICON} shape={Shape.SQUARE} onClick={action('Icon Button')}>
+            <CloseIcon color={SecondaryColor.grey} />
+          </Button>
+        </ButtonContainer>
+      </ButtonRow>
     </div>
   </StorybookComponent>
 );

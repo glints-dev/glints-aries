@@ -619,3 +619,38 @@ export const LinkBtn = styled(Button)<LinkBtnProps>`
 interface LinkBtnProps {
   block?: boolean;
 }
+
+/*
+ * Icon Button
+ */
+
+export const IconBtn = styled(Button)<IconBtnProps>`
+  font-weight: normal;
+  text-transform: inherit;
+  padding: 0;
+  justify-content: flex-start;
+  label {
+    cursor: pointer;
+  }
+  &.iconbtn-square {
+    width: 40px;
+    height: 40px;
+    cursor: default;
+    border: solid 2px ${SecondaryColor.grey};
+    svg {
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+  &.iconbtn-square:hover {
+    border: solid 2px ${SecondaryColor.actionblue};
+    svg {
+      fill: ${SecondaryColor.actionblue};
+    }
+  }
+`;
+
+interface IconBtnProps {
+  block?: boolean;
+  shape?: string;
+}
