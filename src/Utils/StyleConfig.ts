@@ -27,6 +27,11 @@ export const Shape = {
   SQUARE: 'square',
 };
 
+export const Position = {
+  LEFT: 'left',
+  RIGHT: 'right',
+};
+
 export const PsychedelicTheme = {
   BLUE_DOMINANT: 'blue-dominant',
   BLUE_DEFAULT: 'blue-default',

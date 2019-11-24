@@ -6,11 +6,15 @@ import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
-import { CloseIcon } from '../../src/General/Icon/components'
+import {
+  CloseIcon,
+  ArrowNextIcon,
+  ArrowBackIcon,
+} from '../../src/General/Icon/components'
 
 import { SecondaryColor } from '../../src/Style/Colors'
 
-import { Variant, Theme, Shape } from '../../src/Utils/StyleConfig';
+import { Variant, Theme, Shape, Position } from '../../src/Utils/StyleConfig';
 
 const blockProp = {
   name: 'block',
@@ -190,6 +194,26 @@ Default
           </Button>
         </BlockButtonContainer>
       </ButtonRow>
+      <ButtonRow>
+        <ButtonContainer>
+          <Button theme={Theme.BLUE} onClick={action('Default Button')}>
+            Default
+            <ArrowBackIcon
+              position={Position.LEFT}
+              color={SecondaryColor.white}
+            />
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button theme={Theme.BLUE} onClick={action('Default Button')}>
+            Default
+            <ArrowNextIcon
+              position={Position.RIGHT}
+              color={SecondaryColor.white}
+            />
+          </Button>
+        </ButtonContainer>
+      </ButtonRow>
     </div>
   </StorybookComponent>
 );
@@ -202,7 +226,16 @@ variant='primary'
 theme='yellow'
 >
 Primary
-</Button>`}
+</Button>
+
+For Icon button
+<Button
+variant='primary'
+theme='yellow'
+>
+Primary <ArrowNextIcon position='left' />
+</Button>
+`}
   >
     <div style={{ marginBottom: '2em' }}>
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
@@ -269,6 +302,26 @@ Primary
           </Button>
         </ButtonContainer>
       </ButtonRow>
+      <ButtonRow>
+        <ButtonContainer>
+          <Button
+            variant={Variant.PRIMARY}
+            theme={Theme.YELLOW}
+            onClick={action('Primary Button')}
+          >
+            Yellow <ArrowBackIcon position={Position.LEFT} />
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button
+            variant={Variant.PRIMARY}
+            theme={Theme.YELLOW}
+            onClick={action('Primary Button')}
+          >
+            Yellow <ArrowNextIcon position={Position.RIGHT} />
+          </Button>
+        </ButtonContainer>
+      </ButtonRow>
     </div>
   </StorybookComponent>
 );
@@ -286,9 +339,23 @@ const SecondaryButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Secondary Button
       </Heading>
-      <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
-        Secondary
-      </Button>
+      <ButtonRow>
+        <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
+          Secondary
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
+        <ButtonContainer>
+          <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
+            Secondary <ArrowBackIcon position={Position.LEFT} />
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
+            Secondary <ArrowNextIcon position={Position.RIGHT} />
+          </Button>
+        </ButtonContainer>
+      </ButtonRow>
     </div>
   </StorybookComponent>
 );
@@ -307,13 +374,35 @@ const GhostButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Ghost Button
       </Heading>
-      <Button
-        variant={Variant.GHOST}
-        theme={Theme.BLUE}
-        onClick={action('Ghost Button')}
-      >
-        Ghost
-      </Button>
+      <ButtonRow>
+        <Button
+          variant={Variant.GHOST}
+          theme={Theme.BLUE}
+          onClick={action('Ghost Button')}
+        >
+          Ghost
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
+        <ButtonContainer>
+          <Button
+            variant={Variant.GHOST}
+            theme={Theme.BLUE}
+            onClick={action('Ghost Button')}
+          >
+            Ghost <ArrowBackIcon position={Position.LEFT} />
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button
+            variant={Variant.GHOST}
+            theme={Theme.BLUE}
+            onClick={action('Ghost Button')}
+          >
+            Ghost <ArrowNextIcon position={Position.RIGHT} />
+          </Button>
+        </ButtonContainer>
+      </ButtonRow>
     </div>
   </StorybookComponent>
 );

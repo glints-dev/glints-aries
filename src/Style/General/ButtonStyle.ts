@@ -7,6 +7,7 @@ const smallButtonPadding = [10, 20];
 
 interface ButtonProps {
   small?: boolean;
+  position?:string;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -27,6 +28,10 @@ const Button = styled.button<ButtonProps>`
       : `${generalButtonPadding[0]}px ${generalButtonPadding[1]}px`};
   background: transparent;
   transition: all 0.2s;
+  .icon-content {
+    display: flex;
+    padding-left: 10px;
+  }
 `;
 
 /*

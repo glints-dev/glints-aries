@@ -7,7 +7,7 @@ import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 import IconButton from './IconButton';
 
-import { Variant } from '../../Utils/StyleConfig';
+import { Position, Variant } from '../../Utils/StyleConfig';
 
 const renderButton: React.FunctionComponent<Props> = ({
   children,
@@ -22,6 +22,19 @@ const renderButton: React.FunctionComponent<Props> = ({
   shape = 'default',
   ...defaultProps
 }) => {
+  const childElement = React.Children.map(children, child => {
+    return child;
+  });
+  if (childElement[1]) {
+    if (
+      childElement[1].props.position &&
+      childElement[1].props.position === Position.LEFT
+    ) {
+      const swapElement = childElement[1];
+      childElement[1] = childElement[0];
+      childElement[0] = swapElement;
+    }
+  }
   switch (variant) {
     case Variant.PRIMARY:
       return (
@@ -35,7 +48,10 @@ const renderButton: React.FunctionComponent<Props> = ({
           theme={theme}
           {...defaultProps}
         >
-          {children}
+          {childElement[0]}
+          <span className="icon-content">
+            {childElement[1]}
+          </span>
         </PrimaryButton>
       );
     case Variant.SECONDARY:
@@ -48,7 +64,10 @@ const renderButton: React.FunctionComponent<Props> = ({
           small={small}
           {...defaultProps}
         >
-          {children}
+          {childElement[0]}
+          <span className="icon-content">
+            {childElement[1]}
+          </span>
         </SecondaryButton>
       );
     case Variant.GHOST:
@@ -63,7 +82,10 @@ const renderButton: React.FunctionComponent<Props> = ({
           theme={theme}
           {...defaultProps}
         >
-          {children}
+          {childElement[0]}
+          <span className="icon-content">
+            {childElement[1]}
+          </span>
         </GhostButton>
       );
     case Variant.LINK:
@@ -103,7 +125,10 @@ const renderButton: React.FunctionComponent<Props> = ({
           removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
-          {children}
+          {childElement[0]}
+          <span className="icon-content">
+            {childElement[1]}
+          </span>
         </DefaultButton>
       );
   }
