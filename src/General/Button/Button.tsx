@@ -25,14 +25,32 @@ const renderButton: React.FunctionComponent<Props> = ({
   const childElement = React.Children.map(children, child => {
     return child;
   });
-  if (childElement[1]) {
+  let iconIndex = null;
+  let content = [children];
+  for(let i=0; i < childElement.length; i++) {
+    if(childElement[i].props &&  childElement[i].props.position){
+      iconIndex = i;
+      break;
+    }
+  }
+  if (childElement[iconIndex]) {
+    content = [
+      childElement[0],
+      <span className="icon-content">{childElement[1]}</span>
+    ];
     if (
-      childElement[1].props.position &&
-      childElement[1].props.position === Position.LEFT
+      childElement[iconIndex].props.position &&
+      childElement[iconIndex].props.position === Position.LEFT
     ) {
-      const swapElement = childElement[1];
-      childElement[1] = childElement[0];
-      childElement[0] = swapElement;
+      content = [
+        <span
+          className="icon-content"
+          style={{paddingRight: '10px', paddingLeft: '0'}}
+        >
+          {childElement[iconIndex]}
+        </span>,
+        childElement[0]
+      ]
     }
   }
   switch (variant) {
@@ -48,10 +66,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           theme={theme}
           {...defaultProps}
         >
-          {childElement[0]}
-          <span className="icon-content">
-            {childElement[1]}
-          </span>
+          {content}
         </PrimaryButton>
       );
     case Variant.SECONDARY:
@@ -64,10 +79,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           small={small}
           {...defaultProps}
         >
-          {childElement[0]}
-          <span className="icon-content">
-            {childElement[1]}
-          </span>
+          {content}
         </SecondaryButton>
       );
     case Variant.GHOST:
@@ -82,10 +94,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           theme={theme}
           {...defaultProps}
         >
-          {childElement[0]}
-          <span className="icon-content">
-            {childElement[1]}
-          </span>
+          {content}
         </GhostButton>
       );
     case Variant.LINK:
@@ -125,10 +134,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
-          {childElement[0]}
-          <span className="icon-content">
-            {childElement[1]}
-          </span>
+          {content}
         </DefaultButton>
       );
   }

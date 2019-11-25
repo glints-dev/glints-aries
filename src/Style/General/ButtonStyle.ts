@@ -283,6 +283,9 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
         return `
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
+          .icon-content {
+            fill: ${SecondaryColor.white};
+          }
         `;
       }}
     }
@@ -415,6 +418,9 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
     ${SecondaryBtn} {
       background-color: ${SecondaryColor.black};
       color: ${SecondaryColor.white};
+      .icon-content {
+        fill: ${SecondaryColor.white};
+      }
       transition: all 0.2s;
       transform: translate3d(0, 0, 0);
     }
@@ -583,6 +589,9 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
           border: 2px solid ${SecondaryColor.black};
+          .icon-content {
+            fill: ${SecondaryColor.white};
+          }
         }
       `;
       }
