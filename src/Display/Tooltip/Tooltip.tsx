@@ -15,12 +15,32 @@ const Tooltip: React.FunctionComponent<Props> = ({
   position,
   ...defaultProps
 }) => {
+  const ref = React.useRef(null);
   const [isHover, setIsHover] = React.useState(false);
   const showTooltip = () => setIsHover(true);
   const hideTooltip = () => setIsHover(false);
 
+  const touchOutside = (event: TouchEvent) => {
+    const element = event.target as HTMLElement;
+    const hasTouchedOutside = !ref.current.contains(element);
+
+    if (hasTouchedOutside) {
+      hideTooltip();
+      document.removeEventListener('touchstart', touchOutside);
+    }
+  };
+  const handleTouchStart = (event: React.TouchEvent) => {
+    const eventType = event.type as string;
+
+    showTooltip();
+
+    if (eventType === 'touchstart') {
+      document.addEventListener('touchstart', touchOutside);
+    }
+  };
   return (
     <TooltipContainer
+      ref={ref}
       className={classNames('aries-tooltip', classes.container)}
       role="tooltip"
       aria-hidden={isHover ? 'false' : 'true'}
@@ -28,8 +48,7 @@ const Tooltip: React.FunctionComponent<Props> = ({
       // The tooltip does not close on iOS devices because of this issue https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#Safari_Mobile
       // Adding onTouchStart and onTouchEnd as a workaround
       // On mobile, it shows the tooltip on touch and hides the tooltip when the touch is released
-      onTouchStart={showTooltip}
-      onTouchEnd={hideTooltip}
+      onTouchStart={handleTouchStart}
       onMouseOver={showTooltip}
       onMouseLeave={hideTooltip}
       {...defaultProps}
