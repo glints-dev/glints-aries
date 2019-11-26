@@ -30,13 +30,8 @@ const Tooltip: React.FunctionComponent<Props> = ({
     }
   };
   const handleTouchStart = (event: React.TouchEvent) => {
-    const eventType = event.type as string;
-
     showTooltip();
-
-    if (eventType === 'touchstart') {
-      document.addEventListener('touchstart', touchOutside);
-    }
+    document.addEventListener('touchstart', touchOutside);
   };
   return (
     <TooltipContainer
