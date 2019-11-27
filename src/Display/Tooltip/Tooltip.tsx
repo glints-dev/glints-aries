@@ -20,29 +20,26 @@ const Tooltip: React.FunctionComponent<Props> = ({
   const showTooltip = () => setIsShow(true);
   const hideTooltip = () => setIsShow(false);
 
-  const hideTooltipIfTouchOutside = (element: HTMLElement) => {
-    const hasTouchedOutsideOfTooltipContent = !contentRef.current.contains(
-      element
-    );
+  const hideTooltipIfTouchOutside = React.useCallback(
+    (event: TouchEvent | React.TouchEvent) => {
+      const hasTouchedOutsideOfTooltipContent = !contentRef.current.contains(
+        event.target as HTMLElement
+      );
 
-    if (hasTouchedOutsideOfTooltipContent) {
-      hideTooltip();
-      document.removeEventListener('touchstart', touchOutside);
-    }
-  };
-
-  const touchOutside = React.useCallback((event: TouchEvent) => {
-    const element = event.target as HTMLElement;
-    hideTooltipIfTouchOutside(element);
-  }, []);
+      if (hasTouchedOutsideOfTooltipContent) {
+        hideTooltip();
+        document.removeEventListener('touchstart', hideTooltipIfTouchOutside);
+      }
+    },
+    []
+  );
 
   const handleTouchStart = (event: React.TouchEvent) => {
     if (!isShow) {
       showTooltip();
-      document.addEventListener('touchstart', touchOutside);
+      document.addEventListener('touchstart', hideTooltipIfTouchOutside);
     } else {
-      const element = event.target as HTMLElement;
-      hideTooltipIfTouchOutside(element);
+      hideTooltipIfTouchOutside(event);
     }
   };
   return (
