@@ -19,6 +19,14 @@ const props = {
       require: 'yes',
       description: 'Display content when button is clicked.',
     },
+    {
+      name: 'showBadgeNumber',
+      type: 'number',
+      defaultValue: '0',
+      possibleValue: 'integer value',
+      require: 'no',
+      description: 'To display a badge with the number of options selected from popover',
+    },
   ],
 };
 
