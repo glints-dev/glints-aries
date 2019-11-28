@@ -15,30 +15,38 @@ const Tooltip: React.FunctionComponent<Props> = ({
   position,
   ...defaultProps
 }) => {
-  const ref = React.useRef(null);
-  const [isHover, setIsHover] = React.useState(false);
-  const showTooltip = () => setIsHover(true);
-  const hideTooltip = () => setIsHover(false);
+  const contentRef = React.useRef(null);
+  const [isShow, setIsShow] = React.useState(false);
+  const showTooltip = () => setIsShow(true);
+  const hideTooltip = () => setIsShow(false);
 
-  const touchOutside = (event: TouchEvent) => {
-    const element = event.target as HTMLElement;
-    const hasTouchedOutside = !ref.current.contains(element);
+  const hideTooltipIfTouchOutside = React.useCallback(
+    (event: TouchEvent | React.TouchEvent) => {
+      const hasTouchedOutsideOfTooltipContent = !contentRef.current.contains(
+        event.target as HTMLElement
+      );
 
-    if (hasTouchedOutside) {
-      hideTooltip();
-      document.removeEventListener('touchstart', touchOutside);
-    }
-  };
+      if (hasTouchedOutsideOfTooltipContent) {
+        hideTooltip();
+        document.removeEventListener('touchstart', hideTooltipIfTouchOutside);
+      }
+    },
+    []
+  );
+
   const handleTouchStart = (event: React.TouchEvent) => {
-    showTooltip();
-    document.addEventListener('touchstart', touchOutside);
+    if (!isShow) {
+      showTooltip();
+      document.addEventListener('touchstart', hideTooltipIfTouchOutside);
+    } else {
+      hideTooltipIfTouchOutside(event);
+    }
   };
   return (
     <TooltipContainer
-      ref={ref}
       className={classNames('aries-tooltip', classes.container)}
       role="tooltip"
-      aria-hidden={isHover ? 'false' : 'true'}
+      aria-hidden={isShow ? 'false' : 'true'}
       aria-label={text}
       // The tooltip does not close on iOS devices because of this issue https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#Safari_Mobile
       // Adding onTouchStart and onTouchEnd as a workaround
@@ -48,8 +56,9 @@ const Tooltip: React.FunctionComponent<Props> = ({
       onMouseLeave={hideTooltip}
       {...defaultProps}
     >
-      {isHover && (
+      {isShow && (
         <TooltipContent
+          ref={contentRef}
           className={classNames('aries-tooltip-content', classes.content)}
           text={text}
           position={position}
