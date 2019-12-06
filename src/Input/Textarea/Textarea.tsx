@@ -25,14 +25,16 @@ class Textarea extends React.PureComponent<Props, State> {
     this.textareaInputRef = React.createRef();
   }
 
-  handleFocusChange = (onBlur: () => void) => {
+  handleFocusChange = (
+    onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void
+  ) => {
     const listener = (e: React.FocusEvent<HTMLTextAreaElement>) => {
       this.setState({
         floating: e.target.value.length > 0,
       });
 
       if (onBlur !== undefined) {
-        return onBlur();
+        return onBlur(e);
       }
     };
 
