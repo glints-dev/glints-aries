@@ -2,14 +2,6 @@
 
 We proudly present to you Glints Aries created by the front-end engineers of Glints. It is a front-end framework to simplify and speed up your development. This project is built with React and Styled Components. We are still actively developing this project day by day and there are still a ton of amazing components to be built.
 
-# Contributing
-
-[Find out more at the wiki.](https://github.com/glints-dev/glints-aries/wiki/Contributing)
-
-# Testing
-
-[Find out more at the wiki.](https://github.com/glints-dev/glints-aries/wiki/Testing)
-
 ### Installation
 
 ```bash
@@ -189,10 +181,10 @@ If you design a component, you should pay attention to
    - Do manual test.
    - Remove all warnings and errors before push it to Github.
 
-# Glints Aries Roadmap
+# More about Glints Aries
 
-1. Using ThemeProvider for distributing color.
-2. Doing Accessibility Testing in storybook.
-3. Doing Component Testing.
-4. Trying Knobs.
-5. Updating styled-component v4.
+Find out more about the following topics in our wiki:
+
+- [Contributing](https://github.com/glints-dev/glints-aries/wiki/Contributing)
+- [Roadmap](https://github.com/glints-dev/glints-aries/wiki/Roadmap)
+- [Testing](https://github.com/glints-dev/glints-aries/wiki/Testing)
