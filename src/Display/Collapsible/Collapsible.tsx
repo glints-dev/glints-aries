@@ -67,7 +67,7 @@ class Collapsible extends React.Component<Props, State> {
 
 interface Props
   extends React.ComponentPropsWithoutRef<typeof CollapsibleContainer> {
-  label: string;
+  label: React.ReactNode;
   isOpen?: boolean;
 }
 
