@@ -19,17 +19,6 @@ class Collapsible extends React.Component<Props, State> {
     this.setState({ isOpen: !isOpen });
   };
 
-  shouldComponentUpdate(nextProps: Props, nextState: State) {
-    const { isOpen } = this.state;
-    if (isOpen !== nextState.isOpen) {
-      // re-render
-      return true;
-    }
-
-    // nothing changed. avoid unnecessary re-render
-    return false;
-  }
-
   componentDidMount() {
     const { isOpen } = this.props;
 
