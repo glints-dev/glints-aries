@@ -4,7 +4,8 @@ import { ScreenSize, Device } from '../Utils/StyleConfig';
 const GlintsContainer = styled.div`
   position: relative;
   margin: 0 auto;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, 'SVN Poppins', sans-serif;
+
   @media ${`(min-width: ${ScreenSize.desktopL}px)`} {
     width: 1400px;
     padding: 0 20px;
