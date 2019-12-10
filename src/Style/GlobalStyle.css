@@ -75,10 +75,10 @@
   unicode-range: var(--vn-unicode-range);
 }
 
-/* Default Font */
-/* The default Poppins font should be declared last 
-so the browser can fallback on it when there are 
-no special unicode characters detected */
+/* Original Font */
+/* The original Poppins font should be declared last 
+so the browser can fallback on it by default which is
+preferable since it is a smaller file */
 
 @font-face {
   font-family: 'Poppins';
