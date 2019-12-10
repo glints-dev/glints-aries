@@ -7,7 +7,78 @@
     U+1EA0 - U+1EF9;
 }
 
+/* Vietnamese Font */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/SVN-Poppins-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  unicode-range: var(--vn-unicode-range);
+}
+
 /* Default Font */
+/* The default Poppins font should be declared last 
+so the browser can fallback on it when there are 
+no special unicode characters detected */
 
 @font-face {
   font-family: 'Poppins';
@@ -67,72 +138,4 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-}
-
-/* Vietnamese Font */
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
-}
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
-}
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-Light.ttf');
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
-}
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-Medium.ttf');
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
-}
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-SemiBold.ttf');
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
-}
-
-@font-face {
-  font-family: 'SVN Poppins';
-  src: url('../../assets/fonts/SVN-Poppins-Black.ttf');
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  unicode-range: var(--vn-unicode-range);
 }
