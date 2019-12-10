@@ -4,10 +4,25 @@ import StorybookComponent from '../StorybookComponent';
 
 import Gallery from '../../src/Application/Gallery';
 
+const props = {
+  Gallery: [
+    {
+      name: 'imagesDisplayed',
+      type: 'number',
+      defaultValue: '8',
+      possibleValue: 'number',
+      require: 'no',
+      description:
+        'Set the number of images displayed by the gallery component at once',
+    },
+  ],
+};
+
 const GalleryStory = () => (
   <StorybookComponent
     title="Gallery"
     code="import { Gallery } from 'glints-aries'"
+    propsObject={props}
     usage={`<Gallery>
   <img src="..." />
   <img src="..." />

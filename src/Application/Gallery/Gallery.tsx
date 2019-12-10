@@ -13,6 +13,8 @@ import {
   GalleryThumbnailWrapper,
 } from '../../Style/Application/GalleryStyle';
 
+const defaultImagesDisplayed = 8;
+
 class Gallery extends React.Component<Props, State> {
   sliderRef: React.RefObject<Slider>;
 
@@ -53,10 +55,9 @@ class Gallery extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    const { children } = this.props;
-
-    if (React.Children.count(children) > 8) {
-      this.setState({ imageLeft: React.Children.count(children) - 8 });
+    const { children, imagesDisplayed = defaultImagesDisplayed } = this.props;
+    if (React.Children.count(children) > imagesDisplayed) {
+      this.setState({ imageLeft: React.Children.count(children) - imagesDisplayed });
     }
   }
 
@@ -71,14 +72,13 @@ class Gallery extends React.Component<Props, State> {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, imagesDisplayed = defaultImagesDisplayed } = this.props;
     const { visible, currentIndex, imageLeft } = this.state;
-
     return (
       <GalleryContainer className="aries-gallery">
         <GalleryItemWrapper className="gallery-wrapper">
           {React.Children.toArray(children)
-            .slice(0, 8)
+            .slice(0, imagesDisplayed)
             .map((data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
               <GalleryItem
                 className="gallery-item"
@@ -143,6 +143,7 @@ class Gallery extends React.Component<Props, State> {
 
 interface Props {
   children?: React.ReactNode;
+  imagesDisplayed?: number;
 }
 
 interface State {
