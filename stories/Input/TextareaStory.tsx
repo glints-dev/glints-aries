@@ -54,10 +54,10 @@ const TextareaStory = () => (
     title="Textarea"
     code="import { Textarea } from 'glints-aries'"
     propsObject={props}
-    usage={'<Textarea label="Job" />'}
+    usage={'<Textarea label="Description" />'}
   >
     <div style={{ width: '300px' }}>
-      <Textarea label="Job" />
+      <Textarea label="Description" />
     </div>
   </StorybookComponent>
 );

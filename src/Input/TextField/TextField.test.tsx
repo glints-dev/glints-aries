@@ -60,7 +60,7 @@ describe('when it is rendered', () => {
 });
 
 describe('when a value is entered', () => {
-  it('should call onChange once', () => {
+  it('should call onChange for each input', () => {
     setupTextFieldWithChangeEvent();
     expect(props.onChange).toHaveBeenCalledTimes(inputValue.length);
   });
@@ -78,7 +78,7 @@ describe('when a value is entered', () => {
 
 describe('when status is:', () => {
   it("'success', it should display a lightblack border", () => {
-    const { textFieldInput } = setupTextField();
+    const { textFieldInput } = setupTextField({ status: 'success' });
     expect(textFieldInput).toHaveStyle(`
       border-color: ${SecondaryColor.lightblack};
     `);
