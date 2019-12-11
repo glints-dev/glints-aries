@@ -222,7 +222,6 @@ export const Image = styled.img`
 `;
 
 export const LabelTag = styled.span`
-  font-family: Poppins;
   display: inline-block;
   color: ${SecondaryColor.white};
   background-color: ${PrimaryColor.glintsblue};
