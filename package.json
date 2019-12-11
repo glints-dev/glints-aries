@@ -107,6 +107,7 @@
     "webpack-glob-entry": "2.1.1"
   },
   "dependencies": {
+    "@glints/poppins": "^1.0.0",
     "classnames": "^2.2.6",
     "create-react-context": "^0.2.3",
     "moment": "^2.24.0",

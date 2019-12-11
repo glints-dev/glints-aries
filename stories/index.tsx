@@ -1,11 +1,10 @@
+import '@glints/poppins';
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Provider from './Provider';
 
 import StorybookStyle from '../src/Style/StorybookStyle';
-
-import '../src/Style/GlobalStyle.css';
 
 // Candidate
 import IntroStory from './IntroStory';
