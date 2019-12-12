@@ -1215,6 +1215,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
   integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
+"@glints/poppins@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@glints/poppins/-/poppins-1.0.0.tgz#c6c0285aba8b4571df654bc081723a9c83408ae4"
+  integrity sha512-4QzyZ9btZ0vxfmrta+NKdkE8qbH9o6l3jPvibdEm7gqLTweub11xkQNZFRyv1klcnyDBhEcT9+nl/dkSLxfo0Q==
+
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
