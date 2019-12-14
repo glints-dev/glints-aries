@@ -4,7 +4,6 @@ import StorybookComponent from '../StorybookComponent';
 
 import SearchFilter from '../../src/Input/SearchFilter';
 import { LocationIcon, SearchIcon } from '../../src/General/Icon/components';
-import Button from '../../src/General/Button';
 
 const props = {
   SearchFilter: [
@@ -64,9 +63,9 @@ const SearchFilterStory = () => (
   label="Search for job title, location, or company"
   value="Gojek"
   content={(
-    <Button theme="blue">
+    <SearchFilter.Button theme="blue">
       <SearchIcon color="white" />
-    </Button>
+    </SearchFilter.Button>
   )}
 >
   <SearchFilter.Body>
