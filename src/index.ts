@@ -64,6 +64,7 @@ export { default as ArrowBackDoubleIcon } from './General/Icon/components/ArrowB
 export { default as ArrowDownIcon } from './General/Icon/components/ArrowDownIcon';
 export { default as ArrowDownCircleOutlineIcon } from './General/Icon/components/ArrowDownCircleOutlineIcon';
 export { default as ArrowDownSolidIcon } from './General/Icon/components/ArrowDownSolidIcon';
+export { default as ArrowUpSolidIcon } from './General/Icon/components/ArrowUpSolidIcon';
 export { default as ArrowNextIcon } from './General/Icon/components/ArrowNextIcon';
 export { default as ArrowNextDoubleIcon } from './General/Icon/components/ArrowNextDoubleIcon';
 export { default as ArrowNextSolidIcon } from './General/Icon/components/ArrowNextSolidIcon';
