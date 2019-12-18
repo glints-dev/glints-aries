@@ -19,7 +19,7 @@ function createIconComponent(componentName: string, svgAsString: string) {
     `${ICON_COMPONENTS_DIR}/${componentName}.tsx`,
     `
 // GENERATE BY ./src/General/Icon/generateIcons.js
-// DON NOT EDIT IT MANUALLY
+// DO NOT EDIT IT MANUALLY
 import * as React from 'react';
 import Icon, { Props } from '../Icon';
 
