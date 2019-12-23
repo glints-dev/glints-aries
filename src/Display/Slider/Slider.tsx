@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { isNil } from 'lodash';
 
 import classNames from 'classnames';
 
@@ -47,8 +48,11 @@ class Slider extends React.Component<Props, State> {
   nextSlide = () => {
     const { children, afterChange } = this.props;
     const { index, translateValue, screenSize } = this.state;
+    const childrenCount = React.Children.toArray(children).filter(
+      child => !isNil(child)
+    ).length;
 
-    if (index !== React.Children.count(children)) {
+    if (index !== childrenCount) {
       this.setState({
         index: index + 1,
         translateValue: translateValue - screenSize,
@@ -101,6 +105,9 @@ class Slider extends React.Component<Props, State> {
   componentDidMount() {
     const { initialItem, autoplay, children } = this.props;
     const { index, screenSize } = this.state;
+    const childrenCount = React.Children.toArray(children).filter(
+      child => !isNil(child)
+    ).length;
     const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
       .width;
 
@@ -109,7 +116,7 @@ class Slider extends React.Component<Props, State> {
     });
 
     if (initialItem !== undefined) {
-      if (initialItem > 0 && initialItem <= React.Children.count(children)) {
+      if (initialItem > 0 && initialItem <= childrenCount) {
         this.setState({
           translateValue: -(windowWidth * (initialItem - 1)),
           index: initialItem,
@@ -125,7 +132,7 @@ class Slider extends React.Component<Props, State> {
     if (autoplay) {
       this.interval = setInterval(() => {
         // eslint-disable-next-line react/destructuring-assignment
-        if (this.state.index != React.Children.count(children)) {
+        if (this.state.index != childrenCount) {
           this.setState(prevState => ({
             index: prevState.index + 1,
             translateValue: -(prevState.screenSize * prevState.index),
@@ -165,6 +172,9 @@ class Slider extends React.Component<Props, State> {
       removeDots,
     } = this.props;
     const { translateValue, index } = this.state;
+    const childrenCount = React.Children.toArray(children).filter(
+      child => !isNil(child)
+    ).length;
 
     return (
       <SliderContainer
@@ -191,19 +201,24 @@ class Slider extends React.Component<Props, State> {
         <RightArrow
           nextSlide={this.nextSlide}
           index={index}
-          limit={React.Children.count(children)}
+          limit={childrenCount}
           arrowWhite={arrowWhite}
         />
         {!removeDots && (
           <ul>
-            {React.Children.map(children, (data, idx) => (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <li
-                className={idx + 1 === index ? 'active' : null}
-                onClick={() => this.handleDotClick(idx)}
-                key={idx}
-              ></li>
-            ))}
+            {React.Children.map(children, (data, idx) => {
+              if (isNil(data)) {
+                return null;
+              }
+              return (
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                <li
+                  className={idx + 1 === index ? 'active' : null}
+                  onClick={() => this.handleDotClick(idx)}
+                  key={idx}
+                ></li>
+              );
+            })}
           </ul>
         )}
       </SliderContainer>
