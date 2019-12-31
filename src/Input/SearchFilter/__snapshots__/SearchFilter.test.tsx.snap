@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchFilter> should render with an input with a button, and a list with an item 1`] = `
+<div
+  aria-expanded={false}
+  aria-label="Search jobs, location, or company"
+  className="aries-searchfilter sc-iwsKbI fzPyAB"
+  role="search"
+>
+  <div
+    className="searchfilter-inputwrapper sc-gZMcBi iaHGfs"
+  >
+    <input
+      onChange={[MockFunction]}
+      onFocus={[Function]}
+      placeholder="Search jobs, location, or company"
+      type="text"
+    />
+    <div
+      className="aries-defaultbtn sc-gqjmRU kyGVPq sc-htpNat cqvpiG"
+    >
+      <button
+        className="sc-bdVaJa defaultbtn-content sc-bwzfXH japkP"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="searchfilter-content sc-VigVT frFNix"
+    open={false}
+    role="menuitem"
+  >
+    <div
+      className="searchfilter-listitem sc-fjdhpX gvbQxn"
+      role="list"
+    >
+      <label>
+        Title
+      </label>
+      <ul>
+        <li
+          className="sc-jzJRlG byHcWR"
+          role="listitem"
+        >
+          Item
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
