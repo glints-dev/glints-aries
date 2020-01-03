@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { HashRouter, Link } from 'react-router-dom';
 import createContext, { Context } from 'create-react-context';
 const uikitAssets = require('../dist/public/manifest.json');
 
@@ -36,9 +35,9 @@ interface Props {
 }
 
 const Provider: React.FunctionComponent<Props> = props => (
-  <HashRouter>
-    <UikitProvider value={new Uikit('/', Link)}>{props.children}</UikitProvider>
-  </HashRouter>
+  <UikitProvider value={new Uikit('/', DefaultLink)}>
+    {props.children}
+  </UikitProvider>
 );
 
 export default Provider;
