@@ -1,47 +1,73 @@
 import * as React from 'react';
+import classNames from 'classnames';
 
-import { AddIcon } from '../../General/Icon/components';
+import { IconOptions } from './Accordion';
 
 import {
-  AccordionPanelWrapper,
-  AccordionIconWrapper,
-  AccordionContentWrapper,
-  AccordionContent,
+  PanelWrapper,
+  IconWrapper,
+  IconLabelWrapper,
+  ContentWrapper,
+  Content,
+  Label,
 } from '../../Style/Display/AccordionStyle';
 
-import { SecondaryColor } from '../../Style/Colors';
-
 const AccordionPanel: React.FunctionComponent<Props> = props => {
-  const { className, label, content, active, ...defaultProps } = props;
+  const {
+    className,
+    content,
+    label,
+    active,
+    iconOptions: { activeIcon, inactiveIcon, position },
+    onOpen,
+    onClick,
+    ...restProps
+  } = props;
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    onOpen();
+    if (onClick) {
+      onClick(e);
+    }
+  };
+  const renderIcon = () => (
+    <IconWrapper position={position} active={active}>
+      {active ? activeIcon : inactiveIcon}
+    </IconWrapper>
+  );
 
   return (
-    <AccordionPanelWrapper
-      className={className}
+    <PanelWrapper
+      className={classNames('accordion-panelwrapper', className)}
       role="tab"
       aria-expanded={active}
       tabIndex={0}
-      {...defaultProps}
+      {...restProps}
     >
-      <AccordionContentWrapper className="accordion-content" tabIndex={-1}>
-        <AccordionIconWrapper>
-          <AddIcon color={SecondaryColor.lightblack} />
-        </AccordionIconWrapper>
-        <p>{label}</p>
-        {active && (
-          <AccordionContent onClick={e => e.stopPropagation()}>
-            {content}
-          </AccordionContent>
-        )}
-      </AccordionContentWrapper>
-    </AccordionPanelWrapper>
+      <IconLabelWrapper
+        onClick={handleClick}
+        tabIndex={-1}
+        position={position}
+        active={active}
+      >
+        {position === 'left' && renderIcon()}
+        <Label>{label}</Label>
+        {position === 'right' && renderIcon()}
+      </IconLabelWrapper>
+      <ContentWrapper active={active}>
+        <Content position={position}>{content}</Content>
+      </ContentWrapper>
+    </PanelWrapper>
   );
 };
 
 export interface Props
-  extends React.ComponentPropsWithoutRef<typeof AccordionPanelWrapper> {
-  label: string;
-  content: string;
+  extends React.ComponentPropsWithoutRef<typeof PanelWrapper> {
+  content: React.ReactNode;
+  label: React.ReactNode;
   active?: boolean;
+  iconOptions?: IconOptions;
+  onOpen?(): void;
+  onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
 }
 
 export default AccordionPanel;
