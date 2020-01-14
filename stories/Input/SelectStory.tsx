@@ -42,6 +42,15 @@ const props = {
         'Sets error state on component. If string, the error will be shown below the select',
     },
     {
+      name: 'ErrorComponent',
+      type: 'Component',
+      defaultValue: '<DefaultError />',
+      possibleValue: 'any',
+      require: 'no',
+      description:
+        'Replaces the default error component. Receives `error` as children.',
+    },
+    {
       name: 'isLoading',
       type: 'boolean',
       defaultValue: <code>false</code>,
@@ -153,6 +162,23 @@ const Story = (
     </div>
     <div style={{ width: '300px' }}>
       <Select label="Jobs" error="I am an error message 🙀">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select
+        label="Jobs"
+        error="🎂 I am a custom error message"
+        ErrorComponent={({ children }) => (
+          <div style={{ color: 'orange', textAlign: 'right' }}>{children}</div>
+        )}
+      >
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
           Business Development
