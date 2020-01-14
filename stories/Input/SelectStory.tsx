@@ -27,9 +27,10 @@ const props = {
       name: 'status',
       type: 'string',
       defaultValue: '',
-      possibleValue: <code>success | error</code>,
+      possibleValue: <code>error</code>,
       require: 'no',
-      description: 'Sets different style for Select based on status.',
+      description:
+        '(DEPRECATED) Sets different style for Select based on status.',
     },
     {
       name: 'error',
