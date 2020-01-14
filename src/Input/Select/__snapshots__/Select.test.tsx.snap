@@ -43,7 +43,7 @@ exports[`<Select> should render with 3 options 1`] = `
   </div>
   <ul
     aria-hidden={true}
-    className="select-listbox sc-ifAKCX krCAU"
+    className="select-listbox sc-ifAKCX skPpr"
     open={false}
     role="listbox"
   >
