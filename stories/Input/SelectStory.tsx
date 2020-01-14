@@ -32,6 +32,15 @@ const props = {
       description: 'Sets different style for Select based on status.',
     },
     {
+      name: 'error',
+      type: 'boolean | string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description:
+        'Sets error state on component. If string, the error will be shown below the select',
+    },
+    {
       name: 'isLoading',
       type: 'boolean',
       defaultValue: <code>false</code>,
@@ -118,16 +127,41 @@ const props = {
 };
 
 const Story = (
-  <Select label="Jobs">
-    <Select.Option value="accountant">Accountant</Select.Option>
-    <Select.Option value="business development">
-      Business Development
-    </Select.Option>
-    <Select.Option value="software engineer">Software Engineer</Select.Option>
-    <Select.Option value="finance">Finance</Select.Option>
-    <Select.Option value="design">Design</Select.Option>
-    <Select.Option value="human resources">Human Resources</Select.Option>
-  </Select>
+  <div>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select label="Jobs">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select label="Jobs" error={true}>
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select label="Jobs" error="I am an error message 🙀">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+  </div>
 );
 
 const SelectStory = () => {

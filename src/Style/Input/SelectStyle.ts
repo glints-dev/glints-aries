@@ -236,3 +236,7 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
 interface SelectItemWrapperProps {
   disabled?: boolean;
 }
+
+export const SelectErrorDefault = styled.span`
+  color:${PrimaryColor.glintsred};
+`

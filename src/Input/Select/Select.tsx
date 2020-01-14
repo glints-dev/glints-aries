@@ -12,6 +12,7 @@ import {
   SelectWrapper,
   SelectInput,
   SelectLabel,
+  SelectErrorDefault,
 } from '../../Style/Input/SelectStyle';
 
 class Select extends React.Component<Props, State> {
@@ -258,6 +259,7 @@ class Select extends React.Component<Props, State> {
       disableTyping,
       removeFloatingLabel,
       removeDropIcon,
+      error,
       ...defaultProps
     } = this.props;
 
@@ -282,7 +284,7 @@ class Select extends React.Component<Props, State> {
             role="combobox"
             aria-expanded={isFocus}
             aria-autocomplete="list"
-            status={status}
+            status={status || (error && 'error')}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
             onBlur={this.handleFocusOut(onBlur)}
@@ -299,7 +301,7 @@ class Select extends React.Component<Props, State> {
             <SelectLabel
               aria-label={label}
               floating={floating}
-              status={status}
+              status={status || (error && 'error')}
               small={small}
             >
               {label}
@@ -322,6 +324,9 @@ class Select extends React.Component<Props, State> {
           handleClick={this.handleClick}
           handleMouseEnter={this.handleMouseEnter}
         />
+        {typeof error === 'string' && (
+          <SelectErrorDefault>{error}</SelectErrorDefault>
+        )}
       </SelectContainer>
     );
   }
@@ -334,6 +339,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   noOptionResult?: string;
   removeDropIcon?: boolean;
   removeFloatingLabel?: boolean;
+  error?: string | boolean;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
