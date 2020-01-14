@@ -181,7 +181,7 @@ export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   transform-origin: center top;
   transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
   background: ${SecondaryColor.white};
-  width: 100%;
+  min-width: 100%;
   height: auto;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
   z-index: 9999;
