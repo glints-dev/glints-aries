@@ -1,92 +1,74 @@
 import * as React from 'react';
-
 import classNames from 'classnames';
 
+import {
+  AddIcon,
+  MinusIcon,
+  ArrowDownSolidIcon,
+} from '../../General/Icon/components';
 import AccordionPanel, { Props as AccordionPanelProps } from './AccordionPanel';
 
-import { AccordionContainer } from '../../Style/Display/AccordionStyle';
+import { Container } from '../../Style/Display/AccordionStyle';
 
-class Accordion extends React.Component<Props, State> {
-  static Panel = AccordionPanel;
-
-  state = {
-    currIndex: -1,
-    isOpenSingleItem: false,
+const Accordion: Accordion = ({ children, className, iconPosition }) => {
+  const [currIndex, setCurrIndex] = React.useState(-1);
+  const iconOptions: IconOptions = {
+    activeIcon:
+      iconPosition === 'left' ? <MinusIcon /> : <ArrowDownSolidIcon />,
+    inactiveIcon:
+      iconPosition === 'left' ? <AddIcon /> : <ArrowDownSolidIcon />,
+    position: iconPosition,
   };
 
-  handleOpen = (index: number) => {
-    const { currIndex } = this.state;
-
-    this.setState({
-      currIndex: currIndex === index ? -1 : index,
-    });
+  const handleOpen = (index: number) => {
+    setCurrIndex(currIndex === index ? -1 : index);
   };
 
-  handleOpenSingleItem = () => {
-    const { isOpenSingleItem } = this.state;
+  return (
+    <Container className={classNames('aries-accordion', className)}>
+      {React.Children.map(
+        children,
+        (data: React.ReactElement<AccordionPanelProps>, index) => {
+          const { label, content, ...restChildProps } = data.props;
+          return (
+            <AccordionPanel
+              key={index}
+              label={label}
+              content={content}
+              active={currIndex === index}
+              iconOptions={iconOptions}
+              onOpen={() => handleOpen(index)}
+              {...restChildProps}
+            />
+          );
+        }
+      )}
+    </Container>
+  );
+};
 
-    this.setState({
-      isOpenSingleItem: !isOpenSingleItem,
-    });
-  };
+type Accordion = React.FunctionComponent<Props> & {
+  Panel: typeof AccordionPanel;
+};
 
-  renderMultipleItem() {
-    const { children } = this.props;
-    const { currIndex } = this.state;
+export type IconPosition = 'left' | 'right';
 
-    return React.Children.map(
-      children,
-      (data: React.ReactElement<AccordionPanelProps>, index) => (
-        <AccordionPanel
-          className="accordion-contentwrapper"
-          key={index}
-          label={data.props.label}
-          content={data.props.content}
-          active={currIndex === index}
-          onClick={() => this.handleOpen(index)}
-        />
-      )
-    );
-  }
-
-  renderSingleItem() {
-    const { children } = this.props;
-    const { isOpenSingleItem } = this.state;
-
-    const childProps = (children as React.ReactElement<AccordionPanelProps>)
-      .props;
-    return (
-      <AccordionPanel
-        className="accordion-contentwrapper"
-        label={childProps.label}
-        content={childProps.content}
-        active={isOpenSingleItem}
-        onClick={this.handleOpenSingleItem}
-      />
-    );
-  }
-
-  render() {
-    const { children, className } = this.props;
-
-    return (
-      <AccordionContainer className={classNames('aries-accordion', className)}>
-        {React.Children.count(children) > 1
-          ? this.renderMultipleItem()
-          : this.renderSingleItem()}
-      </AccordionContainer>
-    );
-  }
+export interface IconOptions {
+  activeIcon: React.ReactElement;
+  inactiveIcon: React.ReactElement;
+  position: IconPosition;
 }
 
 interface Props {
   children: React.ReactNode;
   className?: string;
+  iconPosition?: IconPosition;
 }
 
-interface State {
-  currIndex: number;
-  isOpenSingleItem: boolean;
-}
+Accordion.defaultProps = {
+  iconPosition: 'left' as IconPosition,
+};
+
+Accordion.Panel = AccordionPanel;
 
 export default Accordion;
