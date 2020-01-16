@@ -37,13 +37,14 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
 
   return (
     <PanelWrapper
-      className={classNames('accordion-panelwrapper', className)}
+      className={classNames('panel-wrapper', className)}
       role="tab"
       aria-expanded={active}
       tabIndex={0}
       {...restProps}
     >
       <IconLabelWrapper
+        className="label-wrapper"
         onClick={handleClick}
         tabIndex={-1}
         position={position}
@@ -53,7 +54,7 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
         <Label>{label}</Label>
         {position === 'right' && renderIcon()}
       </IconLabelWrapper>
-      <ContentWrapper active={active}>
+      <ContentWrapper className="content-wrapper" active={active}>
         <Content position={position}>{content}</Content>
       </ContentWrapper>
     </PanelWrapper>
