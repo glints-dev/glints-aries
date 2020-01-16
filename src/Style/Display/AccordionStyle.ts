@@ -9,7 +9,7 @@ const offsetIcon = iconSize + iconMargin;
 const transitionTiming = '0.24s';
 
 export const PanelWrapper = styled.div`
-  border-top: solid 1px ${Greyscale.grey};
+  border-top: solid 1px ${Greyscale.lightgrey};
   outline: none;
 `;
 
@@ -25,7 +25,7 @@ export const IconLabelWrapper = styled.div<IconLabelWrapper>`
   justify-content: ${({ position }) =>
     position === 'left' ? 'flex-start' : 'space-between'};
   margin-top: 30px;
-  padding-bottom: ${({ active }) => (active ? '16px' : '30px')};
+  padding-bottom: 30px;
   cursor: pointer;
   outline: none;
   transition: ${({ active }) =>
