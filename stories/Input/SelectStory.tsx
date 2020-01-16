@@ -121,17 +121,17 @@ const SelectStory = () => (
     title="Select"
     code="import { Select } from 'glints-aries'"
     propsObject={props}
-    usage={`handleChange = value => {
-  console.log('selected value: ', value);
-}
-
-<Select
-  label="Jobs"
-  onChange={this.handleChange}
->
+    usage={`<Select label="Jobs">
   <Select.Option value="accountant">Accountant</Select.Option>
-  <Select.Option value="business development">Business Development</Select.Option>
-  <Select.Option value="software engineer">Software Engineer</Select.Option>
+  <Select.Option value="business development">
+    Business Development
+  </Select.Option>
+  <Select.Option value="software engineer">
+    Software Engineer
+  </Select.Option>
+  <Select.Option value="finance">Finance</Select.Option>
+  <Select.Option value="design">Design</Select.Option>
+  <Select.Option value="human resources">Human Resources</Select.Option>
 </Select>`}
   >
     <div style={{ width: '300px' }}>
@@ -143,6 +143,9 @@ const SelectStory = () => (
         <Select.Option value="software engineer">
           Software Engineer
         </Select.Option>
+        <Select.Option value="finance">Finance</Select.Option>
+        <Select.Option value="design">Design</Select.Option>
+        <Select.Option value="human resources">Human Resources</Select.Option>
       </Select>
     </div>
   </StorybookComponent>
