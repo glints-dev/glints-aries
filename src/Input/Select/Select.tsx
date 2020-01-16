@@ -338,4 +338,6 @@ interface State {
   isLoading: boolean;
 }
 
+Select.Option.displayName = 'Select.Option';
+
 export default Select;
