@@ -28,19 +28,17 @@ const Accordion: Accordion = ({ children, className, iconPosition }) => {
     <Container className={classNames('aries-accordion', className)}>
       {React.Children.map(
         children,
-        (data: React.ReactElement<AccordionPanelProps>, index) => {
-          const { label, content, ...restChildProps } = data.props;
-          return (
-            <AccordionPanel
-              key={index}
-              label={label}
-              content={content}
-              active={currIndex === index}
-              iconOptions={iconOptions}
-              onOpen={() => handleOpen(index)}
-              {...restChildProps}
-            />
-          );
+        (child: React.ReactElement<AccordionPanelProps>, index) => {
+          const { label, content, ...restChildProps } = child.props;
+          return React.cloneElement(child, {
+            key: index,
+            label: label,
+            content: content,
+            active: currIndex === index,
+            iconOptions: iconOptions,
+            onOpen: () => handleOpen(index),
+            ...restChildProps,
+          });
         }
       )}
     </Container>
