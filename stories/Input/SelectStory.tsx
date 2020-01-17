@@ -1,4 +1,5 @@
 import * as React from 'react';
+import jsxToString from 'jsx-to-string';
 
 import StorybookComponent from '../StorybookComponent';
 
@@ -116,36 +117,30 @@ const props = {
   ],
 };
 
-const SelectStory = () => (
-  <StorybookComponent
-    title="Select"
-    code="import { Select } from 'glints-aries'"
-    propsObject={props}
-    usage={`handleChange = value => {
-  console.log('selected value: ', value);
-}
-
-<Select
-  label="Jobs"
-  onChange={this.handleChange}
->
-  <Select.Option value="accountant">Accountant</Select.Option>
-  <Select.Option value="business development">Business Development</Select.Option>
-  <Select.Option value="software engineer">Software Engineer</Select.Option>
-</Select>`}
-  >
-    <div style={{ width: '300px' }}>
-      <Select label="Jobs">
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
-  </StorybookComponent>
+const Story = (
+  <Select label="Jobs">
+    <Select.Option value="accountant">Accountant</Select.Option>
+    <Select.Option value="business development">
+      Business Development
+    </Select.Option>
+    <Select.Option value="software engineer">Software Engineer</Select.Option>
+    <Select.Option value="finance">Finance</Select.Option>
+    <Select.Option value="design">Design</Select.Option>
+    <Select.Option value="human resources">Human Resources</Select.Option>
+  </Select>
 );
+
+const SelectStory = () => {
+  return (
+    <StorybookComponent
+      title="Select"
+      code="import { Select } from 'glints-aries'"
+      propsObject={props}
+      usage={jsxToString(Story)}
+    >
+      <div style={{ width: '300px' }}>{Story}</div>
+    </StorybookComponent>
+  );
+};
 
 export default SelectStory;

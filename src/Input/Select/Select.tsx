@@ -191,18 +191,12 @@ class Select extends React.Component<Props, State> {
     }
 
     if (e.keyCode === 38 && cursor > 0) {
-      this.setState({
-        cursor: cursor - 1,
-      });
+      this.setState({ cursor: cursor - 1 }, this.scrollToActiveElement);
     } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
-      this.setState({
-        cursor: cursor + 1,
-      });
+      this.setState({ cursor: cursor + 1 }, this.scrollToActiveElement);
     } else if (e.keyCode === 13) {
       inputElement.blur();
-      const activeElement = this.node.current.querySelector(
-        '.active'
-      ) as HTMLLIElement;
+      const activeElement = this.getActiveElement();
       this.setState({
         selectedValue: activeElement.innerText,
         filterValue: React.Children.map(children, data => data),
@@ -224,6 +218,17 @@ class Select extends React.Component<Props, State> {
     this.setState({
       cursor: Number(listItemElement.dataset.id),
     });
+  };
+
+  scrollToActiveElement = () => {
+    const selectListElement = this.node.current.querySelector(
+      '.select-listbox'
+    ) as HTMLUListElement;
+    selectListElement.scrollTop = this.getActiveElement().offsetTop;
+  };
+
+  getActiveElement = () => {
+    return this.node.current.querySelector('.active') as HTMLLIElement;
   };
 
   render() {
@@ -332,5 +337,7 @@ interface State {
   cursor: number;
   isLoading: boolean;
 }
+
+Select.Option.displayName = 'Select.Option';
 
 export default Select;
