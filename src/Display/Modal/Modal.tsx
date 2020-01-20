@@ -23,8 +23,7 @@ class Modal extends React.Component<Props> {
   }
 
   componentDidMount() {
-    const { onClose } = this.props;
-    document.addEventListener('keydown', escEvent(onClose), false);
+    this.onOpen();
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -43,6 +42,15 @@ class Modal extends React.Component<Props> {
   }
 
   componentWillUnmount() {
+    this.onClose();
+  }
+
+  onOpen() {
+    const { onClose } = this.props;
+    document.addEventListener('keydown', escEvent(onClose), false);
+  }
+
+  onClose() {
     const { onClose } = this.props;
     document.removeEventListener('keydown', escEvent(onClose), false);
     document.body.removeAttribute('style');
