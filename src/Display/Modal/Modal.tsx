@@ -13,7 +13,7 @@ import {
   ModalFooter,
 } from '../../Style/Display/ModalStyle';
 
-class Modal extends React.Component<Props, State> {
+class Modal extends React.Component<Props> {
   modalContentAreaRef: React.RefObject<HTMLDivElement>;
   mouseDownTarget: HTMLElement;
 
@@ -31,23 +31,18 @@ class Modal extends React.Component<Props, State> {
     document.addEventListener('keydown', escEvent(onClose), false);
   }
 
-  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-    if (nextProps.isVisible && !prevState.isOpen) {
-      document.body.style.overflow = 'hidden';
-      return { isOpen: true };
-    }
-
-    if (!nextProps.isVisible && prevState.isOpen) {
-      document.body.removeAttribute('style');
-      return { isOpen: false };
-    }
-    return null;
-  }
-
   componentDidUpdate(prevProps: Props) {
     const { isVisible } = this.props;
+
+    // closed -> open
     if (!prevProps.isVisible && isVisible) {
       this.modalContentAreaRef.current.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    // open -> closed
+    if (prevProps.isVisible && !isVisible) {
+      document.body.removeAttribute('style');
     }
   }
 
@@ -83,18 +78,17 @@ class Modal extends React.Component<Props, State> {
       removeAnimation,
       footer,
       size,
+      isVisible,
       hideHeader,
       ...restProps
     } = this.props;
-
-    const { isOpen } = this.state;
 
     return (
       <ModalContainer
         data-testid="modal-container"
         className={classNames('aries-modal', className)}
         centering={centering}
-        isOpen={isOpen}
+        isOpen={isVisible}
         removeAnimation={removeAnimation}
         onMouseDown={this.handleMouseDown}
         onClick={this.handleClick}
@@ -108,7 +102,7 @@ class Modal extends React.Component<Props, State> {
             centering={centering}
             onClick={e => e.stopPropagation()}
             tabIndex={0}
-            isOpen={isOpen}
+            isOpen={isVisible}
             removeAnimation={removeAnimation}
             size={size}
             ref={this.modalContentAreaRef}
@@ -153,10 +147,6 @@ interface Props
   footer?: React.ReactElement[];
   size?: sizeType;
   hideHeader?: boolean;
-}
-
-interface State {
-  isOpen: boolean;
 }
 
 export default Modal;
