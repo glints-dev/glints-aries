@@ -16,14 +16,11 @@ import {
 class Modal extends React.Component<Props> {
   modalContentAreaRef: React.RefObject<HTMLDivElement>;
   mouseDownTarget: HTMLElement;
+  escEvent: (e: KeyboardEvent) => any;
 
   constructor(props: Props) {
     super(props);
     this.modalContentAreaRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.onOpen();
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -33,26 +30,28 @@ class Modal extends React.Component<Props> {
     if (!prevProps.isVisible && isVisible) {
       this.modalContentAreaRef.current.focus();
       document.body.style.overflow = 'hidden';
+      this.handleOpen();
     }
 
     // open -> closed
     if (prevProps.isVisible && !isVisible) {
       document.body.removeAttribute('style');
+      this.handleClose();
     }
   }
 
   componentWillUnmount() {
-    this.onClose();
+    this.handleClose();
   }
 
-  onOpen() {
+  handleOpen() {
     const { onClose } = this.props;
-    document.addEventListener('keydown', escEvent(onClose), false);
+    this.escEvent = escEvent(onClose);
+    document.addEventListener('keydown', this.escEvent, false);
   }
 
-  onClose() {
-    const { onClose } = this.props;
-    document.removeEventListener('keydown', escEvent(onClose), false);
+  handleClose() {
+    document.removeEventListener('keydown', this.escEvent, false);
     document.body.removeAttribute('style');
   }
 
