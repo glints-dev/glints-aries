@@ -44,6 +44,14 @@ then open your browser on port 9001
 
 Run `yarn unlink glints-aries` and re-install `glints-aries` when you want to stop using local `glints-aries`
 
+Currently there is an issue where the above leads to react complaining about multiple instances of react being found. The error message says `Uncaught Invariant Violation: Invalid hook call [...]`. If you encounter this, you can link your project's react into your local Glints Aries:
+
+1. Open terminal in your project.
+2. Run `cd node_modules/react`.
+3. Run `yarn link`.
+4. Open terminal in `glints-aries`.
+5. Run `yarn link react`.
+
 ### Code structure in glints-aries
 
 1. Always do alphabetically when importing file.
