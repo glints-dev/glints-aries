@@ -17,10 +17,6 @@ class Modal extends React.Component<Props> {
   modalContentAreaRef: React.RefObject<HTMLDivElement>;
   mouseDownTarget: HTMLElement;
 
-  state = {
-    isOpen: false,
-  };
-
   constructor(props: Props) {
     super(props);
     this.modalContentAreaRef = React.createRef();
