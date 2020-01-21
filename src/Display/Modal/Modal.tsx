@@ -26,9 +26,17 @@ class Modal extends React.Component<Props, State> {
     this.modalContentAreaRef = React.createRef();
   }
 
-  componentDidMount() {
+  guardedOnClose() {
     const { onClose } = this.props;
-    document.addEventListener('keydown', escEvent(onClose), false);
+    if (this.state.isOpen) onClose();
+  }
+
+  componentDidMount() {
+    document.addEventListener(
+      'keydown',
+      escEvent(this.guardedOnClose.bind(this)),
+      false
+    );
   }
 
   static getDerivedStateFromProps(nextProps: Props, prevState: State) {
@@ -52,8 +60,11 @@ class Modal extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
-    const { onClose } = this.props;
-    document.removeEventListener('keydown', escEvent(onClose), false);
+    document.removeEventListener(
+      'keydown',
+      escEvent(this.guardedOnClose),
+      false
+    );
     document.body.removeAttribute('style');
   }
 
