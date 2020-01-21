@@ -107,12 +107,21 @@ describe('onClose should be called once when:', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
+  const escapeEvent = {
+    key: 'Escape',
+    keyCode: 27,
+  };
+
   it('escape key is pressed', () => {
     const { modalContainer, onClose } = setupModal(true);
-    fireEvent.keyDown(modalContainer, {
-      key: 'Escape',
-      keyCode: 27,
-    });
+    fireEvent.keyDown(modalContainer, escapeEvent);
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('escape key is pressed twice', () => {
+    const { modalContainer, onClose } = setupModal(true);
+    fireEvent.keyDown(modalContainer, escapeEvent);
+    fireEvent.keyDown(modalContainer, escapeEvent);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 });
