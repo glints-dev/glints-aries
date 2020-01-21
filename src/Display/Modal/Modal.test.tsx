@@ -90,6 +90,11 @@ describe('when modal is closed', () => {
   });
 });
 
+const escapeEvent = {
+  key: 'Escape',
+  keyCode: 27,
+};
+
 describe('onClose should be called once when:', () => {
   it('close icon is clicked', () => {
     const { closeButton, onClose } = setupModal(true);
@@ -109,11 +114,16 @@ describe('onClose should be called once when:', () => {
 
   it('escape key is pressed', () => {
     const { modalContainer, onClose } = setupModal(true);
-    fireEvent.keyDown(modalContainer, {
-      key: 'Escape',
-      keyCode: 27,
-    });
+    fireEvent.keyDown(modalContainer, escapeEvent);
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('onClose should not have been called when:', () => {
+  it('escape key is pressed on closed modal', () => {
+    const { modalContainer, onClose } = setupModal(false);
+    fireEvent.keyDown(modalContainer, escapeEvent);
+    expect(onClose).toHaveBeenCalledTimes(0);
   });
 });
 
