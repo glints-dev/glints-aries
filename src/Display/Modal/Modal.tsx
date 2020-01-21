@@ -40,6 +40,10 @@ class Modal extends React.Component<Props> {
     }
   }
 
+  componentDidMount() {
+    if (this.props.isVisible) this.handleOpen();
+  }
+
   componentWillUnmount() {
     this.handleClose();
   }
