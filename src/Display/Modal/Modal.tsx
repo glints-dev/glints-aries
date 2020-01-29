@@ -32,9 +32,13 @@ class Modal extends React.Component<Props, State> {
     if (this.state.isOpen) onClose();
   }
 
-  componentDidMount() {
+  registerEventEscapeListener() {
     this.escEvent = escEvent(this.guardedOnClose.bind(this));
     document.addEventListener('keydown', this.escEvent, false);
+  }
+
+  componentDidMount() {
+    this.registerEventEscapeListener();
   }
 
   static getDerivedStateFromProps(nextProps: Props, prevState: State) {
