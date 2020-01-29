@@ -58,6 +58,7 @@ class Modal extends React.Component<Props, State> {
     const { isVisible } = this.props;
     if (!prevProps.isVisible && isVisible) {
       this.modalContentAreaRef.current.focus();
+      this.registerEventEscapeListener();
     }
     if (prevProps.isVisible && !isVisible) {
       this.removeEscapeEventListener();
