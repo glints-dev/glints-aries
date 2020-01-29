@@ -16,6 +16,7 @@ import {
 class Modal extends React.Component<Props, State> {
   modalContentAreaRef: React.RefObject<HTMLDivElement>;
   mouseDownTarget: HTMLElement;
+  escEvent: (e: KeyboardEvent) => any;
 
   state = {
     isOpen: false,
@@ -32,11 +33,8 @@ class Modal extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    document.addEventListener(
-      'keydown',
-      escEvent(this.guardedOnClose.bind(this)),
-      false
-    );
+    this.escEvent = escEvent(this.guardedOnClose.bind(this));
+    document.addEventListener('keydown', this.escEvent, false);
   }
 
   static getDerivedStateFromProps(nextProps: Props, prevState: State) {
@@ -60,11 +58,7 @@ class Modal extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
-    document.removeEventListener(
-      'keydown',
-      escEvent(this.guardedOnClose),
-      false
-    );
+    document.removeEventListener('keydown', this.escEvent, false);
     document.body.removeAttribute('style');
   }
 
