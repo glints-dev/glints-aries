@@ -57,8 +57,12 @@ class Modal extends React.Component<Props, State> {
     }
   }
 
-  componentWillUnmount() {
+  removeEscapeEventListener() {
     document.removeEventListener('keydown', this.escEvent, false);
+  }
+
+  componentWillUnmount() {
+    this.removeEscapeEventListener();
     document.body.removeAttribute('style');
   }
 
