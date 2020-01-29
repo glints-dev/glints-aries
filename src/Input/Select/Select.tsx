@@ -273,6 +273,8 @@ class Select extends React.Component<Props, State> {
       isLoading,
     } = this.state;
 
+    const deprecatedStatus = status || (error && 'error');
+
     return (
       <SelectContainer
         className={classNames('aries-select', className)}
@@ -285,7 +287,7 @@ class Select extends React.Component<Props, State> {
             role="combobox"
             aria-expanded={isFocus}
             aria-autocomplete="list"
-            status={status || (error && 'error')}
+            status={deprecatedStatus}
             disabled={disabled}
             onFocus={this.handleFocus(onFocus)}
             onBlur={this.handleFocusOut(onBlur)}
@@ -302,7 +304,7 @@ class Select extends React.Component<Props, State> {
             <SelectLabel
               aria-label={label}
               floating={floating}
-              status={status || (error && 'error')}
+              status={deprecatedStatus}
               small={small}
             >
               {label}
