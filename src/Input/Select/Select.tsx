@@ -283,6 +283,15 @@ class Select extends React.Component<Props, State> {
 
     const deprecatedStatus = status || (error && 'error');
 
+    const shouldRenderError = !error || typeof error === 'boolean';
+    const completeError = shouldRenderError ? null : renderError ? (
+      renderError(error)
+    ) : (
+      <SelectErrorDefault className="select-error-default">
+        {error}
+      </SelectErrorDefault>
+    );
+
     return (
       <SelectContainer
         className={classNames('aries-select', className)}
@@ -335,12 +344,7 @@ class Select extends React.Component<Props, State> {
           handleClick={this.handleClick}
           handleMouseEnter={this.handleMouseEnter}
         />
-        {typeof error !== 'boolean' &&
-          (renderError ? (
-            renderError(error)
-          ) : (
-            <SelectErrorDefault>{error}</SelectErrorDefault>
-          ))}
+        {completeError}
       </SelectContainer>
     );
   }
