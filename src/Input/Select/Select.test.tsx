@@ -186,6 +186,118 @@ describe("when status = 'error'", () => {
   });
 });
 
+describe('when error is true', () => {
+  it('should show a red border', () => {
+    const { getByRole } = render(
+      <Select error={true}>{SelectChildren}</Select>
+    );
+    const selectInput = getByRole('combobox');
+    expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+  });
+});
+
+describe('when error is a string', () => {
+  it('should show a red border', () => {
+    const { getByRole } = render(
+      <Select error="error">{SelectChildren}</Select>
+    );
+    const selectInput = getByRole('combobox');
+    expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+  });
+});
+
+describe('when error is a component', () => {
+  it('should show a red border', () => {
+    const { getByRole } = render(
+      <Select error={<span>error</span>}>{SelectChildren}</Select>
+    );
+    const selectInput = getByRole('combobox');
+    expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+  });
+});
+
+describe('when renderError is not given', () => {
+  it('should not render the default error if error is falsy', () => {
+    const { getByRole } = render(<Select>{SelectChildren}</Select>);
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).not.toHaveClass('select-error-default');
+  });
+
+  it('should not render the default error if error is true', () => {
+    const { getByRole } = render(
+      <Select error={true}>{SelectChildren}</Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).not.toHaveClass('select-error-default');
+  });
+
+  it('should render the error string in the default error', () => {
+    const { getByRole } = render(
+      <Select error={'test'}>{SelectChildren}</Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).toHaveClass('select-error-default');
+    expect(selectContainer.lastChild).toHaveTextContent('test');
+  });
+
+  it('should render the error component in the custom error', () => {
+    const errorComponent = <span className="errorComponent" />;
+    const { getByRole } = render(
+      <Select error={errorComponent}>{SelectChildren}</Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).toHaveClass('select-error-default');
+    expect(selectContainer.lastChild.firstChild).toHaveClass('errorComponent');
+  });
+});
+
+describe('when renderError is given', () => {
+  it('should not render the custom error if error is falsy', () => {
+    const customError = (e: string) => <div className="customError">{e}</div>;
+    const { getByRole } = render(
+      <Select renderError={customError}>{SelectChildren}</Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).not.toHaveClass('customError');
+  });
+
+  it('should not render the custom error if error is true', () => {
+    const customError = (e: string) => <div className="customError">{e}</div>;
+    const { getByRole } = render(
+      <Select renderError={customError} error={true}>
+        {SelectChildren}
+      </Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).not.toHaveClass('customError');
+  });
+
+  it('should render the error string in the custom error', () => {
+    const customError = (e: string) => <div className="customError">{e}</div>;
+    const { getByRole } = render(
+      <Select renderError={customError} error={'test'}>
+        {SelectChildren}
+      </Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).toHaveClass('customError');
+    expect(selectContainer.lastChild).toHaveTextContent('test');
+  });
+
+  it('should render the error component in the custom error', () => {
+    const customError = (e: string) => <div className="customError">{e}</div>;
+    const errorComponent = <span className="errorComponent" />;
+    const { getByRole } = render(
+      <Select renderError={customError} error={errorComponent}>
+        {SelectChildren}
+      </Select>
+    );
+    const selectContainer = getByRole('combobox').parentElement.parentElement;
+    expect(selectContainer.lastChild).toHaveClass('customError');
+    expect(selectContainer.lastChild.firstChild).toHaveClass('errorComponent');
+  });
+});
+
 describe('when isLoading = true', () => {
   it('should show a loading spinner', () => {
     const { getByRole } = render(<Select isLoading>{SelectChildren}</Select>);
