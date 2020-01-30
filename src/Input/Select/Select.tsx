@@ -36,7 +36,7 @@ class Select extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    const { value, children } = this.props;
+    const { value, children, status } = this.props;
 
     // Checking if children data is exist or not.
     if (React.Children.count(children) !== 0) {
@@ -54,6 +54,14 @@ class Select extends React.Component<Props, State> {
     }
 
     document.addEventListener('click', this.handleOnBlur, false);
+
+    if (status) {
+      if (typeof console !== 'undefined') {
+        console.warn(`Warning: Select's status prop is deprecated and will be
+        removed in a future release.\n\nPlease use the error prop instead to
+        show errors and indicate an error state.`);
+      }
+    }
   }
 
   componentDidUpdate(prevProps: Props) {
