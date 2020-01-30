@@ -42,9 +42,9 @@ const props = {
         'Sets error state on component. If string, the error will be shown below the select',
     },
     {
-      name: 'ErrorComponent',
+      name: 'renderError',
       type: 'Component',
-      defaultValue: '<DefaultError />',
+      defaultValue: '<span color="#EC272B" />',
       possibleValue: 'any',
       require: 'no',
       description:
