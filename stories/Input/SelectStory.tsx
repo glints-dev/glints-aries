@@ -34,7 +34,7 @@ const props = {
     },
     {
       name: 'error',
-      type: 'boolean | string',
+      type: 'ReactNode | boolean | string',
       defaultValue: '',
       possibleValue: 'any',
       require: 'no',
@@ -43,7 +43,7 @@ const props = {
     },
     {
       name: 'renderError',
-      type: 'Component',
+      type: 'ReactNode',
       defaultValue: '<span color="#EC272B" />',
       possibleValue: 'any',
       require: 'no',
@@ -162,6 +162,17 @@ const Story = (
     </div>
     <div style={{ width: '300px' }}>
       <Select label="Jobs" error="I am an error message 🙀">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select label="Jobs" error={<strong>I am a custom error</strong>}>
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
           Business Development

@@ -335,7 +335,7 @@ class Select extends React.Component<Props, State> {
           handleClick={this.handleClick}
           handleMouseEnter={this.handleMouseEnter}
         />
-        {typeof error === 'string' &&
+        {typeof error !== 'boolean' &&
           (renderError ? (
             renderError(error)
           ) : (
@@ -353,8 +353,8 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   noOptionResult?: string;
   removeDropIcon?: boolean;
   removeFloatingLabel?: boolean;
-  error?: string | boolean;
-  renderError?: React.FunctionComponent<string | boolean>;
+  error?: React.ReactNode | string | boolean;
+  renderError?: (error: React.ReactNode | string | boolean) => React.ReactNode;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
