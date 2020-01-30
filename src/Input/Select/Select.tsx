@@ -260,7 +260,7 @@ class Select extends React.Component<Props, State> {
       removeFloatingLabel,
       removeDropIcon,
       error,
-      ErrorComponent,
+      renderError,
       ...defaultProps
     } = this.props;
 
@@ -328,8 +328,8 @@ class Select extends React.Component<Props, State> {
           handleMouseEnter={this.handleMouseEnter}
         />
         {typeof error === 'string' &&
-          (ErrorComponent ? (
-            <ErrorComponent>{error}</ErrorComponent>
+          (renderError ? (
+            renderError(error)
           ) : (
             <SelectErrorDefault>{error}</SelectErrorDefault>
           ))}
@@ -346,7 +346,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   removeDropIcon?: boolean;
   removeFloatingLabel?: boolean;
   error?: string | boolean;
-  ErrorComponent?: React.ElementType;
+  renderError?: React.FunctionComponent<string | boolean>;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;

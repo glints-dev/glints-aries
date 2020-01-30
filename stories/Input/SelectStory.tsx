@@ -175,8 +175,8 @@ const Story = (
       <Select
         label="Jobs"
         error="🎂 I am a custom error message"
-        ErrorComponent={({ children }) => (
-          <div style={{ color: 'orange', textAlign: 'right' }}>{children}</div>
+        renderError={error => (
+          <div style={{ color: 'orange', textAlign: 'right' }}>{error}</div>
         )}
       >
         <Select.Option value="accountant">Accountant</Select.Option>
