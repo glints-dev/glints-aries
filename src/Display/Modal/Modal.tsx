@@ -27,13 +27,9 @@ class Modal extends React.Component<Props, State> {
     this.modalContentAreaRef = React.createRef();
   }
 
-  guardedOnClose() {
-    const { onClose } = this.props;
-    if (this.state.isOpen) onClose();
-  }
-
   registerEventEscapeListener() {
-    this.escEvent = escEvent(this.guardedOnClose.bind(this));
+    if (!this.props.isVisible) return;
+    this.escEvent = escEvent(this.props.onClose);
     document.addEventListener('keydown', this.escEvent, false);
   }
 
