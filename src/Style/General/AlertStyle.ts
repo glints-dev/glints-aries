@@ -43,7 +43,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
   font-size: 1em;
 
   @media ${Device.mobileM} {
-    min-width: 100%;
+    min-width: calc(100% - 30px);
   }
 
   ${({ type }) => {
@@ -98,6 +98,7 @@ export const AlertContent = styled.div`
 export const AlertMessage = styled.p`
   position: relative;
   margin: 0;
+  padding-right: 10px;
 `;
 
 export const AlertIcon = styled.div`
