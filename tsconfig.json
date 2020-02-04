@@ -16,7 +16,6 @@
       "node",
       "react",
       "react-dom",
-      "react-router-dom",
       "storybook__addon-actions",
       "storybook__addon-knobs",
       "storybook__react",

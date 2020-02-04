@@ -30,7 +30,6 @@ import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
 import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
-import JobCardStory from './Application/JobCardStory';
 import JobOverviewStory from './Application/JobOverviewStory';
 import LoadingStory from './General/LoadingStory';
 import ModalStory from './Display/ModalStory';
@@ -152,7 +151,6 @@ storiesOf('Application', module)
   ))
   .add('Gallery', () => <GalleryStory />)
   .add('Information', () => <InformationStory />)
-  .add('Job Card', () => <JobCardStory />)
   .add('Job Overview', () => <JobOverviewStory />);
 
 storiesOf('Utilities', module)

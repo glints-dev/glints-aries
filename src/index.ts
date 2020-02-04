@@ -21,7 +21,6 @@ export { default as Grid } from './Layout/Grid';
 export { default as Heading } from './General/Heading';
 export { default as Information } from './Application/Information';
 export { default as Icon } from './General/Icon';
-export { default as JobCard } from './Application/JobCard';
 export { default as JobOverview } from './Application/JobOverview';
 export { default as Loading } from './General/Loading';
 export { default as Modal } from './Display/Modal';
