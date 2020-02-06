@@ -137,7 +137,8 @@ class TextField extends React.Component<Props, State> {
 
 export type textFieldType = 'text' | 'password' | 'number';
 
-interface Props extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
   type: textFieldType;
   label: string;
   disabled?: boolean;

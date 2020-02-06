@@ -1,5 +1,5 @@
-import TextField from './TextField';
+import TextField, { Props } from './TextField';
 
-export { TextField };
+export { TextField, Props as TextFieldProps };
 
 export default TextField;
