@@ -135,7 +135,7 @@ class TextField extends React.Component<Props, State> {
   }
 }
 
-export type textFieldType = 'text' | 'password';
+export type textFieldType = 'text' | 'password' | 'number';
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
   type: textFieldType;
@@ -147,7 +147,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
 
 interface State {
   floating: boolean;
-  inputType: 'text' | 'password';
+  inputType: textFieldType;
 }
 
 export default TextField;
