@@ -33,6 +33,7 @@ import InformationStory from './Application/InformationStory';
 import JobOverviewStory from './Application/JobOverviewStory';
 import LoadingStory from './General/LoadingStory';
 import ModalStory from './Display/ModalStory';
+import NumberInputStory from './Input/NumberInputStory';
 import OmniSearchStory from './Input/OmniSearchStory';
 import PointingModalStory from './Display/PointingModalStory';
 import PopoverStory from './Display/PopoverStory';
@@ -103,6 +104,7 @@ storiesOf('Input', module)
   .add('Auto Complete', () => <AutoCompleteStory />)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Datepicker', () => <DatepickerStory />)
+  .add('NumberInput', () => <NumberInputStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Range', () => <RangeStory />)

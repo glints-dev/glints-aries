@@ -6,7 +6,7 @@ import TextField from '../../src/Input/TextField';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
 
-const props = {
+export const props = {
   TextField: [
     {
       name: 'type',
@@ -72,90 +72,36 @@ const props = {
       require: 'no',
       description: 'Removes floating effect for placeholder.',
     },
-    {
-      name: 'min',
-      type: 'Number',
-      defaultValue: '',
-      possibleValue: 'Any Number',
-      require: 'no',
-      description: 'Minimum value for number input',
-    },
-    {
-      name: 'max',
-      type: 'Number',
-      defaultValue: '',
-      possibleValue: 'Any Number',
-      require: 'no',
-      description: 'Maximum value for number input',
-    },
-    {
-      name: 'step',
-      type: 'Number',
-      defaultValue: '',
-      possibleValue: 'Any Number',
-      require: 'no',
-      description: 'Step size for number input',
-    },
   ],
 };
 
-const TextFieldStory = () => {
-  const [number, setNumber] = React.useState(2);
+const TextFieldStory = () => (
+  <React.Fragment>
+    <StorybookComponent
+      title="Text Field"
+      code="import { TextField } from 'glints-aries'"
+      usage={'<TextField type="text" label="Username" />'}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Text</Heading>
+      <div style={{ width: '300px' }}>
+        <TextField type="text" label="Username" />
+      </div>
+    </StorybookComponent>
 
-  return (
-    <React.Fragment>
-      <StorybookComponent
-        title="Text Field"
-        code="import { TextField } from 'glints-aries'"
-        usage={'<TextField type="text" label="Username" />'}
-      >
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Text
-        </Heading>
-        <div style={{ width: '300px' }}>
-          <TextField type="text" label="Username" />
-        </div>
-      </StorybookComponent>
+    <Divider theme="grey" />
 
-      <Divider theme="grey" />
-
-      <StorybookComponent
-        propsObject={props}
-        usage={'<TextField type="password" label="Password" value="..." />'}
-      >
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Password
-        </Heading>
-        <div style={{ width: '300px' }}>
-          <TextField type="password" label="Password" />
-        </div>
-      </StorybookComponent>
-
-      <Divider theme="grey" />
-
-      <StorybookComponent
-        propsObject={props}
-        usage={
-          '<TextField type="number" label="Number" value="4" min="-10" max="10" step="2" />'
-        }
-      >
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Number
-        </Heading>
-        <div style={{ width: '300px' }}>
-          <TextField
-            type="number"
-            label="Number"
-            value={number}
-            onChange={e => setNumber(Number(e.target.value))}
-            min="-10"
-            max="10"
-            step="2"
-          />
-        </div>
-      </StorybookComponent>
-    </React.Fragment>
-  );
-};
+    <StorybookComponent
+      propsObject={props}
+      usage={'<TextField type="password" label="Password" value="..." />'}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Password
+      </Heading>
+      <div style={{ width: '300px' }}>
+        <TextField type="password" label="Password" />
+      </div>
+    </StorybookComponent>
+  </React.Fragment>
+);
 
 export default TextFieldStory;
