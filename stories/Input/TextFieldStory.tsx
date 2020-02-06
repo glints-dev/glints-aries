@@ -104,6 +104,29 @@ const TextFieldStory = () => {
           <TextField type="password" label="Password" />
         </div>
       </StorybookComponent>
+
+      <Divider theme="grey" />
+
+      <StorybookComponent
+        propsObject={props}
+        usage={
+          '<TextField type="number" label="Number" value="4" min="-10" max="10" step="2" />'
+        }
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Number
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField
+            type="number"
+            label="Number"
+            value="2"
+            min="-10"
+            max="10"
+            step="2"
+          />
+        </div>
+      </StorybookComponent>
     </React.Fragment>
   );
 };
