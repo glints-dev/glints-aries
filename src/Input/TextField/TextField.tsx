@@ -143,6 +143,9 @@ interface Props extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
   disabled?: boolean;
   className?: string;
   removeFloatingLabel?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
 }
 
 interface State {
