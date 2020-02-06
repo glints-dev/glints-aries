@@ -76,6 +76,8 @@ const props = {
 };
 
 const TextFieldStory = () => {
+  const [number, setNumber] = React.useState(2);
+
   return (
     <React.Fragment>
       <StorybookComponent
@@ -120,7 +122,8 @@ const TextFieldStory = () => {
           <TextField
             type="number"
             label="Number"
-            value="2"
+            value={number}
+            onChange={e => setNumber(Number(e.target.value))}
             min="-10"
             max="10"
             step="2"
