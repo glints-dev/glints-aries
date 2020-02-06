@@ -75,33 +75,37 @@ const props = {
   ],
 };
 
-const TextFieldStory = () => (
-  <React.Fragment>
-    <StorybookComponent
-      title="Text Field"
-      code="import { TextField } from 'glints-aries'"
-      usage={'<TextField type="text" label="Username" />'}
-    >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Text</Heading>
-      <div style={{ width: '300px' }}>
-        <TextField type="text" label="Username" />
-      </div>
-    </StorybookComponent>
+const TextFieldStory = () => {
+  return (
+    <React.Fragment>
+      <StorybookComponent
+        title="Text Field"
+        code="import { TextField } from 'glints-aries'"
+        usage={'<TextField type="text" label="Username" />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Text
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField type="text" label="Username" />
+        </div>
+      </StorybookComponent>
 
-    <Divider theme="grey" />
+      <Divider theme="grey" />
 
-    <StorybookComponent
-      propsObject={props}
-      usage={'<TextField type="password" label="Password" value="..." />'}
-    >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Password
-      </Heading>
-      <div style={{ width: '300px' }}>
-        <TextField type="password" label="Password" />
-      </div>
-    </StorybookComponent>
-  </React.Fragment>
-);
+      <StorybookComponent
+        propsObject={props}
+        usage={'<TextField type="password" label="Password" value="..." />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Password
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField type="password" label="Password" />
+        </div>
+      </StorybookComponent>
+    </React.Fragment>
+  );
+};
 
 export default TextFieldStory;
