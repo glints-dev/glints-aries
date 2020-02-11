@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NumberInput> should render with a label of Username 1`] = `
+exports[`<NumberInput> should render correctly to match snapshot 1`] = `
 <div
   className="aries-textfield sc-bdVaJa ktXGUd"
 >

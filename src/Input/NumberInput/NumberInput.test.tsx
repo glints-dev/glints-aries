@@ -15,7 +15,7 @@ const props = {
 const inputValue = '12';
 
 function setupNumberInput(otherProps?: any) {
-  const { getByLabelText, ...utils } = render(
+  const { getByLabelText } = render(
     <NumberInput
       label={props.label}
       onChange={props.onChange}
@@ -23,13 +23,13 @@ function setupNumberInput(otherProps?: any) {
     />
   );
   const numberInput = getByLabelText(props.label) as HTMLInputElement;
-  return { numberInput, utils };
+  return numberInput;
 }
 
 function setupNumberInputWithChangeEvent(otherProps?: any) {
-  const { numberInput } = setupNumberInput(otherProps);
+  const numberInput = setupNumberInput(otherProps);
   userEvent.type(numberInput, inputValue);
-  return { numberInput };
+  return numberInput;
 }
 
 it('<NumberInput> should render correctly to match snapshot', () => {
@@ -41,7 +41,7 @@ it('<NumberInput> should render correctly to match snapshot', () => {
 
 describe('when it is rendered without a value passed to it', () => {
   it('should have an empty string as its value', () => {
-    const { numberInput } = setupNumberInput();
+    const numberInput = setupNumberInput();
     expect(numberInput.value).toEqual('');
   });
 });
@@ -58,7 +58,7 @@ describe('when a value is entered', () => {
   });
 
   it('should display the correct value', () => {
-    const { numberInput } = setupNumberInputWithChangeEvent();
+    const numberInput = setupNumberInputWithChangeEvent();
     expect(numberInput.value).toEqual(inputValue);
   });
 });
