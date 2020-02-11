@@ -37,7 +37,7 @@ const props = {
 };
 
 const NumberInputStory = () => {
-  const [number, setNumber] = React.useState(4);
+  const [number, setNumber] = React.useState('4');
 
   return (
     <React.Fragment>
@@ -54,7 +54,7 @@ const NumberInputStory = () => {
           <NumberInput
             label="Number"
             value={number}
-            onChange={e => setNumber(Number(e.target.value))}
+            onChange={e => setNumber(e.target.value)}
             min={-10}
             max={10}
             step={2}
