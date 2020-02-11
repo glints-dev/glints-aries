@@ -283,14 +283,20 @@ class Select extends React.Component<Props, State> {
 
     const deprecatedStatus = status || (error && 'error');
 
-    const shouldRenderError = !error || typeof error === 'boolean';
-    const completeError = shouldRenderError ? null : renderError ? (
-      renderError(error)
-    ) : (
-      <SelectErrorDefault className="select-error-default">
-        {error}
-      </SelectErrorDefault>
-    );
+    const shouldShowError = error && typeof error !== 'boolean';
+
+    let completeError = null;
+    if (shouldShowError) {
+      if (renderError) {
+        completeError = renderError(error);
+      } else {
+        completeError = (
+          <SelectErrorDefault className="select-error-default">
+            {error}
+          </SelectErrorDefault>
+        );
+      }
+    }
 
     return (
       <SelectContainer
