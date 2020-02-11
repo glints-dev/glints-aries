@@ -32,14 +32,14 @@ function setupNumberInputWithChangeEvent(otherProps?: any) {
   return { numberInput };
 }
 
-it('<NumberInput> should render with a label of Username', () => {
+it('<NumberInput> should render correctly to match snapshot', () => {
   const TextFieldSnapshot = renderer
     .create(<NumberInput label={props.label} />)
     .toJSON();
   expect(TextFieldSnapshot).toMatchSnapshot();
 });
 
-describe('when it is rendered', () => {
+describe('when it is rendered without a value passed to it', () => {
   it('should have an empty string as its value', () => {
     const { numberInput } = setupNumberInput();
     expect(numberInput.value).toEqual('');
