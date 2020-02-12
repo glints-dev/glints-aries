@@ -24,6 +24,7 @@ export { default as Icon } from './General/Icon';
 export { default as JobOverview } from './Application/JobOverview';
 export { default as Loading } from './General/Loading';
 export { default as Modal } from './Display/Modal';
+export { default as NumberInput } from './Input/NumberInput';
 export { default as OmniSearch } from './Input/OmniSearch';
 export { default as PointingModal } from './Display/PointingModal';
 export { default as Popover } from './Display/Popover';
