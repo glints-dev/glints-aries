@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput> should render correctly to match snapshot 1`] = `
+<div
+  className="aries-textfield sc-bdVaJa ktXGUd"
+>
+  <input
+    aria-label="Number"
+    className="sc-htpNat evWPXU"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    type="number"
+  />
+  <label
+    className="textfield-label sc-bwzfXH gtXjtR"
+    data-testid="textfield-label"
+  >
+    Number
+  </label>
+</div>
+`;

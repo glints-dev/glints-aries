@@ -6,13 +6,13 @@ import TextField from '../../src/Input/TextField';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
 
-const props = {
+export const props = {
   TextField: [
     {
       name: 'type',
       type: 'string',
       defaultValue: <code>text</code>,
-      possibleValue: <code>text | password</code>,
+      possibleValue: <code>text | password | number</code>,
       require: 'yes',
       description: 'Sets the type of Text Field.',
     },
