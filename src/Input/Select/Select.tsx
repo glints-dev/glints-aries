@@ -281,6 +281,7 @@ class Select extends React.Component<Props, State> {
             value={selectedValue}
             small={small}
             disableTyping={disableTyping}
+            readOnly={disableTyping}
             {...defaultProps}
           />
           {!removeFloatingLabel && (
