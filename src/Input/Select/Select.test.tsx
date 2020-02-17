@@ -125,7 +125,7 @@ describe('when it is rendered', () => {
     expect(selectContainer.lastChild).not.toHaveClass('select-error-default');
   });
 
-  it('should render the error string in the default error', () => {
+  it('should render the error string in the default error container', () => {
     const { getByRole } = render(
       <Select error={'test'}>{SelectChildren}</Select>
     );
@@ -134,14 +134,28 @@ describe('when it is rendered', () => {
     expect(selectContainer.lastChild).toHaveTextContent('test');
   });
 
-  it('should render the error component in the custom error', () => {
-    const errorComponent = <span className="errorComponent" />;
-    const { getByRole } = render(
-      <Select error={errorComponent}>{SelectChildren}</Select>
+  it('should render the error component in the default error container', () => {
+    const customError = <span data-testid="custom-error">nasty error</span>;
+    const { container, getByTestId } = render(
+      <Select error={customError}>{SelectChildren}</Select>
     );
-    const selectContainer = getByRole('combobox').parentElement.parentElement;
-    expect(selectContainer.lastChild).toHaveClass('select-error-default');
-    expect(selectContainer.lastChild.firstChild).toHaveClass('errorComponent');
+    const customErrorElement = getByTestId('custom-error');
+    expect(container).toContainElement(customErrorElement);
+    expect(customErrorElement).toHaveTextContent('nasty error');
+  });
+
+  it('should render the error string in the custom error', () => {
+    const customError = (e: string) => (
+      <div data-testid="custom-error">{e}</div>
+    );
+    const { container, getByTestId } = render(
+      <Select renderError={customError} error="nasty error">
+        {SelectChildren}
+      </Select>
+    );
+    const errorElement = getByTestId('custom-error');
+    expect(container).toContainElement(errorElement);
+    expect(container).toHaveTextContent('nasty error');
   });
 });
 
@@ -270,29 +284,37 @@ describe('when renderError is given', () => {
     expect(selectContainer.lastChild).not.toHaveClass('customError');
   });
 
-  it('should render the error string in the custom error', () => {
-    const customError = (e: string) => <div className="customError">{e}</div>;
-    const { getByRole } = render(
-      <Select renderError={customError} error={'test'}>
+  it('should render the error string in the custom error container', () => {
+    const errorContainer = (e: React.ReactNode) => (
+      <div data-testid="error-component">{e}</div>
+    );
+    const { container, getByTestId } = render(
+      <Select renderError={errorContainer} error="nasty error">
         {SelectChildren}
       </Select>
     );
-    const selectContainer = getByRole('combobox').parentElement.parentElement;
-    expect(selectContainer.lastChild).toHaveClass('customError');
-    expect(selectContainer.lastChild).toHaveTextContent('test');
+    const errorContainerElement = getByTestId('error-component');
+    expect(container).toContainElement(errorContainerElement);
+    expect(errorContainerElement).toHaveTextContent('nasty error');
   });
 
-  it('should render the error component in the custom error', () => {
-    const customError = (e: string) => <div className="customError">{e}</div>;
-    const errorComponent = <span className="errorComponent" />;
-    const { getByRole } = render(
-      <Select renderError={customError} error={errorComponent}>
+  it('should render the custom error in the custom error container', () => {
+    const customError = () => (
+      <span data-testid="custom-error">nasty error</span>
+    );
+    const errorContainer = (e: () => React.ReactNode) => (
+      <div data-testid="error-component">{e()}</div>
+    );
+    const { container, getByTestId } = render(
+      <Select renderError={errorContainer} error={customError}>
         {SelectChildren}
       </Select>
     );
-    const selectContainer = getByRole('combobox').parentElement.parentElement;
-    expect(selectContainer.lastChild).toHaveClass('customError');
-    expect(selectContainer.lastChild.firstChild).toHaveClass('errorComponent');
+    const customErrorElement = getByTestId('custom-error');
+    const errorContainerElement = getByTestId('error-component');
+    expect(container).toContainElement(errorContainerElement);
+    expect(errorContainerElement).toContainElement(customErrorElement);
+    expect(customErrorElement).toHaveTextContent('nasty error');
   });
 });
 
