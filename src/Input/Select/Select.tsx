@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { isEqual } from 'lodash';
+import { get, isEqual } from 'lodash';
 
 import classNames from 'classnames';
 
@@ -197,6 +197,14 @@ class Select extends React.Component<Props, State> {
     } else if (e.keyCode === 13) {
       inputElement.blur();
       const activeElement = this.getActiveElement();
+      if (!activeElement) {
+        return;
+      }
+
+      const activeElementIndex = Number(get(activeElement, 'dataset.id'));
+      const activeChild = React.Children.toArray(children)[activeElementIndex];
+      const onOptionClick = get(activeChild, 'props.onOptionClick');
+
       this.setState({
         selectedValue: activeElement.innerText,
         filterValue: React.Children.map(children, data => data),
@@ -206,6 +214,9 @@ class Select extends React.Component<Props, State> {
       if (onChange !== undefined) {
         const itemValue = activeElement.dataset.value;
         onChange(itemValue);
+      }
+      if (onOptionClick !== undefined) {
+        onOptionClick(e);
       }
     } else if (e.keyCode === 27) {
       inputElement.blur();

@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import * as lodash from 'lodash';
 import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
@@ -19,10 +20,14 @@ const props = {
 };
 
 const SelectChildren = props.options.map(option => (
-  <Select.Option key={option.id} value={option.value} onOptionClick={props.onOptionClick}>
+  <Select.Option
+    key={option.id}
+    value={option.value}
+    onOptionClick={props.onOptionClick}
+  >
     {option.name}
   </Select.Option>
-))
+));
 
 const SelectComponent = (
   <Select label={props.label} onChange={props.onChange}>
@@ -47,7 +52,8 @@ function setupOpenSelectMenu() {
 
 function setupSelectOptionFromMenu() {
   const { selectInput, selectList, displayedOptions } = setupOpenSelectMenu();
-  const randomOption = displayedOptions[Math.floor(Math.random() * displayedOptions.length)];
+  const randomOption =
+    displayedOptions[Math.floor(Math.random() * displayedOptions.length)];
 
   fireEvent.mouseDown(randomOption);
   fireEvent.change(selectInput, {
@@ -61,10 +67,34 @@ function setupSelectOptionFromMenu() {
   };
 }
 
+function setupSelectOptionFromMenuWithKeyHandling() {
+  const { selectInput, selectList, displayedOptions } = setupOpenSelectMenu();
+  const randomIndex = Math.floor(Math.random() * displayedOptions.length);
+  const randomOption = displayedOptions[randomIndex];
+  const arrowDownEvent = { key: 'ArrowDown', keyCode: 40 };
+  const enterEvent = { key: 'Enter', keyCode: 13 };
+
+  lodash.times(randomIndex, () =>
+    fireEvent.keyDown(selectInput, arrowDownEvent)
+  );
+  fireEvent.keyDown(selectInput, enterEvent);
+  fireEvent.change(selectInput, {
+    target: { value: randomOption.textContent },
+  });
+
+  return {
+    selectInput,
+    selectList,
+    randomOption,
+  };
+}
+
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
 it('<Select> should render with 3 options', () => {
-  const SelectSnapshot = renderer
-    .create(SelectComponent)
-    .toJSON();
+  const SelectSnapshot = renderer.create(SelectComponent).toJSON();
   expect(SelectSnapshot).toMatchSnapshot();
 });
 
@@ -92,7 +122,9 @@ describe('when it is clicked', () => {
     const { displayedOptions } = setupOpenSelectMenu();
     displayedOptions.forEach((option, index) => {
       expect(option).toHaveTextContent(props.options[index].name);
-      expect(option.getAttribute('data-value')).toEqual(props.options[index].value);
+      expect(option.getAttribute('data-value')).toEqual(
+        props.options[index].value
+      );
     });
   });
 });
@@ -114,6 +146,26 @@ describe('when an option is clicked', () => {
   });
 });
 
+describe('when the enter key is pressed on an option', () => {
+  it('should call the onOptionClick function', () => {
+    setupSelectOptionFromMenuWithKeyHandling();
+    expect(props.onOptionClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should show the value of the option on the select input', () => {
+    const {
+      selectInput,
+      randomOption,
+    } = setupSelectOptionFromMenuWithKeyHandling();
+    expect(selectInput.value).toEqual(randomOption.textContent);
+  });
+
+  it('should close the option menu', () => {
+    const { selectList } = setupSelectOptionFromMenuWithKeyHandling();
+    expect(selectList.hasAttribute('open')).toBe(false);
+  });
+});
+
 describe('when no results are found', () => {
   it('should display "No results found"', () => {
     const { selectInput, selectList } = setupOpenSelectMenu();
@@ -126,7 +178,9 @@ describe('when no results are found', () => {
 
 describe("when status = 'error'", () => {
   it('should show a red border', () => {
-    const { getByRole } = render(<Select status="error">{SelectChildren}</Select>);
+    const { getByRole } = render(
+      <Select status="error">{SelectChildren}</Select>
+    );
     const selectInput = getByRole('combobox');
     expect(selectInput).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
   });
@@ -139,4 +193,20 @@ describe('when isLoading = true', () => {
     const loadingSpinner = getByRole('alert');
     expect(selectContainer).toContainElement(loadingSpinner);
   });
+});
+
+describe('up and down arrow keys can be used to navigate the options menu', () => {
+  const { selectInput, displayedOptions } = setupOpenSelectMenu();
+  const firstOption = displayedOptions[0];
+  const secondOption = displayedOptions[1];
+  const arrowUpEvent = { key: 'ArrowUp', keyCode: 38 };
+  const arrowDownEvent = { key: 'ArrowDown', keyCode: 40 };
+
+  expect(firstOption).toHaveClass('active');
+
+  fireEvent.keyDown(selectInput, arrowDownEvent);
+  expect(secondOption).toHaveClass('active');
+
+  fireEvent.keyDown(selectInput, arrowUpEvent);
+  expect(firstOption).toHaveClass('active');
 });
