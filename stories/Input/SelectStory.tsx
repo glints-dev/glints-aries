@@ -27,9 +27,28 @@ const props = {
       name: 'status',
       type: 'string',
       defaultValue: '',
-      possibleValue: <code>success | error</code>,
+      possibleValue: <code>error</code>,
       require: 'no',
-      description: 'Sets different style for Select based on status.',
+      description:
+        '(DEPRECATED) Sets different style for Select based on status.',
+    },
+    {
+      name: 'error',
+      type: 'ReactNode | boolean | string',
+      defaultValue: '',
+      possibleValue: 'any',
+      require: 'no',
+      description:
+        'Sets error state on component. If string, the error will be shown below the select',
+    },
+    {
+      name: 'renderError',
+      type: 'ReactNode',
+      defaultValue: '<span color="#EC272B" />',
+      possibleValue: 'any',
+      require: 'no',
+      description:
+        'Replaces the default error component. Receives `error` as children.',
     },
     {
       name: 'isLoading',
@@ -118,16 +137,69 @@ const props = {
 };
 
 const Story = (
-  <Select label="Jobs">
-    <Select.Option value="accountant">Accountant</Select.Option>
-    <Select.Option value="business development">
-      Business Development
-    </Select.Option>
-    <Select.Option value="software engineer">Software Engineer</Select.Option>
-    <Select.Option value="finance">Finance</Select.Option>
-    <Select.Option value="design">Design</Select.Option>
-    <Select.Option value="human resources">Human Resources</Select.Option>
-  </Select>
+  <div>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select label="Jobs">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select label="Jobs" error={true}>
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select label="Jobs" error="I am an error message 🙀">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select label="Jobs" error={<strong>I am a custom error</strong>}>
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select
+        label="Jobs"
+        error="🎂 I am a custom error message"
+        renderError={error => (
+          <div style={{ color: 'orange', textAlign: 'right' }}>{error}</div>
+        )}
+      >
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+  </div>
 );
 
 const SelectStory = () => {
