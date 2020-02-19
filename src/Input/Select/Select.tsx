@@ -211,7 +211,7 @@ class Select extends React.Component<Props, State> {
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
-      const activeChild = React.Children.toArray(children)[activeElementIndex];
+      const activeChild = filterValue[activeElementIndex];
       const onOptionClick = get(activeChild, 'props.onOptionClick');
 
       this.setState({
