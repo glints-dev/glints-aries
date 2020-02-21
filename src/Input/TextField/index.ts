@@ -1,5 +1,7 @@
 import TextField, { Props } from './TextField';
 
-export { TextField, Props as TextFieldProps };
+export type TextFieldProps = Props;
+
+export { TextField };
 
 export default TextField;
