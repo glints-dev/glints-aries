@@ -115,3 +115,27 @@ describe('when removeFloatingLabel is true', () => {
     expect(textareaInput).toBeTruthy();
   });
 });
+
+describe('<Textarea /> forwards ref to underlying textarea element', () => {
+  const label = 'forward-ref';
+
+  test('ref is being forwarded correctly', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+    const { queryByLabelText } = render(<Textarea ref={ref} label={label} />);
+    const textarea = queryByLabelText(label);
+    expect(textarea).toEqual(ref.current);
+  });
+
+  test('underlying textarea can be focused/blurred through ref', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+    const { queryByLabelText } = render(<Textarea ref={ref} label={label} />);
+    const textarea = queryByLabelText(label);
+    expect(textarea).not.toHaveFocus();
+
+    ref.current.focus();
+    expect(textarea).toHaveFocus();
+
+    ref.current.blur();
+    expect(textarea).not.toHaveFocus();
+  });
+});
