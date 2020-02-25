@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon> should display the correct <Icon> should render a label with the text "Glints Aries" 1`] = `
+<svg
+  data-testid="icon-svg"
+  fill="currentColor"
+  height="1em"
+  viewBox="0 0 100 100"
+  width="1em"
+>
+  <path
+    d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+  />
+</svg>
+`;
+
+exports[`<Icon> should render a svg with color, width, height and a path as children 1`] = `
+<svg
+  data-testid="icon-svg"
+  fill="currentColor"
+  height="1em"
+  viewBox="0 0 100 100"
+  width="1em"
+>
+  <path
+    d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+  />
+</svg>
+`;
