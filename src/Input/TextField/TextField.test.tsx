@@ -146,3 +146,31 @@ describe('when removeFloatingLabel is true', () => {
     expect(textFieldInput).toBeTruthy();
   });
 });
+
+describe('<TextField /> forwards ref to underlying input element', () => {
+  const label = 'forward-ref';
+
+  test('ref is being forwarded correctly', () => {
+    const ref = React.createRef<HTMLInputElement>();
+    const { queryByLabelText } = render(
+      <TextField ref={ref} label={label} type="text" />
+    );
+    const textInput = queryByLabelText(label);
+    expect(textInput).toEqual(ref.current);
+  });
+
+  test('underlying textarea can be focused/blurred through ref', () => {
+    const ref = React.createRef<HTMLInputElement>();
+    const { queryByLabelText } = render(
+      <TextField ref={ref} label={label} type="text" />
+    );
+    const textInput = queryByLabelText(label);
+    expect(textInput).not.toHaveFocus();
+
+    ref.current.focus();
+    expect(textInput).toHaveFocus();
+
+    ref.current.blur();
+    expect(textInput).not.toHaveFocus();
+  });
+});

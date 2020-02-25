@@ -89,6 +89,7 @@ class TextField extends React.Component<Props, State> {
       small,
       removeFloatingLabel,
       disableTyping,
+      forwardedRef,
       ...defaultProps
     } = this.props;
 
@@ -97,6 +98,7 @@ class TextField extends React.Component<Props, State> {
     return (
       <TextFieldContainer className={classNames('aries-textfield', className)}>
         <TextFieldInput
+          ref={forwardedRef}
           type={inputType}
           placeholder={removeFloatingLabel && label}
           status={status}
@@ -147,6 +149,7 @@ export interface Props
   min?: number;
   max?: number;
   step?: number;
+  forwardedRef?: React.RefObject<HTMLInputElement>;
 }
 
 interface State {
@@ -154,4 +157,10 @@ interface State {
   inputType: textFieldType;
 }
 
-export default TextField;
+const forwardRef = (props: Props, ref: React.RefObject<HTMLInputElement>) => (
+  <TextField {...props} forwardedRef={ref} />
+);
+
+forwardRef.displayName = TextField.name;
+
+export default React.forwardRef(forwardRef);

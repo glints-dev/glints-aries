@@ -22,7 +22,7 @@ class Textarea extends React.PureComponent<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    this.textareaInputRef = React.createRef();
+    this.textareaInputRef = props.forwardedRef || React.createRef();
   }
 
   handleFocusChange = (
@@ -142,6 +142,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
   onBlur?(): void;
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
+  forwardedRef?: React.RefObject<HTMLTextAreaElement>;
 }
 
 interface State {
@@ -152,4 +153,11 @@ interface State {
   textareaMaxHeight: number;
 }
 
-export default Textarea;
+const forwardRef = (
+  props: Props,
+  ref: React.RefObject<HTMLTextAreaElement>
+) => <Textarea {...props} forwardedRef={ref} />;
+
+forwardRef.displayName = Textarea.name;
+
+export default React.forwardRef(forwardRef);
