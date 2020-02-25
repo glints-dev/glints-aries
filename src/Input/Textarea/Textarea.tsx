@@ -9,133 +9,116 @@ import {
   TextareaLabel,
 } from '../../Style/Input/TextareaStyle';
 
-class Textarea extends React.PureComponent<Props, State> {
-  textareaInputRef: React.RefObject<HTMLTextAreaElement>;
+const Textarea: React.FunctionComponent<Props> = props => {
+  const {
+    label,
+    value,
+    status,
+    disabled,
+    className,
+    onBlur,
+    onChange,
+    removeFloatingLabel,
+    ...restProps
+  } = props;
 
-  state = {
-    floating: false,
-    rows: 4,
-    minRows: 4,
-    maxRows: 12,
-    textareaMaxHeight: 0,
-  };
+  const [floating, setFloating] = React.useState(false);
+  const [rows, setRows] = React.useState(4);
+  const [minRows] = React.useState(4);
+  const [maxRows] = React.useState(12);
 
-  constructor(props: Props) {
-    super(props);
-    this.textareaInputRef = props.forwardedRef || React.createRef();
-  }
+  const textareaInputRef = props.forwardedRef || React.useRef(null);
 
-  handleFocusChange = (
-    onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void
-  ) => {
-    const listener = (e: React.FocusEvent<HTMLTextAreaElement>) => {
-      this.setState({
-        floating: e.target.value.length > 0,
-      });
+  const [textareaMaxHeight, setTextareaMaxHeight] = React.useState(0);
 
-      if (onBlur !== undefined) {
-        return onBlur(e);
-      }
-    };
+  React.useLayoutEffect(() => {
+    const textarea = textareaInputRef.current;
 
-    return listener;
-  };
-
-  handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { minRows, maxRows } = this.state;
-
-    const previousRows = e.target.rows;
-    e.target.rows = minRows;
-
-    const currentRows = ~~(e.target.scrollHeight / 30);
-
-    if (currentRows === previousRows) {
-      e.target.rows = currentRows;
-    }
-
-    if (currentRows >= maxRows) {
-      e.target.rows = maxRows;
-      e.target.scrollTop = e.target.scrollHeight;
-    }
-
-    this.setState({
-      rows: currentRows < maxRows ? currentRows : maxRows,
-    });
-
-    if (isFunction(this.props.onChange)) {
-      return this.props.onChange(e);
-    }
-  };
-
-  componentDidMount() {
-    const textarea = this.textareaInputRef.current;
+    if (!textarea) return;
 
     if (textarea.value.length > 0) {
-      this.setState({
-        floating: true,
-      });
+      setFloating(true);
     }
 
-    this.setState({
-      textareaMaxHeight: ~~(textarea.offsetHeight * 3.7 + 23 * 8 + 1),
-    });
-  }
+    setTextareaMaxHeight(~~(textarea.offsetHeight * 3.7 + 23 * 8 + 1));
+  }, []);
 
-  componentDidUpdate() {
-    const { value } = this.props;
-    const { floating } = this.state;
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const previousRows = e.target.rows;
+      e.target.rows = minRows;
 
+      const currentRows = ~~(e.target.scrollHeight / 30);
+
+      if (currentRows === previousRows) {
+        e.target.rows = currentRows;
+      }
+
+      if (currentRows >= maxRows) {
+        e.target.rows = maxRows;
+        e.target.scrollTop = e.target.scrollHeight;
+      }
+
+      setRows(currentRows < maxRows ? currentRows : maxRows);
+
+      if (isFunction(onChange)) {
+        return onChange(e);
+      }
+    },
+    [onChange]
+  );
+
+  const handleFocusChange = React.useCallback(
+    (onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void) => {
+      const listener = (e: React.FocusEvent<HTMLTextAreaElement>) => {
+        setFloating(e.target.value.length > 0);
+
+        if (onBlur !== undefined) {
+          return onBlur(e);
+        }
+      };
+
+      return listener;
+    },
+    []
+  );
+
+  React.useEffect(() => {
     if (value && value !== '' && !floating) {
-      this.setState({ floating: true });
+      setFloating(true);
     }
-  }
+  }, [value, floating]);
 
-  render() {
-    const {
-      label,
-      value,
-      status,
-      disabled,
-      className,
-      onBlur,
-      onChange,
-      removeFloatingLabel,
-      ...restProps
-    } = this.props;
-
-    const { floating, rows, textareaMaxHeight } = this.state;
-
-    return (
-      <TextareaContainer className={classNames('aries-textarea', className)}>
-        <TextareaInput
-          ref={this.textareaInputRef}
-          placeholder={removeFloatingLabel && label}
-          rows={rows}
-          status={status}
-          disabled={disabled}
-          onBlur={this.handleFocusChange(onBlur)}
-          onChange={this.handleChange}
+  return (
+    <TextareaContainer className={classNames('aries-textarea', className)}>
+      <TextareaInput
+        ref={textareaInputRef}
+        placeholder={removeFloatingLabel && label}
+        rows={rows}
+        status={status}
+        disabled={disabled}
+        onBlur={handleFocusChange(onBlur)}
+        onChange={handleChange}
+        floating={floating}
+        value={value}
+        aria-label={label}
+        {...restProps}
+        style={{
+          maxHeight: `${textareaMaxHeight}px`,
+        }}
+      />
+      {!removeFloatingLabel && (
+        <TextareaLabel
+          data-testid="textarea-label"
           floating={floating}
-          value={value}
-          aria-label={label}
-          {...restProps}
-          style={{
-            maxHeight: `${textareaMaxHeight}px`,
-          }}
-        />
-        {!removeFloatingLabel && (
-          <TextareaLabel
-            data-testid="textarea-label"
-            floating={floating}
-            status={status}
-          >
-            {label}
-          </TextareaLabel>
-        )}
-      </TextareaContainer>
-    );
-  }
-}
+          status={status}
+        >
+          {label}
+        </TextareaLabel>
+      )}
+    </TextareaContainer>
+  );
+};
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
   label?: string;
@@ -143,14 +126,6 @@ interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
   forwardedRef?: React.RefObject<HTMLTextAreaElement>;
-}
-
-interface State {
-  floating: boolean;
-  rows: number;
-  minRows: number;
-  maxRows: number;
-  textareaMaxHeight: number;
 }
 
 const forwardRef = (
