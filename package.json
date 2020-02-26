@@ -73,6 +73,7 @@
     "@types/styled-components": "^4.1.15",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
     "create-index": "^2.4.0",
     "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
