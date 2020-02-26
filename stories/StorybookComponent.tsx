@@ -91,7 +91,14 @@ class StorybookComponent extends React.Component<Props> {
   }
 
   render() {
-    const { title, code, usage, children, propsObject } = this.props;
+    const {
+      title,
+      code,
+      usage,
+      disableUsage,
+      children,
+      propsObject,
+    } = this.props;
     return (
       <div className="doc-mainbar">
         {(title || code) && (
@@ -103,13 +110,15 @@ class StorybookComponent extends React.Component<Props> {
 
         <div style={{ marginBottom: '2em' }}>{children}</div>
 
-        <div style={{ marginBottom: '2em' }}>
-          <Collapsible label="Usage" isOpen={false}>
-            {usage
-              ? this.renderUsage(usage)
-              : this.renderDefaultUsage(children)}
-          </Collapsible>
-        </div>
+        {!disableUsage && (
+          <div style={{ marginBottom: '2em' }}>
+            <Collapsible label="Usage" isOpen={false}>
+              {usage
+                ? this.renderUsage(usage)
+                : this.renderDefaultUsage(children)}
+            </Collapsible>
+          </div>
+        )}
 
         {propsObject && (
           <div style={{ marginBottom: '4em' }}>
@@ -125,6 +134,7 @@ interface Props {
   title?: string;
   code?: string;
   usage?: string;
+  disableUsage?: boolean;
   children?: React.ReactNode;
   propsObject?: Object;
 }
