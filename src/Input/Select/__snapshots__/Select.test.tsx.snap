@@ -2,15 +2,15 @@
 
 exports[`<Select> should render with 3 options 1`] = `
 <div
-  className="aries-select sc-bdVaJa gyioBc"
+  className="aries-select SelectStyle__SelectContainer-jmk38c-0 cxQAyJ"
 >
   <div
-    className="select-inputwrapper sc-bwzfXH diPLjv"
+    className="select-inputwrapper SelectStyle__SelectWrapper-jmk38c-1 cnQpwy"
   >
     <input
       aria-autocomplete="list"
       aria-expanded={false}
-      className="sc-bxivhb jbuuPN"
+      className="SelectStyle__SelectInput-jmk38c-3 bGZcBu"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -21,7 +21,7 @@ exports[`<Select> should render with 3 options 1`] = `
     />
     <label
       aria-label="Jobs"
-      className="sc-htpNat MTgpk"
+      className="SelectStyle__SelectLabel-jmk38c-2 fuofeP"
     >
       Jobs
     </label>
@@ -43,12 +43,12 @@ exports[`<Select> should render with 3 options 1`] = `
   </div>
   <ul
     aria-hidden={true}
-    className="select-listbox sc-ifAKCX skPpr"
+    className="select-listbox SelectStyle__SelectListWrapper-jmk38c-4 gVUTIk"
     open={false}
     role="listbox"
   >
     <li
-      className="active sc-EHOje eoZeEM"
+      className="active SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
       data-id={0}
       data-value="accountant"
       onMouseDown={[Function]}
@@ -59,7 +59,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Accountant
     </li>
     <li
-      className="sc-EHOje eoZeEM"
+      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
       data-id={1}
       data-value="business development"
       onMouseDown={[Function]}
@@ -70,7 +70,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Business Development
     </li>
     <li
-      className="sc-EHOje eoZeEM"
+      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
       data-id={2}
       data-value="software engineer"
       onMouseDown={[Function]}

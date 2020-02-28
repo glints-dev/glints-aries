@@ -2,12 +2,12 @@
 
 exports[`<Tag> should render a label with the text "Glints Aries" 1`] = `
 <div
-  className="aries-tag sc-bwzfXH gyEtYh"
+  className="aries-tag TagStyle__TagContainer-sc-1idy1a0-1 fvdmWS"
   role="presentation"
   tabIndex={0}
 >
   <label
-    className="tag-content sc-bdVaJa kxQGlq"
+    className="tag-content TagStyle__TagContent-sc-1idy1a0-0 fykdFn"
     tabIndex={-1}
   >
     Glints Aries

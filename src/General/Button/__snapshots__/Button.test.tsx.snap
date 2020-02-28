@@ -2,10 +2,10 @@
 
 exports[`<Button> should render with text "click me" and an onClick handler 1`] = `
 <div
-  className="aries-defaultbtn sc-htpNat cqvpiG"
+  className="aries-defaultbtn ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF"
 >
   <button
-    className="sc-bdVaJa defaultbtn-content sc-bwzfXH bmngHj"
+    className="ButtonStyle__Button-gw4ytw-0 defaultbtn-content ButtonStyle__DefaultBtn-gw4ytw-1 eGboJv"
     onClick={[MockFunction]}
   >
     click me

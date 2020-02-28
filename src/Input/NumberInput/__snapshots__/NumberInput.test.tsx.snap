@@ -2,17 +2,17 @@
 
 exports[`<NumberInput> should render correctly to match snapshot 1`] = `
 <div
-  className="aries-textfield sc-bdVaJa ktXGUd"
+  className="aries-textfield TextFieldStyle__TextFieldContainer-snd1vr-0 eFsLeY"
 >
   <input
     aria-label="Number"
-    className="sc-htpNat evWPXU"
+    className="TextFieldStyle__TextFieldInput-snd1vr-2 ejWXUJ"
     onBlur={[Function]}
     onKeyDown={[Function]}
     type="number"
   />
   <label
-    className="textfield-label sc-bwzfXH gtXjtR"
+    className="textfield-label TextFieldStyle__TextFieldLabel-snd1vr-1 kGFxtj"
     data-testid="textfield-label"
   >
     Number
