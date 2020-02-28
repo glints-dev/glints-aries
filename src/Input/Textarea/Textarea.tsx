@@ -81,7 +81,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
 
       return listener;
     },
-    []
+    [onBlur]
   );
 
   React.useEffect(() => {
