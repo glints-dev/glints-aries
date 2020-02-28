@@ -9,6 +9,9 @@ import {
   TextareaLabel,
 } from '../../Style/Input/TextareaStyle';
 
+const MIN_ROWS = 4;
+const MAX_ROWS = 12;
+
 const Textarea: React.FunctionComponent<Props> = props => {
   const {
     label,
@@ -22,10 +25,8 @@ const Textarea: React.FunctionComponent<Props> = props => {
     ...restProps
   } = props;
 
-  const [floating, setFloating] = React.useState(false);
-  const [rows, setRows] = React.useState(4);
-  const [minRows] = React.useState(4);
-  const [maxRows] = React.useState(12);
+  const [floating, setFloating] = React.useState<boolean>(false);
+  const [rows, setRows] = React.useState<number>(MIN_ROWS);
 
   const textareaInputRef = props.forwardedRef || React.useRef(null);
 
@@ -46,7 +47,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const previousRows = e.target.rows;
-      e.target.rows = minRows;
+      e.target.rows = MIN_ROWS;
 
       const currentRows = ~~(e.target.scrollHeight / 30);
 
@@ -54,12 +55,12 @@ const Textarea: React.FunctionComponent<Props> = props => {
         e.target.rows = currentRows;
       }
 
-      if (currentRows >= maxRows) {
-        e.target.rows = maxRows;
+      if (currentRows >= MAX_ROWS) {
+        e.target.rows = MAX_ROWS;
         e.target.scrollTop = e.target.scrollHeight;
       }
 
-      setRows(currentRows < maxRows ? currentRows : maxRows);
+      setRows(currentRows < MAX_ROWS ? currentRows : MAX_ROWS);
 
       if (isFunction(onChange)) {
         return onChange(e);
