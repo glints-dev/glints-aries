@@ -16,9 +16,10 @@ it('<Button> should render with text "click me" and an onClick handler', () => {
 });
 
 it('<Button> should render as button by default', () => {
-  const tag = 'a';
-  const { container } = render(<Button tag={tag}>test</Button>);
-  expect(container.querySelector(tag)).toBeTruthy();
+  const { getByTestId } = render(
+    <Button data-testid="test-button">test</Button>
+  );
+  expect(getByTestId('test-button').tagName).toBe('BUTTON');
 });
 
 describe('<Button> should render as the given tag', () => {

@@ -13,6 +13,7 @@ const DefaultButton: React.FunctionComponent<Props> = ({
   block,
   small,
   removeHoverEffect,
+  tag,
   ...defaultProps
 }) => (
   <DefaultBtnContainer
@@ -28,6 +29,7 @@ const DefaultButton: React.FunctionComponent<Props> = ({
       disabled={disabled}
       block={block}
       small={small}
+      as={(tag as React.ElementType) || 'button'}
       {...defaultProps}
     >
       {children}
@@ -43,6 +45,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof DefaultBtn> {
   block?: boolean;
   small?: boolean;
   removeHoverEffect?: boolean;
+  tag?: React.ElementType;
 }
 
 export default DefaultButton;
