@@ -44,6 +44,14 @@ const buttonProps = [
     require: 'no',
     description: 'Sets Button to small version.',
   },
+  {
+    name: 'tag',
+    type: 'React.ElementType',
+    defaultValue: <code>button</code>,
+    possibleValue: 'any valid html tag e.g. "a"',
+    require: 'no',
+    description: 'Changes the tag with which the button will render.',
+  },
 ];
 
 const removeHoverEffectProp = {
