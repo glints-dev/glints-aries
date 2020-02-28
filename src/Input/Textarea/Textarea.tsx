@@ -30,7 +30,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
 
   const textareaInputRef = props.forwardedRef || React.useRef(null);
 
-  const [textareaMaxHeight, setTextareaMaxHeight] = React.useState(0);
+  const [textareaMaxHeight, setTextareaMaxHeight] = React.useState<number>(0);
 
   React.useLayoutEffect(() => {
     const textarea = textareaInputRef.current;
