@@ -3,5 +3,13 @@
   "extends": [
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
-  ]
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": [
+      true, {
+        ignoreProperties: ['appearance']
+      }
+    ]
+  }
 }

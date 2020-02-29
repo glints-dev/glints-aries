@@ -73,7 +73,6 @@ interface SelectLabelProps {
 
 export const SelectInput = styled.input<SelectInputProps>`
   width: 100%;
-  border: none;
   outline: none;
   padding: ${({ small }) =>
     small ? '13px 2.5em 13px 15px' : '15px 2.5em 15px 20px'};
@@ -238,5 +237,5 @@ interface SelectItemWrapperProps {
 }
 
 export const SelectErrorDefault = styled.span`
-  color:${PrimaryColor.glintsred};
-`
+  color: ${PrimaryColor.glintsred};
+`;

@@ -17,11 +17,11 @@ export const AutoCompleteLabel = styled.label<AutoCompleteLabelProps>`
   background: ${SecondaryColor.white};
   color: ${({ floating }) =>
     floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
-  transition: all .2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-weight: 300;
   font-size: 1.1em;
-  
+
   ${({ floating }) => {
     if (floating) {
       return `
@@ -60,7 +60,6 @@ interface AutoCompleteLabelProps {
 export const AutoCompleteInput = styled.input<AutoCompleteInputProps>`
   position: relative;
   width: 100%;
-  border: none;
   outline: none;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;

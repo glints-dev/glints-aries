@@ -75,16 +75,16 @@ export const JobOverviewInfostyle = styled.div`
     color: #000000;
     display: flex;
 
-    span svg {
-      margin-top: 0;
-    }
-
     svg {
       vertical-align: middle;
       margin-right: 5px;
       margin-top: 7px;
       width: 6px;
       height: 6px;
+    }
+
+    span svg {
+      margin-top: 0;
     }
   }
 `;

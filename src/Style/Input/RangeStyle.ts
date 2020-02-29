@@ -21,7 +21,6 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   }
 
   &::-moz-range-thumb {
-    border: none;
     height: 14px;
     width: 14px;
     border-radius: 50%;
@@ -33,7 +32,6 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   &::-moz-range-track {
     width: 100%;
     height: 3px;
-    cursor: pointer;
     background: ${SecondaryColor.white};
     border: 1px solid ${SecondaryColor.lightgrey};
     border-radius: 5px;
