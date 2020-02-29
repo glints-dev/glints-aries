@@ -254,7 +254,6 @@ class Select extends React.Component<Props, State> {
   render() {
     const {
       label,
-      value,
       status,
       disabled,
       className,
@@ -262,13 +261,14 @@ class Select extends React.Component<Props, State> {
       onBlur,
       onChange,
       noOptionResult = 'No results found',
-      children,
       small,
       disableTyping,
       removeFloatingLabel,
       removeDropIcon,
       error,
       renderError,
+      value, // eslint-disable-line @typescript-eslint/no-unused-vars
+      children, // eslint-disable-line @typescript-eslint/no-unused-vars
       ...defaultProps
     } = this.props;
 

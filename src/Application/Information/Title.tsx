@@ -5,7 +5,7 @@ const Title: React.FunctionComponent<Props> = props => {
   const { children, bold, className, ...defaultProps } = props;
 
   return (
-    <TitleWrapper bold={bold} {...defaultProps}>
+    <TitleWrapper className={className} bold={bold} {...defaultProps}>
       {children}
     </TitleWrapper>
   );

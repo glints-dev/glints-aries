@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { EHorizontalTabVariant, ETabAlignment } from '../../Utils/StyleConfig';
+import { EHorizontalTabVariant } from '../../Utils/StyleConfig';
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import {
