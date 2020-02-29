@@ -15,8 +15,7 @@
     "react/no-find-dom-node": "off",
     "react/no-children-prop": "off",
     "react/prop-types": "off",
-    "react/display-name": "off",
-    "jest/no-standalone-expect": "off"
+    "react/display-name": "off"
   },
   "settings": {
     "react": {
