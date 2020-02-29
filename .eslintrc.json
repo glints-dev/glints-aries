@@ -14,8 +14,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-find-dom-node": "off",
     "react/no-children-prop": "off",
-    "react/prop-types": "off",
-    "react/display-name": "off"
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {
