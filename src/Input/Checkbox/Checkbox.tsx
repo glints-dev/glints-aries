@@ -9,7 +9,7 @@ const Checkbox: React.FunctionComponent<Props> = ({
   onClick,
   className,
   ...restProps
-}) => {
+}: Props) => {
   const [checked, setChecked] = React.useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Title as StyledTitle } from './TitleStyles';
 import { SecondaryColor } from '../../Style/Colors';
 
-const Title: React.FunctionComponent<Props> = props => {
+const Title: React.FunctionComponent<Props> = (props: Props) => {
   const {
     className,
     children,

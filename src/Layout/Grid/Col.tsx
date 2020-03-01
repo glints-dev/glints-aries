@@ -10,7 +10,7 @@ const Col: React.FunctionComponent<Props> = ({
   mdOrder,
   children,
   ...defaultProps
-}) => (
+}: Props) => (
   <ColumnContainer
     xs={xs}
     sm={sm}

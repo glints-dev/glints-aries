@@ -14,7 +14,7 @@ const SelectList: React.FunctionComponent<Props> = ({
   small,
   handleClick,
   handleMouseEnter,
-}) => (
+}: Props) => (
   <SelectListWrapper
     className="select-listbox"
     role="listbox"

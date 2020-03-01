@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BreadcrumbItemWrapper } from '../../Style/Navigation/BreadcrumbStyle';
 
-const BreadcrumbItem: React.FunctionComponent<Props> = props => {
+const BreadcrumbItem: React.FunctionComponent<Props> = (props: Props) => {
   const { active, className, children, ...defaultProps } = props;
 
   return (
