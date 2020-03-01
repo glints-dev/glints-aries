@@ -41,6 +41,6 @@ const Checkbox: React.FunctionComponent<Props> = ({
   );
 };
 
-interface Props extends React.HTMLProps<HTMLInputElement> {}
+type Props = React.HTMLProps<HTMLInputElement>;
 
 export default Checkbox;

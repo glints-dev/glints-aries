@@ -5,6 +5,6 @@ const NumberInput = (props: Props) => {
   return <TextField {...props} type="number" />;
 };
 
-interface Props extends Omit<TextFieldProps, 'type'> {}
+type Props = Omit<TextFieldProps, 'type'>;
 
 export default NumberInput;
