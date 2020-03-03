@@ -25,7 +25,7 @@ const props = {
     {
       name: 'color',
       type: 'string',
-      defaultValue: <code>inherit parent's color</code>,
+      defaultValue: <code>currentColor (inherit parent's color)</code>,
       possibleValue: <code>hex-value | rba-value | string-value</code>,
       require: 'no',
       description: 'Sets color for icon.',
