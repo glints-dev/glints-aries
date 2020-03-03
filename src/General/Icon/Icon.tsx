@@ -4,7 +4,7 @@ const Icon: React.FunctionComponent<Props> = props => {
   const {
     className,
     children,
-    color,
+    color = 'currentColor',
     width = '1em',
     height = '1em',
     onClick,
@@ -13,6 +13,7 @@ const Icon: React.FunctionComponent<Props> = props => {
 
   return (
     <svg
+      data-testid="icon-svg"
       className={className}
       width={width}
       height={height}

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
-import { PrimaryColor } from '../../src/Style/Colors';
 import * as AllIcons from '../../src/General/Icon/components';
 
 const props = {
@@ -26,29 +25,75 @@ const props = {
     {
       name: 'color',
       type: 'string',
-      defaultValue: <code>black</code>,
+      defaultValue: <code>currentColor (inherit parent's color)</code>,
       possibleValue: <code>hex-value | rba-value | string-value</code>,
       require: 'no',
       description: 'Sets color for icon.',
     },
+    {
+      name: 'onClick',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: '',
+    },
   ],
 };
 
-const LikeButton = styled(AllIcons.ThumbsUpOutlineIcon)`
+const { ThumbsUpOutlineIcon } = AllIcons;
+
+const DefaultIcon = (
+  <div style={{ color: 'blue' }}>
+    <ThumbsUpOutlineIcon />
+  </div>
+);
+
+const LikeButton = styled(ThumbsUpOutlineIcon)`
   cursor: pointer;
   :hover {
-    fill: ${PrimaryColor.glintsred};
+    fill: red;
   }
 `;
+
+const CustomIcon = (
+  <LikeButton
+    width={50}
+    height="100%"
+    color="green"
+    onClick={() => alert('Liked!')}
+  />
+);
 
 const IconStory = () => (
   <React.Fragment>
     <StorybookComponent
-      title="Icon"
-      code="import { AddCircleOutlineIcon } from 'glints-aries'"
-      propsObject={props}
-      usage={'<AddCircleOutlineIcon />'}
+      title="Default Icon"
+      code="import { ThumbsUpOutlineIcon } from 'glints-aries'"
     >
+      {DefaultIcon}
+    </StorybookComponent>
+    <StorybookComponent
+      title="Custom Icon"
+      propsObject={props}
+      usage={`
+const LikeButton = styled(ThumbsUpOutlineIcon)\`
+  cursor: pointer;
+  :hover {
+    fill: red;
+  }
+\`;
+<LikeButton
+  width={50}
+  height="100%"
+  color="green"
+  onClick={() => alert('Liked!')}
+/>
+    `}
+    >
+      {CustomIcon}
+    </StorybookComponent>
+    <StorybookComponent title="Icon Library" disableUsage={true}>
       <div style={{ display: 'flex', flexWrap: 'wrap', fontSize: '20px' }}>
         {Object.values(AllIcons)
           .sort()
@@ -61,24 +106,6 @@ const IconStory = () => (
             </div>
           ))}
       </div>
-    </StorybookComponent>
-    <StorybookComponent
-      title="Custom Icon"
-      usage={`
-import styled from 'styled-components';
-import { ThumbsUpOutlineIcon, PrimaryColor } from 'glints-aries';
-
-const LikeButton = styled(ThumbsUpOutlineIcon)\`
-  cursor: pointer;
-  :hover {
-    fill: ${PrimaryColor.glintsred};
-  }
-\`;
-
-<LikeButton width={50} height="100%" onClick={() => alert('Liked!')} />
-    `}
-    >
-      <LikeButton width={50} height="100%" onClick={() => alert('Liked!')} />
     </StorybookComponent>
   </React.Fragment>
 );

@@ -30,6 +30,7 @@ exports[`<Select> should render with 3 options 1`] = `
       className="select-icon"
     >
       <svg
+        data-testid="icon-svg"
         fill="#777777"
         height="1em"
         viewBox="0 0 100 100"
