@@ -135,7 +135,7 @@ export const TabsHeader = styled.div`
       }
 
       button {
-        width: 100%
+        width: 100%;
         padding: 20px 0;
         background: transparent;
         border: none;
