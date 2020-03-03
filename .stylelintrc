@@ -6,10 +6,5 @@
   ],
   "rules": {
     "no-descending-specificity": null,
-    "property-no-vendor-prefix": [
-      true, {
-        ignoreProperties: ['appearance']
-      }
-    ]
   }
 }
