@@ -70,16 +70,12 @@ const Textarea: React.FunctionComponent<Props> = props => {
   );
 
   const handleFocusChange = React.useCallback(
-    (onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void) => {
-      const listener = (e: React.FocusEvent<HTMLTextAreaElement>) => {
-        setFloating(e.target.value.length > 0);
+    (e: React.FocusEvent<HTMLTextAreaElement>) => {
+      setFloating(e.target.value.length > 0);
 
-        if (onBlur !== undefined) {
-          return onBlur(e);
-        }
-      };
-
-      return listener;
+      if (onBlur !== undefined) {
+        return onBlur(e);
+      }
     },
     [onBlur]
   );
@@ -98,7 +94,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
         rows={rows}
         status={status}
         disabled={disabled}
-        onBlur={handleFocusChange(onBlur)}
+        onBlur={handleFocusChange}
         onChange={handleChange}
         floating={floating}
         value={value}
@@ -123,7 +119,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
   label?: string;
-  onBlur?(): void;
+  onBlur?(e: React.FocusEvent<HTMLTextAreaElement>): void;
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
   forwardedRef?: React.RefObject<HTMLTextAreaElement>;
