@@ -52,14 +52,12 @@ const Modal = (props: Props) => {
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
   // but the subsequent mouseup event occurs outside
-  const [mouseDownTarget, setMouseDownTarget] = React.useState<HTMLElement>(
-    null
-  );
+  const mouseDownTarget = React.useRef<HTMLElement>(null);
 
   const handleMouseDown = React.useCallback(
     (e: React.MouseEvent) => {
       const element = e.target as HTMLElement;
-      setMouseDownTarget(element);
+      mouseDownTarget.current = element;
     },
     [mouseDownTarget]
   );
@@ -67,7 +65,7 @@ const Modal = (props: Props) => {
   const handleClick = React.useCallback(
     (e: React.MouseEvent) => {
       const element = e.target as HTMLElement;
-      if (mouseDownTarget === element) {
+      if (mouseDownTarget.current === element) {
         onClose();
       }
     },
