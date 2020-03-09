@@ -32,7 +32,14 @@ const Modal = (props: Props) => {
   const modalContentAreaRef = React.useRef(null);
 
   React.useEffect(() => {
-    if (isVisible) modalContentAreaRef.current.focus();
+    if (isVisible) {
+      // On modal open
+      modalContentAreaRef.current.focus();
+      document.body.style.overflow = 'hidden';
+    } else {
+      // On modal close
+      document.body.removeAttribute('style');
+    }
   }, [isVisible]);
 
   React.useEffect(() => {
