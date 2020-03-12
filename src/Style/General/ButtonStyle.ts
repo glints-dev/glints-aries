@@ -43,7 +43,7 @@ interface DefaultBtnProps {
   block?: boolean;
 }
 
-export const DefaultBtn = styled(Button)<DefaultBtnProps>`
+export const DefaultBtn = styled(Button) <DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
 
   &:active {
@@ -93,13 +93,13 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
 
   &:hover {
     ${({ disabled }) => {
-      if (disabled) {
-        return `
+    if (disabled) {
+      return `
           background-color: ${SecondaryColor.lightgrey};
           color: ${SecondaryColor.white};
         `;
-      }
-    }}
+    }
+  }}
   }
 `;
 
@@ -148,28 +148,28 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
   &:hover {
     ${DefaultBtn} {
       ${props => {
-        if (props.disabled) {
-          return `
+    if (props.disabled) {
+      return `
             background-color: none;
           `;
-        }
-      }}
+    }
+  }}
     }
   }
 
   &:active {
     ${DefaultBtn} {
       ${props => {
-        if (props.disabled) {
-          return `
+    if (props.disabled) {
+      return `
             background-color: none;
           `;
-        }
-        return `
+    }
+    return `
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
         `;
-      }}
+  }}
     }
   }
 `;
@@ -187,7 +187,7 @@ interface PrimaryBtnProps {
   block?: boolean;
 }
 
-export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
+export const PrimaryBtn = styled(Button) <PrimaryBtnProps>`
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
@@ -243,41 +243,41 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
 
   &:hover {
     ${props => {
-      if (props.disabled) {
-        return 'transform: none';
-      }
-      return `
+    if (props.disabled) {
+      return 'transform: none';
+    }
+    return `
       transform: translate(2px, 2px);
       transition: all .2s;
     `;
-    }}
+  }}
   }
 
   &:active {
     ${props => {
-      if (!props.disabled) {
-        return `
+    if (!props.disabled) {
+      return `
         transform: translate(4px, 4px);
         transition: all .2s;
         color: ${SecondaryColor.white};
       `;
-      }
+    }
 
-      return 'transform: none';
-    }}
+    return 'transform: none';
+  }}
 
     ${PrimaryBtn} {
       ${props => {
-        if (props.disabled) {
-          return `
+    if (props.disabled) {
+      return `
             background-color: none;
           `;
-        }
-        return `
+    }
+    return `
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
         `;
-      }}
+  }}
     }
   }
 
@@ -291,47 +291,47 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     transition: all 0.2s;
 
     ${props => {
-      const themeBackgrounds = {
-        [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.YELLOW]: PrimaryColor.glintsred,
-      };
-      if (props.disabled) {
-        return 'background-color: none';
-      }
-      if (props.theme && themeBackgrounds[props.theme]) {
-        return `background-color: ${themeBackgrounds[props.theme]};`;
-      }
-      return `background-color: ${PrimaryColor.glintsyellow};`;
-    }}
+    const themeBackgrounds = {
+      [Theme.BLUE_RED]: PrimaryColor.glintsred,
+      [Theme.YELLOW]: PrimaryColor.glintsred,
+    };
+    if (props.disabled) {
+      return 'background-color: none';
+    }
+    if (props.theme && themeBackgrounds[props.theme]) {
+      return `background-color: ${themeBackgrounds[props.theme]};`;
+    }
+    return `background-color: ${PrimaryColor.glintsyellow};`;
+  }}
   }
 
   &:hover:before {
     ${props => {
-      if (props.disabled) {
-        return `
+    if (props.disabled) {
+      return `
           cursor: default;
           background-color: none;
         `;
-      }
-      return `
+    }
+    return `
       background: ${SecondaryColor.black};
       transform: translate(-4px, -4px);
       transition: all .2s;
     `;
-    }}
+  }}
   }
 
   &:active:before {
     ${props => {
-      if (!props.disabled) {
-        return `
+    if (!props.disabled) {
+      return `
         transform: translate(-8px, -8px);
         transition: all .2s;
       `;
-      }
+    }
 
-      return false;
-    }}
+    return false;
+  }}
   }
 `;
 
@@ -349,7 +349,7 @@ const Bouncing = keyframes`
   }
 `;
 
-export const SecondaryBtn = styled(Button)<SecondaryBtnProps>`
+export const SecondaryBtn = styled(Button) <SecondaryBtnProps>`
   background-color: ${SecondaryColor.whitesmoke};
   color: ${SecondaryColor.black};
   z-index: 2;
@@ -392,14 +392,14 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
   &:hover {
     ${SecondaryBtn} {
       ${({ disabled }) => {
-        if (!disabled) {
-          return `
+    if (!disabled) {
+      return `
           background-color: ${PrimaryColor.glintsyellow};
           transform: translate3d(-4px, -4px, 0);
           transition: transform .2s;
         `;
-        }
-      }}
+    }
+  }}
     }
   }
 
@@ -440,7 +440,7 @@ interface SecondaryContainerProps {
  * Ghost Button
  */
 
-export const GhostBtn = styled(Button)<GhostBtnProps>`
+export const GhostBtn = styled(Button) <GhostBtnProps>`
   transition: background-color 0.5s;
   width: ${({ block }) => block && '100%'};
   background: ${SecondaryColor.white};
@@ -480,33 +480,33 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
     transition: background-color 0.5s;
 
     ${({ disabled, theme }) => {
-      if (!disabled) {
-        switch (theme) {
-          case `${Theme.RED}`:
-            return `
+    if (!disabled) {
+      switch (theme) {
+        case `${Theme.RED}`:
+          return `
             background-color: ${PrimaryColor.glintsred};
             color: ${SecondaryColor.white};
           `;
-          case `${Theme.YELLOW}`:
-            return `
+        case `${Theme.YELLOW}`:
+          return `
             background-color: ${PrimaryColor.glintsyellow};
             color: ${SecondaryColor.white};
           `;
-          case `${Theme.BLUE}`:
-            return `
+        case `${Theme.BLUE}`:
+          return `
             background-color: ${SecondaryColor.actionblue};
             color: ${SecondaryColor.white};
           `;
-          case `${Theme.WHITE}`:
-            return `
+        case `${Theme.WHITE}`:
+          return `
             background-color: ${SecondaryColor.white};
             color: ${PrimaryColor.glintsblue};
           `;
-          default:
-            return null;
-        }
+        default:
+          return null;
       }
-    }}
+    }
+  }}
   }
 
   ${({ disabled }) => {
@@ -568,16 +568,16 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
 
   ${GhostBtn} {
     ${({ disabled }) => {
-      if (!disabled) {
-        return `
+    if (!disabled) {
+      return `
         &:active {
           background-color: ${SecondaryColor.black};
           color: ${SecondaryColor.white};
           border: 2px solid ${SecondaryColor.black};
         }
       `;
-      }
-    }}
+    }
+  }}
   }
 `;
 
@@ -591,7 +591,7 @@ interface GhostBtnContainerProps {
  * Link Button
  */
 
-export const LinkBtn = styled(Button)<LinkBtnProps>`
+export const LinkBtn = styled(Button) <LinkBtnProps>`
   font-weight: normal;
   text-transform: inherit;
   width: ${({ block }) => block && '100%'};
