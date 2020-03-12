@@ -27,8 +27,8 @@ const Textarea: React.FunctionComponent<Props> = props => {
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [rows, setRows] = React.useState<number>(MIN_ROWS);
-
-  const textareaInputRef = props.forwardedRef || React.useRef(null);
+  const innerRef = React.useRef(null);
+  const textareaInputRef = props.forwardedRef || innerRef;
 
   const [textareaMaxHeight, setTextareaMaxHeight] = React.useState<number>(0);
 
@@ -42,7 +42,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
     }
 
     setTextareaMaxHeight(~~(textarea.offsetHeight * 3.7 + 23 * 8 + 1));
-  }, []);
+  }, [textareaInputRef]);
 
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
