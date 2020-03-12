@@ -47,7 +47,6 @@ interface TextareaLabelProps {
 export const TextareaInput = styled.textarea<TextareaInputProps>`
   position: relative;
   width: 100%;
-  border: none;
   outline: none;
   font-size: 1.1em;
   line-height: 1.5;

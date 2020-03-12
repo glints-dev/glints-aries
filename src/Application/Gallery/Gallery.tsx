@@ -57,7 +57,9 @@ class Gallery extends React.Component<Props, State> {
   componentDidMount() {
     const { children, imagesDisplayed = defaultImagesDisplayed } = this.props;
     if (React.Children.count(children) > imagesDisplayed) {
-      this.setState({ imageLeft: React.Children.count(children) - imagesDisplayed });
+      this.setState({
+        imageLeft: React.Children.count(children) - imagesDisplayed,
+      });
     }
   }
 

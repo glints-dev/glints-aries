@@ -149,7 +149,6 @@ class Dropdown extends React.Component<Props, State> {
     const {
       children,
       className,
-      label,
       disabled,
       showHoverLine,
       leftIcon,
@@ -158,8 +157,9 @@ class Dropdown extends React.Component<Props, State> {
       itemElement,
       iconDefaultColor,
       showFullWidth,
-      hoverToOpen,
-      onChange,
+      label, // eslint-disable-line @typescript-eslint/no-unused-vars
+      hoverToOpen, // eslint-disable-line @typescript-eslint/no-unused-vars
+      onChange, // eslint-disable-line @typescript-eslint/no-unused-vars
       ...defaultProps
     } = this.props;
 

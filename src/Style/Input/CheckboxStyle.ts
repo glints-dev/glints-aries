@@ -52,7 +52,7 @@ export const CheckboxContainer = styled.div`
 
     &:before {
       content: '';
-      -webkit-appearance: none;
+      appearance: none;
       background-color: transparent;
       border: 2px solid ${SecondaryColor.lightblack};
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),

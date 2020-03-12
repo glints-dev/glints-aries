@@ -22,7 +22,6 @@ export const DescriptionWrapper = styled.p`
   font-size: 12px;
   font-weight: 100;
   color: ${SecondaryColor.grey};
-  margin-bottom: 30px;
   margin: 0;
 `;
 

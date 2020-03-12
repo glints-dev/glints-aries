@@ -327,7 +327,7 @@ describe('when isLoading = true', () => {
   });
 });
 
-describe('up and down arrow keys can be used to navigate the options menu', () => {
+it('up and down arrow keys can be used to navigate the options menu', () => {
   const { selectInput, displayedOptions } = setupOpenSelectMenu();
   const firstOption = displayedOptions[0];
   const secondOption = displayedOptions[1];

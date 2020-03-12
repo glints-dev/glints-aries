@@ -66,7 +66,6 @@ interface TextFieldLabelProps {
 export const TextFieldInput = styled.input<TextFieldInputProps>`
   position: relative;
   width: 100%;
-  border: none;
   outline: none;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;

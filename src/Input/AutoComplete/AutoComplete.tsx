@@ -208,9 +208,7 @@ class AutoComplete extends React.Component<Props, State> {
 
   render() {
     const {
-      children,
       label,
-      value,
       status,
       disabled,
       className,
@@ -219,6 +217,8 @@ class AutoComplete extends React.Component<Props, State> {
       onChange,
       small,
       removeFloatingLabel,
+      children, // eslint-disable-line @typescript-eslint/no-unused-vars
+      value, // eslint-disable-line @typescript-eslint/no-unused-vars
       ...defaultProps
     } = this.props;
 

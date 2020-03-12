@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { AutoCompleteItemWrapper } from '../../Style/Input/AutoCompleteStyle';
 
-const AutoCompleteItem: React.FunctionComponent<Props> = props => {
+const AutoCompleteItem: React.FunctionComponent<Props> = (props: Props) => {
   const { children, className, onClick, ...defaultProps } = props;
 
   return (

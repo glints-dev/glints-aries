@@ -6,7 +6,7 @@ exports[`<NumberInput> should render correctly to match snapshot 1`] = `
 >
   <input
     aria-label="Number"
-    className="TextFieldStyle__TextFieldInput-snd1vr-2 ejWXUJ"
+    className="TextFieldStyle__TextFieldInput-snd1vr-2 jTGFNv"
     onBlur={[Function]}
     onKeyDown={[Function]}
     type="number"

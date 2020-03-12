@@ -3,7 +3,7 @@ import { SecondaryColor } from '../Colors';
 
 export const RangeContainer = styled.input<RangeContainerProps>`
   position: relative;
-  -webkit-appearance: none;
+  appearance: none;
   outline: none;
   background: ${SecondaryColor.lighterblack};
   height: 0.4rem;
@@ -11,7 +11,7 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   border-radius: 5px;
 
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    appearance: none;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -21,7 +21,6 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   }
 
   &::-moz-range-thumb {
-    border: none;
     height: 14px;
     width: 14px;
     border-radius: 50%;
@@ -33,7 +32,6 @@ export const RangeContainer = styled.input<RangeContainerProps>`
   &::-moz-range-track {
     width: 100%;
     height: 3px;
-    cursor: pointer;
     background: ${SecondaryColor.white};
     border: 1px solid ${SecondaryColor.lightgrey};
     border-radius: 5px;

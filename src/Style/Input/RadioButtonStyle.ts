@@ -47,18 +47,16 @@ export const RadioLabel = styled.span`
 
 export const RadioContainer = styled.label`
   display: inline-flex;
-  cursor: pointer; 
-  user-select:none;
+  cursor: pointer;
+  user-select: none;
   text-align: left;
 
   input {
     display: none;
 
-    &+${RadioLabel};
-    
-    &:checked+span:after {
+    &:checked + span:after {
       opacity: 1;
-      transform: scale(1,1);
+      transform: scale(1, 1);
     }
   }
 

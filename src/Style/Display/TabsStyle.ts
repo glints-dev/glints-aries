@@ -16,17 +16,17 @@ export const TabsContainer = styled.div`
 
 export const TabsHeader = styled.div`
   position: relative;
-  
+
   &.vertical-tabs-header {
     @media (min-width: ${ScreenSize.tablet}px) {
       width: 20%;
     }
   }
- 
+
   .horizontal-tabs-list.colored {
     border-top: 1px solid ${SecondaryColor.lightergrey};
   }
-  
+
   .vertical-tabs-list {
     @media (min-width: ${ScreenSize.tablet}px) {
       border-right: 1px solid ${SecondaryColor.lightergrey};
@@ -34,7 +34,7 @@ export const TabsHeader = styled.div`
       flex-direction: column;
     }
   }
-  
+
   ul {
     border-bottom: 1px solid ${SecondaryColor.lightergrey};
     display: flex;
@@ -48,39 +48,39 @@ export const TabsHeader = styled.div`
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     .horizontal-tab.colored {
       min-width: 230px;
       font-size: 16px;
-      text-align:center;
+      text-align: center;
       margin: 0;
     }
-    
+
     .horizontal-tab.colored:hover {
       background-color: ${SecondaryColor.whitesmoke};
       color: ${SecondaryColor.actionblue};
       margin: 0;
     }
-    
+
     .horizontal-tab.underlined {
       margin: 0 10px;
     }
-    
+
     .vertical-tab {
-      margin 0 10px;
+      margin: 0 10px;
       @media (min-width: ${ScreenSize.tablet}px) {
         margin: 0;
       }
     }
-    
+
     li {
       text-transform: uppercase;
       list-style-type: none;
-      
+
       &:first-child.horizontal-tab {
         margin-left: 0;
       }
-      
+
       &:last-child.horizontal-tab {
         margin-right: 0;
       }
@@ -102,16 +102,16 @@ export const TabsHeader = styled.div`
           text-transform: uppercase;
         }
       }
-      
+
       &.colored.active.horizontal-tab {
         background-color: ${SecondaryColor.whitesmoke};
-        
+
         button {
           font-weight: bold;
           text-transform: uppercase;
         }
       }
-      
+
       &.active.vertical-tab {
         border-bottom: 2px solid ${SecondaryColor.black};
         @media (min-width: ${ScreenSize.tablet}px) {
@@ -119,36 +119,35 @@ export const TabsHeader = styled.div`
           border-bottom: none;
         }
 
-          button {
-            font-weight: bold;
-            text-transform: uppercase;
-          }
+        button {
+          font-weight: bold;
+          text-transform: uppercase;
         }
-      }
-
-      &:focus {
-        outline: none;
-      }
-      
-      .vertical-tab button {
-        text-align: left;  
-      }
-
-      button {
-        width: 100%;
-        padding: 20px 0;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        outline: none;
-        text-transform: uppercase;
       }
     }
 
-    @media ${`(min-width: ${ScreenSize.desktopS}px)`} {
-      li {
-        margin: 0 15px;
-      }
+    &:focus {
+      outline: none;
+    }
+
+    .vertical-tab button {
+      text-align: left;
+    }
+
+    button {
+      width: 100%;
+      padding: 20px 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      text-transform: uppercase;
+    }
+  }
+
+  @media ${`(min-width: ${ScreenSize.desktopS}px)`} {
+    li {
+      margin: 0 15px;
     }
   }
 `;

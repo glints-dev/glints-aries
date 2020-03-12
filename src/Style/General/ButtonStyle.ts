@@ -265,9 +265,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
 
       return 'transform: none';
     }}
-  }
 
-  &:active {
     ${PrimaryBtn} {
       ${props => {
         if (props.disabled) {
@@ -383,7 +381,6 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: -1;
     top: 6px;
     left: 6px;
     transition: all 0.2s;
@@ -444,14 +441,13 @@ interface SecondaryContainerProps {
  */
 
 export const GhostBtn = styled(Button)<GhostBtnProps>`
-  transition: background-color .5s;
+  transition: background-color 0.5s;
   width: ${({ block }) => block && '100%'};
   background: ${SecondaryColor.white};
   padding: ${({ small }) =>
     small
       ? `${smallButtonPadding[0] - 2}px ${smallButtonPadding[1] - 2}px`
       : `${generalButtonPadding[0] - 2}px ${generalButtonPadding[1] - 2}px`};
-  }
 
   ${props => {
     switch (props.theme) {
@@ -481,8 +477,8 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
   }}
 
   &:hover {
-    transition: background-color .5s;
-  
+    transition: background-color 0.5s;
+
     ${({ disabled, theme }) => {
       if (!disabled) {
         switch (theme) {

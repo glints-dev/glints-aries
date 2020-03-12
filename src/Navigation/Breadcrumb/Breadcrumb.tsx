@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BreadcrumbContainer } from '../../Style/Navigation/BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
-const Breadcrumb: Breadcrumb = props => {
+const Breadcrumb: Breadcrumb = (props: Props) => {
   const { className, children, ...defaultProps } = props;
 
   return (

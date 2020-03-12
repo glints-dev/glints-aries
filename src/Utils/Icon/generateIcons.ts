@@ -23,7 +23,11 @@ function createIconComponent(componentName: string, svgAsString: string) {
 import * as React from 'react';
 import Icon, { Props } from '../Icon';
 
-const ${componentName} = (props: Partial<Props>) => <Icon {...props} children={${svgAsString}} />;
+const ${componentName} = (props: Partial<Props>) => (
+  <Icon {...props}>
+    ${svgAsString}
+  </Icon>
+);
 export default ${componentName};
 `
   );

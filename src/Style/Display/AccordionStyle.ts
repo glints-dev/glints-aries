@@ -14,7 +14,7 @@ export const PanelWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  ${PanelWrapper}:first-child {
+  ${/* sc-selector */ PanelWrapper}:first-child {
     border-top: none;
   }
 `;
