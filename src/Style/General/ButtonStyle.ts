@@ -27,6 +27,7 @@ const Button = styled.button<ButtonProps>`
       : `${generalButtonPadding[0]}px ${generalButtonPadding[1]}px`};
   background: transparent;
   transition: all 0.2s;
+  text-decoration: none;
 `;
 
 /*
@@ -92,6 +93,7 @@ export const DefaultBtn = styled(Button) <DefaultBtnProps>`
   }}
 
   &:hover {
+    text-decoration: none;
     ${({ disabled }) => {
     if (disabled) {
       return `
@@ -192,6 +194,10 @@ export const PrimaryBtn = styled(Button) <PrimaryBtnProps>`
   cursor: pointer;
   position: relative;
   width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   ${props => {
     if (props.disabled) {
@@ -355,6 +361,10 @@ export const SecondaryBtn = styled(Button) <SecondaryBtnProps>`
   z-index: 2;
   width: ${({ block }) => block && '100%'};
 
+  &:hover {
+    text-decoration: none;
+  }
+
   ${({ disabled }) => {
     if (disabled) {
       return `
@@ -478,6 +488,7 @@ export const GhostBtn = styled(Button) <GhostBtnProps>`
 
   &:hover {
     transition: background-color 0.5s;
+    text-decoration: none;
 
     ${({ disabled, theme }) => {
     if (!disabled) {
@@ -605,6 +616,7 @@ export const LinkBtn = styled(Button) <LinkBtnProps>`
 
   &:hover {
     color: ${SecondaryColor.darkblue};
+    text-decoration: none;
   }
 
   &:active {
