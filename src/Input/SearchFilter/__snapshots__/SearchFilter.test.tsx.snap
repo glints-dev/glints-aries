@@ -20,7 +20,7 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       className="aries-defaultbtn SearchFilterStyle__SearchFilterButton-b75szs-2 gluDQb ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF"
     >
       <button
-        className="ButtonStyle__Button-gw4ytw-0 defaultbtn-content ButtonStyle__DefaultBtn-gw4ytw-1 bJjOgz"
+        className="ButtonStyle__Button-gw4ytw-0 defaultbtn-content ButtonStyle__DefaultBtn-gw4ytw-1 dMpybm"
       >
         Search
       </button>
