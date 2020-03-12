@@ -125,6 +125,8 @@ const ButtonStories = () => (
     <Divider theme="grey" />
     <GhostButtonStory />
     <Divider theme="grey" />
+    <TagButtonStory />
+    <Divider theme="grey" />
     <LinkButtonStory />
   </React.Fragment>
 );
@@ -303,6 +305,32 @@ const GhostButtonStory = () => (
         onClick={action('Ghost Button')}
       >
         Ghost
+      </Button>
+    </div>
+  </StorybookComponent>
+);
+
+const TagButtonStory = () => (
+  <StorybookComponent
+    usage={`<Button
+  variant="ghost"
+  theme="blue"
+  tag="a"
+>
+  Ghost
+</Button>`}
+  >
+    <div style={{ marginBottom: '2em' }}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Ghost Button with Different Tag
+      </Heading>
+      <Button
+        variant={Variant.GHOST}
+        theme={Theme.BLUE}
+        onClick={action('Tag Button')}
+        tag="a"
+      >
+        Ghost Button as Anchor
       </Button>
     </div>
   </StorybookComponent>
