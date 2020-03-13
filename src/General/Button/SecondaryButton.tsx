@@ -11,6 +11,7 @@ const SecondaryButton: React.FunctionComponent<Props> = ({
   block,
   small,
   disabled,
+  tag,
   ...defaultProps
 }) => (
   <SecondaryContainer
@@ -23,6 +24,7 @@ const SecondaryButton: React.FunctionComponent<Props> = ({
       block={block}
       small={small}
       disabled={disabled}
+      as={(tag as React.ElementType) || 'button'}
       {...defaultProps}
     >
       {children}
@@ -36,6 +38,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SecondaryBtn> {
   block?: boolean;
   small?: boolean;
   disabled?: boolean;
+  tag?: React.ElementType;
 }
 
 export default SecondaryButton;

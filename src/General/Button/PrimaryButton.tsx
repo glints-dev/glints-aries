@@ -9,6 +9,7 @@ const PrimaryButton: React.FunctionComponent<Props> = ({
   disabled,
   block,
   small,
+  tag,
   ...defaultProps
 }) => (
   <PrimaryContainer
@@ -23,6 +24,7 @@ const PrimaryButton: React.FunctionComponent<Props> = ({
       disabled={disabled}
       block={block}
       small={small}
+      as={(tag as React.ElementType) || 'button'}
       {...defaultProps}
     >
       {children}
@@ -38,6 +40,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof PrimaryBtn> {
   block?: boolean;
   small?: boolean;
   removeHoverEffect?: boolean;
+  tag?: React.ElementType;
 }
 
 export default PrimaryButton;

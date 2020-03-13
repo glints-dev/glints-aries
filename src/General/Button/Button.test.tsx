@@ -15,6 +15,26 @@ it('<Button> should render with text "click me" and an onClick handler', () => {
   expect(ButtonSnapshot).toMatchSnapshot();
 });
 
+it('<Button> should render as button by default', () => {
+  const { getByTestId } = render(
+    <Button data-testid="test-button">test</Button>
+  );
+  expect(getByTestId('test-button').tagName).toBe('BUTTON');
+});
+
+describe('<Button> should render as the given tag', () => {
+  const tags = ['a', 'h1', 'div'];
+  tags.forEach((tag: string) => {
+    it(`<Button> should render as ${tag}`, () => {
+      const { container } = render(
+        <Button tag={tag as React.ElementType}>button</Button>
+      );
+      const tagRegexp = new RegExp(tag, 'i');
+      expect(container.querySelector(tag).tagName).toMatch(tagRegexp);
+    });
+  });
+});
+
 it('should call onClick once when it is clicked', () => {
   const onClick = jest.fn();
   const { getByText } = render(<Button onClick={onClick}>click me</Button>);

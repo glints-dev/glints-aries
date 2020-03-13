@@ -108,6 +108,7 @@ export interface Props {
   small?: boolean;
   theme?: string;
   variant?: string;
+  tag?: React.ElementType;
 }
 
 export default Button;
