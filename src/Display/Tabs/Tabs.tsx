@@ -53,13 +53,15 @@ const Tabs: Tabs = ({
             children,
             (data: React.ReactElement<TabPaneProps>, index) => {
               const tabLabel = data.props.label || index;
+              const tabClassName = data.props.tabClassName || '';
               return (
                 <li
                   className={classNames(
                     `tab-${tabLabel}`,
                     { active: activeTabOrIndex === tabLabel },
                     `${alignment}-tab`,
-                    `${variant}`
+                    `${variant}`,
+                    `${tabClassName}`
                   )}
                   key={data.props.tab}
                   role="tab"

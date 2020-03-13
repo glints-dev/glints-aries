@@ -211,20 +211,26 @@ class Dropdown extends React.Component<Props, State> {
           >
             {React.Children.map(
               children,
-              (item: React.ReactElement<DropdownItemProps>, index) => (
-                <DropdownItemWrapper
-                  className={classNames({ active: cursor === index })}
-                  role="option"
-                  data-value={item.props.value}
-                  key={item.key}
-                  onMouseDown={this.handleClickItem(item.props.onClick)}
-                  onMouseEnter={() => this.handleMouseEnter(index)}
-                  tabIndex={0}
-                  showFullWidth={showFullWidth}
-                >
-                  {item.props.children}
-                </DropdownItemWrapper>
-              )
+              (item: React.ReactElement<DropdownItemProps>, index) => {
+                const dropDownItemClassName = item.props.className || '';
+                return (
+                  <DropdownItemWrapper
+                    className={classNames(
+                      {active: cursor === index},
+                      `${dropDownItemClassName}`
+                    )}
+                    role="option"
+                    data-value={item.props.value}
+                    key={item.key}
+                    onMouseDown={this.handleClickItem(item.props.onClick)}
+                    onMouseEnter={() => this.handleMouseEnter(index)}
+                    tabIndex={0}
+                    showFullWidth={showFullWidth}
+                  >
+                    {item.props.children}
+                  </DropdownItemWrapper>
+                );
+              }
             )}
           </DropdownBody>
         </DropdownWrapper>

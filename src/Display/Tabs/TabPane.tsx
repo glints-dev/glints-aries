@@ -17,6 +17,7 @@ export interface Props
   children: React.ReactNode;
   tab?: string;
   label?: string | number;
+  tabClassName?: string;
 }
 
 export default TabPane;
