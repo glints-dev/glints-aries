@@ -10,132 +10,93 @@ import {
   TextFieldLabel,
 } from '../../Style/Input/TextFieldStyle';
 
-class TextField extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    const { type } = this.props;
+export const isEmpty = (type: textFieldType, value: any) => {
+  if (value === undefined || value === null) return true;
+  if (type === 'number' && isNaN(value)) return true;
+  return value === '';
+};
 
-    this.state = {
-      floating: false,
-      inputType: type,
-    };
-  }
+const TextField: React.FunctionComponent<Props> = props => {
+  const {
+    value,
+    defaultValue,
+    status,
+    onKeyDown,
+    disableTyping,
+    small,
+    type,
+    label,
+    disabled,
+    className,
+    removeFloatingLabel,
+    forwardedRef,
+    ...restProps
+  } = props;
 
-  handleFocusChange = (
-    onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
-  ) => {
-    const listener = (e: React.FocusEvent<HTMLInputElement>) => {
-      this.setState({
-        floating: e.target.value.length > 0,
-      });
+  const [floating, setFloating] = React.useState<boolean>(false);
+  const [inputType, setInputType] = React.useState<textFieldType>(type);
 
-      if (onBlur !== undefined) {
-        return onBlur(e);
+  const handleShowPassword = React.useCallback(() => {
+    setInputType(inputType === 'password' ? 'text' : 'password');
+  }, [setInputType, inputType]);
+
+  const handleKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (disableTyping) {
+        e.preventDefault();
       }
-    };
 
-    return listener;
-  };
-
-  handleShowPassword = () => {
-    const { inputType } = this.state;
-
-    this.setState({
-      inputType: inputType === 'password' ? 'text' : 'password',
-    });
-  };
-
-  handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const { disableTyping, onKeyDown } = this.props;
-
-    if (disableTyping) {
-      e.preventDefault();
-    }
-
-    if (onKeyDown !== undefined) {
-      return onKeyDown(e);
-    }
-  };
-
-  componentDidMount() {
-    const { value, defaultValue } = this.props;
-    if (value !== undefined || defaultValue !== undefined) {
-      if (value !== '') {
-        this.setState({
-          floating: true,
-        });
+      if (onKeyDown !== undefined) {
+        return onKeyDown(e);
       }
-    }
-  }
+    },
+    [onKeyDown, disableTyping]
+  );
 
-  static getDerivedStateFromProps(nextProps: Props) {
-    if (nextProps.value) {
-      return {
-        floating: true,
-      };
-    }
-    return false;
-  }
+  React.useEffect(() => {
+    const checkedValue = value === undefined ? defaultValue : value;
+    setFloating(!isEmpty(inputType, checkedValue));
+  }, [value, defaultValue, setFloating, inputType]);
 
-  render() {
-    const {
-      type,
-      label,
-      value,
-      status,
-      disabled,
-      className,
-      onBlur,
-      small,
-      removeFloatingLabel,
-      disableTyping,
-      forwardedRef,
-      ...defaultProps
-    } = this.props;
-
-    const { floating, inputType } = this.state;
-
-    return (
-      <TextFieldContainer className={classNames('aries-textfield', className)}>
-        <TextFieldInput
-          ref={forwardedRef}
-          type={inputType}
-          placeholder={removeFloatingLabel && label}
-          status={status}
-          disabled={disabled}
-          onBlur={this.handleFocusChange(onBlur)}
-          onKeyDown={this.handleKeyDown}
+  return (
+    <TextFieldContainer className={classNames('aries-textfield', className)}>
+      <TextFieldInput
+        ref={forwardedRef}
+        type={inputType}
+        placeholder={removeFloatingLabel && label}
+        status={status}
+        disabled={disabled}
+        onKeyDown={handleKeyDown}
+        floating={floating}
+        value={value}
+        aria-label={label}
+        small={small}
+        disableTyping={disableTyping}
+        {...restProps}
+      />
+      {!removeFloatingLabel && (
+        <TextFieldLabel
+          data-testid="textfield-label"
+          className="textfield-label"
           floating={floating}
-          value={value}
-          aria-label={label}
+          status={status}
           small={small}
-          disableTyping={disableTyping}
-          {...defaultProps}
-        />
-        {!removeFloatingLabel && (
-          <TextFieldLabel
-            data-testid="textfield-label"
-            className="textfield-label"
-            floating={floating}
-            status={status}
-            small={small}
-          >
-            {label}
-          </TextFieldLabel>
-        )}
-        {type === 'password' && (
-          <div className="see-password" onClick={this.handleShowPassword}>
-            {inputType === 'password' ? (
-              <EyeIcon color="black" />
-            ) : (
-              <EyeSlashedIcon color="#777777" />
-            )}
-          </div>
-        )}
-      </TextFieldContainer>
-    );
-  }
-}
+        >
+          {label}
+        </TextFieldLabel>
+      )}
+      {type === 'password' && (
+        <div className="see-password" onClick={handleShowPassword}>
+          {inputType === 'password' ? (
+            <EyeIcon color="black" />
+          ) : (
+            <EyeSlashedIcon color="#777777" />
+          )}
+        </div>
+      )}
+    </TextFieldContainer>
+  );
+};
 
 export type textFieldType = 'text' | 'password' | 'number';
 
@@ -150,11 +111,6 @@ export interface Props
   max?: number;
   step?: number;
   forwardedRef?: React.RefObject<HTMLInputElement>;
-}
-
-interface State {
-  floating: boolean;
-  inputType: textFieldType;
 }
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLInputElement>) => (
