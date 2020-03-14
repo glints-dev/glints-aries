@@ -19,7 +19,6 @@ export const isEmpty = (type: textFieldType, value: any) => {
 const TextField: React.FunctionComponent<Props> = props => {
   const {
     value,
-    defaultValue,
     status,
     onKeyDown,
     disableTyping,
@@ -54,9 +53,8 @@ const TextField: React.FunctionComponent<Props> = props => {
   );
 
   React.useEffect(() => {
-    const checkedValue = value === undefined ? defaultValue : value;
-    setFloating(!isEmpty(inputType, checkedValue));
-  }, [value, defaultValue, setFloating, inputType]);
+    setFloating(!isEmpty(inputType, value));
+  }, [setFloating, inputType, value]);
 
   return (
     <TextFieldContainer className={classNames('aries-textfield', className)}>

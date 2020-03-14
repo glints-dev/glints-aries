@@ -209,25 +209,6 @@ describe('when an empty value is passed to', () => {
       });
     });
   });
-
-  test('defaultValue prop, label should not be floating', () => {
-    inputTypes.forEach(type => {
-      emptyValueArray.forEach((emptyValue, index) => {
-        const { getAllByTestId } = render(
-          <TextField
-            defaultValue={emptyValue}
-            label="label"
-            type={type}
-            onChange={jest.fn()}
-          />
-        );
-        const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).not.toHaveStyle(
-          `color: ${SecondaryColor.black}`
-        );
-      });
-    });
-  });
 });
 
 describe('when a non-empty value is passed to', () => {
@@ -247,24 +228,6 @@ describe('when a non-empty value is passed to', () => {
         const { getAllByTestId } = render(
           <TextField
             value={value}
-            label="label"
-            type={type}
-            onChange={jest.fn()}
-          />
-        );
-        const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).toHaveStyle(`color: ${SecondaryColor.black}`);
-      });
-    });
-  });
-
-  test('defaultValue prop, label should be floating', () => {
-    inputTypes.forEach(type => {
-      const valueArray = valueArrayMap[type];
-      valueArray.forEach((value: any, index: number) => {
-        const { getAllByTestId } = render(
-          <TextField
-            defaultValue={value}
             label="label"
             type={type}
             onChange={jest.fn()}
