@@ -13,6 +13,14 @@ import {
   ModalFooter,
 } from '../../Style/Display/ModalStyle';
 
+enum MountingState {
+  UNMOUNTED = 'UNMOUNTED',
+  // modal is mounted in the following states
+  MOUNTED = 'MOUNTED',
+  VISIBLE = 'VISIBLE',
+  UNMOUNT_START = 'UNMOUNT_START',
+}
+
 const Modal = (props: Props) => {
   const {
     isVisible,
@@ -29,10 +37,48 @@ const Modal = (props: Props) => {
     ...restProps
   } = props;
 
+  const modalContainerRef = React.useRef(null);
   const modalContentAreaRef = React.useRef(null);
 
+  // mountingState controls mounting and animation
+  const [mountingState, setMountingState] = React.useState(() => {
+    return isVisible ? MountingState.VISIBLE : MountingState.UNMOUNTED;
+  });
+
+  // isOpen set css transition styles
+  const isOpen = mountingState === MountingState.VISIBLE;
+
+  // MOUNTED mount modal, but modal is not visible
   React.useEffect(() => {
-    if (isVisible) {
+    if (isVisible && mountingState === MountingState.UNMOUNTED) {
+      setMountingState(MountingState.MOUNTED);
+    }
+  }, [isVisible, mountingState]);
+
+  // VISIBLE set isOpen to true, triggers css transition
+  React.useEffect(() => {
+    if (isVisible && mountingState === MountingState.MOUNTED) {
+      setMountingState(MountingState.VISIBLE);
+    }
+  }, [isVisible, mountingState]);
+
+  // UNMOUNT_START set isOpen to false, triggers css transition
+  React.useEffect(() => {
+    if (!isVisible && mountingState === MountingState.VISIBLE) {
+      setMountingState(MountingState.UNMOUNT_START);
+    }
+  }, [isVisible, mountingState]);
+
+  // unmount Modal after fade out transition finished
+  const onTransitionEnd = React.useCallback(() => {
+    if (!isVisible) {
+      setMountingState(MountingState.UNMOUNTED);
+    }
+  }, [isVisible]);
+
+  // disable page scrolling when modal is mounted
+  React.useEffect(() => {
+    if (mountingState !== MountingState.UNMOUNTED) {
       // On modal open
       modalContentAreaRef.current.focus();
       document.body.style.overflow = 'hidden';
@@ -40,11 +86,12 @@ const Modal = (props: Props) => {
       // On modal close
       document.body.removeAttribute('style');
     }
-  }, [isVisible]);
+  }, [mountingState]);
 
+  // bind onClose to esc key
   React.useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
-      if (isVisible) onClose();
+      if (mountingState !== MountingState.UNMOUNTED) onClose();
     });
 
     document.addEventListener('keydown', escapeKeyEventListener, false);
@@ -54,7 +101,7 @@ const Modal = (props: Props) => {
     // to clean up the existing escape key event listener.
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
-  }, [isVisible, onClose]);
+  }, [mountingState, onClose]);
 
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
@@ -79,15 +126,17 @@ const Modal = (props: Props) => {
     [mouseDownTarget, onClose]
   );
 
-  return (
+  return mountingState !== MountingState.UNMOUNTED ? (
     <ModalContainer
       data-testid="modal-container"
       className={classNames('aries-modal', className)}
       centering={centering}
-      isOpen={isVisible}
+      isOpen={isOpen}
       removeAnimation={removeAnimation}
       onMouseDown={handleMouseDown}
       onClick={handleClick}
+      ref={modalContainerRef}
+      onTransitionEnd={onTransitionEnd}
     >
       <ModalDialog className="modal-dialog">
         <ModalContentArea
@@ -98,7 +147,7 @@ const Modal = (props: Props) => {
           centering={centering}
           onClick={e => e.stopPropagation()}
           tabIndex={0}
-          isOpen={isVisible}
+          isOpen={isOpen}
           removeAnimation={removeAnimation}
           size={size}
           ref={modalContentAreaRef}
@@ -125,7 +174,7 @@ const Modal = (props: Props) => {
         </ModalContentArea>
       </ModalDialog>
     </ModalContainer>
-  );
+  ) : null;
 };
 
 export type sizeType = 's' | 'm' | 'l' | 'xl';
