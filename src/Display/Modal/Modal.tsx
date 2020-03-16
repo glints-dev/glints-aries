@@ -37,7 +37,6 @@ const Modal = (props: Props) => {
     ...restProps
   } = props;
 
-  const modalContainerRef = React.useRef(null);
   const modalContentAreaRef = React.useRef(null);
 
   // mountingState controls mounting and animation
@@ -48,22 +47,18 @@ const Modal = (props: Props) => {
   // isOpen set css transition styles
   const isOpen = mountingState === MountingState.VISIBLE;
 
-  // MOUNTED mount modal, but modal is not visible
   React.useEffect(() => {
+    // MOUNTED mount modal, but modal is not visible
     if (isVisible && mountingState === MountingState.UNMOUNTED) {
       setMountingState(MountingState.MOUNTED);
     }
-  }, [isVisible, mountingState]);
 
-  // VISIBLE set isOpen to true, triggers css transition
-  React.useEffect(() => {
+    // VISIBLE set isOpen to true, triggers css transition
     if (isVisible && mountingState === MountingState.MOUNTED) {
       setMountingState(MountingState.VISIBLE);
     }
-  }, [isVisible, mountingState]);
 
-  // UNMOUNT_START set isOpen to false, triggers css transition
-  React.useEffect(() => {
+    // UNMOUNT_START set isOpen to false, triggers css transition
     if (!isVisible && mountingState === MountingState.VISIBLE) {
       setMountingState(MountingState.UNMOUNT_START);
     }
@@ -71,10 +66,10 @@ const Modal = (props: Props) => {
 
   // unmount Modal after fade out transition finished
   const onTransitionEnd = React.useCallback(() => {
-    if (!isVisible) {
+    if (mountingState === MountingState.UNMOUNT_START) {
       setMountingState(MountingState.UNMOUNTED);
     }
-  }, [isVisible]);
+  }, [mountingState]);
 
   // disable page scrolling when modal is mounted
   React.useEffect(() => {
@@ -135,7 +130,6 @@ const Modal = (props: Props) => {
       removeAnimation={removeAnimation}
       onMouseDown={handleMouseDown}
       onClick={handleClick}
-      ref={modalContainerRef}
       onTransitionEnd={onTransitionEnd}
     >
       <ModalDialog className="modal-dialog">

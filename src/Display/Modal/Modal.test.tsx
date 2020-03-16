@@ -184,6 +184,7 @@ test('<Modal> should be visible when isVisible changes from false to true', asyn
   const { queryByTestId, rerender } = render(
     <ModalComponent isVisible={false} />
   );
+  expect(queryByTestId('modal-container')).not.toBeInTheDocument();
   rerender(<ModalComponent isVisible={true} />);
   expect(queryByTestId('modal-container')).toHaveStyle('visibility: visible');
 });
