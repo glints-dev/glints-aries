@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { VerticalCenteredSvg } from '../../Style/General/IconStyle';
 
 const Icon: React.FunctionComponent<Props> = props => {
   const {
@@ -12,7 +13,7 @@ const Icon: React.FunctionComponent<Props> = props => {
   } = props;
 
   return (
-    <svg
+    <VerticalCenteredSvg
       data-testid="icon-svg"
       className={className}
       width={width}
@@ -23,7 +24,7 @@ const Icon: React.FunctionComponent<Props> = props => {
       {...restProps}
     >
       {children}
-    </svg>
+    </VerticalCenteredSvg>
   );
 };
 

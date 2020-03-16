@@ -46,6 +46,9 @@ const { ThumbsUpOutlineIcon } = AllIcons;
 const DefaultIcon = (
   <div style={{ color: 'blue' }}>
     <ThumbsUpOutlineIcon />
+    <span style={{ fontSize: '24px', verticalAlign: 'middle' }}>
+      &nbsp;Icon is vertical centered and inherit color by default
+    </span>
   </div>
 );
 
