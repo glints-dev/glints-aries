@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Modal> should render with a title, content, footer and an onClick handler 1`] = `
+exports[`<Modal> should match snapshot 1`] = `
 <div
   className="aries-modal ModalStyle__ModalContainer-sc-101ur27-0 gsOTFp"
   data-testid="modal-container"
   onClick={[Function]}
   onMouseDown={[Function]}
+  onTransitionEnd={[Function]}
 >
   <div
     className="modal-dialog ModalStyle__ModalDialog-sc-101ur27-1 ShNNk"

@@ -37,17 +37,17 @@ function setupModal(isVisible: boolean) {
       <p>{props.content}</p>
     </Modal>
   );
-  const { getByTestId, getByRole } = render(ModalComponent);
+  const { queryByTestId, queryByRole } = render(ModalComponent);
 
   return {
-    modalContainer: getByTestId('modal-container') as Element,
-    modalDialog: getByRole('dialog') as Element,
-    closeButton: getByTestId('close-button') as Element,
+    modalContainer: queryByTestId('modal-container') as Element,
+    modalDialog: queryByRole('dialog') as Element,
+    closeButton: queryByTestId('close-button') as Element,
     onClose,
   };
 }
 
-it('<Modal> should render with a title, content, footer and an onClick handler', () => {
+test('<Modal> should match snapshot', () => {
   const ModalSnapshot = renderer.create(OpenedModal).toJSON();
   expect(ModalSnapshot).toMatchSnapshot();
 });
@@ -84,9 +84,9 @@ describe('when modal is opened', () => {
 });
 
 describe('when modal is closed', () => {
-  it('should not be visible', () => {
+  it('should not be in the dom', () => {
     const { modalContainer } = setupModal(false);
-    expect(modalContainer).toHaveStyle('visibility: hidden');
+    expect(modalContainer).not.toBeInTheDocument();
   });
 });
 
@@ -121,8 +121,8 @@ describe('onClose should be called once when:', () => {
 
 describe('onClose should not have been called when:', () => {
   it('escape key is pressed on closed modal', () => {
-    const { modalContainer, onClose } = setupModal(false);
-    fireEvent.keyDown(modalContainer, escapeEvent);
+    const { onClose } = setupModal(false);
+    fireEvent.keyDown(document, escapeEvent);
     expect(onClose).toHaveBeenCalledTimes(0);
   });
 });
@@ -167,4 +167,45 @@ it('should center the Modal vertically when centering is true', () => {
   );
   const modalContainer = getByTestId('modal-container');
   expect(modalContainer).toHaveStyle('align-items: center;');
+});
+
+test('<Modal> should be visible when isVisible changes from false to true', async () => {
+  const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
+    <Modal
+      title={props.title}
+      isVisible={isVisible}
+      footer={[<button key="button">{props.footer}</button>]}
+      onClose={props.onClose}
+    >
+      <p>{props.content}</p>
+    </Modal>
+  );
+
+  const { queryByTestId, rerender } = render(
+    <ModalComponent isVisible={false} />
+  );
+  rerender(<ModalComponent isVisible={true} />);
+  expect(queryByTestId('modal-container')).toHaveStyle('visibility: visible');
+});
+
+test('<Modal> unmounts after transitionEnd event', async () => {
+  const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
+    <Modal
+      title={props.title}
+      isVisible={isVisible}
+      footer={[<button key="button">{props.footer}</button>]}
+      onClose={props.onClose}
+    >
+      <p>{props.content}</p>
+    </Modal>
+  );
+
+  const { queryByTestId, rerender } = render(
+    <ModalComponent isVisible={true} />
+  );
+  rerender(<ModalComponent isVisible={false} />);
+  expect(queryByTestId('modal-container')).toBeInTheDocument();
+
+  fireEvent.transitionEnd(queryByTestId('modal-container'));
+  expect(queryByTestId('modal-container')).not.toBeInTheDocument();
 });
