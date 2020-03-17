@@ -10,10 +10,10 @@ import {
   TextFieldLabel,
 } from '../../Style/Input/TextFieldStyle';
 
-export const isEmpty = (type: textFieldType, value: any) => {
-  if (value === undefined || value === null) return true;
-  if (type === 'number' && isNaN(value)) return true;
-  return value === '';
+export const isFilled = (type: textFieldType, value: any) => {
+  if (value === undefined || value === null) return false;
+  if (type === 'number') return !isNaN(parseInt(value));
+  return value !== '';
 };
 
 const TextField: React.FunctionComponent<Props> = props => {
@@ -53,7 +53,7 @@ const TextField: React.FunctionComponent<Props> = props => {
   );
 
   React.useEffect(() => {
-    setFloating(!isEmpty(inputType, value));
+    setFloating(isFilled(inputType, value));
   }, [setFloating, inputType, value]);
 
   return (

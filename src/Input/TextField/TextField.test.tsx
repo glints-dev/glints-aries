@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import TextField, { textFieldType, isEmpty } from './TextField';
+import TextField, { textFieldType, isFilled } from './TextField';
 import { SecondaryColor, PrimaryColor } from '../../Style/Colors';
 
 const props = {
@@ -183,10 +183,10 @@ describe('<TextField /> forwards ref to underlying input element', () => {
 });
 
 describe('when an empty value is passed to', () => {
-  test('isEmpty, it should return true', () => {
+  test('isFilled, it should return false', () => {
     inputTypes.forEach(type => {
       emptyValueArray.forEach(emptyValue => {
-        expect(isEmpty(type, emptyValue)).toBe(true);
+        expect(isFilled(type, emptyValue)).toBe(false);
       });
     });
   });
@@ -212,11 +212,11 @@ describe('when an empty value is passed to', () => {
 });
 
 describe('when a non-empty value is passed to', () => {
-  test('isEmpty, it should return false', () => {
+  test('isFilled, it should return true', () => {
     inputTypes.forEach(type => {
       const valueArray = valueArrayMap[type];
       valueArray.forEach((value: any) => {
-        expect(isEmpty(type, value)).toBe(false);
+        expect(isFilled(type, value)).toBe(true);
       });
     });
   });
