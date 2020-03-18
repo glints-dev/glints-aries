@@ -31,6 +31,14 @@ const props = {
       require: 'no',
       description: 'Content to display element inside Input Field.',
     },
+    {
+      name: 'inputRef',
+      type: 'React.RefObject',
+      defaultValue: '',
+      possibleValue: 'React.RefObject',
+      require: 'no',
+      description: 'To control the underlying text input',
+    },
   ],
   'SearchFilter.List': [
     {
