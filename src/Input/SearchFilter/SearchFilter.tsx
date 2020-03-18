@@ -20,7 +20,12 @@ class SearchFilter extends React.Component<Props, State> {
 
   state = { isOpen: false };
   searchFilterRef = React.createRef() as React.RefObject<HTMLDivElement>;
-  inputRef = React.createRef() as React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement>;
+
+  constructor(props: Props) {
+    super(props);
+    this.inputRef = props.inputRef || React.createRef();
+  }
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleMouseDown, false);
@@ -66,6 +71,7 @@ class SearchFilter extends React.Component<Props, State> {
       ...defaultProps
     } = this.props;
 
+    delete defaultProps.inputRef;
     const { isOpen } = this.state;
 
     return (
@@ -101,9 +107,10 @@ class SearchFilter extends React.Component<Props, State> {
 }
 
 interface Props extends Omit<React.HTMLProps<HTMLInputElement>, 'content'> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   content?: React.ReactNode;
   label: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
 
 interface State {
