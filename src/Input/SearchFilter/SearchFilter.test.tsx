@@ -159,3 +159,24 @@ describe('when a value is entered', () => {
     expect(searchFilterInput.value).toEqual(inputValue);
   });
 });
+
+describe('<SearchFilter> inputRef', () => {
+  test('inputRef is being correctly passed to the underlying input element', () => {
+    const label = 'test-inputRef';
+    const inputRef = React.createRef<HTMLInputElement>();
+    const { queryByPlaceholderText } = render(
+      <SearchFilter label={label} inputRef={inputRef} />
+    );
+    expect(queryByPlaceholderText(label)).toEqual(inputRef.current);
+  });
+
+  test('inputRef can focus the underlying input element programmatically', () => {
+    const label = 'test-inputRef';
+    const inputRef = React.createRef<HTMLInputElement>();
+    const { queryByPlaceholderText } = render(
+      <SearchFilter label={label} inputRef={inputRef} />
+    );
+    inputRef.current.focus();
+    expect(queryByPlaceholderText(label)).toHaveFocus();
+  });
+});
