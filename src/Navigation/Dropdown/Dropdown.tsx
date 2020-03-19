@@ -216,7 +216,7 @@ class Dropdown extends React.Component<Props, State> {
                 return (
                   <DropdownItemWrapper
                     className={classNames(
-                      {active: cursor === index},
+                      { active: cursor === index },
                       `${dropDownItemClassName}`
                     )}
                     role="option"
