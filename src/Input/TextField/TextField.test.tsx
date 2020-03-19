@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import TextField, { textFieldType } from './TextField';
+import TextField, { textFieldType, isFilled } from './TextField';
 import { SecondaryColor, PrimaryColor } from '../../Style/Colors';
 
 const props = {
@@ -15,6 +15,13 @@ const props = {
 };
 
 const inputValue = 'glintsaries';
+const inputTypes: textFieldType[] = ['text', 'password', 'number'];
+const emptyValueArray = [undefined, ''];
+const valueArrayMap = {
+  text: [inputValue, ' '],
+  password: [inputValue, ' '],
+  number: [0, 123],
+};
 
 function setupTextField(otherProps?: any) {
   const { getByLabelText, ...utils } = render(
@@ -172,5 +179,63 @@ describe('<TextField /> forwards ref to underlying input element', () => {
 
     ref.current.blur();
     expect(textInput).not.toHaveFocus();
+  });
+});
+
+describe('when an empty value is passed to', () => {
+  test('isFilled, it should return false', () => {
+    inputTypes.forEach(type => {
+      emptyValueArray.forEach(emptyValue => {
+        expect(isFilled(type, emptyValue)).toBe(false);
+      });
+    });
+  });
+
+  test('value prop, label should not be floating', () => {
+    inputTypes.forEach(type => {
+      emptyValueArray.forEach((emptyValue, index) => {
+        const { getAllByTestId } = render(
+          <TextField
+            value={emptyValue}
+            label="label"
+            type={type}
+            onChange={jest.fn()}
+          />
+        );
+        const textFieldLabel = getAllByTestId('textfield-label')[index];
+        expect(textFieldLabel).not.toHaveStyle(
+          `color: ${SecondaryColor.black}`
+        );
+      });
+    });
+  });
+});
+
+describe('when a non-empty value is passed to', () => {
+  test('isFilled, it should return true', () => {
+    inputTypes.forEach(type => {
+      const valueArray = valueArrayMap[type];
+      valueArray.forEach((value: any) => {
+        expect(isFilled(type, value)).toBe(true);
+      });
+    });
+  });
+
+  test('value prop, label should be floating', () => {
+    inputTypes.forEach(type => {
+      const valueArray = valueArrayMap[type];
+      valueArray.forEach((value: any, index: number) => {
+        const { getAllByTestId } = render(
+          <TextField
+            value={value}
+            label="label"
+            type={type}
+            onChange={jest.fn()}
+          />
+        );
+        const textFieldLabel = getAllByTestId('textfield-label')[index];
+        expect(textFieldLabel).toHaveStyle(`color: ${SecondaryColor.black}`);
+      });
+    });
   });
 });

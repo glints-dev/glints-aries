@@ -75,33 +75,50 @@ export const props = {
   ],
 };
 
-const TextFieldStory = () => (
-  <React.Fragment>
-    <StorybookComponent
-      title="Text Field"
-      code="import { TextField } from 'glints-aries'"
-      usage={'<TextField type="text" label="Username" />'}
-    >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>Text</Heading>
-      <div style={{ width: '300px' }}>
-        <TextField type="text" label="Username" />
-      </div>
-    </StorybookComponent>
+const TextFieldStory = () => {
+  const [textValue, setTextValue] = React.useState('');
+  const [passwordValue, setPasswordValue] = React.useState('');
 
-    <Divider theme="grey" />
+  return (
+    <React.Fragment>
+      <StorybookComponent
+        title="Text Field"
+        code="import { TextField } from 'glints-aries'"
+        usage={'<TextField type="text" label="Username" />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Text
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField
+            type="text"
+            label="Username"
+            value={textValue}
+            onChange={e => setTextValue(e.target.value)}
+          />
+        </div>
+      </StorybookComponent>
 
-    <StorybookComponent
-      propsObject={props}
-      usage={'<TextField type="password" label="Password" value="..." />'}
-    >
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Password
-      </Heading>
-      <div style={{ width: '300px' }}>
-        <TextField type="password" label="Password" />
-      </div>
-    </StorybookComponent>
-  </React.Fragment>
-);
+      <Divider theme="grey" />
+
+      <StorybookComponent
+        propsObject={props}
+        usage={'<TextField type="password" label="Password" value="..." />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Password
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField
+            type="password"
+            label="Password"
+            value={passwordValue}
+            onChange={e => setPasswordValue(e.target.value)}
+          />
+        </div>
+      </StorybookComponent>
+    </React.Fragment>
+  );
+};
 
 export default TextFieldStory;
