@@ -18,7 +18,7 @@
     "preversion": "npm whoami && npm run validate",
     "postversion": "npm publish",
     "prepublishOnly": "npm whoami && npm run validate",
-    "postpublish": "git push --tags",
+    "postpublish": "git push origin --tags",
     "storybook": "npm run storybook:build:assets && npm run build:icon && start-storybook -p 9001 -c storybook-config -s dist/public",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -c storybook-config -o .out -s dist/public",
     "storybook:build:assets": "webpack",
