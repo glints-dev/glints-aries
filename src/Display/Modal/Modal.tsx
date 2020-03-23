@@ -40,6 +40,9 @@ const Modal = (props: Props) => {
       // On modal close
       document.body.removeAttribute('style');
     }
+    return () => {
+      document.body.removeAttribute('style');
+    };
   }, [isVisible]);
 
   React.useEffect(() => {
