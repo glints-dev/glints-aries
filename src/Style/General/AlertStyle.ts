@@ -102,8 +102,5 @@ export const AlertMessage = styled.p`
 `;
 
 export const AlertIcon = styled.div`
-  height: 1em;
-  width: 1em;
-  align-self: center;
   cursor: pointer;
 `;
