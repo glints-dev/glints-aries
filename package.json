@@ -18,7 +18,7 @@
     "branch": "if [ \"$(git rev-parse --abbrev-ref HEAD)\" = v4 ] ; then echo Branch check passed. ; else echo Error: Not on branch v4. ; exit 1 ; fi",
     "preversion": "npm run branch && git pull && npm whoami && npm run validate",
     "postversion": "npm publish",
-    "prepublishOnly": "npm run branch && git pull && npm whoami  && npm run validate",
+    "prepublishOnly": "npm run branch && git pull && npm whoami && npm run validate",
     "postpublish": "git push && git push --tags",
     "storybook": "npm run storybook:build:assets && npm run build:icon && start-storybook -p 9001 -c storybook-config -s dist/public",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -c storybook-config -o .out -s dist/public",
