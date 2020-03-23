@@ -25,6 +25,12 @@ const OpenedModal = (
   </Modal>
 );
 
+const ModalComponet = ({ isVisible }: { isVisible: boolean }) => (
+  <Modal isVisible={isVisible} onClose={props.onClose}>
+    <p>{props.content}</p>
+  </Modal>
+);
+
 function setupModal(isVisible: boolean) {
   const onClose = jest.fn();
   const ModalComponent = (
@@ -170,27 +176,15 @@ it('should center the Modal vertically when centering is true', () => {
 });
 
 it('should remove overflow hidden from document body after unmount', () => {
-  const { unmount } = render(
-    <Modal centering isVisible={true} onClose={props.onClose}>
-      <p>{props.content}</p>
-    </Modal>
-  );
+  const { unmount } = render(<ModalComponet isVisible={true} />);
   expect(document.body).toHaveStyle('overflow: hidden');
   unmount();
   expect(document.body).not.toHaveStyle('overflow: hidden');
 });
 
 it('should remove overflow hidden from document body after close', () => {
-  const { rerender } = render(
-    <Modal centering isVisible={true} onClose={props.onClose}>
-      <p>{props.content}</p>
-    </Modal>
-  );
+  const { rerender } = render(<ModalComponet isVisible={true} />);
   expect(document.body).toHaveStyle('overflow: hidden');
-  rerender(
-    <Modal centering isVisible={false} onClose={props.onClose}>
-      <p>{props.content}</p>
-    </Modal>
-  );
+  rerender(<ModalComponet isVisible={false} />);
   expect(document.body).not.toHaveStyle('overflow: hidden');
 });
