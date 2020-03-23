@@ -168,3 +168,29 @@ it('should center the Modal vertically when centering is true', () => {
   const modalContainer = getByTestId('modal-container');
   expect(modalContainer).toHaveStyle('align-items: center;');
 });
+
+it('should remove overflow hidden from document body after unmount', () => {
+  const { unmount } = render(
+    <Modal centering isVisible={true} onClose={props.onClose}>
+      <p>{props.content}</p>
+    </Modal>
+  );
+  expect(document.body).toHaveStyle('overflow: hidden');
+  unmount();
+  expect(document.body).not.toHaveStyle('overflow: hidden');
+});
+
+it('should remove overflow hidden from document body after close', () => {
+  const { rerender } = render(
+    <Modal centering isVisible={true} onClose={props.onClose}>
+      <p>{props.content}</p>
+    </Modal>
+  );
+  expect(document.body).toHaveStyle('overflow: hidden');
+  rerender(
+    <Modal centering isVisible={false} onClose={props.onClose}>
+      <p>{props.content}</p>
+    </Modal>
+  );
+  expect(document.body).not.toHaveStyle('overflow: hidden');
+});
