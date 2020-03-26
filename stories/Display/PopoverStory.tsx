@@ -13,9 +13,9 @@ const props = {
   Popover: [
     {
       name: 'content',
-      type: 'element',
+      type: 'React.ReactNode',
       defaultValue: '',
-      possibleValue: 'element',
+      possibleValue: 'React.ReactNode',
       require: 'yes',
       description: 'Display content when button is clicked.',
     },
