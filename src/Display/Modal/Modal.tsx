@@ -134,9 +134,12 @@ const Modal = (props: Props) => {
 export type sizeType = 's' | 'm' | 'l' | 'xl';
 
 interface Props
-  extends React.ComponentPropsWithoutRef<typeof ModalContentArea> {
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof ModalContentArea>,
+    'title' // we don't really use this title attribute for div element
+  > {
   children: React.ReactNode;
-  title?: string;
+  title?: React.ReactNode;
   isVisible: boolean;
   onClose(): void;
   hideContentArea?: boolean;
