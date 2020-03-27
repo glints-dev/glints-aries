@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { get, isEqual } from 'lodash';
+import { get } from 'lodash';
 
 import classNames from 'classnames';
 
@@ -15,45 +15,60 @@ import {
   SelectErrorDefault,
 } from '../../Style/Input/SelectStyle';
 
-class Select extends React.Component<Props, State> {
-  static Option: React.FunctionComponent<SelectItemProps> = () => null;
+const Select: ISelect = (props: Props) => {
+  const {
+    label,
+    status,
+    disabled,
+    className,
+    onFocus,
+    onBlur,
+    onChange,
+    noOptionResult = 'No results found',
+    small,
+    disableTyping,
+    removeFloatingLabel,
+    removeDropIcon,
+    error,
+    renderError,
+    value, // eslint-disable-line @typescript-eslint/no-unused-vars
+    children, // eslint-disable-line @typescript-eslint/no-unused-vars
+    isLoading,
+    ...defaultProps
+  } = props;
 
-  node: React.RefObject<HTMLDivElement>;
+  const [floating, setFloating] = React.useState<boolean>(false);
+  const [isFocus, setIsFocus] = React.useState<boolean>(false);
+  const [selectedValue, setSelectedValue] = React.useState<string>('');
+  const [filterValue, setFilterValue] = React.useState<React.ReactNode[]>([]);
+  const [cursor, setCursor] = React.useState<number>(0);
+  const [shouldScrollToCursor, setShouldScrollToCursor] = React.useState<
+    boolean
+  >(false);
+  const [defaultValue, setDefaultValue] = React.useState<string>(
+    props.defaultValue
+  );
 
-  state = {
-    floating: false,
-    isFocus: false,
-    selectedValue: '',
-    filterValue: [] as React.ReactNode[],
-    cursor: 0,
-    defaultValue: '',
-    isLoading: this.props.isLoading,
-  };
+  const node: React.RefObject<HTMLDivElement> = React.useRef();
 
-  constructor(props: Props) {
-    super(props);
-    this.node = React.createRef();
-  }
+  const handleOnBlur = React.useCallback((event: MouseEvent) => {
+    const element = event.target as HTMLElement;
+    if (!ReactDOM.findDOMNode(node.current).contains(element)) {
+      setIsFocus(false);
+    }
+  }, []);
 
-  componentDidMount() {
-    const { value, children, status } = this.props;
-
+  React.useLayoutEffect(() => {
     // Checking if children data is exist or not.
     if (React.Children.count(children) !== 0) {
-      this.setState({
-        filterValue: React.Children.map(children, data => data),
-      });
+      setFilterValue(React.Children.map(children, data => data));
     }
 
     if (value !== undefined && value !== '' && value !== null) {
-      this.setState({
-        floating: true,
-        selectedValue: value as string,
-        defaultValue: value as string,
-      });
+      setFloating(true);
+      setSelectedValue(value as string);
+      setDefaultValue(value as string);
     }
-
-    document.addEventListener('click', this.handleOnBlur, false);
 
     if (status) {
       if (typeof console !== 'undefined') {
@@ -62,299 +77,219 @@ class Select extends React.Component<Props, State> {
         show errors and indicate an error state.`);
       }
     }
-  }
 
-  componentDidUpdate(prevProps: Props) {
-    const { children, isLoading, value } = this.props;
+    document.addEventListener('click', handleOnBlur, false);
 
-    const hasDifferentChildren = !isEqual(children, prevProps.children);
-    if (hasDifferentChildren) {
-      this.setState({
-        selectedValue: value as string,
-        defaultValue: value as string,
-        floating: Boolean(value),
-        filterValue: React.Children.map(children, data => data),
-      });
-    } else if (value !== prevProps.value) {
-      if (value && value !== this.state.defaultValue) {
-        this.setState({
-          selectedValue: value as string,
-          defaultValue: value as string,
-          floating: true,
-        });
-      } else if (value === '') {
-        this.setState({
-          selectedValue: value,
-          defaultValue: value,
-          floating: false,
-        });
-      }
-    } else if (isLoading && isLoading !== prevProps.isLoading) {
-      this.setState({
-        isLoading: isLoading,
-      });
+    return () => document.removeEventListener('click', handleOnBlur, false);
+  }, [children, handleOnBlur, status, value]);
+
+  React.useEffect(() => {
+    if (value && value !== defaultValue) {
+      setSelectedValue(value as string);
+      setDefaultValue(value as string);
+      setFloating(true);
+    } else if (value === '') {
+      setSelectedValue(value);
+      setDefaultValue(value);
+      setFloating(false);
     }
-  }
+  }, [value, defaultValue]);
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleOnBlur, false);
-  }
-
-  handleOnBlur = (event: MouseEvent) => {
-    const element = event.target as HTMLElement;
-    if (!ReactDOM.findDOMNode(this.node.current).contains(element)) {
-      this.setState({
-        isFocus: false,
-      });
-    }
-  };
-
-  handleFocusOut = (
-    onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
-  ) => {
-    const listener = (e: React.FocusEvent<HTMLInputElement>) => {
-      this.setState({
-        floating: e.target.value.length > 0,
-      });
+  const handleFocusOut = React.useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      setFloating(e.target.value.length > 0);
 
       if (onBlur !== undefined) {
         return onBlur(e);
       }
-    };
+    },
+    [onBlur]
+  );
 
-    return listener;
-  };
-
-  handleFocus = (onFocus: (e: React.FocusEvent<HTMLInputElement>) => void) => {
-    const listener = (e: React.FocusEvent<HTMLInputElement>) => {
-      this.setState({
-        isFocus: true,
-      });
+  const handleFocus = React.useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      setIsFocus(true);
 
       if (onFocus !== undefined) {
         return onFocus(e);
       }
-    };
+    },
+    [onFocus]
+  );
 
-    return listener;
-  };
-
-  handleChange = (
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  ) => {
-    const listener = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { children } = this.props;
+  // Should be called when the user types into the input
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const childrenArray = React.Children.toArray(children) as Array<
         React.ReactElement<SelectItemProps>
       >;
 
-      this.setState({
-        selectedValue: e.target.value,
-        filterValue: childrenArray.filter(data =>
+      setSelectedValue(e.target.value);
+      setFilterValue(
+        childrenArray.filter(data =>
           data.props.children
             .toLowerCase()
             .includes(e.target.value.toLowerCase())
-        ),
-        cursor: 0,
-      });
+        )
+      );
+      setCursor(0);
 
       if (onChange !== undefined) {
-        return onChange(e);
+        return onChange(e.target.value);
       }
-    };
+    },
+    [children, onChange]
+  );
 
-    return listener;
-  };
+  const getActiveElement = React.useCallback(() => {
+    return node.current.querySelector('.active') as HTMLLIElement;
+  }, []);
 
-  handleClick = (
-    onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
-  ) => {
-    const listener = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-      const { children, onChange } = this.props;
-      this.setState({
-        selectedValue: e.currentTarget.innerText,
-        filterValue: React.Children.map(children, data => data),
-        isFocus: false,
-      });
+  // Should be called when the user selects an option
+  const handleSelect = React.useCallback(
+    (e?: React.ChangeEvent<HTMLInputElement>) => {
+      const activeElement = getActiveElement();
+      const selectedValue = activeElement.textContent;
+      setSelectedValue(selectedValue);
+      setFilterValue(React.Children.map(children, data => data));
+      setIsFocus(false);
+      setFloating(true);
 
       if (onChange !== undefined) {
-        const element = e.target as HTMLElement;
-        onChange(element.dataset.value);
-      }
-
-      if (onOptionClick !== undefined) {
-        onOptionClick(e);
-      }
-    };
-
-    return listener;
-  };
-
-  handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const { children, onChange, disableTyping } = this.props;
-    const { cursor, filterValue } = this.state;
-    const inputElement = e.target as HTMLInputElement;
-
-    if (disableTyping) {
-      e.preventDefault();
-    }
-
-    if (e.keyCode === 38 && cursor > 0) {
-      this.setState({ cursor: cursor - 1 }, this.scrollToActiveElement);
-    } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
-      this.setState({ cursor: cursor + 1 }, this.scrollToActiveElement);
-    } else if (e.keyCode === 13) {
-      inputElement.blur();
-      const activeElement = this.getActiveElement();
-      if (!activeElement) {
-        return;
+        onChange(selectedValue);
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
       const activeChild = filterValue[activeElementIndex];
       const onOptionClick = get(activeChild, 'props.onOptionClick');
-
-      this.setState({
-        selectedValue: activeElement.innerText,
-        filterValue: React.Children.map(children, data => data),
-        floating: true,
-        isFocus: false,
-      });
-      if (onChange !== undefined) {
-        const itemValue = activeElement.dataset.value;
-        onChange(itemValue);
-      }
       if (onOptionClick !== undefined) {
         onOptionClick(e);
       }
-    } else if (e.keyCode === 27) {
-      inputElement.blur();
-      this.setState({ isFocus: false });
-    }
-  };
+    },
+    [children, onChange, filterValue, getActiveElement]
+  );
 
-  handleMouseEnter = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const listItemElement = e.target as HTMLLIElement;
-    this.setState({
-      cursor: Number(listItemElement.dataset.id),
-    });
-  };
-
-  scrollToActiveElement = () => {
-    const selectListElement = this.node.current.querySelector(
+  const scrollToActiveElement = React.useCallback(() => {
+    const selectListElement = node.current.querySelector(
       '.select-listbox'
     ) as HTMLUListElement;
-    selectListElement.scrollTop = this.getActiveElement().offsetTop;
-  };
+    selectListElement.scrollTop = getActiveElement().offsetTop;
+  }, [getActiveElement]);
 
-  getActiveElement = () => {
-    return this.node.current.querySelector('.active') as HTMLLIElement;
-  };
+  // Should be called when any key is pressed inside the component
+  const handleKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      const inputElement = e.target as HTMLInputElement;
 
-  render() {
-    const {
-      label,
-      status,
-      disabled,
-      className,
-      onFocus,
-      onBlur,
-      onChange,
-      noOptionResult = 'No results found',
-      small,
-      disableTyping,
-      removeFloatingLabel,
-      removeDropIcon,
-      error,
-      renderError,
-      value, // eslint-disable-line @typescript-eslint/no-unused-vars
-      children, // eslint-disable-line @typescript-eslint/no-unused-vars
-      ...defaultProps
-    } = this.props;
-
-    const {
-      floating,
-      isFocus,
-      selectedValue = '',
-      filterValue,
-      cursor,
-      isLoading,
-    } = this.state;
-
-    const deprecatedStatus = status || (error && 'error');
-
-    const shouldShowError = error && typeof error !== 'boolean';
-
-    let completeError = null;
-    if (shouldShowError) {
-      if (renderError) {
-        completeError = renderError(error);
-      } else {
-        completeError = (
-          <SelectErrorDefault className="select-error-default">
-            {error}
-          </SelectErrorDefault>
-        );
+      if (disableTyping) {
+        e.preventDefault();
       }
-    }
 
-    return (
-      <SelectContainer
-        className={classNames('aries-select', className)}
-        ref={this.node}
-      >
-        <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
-          <SelectInput
-            type="text"
-            placeholder={removeFloatingLabel && label}
-            role="combobox"
-            aria-expanded={isFocus}
-            aria-autocomplete="list"
-            status={deprecatedStatus}
-            disabled={disabled}
-            onFocus={this.handleFocus(onFocus)}
-            onBlur={this.handleFocusOut(onBlur)}
-            onChange={this.handleChange(onChange)}
-            onKeyDown={this.handleKeyDown}
-            floating={floating}
-            value={selectedValue}
-            small={small}
-            disableTyping={disableTyping}
-            readOnly={disableTyping}
-            {...defaultProps}
-          />
-          {!removeFloatingLabel && (
-            <SelectLabel
-              aria-label={label}
-              floating={floating}
-              status={deprecatedStatus}
-              small={small}
-            >
-              {label}
-            </SelectLabel>
-          )}
-          {!removeDropIcon && (
-            <div className="select-icon" aria-label="show options">
-              <ArrowDownIcon color="#777777" />
-            </div>
-          )}
-        </SelectWrapper>
-        <SelectList
-          aria-label="select-list"
-          cursor={cursor}
-          filterValue={filterValue}
-          isFocus={isFocus}
-          isLoading={isLoading}
-          noOptionResult={noOptionResult}
-          small={small}
-          handleClick={this.handleClick}
-          handleMouseEnter={this.handleMouseEnter}
-        />
-        {completeError}
-      </SelectContainer>
-    );
+      if (e.keyCode === 38 && cursor > 0) {
+        setCursor(cursor - 1);
+        setShouldScrollToCursor(true);
+      } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
+        setCursor(cursor + 1);
+        setShouldScrollToCursor(true);
+      } else if (e.keyCode === 13) {
+        inputElement.blur();
+        handleSelect();
+      } else if (e.keyCode === 27) {
+        inputElement.blur();
+        setIsFocus(false);
+      }
+    },
+    [disableTyping, filterValue, cursor, handleSelect]
+  );
+
+  React.useEffect(() => {
+    if (shouldScrollToCursor) {
+      scrollToActiveElement();
+      setShouldScrollToCursor(false);
+    }
+  }, [shouldScrollToCursor, setShouldScrollToCursor, scrollToActiveElement]);
+
+  const handleMouseEnter = React.useCallback(
+    (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+      const listItemElement = e.target as HTMLLIElement;
+      setCursor(Number(listItemElement.dataset.id));
+    },
+    []
+  );
+
+  const deprecatedStatus = status || (error && 'error');
+
+  const shouldShowError = error && typeof error !== 'boolean';
+
+  let completeError = null;
+  if (shouldShowError) {
+    if (renderError) {
+      completeError = renderError(error);
+    } else {
+      completeError = (
+        <SelectErrorDefault className="select-error-default">
+          {error}
+        </SelectErrorDefault>
+      );
+    }
   }
-}
+
+  return (
+    <SelectContainer
+      className={classNames('aries-select', className)}
+      ref={node}
+    >
+      <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
+        <SelectInput
+          type="text"
+          placeholder={removeFloatingLabel && label}
+          role="combobox"
+          aria-expanded={isFocus}
+          aria-autocomplete="list"
+          status={deprecatedStatus}
+          disabled={disabled}
+          onFocus={handleFocus}
+          onBlur={handleFocusOut}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          floating={floating}
+          value={selectedValue}
+          small={small}
+          disableTyping={disableTyping}
+          readOnly={disableTyping}
+          {...defaultProps}
+        />
+        {!removeFloatingLabel && (
+          <SelectLabel
+            aria-label={label}
+            floating={floating}
+            status={deprecatedStatus}
+            small={small}
+          >
+            {label}
+          </SelectLabel>
+        )}
+        {!removeDropIcon && (
+          <div className="select-icon" aria-label="show options">
+            <ArrowDownIcon color="#777777" />
+          </div>
+        )}
+      </SelectWrapper>
+      <SelectList
+        aria-label="select-list"
+        cursor={cursor}
+        filterValue={filterValue}
+        isFocus={isFocus}
+        isLoading={isLoading}
+        noOptionResult={noOptionResult}
+        small={small}
+        handleClick={handleSelect}
+        handleMouseEnter={handleMouseEnter}
+      />
+      {completeError}
+    </SelectContainer>
+  );
+};
 
 interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   children: React.ReactNode;
@@ -365,22 +300,20 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   removeFloatingLabel?: boolean;
   error?: React.ReactNode | string | boolean;
   renderError?: (error: React.ReactNode | string | boolean) => React.ReactNode;
+  defaultValue?: string;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
-  onChange?(value: string | React.ChangeEvent<HTMLInputElement>): void;
+  onChange?(value: any): void;
 }
 
-interface State {
-  floating: boolean;
-  isFocus: boolean;
-  selectedValue: string;
-  filterValue: React.ReactNode[];
-  defaultValue: string;
-  cursor: number;
-  isLoading: boolean;
-}
+type ISelect = React.FunctionComponent<Props> & {
+  Option: React.FunctionComponent<SelectItemProps>;
+};
 
-Select.Option.displayName = 'Select.Option';
+export const Option: React.FunctionComponent<SelectItemProps> = () => null;
+Option.displayName = 'Select.Option';
+
+Select.Option = Option;
 
 export default Select;

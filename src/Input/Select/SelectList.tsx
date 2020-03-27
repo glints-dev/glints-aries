@@ -30,7 +30,7 @@ const SelectList: React.FunctionComponent<Props> = ({
           role="option"
           data-id={index}
           data-value={data.props.value}
-          onClick={handleClick(data.props.onOptionClick)}
+          onClick={handleClick}
           onMouseEnter={handleMouseEnter}
           tabIndex={0}
         >
@@ -61,9 +61,7 @@ interface Props {
   isLoading: boolean;
   noOptionResult?: string;
   small?: boolean;
-  handleClick(
-    onOptionClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
-  ): (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+  handleClick?: () => void;
   handleMouseEnter(event: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
 }
 
