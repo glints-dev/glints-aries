@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
-export const CheckboxContainer = styled.div`
+export const CheckboxContainer = styled.div<CheckboxContainerProps>`
   position: relative;
   display: inline-flex;
-  font-size: 1em;
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
   line-height: 1.5;
 
   &:focus {
@@ -69,3 +69,7 @@ export const CheckboxContainer = styled.div`
     }
   }
 `;
+
+interface CheckboxContainerProps {
+  small?: boolean;
+}

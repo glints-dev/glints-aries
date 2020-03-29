@@ -30,6 +30,14 @@ const props = {
       require: 'no',
       description: 'Sets the children of the checkbox label.',
     },
+    {
+      name: 'small',
+      type: 'boolean',
+      defaultValue: 'false',
+      possibleValue: 'true|false',
+      require: 'no',
+      description: 'Sets the size of checkbox.',
+    },
   ],
 };
 
