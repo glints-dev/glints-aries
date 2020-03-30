@@ -35,9 +35,9 @@ class AlertStory extends React.Component<{}, State> {
         },
         {
           name: 'message',
-          type: 'string',
+          type: 'React.ReactNode',
           defaultValue: '',
-          possibleValue: 'any',
+          possibleValue: 'React.ReactNode',
           require: 'yes',
           description: 'Sets message for Alert.',
         },

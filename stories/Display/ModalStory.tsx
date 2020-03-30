@@ -25,9 +25,9 @@ class ModalStory extends React.Component {
       Modal: [
         {
           name: 'title',
-          type: 'string',
+          type: 'React.ReactNode',
           defaultValue: '',
-          possibleValue: 'any',
+          possibleValue: 'React.ReactNode',
           require: 'no',
           description: 'Sets title of Modal.',
         },

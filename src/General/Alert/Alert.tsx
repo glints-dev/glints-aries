@@ -158,7 +158,7 @@ interface State {
 
 interface Props {
   type: string;
-  message: string;
+  message: React.ReactNode;
   onClose(): void;
   isOpen: boolean;
   className?: string;

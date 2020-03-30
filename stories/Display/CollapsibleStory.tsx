@@ -8,9 +8,9 @@ const props = {
   Collapsible: [
     {
       name: 'label',
-      type: 'string',
+      type: 'React.ReactNode',
       defaultValue: '',
-      possibleValue: 'any',
+      possibleValue: 'React.ReactNode',
       require: 'yes',
       description: 'Sets title for Collapsible.',
     },
