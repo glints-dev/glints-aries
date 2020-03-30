@@ -262,6 +262,7 @@ const Select: ISelect = (props: Props) => {
         {!removeFloatingLabel && (
           <SelectLabel
             aria-label={label}
+            data-testid="select-label"
             floating={floating}
             status={deprecatedStatus}
             small={small}

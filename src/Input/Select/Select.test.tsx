@@ -36,9 +36,10 @@ const SelectComponent = (
 );
 
 function setupOpenSelectMenu() {
-  const { getByRole, getAllByRole } = render(SelectComponent);
+  const { getByRole, getAllByRole, getByTestId } = render(SelectComponent);
   const selectInput = getByRole('combobox') as HTMLInputElement;
   const selectList = getByRole('listbox');
+  const selectLabel = getByTestId('select-label');
   const displayedOptions = getAllByRole('option');
 
   fireEvent.focus(selectInput);
@@ -46,6 +47,7 @@ function setupOpenSelectMenu() {
   return {
     selectInput,
     selectList,
+    selectLabel,
     displayedOptions,
   };
 }
@@ -68,7 +70,12 @@ function setupSelectOptionFromMenu() {
 }
 
 function setupSelectOptionFromMenuWithKeyHandling() {
-  const { selectInput, selectList, displayedOptions } = setupOpenSelectMenu();
+  const {
+    selectInput,
+    selectList,
+    selectLabel,
+    displayedOptions,
+  } = setupOpenSelectMenu();
   const randomIndex = Math.floor(Math.random() * displayedOptions.length);
   const randomOption = displayedOptions[randomIndex];
   const arrowDownEvent = { key: 'ArrowDown', keyCode: 40 };
@@ -85,6 +92,7 @@ function setupSelectOptionFromMenuWithKeyHandling() {
   return {
     selectInput,
     selectList,
+    selectLabel,
     randomOption,
   };
 }
@@ -210,6 +218,12 @@ describe('when the enter key is pressed on an option', () => {
   it('should close the option menu', () => {
     const { selectList } = setupSelectOptionFromMenuWithKeyHandling();
     expect(selectList.hasAttribute('open')).toBe(false);
+  });
+
+  it('should float the label ', () => {
+    const { selectLabel } = setupSelectOptionFromMenuWithKeyHandling();
+    const style = window.getComputedStyle(selectLabel);
+    expect(style.transform).not.toEqual('');
   });
 });
 
