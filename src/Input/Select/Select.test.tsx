@@ -222,8 +222,7 @@ describe('when the enter key is pressed on an option', () => {
 
   it('should float the label ', () => {
     const { selectLabel } = setupSelectOptionFromMenuWithKeyHandling();
-    const style = window.getComputedStyle(selectLabel);
-    expect(style.transform).not.toEqual('');
+    expect(selectLabel).toHaveStyle('transform: translate3d(-15px,-20px,0);');
   });
 });
 
