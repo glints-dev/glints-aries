@@ -36,11 +36,11 @@ const SelectComponent = (
 );
 
 function setupOpenSelectMenu() {
-  const { getByRole, getAllByRole, getByTestId } = render(SelectComponent);
+  const { getByRole, queryAllByTestId, getByTestId } = render(SelectComponent);
   const selectInput = getByRole('combobox') as HTMLInputElement;
-  const selectList = getByRole('listbox');
+  const selectList = getByTestId('listbox');
   const selectLabel = getByTestId('select-label');
-  const displayedOptions = getAllByRole('option');
+  const displayedOptions = queryAllByTestId('option');
 
   fireEvent.focus(selectInput);
 
@@ -333,9 +333,11 @@ describe('when renderError is given', () => {
 
 describe('when isLoading = true', () => {
   it('should show a loading spinner', () => {
-    const { getByRole } = render(<Select isLoading>{SelectChildren}</Select>);
+    const { getByRole, getByTestId } = render(
+      <Select isLoading>{SelectChildren}</Select>
+    );
     const selectContainer = getByRole('combobox').parentElement.parentElement;
-    const loadingSpinner = getByRole('alert');
+    const loadingSpinner = getByTestId('alert');
     expect(selectContainer).toContainElement(loadingSpinner);
   });
 });

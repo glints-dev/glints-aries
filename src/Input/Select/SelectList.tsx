@@ -18,6 +18,7 @@ const SelectList: React.FunctionComponent<Props> = ({
   <SelectListWrapper
     className="select-listbox"
     role="listbox"
+    data-testid="listbox"
     aria-hidden={!isFocus && true}
     open={isFocus}
     small={small}
@@ -28,6 +29,7 @@ const SelectList: React.FunctionComponent<Props> = ({
           className={cursor === index ? 'active' : null}
           key={data.props.value}
           role="option"
+          data-testid="option"
           data-id={index}
           data-value={data.props.value}
           onClick={handleClick}
@@ -45,6 +47,7 @@ const SelectList: React.FunctionComponent<Props> = ({
       <SelectItem
         disabled
         role="option"
+        data-testid="option"
         aria-hidden={false}
         aria-disabled="true"
       >

@@ -31,7 +31,9 @@ const Modal = (props: Props) => {
 
   const modalContentAreaRef = React.useRef(null);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
+    if (!modalContentAreaRef.current) return;
+
     if (isVisible) {
       // On modal open
       modalContentAreaRef.current.focus();
@@ -43,7 +45,7 @@ const Modal = (props: Props) => {
     return () => {
       document.body.removeAttribute('style');
     };
-  }, [isVisible]);
+  }, [isVisible, modalContentAreaRef]);
 
   React.useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
@@ -95,6 +97,7 @@ const Modal = (props: Props) => {
       <ModalDialog className="modal-dialog">
         <ModalContentArea
           className="modal-content"
+          data-testid="dialog"
           role="dialog"
           aria-modal="true"
           hideContentArea={hideContentArea}

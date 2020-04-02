@@ -139,13 +139,13 @@ describe('displays the correct size', () => {
     const width = SIZES[size];
 
     it(`${size}: ${width}`, () => {
-      const { getByRole } = render(
+      const { getByTestId } = render(
         <Modal size={size} isVisible={true} onClose={props.onClose}>
           <p>{props.content}</p>
         </Modal>
       );
-      const modalDialog = getByRole('dialog');
-      expect(modalDialog).toHaveStyle(`width: ${width};`);
+      const modalDialog = getByTestId('dialog');
+      expect(modalDialog).toHaveStyle(`width: ${width}px;`);
     });
   });
 });
