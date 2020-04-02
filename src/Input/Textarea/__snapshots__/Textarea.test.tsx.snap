@@ -2,7 +2,7 @@
 
 exports[`<Textarea> should render with a label of Description 1`] = `
 <div
-  className="aries-textarea TextareaStyle__TextareaContainer-sc-1tpxnjf-0 ibcviz"
+  className="TextareaStyle__TextareaContainer-sc-1tpxnjf-0 ibcviz aries-textarea"
 >
   <textarea
     aria-label="Description"

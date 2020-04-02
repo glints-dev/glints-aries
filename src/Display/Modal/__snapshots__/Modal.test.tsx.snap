@@ -2,23 +2,24 @@
 
 exports[`<Modal> should render with a title, content, footer and an onClick handler 1`] = `
 <div
-  className="aries-modal ModalStyle__ModalContainer-sc-101ur27-0 gsOTFp"
+  className="ModalStyle__ModalContainer-sc-101ur27-0 gsOTFp aries-modal"
   data-testid="modal-container"
   onClick={[Function]}
   onMouseDown={[Function]}
 >
   <div
-    className="modal-dialog ModalStyle__ModalDialog-sc-101ur27-1 ShNNk"
+    className="ModalStyle__ModalDialog-sc-101ur27-1 ShNNk modal-dialog"
   >
     <div
       aria-modal="true"
-      className="modal-content ModalStyle__ModalContentArea-sc-101ur27-2 dySsLM"
+      className="ModalStyle__ModalContentArea-sc-101ur27-2 dySsLM modal-content"
+      data-testid="dialog"
       onClick={[Function]}
       role="dialog"
       tabIndex={0}
     >
       <header
-        className="modal-header ModalStyle__ModalHeader-sc-101ur27-3 eEgWgO"
+        className="ModalStyle__ModalHeader-sc-101ur27-3 eEgWgO modal-header"
       >
         <h3>
           Modal Title
@@ -43,14 +44,14 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
         </button>
       </header>
       <section
-        className="modal-body ModalStyle__ModalBody-sc-101ur27-4 iWAGvJ"
+        className="ModalStyle__ModalBody-sc-101ur27-4 iWAGvJ modal-body"
       >
         <p>
           Modal Content
         </p>
       </section>
       <footer
-        className="modal-footer ModalStyle__ModalFooter-sc-101ur27-5 dNhZMD"
+        className="ModalStyle__ModalFooter-sc-101ur27-5 dNhZMD modal-footer"
       >
         <button>
           Modal Footer

@@ -2,7 +2,7 @@
 
 exports[`<Typography> should contain the Title and Paragraph components: <Typography.Paragraph> should render a p tag with the text Glints Aries 1`] = `
 <p
-  className="aries-typography-paragraph ParagraphStyles__Paragraph-sc-1w5f8q5-0 gCSEMQ"
+  className="ParagraphStyles__Paragraph-sc-1w5f8q5-0 gCSEMQ aries-typography-paragraph"
   color="#000000"
 >
   Glints Aries
@@ -11,7 +11,7 @@ exports[`<Typography> should contain the Title and Paragraph components: <Typogr
 
 exports[`<Typography> should contain the Title and Paragraph components: <Typography.Title> should render a h1 tag with the text Glints Aries 1`] = `
 <h1
-  className="aries-typography-title TitleStyles__Title-sc-6snwzj-0 hMAqSP"
+  className="TitleStyles__Title-sc-6snwzj-0 hMAqSP aries-typography-title"
   color="#000000"
 >
   Glints Aries

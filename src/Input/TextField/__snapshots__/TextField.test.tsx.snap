@@ -2,7 +2,7 @@
 
 exports[`<TextField> should render with a label of Username and type of text 1`] = `
 <div
-  className="aries-textfield TextFieldStyle__TextFieldContainer-snd1vr-0 eFsLeY"
+  className="TextFieldStyle__TextFieldContainer-snd1vr-0 eFsLeY aries-textfield"
 >
   <input
     aria-label="Username"
@@ -11,7 +11,7 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
     type="text"
   />
   <label
-    className="textfield-label TextFieldStyle__TextFieldLabel-snd1vr-1 kGFxtj"
+    className="TextFieldStyle__TextFieldLabel-snd1vr-1 kGFxtj textfield-label"
     data-testid="textfield-label"
   >
     Username

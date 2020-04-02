@@ -2,10 +2,10 @@
 
 exports[`<Select> should render with 3 options 1`] = `
 <div
-  className="aries-select SelectStyle__SelectContainer-jmk38c-0 cxQAyJ"
+  className="SelectStyle__SelectContainer-jmk38c-0 cxQAyJ aries-select"
 >
   <div
-    className="select-inputwrapper SelectStyle__SelectWrapper-jmk38c-1 cnQpwy"
+    className="SelectStyle__SelectWrapper-jmk38c-1 cnQpwy select-inputwrapper"
   >
     <input
       aria-autocomplete="list"
@@ -46,13 +46,15 @@ exports[`<Select> should render with 3 options 1`] = `
   </div>
   <ul
     aria-hidden={true}
-    className="select-listbox SelectStyle__SelectListWrapper-jmk38c-4 gVUTIk"
+    className="SelectStyle__SelectListWrapper-jmk38c-4 gVUTIk select-listbox"
+    data-testid="listbox"
     open={false}
     role="listbox"
   >
     <li
-      className="active SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
+      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb active"
       data-id={0}
+      data-testid="option"
       data-value="accountant"
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
@@ -64,6 +66,7 @@ exports[`<Select> should render with 3 options 1`] = `
     <li
       className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
       data-id={1}
+      data-testid="option"
       data-value="business development"
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
@@ -75,6 +78,7 @@ exports[`<Select> should render with 3 options 1`] = `
     <li
       className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
       data-id={2}
+      data-testid="option"
       data-value="software engineer"
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
