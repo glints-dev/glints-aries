@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { action } from '@storybook/addon-actions';
-
 import StorybookComponent from '../StorybookComponent';
 
 import PointingModal from '../../src/Display/PointingModal';
@@ -49,15 +47,13 @@ const PointingModalStory = () => (
         </PointingModal.Header>
         <Divider theme="grey" />
         <PointingModal.Body>
-          <PointingModal.Item onClick={action('View Profile')}>
+          <PointingModal.Item onClick={() => null}>
             View Profile
           </PointingModal.Item>
-          <PointingModal.Item onClick={action('Edit Profile')}>
+          <PointingModal.Item onClick={() => null}>
             Edit Profile
           </PointingModal.Item>
-          <PointingModal.Item onClick={action('Sign Out')}>
-            Sign Out
-          </PointingModal.Item>
+          <PointingModal.Item onClick={() => null}>Sign Out</PointingModal.Item>
         </PointingModal.Body>
       </PointingModal>
     </div>

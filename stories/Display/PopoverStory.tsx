@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { action } from '@storybook/addon-actions';
-
 import StorybookComponent from '../StorybookComponent';
 
 import Popover from '../../src/Display/Popover';
@@ -37,7 +35,7 @@ const PopoverStory = () => (
       content={
         <PointingModal>
           <PointingModal.Header>
-            <ProfilePicture editable onClick={action('Profile Picture is')}>
+            <ProfilePicture editable onClick={() => null}>
               <img
                 src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80"
                 alt="profile"
@@ -50,13 +48,13 @@ const PopoverStory = () => (
           </PointingModal.Header>
           <Divider theme="grey" />
           <PointingModal.Body>
-            <PointingModal.Item onClick={action('View Profile')}>
+            <PointingModal.Item onClick={() => null}>
               View Profile
             </PointingModal.Item>
-            <PointingModal.Item onClick={action('Edit Profile')}>
+            <PointingModal.Item onClick={() => null}>
               Edit Profile
             </PointingModal.Item>
-            <PointingModal.Item onClick={action('Sign Out')}>
+            <PointingModal.Item onClick={() => null}>
               Sign Out
             </PointingModal.Item>
           </PointingModal.Body>
