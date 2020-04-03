@@ -29,10 +29,12 @@ class Dropdown extends React.Component<Props, State> {
   };
 
   dropdownBodyRef: React.RefObject<HTMLUListElement>;
+  handleEscKeydown: (this: Document, ev: KeyboardEvent) => any;
 
   constructor(props: Props) {
     super(props);
     this.dropdownBodyRef = React.createRef();
+    this.handleEscKeydown = escEvent(this.handleClose);
     this.state = {
       dropdownLabel: props.label,
       isOpen: false,
@@ -117,18 +119,20 @@ class Dropdown extends React.Component<Props, State> {
     const { children } = this.props;
     const { cursor } = this.state;
 
+    // Up Arrow
     if (e.keyCode === 38 && cursor > 0) {
       this.setState({
         cursor: cursor - 1,
       });
     } else if (
-      e.keyCode === 40 &&
+      e.keyCode === 40 && // Down Arrow
       cursor < React.Children.count(children) - 1
     ) {
       this.setState({
         cursor: cursor + 1,
       });
     } else if (e.keyCode === 13) {
+      // Enter
       this.setState({
         dropdownLabel: this.dropdownBodyRef.current.querySelector('.active')
           .innerHTML,
@@ -138,11 +142,11 @@ class Dropdown extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', escEvent(this.handleClose), false);
+    document.addEventListener('keydown', this.handleEscKeydown, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', escEvent(this.handleClose), false);
+    document.removeEventListener('keydown', this.handleEscKeydown, false);
   }
 
   render() {
