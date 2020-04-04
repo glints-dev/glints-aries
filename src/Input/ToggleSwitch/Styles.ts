@@ -9,7 +9,7 @@ const DEFAULTS = {
 };
 
 interface ToggleProps {
-  active: Boolean;
+  active: boolean;
 }
 
 const Toggle = styled.button<ToggleProps>`
