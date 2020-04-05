@@ -13,6 +13,7 @@ const Badge: React.FunctionComponent<Props> = ({
     {!isNil(label) && (
       <BadgeContainer
         className={classNames('aries-badge', className)}
+        role="presentation"
         sup={sup}
         {...defaultProps}
       >
