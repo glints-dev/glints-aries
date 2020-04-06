@@ -14,17 +14,16 @@ it(`<Badge> should render a label with the text "6"`, () => {
 });
 
 it('should display the correct text when rendered', () => {
-  const { getByText } = render(<Badge label={label} />);
-  const BadgeContent = getByText(label);
-  expect(BadgeContent).toBeTruthy();
+  const { queryByText } = render(<Badge label={label} />);
+  const BadgeContent = queryByText(label);
+  expect(BadgeContent).toBeVisible();
 });
 
 describe('when sup is:', () => {
   it('true, should have a top property', () => {
     const { getByRole } = render(<Badge label={label} sup />);
     const badgeContainer = getByRole('presentation');
-    const { top } = getComputedStyle(badgeContainer);
-    expect(top).toBeTruthy();
+    expect(badgeContainer).toHaveStyle('top: -.6em');
   });
 
   it('false, should not have a top property', () => {
