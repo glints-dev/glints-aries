@@ -308,6 +308,23 @@ describe('<Dropdown/> keydown event', () => {
     fireEvent.keyDown(document, { key: 'Esc', keyCode: 27 });
     expect(dropdownContent).not.toBeVisible();
   });
+
+  test('handleEscKeydown listener should be removed before component unmount', async () => {
+    const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
+    const ref = React.createRef<Dropdown>();
+    const { unmount } = render(
+      <Dropdown label="Career" ref={ref}>
+        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
+        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const handleEscKeydown = ref.current.handleEscKeydown;
+    unmount();
+    expect(removeEventListenerSpy).toHaveBeenCalledTimes(1);
+    expect(removeEventListenerSpy.mock.calls[0][1]).toEqual(handleEscKeydown);
+    removeEventListenerSpy.mockRestore();
+  });
 });
 
 describe('<Dropdown/> logic', () => {
