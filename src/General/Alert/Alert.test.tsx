@@ -260,4 +260,57 @@ describe('<Alert/> timeout', () => {
       expect(alert).not.toBeInTheDocument();
     });
   });
+
+  test('autoCloseTimeout should be cleared before component unmount', async () => {
+    // this test case needs to be rewritten after Alert is updated to a functional component
+    const ref = React.createRef<Alert>();
+    const clearTimeoutSpy = jest.spyOn(window, 'clearTimeout');
+    const { rerender, unmount } = render(
+      <Alert
+        type="success"
+        message="You have successfully applied to Glints as Software Engineer."
+        isOpen={false}
+        onClose={jest.fn()}
+        autoClose={100}
+        ref={ref}
+      />
+    );
+
+    rerender(
+      <Alert
+        type="success"
+        message="You have successfully applied to Glints as Software Engineer."
+        isOpen={true}
+        onClose={jest.fn()}
+        autoClose={100}
+        ref={ref}
+      />
+    );
+    expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
+    expect(clearTimeoutSpy.mock.calls[0][0]).toEqual(undefined);
+    const autoCloseTimeout = ref.current.autoCloseTimeout;
+
+    unmount();
+    expect(clearTimeoutSpy).toHaveBeenCalledTimes(2);
+    expect(clearTimeoutSpy.mock.calls[1][0]).toEqual(autoCloseTimeout);
+    clearTimeoutSpy.mockRestore();
+  });
+});
+
+describe('<Alert/> focus', () => {
+  const AlertComponent = ({ isOpen }: { isOpen: boolean }) => (
+    <Alert
+      type={'success'}
+      message="You have successfully applied to Glints as Software Engineer."
+      isOpen={isOpen}
+      onClose={jest.fn()}
+    />
+  );
+
+  test('alert dialog should have focus when isOpen changes from falsy to truthy', () => {
+    const { queryByRole, rerender } = render(<AlertComponent isOpen={false} />);
+    rerender(<AlertComponent isOpen={true} />);
+    const alert = queryByRole('alertdialog');
+    expect(alert).toHaveFocus();
+  });
 });
