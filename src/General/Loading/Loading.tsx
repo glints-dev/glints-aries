@@ -9,6 +9,7 @@ const Loading: React.FunctionComponent<Props> = props => {
     <LoadingContainer
       className={classNames('aries-loading', className)}
       role="alert"
+      data-testid="alert"
       aria-busy="true"
       aria-live="polite"
     >

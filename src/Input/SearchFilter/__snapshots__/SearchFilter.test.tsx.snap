@@ -4,11 +4,11 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
 <div
   aria-expanded={false}
   aria-label="Search jobs, location, or company"
-  className="aries-searchfilter SearchFilterStyle__SearchFilterContainer-b75szs-0 krQYSW"
+  className="SearchFilterStyle__SearchFilterContainer-b75szs-0 krQYSW aries-searchfilter"
   role="search"
 >
   <div
-    className="searchfilter-inputwrapper SearchFilterStyle__SearchFilterBar-b75szs-1 fkIJWd"
+    className="SearchFilterStyle__SearchFilterBar-b75szs-1 fkIJWd searchfilter-inputwrapper"
   >
     <input
       onChange={[MockFunction]}
@@ -17,10 +17,10 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       type="text"
     />
     <div
-      className="aries-defaultbtn SearchFilterStyle__SearchFilterButton-b75szs-2 gluDQb ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF"
+      className="ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF aries-defaultbtn SearchFilterStyle__SearchFilterButton-b75szs-2 gluDQb"
     >
       <button
-        className="ButtonStyle__Button-gw4ytw-0 defaultbtn-content ButtonStyle__DefaultBtn-gw4ytw-1 dMpybm"
+        className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 dMpybm defaultbtn-content"
       >
         Search
       </button>
@@ -28,12 +28,12 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
   </div>
   <div
     aria-hidden={true}
-    className="searchfilter-content SearchFilterStyle__SearchFilterBodyWrapper-b75szs-3 emnrvi"
+    className="SearchFilterStyle__SearchFilterBodyWrapper-b75szs-3 emnrvi searchfilter-content"
     open={false}
     role="menuitem"
   >
     <div
-      className="searchfilter-listitem SearchFilterStyle__SearchFilterListWrapper-b75szs-5 kLSFzP"
+      className="SearchFilterStyle__SearchFilterListWrapper-b75szs-5 kLSFzP searchfilter-listitem"
       role="list"
     >
       <label>

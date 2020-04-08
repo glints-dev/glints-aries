@@ -45,7 +45,9 @@ function setupSearchFilter(props: Props) {
   const searchFilterInput = getByPlaceholderText(
     props.label
   ) as HTMLInputElement;
-  const searchFilterMenu = getByRole('menuitem') as HTMLDivElement;
+  const searchFilterMenu = getByRole('menuitem', {
+    hidden: true,
+  }) as HTMLDivElement;
   return { searchFilterNode, searchFilterInput, searchFilterMenu, utils };
 }
 

@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { action } from '@storybook/addon-actions';
-
 import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
@@ -148,36 +146,36 @@ Default
       </Heading>
       <ButtonRow>
         <ButtonContainer>
-          <Button theme={Theme.WHITE} onClick={action('Default Button')}>
+          <Button theme={Theme.WHITE} onClick={() => null}>
             Default
           </Button>
         </ButtonContainer>
         <ButtonContainer>
-          <Button theme={Theme.RED} onClick={action('Default Button')}>
+          <Button theme={Theme.RED} onClick={() => null}>
             Red
           </Button>
         </ButtonContainer>
       </ButtonRow>
       <ButtonRow>
         <ButtonContainer>
-          <Button theme={Theme.BLUE} onClick={action('Default Button')}>
+          <Button theme={Theme.BLUE} onClick={() => null}>
             Blue
           </Button>
         </ButtonContainer>
         <ButtonContainer>
-          <Button theme={Theme.YELLOW} onClick={action('Default Button')}>
+          <Button theme={Theme.YELLOW} onClick={() => null}>
             Yellow
           </Button>
         </ButtonContainer>
       </ButtonRow>
       <ButtonRow>
         <ButtonContainer>
-          <Button disabled onClick={action('Default Button')}>
+          <Button disabled onClick={() => null}>
             Disabled
           </Button>
         </ButtonContainer>
         <BlockButtonContainer>
-          <Button theme={Theme.YELLOW} block onClick={action('Default Button')}>
+          <Button theme={Theme.YELLOW} block onClick={() => null}>
             Block
           </Button>
         </BlockButtonContainer>
@@ -205,7 +203,7 @@ Primary
           <Button
             variant={Variant.PRIMARY}
             theme={Theme.YELLOW}
-            onClick={action('Primary Button')}
+            onClick={() => null}
           >
             Yellow
           </Button>
@@ -214,7 +212,7 @@ Primary
           <Button
             variant={Variant.PRIMARY}
             theme={Theme.RED}
-            onClick={action('Primary Button')}
+            onClick={() => null}
           >
             Red
           </Button>
@@ -225,7 +223,7 @@ Primary
           <Button
             variant={Variant.PRIMARY}
             theme={Theme.BLUE}
-            onClick={action('Primary Button')}
+            onClick={() => null}
           >
             Blue
           </Button>
@@ -234,7 +232,7 @@ Primary
           <Button
             variant={Variant.PRIMARY}
             theme={Theme.BLUE_RED}
-            onClick={action('Primary Button')}
+            onClick={() => null}
           >
             Blue-Red
           </Button>
@@ -246,17 +244,13 @@ Primary
             variant={Variant.PRIMARY}
             theme={Theme.YELLOW}
             block
-            onClick={action('Primary Button')}
+            onClick={() => null}
           >
             Block
           </Button>
         </BlockButtonContainer>
         <ButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            disabled
-            onClick={action('Primary Button')}
-          >
+          <Button variant={Variant.PRIMARY} disabled onClick={() => null}>
             Disabled
           </Button>
         </ButtonContainer>
@@ -278,7 +272,7 @@ const SecondaryButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Secondary Button
       </Heading>
-      <Button variant={Variant.SECONDARY} onClick={action('Secondary Button')}>
+      <Button variant={Variant.SECONDARY} onClick={() => null}>
         Secondary
       </Button>
     </div>
@@ -299,11 +293,7 @@ const GhostButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Ghost Button
       </Heading>
-      <Button
-        variant={Variant.GHOST}
-        theme={Theme.BLUE}
-        onClick={action('Ghost Button')}
-      >
+      <Button variant={Variant.GHOST} theme={Theme.BLUE} onClick={() => null}>
         Ghost
       </Button>
     </div>
@@ -327,7 +317,7 @@ const TagButtonStory = () => (
       <Button
         variant={Variant.GHOST}
         theme={Theme.BLUE}
-        onClick={action('Tag Button')}
+        onClick={() => null}
         tag="a"
       >
         Ghost Button as Anchor
@@ -350,7 +340,7 @@ const LinkButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Link Button
       </Heading>
-      <Button variant={Variant.LINK} onClick={action('Link Button')}>
+      <Button variant={Variant.LINK} onClick={() => null}>
         Link
       </Button>
     </div>

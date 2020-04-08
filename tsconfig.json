@@ -16,8 +16,6 @@
       "node",
       "react",
       "react-dom",
-      "storybook__addon-actions",
-      "storybook__addon-knobs",
       "storybook__react",
       "styled-components"
     ]
