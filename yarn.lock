@@ -1913,6 +1913,11 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-7.1.2.tgz#3a71bb8a45a1e08b71a54c9efcee9927f3895e80"
   integrity sha512-lDyCVxxgX5lrgCa75ELCfWcdEDyfisjqoDIM3YsghQ+lyViIac/qT67qabQ/HmoVxyikFKovjKwWdn3b/oKhZA==
 
+"@types/async@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@types/async/-/async-3.2.0.tgz#2bf5c62ca7f50efa77b74c971f1401a6db9ff938"
+  integrity sha512-7dhGj2u7hS+Y/NPxFDaTL/kbTvVjOKvZmD+GZp0jGGOLvnakomncrqSReX+xPAGGZuCUSUsXXy9I9pEpSwxpKA==
+
 "@types/babel__core@^7.1.0":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.2.tgz#608c74f55928033fce18b99b213c16be4b3d114f"
@@ -2012,10 +2017,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
-"@types/lodash@^4.14.132":
-  version "4.14.133"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.133.tgz#430721c96da22dd1694443e68e6cec7ba1c1003d"
-  integrity sha512-/3JqnvPnY58GLzG3Y7fpphOhATV1DDZ/Ak3DQufjlRK5E4u+s0CfClfNFtAGBabw+jDGtRFbOZe+Z02ZMWCBNQ==
+"@types/lodash@^4.14.149":
+  version "4.14.149"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
+  integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -2792,6 +2797,11 @@ async@^2.1.4:
   dependencies:
     lodash "^4.17.11"
 
+async@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
+  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -3261,6 +3271,11 @@ babel-runtime@^6.18.0, babel-runtime@^6.26.0:
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
+
+"babylon7@npm:@babel/parser@^7":
+  version "7.9.4"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.4.tgz#68a35e6b0319bbc014465be43828300113f2f2e8"
+  integrity sha512-bC49otXX6N0/VYhgOMh4gnP26E9xnDZK3TmbNpxYzzz9BQLBosQwfyOe9/cXUU3txYhTzLCbcqd5c8y/OmCjHA==
 
 bail@^1.0.0:
   version "1.0.4"
