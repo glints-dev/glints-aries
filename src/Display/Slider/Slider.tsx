@@ -148,7 +148,7 @@ class Slider extends React.Component<Props, State> {
     window.addEventListener('resize', this.setSize);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
       .width;
 
