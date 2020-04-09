@@ -80,7 +80,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
         <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
       </Dropdown>
     );
-    expect(queryByRole(document.body, 'listbox')).toHaveStyle(
+    expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
       'right: 0; width: auto;'
     );
   });
@@ -92,7 +92,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
         <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
       </Dropdown>
     );
-    expect(queryByRole(document.body, 'listbox')).toHaveStyle(
+    expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
       'white-space: normal'
     );
   });
@@ -104,7 +104,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
         <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
       </Dropdown>
     );
-    expect(queryByRole(document.body, 'listbox')).toHaveStyle(
+    expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
       'width: calc(100% - 20px); left: 10px;'
     );
   });
@@ -116,7 +116,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
         <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
       </Dropdown>
     );
-    expect(queryByRole(document.body, 'listbox')).toHaveStyle(
+    expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
       'margin-top: 13px;'
     );
   });
