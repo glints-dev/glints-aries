@@ -205,7 +205,7 @@ class Dropdown extends React.Component<Props, State> {
             className="dropdown-listbox"
             role="listbox"
             aria-hidden={!isOpen && true}
-            onClick={e => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
             open={isOpen}
             dropDownPlacement={dropDownPlacement}
             noLineBreak={noLineBreak}
@@ -248,14 +248,14 @@ type PropsFromDropdownContainer = Omit<
   'onChange'
 >;
 
-type PropsFromDropdownHeader = Pick<
+type PropsFromDropdownHeader = Omit<
   React.ComponentPropsWithoutRef<typeof DropdownHeader>,
-  'disabled' | 'showHoverLine' | 'showFullWidth'
+  'isOpen'
 >;
 
-type PropsFromDropdownBody = Pick<
+type PropsFromDropdownBody = Omit<
   React.ComponentPropsWithoutRef<typeof DropdownBody>,
-  'dropDownPlacement' | 'noLineBreak' | 'showFullWidth' | 'showHoverLine'
+  'open'
 >;
 
 interface Props
@@ -267,7 +267,7 @@ interface Props
   hoverToOpen?: boolean;
   leftIcon?: React.ReactType;
   itemElement?: React.ReactNode;
-  iconDefaultColor: string;
+  iconDefaultColor?: string;
   onChange?(value: string): void;
 }
 
