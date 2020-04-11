@@ -6,6 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import { Variant } from '../../Utils/StyleConfig';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Style/Colors';
 
 it('<Button> should render with text "click me" and an onClick handler', () => {
   const onClick = jest.fn();
@@ -56,17 +57,57 @@ it('should not call onClick when it is disabled', () => {
 });
 
 describe('contains the correct className for each variant:', () => {
-  const variants = [...Object.values(Variant), 'default'];
-  variants.forEach(variant => {
+  Object.values(Variant).forEach(variant => {
     it(`${variant}`, () => {
       const { getByText } = render(<Button variant={variant}>click me</Button>);
-      if (variant === Variant.LINK) {
-        const linkButton = getByText('click me');
-        expect(linkButton).toHaveClass(`aries-${variant}btn`);
-      } else {
-        const buttonContainer = getByText('click me').parentNode;
-        expect(buttonContainer).toHaveClass(`aries-${variant}btn`);
-      }
+      const button = getByText('click me');
+      expect(button).toHaveClass(`aries-${variant}btn`);
+    });
+  });
+});
+
+describe('render the correct default style for each variant:', () => {
+  const defaultStyleMap = {
+    [Variant.SOLID]: {
+      bgColor: Greyscale.white,
+      color: SecondaryColor.actionblue,
+    },
+    [Variant.GHOST]: {
+      bgColor: Greyscale.white,
+      color: SecondaryColor.actionblue,
+    },
+    [Variant.SOLID_SHADOW]: {
+      bgColor: PrimaryColor.glintsyellow,
+      color: Greyscale.black,
+    },
+    [Variant.LINK]: {
+      bgColor: Greyscale.white,
+      color: SecondaryColor.actionblue,
+    },
+  };
+
+  Object.values(Variant).forEach(variant => {
+    it(`${variant}`, () => {
+      const defaultStyle = defaultStyleMap[variant];
+      const { getByText } = render(<Button variant={variant}>click me</Button>);
+      const button = getByText('click me');
+      expect(button).toHaveStyle(`background-color: ${defaultStyle.bgColor}`);
+      expect(button).toHaveStyle(`color: ${defaultStyle.color}`);
+    });
+  });
+});
+
+describe('render the correct disabled style for each variant:', () => {
+  Object.values(Variant).forEach(variant => {
+    it(`${variant}`, () => {
+      const { getByText } = render(
+        <Button variant={variant} disabled>
+          click me
+        </Button>
+      );
+      const button = getByText('click me');
+      expect(button).toHaveStyle(`background-color: ${Greyscale.lightgrey}`);
+      expect(button).toHaveStyle(`color: ${Greyscale.white}`);
     });
   });
 });

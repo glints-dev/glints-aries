@@ -1,14 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button> should render with text "click me" and an onClick handler 1`] = `
-<div
-  className="ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF aries-defaultbtn"
+<button
+  className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__SolidButton-gw4ytw-1 dwMShH aries-solidbtn"
+  onClick={[MockFunction]}
 >
-  <button
-    className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 biANeV defaultbtn-content"
-    onClick={[MockFunction]}
-  >
-    click me
-  </button>
-</div>
+  click me
+</button>
 `;

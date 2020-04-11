@@ -15,12 +15,12 @@ export enum ETooltipPosition {
   RIGHT = 'right',
 }
 
-export const Variant = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  GHOST: 'ghost',
-  LINK: 'link',
-};
+export enum Variant {
+  SOLID = 'solid',
+  GHOST = 'ghost',
+  LINK = 'link',
+  SOLID_SHADOW = 'solid-shadow',
+}
 
 export const PsychedelicTheme = {
   BLUE_DOMINANT: 'blue-dominant',
@@ -31,14 +31,19 @@ export const PsychedelicTheme = {
   YELLOW_DEFAULT: 'yellow-default',
 };
 
-export const Theme = {
-  RED: 'red',
-  YELLOW: 'yellow',
-  BLUE: 'blue',
-  BLUE_RED: 'blue-red',
-  WHITE: 'white',
-  GREY: 'grey',
-};
+export enum Theme {
+  RED = 'red',
+  YELLOW = 'yellow',
+  BLUE = 'blue',
+  BLUE_RED = 'blue-red',
+  WHITE = 'white',
+  GREY = 'grey',
+}
+
+export enum Size {
+  SMALL = 'small',
+  LARGE = 'large',
+}
 
 /* Screen size library of Glints
  * Usage:

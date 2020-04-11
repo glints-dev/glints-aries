@@ -4,369 +4,263 @@ import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
+import {
+  ViewIcon,
+  ArrowRoundForwardIcon,
+} from '../../src/General/Icon/components';
 
-import { Variant, Theme } from '../../src/Utils/StyleConfig';
+import { Variant, Theme, Size } from '../../src/Utils/StyleConfig';
+import styled from 'styled-components';
 
-const blockProp = {
-  name: 'block',
-  type: 'boolean',
-  defaultValue: <code>false</code>,
-  possibleValue: <code>true | false</code>,
-  require: 'no',
-  description: '	Sets Button to block type.',
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+`;
+
+const SHeading = styled(Heading)`
+  font-size: '20px';
+  margin-bottom: '1em';
+`;
+
+const SButton = styled(Button)`
+  margin-right: 15px;
+`;
+
+const ButtonTypesStory = () => {
+  const usage = `// Solid
+<Button variant="${Variant.SOLID}">Default</Button>
+<Button variant="${Variant.SOLID}" disabled>Disabled</Button>
+<Button variant="${Variant.SOLID}" theme="${Theme.BLUE}">Blue</Button>
+// Ghost
+<Button variant="${Variant.GHOST}">Default</Button>
+<Button variant="${Variant.GHOST}" disabled>Disabled</Button>
+// Solid Shadow
+<Button variant="${Variant.SOLID_SHADOW}">Default</Button>
+<Button variant="${Variant.SOLID_SHADOW}" disabled>Disabled</Button>
+// Link
+<Button variant="${Variant.LINK}">Default</Button>
+<Button variant="${Variant.LINK}" disabled>Disabled</Button>
+`;
+  const propsObject = {
+    All: [
+      {
+        name: 'variant',
+        type: 'string',
+        defaultValue: '"solid"',
+        possibleValue: `${Object.values(Variant)
+          .map(value => `"${value}"`)
+          .join(' | ')}`,
+        require: 'no',
+        description: "Sets the Button's type.",
+      },
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets Button to disable state.',
+      },
+    ],
+    Solid: [
+      {
+        name: 'theme',
+        type: 'string',
+        defaultValue: '"white"',
+        possibleValue: '"white" | "blue"',
+        require: 'no',
+        description: "Sets the Button's theme",
+      },
+    ],
+  };
+  return (
+    <StorybookComponent
+      title="Button"
+      code="import { Button } from 'glints-aries'"
+      usage={usage}
+      propsObject={propsObject}
+    >
+      <SHeading>Types</SHeading>
+      <h3>Solid</h3>
+      <Row>
+        <SButton>Default</SButton>
+        <SButton disabled>Disabled</SButton>
+        <SButton theme={Theme.BLUE}>Blue</SButton>
+      </Row>
+      <h3>Ghost</h3>
+      <Row>
+        <SButton variant={Variant.GHOST}>Default</SButton>
+        <SButton variant={Variant.GHOST} disabled>
+          Disabled
+        </SButton>
+      </Row>
+      <h3>Solid Shadow</h3>
+      <Row>
+        <SButton variant={Variant.SOLID_SHADOW}>Default</SButton>
+        <SButton variant={Variant.SOLID_SHADOW} disabled>
+          Disabled
+        </SButton>
+      </Row>
+      <h3>Link</h3>
+      <Row>
+        <SButton variant={Variant.LINK}>Default</SButton>
+        <SButton variant={Variant.LINK} disabled>
+          Disabled
+        </SButton>
+      </Row>
+    </StorybookComponent>
+  );
 };
 
-const buttonProps = [
-  {
-    name: 'variant',
-    type: 'string',
-    defaultValue: 'default',
-    possibleValue: <code>default | primary | secondary | ghost | link</code>,
-    require: 'no',
-    description: 'Sets the Default Button.',
-  },
-  {
-    name: 'disabled',
-    type: 'boolean',
-    defaultValue: <code>false</code>,
-    possibleValue: <code>true | false</code>,
-    require: 'no',
-    description: 'Sets Button to disable state.',
-  },
-  blockProp,
-  {
-    name: 'small',
-    type: 'boolean',
-    defaultValue: <code>false</code>,
-    possibleValue: <code>true | false</code>,
-    require: 'no',
-    description: 'Sets Button to small version.',
-  },
-  {
-    name: 'tag',
-    type: 'React.ElementType',
-    defaultValue: <code>button</code>,
-    possibleValue: 'any valid html tag e.g. "a"',
-    require: 'no',
-    description: 'Changes the tag with which the button will render.',
-  },
-];
+const ButtonSizeStory = () => {
+  const usage = `<Button size="${Size.SMALL}">Small</Button>
+<Button size="${Size.LARGE}">Large</Button>
+<Button block>Block</Button>
+`;
+  const propsObject = {
+    All: [
+      {
+        name: 'size',
+        type: 'string',
+        defaultValue: '"large"',
+        possibleValue: '"small" | "large"',
+        require: 'no',
+        description: "Sets the Button's size.",
+      },
+      {
+        name: 'block',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Make the button fit to its parent width.',
+      },
+    ],
+  };
 
-const removeHoverEffectProp = {
-  name: 'removeHoverEffect',
-  type: 'boolean',
-  defaultValue: <code>false</code>,
-  possibleValue: <code>true | false</code>,
-  require: 'no',
-  description: "Removes Button's effect when hovered",
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <SHeading>Sizes</SHeading>
+      <Row>
+        <SButton theme={Theme.BLUE} size={Size.SMALL}>
+          Small
+        </SButton>
+        <SButton theme={Theme.BLUE}>Large</SButton>
+        <SButton theme={Theme.BLUE} block>
+          Block
+        </SButton>
+      </Row>
+      {Object.values(Variant).map(type => (
+        <Row key={type}>
+          <SButton variant={type} size={Size.SMALL}>
+            Small
+          </SButton>
+          <SButton variant={type}>Large</SButton>
+          <SButton variant={type} block>
+            Block
+          </SButton>
+        </Row>
+      ))}
+    </StorybookComponent>
+  );
 };
 
-const defaultButtonProps = {
-  'Default Button': [
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: <code>white</code>,
-      possibleValue: <code>red | blue | yellow</code>,
-      require: 'no',
-      description: "Sets the Button's theme",
-    },
-    ...buttonProps,
-    removeHoverEffectProp,
-  ],
+const ButtonWithIconStory = () => {
+  const usage = `<Button startIcon={<ViewIcon />}>Button</Button>
+<Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
+  const propsObject = {
+    All: [
+      {
+        name: 'startIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed before the children.',
+      },
+      {
+        name: 'endIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed after the children.',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <SHeading>Button with Icon</SHeading>
+      <Row>
+        <SButton theme={Theme.BLUE} startIcon={<ViewIcon />}>
+          Button Icon Left
+        </SButton>
+        <SButton theme={Theme.BLUE} endIcon={<ArrowRoundForwardIcon />}>
+          Button Icon Right
+        </SButton>
+      </Row>
+      {Object.values(Variant).map(type => (
+        <Row key={type}>
+          <SButton variant={type} startIcon={<ViewIcon />}>
+            Button Icon Left
+          </SButton>
+          <SButton variant={type} endIcon={<ArrowRoundForwardIcon />}>
+            Button Icon Right
+          </SButton>
+        </Row>
+      ))}
+    </StorybookComponent>
+  );
 };
 
-const primaryButtonProps = {
-  'Primary Button': [
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: <code>white</code>,
-      possibleValue: <code>red | blue | blue-red | yellow</code>,
-      require: 'no',
-      description: "Sets the Button's theme",
-    },
-    ...buttonProps,
-  ],
-};
+const ButtonWithTagStory = () => {
+  const usage = `<Button tag="a">Button as Anchor</Button>`;
+  const propsObject = {
+    All: [
+      {
+        name: 'tag',
+        type: 'string',
+        defaultValue: '"button"',
+        possibleValue: 'any valid html tag e.g. "a"',
+        require: 'no',
+        description: 'Changes the tag with which the button will render.',
+      },
+    ],
+  };
 
-const secondaryButtonProps = {
-  'Secondary Button': buttonProps,
-};
-
-const ghostButtonProps = {
-  'Ghost Button': [
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: <code>white</code>,
-      possibleValue: <code>red | blue | yellow | white</code>,
-      require: 'no',
-      description: "Sets the Button's theme",
-    },
-    ...buttonProps,
-    removeHoverEffectProp,
-  ],
-};
-
-const linkButtonProps = {
-  'Link Button': [blockProp],
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <SHeading>Button with Different Tag</SHeading>
+      <Row>
+        <SButton theme={Theme.BLUE} tag="a">
+          Button as Anchor
+        </SButton>
+      </Row>
+      {Object.values(Variant).map(type => (
+        <Row key={type}>
+          <SButton variant={type} tag="a">
+            Button as Anchor
+          </SButton>
+        </Row>
+      ))}
+    </StorybookComponent>
+  );
 };
 
 const ButtonStories = () => (
-  <React.Fragment>
-    <DefaultButtonStory />
+  <>
+    <ButtonTypesStory />
     <Divider theme="grey" />
-    <PrimaryButtonStory />
+    <ButtonSizeStory />
     <Divider theme="grey" />
-    <SecondaryButtonStory />
+    <ButtonWithIconStory />
     <Divider theme="grey" />
-    <GhostButtonStory />
-    <Divider theme="grey" />
-    <TagButtonStory />
-    <Divider theme="grey" />
-    <LinkButtonStory />
-  </React.Fragment>
-);
-
-const DefaultButtonStory = () => (
-  <StorybookComponent
-    title="Button"
-    code="import { Button } from 'glints-aries'"
-    propsObject={defaultButtonProps}
-    usage={`<Button
-theme="blue"
->
-Default
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Default Button
-      </Heading>
-      <ButtonRow>
-        <ButtonContainer>
-          <Button theme={Theme.WHITE} onClick={() => null}>
-            Default
-          </Button>
-        </ButtonContainer>
-        <ButtonContainer>
-          <Button theme={Theme.RED} onClick={() => null}>
-            Red
-          </Button>
-        </ButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <ButtonContainer>
-          <Button theme={Theme.BLUE} onClick={() => null}>
-            Blue
-          </Button>
-        </ButtonContainer>
-        <ButtonContainer>
-          <Button theme={Theme.YELLOW} onClick={() => null}>
-            Yellow
-          </Button>
-        </ButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <ButtonContainer>
-          <Button disabled onClick={() => null}>
-            Disabled
-          </Button>
-        </ButtonContainer>
-        <BlockButtonContainer>
-          <Button theme={Theme.YELLOW} block onClick={() => null}>
-            Block
-          </Button>
-        </BlockButtonContainer>
-      </ButtonRow>
-    </div>
-  </StorybookComponent>
-);
-
-const PrimaryButtonStory = () => (
-  <StorybookComponent
-    propsObject={primaryButtonProps}
-    usage={`<Button
-variant='primary'
-theme='yellow'
->
-Primary
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Primary Button
-      </Heading>
-      <ButtonRow>
-        <ButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            theme={Theme.YELLOW}
-            onClick={() => null}
-          >
-            Yellow
-          </Button>
-        </ButtonContainer>
-        <ButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            theme={Theme.RED}
-            onClick={() => null}
-          >
-            Red
-          </Button>
-        </ButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <ButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            theme={Theme.BLUE}
-            onClick={() => null}
-          >
-            Blue
-          </Button>
-        </ButtonContainer>
-        <ButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            theme={Theme.BLUE_RED}
-            onClick={() => null}
-          >
-            Blue-Red
-          </Button>
-        </ButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <BlockButtonContainer>
-          <Button
-            variant={Variant.PRIMARY}
-            theme={Theme.YELLOW}
-            block
-            onClick={() => null}
-          >
-            Block
-          </Button>
-        </BlockButtonContainer>
-        <ButtonContainer>
-          <Button variant={Variant.PRIMARY} disabled onClick={() => null}>
-            Disabled
-          </Button>
-        </ButtonContainer>
-      </ButtonRow>
-    </div>
-  </StorybookComponent>
-);
-
-const SecondaryButtonStory = () => (
-  <StorybookComponent
-    propsObject={secondaryButtonProps}
-    usage={`<Button
-  variant="secondary"
->
-  Secondary
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Secondary Button
-      </Heading>
-      <Button variant={Variant.SECONDARY} onClick={() => null}>
-        Secondary
-      </Button>
-    </div>
-  </StorybookComponent>
-);
-
-const GhostButtonStory = () => (
-  <StorybookComponent
-    propsObject={ghostButtonProps}
-    usage={`<Button
-  variant="ghost"
-  theme="blue"
->
-  Ghost
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Ghost Button
-      </Heading>
-      <Button variant={Variant.GHOST} theme={Theme.BLUE} onClick={() => null}>
-        Ghost
-      </Button>
-    </div>
-  </StorybookComponent>
-);
-
-const TagButtonStory = () => (
-  <StorybookComponent
-    usage={`<Button
-  variant="ghost"
-  theme="blue"
-  tag="a"
->
-  Ghost
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Ghost Button with Different Tag
-      </Heading>
-      <Button
-        variant={Variant.GHOST}
-        theme={Theme.BLUE}
-        onClick={() => null}
-        tag="a"
-      >
-        Ghost Button as Anchor
-      </Button>
-    </div>
-  </StorybookComponent>
-);
-
-const LinkButtonStory = () => (
-  <StorybookComponent
-    propsObject={linkButtonProps}
-    usage={`<Button
-  variant="link"
-  theme="blue"
->
-  Link
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Link Button
-      </Heading>
-      <Button variant={Variant.LINK} onClick={() => null}>
-        Link
-      </Button>
-    </div>
-  </StorybookComponent>
-);
-
-const ButtonRow: React.FunctionComponent = ({ children }) => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-around',
-      marginBottom: '2em',
-    }}
-  >
-    {children}
-  </div>
-);
-
-const BlockButtonContainer: React.FunctionComponent = ({ children }) => (
-  <div style={{ flex: '0 0 40%' }}>{children}</div>
-);
-
-const ButtonContainer: React.FunctionComponent = ({ children }) => (
-  <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
-    {children}
-  </div>
+    <ButtonWithTagStory />
+  </>
 );
 
 export default ButtonStories;

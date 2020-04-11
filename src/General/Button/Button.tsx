@@ -1,95 +1,82 @@
 import * as React from 'react';
+import classNames from 'classnames';
 
-import DefaultButton from './DefaultButton';
-import PrimaryButton from './PrimaryButton';
-import SecondaryButton from './SecondaryButton';
-import GhostButton from './GhostButton';
-import LinkButton from './LinkButton';
-
-import { Variant } from '../../Utils/StyleConfig';
+import {
+  SolidButton,
+  GhostButton,
+  SolidShadowButton,
+  LinkButton,
+  StartIconContainer,
+  EndIconContainer,
+} from '../../Style/General/ButtonStyle';
+import { Size, Theme, Variant } from '../../Utils/StyleConfig';
 
 const renderButton: React.FunctionComponent<Props> = ({
-  children,
-  block,
   className,
-  disabled,
   onClick,
-  removeHoverEffect,
-  small,
+  block,
+  disabled,
+  size,
+  tag,
   theme,
   variant,
-  ...defaultProps
+  startIcon,
+  endIcon,
+  children,
+  ...restProps
 }) => {
+  const commonProps = {
+    onClick,
+    block,
+    disabled,
+    size,
+    as: (tag as React.ElementType) || 'button',
+    ...restProps,
+  };
+  const content = (
+    <>
+      {startIcon && <StartIconContainer>{startIcon}</StartIconContainer>}
+      {children}
+      {endIcon && <EndIconContainer>{endIcon}</EndIconContainer>}
+    </>
+  );
   switch (variant) {
-    case Variant.PRIMARY:
+    case Variant.SOLID_SHADOW:
       return (
-        <PrimaryButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          removeHoverEffect={removeHoverEffect}
-          theme={theme}
-          {...defaultProps}
+        <SolidShadowButton
+          {...commonProps}
+          className={classNames('aries-solid-shadowbtn', className)} // 'aries-primarybtn'
         >
-          {children}
-        </PrimaryButton>
-      );
-    case Variant.SECONDARY:
-      return (
-        <SecondaryButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          {...defaultProps}
-        >
-          {children}
-        </SecondaryButton>
+          {content}
+        </SolidShadowButton>
       );
     case Variant.GHOST:
       return (
         <GhostButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          removeHoverEffect={removeHoverEffect}
-          theme={theme}
-          {...defaultProps}
+          {...commonProps}
+          className={classNames('aries-ghostbtn', className)}
         >
-          {children}
+          {content}
         </GhostButton>
       );
     case Variant.LINK:
       return (
         <LinkButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          {...defaultProps}
+          {...commonProps}
+          className={classNames('aries-linkbtn', className)}
         >
-          {children}
+          {content}
         </LinkButton>
       );
     default:
       return (
-        <DefaultButton
+        <SolidButton
+          {...commonProps}
+          className={classNames('aries-solidbtn', className)} // aries-defaultbtn
           theme={theme}
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          removeHoverEffect={removeHoverEffect}
-          {...defaultProps}
         >
-          {children}
-        </DefaultButton>
+          {content}
+        </SolidButton>
       );
   }
 };
@@ -98,17 +85,21 @@ const Button: React.FunctionComponent<Props> = props => (
   <React.Fragment>{renderButton(props)}</React.Fragment>
 );
 
-export interface Props {
-  children: React.ReactNode;
+export interface ButtonStyleProps {
   block?: boolean;
-  className?: string;
   disabled?: boolean;
+  size?: Size;
+  theme?: Theme;
+}
+
+export interface Props extends ButtonStyleProps {
+  className?: string;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
-  removeHoverEffect?: boolean;
-  small?: boolean;
-  theme?: string;
-  variant?: string;
   tag?: React.ElementType;
+  variant?: Variant;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export default Button;
