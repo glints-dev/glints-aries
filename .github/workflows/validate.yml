@@ -21,7 +21,9 @@ jobs:
           node-version: '10.x'
       - name: Install dependencies
         run: yarn install
-      - name: Build
+      - name: Build storybook
+        run: yarn storybook:build
+      - name: Build package
         run: yarn build
       - name: Lint
         run: yarn lint

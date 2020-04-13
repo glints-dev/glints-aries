@@ -169,7 +169,7 @@ const ColorStory = () => (
       altogether.
       <h4 style={{ marginTop: '1em' }}>Deprecated colors:</h4>
       {deprecatedColors.map(color => (
-        <React.Fragment>
+        <React.Fragment key={color}>
           {color}
           <br />
         </React.Fragment>
@@ -183,7 +183,7 @@ const ColorStory = () => (
         Moved to <code>Greyscale</code>
       </h4>
       {movedColors.map(color => (
-        <React.Fragment>
+        <React.Fragment key={color}>
           {color}
           <br />
         </React.Fragment>
