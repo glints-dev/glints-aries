@@ -6,7 +6,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="aries-alert AlertStyle__AlertContainer-srh7y6-0 fJNeNU"
+  className="AlertStyle__AlertContainer-srh7y6-0 fJNeNU aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -25,16 +25,16 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
     />
   </svg>
   <div
-    className="alert-content AlertStyle__AlertContent-srh7y6-1 bUAHVI"
+    className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="alert-message AlertStyle__AlertMessage-srh7y6-2 eeMpAG"
+      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="alert-close AlertStyle__AlertIcon-srh7y6-3 jtLoID"
+      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -60,7 +60,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="aries-alert AlertStyle__AlertContainer-srh7y6-0 kshnsq"
+  className="AlertStyle__AlertContainer-srh7y6-0 kshnsq aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -79,16 +79,16 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
     />
   </svg>
   <div
-    className="alert-content AlertStyle__AlertContent-srh7y6-1 bUAHVI"
+    className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="alert-message AlertStyle__AlertMessage-srh7y6-2 eeMpAG"
+      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="alert-close AlertStyle__AlertIcon-srh7y6-3 jtLoID"
+      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -114,7 +114,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="aries-alert AlertStyle__AlertContainer-srh7y6-0 kshnsq"
+  className="AlertStyle__AlertContainer-srh7y6-0 kshnsq aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -133,16 +133,16 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
     />
   </svg>
   <div
-    className="alert-content AlertStyle__AlertContent-srh7y6-1 bUAHVI"
+    className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="alert-message AlertStyle__AlertMessage-srh7y6-2 eeMpAG"
+      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="alert-close AlertStyle__AlertIcon-srh7y6-3 jtLoID"
+      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -168,7 +168,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="aries-alert AlertStyle__AlertContainer-srh7y6-0 jFiaom"
+  className="AlertStyle__AlertContainer-srh7y6-0 jFiaom aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -187,16 +187,16 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
     />
   </svg>
   <div
-    className="alert-content AlertStyle__AlertContent-srh7y6-1 bUAHVI"
+    className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="alert-message AlertStyle__AlertMessage-srh7y6-2 eeMpAG"
+      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="alert-close AlertStyle__AlertIcon-srh7y6-3 jtLoID"
+      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -222,7 +222,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="aries-alert AlertStyle__AlertContainer-srh7y6-0 igsYJ"
+  className="AlertStyle__AlertContainer-srh7y6-0 igsYJ aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -241,16 +241,16 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
     />
   </svg>
   <div
-    className="alert-content AlertStyle__AlertContent-srh7y6-1 bUAHVI"
+    className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="alert-message AlertStyle__AlertMessage-srh7y6-2 eeMpAG"
+      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="alert-close AlertStyle__AlertIcon-srh7y6-3 jtLoID"
+      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
