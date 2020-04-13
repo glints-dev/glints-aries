@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge> should render a label with the text "6" 1`] = `
+<div
+  className="BadgeStyle__BadgeContainer-sc-1rr32yz-0 haqjCy aries-badge"
+  role="presentation"
+>
+  <span
+    className="badge-content"
+  >
+    6
+  </span>
+</div>
+`;
