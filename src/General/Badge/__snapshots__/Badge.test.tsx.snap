@@ -2,7 +2,7 @@
 
 exports[`<Badge> should render a label with the text "6" 1`] = `
 <div
-  className="aries-badge BadgeStyle__BadgeContainer-sc-1rr32yz-0 haqjCy"
+  className="BadgeStyle__BadgeContainer-sc-1rr32yz-0 haqjCy aries-badge"
   role="presentation"
 >
   <span
