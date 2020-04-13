@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Collapsible> should render as expected 1`] = `
+<div
+  className="aries-collapsible CollapsibleStyle__CollapsibleContainer-sc-16akyym-1 ctRcDY"
+  data-testid="collapsible-container"
+  onClick={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="CollapsibleStyle__CollapsibleContent-sc-16akyym-0 lddXIm"
+    tabIndex={-1}
+  >
+    <div
+      aria-expanded={false}
+      className="collapsible-title CollapsibleStyle__CollapsibleHeader-sc-16akyym-2 cCEtWo"
+      role="tab"
+    >
+      label
+      <svg
+        className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+        data-testid="icon-svg"
+        fill="#000000"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <polygon
+          points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Collapsible> should render as expected 2`] = `
+<div
+  className="aries-collapsible CollapsibleStyle__CollapsibleContainer-sc-16akyym-1 ctRcDY"
+  data-testid="collapsible-container"
+  onClick={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="CollapsibleStyle__CollapsibleContent-sc-16akyym-0 lddXIm"
+    tabIndex={-1}
+  >
+    <div
+      aria-expanded={true}
+      className="collapsible-title CollapsibleStyle__CollapsibleHeader-sc-16akyym-2 gqXdzD"
+      role="tab"
+    >
+      label
+      <svg
+        className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+        data-testid="icon-svg"
+        fill="#000000"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <polygon
+          points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+        />
+      </svg>
+    </div>
+    <div
+      className="collapsible-content CollapsibleStyle__CollapsibleBody-sc-16akyym-3 ldgfso"
+      data-testid="collapsible-content"
+      onClick={[Function]}
+    >
+      children
+    </div>
+  </div>
+</div>
+`;

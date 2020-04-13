@@ -39,6 +39,7 @@ class Collapsible extends React.Component<Props, State> {
         className={classNames('aries-collapsible', className)}
         tabIndex={0}
         onClick={this.handleOpen}
+        data-testid="collapsible-container"
         {...defaultProps}
       >
         <CollapsibleContent tabIndex={-1}>
@@ -54,6 +55,7 @@ class Collapsible extends React.Component<Props, State> {
           {isOpen && (
             <CollapsibleBody
               className="collapsible-content"
+              data-testid="collapsible-content"
               onClick={e => e.stopPropagation()}
             >
               {children}
