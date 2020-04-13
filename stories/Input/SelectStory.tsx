@@ -1,5 +1,5 @@
 import * as React from 'react';
-import jsxToString from 'jsx-to-string';
+const jsxToString = require('jsx-to-string');
 
 import StorybookComponent from '../StorybookComponent';
 

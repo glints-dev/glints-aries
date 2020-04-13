@@ -347,7 +347,7 @@ const LinkButtonStory = () => (
   </StorybookComponent>
 );
 
-const ButtonRow = ({ children }) => (
+const ButtonRow: React.FunctionComponent = ({ children }) => (
   <div
     style={{
       display: 'flex',
@@ -359,11 +359,11 @@ const ButtonRow = ({ children }) => (
   </div>
 );
 
-const BlockButtonContainer = ({ children }) => (
+const BlockButtonContainer: React.FunctionComponent = ({ children }) => (
   <div style={{ flex: '0 0 40%' }}>{children}</div>
 );
 
-const ButtonContainer = ({ children }) => (
+const ButtonContainer: React.FunctionComponent = ({ children }) => (
   <div style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center' }}>
     {children}
   </div>

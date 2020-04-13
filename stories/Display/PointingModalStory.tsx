@@ -47,13 +47,9 @@ const PointingModalStory = () => (
         </PointingModal.Header>
         <Divider theme="grey" />
         <PointingModal.Body>
-          <PointingModal.Item onClick={() => null}>
-            View Profile
-          </PointingModal.Item>
-          <PointingModal.Item onClick={() => null}>
-            Edit Profile
-          </PointingModal.Item>
-          <PointingModal.Item onClick={() => null}>Sign Out</PointingModal.Item>
+          <PointingModal.Item>View Profile</PointingModal.Item>
+          <PointingModal.Item>Edit Profile</PointingModal.Item>
+          <PointingModal.Item>Sign Out</PointingModal.Item>
         </PointingModal.Body>
       </PointingModal>
     </div>

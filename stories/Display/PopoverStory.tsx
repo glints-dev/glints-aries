@@ -35,7 +35,7 @@ const PopoverStory = () => (
       content={
         <PointingModal>
           <PointingModal.Header>
-            <ProfilePicture editable onClick={() => null}>
+            <ProfilePicture editable>
               <img
                 src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&w=750&q=80"
                 alt="profile"
@@ -48,15 +48,9 @@ const PopoverStory = () => (
           </PointingModal.Header>
           <Divider theme="grey" />
           <PointingModal.Body>
-            <PointingModal.Item onClick={() => null}>
-              View Profile
-            </PointingModal.Item>
-            <PointingModal.Item onClick={() => null}>
-              Edit Profile
-            </PointingModal.Item>
-            <PointingModal.Item onClick={() => null}>
-              Sign Out
-            </PointingModal.Item>
+            <PointingModal.Item>View Profile</PointingModal.Item>
+            <PointingModal.Item>Edit Profile</PointingModal.Item>
+            <PointingModal.Item>Sign Out</PointingModal.Item>
           </PointingModal.Body>
         </PointingModal>
       }

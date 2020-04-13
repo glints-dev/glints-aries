@@ -27,7 +27,17 @@ const movedColors = [
   'lightgrey: #C6C6C6',
 ];
 
-const ColoredSquare = ({ bgColor, fontColor, name }) => (
+interface ColoredSquareProps {
+  bgColor: string;
+  fontColor: string;
+  name: string;
+}
+
+const ColoredSquare: React.FunctionComponent<ColoredSquareProps> = ({
+  bgColor,
+  fontColor,
+  name,
+}) => (
   <div style={{ margin: '1em', flex: '1 20%' }}>
     <div
       style={{
