@@ -9,8 +9,8 @@ const props = {
     {
       name: 'iconPosition',
       type: 'string',
-      defaultValue: <code>'left'</code>,
-      possibleValue: <code>'left' | 'right'</code>,
+      defaultValue: '"left"',
+      possibleValue: '"left" | "right"',
       require: 'no',
       description: 'Sets the position of the icon.',
     },
@@ -71,7 +71,7 @@ const AccordionStory = () => (
   >
     <React.Fragment>
       <h2 style={{ marginBottom: '15px' }}>
-        <code style={{ fontSize: 'inherit' }}>iconPosition='left'</code>
+        <code style={{ fontSize: 'inherit' }}>{`iconPosition='left'`}</code>
       </h2>
       <Accordion>
         <Accordion.Panel
@@ -84,7 +84,7 @@ const AccordionStory = () => (
         />
       </Accordion>
       <h2 style={{ marginTop: '30px', marginBottom: '15px' }}>
-        <code style={{ fontSize: 'inherit' }}>iconPosition='right'</code>
+        <code style={{ fontSize: 'inherit' }}>{`iconPosition='right'`}</code>
       </h2>
       <Accordion iconPosition="right">
         <Accordion.Panel

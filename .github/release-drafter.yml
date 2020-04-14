@@ -1,0 +1,29 @@
+name-template: 'Release v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+template: |
+  # What's Changed
+
+  $CHANGES
+categories:
+  - title: 'Features'
+    labels:
+      - ':bulb: Feature Request'
+      - ':straight_ruler: Extend Component'
+      - ':new: New Component'
+  - title: 'Bugfixes'
+    labels:
+      - ':bug: Bug'
+      - ':nail_care:  UI Mismatch'
+  - title: 'Refactoring'
+    labels:
+      - 'Functional Component Conversion'
+      - ':toilet: Clean up'
+  - title: 'Tests'
+    labels:
+      - ':ballot_box_with_check: Tests'
+  - title: 'Documentation'
+    labels:
+      - ':bookmark_tabs: Documentation'
+  - title: 'Dependencies'
+    labels:
+      - 'dependencies'

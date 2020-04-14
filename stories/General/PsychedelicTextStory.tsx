@@ -31,11 +31,12 @@ yellow-default`}
         </pre>
       ),
       require: 'yes',
-      description: [
-        'This props is only available along with ',
-        <b>subheading</b>,
-        " type. It's a required props to display Psychedelic Effect on the text.",
-      ],
+      description: (
+        <>
+          This props is only available along with <b>subheading</b>
+          {` type. It's a required props to display Psychedelic Effect on the text.`}
+        </>
+      ),
     },
   ],
 };

@@ -94,7 +94,9 @@ const TextFieldStory = () => {
             type="text"
             label="Username"
             value={textValue}
-            onChange={e => setTextValue(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setTextValue(e.target.value)
+            }
           />
         </div>
       </StorybookComponent>
@@ -113,7 +115,9 @@ const TextFieldStory = () => {
             type="password"
             label="Password"
             value={passwordValue}
-            onChange={e => setPasswordValue(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPasswordValue(e.target.value)
+            }
           />
         </div>
       </StorybookComponent>

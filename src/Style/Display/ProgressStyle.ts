@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { SecondaryColor } from '../Colors';
 
-export const CIRCLE_CIRCUMFERENCE = 282.6
+export const CIRCLE_CIRCUMFERENCE = 282.6;
 
 const spinning = keyframes`
   from {

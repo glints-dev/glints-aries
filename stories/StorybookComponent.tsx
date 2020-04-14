@@ -136,7 +136,7 @@ interface Props {
   usage?: string;
   disableUsage?: boolean;
   children?: React.ReactNode;
-  propsObject?: Object;
+  propsObject?: object;
 }
 
 export default StorybookComponent;

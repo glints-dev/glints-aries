@@ -16,7 +16,7 @@ const generateResolvedPropMessage = (resolvedPropValue: string) =>
 const generateComponentDocumentationMessage = (documentationURL: string) =>
   `Visit ${documentationURL} for more information on the components' behaviour.`;
 
-const generateWarningMessage = (messageProps: IMessageProps) => {
+const generateWarningMessage = (messageProps: MessageProps) => {
   return (
     generateInvalidPropValueMessage(messageProps.component) +
     generateExpectedAndActualPropMessage(
@@ -29,15 +29,15 @@ const generateWarningMessage = (messageProps: IMessageProps) => {
   );
 };
 
-const makeShowWarningMessage = (defaultMessageProps: IDefaultMessageProps) => (
-  messageProps: IMessageProps
+const makeShowWarningMessage = (defaultMessageProps: DefaultMessageProps) => (
+  messageProps: MessageProps
 ) =>
   console.warn(
     generateWarningMessage({ ...messageProps, ...defaultMessageProps })
   );
 
 const makeReducerToPairWarningMessagesWithShowMessageFn = (
-  defaultMessageProps: IDefaultMessageProps
+  defaultMessageProps: DefaultMessageProps
 ) => {
   const showWarningMessageWithDefaultProps = makeShowWarningMessage(
     defaultMessageProps
@@ -51,7 +51,7 @@ const makeReducerToPairWarningMessagesWithShowMessageFn = (
 
 export const generateWarningMessages = (
   warningMessageTypes: string[],
-  defaultWarningMessageProps: IDefaultMessageProps
+  defaultWarningMessageProps: DefaultMessageProps
 ) => {
   const pairWarningMessagesWithShowMessageFn = makeReducerToPairWarningMessagesWithShowMessageFn(
     defaultWarningMessageProps
@@ -59,7 +59,7 @@ export const generateWarningMessages = (
   return warningMessageTypes.reduce(pairWarningMessagesWithShowMessageFn, {});
 };
 
-interface IMessageProps {
+interface MessageProps {
   component: string;
   documentationURL: string;
   propName: string;
@@ -68,7 +68,7 @@ interface IMessageProps {
   resolvedPropValue: any;
 }
 
-interface IDefaultMessageProps {
+interface DefaultMessageProps {
   component: string;
   documentationURL: string;
   propName?: string;

@@ -54,7 +54,9 @@ const NumberInputStory = () => {
           <NumberInput
             label="Number"
             value={number}
-            onChange={e => setNumber(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setNumber(e.target.value)
+            }
             min={-10}
             max={10}
             step={2}
