@@ -9,3 +9,4 @@ src/General/Icon/components
 flow-typed
 .vscode
 .idea
+coverage
