@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grid/> snapshots should match snapshot with props alignContent and justifyContent 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  margin: 0 auto;
+  font-family: Poppins,sans-serif;
+}
+
+.c0 *,
+.c0 *:before,
+.c0 *:after {
+  box-sizing: border-box;
+}
+
+.c2 {
+  max-width: 100%;
+  -webkit-flex-basis: calc(100% / 12 * 12);
+  -ms-flex-preferred-size: calc(100% / 12 * 12);
+  flex-basis: calc(100% / 12 * 12);
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c3 {
+  max-width: 100%;
+  -webkit-flex-basis: calc(100% / 12 * 12);
+  -ms-flex-preferred-size: calc(100% / 12 * 12);
+  flex-basis: calc(100% / 12 * 12);
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width:1440px) {
+  .c0 {
+    width: 1400px;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width:1260px) and (max-width:1439px) {
+  .c0 {
+    width: 1200px;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1259px) {
+  .c0 {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c0 {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width:640px) and (max-width:767px) {
+  .c0 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width:480px) and (max-width:639px) {
+  .c0 {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width:320px) and (max-width:479px) {
+  .c0 {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width:320px) {
+  .c0 {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width:320px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:640px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1260px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1440px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:320px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:640px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1260px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1440px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        mock content
+      </div>
+      <div
+        class="c3"
+      >
+        mock content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Grid/> snapshots should match snapshot without props alignContent and justifyContent 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  margin: 0 auto;
+  font-family: Poppins,sans-serif;
+}
+
+.c0 *,
+.c0 *:before,
+.c0 *:after {
+  box-sizing: border-box;
+}
+
+.c2 {
+  max-width: 100%;
+  -webkit-flex-basis: calc(100% / 12 * 12);
+  -ms-flex-preferred-size: calc(100% / 12 * 12);
+  flex-basis: calc(100% / 12 * 12);
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c3 {
+  max-width: 100%;
+  -webkit-flex-basis: calc(100% / 12 * 12);
+  -ms-flex-preferred-size: calc(100% / 12 * 12);
+  flex-basis: calc(100% / 12 * 12);
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+
+@media (min-width:1440px) {
+  .c0 {
+    width: 1400px;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width:1260px) and (max-width:1439px) {
+  .c0 {
+    width: 1200px;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1259px) {
+  .c0 {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c0 {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width:640px) and (max-width:767px) {
+  .c0 {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width:480px) and (max-width:639px) {
+  .c0 {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width:320px) and (max-width:479px) {
+  .c0 {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width:320px) {
+  .c0 {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width:320px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:640px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1260px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1440px) {
+  .c2 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:320px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:480px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:640px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 12);
+    -ms-flex-preferred-size: calc(100% / 12 * 12);
+    flex-basis: calc(100% / 12 * 12);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 3);
+    -ms-flex-preferred-size: calc(100% / 12 * 3);
+    flex-basis: calc(100% / 12 * 3);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1260px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media (min-width:1440px) {
+  .c3 {
+    -webkit-flex-basis: calc(100% / 12 * 9);
+    -ms-flex-preferred-size: calc(100% / 12 * 9);
+    flex-basis: calc(100% / 12 * 9);
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        mock content
+      </div>
+      <div
+        class="c3"
+      >
+        mock content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
