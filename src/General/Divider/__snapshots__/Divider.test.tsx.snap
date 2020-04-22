@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider/> snapshots should match snapshot when all props is being passed 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #0BAEEC;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots should match snapshot when no props is being passed 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #000000;
+}
+
+<div
+    class="c0 aries-divider"
+  />
+</DocumentFragment>
+`;
