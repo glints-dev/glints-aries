@@ -4,6 +4,7 @@ import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 export const SelectContainer = styled.div`
   flex-grow: 1;
   position: relative;
+  font-weight: normal;
 `;
 
 export const SelectWrapper = styled.div<SelectWrapperProps>`
@@ -37,7 +38,6 @@ export const SelectLabel = styled.label<SelectLabelProps>`
     floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
   transition: all .2s;
   pointer-events: none;
-  font-weight: 300;
   font-size: ${({ small }) => (small ? '14px' : '16px')};
   
   ${({ floating }) => {
@@ -89,7 +89,6 @@ export const SelectInput = styled.input<SelectInputProps>`
 
   &::placeholder {
     color: ${Greyscale.grey};
-    font-weight: 300;
   }
 
   /* Styling for disableTyping */
