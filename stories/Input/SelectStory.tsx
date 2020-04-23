@@ -136,6 +136,7 @@ const props = {
 
 const Story = (
   <div>
+    <div style={{ marginBottom: '1rem' }}>2 sizes only</div>
     <div style={{ width: '300px', marginBottom: '1rem' }}>
       <Select
         label="Jobs"
@@ -152,7 +153,7 @@ const Story = (
         </Select.Option>
       </Select>
     </div>
-    <div style={{ width: '300px', marginBottom: '1rem' }}>
+    <div style={{ width: '300px', marginBottom: '3rem' }}>
       <Select label="Jobs">
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
@@ -162,6 +163,10 @@ const Story = (
           Software Engineer
         </Select.Option>
       </Select>
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      2 error states only, error message is optional, do not customize error
+      message style
     </div>
     <div style={{ width: '300px', marginBottom: '1rem' }}>
       <Select label="Jobs" error={true}>
@@ -196,7 +201,7 @@ const SelectStory = () => {
       propsObject={props}
       usage={jsxToString(Story)}
     >
-      <div style={{ width: '300px' }}>{Story}</div>
+      <div>{Story}</div>
     </StorybookComponent>
   );
 };
