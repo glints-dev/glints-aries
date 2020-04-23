@@ -10,8 +10,9 @@ export const SelectWrapper = styled.div<SelectWrapperProps>`
   display: flex;
   align-items: center;
   .select-icon {
+    font-size: ${({ small }) => (small ? '12px' : '15px')};
     position: absolute;
-    right: 1em;
+    right: 15px;
     display: flex;
     align-items: center;
     pointer-events: none;
@@ -25,6 +26,7 @@ export const SelectWrapper = styled.div<SelectWrapperProps>`
 
 interface SelectWrapperProps {
   isFocus: boolean;
+  small?: boolean;
 }
 
 export const SelectLabel = styled.label<SelectLabelProps>`
@@ -36,7 +38,7 @@ export const SelectLabel = styled.label<SelectLabelProps>`
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
-  font-size: 1.1em;
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
   
   ${({ floating }) => {
     if (floating) {
@@ -74,8 +76,9 @@ interface SelectLabelProps {
 export const SelectInput = styled.input<SelectInputProps>`
   width: 100%;
   outline: none;
+  height: ${({ small }) => (small ? '46px' : '53px')};
   padding: ${({ small }) =>
-    small ? '13px 2.5em 13px 15px' : '15px 2.5em 15px 20px'};
+    small ? '13px 40px 13px 15px' : '15px 42px 15px 20px'};
   border: ${({ status }) =>
     status === 'error'
       ? `2px solid ${PrimaryColor.glintsred}`
