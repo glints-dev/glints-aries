@@ -138,8 +138,13 @@ const props = {
 
 const Story = (
   <div>
-  <div style={{ width: '300px', marginBottom: '1rem' }}>
-      <Select label="Jobs" small={true}>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select
+        label="Jobs"
+        small={true}
+        removeFloatingLabel={true}
+        disableTyping={true}
+      >
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
           Business Development

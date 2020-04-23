@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 
 export const SelectContainer = styled.div`
   flex-grow: 1;
@@ -32,9 +32,9 @@ interface SelectWrapperProps {
 export const SelectLabel = styled.label<SelectLabelProps>`
   position: absolute;
   left: ${({ small }) => (small ? '16px' : '22px')};
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   color: ${({ floating }) =>
-    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+    floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
@@ -82,10 +82,16 @@ export const SelectInput = styled.input<SelectInputProps>`
   border: ${({ status }) =>
     status === 'error'
       ? `2px solid ${PrimaryColor.glintsred}`
-      : `2px solid ${SecondaryColor.lightblack}`};
+      : `2px solid ${Greyscale.grey}`};
   transition: all .5s;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
+
+  &::placeholder {
+    color: ${Greyscale.grey};
+    font-weight: 300;
+  }
+
   /* Styling for disableTyping */
   ${({ disableTyping }) => {
     if (disableTyping) {
@@ -111,10 +117,10 @@ export const SelectInput = styled.input<SelectInputProps>`
     background: ${SecondaryColor.whitesmoke};
     + ${SelectLabel} {
       background: transparent;
-      color: ${SecondaryColor.grey};
+      color: ${Greyscale.grey};
     }
     &:hover {
-      border: 2px solid ${SecondaryColor.lightgrey};
+      border: 2px solid ${Greyscale.lightgrey};
     }
   }
   &:hover {
@@ -128,7 +134,7 @@ export const SelectInput = styled.input<SelectInputProps>`
       }
     }}
     + ${SelectLabel} {
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
       ${({ status }) => {
         if (status === 'error') {
           return `
@@ -155,7 +161,7 @@ export const SelectInput = styled.input<SelectInputProps>`
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
       font-size: 12px;
       ${({ status }) => {
         if (status === 'error') {
@@ -182,7 +188,7 @@ export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   transform: ${({ open }) => (open ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
   transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   min-width: 100%;
   height: auto;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
@@ -228,7 +234,7 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
       return `
         cursor: not-allowed;
         background: ${SecondaryColor.lightergrey};
-        color: ${SecondaryColor.grey};
+        color: ${Greyscale.grey};
         font-style: italic;
       `;
     }
