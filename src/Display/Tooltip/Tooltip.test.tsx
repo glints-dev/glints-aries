@@ -5,32 +5,50 @@ import { fireEvent, render } from '@testing-library/react';
 
 import Tooltip from './Tooltip';
 
-describe('<Tooltip/> snapshots', () => {
-  const TooltipComponent = () => (
-    <Tooltip
-      text="mock text"
-      position="right"
-      classes={{
-        container: 'container',
-        content: 'content',
-        message: 'message',
-      }}
-    >
-      <span>mock content</span>
-    </Tooltip>
-  );
-
+describe('<Tooltip/> snapshot', () => {
   test('should match snapshot when Tooltip is hidden', () => {
-    const { asFragment } = render(<TooltipComponent />);
+    const { asFragment } = render(
+      <Tooltip
+        text="mock text"
+        position="right"
+        classes={{
+          container: 'container',
+          content: 'content',
+          message: 'message',
+        }}
+      >
+        <span>mock content</span>
+      </Tooltip>
+    );
     expect(asFragment()).toMatchSnapshot();
   });
+});
 
-  test('should match snapshot when Tooltip is shown', () => {
-    const { asFragment, queryByText } = render(<TooltipComponent />);
-    const element = queryByText('mock content');
-    fireEvent.mouseOver(element);
-    expect(asFragment()).toMatchSnapshot();
-  });
+describe('<Tooltip/> snapshots with position prop', () => {
+  const matchSnapshotWithPosition = (position: string) => {
+    test(`position ${position}`, () => {
+      const { asFragment, queryByText } = render(
+        <Tooltip
+          text="mock text"
+          position={position}
+          classes={{
+            container: 'container',
+            content: 'content',
+            message: 'message',
+          }}
+        >
+          <span>mock content</span>
+        </Tooltip>
+      );
+      const element = queryByText('mock content');
+      fireEvent.mouseOver(element);
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  ['left', 'right', 'bottom', 'default'].forEach(position =>
+    matchSnapshotWithPosition(position)
+  );
 });
 
 describe('<Tooltip/> touch event', () => {
