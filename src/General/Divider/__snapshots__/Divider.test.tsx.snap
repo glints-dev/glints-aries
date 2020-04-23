@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider/> snapshots should match snapshot when no props is being passed 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #000000;
+}
+
+<div
+    class="c0 aries-divider"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme blue 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #0BAEEC;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme default 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #000000;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme grey 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #C6C6C6;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme red 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #EC272B;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme white 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #FFFFFF;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Divider/> snapshots with theme prop theme yellow 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0.15em;
+  background: #FFF240;
+}
+
+<div
+    class="c0 aries-divider name"
+    style="top: 10px;"
+  />
+</DocumentFragment>
+`;
