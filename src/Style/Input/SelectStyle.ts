@@ -133,7 +133,6 @@ export const SelectInput = styled.input<SelectInputProps>`
       }
     }}
     + ${SelectLabel} {
-      color: ${Greyscale.black};
       ${({ status }) => {
         if (status === 'error') {
           return `
