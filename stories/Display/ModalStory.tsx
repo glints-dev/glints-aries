@@ -4,6 +4,7 @@ import StorybookComponent from '../StorybookComponent';
 
 import Modal from '../../src/Display/Modal';
 import Button from '../../src/General/Button';
+import { Size, Theme, Variant } from '../../src/Utils/StyleConfig';
 
 class ModalStory extends React.Component {
   state = {
@@ -159,7 +160,7 @@ class ModalStory extends React.Component {
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </Modal>`}
       >
-        <Button theme="blue" onClick={this.handleOpen}>
+        <Button theme={Theme.BLUE} onClick={this.handleOpen}>
           Open Modal
         </Button>
         <Modal
@@ -169,18 +170,18 @@ class ModalStory extends React.Component {
           footer={[
             <Button
               key="cancel"
-              variant="ghost"
-              theme="blue"
-              small
+              variant={Variant.GHOST}
+              theme={Theme.BLUE}
+              size={Size.SMALL}
               onClick={this.handleClose}
             >
               Cancel
             </Button>,
             <Button
               key="save"
-              variant="default"
-              theme="blue"
-              small
+              variant={Variant.SOLID}
+              theme={Theme.BLUE}
+              size={Size.SMALL}
               onClick={this.handleClose}
             >
               Save

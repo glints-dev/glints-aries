@@ -4,6 +4,7 @@ import StorybookComponent from '../StorybookComponent';
 
 import Alert from '../../src/General/Alert';
 import Button from '../../src/General/Button';
+import { Theme } from '../../src/Utils/StyleConfig';
 
 class AlertStory extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -90,7 +91,7 @@ handleOnClose = () => {
   autoClose={3000}
 />`}
       >
-        <Button theme="blue" onClick={this.handleOnClick}>
+        <Button theme={Theme.BLUE} onClick={this.handleOnClick}>
           Open Alert
         </Button>
         <Alert

@@ -4,6 +4,7 @@ import StorybookComponent from '../StorybookComponent';
 
 import Button from '../../src/General/Button';
 import Toast from '../../src/Display/Toast';
+import { Theme } from '../../src/Utils/StyleConfig';
 
 class ToastStory extends React.Component {
   state = {
@@ -81,7 +82,7 @@ handleClose = () => {
   <Component />
 </Toast>`}
       >
-        <Button theme="red" onClick={this.handleOpen}>
+        <Button theme={Theme.BLUE} onClick={this.handleOpen}>
           Open Toast
         </Button>
         <Toast isVisible={isOpen} onClose={this.handleClose}>

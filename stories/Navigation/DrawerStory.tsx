@@ -4,6 +4,7 @@ import StorybookComponent from '../StorybookComponent';
 
 import Drawer from '../../src/Navigation/Drawer';
 import Button from '../../src/General/Button';
+import { Theme } from '../../src/Utils/StyleConfig';
 
 class DrawerStory extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -17,7 +18,10 @@ class DrawerStory extends React.Component<{}, State> {
     const { isOpen } = this.state;
     return (
       <div>
-        <Button theme="blue" onClick={() => this.setState({ isOpen: !isOpen })}>
+        <Button
+          theme={Theme.BLUE}
+          onClick={() => this.setState({ isOpen: !isOpen })}
+        >
           CLOSE
         </Button>
       </div>
@@ -59,7 +63,10 @@ class DrawerStory extends React.Component<{}, State> {
   <Component />
 </Drawer>`}
       >
-        <Button theme="blue" onClick={() => this.setState({ isOpen: true })}>
+        <Button
+          theme={Theme.BLUE}
+          onClick={() => this.setState({ isOpen: true })}
+        >
           OPEN
         </Button>
         <Drawer
