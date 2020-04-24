@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton> should render as expected 1`] = `
+<label
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+  tabIndex={0}
+>
+  <input
+    name="job-type"
+    type="radio"
+    value="full-time"
+  />
+  <span
+    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 nYOUk radiobtn-content"
+    tabIndex={-1}
+  >
+    Full Time
+  </span>
+</label>
+`;
+
+exports[`<RadioButton> should render as expected 2`] = `
+<label
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+  tabIndex={0}
+>
+  <input
+    name="job-type"
+    type="radio"
+    value="full-time"
+  />
+  <span
+    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 cQeeCd radiobtn-content"
+    tabIndex={-1}
+  >
+    Full Time
+  </span>
+</label>
+`;
+
+exports[`<RadioButton> should render as expected 3`] = `
+Array [
+  <label
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+    tabIndex={0}
+  >
+    <input
+      name="job-type"
+      type="radio"
+      value="full-time"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 nYOUk radiobtn-content"
+      tabIndex={-1}
+    >
+      Full Time
+    </span>
+  </label>,
+  <label
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+    tabIndex={0}
+  >
+    <input
+      name="job-type"
+      type="radio"
+      value="intership"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 nYOUk radiobtn-content"
+      tabIndex={-1}
+    >
+      Intership
+    </span>
+  </label>,
+]
+`;
+
+exports[`<RadioButton> should render as expected 4`] = `
+Array [
+  <label
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+    tabIndex={0}
+  >
+    <input
+      checked={true}
+      name="job-type"
+      type="radio"
+      value="full-time"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 nYOUk radiobtn-content"
+      tabIndex={-1}
+    >
+      Full Time
+    </span>
+  </label>,
+  <label
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 llKmen aries-radiobtn"
+    tabIndex={0}
+  >
+    <input
+      name="job-type"
+      type="radio"
+      value="intership"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 nYOUk radiobtn-content"
+      tabIndex={-1}
+    >
+      Intership
+    </span>
+  </label>,
+]
+`;
