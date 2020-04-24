@@ -239,7 +239,11 @@ const Select: ISelect = (props: Props) => {
       className={classNames('aries-select', className)}
       ref={node}
     >
-      <SelectWrapper className="select-inputwrapper" isFocus={isFocus}>
+      <SelectWrapper
+        className="select-inputwrapper"
+        isFocus={isFocus}
+        small={small}
+      >
         <SelectInput
           type="text"
           placeholder={removeFloatingLabel && label}

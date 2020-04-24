@@ -1,7 +1,7 @@
 import * as React from 'react';
-
 import * as lodash from 'lodash';
 import * as renderer from 'react-test-renderer';
+import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 

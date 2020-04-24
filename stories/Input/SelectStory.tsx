@@ -38,8 +38,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'no',
-      description:
-        'Sets error state on component. If string, the error will be shown below the select',
+      description: `WARNING: Will only allow string type in the future, don't customize error message style. Sets error state on component. If string, the error will be shown below the select`,
     },
     {
       name: 'renderError',
@@ -47,8 +46,7 @@ const props = {
       defaultValue: '<span color="#EC272B" />',
       possibleValue: 'any',
       require: 'no',
-      description:
-        'Replaces the default error component. Receives `error` as children.',
+      description: `WARNING: Will only allow string type in the future, don't customize error message style. Replaces the default error component. Receives 'error' as children.`,
     },
     {
       name: 'isLoading',
@@ -138,7 +136,24 @@ const props = {
 
 const Story = (
   <div>
+    <div style={{ marginBottom: '1rem' }}>2 sizes only</div>
     <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select
+        label="Jobs"
+        small={true}
+        removeFloatingLabel={true}
+        disableTyping={true}
+      >
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px', marginBottom: '3rem' }}>
       <Select label="Jobs">
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
@@ -148,6 +163,10 @@ const Story = (
           Software Engineer
         </Select.Option>
       </Select>
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      2 error states only, error message is optional, do not customize error
+      message style
     </div>
     <div style={{ width: '300px', marginBottom: '1rem' }}>
       <Select label="Jobs" error={true}>
@@ -171,34 +190,6 @@ const Story = (
         </Select.Option>
       </Select>
     </div>
-    <div style={{ width: '300px' }}>
-      <Select label="Jobs" error={<strong>I am a custom error</strong>}>
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
-    <div style={{ width: '300px' }}>
-      <Select
-        label="Jobs"
-        error="🎂 I am a custom error message"
-        renderError={error => (
-          <div style={{ color: 'orange', textAlign: 'right' }}>{error}</div>
-        )}
-      >
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
   </div>
 );
 
@@ -210,7 +201,7 @@ const SelectStory = () => {
       propsObject={props}
       usage={jsxToString(Story)}
     >
-      <div style={{ width: '300px' }}>{Story}</div>
+      <div>{Story}</div>
     </StorybookComponent>
   );
 };

@@ -1,16 +1,197 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Select> should render with 3 options 1`] = `
+.c0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  font-weight: normal;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .select-icon {
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c1 .select-icon svg {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+  -webkit-transition: -webkit-transform .5s;
+  -webkit-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.c4 {
+  position: absolute;
+  left: 22px;
+  background: #FFFFFF;
+  color: #777777;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.c2 {
+  width: 100%;
+  outline: none;
+  height: 53px;
+  padding: 15px 42px 15px 20px;
+  border: 2px solid #777777;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #777777;
+}
+
+.c2::-moz-placeholder {
+  color: #777777;
+}
+
+.c2:-ms-input-placeholder {
+  color: #777777;
+}
+
+.c2::placeholder {
+  color: #777777;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  background: #F3F3F3;
+}
+
+.c2:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c2:disabled:hover {
+  border: 2px solid #C6C6C6;
+}
+
+.c2:hover {
+  border: 2px solid #017EB7;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.c2:focus {
+  border: 2px solid #017EB7;
+}
+
+.c2:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
+.c6 {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scaleY(0.9);
+  -ms-transform: scaleY(0.9);
+  transform: scaleY(0.9);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+  background: #FFFFFF;
+  min-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow: auto;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  list-style-type: none;
+}
+
+.c7:first-child {
+  margin-top: 0.5em;
+}
+
+.c7:last-child {
+  margin-bottom: 0.5em;
+}
+
+.c7.active {
+  color: #017EB7;
+  background: #EEEEEE;
+}
+
+.c7.select-loading {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  vertical-align: middle;
+}
+
 <div
-  className="SelectStyle__SelectContainer-jmk38c-0 cxQAyJ aries-select"
+  className="c0 aries-select"
 >
   <div
-    className="SelectStyle__SelectWrapper-jmk38c-1 cnQpwy select-inputwrapper"
+    className="c1 select-inputwrapper"
   >
     <input
       aria-autocomplete="list"
       aria-expanded={false}
-      className="SelectStyle__SelectInput-jmk38c-3 bnwlHy"
+      className="c2"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -21,7 +202,7 @@ exports[`<Select> should render with 3 options 1`] = `
     />
     <label
       aria-label="Jobs"
-      className="SelectStyle__SelectLabel-jmk38c-2 fuofeP"
+      className="c3 c4"
       data-testid="select-label"
     >
       Jobs
@@ -31,7 +212,7 @@ exports[`<Select> should render with 3 options 1`] = `
       className="select-icon"
     >
       <svg
-        className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+        className="c5"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -46,13 +227,13 @@ exports[`<Select> should render with 3 options 1`] = `
   </div>
   <ul
     aria-hidden={true}
-    className="SelectStyle__SelectListWrapper-jmk38c-4 gVUTIk select-listbox"
+    className="c6 select-listbox"
     data-testid="listbox"
     open={false}
     role="listbox"
   >
     <li
-      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb active"
+      className="c7 active"
       data-id={0}
       data-testid="option"
       data-value="accountant"
@@ -64,7 +245,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Accountant
     </li>
     <li
-      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
+      className="c7"
       data-id={1}
       data-testid="option"
       data-value="business development"
@@ -76,7 +257,7 @@ exports[`<Select> should render with 3 options 1`] = `
       Business Development
     </li>
     <li
-      className="SelectStyle__SelectItemWrapper-jmk38c-5 bTfIVb"
+      className="c7"
       data-id={2}
       data-testid="option"
       data-value="software engineer"
