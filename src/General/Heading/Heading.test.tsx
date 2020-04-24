@@ -10,15 +10,9 @@ const heading = 'This is a Heading';
 
 it(`<Heading> should match snapshot when the component is called`, () => {
   const HeadingSnapshot = renderer
-    .create(<Heading>{heading}</Heading>)
+    .create(<Heading className="test-class-name">{heading}</Heading>)
     .toJSON();
   expect(HeadingSnapshot).toMatchSnapshot();
-});
-
-it('<Heading> should display the correct text for the heading when rendered', () => {
-  const { queryByText } = render(<Heading>{heading}</Heading>);
-  const HeadingContent = queryByText(heading);
-  expect(HeadingContent).toBeVisible();
 });
 
 describe('<Heading> should render the correct case for the text when', () => {
