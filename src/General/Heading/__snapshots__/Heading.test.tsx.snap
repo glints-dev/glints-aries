@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading> should match snapshot when the component is called 1`] = `
+<h1
+  className="HeadingStyle__HeadingContainer-sc-1u1nmvn-0 fnrjID aries-heading test-class-name"
+  role="heading"
+>
+  <span
+    className="heading-text"
+  >
+    This is a Heading
+  </span>
+</h1>
+`;

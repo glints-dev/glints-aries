@@ -8,6 +8,7 @@ const Heading: React.FunctionComponent<Props> = props => {
   return (
     <React.Fragment>
       <HeadingContainer
+        role="heading"
         className={classNames('aries-heading', className)}
         inline={inline}
         uppercaseText={uppercaseText}
