@@ -19,7 +19,7 @@ const Button = styled.button<ButtonProps>`
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1em;
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
   line-height: 1.5;
   padding: ${({ small }) =>
     small

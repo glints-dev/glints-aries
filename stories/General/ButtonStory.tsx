@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
@@ -13,7 +14,16 @@ const blockProp = {
   defaultValue: <code>false</code>,
   possibleValue: <code>true | false</code>,
   require: 'no',
-  description: '	Sets Button to block type.',
+  description: 'Make the button fit to its parent width.',
+};
+
+const smallProp = {
+  name: 'small',
+  type: 'boolean',
+  defaultValue: <code>false</code>,
+  possibleValue: <code>true | false</code>,
+  require: 'no',
+  description: 'Sets Button to small version.',
 };
 
 const buttonProps = [
@@ -34,14 +44,7 @@ const buttonProps = [
     description: 'Sets Button to disable state.',
   },
   blockProp,
-  {
-    name: 'small',
-    type: 'boolean',
-    defaultValue: <code>false</code>,
-    possibleValue: <code>true | false</code>,
-    require: 'no',
-    description: 'Sets Button to small version.',
-  },
+  smallProp,
   {
     name: 'tag',
     type: 'React.ElementType',
@@ -115,6 +118,8 @@ const linkButtonProps = {
 
 const ButtonStories = () => (
   <React.Fragment>
+    <ButtonSizeStory />
+    <Divider theme="grey" />
     <DefaultButtonStory />
     <Divider theme="grey" />
     <PrimaryButtonStory />
@@ -128,6 +133,71 @@ const ButtonStories = () => (
     <LinkButtonStory />
   </React.Fragment>
 );
+
+const ButtonSizeStory = () => {
+  const usage = `<div>
+  <Button theme="${Theme.BLUE}" small>Small</Button>
+  <Button theme="${Theme.BLUE}">Normal</Button>
+  <Button theme="${Theme.BLUE}" block>Block</Button>
+</div>
+<div>
+  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" small>Small</Button>
+  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}">Normal</Button>
+  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" block>Block</Button>
+</div>
+<div>
+  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" small>Small</Button>
+  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}">Normal</Button>
+  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" block>Block</Button>
+</div>
+`;
+  const propsObject = {
+    'Default Button, Primary Button, Ghost Button': [smallProp, blockProp],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Sizes</Heading>
+      <ButtonRow>
+        <Button theme={Theme.BLUE} small>
+          Small
+        </Button>
+        <Button theme={Theme.BLUE}>Normal</Button>
+        <BlockButtonContainer>
+          <Button theme={Theme.BLUE} block>
+            Block
+          </Button>
+        </BlockButtonContainer>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} small>
+          Small
+        </Button>
+        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW}>
+          Normal
+        </Button>
+        <BlockButtonContainer>
+          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block>
+            Block
+          </Button>
+        </BlockButtonContainer>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.GHOST} theme={Theme.BLUE} small>
+          Small
+        </Button>
+        <Button variant={Variant.GHOST} theme={Theme.BLUE}>
+          Normal
+        </Button>
+        <BlockButtonContainer>
+          <Button variant={Variant.GHOST} theme={Theme.BLUE} block>
+            Block
+          </Button>
+        </BlockButtonContainer>
+      </ButtonRow>
+    </StorybookComponent>
+  );
+};
 
 const DefaultButtonStory = () => (
   <StorybookComponent
@@ -347,17 +417,31 @@ const LinkButtonStory = () => (
   </StorybookComponent>
 );
 
-const ButtonRow: React.FunctionComponent = ({ children }) => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-around',
-      marginBottom: '2em',
-    }}
-  >
-    {children}
-  </div>
-);
+// const ButtonRow: React.FunctionComponent = ({ children }) => (
+//   <div
+//     style={{
+//       display: 'flex',
+//       flexDirection: 'row',
+//       alignItems: 'center',
+//       marginTop: '15px',
+//       marginBottom: '15px',
+//     }}
+//   >
+//     {children}
+//   </div>
+// );
+
+const ButtonRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  > div {
+    margin-right: 20px;
+  }
+`;
 
 const BlockButtonContainer: React.FunctionComponent = ({ children }) => (
   <div style={{ flex: '0 0 40%' }}>{children}</div>
