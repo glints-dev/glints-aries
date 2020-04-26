@@ -8,6 +8,10 @@ import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
 import { Variant, Theme } from '../../Utils/StyleConfig';
+import {
+  StartIconContainer,
+  EndIconContainer,
+} from '../../Style/General/ButtonStyle';
 
 export const DeprecatedThemeMap = {
   [Variant.DEFAULT]: [Theme.RED, Theme.YELLOW],
@@ -24,8 +28,18 @@ const renderButton: React.FunctionComponent<Props> = ({
   small,
   theme,
   variant,
+  startIcon,
+  endIcon,
   ...defaultProps
 }) => {
+  const content = (
+    <>
+      {startIcon && <StartIconContainer>{startIcon}</StartIconContainer>}
+      {children}
+      {endIcon && <EndIconContainer>{endIcon}</EndIconContainer>}
+    </>
+  );
+
   switch (variant) {
     case Variant.PRIMARY:
       if (get(DeprecatedThemeMap, Variant.PRIMARY, []).includes(theme)) {
@@ -44,7 +58,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           theme={theme}
           {...defaultProps}
         >
-          {children}
+          {content}
         </PrimaryButton>
       );
     case Variant.SECONDARY:
@@ -74,7 +88,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
-          {children}
+          {content}
         </GhostButton>
       );
     case Variant.LINK:
@@ -106,7 +120,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
-          {children}
+          {content}
         </DefaultButton>
       );
   }
@@ -127,6 +141,8 @@ export interface Props {
   theme?: string;
   variant?: string;
   tag?: React.ElementType;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
 export default Button;

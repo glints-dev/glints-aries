@@ -5,6 +5,10 @@ import StorybookComponent from '../StorybookComponent';
 import Button, { DeprecatedThemeMap } from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
+import {
+  ViewIcon,
+  ArrowRoundForwardIcon,
+} from '../../src/General/Icon/components';
 
 import { Variant, Theme } from '../../src/Utils/StyleConfig';
 
@@ -122,6 +126,8 @@ const ButtonStories = () => (
     <Divider theme="grey" />
     <ButtonThemeStory />
     <Divider theme="grey" />
+    <ButtonWithIconStory />
+    <Divider theme="grey" />
     <DefaultButtonStory />
     <Divider theme="grey" />
     <PrimaryButtonStory />
@@ -237,6 +243,70 @@ const ButtonThemeStory = () => {
           ))}
         </ButtonRow>
       ))}
+    </StorybookComponent>
+  );
+};
+
+const ButtonWithIconStory = () => {
+  const usage = `/* Default Button */
+<Button startIcon={<ViewIcon />}>Button</Button>
+<Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>
+
+/* Primary Button */
+<Button variant="${Variant.PRIMARY}" startIcon={<ViewIcon />}>Button</Button>
+<Button variant="${Variant.PRIMARY}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
+
+/* Ghost Button */
+<Button variant="${Variant.GHOST}" startIcon={<ViewIcon />}>Button</Button>
+<Button variant="${Variant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
+  const propsObject = {
+    All: [
+      {
+        name: 'startIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed before the children.',
+      },
+      {
+        name: 'endIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed after the children.',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Button with Icon</Heading>
+      <ButtonRow>
+        <Button theme={Theme.BLUE} startIcon={<ViewIcon />}>
+          Button Icon Left
+        </Button>
+        <Button theme={Theme.BLUE} endIcon={<ArrowRoundForwardIcon />}>
+          Button Icon Right
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.PRIMARY} startIcon={<ViewIcon />}>
+          Button Icon Left
+        </Button>
+        <Button variant={Variant.PRIMARY} endIcon={<ArrowRoundForwardIcon />}>
+          Button Icon Right
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.GHOST} startIcon={<ViewIcon />}>
+          Button Icon Left
+        </Button>
+        <Button variant={Variant.GHOST} endIcon={<ArrowRoundForwardIcon />}>
+          Button Icon Right
+        </Button>
+      </ButtonRow>
     </StorybookComponent>
   );
 };

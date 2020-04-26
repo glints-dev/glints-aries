@@ -577,3 +577,13 @@ export const LinkBtn = styled(Button)<LinkBtnProps>`
 interface LinkBtnProps {
   block?: boolean;
 }
+
+export const StartIconContainer = styled.span`
+  display: inline-flex;
+  margin-right: 10px;
+`;
+
+export const EndIconContainer = styled.span`
+  display: inline-flex;
+  margin-left: 10px;
+`;
