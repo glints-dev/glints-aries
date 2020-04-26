@@ -74,7 +74,7 @@ const defaultButtonProps = {
       name: 'theme',
       type: 'string',
       defaultValue: <code>white</code>,
-      possibleValue: <code>red | blue | yellow</code>,
+      possibleValue: <code>white | red | blue | yellow</code>,
       require: 'no',
       description: "Sets the Button's theme",
     },
@@ -88,7 +88,7 @@ const primaryButtonProps = {
     {
       name: 'theme',
       type: 'string',
-      defaultValue: <code>white</code>,
+      defaultValue: <code>yellow</code>,
       possibleValue: <code>red | blue | blue-red | yellow</code>,
       require: 'no',
       description: "Sets the Button's theme",
@@ -102,18 +102,7 @@ const secondaryButtonProps = {
 };
 
 const ghostButtonProps = {
-  'Ghost Button': [
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: <code>white</code>,
-      possibleValue: <code>red | blue | yellow | white</code>,
-      require: 'no',
-      description: "Sets the Button's theme",
-    },
-    ...buttonProps,
-    removeHoverEffectProp,
-  ],
+  'Ghost Button': [...buttonProps, removeHoverEffectProp],
 };
 
 const linkButtonProps = {
@@ -149,14 +138,14 @@ const ButtonSizeStory = () => {
 <Button theme="${Theme.BLUE}" block>Block</Button>
 
 /* Primary Button */
-<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" small>Small</Button>
-<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}">Normal</Button>
-<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" block>Block</Button>
+<Button variant="${Variant.PRIMARY}" small>Small</Button>
+<Button variant="${Variant.PRIMARY}">Normal</Button>
+<Button variant="${Variant.PRIMARY}" block>Block</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" small>Small</Button>
-<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}">Normal</Button>
-<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" block>Block</Button>
+<Button variant="${Variant.GHOST}" small>Small</Button>
+<Button variant="${Variant.GHOST}">Normal</Button>
+<Button variant="${Variant.GHOST}" block>Block</Button>
 `;
   const propsObject = {
     'Default Button, Primary Button, Ghost Button': [smallProp, blockProp],
@@ -177,27 +166,23 @@ const ButtonSizeStory = () => {
         </BlockButtonContainer>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} small>
+        <Button variant={Variant.PRIMARY} small>
           Small
         </Button>
-        <Button variant={Variant.PRIMARY} theme={Theme.YELLOW}>
-          Normal
-        </Button>
+        <Button variant={Variant.PRIMARY}>Normal</Button>
         <BlockButtonContainer>
-          <Button variant={Variant.PRIMARY} theme={Theme.YELLOW} block>
+          <Button variant={Variant.PRIMARY} block>
             Block
           </Button>
         </BlockButtonContainer>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST} theme={Theme.BLUE} small>
+        <Button variant={Variant.GHOST} small>
           Small
         </Button>
-        <Button variant={Variant.GHOST} theme={Theme.BLUE}>
-          Normal
-        </Button>
+        <Button variant={Variant.GHOST}>Normal</Button>
         <BlockButtonContainer>
-          <Button variant={Variant.GHOST} theme={Theme.BLUE} block>
+          <Button variant={Variant.GHOST} block>
             Block
           </Button>
         </BlockButtonContainer>

@@ -216,9 +216,6 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
         background-color: ${PrimaryColor.glintsblue};
         color: ${SecondaryColor.white};
       `,
-      [Theme.YELLOW]: `
-        background-color: ${PrimaryColor.glintsyellow};
-      `,
     };
 
     if (props.theme && themeColors[props.theme]) {
@@ -226,12 +223,7 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     }
 
     return `
-      background-color: ${SecondaryColor.white};
-      color: ${PrimaryColor.glintsblue};
-
-      &:active {
-        color: ${SecondaryColor.white};
-      }
+      background-color: ${PrimaryColor.glintsyellow};
     `;
   }}
 `;
@@ -294,7 +286,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     ${props => {
       const themeBackgrounds = {
         [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.YELLOW]: PrimaryColor.glintsred,
+        [Theme.BLUE]: PrimaryColor.glintsyellow,
+        [Theme.RED]: PrimaryColor.glintsyellow,
       };
       if (props.disabled) {
         return 'background-color: none';
@@ -302,7 +295,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
       if (props.theme && themeBackgrounds[props.theme]) {
         return `background-color: ${themeBackgrounds[props.theme]};`;
       }
-      return `background-color: ${PrimaryColor.glintsyellow};`;
+      return `background-color: ${PrimaryColor.glintsred};`;
     }}
   }
 
