@@ -18,6 +18,8 @@ export const DeprecatedThemeMap = {
   [Variant.PRIMARY]: [Theme.RED, Theme.BLUE, Theme.BLUE_RED],
 };
 
+export const DeprecatedSecondayVariant = 'secondary';
+
 const renderButton: React.FunctionComponent<Props> = ({
   children,
   block,
@@ -61,7 +63,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           {content}
         </PrimaryButton>
       );
-    case Variant.SECONDARY:
+    case DeprecatedSecondayVariant:
       console.warn(
         `Warning: Secondary Button is deprecated and will be removed in v5.\nPlease use the Primary Button instead.`
       );

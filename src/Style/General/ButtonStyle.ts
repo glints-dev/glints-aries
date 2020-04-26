@@ -58,21 +58,37 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
         return `
           background-color: ${PrimaryColor.glintsred};
           color: ${SecondaryColor.white};
+
+          &:hover {
+            color: ${SecondaryColor.white};
+          }
         `;
       case `${Theme.BLUE}`:
         return `
           background-color: ${SecondaryColor.actionblue};
           color: ${SecondaryColor.white};
+
+          &:hover {
+            color: ${SecondaryColor.white};
+          }
         `;
       case `${Theme.YELLOW}`:
         return `
           background-color: ${PrimaryColor.glintsyellow};
           color: ${SecondaryColor.black};
+
+          &:hover {
+            color: ${SecondaryColor.black};
+          }
         `;
       default:
         return `
           background-color: ${SecondaryColor.white};
           color: ${SecondaryColor.actionblue};
+
+          &:hover {
+            color: ${SecondaryColor.actionblue};
+          }
         `;
     }
   }}
@@ -224,6 +240,7 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
 
     return `
       background-color: ${PrimaryColor.glintsyellow};
+      color: ${SecondaryColor.black};
     `;
   }}
 `;

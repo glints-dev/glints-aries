@@ -2,7 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
-import Button, { DeprecatedThemeMap } from '../../src/General/Button';
+import Button, {
+  DeprecatedThemeMap,
+  DeprecatedSecondayVariant,
+} from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
 import {
@@ -117,13 +120,13 @@ const ButtonStories = () => (
     <Divider theme="grey" />
     <ButtonWithIconStory />
     <Divider theme="grey" />
+    <ButtonWithTagStory />
+    <Divider theme="grey" />
     <DefaultButtonStory />
     <Divider theme="grey" />
     <PrimaryButtonStory />
     <Divider theme="grey" />
     <GhostButtonStory />
-    <Divider theme="grey" />
-    <TagButtonStory />
     <Divider theme="grey" />
     <LinkButtonStory />
     <Divider theme="grey" />
@@ -296,6 +299,40 @@ const ButtonWithIconStory = () => {
   );
 };
 
+const ButtonWithTagStory = () => {
+  const usage = `<Button tag="a">Button as Anchor</Button>`;
+  const propsObject = {
+    All: [
+      {
+        name: 'tag',
+        type: 'string',
+        defaultValue: '"button"',
+        possibleValue: 'any valid html tag e.g. "a"',
+        require: 'no',
+        description: 'Changes the tag with which the button will render.',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Button with Different Tag</Heading>
+      <ButtonRow>
+        <Button theme={Theme.BLUE} tag="a">
+          Button as Anchor
+        </Button>
+      </ButtonRow>
+      {Object.values(Variant).map(type => (
+        <ButtonRow key={type}>
+          <Button variant={type} tag="a">
+            Button as Anchor
+          </Button>
+        </ButtonRow>
+      ))}
+    </StorybookComponent>
+  );
+};
+
 const DefaultButtonStory = () => (
   <StorybookComponent
     title="Button"
@@ -439,7 +476,7 @@ const SecondaryButtonStory = () => (
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         [DEPRECATED] Secondary Button
       </Heading>
-      <Button variant={Variant.SECONDARY} onClick={() => null}>
+      <Button variant={DeprecatedSecondayVariant} onClick={() => null}>
         Secondary
       </Button>
     </div>
@@ -462,32 +499,6 @@ const GhostButtonStory = () => (
       </Heading>
       <Button variant={Variant.GHOST} theme={Theme.BLUE} onClick={() => null}>
         Ghost
-      </Button>
-    </div>
-  </StorybookComponent>
-);
-
-const TagButtonStory = () => (
-  <StorybookComponent
-    usage={`<Button
-  variant="ghost"
-  theme="blue"
-  tag="a"
->
-  Ghost
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Ghost Button with Different Tag
-      </Heading>
-      <Button
-        variant={Variant.GHOST}
-        theme={Theme.BLUE}
-        onClick={() => null}
-        tag="a"
-      >
-        Ghost Button as Anchor
       </Button>
     </div>
   </StorybookComponent>
