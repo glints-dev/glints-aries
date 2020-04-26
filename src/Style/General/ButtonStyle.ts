@@ -453,64 +453,19 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
     small
       ? `${smallButtonPadding[0] - 2}px ${smallButtonPadding[1] - 2}px`
       : `${generalButtonPadding[0] - 2}px ${generalButtonPadding[1] - 2}px`};
-
-  ${props => {
-    switch (props.theme) {
-      case `${Theme.RED}`:
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-          color: ${PrimaryColor.glintsred};
-        `;
-      case `${Theme.YELLOW}`:
-        return `
-          border: 2px solid ${PrimaryColor.glintsyellow};
-          color: ${PrimaryColor.glintsyellow};
-        `;
-      case `${Theme.BLUE}`:
-        return `
-          border: 2px solid ${SecondaryColor.actionblue};
-          color: ${SecondaryColor.actionblue};
-        `;
-      case `${Theme.WHITE}`:
-        return `
-          border: 2px solid ${SecondaryColor.white};
-          color: ${SecondaryColor.white};
-        `;
-      default:
-        return null;
-    }
-  }}
+  border: 2px solid ${SecondaryColor.actionblue};
+  color: ${SecondaryColor.actionblue};
 
   &:hover {
     transition: background-color 0.5s;
     text-decoration: none;
 
-    ${({ disabled, theme }) => {
+    ${({ disabled }) => {
       if (!disabled) {
-        switch (theme) {
-          case `${Theme.RED}`:
-            return `
-            background-color: ${PrimaryColor.glintsred};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.YELLOW}`:
-            return `
-            background-color: ${PrimaryColor.glintsyellow};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.BLUE}`:
-            return `
-            background-color: ${SecondaryColor.actionblue};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.WHITE}`:
-            return `
-            background-color: ${SecondaryColor.white};
-            color: ${PrimaryColor.glintsblue};
-          `;
-          default:
-            return null;
-        }
+        return `
+          background-color: ${SecondaryColor.actionblue};
+          color: ${SecondaryColor.white};
+        `;
       }
     }}
   }

@@ -58,7 +58,6 @@ const renderButton: React.FunctionComponent<Props> = ({
           block={block}
           small={small}
           removeHoverEffect={removeHoverEffect}
-          theme={theme}
           {...defaultProps}
         >
           {children}
