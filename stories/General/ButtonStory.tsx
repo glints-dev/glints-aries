@@ -114,6 +114,8 @@ const linkButtonProps = {
 
 const ButtonStories = () => (
   <React.Fragment>
+    <ButtonVariantStory />
+    <Divider theme="grey" />
     <ButtonSizeStory />
     <Divider theme="grey" />
     <ButtonThemeStory />
@@ -133,6 +135,58 @@ const ButtonStories = () => (
     <SecondaryButtonStory />
   </React.Fragment>
 );
+
+const ButtonVariantStory = () => {
+  const usage = `/* Default Button */
+<Button>${Variant.DEFAULT}</Button>
+
+/* Primary Button */
+<Button variant="${Variant.PRIMARY}">${Variant.PRIMARY}</Button>
+
+/* Ghost Button */
+<Button variant="${Variant.GHOST}">${Variant.GHOST}</Button>
+
+/* Link Button */
+<Button variant="${Variant.LINK}">${Variant.LINK}</Button>
+`;
+  const propsObject = {
+    All: [
+      {
+        name: 'variant',
+        type: 'string',
+        defaultValue: `"${Variant.DEFAULT}"`,
+        possibleValue: `${Object.values(Variant)
+          .map(value => `"${value}"`)
+          .join(' | ')}`,
+        require: 'no',
+        description: "Sets the Button's type.",
+      },
+    ],
+  };
+  return (
+    <StorybookComponent
+      title="Button"
+      code="import { Button } from 'glints-aries'"
+      usage={usage}
+      propsObject={propsObject}
+    >
+      <Heading>Variants</Heading>
+      <h3></h3>
+      <ButtonRow>
+        <Button>{Variant.DEFAULT}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.PRIMARY}>{Variant.PRIMARY}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.GHOST}>{Variant.GHOST}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.LINK}>{Variant.LINK}</Button>
+      </ButtonRow>
+    </StorybookComponent>
+  );
+};
 
 const ButtonSizeStory = () => {
   const usage = `/* Default Button */
