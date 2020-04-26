@@ -72,12 +72,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
       default:
         return `
           background-color: ${SecondaryColor.white};
-          color: ${SecondaryColor.black};
-
-          &:active {
-            background-color: ${SecondaryColor.black};
-            color: ${SecondaryColor.white};
-          }
+          color: ${SecondaryColor.actionblue};
         `;
     }
   }}

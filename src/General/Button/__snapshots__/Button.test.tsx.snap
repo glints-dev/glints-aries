@@ -5,7 +5,7 @@ exports[`<Button> should render with text "click me" and an onClick handler 1`] 
   className="ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF aries-defaultbtn"
 >
   <button
-    className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 chTUsY defaultbtn-content"
+    className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 ixCkld defaultbtn-content"
     onClick={[MockFunction]}
   >
     click me
