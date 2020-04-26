@@ -120,6 +120,8 @@ const ButtonStories = () => (
   <React.Fragment>
     <ButtonSizeStory />
     <Divider theme="grey" />
+    <ButtonThemeStory />
+    <Divider theme="grey" />
     <DefaultButtonStory />
     <Divider theme="grey" />
     <PrimaryButtonStory />
@@ -135,21 +137,20 @@ const ButtonStories = () => (
 );
 
 const ButtonSizeStory = () => {
-  const usage = `<div>
-  <Button theme="${Theme.BLUE}" small>Small</Button>
-  <Button theme="${Theme.BLUE}">Normal</Button>
-  <Button theme="${Theme.BLUE}" block>Block</Button>
-</div>
-<div>
-  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" small>Small</Button>
-  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}">Normal</Button>
-  <Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" block>Block</Button>
-</div>
-<div>
-  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" small>Small</Button>
-  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}">Normal</Button>
-  <Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" block>Block</Button>
-</div>
+  const usage = `/* Default Button */
+<Button theme="${Theme.BLUE}" small>Small</Button>
+<Button theme="${Theme.BLUE}">Normal</Button>
+<Button theme="${Theme.BLUE}" block>Block</Button>
+
+/* Primary Button */
+<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" small>Small</Button>
+<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}">Normal</Button>
+<Button variant="${Variant.PRIMARY}" theme="${Theme.YELLOW}" block>Block</Button>
+
+/* Ghost Button */
+<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" small>Small</Button>
+<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}">Normal</Button>
+<Button variant="${Variant.GHOST}" theme="${Theme.BLUE}" block>Block</Button>
 `;
   const propsObject = {
     'Default Button, Primary Button, Ghost Button': [smallProp, blockProp],
@@ -194,6 +195,53 @@ const ButtonSizeStory = () => {
             Block
           </Button>
         </BlockButtonContainer>
+      </ButtonRow>
+    </StorybookComponent>
+  );
+};
+
+const ButtonThemeStory = () => {
+  const usage = `<Button theme="${Theme.BLUE}">Blue</Button>
+<Button theme="${Theme.WHITE}">White</Button>
+`;
+
+  const propsObject = {
+    'Default Button': [
+      {
+        name: 'theme',
+        type: 'string',
+        defaultValue: '"white"',
+        possibleValue: '"white" | "blue"',
+        require: 'no',
+        description: "Sets the Button's theme",
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Themes</Heading>
+      <ButtonRow>
+        <Button theme={Theme.BLUE}>{Theme.BLUE}</Button>
+        <Button theme={Theme.WHITE}>{Theme.WHITE}</Button>
+      </ButtonRow>
+      <Heading style={{ fontSize: '20px' }}>Deprecated themes</Heading>
+      The following themes will be deprecated in v5 after we refactor out all
+      uses of them in our codebases, so please avoid using them altogether.
+      <ButtonRow>
+        <Button theme={Theme.RED}>{Theme.RED}</Button>
+        <Button theme={Theme.YELLOW}>{Theme.YELLOW}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.PRIMARY} theme={Theme.RED}>
+          {Theme.RED}
+        </Button>
+        <Button variant={Variant.PRIMARY} theme={Theme.BLUE}>
+          {Theme.BLUE}
+        </Button>
+        <Button variant={Variant.PRIMARY} theme={Theme.BLUE_RED}>
+          {Theme.BLUE_RED}
+        </Button>
       </ButtonRow>
     </StorybookComponent>
   );
