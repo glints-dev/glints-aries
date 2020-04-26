@@ -16,6 +16,7 @@ export enum ETooltipPosition {
 }
 
 export const Variant = {
+  DEFAULT: 'default',
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   GHOST: 'ghost',
