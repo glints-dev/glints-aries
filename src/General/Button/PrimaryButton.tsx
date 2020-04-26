@@ -39,7 +39,6 @@ interface Props extends React.ComponentPropsWithoutRef<typeof PrimaryBtn> {
   disabled?: boolean;
   block?: boolean;
   small?: boolean;
-  removeHoverEffect?: boolean;
   tag?: React.ElementType;
 }
 
