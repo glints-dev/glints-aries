@@ -126,13 +126,13 @@ const ButtonStories = () => (
     <Divider theme="grey" />
     <PrimaryButtonStory />
     <Divider theme="grey" />
-    <SecondaryButtonStory />
-    <Divider theme="grey" />
     <GhostButtonStory />
     <Divider theme="grey" />
     <TagButtonStory />
     <Divider theme="grey" />
     <LinkButtonStory />
+    <Divider theme="grey" />
+    <SecondaryButtonStory />
   </React.Fragment>
 );
 
@@ -382,7 +382,7 @@ const SecondaryButtonStory = () => (
   >
     <div style={{ marginBottom: '2em' }}>
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Secondary Button
+        [DEPRECATED] Secondary Button
       </Heading>
       <Button variant={Variant.SECONDARY} onClick={() => null}>
         Secondary

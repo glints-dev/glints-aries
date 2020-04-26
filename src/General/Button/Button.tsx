@@ -48,6 +48,9 @@ const renderButton: React.FunctionComponent<Props> = ({
         </PrimaryButton>
       );
     case Variant.SECONDARY:
+      console.warn(
+        `Warning: Secondary Button is deprecated and will be removed in v5.\nPlease use the Primary Button instead.`
+      );
       return (
         <SecondaryButton
           className={className}
