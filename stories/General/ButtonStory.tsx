@@ -116,6 +116,8 @@ const ButtonStories = () => (
   <React.Fragment>
     <ButtonVariantStory />
     <Divider theme="grey" />
+    <ButtonDisableStory />
+    <Divider theme="grey" />
     <ButtonSizeStory />
     <Divider theme="grey" />
     <ButtonThemeStory />
@@ -123,6 +125,8 @@ const ButtonStories = () => (
     <ButtonWithIconStory />
     <Divider theme="grey" />
     <ButtonWithTagStory />
+    <Divider theme="grey" />
+    <ButtonRemoveHoverEffectStory />
     <Divider theme="grey" />
     <DefaultButtonStory />
     <Divider theme="grey" />
@@ -183,6 +187,49 @@ const ButtonVariantStory = () => {
       </ButtonRow>
       <ButtonRow>
         <Button variant={Variant.LINK}>{Variant.LINK}</Button>
+      </ButtonRow>
+    </StorybookComponent>
+  );
+};
+
+const ButtonDisableStory = () => {
+  const usage = `/* Default Button */
+<Button disabled>${Variant.DEFAULT}</Button>
+
+/* Primary Button */
+<Button variant="${Variant.PRIMARY}" disabled>${Variant.PRIMARY}</Button>
+
+/* Ghost Button */
+<Button variant="${Variant.GHOST} disabled">${Variant.GHOST}</Button>
+`;
+  const propsObject = {
+    'Default Button, Primary Button, Ghost Button': [
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets Button to disable state.',
+      },
+    ],
+  };
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Disabled</Heading>
+      <h3></h3>
+      <ButtonRow>
+        <Button disabled>{Variant.DEFAULT}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.PRIMARY} disabled>
+          {Variant.PRIMARY}
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.GHOST} disabled>
+          {Variant.GHOST}
+        </Button>
       </ButtonRow>
     </StorybookComponent>
   );
@@ -383,6 +430,41 @@ const ButtonWithTagStory = () => {
           </Button>
         </ButtonRow>
       ))}
+    </StorybookComponent>
+  );
+};
+
+const ButtonRemoveHoverEffectStory = () => {
+  const usage = `/* Default Button */
+<Button removeHoverEffect>${Variant.DEFAULT}</Button>
+
+/* Ghost Button */
+<Button variant="${Variant.GHOST} removeHoverEffect">${Variant.GHOST}</Button>
+`;
+  const propsObject = {
+    'Default Button, Ghost Button': [
+      {
+        name: 'removeHoverEffect',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: "Removes Button's effect when hovered",
+      },
+    ],
+  };
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Button without hovered background</Heading>
+      <h3></h3>
+      <ButtonRow>
+        <Button removeHoverEffect>{Variant.DEFAULT}</Button>
+      </ButtonRow>
+      <ButtonRow>
+        <Button variant={Variant.GHOST} removeHoverEffect>
+          {Variant.GHOST}
+        </Button>
+      </ButtonRow>
     </StorybookComponent>
   );
 };
