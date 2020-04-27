@@ -20,7 +20,8 @@
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -c storybook-config -o .out -s dist/public",
     "storybook:build:assets": "webpack",
     "test:update": "jest -u",
-    "test": "jest"
+    "test": "jest",
+    "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/'"
   },
   "author": "Glints",
   "license": "MIT",
