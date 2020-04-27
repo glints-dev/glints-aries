@@ -70,7 +70,6 @@ const ButtonVariantStory = () => {
       propsObject={propsObject}
     >
       <Heading>Variants</Heading>
-      <h3></h3>
       <ButtonRow>
         <Button>{Variant.DEFAULT}</Button>
       </ButtonRow>
@@ -112,7 +111,6 @@ const ButtonDisableStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Disabled</Heading>
-      <h3></h3>
       <ButtonRow>
         <Button disabled>{Variant.DEFAULT}</Button>
       </ButtonRow>
@@ -368,7 +366,6 @@ const ButtonRemoveHoverEffectStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button without hovered background</Heading>
-      <h3></h3>
       <ButtonRow>
         <Button removeHoverEffect>{Variant.DEFAULT}</Button>
       </ButtonRow>
