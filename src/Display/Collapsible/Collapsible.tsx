@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { isUndefined } from 'lodash';
 import { ArrowDownIcon } from '../../General/Icon/components';
 
 import {
@@ -9,72 +10,57 @@ import {
   CollapsibleBody,
 } from '../../Style/Display/CollapsibleStyle';
 
-class Collapsible extends React.Component<Props, State> {
-  state = {
-    isOpen: true,
+const Collapsible: React.FunctionComponent<Props> = ({
+  label,
+  children,
+  className,
+  isOpen,
+  ...defaultProps
+}) => {
+  const [isOpenInternal, setIsOpenInternal] = React.useState<boolean>(
+    isUndefined(isOpen) ? true : isOpen
+  );
+
+  const toggle = () => {
+    setIsOpenInternal(!isOpenInternal);
   };
 
-  handleOpen = () => {
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
-  };
-
-  componentDidMount() {
-    const { isOpen } = this.props;
-
-    if (isOpen === false && isOpen !== undefined) {
-      this.setState({
-        isOpen,
-      });
-    }
-  }
-
-  render() {
-    const { label, children, className, ...defaultProps } = this.props;
-
-    const { isOpen } = this.state;
-
-    return (
-      <CollapsibleContainer
-        className={classNames('aries-collapsible', className)}
-        tabIndex={0}
-        onClick={this.handleOpen}
-        data-testid="collapsible-container"
-        {...defaultProps}
-      >
-        <CollapsibleContent tabIndex={-1}>
-          <CollapsibleHeader
-            className="collapsible-title"
-            role="tab"
-            aria-expanded={isOpen}
-            isOpen={isOpen}
+  return (
+    <CollapsibleContainer
+      className={classNames('aries-collapsible', className)}
+      tabIndex={0}
+      onClick={toggle}
+      data-testid="collapsible-container"
+      {...defaultProps}
+    >
+      <CollapsibleContent tabIndex={-1}>
+        <CollapsibleHeader
+          className="collapsible-title"
+          role="tab"
+          aria-expanded={isOpenInternal}
+          isOpen={isOpenInternal}
+        >
+          {label}
+          <ArrowDownIcon color="#000000" />
+        </CollapsibleHeader>
+        {isOpenInternal && (
+          <CollapsibleBody
+            className="collapsible-content"
+            data-testid="collapsible-content"
+            onClick={e => e.stopPropagation()}
           >
-            {label}
-            <ArrowDownIcon color="#000000" />
-          </CollapsibleHeader>
-          {isOpen && (
-            <CollapsibleBody
-              className="collapsible-content"
-              data-testid="collapsible-content"
-              onClick={e => e.stopPropagation()}
-            >
-              {children}
-            </CollapsibleBody>
-          )}
-        </CollapsibleContent>
-      </CollapsibleContainer>
-    );
-  }
-}
+            {children}
+          </CollapsibleBody>
+        )}
+      </CollapsibleContent>
+    </CollapsibleContainer>
+  );
+};
 
 interface Props
   extends React.ComponentPropsWithoutRef<typeof CollapsibleContainer> {
   label: React.ReactNode;
   isOpen?: boolean;
-}
-
-interface State {
-  isOpen: boolean;
 }
 
 export default Collapsible;
