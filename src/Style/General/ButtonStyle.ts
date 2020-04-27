@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 import { Theme } from '../../Utils/StyleConfig';
 
 const generalButtonPadding = [15, 40];
@@ -19,7 +19,7 @@ const Button = styled.button<ButtonProps>`
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1em;
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
   line-height: 1.5;
   padding: ${({ small }) =>
     small
@@ -48,8 +48,8 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   width: ${({ block }) => block && '100%'};
 
   &:active {
-    background-color: ${SecondaryColor.black};
-    color: ${SecondaryColor.white};
+    background-color: ${Greyscale.black};
+    color: ${Greyscale.white};
   }
 
   ${props => {
@@ -57,26 +57,37 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
       case `${Theme.RED}`:
         return `
           background-color: ${PrimaryColor.glintsred};
-          color: ${SecondaryColor.white};
+          color: ${Greyscale.white};
+
+          &:hover {
+            color: ${Greyscale.white};
+          }
         `;
       case `${Theme.BLUE}`:
         return `
           background-color: ${SecondaryColor.actionblue};
-          color: ${SecondaryColor.white};
+          color: ${Greyscale.white};
+
+          &:hover {
+            color: ${Greyscale.white};
+          }
         `;
       case `${Theme.YELLOW}`:
         return `
           background-color: ${PrimaryColor.glintsyellow};
-          color: ${SecondaryColor.black};
+          color: ${Greyscale.black};
+
+          &:hover {
+            color: ${Greyscale.black};
+          }
         `;
       default:
         return `
-          background-color: ${SecondaryColor.white};
-          color: ${SecondaryColor.black};
+          background-color: ${Greyscale.white};
+          color: ${SecondaryColor.actionblue};
 
-          &:active {
-            background-color: ${SecondaryColor.black};
-            color: ${SecondaryColor.white};
+          &:hover {
+            color: ${SecondaryColor.actionblue};
           }
         `;
     }
@@ -85,8 +96,8 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   ${({ disabled }) => {
     if (disabled) {
       return `
-        background-color: ${SecondaryColor.lightgrey};
-        color: ${SecondaryColor.white};
+        background-color: ${Greyscale.lightgrey};
+        color: ${Greyscale.white};
         cursor: not-allowed;
       `;
     }
@@ -97,8 +108,8 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
     ${({ disabled }) => {
       if (disabled) {
         return `
-          background-color: ${SecondaryColor.lightgrey};
-          color: ${SecondaryColor.white};
+          background-color: ${Greyscale.lightgrey};
+          color: ${Greyscale.white};
         `;
       }
     }}
@@ -114,8 +125,8 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
     if (!disabled && !removeHoverEffect) {
       return `
       &:active {
-        background: ${SecondaryColor.black};
-        color: ${SecondaryColor.white};
+        background: ${Greyscale.black};
+        color: ${Greyscale.white};
         transform: translate3d(2px, 2px, 0);
         transition: all .2s;
       }
@@ -168,8 +179,8 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
           `;
         }
         return `
-          background-color: ${SecondaryColor.black};
-          color: ${SecondaryColor.white};
+          background-color: ${Greyscale.black};
+          color: ${Greyscale.white};
         `;
       }}
     }
@@ -203,26 +214,23 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     if (props.disabled) {
       return `
         cursor: not-allowed;
-        background-color: ${SecondaryColor.lightgrey};
-        color: ${SecondaryColor.white};
+        background-color: ${Greyscale.lightgrey};
+        color: ${Greyscale.white};
       `;
     }
 
     const themeColors = {
       [Theme.RED]: `
         background-color: ${PrimaryColor.glintsred};
-        color: ${SecondaryColor.white};
+        color: ${Greyscale.white};
       `,
       [Theme.BLUE]: `
         background-color: ${PrimaryColor.glintsblue};
-        color: ${SecondaryColor.white};
+        color: ${Greyscale.white};
       `,
       [Theme.BLUE_RED]: `
         background-color: ${PrimaryColor.glintsblue};
-        color: ${SecondaryColor.white};
-      `,
-      [Theme.YELLOW]: `
-        background-color: ${PrimaryColor.glintsyellow};
+        color: ${Greyscale.white};
       `,
     };
 
@@ -231,12 +239,8 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
     }
 
     return `
-      background-color: ${SecondaryColor.white};
-      color: ${PrimaryColor.glintsblue};
-
-      &:active {
-        color: ${SecondaryColor.white};
-      }
+      background-color: ${PrimaryColor.glintsyellow};
+      color: ${Greyscale.black};
     `;
   }}
 `;
@@ -265,7 +269,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
         return `
         transform: translate(4px, 4px);
         transition: all .2s;
-        color: ${SecondaryColor.white};
+        color: ${Greyscale.white};
       `;
       }
 
@@ -280,8 +284,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
           `;
         }
         return `
-          background-color: ${SecondaryColor.black};
-          color: ${SecondaryColor.white};
+          background-color: ${Greyscale.black};
+          color: ${Greyscale.white};
         `;
       }}
     }
@@ -299,7 +303,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     ${props => {
       const themeBackgrounds = {
         [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.YELLOW]: PrimaryColor.glintsred,
+        [Theme.BLUE]: PrimaryColor.glintsyellow,
+        [Theme.RED]: PrimaryColor.glintsyellow,
       };
       if (props.disabled) {
         return 'background-color: none';
@@ -307,7 +312,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
       if (props.theme && themeBackgrounds[props.theme]) {
         return `background-color: ${themeBackgrounds[props.theme]};`;
       }
-      return `background-color: ${PrimaryColor.glintsyellow};`;
+      return `background-color: ${PrimaryColor.glintsred};`;
     }}
   }
 
@@ -320,7 +325,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
         `;
       }
       return `
-      background: ${SecondaryColor.black};
+      background: ${Greyscale.black};
       transform: translate(-4px, -4px);
       transition: all .2s;
     `;
@@ -357,7 +362,7 @@ const Bouncing = keyframes`
 
 export const SecondaryBtn = styled(Button)<SecondaryBtnProps>`
   background-color: ${SecondaryColor.whitesmoke};
-  color: ${SecondaryColor.black};
+  color: ${Greyscale.black};
   z-index: 2;
   width: ${({ block }) => block && '100%'};
 
@@ -368,8 +373,8 @@ export const SecondaryBtn = styled(Button)<SecondaryBtnProps>`
   ${({ disabled }) => {
     if (disabled) {
       return `
-        background-color: ${SecondaryColor.lightgrey};
-        color: ${SecondaryColor.white};
+        background-color: ${Greyscale.lightgrey};
+        color: ${Greyscale.white};
         cursor: not-allowed;
       `;
     }
@@ -415,15 +420,15 @@ export const SecondaryContainer = styled.div<SecondaryContainerProps>`
 
   &:active {
     ${SecondaryBtn} {
-      background-color: ${SecondaryColor.black};
-      color: ${SecondaryColor.white};
+      background-color: ${Greyscale.black};
+      color: ${Greyscale.white};
       transition: all 0.2s;
       transform: translate3d(0, 0, 0);
     }
   }
 
   &:active:after {
-    background-color: ${SecondaryColor.black};
+    background-color: ${Greyscale.black};
     transform: translate3d(-6px, -6px, 0);
     transition: all 0.2s;
   }
@@ -453,69 +458,24 @@ interface SecondaryContainerProps {
 export const GhostBtn = styled(Button)<GhostBtnProps>`
   transition: background-color 0.5s;
   width: ${({ block }) => block && '100%'};
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   padding: ${({ small }) =>
     small
       ? `${smallButtonPadding[0] - 2}px ${smallButtonPadding[1] - 2}px`
       : `${generalButtonPadding[0] - 2}px ${generalButtonPadding[1] - 2}px`};
-
-  ${props => {
-    switch (props.theme) {
-      case `${Theme.RED}`:
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-          color: ${PrimaryColor.glintsred};
-        `;
-      case `${Theme.YELLOW}`:
-        return `
-          border: 2px solid ${PrimaryColor.glintsyellow};
-          color: ${PrimaryColor.glintsyellow};
-        `;
-      case `${Theme.BLUE}`:
-        return `
-          border: 2px solid ${SecondaryColor.actionblue};
-          color: ${SecondaryColor.actionblue};
-        `;
-      case `${Theme.WHITE}`:
-        return `
-          border: 2px solid ${SecondaryColor.white};
-          color: ${SecondaryColor.white};
-        `;
-      default:
-        return null;
-    }
-  }}
+  border: 2px solid ${SecondaryColor.actionblue};
+  color: ${SecondaryColor.actionblue};
 
   &:hover {
     transition: background-color 0.5s;
     text-decoration: none;
 
-    ${({ disabled, theme }) => {
+    ${({ disabled }) => {
       if (!disabled) {
-        switch (theme) {
-          case `${Theme.RED}`:
-            return `
-            background-color: ${PrimaryColor.glintsred};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.YELLOW}`:
-            return `
-            background-color: ${PrimaryColor.glintsyellow};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.BLUE}`:
-            return `
-            background-color: ${SecondaryColor.actionblue};
-            color: ${SecondaryColor.white};
-          `;
-          case `${Theme.WHITE}`:
-            return `
-            background-color: ${SecondaryColor.white};
-            color: ${PrimaryColor.glintsblue};
-          `;
-          default:
-            return null;
-        }
+        return `
+          background-color: ${SecondaryColor.actionblue};
+          color: ${Greyscale.white};
+        `;
       }
     }}
   }
@@ -582,9 +542,9 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
       if (!disabled) {
         return `
         &:active {
-          background-color: ${SecondaryColor.black};
-          color: ${SecondaryColor.white};
-          border: 2px solid ${SecondaryColor.black};
+          background-color: ${Greyscale.black};
+          color: ${Greyscale.white};
+          border: 2px solid ${Greyscale.black};
         }
       `;
       }
@@ -620,10 +580,20 @@ export const LinkBtn = styled(Button)<LinkBtnProps>`
   }
 
   &:active {
-    color: ${SecondaryColor.black};
+    color: ${Greyscale.black};
   }
 `;
 
 interface LinkBtnProps {
   block?: boolean;
 }
+
+export const StartIconContainer = styled.span`
+  display: inline-flex;
+  margin-right: 10px;
+`;
+
+export const EndIconContainer = styled.span`
+  display: inline-flex;
+  margin-left: 10px;
+`;

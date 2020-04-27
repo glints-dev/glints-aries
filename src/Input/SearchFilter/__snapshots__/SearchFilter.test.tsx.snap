@@ -20,7 +20,7 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       className="ButtonStyle__DefaultBtnContainer-gw4ytw-2 jOFFLF aries-defaultbtn SearchFilterStyle__SearchFilterButton-b75szs-2 gluDQb"
     >
       <button
-        className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 dMpybm defaultbtn-content"
+        className="ButtonStyle__Button-gw4ytw-0 ButtonStyle__DefaultBtn-gw4ytw-1 efFgZq defaultbtn-content"
       >
         Search
       </button>

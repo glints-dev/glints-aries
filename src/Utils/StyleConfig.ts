@@ -1,3 +1,4 @@
+import { DeprecatedThemeMap } from './../General/Button/Button';
 export enum ETabAlignment {
   HORIZONTAL = 'horizontal',
   VERTICAL = 'vertical',
@@ -16,8 +17,8 @@ export enum ETooltipPosition {
 }
 
 export const Variant = {
+  DEFAULT: 'default',
   PRIMARY: 'primary',
-  SECONDARY: 'secondary',
   GHOST: 'ghost',
   LINK: 'link',
 };

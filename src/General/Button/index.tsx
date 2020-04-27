@@ -1,5 +1,8 @@
-import Button from './Button';
+import Button, {
+  DeprecatedThemeMap,
+  DeprecatedSecondayVariant,
+} from './Button';
 
-export { Button };
+export { Button, DeprecatedThemeMap, DeprecatedSecondayVariant };
 
 export default Button;
