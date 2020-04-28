@@ -7,8 +7,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "npm run build:icon && npm run build:lib && npm run build:es && npm run build:ts",
-    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore src/**/*.test.tsx",
-    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore src/**/*.test.tsx",
+    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
+    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
     "build:ts": "tsc --project tsconfig.declaration.json -d --declarationDir lib && tsc --project tsconfig.declaration.json -d --declarationDir es",
     "build:icon": "rm -rf src/General/Icon/components && babel-node --extensions .ts,.tsx src/Utils/Icon/generateIcons.ts && npm run format:icon",
     "format:icon": "prettier --write src/General/Icon/components/*.tsx",
@@ -20,7 +20,8 @@
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -c storybook-config -o .out -s dist/public",
     "storybook:build:assets": "webpack",
     "test:update": "jest -u",
-    "test": "jest"
+    "test": "jest",
+    "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/'"
   },
   "author": "Glints",
   "license": "MIT",
