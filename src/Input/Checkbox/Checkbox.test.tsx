@@ -49,6 +49,15 @@ it('when toggling checkbox, it should fire onClick once and become checked, then
   expect(checkboxInput.checked).toEqual(false);
 });
 
+it('when passed label, it should render the label', () => {
+  const label = <p data-testid="label-child">label child</p>;
+  const { getByTestId } = render(
+    <Checkbox id={props.id} value={props.value} label={label} />
+  );
+  const LabelChild = getByTestId('label-child');
+  expect(document.querySelector('label')).toContainElement(LabelChild);
+});
+
 describe('when it is rendered', () => {
   it('should display the correct label', () => {
     const { checkboxInput } = setupCheckbox(props);
