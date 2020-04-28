@@ -562,27 +562,52 @@ interface GhostBtnContainerProps {
  * Link Button
  */
 
-export const LinkBtn = styled(Button)<LinkBtnProps>`
-  font-weight: normal;
-  text-transform: inherit;
-  width: ${({ block }) => block && '100%'};
-  padding: 0;
-  justify-content: flex-start;
+export const LinkBtn = styled(Button)`
+  background-color: ${Greyscale.white};
   color: ${SecondaryColor.actionblue};
 
-  label {
-    cursor: pointer;
-  }
-
   &:hover {
-    color: ${SecondaryColor.darkblue};
-    text-decoration: none;
+    background-color: ${Greyscale.softgrey};
+    color: ${SecondaryColor.actionblue};
   }
 
   &:active {
-    color: ${Greyscale.black};
+    background-color: ${Greyscale.black};
+    color: ${Greyscale.white};
   }
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        background-color: ${Greyscale.lightgrey};
+        color: ${Greyscale.white};
+        cursor: not-allowed;
+      `;
+    }
+  }}
 `;
+
+// export const LinkBtn = styled(Button)<LinkBtnProps>`
+//   font-weight: normal;
+//   text-transform: inherit;
+//   width: ${({ block }) => block && '100%'};
+//   padding: 0;
+//   justify-content: flex-start;
+//   color: ${SecondaryColor.actionblue};
+
+//   label {
+//     cursor: pointer;
+//   }
+
+//   &:hover {
+//     color: ${SecondaryColor.darkblue};
+//     text-decoration: none;
+//   }
+
+//   &:active {
+//     color: ${Greyscale.black};
+//   }
+// `;
 
 interface LinkBtnProps {
   block?: boolean;
