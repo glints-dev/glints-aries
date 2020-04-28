@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Checkbox from './Checkbox';
+import Checkbox, { Props } from './Checkbox';
 
 const props = {
   id: 'software-engineer',
@@ -12,13 +12,14 @@ const props = {
   onClick: jest.fn().mockImplementation(event => event.target.value),
 };
 
-function setupCheckbox() {
-  const { getByText, getByLabelText } = render(
-    <Checkbox id={props.id} value={props.value} onClick={props.onClick} />
+function setupCheckbox(props: Props) {
+  const { id, value, onClick, ...restProps } = props;
+  const { getByText, getByLabelText, ...utils } = render(
+    <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
   );
-  const checkboxInput = getByLabelText(props.value) as HTMLInputElement;
-  const checkboxLabel = getByText(props.value) as HTMLLabelElement;
-  return { checkboxInput, checkboxLabel };
+  const checkboxInput = getByLabelText(value as string) as HTMLInputElement;
+  const checkboxLabel = getByText(value as string) as HTMLLabelElement;
+  return { checkboxInput, checkboxLabel, utils };
 }
 
 afterEach(() => {
@@ -35,7 +36,7 @@ it(`<Checkbox> should render an input with id, value and onClick props and a lab
 });
 
 it('when toggling checkbox, it should fire onClick once and become checked, then fire onClick once and become unchecked', () => {
-  const { checkboxInput, checkboxLabel } = setupCheckbox();
+  const { checkboxInput, checkboxLabel } = setupCheckbox(props);
 
   fireEvent.click(checkboxLabel);
   expect(props.onClick).toHaveBeenCalledTimes(1);
@@ -50,23 +51,23 @@ it('when toggling checkbox, it should fire onClick once and become checked, then
 
 describe('when it is rendered', () => {
   it('should display the correct label', () => {
-    const { checkboxInput } = setupCheckbox();
+    const { checkboxInput } = setupCheckbox(props);
     expect(checkboxInput).toBeTruthy();
   });
 
   it('should display an unchecked checkbox', () => {
-    const { checkboxInput } = setupCheckbox();
+    const { checkboxInput } = setupCheckbox(props);
     expect(checkboxInput.checked).toEqual(false);
   });
 
   it('should have the correct input id and value', async () => {
-    const { checkboxInput } = setupCheckbox();
+    const { checkboxInput } = setupCheckbox(props);
     expect(checkboxInput.id).toEqual(props.id);
     expect(checkboxInput.value).toEqual(props.value);
   });
 
   it('should return the input value when onClick is passed a function: event => event.target.value', () => {
-    const { checkboxLabel } = setupCheckbox();
+    const { checkboxLabel } = setupCheckbox(props);
     fireEvent.click(checkboxLabel);
     expect(props.onClick.mock.results[0].value).toEqual(props.value);
   });
