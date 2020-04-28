@@ -20,7 +20,15 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'yes',
-      description: 'Sets the label of checkbox.',
+      description: 'Sets the value of the checkbox.',
+    },
+    {
+      name: 'label',
+      type: 'React.ReactNode',
+      defaultValue: '',
+      possibleValue: 'React.ReactNode',
+      require: 'no',
+      description: 'Sets the children of the checkbox label.',
     },
   ],
 };

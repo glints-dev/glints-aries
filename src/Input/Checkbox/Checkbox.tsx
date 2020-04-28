@@ -4,10 +4,11 @@ import classNames from 'classnames';
 import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 
 const Checkbox: React.FunctionComponent<Props> = ({
+  className,
   id,
+  label,
   value,
   onClick,
-  className,
   ...restProps
 }: Props) => {
   const [checked, setChecked] = React.useState(false);
@@ -35,12 +36,16 @@ const Checkbox: React.FunctionComponent<Props> = ({
         {...restProps}
       />
       <label htmlFor={id} tabIndex={-1}>
-        {value}
+        {label || value}
       </label>
     </CheckboxContainer>
   );
 };
 
-type Props = React.HTMLProps<HTMLInputElement>;
+type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'label'>;
+
+export interface Props extends HTMLInputProps {
+  label?: React.ReactNode;
+}
 
 export default Checkbox;
