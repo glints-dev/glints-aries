@@ -1,4 +1,3 @@
-import { DeprecatedThemeMap } from './../General/Button/Button';
 export enum ETabAlignment {
   HORIZONTAL = 'horizontal',
   VERTICAL = 'vertical',
