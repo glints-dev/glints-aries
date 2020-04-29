@@ -6,6 +6,7 @@ import StorybookComponent from '../StorybookComponent';
 import Divider from '../../src/General/Divider';
 import Heading from '../../src/General/Heading';
 import Tag from '../../src/General/Tag';
+import { AddIcon, CloseIcon } from '../../src/General/Icon/components';
 
 const TagContainer = styled.span`
   margin-right: 15px;
@@ -126,11 +127,70 @@ const TagThemeStory = () => {
   );
 };
 
+const ClickableTagStory = () => {
+  const usage = `<Tag>Non-clickable tag</Tag>
+<Tag startIcon={<AddIcon onClick={() => alert('Clicked!')} />}>Clickable icon</Tag>
+<Tag endIcon={<CloseIcon onClick={() => alert('Clicked!')} />}>Clickable icon</Tag>
+<Tag onClick={() => alert('Clicked!')}>Clickable tag</Tag>`;
+  const propsObject = {
+    Tag: [
+      {
+        name: 'startIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed before the children.',
+      },
+      {
+        name: 'endIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any',
+        require: 'no',
+        description: 'Element placed after the children.',
+      },
+      {
+        name: 'onClick',
+        type: 'function',
+        defaultValue: '-',
+        possibleValue: 'function',
+        require: 'no',
+        description: 'Make the whole tag is clickable',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent usage={usage} propsObject={propsObject}>
+      <Heading>Clickable Area</Heading>
+      <TagContainer>
+        <Tag>Non-clickable tag</Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag startIcon={<AddIcon onClick={() => alert('Clicked!')} />}>
+          Clickable icon
+        </Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag endIcon={<CloseIcon onClick={() => alert('Clicked!')} />}>
+          Clickable icon
+        </Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag onClick={() => alert('Clicked!')}>Clickable tag</Tag>
+      </TagContainer>
+    </StorybookComponent>
+  );
+};
+
 const TagStories = () => (
   <React.Fragment>
     <TagTypeStory />
     <Divider theme="grey" />
     <TagThemeStory />
+    <Divider theme="grey" />
+    <ClickableTagStory />
   </React.Fragment>
 );
 

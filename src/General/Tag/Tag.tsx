@@ -1,6 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { TagContainer, TagContent } from '../../Style/General/TagStyle';
+import {
+  TagContainer,
+  TagContent,
+  StartIconContainer,
+  EndIconContainer,
+} from '../../Style/General/TagStyle';
 
 const Tag: React.FunctionComponent<Props> = props => {
   const {
@@ -10,8 +15,19 @@ const Tag: React.FunctionComponent<Props> = props => {
     block,
     outline,
     borderStyle,
+    startIcon,
+    endIcon,
+    onClick,
     ...restProps
   } = props;
+
+  const content = (
+    <>
+      {startIcon && <StartIconContainer>{startIcon}</StartIconContainer>}
+      {children}
+      {endIcon && <EndIconContainer>{endIcon}</EndIconContainer>}
+    </>
+  );
 
   return (
     <React.Fragment>
@@ -25,8 +41,13 @@ const Tag: React.FunctionComponent<Props> = props => {
         borderStyle={borderStyle}
         {...restProps}
       >
-        <TagContent className="tag-content" tabIndex={-1}>
-          {children}
+        <TagContent
+          className="tag-content"
+          tabIndex={-1}
+          isClickable={typeof onClick === 'function'}
+          onClick={onClick}
+        >
+          {content}
         </TagContent>
       </TagContainer>
     </React.Fragment>
@@ -43,6 +64,9 @@ Tag.defaultProps = {
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {
   children: React.ReactNode;
   theme?: string;
+  onClick?(e: React.MouseEvent<HTMLLabelElement, MouseEvent>): void;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
 export default Tag;

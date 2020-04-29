@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 
-export const TagContent = styled.label`
+export const TagContent = styled.label<TagContentProps>`
   display: flex;
   align-items: center;
-  padding: 5px 12px;
+  padding: 5px 15px; /* TODO: replace by spacing */
   outline: none;
+  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'default')};
 `;
+
+interface TagContentProps {
+  isClickable?: boolean;
+}
 
 export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
@@ -92,3 +97,15 @@ interface TagContainerProps {
   borderStyle?: string;
   outline?: boolean;
 }
+
+export const StartIconContainer = styled.span`
+  display: inline-flex;
+  margin-right: 8px; /* TODO: replace by spacing */
+  cursor: pointer;
+`;
+
+export const EndIconContainer = styled.span`
+  display: inline-flex;
+  margin-left: 8px; /* TODO: replace by spacing */
+  cursor: pointer;
+`;
