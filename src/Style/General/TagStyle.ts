@@ -42,6 +42,7 @@ export const TagContainer = styled.div<TagContainerProps>`
           return `
             background: ${SecondaryColor.lightergrey};
             border: 1px solid ${SecondaryColor.lightgrey};
+            color: ${SecondaryColor.black};
           `;
       }
     } else {
