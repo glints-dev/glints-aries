@@ -1,81 +1,123 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
 
+import Divider from '../../src/General/Divider';
+import Heading from '../../src/General/Heading';
 import Tag from '../../src/General/Tag';
-import { CloseIcon } from '../../src/General/Icon/components';
 
-const props = {
-  Tag: [
-    {
-      name: 'theme',
-      type: 'string',
-      defaultValue: <code>grey</code>,
-      possibleValue: <code>red | blue | orange | green | black</code>,
-      require: 'no',
-      description: 'Sets theme of Badge.',
-    },
-    {
-      name: 'block',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Sets Badge into block style.',
-    },
-    {
-      name: 'outline',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Sets Badge into outline style.',
-    },
-  ],
+const TagContainer = styled.span`
+  margin-right: 15px;
+`;
+
+const TagTypeStory = () => {
+  const props = {
+    Tag: [
+      {
+        name: 'block',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets Badge into block style.',
+      },
+      {
+        name: 'outline',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets Badge into outline style.',
+      },
+    ],
+  };
+  return (
+    <StorybookComponent
+      title="Tag"
+      code="import { Tag } from 'glints-aries'"
+      propsObject={props}
+      usage={`<Tag>Default</Tag>
+<Tag block>Block</Tag>
+<Tag outline>Outline</Tag>
+<Tag block outline>Block and Outline</Tag>`}
+    >
+      <Heading>Types</Heading>
+      <TagContainer>
+        <Tag>Default</Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag block>Block</Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag outline>Outline</Tag>
+      </TagContainer>
+      <TagContainer>
+        <Tag block outline>
+          Block and Outline
+        </Tag>
+      </TagContainer>
+    </StorybookComponent>
+  );
 };
 
-const TagStory = () => (
-  <StorybookComponent
-    title="Tag"
-    code="import { Tag } from 'glints-aries'"
-    propsObject={props}
-    usage={`<Tag theme="blue">
-  Software Engineer
-  <CloseIcon color="white" />
-</Tag>`}
-  >
-    <div style={{ display: 'flex' }}>
-      <div style={{ textAlign: 'center', marginRight: '2em' }}>
-        <h3>Block</h3>
-        <Tag theme="orange" block>
-          <span style={{ marginRight: '12px' }}>Software Engineer</span>
-          <CloseIcon color="white" />
-        </Tag>
+const TagThemeStory = () => {
+  const props = {
+    Tag: [
+      {
+        name: 'theme',
+        type: 'string',
+        defaultValue: <code>grey</code>,
+        possibleValue: <code>red | blue | orange | green | black</code>,
+        require: 'no',
+        description: 'Sets theme of Badge.',
+      },
+    ],
+  };
+  return (
+    <StorybookComponent
+      propsObject={props}
+      usage={`<Tag>Grey (Default)</Tag>
+<Tag theme="red">Red</Tag>
+<Tag theme="blue">Blue</Tag>
+<Tag theme="orange">Orange</Tag>
+<Tag theme="green">Green</Tag>
+<Tag theme="black">Black</Tag>
+`}
+    >
+      <Heading>Themes</Heading>
+      <div style={{ display: 'flex' }}>
+        <div style={{ textAlign: 'center', marginRight: '2em' }}>
+          <TagContainer>
+            <Tag>Grey (Default)</Tag>
+          </TagContainer>
+          <TagContainer>
+            <Tag theme="red">Red</Tag>
+          </TagContainer>
+          <TagContainer>
+            <Tag theme="blue">Blue</Tag>
+          </TagContainer>
+          <TagContainer>
+            <Tag theme="orange">Orange</Tag>
+          </TagContainer>
+          <TagContainer>
+            <Tag theme="green">Green</Tag>
+          </TagContainer>
+          <TagContainer>
+            <Tag theme="black">Black</Tag>
+          </TagContainer>
+        </div>
       </div>
-      <div style={{ textAlign: 'center', marginRight: '2em' }}>
-        <h3>Default</h3>
-        <Tag theme="grey">
-          <span style={{ marginRight: '12px', color: 'black' }}>
-            Software Engineer
-          </span>
-          <CloseIcon color="black" />
-        </Tag>
-      </div>
-      <div style={{ textAlign: 'center', marginRight: '2em' }}>
-        <h3>Outline</h3>
-        <Tag theme="green" outline>
-          <span style={{ marginRight: '12px' }}>Software Engineer</span>
-          <CloseIcon color="#93bd49" />
-        </Tag>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <h3>Default without Icon</h3>
-        <Tag theme="grey">
-          <span style={{ color: 'black' }}>Software Engineer</span>
-        </Tag>
-      </div>
-    </div>
-  </StorybookComponent>
+    </StorybookComponent>
+  );
+};
+
+const TagStories = () => (
+  <React.Fragment>
+    <TagTypeStory />
+    <Divider theme="grey" />
+    <TagThemeStory />
+  </React.Fragment>
 );
 
-export default TagStory;
+export default TagStories;
