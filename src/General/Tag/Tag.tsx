@@ -3,7 +3,15 @@ import classNames from 'classnames';
 import { TagContainer, TagContent } from '../../Style/General/TagStyle';
 
 const Tag: React.FunctionComponent<Props> = props => {
-  const { className, children, theme, block, outline, ...restProps } = props;
+  const {
+    className,
+    children,
+    theme,
+    block,
+    outline,
+    borderStyle,
+    ...restProps
+  } = props;
 
   return (
     <React.Fragment>
@@ -14,6 +22,7 @@ const Tag: React.FunctionComponent<Props> = props => {
         theme={theme}
         block={block}
         outline={outline}
+        borderStyle={borderStyle}
         {...restProps}
       >
         <TagContent className="tag-content" tabIndex={-1}>
@@ -28,6 +37,7 @@ Tag.defaultProps = {
   theme: 'grey',
   block: false,
   outline: false,
+  borderStyle: 'solid',
 };
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {

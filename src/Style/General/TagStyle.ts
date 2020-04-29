@@ -11,6 +11,8 @@ export const TagContent = styled.label`
 export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
   border-radius: ${({ block }) => !block && '20px'};
+  border-style: ${({ borderStyle }) => borderStyle};
+  border-width: 1px;
   font-size: 1em;
   line-height: 1.5;
   color: ${Greyscale.white};
@@ -41,7 +43,7 @@ export const TagContainer = styled.div<TagContainerProps>`
         default:
           return `
             background: ${SecondaryColor.lightergrey};
-            border: 1px solid ${SecondaryColor.lightgrey};
+            border-color: ${SecondaryColor.lightgrey};
             color: ${Greyscale.black};
           `;
       }
@@ -49,27 +51,27 @@ export const TagContainer = styled.div<TagContainerProps>`
       switch (theme) {
         case 'red':
           return `
-            border: 1px solid ${PrimaryColor.glintsred};
+            border-color: ${PrimaryColor.glintsred};
             color: ${PrimaryColor.glintsred};
           `;
         case 'blue':
           return `
-            border: 1px solid ${PrimaryColor.glintsblue};
+            border-color: ${PrimaryColor.glintsblue};
             color: ${PrimaryColor.glintsblue};
           `;
         case 'orange':
           return `
-            border: 1px solid ${SecondaryColor.orange};
+            border-color: ${SecondaryColor.orange};
             color: ${SecondaryColor.orange};
           `;
         case 'green':
           return `
-            border: 1px solid ${SecondaryColor.green};
+            border-color: ${SecondaryColor.green};
             color: ${SecondaryColor.green};
           `;
         default:
           return `
-            border: 1px solid ${Greyscale.black};
+            border-color: ${Greyscale.black};
             color: ${Greyscale.black};
           `;
       }
@@ -87,5 +89,6 @@ export const TagContainer = styled.div<TagContainerProps>`
 
 interface TagContainerProps {
   block?: boolean;
+  borderStyle?: string;
   outline?: boolean;
 }
