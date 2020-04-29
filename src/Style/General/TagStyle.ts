@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 
 export const TagContent = styled.label`
   display: flex;
@@ -13,7 +13,7 @@ export const TagContainer = styled.div<TagContainerProps>`
   border-radius: ${({ block }) => !block && '20px'};
   font-size: 1em;
   line-height: 1.5;
-  color: ${SecondaryColor.white};
+  color: ${Greyscale.white};
 
   ${({ theme, outline }) => {
     if (!outline) {
@@ -36,13 +36,13 @@ export const TagContainer = styled.div<TagContainerProps>`
           `;
         case 'black':
           return `
-            background: ${SecondaryColor.black};
+            background: ${Greyscale.black};
           `;
         default:
           return `
             background: ${SecondaryColor.lightergrey};
             border: 1px solid ${SecondaryColor.lightgrey};
-            color: ${SecondaryColor.black};
+            color: ${Greyscale.black};
           `;
       }
     } else {
@@ -69,8 +69,8 @@ export const TagContainer = styled.div<TagContainerProps>`
           `;
         default:
           return `
-            border: 1px solid ${SecondaryColor.black};
-            color: ${SecondaryColor.black};
+            border: 1px solid ${Greyscale.black};
+            color: ${Greyscale.black};
           `;
       }
     }
