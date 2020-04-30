@@ -98,14 +98,20 @@ interface TagContainerProps {
   outline?: boolean;
 }
 
-export const StartIconContainer = styled.span`
+const IconContainer = styled.span`
   display: inline-flex;
-  margin-right: 8px; /* TODO: replace by spacing */
   cursor: pointer;
+
+  svg {
+    width: 12px; /* TODO: replace by icon-sizes variable after Iconography is done */
+    height: 12px; /* TODO: replace by icon-sizes variable after Iconography is done */
+  }
 `;
 
-export const EndIconContainer = styled.span`
-  display: inline-flex;
+export const StartIconContainer = styled(IconContainer)`
+  margin-right: 8px; /* TODO: replace by spacing */
+`;
+
+export const EndIconContainer = styled(IconContainer)`
   margin-left: 8px; /* TODO: replace by spacing */
-  cursor: pointer;
 `;
