@@ -1,6 +1,6 @@
 {
   "name": "glints-aries",
-  "version": "4.0.73",
+  "version": "4.0.74",
   "description": "Glints ui-kit for frontend",
   "main": "./lib/index.js",
   "module": "./es/index.js",
