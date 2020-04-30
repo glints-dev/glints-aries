@@ -124,6 +124,7 @@ export { default as GuaranteeIcon } from './General/Icon/components/GuaranteeIco
 export { default as GithubIcon } from './General/Icon/components/GithubIcon';
 export { default as HeartIcon } from './General/Icon/components/HeartIcon';
 export { default as HelpIcon } from './General/Icon/components/HelpIcon';
+export { default as HomeIcon } from './General/Icon/components/HomeIcon';
 export { default as HourglassIcon } from './General/Icon/components/HourglassIcon';
 export { default as JobSearchIcon } from './General/Icon/components/JobSearchIcon';
 export { default as ImageIcon } from './General/Icon/components/ImageIcon';
