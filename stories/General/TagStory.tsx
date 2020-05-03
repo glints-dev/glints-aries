@@ -83,7 +83,7 @@ const TagThemeStory = () => {
         name: 'theme',
         type: 'string',
         defaultValue: <code>grey</code>,
-        possibleValue: <code>red | blue | orange | green | black</code>,
+        possibleValue: <code>red | black</code>,
         require: 'no',
         description: 'Sets theme of Badge.',
       },
@@ -94,9 +94,6 @@ const TagThemeStory = () => {
       propsObject={props}
       usage={`<Tag>Grey (Default)</Tag>
 <Tag theme="red">Red</Tag>
-<Tag theme="blue">Blue</Tag>
-<Tag theme="orange">Orange</Tag>
-<Tag theme="green">Green</Tag>
 <Tag theme="black">Black</Tag>
 `}
     >
@@ -108,15 +105,6 @@ const TagThemeStory = () => {
           </TagContainer>
           <TagContainer>
             <Tag theme="red">Red</Tag>
-          </TagContainer>
-          <TagContainer>
-            <Tag theme="blue">Blue</Tag>
-          </TagContainer>
-          <TagContainer>
-            <Tag theme="orange">Orange</Tag>
-          </TagContainer>
-          <TagContainer>
-            <Tag theme="green">Green</Tag>
           </TagContainer>
           <TagContainer>
             <Tag theme="black">Black</Tag>

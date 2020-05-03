@@ -29,18 +29,6 @@ export const TagContainer = styled.div<TagContainerProps>`
           return `
             background: ${PrimaryColor.glintsred};
           `;
-        case 'blue':
-          return `
-            background: ${PrimaryColor.glintsblue};
-          `;
-        case 'orange':
-          return `
-            background: ${SecondaryColor.orange};
-          `;
-        case 'green':
-          return `
-            background: ${SecondaryColor.green};
-          `;
         case 'black':
           return `
             background: ${Greyscale.black};
@@ -58,21 +46,6 @@ export const TagContainer = styled.div<TagContainerProps>`
           return `
             border-color: ${PrimaryColor.glintsred};
             color: ${PrimaryColor.glintsred};
-          `;
-        case 'blue':
-          return `
-            border-color: ${PrimaryColor.glintsblue};
-            color: ${PrimaryColor.glintsblue};
-          `;
-        case 'orange':
-          return `
-            border-color: ${SecondaryColor.orange};
-            color: ${SecondaryColor.orange};
-          `;
-        case 'green':
-          return `
-            border-color: ${SecondaryColor.green};
-            color: ${SecondaryColor.green};
           `;
         default:
           return `
