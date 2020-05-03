@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import DefaultButton from './DefaultButton';
-import PrimaryButton from './PrimaryButton';
+import SolidButton from './SolidButton';
+import SolidShadowButton from './SolidShadowButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
-import { Variant } from '../../Utils/StyleConfig';
+import { ButtonVariant } from '../../Utils/StyleConfig';
 import {
   StartIconContainer,
   EndIconContainer,
@@ -34,9 +34,9 @@ const renderButton: React.FunctionComponent<Props> = ({
   );
 
   switch (variant) {
-    case Variant.PRIMARY:
+    case ButtonVariant.SOLID_SHADOW:
       return (
-        <PrimaryButton
+        <SolidShadowButton
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -45,9 +45,9 @@ const renderButton: React.FunctionComponent<Props> = ({
           {...defaultProps}
         >
           {content}
-        </PrimaryButton>
+        </SolidShadowButton>
       );
-    case Variant.GHOST:
+    case ButtonVariant.GHOST:
       return (
         <GhostButton
           className={className}
@@ -61,7 +61,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           {content}
         </GhostButton>
       );
-    case Variant.LINK:
+    case ButtonVariant.LINK:
       return (
         <LinkButton
           className={className}
@@ -75,7 +75,7 @@ const renderButton: React.FunctionComponent<Props> = ({
       );
     default:
       return (
-        <DefaultButton
+        <SolidButton
           theme={theme}
           className={className}
           disabled={disabled}
@@ -86,7 +86,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           {...defaultProps}
         >
           {content}
-        </DefaultButton>
+        </SolidButton>
       );
   }
 };

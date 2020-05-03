@@ -34,17 +34,17 @@ const Button = styled.button<ButtonProps>`
  * Default Button
  */
 
-interface DefaultBtnContainerProps {
+interface SolidBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
   removeHoverEffect?: boolean;
 }
 
-interface DefaultBtnProps {
+interface SolidBtnProps {
   block?: boolean;
 }
 
-export const DefaultBtn = styled(Button)<DefaultBtnProps>`
+export const SolidBtn = styled(Button)<SolidBtnProps>`
   width: ${({ block }) => block && '100%'};
 
   &:active {
@@ -98,7 +98,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
   }
 `;
 
-export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
+export const SolidBtnContainer = styled.div<SolidBtnContainerProps>`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
@@ -141,7 +141,7 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
   }}
 
   &:hover {
-    ${DefaultBtn} {
+    ${SolidBtn} {
       ${props => {
         if (props.disabled) {
           return `
@@ -153,7 +153,7 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
   }
 
   &:active {
-    ${DefaultBtn} {
+    ${SolidBtn} {
       ${props => {
         if (props.disabled) {
           return `
@@ -170,19 +170,19 @@ export const DefaultBtnContainer = styled.div<DefaultBtnContainerProps>`
 `;
 
 /*
- * Primary Button
+ * SolidShadow Button
  */
 
-interface PrimaryContainerProps {
+interface SolidShadowContainerProps {
   block?: boolean;
   disabled?: boolean;
 }
 
-interface PrimaryBtnProps {
+interface SolidShadowBtnProps {
   block?: boolean;
 }
 
-export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
+export const SolidShadowBtn = styled(Button)<SolidShadowBtnProps>`
   transition: all 0.2s;
   cursor: pointer;
   position: relative;
@@ -207,7 +207,7 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
   }}
 `;
 
-export const PrimaryContainer = styled.div<PrimaryContainerProps>`
+export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
@@ -238,7 +238,7 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
       return 'transform: none';
     }}
 
-    ${PrimaryBtn} {
+    ${SolidShadowBtn} {
       ${props => {
         if (props.disabled) {
           return `

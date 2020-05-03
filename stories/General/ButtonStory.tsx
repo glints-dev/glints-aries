@@ -10,7 +10,7 @@ import {
   ArrowRoundForwardIcon,
 } from '../../src/General/Icon/components';
 
-import { Variant, ButtonTheme } from '../../src/Utils/StyleConfig';
+import { ButtonVariant, ButtonTheme } from '../../src/Utils/StyleConfig';
 
 const ButtonStories = () => (
   <React.Fragment>
@@ -31,25 +31,25 @@ const ButtonStories = () => (
 );
 
 const ButtonVariantStory = () => {
-  const usage = `/* Default Button */
-<Button>${Variant.DEFAULT}</Button>
+  const usage = `/* Solid Button */
+<Button>${ButtonVariant.SOLID}</Button>
 
-/* Primary Button */
-<Button variant="${Variant.PRIMARY}">${Variant.PRIMARY}</Button>
+/* Solid-Shadow Button */
+<Button variant="${ButtonVariant.SOLID_SHADOW}">${ButtonVariant.SOLID_SHADOW}</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST}">${Variant.GHOST}</Button>
+<Button variant="${ButtonVariant.GHOST}">${ButtonVariant.GHOST}</Button>
 
 /* Link Button */
-<Button variant="${Variant.LINK}">${Variant.LINK}</Button>
+<Button variant="${ButtonVariant.LINK}">${ButtonVariant.LINK}</Button>
 `;
   const propsObject = {
     All: [
       {
         name: 'variant',
         type: 'string',
-        defaultValue: `"${Variant.DEFAULT}"`,
-        possibleValue: `${Object.values(Variant)
+        defaultValue: `"${ButtonVariant.SOLID}"`,
+        possibleValue: `${Object.values(ButtonVariant)
           .map(value => `"${value}"`)
           .join(' | ')}`,
         require: 'no',
@@ -66,33 +66,35 @@ const ButtonVariantStory = () => {
     >
       <Heading>Variants</Heading>
       <ButtonRow>
-        <Button>{Variant.DEFAULT}</Button>
+        <Button>{ButtonVariant.SOLID}</Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.PRIMARY}>{Variant.PRIMARY}</Button>
+        <Button variant={ButtonVariant.SOLID_SHADOW}>
+          {ButtonVariant.SOLID_SHADOW}
+        </Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST}>{Variant.GHOST}</Button>
+        <Button variant={ButtonVariant.GHOST}>{ButtonVariant.GHOST}</Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.LINK}>{Variant.LINK}</Button>
+        <Button variant={ButtonVariant.LINK}>{ButtonVariant.LINK}</Button>
       </ButtonRow>
     </StorybookComponent>
   );
 };
 
 const ButtonDisableStory = () => {
-  const usage = `/* Default Button */
-<Button disabled>${Variant.DEFAULT}</Button>
+  const usage = `/* Solid Button */
+<Button disabled>${ButtonVariant.SOLID}</Button>
 
-/* Primary Button */
-<Button variant="${Variant.PRIMARY}" disabled>${Variant.PRIMARY}</Button>
+/* Solid-Shadow Button */
+<Button variant="${ButtonVariant.SOLID_SHADOW}" disabled>${ButtonVariant.SOLID_SHADOW}</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST} disabled">${Variant.GHOST}</Button>
+<Button variant="${ButtonVariant.GHOST} disabled">${ButtonVariant.GHOST}</Button>
 `;
   const propsObject = {
-    'Default Button, Primary Button, Ghost Button': [
+    'Solid Button, Solid-Shadow Button, Ghost Button': [
       {
         name: 'disabled',
         type: 'boolean',
@@ -107,16 +109,16 @@ const ButtonDisableStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Disabled</Heading>
       <ButtonRow>
-        <Button disabled>{Variant.DEFAULT}</Button>
+        <Button disabled>{ButtonVariant.SOLID}</Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.PRIMARY} disabled>
-          {Variant.PRIMARY}
+        <Button variant={ButtonVariant.SOLID_SHADOW} disabled>
+          {ButtonVariant.SOLID_SHADOW}
         </Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST} disabled>
-          {Variant.GHOST}
+        <Button variant={ButtonVariant.GHOST} disabled>
+          {ButtonVariant.GHOST}
         </Button>
       </ButtonRow>
     </StorybookComponent>
@@ -124,23 +126,23 @@ const ButtonDisableStory = () => {
 };
 
 const ButtonSizeStory = () => {
-  const usage = `/* Default Button */
+  const usage = `/* Solid Button */
 <Button theme="${ButtonTheme.BLUE}" small>Small</Button>
 <Button theme="${ButtonTheme.BLUE}">Normal</Button>
 <Button theme="${ButtonTheme.BLUE}" block>Block</Button>
 
-/* Primary Button */
-<Button variant="${Variant.PRIMARY}" small>Small</Button>
-<Button variant="${Variant.PRIMARY}">Normal</Button>
-<Button variant="${Variant.PRIMARY}" block>Block</Button>
+/* Solid-Shadow Button */
+<Button variant="${ButtonVariant.SOLID_SHADOW}" small>Small</Button>
+<Button variant="${ButtonVariant.SOLID_SHADOW}">Normal</Button>
+<Button variant="${ButtonVariant.SOLID_SHADOW}" block>Block</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST}" small>Small</Button>
-<Button variant="${Variant.GHOST}">Normal</Button>
-<Button variant="${Variant.GHOST}" block>Block</Button>
+<Button variant="${ButtonVariant.GHOST}" small>Small</Button>
+<Button variant="${ButtonVariant.GHOST}">Normal</Button>
+<Button variant="${ButtonVariant.GHOST}" block>Block</Button>
 `;
   const propsObject = {
-    'Default Button, Primary Button, Ghost Button': [
+    'Solid Button, Solid-Shadow Button, Ghost Button': [
       {
         name: 'small',
         type: 'boolean',
@@ -175,23 +177,23 @@ const ButtonSizeStory = () => {
         </BlockButtonContainer>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.PRIMARY} small>
+        <Button variant={ButtonVariant.SOLID_SHADOW} small>
           Small
         </Button>
-        <Button variant={Variant.PRIMARY}>Normal</Button>
+        <Button variant={ButtonVariant.SOLID_SHADOW}>Normal</Button>
         <BlockButtonContainer>
-          <Button variant={Variant.PRIMARY} block>
+          <Button variant={ButtonVariant.SOLID_SHADOW} block>
             Block
           </Button>
         </BlockButtonContainer>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST} small>
+        <Button variant={ButtonVariant.GHOST} small>
           Small
         </Button>
-        <Button variant={Variant.GHOST}>Normal</Button>
+        <Button variant={ButtonVariant.GHOST}>Normal</Button>
         <BlockButtonContainer>
-          <Button variant={Variant.GHOST} block>
+          <Button variant={ButtonVariant.GHOST} block>
             Block
           </Button>
         </BlockButtonContainer>
@@ -206,7 +208,7 @@ const ButtonThemeStory = () => {
 `;
 
   const propsObject = {
-    'Default Button': [
+    'Solid Button': [
       {
         name: 'theme',
         type: 'string',
@@ -230,17 +232,17 @@ const ButtonThemeStory = () => {
 };
 
 const ButtonWithIconStory = () => {
-  const usage = `/* Default Button */
+  const usage = `/* Solid Button */
 <Button startIcon={<ViewIcon />}>Button</Button>
 <Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>
 
-/* Primary Button */
-<Button variant="${Variant.PRIMARY}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${Variant.PRIMARY}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
+/* Solid-Shadow Button */
+<Button variant="${ButtonVariant.SOLID_SHADOW}" startIcon={<ViewIcon />}>Button</Button>
+<Button variant="${ButtonVariant.SOLID_SHADOW}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${Variant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
+<Button variant="${ButtonVariant.GHOST}" startIcon={<ViewIcon />}>Button</Button>
+<Button variant="${ButtonVariant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
   const propsObject = {
     All: [
       {
@@ -274,18 +276,24 @@ const ButtonWithIconStory = () => {
         </Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.PRIMARY} startIcon={<ViewIcon />}>
+        <Button variant={ButtonVariant.SOLID_SHADOW} startIcon={<ViewIcon />}>
           Button Icon Left
         </Button>
-        <Button variant={Variant.PRIMARY} endIcon={<ArrowRoundForwardIcon />}>
+        <Button
+          variant={ButtonVariant.SOLID_SHADOW}
+          endIcon={<ArrowRoundForwardIcon />}
+        >
           Button Icon Right
         </Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST} startIcon={<ViewIcon />}>
+        <Button variant={ButtonVariant.GHOST} startIcon={<ViewIcon />}>
           Button Icon Left
         </Button>
-        <Button variant={Variant.GHOST} endIcon={<ArrowRoundForwardIcon />}>
+        <Button
+          variant={ButtonVariant.GHOST}
+          endIcon={<ArrowRoundForwardIcon />}
+        >
           Button Icon Right
         </Button>
       </ButtonRow>
@@ -316,7 +324,7 @@ const ButtonWithTagStory = () => {
           Button as Anchor
         </Button>
       </ButtonRow>
-      {Object.values(Variant).map(type => (
+      {Object.values(ButtonVariant).map(type => (
         <ButtonRow key={type}>
           <Button variant={type} tag="a">
             Button as Anchor
@@ -328,14 +336,14 @@ const ButtonWithTagStory = () => {
 };
 
 const ButtonRemoveHoverEffectStory = () => {
-  const usage = `/* Default Button */
-<Button removeHoverEffect>${Variant.DEFAULT}</Button>
+  const usage = `/* Solid Button */
+<Button removeHoverEffect>${ButtonVariant.SOLID}</Button>
 
 /* Ghost Button */
-<Button variant="${Variant.GHOST} removeHoverEffect">${Variant.GHOST}</Button>
+<Button variant="${ButtonVariant.GHOST} removeHoverEffect">${ButtonVariant.GHOST}</Button>
 `;
   const propsObject = {
-    'Default Button, Ghost Button': [
+    'Solid Button, Ghost Button': [
       {
         name: 'removeHoverEffect',
         type: 'boolean',
@@ -350,11 +358,11 @@ const ButtonRemoveHoverEffectStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button without hovered background</Heading>
       <ButtonRow>
-        <Button removeHoverEffect>{Variant.DEFAULT}</Button>
+        <Button removeHoverEffect>{ButtonVariant.SOLID}</Button>
       </ButtonRow>
       <ButtonRow>
-        <Button variant={Variant.GHOST} removeHoverEffect>
-          {Variant.GHOST}
+        <Button variant={ButtonVariant.GHOST} removeHoverEffect>
+          {ButtonVariant.GHOST}
         </Button>
       </ButtonRow>
     </StorybookComponent>

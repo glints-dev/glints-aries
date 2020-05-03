@@ -15,9 +15,9 @@ export enum ETooltipPosition {
   RIGHT = 'right',
 }
 
-export const Variant = {
-  DEFAULT: 'default',
-  PRIMARY: 'primary',
+export const ButtonVariant = {
+  SOLID: 'solid',
+  SOLID_SHADOW: 'solid-shadow',
   GHOST: 'ghost',
   LINK: 'link',
 };
