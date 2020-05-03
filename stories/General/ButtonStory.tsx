@@ -10,7 +10,7 @@ import {
   ArrowRoundForwardIcon,
 } from '../../src/General/Icon/components';
 
-import { Variant, Theme } from '../../src/Utils/StyleConfig';
+import { Variant, ButtonTheme } from '../../src/Utils/StyleConfig';
 
 const ButtonStories = () => (
   <React.Fragment>
@@ -127,9 +127,9 @@ const ButtonDisableStory = () => {
 
 const ButtonSizeStory = () => {
   const usage = `/* Default Button */
-<Button theme="${Theme.BLUE}" small>Small</Button>
-<Button theme="${Theme.BLUE}">Normal</Button>
-<Button theme="${Theme.BLUE}" block>Block</Button>
+<Button theme="${ButtonTheme.BLUE}" small>Small</Button>
+<Button theme="${ButtonTheme.BLUE}">Normal</Button>
+<Button theme="${ButtonTheme.BLUE}" block>Block</Button>
 
 /* Primary Button */
 <Button variant="${Variant.PRIMARY}" small>Small</Button>
@@ -166,12 +166,12 @@ const ButtonSizeStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Sizes</Heading>
       <ButtonRow>
-        <Button theme={Theme.BLUE} small>
+        <Button theme={ButtonTheme.BLUE} small>
           Small
         </Button>
-        <Button theme={Theme.BLUE}>Normal</Button>
+        <Button theme={ButtonTheme.BLUE}>Normal</Button>
         <BlockButtonContainer>
-          <Button theme={Theme.BLUE} block>
+          <Button theme={ButtonTheme.BLUE} block>
             Block
           </Button>
         </BlockButtonContainer>
@@ -203,8 +203,8 @@ const ButtonSizeStory = () => {
 };
 
 const ButtonThemeStory = () => {
-  const usage = `<Button theme="${Theme.BLUE}">Blue</Button>
-<Button theme="${Theme.WHITE}">White</Button>
+  const usage = `<Button theme="${ButtonTheme.BLUE}">Blue</Button>
+<Button theme="${ButtonTheme.WHITE}">White</Button>
 `;
 
   const propsObject = {
@@ -224,8 +224,8 @@ const ButtonThemeStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Themes</Heading>
       <ButtonRow>
-        <Button theme={Theme.BLUE}>{Theme.BLUE}</Button>
-        <Button theme={Theme.WHITE}>{Theme.WHITE}</Button>
+        <Button theme={ButtonTheme.BLUE}>{ButtonTheme.BLUE}</Button>
+        <Button theme={ButtonTheme.WHITE}>{ButtonTheme.WHITE}</Button>
       </ButtonRow>
     </StorybookComponent>
   );
@@ -268,10 +268,10 @@ const ButtonWithIconStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button with Icon</Heading>
       <ButtonRow>
-        <Button theme={Theme.BLUE} startIcon={<ViewIcon />}>
+        <Button theme={ButtonTheme.BLUE} startIcon={<ViewIcon />}>
           Button Icon Left
         </Button>
-        <Button theme={Theme.BLUE} endIcon={<ArrowRoundForwardIcon />}>
+        <Button theme={ButtonTheme.BLUE} endIcon={<ArrowRoundForwardIcon />}>
           Button Icon Right
         </Button>
       </ButtonRow>
@@ -314,7 +314,7 @@ const ButtonWithTagStory = () => {
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button with Different Tag</Heading>
       <ButtonRow>
-        <Button theme={Theme.BLUE} tag="a">
+        <Button theme={ButtonTheme.BLUE} tag="a">
           Button as Anchor
         </Button>
       </ButtonRow>

@@ -31,7 +31,7 @@ export const PsychedelicTheme = {
   YELLOW_DEFAULT: 'yellow-default',
 };
 
-export const Theme = {
+export const ButtonTheme = {
   BLUE: 'blue',
   WHITE: 'white',
 };

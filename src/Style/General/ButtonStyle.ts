@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
-import { Theme } from '../../Utils/StyleConfig';
+import { ButtonTheme } from '../../Utils/StyleConfig';
 
 const generalButtonPadding = [15, 40];
 const smallButtonPadding = [10, 20];
@@ -54,7 +54,7 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
 
   ${props => {
     switch (props.theme) {
-      case `${Theme.BLUE}`:
+      case `${ButtonTheme.BLUE}`:
         return `
           background-color: ${SecondaryColor.actionblue};
           color: ${Greyscale.white};
