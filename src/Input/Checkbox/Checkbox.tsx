@@ -8,7 +8,7 @@ const Checkbox: React.FunctionComponent<Props> = ({
   label,
   value,
   onClick,
-  small = false,
+  size = 'small',
   className,
   ...restProps
 }: Props) => {
@@ -28,7 +28,7 @@ const Checkbox: React.FunctionComponent<Props> = ({
       aria-labelledby={id}
       aria-checked={checked}
       tabIndex={0}
-      small={small}
+      size={size}
     >
       <input
         type="checkbox"
@@ -44,11 +44,11 @@ const Checkbox: React.FunctionComponent<Props> = ({
   );
 };
 
-type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'label'>;
+type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'size' | 'label'>;
 
 export interface Props extends HTMLInputProps {
   label?: React.ReactNode;
-  small?: boolean;
+  size?: 'large' | 'small';
 }
 
 export default Checkbox;

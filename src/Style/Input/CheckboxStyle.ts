@@ -4,7 +4,7 @@ import { SecondaryColor } from '../Colors';
 export const CheckboxContainer = styled.div<CheckboxContainerProps>`
   position: relative;
   display: inline-flex;
-  font-size: ${({ small }) => (small ? '14px' : '16px')};
+  font-size: ${({ size }) => (size === 'small' ? '14px' : '16px')};
   line-height: 1.5;
 
   &:focus {
@@ -71,5 +71,5 @@ export const CheckboxContainer = styled.div<CheckboxContainerProps>`
 `;
 
 interface CheckboxContainerProps {
-  small?: boolean;
+  size?: 'small' | 'large';
 }
