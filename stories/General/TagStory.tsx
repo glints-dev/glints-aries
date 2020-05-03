@@ -32,7 +32,7 @@ const TagTypeStory = () => {
         description: 'Sets Badge into outline style.',
       },
       {
-        name: 'borderStyle',
+        name: 'border',
         type: 'string',
         defaultValue: <code>solid</code>,
         possibleValue: <code>solid | dashed | none</code>,
@@ -67,10 +67,10 @@ const TagTypeStory = () => {
         </Tag>
       </TagContainer>
       <TagContainer>
-        <Tag borderStyle="dashed">Dashed border</Tag>
+        <Tag border="dashed">Dashed border</Tag>
       </TagContainer>
       <TagContainer>
-        <Tag borderStyle="none">None border</Tag>
+        <Tag border="none">None border</Tag>
       </TagContainer>
     </StorybookComponent>
   );

@@ -13,7 +13,7 @@ const Tag: React.FunctionComponent<Props> = props => {
     children,
     block,
     outline,
-    borderStyle,
+    border,
     startIcon,
     endIcon,
     onClick,
@@ -36,7 +36,7 @@ const Tag: React.FunctionComponent<Props> = props => {
         tabIndex={0}
         block={block}
         outline={outline}
-        borderStyle={borderStyle}
+        border={border}
         {...restProps}
       >
         <TagContent
@@ -55,7 +55,7 @@ const Tag: React.FunctionComponent<Props> = props => {
 Tag.defaultProps = {
   block: false,
   outline: false,
-  borderStyle: 'solid',
+  border: 'solid',
 };
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {

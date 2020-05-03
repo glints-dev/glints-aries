@@ -16,7 +16,7 @@ interface TagContentProps {
 export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
   border-radius: ${({ block }) => !block && '20px'};
-  border-style: ${({ borderStyle }) => borderStyle};
+  border-style: ${({ border }) => border};
   border-width: 1px;
   font-size: 1em;
   line-height: 1.5;
@@ -46,7 +46,7 @@ export const TagContainer = styled.div<TagContainerProps>`
 
 interface TagContainerProps {
   block?: boolean;
-  borderStyle?: string;
+  border?: string;
   outline?: boolean;
 }
 
