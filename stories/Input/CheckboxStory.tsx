@@ -38,6 +38,14 @@ const props = {
       require: 'no',
       description: 'Sets the size of checkbox.',
     },
+    {
+      name: 'border',
+      type: 'boolean',
+      defaultValue: 'false',
+      possibleValue: 'true | false',
+      require: 'no',
+      description: 'Sets a border around the checkbox',
+    },
   ],
 };
 

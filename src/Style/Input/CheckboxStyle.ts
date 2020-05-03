@@ -1,11 +1,26 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
+import { CheckboxProps } from '../../Input/Checkbox/Checkbox';
 
-export const CheckboxContainer = styled.div<CheckboxContainerProps>`
+export const CheckboxContainer = styled.div<CheckboxProps>`
   position: relative;
   display: inline-flex;
   font-size: ${({ size }) => (size === 'small' ? '14px' : '16px')};
   line-height: 1.5;
+
+  &.border {
+    border: 1px solid #aaaaaa;
+    height: ${({ size }) => (size === 'small' ? '40px' : '43px')};
+    padding: 10px 15px;
+    border-radius: 2px;
+  }
+  &.border:hover {
+    background: rgba(1, 126, 183, 0.1);
+    border-color: ${SecondaryColor.actionblue};
+  }
+  &.checked {
+    border-color: ${SecondaryColor.actionblue};
+  }
 
   &:focus {
     outline: none;
@@ -22,6 +37,13 @@ export const CheckboxContainer = styled.div<CheckboxContainerProps>`
     margin-bottom: 0;
     display: none;
     cursor: pointer;
+
+    &.border {
+      &:checked + label:before {
+        background: ${SecondaryColor.actionblue};
+        border: 2px solid ${SecondaryColor.actionblue};
+      }
+    }
 
     &:checked + label:after {
       content: '';
@@ -69,7 +91,3 @@ export const CheckboxContainer = styled.div<CheckboxContainerProps>`
     }
   }
 `;
-
-interface CheckboxContainerProps {
-  size?: 'small' | 'large';
-}

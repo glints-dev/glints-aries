@@ -4,11 +4,13 @@ exports[`<Checkbox> should render an input with id, value and onClick props and 
 <div
   aria-checked={false}
   aria-labelledby="software-engineer"
-  className="CheckboxStyle__CheckboxContainer-lmispl-0 jKuykJ aries-checkbox"
+  className="CheckboxStyle__CheckboxContainer-lmispl-0 jekiyq aries-checkbox"
   role="checkbox"
+  size="small"
   tabIndex={0}
 >
   <input
+    className=""
     id="software-engineer"
     onClick={[Function]}
     type="checkbox"
