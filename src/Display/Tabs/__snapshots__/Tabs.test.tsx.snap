@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs/> render should match snapshot 1`] = `
+<div
+  className="TabsStyle__TabsContainer-sc-1bcl7qu-0 djllus horizontal-aries-tabs aries-tabs"
+>
+  <div
+    className="TabsStyle__TabsHeader-sc-1bcl7qu-1 iuuVHD horizontal-tabs-header tabs-header"
+  >
+    <ul
+      className="horizontal-tabs-list tabs-list underlined"
+      role="tablist"
+    >
+      <li
+        aria-controls="tab-item-0"
+        aria-selected={true}
+        className="tab-0 active horizontal-tab underlined"
+        role="tab"
+        tabIndex={-1}
+      >
+        <button
+          onClick={[Function]}
+          role="tab-button"
+          type="button"
+        >
+          Job
+        </button>
+      </li>
+      <li
+        aria-controls="tab-item-1"
+        aria-selected={false}
+        className="tab-1 horizontal-tab underlined"
+        role="tab"
+        tabIndex={-1}
+      >
+        <button
+          onClick={[Function]}
+          role="tab-button"
+          type="button"
+        >
+          Company
+        </button>
+      </li>
+      <li
+        aria-controls="tab-item-2"
+        aria-selected={false}
+        className="tab-2 horizontal-tab underlined"
+        role="tab"
+        tabIndex={-1}
+      >
+        <button
+          onClick={[Function]}
+          role="tab-button"
+          type="button"
+        >
+          Location
+        </button>
+      </li>
+      <li
+        aria-controls="tab-item-3"
+        aria-selected={false}
+        className="tab-3 horizontal-tab underlined"
+        role="tab"
+        tabIndex={-1}
+      >
+        <button
+          onClick={[Function]}
+          role="tab-button"
+          type="button"
+        >
+          Salary
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="TabsStyle__TabsBody-sc-1bcl7qu-3 gzOTzN tabs-body"
+    tabIndex={0}
+  >
+    <div
+      aria-labelledby="tab-0"
+      className="TabsStyle__TabsContent-sc-1bcl7qu-2 ezqQUq tabs-item tab-item-0 tabs-item-horizontal tabs-item"
+      role="tabpanel"
+      tabIndex={-1}
+    >
+      Software Engineer
+    </div>
+  </div>
+</div>
+`;

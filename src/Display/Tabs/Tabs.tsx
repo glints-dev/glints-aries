@@ -72,6 +72,7 @@ const Tabs: Tabs = ({
                   <button
                     type="button"
                     onClick={handleTabClick(index, tabLabel)}
+                    role="tab-button"
                   >
                     {data.props.tab}
                   </button>
@@ -111,7 +112,7 @@ interface Props {
   children: React.ReactNode;
   variant?: EHorizontalTabVariant;
   alignment?: string;
-  activeTab?: string;
+  activeTab?: string | number;
   onTabClick?(tab: React.ReactText): void;
   className?: string;
 }
