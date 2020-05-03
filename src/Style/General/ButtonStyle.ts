@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 import { ButtonTheme } from '../../Utils/StyleConfig';
 
@@ -299,111 +299,6 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     }}
   }
 `;
-
-/*
- * Secondary Button
- */
-
-const Bouncing = keyframes`
-  25%, 75% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50%, 100% {
-    transform: translate3d(-4px, -4px, 0);
-  }
-`;
-
-export const SecondaryBtn = styled(Button)<SecondaryBtnProps>`
-  background-color: ${SecondaryColor.whitesmoke};
-  color: ${Greyscale.black};
-  z-index: 2;
-  width: ${({ block }) => block && '100%'};
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  ${({ disabled }) => {
-    if (disabled) {
-      return `
-        background-color: ${Greyscale.lightgrey};
-        color: ${Greyscale.white};
-        cursor: not-allowed;
-      `;
-    }
-  }}
-`;
-
-interface SecondaryBtnProps {
-  block?: boolean;
-}
-
-export const SecondaryContainer = styled.div<SecondaryContainerProps>`
-  position: relative;
-  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
-
-  &:after {
-    content: '';
-    opacity: 0;
-    background-color: ${PrimaryColor.glintsred};
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    transition: all 0.2s;
-    transform: translate3d(-4px, -4px, 0);
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  &:hover {
-    ${SecondaryBtn} {
-      ${({ disabled }) => {
-        if (!disabled) {
-          return `
-          background-color: ${PrimaryColor.glintsyellow};
-          transform: translate3d(-4px, -4px, 0);
-          transition: transform .2s;
-        `;
-        }
-      }}
-    }
-  }
-
-  &:active {
-    ${SecondaryBtn} {
-      background-color: ${Greyscale.black};
-      color: ${Greyscale.white};
-      transition: all 0.2s;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  &:active:after {
-    background-color: ${Greyscale.black};
-    transform: translate3d(-6px, -6px, 0);
-    transition: all 0.2s;
-  }
-
-  ${({ disabled }) => {
-    if (!disabled) {
-      return css`
-        &:hover:after {
-          opacity: 1;
-          transition: opacity 0.8s linear;
-          animation: ${Bouncing} 0.5s linear;
-        }
-      `;
-    }
-  }}
-`;
-
-interface SecondaryContainerProps {
-  block?: boolean;
-  disabled?: boolean;
-}
 
 /*
  * Ghost Button

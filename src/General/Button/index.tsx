@@ -1,5 +1,5 @@
-import Button, { DeprecatedSecondayVariant } from './Button';
+import Button from './Button';
 
-export { Button, DeprecatedSecondayVariant };
+export { Button };
 
 export default Button;

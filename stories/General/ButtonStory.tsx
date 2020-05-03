@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
-import Button, { DeprecatedSecondayVariant } from '../../src/General/Button';
+import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
 import {
@@ -27,8 +27,6 @@ const ButtonStories = () => (
     <ButtonWithTagStory />
     <Divider theme="grey" />
     <ButtonRemoveHoverEffectStory />
-    <Divider theme="grey" />
-    <SecondaryButtonStory />
   </React.Fragment>
 );
 
@@ -362,25 +360,6 @@ const ButtonRemoveHoverEffectStory = () => {
     </StorybookComponent>
   );
 };
-
-const SecondaryButtonStory = () => (
-  <StorybookComponent
-    usage={`<Button
-  variant="secondary"
->
-  Secondary
-</Button>`}
-  >
-    <div style={{ marginBottom: '2em' }}>
-      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        [DEPRECATED] Secondary Button
-      </Heading>
-      <Button variant={DeprecatedSecondayVariant} onClick={() => null}>
-        Secondary
-      </Button>
-    </div>
-  </StorybookComponent>
-);
 
 const ButtonRow = styled.div`
   display: flex;

@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import DefaultButton from './DefaultButton';
 import PrimaryButton from './PrimaryButton';
-import SecondaryButton from './SecondaryButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
@@ -11,8 +10,6 @@ import {
   StartIconContainer,
   EndIconContainer,
 } from '../../Style/General/ButtonStyle';
-
-export const DeprecatedSecondayVariant = 'secondary';
 
 const renderButton: React.FunctionComponent<Props> = ({
   children,
@@ -49,22 +46,6 @@ const renderButton: React.FunctionComponent<Props> = ({
         >
           {content}
         </PrimaryButton>
-      );
-    case DeprecatedSecondayVariant:
-      console.warn(
-        `Warning: Secondary Button is deprecated and will be removed in v5.\nPlease use the Primary Button instead.`
-      );
-      return (
-        <SecondaryButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          {...defaultProps}
-        >
-          {children}
-        </SecondaryButton>
       );
     case Variant.GHOST:
       return (
