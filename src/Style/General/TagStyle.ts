@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import { SecondaryColor, Greyscale } from '../Colors';
 
-export const TagContent = styled.label<TagContentProps>`
+export const TagContent = styled.label`
   display: flex;
   align-items: center;
   padding: 5px 15px; /* TODO: replace by spacing */
   outline: none;
-  cursor: ${({ isClickable }) => (isClickable ? 'pointer' : 'default')};
 `;
-
-interface TagContentProps {
-  isClickable?: boolean;
-}
 
 export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
@@ -21,6 +16,14 @@ export const TagContainer = styled.div<TagContainerProps>`
   font-size: 1em;
   line-height: 1.5;
   color: ${Greyscale.black};
+
+  ${({ isClickable }) => {
+    if (isClickable) {
+      return `${TagContent} {
+        cursor: pointer;
+      }`;
+    }
+  }};
 
   ${({ outline }) => {
     if (!outline) {
@@ -48,6 +51,7 @@ interface TagContainerProps {
   block?: boolean;
   border?: string;
   outline?: boolean;
+  isClickable?: boolean;
 }
 
 const IconContainer = styled.span`

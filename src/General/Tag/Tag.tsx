@@ -37,14 +37,11 @@ const Tag: React.FunctionComponent<Props> = props => {
         block={block}
         outline={outline}
         border={border}
+        isClickable={typeof onClick === 'function'}
+        onClick={onClick}
         {...restProps}
       >
-        <TagContent
-          className="tag-content"
-          tabIndex={-1}
-          isClickable={typeof onClick === 'function'}
-          onClick={onClick}
-        >
+        <TagContent className="tag-content" tabIndex={-1}>
           {content}
         </TagContent>
       </TagContainer>
@@ -60,7 +57,7 @@ Tag.defaultProps = {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {
   children: React.ReactNode;
-  onClick?(e: React.MouseEvent<HTMLLabelElement, MouseEvent>): void;
+  onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
 }
