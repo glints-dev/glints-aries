@@ -17,7 +17,6 @@ const renderButton: React.FunctionComponent<Props> = ({
   className,
   disabled,
   onClick,
-  removeHoverEffect,
   small,
   theme,
   variant,
@@ -55,7 +54,6 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
-          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {content}
@@ -82,7 +80,6 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
-          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {content}
@@ -101,7 +98,6 @@ export interface Props {
   className?: string;
   disabled?: boolean;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
-  removeHoverEffect?: boolean;
   small?: boolean;
   theme?: string;
   variant?: string;

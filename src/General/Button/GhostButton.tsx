@@ -9,7 +9,6 @@ const GhostButton: React.FunctionComponent<Props> = ({
   disabled,
   block,
   small,
-  removeHoverEffect,
   tag,
   ...defaultProps
 }) => (
@@ -18,7 +17,6 @@ const GhostButton: React.FunctionComponent<Props> = ({
     theme={theme}
     disabled={disabled}
     block={block}
-    removeHoverEffect={removeHoverEffect}
   >
     <GhostBtn
       className="ghostbtn-content"
@@ -41,7 +39,6 @@ interface Props extends React.ComponentPropsWithoutRef<typeof GhostBtn> {
   disabled?: boolean;
   block?: boolean;
   small?: boolean;
-  removeHoverEffect?: boolean;
   tag?: React.ElementType;
 }
 

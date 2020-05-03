@@ -25,8 +25,6 @@ const ButtonStories = () => (
     <ButtonWithIconStory />
     <Divider theme="grey" />
     <ButtonWithTagStory />
-    <Divider theme="grey" />
-    <ButtonRemoveHoverEffectStory />
   </React.Fragment>
 );
 
@@ -331,40 +329,6 @@ const ButtonWithTagStory = () => {
           </Button>
         </ButtonRow>
       ))}
-    </StorybookComponent>
-  );
-};
-
-const ButtonRemoveHoverEffectStory = () => {
-  const usage = `/* Solid Button */
-<Button removeHoverEffect>${ButtonVariant.SOLID}</Button>
-
-/* Ghost Button */
-<Button variant="${ButtonVariant.GHOST} removeHoverEffect">${ButtonVariant.GHOST}</Button>
-`;
-  const propsObject = {
-    'Solid Button, Ghost Button': [
-      {
-        name: 'removeHoverEffect',
-        type: 'boolean',
-        defaultValue: <code>false</code>,
-        possibleValue: <code>true | false</code>,
-        require: 'no',
-        description: "Removes Button's effect when hovered",
-      },
-    ],
-  };
-  return (
-    <StorybookComponent usage={usage} propsObject={propsObject}>
-      <Heading>Button without hovered background</Heading>
-      <ButtonRow>
-        <Button removeHoverEffect>{ButtonVariant.SOLID}</Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.GHOST} removeHoverEffect>
-          {ButtonVariant.GHOST}
-        </Button>
-      </ButtonRow>
     </StorybookComponent>
   );
 };

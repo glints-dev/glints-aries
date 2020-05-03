@@ -37,7 +37,6 @@ const Button = styled.button<ButtonProps>`
 interface SolidBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
-  removeHoverEffect?: boolean;
 }
 
 interface SolidBtnProps {
@@ -103,8 +102,8 @@ export const SolidBtnContainer = styled.div<SolidBtnContainerProps>`
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
 
-  ${({ disabled, removeHoverEffect }) => {
-    if (!disabled && !removeHoverEffect) {
+  ${({ disabled }) => {
+    if (!disabled) {
       return `
       &:active {
         background: ${Greyscale.black};
@@ -350,8 +349,8 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
 
-  ${({ disabled, removeHoverEffect }) => {
-    if (!disabled && !removeHoverEffect) {
+  ${({ disabled }) => {
+    if (!disabled) {
       return `
         &:active {
           transition: background-color .5s; 
@@ -404,7 +403,6 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
 interface GhostBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
-  removeHoverEffect?: boolean;
 }
 
 /*

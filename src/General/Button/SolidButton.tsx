@@ -9,7 +9,6 @@ const SolidButton: React.FunctionComponent<Props> = ({
   disabled,
   block,
   small,
-  removeHoverEffect,
   tag,
   ...defaultProps
 }) => (
@@ -18,7 +17,6 @@ const SolidButton: React.FunctionComponent<Props> = ({
     theme={theme}
     disabled={disabled}
     block={block}
-    removeHoverEffect={removeHoverEffect}
   >
     <SolidBtn
       className="solidbtn-content"
@@ -41,7 +39,6 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
   disabled?: boolean;
   block?: boolean;
   small?: boolean;
-  removeHoverEffect?: boolean;
   tag?: React.ElementType;
 }
 
