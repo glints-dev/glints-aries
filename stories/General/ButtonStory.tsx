@@ -2,10 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
-import Button, {
-  DeprecatedThemeMap,
-  DeprecatedSecondayVariant,
-} from '../../src/General/Button';
+import Button, { DeprecatedSecondayVariant } from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
 import {
@@ -230,18 +227,6 @@ const ButtonThemeStory = () => {
         <Button theme={Theme.BLUE}>{Theme.BLUE}</Button>
         <Button theme={Theme.WHITE}>{Theme.WHITE}</Button>
       </ButtonRow>
-      <Heading style={{ fontSize: '20px' }}>Deprecated themes</Heading>
-      The following themes will be deprecated in v5 after we refactor out all
-      uses of them in our codebases, so please avoid using them altogether.
-      {Object.keys(DeprecatedThemeMap).map(variant => (
-        <ButtonRow key={variant}>
-          {DeprecatedThemeMap[variant].map(theme => (
-            <Button key={theme} variant={variant} theme={theme}>
-              {theme}
-            </Button>
-          ))}
-        </ButtonRow>
-      ))}
     </StorybookComponent>
   );
 };

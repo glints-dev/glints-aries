@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { get } from 'lodash';
 
 import DefaultButton from './DefaultButton';
 import PrimaryButton from './PrimaryButton';
@@ -7,16 +6,11 @@ import SecondaryButton from './SecondaryButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
-import { Variant, Theme } from '../../Utils/StyleConfig';
+import { Variant } from '../../Utils/StyleConfig';
 import {
   StartIconContainer,
   EndIconContainer,
 } from '../../Style/General/ButtonStyle';
-
-export const DeprecatedThemeMap = {
-  [Variant.DEFAULT]: [Theme.RED, Theme.YELLOW],
-  [Variant.PRIMARY]: [Theme.RED, Theme.BLUE, Theme.BLUE_RED],
-};
 
 export const DeprecatedSecondayVariant = 'secondary';
 
@@ -44,11 +38,6 @@ const renderButton: React.FunctionComponent<Props> = ({
 
   switch (variant) {
     case Variant.PRIMARY:
-      if (get(DeprecatedThemeMap, Variant.PRIMARY, []).includes(theme)) {
-        console.warn(
-          `Warning: Primary Button's theme prop is deprecated and will be removed in v5.`
-        );
-      }
       return (
         <PrimaryButton
           className={className}
@@ -56,7 +45,6 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
-          theme={theme}
           {...defaultProps}
         >
           {content}
@@ -105,11 +93,6 @@ const renderButton: React.FunctionComponent<Props> = ({
         </LinkButton>
       );
     default:
-      if (get(DeprecatedThemeMap, Variant.DEFAULT, []).includes(theme)) {
-        console.warn(
-          `Warning: Default Button's ${theme} theme is deprecated and will be removed in v5.\nPlease use another theme instead.`
-        );
-      }
       return (
         <DefaultButton
           theme={theme}

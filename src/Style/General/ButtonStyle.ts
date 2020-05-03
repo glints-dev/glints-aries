@@ -54,15 +54,6 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
 
   ${props => {
     switch (props.theme) {
-      case `${Theme.RED}`:
-        return `
-          background-color: ${PrimaryColor.glintsred};
-          color: ${Greyscale.white};
-
-          &:hover {
-            color: ${Greyscale.white};
-          }
-        `;
       case `${Theme.BLUE}`:
         return `
           background-color: ${SecondaryColor.actionblue};
@@ -70,15 +61,6 @@ export const DefaultBtn = styled(Button)<DefaultBtnProps>`
 
           &:hover {
             color: ${Greyscale.white};
-          }
-        `;
-      case `${Theme.YELLOW}`:
-        return `
-          background-color: ${PrimaryColor.glintsyellow};
-          color: ${Greyscale.black};
-
-          &:hover {
-            color: ${Greyscale.black};
           }
         `;
       default:
@@ -218,26 +200,6 @@ export const PrimaryBtn = styled(Button)<PrimaryBtnProps>`
         color: ${Greyscale.white};
       `;
     }
-
-    const themeColors = {
-      [Theme.RED]: `
-        background-color: ${PrimaryColor.glintsred};
-        color: ${Greyscale.white};
-      `,
-      [Theme.BLUE]: `
-        background-color: ${PrimaryColor.glintsblue};
-        color: ${Greyscale.white};
-      `,
-      [Theme.BLUE_RED]: `
-        background-color: ${PrimaryColor.glintsblue};
-        color: ${Greyscale.white};
-      `,
-    };
-
-    if (props.theme && themeColors[props.theme]) {
-      return themeColors[props.theme];
-    }
-
     return `
       background-color: ${PrimaryColor.glintsyellow};
       color: ${Greyscale.black};
@@ -301,16 +263,8 @@ export const PrimaryContainer = styled.div<PrimaryContainerProps>`
     transition: all 0.2s;
 
     ${props => {
-      const themeBackgrounds = {
-        [Theme.BLUE_RED]: PrimaryColor.glintsred,
-        [Theme.BLUE]: PrimaryColor.glintsyellow,
-        [Theme.RED]: PrimaryColor.glintsyellow,
-      };
       if (props.disabled) {
         return 'background-color: none';
-      }
-      if (props.theme && themeBackgrounds[props.theme]) {
-        return `background-color: ${themeBackgrounds[props.theme]};`;
       }
       return `background-color: ${PrimaryColor.glintsred};`;
     }}

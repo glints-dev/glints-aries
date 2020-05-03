@@ -32,12 +32,8 @@ export const PsychedelicTheme = {
 };
 
 export const Theme = {
-  RED: 'red',
-  YELLOW: 'yellow',
   BLUE: 'blue',
-  BLUE_RED: 'blue-red',
   WHITE: 'white',
-  GREY: 'grey',
 };
 
 /* Screen size library of Glints
