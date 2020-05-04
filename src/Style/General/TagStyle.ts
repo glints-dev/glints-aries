@@ -11,7 +11,6 @@ export const TagContent = styled.label`
 export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
   border-radius: ${({ block }) => !block && '20px'};
-  border-style: ${({ border }) => border};
   border-width: 1px;
   font-size: 1em;
   line-height: 1.5;
@@ -37,6 +36,24 @@ export const TagContainer = styled.div<TagContainerProps>`
       `;
     }
   }}
+
+  ${({ border }) => {
+    switch (border) {
+      case 'none':
+        return `
+          border-style: solid;
+          border-color: transparent;
+        `;
+      case 'dashed':
+        return `
+          border-style: dashed;
+        `;
+      default:
+        return `
+          border-style: solid;
+        `;
+    }
+  }};
 
   &:focus {
     outline: none;
