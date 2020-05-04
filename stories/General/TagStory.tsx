@@ -76,45 +76,6 @@ const TagTypeStory = () => {
   );
 };
 
-const TagThemeStory = () => {
-  const props = {
-    Tag: [
-      {
-        name: 'theme',
-        type: 'string',
-        defaultValue: <code>grey</code>,
-        possibleValue: <code>red | black</code>,
-        require: 'no',
-        description: 'Sets theme of Badge.',
-      },
-    ],
-  };
-  return (
-    <StorybookComponent
-      propsObject={props}
-      usage={`<Tag>Grey (Default)</Tag>
-<Tag theme="red">Red</Tag>
-<Tag theme="black">Black</Tag>
-`}
-    >
-      <Heading>Themes</Heading>
-      <div style={{ display: 'flex' }}>
-        <div style={{ textAlign: 'center', marginRight: '2em' }}>
-          <TagContainer>
-            <Tag>Grey (Default)</Tag>
-          </TagContainer>
-          <TagContainer>
-            <Tag theme="red">Red</Tag>
-          </TagContainer>
-          <TagContainer>
-            <Tag theme="black">Black</Tag>
-          </TagContainer>
-        </div>
-      </div>
-    </StorybookComponent>
-  );
-};
-
 const ClickableTagStory = () => {
   const usage = `<Tag>Non-clickable tag</Tag>
 <Tag startIcon={<AddIcon onClick={() => alert('Clicked!')} />}>Clickable icon</Tag>
@@ -175,8 +136,6 @@ const ClickableTagStory = () => {
 const TagStories = () => (
   <React.Fragment>
     <TagTypeStory />
-    <Divider theme="grey" />
-    <TagThemeStory />
     <Divider theme="grey" />
     <ClickableTagStory />
   </React.Fragment>

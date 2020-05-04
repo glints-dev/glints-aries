@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
+import { SecondaryColor, Greyscale } from '../Colors';
 
 export const TagContent = styled.label<TagContentProps>`
   display: flex;
@@ -20,39 +20,18 @@ export const TagContainer = styled.div<TagContainerProps>`
   border-width: 1px;
   font-size: 1em;
   line-height: 1.5;
-  color: ${Greyscale.white};
+  color: ${Greyscale.black};
 
-  ${({ theme, outline }) => {
+  ${({ outline }) => {
     if (!outline) {
-      switch (theme) {
-        case 'red':
-          return `
-            background: ${PrimaryColor.glintsred};
-          `;
-        case 'black':
-          return `
-            background: ${Greyscale.black};
-          `;
-        default:
-          return `
-            background: ${SecondaryColor.lightergrey};
-            border-color: ${SecondaryColor.lightgrey};
-            color: ${Greyscale.black};
-          `;
-      }
+      return `
+        background: ${SecondaryColor.lightergrey};
+        border-color: ${SecondaryColor.lightgrey};
+      `;
     } else {
-      switch (theme) {
-        case 'red':
-          return `
-            border-color: ${PrimaryColor.glintsred};
-            color: ${PrimaryColor.glintsred};
-          `;
-        default:
-          return `
-            border-color: ${Greyscale.black};
-            color: ${Greyscale.black};
-          `;
-      }
+      return `
+        border-color: ${Greyscale.black};
+      `;
     }
   }}
 

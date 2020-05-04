@@ -45,7 +45,7 @@ const TooltipStory = () => (
       text="Click here to apply as Software Engineer at Glints"
       position={ETooltipPosition.BOTTOM}
     >
-      <Tag theme="black">Software Engineer</Tag>
+      <Tag>Software Engineer</Tag>
     </Tooltip>
   </StorybookComponent>
 );

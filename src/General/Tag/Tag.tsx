@@ -11,7 +11,6 @@ const Tag: React.FunctionComponent<Props> = props => {
   const {
     className,
     children,
-    theme,
     block,
     outline,
     borderStyle,
@@ -35,7 +34,6 @@ const Tag: React.FunctionComponent<Props> = props => {
         className={classNames('aries-tag', className)}
         role="presentation"
         tabIndex={0}
-        theme={theme}
         block={block}
         outline={outline}
         borderStyle={borderStyle}
@@ -55,7 +53,6 @@ const Tag: React.FunctionComponent<Props> = props => {
 };
 
 Tag.defaultProps = {
-  theme: 'grey',
   block: false,
   outline: false,
   borderStyle: 'solid',
@@ -63,7 +60,6 @@ Tag.defaultProps = {
 
 interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {
   children: React.ReactNode;
-  theme?: string;
   onClick?(e: React.MouseEvent<HTMLLabelElement, MouseEvent>): void;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
