@@ -94,6 +94,16 @@ describe('when modal is closed', () => {
     const { modalContainer } = setupModal(false);
     expect(modalContainer).toHaveStyle('visibility: hidden');
   });
+
+  it('children should not be mounted', () => {
+    const { queryByTestId } = render(
+      <Modal isVisible={false} onClose={props.onClose}>
+        <p data-testid="modal-children">{props.content}</p>
+      </Modal>
+    );
+    const children = queryByTestId('modal-children');
+    expect(children).not.toBeInTheDocument();
+  });
 });
 
 const escapeEvent = {

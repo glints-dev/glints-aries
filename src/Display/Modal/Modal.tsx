@@ -123,7 +123,7 @@ const Modal = (props: Props) => {
             </ModalHeader>
           )}
           <ModalBody className="modal-body" hideContentArea={hideContentArea}>
-            {children}
+            {isVisible && children}
           </ModalBody>
           {footer !== undefined && (
             <ModalFooter className="modal-footer">{footer}</ModalFooter>
