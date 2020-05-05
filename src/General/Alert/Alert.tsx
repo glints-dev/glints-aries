@@ -44,10 +44,12 @@ const Alert = ({
       }, autoClose);
     }
 
-    if (isOpen) {
+    if (isVisible && alertContainerRef.current) {
       alertContainerRef.current.focus();
     }
-  }, [isOpen, setIsVisible, autoClose, onClose]);
+
+    prevIsOpen.current = isOpen;
+  }, [isOpen, isVisible, setIsVisible, autoClose, onClose]);
 
   React.useEffect(() => {
     return () => clearTimeout(autoCloseTimeout.current);
@@ -97,7 +99,7 @@ const Alert = ({
       aria-hidden={isVisible ? 'false' : 'true'}
       aria-describedby="alert-message"
       isOpen={isOpen}
-      isVisible={isVisible}
+      isVisible={isVisible && isOpen}
       tabIndex={0}
       onKeyDown={handleKeyDown(onClose)}
       ref={alertContainerRef}
