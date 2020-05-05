@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumb> should render as expected 1`] = `
+.c1 {
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.c1 * {
+  color: #000000;
+}
+
+.c1 span {
+  margin: 0 1em;
+  color: #AAAAAA;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #F3F3F3;
+  padding: 1em;
+}
+
+.c0 > label:last-child span {
+  display: none;
+}
+
+<div
+  className="c0 aries-breadcrumb"
+>
+  <label
+    className="c1"
+  >
+    one
+    <span>
+      /
+    </span>
+  </label>
+</div>
+`;
+
+exports[`<Breadcrumb> should render as expected 2`] = `
+.c1 {
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.c1 * {
+  color: #000000;
+}
+
+.c1 span {
+  margin: 0 1em;
+  color: #AAAAAA;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #F3F3F3;
+  padding: 1em;
+}
+
+.c0 > label:last-child span {
+  display: none;
+}
+
+<div
+  className="c0 aries-breadcrumb"
+>
+  <label
+    className="c1"
+  >
+    one
+    <span>
+      /
+    </span>
+  </label>
+  <label
+    className="c1"
+  >
+    two
+    <span>
+      /
+    </span>
+  </label>
+</div>
+`;
