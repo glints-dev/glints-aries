@@ -17,7 +17,14 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
-export const Alert = ({ isOpen, autoClose, onClose, type }: Props) => {
+const Alert = ({
+  isOpen,
+  autoClose,
+  onClose,
+  type,
+  className,
+  message,
+}: Props) => {
   const alertContainerRef = React.useRef<HTMLDivElement>();
   const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
   const prevIsOpen = React.useRef(isOpen);
@@ -89,47 +96,36 @@ export const Alert = ({ isOpen, autoClose, onClose, type }: Props) => {
       </React.Fragment>
     );
   }, [type]);
+
+  return isVisible ? (
+    <AlertContainer
+      className={classNames('aries-alert', className)}
+      type={type}
+      role="alertdialog"
+      aria-hidden={isVisible ? 'false' : 'true'}
+      aria-describedby="alert-message"
+      isOpen={isOpen}
+      isVisible={isVisible}
+      tabIndex={0}
+      onKeyDown={handleKeyDown(onClose)}
+      ref={alertContainerRef}
+    >
+      {renderAlertTypeIcon()}
+      <AlertContent className="alert-content">
+        <AlertMessage className="alert-message">{message}</AlertMessage>
+        <AlertIcon
+          className="alert-close"
+          role="button"
+          aria-label="Press Escape or Enter button to close alert"
+          title="Close alert"
+          onClick={onClose}
+        >
+          <CloseIcon color={SecondaryColor.grey} />
+        </AlertIcon>
+      </AlertContent>
+    </AlertContainer>
+  ) : null;
 };
-
-class AlertClass extends React.Component<Props, State> {
-  render() {
-    const { type, isOpen, onClose, className, message } = this.props;
-    const { isVisible } = this.state;
-
-    return isVisible ? (
-      <AlertContainer
-        className={classNames('aries-alert', className)}
-        type={type}
-        role="alertdialog"
-        aria-hidden={isVisible ? 'false' : 'true'}
-        aria-describedby="alert-message"
-        isOpen={isOpen}
-        isVisible={isVisible}
-        tabIndex={0}
-        onKeyDown={this.handleKeyDown(onClose)}
-        ref={this.alertContainerRef}
-      >
-        {this.renderAlertTypeIcon()}
-        <AlertContent className="alert-content">
-          <AlertMessage className="alert-message">{message}</AlertMessage>
-          <AlertIcon
-            className="alert-close"
-            role="button"
-            aria-label="Press Escape or Enter button to close alert"
-            title="Close alert"
-            onClick={onClose}
-          >
-            <CloseIcon color={SecondaryColor.grey} />
-          </AlertIcon>
-        </AlertContent>
-      </AlertContainer>
-    ) : null;
-  }
-}
-
-interface State {
-  isVisible: boolean;
-}
 
 interface Props {
   type: string;
