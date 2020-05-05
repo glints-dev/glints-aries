@@ -41,13 +41,13 @@ export const Alert = ({ isOpen, autoClose, onClose }: Props) => {
       alertContainerRef.current.focus();
     }
   }, [isOpen, setIsVisible, autoClose, onClose]);
+
+  React.useEffect(() => {
+    return () => clearTimeout(autoCloseTimeout.current);
+  }, []);
 };
 
 class AlertClass extends React.Component<Props, State> {
-  componentWillUnmount() {
-    clearTimeout(this.autoCloseTimeout);
-  }
-
   handleKeyDown = (onClose: () => void) => {
     const listener = (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.keyCode === 13 || e.keyCode === 27) {
