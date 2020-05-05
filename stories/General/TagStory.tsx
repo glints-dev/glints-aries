@@ -171,7 +171,7 @@ const TagTypeStory = () => {
         defaultValue: <code>false</code>,
         possibleValue: <code>true | false</code>,
         require: 'no',
-        description: 'Sets Badge into block style.',
+        description: 'Sets Tag into block style.',
       },
       {
         name: 'outline',
@@ -179,7 +179,7 @@ const TagTypeStory = () => {
         defaultValue: <code>false</code>,
         possibleValue: <code>true | false</code>,
         require: 'no',
-        description: 'Sets Badge into outline style.',
+        description: 'Sets Tag into outline style.',
       },
       {
         name: 'border',
@@ -187,7 +187,7 @@ const TagTypeStory = () => {
         defaultValue: <code>solid</code>,
         possibleValue: <code>solid | dashed | none</code>,
         require: 'no',
-        description: "Sets Badge's border style.",
+        description: "Sets Tag's border style.",
       },
     ],
   };
