@@ -17,7 +17,7 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
-export const Alert = ({ isOpen, autoClose, onClose }: Props) => {
+export const Alert = ({ isOpen, autoClose, onClose, type }: Props) => {
   const alertContainerRef = React.useRef<HTMLDivElement>();
   const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
   const prevIsOpen = React.useRef(isOpen);
@@ -55,6 +55,8 @@ export const Alert = ({ isOpen, autoClose, onClose }: Props) => {
 
     return listener;
   }, []);
+
+  const renderAlertTypeIcon = React.useCallback(() => {}, [type]);
 };
 
 class AlertClass extends React.Component<Props, State> {
