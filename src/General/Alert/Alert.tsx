@@ -56,12 +56,7 @@ export const Alert = ({ isOpen, autoClose, onClose, type }: Props) => {
     return listener;
   }, []);
 
-  const renderAlertTypeIcon = React.useCallback(() => {}, [type]);
-};
-
-class AlertClass extends React.Component<Props, State> {
-  renderAlertTypeIcon() {
-    const { type } = this.props;
+  const renderAlertTypeIcon = React.useCallback(() => {
     let AlertTypeIcon = null;
     let alertColor = null;
 
@@ -93,32 +88,12 @@ class AlertClass extends React.Component<Props, State> {
         <AlertTypeIcon color={alertColor} />
       </React.Fragment>
     );
-  }
+  }, [type]);
+};
 
-  renderMessage() {
-    const { message } = this.props;
-
-    return <AlertMessage className="alert-message">{message}</AlertMessage>;
-  }
-
-  renderIcon() {
-    const { onClose } = this.props;
-
-    return (
-      <AlertIcon
-        className="alert-close"
-        role="button"
-        aria-label="Press Escape or Enter button to close alert"
-        title="Close alert"
-        onClick={onClose}
-      >
-        <CloseIcon color={SecondaryColor.grey} />
-      </AlertIcon>
-    );
-  }
-
+class AlertClass extends React.Component<Props, State> {
   render() {
-    const { type, isOpen, onClose, className } = this.props;
+    const { type, isOpen, onClose, className, message } = this.props;
     const { isVisible } = this.state;
 
     return isVisible ? (
@@ -136,8 +111,16 @@ class AlertClass extends React.Component<Props, State> {
       >
         {this.renderAlertTypeIcon()}
         <AlertContent className="alert-content">
-          {this.renderMessage()}
-          {this.renderIcon()}
+          <AlertMessage className="alert-message">{message}</AlertMessage>
+          <AlertIcon
+            className="alert-close"
+            role="button"
+            aria-label="Press Escape or Enter button to close alert"
+            title="Close alert"
+            onClick={onClose}
+          >
+            <CloseIcon color={SecondaryColor.grey} />
+          </AlertIcon>
         </AlertContent>
       </AlertContainer>
     ) : null;
