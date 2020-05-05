@@ -17,35 +17,33 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
-export const Alert = ({ isOpen }: Props) => {
+export const Alert = ({ isOpen, autoClose, onClose }: Props) => {
   const alertContainerRef = React.useRef<HTMLDivElement>();
-  const autoCloseTimeout = React.useRef();
+  const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
+  const prevIsOpen = React.useRef(isOpen);
   const [isVisible, setIsVisible] = React.useState<boolean>(isOpen);
 
   React.useEffect(() => {
     if (isOpen && !isVisible) setIsVisible(true);
   }, [isOpen, isVisible, setIsVisible]);
-};
 
-class AlertClass extends React.Component<Props, State> {
-  componentDidUpdate(prevProps: Props) {
-    const { isOpen } = this.props;
-
-    clearTimeout(this.autoCloseTimeout);
-
-    if (prevProps.isOpen && !isOpen) {
-      setTimeout(() => this.setState({ isVisible: false }), 300);
-    } else if (isOpen && this.props.autoClose) {
-      this.autoCloseTimeout = setTimeout(() => {
-        prevProps.onClose();
-      }, this.props.autoClose);
+  React.useEffect(() => {
+    clearTimeout(autoCloseTimeout.current);
+    if (prevIsOpen.current && !isOpen) {
+      setTimeout(() => setIsVisible(false), 300);
+    } else if (isOpen && autoClose) {
+      autoCloseTimeout.current = setTimeout(() => {
+        onClose();
+      }, autoClose);
     }
 
     if (isOpen) {
-      this.alertContainerRef.current.focus();
+      alertContainerRef.current.focus();
     }
-  }
+  }, [isOpen, setIsVisible, autoClose, onClose]);
+};
 
+class AlertClass extends React.Component<Props, State> {
   componentWillUnmount() {
     clearTimeout(this.autoCloseTimeout);
   }
