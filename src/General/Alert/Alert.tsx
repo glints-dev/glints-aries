@@ -17,25 +17,17 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
-class Alert extends React.Component<Props, State> {
-  alertContainerRef: React.RefObject<HTMLDivElement>;
-  autoCloseTimeout: ReturnType<typeof setTimeout>;
+export const Alert = ({ isOpen }: Props) => {
+  const alertContainerRef = React.useRef<HTMLDivElement>();
+  const autoCloseTimeout = React.useRef();
+  const [isVisible, setIsVisible] = React.useState<boolean>(isOpen);
 
-  constructor(props: Props) {
-    super(props);
-    this.alertContainerRef = React.createRef();
-    this.state = {
-      isVisible: props.isOpen,
-    };
-  }
+  React.useEffect(() => {
+    if (isOpen && !isVisible) setIsVisible(true);
+  }, [isOpen, isVisible, setIsVisible]);
+};
 
-  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-    if (nextProps.isOpen && !prevState.isVisible) {
-      return { isVisible: true };
-    }
-    return null;
-  }
-
+class AlertClass extends React.Component<Props, State> {
   componentDidUpdate(prevProps: Props) {
     const { isOpen } = this.props;
 
