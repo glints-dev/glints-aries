@@ -45,10 +45,8 @@ export const Alert = ({ isOpen, autoClose, onClose }: Props) => {
   React.useEffect(() => {
     return () => clearTimeout(autoCloseTimeout.current);
   }, []);
-};
 
-class AlertClass extends React.Component<Props, State> {
-  handleKeyDown = (onClose: () => void) => {
+  const handleKeyDown = React.useCallback((onClose: () => void) => {
     const listener = (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.keyCode === 13 || e.keyCode === 27) {
         onClose();
@@ -56,8 +54,10 @@ class AlertClass extends React.Component<Props, State> {
     };
 
     return listener;
-  };
+  }, []);
+};
 
+class AlertClass extends React.Component<Props, State> {
   renderAlertTypeIcon() {
     const { type } = this.props;
     let AlertTypeIcon = null;
