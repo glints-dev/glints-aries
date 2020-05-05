@@ -63,38 +63,30 @@ const Alert = ({
     return listener;
   }, []);
 
-  const renderAlertTypeIcon = React.useCallback(() => {
-    let AlertTypeIcon = null;
-    let alertColor = null;
-
+  const { AlertTypeIcon, alertColor } = React.useMemo(() => {
     switch (type) {
       case 'success':
-        AlertTypeIcon = CheckmarkSolidIcon;
-        alertColor = SecondaryColor.darkgreen;
-        break;
+        return {
+          AlertTypeIcon: CheckmarkSolidIcon,
+          alertColor: SecondaryColor.darkgreen,
+        };
       case 'warning':
-        AlertTypeIcon = WarningSolidIcon;
-        alertColor = SecondaryColor.orange;
-        break;
+        return {
+          AlertTypeIcon: WarningSolidIcon,
+          alertColor: SecondaryColor.orange,
+        };
       case 'danger':
-        AlertTypeIcon = WarningSolidIcon;
-        alertColor = PrimaryColor.glintsred;
-        break;
+        return {
+          AlertTypeIcon: WarningSolidIcon,
+          alertColor: PrimaryColor.glintsred,
+        };
       case 'info':
-        AlertTypeIcon = InfoSolidIcon;
-        alertColor = PrimaryColor.glintsblue;
-        break;
       default:
-        AlertTypeIcon = InfoSolidIcon;
-        alertColor = PrimaryColor.glintsblue;
-        break;
+        return {
+          AlertTypeIcon: InfoSolidIcon,
+          alertColor: PrimaryColor.glintsblue,
+        };
     }
-
-    return (
-      <React.Fragment>
-        <AlertTypeIcon color={alertColor} />
-      </React.Fragment>
-    );
   }, [type]);
 
   return isVisible ? (
@@ -110,7 +102,7 @@ const Alert = ({
       onKeyDown={handleKeyDown(onClose)}
       ref={alertContainerRef}
     >
-      {renderAlertTypeIcon()}
+      <AlertTypeIcon color={alertColor} />
       <AlertContent className="alert-content">
         <AlertMessage className="alert-message">{message}</AlertMessage>
         <AlertIcon
