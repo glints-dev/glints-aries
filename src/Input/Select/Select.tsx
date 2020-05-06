@@ -135,7 +135,7 @@ const Select: ISelect = (props: Props) => {
       setCursor(0);
 
       if (onChange !== undefined) {
-        return onChange(e.target.value);
+        return onChange(e);
       }
     },
     [children, onChange]
@@ -148,7 +148,7 @@ const Select: ISelect = (props: Props) => {
   // Should be called when the user selects an option
   const handleSelect = React.useCallback(
     (e?: React.ChangeEvent<HTMLInputElement>) => {
-      const activeElement = getActiveElement();
+      const activeElement = e ? e.target : getActiveElement();
       const selectedValue = activeElement.textContent;
       setSelectedValue(selectedValue);
       setFilterValue(React.Children.map(children, data => data));
@@ -156,7 +156,7 @@ const Select: ISelect = (props: Props) => {
       setFloating(true);
 
       if (onChange !== undefined) {
-        onChange(selectedValue);
+        onChange(activeElement.getAttribute('data-value'));
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
