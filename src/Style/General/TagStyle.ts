@@ -13,8 +13,7 @@ export const TagContainer = styled.div<TagContainerProps>`
   border-radius: ${({ block }) => !block && '20px'};
   border-width: 1px;
   border-style: solid;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 14px;
   color: ${Greyscale.black};
 
   ${({ isClickable }) => {
