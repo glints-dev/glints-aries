@@ -135,7 +135,7 @@ const Select: ISelect = (props: Props) => {
       setCursor(0);
 
       if (onChange !== undefined) {
-        return onChange(e.target.value);
+        return onChange(e);
       }
     },
     [children, onChange]
