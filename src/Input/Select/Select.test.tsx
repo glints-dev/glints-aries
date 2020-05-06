@@ -186,8 +186,9 @@ describe('when it is clicked', () => {
 
 describe('when an option is clicked', () => {
   it('should call the onOptionClick function', () => {
-    setupSelectOptionFromMenu();
+    const { randomOption } = setupSelectOptionFromMenu();
     expect(props.onOptionClick).toHaveBeenCalledTimes(1);
+    expect(props.onChange).toHaveBeenCalledWith(randomOption.dataset.value);
   });
 
   it('should show the value of the option on the select input', () => {
@@ -203,8 +204,10 @@ describe('when an option is clicked', () => {
 
 describe('when the enter key is pressed on an option', () => {
   it('should call the onOptionClick function', () => {
-    setupSelectOptionFromMenuWithKeyHandling();
-    expect(props.onOptionClick).toHaveBeenCalledTimes(1);
+    const { randomOption } = setupSelectOptionFromMenuWithKeyHandling();
+    expect(props.onChange).toHaveBeenCalledWith(
+      randomOption.getAttribute('data-value')
+    );
   });
 
   it('should show the value of the option on the select input', () => {
