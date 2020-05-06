@@ -27,28 +27,34 @@ const Alert = ({
 }: Props) => {
   const alertContainerRef = React.useRef<HTMLDivElement>();
   const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
-  const prevIsOpen = React.useRef(isOpen);
   const [isVisible, setIsVisible] = React.useState<boolean>(isOpen);
 
   React.useEffect(() => {
-    if (isOpen && !isVisible) setIsVisible(true);
+    if (isOpen && !isVisible) {
+      setIsVisible(true);
+    }
+    if (!isOpen && isVisible) {
+      setTimeout(() => setIsVisible(false), 300);
+    }
   }, [isOpen, isVisible, setIsVisible]);
 
+  // focus alert element for keydown event
   React.useEffect(() => {
-    clearTimeout(autoCloseTimeout.current);
-    if (prevIsOpen.current && !isOpen) {
-      setTimeout(() => setIsVisible(false), 300);
-    } else if (isOpen && autoClose) {
+    if (isVisible && alertContainerRef.current) {
+      alertContainerRef.current.focus();
+    }
+  }, [isVisible]);
+
+  React.useEffect(() => {
+    if (autoCloseTimeout.current) {
+      clearTimeout(autoCloseTimeout.current);
+    }
+
+    if (isOpen && autoClose) {
       autoCloseTimeout.current = setTimeout(() => {
         onClose();
       }, autoClose);
     }
-
-    if (isVisible && alertContainerRef.current) {
-      alertContainerRef.current.focus();
-    }
-
-    prevIsOpen.current = isOpen;
   }, [isOpen, isVisible, setIsVisible, autoClose, onClose]);
 
   React.useEffect(() => {
