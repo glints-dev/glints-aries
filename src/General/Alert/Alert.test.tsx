@@ -262,8 +262,7 @@ describe('<Alert/> timeout', () => {
   });
 
   test('autoCloseTimeout should be cleared before component unmount', async () => {
-    // this test case needs to be rewritten after Alert is updated to a functional component
-    const ref = React.createRef<Alert>();
+    const useRefSpy = jest.spyOn(React, 'useRef');
     const clearTimeoutSpy = jest.spyOn(window, 'clearTimeout');
     const { rerender, unmount } = render(
       <Alert
@@ -272,7 +271,6 @@ describe('<Alert/> timeout', () => {
         isOpen={false}
         onClose={jest.fn()}
         autoClose={100}
-        ref={ref}
       />
     );
 
@@ -283,17 +281,17 @@ describe('<Alert/> timeout', () => {
         isOpen={true}
         onClose={jest.fn()}
         autoClose={100}
-        ref={ref}
       />
     );
-    expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
-    expect(clearTimeoutSpy.mock.calls[0][0]).toEqual(undefined);
-    const autoCloseTimeout = ref.current.autoCloseTimeout;
 
     unmount();
     expect(clearTimeoutSpy).toHaveBeenCalledTimes(2);
-    expect(clearTimeoutSpy.mock.calls[1][0]).toEqual(autoCloseTimeout);
+    expect(clearTimeoutSpy.mock.calls[1][0]).toEqual(
+      useRefSpy.mock.results[1].value.current
+    );
+
     clearTimeoutSpy.mockRestore();
+    useRefSpy.mockRestore();
   });
 });
 
