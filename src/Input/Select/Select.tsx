@@ -156,7 +156,7 @@ const Select: ISelect = (props: Props) => {
       setFloating(true);
 
       if (onChange !== undefined) {
-        onChange(selectedValue);
+        onChange(activeElement.getAttribute('data-value'));
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
