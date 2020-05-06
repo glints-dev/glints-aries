@@ -12,6 +12,7 @@ export const TagContainer = styled.div<TagContainerProps>`
   display: inline-flex;
   border-radius: ${({ block }) => !block && '20px'};
   border-width: 1px;
+  border-style: solid;
   font-size: 1em;
   line-height: 1.5;
   color: ${Greyscale.black};
@@ -37,24 +38,6 @@ export const TagContainer = styled.div<TagContainerProps>`
     }
   }}
 
-  ${({ border }) => {
-    switch (border) {
-      case 'none':
-        return `
-          border-style: solid;
-          border-color: transparent;
-        `;
-      case 'dashed':
-        return `
-          border-style: dashed;
-        `;
-      default:
-        return `
-          border-style: solid;
-        `;
-    }
-  }};
-
   &:focus {
     outline: none;
   }
@@ -66,14 +49,12 @@ export const TagContainer = styled.div<TagContainerProps>`
 
 interface TagContainerProps {
   block?: boolean;
-  border?: string;
   outline?: boolean;
   isClickable?: boolean;
 }
 
 const IconContainer = styled.span`
   display: inline-flex;
-  cursor: pointer;
 
   svg {
     width: 12px; /* TODO: replace by icon-sizes variable after Iconography is done */
@@ -87,4 +68,14 @@ export const StartIconContainer = styled(IconContainer)`
 
 export const EndIconContainer = styled(IconContainer)`
   margin-left: 8px; /* TODO: replace by spacing */
+
+  svg {
+    fill: ${Greyscale.grey};
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      fill: ${Greyscale.black};
+    }
+  }
 `;
