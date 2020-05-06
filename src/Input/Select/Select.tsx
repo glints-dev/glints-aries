@@ -148,7 +148,7 @@ const Select: ISelect = (props: Props) => {
   // Should be called when the user selects an option
   const handleSelect = React.useCallback(
     (e?: React.ChangeEvent<HTMLInputElement>) => {
-      const activeElement = getActiveElement();
+      const activeElement = e ? e.target : getActiveElement();
       const selectedValue = activeElement.textContent;
       setSelectedValue(selectedValue);
       setFilterValue(React.Children.map(children, data => data));
