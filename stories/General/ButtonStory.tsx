@@ -38,6 +38,9 @@ const ButtonVariantStory = () => {
 /* Ghost Button */
 <Button variant="${ButtonVariant.GHOST}">${ButtonVariant.GHOST}</Button>
 
+/* White-Grey Button */
+<Button variant="${ButtonVariant.WHITE_GREY}">${ButtonVariant.WHITE_GREY}</Button>
+
 /* Link Button */
 <Button variant="${ButtonVariant.LINK}">${ButtonVariant.LINK}</Button>
 `;
@@ -75,6 +78,11 @@ const ButtonVariantStory = () => {
         <Button variant={ButtonVariant.GHOST}>{ButtonVariant.GHOST}</Button>
       </ButtonRow>
       <ButtonRow>
+        <Button variant={ButtonVariant.WHITE_GREY}>
+          {ButtonVariant.WHITE_GREY}
+        </Button>
+      </ButtonRow>
+      <ButtonRow>
         <Button variant={ButtonVariant.LINK}>{ButtonVariant.LINK}</Button>
       </ButtonRow>
     </StorybookComponent>
@@ -90,9 +98,12 @@ const ButtonDisableStory = () => {
 
 /* Ghost Button */
 <Button variant="${ButtonVariant.GHOST} disabled">${ButtonVariant.GHOST}</Button>
+
+/* White-Grey Button */
+<Button variant="${ButtonVariant.WHITE_GREY} disabled">${ButtonVariant.WHITE_GREY}</Button>
 `;
   const propsObject = {
-    'Solid Button, Solid-Shadow Button, Ghost Button': [
+    'Solid Button, Solid-Shadow Button, Ghost Button, White-Grey Button': [
       {
         name: 'disabled',
         type: 'boolean',
@@ -119,6 +130,11 @@ const ButtonDisableStory = () => {
           {ButtonVariant.GHOST}
         </Button>
       </ButtonRow>
+      <ButtonRow>
+        <Button variant={ButtonVariant.WHITE_GREY} disabled>
+          {ButtonVariant.WHITE_GREY}
+        </Button>
+      </ButtonRow>
     </StorybookComponent>
   );
 };
@@ -138,9 +154,14 @@ const ButtonSizeStory = () => {
 <Button variant="${ButtonVariant.GHOST}" small>Small</Button>
 <Button variant="${ButtonVariant.GHOST}">Normal</Button>
 <Button variant="${ButtonVariant.GHOST}" block>Block</Button>
+
+/* White-Grey Button */
+<Button variant="${ButtonVariant.WHITE_GREY}" small>Small</Button>
+<Button variant="${ButtonVariant.WHITE_GREY}">Normal</Button>
+<Button variant="${ButtonVariant.WHITE_GREY}" block>Block</Button>
 `;
   const propsObject = {
-    'Solid Button, Solid-Shadow Button, Ghost Button': [
+    'Solid Button, Solid-Shadow Button, Ghost Button, White-Grey Button': [
       {
         name: 'small',
         type: 'boolean',
@@ -196,6 +217,17 @@ const ButtonSizeStory = () => {
           </Button>
         </BlockButtonContainer>
       </ButtonRow>
+      <ButtonRow>
+        <Button variant={ButtonVariant.WHITE_GREY} small>
+          Small
+        </Button>
+        <Button variant={ButtonVariant.WHITE_GREY}>Normal</Button>
+        <BlockButtonContainer>
+          <Button variant={ButtonVariant.WHITE_GREY} block>
+            Block
+          </Button>
+        </BlockButtonContainer>
+      </ButtonRow>
     </StorybookComponent>
   );
 };
@@ -240,7 +272,11 @@ const ButtonWithIconStory = () => {
 
 /* Ghost Button */
 <Button variant="${ButtonVariant.GHOST}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${ButtonVariant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
+<Button variant="${ButtonVariant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
+
+/* White-Grey Button */
+<Button variant="${ButtonVariant.WHITE_GREY}" startIcon={<ViewIcon />}>Button</Button>
+<Button variant="${ButtonVariant.WHITE_GREY}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
   const propsObject = {
     All: [
       {
@@ -295,6 +331,17 @@ const ButtonWithIconStory = () => {
           Button Icon Right
         </Button>
       </ButtonRow>
+      <ButtonRow>
+        <Button variant={ButtonVariant.WHITE_GREY} startIcon={<ViewIcon />}>
+          Button Icon Left
+        </Button>
+        <Button
+          variant={ButtonVariant.WHITE_GREY}
+          endIcon={<ArrowRoundForwardIcon />}
+        >
+          Button Icon Right
+        </Button>
+      </ButtonRow>
     </StorybookComponent>
   );
 };
@@ -340,6 +387,7 @@ const ButtonRow = styled.div`
   margin-top: 15px;
   margin-bottom: 15px;
 
+  > button,
   > div {
     margin-right: 20px;
   }

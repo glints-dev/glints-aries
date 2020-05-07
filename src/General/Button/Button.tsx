@@ -9,6 +9,7 @@ import { ButtonVariant } from '../../Utils/StyleConfig';
 import {
   StartIconContainer,
   EndIconContainer,
+  WhiteGreyBtn,
 } from '../../Style/General/ButtonStyle';
 
 const renderButton: React.FunctionComponent<Props> = ({
@@ -58,6 +59,19 @@ const renderButton: React.FunctionComponent<Props> = ({
         >
           {content}
         </GhostButton>
+      );
+    case ButtonVariant.WHITE_GREY:
+      return (
+        <WhiteGreyBtn
+          className={className}
+          disabled={disabled}
+          onClick={onClick}
+          block={block}
+          small={small}
+          {...defaultProps}
+        >
+          {content}
+        </WhiteGreyBtn>
       );
     case ButtonVariant.LINK:
       return (

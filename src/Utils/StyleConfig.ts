@@ -19,6 +19,7 @@ export const ButtonVariant = {
   SOLID: 'solid',
   SOLID_SHADOW: 'solid-shadow',
   GHOST: 'ghost',
+  WHITE_GREY: 'white-grey',
   LINK: 'link',
 };
 

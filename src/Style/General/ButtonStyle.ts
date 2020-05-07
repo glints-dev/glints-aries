@@ -406,6 +406,41 @@ interface GhostBtnContainerProps {
 }
 
 /*
+ * White-Grey Button
+ */
+export const WhiteGreyBtn = styled(Button)<WhiteGreyBtnProps>`
+  width: ${({ block }) => block && '100%'};
+
+  ${({ disabled }) => {
+    if (!disabled) {
+      return `
+        background-color: ${Greyscale.white};
+        color: ${SecondaryColor.actionblue};
+
+        &:hover {
+          background-color: ${Greyscale.softgrey};
+          color: ${SecondaryColor.actionblue};
+        }
+
+        &:active {
+          background-color: ${Greyscale.black};
+          color: ${Greyscale.white};
+        }
+      `;
+    }
+    return `
+      background-color: ${Greyscale.lightgrey};
+      color: ${Greyscale.white};
+      cursor: not-allowed;
+    `;
+  }}
+`;
+
+interface WhiteGreyBtnProps {
+  block?: boolean;
+}
+
+/*
  * Link Button
  */
 
