@@ -6,24 +6,25 @@ import {
   EndIconContainer,
 } from '../../Style/General/TagStyle';
 
-import { AddTag } from './AddTag';
-import { ResetTag } from './ResetTag';
+import { AddTag } from './ActionTags/AddTag';
+import { ResetTag } from './ActionTags/ResetTag';
 import BasicTag from './BasicTag';
 
-const Tag: React.FunctionComponent<{
-  variant?: string;
-  action?: string;
-  block?: boolean;
-  outline?: boolean;
-  border?: string;
-  onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
-  icon?: React.ReactNode;
-}> = ({ variant, action, children, icon, onClick, ...resetProps }) => {
+const Tag: React.FunctionComponent<Props> = ({
+  variant,
+  action,
+  children,
+  icon,
+  block,
+  outline,
+  onClick,
+  ...resetProps
+}) => {
   if (variant === 'action') {
     switch (action) {
       case 'add':
         return (
-          <AddTag onClick={onClick}>
+          <AddTag onClick={onClick} {...resetProps}>
             <StartIconContainer>
               <AddIcon />
             </StartIconContainer>
@@ -32,7 +33,7 @@ const Tag: React.FunctionComponent<{
         );
       case 'reset':
         return (
-          <ResetTag onClick={onClick}>
+          <ResetTag onClick={onClick} {...resetProps}>
             <StartIconContainer>
               <TrashIcon />
             </StartIconContainer>
@@ -43,13 +44,36 @@ const Tag: React.FunctionComponent<{
     }
   } else if (variant === 'button') {
     return (
-      <BasicTag onClick={onClick}>
+      <BasicTag {...resetProps}>
         {children}
         <EndIconContainer>{icon}</EndIconContainer>
       </BasicTag>
     );
   }
-  return <BasicTag {...resetProps}>{children}</BasicTag>;
+  return (
+    <BasicTag block={block} outline={outline} {...resetProps}>
+      {children}
+    </BasicTag>
+  );
 };
+
+interface BasicTagProps {
+  block?: boolean;
+  outline?: boolean;
+}
+
+interface ButtonTagProps {
+  icon?: React.ReactNode;
+}
+
+interface ActionTagProps {
+  action?: string;
+  onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
+}
+
+interface Props extends BasicTagProps, ButtonTagProps, ActionTagProps {
+  children: React.ReactNode;
+  variant?: string;
+}
 
 export default Tag;

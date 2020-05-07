@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { PrimaryColor } from '../../Style/Colors';
-import BasicTag from './BasicTag';
+import { PrimaryColor } from '../../../Style/Colors';
+import BasicTag from '../BasicTag';
 
 export const ResetTag = styled(BasicTag)`
   color: ${PrimaryColor.glintsred};

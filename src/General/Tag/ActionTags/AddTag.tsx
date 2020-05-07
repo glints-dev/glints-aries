@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { Greyscale, SecondaryColor } from '../../Style/Colors';
-import BasicTag from './BasicTag';
+import { Greyscale, SecondaryColor } from '../../../Style/Colors';
+import BasicTag from '../BasicTag';
 
 export const AddTag = styled(BasicTag)`
   border-style: dashed;
