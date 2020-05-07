@@ -56,16 +56,23 @@ it('should not call onClick when it is disabled', () => {
 });
 
 describe('contains the correct className for each variant:', () => {
-  const variants = [...Object.values(ButtonVariant)];
-  variants.forEach(variant => {
+  const classNameMap = {
+    [ButtonVariant.SOLID_BLUE]: 'aries-solid-btn',
+    [ButtonVariant.SOLID_BLUE]: 'aries-solid-btn',
+    [ButtonVariant.YELLOW]: 'aries-solid-shadow-btn',
+    [ButtonVariant.GHOST]: 'aries-ghostbtn',
+    [ButtonVariant.LINK]: 'aries-linkbtn',
+  };
+
+  Object.keys(classNameMap).forEach(variant => {
     it(`${variant}`, () => {
       const { getByText } = render(<Button variant={variant}>click me</Button>);
       if (variant === ButtonVariant.LINK) {
         const linkButton = getByText('click me');
-        expect(linkButton).toHaveClass(`aries-${variant}btn`);
+        expect(linkButton).toHaveClass(classNameMap[variant]);
       } else {
         const buttonContainer = getByText('click me').parentNode;
-        expect(buttonContainer).toHaveClass(`aries-${variant}btn`);
+        expect(buttonContainer).toHaveClass(classNameMap[variant]);
       }
     });
   });

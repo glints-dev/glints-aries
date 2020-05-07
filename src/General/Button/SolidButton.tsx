@@ -13,13 +13,13 @@ const SolidButton: React.FunctionComponent<Props> = ({
   ...defaultProps
 }) => (
   <SolidBtnContainer
-    className={classNames('aries-solidbtn', className)}
+    className={classNames('aries-solid-btn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
   >
     <SolidBtn
-      className="solidbtn-content"
+      className="solid-btn-content"
       theme={theme}
       disabled={disabled}
       block={block}

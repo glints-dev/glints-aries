@@ -16,13 +16,13 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
   ...defaultProps
 }) => (
   <SolidShadowContainer
-    className={classNames('aries-solid-shadowbtn', className)}
+    className={classNames('aries-solid-shadow-btn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
   >
     <SolidShadowBtn
-      className="solid-shadowbtn-content"
+      className="solid-shadow-btn-content"
       theme={theme}
       disabled={disabled}
       block={block}
