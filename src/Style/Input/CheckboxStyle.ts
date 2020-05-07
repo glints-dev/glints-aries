@@ -8,19 +8,28 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
   font-size: ${({ size }) => (size === 'small' ? '14px' : '16px')};
   line-height: 1.5;
 
-  &.border {
-    border: 1px solid #aaaaaa;
-    height: ${({ size }) => (size === 'small' ? '40px' : '43px')};
-    padding: 10px 15px;
-    border-radius: 2px;
-  }
-  &.border:hover {
-    background: rgba(1, 126, 183, 0.1);
-    border-color: ${SecondaryColor.actionblue};
-  }
-  &.checked {
-    border-color: ${SecondaryColor.actionblue};
-  }
+  ${({ border }) => {
+    if (border) {
+      return `
+        border: 1px solid #aaaaaa;
+        height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
+        padding: 10px 15px;
+        border-radius: 2px;
+        &:hover {
+          background: rgba(1, 126, 183, 0.1);
+          border-color: ${SecondaryColor.actionblue};
+        }
+      `;
+    }
+  }};
+
+  ${({ checked }) => {
+    if (checked) {
+      return `
+        border-color: ${SecondaryColor.actionblue};
+      `;
+    }
+  }};
 
   &:focus {
     outline: none;
@@ -38,13 +47,6 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     display: none;
     cursor: pointer;
 
-    &.border {
-      &:checked + label:before {
-        background: ${SecondaryColor.actionblue};
-        border: 2px solid ${SecondaryColor.actionblue};
-      }
-    }
-
     &:checked + label:after {
       content: '';
       display: block;
@@ -59,8 +61,15 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     }
 
     &:checked + label:before {
-      background: ${SecondaryColor.darkgreen};
-      border: 2px solid ${SecondaryColor.darkgreen};
+      background: ${({ border }) =>
+        border
+          ? `${SecondaryColor.actionblue}`
+          : `${SecondaryColor.darkgreen}`};
+      border: 2px solid
+        ${({ border }) =>
+          border
+            ? `${SecondaryColor.actionblue}`
+            : `${SecondaryColor.darkgreen}`};
     }
   }
 
@@ -84,10 +93,10 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       position: relative;
       vertical-align: middle;
       cursor: pointer;
-      margin-right: 0.5em;
+      margin-right: 10px;
       border-radius: 4px;
-      height: 1em;
-      width: 1em;
+      height: 18px;
+      width: 18px;
     }
   }
 `;

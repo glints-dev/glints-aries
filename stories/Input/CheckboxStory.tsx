@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 
+import Divider from '../../src/General/Divider';
+import Heading from '../../src/General/Heading';
 import Checkbox from '../../src/Input/Checkbox';
 
 const props = {
@@ -50,14 +52,33 @@ const props = {
 };
 
 const CheckboxStory = () => (
-  <StorybookComponent
-    title="Checkbox"
-    code="import { Checkbox } from 'glints-aries'"
-    propsObject={props}
-    usage={'<Checkbox id="software-engineer" value="Software Engineer" />'}
-  >
-    <Checkbox id="software-engineer" value="Software Engineer" />
-  </StorybookComponent>
+  <React.Fragment>
+    <StorybookComponent
+      title="Checkbox"
+      code="import { Checkbox } from 'glints-aries'"
+      propsObject={props}
+      usage={'<Checkbox id="software-engineer" value="Software Engineer" />'}
+    >
+      <Checkbox id="software-engineer" value="Software Engineer" />
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      usage={
+        '<Checkbox id="software-engineer" value="Software Engineer" border={true} />'
+      }
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Checkbox with border
+      </Heading>
+      <Checkbox
+        id="software-engineer-border"
+        value="Software Engineer"
+        border={true}
+      />
+    </StorybookComponent>
+  </React.Fragment>
 );
 
 export default CheckboxStory;

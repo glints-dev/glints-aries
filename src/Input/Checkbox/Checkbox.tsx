@@ -24,19 +24,20 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
 
   return (
     <CheckboxContainer
-      className={classNames('aries-checkbox', { border, checked }, className)}
+      className={classNames('aries-checkbox', className)}
       role="checkbox"
       aria-labelledby={id}
       aria-checked={checked}
       tabIndex={0}
       size={size}
+      border={border}
+      checked={checked}
     >
       <input
         type="checkbox"
         id={id}
         value={value}
         onClick={handleClick}
-        className={classNames({ border })}
         {...restProps}
       />
       <label htmlFor={id} tabIndex={-1}>
