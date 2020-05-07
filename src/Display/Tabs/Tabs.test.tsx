@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import * as renderer from 'react-test-renderer';
+import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import Tabs from './Tabs';
 import { EHorizontalTabVariant } from '../../Utils/StyleConfig';
-import { SecondaryColor } from '../../Style/Colors';
 
 describe('<Tabs/> render', () => {
   test('should match snapshot', () => {
@@ -24,52 +24,44 @@ describe('<Tabs/> render', () => {
   });
 });
 
-describe('<Tabs/> should render correctly with the alignment prop', () => {
-  test('horizontal, when alignment is set horizontal', () => {
-    const { getByRole } = render(
-      <Tabs alignment="horizontal">
-        <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
-        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
-        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
-        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
-      </Tabs>
-    );
-    const tabContainer = getByRole('tablist');
-    expect(tabContainer).toHaveStyle('display: flex');
-  });
+describe('<Tabs/> snapshots with alignment props', () => {
+  const matchTabSnapshotsWithAlignment = (alignment: string) => {
+    test(`alignment ${alignment}`, () => {
+      const { asFragment } = render(
+        <Tabs alignment={alignment} variant={EHorizontalTabVariant.UNDERLINED}>
+          <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
+          <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+          <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+          <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+        </Tabs>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  ['horizontal', 'vertical'].forEach(alignment =>
+    matchTabSnapshotsWithAlignment(alignment)
+  );
 });
 
-describe('<Tabs/> should render correctly with the variant prop', () => {
-  test('colored, when alignment is set colored', () => {
-    const { getByRole } = render(
-      <Tabs alignment="horizontal" variant={EHorizontalTabVariant.COLORED}>
-        <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
-        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
-        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
-        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
-      </Tabs>
-    );
-    const tabContainer = getByRole('tablist');
-    expect(tabContainer).toHaveStyle(`
-      border-top: 1px solid ${SecondaryColor.lightergrey}; 
-      border-bottom: 1px solid ${SecondaryColor.lightergrey};
-    `);
-  });
+describe('<Tabs/> snapshots with variant props', () => {
+  const matchTabSnapshotsWithVariant = (variant: EHorizontalTabVariant) => {
+    test(`alignment ${variant}`, () => {
+      const { asFragment } = render(
+        <Tabs alignment="horizontal" variant={variant}>
+          <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
+          <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+          <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+          <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+        </Tabs>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
 
-  test('underlined, when alignment is set underlined', () => {
-    const { getByRole } = render(
-      <Tabs alignment="horizontal" variant={EHorizontalTabVariant.UNDERLINED}>
-        <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
-        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
-        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
-        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
-      </Tabs>
-    );
-    const tabContainer = getByRole('tablist');
-    expect(tabContainer).toHaveStyle(
-      `border-bottom: 1px solid ${SecondaryColor.lightergrey}`
-    );
-  });
+  Object.values(EHorizontalTabVariant).forEach(variant =>
+    matchTabSnapshotsWithVariant(variant)
+  );
 });
 
 describe('<Tabs/> should render correctly with an active tab item set', () => {
@@ -92,9 +84,10 @@ describe('<Tabs/> should render correctly with an active tab item set', () => {
 describe('<Tabs/> should render correctly when an item is clicked', () => {
   const firstTabIndex = 0;
   const clickedTabIndex = 1;
+  const onTabClick = jest.fn();
   test('clicked tab pane should show the correct body and the item should turn active', () => {
     const { getAllByRole, queryByText } = render(
-      <Tabs>
+      <Tabs onTabClick={onTabClick}>
         <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
         <Tabs.Pane tab="Company">Glints</Tabs.Pane>
       </Tabs>
@@ -103,6 +96,7 @@ describe('<Tabs/> should render correctly when an item is clicked', () => {
 
     expect(tab[firstTabIndex]).toHaveStyle('font-weight: bold');
     expect(tab[clickedTabIndex]).not.toHaveStyle('font-weight: bold');
+    expect(onTabClick).not.toHaveBeenCalled();
 
     fireEvent.click(tab[clickedTabIndex]);
     const Job = queryByText('Software Engineering');
@@ -112,5 +106,6 @@ describe('<Tabs/> should render correctly when an item is clicked', () => {
     expect(tab[clickedTabIndex]).toHaveStyle('font-weight: bold');
     expect(Job).not.toBeInTheDocument();
     expect(Company).toBeVisible();
+    expect(onTabClick).toHaveBeenCalled();
   });
 });
