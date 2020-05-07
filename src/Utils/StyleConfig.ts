@@ -16,8 +16,9 @@ export enum ETooltipPosition {
 }
 
 export const ButtonVariant = {
-  SOLID: 'solid',
-  SOLID_SHADOW: 'solid-shadow',
+  SOLID_WHITE: 'solid-white',
+  SOLID_BLUE: 'solid-blue',
+  YELLOW: 'yellow',
   GHOST: 'ghost',
   WHITE_GREY: 'white-grey',
   LINK: 'link',

@@ -90,7 +90,7 @@ handleOnClose = () => {
   autoClose={3000}
 />`}
       >
-        <Button theme="blue" onClick={this.handleOnClick}>
+        <Button variant="solid-blue" onClick={this.handleOnClick}>
           Open Alert
         </Button>
         <Alert

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { omit } from 'lodash';
 
 import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
@@ -10,7 +11,11 @@ import {
   ArrowRoundForwardIcon,
 } from '../../src/General/Icon/components';
 
-import { ButtonVariant, ButtonTheme } from '../../src/Utils/StyleConfig';
+import { ButtonVariant } from '../../src/Utils/StyleConfig';
+
+const ButtonVariantWithoutLink = omit(ButtonVariant, ['LINK']);
+const AllButtonNamesWithouLink =
+  'Solid-White Button, Solid-Blue Button, Yellow Button, Ghost Button, White-Grey Button';
 
 const ButtonStories = () => (
   <React.Fragment>
@@ -20,8 +25,6 @@ const ButtonStories = () => (
     <Divider theme="grey" />
     <ButtonSizeStory />
     <Divider theme="grey" />
-    <ButtonThemeStory />
-    <Divider theme="grey" />
     <ButtonWithIconStory />
     <Divider theme="grey" />
     <ButtonWithTagStory />
@@ -29,11 +32,14 @@ const ButtonStories = () => (
 );
 
 const ButtonVariantStory = () => {
-  const usage = `/* Solid Button */
-<Button>${ButtonVariant.SOLID}</Button>
+  const usage = `/* Solid-White Button */
+<Button>${ButtonVariant.SOLID_WHITE}</Button>
 
-/* Solid-Shadow Button */
-<Button variant="${ButtonVariant.SOLID_SHADOW}">${ButtonVariant.SOLID_SHADOW}</Button>
+/* Solid-Blue Button */
+<Button>${ButtonVariant.SOLID_BLUE}</Button>
+
+/* Yellow Button */
+<Button variant="${ButtonVariant.YELLOW}">${ButtonVariant.YELLOW}</Button>
 
 /* Ghost Button */
 <Button variant="${ButtonVariant.GHOST}">${ButtonVariant.GHOST}</Button>
@@ -49,7 +55,7 @@ const ButtonVariantStory = () => {
       {
         name: 'variant',
         type: 'string',
-        defaultValue: `"${ButtonVariant.SOLID}"`,
+        defaultValue: `"${ButtonVariant.SOLID_WHITE}"`,
         possibleValue: `${Object.values(ButtonVariant)
           .map(value => `"${value}"`)
           .join(' | ')}`,
@@ -66,44 +72,19 @@ const ButtonVariantStory = () => {
       propsObject={propsObject}
     >
       <Heading>Variants</Heading>
-      <ButtonRow>
-        <Button>{ButtonVariant.SOLID}</Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.SOLID_SHADOW}>
-          {ButtonVariant.SOLID_SHADOW}
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.GHOST}>{ButtonVariant.GHOST}</Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.WHITE_GREY}>
-          {ButtonVariant.WHITE_GREY}
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.LINK}>{ButtonVariant.LINK}</Button>
-      </ButtonRow>
+      {Object.values(ButtonVariant).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant}>{variant}</Button>
+        </ButtonRow>
+      ))}
     </StorybookComponent>
   );
 };
 
 const ButtonDisableStory = () => {
-  const usage = `/* Solid Button */
-<Button disabled>${ButtonVariant.SOLID}</Button>
-
-/* Solid-Shadow Button */
-<Button variant="${ButtonVariant.SOLID_SHADOW}" disabled>${ButtonVariant.SOLID_SHADOW}</Button>
-
-/* Ghost Button */
-<Button variant="${ButtonVariant.GHOST} disabled">${ButtonVariant.GHOST}</Button>
-
-/* White-Grey Button */
-<Button variant="${ButtonVariant.WHITE_GREY} disabled">${ButtonVariant.WHITE_GREY}</Button>
-`;
+  const usage = `<Button disabled>disabled</Button>`;
   const propsObject = {
-    'Solid Button, Solid-Shadow Button, Ghost Button, White-Grey Button': [
+    [AllButtonNamesWithouLink]: [
       {
         name: 'disabled',
         type: 'boolean',
@@ -117,51 +98,23 @@ const ButtonDisableStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Disabled</Heading>
-      <ButtonRow>
-        <Button disabled>{ButtonVariant.SOLID}</Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.SOLID_SHADOW} disabled>
-          {ButtonVariant.SOLID_SHADOW}
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.GHOST} disabled>
-          {ButtonVariant.GHOST}
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.WHITE_GREY} disabled>
-          {ButtonVariant.WHITE_GREY}
-        </Button>
-      </ButtonRow>
+      {Object.values(ButtonVariantWithoutLink).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant} disabled>
+            {variant}
+          </Button>
+        </ButtonRow>
+      ))}
     </StorybookComponent>
   );
 };
 
 const ButtonSizeStory = () => {
-  const usage = `/* Solid Button */
-<Button theme="${ButtonTheme.BLUE}" small>Small</Button>
-<Button theme="${ButtonTheme.BLUE}">Normal</Button>
-<Button theme="${ButtonTheme.BLUE}" block>Block</Button>
-
-/* Solid-Shadow Button */
-<Button variant="${ButtonVariant.SOLID_SHADOW}" small>Small</Button>
-<Button variant="${ButtonVariant.SOLID_SHADOW}">Normal</Button>
-<Button variant="${ButtonVariant.SOLID_SHADOW}" block>Block</Button>
-
-/* Ghost Button */
-<Button variant="${ButtonVariant.GHOST}" small>Small</Button>
-<Button variant="${ButtonVariant.GHOST}">Normal</Button>
-<Button variant="${ButtonVariant.GHOST}" block>Block</Button>
-
-/* White-Grey Button */
-<Button variant="${ButtonVariant.WHITE_GREY}" small>Small</Button>
-<Button variant="${ButtonVariant.WHITE_GREY}">Normal</Button>
-<Button variant="${ButtonVariant.WHITE_GREY}" block>Block</Button>
-`;
+  const usage = `<Button small>Small</Button>
+<Button>Normal</Button>
+<Button block>Block</Button>`;
   const propsObject = {
-    'Solid Button, Solid-Shadow Button, Ghost Button, White-Grey Button': [
+    [AllButtonNamesWithouLink]: [
       {
         name: 'small',
         type: 'boolean',
@@ -184,101 +137,28 @@ const ButtonSizeStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Sizes</Heading>
-      <ButtonRow>
-        <Button theme={ButtonTheme.BLUE} small>
-          Small
-        </Button>
-        <Button theme={ButtonTheme.BLUE}>Normal</Button>
-        <BlockButtonContainer>
-          <Button theme={ButtonTheme.BLUE} block>
-            Block
+      {Object.values(ButtonVariantWithoutLink).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant} small>
+            Small
           </Button>
-        </BlockButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.SOLID_SHADOW} small>
-          Small
-        </Button>
-        <Button variant={ButtonVariant.SOLID_SHADOW}>Normal</Button>
-        <BlockButtonContainer>
-          <Button variant={ButtonVariant.SOLID_SHADOW} block>
-            Block
-          </Button>
-        </BlockButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.GHOST} small>
-          Small
-        </Button>
-        <Button variant={ButtonVariant.GHOST}>Normal</Button>
-        <BlockButtonContainer>
-          <Button variant={ButtonVariant.GHOST} block>
-            Block
-          </Button>
-        </BlockButtonContainer>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.WHITE_GREY} small>
-          Small
-        </Button>
-        <Button variant={ButtonVariant.WHITE_GREY}>Normal</Button>
-        <BlockButtonContainer>
-          <Button variant={ButtonVariant.WHITE_GREY} block>
-            Block
-          </Button>
-        </BlockButtonContainer>
-      </ButtonRow>
-    </StorybookComponent>
-  );
-};
-
-const ButtonThemeStory = () => {
-  const usage = `<Button theme="${ButtonTheme.BLUE}">Blue</Button>
-<Button theme="${ButtonTheme.WHITE}">White</Button>
-`;
-
-  const propsObject = {
-    'Solid Button': [
-      {
-        name: 'theme',
-        type: 'string',
-        defaultValue: '"white"',
-        possibleValue: '"white" | "blue"',
-        require: 'no',
-        description: "Sets the Button's theme",
-      },
-    ],
-  };
-
-  return (
-    <StorybookComponent usage={usage} propsObject={propsObject}>
-      <Heading>Themes</Heading>
-      <ButtonRow>
-        <Button theme={ButtonTheme.BLUE}>{ButtonTheme.BLUE}</Button>
-        <Button theme={ButtonTheme.WHITE}>{ButtonTheme.WHITE}</Button>
-      </ButtonRow>
+          <Button variant={variant}>Normal</Button>
+          <BlockButtonContainer>
+            <Button variant={variant} block>
+              Block
+            </Button>
+          </BlockButtonContainer>
+        </ButtonRow>
+      ))}
     </StorybookComponent>
   );
 };
 
 const ButtonWithIconStory = () => {
-  const usage = `/* Solid Button */
-<Button startIcon={<ViewIcon />}>Button</Button>
-<Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>
-
-/* Solid-Shadow Button */
-<Button variant="${ButtonVariant.SOLID_SHADOW}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${ButtonVariant.SOLID_SHADOW}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
-
-/* Ghost Button */
-<Button variant="${ButtonVariant.GHOST}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${ButtonVariant.GHOST}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>
-
-/* White-Grey Button */
-<Button variant="${ButtonVariant.WHITE_GREY}" startIcon={<ViewIcon />}>Button</Button>
-<Button variant="${ButtonVariant.WHITE_GREY}" endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
+  const usage = `<Button startIcon={<ViewIcon />}>Button</Button>
+<Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
   const propsObject = {
-    All: [
+    [AllButtonNamesWithouLink]: [
       {
         name: 'startIcon',
         type: 'node',
@@ -301,47 +181,16 @@ const ButtonWithIconStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button with Icon</Heading>
-      <ButtonRow>
-        <Button theme={ButtonTheme.BLUE} startIcon={<ViewIcon />}>
-          Button Icon Left
-        </Button>
-        <Button theme={ButtonTheme.BLUE} endIcon={<ArrowRoundForwardIcon />}>
-          Button Icon Right
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.SOLID_SHADOW} startIcon={<ViewIcon />}>
-          Button Icon Left
-        </Button>
-        <Button
-          variant={ButtonVariant.SOLID_SHADOW}
-          endIcon={<ArrowRoundForwardIcon />}
-        >
-          Button Icon Right
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.GHOST} startIcon={<ViewIcon />}>
-          Button Icon Left
-        </Button>
-        <Button
-          variant={ButtonVariant.GHOST}
-          endIcon={<ArrowRoundForwardIcon />}
-        >
-          Button Icon Right
-        </Button>
-      </ButtonRow>
-      <ButtonRow>
-        <Button variant={ButtonVariant.WHITE_GREY} startIcon={<ViewIcon />}>
-          Button Icon Left
-        </Button>
-        <Button
-          variant={ButtonVariant.WHITE_GREY}
-          endIcon={<ArrowRoundForwardIcon />}
-        >
-          Button Icon Right
-        </Button>
-      </ButtonRow>
+      {Object.values(ButtonVariantWithoutLink).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant} startIcon={<ViewIcon />}>
+            Button Icon Left
+          </Button>
+          <Button variant={variant} endIcon={<ArrowRoundForwardIcon />}>
+            Button Icon Right
+          </Button>
+        </ButtonRow>
+      ))}
     </StorybookComponent>
   );
 };
@@ -364,14 +213,9 @@ const ButtonWithTagStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button with Different Tag</Heading>
-      <ButtonRow>
-        <Button theme={ButtonTheme.BLUE} tag="a">
-          Button as Anchor
-        </Button>
-      </ButtonRow>
-      {Object.values(ButtonVariant).map(type => (
-        <ButtonRow key={type}>
-          <Button variant={type} tag="a">
+      {Object.values(ButtonVariant).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant} tag="a">
             Button as Anchor
           </Button>
         </ButtonRow>

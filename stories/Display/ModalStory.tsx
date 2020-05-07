@@ -159,7 +159,7 @@ class ModalStory extends React.Component {
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </Modal>`}
       >
-        <Button theme="blue" onClick={this.handleOpen}>
+        <Button variant="solid-blue" onClick={this.handleOpen}>
           Open Modal
         </Button>
         <Modal
@@ -170,7 +170,6 @@ class ModalStory extends React.Component {
             <Button
               key="cancel"
               variant="ghost"
-              theme="blue"
               small
               onClick={this.handleClose}
             >
@@ -178,8 +177,7 @@ class ModalStory extends React.Component {
             </Button>,
             <Button
               key="save"
-              variant="default"
-              theme="blue"
+              variant="solid-blue"
               small
               onClick={this.handleClose}
             >

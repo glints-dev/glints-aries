@@ -5,12 +5,17 @@ import SolidShadowButton from './SolidShadowButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
-import { ButtonVariant } from '../../Utils/StyleConfig';
+import { ButtonVariant, ButtonTheme } from '../../Utils/StyleConfig';
 import {
   StartIconContainer,
   EndIconContainer,
   WhiteGreyBtn,
 } from '../../Style/General/ButtonStyle';
+
+const SOLID_BUTTON_THEME_MAP = {
+  [ButtonVariant.SOLID_WHITE]: ButtonTheme.WHITE,
+  [ButtonVariant.SOLID_BLUE]: ButtonTheme.BLUE,
+};
 
 const renderButton: React.FunctionComponent<Props> = ({
   children,
@@ -19,8 +24,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   disabled,
   onClick,
   small,
-  theme,
-  variant,
+  variant = ButtonVariant.SOLID_WHITE,
   startIcon,
   endIcon,
   ...defaultProps
@@ -34,7 +38,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   );
 
   switch (variant) {
-    case ButtonVariant.SOLID_SHADOW:
+    case ButtonVariant.YELLOW:
       return (
         <SolidShadowButton
           className={className}
@@ -88,7 +92,7 @@ const renderButton: React.FunctionComponent<Props> = ({
     default:
       return (
         <SolidButton
-          theme={theme}
+          theme={SOLID_BUTTON_THEME_MAP[variant]}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -113,7 +117,6 @@ export interface Props {
   disabled?: boolean;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   small?: boolean;
-  theme?: string;
   variant?: string;
   tag?: React.ElementType;
   startIcon?: React.ReactNode;
