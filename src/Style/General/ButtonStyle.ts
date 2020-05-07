@@ -218,9 +218,9 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
         return 'transform: none';
       }
       return `
-      transform: translate(2px, 2px);
-      transition: all .2s;
-    `;
+        transform: translate(2px, 2px);
+        transition: all .2s;
+      `;
     }}
   }
 
@@ -228,10 +228,10 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
     ${props => {
       if (!props.disabled) {
         return `
-        transform: translate(4px, 4px);
-        transition: all .2s;
-        color: ${Greyscale.white};
-      `;
+          transform: translate(3px, 3px);
+          transition: all .2s;
+          color: ${Greyscale.white};
+        `;
       }
 
       return 'transform: none';
@@ -257,8 +257,8 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 5px;
+    left: 5px;
     transition: all 0.2s;
 
     ${props => {
@@ -279,7 +279,7 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
       }
       return `
       background: ${Greyscale.black};
-      transform: translate(-4px, -4px);
+      transform: translate(-2px, -2px);
       transition: all .2s;
     `;
     }}
@@ -289,7 +289,7 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
     ${props => {
       if (!props.disabled) {
         return `
-        transform: translate(-8px, -8px);
+        transform: translate(-5px, -5px);
         transition: all .2s;
       `;
       }
