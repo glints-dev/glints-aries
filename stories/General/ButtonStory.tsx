@@ -14,7 +14,7 @@ import {
 import { ButtonVariant } from '../../src/Utils/StyleConfig';
 
 const ButtonVariantWithoutLink = omit(ButtonVariant, ['LINK']);
-const AllButtonNamesWithouLink =
+const AllButtonNamesWithoutLink =
   'Solid-White Button, Solid-Blue Button, Yellow Button, Ghost Button, White-Grey Button';
 
 const ButtonStories = () => (
@@ -84,7 +84,7 @@ const ButtonVariantStory = () => {
 const ButtonDisableStory = () => {
   const usage = `<Button disabled>disabled</Button>`;
   const propsObject = {
-    [AllButtonNamesWithouLink]: [
+    [AllButtonNamesWithoutLink]: [
       {
         name: 'disabled',
         type: 'boolean',
@@ -114,7 +114,7 @@ const ButtonSizeStory = () => {
 <Button>Normal</Button>
 <Button block>Block</Button>`;
   const propsObject = {
-    [AllButtonNamesWithouLink]: [
+    [AllButtonNamesWithoutLink]: [
       {
         name: 'small',
         type: 'boolean',
@@ -158,7 +158,7 @@ const ButtonWithIconStory = () => {
   const usage = `<Button startIcon={<ViewIcon />}>Button</Button>
 <Button endIcon={<ArrowRoundForwardIcon />}>Button</Button>`;
   const propsObject = {
-    [AllButtonNamesWithouLink]: [
+    [AllButtonNamesWithoutLink]: [
       {
         name: 'startIcon',
         type: 'node',
