@@ -1,15 +1,31 @@
 import styled from 'styled-components';
 
+import { ScreenSize } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../Colors';
 
 export const SwipeableContainer = styled.div`
   display: flex;
   position: relative;
   overflow-x: auto;
-  scrollbar-width: none; /* hide scrollbar on firefox */
 
+  /* make the horizontal scrollbar visible on desktop */
   &::-webkit-scrollbar {
-    display: none;
+    appearance: none;
+    height: 7px;
+  }
+
+  /* make the horizontal scrollbar visible on desktop */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: ${ScreenSize.desktopS}px) {
+    scrollbar-width: none; /* hide scrollbar on firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
