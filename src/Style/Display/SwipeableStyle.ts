@@ -10,7 +10,7 @@ export const SwipeableContainer = styled.div`
 
   /* make the horizontal scrollbar visible on desktop */
   &::-webkit-scrollbar {
-    -webkit-appearance: none;
+    appearance: none;
     height: 7px;
   }
 
