@@ -17,7 +17,7 @@ export const SwipeableContainer = styled.div`
   /* make the horizontal scrollbar visible on desktop */
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   @media (max-width: ${ScreenSize.desktopS}px) {
