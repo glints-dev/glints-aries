@@ -20,26 +20,13 @@ const SwipeableStory = () => (
 </Swipeable>`}
   >
     <Swipeable>
-      <Swipeable.Item>
-        <SwipeableCardExample>
-          <h1>Card.</h1>
-        </SwipeableCardExample>
-      </Swipeable.Item>
-      <Swipeable.Item>
-        <SwipeableCardExample>
-          <h1>Card.</h1>
-        </SwipeableCardExample>
-      </Swipeable.Item>
-      <Swipeable.Item>
-        <SwipeableCardExample>
-          <h1>Card.</h1>
-        </SwipeableCardExample>
-      </Swipeable.Item>
-      <Swipeable.Item>
-        <SwipeableCardExample>
-          <h1>Card.</h1>
-        </SwipeableCardExample>
-      </Swipeable.Item>
+      {Array.from(Array(10).keys()).map(number => (
+        <Swipeable.Item key={number}>
+          <SwipeableCardExample>
+            <h1>Card. {number}</h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+      ))}
     </Swipeable>
   </StorybookComponent>
 );
