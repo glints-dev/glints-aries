@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 1`] = `
+<DocumentFragment>
+  .c2 {
+  vertical-align: middle;
+}
+
+.c1 {
+  position: relative;
+  z-index: 1;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:hover:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: url(.styledComponentId);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.c1 img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<div
+    aria-label="Profile Picture"
+    class="c0 aries-profile"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="c1"
+      tabindex="-1"
+    >
+      <svg
+        class="c2"
+        data-testid="icon-svg"
+        fill="white"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <path
+          d="M0 79.22l61.299-61.298 20.779 20.78L20.779 100H0V79.22zm98.182-56.623l-10.39 10.39-20.779-20.78 10.39-10.389c2.424-2.424 4.935-2.424 7.532 0l13.247 13.247c2.424 2.597 2.424 5.108 0 7.532z"
+        />
+      </svg>
+      <img
+        src="/mock.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 2`] = `
+<DocumentFragment>
+  .c1 {
+  position: relative;
+  z-index: 1;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:hover:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: url(.styledComponentId);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.c1 img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<div
+    aria-label="Profile Picture"
+    class="c0 aries-profile"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="c1"
+      tabindex="-1"
+    >
+      <img
+        src="/mock.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ProfilePicture/> snapshots with prop editable editable false 1`] = `
+<DocumentFragment>
+  .c1 {
+  position: relative;
+  z-index: 1;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+}
+
+.c1 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: url(.styledComponentId);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.c1 img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<div
+    aria-label="Profile Picture"
+    class="c0 aries-profile"
+    role="presentation"
+  >
+    <div
+      class="c1"
+    >
+      <img
+        src="/mock.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<ProfilePicture/> snapshots with prop editable editable true 1`] = `
+<DocumentFragment>
+  .c1 {
+  position: relative;
+  z-index: 1;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c1:hover:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: url(.styledComponentId);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.c1 img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<div
+    aria-label="Profile Picture"
+    class="c0 aries-profile"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="c1"
+      tabindex="-1"
+    >
+      <img
+        src="/mock.jpg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
