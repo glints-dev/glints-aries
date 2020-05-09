@@ -6,11 +6,14 @@ exports[`<Checkbox> should render an input with id, value and onClick props and 
   aria-labelledby="software-engineer"
   checked={false}
   className="CheckboxStyle__CheckboxContainer-lmispl-0 RHDAa aries-checkbox"
+  id="Software Engineer"
+  onClick={[Function]}
   role="checkbox"
   size="small"
   tabIndex={0}
 >
   <input
+    checked={false}
     id="software-engineer"
     onClick={[Function]}
     type="checkbox"
@@ -18,6 +21,7 @@ exports[`<Checkbox> should render an input with id, value and onClick props and 
   />
   <label
     htmlFor="software-engineer"
+    id="Software Engineer"
     tabIndex={-1}
   >
     Software Engineer
