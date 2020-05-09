@@ -66,6 +66,23 @@ const CheckboxStory = () => (
 
     <StorybookComponent
       usage={
+        '<Checkbox id="software-engineer" value="Software Engineer" size="large" />'
+      }
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Checkbox with larger size
+      </Heading>
+      <Checkbox
+        id="software-engineer-size"
+        value="Software Engineer"
+        size="large"
+      />
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      usage={
         '<Checkbox id="software-engineer" value="Software Engineer" border={true} />'
       }
     >
@@ -75,6 +92,24 @@ const CheckboxStory = () => (
       <Checkbox
         id="software-engineer-border"
         value="Software Engineer"
+        border={true}
+      />
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      usage={
+        '<Checkbox id="software-engineer" value="Software Engineer" size="large" border={true} />'
+      }
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Checkbox with larger size and a border
+      </Heading>
+      <Checkbox
+        id="software-engineer-border-size"
+        value="Software Engineer"
+        size="large"
         border={true}
       />
     </StorybookComponent>

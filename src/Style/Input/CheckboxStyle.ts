@@ -14,6 +14,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
         border: 1px solid #aaaaaa;
         height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
         padding: 10px 15px;
+        cursor: pointer;
         border-radius: 2px;
         &:hover {
           background: rgba(1, 126, 183, 0.1);
@@ -33,10 +34,6 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
 
   &:focus {
     outline: none;
-  }
-
-  &:focus > label {
-    outline: 5px auto -webkit-focus-ring-color;
   }
 
   input {
