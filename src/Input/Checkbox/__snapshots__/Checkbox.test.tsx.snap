@@ -5,7 +5,7 @@ exports[`<Checkbox> should render an input with id, value and onClick props and 
   aria-checked={false}
   aria-labelledby="software-engineer"
   checked={false}
-  className="CheckboxStyle__CheckboxContainer-lmispl-0 RHDAa aries-checkbox"
+  className="CheckboxStyle__CheckboxContainer-lmispl-0 cIwTiw aries-checkbox"
   id="Software Engineer"
   onClick={[Function]}
   role="checkbox"

@@ -91,7 +91,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       vertical-align: middle;
       cursor: pointer;
       margin-right: 10px;
-      border-radius: 4px;
+      border-radius: 2px;
       height: 18px;
       width: 18px;
     }
