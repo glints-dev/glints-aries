@@ -27,3 +27,6 @@ categories:
   - title: 'Dependencies'
     labels:
       - 'dependencies'
+  - title: 'Breaking Changes'
+    labels:
+      - ':warning: Breaking Changes'
