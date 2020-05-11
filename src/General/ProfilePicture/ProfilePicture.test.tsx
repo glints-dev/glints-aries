@@ -21,7 +21,7 @@ describe('<ProfilePicture/> snapshots with prop editable', () => {
 });
 
 describe('<ProfilePicture/> snapshots with mouse event', () => {
-  test('mouseenter and mouseleave', () => {
+  test('mouseenter and mouseleave when is editable', () => {
     const { asFragment, queryByRole } = render(
       <ProfilePicture editable={true}>
         <img src="/mock.jpg" />
@@ -29,6 +29,20 @@ describe('<ProfilePicture/> snapshots with mouse event', () => {
     );
 
     const container = queryByRole('button');
+    fireEvent.mouseEnter(container);
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.mouseLeave(container);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('mouseenter and mouseleave when is not editable', () => {
+    const { asFragment, queryByRole } = render(
+      <ProfilePicture editable={false}>
+        <img src="/mock.jpg" />
+      </ProfilePicture>
+    );
+
+    const container = queryByRole('presentation');
     fireEvent.mouseEnter(container);
     expect(asFragment()).toMatchSnapshot();
     fireEvent.mouseLeave(container);
