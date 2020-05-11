@@ -1,30 +1,28 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {
-  DefaultBtnContainer,
-  DefaultBtn,
+  SolidShadowContainer,
+  SolidShadowBtn,
 } from '../../Style/General/ButtonStyle';
 
-const DefaultButton: React.FunctionComponent<Props> = ({
+const SolidShadowButton: React.FunctionComponent<Props> = ({
   children,
   className,
   theme,
   disabled,
   block,
   small,
-  removeHoverEffect,
   tag,
   ...defaultProps
 }) => (
-  <DefaultBtnContainer
-    className={classNames('aries-defaultbtn', className)}
+  <SolidShadowContainer
+    className={classNames('aries-solid-shadow-btn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
-    removeHoverEffect={removeHoverEffect}
   >
-    <DefaultBtn
-      className="defaultbtn-content"
+    <SolidShadowBtn
+      className="solid-shadow-btn-content"
       theme={theme}
       disabled={disabled}
       block={block}
@@ -33,19 +31,18 @@ const DefaultButton: React.FunctionComponent<Props> = ({
       {...defaultProps}
     >
       {children}
-    </DefaultBtn>
-  </DefaultBtnContainer>
+    </SolidShadowBtn>
+  </SolidShadowContainer>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof DefaultBtn> {
+interface Props extends React.ComponentPropsWithoutRef<typeof SolidShadowBtn> {
   children: React.ReactNode;
-  className?: string;
+  className: string;
   theme?: string;
   disabled?: boolean;
   block?: boolean;
   small?: boolean;
-  removeHoverEffect?: boolean;
   tag?: React.ElementType;
 }
 
-export default DefaultButton;
+export default SolidShadowButton;

@@ -1,24 +1,21 @@
 import * as React from 'react';
-import { get } from 'lodash';
 
-import DefaultButton from './DefaultButton';
-import PrimaryButton from './PrimaryButton';
-import SecondaryButton from './SecondaryButton';
+import SolidButton from './SolidButton';
+import SolidShadowButton from './SolidShadowButton';
 import GhostButton from './GhostButton';
 import LinkButton from './LinkButton';
 
-import { Variant, Theme } from '../../Utils/StyleConfig';
+import { ButtonVariant, ButtonTheme } from '../../Utils/StyleConfig';
 import {
   StartIconContainer,
   EndIconContainer,
+  WhiteGreyBtn,
 } from '../../Style/General/ButtonStyle';
 
-export const DeprecatedThemeMap = {
-  [Variant.DEFAULT]: [Theme.RED, Theme.YELLOW],
-  [Variant.PRIMARY]: [Theme.RED, Theme.BLUE, Theme.BLUE_RED],
+const SOLID_BUTTON_THEME_MAP = {
+  [ButtonVariant.SOLID_WHITE]: ButtonTheme.WHITE,
+  [ButtonVariant.SOLID_BLUE]: ButtonTheme.BLUE,
 };
-
-export const DeprecatedSecondayVariant = 'secondary';
 
 const renderButton: React.FunctionComponent<Props> = ({
   children,
@@ -26,10 +23,8 @@ const renderButton: React.FunctionComponent<Props> = ({
   className,
   disabled,
   onClick,
-  removeHoverEffect,
   small,
-  theme,
-  variant,
+  variant = ButtonVariant.SOLID_WHITE,
   startIcon,
   endIcon,
   ...defaultProps
@@ -43,42 +38,20 @@ const renderButton: React.FunctionComponent<Props> = ({
   );
 
   switch (variant) {
-    case Variant.PRIMARY:
-      if (get(DeprecatedThemeMap, Variant.PRIMARY, []).includes(theme)) {
-        console.warn(
-          `Warning: Primary Button's theme prop is deprecated and will be removed in v5.`
-        );
-      }
+    case ButtonVariant.YELLOW:
       return (
-        <PrimaryButton
+        <SolidShadowButton
           className={className}
           disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
-          theme={theme}
           {...defaultProps}
         >
           {content}
-        </PrimaryButton>
+        </SolidShadowButton>
       );
-    case DeprecatedSecondayVariant:
-      console.warn(
-        `Warning: Secondary Button is deprecated and will be removed in v5.\nPlease use the Primary Button instead.`
-      );
-      return (
-        <SecondaryButton
-          className={className}
-          disabled={disabled}
-          onClick={onClick}
-          block={block}
-          small={small}
-          {...defaultProps}
-        >
-          {children}
-        </SecondaryButton>
-      );
-    case Variant.GHOST:
+    case ButtonVariant.GHOST:
       return (
         <GhostButton
           className={className}
@@ -86,13 +59,25 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
-          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {content}
         </GhostButton>
       );
-    case Variant.LINK:
+    case ButtonVariant.WHITE_GREY:
+      return (
+        <WhiteGreyBtn
+          className={className}
+          disabled={disabled}
+          onClick={onClick}
+          block={block}
+          small={small}
+          {...defaultProps}
+        >
+          {content}
+        </WhiteGreyBtn>
+      );
+    case ButtonVariant.LINK:
       return (
         <LinkButton
           className={className}
@@ -105,24 +90,18 @@ const renderButton: React.FunctionComponent<Props> = ({
         </LinkButton>
       );
     default:
-      if (get(DeprecatedThemeMap, Variant.DEFAULT, []).includes(theme)) {
-        console.warn(
-          `Warning: Default Button's ${theme} theme is deprecated and will be removed in v5.\nPlease use another theme instead.`
-        );
-      }
       return (
-        <DefaultButton
-          theme={theme}
+        <SolidButton
+          theme={SOLID_BUTTON_THEME_MAP[variant]}
           className={className}
           disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
-          removeHoverEffect={removeHoverEffect}
           {...defaultProps}
         >
           {content}
-        </DefaultButton>
+        </SolidButton>
       );
   }
 };
@@ -137,9 +116,7 @@ export interface Props {
   className?: string;
   disabled?: boolean;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
-  removeHoverEffect?: boolean;
   small?: boolean;
-  theme?: string;
   variant?: string;
   tag?: React.ElementType;
   startIcon?: React.ReactNode;

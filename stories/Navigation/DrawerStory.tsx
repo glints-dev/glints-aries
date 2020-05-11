@@ -17,7 +17,10 @@ class DrawerStory extends React.Component<{}, State> {
     const { isOpen } = this.state;
     return (
       <div>
-        <Button theme="blue" onClick={() => this.setState({ isOpen: !isOpen })}>
+        <Button
+          variant="solid-blue"
+          onClick={() => this.setState({ isOpen: !isOpen })}
+        >
           CLOSE
         </Button>
       </div>
@@ -59,7 +62,10 @@ class DrawerStory extends React.Component<{}, State> {
   <Component />
 </Drawer>`}
       >
-        <Button theme="blue" onClick={() => this.setState({ isOpen: true })}>
+        <Button
+          variant="solid-blue"
+          onClick={() => this.setState({ isOpen: true })}
+        >
           OPEN
         </Button>
         <Drawer

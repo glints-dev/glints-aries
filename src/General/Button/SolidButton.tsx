@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { PrimaryContainer, PrimaryBtn } from '../../Style/General/ButtonStyle';
+import { SolidBtnContainer, SolidBtn } from '../../Style/General/ButtonStyle';
 
-const PrimaryButton: React.FunctionComponent<Props> = ({
+const SolidButton: React.FunctionComponent<Props> = ({
   children,
   className,
   theme,
@@ -12,14 +12,14 @@ const PrimaryButton: React.FunctionComponent<Props> = ({
   tag,
   ...defaultProps
 }) => (
-  <PrimaryContainer
-    className={classNames('aries-primarybtn', className)}
+  <SolidBtnContainer
+    className={classNames('aries-solid-btn', className)}
     theme={theme}
     disabled={disabled}
     block={block}
   >
-    <PrimaryBtn
-      className="primarybtn-content"
+    <SolidBtn
+      className="solid-btn-content"
       theme={theme}
       disabled={disabled}
       block={block}
@@ -28,13 +28,13 @@ const PrimaryButton: React.FunctionComponent<Props> = ({
       {...defaultProps}
     >
       {children}
-    </PrimaryBtn>
-  </PrimaryContainer>
+    </SolidBtn>
+  </SolidBtnContainer>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof PrimaryBtn> {
+interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   theme?: string;
   disabled?: boolean;
   block?: boolean;
@@ -42,4 +42,4 @@ interface Props extends React.ComponentPropsWithoutRef<typeof PrimaryBtn> {
   tag?: React.ElementType;
 }
 
-export default PrimaryButton;
+export default SolidButton;

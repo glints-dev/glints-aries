@@ -81,7 +81,7 @@ handleClose = () => {
   <Component />
 </Toast>`}
       >
-        <Button theme="red" onClick={this.handleOpen}>
+        <Button variant="solid-blue" onClick={this.handleOpen}>
           Open Toast
         </Button>
         <Toast isVisible={isOpen} onClose={this.handleClose}>
