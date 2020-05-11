@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
-import Tag from './Tag';
+import Tag from './BasicTag';
 
 const children = 'Glints Aries';
 

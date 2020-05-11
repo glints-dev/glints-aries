@@ -1,38 +1,79 @@
 import * as React from 'react';
-import classNames from 'classnames';
-import { TagContainer, TagContent } from '../../Style/General/TagStyle';
 
-const Tag: React.FunctionComponent<Props> = props => {
-  const { className, children, theme, block, outline, ...restProps } = props;
+import { AddIcon, TrashIcon } from '../../General/Icon/components';
+import {
+  StartIconContainer,
+  EndIconContainer,
+} from '../../Style/General/TagStyle';
 
+import { AddTag } from './ActionTags/AddTag';
+import { ResetTag } from './ActionTags/ResetTag';
+import BasicTag from './BasicTag';
+
+const Tag: React.FunctionComponent<Props> = ({
+  variant,
+  action,
+  children,
+  icon,
+  block,
+  outline,
+  onClick,
+  ...resetProps
+}) => {
+  if (variant === 'action') {
+    switch (action) {
+      case 'add':
+        return (
+          <AddTag onClick={onClick} {...resetProps}>
+            <StartIconContainer>
+              <AddIcon />
+            </StartIconContainer>
+            {children}
+          </AddTag>
+        );
+      case 'reset':
+        return (
+          <ResetTag onClick={onClick} {...resetProps}>
+            <StartIconContainer>
+              <TrashIcon />
+            </StartIconContainer>
+            {children}
+          </ResetTag>
+        );
+      default:
+    }
+  } else if (variant === 'button') {
+    return (
+      <BasicTag {...resetProps}>
+        {children}
+        <EndIconContainer>{icon}</EndIconContainer>
+      </BasicTag>
+    );
+  }
   return (
-    <React.Fragment>
-      <TagContainer
-        className={classNames('aries-tag', className)}
-        role="presentation"
-        tabIndex={0}
-        theme={theme}
-        block={block}
-        outline={outline}
-        {...restProps}
-      >
-        <TagContent className="tag-content" tabIndex={-1}>
-          {children}
-        </TagContent>
-      </TagContainer>
-    </React.Fragment>
+    <BasicTag block={block} outline={outline} {...resetProps}>
+      {children}
+    </BasicTag>
   );
 };
 
-Tag.defaultProps = {
-  theme: 'grey',
-  block: false,
-  outline: false,
-};
+interface BasicTagProps {
+  block?: boolean;
+  outline?: boolean;
+}
 
-interface Props extends React.ComponentPropsWithoutRef<typeof TagContainer> {
+interface ButtonTagProps {
+  icon?: React.ReactNode;
+}
+
+interface ActionTagProps {
+  action?: string;
+  onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
+}
+
+interface Props extends BasicTagProps, ButtonTagProps, ActionTagProps {
   children: React.ReactNode;
-  theme?: string;
+  variant?: string;
 }
 
 export default Tag;
