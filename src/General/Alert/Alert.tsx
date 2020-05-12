@@ -17,48 +17,51 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
 
-class Alert extends React.Component<Props, State> {
-  alertContainerRef: React.RefObject<HTMLDivElement>;
-  autoCloseTimeout: ReturnType<typeof setTimeout>;
+const Alert = ({
+  isOpen,
+  autoClose,
+  onClose,
+  type,
+  className,
+  message,
+}: Props) => {
+  const alertContainerRef = React.useRef<HTMLDivElement>();
+  const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
+  const [isVisible, setIsVisible] = React.useState<boolean>(isOpen);
 
-  constructor(props: Props) {
-    super(props);
-    this.alertContainerRef = React.createRef();
-    this.state = {
-      isVisible: props.isOpen,
-    };
-  }
-
-  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-    if (nextProps.isOpen && !prevState.isVisible) {
-      return { isVisible: true };
+  React.useEffect(() => {
+    if (isOpen && !isVisible) {
+      setIsVisible(true);
     }
-    return null;
-  }
+    if (!isOpen && isVisible) {
+      setTimeout(() => setIsVisible(false), 300);
+    }
+  }, [isOpen, isVisible, setIsVisible]);
 
-  componentDidUpdate(prevProps: Props) {
-    const { isOpen } = this.props;
+  // focus alert element for keydown event
+  React.useEffect(() => {
+    if (isVisible && alertContainerRef.current) {
+      alertContainerRef.current.focus();
+    }
+  }, [isVisible]);
 
-    clearTimeout(this.autoCloseTimeout);
-
-    if (prevProps.isOpen && !isOpen) {
-      setTimeout(() => this.setState({ isVisible: false }), 300);
-    } else if (isOpen && this.props.autoClose) {
-      this.autoCloseTimeout = setTimeout(() => {
-        prevProps.onClose();
-      }, this.props.autoClose);
+  React.useEffect(() => {
+    if (autoCloseTimeout.current) {
+      clearTimeout(autoCloseTimeout.current);
     }
 
-    if (isOpen) {
-      this.alertContainerRef.current.focus();
+    if (isOpen && autoClose) {
+      autoCloseTimeout.current = setTimeout(() => {
+        onClose();
+      }, autoClose);
     }
-  }
+  }, [isOpen, isVisible, setIsVisible, autoClose, onClose]);
 
-  componentWillUnmount() {
-    clearTimeout(this.autoCloseTimeout);
-  }
+  React.useEffect(() => {
+    return () => clearTimeout(autoCloseTimeout.current);
+  }, []);
 
-  handleKeyDown = (onClose: () => void) => {
+  const handleKeyDown = React.useCallback((onClose: () => void) => {
     const listener = (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.keyCode === 13 || e.keyCode === 27) {
         onClose();
@@ -66,95 +69,63 @@ class Alert extends React.Component<Props, State> {
     };
 
     return listener;
-  };
+  }, []);
 
-  renderAlertTypeIcon() {
-    const { type } = this.props;
-    let AlertTypeIcon = null;
-    let alertColor = null;
-
+  const { AlertTypeIcon, alertColor } = React.useMemo(() => {
     switch (type) {
       case 'success':
-        AlertTypeIcon = CheckmarkSolidIcon;
-        alertColor = SecondaryColor.darkgreen;
-        break;
+        return {
+          AlertTypeIcon: CheckmarkSolidIcon,
+          alertColor: SecondaryColor.darkgreen,
+        };
       case 'warning':
-        AlertTypeIcon = WarningSolidIcon;
-        alertColor = SecondaryColor.orange;
-        break;
+        return {
+          AlertTypeIcon: WarningSolidIcon,
+          alertColor: SecondaryColor.orange,
+        };
       case 'danger':
-        AlertTypeIcon = WarningSolidIcon;
-        alertColor = PrimaryColor.glintsred;
-        break;
+        return {
+          AlertTypeIcon: WarningSolidIcon,
+          alertColor: PrimaryColor.glintsred,
+        };
       case 'info':
-        AlertTypeIcon = InfoSolidIcon;
-        alertColor = PrimaryColor.glintsblue;
-        break;
       default:
-        AlertTypeIcon = InfoSolidIcon;
-        alertColor = PrimaryColor.glintsblue;
-        break;
+        return {
+          AlertTypeIcon: InfoSolidIcon,
+          alertColor: PrimaryColor.glintsblue,
+        };
     }
+  }, [type]);
 
-    return (
-      <React.Fragment>
-        <AlertTypeIcon color={alertColor} />
-      </React.Fragment>
-    );
-  }
-
-  renderMessage() {
-    const { message } = this.props;
-
-    return <AlertMessage className="alert-message">{message}</AlertMessage>;
-  }
-
-  renderIcon() {
-    const { onClose } = this.props;
-
-    return (
-      <AlertIcon
-        className="alert-close"
-        role="button"
-        aria-label="Press Escape or Enter button to close alert"
-        title="Close alert"
-        onClick={onClose}
-      >
-        <CloseIcon color={SecondaryColor.grey} />
-      </AlertIcon>
-    );
-  }
-
-  render() {
-    const { type, isOpen, onClose, className } = this.props;
-    const { isVisible } = this.state;
-
-    return isVisible ? (
-      <AlertContainer
-        className={classNames('aries-alert', className)}
-        type={type}
-        role="alertdialog"
-        aria-hidden={isVisible ? 'false' : 'true'}
-        aria-describedby="alert-message"
-        isOpen={isOpen}
-        isVisible={isVisible}
-        tabIndex={0}
-        onKeyDown={this.handleKeyDown(onClose)}
-        ref={this.alertContainerRef}
-      >
-        {this.renderAlertTypeIcon()}
-        <AlertContent className="alert-content">
-          {this.renderMessage()}
-          {this.renderIcon()}
-        </AlertContent>
-      </AlertContainer>
-    ) : null;
-  }
-}
-
-interface State {
-  isVisible: boolean;
-}
+  return isVisible ? (
+    <AlertContainer
+      className={classNames('aries-alert', className)}
+      type={type}
+      role="alertdialog"
+      aria-hidden={isVisible ? 'false' : 'true'}
+      aria-describedby="alert-message"
+      isOpen={isOpen}
+      isVisible={isVisible && isOpen}
+      tabIndex={0}
+      onKeyDown={handleKeyDown(onClose)}
+      ref={alertContainerRef}
+    >
+      <AlertTypeIcon color={alertColor} />
+      <AlertContent className="alert-content">
+        <AlertMessage className="alert-message">{message}</AlertMessage>
+        <AlertIcon
+          className="alert-close"
+          role="button"
+          aria-label="Press Escape or Enter button to close alert"
+          title="Close alert"
+          onClick={onClose}
+        >
+          <CloseIcon color={SecondaryColor.grey} />
+        </AlertIcon>
+      </AlertContent>
+    </AlertContainer>
+  ) : null;
+};
 
 interface Props {
   type: string;
