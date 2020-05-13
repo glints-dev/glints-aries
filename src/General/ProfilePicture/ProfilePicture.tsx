@@ -9,62 +9,51 @@ import {
   ProfilePictureContent,
 } from '../../Style/General/ProfilePictureStyle';
 
-class ProfilePicture extends React.Component<Props, State> {
-  state = {
-    isHover: false,
-  };
+const ProfilePicture = ({
+  editable,
+  children,
+  className,
+  ...defaultProps
+}: Props) => {
+  const [isHover, setIsHover] = React.useState<boolean>(false);
 
-  handleMouseEnter = () => {
-    const { editable } = this.props;
-
+  const handleMouseEnter = () => {
     if (editable) {
-      this.setState({ isHover: true });
+      setIsHover(true);
     }
   };
 
-  handleMouseLeave = () => {
-    const { editable } = this.props;
-
+  const handleMouseLeave = () => {
     if (editable) {
-      this.setState({ isHover: false });
+      setIsHover(false);
     }
   };
 
-  render() {
-    const { editable, children, className, ...defaultProps } = this.props;
-
-    const { isHover } = this.state;
-
-    return (
-      <ProfilePictureContainer
-        className={classNames('aries-profile', className)}
-        role={editable ? 'button' : 'presentation'}
-        aria-label="Profile Picture"
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        tabIndex={editable ? 0 : undefined}
-        {...defaultProps}
+  return (
+    <ProfilePictureContainer
+      className={classNames('aries-profile', className)}
+      role={editable ? 'button' : 'presentation'}
+      aria-label="Profile Picture"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      tabIndex={editable ? 0 : undefined}
+      {...defaultProps}
+    >
+      <ProfilePictureContent
+        editable={editable}
+        tabIndex={editable ? -1 : undefined}
       >
-        <ProfilePictureContent
-          editable={editable}
-          tabIndex={editable ? -1 : undefined}
-        >
-          {isHover && <EditIcon color="white" />}
-          {children}
-        </ProfilePictureContent>
-      </ProfilePictureContainer>
-    );
-  }
-}
+        {isHover && <EditIcon color="white" />}
+        {children}
+      </ProfilePictureContent>
+    </ProfilePictureContainer>
+  );
+};
 
 interface Props
   extends React.ComponentPropsWithoutRef<typeof ProfilePictureContainer> {
   editable?: boolean;
   children: React.ReactNode;
-}
-
-interface State {
-  isHover: boolean;
 }
 
 export default ProfilePicture;
