@@ -17,6 +17,33 @@ const SOLID_BUTTON_THEME_MAP = {
   [ButtonVariant.SOLID_BLUE]: ButtonTheme.BLUE,
 };
 
+export const transformVariant = (variant: string, theme?: string) => {
+  if (theme) {
+    console.warn(
+      `Warning: Button's theme prop is deprecated and will be removed in a future release.\nPlease use the variant prop instead.`
+    );
+  }
+
+  if (
+    (variant === ButtonVariant.SOLID_WHITE || variant === 'default') &&
+    theme &&
+    theme !== ButtonTheme.WHITE
+  ) {
+    console.warn(
+      `Warning: Button's 'default' variant is deprecated and will be removed in a future release.\nPlease use the 'solid-blue' or 'solid-white' variant instead.`
+    );
+    return ButtonVariant.SOLID_BLUE;
+  } else if (variant === 'primary') {
+    console.warn(
+      `Warning: Button's 'primary' variant is deprecated and will be removed in a future release.\nPlease use the 'yellow' variant instead.`
+    );
+    return ButtonVariant.YELLOW;
+  } else if (Object.values(ButtonVariant).includes(variant)) {
+    return variant;
+  }
+  return ButtonVariant.SOLID_WHITE;
+};
+
 const renderButton: React.FunctionComponent<Props> = ({
   children,
   block,
@@ -27,6 +54,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   variant = ButtonVariant.SOLID_WHITE,
   startIcon,
   endIcon,
+  theme,
   ...defaultProps
 }) => {
   const content = (
@@ -37,7 +65,9 @@ const renderButton: React.FunctionComponent<Props> = ({
     </>
   );
 
-  switch (variant) {
+  const transformedVariant = transformVariant(variant, theme);
+
+  switch (transformedVariant) {
     case ButtonVariant.YELLOW:
       return (
         <SolidShadowButton
@@ -92,7 +122,7 @@ const renderButton: React.FunctionComponent<Props> = ({
     default:
       return (
         <SolidButton
-          theme={SOLID_BUTTON_THEME_MAP[variant]}
+          theme={SOLID_BUTTON_THEME_MAP[transformedVariant]}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -121,6 +151,7 @@ export interface Props {
   tag?: React.ElementType;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  theme?: string;
 }
 
 export default Button;

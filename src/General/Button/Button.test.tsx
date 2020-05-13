@@ -5,7 +5,8 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import { ButtonVariant } from '../../Utils/StyleConfig';
+import { transformVariant } from './Button';
+import { ButtonVariant, ButtonTheme } from '../../Utils/StyleConfig';
 
 it('<Button> should render with text "click me" and an onClick handler', () => {
   const onClick = jest.fn();
@@ -73,6 +74,49 @@ describe('contains the correct className for each variant:', () => {
       } else {
         const buttonContainer = getByText('click me').parentNode;
         expect(buttonContainer).toHaveClass(classNameMap[variant]);
+      }
+    });
+  });
+});
+
+describe('transform the legacy variant and theme props to corresponding variant', () => {
+  const deprecatedTheme = 'red';
+
+  it('default', () => {
+    expect(transformVariant('default')).toBe(ButtonVariant.SOLID_WHITE);
+    expect(transformVariant('default', ButtonTheme.BLUE)).toBe(
+      ButtonVariant.SOLID_BLUE
+    );
+    expect(transformVariant('default', deprecatedTheme)).toBe(
+      ButtonVariant.SOLID_BLUE
+    );
+  });
+
+  it('primary', () => {
+    expect(transformVariant('primary')).toBe(ButtonVariant.YELLOW);
+    expect(transformVariant('primary', ButtonTheme.BLUE)).toBe(
+      ButtonVariant.YELLOW
+    );
+    expect(transformVariant('primary', deprecatedTheme)).toBe(
+      ButtonVariant.YELLOW
+    );
+  });
+
+  Object.values(ButtonVariant).forEach(variant => {
+    it(`${variant}`, () => {
+      expect(transformVariant(variant)).toBe(variant);
+
+      if (variant === ButtonVariant.SOLID_WHITE) {
+        // To check the legacy use of <Button theme="blue" />
+        expect(transformVariant(variant, ButtonTheme.BLUE)).toBe(
+          ButtonVariant.SOLID_BLUE
+        );
+        expect(transformVariant(variant, deprecatedTheme)).toBe(
+          ButtonVariant.SOLID_BLUE
+        );
+      } else {
+        expect(transformVariant(variant, ButtonTheme.BLUE)).toBe(variant);
+        expect(transformVariant(variant, deprecatedTheme)).toBe(variant);
       }
     });
   });
