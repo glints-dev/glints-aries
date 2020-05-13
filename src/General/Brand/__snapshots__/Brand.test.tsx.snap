@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Brand/>  should render as expected 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus > img {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.c1 {
+  object-fit: contain;
+  width: 3em;
+  height: 3em;
+  outline: none;
+}
+
+<div
+  className="c0 aries-brand"
+  onContextMenu={[Function]}
+  role="presentation"
+  tabIndex={0}
+>
+  <img
+    className="c1 brand-image"
+    src="test-file-stub"
+    tabIndex={-1}
+  />
+</div>
+`;
+
+exports[`<Brand/>  should render as expected 2`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus > img {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.c1 {
+  object-fit: contain;
+  width: 3em;
+  height: 3em;
+  outline: none;
+}
+
+<div
+  className="c0 aries-brand"
+  onContextMenu={[Function]}
+  role="presentation"
+  tabIndex={0}
+>
+  <img
+    className="c1 brand-image"
+    src="test-file-stub"
+    tabIndex={-1}
+  />
+</div>
+`;
+
+exports[`<Brand/>  should render as expected 3`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0:focus > img {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.c1 {
+  object-fit: contain;
+  width: 3em;
+  height: 3em;
+  outline: none;
+}
+
+<div
+  className="c0 aries-brand"
+  onContextMenu={[Function]}
+  role="presentation"
+  tabIndex={0}
+>
+  <img
+    className="c1 brand-image"
+    src="http://example.com/example.jpg"
+    tabIndex={-1}
+  />
+</div>
+`;
