@@ -40,7 +40,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -130,7 +130,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -195,7 +195,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -258,7 +258,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -321,7 +321,7 @@ exports[`<ProfilePicture/> snapshots with prop editable editable false 1`] = `
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -397,7 +397,7 @@ exports[`<ProfilePicture/> snapshots with prop editable editable true 1`] = `
   content: '';
   position: absolute;
   z-index: -1;
-  background: url(.styledComponentId);
+  background: url(test-file-stub);
   height: 100%;
   width: 100%;
   border-radius: 50%;
