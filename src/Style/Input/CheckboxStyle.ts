@@ -8,30 +8,6 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
   font-size: ${({ size }) => (size === 'small' ? '14px' : '16px')};
   line-height: 1.5;
 
-  ${({ border }) => {
-    if (border) {
-      return `
-        border: 1px solid #aaaaaa;
-        height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 2px;
-        &:hover {
-          background: rgba(1, 126, 183, 0.1);
-          border-color: ${SecondaryColor.actionblue};
-        }
-      `;
-    }
-  }};
-
-  ${({ checked }) => {
-    if (checked) {
-      return `
-        border-color: ${SecondaryColor.actionblue};
-      `;
-    }
-  }};
-
   &:focus {
     outline: none;
   }
@@ -55,6 +31,14 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       border: solid ${SecondaryColor.white};
       border-width: 0 0.15em 0.15em 0;
       transform: rotate(45deg);
+      ${({ border }) => {
+        if (border) {
+          return `
+            margin-top: 10px;
+            margin-left: 15px;
+          `;
+        }
+      }};
     }
 
     &:checked + label:before {
@@ -77,6 +61,29 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     line-height: 1.5;
     cursor: pointer;
     outline: none;
+    ${({ border }) => {
+      if (border) {
+        return `
+          border: 1px solid #aaaaaa;
+          height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
+          cursor: pointer;
+          border-radius: 2px;
+          padding: 10px 15px;
+          &:hover {
+            background: rgba(1, 126, 183, 0.1);
+            border-color: ${SecondaryColor.actionblue};
+          }
+        `;
+      }
+    }};
+
+    ${({ checked }) => {
+      if (checked) {
+        return `
+          border-color: ${SecondaryColor.actionblue};
+        `;
+      }
+    }};
 
     &:before {
       content: '';
