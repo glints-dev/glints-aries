@@ -22,6 +22,14 @@ const props = {
       require: 'no',
       description: 'Sets Badge into superscript type.',
     },
+    {
+      name: 'variant',
+      type: 'string',
+      defaultValue: 'default',
+      possibleValue: <code>default | dimmed</code>,
+      require: 'no',
+      description: 'Sets the variant of the badge',
+    },
   ],
 };
 
@@ -40,6 +48,11 @@ const BadgeStory = () => (
     <div style={{ marginBottom: '2em' }}>
       <span style={{ marginRight: '.5em' }}>Location</span>
       <Badge label="15" />
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      <span style={{ marginRight: '.5em' }}>Dimmed Badge</span>
+      <Badge label="16" variant="dimmed" />
     </div>
   </StorybookComponent>
 );

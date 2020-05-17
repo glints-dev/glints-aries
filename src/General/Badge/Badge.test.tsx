@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import 'jest-styled-components';
 import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
@@ -32,4 +33,15 @@ describe('when sup is:', () => {
     const { top } = getComputedStyle(badgeContainer);
     expect(top).toBeFalsy();
   });
+});
+
+describe('<Badge/> snapshots with variant prop', () => {
+  const matchSnapshotWithVariant = (variant: string) => {
+    test(`variant ${variant}`, () => {
+      const { asFragment } = render(<Badge variant={variant} label={label} />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  ['default', 'dimmed'].forEach(variant => matchSnapshotWithVariant(variant));
 });

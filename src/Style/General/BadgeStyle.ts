@@ -1,12 +1,17 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
+import { BadgeVariant } from '../../General/Badge/Badge';
 
 export const BadgeContainer = styled.div<BadgeContainerProps>`
   position: relative;
   display: inline-flex;
-  background: ${PrimaryColor.glintsred};
+  background: ${({ variant }) =>
+    variant === BadgeVariant.DEFAULT
+      ? `${PrimaryColor.glintsred}`
+      : `${Greyscale.grey}`};
   color: ${SecondaryColor.white};
-  border-radius: 20px;
+  border-radius: 10px;
+  margin: 0 5px;
 
   ${({ sup }) => {
     if (sup) {
@@ -17,18 +22,24 @@ export const BadgeContainer = styled.div<BadgeContainerProps>`
   }}
 
   span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: ${({ sup }) => (sup ? '1.6em' : '2em')};
-    min-width: ${({ sup }) => (sup ? '1.6em' : '2em')};
-    font-size: ${({ sup }) => (sup ? '.7em' : '1em')};
-    line-height: 1.5;
-    font-weight: 600;
-    padding: 0.4em;
+    height: ${({ sup }) => (sup ? '1.6em' : '17px')};
+    min-width: ${({ sup }) => (sup ? '1.6em' : '19px')};
+    font-size: ${({ sup }) => (sup ? '.7em' : '12px')};
+    font-weight: bold;
+    padding: 0 5px;
+    text-align: center;
+    ${({ sup }) => {
+      if (sup) {
+        return `
+          display: flex;
+          align-items: center;
+        `;
+      }
+    }}
   }
 `;
 
 interface BadgeContainerProps {
   sup?: boolean;
+  variant?: string;
 }
