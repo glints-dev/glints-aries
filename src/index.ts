@@ -113,6 +113,7 @@ export { default as EyeSlashedIcon } from './General/Icon/components/EyeSlashedI
 export { default as FacebookIcon } from './General/Icon/components/FacebookIcon';
 export { default as FileIcon } from './General/Icon/components/FileIcon';
 export { default as FileAlternateIcon } from './General/Icon/components/FileAlternateIcon';
+export { default as FilePreviewIcon } from './General/Icon/components/FilePreviewIcon';
 export { default as FileSolidIcon } from './General/Icon/components/FileSolidIcon';
 export { default as FilterIcon } from './General/Icon/components/FilterIcon';
 export { default as FlagIcon } from './General/Icon/components/FlagIcon';

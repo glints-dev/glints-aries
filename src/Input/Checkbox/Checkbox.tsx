@@ -3,14 +3,16 @@ import classNames from 'classnames';
 
 import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
 
-const Checkbox: React.FunctionComponent<Props> = ({
-  className,
+const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   id,
   label,
   value,
   onClick,
+  size = 'small',
+  border = false,
+  className,
   ...restProps
-}: Props) => {
+}: CheckboxProps) => {
   const [checked, setChecked] = React.useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
@@ -27,6 +29,9 @@ const Checkbox: React.FunctionComponent<Props> = ({
       aria-labelledby={id}
       aria-checked={checked}
       tabIndex={0}
+      size={size}
+      border={border}
+      checked={checked}
     >
       <input
         type="checkbox"
@@ -42,10 +47,13 @@ const Checkbox: React.FunctionComponent<Props> = ({
   );
 };
 
-type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'label'>;
+type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'size' | 'label'>;
 
-export interface Props extends HTMLInputProps {
+export interface CheckboxProps extends HTMLInputProps {
   label?: React.ReactNode;
+  size?: 'large' | 'small';
+  border?: boolean;
+  value?: string;
 }
 
 export default Checkbox;

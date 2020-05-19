@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../Colors';
+import { CheckboxProps } from '../../Input/Checkbox/Checkbox';
 
-export const CheckboxContainer = styled.div`
+export const CheckboxContainer = styled.div<CheckboxProps>`
   position: relative;
   display: inline-flex;
-  font-size: 1em;
+  font-size: ${({ size }) => (size === 'small' ? '14px' : '16px')};
   line-height: 1.5;
 
   &:focus {
     outline: none;
-  }
-
-  &:focus > label {
-    outline: 5px auto -webkit-focus-ring-color;
   }
 
   input {
@@ -34,11 +31,26 @@ export const CheckboxContainer = styled.div`
       border: solid ${SecondaryColor.white};
       border-width: 0 0.15em 0.15em 0;
       transform: rotate(45deg);
+      ${({ border }) => {
+        if (border) {
+          return `
+            margin-top: 10px;
+            margin-left: 15px;
+          `;
+        }
+      }};
     }
 
     &:checked + label:before {
-      background: ${SecondaryColor.darkgreen};
-      border: 2px solid ${SecondaryColor.darkgreen};
+      background: ${({ border }) =>
+        border
+          ? `${SecondaryColor.actionblue}`
+          : `${SecondaryColor.darkgreen}`};
+      border: 2px solid
+        ${({ border }) =>
+          border
+            ? `${SecondaryColor.actionblue}`
+            : `${SecondaryColor.darkgreen}`};
     }
   }
 
@@ -49,6 +61,29 @@ export const CheckboxContainer = styled.div`
     line-height: 1.5;
     cursor: pointer;
     outline: none;
+    ${({ border }) => {
+      if (border) {
+        return `
+          border: 1px solid #aaaaaa;
+          height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
+          cursor: pointer;
+          border-radius: 2px;
+          padding: 10px 15px;
+          &:hover {
+            background: rgba(1, 126, 183, 0.1);
+            border-color: ${SecondaryColor.actionblue};
+          }
+        `;
+      }
+    }};
+
+    ${({ checked }) => {
+      if (checked) {
+        return `
+          border-color: ${SecondaryColor.actionblue};
+        `;
+      }
+    }};
 
     &:before {
       content: '';
@@ -62,10 +97,10 @@ export const CheckboxContainer = styled.div`
       position: relative;
       vertical-align: middle;
       cursor: pointer;
-      margin-right: 0.5em;
-      border-radius: 4px;
-      height: 1em;
-      width: 1em;
+      margin-right: 10px;
+      border-radius: 2px;
+      height: 18px;
+      width: 18px;
     }
   }
 `;

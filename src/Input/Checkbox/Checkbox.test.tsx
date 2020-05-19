@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Checkbox, { Props } from './Checkbox';
+import Checkbox, { CheckboxProps } from './Checkbox';
 
 const props = {
   id: 'software-engineer',
@@ -12,7 +12,7 @@ const props = {
   onClick: jest.fn().mockImplementation(event => event.target.value),
 };
 
-function setupCheckbox(props: Props) {
+function setupCheckbox(props: CheckboxProps) {
   const { id, value, onClick, ...restProps } = props;
   const { getByText, getByLabelText, ...utils } = render(
     <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
