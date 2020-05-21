@@ -38,15 +38,18 @@ const Select: ISelect = (props: Props) => {
   } = props;
 
   // warn deprecated prop "status"
-  React.useEffect(() => {
-    if (status) {
-      if (typeof console !== 'undefined') {
-        console.warn(`Warning: Select's status prop is deprecated and will be
+  React.useEffect(
+    function warnDeprecatedProp() {
+      if (status) {
+        if (typeof console !== 'undefined') {
+          console.warn(`Warning: Select's status prop is deprecated and will be
         removed in a future release.\n\nPlease use the error prop instead to
         show errors and indicate an error state.`);
+        }
       }
-    }
-  }, [status]);
+    },
+    [status]
+  );
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
@@ -90,10 +93,13 @@ const Select: ISelect = (props: Props) => {
     getAvailableOptions()
   );
 
-  React.useEffect(() => {
-    const availableOptions = getAvailableOptions();
-    setOptions(availableOptions);
-  }, [getAvailableOptions]);
+  React.useEffect(
+    function updateOptions() {
+      const availableOptions = getAvailableOptions();
+      setOptions(availableOptions);
+    },
+    [getAvailableOptions]
+  );
 
   // handle click outside
   const onClickOutside = React.useCallback(
@@ -106,10 +112,13 @@ const Select: ISelect = (props: Props) => {
     [setIsFocus]
   );
 
-  React.useEffect(() => {
-    document.addEventListener('click', onClickOutside, false);
-    return () => document.removeEventListener('click', onClickOutside, false);
-  }, [onClickOutside]);
+  React.useEffect(
+    function registerClickOutsideListener() {
+      document.addEventListener('click', onClickOutside, false);
+      return () => document.removeEventListener('click', onClickOutside, false);
+    },
+    [onClickOutside]
+  );
 
   React.useEffect(() => {
     if (value !== undefined && value !== '' && value !== null) {
