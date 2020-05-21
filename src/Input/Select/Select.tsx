@@ -32,8 +32,9 @@ const Select: ISelect = (props: Props) => {
     removeDropIcon,
     error,
     renderError,
-    value, // eslint-disable-line @typescript-eslint/no-unused-vars
-    children, // eslint-disable-line @typescript-eslint/no-unused-vars
+    value,
+    defaultValue,
+    children,
     isLoading,
     ...defaultProps
   } = props;
@@ -55,16 +56,13 @@ const Select: ISelect = (props: Props) => {
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(
-    props.defaultValue || value || ''
+    value || defaultValue || ''
   );
   const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
   const [
     shouldScrollToActiveOption,
     setShouldScrollToActiveOption,
   ] = React.useState<boolean>(false);
-  const [defaultValue, setDefaultValue] = React.useState<string>(
-    props.defaultValue
-  );
 
   const SelectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
 
