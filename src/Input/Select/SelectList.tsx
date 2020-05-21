@@ -24,21 +24,26 @@ const SelectList: React.FunctionComponent<Props> = ({
     small={small}
   >
     {options.length !== 0 && !isLoading ? (
-      options.map((data: React.ReactElement<SelectItemProps>, index) => (
-        <SelectItem
-          className={activeOptionIndex === index ? 'active' : null}
-          key={data.props.value}
-          role="option"
-          data-testid="option"
-          data-id={index}
-          data-value={data.props.value}
-          onClick={handleClickOnOption}
-          onMouseEnter={handleMouseEnterOption}
-          tabIndex={0}
-        >
-          {data.props.children}
-        </SelectItem>
-      ))
+      options.map((data: React.ReactElement<SelectItemProps>, index) => {
+        const { value, children, ...restProps } = data.props;
+        delete restProps.onOptionClick;
+        return (
+          <SelectItem
+            {...restProps}
+            className={activeOptionIndex === index ? 'active' : null}
+            key={value}
+            role="option"
+            data-testid="option"
+            data-id={index}
+            data-value={value}
+            onClick={handleClickOnOption}
+            onMouseEnter={handleMouseEnterOption}
+            tabIndex={0}
+          >
+            {children}
+          </SelectItem>
+        );
+      })
     ) : isLoading ? (
       <SelectItem className="select-loading" role="option">
         <Loading />
