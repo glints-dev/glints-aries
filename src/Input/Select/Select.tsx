@@ -39,8 +39,9 @@ const Select: ISelect = (props: Props) => {
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const [options, setOptions] = React.useState<React.ReactNode[]>([]);
+  const [inputValue, setInputValue] = React.useState<string>(
+    props.defaultValue || value || ''
+  );
   const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
   const [
     shouldScrollToActiveOption,
@@ -51,6 +52,37 @@ const Select: ISelect = (props: Props) => {
   );
 
   const SelectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
+
+  // set options based on children and inputValue
+  const getAvailableOptions = React.useCallback(() => {
+    const childrenOptions = React.Children.toArray(children) as Array<
+      React.ReactElement<SelectItemProps>
+    >;
+    if (!inputValue) {
+      return childrenOptions;
+    }
+
+    const isInputValueOneOfOptions = childrenOptions.find(
+      data => data.props.children === inputValue
+    );
+    if (isInputValueOneOfOptions) {
+      return childrenOptions;
+    }
+
+    const matchedChildrenOptions = childrenOptions.filter(data =>
+      data.props.children.toLowerCase().includes(inputValue.toLowerCase())
+    );
+    return matchedChildrenOptions;
+  }, [children, inputValue]);
+
+  const [options, setOptions] = React.useState<React.ReactNode[]>(
+    getAvailableOptions()
+  );
+
+  React.useEffect(() => {
+    const availableOptions = getAvailableOptions();
+    setOptions(availableOptions);
+  }, [getAvailableOptions]);
 
   // handle click outside
   const onClickOutside = React.useCallback(
@@ -66,34 +98,6 @@ const Select: ISelect = (props: Props) => {
     document.addEventListener('click', onClickOutside, false);
     return () => document.removeEventListener('click', onClickOutside, false);
   }, [onClickOutside]);
-
-  // set options based on children and inputValue
-  // TODO: understand why useEffect is not working, need useLayoutEffect
-  React.useLayoutEffect(() => {
-    const childrenOptions = React.Children.toArray(children) as Array<
-      React.ReactElement<SelectItemProps>
-    >;
-
-    if (!inputValue) {
-      setOptions(childrenOptions);
-      return;
-    }
-
-    const isInputValueOneOfOptions = childrenOptions.find(
-      data => data.props.children === inputValue
-    );
-
-    if (isInputValueOneOfOptions) {
-      setOptions(childrenOptions);
-      return;
-    }
-
-    const matchedChildrenOptions = childrenOptions.filter(data =>
-      data.props.children.toLowerCase().includes(inputValue.toLowerCase())
-    );
-
-    setOptions(matchedChildrenOptions);
-  }, [children, inputValue]);
 
   React.useLayoutEffect(() => {
     if (value !== undefined && value !== '' && value !== null) {
