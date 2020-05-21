@@ -120,31 +120,27 @@ const Select: ISelect = (props: Props) => {
     [onClickOutside]
   );
 
-  React.useEffect(() => {
-    if (value !== undefined && value !== '' && value !== null) {
-      setFloating(true);
-      setInputValue(value as string);
-      setDefaultValue(value as string);
-    }
-  }, [children, value]);
-
-  React.useEffect(() => {
-    if (value && value !== defaultValue) {
-      setInputValue(value as string);
-      setDefaultValue(value as string);
-      setFloating(true);
-    } else if (value === '') {
-      setInputValue(value);
-      setDefaultValue(value);
-      setFloating(false);
-    }
-  }, [value, defaultValue]);
+  // set inputValue
+  React.useEffect(
+    function handleValueChange() {
+      if (value) {
+        setFloating(true);
+        setInputValue(value as string);
+        return;
+      }
+      if (value === '') {
+        setInputValue(value);
+        setFloating(false);
+      }
+    },
+    [value]
+  );
 
   const handleFocusOut = React.useCallback(
     (e: React.FocusEvent<HTMLInputElement>) => {
       setFloating(e.target.value.length > 0);
 
-      if (onBlur !== undefined) {
+      if (typeof onBlur === 'function') {
         return onBlur(e);
       }
     },
@@ -155,7 +151,7 @@ const Select: ISelect = (props: Props) => {
     (e: React.FocusEvent<HTMLInputElement>) => {
       setIsFocus(true);
 
-      if (onFocus !== undefined) {
+      if (typeof onFocus === 'function') {
         return onFocus(e);
       }
     },
