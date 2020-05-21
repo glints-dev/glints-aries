@@ -67,12 +67,35 @@ const Select: ISelect = (props: Props) => {
     return () => document.removeEventListener('click', onClickOutside, false);
   }, [onClickOutside]);
 
+  // set options based on children and inputValue
+  // TODO: understand why useEffect is not working, need useLayoutEffect
   React.useLayoutEffect(() => {
-    // Checking if children data is exist or not.
-    if (React.Children.count(children) !== 0) {
-      setOptions(React.Children.map(children, data => data));
+    const childrenOptions = React.Children.toArray(children) as Array<
+      React.ReactElement<SelectItemProps>
+    >;
+
+    if (!inputValue) {
+      setOptions(childrenOptions);
+      return;
     }
 
+    const isInputValueOneOfOptions = childrenOptions.find(
+      data => data.props.children === inputValue
+    );
+
+    if (isInputValueOneOfOptions) {
+      setOptions(childrenOptions);
+      return;
+    }
+
+    const matchedChildrenOptions = childrenOptions.filter(data =>
+      data.props.children.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
+    setOptions(matchedChildrenOptions);
+  }, [children, inputValue]);
+
+  React.useLayoutEffect(() => {
     if (value !== undefined && value !== '' && value !== null) {
       setFloating(true);
       setInputValue(value as string);
@@ -125,25 +148,14 @@ const Select: ISelect = (props: Props) => {
   // Should be called when the user types into the input
   const handleInputChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const childrenArray = React.Children.toArray(children) as Array<
-        React.ReactElement<SelectItemProps>
-      >;
-
       setInputValue(e.target.value);
-      setOptions(
-        childrenArray.filter(data =>
-          data.props.children
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase())
-        )
-      );
       setActiveOptionIndex(0);
 
       if (onChange !== undefined) {
         return onChange(e);
       }
     },
-    [children, onChange]
+    [onChange]
   );
 
   const getActiveElement = React.useCallback(() => {
@@ -156,7 +168,6 @@ const Select: ISelect = (props: Props) => {
       const activeElement = e ? e.target : getActiveElement();
       const inputValue = activeElement.textContent;
       setInputValue(inputValue);
-      setOptions(React.Children.map(children, data => data));
       setIsFocus(false);
       setFloating(true);
 
@@ -171,7 +182,7 @@ const Select: ISelect = (props: Props) => {
         onOptionClick(e);
       }
     },
-    [children, onChange, options, getActiveElement]
+    [onChange, options, getActiveElement]
   );
 
   const scrollToActiveElement = React.useCallback(() => {
