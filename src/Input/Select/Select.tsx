@@ -39,12 +39,13 @@ const Select: ISelect = (props: Props) => {
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
-  const [selectedValue, setSelectedValue] = React.useState<string>('');
-  const [filterValue, setFilterValue] = React.useState<React.ReactNode[]>([]);
-  const [cursor, setCursor] = React.useState<number>(0);
-  const [shouldScrollToCursor, setShouldScrollToCursor] = React.useState<
-    boolean
-  >(false);
+  const [inputValue, setInputValue] = React.useState<string>('');
+  const [options, setOptions] = React.useState<React.ReactNode[]>([]);
+  const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
+  const [
+    shouldScrollToActiveOption,
+    setShouldScrollToActiveOption,
+  ] = React.useState<boolean>(false);
   const [defaultValue, setDefaultValue] = React.useState<string>(
     props.defaultValue
   );
@@ -61,12 +62,12 @@ const Select: ISelect = (props: Props) => {
   React.useLayoutEffect(() => {
     // Checking if children data is exist or not.
     if (React.Children.count(children) !== 0) {
-      setFilterValue(React.Children.map(children, data => data));
+      setOptions(React.Children.map(children, data => data));
     }
 
     if (value !== undefined && value !== '' && value !== null) {
       setFloating(true);
-      setSelectedValue(value as string);
+      setInputValue(value as string);
       setDefaultValue(value as string);
     }
 
@@ -85,11 +86,11 @@ const Select: ISelect = (props: Props) => {
 
   React.useEffect(() => {
     if (value && value !== defaultValue) {
-      setSelectedValue(value as string);
+      setInputValue(value as string);
       setDefaultValue(value as string);
       setFloating(true);
     } else if (value === '') {
-      setSelectedValue(value);
+      setInputValue(value);
       setDefaultValue(value);
       setFloating(false);
     }
@@ -118,21 +119,21 @@ const Select: ISelect = (props: Props) => {
   );
 
   // Should be called when the user types into the input
-  const handleChange = React.useCallback(
+  const handleInputChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const childrenArray = React.Children.toArray(children) as Array<
         React.ReactElement<SelectItemProps>
       >;
 
-      setSelectedValue(e.target.value);
-      setFilterValue(
+      setInputValue(e.target.value);
+      setOptions(
         childrenArray.filter(data =>
           data.props.children
             .toLowerCase()
             .includes(e.target.value.toLowerCase())
         )
       );
-      setCursor(0);
+      setActiveOptionIndex(0);
 
       if (onChange !== undefined) {
         return onChange(e);
@@ -146,12 +147,12 @@ const Select: ISelect = (props: Props) => {
   }, []);
 
   // Should be called when the user selects an option
-  const handleSelect = React.useCallback(
+  const handleClickOnOption = React.useCallback(
     (e?: React.ChangeEvent<HTMLInputElement>) => {
       const activeElement = e ? e.target : getActiveElement();
-      const selectedValue = activeElement.textContent;
-      setSelectedValue(selectedValue);
-      setFilterValue(React.Children.map(children, data => data));
+      const inputValue = activeElement.textContent;
+      setInputValue(inputValue);
+      setOptions(React.Children.map(children, data => data));
       setIsFocus(false);
       setFloating(true);
 
@@ -160,13 +161,13 @@ const Select: ISelect = (props: Props) => {
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
-      const activeChild = filterValue[activeElementIndex];
+      const activeChild = options[activeElementIndex];
       const onOptionClick = get(activeChild, 'props.onOptionClick');
       if (onOptionClick !== undefined) {
         onOptionClick(e);
       }
     },
-    [children, onChange, filterValue, getActiveElement]
+    [children, onChange, options, getActiveElement]
   );
 
   const scrollToActiveElement = React.useCallback(() => {
@@ -185,34 +186,45 @@ const Select: ISelect = (props: Props) => {
         e.preventDefault();
       }
 
-      if (e.keyCode === 38 && cursor > 0) {
-        setCursor(cursor - 1);
-        setShouldScrollToCursor(true);
-      } else if (e.keyCode === 40 && cursor < filterValue.length - 1) {
-        setCursor(cursor + 1);
-        setShouldScrollToCursor(true);
-      } else if (e.keyCode === 13) {
+      // up arrow key
+      if (e.keyCode === 38 && activeOptionIndex > 0) {
+        setActiveOptionIndex(activeOptionIndex - 1);
+        setShouldScrollToActiveOption(true);
+      }
+      // down arrow key
+      else if (e.keyCode === 40 && activeOptionIndex < options.length - 1) {
+        setActiveOptionIndex(activeOptionIndex + 1);
+        setShouldScrollToActiveOption(true);
+      }
+      // enter key
+      else if (e.keyCode === 13) {
         inputElement.blur();
-        handleSelect();
-      } else if (e.keyCode === 27) {
+        handleClickOnOption();
+      }
+      // escape key
+      else if (e.keyCode === 27) {
         inputElement.blur();
         setIsFocus(false);
       }
     },
-    [disableTyping, filterValue, cursor, handleSelect]
+    [disableTyping, options, activeOptionIndex, handleClickOnOption]
   );
 
   React.useEffect(() => {
-    if (shouldScrollToCursor) {
+    if (shouldScrollToActiveOption) {
       scrollToActiveElement();
-      setShouldScrollToCursor(false);
+      setShouldScrollToActiveOption(false);
     }
-  }, [shouldScrollToCursor, setShouldScrollToCursor, scrollToActiveElement]);
+  }, [
+    shouldScrollToActiveOption,
+    setShouldScrollToActiveOption,
+    scrollToActiveElement,
+  ]);
 
-  const handleMouseEnter = React.useCallback(
+  const handleMouseEnterOption = React.useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
       const listItemElement = e.target as HTMLLIElement;
-      setCursor(Number(listItemElement.dataset.id));
+      setActiveOptionIndex(Number(listItemElement.dataset.id));
     },
     []
   );
@@ -254,10 +266,10 @@ const Select: ISelect = (props: Props) => {
           disabled={disabled}
           onFocus={handleFocus}
           onBlur={handleFocusOut}
-          onChange={handleChange}
+          onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           floating={floating}
-          value={selectedValue}
+          value={inputValue}
           small={small}
           disableTyping={disableTyping}
           readOnly={disableTyping}
@@ -282,14 +294,14 @@ const Select: ISelect = (props: Props) => {
       </SelectWrapper>
       <SelectList
         aria-label="select-list"
-        cursor={cursor}
-        filterValue={filterValue}
+        activeOptionIndex={activeOptionIndex}
+        options={options}
         isFocus={isFocus}
         isLoading={isLoading}
         noOptionResult={noOptionResult}
         small={small}
-        handleClick={handleSelect}
-        handleMouseEnter={handleMouseEnter}
+        handleClickOnOption={handleClickOnOption}
+        handleMouseEnterOption={handleMouseEnterOption}
       />
       {completeError}
     </SelectContainer>
