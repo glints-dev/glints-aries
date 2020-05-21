@@ -165,6 +165,12 @@ const Select: ISelect = (props: Props) => {
 
       if (typeof onChange === 'function') {
         onChange(e);
+        if (typeof console !== 'undefined') {
+          console.warn(`
+            Warning: onChange will not be fired when input value changes in a future release,
+            please use onInputChange instead.
+          `);
+        }
       }
 
       if (typeof onInputChange === 'function') {
@@ -188,7 +194,7 @@ const Select: ISelect = (props: Props) => {
       setFloating(true);
 
       if (typeof onChange === 'function') {
-        onChange(activeElement.getAttribute('data-value'));
+        onChange(activeElement.dataset.value);
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
@@ -211,11 +217,12 @@ const Select: ISelect = (props: Props) => {
   // Should be called when any key is pressed inside the component
   const handleKeyDown = React.useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
-      const inputElement = e.target as HTMLInputElement;
-
       if (disableTyping) {
         e.preventDefault();
+        return;
       }
+
+      const inputElement = e.target as HTMLInputElement;
 
       // up arrow key
       if (e.keyCode === 38 && activeOptionIndex > 0) {
@@ -241,16 +248,19 @@ const Select: ISelect = (props: Props) => {
     [disableTyping, options, activeOptionIndex, handleClickOnOption]
   );
 
-  React.useEffect(() => {
-    if (shouldScrollToActiveOption) {
-      scrollToActiveElement();
-      setShouldScrollToActiveOption(false);
-    }
-  }, [
-    shouldScrollToActiveOption,
-    setShouldScrollToActiveOption,
-    scrollToActiveElement,
-  ]);
+  React.useEffect(
+    function handleScrollToActiveElement() {
+      if (shouldScrollToActiveOption) {
+        scrollToActiveElement();
+        setShouldScrollToActiveOption(false);
+      }
+    },
+    [
+      shouldScrollToActiveOption,
+      setShouldScrollToActiveOption,
+      scrollToActiveElement,
+    ]
+  );
 
   const handleMouseEnterOption = React.useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
