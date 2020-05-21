@@ -24,6 +24,7 @@ const Select: ISelect = (props: Props) => {
     onFocus,
     onBlur,
     onChange,
+    onInputChange,
     noOptionResult = 'No results found',
     small,
     disableTyping,
@@ -164,11 +165,15 @@ const Select: ISelect = (props: Props) => {
       setInputValue(e.target.value);
       setActiveOptionIndex(0);
 
-      if (onChange !== undefined) {
-        return onChange(e);
+      if (typeof onChange === 'function') {
+        onChange(e);
+      }
+
+      if (typeof onInputChange === 'function') {
+        onInputChange(e);
       }
     },
-    [onChange]
+    [onChange, onInputChange]
   );
 
   const getActiveElement = React.useCallback(() => {
@@ -184,14 +189,14 @@ const Select: ISelect = (props: Props) => {
       setIsFocus(false);
       setFloating(true);
 
-      if (onChange !== undefined) {
+      if (typeof onChange === 'function') {
         onChange(activeElement.getAttribute('data-value'));
       }
 
       const activeElementIndex = Number(get(activeElement, 'dataset.id'));
       const activeChild = options[activeElementIndex];
       const onOptionClick = get(activeChild, 'props.onOptionClick');
-      if (onOptionClick !== undefined) {
+      if (typeof onOptionClick === 'function') {
         onOptionClick(e);
       }
     },
@@ -350,6 +355,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
   onChange?(value: any): void;
+  onInputChange?(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 type ISelect = React.FunctionComponent<Props> & {

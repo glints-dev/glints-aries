@@ -38,7 +38,7 @@ const props = {
       defaultValue: '',
       possibleValue: 'any',
       require: 'no',
-      description: `WARNING: Will only allow string type in the future, don't customize error message style. Sets error state on component. If string, the error will be shown below the select`,
+      description: `WARNING: Don't customize error message style when passing ReactNode, pass true to display error state without error message`,
     },
     {
       name: 'renderError',
@@ -46,7 +46,7 @@ const props = {
       defaultValue: '<span color="#EC272B" />',
       possibleValue: 'any',
       require: 'no',
-      description: `WARNING: Will only allow string type in the future, don't customize error message style. Replaces the default error component. Receives 'error' as children.`,
+      description: `WARNING: Don't customize error message style. Replaces the default error component. Receives 'error' as children.`,
     },
     {
       name: 'isLoading',
@@ -66,6 +66,15 @@ const props = {
         "Disable typing on Select input, so the option can't be searched.",
     },
     {
+      name: 'autoComplete',
+      type: 'string',
+      defaultValue: '',
+      possibleValue: 'nope',
+      require: 'no',
+      description:
+        'To disable browser auto complete, pass "nope" or anything other than "off".',
+    },
+    {
       name: 'disabled',
       type: 'boolean',
       defaultValue: <code>false</code>,
@@ -83,11 +92,20 @@ const props = {
     },
     {
       name: 'onChange',
-      type: 'function',
+      type: '(value: string) => void',
       defaultValue: '',
       possibleValue: 'function',
       require: 'no',
-      description: 'Called when select an option or value of input is changed.',
+      description:
+        'Called when select an option or value of input is changed. WARNING: firing on value of input is changed will be deprecated',
+    },
+    {
+      name: 'onInputChange',
+      type: '(e: React.ChangeEvent<HTMLInputElement>) => void',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description: 'Called when value of input is changed.',
     },
     {
       name: 'small',
@@ -154,7 +172,7 @@ const Story = (
       </Select>
     </div>
     <div style={{ width: '300px', marginBottom: '3rem' }}>
-      <Select label="Jobs">
+      <Select label="Jobs" autoComplete="nope">
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
           Business Development
