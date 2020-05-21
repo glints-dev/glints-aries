@@ -37,6 +37,17 @@ const Select: ISelect = (props: Props) => {
     ...defaultProps
   } = props;
 
+  // warn deprecated prop "status"
+  React.useEffect(() => {
+    if (status) {
+      if (typeof console !== 'undefined') {
+        console.warn(`Warning: Select's status prop is deprecated and will be
+        removed in a future release.\n\nPlease use the error prop instead to
+        show errors and indicate an error state.`);
+      }
+    }
+  }, [status]);
+
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(
@@ -94,26 +105,19 @@ const Select: ISelect = (props: Props) => {
     },
     [setIsFocus]
   );
+
   React.useEffect(() => {
     document.addEventListener('click', onClickOutside, false);
     return () => document.removeEventListener('click', onClickOutside, false);
   }, [onClickOutside]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (value !== undefined && value !== '' && value !== null) {
       setFloating(true);
       setInputValue(value as string);
       setDefaultValue(value as string);
     }
-
-    if (status) {
-      if (typeof console !== 'undefined') {
-        console.warn(`Warning: Select's status prop is deprecated and will be
-        removed in a future release.\n\nPlease use the error prop instead to
-        show errors and indicate an error state.`);
-      }
-    }
-  }, [children, status, value]);
+  }, [children, value]);
 
   React.useEffect(() => {
     if (value && value !== defaultValue) {
