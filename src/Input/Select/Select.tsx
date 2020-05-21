@@ -50,14 +50,22 @@ const Select: ISelect = (props: Props) => {
     props.defaultValue
   );
 
-  const node: React.RefObject<HTMLDivElement> = React.useRef();
+  const SelectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
 
-  const handleOnBlur = React.useCallback((event: MouseEvent) => {
-    const element = event.target as HTMLElement;
-    if (!ReactDOM.findDOMNode(node.current).contains(element)) {
-      setIsFocus(false);
-    }
-  }, []);
+  // handle click outside
+  const onClickOutside = React.useCallback(
+    (event: MouseEvent) => {
+      const element = event.target as HTMLElement;
+      if (!ReactDOM.findDOMNode(SelectContainerRef.current).contains(element)) {
+        setIsFocus(false);
+      }
+    },
+    [setIsFocus]
+  );
+  React.useEffect(() => {
+    document.addEventListener('click', onClickOutside, false);
+    return () => document.removeEventListener('click', onClickOutside, false);
+  }, [onClickOutside]);
 
   React.useLayoutEffect(() => {
     // Checking if children data is exist or not.
@@ -78,11 +86,7 @@ const Select: ISelect = (props: Props) => {
         show errors and indicate an error state.`);
       }
     }
-
-    document.addEventListener('click', handleOnBlur, false);
-
-    return () => document.removeEventListener('click', handleOnBlur, false);
-  }, [children, handleOnBlur, status, value]);
+  }, [children, status, value]);
 
   React.useEffect(() => {
     if (value && value !== defaultValue) {
@@ -143,7 +147,7 @@ const Select: ISelect = (props: Props) => {
   );
 
   const getActiveElement = React.useCallback(() => {
-    return node.current.querySelector('.active') as HTMLLIElement;
+    return SelectContainerRef.current.querySelector('.active') as HTMLLIElement;
   }, []);
 
   // Should be called when the user selects an option
@@ -171,7 +175,7 @@ const Select: ISelect = (props: Props) => {
   );
 
   const scrollToActiveElement = React.useCallback(() => {
-    const selectListElement = node.current.querySelector(
+    const selectListElement = SelectContainerRef.current.querySelector(
       '.select-listbox'
     ) as HTMLUListElement;
     selectListElement.scrollTop = getActiveElement().offsetTop;
@@ -249,7 +253,7 @@ const Select: ISelect = (props: Props) => {
   return (
     <SelectContainer
       className={classNames('aries-select', className)}
-      ref={node}
+      ref={SelectContainerRef}
     >
       <SelectWrapper
         className="select-inputwrapper"
