@@ -360,3 +360,196 @@ it('up and down arrow keys can be used to navigate the options menu', () => {
   fireEvent.keyDown(selectInput, arrowUpEvent);
   expect(firstOption).toHaveClass('active');
 });
+
+describe('<Select/> on click outside', () => {
+  it('should lose focus', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="ClickOutside">
+          <Select.Option value="ClickOutside">ClickOutside</Select.Option>
+        </Select>
+        <div>outside</div>
+      </React.Fragment>
+    );
+
+    const { queryByTestId, queryByRole, queryByText } = render(<Component />);
+    const selectInput = queryByRole('combobox') as HTMLInputElement;
+    const selectList = queryByTestId('listbox');
+    const outside = queryByText('outside');
+
+    fireEvent.focus(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.click(outside);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+    expect(selectInput).not.toHaveFocus();
+  });
+
+  it('should remove click outside listener when unmount', () => {
+    const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+    const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
+
+    const Component = () => (
+      <React.Fragment>
+        <Select label="ClickOutside">
+          <Select.Option value="ClickOutside">ClickOutside</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { unmount } = render(<Component />);
+    unmount();
+    expect(removeEventListenerSpy.mock.calls[0][1]).toEqual(
+      addEventListenerSpy.mock.calls[0][1]
+    );
+    addEventListenerSpy.mockRestore();
+    removeEventListenerSpy.mockRestore();
+  });
+});
+
+describe('<Select/> onBlur onFocus', () => {
+  it('should call onBlur and onFocus', () => {
+    const onBlurSpy = jest.fn();
+    const onFocusSpy = jest.fn();
+    const Component = () => (
+      <React.Fragment>
+        <Select label="ClickOutside" onBlur={onBlurSpy} onFocus={onFocusSpy}>
+          <Select.Option value="ClickOutside">ClickOutside</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole, asFragment } = render(<Component />);
+    const selectInput = queryByRole('combobox') as HTMLInputElement;
+
+    fireEvent.focus(selectInput);
+    expect(onFocusSpy).toHaveBeenCalledTimes(1);
+    // use snapshot to validate isFocus
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.blur(selectInput);
+    expect(onBlurSpy).toHaveBeenCalledTimes(1);
+    // use snapshot to validate floating
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('<Select/> handleValueChange', () => {
+  it('input value should be the same as passed prop value', async () => {
+    const Component = ({ value }: { value: string }) => (
+      <React.Fragment>
+        <Select label="handleValueChange" value={value}>
+          <Select.Option value="handleValueChange">
+            handleValueChange
+          </Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const mockValue = 'mock';
+    const { queryByRole, rerender } = render(<Component value={mockValue} />);
+    const selectInput = queryByRole('combobox');
+    expect(selectInput.getAttribute('value')).toEqual(mockValue);
+    rerender(<Component value="" />);
+    expect(selectInput.getAttribute('value')).toEqual('');
+  });
+});
+
+describe('<Select/> prop onInputChange', () => {
+  it('should call onInputChange on input change', async () => {
+    const onInputChangeSpy = jest.fn();
+    const Component = () => (
+      <React.Fragment>
+        <Select label="onInputChange" onInputChange={onInputChangeSpy}>
+          <Select.Option value="onInputChange">onInputChange</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const mockValue = 'mock value';
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    fireEvent.change(selectInput, {
+      target: {
+        value: mockValue,
+      },
+    });
+    expect(onInputChangeSpy).toHaveBeenCalledTimes(1);
+    // not able to validate SyntheticEvent
+  });
+});
+
+describe('<Select/> disableTyping', () => {
+  it('esc key should have no effect', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="disableTyping" disableTyping={true}>
+          <Select.Option value="disableTyping">disableTyping</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    fireEvent.focus(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.keyDown(selectInput, { key: 'Esc', keyCode: 27 });
+    expect(selectList.hasAttribute('open')).toEqual(true);
+  });
+});
+
+describe('<Select/> esc key', () => {
+  it('esk keydown event should close the option list', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="disableTyping">
+          <Select.Option value="disableTyping">disableTyping</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    fireEvent.focus(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.keyDown(selectInput, { key: 'Esc', keyCode: 27 });
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+});
+
+describe('<Select/> handleMouseEnterOption', () => {
+  it('it should match snapshot, the option element should have active class name', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="handleMouseEnterOption">
+          <Select.Option value="handleMouseEnterOption">
+            handleMouseEnterOption
+          </Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole, queryByTestId, asFragment } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const option = queryByTestId('option');
+    const selectList = queryByTestId('listbox');
+
+    fireEvent.focus(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.mouseEnter(option);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('<Select.Option/>', () => {
+  it('should match snapshot', async () => {
+    const { asFragment } = render(
+      <Select.Option value="Option">Option</Select.Option>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
