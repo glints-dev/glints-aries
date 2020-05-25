@@ -69,10 +69,6 @@ class Gallery extends React.Component<Props, State> {
     }
   }
 
-  componentWillUnmount() {
-    this.sliderRef.current.sliderContainerRef.current.blur();
-  }
-
   render() {
     const { children, imagesDisplayed = defaultImagesDisplayed } = this.props;
     const { visible, currentIndex, imageLeft } = this.state;
