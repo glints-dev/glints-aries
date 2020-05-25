@@ -4,6 +4,7 @@ import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Select from './Select';
 import { PrimaryColor } from '../../Style/Colors';
@@ -381,7 +382,6 @@ describe('<Select/> on click outside', () => {
     expect(selectList.hasAttribute('open')).toEqual(true);
     fireEvent.click(outside);
     expect(selectList.hasAttribute('open')).toEqual(false);
-    expect(selectInput).not.toHaveFocus();
   });
 
   it('should remove click outside listener when unmount', () => {
@@ -446,8 +446,10 @@ describe('<Select/> handleValueChange', () => {
     );
 
     const mockValue = 'mock';
-    const { queryByRole, rerender } = render(<Component value={mockValue} />);
+    const { queryByRole, rerender } = render(<Component value="" />);
     const selectInput = queryByRole('combobox');
+    expect(selectInput.getAttribute('value')).toEqual('');
+    rerender(<Component value={mockValue} />);
     expect(selectInput.getAttribute('value')).toEqual(mockValue);
     rerender(<Component value="" />);
     expect(selectInput.getAttribute('value')).toEqual('');
@@ -479,7 +481,7 @@ describe('<Select/> prop onInputChange', () => {
 });
 
 describe('<Select/> disableTyping', () => {
-  it('esc key should have no effect', async () => {
+  it('esc key should still have effect', async () => {
     const Component = () => (
       <React.Fragment>
         <Select label="disableTyping" disableTyping={true}>
@@ -495,16 +497,46 @@ describe('<Select/> disableTyping', () => {
     fireEvent.focus(selectInput);
     expect(selectList.hasAttribute('open')).toEqual(true);
     fireEvent.keyDown(selectInput, { key: 'Esc', keyCode: 27 });
-    expect(selectList.hasAttribute('open')).toEqual(true);
+    expect(selectList.hasAttribute('open')).toEqual(false);
   });
-});
 
-describe('<Select/> esc key', () => {
-  it('esk keydown event should close the option list', async () => {
+  it('input value should change when disableTyping is not specified', async () => {
     const Component = () => (
       <React.Fragment>
         <Select label="disableTyping">
           <Select.Option value="disableTyping">disableTyping</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    userEvent.type(selectInput, 'abc');
+    expect((selectInput as any).value).toEqual('abc');
+  });
+
+  it('input value should not change when disableTyping is truthy', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="disableTyping" disableTyping={true}>
+          <Select.Option value="disableTyping">disableTyping</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    userEvent.type(selectInput, 'abc');
+    expect((selectInput as any).value).toEqual('');
+  });
+});
+
+describe('<Select/> esc key', () => {
+  it('esc keydown event should close the option list', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="esc">
+          <Select.Option value="esc">esc</Select.Option>
         </Select>
       </React.Fragment>
     );

@@ -46,7 +46,7 @@ const props = {
       defaultValue: '<span color="#EC272B" />',
       possibleValue: 'any',
       require: 'no',
-      description: `WARNING: Don't customize error message style. Replaces the default error component. Receives 'error' as children.`,
+      description: `(DEPRECATED) please use error instead`,
     },
     {
       name: 'isLoading',

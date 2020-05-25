@@ -67,7 +67,7 @@ const Select: ISelect = (props: Props) => {
   const selectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
 
   // set options based on children and inputValue
-  const getAvailableOptions = React.useCallback(() => {
+  const availableOptions = React.useMemo(() => {
     const childrenOptions = React.Children.toArray(children) as Array<
       React.ReactElement<SelectItemProps>
     >;
@@ -75,7 +75,7 @@ const Select: ISelect = (props: Props) => {
       return childrenOptions;
     }
 
-    const isInputValueOneOfOptions = childrenOptions.find(
+    const isInputValueOneOfOptions = childrenOptions.some(
       data => data.props.children === inputValue
     );
     if (isInputValueOneOfOptions) {
@@ -89,18 +89,16 @@ const Select: ISelect = (props: Props) => {
   }, [children, inputValue]);
 
   const [options, setOptions] = React.useState<React.ReactNode[]>(
-    getAvailableOptions()
+    availableOptions
   );
 
   React.useEffect(
     function updateOptions() {
-      const availableOptions = getAvailableOptions();
       setOptions(availableOptions);
     },
-    [getAvailableOptions]
+    [availableOptions]
   );
 
-  // handle click outside
   React.useEffect(function registerClickOutsideListener() {
     const onClickOutside = (event: MouseEvent) => {
       const element = event.target as HTMLElement;
@@ -115,7 +113,6 @@ const Select: ISelect = (props: Props) => {
     return () => document.removeEventListener('click', onClickOutside, false);
   }, []);
 
-  // set inputValue
   React.useEffect(
     function handleValueChange() {
       if (value) {
@@ -215,7 +212,6 @@ const Select: ISelect = (props: Props) => {
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (disableTyping) {
         e.preventDefault();
-        return;
       }
 
       const inputElement = e.target as HTMLInputElement;
