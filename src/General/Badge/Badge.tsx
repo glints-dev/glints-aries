@@ -21,7 +21,7 @@ const Badge: React.FunctionComponent<Props> = ({
         className={classNames('aries-badge', className)}
         role="presentation"
         sup={sup}
-        type={variant}
+        variant={variant}
         {...defaultProps}
       >
         <span className="badge-content">{label}</span>
@@ -33,7 +33,7 @@ const Badge: React.FunctionComponent<Props> = ({
 interface Props extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
   label: string | number;
   sup?: boolean;
-  type?: string;
+  variant?: string;
 }
 
 export default Badge;

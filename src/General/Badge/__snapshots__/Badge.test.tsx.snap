@@ -8,7 +8,7 @@ exports[`<Badge/> snapshots with variant prop variant default 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background: #777777;
+  background: #EC272B;
   color: #FFFFFF;
   border-radius: 10px;
   margin: 0 5px;
@@ -26,7 +26,6 @@ exports[`<Badge/> snapshots with variant prop variant default 1`] = `
 <div
     class="c0 aries-badge"
     role="presentation"
-    type="default"
   >
     <span
       class="badge-content"
@@ -63,7 +62,6 @@ exports[`<Badge/> snapshots with variant prop variant dimmed 1`] = `
 <div
     class="c0 aries-badge"
     role="presentation"
-    type="dimmed"
   >
     <span
       class="badge-content"
@@ -81,7 +79,7 @@ exports[`<Badge> should render a label with the text "6" 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background: #777777;
+  background: #EC272B;
   color: #FFFFFF;
   border-radius: 10px;
   margin: 0 5px;
@@ -99,7 +97,6 @@ exports[`<Badge> should render a label with the text "6" 1`] = `
 <div
   className="c0 aries-badge"
   role="presentation"
-  type="default"
 >
   <span
     className="badge-content"
