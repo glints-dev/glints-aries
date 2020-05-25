@@ -3,6 +3,7 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 
 import Badge from '../../src/General/Badge';
+import { ArrowDownIcon } from '../../src';
 
 const props = {
   Badge: [
@@ -46,13 +47,25 @@ const BadgeStory = () => (
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <span style={{ marginRight: '.5em' }}>Location</span>
-      <Badge label="15" />
+      Default
+      <Badge label="4" />
+      <Badge label="36" />
+      <Badge label="872" />
+      <Badge label="28.397" />
     </div>
 
     <div style={{ marginBottom: '2em' }}>
-      <span style={{ marginRight: '.5em' }}>Dimmed Badge</span>
-      <Badge label="16" variant="dimmed" />
+      Dimmed
+      <Badge label="4" variant="dimmed" />
+      <Badge label="36" variant="dimmed" />
+      <Badge label="872" variant="dimmed" />
+      <Badge label="28.397" variant="dimmed" />
+    </div>
+
+    <div style={{ marginBottom: '2em' }}>
+      My Applications
+      <Badge label="4" />
+      <ArrowDownIcon />
     </div>
   </StorybookComponent>
 );
