@@ -6,14 +6,14 @@ import Loading from '../../General/Loading';
 import { SelectListWrapper } from '../../Style/Input/SelectStyle';
 
 const SelectList: React.FunctionComponent<Props> = ({
-  cursor,
-  filterValue,
+  activeOptionIndex,
+  options,
   isFocus,
   isLoading,
   noOptionResult,
   small,
-  handleClick,
-  handleMouseEnter,
+  handleClickOnOption,
+  handleMouseEnterOption,
 }: Props) => (
   <SelectListWrapper
     className="select-listbox"
@@ -23,22 +23,27 @@ const SelectList: React.FunctionComponent<Props> = ({
     open={isFocus}
     small={small}
   >
-    {filterValue.length !== 0 && !isLoading ? (
-      filterValue.map((data: React.ReactElement<SelectItemProps>, index) => (
-        <SelectItem
-          className={cursor === index ? 'active' : null}
-          key={data.props.value}
-          role="option"
-          data-testid="option"
-          data-id={index}
-          data-value={data.props.value}
-          onClick={handleClick}
-          onMouseEnter={handleMouseEnter}
-          tabIndex={0}
-        >
-          {data.props.children}
-        </SelectItem>
-      ))
+    {options.length !== 0 && !isLoading ? (
+      options.map((data: React.ReactElement<SelectItemProps>, index) => {
+        const { value, children, ...restProps } = data.props;
+        delete restProps.onOptionClick;
+        return (
+          <SelectItem
+            {...restProps}
+            className={activeOptionIndex === index ? 'active' : null}
+            key={value}
+            role="option"
+            data-testid="option"
+            data-id={index}
+            data-value={value}
+            onClick={handleClickOnOption}
+            onMouseEnter={handleMouseEnterOption}
+            tabIndex={0}
+          >
+            {children}
+          </SelectItem>
+        );
+      })
     ) : isLoading ? (
       <SelectItem className="select-loading" role="option">
         <Loading />
@@ -58,14 +63,16 @@ const SelectList: React.FunctionComponent<Props> = ({
 );
 
 interface Props {
-  cursor: number;
-  filterValue: React.ReactNode[];
+  activeOptionIndex: number;
+  options: React.ReactNode[];
   isFocus: boolean;
   isLoading: boolean;
   noOptionResult?: string;
   small?: boolean;
-  handleClick?: () => void;
-  handleMouseEnter(event: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
+  handleClickOnOption?: () => void;
+  handleMouseEnterOption(
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ): void;
 }
 
 export interface SelectItemProps {

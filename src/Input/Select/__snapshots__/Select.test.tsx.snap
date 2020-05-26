@@ -1,5 +1,822 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Select.Option/> should match snapshot 1`] = `<DocumentFragment />`;
+
+exports[`<Select/> handleMouseEnterOption it should match snapshot, the option element should have active class name 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  font-weight: normal;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .select-icon {
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c1 .select-icon svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .5s;
+  -webkit-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.c4 {
+  position: absolute;
+  left: 22px;
+  background: #FFFFFF;
+  color: #777777;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.c2 {
+  width: 100%;
+  outline: none;
+  height: 53px;
+  padding: 15px 42px 15px 20px;
+  border: 2px solid #777777;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #777777;
+}
+
+.c2::-moz-placeholder {
+  color: #777777;
+}
+
+.c2:-ms-input-placeholder {
+  color: #777777;
+}
+
+.c2::placeholder {
+  color: #777777;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  background: #F3F3F3;
+}
+
+.c2:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c2:disabled:hover {
+  border: 2px solid #C6C6C6;
+}
+
+.c2:hover {
+  border: 2px solid #017EB7;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.c2:focus {
+  border: 2px solid #017EB7;
+}
+
+.c2:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
+.c8:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c8:hover + .c3 {
+  color: #EC272B;
+}
+
+.c8:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+  color: #EC272B;
+}
+
+.c9:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c9:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
+.c6 {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background: #FFFFFF;
+  min-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow: auto;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  list-style-type: none;
+}
+
+.c7:first-child {
+  margin-top: 0.5em;
+}
+
+.c7:last-child {
+  margin-bottom: 0.5em;
+}
+
+.c7.active {
+  color: #017EB7;
+  background: #EEEEEE;
+}
+
+.c7.select-loading {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  vertical-align: middle;
+}
+
+<div
+    class="c0 aries-select"
+  >
+    <div
+      class="c1 select-inputwrapper"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-expanded="true"
+        class="c2"
+        role="combobox"
+        type="text"
+        value=""
+      />
+      <label
+        aria-label="handleMouseEnterOption"
+        class="c3 c4"
+        data-testid="select-label"
+      >
+        handleMouseEnterOption
+      </label>
+      <div
+        aria-label="show options"
+        class="select-icon"
+      >
+        <svg
+          class="c5"
+          data-testid="icon-svg"
+          fill="#777777"
+          height="1em"
+          viewBox="0 0 100 100"
+          width="1em"
+        >
+          <polygon
+            points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+          />
+        </svg>
+      </div>
+    </div>
+    <ul
+      aria-hidden="false"
+      class="c6 select-listbox"
+      data-testid="listbox"
+      open=""
+      role="listbox"
+    >
+      <li
+        class="c7 active"
+        data-id="0"
+        data-testid="option"
+        data-value="handleMouseEnterOption"
+        role="option"
+        tabindex="0"
+      >
+        handleMouseEnterOption
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  font-weight: normal;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .select-icon {
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c1 .select-icon svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .5s;
+  -webkit-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.c4 {
+  position: absolute;
+  left: 22px;
+  background: #FFFFFF;
+  color: #777777;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.c2 {
+  width: 100%;
+  outline: none;
+  height: 53px;
+  padding: 15px 42px 15px 20px;
+  border: 2px solid #777777;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #777777;
+}
+
+.c2::-moz-placeholder {
+  color: #777777;
+}
+
+.c2:-ms-input-placeholder {
+  color: #777777;
+}
+
+.c2::placeholder {
+  color: #777777;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  background: #F3F3F3;
+}
+
+.c2:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c2:disabled:hover {
+  border: 2px solid #C6C6C6;
+}
+
+.c2:hover {
+  border: 2px solid #017EB7;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.c2:focus {
+  border: 2px solid #017EB7;
+}
+
+.c2:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
+.c8:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c8:hover + .c3 {
+  color: #EC272B;
+}
+
+.c8:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+  color: #EC272B;
+}
+
+.c6 {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background: #FFFFFF;
+  min-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow: auto;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  list-style-type: none;
+}
+
+.c7:first-child {
+  margin-top: 0.5em;
+}
+
+.c7:last-child {
+  margin-bottom: 0.5em;
+}
+
+.c7.active {
+  color: #017EB7;
+  background: #EEEEEE;
+}
+
+.c7.select-loading {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  vertical-align: middle;
+}
+
+<div
+    class="c0 aries-select"
+  >
+    <div
+      class="c1 select-inputwrapper"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-expanded="true"
+        class="c2"
+        role="combobox"
+        type="text"
+        value=""
+      />
+      <label
+        aria-label="ClickOutside"
+        class="c3 c4"
+        data-testid="select-label"
+      >
+        ClickOutside
+      </label>
+      <div
+        aria-label="show options"
+        class="select-icon"
+      >
+        <svg
+          class="c5"
+          data-testid="icon-svg"
+          fill="#777777"
+          height="1em"
+          viewBox="0 0 100 100"
+          width="1em"
+        >
+          <polygon
+            points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+          />
+        </svg>
+      </div>
+    </div>
+    <ul
+      aria-hidden="false"
+      class="c6 select-listbox"
+      data-testid="listbox"
+      open=""
+      role="listbox"
+    >
+      <li
+        class="c7 active"
+        data-id="0"
+        data-testid="option"
+        data-value="ClickOutside"
+        role="option"
+        tabindex="0"
+      >
+        ClickOutside
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
+<DocumentFragment>
+  .c0 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  font-weight: normal;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 .select-icon {
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.c1 .select-icon svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .5s;
+  -webkit-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.c4 {
+  position: absolute;
+  left: 22px;
+  background: #FFFFFF;
+  color: #777777;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.c2 {
+  width: 100%;
+  outline: none;
+  height: 53px;
+  padding: 15px 42px 15px 20px;
+  border: 2px solid #777777;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #777777;
+}
+
+.c2::-moz-placeholder {
+  color: #777777;
+}
+
+.c2:-ms-input-placeholder {
+  color: #777777;
+}
+
+.c2::placeholder {
+  color: #777777;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  background: #F3F3F3;
+}
+
+.c2:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c2:disabled:hover {
+  border: 2px solid #C6C6C6;
+}
+
+.c2:hover {
+  border: 2px solid #017EB7;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.c2:focus {
+  border: 2px solid #017EB7;
+}
+
+.c2:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
+.c8:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c8:hover + .c3 {
+  color: #EC272B;
+}
+
+.c8:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+  color: #EC272B;
+}
+
+.c6 {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background: #FFFFFF;
+  min-width: 100%;
+  height: auto;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  z-index: 9999;
+  max-height: 200px;
+  overflow: auto;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  list-style-type: none;
+}
+
+.c7:first-child {
+  margin-top: 0.5em;
+}
+
+.c7:last-child {
+  margin-bottom: 0.5em;
+}
+
+.c7.active {
+  color: #017EB7;
+  background: #EEEEEE;
+}
+
+.c7.select-loading {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  vertical-align: middle;
+}
+
+<div
+    class="c0 aries-select"
+  >
+    <div
+      class="c1 select-inputwrapper"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-expanded="true"
+        class="c2"
+        role="combobox"
+        type="text"
+        value=""
+      />
+      <label
+        aria-label="ClickOutside"
+        class="c3 c4"
+        data-testid="select-label"
+      >
+        ClickOutside
+      </label>
+      <div
+        aria-label="show options"
+        class="select-icon"
+      >
+        <svg
+          class="c5"
+          data-testid="icon-svg"
+          fill="#777777"
+          height="1em"
+          viewBox="0 0 100 100"
+          width="1em"
+        >
+          <polygon
+            points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+          />
+        </svg>
+      </div>
+    </div>
+    <ul
+      aria-hidden="false"
+      class="c6 select-listbox"
+      data-testid="listbox"
+      open=""
+      role="listbox"
+    >
+      <li
+        class="c7 active"
+        data-id="0"
+        data-testid="option"
+        data-value="ClickOutside"
+        role="option"
+        tabindex="0"
+      >
+        ClickOutside
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Select> should render with 3 options 1`] = `
 .c0 {
   -webkit-box-flex: 1;
