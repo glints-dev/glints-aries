@@ -64,7 +64,12 @@ class Gallery extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
-    if (!prevState.visible && this.state.visible) {
+    if (
+      !prevState.visible &&
+      this.state.visible &&
+      this.sliderRef.current &&
+      this.sliderRef.current.sliderContainerRef.current
+    ) {
       this.sliderRef.current.sliderContainerRef.current.focus();
     }
   }
