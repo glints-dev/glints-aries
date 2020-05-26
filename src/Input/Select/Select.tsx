@@ -55,6 +55,7 @@ const Select: ISelect = (props: Props) => {
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
+  const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(
     value || defaultValue || ''
   );
@@ -79,11 +80,20 @@ const Select: ISelect = (props: Props) => {
       return childrenOptions;
     }
 
+    if (!isInputChange) {
+      const isInputValueOneOfOptions = childrenOptions.some(
+        data => data.props.children === inputValue
+      );
+      if (isInputValueOneOfOptions) {
+        return childrenOptions;
+      }
+    }
+
     const matchedChildrenOptions = childrenOptions.filter(data =>
       data.props.children.toLowerCase().includes(inputValue.toLowerCase())
     );
     return matchedChildrenOptions;
-  }, [children, inputValue, disableTyping]);
+  }, [children, inputValue, disableTyping, isInputChange]);
 
   const [options, setOptions] = React.useState<React.ReactNode[]>(
     availableOptions
@@ -128,7 +138,7 @@ const Select: ISelect = (props: Props) => {
   const handleFocusOut = React.useCallback(
     (e: React.FocusEvent<HTMLInputElement>) => {
       setFloating(e.target.value.length > 0);
-
+      setIsInputChange(false);
       if (typeof onBlur === 'function') {
         return onBlur(e);
       }
@@ -152,6 +162,7 @@ const Select: ISelect = (props: Props) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setInputValue(e.target.value);
       setActiveOptionIndex(0);
+      setIsInputChange(true);
 
       if (typeof onChange === 'function') {
         onChange(e);
@@ -182,7 +193,7 @@ const Select: ISelect = (props: Props) => {
       setInputValue(inputValue);
       setIsFocus(false);
       setFloating(true);
-
+      setIsInputChange(false);
       if (typeof onChange === 'function') {
         onChange(activeElement.dataset.value);
       }
