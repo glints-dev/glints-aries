@@ -75,10 +75,7 @@ const Select: ISelect = (props: Props) => {
       return childrenOptions;
     }
 
-    const isInputValueOneOfOptions = childrenOptions.some(
-      data => data.props.children === inputValue
-    );
-    if (isInputValueOneOfOptions) {
+    if (inputValue && disableTyping) {
       return childrenOptions;
     }
 
@@ -86,7 +83,7 @@ const Select: ISelect = (props: Props) => {
       data.props.children.toLowerCase().includes(inputValue.toLowerCase())
     );
     return matchedChildrenOptions;
-  }, [children, inputValue]);
+  }, [children, inputValue, disableTyping]);
 
   const [options, setOptions] = React.useState<React.ReactNode[]>(
     availableOptions
