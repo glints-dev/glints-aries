@@ -164,12 +164,16 @@ const Select: ISelect = (props: Props) => {
       setActiveOptionIndex(0);
       setIsInputChange(true);
 
-      if (typeof onChange === 'function') {
+      if (
+        typeof onChange === 'function' &&
+        typeof onInputChange !== 'function'
+      ) {
         onChange(e);
         if (typeof console !== 'undefined') {
           console.warn(`
             Warning: onChange will not be fired when input value changes in a future release,
-            please use onInputChange instead.
+            please use onInputChange instead. Now, if onChange is passed but onInputChange is not,
+            the onChange callback will still receive the input change event for backward compatibility.
           `);
         }
       }
