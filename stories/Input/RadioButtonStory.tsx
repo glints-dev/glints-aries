@@ -4,6 +4,8 @@ import StorybookComponent from '../StorybookComponent';
 
 import RadioButton from '../../src/Input/RadioButton';
 
+const jsxToString = require('jsx-to-string');
+
 const props = {
   RadioButton: [
     {
@@ -39,30 +41,47 @@ const props = {
       description: '',
     },
     {
+      name: 'error',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Displays the error styles',
+    },
+    {
+      name: 'labelProps',
+      type: 'object',
+      defaultValue: '',
+      possibleValue: '',
+      require: 'no',
+      description: 'Sets the props on the label element.',
+    },
+    {
       name: 'theme',
       type: 'boolean',
-      defaultValue: <code>black</code>,
-      possibleValue: <code>black | white</code>,
+      defaultValue: '',
+      possibleValue: <code>white</code>,
       require: 'no',
       description: 'Sets theme for Radio Button.',
     },
   ],
 };
 
+const Story = (
+  <div>
+    <RadioButton label="Full Time" name="job-type" value="full-time" />
+    <RadioButton label="Intership" name="job-type" value="intership" error />
+  </div>
+);
+
 const RadioButtonStory = () => (
   <StorybookComponent
     title="Radio Button"
     code="import { RadioButton } from 'glints-aries'"
     propsObject={props}
-    usage={`<RadioButton 
-  label="Full Time" 
-  name="job-type" 
-  value="full-time"
-/>`}
+    usage={jsxToString(Story)}
   >
-    <RadioButton label="Full Time" name="job-type" value="full-time" />
-    <div style={{ display: 'inline-flex', marginRight: '1em' }} />
-    <RadioButton label="Intership" name="job-type" value="intership" />
+    {Story}
   </StorybookComponent>
 );
 

@@ -1,12 +1,19 @@
-import styled from 'styled-components';
-import { SecondaryColor } from '../Colors';
+import styled, { css } from 'styled-components';
 
-export const RadioLabel = styled.span`
+import { PrimaryColor, SecondaryColor } from '../Colors';
+
+interface Props {
+  error?: boolean;
+  theme?: string;
+}
+
+export const RadioLabel = styled.span<Props>`
   display: inline-flex;
+  align-items: center;
   position: relative;
   font-size: 1em;
   color: ${({ theme }) =>
-    theme === 'white' ? `${SecondaryColor.white}` : `${SecondaryColor.black}`};
+    theme === 'white' ? SecondaryColor.white : SecondaryColor.black};
   outline: none;
 
   &:before {
@@ -17,42 +24,85 @@ export const RadioLabel = styled.span`
     left: 0;
     margin-right: 8px;
     border-radius: 50%;
-    width: 1.4em;
-    height: 1.4em;
-    border: ${({ theme }) =>
-      theme === 'white'
-        ? `1px solid ${SecondaryColor.white}`
-        : `1px solid ${SecondaryColor.lightgrey}`};
-    background: ${({ theme }) =>
-      theme === 'white' ? 'transparent' : `${SecondaryColor.white}`};
+    height: 18px;
+    width: 18px;
+    flex-shrink: 0;
+
+    ${({ error, theme }) => {
+      if (error) {
+        return css`
+          border: solid 2px ${PrimaryColor.glintsred};
+        `;
+      } else if (theme === 'white') {
+        return css`
+          border: solid 2px ${SecondaryColor.white};
+        `;
+      } else {
+        return css`
+          border: solid 2px ${SecondaryColor.grey};
+        `;
+      }
+    }}
   }
+
   &:after {
     content: '';
     display: block;
-    width: 1em;
-    height: 1em;
-    background: ${({ theme }) =>
-      theme === 'white'
-        ? `${SecondaryColor.white}`
-        : `${SecondaryColor.darkgreen}`};
+    height: 8px;
+    width: 8px;
     position: absolute;
     border-radius: 50%;
-    top: 0.2em;
-    left: 0.2em;
+    left: 5px;
+    top: 50%;
+    margin-top: -4px;
     opacity: 0;
     transform: scale(0, 0);
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+
+    ${({ error, theme }) => {
+      if (error) {
+        return css`
+          background: ${PrimaryColor.glintsred};
+        `;
+      } else if (theme === 'white') {
+        return css`
+          background: ${SecondaryColor.white};
+        `;
+      } else {
+        return css`
+          background: ${SecondaryColor.darkgreen};
+        `;
+      }
+    }}
   }
 `;
 
-export const RadioContainer = styled.label`
+export const RadioContainer = styled.label<Props>`
   display: inline-flex;
   cursor: pointer;
   user-select: none;
   text-align: left;
 
   input {
-    display: none;
+    opacity: 0;
+
+    &:checked + span:before {
+      ${({ error, theme }) => {
+        if (error) {
+          return css`
+            border-color: solid 2px ${PrimaryColor.glintsred};
+          `;
+        } else if (theme === 'white') {
+          return css`
+            border-color: ${SecondaryColor.white};
+          `;
+        } else {
+          return css`
+            border-color: ${SecondaryColor.darkgreen};
+          `;
+        }
+      }}
+    }
 
     &:checked + span:after {
       opacity: 1;

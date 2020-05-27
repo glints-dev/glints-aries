@@ -5,17 +5,33 @@ import classNames from 'classnames';
 import { RadioContainer, RadioLabel } from '../../Style/Input/RadioButtonStyle';
 
 const RadioButton: React.FunctionComponent<Props> = props => {
-  const { label, theme, className, ...defaultProps } = props;
+  const {
+    className,
+    children,
+    error,
+    label,
+    labelProps,
+    theme,
+    ...inputProps
+  } = props;
 
   return (
     <React.Fragment>
       <RadioContainer
         className={classNames('aries-radiobtn', className)}
+        error={error}
         tabIndex={0}
+        theme={theme}
+        {...labelProps}
       >
-        <input type="radio" {...defaultProps} />
-        <RadioLabel className="radiobtn-content" theme={theme} tabIndex={-1}>
-          {label}
+        <input type="radio" {...inputProps} />
+        <RadioLabel
+          className="radiobtn-content"
+          error={error}
+          theme={theme}
+          tabIndex={-1}
+        >
+          {label || children}
         </RadioLabel>
       </RadioContainer>
     </React.Fragment>
@@ -23,8 +39,10 @@ const RadioButton: React.FunctionComponent<Props> = props => {
 };
 
 interface Props extends React.ComponentProps<'input'> {
-  label: string;
-  theme?: string;
+  error?: boolean;
+  label?: React.ReactNode;
+  labelProps?: React.LabelHTMLAttributes<{}>;
+  theme?: 'white';
 }
 
 export default RadioButton;
