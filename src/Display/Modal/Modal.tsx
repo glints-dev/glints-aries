@@ -30,6 +30,9 @@ const Modal = (props: Props) => {
   } = props;
 
   const modalContentAreaRef = React.useRef(null);
+  const canExecuteOnClose = React.useMemo(() => typeof onClose === 'function', [
+    onClose,
+  ]);
 
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
@@ -49,7 +52,7 @@ const Modal = (props: Props) => {
 
   React.useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
-      if (isVisible) onClose();
+      if (isVisible && canExecuteOnClose) onClose();
     });
 
     document.addEventListener('keydown', escapeKeyEventListener, false);
@@ -59,7 +62,7 @@ const Modal = (props: Props) => {
     // to clean up the existing escape key event listener.
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
-  }, [isVisible, onClose]);
+  }, [isVisible, onClose, canExecuteOnClose]);
 
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
@@ -77,11 +80,11 @@ const Modal = (props: Props) => {
   const handleClick = React.useCallback(
     (e: React.MouseEvent) => {
       const element = e.target as HTMLElement;
-      if (mouseDownTarget.current === element) {
+      if (mouseDownTarget.current === element && canExecuteOnClose) {
         onClose();
       }
     },
-    [mouseDownTarget, onClose]
+    [mouseDownTarget, onClose, canExecuteOnClose]
   );
 
   return (
