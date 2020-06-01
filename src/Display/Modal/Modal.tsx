@@ -30,9 +30,7 @@ const Modal = (props: Props) => {
   } = props;
 
   const modalContentAreaRef = React.useRef(null);
-  const canExecuteOnClose = React.useMemo(() => typeof onClose === 'function', [
-    onClose,
-  ]);
+  const canExecuteOnClose = typeof onClose === 'function';
 
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
