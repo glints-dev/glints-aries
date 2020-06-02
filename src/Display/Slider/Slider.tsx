@@ -226,7 +226,7 @@ class Slider extends React.Component<Props, State> {
   }
 }
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   className?: string;
   initialItem?: number;

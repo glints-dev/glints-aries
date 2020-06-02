@@ -10,7 +10,11 @@ const LeftArrow = (props: Props) => {
   if (index === 1) arrowColor = '#c7c7c7';
 
   return (
-    <LeftArrowContainer index={index} onClick={previousSlide}>
+    <LeftArrowContainer
+      index={index}
+      onClick={previousSlide}
+      data-testid="slider_left-arrow"
+    >
       <ArrowBackIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
     </LeftArrowContainer>
   );
