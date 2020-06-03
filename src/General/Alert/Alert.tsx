@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import {
   CheckmarkSolidIcon,
-  WarningSolidIcon,
+  WarningCircleSolidIcon,
   InfoSolidIcon,
   CloseIcon,
 } from '../Icon/components';
@@ -81,12 +81,12 @@ const Alert = ({
         };
       case 'warning':
         return {
-          AlertTypeIcon: WarningSolidIcon,
+          AlertTypeIcon: WarningCircleSolidIcon,
           alertColor: SecondaryColor.orange,
         };
       case 'danger':
         return {
-          AlertTypeIcon: WarningSolidIcon,
+          AlertTypeIcon: WarningCircleSolidIcon,
           alertColor: PrimaryColor.glintsred,
         };
       case 'info':
