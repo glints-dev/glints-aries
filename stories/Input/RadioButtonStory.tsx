@@ -1,8 +1,16 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
 
 import RadioButton from '../../src/Input/RadioButton';
+import Divider from '../../src/General/Divider';
+
+const Row = styled.div`
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+`;
 
 const jsxToString = require('jsx-to-string');
 
@@ -68,10 +76,10 @@ const props = {
 };
 
 const Story = (
-  <div>
+  <Row>
     <RadioButton label="Full Time" name="job-type" value="full-time" />
     <RadioButton label="Intership" name="job-type" value="intership" error />
-  </div>
+  </Row>
 );
 
 const RadioButtonStory = () => (
@@ -85,4 +93,36 @@ const RadioButtonStory = () => (
   </StorybookComponent>
 );
 
-export default RadioButtonStory;
+const RadioButtonWithBorderStory = () => {
+  const props = {
+    RadioButton: [
+      {
+        name: 'border',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets a border around the Radio Button.',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent title="Radio Button with Border" propsObject={props}>
+      <Row>
+        <RadioButton label="Full Time" name="border" value="full-time" border />
+        <RadioButton label="Intership" name="border" value="intership" border />
+      </Row>
+    </StorybookComponent>
+  );
+};
+
+const RadioButtonStories = () => (
+  <>
+    <RadioButtonStory />
+    <Divider theme="grey" />
+    <RadioButtonWithBorderStory />
+  </>
+);
+
+export default RadioButtonStories;
