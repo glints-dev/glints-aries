@@ -8,7 +8,7 @@ import Divider from '../../src/General/Divider';
 
 const Row = styled.div`
   display: inline-grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-column-gap: 10px;
 `;
 
@@ -72,6 +72,14 @@ const props = {
       require: 'no',
       description: 'Sets theme for Radio Button.',
     },
+    {
+      name: 'disabled',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets Radio Button to disable state.',
+    },
   ],
 };
 
@@ -79,6 +87,14 @@ const Story = (
   <Row>
     <RadioButton label="Full Time" name="job-type" value="full-time" />
     <RadioButton label="Intership" name="job-type" value="intership" error />
+    <RadioButton label="Disabled" name="disabled" value="disabled" disabled />
+    <RadioButton
+      label="Disabled selection"
+      name="disabled"
+      value="disabled-selection"
+      disabled
+      checked
+    />
   </Row>
 );
 
@@ -104,6 +120,14 @@ const RadioButtonWithBorderStory = () => {
         require: 'no',
         description: 'Sets a border around the Radio Button.',
       },
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Sets Radio Button to disable state.',
+      },
     ],
   };
 
@@ -112,6 +136,21 @@ const RadioButtonWithBorderStory = () => {
       <Row>
         <RadioButton label="Full Time" name="border" value="full-time" border />
         <RadioButton label="Intership" name="border" value="intership" border />
+        <RadioButton
+          label="Disabled"
+          name="disabled-border"
+          value="disabled"
+          disabled
+          border
+        />
+        <RadioButton
+          label="Disabled selection"
+          name="disabled-border"
+          value="disabled-selection"
+          disabled
+          border
+          checked
+        />
       </Row>
     </StorybookComponent>
   );
