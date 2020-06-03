@@ -48,6 +48,16 @@ export const RadioLabel = styled.span<Props>`
     }}
   }
 
+  &:hover:before {
+    ${({ error, border }) => {
+      if (!error && !border) {
+        return css`
+          border-color: ${SecondaryColor.darkgreen};
+        `;
+      }
+    }}
+  }
+
   &:after {
     content: '';
     display: block;
