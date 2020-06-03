@@ -13,6 +13,7 @@ import {
   AlertContent,
   AlertMessage,
   AlertIcon,
+  AlertTypeIconContainer,
 } from '../../Style/General/AlertStyle';
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
@@ -110,7 +111,9 @@ const Alert = ({
       onKeyDown={handleKeyDown(onClose)}
       ref={alertContainerRef}
     >
-      <AlertTypeIcon color={alertColor} />
+      <AlertTypeIconContainer>
+        <AlertTypeIcon color={alertColor} />
+      </AlertTypeIconContainer>
       <AlertContent className="alert-content">
         <AlertMessage className="alert-message">{message}</AlertMessage>
         <AlertIcon
