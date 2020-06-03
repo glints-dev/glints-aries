@@ -5,6 +5,7 @@ import { PrimaryColor, SecondaryColor } from '../Colors';
 interface Props {
   error?: boolean;
   theme?: string;
+  border?: boolean;
 }
 
 export const RadioLabel = styled.span<Props>`
@@ -24,6 +25,8 @@ export const RadioLabel = styled.span<Props>`
     left: 0;
     margin-right: 8px;
     border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
     height: 18px;
     width: 18px;
     flex-shrink: 0;
@@ -31,15 +34,15 @@ export const RadioLabel = styled.span<Props>`
     ${({ error, theme }) => {
       if (error) {
         return css`
-          border: solid 2px ${PrimaryColor.glintsred};
+          border-color: ${PrimaryColor.glintsred};
         `;
       } else if (theme === 'white') {
         return css`
-          border: solid 2px ${SecondaryColor.white};
+          border-color: ${SecondaryColor.white};
         `;
       } else {
         return css`
-          border: solid 2px ${SecondaryColor.grey};
+          border-color: ${SecondaryColor.grey};
         `;
       }
     }}
@@ -59,22 +62,43 @@ export const RadioLabel = styled.span<Props>`
     transform: scale(0, 0);
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
-    ${({ error, theme }) => {
+    ${({ error, theme, border }) => {
       if (error) {
         return css`
-          background: ${PrimaryColor.glintsred};
+          background-color: ${PrimaryColor.glintsred};
+        `;
+      } else if (border) {
+        return css`
+          left: 15px;
+          background-color: ${SecondaryColor.actionblue};
         `;
       } else if (theme === 'white') {
         return css`
-          background: ${SecondaryColor.white};
+          background-color: ${SecondaryColor.white};
         `;
       } else {
         return css`
-          background: ${SecondaryColor.darkgreen};
+          background-color: ${SecondaryColor.darkgreen};
         `;
       }
     }}
   }
+
+  ${({ border }) => {
+    if (border) {
+      return css`
+        padding: 15px 10px;
+        border: 1px solid #aaa;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: rgba(1, 126, 183, 0.1);
+          border-color: ${SecondaryColor.actionblue};
+        }
+      `;
+    }
+    return null;
+  }}
 `;
 
 export const RadioContainer = styled.label<Props>`
@@ -84,13 +108,27 @@ export const RadioContainer = styled.label<Props>`
   text-align: left;
 
   input {
-    opacity: 0;
+    display: none;
 
-    &:checked + span:before {
-      ${({ error, theme }) => {
+    &:checked + ${RadioLabel} {
+      ${({ border }) => {
+        if (border) {
+          return css`
+            border-color: ${SecondaryColor.actionblue};
+          `;
+        }
+      }}
+    }
+
+    &:checked + ${RadioLabel}:before {
+      ${({ error, theme, border }) => {
         if (error) {
           return css`
-            border-color: solid 2px ${PrimaryColor.glintsred};
+            border-color: ${PrimaryColor.glintsred};
+          `;
+        } else if (border) {
+          return css`
+            border-color: ${SecondaryColor.actionblue};
           `;
         } else if (theme === 'white') {
           return css`
@@ -104,7 +142,7 @@ export const RadioContainer = styled.label<Props>`
       }}
     }
 
-    &:checked + span:after {
+    &:checked + ${RadioLabel}:after {
       opacity: 1;
       transform: scale(1, 1);
     }
@@ -112,9 +150,5 @@ export const RadioContainer = styled.label<Props>`
 
   &:focus {
     outline: none;
-  }
-
-  &:focus > ${RadioLabel} {
-    outline: 5px auto -webkit-focus-ring-color;
   }
 `;
