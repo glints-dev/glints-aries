@@ -6,6 +6,7 @@ interface Props {
   error?: boolean;
   theme?: string;
   border?: boolean;
+  disabled?: boolean;
 }
 
 export const RadioLabel = styled.span<Props>`
@@ -31,8 +32,12 @@ export const RadioLabel = styled.span<Props>`
     width: 18px;
     flex-shrink: 0;
 
-    ${({ error, theme }) => {
-      if (error) {
+    ${({ error, theme, disabled }) => {
+      if (disabled) {
+        return css`
+          border-color: #9b9b9b;
+        `;
+      } else if (error) {
         return css`
           border-color: ${PrimaryColor.glintsred};
         `;
@@ -72,8 +77,13 @@ export const RadioLabel = styled.span<Props>`
     transform: scale(0, 0);
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
-    ${({ error, theme, border }) => {
-      if (error) {
+    ${({ error, theme, border, disabled }) => {
+      if (disabled) {
+        return css`
+          left: ${border ? '15px' : '5px'};
+          background-color: #9b9b9b;
+        `;
+      } else if (error) {
         return css`
           background-color: ${PrimaryColor.glintsred};
         `;
@@ -99,6 +109,7 @@ export const RadioLabel = styled.span<Props>`
       return css`
         padding: 15px 10px;
         border: 1px solid #aaa;
+        border-color: #aaa;
         border-radius: 2px;
 
         &:hover {
@@ -107,7 +118,22 @@ export const RadioLabel = styled.span<Props>`
         }
       `;
     }
-    return null;
+  }}
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return css`
+        color: #aaa;
+      `;
+    }
+  }}
+
+  ${({ border, disabled }) => {
+    if (border && disabled) {
+      return css`
+        border-color: #e3e3e3;
+      `;
+    }
   }}
 `;
 
@@ -121,8 +147,10 @@ export const RadioContainer = styled.label<Props>`
     display: none;
 
     &:checked + ${RadioLabel} {
-      ${({ border }) => {
-        if (border) {
+      ${({ border, disabled }) => {
+        if (disabled) {
+          return null;
+        } else if (border) {
           return css`
             border-color: ${SecondaryColor.actionblue};
           `;
@@ -131,8 +159,10 @@ export const RadioContainer = styled.label<Props>`
     }
 
     &:checked + ${RadioLabel}:before {
-      ${({ error, theme, border }) => {
-        if (error) {
+      ${({ error, theme, border, disabled }) => {
+        if (disabled) {
+          return null;
+        } else if (error) {
           return css`
             border-color: ${PrimaryColor.glintsred};
           `;
@@ -161,4 +191,12 @@ export const RadioContainer = styled.label<Props>`
   &:focus {
     outline: none;
   }
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return css`
+        pointer-events: none;
+      `;
+    }
+  }}
 `;
