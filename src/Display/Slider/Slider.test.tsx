@@ -18,6 +18,7 @@ describe('<Slider/> prop className', () => {
   const matchSnapshot = (className: string) => {
     it(`should match snapshot when class name ${className} is passed`, () => {
       const { asFragment } = render(<SliderComponent className={className} />);
+      // validate class name from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -40,9 +41,12 @@ describe('<Slider/> prop initialItem', () => {
       );
 
       const index = initialItem > 0 ? initialItem - 1 : 0;
+      const theThreeNavigationDots = document.querySelectorAll('li');
+
+      // wait setState in componentDidMount to set active dot
       await wait(() => {
         expect(
-          document.querySelectorAll('li')[index].classList.contains('active')
+          theThreeNavigationDots[index].classList.contains('active')
         ).toBeTruthy();
       });
 
@@ -53,6 +57,7 @@ describe('<Slider/> prop initialItem', () => {
         }),
       });
 
+      // trigger componentWillReceiveProp to recalculate translateX
       rerender(
         <Slider ref={sliderRef} initialItem={initialItem}>
           <Slider.Item>a</Slider.Item>
@@ -60,6 +65,8 @@ describe('<Slider/> prop initialItem', () => {
           <Slider.Item>c</Slider.Item>
         </Slider>
       );
+
+      // validate translateX from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -73,6 +80,7 @@ describe('<Slider/> prop fullContent', () => {
       const { asFragment } = render(
         <SliderComponent fullContent={fullContent} />
       );
+      // validate fullContent style from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -86,6 +94,7 @@ describe('<Slider/> prop arrowWhite', () => {
       const { asFragment } = render(
         <SliderComponent arrowWhite={arrowWhite} />
       );
+      // validate arrow color from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -99,6 +108,7 @@ describe('<Slider/> prop removeDots', () => {
       const { asFragment } = render(
         <SliderComponent removeDots={removeDots} />
       );
+      // validate dot is not in the snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -110,18 +120,14 @@ describe('<Slider/> prop autoplay', () => {
   it(`should go to next slide after 6000ms when autoplay is truthy`, () => {
     jest.useFakeTimers();
     const { asFragment } = render(<SliderComponent autoplay={true} />);
-
+    const theThreeNavigationDots = document.querySelectorAll('li');
     // validate initial active slide
-    expect(
-      document.querySelectorAll('li')[0].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
     jest.advanceTimersByTime(6000);
-    expect(
-      document.querySelectorAll('li')[1].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[1].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -130,36 +136,28 @@ describe('<Slider/> prop autoplay', () => {
     const { asFragment } = render(
       <SliderComponent autoplay={true} initialItem={3} />
     );
-
+    const theThreeNavigationDots = document.querySelectorAll('li');
     // validate initial active slide
-    expect(
-      document.querySelectorAll('li')[2].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[2].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
     jest.advanceTimersByTime(6000);
-    expect(
-      document.querySelectorAll('li')[0].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it(`should not go to next slide after 6000ms when autoplay is falsy`, () => {
     jest.useFakeTimers();
     const { asFragment } = render(<SliderComponent autoplay={false} />);
-
+    const theThreeNavigationDots = document.querySelectorAll('li');
     // validate initial active slide
-    expect(
-      document.querySelectorAll('li')[0].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
     jest.advanceTimersByTime(6000);
-    expect(
-      document.querySelectorAll('li')[0].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
 });
@@ -239,17 +237,14 @@ describe('<Slider/> prop afterChange', () => {
 describe('<Slider/> keydown event', () => {
   test(`when active slide is the first slide`, () => {
     render(<SliderComponent />);
+    const theThreeNavigationDots = document.querySelectorAll('li');
 
     const sliderContainer = document.querySelector('.aries-slider');
     fireEvent.focus(sliderContainer);
     fireEvent.keyDown(sliderContainer, { key: 'right arrow', keyCode: 39 });
-    expect(
-      document.querySelectorAll('li')[1].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[1].classList.contains('active')).toBeTruthy();
     fireEvent.keyDown(sliderContainer, { key: 'left arrow', keyCode: 37 });
-    expect(
-      document.querySelectorAll('li')[0].classList.contains('active')
-    ).toBeTruthy();
+    expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
   });
 });
 
