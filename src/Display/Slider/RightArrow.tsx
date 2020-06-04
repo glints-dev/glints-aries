@@ -10,7 +10,12 @@ const RightArrow: React.FunctionComponent<Props> = props => {
   if (limit === index) arrowColor = '#c7c7c7';
 
   return (
-    <RightArrowContainer index={index} limit={limit} onClick={nextSlide}>
+    <RightArrowContainer
+      index={index}
+      limit={limit}
+      onClick={nextSlide}
+      data-testid="slider_right-arrow"
+    >
       <ArrowNextIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
     </RightArrowContainer>
   );
