@@ -7,13 +7,14 @@ interface Props {
   theme?: string;
   border?: boolean;
   disabled?: boolean;
+  size?: 'regular' | 'small';
 }
 
 export const RadioLabel = styled.span<Props>`
   display: inline-flex;
   align-items: center;
   position: relative;
-  font-size: 1em;
+  font-size: ${({ size }) => (size === 'regular' ? '16px' : '14px')};
   color: ${({ theme }) =>
     theme === 'white' ? SecondaryColor.white : SecondaryColor.black};
   outline: none;
@@ -28,8 +29,8 @@ export const RadioLabel = styled.span<Props>`
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
-    height: 18px;
-    width: 18px;
+    height: ${({ size }) => (size === 'regular' ? '18px' : '15px')};;
+    width: ${({ size }) => (size === 'regular' ? '18px' : '15px')};;
     flex-shrink: 0;
 
     ${({ error, theme, disabled }) => {
@@ -66,13 +67,11 @@ export const RadioLabel = styled.span<Props>`
   &:after {
     content: '';
     display: block;
-    height: 8px;
-    width: 8px;
+    height: ${({ size }) => (size === 'regular' ? '8px' : '5px')};
+    width: ${({ size }) => (size === 'regular' ? '8px' : '5px')};
     position: absolute;
     border-radius: 50%;
     left: 5px;
-    top: 50%;
-    margin-top: -4px;
     opacity: 0;
     transform: scale(0, 0);
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
