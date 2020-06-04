@@ -49,7 +49,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
     >
       <li
         className="DropdownStyle__DropdownItemWrapper-sc-76enys-4 eNxfKa active"
-        data-value="Product Manager"
+        data-value="pm"
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         role="option"
@@ -59,7 +59,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
       </li>
       <li
         className="DropdownStyle__DropdownItemWrapper-sc-76enys-4 eNxfKa"
-        data-value="Software Engineer"
+        data-value="se"
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         role="option"
