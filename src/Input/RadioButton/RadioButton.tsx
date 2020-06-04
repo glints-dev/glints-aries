@@ -14,6 +14,7 @@ const RadioButton: React.FunctionComponent<Props> = props => {
     theme,
     border,
     disabled,
+    size = 'regular',
     ...inputProps
   } = props;
 
@@ -36,6 +37,7 @@ const RadioButton: React.FunctionComponent<Props> = props => {
           tabIndex={-1}
           border={border}
           disabled={disabled}
+          size={size}
         >
           {label || children}
         </RadioLabel>
@@ -44,13 +46,16 @@ const RadioButton: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props extends React.ComponentProps<'input'> {
+type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'size' | 'label'>;
+
+interface Props extends HTMLInputProps {
   error?: boolean;
   label?: React.ReactNode;
   labelProps?: React.LabelHTMLAttributes<{}>;
   theme?: 'white';
   border?: boolean;
   disabled?: boolean;
+  size?: 'regular' | 'small';
 }
 
 export default RadioButton;
