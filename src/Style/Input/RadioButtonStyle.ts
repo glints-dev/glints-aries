@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 
 interface Props {
   error?: boolean;
@@ -35,7 +35,7 @@ export const RadioLabel = styled.span<Props>`
     ${({ error, theme, disabled }) => {
       if (disabled) {
         return css`
-          border-color: #9b9b9b;
+          border-color: ${Greyscale.lightgrey};
         `;
       } else if (error) {
         return css`
@@ -81,7 +81,7 @@ export const RadioLabel = styled.span<Props>`
       if (disabled) {
         return css`
           left: ${border ? '15px' : '5px'};
-          background-color: #9b9b9b;
+          background-color: ${Greyscale.lightgrey};
         `;
       } else if (error) {
         return css`
@@ -109,7 +109,6 @@ export const RadioLabel = styled.span<Props>`
       return css`
         padding: 15px 10px;
         border: 1px solid #aaa;
-        border-color: #aaa;
         border-radius: 2px;
 
         &:hover {
@@ -131,7 +130,7 @@ export const RadioLabel = styled.span<Props>`
   ${({ border, disabled }) => {
     if (border && disabled) {
       return css`
-        border-color: #e3e3e3;
+        border-color: ${Greyscale.lightgrey};
       `;
     }
   }}
