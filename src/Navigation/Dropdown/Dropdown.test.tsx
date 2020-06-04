@@ -340,6 +340,6 @@ describe('<Dropdown/> logic', () => {
     const option = queryByText(document.body, 'Product Manager');
     fireEvent.mouseDown(option);
 
-    expect(onChange.mock.calls[0][0]).toEqual('Product Manager');
+    expect(onChange.mock.calls[0][0]).toEqual('pm');
   });
 });
