@@ -93,7 +93,7 @@ const Alert = ({
       default:
         return {
           AlertTypeIcon: InfoSolidIcon,
-          alertColor: PrimaryColor.glintsblue,
+          alertColor: SecondaryColor.actionblue,
         };
     }
   }, [type]);
