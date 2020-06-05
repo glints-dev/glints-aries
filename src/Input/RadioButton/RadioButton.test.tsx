@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import userEvent from '@testing-library/user-event';
 
 import RadioButton from './RadioButton';
 
@@ -101,5 +102,22 @@ describe('<RadioButton>', () => {
     fireEvent.click(radioButton2);
     expect(radioButton1).not.toBeChecked();
     expect(radioButton2).toBeChecked();
+  });
+
+  it('should not call onChange again when disabled', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <RadioButton
+        label="Full Time"
+        name="job-type"
+        value="full-time"
+        data-testid="radio"
+        onChange={onChange}
+        disabled={true}
+      />
+    );
+    const radioButton = getByTestId('radio');
+    userEvent.click(radioButton);
+    expect(onChange).not.toHaveBeenCalled();
   });
 });
