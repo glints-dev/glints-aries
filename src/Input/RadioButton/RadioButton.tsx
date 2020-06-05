@@ -25,7 +25,12 @@ const RadioButton: React.FunctionComponent<Props> = props => {
 
   const content = (
     <>
-      <RadioIcon border={border} error={error} disabled={disabled} />
+      <RadioIcon
+        size={size}
+        border={border}
+        error={error}
+        disabled={disabled}
+      />
       <RadioLabel
         className="radiobtn-content"
         error={error}

@@ -10,6 +10,7 @@ const Row = styled.div`
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 10px;
+  align-items: end;
 `;
 
 const jsxToString = require('jsx-to-string');

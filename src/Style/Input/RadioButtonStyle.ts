@@ -61,8 +61,8 @@ export const RadioIcon = styled.span<Props>`
   &:after {
     content: '';
     display: inline-block;
-    height: ${({ size }) => (size === 'regular' ? '8px' : '5px')};
-    width: ${({ size }) => (size === 'regular' ? '8px' : '5px')};
+    height: ${({ size }) => (size === 'regular' ? '8px' : '7px')};
+    width: ${({ size }) => (size === 'regular' ? '8px' : '7px')};
     border-radius: 50%;
     opacity: 0;
     transform: scale(0, 0);
@@ -75,7 +75,8 @@ export const RadioIcon = styled.span<Props>`
 export const RadioLabel = styled.span<Props>`
   font-size: ${({ size }) => (size === 'regular' ? '16px' : '14px')};
   outline: none;
-  color: ${({ disabled }) => (disabled ? '#aaa' : SecondaryColor.black)};
+  color: ${({ disabled }) =>
+    disabled ? Greyscale.lightgrey : SecondaryColor.black};
 `;
 
 export const Border = styled.span<Props>`
@@ -85,7 +86,7 @@ export const Border = styled.span<Props>`
   border-style: solid;
   border-width: 1px;
   border-radius: 2px;
-  border-color: #aaa;
+  border-color: ${({ disabled }) => (disabled ? Greyscale.lightgrey : '#aaa')};
 
   ${({ disabled }) => {
     if (!disabled) {
