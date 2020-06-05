@@ -2,21 +2,16 @@ import styled, { css } from 'styled-components';
 
 import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
 
-const getStateColor = ({
-  disabled,
-  error,
-  border,
-  checked,
-}: {
-  disabled: boolean;
-  error: boolean;
-  border: boolean;
-  checked: boolean;
-}) => {
+const getStateColor = (
+  { disabled, error, border, theme }: Props,
+  checked: boolean
+) => {
   if (disabled) {
     return Greyscale.lightgrey;
   } else if (error) {
     return PrimaryColor.glintsred;
+  } else if (theme === 'white') {
+    return Greyscale.white;
   } else if (!checked) {
     return SecondaryColor.grey;
   } else if (border) {
@@ -51,11 +46,10 @@ export const RadioIcon = styled.span<Props>`
   border-radius: 50%;
   border-style: solid;
   border-width: 2px;
-  border-color: ${({ disabled, error, border }) =>
-    getStateColor({ disabled, error, border, checked: false })};
+  border-color: ${props => getStateColor(props, false)};
 
   &:hover {
-    border-color: ${SecondaryColor.darkgreen};
+    border-color: ${props => getStateColor(props, true)};
   }
 
   &:after {
@@ -67,16 +61,22 @@ export const RadioIcon = styled.span<Props>`
     opacity: 0;
     transform: scale(0, 0);
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
-    background-color: ${({ disabled, error, border }) =>
-      getStateColor({ disabled, error, border, checked: true })};
+    background-color: ${props => getStateColor(props, true)};
   }
 `;
 
 export const RadioLabel = styled.span<Props>`
   font-size: ${({ size }) => (size === 'regular' ? '16px' : '14px')};
   outline: none;
-  color: ${({ disabled }) =>
-    disabled ? Greyscale.lightgrey : SecondaryColor.black};
+  color: ${({ disabled, theme }) => {
+    if (disabled) {
+      return Greyscale.lightgrey;
+    } else if (theme === 'white') {
+      return Greyscale.white;
+    } else {
+      return SecondaryColor.black;
+    }
+  }};
 `;
 
 export const Border = styled.span<Props>`
@@ -101,6 +101,7 @@ export const Border = styled.span<Props>`
 `;
 
 export const RadioContainer = styled.label<Props>`
+  position: relative;
   display: inline-flex;
   align-items: center;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};;
@@ -112,18 +113,15 @@ export const RadioContainer = styled.label<Props>`
 
     &:checked + ${RadioIcon} {
       ${showSolidCircleStyle}
-      border-color: ${({ disabled, error, border }) =>
-        getStateColor({ disabled, error, border, checked: true })};
+      border-color: ${props => getStateColor(props, true)};
     }
 
     &:checked + ${Border} {
-      border-color: ${({ disabled, error, border }) =>
-        getStateColor({ disabled, error, border, checked: true })};
+      border-color: ${props => getStateColor(props, true)};
 
       ${RadioIcon} {
         ${showSolidCircleStyle}
-        border-color: ${({ disabled, error, border }) =>
-          getStateColor({ disabled, error, border, checked: true })};
+        border-color: ${props => getStateColor(props, true)};
       }
     }
   }
