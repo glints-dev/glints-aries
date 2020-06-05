@@ -104,7 +104,7 @@ export const RadioContainer = styled.label<Props>`
   position: relative;
   display: inline-flex;
   align-items: center;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
   text-align: left;
 
