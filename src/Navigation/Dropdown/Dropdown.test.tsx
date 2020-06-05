@@ -19,10 +19,8 @@ describe('<Dropdown/> render', () => {
     const snapshot = renderer
       .create(
         <Dropdown label="Career">
-          <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-          <DropdownItem value="Software Engineer">
-            Software Engineer
-          </DropdownItem>
+          <DropdownItem value="pm">Product Manager</DropdownItem>
+          <DropdownItem value="se">Software Engineer</DropdownItem>
         </Dropdown>
       )
       .toJSON();
@@ -32,8 +30,8 @@ describe('<Dropdown/> render', () => {
   test('options should not be visible when it is rendered', () => {
     const { queryByText } = render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -50,8 +48,8 @@ describe('<Dropdown/> with DropdownHeader props', () => {
   test('disabled', () => {
     render(
       <Dropdown label="Career" disabled>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-content')).toHaveStyle(
@@ -62,8 +60,8 @@ describe('<Dropdown/> with DropdownHeader props', () => {
   test('showFullWidth', () => {
     render(
       <Dropdown label="Career" showFullWidth>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-content')).toHaveStyle(
@@ -76,8 +74,8 @@ describe('<Dropdown/> with DropdownBody props', () => {
   test('dropDownPlacement', () => {
     render(
       <Dropdown label="Career" dropDownPlacement="right">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
@@ -88,8 +86,8 @@ describe('<Dropdown/> with DropdownBody props', () => {
   test('noLineBreak', () => {
     render(
       <Dropdown label="Career" noLineBreak>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
@@ -100,8 +98,8 @@ describe('<Dropdown/> with DropdownBody props', () => {
   test('showFullWidth', () => {
     render(
       <Dropdown label="Career" showFullWidth>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
@@ -112,8 +110,8 @@ describe('<Dropdown/> with DropdownBody props', () => {
   test('showHoverLine', () => {
     render(
       <Dropdown label="Career" showHoverLine>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
     expect(document.querySelector('.dropdown-listbox')).toHaveStyle(
@@ -126,8 +124,8 @@ describe('<Dropdown/> mouse event', () => {
   test('options should appear when clicking on it, if prop hoverToOpen is falsy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -144,8 +142,8 @@ describe('<Dropdown/> mouse event', () => {
   test('options should appear when mouse hovering on it, if prop hoverToOpen is truthy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career" hoverToOpen={true}>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -162,8 +160,8 @@ describe('<Dropdown/> mouse event', () => {
   test('dropdown button should be highlighted when mouse is hovering on', () => {
     render(
       <Dropdown label="Career" hoverToOpen={true}>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -178,8 +176,8 @@ describe('<Dropdown/> mouse event', () => {
   test('option should be highlighted when mouse is hovering on', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career" hoverToOpen={true}>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -199,8 +197,8 @@ describe('<Dropdown/> mouse event', () => {
   test('selected option should be displayed', async () => {
     render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -220,8 +218,8 @@ describe('<Dropdown/> mouse event', () => {
   test('arrow icon should be rotated by different angles when dropdown is opened/closed', () => {
     render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -238,8 +236,8 @@ describe('<Dropdown/> keydown event', () => {
   test('press up arrow key and down arrow key should should change highlighted option', async () => {
     render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -269,8 +267,8 @@ describe('<Dropdown/> keydown event', () => {
   test('press enter key should select an highlighted option', async () => {
     render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -294,8 +292,8 @@ describe('<Dropdown/> keydown event', () => {
   test('press esc key should close dropdown', async () => {
     render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -313,8 +311,8 @@ describe('<Dropdown/> keydown event', () => {
     const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
     const { unmount } = render(
       <Dropdown label="Career">
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -332,8 +330,8 @@ describe('<Dropdown/> logic', () => {
     const onChange = jest.fn();
     render(
       <Dropdown label="Career" onChange={onChange}>
-        <DropdownItem value="Product Manager">Product Manager</DropdownItem>
-        <DropdownItem value="Software Engineer">Software Engineer</DropdownItem>
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
       </Dropdown>
     );
 
@@ -342,6 +340,6 @@ describe('<Dropdown/> logic', () => {
     const option = queryByText(document.body, 'Product Manager');
     fireEvent.mouseDown(option);
 
-    expect(onChange.mock.calls[0][0]).toEqual('Product Manager');
+    expect(onChange.mock.calls[0][0]).toEqual('pm');
   });
 });

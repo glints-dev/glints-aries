@@ -71,8 +71,7 @@ const Dropdown = (props: Props) => {
     const itemElement = e.target as HTMLLIElement;
 
     if (itemElement.dataset.value) {
-      // TODO: This should probably set to itemElement.innerHTML
-      setDropdownLabel(itemElement.dataset.value);
+      setDropdownLabel(itemElement.innerHTML);
       setIsOpen(false);
 
       if (onChange !== undefined) {
