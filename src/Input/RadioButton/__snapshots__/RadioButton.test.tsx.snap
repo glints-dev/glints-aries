@@ -2,7 +2,7 @@
 
 exports[`<RadioButton> should render as expected 1`] = `
 <label
-  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jwGjPn aries-radiobtn"
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
   tabIndex={0}
 >
   <input
@@ -11,7 +11,12 @@ exports[`<RadioButton> should render as expected 1`] = `
     value="full-time"
   />
   <span
-    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 jqDYWd radiobtn-content"
+    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+    size="regular"
+  />
+  <span
+    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 xviKd radiobtn-content"
+    size="regular"
     tabIndex={-1}
   >
     Full Time
@@ -21,7 +26,7 @@ exports[`<RadioButton> should render as expected 1`] = `
 
 exports[`<RadioButton> should render as expected 2`] = `
 <label
-  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jePPMf aries-radiobtn"
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 gdqdYZ aries-radiobtn"
   tabIndex={0}
 >
   <input
@@ -30,7 +35,12 @@ exports[`<RadioButton> should render as expected 2`] = `
     value="full-time"
   />
   <span
-    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 icUGCb radiobtn-content"
+    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 YxYio"
+    size="regular"
+  />
+  <span
+    className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 ioQzrz radiobtn-content"
+    size="regular"
     tabIndex={-1}
   >
     Full Time
@@ -41,7 +51,7 @@ exports[`<RadioButton> should render as expected 2`] = `
 exports[`<RadioButton> should render as expected 3`] = `
 Array [
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jwGjPn aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -50,14 +60,19 @@ Array [
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 jqDYWd radiobtn-content"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      size="regular"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 xviKd radiobtn-content"
+      size="regular"
       tabIndex={-1}
     >
       Full Time
     </span>
   </label>,
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jwGjPn aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -66,7 +81,12 @@ Array [
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 jqDYWd radiobtn-content"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      size="regular"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 xviKd radiobtn-content"
+      size="regular"
       tabIndex={-1}
     >
       Intership
@@ -78,7 +98,7 @@ Array [
 exports[`<RadioButton> should render as expected 4`] = `
 Array [
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jwGjPn aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -88,14 +108,19 @@ Array [
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 jqDYWd radiobtn-content"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      size="regular"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 xviKd radiobtn-content"
+      size="regular"
       tabIndex={-1}
     >
       Full Time
     </span>
   </label>,
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-1 jwGjPn aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -104,7 +129,12 @@ Array [
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-0 jqDYWd radiobtn-content"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      size="regular"
+    />
+    <span
+      className="RadioButtonStyle__RadioLabel-sc-1xclcfi-1 xviKd radiobtn-content"
+      size="regular"
       tabIndex={-1}
     >
       Intership
