@@ -15,74 +15,80 @@ const Row = styled.div`
 
 const jsxToString = require('jsx-to-string');
 
-const props = {
-  RadioButton: [
-    {
-      name: 'label',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'any',
-      require: 'yes',
-      description: 'Sets the label of Radio Button.',
-    },
-    {
-      name: 'name',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'any',
-      require: 'yes',
-      description: '',
-    },
-    {
-      name: 'value',
-      type: 'string',
-      defaultValue: '',
-      possibleValue: 'any',
-      require: 'yes',
-      description: '',
-    },
-    {
-      name: 'checked',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: '',
-    },
-    {
-      name: 'error',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Displays the error styles',
-    },
-    {
-      name: 'labelProps',
-      type: 'object',
-      defaultValue: '',
-      possibleValue: '',
-      require: 'no',
-      description: 'Sets the props on the label element.',
-    },
-    {
-      name: 'theme',
-      type: 'boolean',
-      defaultValue: '',
-      possibleValue: <code>white</code>,
-      require: 'no',
-      description: 'Sets theme for Radio Button.',
-    },
-    {
-      name: 'disabled',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Sets Radio Button to disable state.',
-    },
-  ],
-};
+const commonProps = [
+  {
+    name: 'label',
+    type: 'string',
+    defaultValue: '',
+    possibleValue: 'any',
+    require: 'yes',
+    description: 'Sets the label of Radio Button.',
+  },
+  {
+    name: 'name',
+    type: 'string',
+    defaultValue: '',
+    possibleValue: 'any',
+    require: 'yes',
+    description: '',
+  },
+  {
+    name: 'value',
+    type: 'string',
+    defaultValue: '',
+    possibleValue: 'any',
+    require: 'yes',
+    description: '',
+  },
+  {
+    name: 'checked',
+    type: 'boolean',
+    defaultValue: <code>false</code>,
+    possibleValue: <code>true | false</code>,
+    require: 'no',
+    description: '',
+  },
+  {
+    name: 'labelProps',
+    type: 'object',
+    defaultValue: '',
+    possibleValue: '',
+    require: 'no',
+    description: 'Sets the props on the label element.',
+  },
+  {
+    name: 'disabled',
+    type: 'boolean',
+    defaultValue: <code>false</code>,
+    possibleValue: <code>true | false</code>,
+    require: 'no',
+    description: 'Sets Radio Button to disable state.',
+  },
+  {
+    name: 'size',
+    type: 'string',
+    defaultValue: 'regular',
+    possibleValue: 'regular | small',
+    require: 'no',
+    description: 'Sets the size of Radio Button.',
+  },
+  {
+    name: 'error',
+    type: 'boolean',
+    defaultValue: <code>false</code>,
+    possibleValue: <code>true | false</code>,
+    require: 'no',
+    description: 'Displays the error styles',
+  },
+  {
+    name: 'theme',
+    type: 'boolean',
+    defaultValue: '',
+    possibleValue: <code>white</code>,
+    require: 'no',
+    description: 'Sets theme for Radio Button.',
+  },
+];
 
 const Story = (
   <Row>
@@ -100,16 +106,22 @@ const Story = (
   </Row>
 );
 
-const RadioButtonStory = () => (
-  <StorybookComponent
-    title="Radio Button"
-    code="import { RadioButton } from 'glints-aries'"
-    propsObject={props}
-    usage={jsxToString(Story)}
-  >
-    {Story}
-  </StorybookComponent>
-);
+const RadioButtonStory = () => {
+  const props = {
+    RadioButton: commonProps,
+  };
+
+  return (
+    <StorybookComponent
+      title="Radio Button"
+      code="import { RadioButton } from 'glints-aries'"
+      propsObject={props}
+      usage={jsxToString(Story)}
+    >
+      {Story}
+    </StorybookComponent>
+  );
+};
 
 const RadioButtonWithBorderStory = () => {
   const props = {
@@ -122,22 +134,7 @@ const RadioButtonWithBorderStory = () => {
         require: 'no',
         description: 'Sets a border around the Radio Button.',
       },
-      {
-        name: 'disabled',
-        type: 'boolean',
-        defaultValue: <code>false</code>,
-        possibleValue: <code>true | false</code>,
-        require: 'no',
-        description: 'Sets Radio Button to disable state.',
-      },
-      {
-        name: 'size',
-        type: 'string',
-        defaultValue: 'regular',
-        possibleValue: 'regular | small',
-        require: 'no',
-        description: 'Sets the size of Radio Button.',
-      },
+      ...commonProps,
     ],
   };
 
