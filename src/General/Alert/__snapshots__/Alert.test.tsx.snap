@@ -6,35 +6,39 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-srh7y6-0 fJNeNU aries-alert"
+  className="AlertStyle__AlertContainer-srh7y6-0 XeIFy aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
   type="danger"
 >
-  <svg
-    className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
-    data-testid="icon-svg"
-    fill="#EC272B"
-    height="1em"
-    viewBox="0 0 100 100"
-    width="1em"
+  <div
+    className="AlertStyle__AlertTypeIconContainer-srh7y6-4 gdDDxG"
   >
-    <path
-      d="M50,0 C55.3100255,0 60.6197121,2.96755488 62.979422,7.71598379 L62.979422,7.71598379 L97.7875176,68.8517075 C100.737494,73.6001364 100.737494,79.5355873 97.7875176,84.2840162 C95.4274686,89.032104 90.7077096,92 84.8080956,92 L84.8080956,92 L15.1919044,92 C9.88187889,92 4.57219238,89.0324451 2.21248239,84.2840162 C-0.73749413,79.5355873 -0.73749413,73.6001364 2.21248239,68.8517075 L2.21248239,68.8517075 L37.020578,7.71598379 C39.9705545,2.96789598 44.6903135,0 50,0 Z M50,17 C46.4004137,17 44,19.8694251 44,22.6740999 L44,56.3259001 C44,59.1300377 46.3997242,62 50,62 C53.5995863,62 56,59.1305749 56,56.3259001 L56,22.6740999 C56,19.8694251 53.5995863,17 50,17 Z M50,82 C53.3137085,82 56,79.3137085 56,76 C56,72.6862915 53.3137085,70 50,70 C46.6862915,70 44,72.6862915 44,76 C44,79.3137085 46.6862915,82 50,82 Z"
-    />
-  </svg>
+    <svg
+      className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+      data-testid="icon-svg"
+      fill="#EC272B"
+      height="1em"
+      viewBox="0 0 100 100"
+      width="1em"
+    >
+      <path
+        d="M54.928 54.928V24.88h-9.856v30.048h9.856zm0 20.192V65.024h-9.856V75.12h9.856zM50 0c9.135 0 17.588 2.284 25.36 6.851 7.533 4.327 13.462 10.256 17.789 17.788C97.716 32.412 100 40.865 100 50c0 9.135-2.284 17.588-6.851 25.36-4.327 7.533-10.256 13.462-17.788 17.789C67.588 97.716 59.135 100 50 100c-9.135 0-17.588-2.284-25.36-6.851C17.106 88.742 11.177 82.772 6.85 75.24 2.284 67.468 0 59.055 0 50s2.284-17.468 6.851-25.24C11.258 17.228 17.228 11.258 24.76 6.85 32.532 2.284 40.945 0 50 0z"
+      />
+    </svg>
+  </div>
   <div
     className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
+      className="AlertStyle__AlertMessage-srh7y6-2 kGnodW alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
+      className="AlertStyle__AlertIcon-srh7y6-3 daLDez alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -60,35 +64,39 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-srh7y6-0 kshnsq aries-alert"
+  className="AlertStyle__AlertContainer-srh7y6-0 dcpPyE aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
   type="info"
 >
-  <svg
-    className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
-    data-testid="icon-svg"
-    fill="#0BAEEC"
-    height="1em"
-    viewBox="0 0 100 100"
-    width="1em"
+  <div
+    className="AlertStyle__AlertTypeIconContainer-srh7y6-4 gdDDxG"
   >
-    <path
-      d="M99.997 49.33c.148 13.839-4.576 25.668-14.174 35.49-9.597 9.82-21.315 14.879-35.153 15.177-13.839.148-25.668-4.576-35.49-14.174C5.36 76.226.302 64.508.004 50.67-.145 36.83 4.58 25.002 14.177 15.18 23.774 5.36 35.492.302 49.33.004 63.17-.145 74.998 4.58 84.82 14.177c9.82 9.597 14.879 21.315 15.177 35.153zM55.134 19.868c-1.34-1.34-3.05-2.009-5.134-2.009-2.083 0-3.794.67-5.134 2.01-1.339 1.338-2.008 3.05-2.008 5.133s.67 3.794 2.008 5.133c1.34 1.34 3.05 2.01 5.134 2.01 2.083 0 3.794-.67 5.134-2.01 1.339-1.339 2.008-3.05 2.008-5.133s-.67-3.795-2.008-5.134zm4.687 61.157v-2.456h-4.91V40.18H40.178v2.679h4.91v35.711h-4.91v2.456h19.642z"
-    />
-  </svg>
+    <svg
+      className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+      data-testid="icon-svg"
+      fill="#017EB7"
+      height="1em"
+      viewBox="0 0 100 100"
+      width="1em"
+    >
+      <path
+        d="M99.997 49.33c.148 13.839-4.576 25.668-14.174 35.49-9.597 9.82-21.315 14.879-35.153 15.177-13.839.148-25.668-4.576-35.49-14.174C5.36 76.226.302 64.508.004 50.67-.145 36.83 4.58 25.002 14.177 15.18 23.774 5.36 35.492.302 49.33.004 63.17-.145 74.998 4.58 84.82 14.177c9.82 9.597 14.879 21.315 15.177 35.153zM55.134 19.868c-1.34-1.34-3.05-2.009-5.134-2.009-2.083 0-3.794.67-5.134 2.01-1.339 1.338-2.008 3.05-2.008 5.133s.67 3.794 2.008 5.133c1.34 1.34 3.05 2.01 5.134 2.01 2.083 0 3.794-.67 5.134-2.01 1.339-1.339 2.008-3.05 2.008-5.133s-.67-3.795-2.008-5.134zm4.687 61.157v-2.456h-4.91V40.18H40.178v2.679h4.91v35.711h-4.91v2.456h19.642z"
+      />
+    </svg>
+  </div>
   <div
     className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
+      className="AlertStyle__AlertMessage-srh7y6-2 kGnodW alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
+      className="AlertStyle__AlertIcon-srh7y6-3 daLDez alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -114,35 +122,39 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-srh7y6-0 kshnsq aries-alert"
+  className="AlertStyle__AlertContainer-srh7y6-0 dcpPyE aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
   type="xxx"
 >
-  <svg
-    className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
-    data-testid="icon-svg"
-    fill="#0BAEEC"
-    height="1em"
-    viewBox="0 0 100 100"
-    width="1em"
+  <div
+    className="AlertStyle__AlertTypeIconContainer-srh7y6-4 gdDDxG"
   >
-    <path
-      d="M99.997 49.33c.148 13.839-4.576 25.668-14.174 35.49-9.597 9.82-21.315 14.879-35.153 15.177-13.839.148-25.668-4.576-35.49-14.174C5.36 76.226.302 64.508.004 50.67-.145 36.83 4.58 25.002 14.177 15.18 23.774 5.36 35.492.302 49.33.004 63.17-.145 74.998 4.58 84.82 14.177c9.82 9.597 14.879 21.315 15.177 35.153zM55.134 19.868c-1.34-1.34-3.05-2.009-5.134-2.009-2.083 0-3.794.67-5.134 2.01-1.339 1.338-2.008 3.05-2.008 5.133s.67 3.794 2.008 5.133c1.34 1.34 3.05 2.01 5.134 2.01 2.083 0 3.794-.67 5.134-2.01 1.339-1.339 2.008-3.05 2.008-5.133s-.67-3.795-2.008-5.134zm4.687 61.157v-2.456h-4.91V40.18H40.178v2.679h4.91v35.711h-4.91v2.456h19.642z"
-    />
-  </svg>
+    <svg
+      className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+      data-testid="icon-svg"
+      fill="#017EB7"
+      height="1em"
+      viewBox="0 0 100 100"
+      width="1em"
+    >
+      <path
+        d="M99.997 49.33c.148 13.839-4.576 25.668-14.174 35.49-9.597 9.82-21.315 14.879-35.153 15.177-13.839.148-25.668-4.576-35.49-14.174C5.36 76.226.302 64.508.004 50.67-.145 36.83 4.58 25.002 14.177 15.18 23.774 5.36 35.492.302 49.33.004 63.17-.145 74.998 4.58 84.82 14.177c9.82 9.597 14.879 21.315 15.177 35.153zM55.134 19.868c-1.34-1.34-3.05-2.009-5.134-2.009-2.083 0-3.794.67-5.134 2.01-1.339 1.338-2.008 3.05-2.008 5.133s.67 3.794 2.008 5.133c1.34 1.34 3.05 2.01 5.134 2.01 2.083 0 3.794-.67 5.134-2.01 1.339-1.339 2.008-3.05 2.008-5.133s-.67-3.795-2.008-5.134zm4.687 61.157v-2.456h-4.91V40.18H40.178v2.679h4.91v35.711h-4.91v2.456h19.642z"
+      />
+    </svg>
+  </div>
   <div
     className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
+      className="AlertStyle__AlertMessage-srh7y6-2 kGnodW alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
+      className="AlertStyle__AlertIcon-srh7y6-3 daLDez alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -168,35 +180,39 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-srh7y6-0 jFiaom aries-alert"
+  className="AlertStyle__AlertContainer-srh7y6-0 bQUQxC aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
   type="success"
 >
-  <svg
-    className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
-    data-testid="icon-svg"
-    fill="#008464"
-    height="1em"
-    viewBox="0 0 100 100"
-    width="1em"
+  <div
+    className="AlertStyle__AlertTypeIconContainer-srh7y6-4 gdDDxG"
   >
-    <path
-      d="M50 100C22.386 100 0 77.614 0 50S22.386 0 50 0s50 22.386 50 50-22.386 50-50 50zM38.823 63.644L23.206 48.038 18 53.329l20.823 20.809 44.878-44.846L78.406 24 38.823 63.644z"
-    />
-  </svg>
+    <svg
+      className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+      data-testid="icon-svg"
+      fill="#008464"
+      height="1em"
+      viewBox="0 0 100 100"
+      width="1em"
+    >
+      <path
+        d="M50 100C22.386 100 0 77.614 0 50S22.386 0 50 0s50 22.386 50 50-22.386 50-50 50zM38.823 63.644L23.206 48.038 18 53.329l20.823 20.809 44.878-44.846L78.406 24 38.823 63.644z"
+      />
+    </svg>
+  </div>
   <div
     className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
+      className="AlertStyle__AlertMessage-srh7y6-2 kGnodW alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
+      className="AlertStyle__AlertIcon-srh7y6-3 daLDez alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"
@@ -222,35 +238,39 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-srh7y6-0 igsYJ aries-alert"
+  className="AlertStyle__AlertContainer-srh7y6-0 kpZtiM aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
   type="warning"
 >
-  <svg
-    className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
-    data-testid="icon-svg"
-    fill="#F5A623"
-    height="1em"
-    viewBox="0 0 100 100"
-    width="1em"
+  <div
+    className="AlertStyle__AlertTypeIconContainer-srh7y6-4 gdDDxG"
   >
-    <path
-      d="M50,0 C55.3100255,0 60.6197121,2.96755488 62.979422,7.71598379 L62.979422,7.71598379 L97.7875176,68.8517075 C100.737494,73.6001364 100.737494,79.5355873 97.7875176,84.2840162 C95.4274686,89.032104 90.7077096,92 84.8080956,92 L84.8080956,92 L15.1919044,92 C9.88187889,92 4.57219238,89.0324451 2.21248239,84.2840162 C-0.73749413,79.5355873 -0.73749413,73.6001364 2.21248239,68.8517075 L2.21248239,68.8517075 L37.020578,7.71598379 C39.9705545,2.96789598 44.6903135,0 50,0 Z M50,17 C46.4004137,17 44,19.8694251 44,22.6740999 L44,56.3259001 C44,59.1300377 46.3997242,62 50,62 C53.5995863,62 56,59.1305749 56,56.3259001 L56,22.6740999 C56,19.8694251 53.5995863,17 50,17 Z M50,82 C53.3137085,82 56,79.3137085 56,76 C56,72.6862915 53.3137085,70 50,70 C46.6862915,70 44,72.6862915 44,76 C44,79.3137085 46.6862915,82 50,82 Z"
-    />
-  </svg>
+    <svg
+      className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+      data-testid="icon-svg"
+      fill="#F5A623"
+      height="1em"
+      viewBox="0 0 100 100"
+      width="1em"
+    >
+      <path
+        d="M54.928 54.928V24.88h-9.856v30.048h9.856zm0 20.192V65.024h-9.856V75.12h9.856zM50 0c9.135 0 17.588 2.284 25.36 6.851 7.533 4.327 13.462 10.256 17.789 17.788C97.716 32.412 100 40.865 100 50c0 9.135-2.284 17.588-6.851 25.36-4.327 7.533-10.256 13.462-17.788 17.789C67.588 97.716 59.135 100 50 100c-9.135 0-17.588-2.284-25.36-6.851C17.106 88.742 11.177 82.772 6.85 75.24 2.284 67.468 0 59.055 0 50s2.284-17.468 6.851-25.24C11.258 17.228 17.228 11.258 24.76 6.85 32.532 2.284 40.945 0 50 0z"
+      />
+    </svg>
+  </div>
   <div
     className="AlertStyle__AlertContent-srh7y6-1 bUAHVI alert-content"
   >
     <p
-      className="AlertStyle__AlertMessage-srh7y6-2 eeMpAG alert-message"
+      className="AlertStyle__AlertMessage-srh7y6-2 kGnodW alert-message"
     >
       You have successfully applied to Glints as Software Engineer.
     </p>
     <div
       aria-label="Press Escape or Enter button to close alert"
-      className="AlertStyle__AlertIcon-srh7y6-3 jtLoID alert-close"
+      className="AlertStyle__AlertIcon-srh7y6-3 daLDez alert-close"
       onClick={[MockFunction]}
       role="button"
       title="Close alert"

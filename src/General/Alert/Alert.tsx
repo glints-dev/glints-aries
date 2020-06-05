@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import {
   CheckmarkSolidIcon,
-  WarningSolidIcon,
+  WarningCircleSolidIcon,
   InfoSolidIcon,
   CloseIcon,
 } from '../Icon/components';
@@ -13,6 +13,7 @@ import {
   AlertContent,
   AlertMessage,
   AlertIcon,
+  AlertTypeIconContainer,
 } from '../../Style/General/AlertStyle';
 
 import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
@@ -80,19 +81,19 @@ const Alert = ({
         };
       case 'warning':
         return {
-          AlertTypeIcon: WarningSolidIcon,
+          AlertTypeIcon: WarningCircleSolidIcon,
           alertColor: SecondaryColor.orange,
         };
       case 'danger':
         return {
-          AlertTypeIcon: WarningSolidIcon,
+          AlertTypeIcon: WarningCircleSolidIcon,
           alertColor: PrimaryColor.glintsred,
         };
       case 'info':
       default:
         return {
           AlertTypeIcon: InfoSolidIcon,
-          alertColor: PrimaryColor.glintsblue,
+          alertColor: SecondaryColor.actionblue,
         };
     }
   }, [type]);
@@ -110,7 +111,9 @@ const Alert = ({
       onKeyDown={handleKeyDown(onClose)}
       ref={alertContainerRef}
     >
-      <AlertTypeIcon color={alertColor} />
+      <AlertTypeIconContainer>
+        <AlertTypeIcon color={alertColor} />
+      </AlertTypeIconContainer>
       <AlertContent className="alert-content">
         <AlertMessage className="alert-message">{message}</AlertMessage>
         <AlertIcon

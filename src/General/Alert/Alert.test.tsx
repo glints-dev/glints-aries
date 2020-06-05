@@ -93,13 +93,13 @@ describe('<Alert/> should render correct icon color', () => {
   test('type is info', () => {
     const { queryAllByTestId } = render(<AlertComponent type="info" />);
     const icon = queryAllByTestId('icon-svg')[0];
-    expect(icon).toHaveAttribute('fill', PrimaryColor.glintsblue);
+    expect(icon).toHaveAttribute('fill', SecondaryColor.actionblue);
   });
 
   test('type is not a predefined type', () => {
     const { queryAllByTestId } = render(<AlertComponent type="xxx" />);
     const icon = queryAllByTestId('icon-svg')[0];
-    expect(icon).toHaveAttribute('fill', PrimaryColor.glintsblue);
+    expect(icon).toHaveAttribute('fill', SecondaryColor.actionblue);
   });
 });
 

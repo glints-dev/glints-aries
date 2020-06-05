@@ -75,11 +75,6 @@ export const AlertContainer = styled.div<AlertContainerProps>`
         `;
     }
   }}
-
-  > svg {
-    font-size: 1.4em;
-    margin-right: 10px;
-  }
 `;
 
 interface AlertContainerProps {
@@ -98,9 +93,25 @@ export const AlertContent = styled.div`
 export const AlertMessage = styled.p`
   position: relative;
   margin: 0;
-  padding-right: 10px;
+  padding-right: 20px;
+  line-height: normal;
+`;
+
+const alignSelf = `
+  height: 20px;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
 `;
 
 export const AlertIcon = styled.div`
+  ${alignSelf}
   cursor: pointer;
+  font-size: 10px;
+`;
+
+export const AlertTypeIconContainer = styled.div`
+  ${alignSelf}
+  font-size: 15px;
+  margin-right: 10px;
 `;

@@ -10,11 +10,12 @@ class AlertStory extends React.Component<{}, State> {
     super(props);
     this.state = {
       isOpen: false,
+      type: 'success',
     };
   }
 
-  handleOnClick = () => {
-    this.setState({ isOpen: true });
+  handleOnClick = (type: string) => () => {
+    this.setState({ isOpen: true, type });
   };
 
   handleOnClose = () => {
@@ -74,27 +75,46 @@ class AlertStory extends React.Component<{}, State> {
         title="Alert"
         code="import { Alert } from 'glints-aries'"
         propsObject={props}
-        usage={`state = {
-  isOpen: false,
-}
+        usage={`
+          state = {
+            isOpen: false,
+          }
 
-handleOnClose = () => {
-  this.setState({ isOpen: false });
-}
+          handleOnClose = () => {
+            this.setState({ isOpen: false });
+          }
 
-<Alert
-  type="success"
-  message="You have successfully applied to Glints as Software Engineer."
-  isOpen={isOpen}
-  onClose={this.handleOnClose}
-  autoClose={3000}
-/>`}
+          <Alert
+            type="success"
+            message="You have successfully applied to Glints as Software Engineer."
+            isOpen={isOpen}
+            onClose={this.handleOnClose}
+            autoClose={3000}
+          />
+        `}
       >
-        <Button variant="solid-blue" onClick={this.handleOnClick}>
-          Open Alert
-        </Button>
+        <div style={{ marginBottom: '20px' }}>
+          <Button variant="solid-blue" onClick={this.handleOnClick('info')}>
+            Open info Alert
+          </Button>
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <Button variant="solid-blue" onClick={this.handleOnClick('success')}>
+            Open success Alert
+          </Button>
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <Button variant="solid-blue" onClick={this.handleOnClick('warning')}>
+            Open warning Alert
+          </Button>
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <Button variant="solid-blue" onClick={this.handleOnClick('danger')}>
+            Open danger (error) Alert
+          </Button>
+        </div>
         <Alert
-          type="success"
+          type={this.state.type}
           message="You have successfully applied to Glints as Software Engineer."
           isOpen={isOpen}
           onClose={this.handleOnClose}
@@ -106,6 +126,7 @@ handleOnClose = () => {
 
 interface State {
   isOpen: boolean;
+  type: string;
 }
 
 export default AlertStory;
