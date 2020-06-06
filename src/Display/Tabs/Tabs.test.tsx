@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import Tabs from './Tabs';
-import { EHorizontalTabVariant } from '../../Utils/StyleConfig';
+import { EHorizontalTabVariant, ETabColourVariant } from '../../Utils/StyleConfig';
 
 describe('<Tabs/> render', () => {
   test('should match snapshot', () => {
@@ -61,6 +61,26 @@ describe('<Tabs/> snapshots with variant props', () => {
 
   Object.values(EHorizontalTabVariant).forEach(variant =>
     matchTabSnapshotsWithVariant(variant)
+  );
+});
+
+describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
+  const matchTabSnapshotsWithVariant = (colour: ETabColourVariant) => {
+    test(`colour ${colour}`, () => {
+      const { asFragment } = render(
+        <Tabs variant={EHorizontalTabVariant.UNDERLINED} colour={colour}>
+          <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
+          <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+          <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+          <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+        </Tabs>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  Object.values(ETabColourVariant).forEach(colour =>
+    matchTabSnapshotsWithVariant(colour)
   );
 });
 

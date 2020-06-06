@@ -82,6 +82,12 @@ exports[`<Tabs/> render should match snapshot 1`] = `
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
 }
 
 .c1 ul li.colored.active.horizontal-tab {
@@ -93,13 +99,15 @@ exports[`<Tabs/> render should match snapshot 1`] = `
   text-transform: uppercase;
 }
 
-.c1 ul li.active.vertical-tab {
-  border-bottom: 2px solid #000000;
-}
-
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
 
 .c1 ul:focus {
@@ -360,6 +368,12 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
 }
 
 .c1 ul li.colored.active.horizontal-tab {
@@ -371,13 +385,15 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
   text-transform: uppercase;
 }
 
-.c1 ul li.active.vertical-tab {
-  border-bottom: 2px solid #000000;
-}
-
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
 
 .c1 ul:focus {
@@ -635,6 +651,12 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
 }
 
 .c1 ul li.colored.active.horizontal-tab {
@@ -646,13 +668,15 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
   text-transform: uppercase;
 }
 
-.c1 ul li.active.vertical-tab {
-  border-bottom: 2px solid #000000;
-}
-
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
 
 .c1 ul:focus {
@@ -827,6 +851,583 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<Tabs/> snapshots with colour prop and variant as underlined colour black 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c1 .horizontal-tabs-list.colored {
+  border-top: 1px solid #EEEEEE;
+}
+
+.c1 ul {
+  border-bottom: 1px solid #EEEEEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  overflow: auto;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c1 ul::-webkit-scrollbar {
+  display: none;
+}
+
+.c1 ul .horizontal-tab.colored {
+  min-width: 230px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.c1 ul .horizontal-tab.colored:hover {
+  background-color: #F3F3F3;
+  color: #017EB7;
+  margin: 0;
+}
+
+.c1 ul .horizontal-tab.underlined {
+  margin: 0 10px;
+}
+
+.c1 ul .vertical-tab {
+  margin: 0 10px;
+}
+
+.c1 ul li {
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+.c1 ul li:first-child.horizontal-tab {
+  margin-left: 0;
+}
+
+.c1 ul li:last-child.horizontal-tab {
+  margin-right: 0;
+}
+
+.c1 ul li:first-child.vertical-tab {
+  margin-top: 0;
+}
+
+.c1 ul li:last-child.vertical-tab {
+  margin-bottom: 0;
+}
+
+.c1 ul li.underlined.active.horizontal-tab,
+.c1 ul li.active.vertical-tab {
+  border-bottom: 2px solid #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button,
+.c1 ul li.active.vertical-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
+}
+
+.c1 ul li.colored.active.horizontal-tab {
+  background-color: #F3F3F3;
+}
+
+.c1 ul li.colored.active.horizontal-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c1 ul li.active.vertical-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+}
+
+.c1 ul:focus {
+  outline: none;
+}
+
+.c1 ul .vertical-tab button {
+  text-align: left;
+}
+
+.c1 ul button {
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.c4 {
+  position: relative;
+  outline: none;
+}
+
+.c2 {
+  position: relative;
+  padding-top: 1.2em;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus > .c3 {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+@media (min-width:768px) {
+  .c0.vertical-aries-tabs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .c1.vertical-tabs-header {
+    width: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 .vertical-tabs-list {
+    border-right: 1px solid #EEEEEE;
+    border-bottom: none;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 ul .vertical-tab {
+    margin: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 ul li.active.vertical-tab {
+    border-right: 2px solid #000000;
+    border-bottom: none;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 li {
+    margin: 0 15px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4.tabs-item-vertical {
+    margin-left: 60px;
+  }
+}
+
+<div
+    class="c0 horizontal-aries-tabs aries-tabs"
+  >
+    <div
+      class="c1 horizontal-tabs-header tabs-header"
+    >
+      <ul
+        class="horizontal-tabs-list tabs-list underlined"
+        role="tablist"
+      >
+        <li
+          aria-controls="tab-item-0"
+          aria-selected="true"
+          class="tab-0 active horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Job
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-1"
+          aria-selected="false"
+          class="tab-1 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Company
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-2"
+          aria-selected="false"
+          class="tab-2 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Location
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-3"
+          aria-selected="false"
+          class="tab-3 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Salary
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="c2 tabs-body"
+      tabindex="0"
+    >
+      <div
+        aria-labelledby="tab-0"
+        class="c3 c4 tabs-item tab-item-0 tabs-item-horizontal tabs-item"
+        role="tabpanel"
+        tabindex="-1"
+      >
+        Software Engineer
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Tabs/> snapshots with colour prop and variant as underlined colour grey 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c1 .horizontal-tabs-list.colored {
+  border-top: 1px solid #EEEEEE;
+}
+
+.c1 ul {
+  border-bottom: 1px solid #EEEEEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  overflow: auto;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.c1 ul::-webkit-scrollbar {
+  display: none;
+}
+
+.c1 ul .horizontal-tab.colored {
+  min-width: 230px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.c1 ul .horizontal-tab.colored:hover {
+  background-color: #F3F3F3;
+  color: #017EB7;
+  margin: 0;
+}
+
+.c1 ul .horizontal-tab.underlined {
+  margin: 0 15px;
+}
+
+.c1 ul .vertical-tab {
+  margin: 0 10px;
+}
+
+.c1 ul li {
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+.c1 ul li:first-child.horizontal-tab {
+  margin-left: 0;
+}
+
+.c1 ul li:last-child.horizontal-tab {
+  margin-right: 0;
+}
+
+.c1 ul li:first-child.vertical-tab {
+  margin-top: 0;
+}
+
+.c1 ul li:last-child.vertical-tab {
+  margin-bottom: 0;
+}
+
+.c1 ul li.underlined.active.horizontal-tab,
+.c1 ul li.active.vertical-tab {
+  border-bottom: 4px solid #017EB7;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button,
+.c1 ul li.active.vertical-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #017EB7;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
+}
+
+.c1 ul li.colored.active.horizontal-tab {
+  background-color: #F3F3F3;
+}
+
+.c1 ul li.colored.active.horizontal-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c1 ul li.active.vertical-tab button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+}
+
+.c1 ul:focus {
+  outline: none;
+}
+
+.c1 ul .vertical-tab button {
+  text-align: left;
+}
+
+.c1 ul button {
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #777777;
+}
+
+.c1 ul button:hover {
+  color: #017EB7;
+  border-bottom: 4px solid rgba(1,126,183,0.5);
+}
+
+.c4 {
+  position: relative;
+  outline: none;
+}
+
+.c2 {
+  position: relative;
+  padding-top: 1.2em;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:focus > .c3 {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+@media (min-width:768px) {
+  .c0.vertical-aries-tabs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .c1.vertical-tabs-header {
+    width: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 .vertical-tabs-list {
+    border-right: 1px solid #EEEEEE;
+    border-bottom: none;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 ul .vertical-tab {
+    margin: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 ul li.active.vertical-tab {
+    border-right: 4px solid #017EB7;
+    border-bottom: none;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 li {
+    margin: 0 15px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4.tabs-item-vertical {
+    margin-left: 60px;
+  }
+}
+
+<div
+    class="c0 horizontal-aries-tabs aries-tabs"
+  >
+    <div
+      class="c1 horizontal-tabs-header tabs-header"
+    >
+      <ul
+        class="horizontal-tabs-list tabs-list underlined"
+        role="tablist"
+      >
+        <li
+          aria-controls="tab-item-0"
+          aria-selected="true"
+          class="tab-0 active horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Job
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-1"
+          aria-selected="false"
+          class="tab-1 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Company
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-2"
+          aria-selected="false"
+          class="tab-2 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Location
+          </button>
+        </li>
+        <li
+          aria-controls="tab-item-3"
+          aria-selected="false"
+          class="tab-3 horizontal-tab underlined"
+          role="tab"
+          tabindex="-1"
+        >
+          <button
+            role="tab-button"
+            type="button"
+          >
+            Salary
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="c2 tabs-body"
+      tabindex="0"
+    >
+      <div
+        aria-labelledby="tab-0"
+        class="c3 c4 tabs-item tab-item-0 tabs-item-horizontal tabs-item"
+        role="tabpanel"
+        tabindex="-1"
+      >
+        Software Engineer
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
 <DocumentFragment>
   .c0 {
@@ -910,6 +1511,12 @@ exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
 }
 
 .c1 ul li.colored.active.horizontal-tab {
@@ -921,13 +1528,15 @@ exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
   text-transform: uppercase;
 }
 
-.c1 ul li.active.vertical-tab {
-  border-bottom: 2px solid #000000;
-}
-
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
 
 .c1 ul:focus {
@@ -1185,6 +1794,12 @@ exports[`<Tabs/> snapshots with variant props alignment underlined 1`] = `
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+  color: #000000;
+}
+
+.c1 ul li.underlined.active.horizontal-tab button:hover,
+.c1 ul li.active.vertical-tab button:hover {
+  border: 0;
 }
 
 .c1 ul li.colored.active.horizontal-tab {
@@ -1196,13 +1811,15 @@ exports[`<Tabs/> snapshots with variant props alignment underlined 1`] = `
   text-transform: uppercase;
 }
 
-.c1 ul li.active.vertical-tab {
-  border-bottom: 2px solid #000000;
-}
-
 .c1 ul li.active.vertical-tab button {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.c1 ul svg {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
 }
 
 .c1 ul:focus {
