@@ -6,7 +6,10 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import Tabs from './Tabs';
-import { EHorizontalTabVariant, ETabColourVariant } from '../../Utils/StyleConfig';
+import {
+  EHorizontalTabVariant,
+  ETabColourVariant,
+} from '../../Utils/StyleConfig';
 
 describe('<Tabs/> render', () => {
   test('should match snapshot', () => {

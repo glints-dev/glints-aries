@@ -39,8 +39,7 @@ const props = {
       defaultValue: 'black',
       possibleValue: 'blue, grey',
       require: 'no',
-      description:
-        'Sets the colour for the tabs in underlined variant.',
+      description: 'Sets the colour for the tabs in underlined variant.',
     },
     {
       name: 'activeTab',
@@ -197,12 +196,46 @@ const TabsStory = () => (
         variant={EHorizontalTabVariant.UNDERLINED}
         colour={ETabColourVariant.GREY}
       >
-        <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Jobs
+            </div>
+          }
+        >
           Software Engineer <Badge label="1" />
         </Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Company</div>}>Glints</Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Location</div>}>Jakarta</Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Salary</div>}>Rp 10,000,000</Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Company
+            </div>
+          }
+        >
+          Glints
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Location
+            </div>
+          }
+        >
+          Jakarta
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Salary
+            </div>
+          }
+        >
+          Rp 10,000,000
+        </Tabs.Pane>
       </Tabs>
     </StorybookComponent>
 
@@ -259,12 +292,46 @@ const TabsStory = () => (
         alignment={ETabAlignment.VERTICAL}
         colour={ETabColourVariant.GREY}
       >
-        <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Jobs
+            </div>
+          }
+        >
           Software Engineer <Badge label="1" />
         </Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Company</div>}>Glints</Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Location</div>}>Jakarta</Tabs.Pane>
-        <Tabs.Pane tab={<div><FileAlternateIcon />Salary</div>}>Rp 10,000,000</Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Company
+            </div>
+          }
+        >
+          Glints
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Location
+            </div>
+          }
+        >
+          Jakarta
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Salary
+            </div>
+          }
+        >
+          Rp 10,000,000
+        </Tabs.Pane>
       </Tabs>
     </StorybookComponent>
   </React.Fragment>
