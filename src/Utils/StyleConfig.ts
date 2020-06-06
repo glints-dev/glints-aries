@@ -8,6 +8,11 @@ export enum EHorizontalTabVariant {
   COLORED = 'colored',
 }
 
+export enum ETabColourVariant {
+  GREY = 'grey',
+  BLACK = 'black',
+}
+
 export enum ETooltipPosition {
   TOP = 'top',
   BOTTOM = 'bottom',

@@ -15,7 +15,7 @@ const TabPane: React.FunctionComponent<Props> = props => {
 export interface Props
   extends React.ComponentPropsWithoutRef<typeof TabsContent> {
   children: React.ReactNode;
-  tab?: string;
+  tab?: string | React.ReactNode;
   label?: string | number;
   tabClassName?: string;
 }
