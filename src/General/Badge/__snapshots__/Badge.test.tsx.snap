@@ -1,8 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Badge> should render a label with the text "6" 1`] = `
+exports[`<Badge/> snapshots with variant prop variant default 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: #EC272B;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.c0 span {
+  height: 17px;
+  min-width: 19px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-align: center;
+}
+
 <div
-  className="BadgeStyle__BadgeContainer-sc-1rr32yz-0 haqjCy aries-badge"
+    class="c0 aries-badge"
+    role="presentation"
+  >
+    <span
+      class="badge-content"
+    >
+      6
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Badge/> snapshots with variant prop variant dimmed 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: #777777;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.c0 span {
+  height: 17px;
+  min-width: 19px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-align: center;
+}
+
+<div
+    class="c0 aries-badge"
+    role="presentation"
+  >
+    <span
+      class="badge-content"
+    >
+      6
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Badge> should render a label with the text "6" 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: #EC272B;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.c0 span {
+  height: 17px;
+  min-width: 19px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-align: center;
+}
+
+<div
+  className="c0 aries-badge"
   role="presentation"
 >
   <span

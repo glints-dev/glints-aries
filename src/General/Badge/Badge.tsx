@@ -3,9 +3,15 @@ import classNames from 'classnames';
 import { isNil } from 'lodash';
 import { BadgeContainer } from '../../Style/General/BadgeStyle';
 
+export const BadgeVariant = {
+  DEFAULT: 'default',
+  DIMMED: 'dimmed',
+};
+
 const Badge: React.FunctionComponent<Props> = ({
   label,
   sup,
+  variant = BadgeVariant.DEFAULT,
   className,
   ...defaultProps
 }) => (
@@ -15,6 +21,7 @@ const Badge: React.FunctionComponent<Props> = ({
         className={classNames('aries-badge', className)}
         role="presentation"
         sup={sup}
+        variant={variant}
         {...defaultProps}
       >
         <span className="badge-content">{label}</span>
@@ -26,6 +33,7 @@ const Badge: React.FunctionComponent<Props> = ({
 interface Props extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
   label: string | number;
   sup?: boolean;
+  variant?: string;
 }
 
 export default Badge;
