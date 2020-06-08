@@ -124,6 +124,7 @@ export const RadioContainer = styled.label<Props>`
 
     &:checked + ${Border} {
       background-color: transparent;
+      border-color: ${props => getStateColor(props, true)};
 
       ${RadioIcon} {
         ${showSolidCircleStyle}
