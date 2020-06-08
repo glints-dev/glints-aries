@@ -4,7 +4,8 @@ import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
-import RadioButton from './RadioButton';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Style/Colors';
+import RadioButton, { Props } from './RadioButton';
 
 const singleRadioButton = (
   <RadioButton label="Full Time" name="job-type" value="full-time" />
@@ -119,5 +120,89 @@ describe('<RadioButton>', () => {
     const radioButton = getByTestId('radio');
     userEvent.click(radioButton);
     expect(onChange).not.toHaveBeenCalled();
+  });
+});
+
+describe('<RadioButton /> color', () => {
+  const onChange = jest.fn();
+  const Component = (props: Props) => (
+    <RadioButton
+      label="Full Time"
+      name="job-type"
+      value="full-time"
+      onChange={onChange}
+      {...props}
+    />
+  );
+  it('should be grey by default', () => {
+    const { getByTestId } = render(<Component />);
+    const radioIcon = getByTestId('radio-icon');
+    expect(radioIcon).toHaveStyle(`border-color: ${Greyscale.grey}`);
+  });
+
+  it('should be green when checked', () => {
+    const { getByTestId } = render(<Component checked />);
+    const radioIcon = getByTestId('radio-icon');
+    expect(radioIcon).toHaveStyle(`border-color: ${SecondaryColor.darkgreen}`);
+  });
+
+  it('should be red when has error', () => {
+    const { getByTestId } = render(<Component error />);
+    const radioIcon = getByTestId('radio-icon');
+    expect(radioIcon).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+  });
+
+  it('should be light grey when disabled', () => {
+    const { getByTestId } = render(<Component disabled />);
+    const radioIcon = getByTestId('radio-icon');
+    expect(radioIcon).toHaveStyle(`border-color: ${Greyscale.lightgrey}`);
+  });
+});
+
+describe('<RadioButton border /> color', () => {
+  const onChange = jest.fn();
+  const Component = (props: Props) => (
+    <RadioButton
+      label="Full Time"
+      name="job-type"
+      value="full-time"
+      onChange={onChange}
+      border={true}
+      {...props}
+    />
+  );
+  it('should be grey by default', () => {
+    const { getByTestId } = render(<Component />);
+    const radioIcon = getByTestId('radio-icon');
+    const radioBorder = getByTestId('radio-border');
+    expect(radioIcon).toHaveStyle(`border-color: ${Greyscale.grey}`);
+    expect(radioBorder).toHaveStyle('border-color: #aaa');
+  });
+
+  it('should be blue when checked', () => {
+    const { getByTestId } = render(<Component checked />);
+    const radioIcon = getByTestId('radio-icon');
+    const radioBorder = getByTestId('radio-border');
+    expect(radioIcon).toHaveStyle(`border-color: ${SecondaryColor.actionblue}`);
+    expect(radioBorder).toHaveStyle(
+      `border-color: ${SecondaryColor.actionblue}`
+    );
+  });
+
+  it('should be blue when error', () => {
+    const { getByTestId } = render(<Component error />);
+    const radioIcon = getByTestId('radio-icon');
+    const radioBorder = getByTestId('radio-border');
+    expect(radioIcon).toHaveStyle(`border-color: ${Greyscale.grey}`);
+    expect(radioBorder).toHaveStyle(`border-color: ${PrimaryColor.glintsred}`);
+    expect(radioBorder).toHaveStyle('background-color: rgba(236, 39, 43, 0.1)');
+  });
+
+  it('should be light grey when disabled', () => {
+    const { getByTestId } = render(<Component disabled />);
+    const radioIcon = getByTestId('radio-icon');
+    const radioBorder = getByTestId('radio-border');
+    expect(radioIcon).toHaveStyle(`border-color: ${Greyscale.lightgrey}`);
+    expect(radioBorder).toHaveStyle(`border-color: ${Greyscale.lightgrey}`);
   });
 });

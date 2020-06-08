@@ -2,7 +2,7 @@
 
 exports[`<RadioButton> should render as expected 1`] = `
 <label
-  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 eyRelA aries-radiobtn"
   tabIndex={0}
 >
   <input
@@ -11,7 +11,8 @@ exports[`<RadioButton> should render as expected 1`] = `
     value="full-time"
   />
   <span
-    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 hinYyw"
+    data-testid="radio-icon"
     size="regular"
   />
   <span
@@ -26,7 +27,7 @@ exports[`<RadioButton> should render as expected 1`] = `
 
 exports[`<RadioButton> should render as expected 2`] = `
 <label
-  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 gdqdYZ aries-radiobtn"
+  className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 kINzCj aries-radiobtn"
   tabIndex={0}
 >
   <input
@@ -35,7 +36,8 @@ exports[`<RadioButton> should render as expected 2`] = `
     value="full-time"
   />
   <span
-    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 YxYio"
+    className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 fYRZeZ"
+    data-testid="radio-icon"
     size="regular"
   />
   <span
@@ -51,7 +53,7 @@ exports[`<RadioButton> should render as expected 2`] = `
 exports[`<RadioButton> should render as expected 3`] = `
 Array [
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 eyRelA aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -60,7 +62,8 @@ Array [
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 hinYyw"
+      data-testid="radio-icon"
       size="regular"
     />
     <span
@@ -72,7 +75,7 @@ Array [
     </span>
   </label>,
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 eyRelA aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -81,7 +84,8 @@ Array [
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 hinYyw"
+      data-testid="radio-icon"
       size="regular"
     />
     <span
@@ -98,7 +102,7 @@ Array [
 exports[`<RadioButton> should render as expected 4`] = `
 Array [
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 eyRelA aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -108,7 +112,8 @@ Array [
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 hinYyw"
+      data-testid="radio-icon"
       size="regular"
     />
     <span
@@ -120,7 +125,7 @@ Array [
     </span>
   </label>,
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 fBNjVi aries-radiobtn"
+    className="RadioButtonStyle__RadioContainer-sc-1xclcfi-3 eyRelA aries-radiobtn"
     tabIndex={0}
   >
     <input
@@ -129,7 +134,8 @@ Array [
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 dguAlE"
+      className="RadioButtonStyle__RadioIcon-sc-1xclcfi-0 hinYyw"
+      data-testid="radio-icon"
       size="regular"
     />
     <span
