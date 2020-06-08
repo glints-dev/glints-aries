@@ -13,7 +13,7 @@ const getStateColor = (
   } else if (theme === 'white') {
     return Greyscale.white;
   } else if (!checked) {
-    return SecondaryColor.grey;
+    return Greyscale.grey;
   } else if (border) {
     return SecondaryColor.actionblue;
   } else {
@@ -74,7 +74,7 @@ export const RadioLabel = styled.span<Props>`
     } else if (theme === 'white') {
       return Greyscale.white;
     } else {
-      return SecondaryColor.black;
+      return Greyscale.black;
     }
   }};
 `;
@@ -88,15 +88,25 @@ export const Border = styled.span<Props>`
   border-radius: 2px;
   border-color: ${({ disabled }) => (disabled ? Greyscale.lightgrey : '#aaa')};
 
-  ${({ disabled }) => {
-    if (!disabled) {
+  ${({ disabled, error }) => {
+    if (disabled) {
+      return null;
+    } else if (error) {
       return css`
-        &:hover {
-          background-color: rgba(1, 126, 183, 0.1);
-          border-color: ${SecondaryColor.actionblue};
+        background-color: rgba(236, 39, 43, 0.1);
+        border-color: ${PrimaryColor.glintsred};
+
+        ${RadioIcon} {
+          border-color: ${Greyscale.grey};
         }
       `;
     }
+    return css`
+      &:hover {
+        background-color: rgba(1, 126, 183, 0.1);
+        border-color: ${SecondaryColor.actionblue};
+      }
+    `;
   }};
 `;
 
@@ -117,7 +127,7 @@ export const RadioContainer = styled.label<Props>`
     }
 
     &:checked + ${Border} {
-      border-color: ${props => getStateColor(props, true)};
+      background-color: transparent;
 
       ${RadioIcon} {
         ${showSolidCircleStyle}
