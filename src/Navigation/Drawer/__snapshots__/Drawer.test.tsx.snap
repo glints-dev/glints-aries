@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Drawer /> render should match snapshot when not open 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-1g0r1is-0 gnUfHL aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={false}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-1g0r1is-1 cPuCwb drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={false}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
+
+exports[`<Drawer /> render should match snapshot when open 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-1g0r1is-0 kIHgfM aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={true}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-1g0r1is-1 gDvnzk drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={true}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
