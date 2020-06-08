@@ -48,10 +48,6 @@ export const RadioIcon = styled.span<Props>`
   border-width: 2px;
   border-color: ${props => getStateColor(props, false)};
 
-  &:hover {
-    border-color: ${props => getStateColor(props, true)};
-  }
-
   &:after {
     content: '';
     display: inline-block;
@@ -139,4 +135,17 @@ export const RadioContainer = styled.label<Props>`
   &:focus {
     outline: none;
   }
+
+  ${({ disabled, error, border }) => {
+    if (!disabled && !error && !border) {
+      return css`
+        &:hover {
+          ${RadioIcon} {
+            border-color: ${SecondaryColor.darkgreen};
+          }
+        }
+      `;
+    }
+  }}
+
 `;
