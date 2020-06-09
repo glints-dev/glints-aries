@@ -639,6 +639,75 @@ describe('<Select/> disableTyping', () => {
   });
 });
 
+describe('<Select/> defaultOpen', () => {
+  it('should be open', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="defaultOpen" defaultOpen={true}>
+          <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+  });
+
+  it('should be focused', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="defaultOpen" defaultOpen={true}>
+          <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+
+    expect(selectInput).toHaveFocus();
+  });
+
+  it('should be closed by clicking outside', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="defaultOpen" defaultOpen={true}>
+          <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+        </Select>
+        <div>outside</div>
+      </React.Fragment>
+    );
+
+    const { queryByTestId, queryByText } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const outside = queryByText('outside');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.click(outside);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be closed by clicking option', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="defaultOpen" defaultOpen={true}>
+          <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const option = queryByTestId('option');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(option);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+});
+
 describe('<Select/> esc key', () => {
   it('esc keydown event should close the option list', async () => {
     const Component = () => (

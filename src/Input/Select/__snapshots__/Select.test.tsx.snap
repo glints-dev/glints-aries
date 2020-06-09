@@ -1007,6 +1007,7 @@ exports[`<Select> should render with 3 options 1`] = `
     <input
       aria-autocomplete="list"
       aria-expanded={false}
+      autoFocus={false}
       className="c2"
       onBlur={[Function]}
       onChange={[Function]}

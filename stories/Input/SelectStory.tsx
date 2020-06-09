@@ -131,6 +131,14 @@ const props = {
       require: 'no',
       description: 'Removes drop icon.',
     },
+    {
+      name: 'defaultOpen',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Sets initial open state of Select.',
+    },
   ],
   'Select.Option': [
     {

@@ -34,6 +34,7 @@ const Select: ISelect = (props: Props) => {
     renderError,
     value,
     defaultValue,
+    defaultOpen = false,
     children,
     isLoading,
     ...defaultProps
@@ -54,7 +55,7 @@ const Select: ISelect = (props: Props) => {
   );
 
   const [floating, setFloating] = React.useState<boolean>(false);
-  const [isFocus, setIsFocus] = React.useState<boolean>(false);
+  const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
   const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(
     value || defaultValue || ''
@@ -333,6 +334,7 @@ const Select: ISelect = (props: Props) => {
           small={small}
           disableTyping={disableTyping}
           readOnly={disableTyping}
+          autoFocus={defaultOpen}
           {...defaultProps}
         />
         {!removeFloatingLabel && (
@@ -383,6 +385,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   error?: React.ReactNode | string | boolean;
   renderError?: (error: React.ReactNode | string | boolean) => React.ReactNode;
   defaultValue?: string;
+  defaultOpen?: boolean;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
