@@ -480,6 +480,78 @@ describe('<Select/> prop onInputChange', () => {
   });
 });
 
+describe('<Select />', () => {
+  it('should not be closed when input is clicked again', async () => {
+    const Component = () => (
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+  });
+
+  it('should be focused when input is clicked', () => {
+    const Component = () => (
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+
+    userEvent.click(selectInput);
+    expect(selectInput).toHaveFocus();
+  });
+
+  it('should open/ close when drop icon is clicked', async () => {
+    const Component = () => (
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const dropIcon = queryByTestId('select-drop-icon');
+    const selectList = queryByTestId('listbox');
+
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be focused/ blurred when drop icon is clicked', () => {
+    const onBlurSpy = jest.fn();
+    const onFocusSpy = jest.fn();
+
+    const Component = () => (
+      <Select label="default" onFocus={onFocusSpy} onBlur={onBlurSpy}>
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId, queryByRole } = render(<Component />);
+    const dropIcon = queryByTestId('select-drop-icon');
+    const selectInput = queryByRole('combobox');
+
+    userEvent.click(dropIcon);
+    expect(selectInput).toHaveFocus();
+    expect(onFocusSpy).toHaveBeenCalledTimes(1);
+    userEvent.click(dropIcon);
+    expect(selectInput).not.toHaveFocus();
+    expect(onBlurSpy).toHaveBeenCalledTimes(1);
+  });
+});
+
 describe('<Select/> disableTyping', () => {
   it('esc key should still have effect', async () => {
     const Component = () => (
@@ -494,7 +566,7 @@ describe('<Select/> disableTyping', () => {
     const selectInput = queryByRole('combobox');
     const selectList = queryByTestId('listbox');
 
-    fireEvent.focus(selectInput);
+    fireEvent.click(selectInput);
     expect(selectList.hasAttribute('open')).toEqual(true);
     fireEvent.keyDown(selectInput, { key: 'Esc', keyCode: 27 });
     expect(selectList.hasAttribute('open')).toEqual(false);
@@ -528,6 +600,42 @@ describe('<Select/> disableTyping', () => {
     const selectInput = queryByRole('combobox');
     userEvent.type(selectInput, 'abc');
     expect((selectInput as any).value).toEqual('');
+  });
+
+  it('should be open/ close when input is clicked', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="disableTyping" disableTyping={true}>
+          <Select.Option value="disableTyping">disableTyping</Select.Option>
+        </Select>
+      </React.Fragment>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be open/ close when drop icon is clicked', () => {
+    const Component = () => (
+      <Select label="disableTyping" disableTyping={true}>
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const dropIcon = queryByTestId('select-drop-icon');
+
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(false);
   });
 });
 

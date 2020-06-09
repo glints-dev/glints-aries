@@ -66,6 +66,7 @@ const Select: ISelect = (props: Props) => {
   ] = React.useState<boolean>(false);
 
   const selectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
+  const selectInputRef: React.RefObject<HTMLInputElement> = React.useRef();
 
   // set options based on children and inputValue
   const availableOptions = React.useMemo(() => {
@@ -156,6 +157,18 @@ const Select: ISelect = (props: Props) => {
     },
     [onFocus]
   );
+
+  const handleClick = () => {
+    setIsFocus(!isFocus);
+  };
+
+  const handleDropIconClick = () => {
+    setIsFocus(!isFocus);
+
+    if (!disableTyping && !isFocus) {
+      selectInputRef.current.focus();
+    }
+  };
 
   // Should be called when the user types into the input
   const handleInputChange = React.useCallback(
@@ -302,6 +315,7 @@ const Select: ISelect = (props: Props) => {
         small={small}
       >
         <SelectInput
+          ref={selectInputRef}
           type="text"
           placeholder={removeFloatingLabel && label}
           role="combobox"
@@ -309,10 +323,11 @@ const Select: ISelect = (props: Props) => {
           aria-autocomplete="list"
           status={deprecatedStatus}
           disabled={disabled}
-          onFocus={handleFocus}
-          onBlur={handleFocusOut}
+          onFocus={!disableTyping ? handleFocus : null}
+          onBlur={!disableTyping ? handleFocusOut : null}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
+          onClick={disableTyping ? handleClick : null}
           floating={floating}
           value={inputValue}
           small={small}
@@ -332,7 +347,12 @@ const Select: ISelect = (props: Props) => {
           </SelectLabel>
         )}
         {!removeDropIcon && (
-          <div className="select-icon" aria-label="show options">
+          <div
+            className="select-icon"
+            aria-label="show options"
+            data-testid="select-drop-icon"
+            onClick={handleDropIconClick}
+          >
             <ArrowDownIcon color="#777777" />
           </div>
         )}
