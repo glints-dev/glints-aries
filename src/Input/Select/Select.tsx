@@ -352,7 +352,6 @@ const Select: ISelect = (props: Props) => {
           <div
             className="select-icon"
             aria-label="show options"
-            data-testid="select-drop-icon"
             onClick={handleDropIconClick}
           >
             <ArrowDownIcon color="#777777" />

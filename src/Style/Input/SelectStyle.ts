@@ -16,6 +16,7 @@ export const SelectWrapper = styled.div<SelectWrapperProps>`
     right: 15px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     svg {
       transform: ${({ isFocus }) => (isFocus ? 'rotate(180deg)' : 'rotate(0)')};
       transition: ${({ isFocus }) =>

@@ -512,7 +512,7 @@ describe('<Select />', () => {
     );
 
     const { queryByTestId } = render(<Component />);
-    const dropIcon = queryByTestId('select-drop-icon');
+    const dropIcon = document.querySelector('.select-icon');
     const selectList = queryByTestId('listbox');
 
     userEvent.click(dropIcon);
@@ -532,7 +532,7 @@ describe('<Select />', () => {
     );
 
     const { queryByTestId, queryByRole } = render(<Component />);
-    const dropIcon = queryByTestId('select-drop-icon');
+    const dropIcon = document.querySelector('.select-icon');
     const selectInput = queryByRole('combobox');
 
     userEvent.click(dropIcon);
@@ -614,7 +614,7 @@ describe('<Select/> disableTyping', () => {
 
     const { queryByTestId } = render(<Component />);
     const selectList = queryByTestId('listbox');
-    const dropIcon = queryByTestId('select-drop-icon');
+    const dropIcon = document.querySelector('.select-icon');
 
     userEvent.click(dropIcon);
     expect(selectList.hasAttribute('open')).toEqual(true);
