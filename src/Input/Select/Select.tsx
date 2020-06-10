@@ -323,8 +323,8 @@ const Select: ISelect = (props: Props) => {
           aria-autocomplete="list"
           status={deprecatedStatus}
           disabled={disabled}
-          onFocus={!disableTyping ? handleFocus : null}
-          onBlur={!disableTyping ? handleFocusOut : null}
+          onFocus={disableTyping ? null : handleFocus}
+          onBlur={disableTyping ? null : handleFocusOut}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           onClick={disableTyping ? handleClick : null}

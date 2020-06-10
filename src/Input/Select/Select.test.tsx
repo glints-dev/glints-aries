@@ -472,7 +472,7 @@ describe('<Select/> prop onInputChange', () => {
   });
 });
 
-describe('<Select />', () => {
+describe('<Select /> click to close option dropdown', () => {
   it('should not be closed when input is clicked again', async () => {
     const Component = () => (
       <Select label="default">
@@ -531,7 +531,7 @@ describe('<Select />', () => {
       </Select>
     );
 
-    const { queryByTestId, queryByRole } = render(<Component />);
+    const { queryByRole } = render(<Component />);
     const dropIcon = document.querySelector('.select-icon');
     const selectInput = queryByRole('combobox');
 
