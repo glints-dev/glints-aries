@@ -36,7 +36,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .c1 .select-icon svg {
@@ -319,7 +319,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .c1 .select-icon svg {
@@ -585,7 +585,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .c1 .select-icon svg {
@@ -850,7 +850,7 @@ exports[`<Select> should render with 3 options 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .c1 .select-icon svg {
@@ -1008,9 +1008,11 @@ exports[`<Select> should render with 3 options 1`] = `
     <input
       aria-autocomplete="list"
       aria-expanded={false}
+      autoFocus={false}
       className="c2"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={null}
       onFocus={[Function]}
       onKeyDown={[Function]}
       role="combobox"
@@ -1027,6 +1029,7 @@ exports[`<Select> should render with 3 options 1`] = `
     <div
       aria-label="show options"
       className="select-icon"
+      onClick={[Function]}
     >
       <svg
         className="c5"

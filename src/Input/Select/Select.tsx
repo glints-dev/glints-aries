@@ -34,6 +34,7 @@ const Select: ISelect = (props: Props) => {
     renderError,
     value,
     defaultValue,
+    defaultOpen = false,
     children,
     isLoading,
     ...defaultProps
@@ -54,7 +55,7 @@ const Select: ISelect = (props: Props) => {
   );
 
   const [floating, setFloating] = React.useState<boolean>(false);
-  const [isFocus, setIsFocus] = React.useState<boolean>(false);
+  const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
   const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(
     value || defaultValue || ''
@@ -66,6 +67,7 @@ const Select: ISelect = (props: Props) => {
   ] = React.useState<boolean>(false);
 
   const selectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
+  const selectInputRef: React.RefObject<HTMLInputElement> = React.useRef();
 
   // set options based on children and inputValue
   const availableOptions = React.useMemo(() => {
@@ -156,6 +158,17 @@ const Select: ISelect = (props: Props) => {
     },
     [onFocus]
   );
+
+  const handleClick = () => {
+    setIsFocus(!isFocus);
+  };
+
+  const handleDropIconClick = () => {
+    if (!disableTyping && !isFocus) {
+      selectInputRef.current.focus();
+    }
+    setIsFocus(!isFocus);
+  };
 
   // Should be called when the user types into the input
   const handleInputChange = React.useCallback(
@@ -302,6 +315,7 @@ const Select: ISelect = (props: Props) => {
         small={small}
       >
         <SelectInput
+          ref={selectInputRef}
           type="text"
           placeholder={removeFloatingLabel && label}
           role="combobox"
@@ -309,15 +323,17 @@ const Select: ISelect = (props: Props) => {
           aria-autocomplete="list"
           status={deprecatedStatus}
           disabled={disabled}
-          onFocus={handleFocus}
-          onBlur={handleFocusOut}
+          onFocus={disableTyping ? null : handleFocus}
+          onBlur={disableTyping ? null : handleFocusOut}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
+          onClick={disableTyping ? handleClick : null}
           floating={floating}
           value={inputValue}
           small={small}
           disableTyping={disableTyping}
           readOnly={disableTyping}
+          autoFocus={defaultOpen}
           {...defaultProps}
         />
         {!removeFloatingLabel && (
@@ -332,7 +348,11 @@ const Select: ISelect = (props: Props) => {
           </SelectLabel>
         )}
         {!removeDropIcon && (
-          <div className="select-icon" aria-label="show options">
+          <div
+            className="select-icon"
+            aria-label="show options"
+            onClick={handleDropIconClick}
+          >
             <ArrowDownIcon color="#777777" />
           </div>
         )}
@@ -363,6 +383,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   error?: React.ReactNode | string | boolean;
   renderError?: (error: React.ReactNode | string | boolean) => React.ReactNode;
   defaultValue?: string;
+  defaultOpen?: boolean;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;

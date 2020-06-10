@@ -389,11 +389,9 @@ describe('<Select/> on click outside', () => {
     const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
 
     const Component = () => (
-      <React.Fragment>
-        <Select label="ClickOutside">
-          <Select.Option value="ClickOutside">ClickOutside</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="ClickOutside">
+        <Select.Option value="ClickOutside">ClickOutside</Select.Option>
+      </Select>
     );
 
     const { unmount } = render(<Component />);
@@ -411,11 +409,9 @@ describe('<Select/> onBlur onFocus', () => {
     const onBlurSpy = jest.fn();
     const onFocusSpy = jest.fn();
     const Component = () => (
-      <React.Fragment>
-        <Select label="ClickOutside" onBlur={onBlurSpy} onFocus={onFocusSpy}>
-          <Select.Option value="ClickOutside">ClickOutside</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="ClickOutside" onBlur={onBlurSpy} onFocus={onFocusSpy}>
+        <Select.Option value="ClickOutside">ClickOutside</Select.Option>
+      </Select>
     );
 
     const { queryByRole, asFragment } = render(<Component />);
@@ -436,13 +432,11 @@ describe('<Select/> onBlur onFocus', () => {
 describe('<Select/> handleValueChange', () => {
   it('input value should be the same as passed prop value', async () => {
     const Component = ({ value }: { value: string }) => (
-      <React.Fragment>
-        <Select label="handleValueChange" value={value}>
-          <Select.Option value="handleValueChange">
-            handleValueChange
-          </Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="handleValueChange" value={value}>
+        <Select.Option value="handleValueChange">
+          handleValueChange
+        </Select.Option>
+      </Select>
     );
 
     const mockValue = 'mock';
@@ -460,11 +454,9 @@ describe('<Select/> prop onInputChange', () => {
   it('should call onInputChange on input change', async () => {
     const onInputChangeSpy = jest.fn();
     const Component = () => (
-      <React.Fragment>
-        <Select label="onInputChange" onInputChange={onInputChangeSpy}>
-          <Select.Option value="onInputChange">onInputChange</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="onInputChange" onInputChange={onInputChangeSpy}>
+        <Select.Option value="onInputChange">onInputChange</Select.Option>
+      </Select>
     );
 
     const mockValue = 'mock value';
@@ -480,21 +472,91 @@ describe('<Select/> prop onInputChange', () => {
   });
 });
 
-describe('<Select/> disableTyping', () => {
-  it('esc key should still have effect', async () => {
+describe('<Select /> click to close option dropdown', () => {
+  it('should not be closed when input is clicked again', async () => {
     const Component = () => (
-      <React.Fragment>
-        <Select label="disableTyping" disableTyping={true}>
-          <Select.Option value="disableTyping">disableTyping</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
     );
 
     const { queryByRole, queryByTestId } = render(<Component />);
     const selectInput = queryByRole('combobox');
     const selectList = queryByTestId('listbox');
 
-    fireEvent.focus(selectInput);
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+  });
+
+  it('should be focused when input is clicked', () => {
+    const Component = () => (
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+
+    userEvent.click(selectInput);
+    expect(selectInput).toHaveFocus();
+  });
+
+  it('should open/ close when drop icon is clicked', async () => {
+    const Component = () => (
+      <Select label="default">
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const dropIcon = document.querySelector('.select-icon');
+    const selectList = queryByTestId('listbox');
+
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be focused/ blurred when drop icon is clicked', () => {
+    const onBlurSpy = jest.fn();
+    const onFocusSpy = jest.fn();
+
+    const Component = () => (
+      <Select label="default" onFocus={onFocusSpy} onBlur={onBlurSpy}>
+        <Select.Option value="default">default</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const dropIcon = document.querySelector('.select-icon');
+    const selectInput = queryByRole('combobox');
+
+    userEvent.click(dropIcon);
+    expect(selectInput).toHaveFocus();
+    expect(onFocusSpy).toHaveBeenCalledTimes(1);
+    userEvent.click(dropIcon);
+    expect(selectInput).not.toHaveFocus();
+    expect(onBlurSpy).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('<Select/> disableTyping', () => {
+  it('esc key should still have effect', async () => {
+    const Component = () => (
+      <Select label="disableTyping" disableTyping={true}>
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    fireEvent.click(selectInput);
     expect(selectList.hasAttribute('open')).toEqual(true);
     fireEvent.keyDown(selectInput, { key: 'Esc', keyCode: 27 });
     expect(selectList.hasAttribute('open')).toEqual(false);
@@ -502,11 +564,9 @@ describe('<Select/> disableTyping', () => {
 
   it('input value should change when disableTyping is not specified', async () => {
     const Component = () => (
-      <React.Fragment>
-        <Select label="disableTyping">
-          <Select.Option value="disableTyping">disableTyping</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="disableTyping">
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
     );
 
     const { queryByRole } = render(<Component />);
@@ -517,11 +577,9 @@ describe('<Select/> disableTyping', () => {
 
   it('input value should not change when disableTyping is truthy', async () => {
     const Component = () => (
-      <React.Fragment>
-        <Select label="disableTyping" disableTyping={true}>
-          <Select.Option value="disableTyping">disableTyping</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="disableTyping" disableTyping={true}>
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
     );
 
     const { queryByRole } = render(<Component />);
@@ -529,16 +587,111 @@ describe('<Select/> disableTyping', () => {
     userEvent.type(selectInput, 'abc');
     expect((selectInput as any).value).toEqual('');
   });
+
+  it('should be open/ close when input is clicked', async () => {
+    const Component = () => (
+      <Select label="disableTyping" disableTyping={true}>
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole, queryByTestId } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+    const selectList = queryByTestId('listbox');
+
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(selectInput);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be open/ close when drop icon is clicked', () => {
+    const Component = () => (
+      <Select label="disableTyping" disableTyping={true}>
+        <Select.Option value="disableTyping">disableTyping</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const dropIcon = document.querySelector('.select-icon');
+
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(dropIcon);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+});
+
+describe('<Select/> defaultOpen', () => {
+  it('should be open', async () => {
+    const Component = () => (
+      <Select label="defaultOpen" defaultOpen={true}>
+        <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+  });
+
+  it('should be focused', async () => {
+    const Component = () => (
+      <Select label="defaultOpen" defaultOpen={true}>
+        <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole } = render(<Component />);
+    const selectInput = queryByRole('combobox');
+
+    expect(selectInput).toHaveFocus();
+  });
+
+  it('should be closed by clicking outside', async () => {
+    const Component = () => (
+      <React.Fragment>
+        <Select label="defaultOpen" defaultOpen={true}>
+          <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+        </Select>
+        <div>outside</div>
+      </React.Fragment>
+    );
+
+    const { queryByTestId, queryByText } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const outside = queryByText('outside');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    fireEvent.click(outside);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
+
+  it('should be closed by clicking option', async () => {
+    const Component = () => (
+      <Select label="defaultOpen" defaultOpen={true}>
+        <Select.Option value="defaultOpen">defaultOpen</Select.Option>
+      </Select>
+    );
+
+    const { queryByTestId } = render(<Component />);
+    const selectList = queryByTestId('listbox');
+    const option = queryByTestId('option');
+
+    expect(selectList.hasAttribute('open')).toEqual(true);
+    userEvent.click(option);
+    expect(selectList.hasAttribute('open')).toEqual(false);
+  });
 });
 
 describe('<Select/> esc key', () => {
   it('esc keydown event should close the option list', async () => {
     const Component = () => (
-      <React.Fragment>
-        <Select label="esc">
-          <Select.Option value="esc">esc</Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="esc">
+        <Select.Option value="esc">esc</Select.Option>
+      </Select>
     );
 
     const { queryByRole, queryByTestId } = render(<Component />);
@@ -555,13 +708,11 @@ describe('<Select/> esc key', () => {
 describe('<Select/> handleMouseEnterOption', () => {
   it('it should match snapshot, the option element should have active class name', async () => {
     const Component = () => (
-      <React.Fragment>
-        <Select label="handleMouseEnterOption">
-          <Select.Option value="handleMouseEnterOption">
-            handleMouseEnterOption
-          </Select.Option>
-        </Select>
-      </React.Fragment>
+      <Select label="handleMouseEnterOption">
+        <Select.Option value="handleMouseEnterOption">
+          handleMouseEnterOption
+        </Select.Option>
+      </Select>
     );
 
     const { queryByRole, queryByTestId, asFragment } = render(<Component />);
