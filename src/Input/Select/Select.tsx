@@ -164,11 +164,10 @@ const Select: ISelect = (props: Props) => {
   };
 
   const handleDropIconClick = () => {
-    setIsFocus(!isFocus);
-
     if (!disableTyping && !isFocus) {
       selectInputRef.current.focus();
     }
+    setIsFocus(!isFocus);
   };
 
   // Should be called when the user types into the input
