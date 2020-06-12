@@ -16,7 +16,7 @@ const props = {
         'Set the number of images displayed by the gallery component at once',
     },
     {
-      name: 'isModalVisible',
+      name: 'initialVisibility',
       type: 'boolean',
       defaultValue: 'false',
       possibleValue: 'boolean',

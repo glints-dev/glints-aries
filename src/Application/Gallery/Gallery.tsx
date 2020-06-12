@@ -18,14 +18,13 @@ const defaultImagesDisplayed = 8;
 class Gallery extends React.Component<Props, State> {
   sliderRef: React.RefObject<Slider>;
 
-  state = {
-    visible: false,
-    currentIndex: 1,
-    imageLeft: 0,
-  };
-
   constructor(props: Props) {
     super(props);
+    this.state = {
+      visible: props.initialVisibility,
+      currentIndex: 0,
+      imageLeft: 0,
+    };
     this.sliderRef = React.createRef();
   }
 
@@ -55,24 +54,16 @@ class Gallery extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    const {
-      children,
-      imagesDisplayed = defaultImagesDisplayed,
-      isModalVisible = false,
-    } = this.props;
+    const { children, imagesDisplayed = defaultImagesDisplayed } = this.props;
     if (React.Children.count(children) > imagesDisplayed) {
       this.setState({
         imageLeft: React.Children.count(children) - imagesDisplayed,
       });
     }
-    if (isModalVisible) {
-      this.setState({ visible: isModalVisible, currentIndex: 0 });
-    }
   }
 
-  componentDidUpdate(prevProps: Props, prevState: State) {
+  componentDidUpdate() {
     if (
-      !prevState.visible &&
       this.state.visible &&
       this.sliderRef.current &&
       this.sliderRef.current.sliderContainerRef.current
@@ -154,7 +145,7 @@ class Gallery extends React.Component<Props, State> {
 interface Props {
   children?: React.ReactNode;
   imagesDisplayed?: number;
-  isModalVisible?: boolean;
+  initialVisibility?: boolean;
 }
 
 interface State {
