@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { get } from 'lodash';
+import { get, toLower } from 'lodash';
 
 import classNames from 'classnames';
 
@@ -92,7 +92,7 @@ const Select: ISelect = (props: Props) => {
     }
 
     const matchedChildrenOptions = childrenOptions.filter(data =>
-      data.props.children.toLowerCase().includes(inputValue.toLowerCase())
+      toLower(data.props.children).includes(toLower(inputValue))
     );
     return matchedChildrenOptions;
   }, [children, inputValue, disableTyping, isInputChange]);
