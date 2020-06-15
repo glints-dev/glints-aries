@@ -15,6 +15,15 @@ const props = {
       description:
         'Set the number of images displayed by the gallery component at once',
     },
+    {
+      name: 'initialVisibility',
+      type: 'boolean',
+      defaultValue: 'false',
+      possibleValue: 'boolean',
+      require: 'no',
+      description:
+        'Decides if the gallery should open the image modal directly when loaded.',
+    },
   ],
 };
 
