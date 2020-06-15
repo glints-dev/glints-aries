@@ -60,10 +60,14 @@ class Gallery extends React.Component<Props, State> {
         imageLeft: React.Children.count(children) - imagesDisplayed,
       });
     }
+    if (this.state.visible) {
+      this.sliderRef.current.sliderContainerRef.current.focus();
+    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (
+      !prevState.visible &&
       this.state.visible &&
       this.sliderRef.current &&
       this.sliderRef.current.sliderContainerRef.current
