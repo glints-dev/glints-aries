@@ -5,72 +5,57 @@ import {
   DrawerWrapper,
 } from '../../Style/Navigation/DrawerStyle';
 
-class Drawer extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      isDisplay: false,
-    };
-  }
+const Drawer = ({ children, isOpen, onClose, ...defaultProps }: Props) => {
+  const [isDisplay, setIsDisplay] = React.useState<boolean>(false);
 
-  handleAnimationStart = () => {
-    this.setState({ isDisplay: true });
+  const handleAnimationStart = () => {
+    setIsDisplay(true);
   };
 
-  handleAnimationEnd = () => {
-    this.setState({ isDisplay: false });
+  const handleAnimationEnd = () => {
+    setIsDisplay(false);
   };
 
-  componentDidUpdate() {
-    const { isDisplay } = this.state;
-    const { isOpen } = this.props;
+  React.useEffect(
+    function startAnimationOnOpen() {
+      if (isOpen && !isDisplay) {
+        handleAnimationStart();
+      }
+    },
+    [isDisplay, isOpen]
+  );
 
-    if (isOpen && !isDisplay) {
-      this.handleAnimationStart();
-    }
-  }
-
-  render() {
-    const { children, isOpen, onClose, ...defaultProps } = this.props;
-
-    const { isDisplay } = this.state;
-
-    return (
-      <DrawerContainer
-        className="aries-drawer"
-        data-testid="drawer-container"
-        aria-modal="true"
-        aria-hidden={isDisplay ? 'false' : 'true'}
-        isDisplay={isDisplay}
+  return (
+    <DrawerContainer
+      className="aries-drawer"
+      data-testid="drawer-container"
+      aria-modal="true"
+      aria-hidden={isDisplay ? 'false' : 'true'}
+      isDisplay={isDisplay}
+      open={isOpen}
+      onAnimationStart={handleAnimationStart}
+      onAnimationEnd={handleAnimationEnd}
+      onClick={() => onClose()}
+    >
+      <DrawerWrapper
+        className="drawer-contentwrapper"
+        role="dialog"
+        data-testid="drawer-wrapper"
         open={isOpen}
-        onAnimationStart={this.handleAnimationStart}
-        onAnimationEnd={this.handleAnimationEnd}
-        onClick={() => onClose()}
+        tabIndex={0}
+        onClick={e => e.stopPropagation()}
+        {...defaultProps}
       >
-        <DrawerWrapper
-          className="drawer-contentwrapper"
-          role="dialog"
-          data-testid="drawer-wrapper"
-          open={isOpen}
-          tabIndex={0}
-          onClick={e => e.stopPropagation()}
-          {...defaultProps}
-        >
-          {children}
-        </DrawerWrapper>
-      </DrawerContainer>
-    );
-  }
-}
+        {children}
+      </DrawerWrapper>
+    </DrawerContainer>
+  );
+};
 
 interface Props {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: Function;
-}
-
-interface State {
-  isDisplay: boolean;
 }
 
 export default Drawer;
