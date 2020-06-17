@@ -206,6 +206,7 @@ const Select: ISelect = (props: Props) => {
   const handleClickOnOption = React.useCallback(
     (e?: React.ChangeEvent<HTMLInputElement>) => {
       const activeElement = e ? e.target : getActiveElement();
+      if (!activeElement) return; // This is the case for the 'no results' option
       const inputValue = activeElement.textContent;
       setInputValue(inputValue);
       setIsFocus(false);
