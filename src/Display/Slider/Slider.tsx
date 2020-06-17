@@ -10,218 +10,133 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 import SliderItem from './SliderItem';
 
-class Slider extends React.Component<Props, State> {
-  static Item = SliderItem;
+const Slider = ({
+  afterChange,
+  children,
+  autoplay,
+  initialItem,
+  className,
+  fullContent,
+  arrowWhite,
+  removeDots,
+}: Props) => {
+  const interval = React.useRef<ReturnType<typeof setTimeout>>();
+  const sliderContainerRef = React.useRef<HTMLDivElement>();
 
-  interval: ReturnType<typeof setTimeout>;
-  sliderContainerRef: React.RefObject<HTMLDivElement>;
+  // NOTE: The slider is one-indexed. E.g. for three pages, the indices of the
+  // are 1, 2 and 3.
+  const [index, setIndex] = React.useState<number>(initialItem || 1);
 
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      translateValue: 0,
-      screenSize: 0,
-      index: 1,
-    };
-    this.sliderContainerRef = React.createRef();
-  }
+  const childrenCount = React.Children.toArray(children).filter(
+    child => !isNil(child)
+  ).length;
 
-  previousSlide = () => {
-    const { afterChange } = this.props;
-    const { index, translateValue, screenSize } = this.state;
-
+  const previousSlide = () => {
     if (index !== 1) {
-      this.setState({
-        index: index - 1,
-        translateValue: translateValue + screenSize,
-      });
+      setIndex(index - 1);
+    }
+  };
 
+  const nextSlide = React.useCallback(
+    (loop = false) => {
+      setIndex(index =>
+        index === childrenCount ? (loop ? 1 : index) : index + 1
+      );
+    },
+    [childrenCount]
+  );
+
+  React.useEffect(
+    function callAfterChange() {
       if (afterChange !== undefined) {
-        afterChange(index - 1);
+        afterChange(index);
       }
-    }
+    },
+    [afterChange, index]
+  );
+
+  const handleDotClick = (idx: number) => {
+    setIndex(idx + 1);
   };
 
-  nextSlide = () => {
-    const { children, afterChange } = this.props;
-    const { index, translateValue, screenSize } = this.state;
-    const childrenCount = React.Children.toArray(children).filter(
-      child => !isNil(child)
-    ).length;
-
-    if (index !== childrenCount) {
-      this.setState({
-        index: index + 1,
-        translateValue: translateValue - screenSize,
-      });
-
-      if (afterChange !== undefined) {
-        afterChange(index + 1);
-      }
-    }
-  };
-
-  setSize = () => {
-    const { index } = this.state;
-
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
-      .width;
-    this.setState({
-      screenSize: this.getSliderContainerDOMNode().getBoundingClientRect()
-        .width,
-      translateValue: -(windowWidth * (index - 1)),
-    });
-  };
-
-  handleDotClick = (idx: number) => {
-    const { afterChange } = this.props;
-    const { screenSize } = this.state;
-
-    this.setState({
-      index: idx + 1,
-      translateValue: -(screenSize * idx),
-    });
-
-    if (afterChange !== undefined) {
-      afterChange(idx + 1);
-    }
-  };
-
-  handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.keyCode === 37) {
-      this.previousSlide();
+      previousSlide();
     } else if (e.keyCode === 39) {
-      this.nextSlide();
+      nextSlide();
     }
   };
 
-  getSliderContainerDOMNode() {
-    return ReactDOM.findDOMNode(this.sliderContainerRef.current) as Element;
-  }
-
-  componentDidMount() {
-    const { initialItem, autoplay, children } = this.props;
-    const { index, screenSize } = this.state;
-    const childrenCount = React.Children.toArray(children).filter(
-      child => !isNil(child)
-    ).length;
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
-      .width;
-
-    this.setState({
-      screenSize: windowWidth,
-    });
-
-    if (initialItem !== undefined) {
-      if (initialItem > 0 && initialItem <= childrenCount) {
-        this.setState({
-          translateValue: -(windowWidth * (initialItem - 1)),
-          index: initialItem,
-        });
-      } else {
-        this.setState({
-          translateValue: 0,
-          index: 1,
-        });
+  React.useEffect(
+    function updateAutoplay() {
+      if (autoplay) {
+        interval.current = setInterval(() => nextSlide(true), 6000);
       }
-    }
+      return () => {
+        clearInterval(interval.current);
+      };
+    },
+    [autoplay, nextSlide]
+  );
 
-    if (autoplay) {
-      this.interval = setInterval(() => {
-        // eslint-disable-next-line react/destructuring-assignment
-        if (this.state.index != childrenCount) {
-          this.setState(prevState => ({
-            index: prevState.index + 1,
-            translateValue: -(prevState.screenSize * prevState.index),
-          }));
-        } else {
-          this.setState(() => ({
-            index: 1,
-            translateValue: -(screenSize * index),
-          }));
-        }
-      }, 6000);
-    }
-    window.addEventListener('resize', this.setSize);
-  }
+  const sliderContainerElement = ReactDOM.findDOMNode(
+    sliderContainerRef.current
+  ) as Element;
+  const windowWidth = sliderContainerElement
+    ? sliderContainerElement.getBoundingClientRect().width
+    : 0;
+  const translateValue = -(windowWidth * (index - 1));
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    const windowWidth = this.getSliderContainerDOMNode().getBoundingClientRect()
-      .width;
-
-    this.setState({
-      translateValue: -(windowWidth * (nextProps.initialItem - 1)),
-      index: nextProps.initialItem,
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.setSize);
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const {
-      children,
-      className,
-      fullContent,
-      arrowWhite,
-      removeDots,
-    } = this.props;
-    const { translateValue, index } = this.state;
-    const childrenCount = React.Children.toArray(children).filter(
-      child => !isNil(child)
-    ).length;
-
-    return (
-      <SliderContainer
-        ref={this.sliderContainerRef}
-        className={classNames('aries-slider', className)}
-        onKeyDown={this.handleKeyDown}
-        fullContent={fullContent}
-        tabIndex={0}
+  return (
+    <SliderContainer
+      ref={sliderContainerRef}
+      className={classNames('aries-slider', className)}
+      onKeyDown={handleKeyDown}
+      fullContent={fullContent}
+      tabIndex={0}
+    >
+      <SliderContentWrapper
+        className="slider-wrapper"
+        style={{
+          transform: `translateX(${translateValue}px)`,
+          transition: 'transform ease-out 0.45s',
+        }}
       >
-        <SliderContentWrapper
-          className="slider-wrapper"
-          style={{
-            transform: `translateX(${translateValue}px)`,
-            transition: 'transform ease-out 0.45s',
-          }}
-        >
-          {children}
-        </SliderContentWrapper>
-        <LeftArrow
-          previousSlide={this.previousSlide}
-          index={index}
-          arrowWhite={arrowWhite}
-        />
-        <RightArrow
-          nextSlide={this.nextSlide}
-          index={index}
-          limit={childrenCount}
-          arrowWhite={arrowWhite}
-        />
-        {!removeDots && (
-          <ul>
-            {React.Children.map(children, (data, idx) => {
-              if (isNil(data)) {
-                return null;
-              }
-              return (
-                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-                <li
-                  className={idx + 1 === index ? 'active' : null}
-                  onClick={() => this.handleDotClick(idx)}
-                  key={idx}
-                ></li>
-              );
-            })}
-          </ul>
-        )}
-      </SliderContainer>
-    );
-  }
-}
+        {children}
+      </SliderContentWrapper>
+      <LeftArrow
+        previousSlide={previousSlide}
+        index={index}
+        arrowWhite={arrowWhite}
+      />
+      <RightArrow
+        nextSlide={() => nextSlide(false)}
+        index={index}
+        limit={childrenCount}
+        arrowWhite={arrowWhite}
+      />
+      {!removeDots && (
+        <ul>
+          {React.Children.map(children, (data, idx) => {
+            if (isNil(data)) {
+              return null;
+            }
+            return (
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+              <li
+                className={idx + 1 === index ? 'active' : null}
+                onClick={() => handleDotClick(idx)}
+                key={idx}
+              ></li>
+            );
+          })}
+        </ul>
+      )}
+    </SliderContainer>
+  );
+};
+
+Slider.Item = SliderItem;
 
 export interface Props {
   children: React.ReactNode;
@@ -232,12 +147,6 @@ export interface Props {
   removeDots?: boolean;
   afterChange?: Function;
   autoplay?: boolean;
-}
-
-interface State {
-  translateValue: number;
-  index: number;
-  screenSize: number;
 }
 
 export default Slider;
