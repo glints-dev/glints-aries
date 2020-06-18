@@ -10,6 +10,15 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 import SliderItem from './SliderItem';
 
+/**
+ * Custom react hook that utilizes an internal state to trigger re-renders when
+ * the exported state update function is called.
+ */
+const useForceUpdate = () => {
+  const [, setIndex] = React.useState(0);
+  return () => setIndex(index => index + 1);
+};
+
 const Slider = ({
   afterChange,
   children,
@@ -77,6 +86,18 @@ const Slider = ({
       };
     },
     [autoplay, nextSlide]
+  );
+
+  const forceUpdate = useForceUpdate();
+
+  React.useEffect(
+    function registerResizeHandler() {
+      window.addEventListener('resize', forceUpdate);
+      return () => {
+        window.removeEventListener('resize', forceUpdate);
+      };
+    },
+    [forceUpdate]
   );
 
   const sliderContainerElement = ReactDOM.findDOMNode(
