@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import classNames from 'classnames';
 
 import {
@@ -11,6 +10,7 @@ import {
 import SearchFilterBody from './SearchFilterBody';
 import SearchFilterList from './SearchFilterList';
 import SearchFilterItem from './SearchFilterItem';
+import { SearchFilterContext } from './Context';
 
 class SearchFilter extends React.Component<Props, State> {
   static Body = SearchFilterBody;
@@ -19,7 +19,7 @@ class SearchFilter extends React.Component<Props, State> {
   static Item = SearchFilterItem;
 
   state = { isOpen: false };
-  searchFilterRef = React.createRef() as React.RefObject<HTMLDivElement>;
+  searchFilterRef: React.RefObject<HTMLDivElement> = React.createRef();
   inputRef: React.RefObject<HTMLInputElement>;
 
   constructor(props: Props) {
@@ -28,12 +28,22 @@ class SearchFilter extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleMouseDown, false);
+    document.addEventListener('click', this.handleClickOutside, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleMouseDown, false);
+    document.removeEventListener('click', this.handleClickOutside, false);
   }
+
+  handleClickOutside = (event: MouseEvent) => {
+    const element = event.target as HTMLElement;
+    if (
+      this.searchFilterRef.current &&
+      !this.searchFilterRef.current.contains(element)
+    ) {
+      this.handleClose();
+    }
+  };
 
   handleOpen = () => {
     this.setState({ isOpen: true });
@@ -41,24 +51,6 @@ class SearchFilter extends React.Component<Props, State> {
 
   handleClose = () => {
     this.setState({ isOpen: false });
-  };
-
-  handleMouseDown = (event: MouseEvent) => {
-    const element = event.target as HTMLElement;
-    const hasClickedOnInput = element === this.inputRef.current;
-    const hasClickedInsideSearchFilter = this.searchFilterRef.current.contains(
-      element
-    );
-    const hasClickedOnScrollBar =
-      hasClickedInsideSearchFilter &&
-      (event.offsetX > element.clientWidth ||
-        event.offsetY > element.clientHeight);
-
-    if (hasClickedOnInput || hasClickedOnScrollBar) {
-      return;
-    } else {
-      this.handleClose();
-    }
   };
 
   render() {
@@ -75,33 +67,37 @@ class SearchFilter extends React.Component<Props, State> {
     const { isOpen } = this.state;
 
     return (
-      <SearchFilterContainer
-        className={classNames('aries-searchfilter', className)}
-        role="search"
-        aria-expanded={isOpen}
-        aria-label={label}
-        ref={this.searchFilterRef}
+      <SearchFilterContext.Provider
+        value={{ closeSearchFilterMenu: this.handleClose }}
       >
-        <SearchFilterBar className="searchfilter-inputwrapper">
-          <input
-            type="text"
-            placeholder={label}
-            onFocus={this.handleOpen}
-            value={value}
-            ref={this.inputRef}
-            {...defaultProps}
-          />
-          {content}
-        </SearchFilterBar>
-        <SearchFilterBodyWrapper
-          className="searchfilter-content"
-          role="menuitem"
-          aria-hidden={!isOpen && true}
-          open={isOpen}
+        <SearchFilterContainer
+          className={classNames('aries-searchfilter', className)}
+          role="search"
+          aria-expanded={isOpen}
+          aria-label={label}
+          ref={this.searchFilterRef}
         >
-          {children}
-        </SearchFilterBodyWrapper>
-      </SearchFilterContainer>
+          <SearchFilterBar className="searchfilter-inputwrapper">
+            <input
+              type="text"
+              placeholder={label}
+              onFocus={this.handleOpen}
+              value={value}
+              ref={this.inputRef}
+              {...defaultProps}
+            />
+            {content}
+          </SearchFilterBar>
+          <SearchFilterBodyWrapper
+            className="searchfilter-content"
+            role="menuitem"
+            aria-hidden={!isOpen && true}
+            open={isOpen}
+          >
+            {children}
+          </SearchFilterBodyWrapper>
+        </SearchFilterContainer>
+      </SearchFilterContext.Provider>
     );
   }
 }

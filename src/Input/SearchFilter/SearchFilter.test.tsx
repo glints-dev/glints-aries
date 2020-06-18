@@ -16,7 +16,9 @@ interface Props {
 const props: Props = {
   label: 'Search jobs, location, or company',
   onChange: jest.fn().mockImplementation(event => event.target.value),
-  content: <SearchFilter.Button theme="blue">Search</SearchFilter.Button>,
+  content: (
+    <SearchFilter.Button variant="solid-blue">Search</SearchFilter.Button>
+  ),
 };
 const lists = [
   { title: 'Popular Careers', item: 'Software Engineering' },
@@ -128,7 +130,7 @@ describe('when it is focused', () => {
       props
     );
     fireEvent.focus(searchFilterInput);
-    fireEvent.mouseDown(utils.container);
+    fireEvent.click(utils.container);
     expect(searchFilterMenu).not.toHaveAttribute('open');
   });
 
@@ -139,7 +141,7 @@ describe('when it is focused', () => {
       );
       const listItem = utils.getByText(list.item);
       fireEvent.focus(searchFilterInput);
-      fireEvent.mouseDown(listItem);
+      fireEvent.click(listItem);
       expect(searchFilterMenu).not.toHaveAttribute('open');
     });
   });
