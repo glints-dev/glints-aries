@@ -15,7 +15,7 @@ const props = {
       possibleValue: 'index of item',
       require: 'no',
       description:
-        'Sets initial item to show. Index starts from 1 until so on.',
+        'Sets initial item to show. Index starts from 0 until so on.',
     },
     {
       name: 'fullContent',
