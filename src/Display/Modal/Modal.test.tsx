@@ -25,7 +25,7 @@ const OpenedModal = (
   </Modal>
 );
 
-const ModalComponet = ({ isVisible }: { isVisible: boolean }) => (
+const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
   <Modal isVisible={isVisible} onClose={props.onClose}>
     <p>{props.content}</p>
   </Modal>
@@ -186,15 +186,43 @@ it('should center the Modal vertically when centering is true', () => {
 });
 
 it('should remove overflow hidden from document body after unmount', () => {
-  const { unmount } = render(<ModalComponet isVisible={true} />);
+  const { unmount } = render(<ModalComponent isVisible={true} />);
   expect(document.body).toHaveStyle('overflow: hidden');
   unmount();
   expect(document.body).not.toHaveStyle('overflow: hidden');
 });
 
 it('should remove overflow hidden from document body after close', () => {
-  const { rerender } = render(<ModalComponet isVisible={true} />);
+  const { rerender } = render(<ModalComponent isVisible={true} />);
   expect(document.body).toHaveStyle('overflow: hidden');
-  rerender(<ModalComponet isVisible={false} />);
+  rerender(<ModalComponent isVisible={false} />);
   expect(document.body).not.toHaveStyle('overflow: hidden');
+});
+
+describe('<Modal /> not receiving prop onClose', () => {
+  test('click on close button should not close the modal', () => {
+    const { getByTestId } = render(
+      <Modal isVisible={true}>
+        <p>content</p>
+      </Modal>
+    );
+    const modalContainer = getByTestId('modal-container');
+    const closeButton = getByTestId('close-button');
+    fireEvent.click(closeButton);
+    expect(modalContainer).toHaveStyle('visibility: visible');
+  });
+  test('click outside should not close the modal', () => {
+    const { queryByTestId, queryByText } = render(
+      <React.Fragment>
+        <Modal isVisible={true}>
+          <p>content</p>
+        </Modal>
+        <div>outside</div>
+      </React.Fragment>
+    );
+    const modalContainer = queryByTestId('modal-container');
+    const outside = queryByText('outside');
+    fireEvent.click(outside);
+    expect(modalContainer).toHaveStyle('visibility: visible');
+  });
 });

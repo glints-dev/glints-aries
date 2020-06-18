@@ -144,7 +144,7 @@ interface Props
   children: React.ReactNode;
   title?: React.ReactNode;
   isVisible: boolean;
-  onClose(): void;
+  onClose?(): void;
   hideContentArea?: boolean;
   centering?: boolean;
   removeAnimation?: boolean;
@@ -152,5 +152,9 @@ interface Props
   size?: sizeType;
   hideHeader?: boolean;
 }
+
+Modal.defaultProps = {
+  onClose: () => undefined as () => void,
+};
 
 export default Modal;
