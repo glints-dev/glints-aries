@@ -32,16 +32,21 @@ const Slider = ({
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
   const sliderContainerRef = React.useRef<HTMLDivElement>();
 
-  // NOTE: The slider is one-indexed. E.g. for three pages, the indices of the
-  // are 1, 2 and 3.
-  const [index, setIndex] = React.useState<number>(initialItem || 1);
-
   const childrenCount = React.Children.toArray(children).filter(
     child => !isNil(child)
   ).length;
 
+  if (initialItem && (initialItem < 0 || initialItem >= childrenCount)) {
+    throw new Error(
+      `initialItem ${initialItem} is out of bounds (min 0, max ${childrenCount -
+        1})`
+    );
+  }
+
+  const [index, setIndex] = React.useState<number>(initialItem || 0);
+
   const previousSlide = () => {
-    if (index !== 1) {
+    if (index > 0) {
       setIndex(index - 1);
     }
   };
@@ -49,7 +54,7 @@ const Slider = ({
   const nextSlide = React.useCallback(
     (loop = false) => {
       setIndex(index =>
-        index === childrenCount ? (loop ? 1 : index) : index + 1
+        index >= childrenCount - 1 ? (loop ? 0 : index) : index + 1
       );
     },
     [childrenCount]
@@ -65,7 +70,7 @@ const Slider = ({
   );
 
   const handleDotClick = (idx: number) => {
-    setIndex(idx + 1);
+    setIndex(idx);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -106,7 +111,7 @@ const Slider = ({
   const windowWidth = sliderContainerElement
     ? sliderContainerElement.getBoundingClientRect().width
     : 0;
-  const translateValue = -(windowWidth * (index - 1));
+  const translateValue = -(windowWidth * index);
 
   return (
     <SliderContainer
@@ -133,7 +138,7 @@ const Slider = ({
       <RightArrow
         nextSlide={() => nextSlide(false)}
         index={index}
-        limit={childrenCount}
+        limit={childrenCount - 1}
         arrowWhite={arrowWhite}
       />
       {!removeDots && (
@@ -145,7 +150,7 @@ const Slider = ({
             return (
               // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
               <li
-                className={idx + 1 === index ? 'active' : null}
+                className={idx === index ? 'active' : null}
                 onClick={() => handleDotClick(idx)}
                 key={idx}
               ></li>

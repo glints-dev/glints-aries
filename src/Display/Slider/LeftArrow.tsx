@@ -7,7 +7,7 @@ const LeftArrow = (props: Props) => {
 
   let arrowColor = 'black';
 
-  if (index === 1) arrowColor = '#c7c7c7';
+  if (index === 0) arrowColor = '#c7c7c7';
 
   return (
     <LeftArrowContainer
