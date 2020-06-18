@@ -42,6 +42,7 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       <ul>
         <li
           className="SearchFilterStyle__SearchFilterItemWrapper-b75szs-6 hyTowy"
+          onClick={[Function]}
           role="listitem"
         >
           Item

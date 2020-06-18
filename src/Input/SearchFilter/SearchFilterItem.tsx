@@ -1,13 +1,23 @@
 import * as React from 'react';
 import { SearchFilterItemWrapper } from '../../Style/Input/SearchFilterStyle';
+import { useSearchFilterContext } from './Context';
 
 const SearchFilterItem: React.FunctionComponent<Props> = props => {
   const { children, className, onClick, ...defaultProps } = props;
+  const { closeSearchFilterMenu } = useSearchFilterContext();
 
+  const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    if (onClick) {
+      onClick(e);
+    }
+    if (closeSearchFilterMenu) {
+      closeSearchFilterMenu();
+    }
+  };
   return (
     <SearchFilterItemWrapper
       className={className}
-      onMouseDown={onClick}
+      onClick={handleClick}
       role="listitem"
       {...defaultProps}
     >
