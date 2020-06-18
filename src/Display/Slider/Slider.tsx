@@ -28,9 +28,11 @@ const Slider = ({
   fullContent,
   arrowWhite,
   removeDots,
+  containerRef,
 }: Props) => {
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
-  const sliderContainerRef = React.useRef<HTMLDivElement>();
+  const privateContainerRef = React.useRef<HTMLDivElement>();
+  const sliderContainerRef = containerRef || privateContainerRef;
 
   const childrenCount = React.Children.toArray(children).filter(
     child => !isNil(child)
@@ -178,6 +180,7 @@ export interface Props {
   removeDots?: boolean;
   afterChange?: Function;
   autoplay?: boolean;
+  containerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export default Slider;
