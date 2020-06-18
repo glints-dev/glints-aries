@@ -45,32 +45,37 @@ const Slider = ({
 
   const [index, setIndex] = React.useState<number>(initialItem || 0);
 
+  const setSlide = React.useCallback(
+    (index: number, shouldLoop = false) => {
+      setIndex(currentIndex => {
+        if (index < 0) {
+          index = 0;
+        }
+        if (index >= childrenCount) {
+          index = shouldLoop ? 0 : childrenCount - 1;
+        }
+        if (afterChange !== undefined && currentIndex !== index) {
+          afterChange(index);
+        }
+        return index;
+      });
+    },
+    [childrenCount, afterChange]
+  );
+
   const previousSlide = () => {
-    if (index > 0) {
-      setIndex(index - 1);
-    }
+    setSlide(index - 1);
   };
 
   const nextSlide = React.useCallback(
     (loop = false) => {
-      setIndex(index =>
-        index >= childrenCount - 1 ? (loop ? 0 : index) : index + 1
-      );
+      setSlide(index + 1, loop);
     },
-    [childrenCount]
+    [index, setSlide]
   );
 
-  React.useEffect(
-    function callAfterChange() {
-      if (afterChange !== undefined) {
-        afterChange(index);
-      }
-    },
-    [afterChange, index]
-  );
-
-  const handleDotClick = (idx: number) => {
-    setIndex(idx);
+  const handleDotClick = (index: number) => {
+    setSlide(index);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
