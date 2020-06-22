@@ -94,8 +94,29 @@ describe('<Select /> can still work when receives non-string option children or 
       [1, '1'],
       [{ key: 'value' }, '[object Object]'],
       [[1, 2, 3], '1,2,3'],
-    ].forEach(([defaultValue, expectedValue]) => {
-      testNonStringValue([defaultValue, expectedValue]);
+    ].forEach(([value, expectedValue]) => {
+      testNonStringValue([value, expectedValue]);
     });
+  });
+
+  test('rerender with non-string value', async () => {
+    const Component = ({ value }: { value: string }) => (
+      <Select label="rerender" value={value}>
+        <Select.Option value="rerender">Rerender</Select.Option>
+      </Select>
+    );
+
+    const { queryByRole, rerender } = render(<Component value="Rerender" />);
+    const selectInput = queryByRole('combobox');
+    expect(selectInput.getAttribute('value')).toEqual('Rerender');
+
+    rerender(<Component value={1} />);
+    expect(selectInput.getAttribute('value')).toEqual('1');
+
+    rerender(<Component value={[1, 2, 3]} />);
+    expect(selectInput.getAttribute('value')).toEqual('1,2,3');
+
+    rerender(<Component value={{ key: 'value' }} />);
+    expect(selectInput.getAttribute('value')).toEqual('[object Object]');
   });
 });

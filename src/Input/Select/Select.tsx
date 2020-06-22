@@ -59,10 +59,11 @@ const Select: ISelect = (props: Props) => {
   // warn non-string type value, defaultValue
   React.useEffect(
     function warnNonStringValueAndDefaultValue() {
-      const isValueNotString = value && typeof value !== 'string';
-      const isDefaultValueNotString =
-        defaultValue && typeof defaultValue !== 'string';
-      if (isValueNotString || isDefaultValueNotString) {
+      const shouldWarnValue =
+        typeof value !== 'undefined' && typeof value !== 'string';
+      const shouldWarnDefaultValue =
+        typeof defaultValue !== 'undefined' && typeof defaultValue !== 'string';
+      if (shouldWarnValue || shouldWarnDefaultValue) {
         if (canWarn) {
           console.warn(
             `Warning: glints-aries Select's value and defaultValue props can only be type of string.`
