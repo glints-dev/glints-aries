@@ -15,6 +15,8 @@ import {
   SelectErrorDefault,
 } from '../../Style/Input/SelectStyle';
 
+import { canWarn } from '../../Utils/canWarn';
+
 const Select: ISelect = (props: Props) => {
   const {
     label,
@@ -44,7 +46,7 @@ const Select: ISelect = (props: Props) => {
   React.useEffect(
     function warnDeprecatedProp() {
       if (status) {
-        if (typeof console !== 'undefined') {
+        if (canWarn) {
           console.warn(`Warning: Select's status prop is deprecated and will be
         removed in a future release.\n\nPlease use the error prop instead to
         show errors and indicate an error state.`);
@@ -54,12 +56,31 @@ const Select: ISelect = (props: Props) => {
     [status]
   );
 
+  // warn non-string type value, defaultValue
+  React.useEffect(
+    function warnNonStringValueAndDefaultValue() {
+      const shouldWarnValue =
+        typeof value !== 'undefined' && typeof value !== 'string';
+      const shouldWarnDefaultValue =
+        typeof defaultValue !== 'undefined' && typeof defaultValue !== 'string';
+      if (shouldWarnValue || shouldWarnDefaultValue) {
+        if (canWarn) {
+          console.warn(
+            `Warning: glints-aries Select's value and defaultValue props can only be type of string.`
+          );
+        }
+      }
+    },
+    [value, defaultValue]
+  );
+
   const [floating, setFloating] = React.useState<boolean>(false);
   const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
   const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
-  const [inputValue, setInputValue] = React.useState<string>(
-    value || defaultValue || ''
-  );
+  const [inputValue, setInputValue] = React.useState<string>(() => {
+    const initialInputValue = value || defaultValue || '';
+    return String(initialInputValue);
+  });
   const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
   const [
     shouldScrollToActiveOption,
@@ -74,6 +95,7 @@ const Select: ISelect = (props: Props) => {
     const childrenOptions = React.Children.toArray(children) as Array<
       React.ReactElement<SelectItemProps>
     >;
+
     if (!inputValue) {
       return childrenOptions;
     }
@@ -83,14 +105,17 @@ const Select: ISelect = (props: Props) => {
     }
 
     if (!isInputChange) {
+      // to check whether an option is selected by clicking an option
+      // if so, we render all the options in the dropdown
       const isInputValueOneOfOptions = childrenOptions.some(
-        data => data.props.children === inputValue
+        data => String(data.props.children) === inputValue
       );
       if (isInputValueOneOfOptions) {
         return childrenOptions;
       }
     }
 
+    // for search results, so we do toLower to filter matched options
     const matchedChildrenOptions = childrenOptions.filter(data =>
       toLower(data.props.children).includes(toLower(inputValue))
     );
@@ -126,7 +151,7 @@ const Select: ISelect = (props: Props) => {
     function handleValueChange() {
       if (value) {
         setFloating(true);
-        setInputValue(value as string);
+        setInputValue(String(value));
         return;
       }
       if (value === '') {
@@ -182,7 +207,7 @@ const Select: ISelect = (props: Props) => {
         typeof onInputChange !== 'function'
       ) {
         onChange(e);
-        if (typeof console !== 'undefined') {
+        if (canWarn) {
           console.warn(`
             Warning: onChange will not be fired when input value changes in a future release,
             please use onInputChange instead. Now, if onChange is passed but onInputChange is not,
@@ -383,6 +408,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   removeFloatingLabel?: boolean;
   error?: React.ReactNode | string | boolean;
   renderError?: (error: React.ReactNode | string | boolean) => React.ReactNode;
+  value?: string;
   defaultValue?: string;
   defaultOpen?: boolean;
 
