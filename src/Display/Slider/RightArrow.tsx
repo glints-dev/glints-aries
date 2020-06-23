@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ArrowNextIcon } from '../../General/Icon/components';
-import { RightArrowContainer } from '../../Style/Display/SliderStyle';
+import { RightArrowContainer } from './SliderStyle';
 
 const RightArrow: React.FunctionComponent<Props> = props => {
   const { index, limit, nextSlide, arrowWhite } = props;

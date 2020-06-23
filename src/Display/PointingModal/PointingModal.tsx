@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {
   PointingModalContainer,
   PointingModalHeaderArrow,
-} from '../../Style/Display/PointingModalStyle';
+} from './PointingModalStyle';
 
 import PointingModalHeader from './PointingModalHeader';
 import PointingModalBody from './PointingModalBody';

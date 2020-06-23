@@ -9,7 +9,7 @@ import {
   PercentageCompletion,
   LabelText,
   CIRCLE_CIRCUMFERENCE,
-} from '../../Style/Display/ProgressStyle';
+} from './ProgressStyle';
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 import { warningMessages } from './WarningMessages';
 

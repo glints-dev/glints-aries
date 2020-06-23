@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import {
   SliderContainer,
   SliderContentWrapper,
-} from '../../Style/Display/SliderStyle';
+} from './SliderStyle';
 
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';

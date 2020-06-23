@@ -8,7 +8,7 @@ import {
 } from '../../General/Icon/components';
 import AccordionPanel, { Props as AccordionPanelProps } from './AccordionPanel';
 
-import { Container } from '../../Style/Display/AccordionStyle';
+import { Container } from './AccordionStyle';
 
 const Accordion: Accordion = ({ children, className, iconPosition }) => {
   const [currIndex, setCurrIndex] = React.useState(-1);

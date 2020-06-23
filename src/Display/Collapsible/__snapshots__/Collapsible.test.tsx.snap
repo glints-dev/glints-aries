@@ -2,18 +2,18 @@
 
 exports[`<Collapsible> should render as expected 1`] = `
 <div
-  className="CollapsibleStyle__CollapsibleContainer-sc-16akyym-1 ctRcDY aries-collapsible"
+  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 dFFxEB aries-collapsible"
   data-testid="collapsible-container"
   onClick={[Function]}
   tabIndex={0}
 >
   <div
-    className="CollapsibleStyle__CollapsibleContent-sc-16akyym-0 lddXIm"
+    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 ffRrKK"
     tabIndex={-1}
   >
     <div
       aria-expanded={false}
-      className="CollapsibleStyle__CollapsibleHeader-sc-16akyym-2 cCEtWo collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 dlhBAv collapsible-title"
       role="tab"
     >
       label
@@ -36,18 +36,18 @@ exports[`<Collapsible> should render as expected 1`] = `
 
 exports[`<Collapsible> should render as expected 2`] = `
 <div
-  className="CollapsibleStyle__CollapsibleContainer-sc-16akyym-1 ctRcDY aries-collapsible"
+  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 dFFxEB aries-collapsible"
   data-testid="collapsible-container"
   onClick={[Function]}
   tabIndex={0}
 >
   <div
-    className="CollapsibleStyle__CollapsibleContent-sc-16akyym-0 lddXIm"
+    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 ffRrKK"
     tabIndex={-1}
   >
     <div
       aria-expanded={true}
-      className="CollapsibleStyle__CollapsibleHeader-sc-16akyym-2 gqXdzD collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 eXowwp collapsible-title"
       role="tab"
     >
       label
@@ -65,7 +65,7 @@ exports[`<Collapsible> should render as expected 2`] = `
       </svg>
     </div>
     <div
-      className="CollapsibleStyle__CollapsibleBody-sc-16akyym-3 ldgfso collapsible-content"
+      className="CollapsibleStyle__CollapsibleBody-sc-133mwvh-3 jZAnJE collapsible-content"
       data-testid="collapsible-content"
       onClick={[Function]}
     >

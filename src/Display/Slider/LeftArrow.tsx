@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ArrowBackIcon } from '../../General/Icon/components';
-import { LeftArrowContainer } from '../../Style/Display/SliderStyle';
+import { LeftArrowContainer } from './SliderStyle';
 
 const LeftArrow = (props: Props) => {
   const { index, previousSlide, arrowWhite } = props;

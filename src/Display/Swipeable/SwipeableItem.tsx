@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SwipeableItemWrapper } from '../../Style/Display/SwipeableStyle';
+import { SwipeableItemWrapper } from './SwipeableStyle';
 
 const SwipeableItem: React.FunctionComponent<Props> = props => {
   const { children, className, ...defaultProps } = props;

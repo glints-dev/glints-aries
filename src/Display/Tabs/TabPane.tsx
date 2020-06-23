@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TabsContent } from '../../Style/Display/TabsStyle';
+import { TabsContent } from './TabsStyle';
 
 const TabPane: React.FunctionComponent<Props> = props => {
   const { children, className, ...defaultProps } = props;

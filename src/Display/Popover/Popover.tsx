@@ -11,7 +11,7 @@ import {
   PopoverIcon,
   PopOverContent,
   PopoverItemWrapper,
-} from '../../Style/Display/PopoverStyle';
+} from './PopoverStyle';
 
 class Popover extends React.Component<Props, State> {
   constructor(props: Props) {

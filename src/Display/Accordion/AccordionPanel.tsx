@@ -10,7 +10,7 @@ import {
   ContentWrapper,
   Content,
   Label,
-} from '../../Style/Display/AccordionStyle';
+} from './AccordionStyle';
 
 const AccordionPanel: React.FunctionComponent<Props> = props => {
   const {

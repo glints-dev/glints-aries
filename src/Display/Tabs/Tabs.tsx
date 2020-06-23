@@ -9,7 +9,7 @@ import {
   TabsContainer,
   TabsHeader,
   TabsBody,
-} from '../../Style/Display/TabsStyle';
+} from './TabsStyle';
 
 const Tabs: Tabs = ({
   activeTab,

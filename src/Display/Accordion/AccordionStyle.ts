@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
-import { IconPosition } from '../../Display/Accordion/Accordion';
+import { IconPosition } from './Accordion';
 
 const iconSize = 15;
 const iconMargin = 30;
