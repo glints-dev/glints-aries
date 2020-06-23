@@ -4,7 +4,7 @@ import { AddIcon, TrashIcon } from '../../General/Icon/components';
 import {
   StartIconContainer,
   EndIconContainer,
-} from '../../Style/General/TagStyle';
+} from './TagStyle';
 
 import { AddTag } from './ActionTags/AddTag';
 import { ResetTag } from './ActionTags/ResetTag';

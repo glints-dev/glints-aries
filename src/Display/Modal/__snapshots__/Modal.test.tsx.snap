@@ -30,7 +30,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
           type="button"
         >
           <svg
-            className="IconStyle__VerticalCenteredSvg-sc-19ci3uf-0 dmBUgt"
+            className="IconStyle__VerticalCenteredSvg-x7d280-0 iFpcQN"
             data-testid="icon-svg"
             fill="grey"
             height="1em"

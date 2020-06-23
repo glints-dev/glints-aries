@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {
   SolidShadowContainer,
   SolidShadowBtn,
-} from '../../Style/General/ButtonStyle';
+} from './ButtonStyle';
 
 const SolidShadowButton: React.FunctionComponent<Props> = ({
   children,

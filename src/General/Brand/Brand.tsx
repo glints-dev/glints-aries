@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { BrandContainer, BrandImage } from '../../Style/General/BrandStyle';
+import { BrandContainer, BrandImage } from './BrandStyle';
 
 const GlintsBlack = require('../../../assets/image/glints-logo-black.svg');
 const GlintsWhite = require('../../../assets/image/glints-logo-white.svg');

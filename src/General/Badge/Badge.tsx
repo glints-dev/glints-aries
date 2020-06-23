@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { isNil } from 'lodash';
-import { BadgeContainer } from '../../Style/General/BadgeStyle';
+import { BadgeContainer } from './BadgeStyle';
 
 export const BadgeVariant = {
   DEFAULT: 'default',

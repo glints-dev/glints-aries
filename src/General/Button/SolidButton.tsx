@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SolidBtnContainer, SolidBtn } from '../../Style/General/ButtonStyle';
+import { SolidBtnContainer, SolidBtn } from './ButtonStyle';
 
 const SolidButton: React.FunctionComponent<Props> = ({
   children,

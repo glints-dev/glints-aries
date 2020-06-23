@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { LinkBtn } from '../../Style/General/ButtonStyle';
+import { LinkBtn } from './ButtonStyle';
 
 const LinkButton: React.FunctionComponent<Props> = ({
   children,

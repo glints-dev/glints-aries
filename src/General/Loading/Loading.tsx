@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { LoadingContainer, Spinner } from '../../Style/General/LoadingStyle';
+import { LoadingContainer, Spinner } from './LoadingStyle';
 
 const Loading: React.FunctionComponent<Props> = props => {
   const { className } = props;

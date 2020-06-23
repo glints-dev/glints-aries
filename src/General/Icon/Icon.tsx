@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VerticalCenteredSvg } from '../../Style/General/IconStyle';
+import { VerticalCenteredSvg } from './IconStyle';
 
 const Icon: React.FunctionComponent<Props> = props => {
   const {

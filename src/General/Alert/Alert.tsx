@@ -14,7 +14,7 @@ import {
   AlertMessage,
   AlertIcon,
   AlertTypeIconContainer,
-} from '../../Style/General/AlertStyle';
+} from './AlertStyle';
 
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 

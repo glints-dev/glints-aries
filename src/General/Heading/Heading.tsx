@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { HeadingContainer } from '../../Style/General/HeadingStyle';
+import { HeadingContainer } from './HeadingStyle';
 
 const Heading: React.FunctionComponent<Props> = props => {
   const { className, inline, children, uppercaseText, ...defaultProps } = props;
