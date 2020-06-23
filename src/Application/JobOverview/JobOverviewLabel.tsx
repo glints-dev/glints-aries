@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { JobOverviewLabelStyle } from '../../Style/Application/JobOverviewStyle';
+import { JobOverviewLabelStyle } from './JobOverviewStyle';
 
 const JobOverviewLabel: React.FunctionComponent<Props> = props => {
   const { children, style } = props;

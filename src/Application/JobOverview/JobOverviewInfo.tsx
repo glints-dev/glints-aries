@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { JobOverviewInfostyle } from '../../Style/Application/JobOverviewStyle';
+import { JobOverviewInfostyle } from './JobOverviewStyle';
 
 const JobOverviewInfo: React.FunctionComponent<Props> = ({
   children,

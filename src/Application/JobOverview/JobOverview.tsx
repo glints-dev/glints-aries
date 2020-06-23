@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { JobOverviewContainer } from '../../Style/Application/JobOverviewStyle';
+import { JobOverviewContainer } from './JobOverviewStyle';
 
 import JobOverViewHeader from './JobOverViewHeader';
 import JobOverviewLabel from './JobOverviewLabel';

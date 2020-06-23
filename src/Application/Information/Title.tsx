@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TitleWrapper } from '../../Style/Application/InformationStyle';
+import { TitleWrapper } from './InformationStyle';
 
 const Title: React.FunctionComponent<Props> = props => {
   const { children, bold, className, ...defaultProps } = props;
