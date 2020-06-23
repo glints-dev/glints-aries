@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SearchFilterResultContainer } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterResultContainer } from './SearchFilterStyle';
 
 const SearchFilterBody: React.FunctionComponent<Props> = props => {
   const { children, className, ...defaultProps } = props;

@@ -16,7 +16,7 @@ import {
   HoverContent,
   DatepickerNavigation,
   DatepickerTodayBtn,
-} from '../../Style/Input/DatepickerStyle';
+} from './DatepickerStyle';
 
 import TextField from '../TextField';
 import {

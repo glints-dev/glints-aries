@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { OmniSearchListItem } from '../../Style/Input/OmniSearchStyle';
+import { OmniSearchListItem } from './OmniSearchStyle';
 
 const OmniSearchList: React.FunctionComponent<Props> = props => {
   const { title, children, className, ...defaultProps } = props;

@@ -7,7 +7,7 @@ import {
   RadioLabel,
   RadioIcon,
   Border,
-} from '../../Style/Input/RadioButtonStyle';
+} from './RadioButtonStyle';
 
 const RadioButton: React.FunctionComponent<Props> = props => {
   const {

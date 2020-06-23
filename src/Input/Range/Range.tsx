@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { RangeContainer } from '../../Style/Input/RangeStyle';
+import { RangeContainer } from './RangeStyle';
 
 class Range extends React.Component<Props, State> {
   state = {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SecondaryColor } from '../../Utils/Colors';
-import { CheckboxProps } from '../../Input/Checkbox/Checkbox';
+import { CheckboxProps } from './Checkbox';
 
 export const CheckboxContainer = styled.div<CheckboxProps>`
   position: relative;

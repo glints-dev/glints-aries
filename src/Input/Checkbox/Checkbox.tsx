@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { CheckboxContainer } from '../../Style/Input/CheckboxStyle';
+import { CheckboxContainer } from './CheckboxStyle';
 
 const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   id,

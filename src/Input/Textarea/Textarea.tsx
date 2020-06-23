@@ -7,7 +7,7 @@ import {
   TextareaContainer,
   TextareaInput,
   TextareaLabel,
-} from '../../Style/Input/TextareaStyle';
+} from './TextareaStyle';
 
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;

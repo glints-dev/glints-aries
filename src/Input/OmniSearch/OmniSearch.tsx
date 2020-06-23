@@ -7,7 +7,7 @@ import {
   OmniSearchBar,
   OmniSearchBodyWrapper,
   OmniSearchButton,
-} from '../../Style/Input/OmniSearchStyle';
+} from './OmniSearchStyle';
 import OmniSearchBody from './OmniSearchBody';
 import OmniSearchList from './OmniSearchList';
 import OmniSearchItem from './OmniSearchItem';

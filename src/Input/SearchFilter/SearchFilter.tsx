@@ -6,7 +6,7 @@ import {
   SearchFilterBar,
   SearchFilterBodyWrapper,
   SearchFilterButton,
-} from '../../Style/Input/SearchFilterStyle';
+} from './SearchFilterStyle';
 import SearchFilterBody from './SearchFilterBody';
 import SearchFilterList from './SearchFilterList';
 import SearchFilterItem from './SearchFilterItem';

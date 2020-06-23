@@ -4,7 +4,7 @@ import { RadioButton } from '../RadioButton';
 import {
   SwitchContainer,
   SwitchItemWrapper,
-} from '../../Style/Input/SwitchStyle';
+} from './SwitchStyle';
 
 class Switch extends React.Component<Props, State> {
   state = {

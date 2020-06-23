@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { SelectItemWrapper } from '../../Style/Input/SelectStyle';
+import { SelectItemWrapper } from './SelectStyle';
 
 const SelectItem: React.FunctionComponent<Props> = props => {
   const { children, className, onClick, ...defaultProps } = props;

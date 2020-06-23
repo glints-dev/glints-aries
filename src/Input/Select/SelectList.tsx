@@ -3,7 +3,7 @@ import * as React from 'react';
 import SelectItem from './SelectItem';
 
 import Loading from '../../General/Loading';
-import { SelectListWrapper } from '../../Style/Input/SelectStyle';
+import { SelectListWrapper } from './SelectStyle';
 
 const SelectList: React.FunctionComponent<Props> = ({
   activeOptionIndex,
