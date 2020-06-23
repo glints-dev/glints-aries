@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import { CheckboxProps } from '../../Input/Checkbox/Checkbox';
 
 export const CheckboxContainer = styled.div<CheckboxProps>`

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor, Greyscale } from '../Colors';
+import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 export const TagContent = styled.label`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Style/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const DEFAULTS = {
   activeBackgroundColor: SecondaryColor.actionblue,

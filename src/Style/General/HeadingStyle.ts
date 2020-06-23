@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor } from '../Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 
 export const HeadingContainer = styled.h1<HeadingContainerProps>`
   position: relative;

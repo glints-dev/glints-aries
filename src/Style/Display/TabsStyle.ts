@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import { ScreenSize } from '../../Utils/StyleConfig';
 
 export const TabsContainer = styled.div`

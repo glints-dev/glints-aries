@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 export const SwitchContainer = styled.div<SwitchContainerProps>`
   position: relative;

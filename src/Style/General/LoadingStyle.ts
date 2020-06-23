@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const spin = keyframes`
   0%{

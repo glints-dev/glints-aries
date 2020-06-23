@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 export const SelectContainer = styled.div`
   flex-grow: 1;

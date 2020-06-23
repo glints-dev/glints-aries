@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 export const DatepickerContainer = styled.div`
   flex-grow: 1;

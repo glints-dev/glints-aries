@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { QuotationIcon } from '../../General/Icon/components';
 
 import { BlockquoteContainer } from '../../Style/Display/BlockquoteStyle';
-import { PrimaryColor } from '../../Style/Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 
 import BlockquoteProfile from './BlockquoteProfile';
 import BlockquoteContent from './BlockquoteContent';

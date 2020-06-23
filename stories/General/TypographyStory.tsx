@@ -12,7 +12,7 @@ import {
   PARAGRAPH_FONT_SIZES,
 } from '../../src/General/Typography/ParagraphStyles';
 import Heading from '../../src/General/Heading';
-import { PrimaryColor } from '../../src/Style/Colors';
+import { PrimaryColor } from '../../src/Utils/Colors';
 
 const { Title, Paragraph } = Typography;
 

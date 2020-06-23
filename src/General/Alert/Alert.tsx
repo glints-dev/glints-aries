@@ -16,7 +16,7 @@ import {
   AlertTypeIconContainer,
 } from '../../Style/General/AlertStyle';
 
-import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 const Alert = ({
   isOpen,

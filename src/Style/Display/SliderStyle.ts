@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 const arrow = css`
   position: absolute;

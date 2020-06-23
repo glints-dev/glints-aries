@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 import { ButtonTheme } from '../../Utils/StyleConfig';
 
 const generalButtonPadding = [15, 40];

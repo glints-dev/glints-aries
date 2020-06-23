@@ -7,7 +7,7 @@ import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Select from './Select';
-import { PrimaryColor } from '../../Style/Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 
 const props = {
   label: 'Jobs',

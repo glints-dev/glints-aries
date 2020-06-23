@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor } from '../Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 import { PsychedelicTheme } from '../../Utils/StyleConfig';
 
 export const Heading = styled.h1`

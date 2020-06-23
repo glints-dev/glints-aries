@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { PrimaryColor, SecondaryColor, Greyscale } from '../Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 const getStateColor = (
   { disabled, error, border, theme }: Props,

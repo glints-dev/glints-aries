@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../Utils/StyleConfig';
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import { sizeType } from '../../Display/Modal/Modal';
 
 export const SIZES: { [s: string]: number } = {

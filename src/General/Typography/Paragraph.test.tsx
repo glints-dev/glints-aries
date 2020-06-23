@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Paragraph from './Paragraph';
-import { PrimaryColor } from '../../Style/Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';

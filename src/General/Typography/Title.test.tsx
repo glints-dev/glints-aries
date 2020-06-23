@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import Title, { tagType } from './Title';
 import { TITLE_VARIANTS, TITLE_FONT_SIZES } from './TitleStyles';
-import { PrimaryColor } from '../../Style/Colors';
+import { PrimaryColor } from '../../Utils/Colors';
 
 const titleText = 'Glints Aries';
 

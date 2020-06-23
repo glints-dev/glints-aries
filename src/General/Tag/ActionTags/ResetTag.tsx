@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { PrimaryColor } from '../../../Style/Colors';
+import { PrimaryColor } from '../../../Utils/Colors';
 import BasicTag from '../BasicTag';
 
 export const ResetTag = styled(BasicTag)`

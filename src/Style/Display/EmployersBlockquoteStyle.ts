@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Device } from '../../Utils/StyleConfig';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 export const BlockquoteWrapper = styled.div`
   position: relative;

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const animateCollapsible = keyframes`
   from {

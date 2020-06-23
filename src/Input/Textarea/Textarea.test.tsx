@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Textarea from './Textarea';
-import { SecondaryColor, PrimaryColor } from '../../Style/Colors';
+import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
 interface Props {
   label: string;

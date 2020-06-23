@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
-import { SecondaryColor, PrimaryColor } from '../../Style/Colors';
+import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
 const props = {
   type: 'text' as textFieldType,

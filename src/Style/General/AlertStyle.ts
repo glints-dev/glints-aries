@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { Device } from '../../Utils/StyleConfig';
 
-import { SecondaryColor, PrimaryColor } from '../Colors';
+import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
 const fadeDown = keyframes`
   0% {

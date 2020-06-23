@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
-import { PrimaryColor, SecondaryColor, Greyscale } from '../../Style/Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 import RadioButton, { Props } from './RadioButton';
 
 const singleRadioButton = (

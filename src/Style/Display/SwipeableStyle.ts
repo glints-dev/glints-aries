@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { ScreenSize } from '../../Utils/StyleConfig';
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 export const SwipeableContainer = styled.div`
   display: flex;

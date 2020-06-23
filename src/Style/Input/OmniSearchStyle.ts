@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../../General/Button';
 import { Device } from '../../Utils/StyleConfig';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 export const OmniSearchContainer = styled.div`
   position: relative;

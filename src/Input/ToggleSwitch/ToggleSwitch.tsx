@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { has } from 'lodash';
 
-import { SecondaryColor } from '../../Style/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import { Toggle, ToggleBall } from './Styles';
 
 export interface ToggleSwitchProps {

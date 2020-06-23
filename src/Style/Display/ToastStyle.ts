@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Device } from '../../Utils/StyleConfig';
 
-import { PrimaryColor, SecondaryColor } from '../Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 export const ToastContainer = styled.div<ToastContainerProps>`
   visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
