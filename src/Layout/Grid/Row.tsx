@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RowContainer } from '../../Style/Layout/GridStyle';
+import { RowContainer } from './GridStyle';
 
 const Row: React.FunctionComponent<Props> = ({
   children,

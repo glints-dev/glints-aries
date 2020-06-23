@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ScreenSize, Device } from '../Utils/StyleConfig';
+import { ScreenSize, Device } from '../../Utils/StyleConfig';
 
 const GlintsContainer = styled.div`
   position: relative;
