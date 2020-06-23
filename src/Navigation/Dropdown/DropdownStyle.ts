@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SecondaryColor } from '../Colors';
+import { SecondaryColor } from '../../Style/Colors';
 
 const underLine = `
   position: relative;

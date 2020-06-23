@@ -4,7 +4,7 @@ exports[`<Drawer /> render should match snapshot when not open 1`] = `
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-1g0r1is-0 gnUfHL aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 fheXT aries-drawer"
   data-testid="drawer-container"
   onAnimationEnd={[Function]}
   onAnimationStart={[Function]}
@@ -12,7 +12,7 @@ exports[`<Drawer /> render should match snapshot when not open 1`] = `
   open={false}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-1g0r1is-1 cPuCwb drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 jVcUeC drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={false}
@@ -28,7 +28,7 @@ exports[`<Drawer /> render should match snapshot when open 1`] = `
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-1g0r1is-0 kIHgfM aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gylNYf aries-drawer"
   data-testid="drawer-container"
   onAnimationEnd={[Function]}
   onAnimationStart={[Function]}
@@ -36,7 +36,7 @@ exports[`<Drawer /> render should match snapshot when open 1`] = `
   open={true}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-1g0r1is-1 gDvnzk drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 icftkI drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={true}

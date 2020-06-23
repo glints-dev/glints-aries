@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { DropdownItemWrapper } from '../../Style/Navigation/DropdownStyle';
+import { DropdownItemWrapper } from './DropdownStyle';
 
 const DropdownItem: React.FunctionComponent<Props> = props => {
   const { children, className, ...defaultProps } = props;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BreadcrumbContainer } from '../../Style/Navigation/BreadcrumbStyle';
+import { BreadcrumbContainer } from './BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
 const Breadcrumb: Breadcrumb = (props: Props) => {
