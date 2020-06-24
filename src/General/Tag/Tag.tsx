@@ -1,10 +1,7 @@
 import * as React from 'react';
 
 import { AddIcon, TrashIcon } from '../../General/Icon/components';
-import {
-  StartIconContainer,
-  EndIconContainer,
-} from './TagStyle';
+import { StartIconContainer, EndIconContainer } from './TagStyle';
 
 import { AddTag } from './ActionTags/AddTag';
 import { ResetTag } from './ActionTags/ResetTag';

@@ -1,10 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { RadioButton } from '../RadioButton';
-import {
-  SwitchContainer,
-  SwitchItemWrapper,
-} from './SwitchStyle';
+import { SwitchContainer, SwitchItemWrapper } from './SwitchStyle';
 
 class Switch extends React.Component<Props, State> {
   state = {
