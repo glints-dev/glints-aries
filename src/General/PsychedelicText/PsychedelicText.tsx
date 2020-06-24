@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Heading, SubHeading } from '../../Style/General/PsychedelicTextStyle';
+import { Heading, SubHeading } from './PsychedelicTextStyle';
 
 const renderPsychedelicText: React.FunctionComponent<Props> = ({
   children,

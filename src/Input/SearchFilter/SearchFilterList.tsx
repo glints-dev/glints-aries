@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SearchFilterListWrapper } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterListWrapper } from './SearchFilterStyle';
 
 const SearchFilterList = (props: Props) => {
   const { title, children, className, ...defaultProps } = props;

@@ -5,11 +5,7 @@ import classNames from 'classnames';
 import { EHorizontalTabVariant } from '../../Utils/StyleConfig';
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
-import {
-  TabsContainer,
-  TabsHeader,
-  TabsBody,
-} from '../../Style/Display/TabsStyle';
+import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
 
 const Tabs: Tabs = ({
   activeTab,

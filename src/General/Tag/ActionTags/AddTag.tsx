@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Greyscale, SecondaryColor } from '../../../Style/Colors';
+import { Greyscale, SecondaryColor } from '../../../Utils/Colors';
 import BasicTag from '../BasicTag';
 
 export const AddTag = styled(BasicTag)`

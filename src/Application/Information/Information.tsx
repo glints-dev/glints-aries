@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { InformationContainer } from '../../Style/Application/InformationStyle';
+import { InformationContainer } from './InformationStyle';
 
 import Description from './Description';
 import Detail from './Detail';

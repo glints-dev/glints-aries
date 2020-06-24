@@ -4,7 +4,7 @@ import StorybookComponent from '../StorybookComponent';
 
 import Swipeable from '../../src/Display/Swipeable';
 
-import { SwipeableCardExample } from '../../src/Style/Display/SwipeableStyle';
+import { SwipeableCardExample } from '../../src/Display/Swipeable/SwipeableStyle';
 
 const SwipeableStory = () => (
   <StorybookComponent

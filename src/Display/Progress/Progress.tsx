@@ -9,8 +9,8 @@ import {
   PercentageCompletion,
   LabelText,
   CIRCLE_CIRCUMFERENCE,
-} from '../../Style/Display/ProgressStyle';
-import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+} from './ProgressStyle';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 import { warningMessages } from './WarningMessages';
 
 const Progress: React.FunctionComponent<Props> = props => {

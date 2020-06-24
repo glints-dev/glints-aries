@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ColumnContainer } from '../../Style/Layout/GridStyle';
+import { ColumnContainer } from './GridStyle';
 
 const Col: React.FunctionComponent<Props> = ({
   xs,

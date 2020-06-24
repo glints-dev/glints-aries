@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { OmniSearchItemWrapper } from '../../Style/Input/OmniSearchStyle';
+import { OmniSearchItemWrapper } from './OmniSearchStyle';
 
 const OmniSearchItem: React.FunctionComponent<Props> = props => {
   const { children, className, onClick, ...defaultProps } = props;

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import Provider from './Provider';
 
-import StorybookStyle from '../src/Style/StorybookStyle';
+import StorybookStyle from '../src/Utils/StorybookStyle';
 
 // Candidate
 import IntroStory from './IntroStory';

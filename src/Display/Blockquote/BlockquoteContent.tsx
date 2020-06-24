@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BlockquoteContentWrapper } from '../../Style/Display/BlockquoteStyle';
+import { BlockquoteContentWrapper } from './BlockquoteStyle';
 
 const BlockquoteContent: React.FunctionComponent<Props> = props => {
   const { children, className } = props;

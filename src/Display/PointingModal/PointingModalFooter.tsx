@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { PointingModalFooterWrapper } from '../../Style/Display/PointingModalStyle';
+import { PointingModalFooterWrapper } from './PointingModalStyle';
 
 const PointingModalFooter: React.FunctionComponent<Props> = props => {
   const { children, className, ...defaultProps } = props;

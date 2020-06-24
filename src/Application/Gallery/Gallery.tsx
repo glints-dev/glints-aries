@@ -11,7 +11,7 @@ import {
   GalleryItem,
   GalleryImageWrapper,
   GalleryThumbnailWrapper,
-} from '../../Style/Application/GalleryStyle';
+} from './GalleryStyle';
 
 const defaultImagesDisplayed = 8;
 

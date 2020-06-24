@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { JobOverviewHeaderStyle } from '../../Style/Application/JobOverviewStyle';
+import { JobOverviewHeaderStyle } from './JobOverviewStyle';
 
 const JobOverViewHeader: React.FunctionComponent<Props> = props => {
   const { children, ...defaultProps } = props;

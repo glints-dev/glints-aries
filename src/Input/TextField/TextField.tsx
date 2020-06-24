@@ -8,7 +8,7 @@ import {
   TextFieldContainer,
   TextFieldInput,
   TextFieldLabel,
-} from '../../Style/Input/TextFieldStyle';
+} from './TextFieldStyle';
 
 export const isFilled = (type: textFieldType, value: any) => {
   if (value === undefined || value === null) return false;

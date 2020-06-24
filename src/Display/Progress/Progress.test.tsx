@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Progress from './Progress';
-import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';

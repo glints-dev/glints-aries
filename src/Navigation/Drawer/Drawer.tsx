@@ -1,9 +1,6 @@
 import * as React from 'react';
 
-import {
-  DrawerContainer,
-  DrawerWrapper,
-} from '../../Style/Navigation/DrawerStyle';
+import { DrawerContainer, DrawerWrapper } from './DrawerStyle';
 
 const Drawer = ({ children, isOpen, onClose, ...defaultProps }: Props) => {
   const [isDisplay, setIsDisplay] = React.useState<boolean>(false);

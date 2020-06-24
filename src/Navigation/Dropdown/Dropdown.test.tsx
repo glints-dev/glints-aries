@@ -12,7 +12,7 @@ import {
 
 import Dropdown from './Dropdown';
 import DropdownItem from './DropdownItem';
-import { SecondaryColor } from '../../Style/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 describe('<Dropdown/> render', () => {
   test('should match snapshot', () => {

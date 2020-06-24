@@ -4,10 +4,7 @@ import { isNil } from 'lodash';
 
 import classNames from 'classnames';
 
-import {
-  SliderContainer,
-  SliderContentWrapper,
-} from '../../Style/Display/SliderStyle';
+import { SliderContainer, SliderContentWrapper } from './SliderStyle';
 
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';

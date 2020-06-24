@@ -7,7 +7,7 @@ import {
   BlockquoteProfileWrapper,
   BlockquoteProfilePicture,
   BlockquoteIdentity,
-} from '../../Style/Display/EmployersBlockquoteStyle';
+} from './EmployersBlockquoteStyle';
 
 const Blockquote = (props: Props) => {
   const {

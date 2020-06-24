@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { TagContainer, TagContent } from '../../Style/General/TagStyle';
+import { TagContainer, TagContent } from './TagStyle';
 
 const Tag: React.FunctionComponent<Props> = props => {
   const { className, children, block, outline, onClick, ...restProps } = props;

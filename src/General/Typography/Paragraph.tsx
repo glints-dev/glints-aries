@@ -5,7 +5,7 @@ import {
   Paragraph as StyledParagraph,
   ParagraphProps,
 } from './ParagraphStyles';
-import { SecondaryColor } from '../../Style/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const Paragraph: React.FunctionComponent<Props> = props => {
   const {

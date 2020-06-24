@@ -7,7 +7,7 @@ import { EditIcon } from '../Icon/components';
 import {
   ProfilePictureContainer,
   ProfilePictureContent,
-} from '../../Style/General/ProfilePictureStyle';
+} from './ProfilePictureStyle';
 
 const ProfilePicture = ({
   editable,

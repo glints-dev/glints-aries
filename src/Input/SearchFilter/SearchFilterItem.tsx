@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SearchFilterItemWrapper } from '../../Style/Input/SearchFilterStyle';
+import { SearchFilterItemWrapper } from './SearchFilterStyle';
 import { useSearchFilterContext } from './Context';
 
 const SearchFilterItem: React.FunctionComponent<Props> = props => {

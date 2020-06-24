@@ -1,4 +1,4 @@
-import GlintsContainer from '../../Style/GlintsContainerStyle';
+import GlintsContainer from '../GlintsContainer/GlintsContainer';
 import Col from './Col';
 import Row from './Row';
 

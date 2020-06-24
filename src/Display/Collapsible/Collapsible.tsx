@@ -8,7 +8,7 @@ import {
   CollapsibleContent,
   CollapsibleHeader,
   CollapsibleBody,
-} from '../../Style/Display/CollapsibleStyle';
+} from './CollapsibleStyle';
 
 const Collapsible: React.FunctionComponent<Props> = ({
   label,

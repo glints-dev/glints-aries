@@ -3,7 +3,7 @@ import * as renderer from 'react-test-renderer';
 import { render, fireEvent, wait, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { PrimaryColor, SecondaryColor } from '../../Style/Colors';
+import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 import Alert from './Alert';
 
 describe('<Alert/> should match snapshot, when isOpen is falsy', () => {

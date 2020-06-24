@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DescriptionWrapper } from '../../Style/Application/InformationStyle';
+import { DescriptionWrapper } from './InformationStyle';
 
 const Description: React.FunctionComponent<Props> = props => {
   const { children, className } = props;

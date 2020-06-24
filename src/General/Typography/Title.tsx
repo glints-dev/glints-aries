@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import { Title as StyledTitle } from './TitleStyles';
-import { SecondaryColor } from '../../Style/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const Title: React.FunctionComponent<Props> = (props: Props) => {
   const {

@@ -11,7 +11,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-} from '../../Style/Display/ModalStyle';
+} from './ModalStyle';
 
 const Modal = (props: Props) => {
   const {

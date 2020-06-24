@@ -13,7 +13,7 @@ import {
   SelectInput,
   SelectLabel,
   SelectErrorDefault,
-} from '../../Style/Input/SelectStyle';
+} from './SelectStyle';
 
 import { canWarn } from '../../Utils/canWarn';
 

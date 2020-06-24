@@ -10,7 +10,7 @@ import {
   AutoCompleteLabel,
   AutoCompleteInput,
   AutoCompleteListWrapper,
-} from '../../Style/Input/AutoCompleteStyle';
+} from './AutoCompleteStyle';
 
 class AutoComplete extends React.Component<Props, State> {
   static Option: React.FunctionComponent<AutoCompleteItemProps> = () => null;

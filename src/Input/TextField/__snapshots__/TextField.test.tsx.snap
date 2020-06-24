@@ -2,16 +2,16 @@
 
 exports[`<TextField> should render with a label of Username and type of text 1`] = `
 <div
-  className="TextFieldStyle__TextFieldContainer-snd1vr-0 eFsLeY aries-textfield"
+  className="TextFieldStyle__TextFieldContainer-sc-5sd02x-0 kzshjp aries-textfield"
 >
   <input
     aria-label="Username"
-    className="TextFieldStyle__TextFieldInput-snd1vr-2 jTGFNv"
+    className="TextFieldStyle__TextFieldInput-sc-5sd02x-2 jJjmOJ"
     onKeyDown={[Function]}
     type="text"
   />
   <label
-    className="TextFieldStyle__TextFieldLabel-snd1vr-1 kGFxtj textfield-label"
+    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-1 czCIpu textfield-label"
     data-testid="textfield-label"
   >
     Username

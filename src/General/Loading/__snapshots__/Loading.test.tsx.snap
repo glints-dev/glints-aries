@@ -4,12 +4,12 @@ exports[`<Loading> should render as expected 1`] = `
 <div
   aria-busy="true"
   aria-live="polite"
-  className="LoadingStyle__LoadingContainer-k54wo2-0 guIybM aries-loading"
+  className="LoadingStyle__LoadingContainer-fg2qx3-0 jgkChn aries-loading"
   data-testid="alert"
   role="alert"
 >
   <div
-    className="LoadingStyle__Spinner-k54wo2-1 gZXZiB"
+    className="LoadingStyle__Spinner-fg2qx3-1 xhYWy"
   />
 </div>
 `;

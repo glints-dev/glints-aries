@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import Modal, { sizeType } from './Modal';
-import { SIZES } from '../../Style/Display/ModalStyle';
+import { SIZES } from './ModalStyle';
 
 const props = {
   title: 'Modal Title',

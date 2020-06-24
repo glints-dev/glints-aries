@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SwipeableContainer } from '../../Style/Display/SwipeableStyle';
+import { SwipeableContainer } from './SwipeableStyle';
 
 import SwipeableItem from './SwipeableItem';
 

@@ -6,7 +6,7 @@ import {
   TooltipContainer,
   TooltipContent,
   TooltipMessage,
-} from '../../Style/Display/TooltipStyle';
+} from './TooltipStyle';
 
 const Tooltip: React.FunctionComponent<Props> = ({
   classes = {},

@@ -13,7 +13,7 @@ import {
   DropdownBody,
   DropdownItemWrapper,
   IconWrapper,
-} from '../../Style/Navigation/DropdownStyle';
+} from './DropdownStyle';
 
 import DropdownItem, { Props as DropdownItemProps } from './DropdownItem';
 

@@ -10,7 +10,7 @@ import {
   StartIconContainer,
   EndIconContainer,
   WhiteGreyBtn,
-} from '../../Style/General/ButtonStyle';
+} from './ButtonStyle';
 
 const SOLID_BUTTON_THEME_MAP = {
   [ButtonVariant.SOLID_WHITE]: ButtonTheme.WHITE,

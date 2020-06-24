@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SliderItemWrapper } from '../../Style/Display/SliderStyle';
+import { SliderItemWrapper } from './SliderStyle';
 
 const SliderItem: React.FunctionComponent<Props> = props => {
   const { children } = props;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { GhostBtnContainer, GhostBtn } from '../../Style/General/ButtonStyle';
+import { GhostBtnContainer, GhostBtn } from './ButtonStyle';
 
 const GhostButton: React.FunctionComponent<Props> = ({
   children,

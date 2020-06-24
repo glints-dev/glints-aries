@@ -9,7 +9,7 @@ import {
   ToastTopWrapper,
   ToastIcon,
   ToastBodyWrapper,
-} from '../../Style/Display/ToastStyle';
+} from './ToastStyle';
 
 class Toast extends React.Component<Props> {
   componentDidMount() {
