@@ -152,6 +152,7 @@ export { default as NumberListIcon } from './General/Icon/components/NumberListI
 export { default as OnlineIcon } from './General/Icon/components/OnlineIcon';
 export { default as PdfIcon } from './General/Icon/components/PdfIcon';
 export { default as PdfOutlineIcon } from './General/Icon/components/PdfOutlineIcon';
+export { default as PhoneIcon } from './General/Icon/components/PhoneIcon';
 export { default as PowerIcon } from './General/Icon/components/PowerIcon';
 export { default as PuzzleIcon } from './General/Icon/components/PuzzleIcon';
 export { default as QuotationIcon } from './General/Icon/components/QuotationIcon';
