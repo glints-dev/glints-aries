@@ -95,6 +95,7 @@ export { default as CodepenIcon } from './General/Icon/components/CodepenIcon';
 export { default as CompassIcon } from './General/Icon/components/CompassIcon';
 export { default as CopyIcon } from './General/Icon/components/CopyIcon';
 export { default as CopyOutlinedIcon } from './General/Icon/components/CopyOutlinedIcon';
+export { default as CopyLinkIcon } from './General/Icon/components/CopyLinkIcon';
 export { default as CurrencyIcon } from './General/Icon/components/CurrencyIcon';
 export { default as DeleteIcon } from './General/Icon/components/DeleteIcon';
 export { default as DotIcon } from './General/Icon/components/DotIcon';
