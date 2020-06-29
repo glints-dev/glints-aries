@@ -174,6 +174,7 @@ export { default as StackIcon } from './General/Icon/components/StackIcon';
 export { default as StarIcon } from './General/Icon/components/StarIcon';
 export { default as TagIcon } from './General/Icon/components/TagIcon';
 export { default as TaskIcon } from './General/Icon/components/TaskIcon';
+export { default as TelegramIcon } from './General/Icon/components/TelegramIcon';
 export { default as ThumbsUpIcon } from './General/Icon/components/ThumbsUpIcon';
 export { default as ThumbsUpOutlineIcon } from './General/Icon/components/ThumbsUpOutlineIcon';
 export { default as TicketSolidIcon } from './General/Icon/components/TicketSolidIcon';
