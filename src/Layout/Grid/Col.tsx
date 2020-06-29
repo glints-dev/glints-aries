@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { ColumnContainer } from './GridStyle';
 
 const Col: React.FunctionComponent<Props> = ({
@@ -31,9 +32,9 @@ Col.defaultProps = {
 };
 
 interface Props {
-  xs: number;
-  sm: number;
-  md: number;
+  xs?: number;
+  sm?: number;
+  md?: number;
   xsOrder?: number;
   smOrder?: number;
   mdOrder?: number;
