@@ -167,6 +167,8 @@ export { default as SettingIcon } from './General/Icon/components/SettingIcon';
 export { default as SettingSolidIcon } from './General/Icon/components/SettingSolidIcon';
 export { default as ShareIcon } from './General/Icon/components/ShareIcon';
 export { default as ShareOutlineIcon } from './General/Icon/components/ShareOutlineIcon';
+export { default as ShareArrowIcon } from './General/Icon/components/ShareArrowIcon';
+export { default as ShareArrowOutlineIcon } from './General/Icon/components/ShareArrowOutlineIcon';
 export { default as SpeakerIcon } from './General/Icon/components/SpeakerIcon';
 export { default as SpeechBubbleIcon } from './General/Icon/components/SpeechBubbleIcon';
 export { default as SpeechBubbleOutlineIcon } from './General/Icon/components/SpeechBubbleOutlineIcon';
