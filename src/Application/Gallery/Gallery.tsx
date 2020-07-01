@@ -49,7 +49,7 @@ class Gallery extends React.Component<Props, State> {
 
   getCurrentIndex = (index: number) => {
     this.setState({
-      currentIndex: index - 1,
+      currentIndex: index,
     });
   };
 
@@ -97,7 +97,7 @@ class Gallery extends React.Component<Props, State> {
           removeAnimation
         >
           <Slider
-            initialItem={currentIndex + 1}
+            index={currentIndex}
             arrowWhite
             removeDots
             afterChange={this.getCurrentIndex}
