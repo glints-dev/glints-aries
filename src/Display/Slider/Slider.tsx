@@ -46,9 +46,21 @@ const Slider = ({
     );
   }
 
+  if (
+    controlledIndex &&
+    (controlledIndex < 0 || controlledIndex >= childrenCount)
+  ) {
+    throw new Error(
+      `controlledIndex ${controlledIndex} is out of bounds (min 0, max ${childrenCount -
+        1})`
+    );
+  }
+
   const [internalIndex, setInternalIndex] = React.useState<number>(
     initialItem || 0
   );
+
+  const index = isNil(controlledIndex) ? internalIndex : controlledIndex;
 
   const setSlide = React.useCallback(
     (index: number, shouldLoop = false) => {
@@ -69,14 +81,14 @@ const Slider = ({
   );
 
   const previousSlide = () => {
-    setSlide(internalIndex - 1);
+    setSlide(index - 1);
   };
 
   const nextSlide = React.useCallback(
     (loop = false) => {
-      setSlide(internalIndex + 1, loop);
+      setSlide(index + 1, loop);
     },
-    [internalIndex, setSlide]
+    [index, setSlide]
   );
 
   const handleDotClick = (index: number) => {
@@ -114,8 +126,6 @@ const Slider = ({
     },
     [forceUpdate]
   );
-
-  const index = controlledIndex | internalIndex;
 
   const sliderContainerElement = ReactDOM.findDOMNode(
     sliderContainerRef.current

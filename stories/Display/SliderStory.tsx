@@ -9,13 +9,22 @@ import ProfilePicture from '../../src/General/ProfilePicture';
 const props = {
   Slider: [
     {
+      name: 'index',
+      type: 'number',
+      defaultValue: '',
+      possibleValue: '0 to n-1 (n=number of pages',
+      require: 'no',
+      description:
+        'If set, controls the current page. If not set, Slider will control the current page internally',
+    },
+    {
       name: 'initialItem',
       type: 'number',
-      defaultValue: '1',
+      defaultValue: '',
       possibleValue: 'index of item',
       require: 'no',
       description:
-        'Sets initial item to show. Index starts from 0 until so on.',
+        'If uncontrolled, determined which image will be shown initially',
     },
     {
       name: 'fullContent',
@@ -55,7 +64,8 @@ const props = {
       defaultValue: '',
       possibleValue: 'function',
       require: 'no',
-      description: 'Gets current index of item.',
+      description:
+        'Gets called with the current Index after the slider page was changed',
     },
   ],
 };
