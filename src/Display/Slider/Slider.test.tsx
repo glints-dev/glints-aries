@@ -89,6 +89,96 @@ describe('<Slider/> prop initialItem', () => {
   });
 });
 
+describe('<Slider/> prop index', () => {
+  const matchSnapshot = (index: number) => {
+    it(`should match snapshot when index ${index} is passed`, async () => {
+      const useRefSpy = jest
+        .spyOn(React, 'useRef')
+        .mockReturnValue(mockContainer(400));
+
+      const { asFragment } = render(
+        <Slider index={index}>
+          <Slider.Item>a</Slider.Item>
+          <Slider.Item>b</Slider.Item>
+          <Slider.Item>c</Slider.Item>
+        </Slider>
+      );
+
+      const theThreeNavigationDots = document.querySelectorAll('li');
+
+      // wait setState in componentDidMount to set active dot
+      await wait(() => {
+        expect(
+          theThreeNavigationDots[index].classList.contains('active')
+        ).toBeTruthy();
+      });
+
+      expect(asFragment()).toMatchSnapshot();
+
+      useRefSpy.mockRestore();
+    });
+  };
+
+  [0, 1, 2].forEach(index => matchSnapshot(index));
+
+  it(`should use index when index and initialItem are passed at the same time`, async () => {
+    render(
+      <Slider index={1} initialItem={2}>
+        <Slider.Item>a</Slider.Item>
+        <Slider.Item>b</Slider.Item>
+        <Slider.Item>c</Slider.Item>
+      </Slider>
+    );
+
+    const theThreeNavigationDots = document.querySelectorAll('li');
+
+    // wait setState in componentDidMount to set active dot
+    await wait(() => {
+      expect(
+        theThreeNavigationDots[1].classList.contains('active')
+      ).toBeTruthy();
+    });
+  });
+
+  it(`should call afterChange with update for controlled state, if controlled`, () => {
+    const afterChange = jest.fn();
+    const { queryByTestId } = render(
+      <SliderComponent afterChange={afterChange} index={1} />
+    );
+
+    const rightArrow = queryByTestId('slider_right-arrow');
+
+    // By default, Slider's internal index is initially 0. But since we passed
+    // index=1, afterChange should get called with index+1=2 upon clicking the
+    // right arrow if afterChange is dealing with the controlled index correctly.
+    fireEvent.click(rightArrow);
+    expect(afterChange).toHaveBeenCalledTimes(1);
+    expect(afterChange).toHaveBeenLastCalledWith(2);
+  });
+
+  it(`should throw when index is out of bounds`, async () => {
+    // Silence any errors in the console during this test
+    // Otherwise the Slider will throw print his error here, even though the
+    // test passes.
+    const originalError = console.error;
+    console.error = jest.fn();
+
+    const tryToRender = (index: number) =>
+      render(
+        <Slider index={index}>
+          <Slider.Item>a</Slider.Item>
+          <Slider.Item>b</Slider.Item>
+          <Slider.Item>c</Slider.Item>
+        </Slider>
+      );
+
+    expect(() => tryToRender(-1)).toThrow();
+    expect(() => tryToRender(3)).toThrow();
+
+    console.error = originalError;
+  });
+});
+
 describe('<Slider/> prop fullContent', () => {
   const matchSnapshot = (fullContent: boolean) => {
     it(`should match snapshot when fullContent ${fullContent} is passed`, async () => {
