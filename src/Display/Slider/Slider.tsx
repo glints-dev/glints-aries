@@ -24,6 +24,7 @@ const Slider = ({
   children,
   autoplay,
   initialItem,
+  index: controlledIndex,
   className,
   fullContent,
   arrowWhite,
@@ -45,11 +46,13 @@ const Slider = ({
     );
   }
 
-  const [index, setIndex] = React.useState<number>(initialItem || 0);
+  const [internalIndex, setInternalIndex] = React.useState<number>(
+    initialItem || 0
+  );
 
   const setSlide = React.useCallback(
     (index: number, shouldLoop = false) => {
-      setIndex(currentIndex => {
+      setInternalIndex(currentIndex => {
         if (index < 0) {
           index = 0;
         }
@@ -66,14 +69,14 @@ const Slider = ({
   );
 
   const previousSlide = () => {
-    setSlide(index - 1);
+    setSlide(internalIndex - 1);
   };
 
   const nextSlide = React.useCallback(
     (loop = false) => {
-      setSlide(index + 1, loop);
+      setSlide(internalIndex + 1, loop);
     },
-    [index, setSlide]
+    [internalIndex, setSlide]
   );
 
   const handleDotClick = (index: number) => {
@@ -111,6 +114,8 @@ const Slider = ({
     },
     [forceUpdate]
   );
+
+  const index = controlledIndex | internalIndex;
 
   const sliderContainerElement = ReactDOM.findDOMNode(
     sliderContainerRef.current
@@ -175,6 +180,7 @@ export interface Props {
   children: React.ReactNode;
   className?: string;
   initialItem?: number;
+  index?: number;
   fullContent?: boolean;
   arrowWhite?: boolean;
   removeDots?: boolean;

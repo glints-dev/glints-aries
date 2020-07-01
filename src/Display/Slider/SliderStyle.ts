@@ -27,7 +27,7 @@ export const SliderItemWrapper = styled.div`
 export const LeftArrowContainer = styled.div<LeftArrowContainerProps>`
   ${arrow};
   left: 0;
-  cursor: ${({ index }) => (index === 1 ? 'not-allowed' : 'pointer')};
+  cursor: ${({ index }) => (index === 0 ? 'not-allowed' : 'pointer')};
 `;
 
 interface LeftArrowContainerProps {
