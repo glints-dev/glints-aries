@@ -175,6 +175,7 @@ exports[`<Tabs/> render should match snapshot 1`] = `
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -461,6 +462,7 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -744,6 +746,7 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -1027,6 +1030,7 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour bla
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -1134,7 +1138,7 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour bla
 </DocumentFragment>
 `;
 
-exports[`<Tabs/> snapshots with colour prop and variant as underlined colour grey 1`] = `
+exports[`<Tabs/> snapshots with colour prop and variant as underlined colour blue 1`] = `
 <DocumentFragment>
   .c0 {
   position: relative;
@@ -1321,6 +1325,7 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour gre
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -1604,6 +1609,7 @@ exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 
@@ -1887,6 +1893,7 @@ exports[`<Tabs/> snapshots with variant props alignment underlined 1`] = `
 @media (min-width:768px) {
   .c1 ul .vertical-tab {
     margin: 0;
+    padding-left: 15px;
   }
 }
 

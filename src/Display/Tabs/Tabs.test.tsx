@@ -8,7 +8,7 @@ import { fireEvent, render } from '@testing-library/react';
 import Tabs from './Tabs';
 import {
   EHorizontalTabVariant,
-  ETabColourVariant,
+  ETabThemeVariant,
 } from '../../Utils/StyleConfig';
 
 describe('<Tabs/> render', () => {
@@ -68,10 +68,10 @@ describe('<Tabs/> snapshots with variant props', () => {
 });
 
 describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
-  const matchTabSnapshotsWithVariant = (colour: ETabColourVariant) => {
-    test(`colour ${colour}`, () => {
+  const matchTabSnapshotsWithVariant = (theme: ETabThemeVariant) => {
+    test(`colour ${theme}`, () => {
       const { asFragment } = render(
-        <Tabs variant={EHorizontalTabVariant.UNDERLINED} colour={colour}>
+        <Tabs variant={EHorizontalTabVariant.UNDERLINED} theme={theme}>
           <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
           <Tabs.Pane tab="Company">Glints</Tabs.Pane>
           <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
@@ -82,8 +82,8 @@ describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
     });
   };
 
-  Object.values(ETabColourVariant).forEach(colour =>
-    matchTabSnapshotsWithVariant(colour)
+  Object.values(ETabThemeVariant).forEach(theme =>
+    matchTabSnapshotsWithVariant(theme)
   );
 });
 
