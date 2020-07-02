@@ -8,8 +8,8 @@ export enum EHorizontalTabVariant {
   COLORED = 'colored',
 }
 
-export enum ETabColourVariant {
-  GREY = 'grey',
+export enum ETabThemeVariant {
+  BLUE = 'blue',
   BLACK = 'black',
 }
 
