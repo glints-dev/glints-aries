@@ -2,15 +2,19 @@ import styled from 'styled-components';
 
 import {
   ScreenSize,
-  ETabColourVariant,
+  ETabThemeVariant,
   ETabAlignment,
 } from '../../Utils/StyleConfig';
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 interface TabHeader {
-  colour: ETabColourVariant;
+  theme: ETabThemeVariant;
   alignment: string;
 }
+
+const isNewTab = (theme: ETabThemeVariant) => {
+  return theme !== ETabThemeVariant.BLACK;
+};
 
 export const TabsContainer = styled.div`
   position: relative;
@@ -72,14 +76,14 @@ export const TabsHeader = styled.div<TabHeader>`
     }
 
     .horizontal-tab.underlined {
-      margin: ${({ colour }) =>
-        colour === ETabColourVariant.GREY ? '0 15px' : '0 10px'};
+      margin: ${({ theme }) => (isNewTab(theme) ? '0 15px' : '0 10px')};
     }
 
     .vertical-tab {
       margin: 0 10px;
       @media (min-width: ${ScreenSize.tablet}px) {
         margin: 0;
+        padding-left: 15px;
       }
     }
 
@@ -105,16 +109,16 @@ export const TabsHeader = styled.div<TabHeader>`
 
       &.underlined.active.horizontal-tab,
       &.active.vertical-tab {
-        border-bottom: ${({ colour }) =>
-          colour === ETabColourVariant.GREY
+        border-bottom: ${({ theme }) =>
+          isNewTab(theme)
             ? `4px solid ${SecondaryColor.actionblue}`
             : `2px solid ${Greyscale.black}`};
 
         button {
           font-weight: bold;
           text-transform: uppercase;
-          color: ${({ colour }) =>
-            colour === ETabColourVariant.GREY
+          color: ${({ theme }) =>
+            isNewTab(theme)
               ? `${SecondaryColor.actionblue}`
               : `${Greyscale.black}`};
         }
@@ -134,8 +138,8 @@ export const TabsHeader = styled.div<TabHeader>`
 
       &.active.vertical-tab {
         @media (min-width: ${ScreenSize.tablet}px) {
-          border-right: ${({ colour }) =>
-            colour === ETabColourVariant.GREY
+          border-right: ${({ theme }) =>
+            isNewTab(theme)
               ? `4px solid ${SecondaryColor.actionblue}`
               : `2px solid ${Greyscale.black}`};
           border-bottom: none;
@@ -170,8 +174,8 @@ export const TabsHeader = styled.div<TabHeader>`
       cursor: pointer;
       outline: none;
       text-transform: uppercase;
-      ${({ colour }) => {
-        if (colour === ETabColourVariant.GREY) {
+      ${({ theme }) => {
+        if (isNewTab(theme)) {
           return `
             letter-spacing: 1px;
             font-weight: 500;
@@ -182,26 +186,21 @@ export const TabsHeader = styled.div<TabHeader>`
     }
 
     button:hover {
-      ${({ colour, alignment }) => {
-        if (
-          colour === ETabColourVariant.GREY &&
-          alignment === ETabAlignment.VERTICAL
-        ) {
+      ${({ theme }) => {
+        if (isNewTab(theme)) {
           return `
-            color: ${SecondaryColor.actionblue};
-            border-bottom: 4px solid rgba(1, 126, 183, 0.5);
+          color: ${SecondaryColor.actionblue};
+          border-bottom: 4px solid rgba(1, 126, 183, 0.5);
+          `;
+        }
+      }};
+      ${({ alignment, theme }) => {
+        if (alignment === ETabAlignment.VERTICAL && isNewTab(theme)) {
+          return `
             @media (min-width: ${ScreenSize.tablet}px) {
               border-bottom: 0;
               border-right: 4px solid rgba(1, 126, 183, 0.5);
             }
-          `;
-        } else if (
-          colour === ETabColourVariant.GREY &&
-          alignment === ETabAlignment.HORIZONTAL
-        ) {
-          return `
-            color: ${SecondaryColor.actionblue};
-            border-bottom: 4px solid rgba(1, 126, 183, 0.5);
           `;
         }
       }};
