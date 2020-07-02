@@ -9,7 +9,7 @@ import StorybookComponent from '../StorybookComponent';
 import {
   ETabAlignment,
   EHorizontalTabVariant,
-  ETabColourVariant,
+  ETabThemeVariant,
 } from '../../src/Utils/StyleConfig';
 import FileAlternateIcon from '../../src/General/Icon/components/FileAlternateIcon';
 
@@ -34,12 +34,12 @@ const props = {
         'Sets alignment of Tab. The vertical tabs are changed to horizontal ones for screen size below 768',
     },
     {
-      name: 'colour',
+      name: 'theme',
       type: 'string',
       defaultValue: 'black',
-      possibleValue: 'blue, grey',
+      possibleValue: 'blue, black',
       require: 'no',
-      description: 'Sets the colour for the tabs in underlined variant.',
+      description: 'Sets the theme for the tabs in underlined variant.',
     },
     {
       name: 'activeTab',
@@ -150,7 +150,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" colour="grey">
+      usage={`<Tabs variant="underlined" theme="grey">
         <Tabs.Pane tab="Job">
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -160,11 +160,11 @@ const TabsStory = () => (
       </Tabs>`}
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Horizontal Tabs (Grey Colour, Underlined Variant)
+        Horizontal Tabs (Blue theme, Underlined Variant)
       </Heading>
       <Tabs
         variant={EHorizontalTabVariant.UNDERLINED}
-        colour={ETabColourVariant.GREY}
+        theme={ETabThemeVariant.BLUE}
       >
         <Tabs.Pane tab="Job">
           Software Engineer <Badge label="1" />
@@ -180,7 +180,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" colour="grey">
+      usage={`<Tabs variant="underlined" theme="grey">
         <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -190,11 +190,11 @@ const TabsStory = () => (
       </Tabs>`}
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Horizontal Icon Tabs (Grey Colour, Underlined Variant)
+        Horizontal Icon Tabs (Blue theme, Underlined Variant)
       </Heading>
       <Tabs
         variant={EHorizontalTabVariant.UNDERLINED}
-        colour={ETabColourVariant.GREY}
+        theme={ETabThemeVariant.BLUE}
       >
         <Tabs.Pane
           tab={
@@ -244,7 +244,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" alignment="vertical" colour="grey">
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="grey">
         <Tabs.Pane tab="Job">
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -254,12 +254,12 @@ const TabsStory = () => (
       </Tabs>`}
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Vertical Tabs (Grey Colour, Underlined Variant)
+        Vertical Tabs (Blue theme, Underlined Variant)
       </Heading>
       <Tabs
         variant={EHorizontalTabVariant.UNDERLINED}
         alignment={ETabAlignment.VERTICAL}
-        colour={ETabColourVariant.GREY}
+        theme={ETabThemeVariant.BLUE}
       >
         <Tabs.Pane tab="Job">
           Software Engineer <Badge label="1" />
@@ -275,7 +275,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" alignment="vertical" colour="grey">
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="grey">
         <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -285,12 +285,12 @@ const TabsStory = () => (
       </Tabs>`}
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-        Vertical Icon Tabs (Grey Colour, Underlined Variant)
+        Vertical Icon Tabs (Blue theme, Underlined Variant)
       </Heading>
       <Tabs
         variant={EHorizontalTabVariant.UNDERLINED}
         alignment={ETabAlignment.VERTICAL}
-        colour={ETabColourVariant.GREY}
+        theme={ETabThemeVariant.BLUE}
       >
         <Tabs.Pane
           tab={
