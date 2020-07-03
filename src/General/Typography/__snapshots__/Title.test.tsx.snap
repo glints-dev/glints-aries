@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h1 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+}
+
+<h1
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h2 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: line-height:43.2px;
+}
+
+<h2
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h2>
+</DocumentFragment>
+`;
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h3 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: line-height:36px;
+}
+
+<h3
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h3>
+</DocumentFragment>
+`;
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h4 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 36.4px;
+}
+
+<h4
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h4>
+</DocumentFragment>
+`;
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h5 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+<h5
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h5>
+</DocumentFragment>
+`;
+
+exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h6 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+<h6
+    class="c0 aries-typography-title"
+    color="#000000"
+  >
+    Glints Aries
+  </h6>
+</DocumentFragment>
+`;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
@@ -41,4 +42,21 @@ it('display the ellipsis', () => {
       white-space: nowrap; 
       text-overflow: ellipsis;
     `);
+});
+
+describe('displays the correct text case, when upperCase value is set to true', () => {
+  const tags = Object.values(TITLE_VARIANTS) as tagType[];
+
+  const matchSnapshotWithTag = (tag: tagType) => {
+    test(`tag with upperCase as true ${tag}`, () => {
+      const { asFragment } = render(
+        <Title tag={tag} upperCase={true}>
+          {titleText}
+        </Title>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  tags.forEach(tag => matchSnapshotWithTag(tag));
 });
