@@ -202,25 +202,11 @@ const Select: ISelect = (props: Props) => {
       setActiveOptionIndex(0);
       setIsInputChange(true);
 
-      if (
-        typeof onChange === 'function' &&
-        typeof onInputChange !== 'function'
-      ) {
-        onChange(e);
-        if (canWarn) {
-          console.warn(`
-            Warning: onChange will not be fired when input value changes in a future release,
-            please use onInputChange instead. Now, if onChange is passed but onInputChange is not,
-            the onChange callback will still receive the input change event for backward compatibility.
-          `);
-        }
-      }
-
       if (typeof onInputChange === 'function') {
         onInputChange(e);
       }
     },
-    [onChange, onInputChange]
+    [onInputChange]
   );
 
   const getActiveElement = React.useCallback(() => {
@@ -414,7 +400,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
-  onChange?(value: any): void;
+  onChange?(value: string): void;
   onInputChange?(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
