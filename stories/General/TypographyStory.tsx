@@ -263,6 +263,11 @@ ReactDOM.render(
       competition, always being the first in everything - from work to social
       gatherings.
     </Paragraph>
+    <Paragraph variant="smallest">
+      Label
+      <br />
+      This is a sample label
+    </Paragraph>
   </div>,
   mountNode
 );`}
@@ -311,6 +316,11 @@ ReactDOM.render(
         turbulent. They are continuously looking for dynamic, speed and
         competition, always being the first in everything - from work to social
         gatherings.
+      </Paragraph>
+      <Paragraph variant="smallest">
+        Label
+        <br />
+        This is a sample label
       </Paragraph>
     </div>
   </StorybookComponent>
