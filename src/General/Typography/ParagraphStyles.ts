@@ -28,7 +28,7 @@ export interface ParagraphProps {
   color?: string;
   ellipsis?: boolean;
   variant?: paragraphType;
-  lineHeight: boolean;
+  lineHeight?: boolean;
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
