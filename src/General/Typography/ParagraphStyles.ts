@@ -14,6 +14,13 @@ export const PARAGRAPH_FONT_SIZES = {
   [PARAGRAPH_VARIANTS.smallest]: 12,
 };
 
+export const PARAGRAPH_LINE_HEIGHTS = {
+  [PARAGRAPH_VARIANTS.subtitle]: 30.6,
+  [PARAGRAPH_VARIANTS.regular]: 27.2,
+  [PARAGRAPH_VARIANTS.caption]: 23.8,
+  [PARAGRAPH_VARIANTS.smallest]: 20.4,
+};
+
 export type paragraphType = 'subtitle' | 'regular' | 'caption' | 'smallest';
 
 export interface ParagraphProps {
@@ -21,15 +28,17 @@ export interface ParagraphProps {
   color?: string;
   ellipsis?: boolean;
   variant?: paragraphType;
+  lineHeight: boolean;
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
   margin: 0;
   font-size: ${props => PARAGRAPH_FONT_SIZES[props.variant]}px;
+  line-height: ${props =>
+    props.lineHeight ? `${PARAGRAPH_LINE_HEIGHTS[props.variant]}px` : 'normal'};
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
   color: ${props => props.color};
 

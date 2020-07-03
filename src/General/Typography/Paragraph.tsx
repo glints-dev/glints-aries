@@ -15,6 +15,7 @@ const Paragraph: React.FunctionComponent<Props> = props => {
     bold,
     color = SecondaryColor.black,
     ellipsis,
+    lineHeight = false,
     ...restProps
   } = props;
 
@@ -25,6 +26,7 @@ const Paragraph: React.FunctionComponent<Props> = props => {
       bold={bold}
       color={color}
       ellipsis={ellipsis}
+      lineHeight={lineHeight}
       {...restProps}
     >
       {children}
@@ -35,6 +37,7 @@ const Paragraph: React.FunctionComponent<Props> = props => {
 interface Props extends ParagraphProps {
   className?: string;
   children: React.ReactNode;
+  lineHeight?: boolean;
 }
 
 export default Paragraph;
