@@ -2,11 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { isNil } from 'lodash';
 import { BadgeContainer } from './BadgeStyle';
-
-export const BadgeVariant = {
-  DEFAULT: 'default',
-  DIMMED: 'dimmed',
-};
+import { BadgeVariant } from './BadgeVariant';
 
 const Badge: React.FunctionComponent<Props> = ({
   label,

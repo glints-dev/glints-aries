@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
-import { BadgeVariant } from './Badge';
+import { BadgeVariant } from './BadgeVariant';
 
 export const BadgeContainer = styled.div<BadgeContainerProps>`
   position: relative;

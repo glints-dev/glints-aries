@@ -36,6 +36,37 @@ then open your browser on port 9001
 
 ### How to test local changes in glints-aries in your project
 
+#### yalc
+
+install [yalc](https://github.com/whitecolor/yalc) globally
+
+```bash
+yarn global add yalc
+```
+
+in your local `glints-aries` directory:
+
+```bash
+yarn build
+yalc publish
+```
+
+in your dependent project:
+
+```bash
+yalc add glints-aries
+yarn start:dev
+```
+
+unlink local `glints-aries` in dependent project:
+
+```bash
+yalc remove glints-aries
+yarn install
+```
+
+#### yarn link (might not work)
+
 1. Open terminal in `glints-aries`.
 2. Run `yarn link`.
 3. Open terminal in your project.
