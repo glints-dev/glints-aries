@@ -9,7 +9,9 @@ import StorybookComponent from '../StorybookComponent';
 import {
   ETabAlignment,
   EHorizontalTabVariant,
+  ETabThemeVariant,
 } from '../../src/Utils/StyleConfig';
+import FileAlternateIcon from '../../src/General/Icon/components/FileAlternateIcon';
 
 const props = {
   Tabs: [
@@ -30,6 +32,14 @@ const props = {
       require: 'no',
       description:
         'Sets alignment of Tab. The vertical tabs are changed to horizontal ones for screen size below 768',
+    },
+    {
+      name: 'theme',
+      type: 'string',
+      defaultValue: 'black',
+      possibleValue: 'blue, black',
+      require: 'no',
+      description: 'Sets the theme for the tabs in underlined variant.',
     },
     {
       name: 'activeTab',
@@ -132,6 +142,196 @@ const TabsStory = () => (
         <Tabs.Pane tab="Company">Glints</Tabs.Pane>
         <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
         <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      title="Tabs"
+      code="import { Tabs } from 'glints-aries'"
+      usage={`<Tabs variant="underlined" theme="blue">
+        <Tabs.Pane tab="Job">
+        Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>`}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Horizontal Tabs (Blue theme, Underlined Variant)
+      </Heading>
+      <Tabs
+        variant={EHorizontalTabVariant.UNDERLINED}
+        theme={ETabThemeVariant.BLUE}
+      >
+        <Tabs.Pane tab="Job">
+          Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      title="Tabs"
+      code="import { Tabs } from 'glints-aries'"
+      usage={`<Tabs variant="underlined" theme="blue">
+        <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
+        Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Company</div>}>Glints</Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Location</div>}>Jakarta</Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Salary</div>}>Rp 10,000,000</Tabs.Pane>
+      </Tabs>`}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Horizontal Icon Tabs (Blue theme, Underlined Variant)
+      </Heading>
+      <Tabs
+        variant={EHorizontalTabVariant.UNDERLINED}
+        theme={ETabThemeVariant.BLUE}
+      >
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Jobs
+            </div>
+          }
+        >
+          Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Company
+            </div>
+          }
+        >
+          Glints
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Location
+            </div>
+          }
+        >
+          Jakarta
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Salary
+            </div>
+          }
+        >
+          Rp 10,000,000
+        </Tabs.Pane>
+      </Tabs>
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      title="Tabs"
+      code="import { Tabs } from 'glints-aries'"
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="blue">
+        <Tabs.Pane tab="Job">
+        Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>`}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Vertical Tabs (Blue theme, Underlined Variant)
+      </Heading>
+      <Tabs
+        variant={EHorizontalTabVariant.UNDERLINED}
+        alignment={ETabAlignment.VERTICAL}
+        theme={ETabThemeVariant.BLUE}
+      >
+        <Tabs.Pane tab="Job">
+          Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>
+    </StorybookComponent>
+
+    <Divider theme="grey" />
+
+    <StorybookComponent
+      title="Tabs"
+      code="import { Tabs } from 'glints-aries'"
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="blue">
+        <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
+        Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Company</div>}>Glints</Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Location</div>}>Jakarta</Tabs.Pane>
+        <Tabs.Pane tab={<div><FileAlternateIcon />Salary</div>}>Rp 10,000,000</Tabs.Pane>
+      </Tabs>`}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Vertical Icon Tabs (Blue theme, Underlined Variant)
+      </Heading>
+      <Tabs
+        variant={EHorizontalTabVariant.UNDERLINED}
+        alignment={ETabAlignment.VERTICAL}
+        theme={ETabThemeVariant.BLUE}
+      >
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Jobs
+            </div>
+          }
+        >
+          Software Engineer <Badge label="1" />
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Company
+            </div>
+          }
+        >
+          Glints
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Location
+            </div>
+          }
+        >
+          Jakarta
+        </Tabs.Pane>
+        <Tabs.Pane
+          tab={
+            <div>
+              <FileAlternateIcon />
+              Salary
+            </div>
+          }
+        >
+          Rp 10,000,000
+        </Tabs.Pane>
       </Tabs>
     </StorybookComponent>
   </React.Fragment>
