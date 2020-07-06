@@ -150,7 +150,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" theme="grey">
+      usage={`<Tabs variant="underlined" theme="blue">
         <Tabs.Pane tab="Job">
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -180,7 +180,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" theme="grey">
+      usage={`<Tabs variant="underlined" theme="blue">
         <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -244,7 +244,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" alignment="vertical" theme="grey">
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="blue">
         <Tabs.Pane tab="Job">
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
@@ -275,7 +275,7 @@ const TabsStory = () => (
     <StorybookComponent
       title="Tabs"
       code="import { Tabs } from 'glints-aries'"
-      usage={`<Tabs variant="underlined" alignment="vertical" theme="grey">
+      usage={`<Tabs variant="underlined" alignment="vertical" theme="blue">
         <Tabs.Pane tab={<div><FileAlternateIcon />Jobs</div>}>
         Software Engineer <Badge label="1" />
         </Tabs.Pane>
