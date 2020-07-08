@@ -8,11 +8,11 @@ import {
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 interface TabHeader {
-  theme: ETabThemeVariant;
+  theme: string;
   alignment: string;
 }
 
-const isNewTab = (theme: ETabThemeVariant) => {
+const isNewTab = (theme: string) => {
   return theme !== ETabThemeVariant.BLACK;
 };
 
