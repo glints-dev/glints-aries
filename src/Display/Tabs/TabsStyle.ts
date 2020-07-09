@@ -8,8 +8,8 @@ import {
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 interface TabHeader {
-  theme: string;
-  alignment: string;
+  alignment: 'horizontal' | 'vertical';
+  theme: 'blue' | 'black';
 }
 
 const isNewTab = (theme: string) => {

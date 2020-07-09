@@ -28,7 +28,9 @@ describe('<Tabs/> render', () => {
 });
 
 describe('<Tabs/> snapshots with alignment props', () => {
-  const matchTabSnapshotsWithAlignment = (alignment: string) => {
+  const matchTabSnapshotsWithAlignment = (
+    alignment: 'horizontal' | 'vertical'
+  ) => {
     test(`alignment ${alignment}`, () => {
       const { asFragment } = render(
         <Tabs alignment={alignment} variant={EHorizontalTabVariant.UNDERLINED}>
@@ -42,13 +44,13 @@ describe('<Tabs/> snapshots with alignment props', () => {
     });
   };
 
-  ['horizontal', 'vertical'].forEach(alignment =>
+  ['horizontal', 'vertical'].forEach((alignment: 'horizontal' | 'vertical') =>
     matchTabSnapshotsWithAlignment(alignment)
   );
 });
 
 describe('<Tabs/> snapshots with variant props', () => {
-  const matchTabSnapshotsWithVariant = (variant: string) => {
+  const matchTabSnapshotsWithVariant = (variant: 'underlined' | 'colored') => {
     test(`alignment ${variant}`, () => {
       const { asFragment } = render(
         <Tabs alignment="horizontal" variant={variant}>
@@ -68,7 +70,7 @@ describe('<Tabs/> snapshots with variant props', () => {
 });
 
 describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
-  const matchTabSnapshotsWithVariant = (theme: string) => {
+  const matchTabSnapshotsWithVariant = (theme: 'blue' | 'black') => {
     test(`colour ${theme}`, () => {
       const { asFragment } = render(
         <Tabs variant={EHorizontalTabVariant.UNDERLINED} theme={theme}>

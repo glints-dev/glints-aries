@@ -109,12 +109,12 @@ Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
-  variant?: string;
-  alignment?: string;
+  variant?: 'underlined' | 'colored';
+  alignment?: 'horizontal' | 'vertical';
+  theme?: 'blue' | 'black';
   activeTab?: string | number;
   onTabClick?(tab: React.ReactText | React.ReactNode): void;
   className?: string;
-  theme?: string;
 }
 
 export default Tabs;
