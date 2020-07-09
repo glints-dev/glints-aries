@@ -7,6 +7,10 @@ import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
 
+export type Variant = 'underlined' | 'colored';
+export type Alignment = 'horizontal' | 'vertical';
+export type Theme = 'blue' | 'black';
+
 const Tabs: Tabs = ({
   activeTab,
   onTabClick,
@@ -109,9 +113,9 @@ Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
-  variant?: 'underlined' | 'colored';
-  alignment?: 'horizontal' | 'vertical';
-  theme?: 'blue' | 'black';
+  variant?: Variant;
+  alignment?: Alignment;
+  theme?: Theme;
   activeTab?: string | number;
   onTabClick?(tab: React.ReactText | React.ReactNode): void;
   className?: string;

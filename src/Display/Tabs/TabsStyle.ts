@@ -6,10 +6,11 @@ import {
   ETabAlignment,
 } from '../../Utils/StyleConfig';
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Alignment, Theme } from './Tabs';
 
 interface TabHeader {
-  alignment: 'horizontal' | 'vertical';
-  theme: 'blue' | 'black';
+  alignment: Alignment;
+  theme: Theme;
 }
 
 const isNewTab = (theme: string) => {
