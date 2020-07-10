@@ -2,13 +2,14 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import {
-  EHorizontalTabVariant,
-  ETabThemeVariant,
-} from '../../Utils/StyleConfig';
+import { ETabThemeVariant } from '../../Utils/StyleConfig';
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
+
+export type Variant = 'underlined' | 'colored';
+export type Alignment = 'horizontal' | 'vertical';
+export type Theme = 'blue' | 'black';
 
 const Tabs: Tabs = ({
   activeTab,
@@ -112,12 +113,12 @@ Tabs.Pane = TabPane;
 
 interface Props {
   children: React.ReactNode;
-  variant?: EHorizontalTabVariant;
-  alignment?: string;
+  variant?: Variant;
+  alignment?: Alignment;
+  theme?: Theme;
   activeTab?: string | number;
   onTabClick?(tab: React.ReactText | React.ReactNode): void;
   className?: string;
-  theme?: ETabThemeVariant;
 }
 
 export default Tabs;

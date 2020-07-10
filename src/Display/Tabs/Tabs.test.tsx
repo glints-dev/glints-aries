@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Tabs from './Tabs';
+import Tabs, { Alignment, Variant, Theme } from './Tabs';
 import {
   EHorizontalTabVariant,
   ETabThemeVariant,
@@ -28,7 +28,7 @@ describe('<Tabs/> render', () => {
 });
 
 describe('<Tabs/> snapshots with alignment props', () => {
-  const matchTabSnapshotsWithAlignment = (alignment: string) => {
+  const matchTabSnapshotsWithAlignment = (alignment: Alignment) => {
     test(`alignment ${alignment}`, () => {
       const { asFragment } = render(
         <Tabs alignment={alignment} variant={EHorizontalTabVariant.UNDERLINED}>
@@ -42,13 +42,13 @@ describe('<Tabs/> snapshots with alignment props', () => {
     });
   };
 
-  ['horizontal', 'vertical'].forEach(alignment =>
+  ['horizontal', 'vertical'].forEach((alignment: Alignment) =>
     matchTabSnapshotsWithAlignment(alignment)
   );
 });
 
 describe('<Tabs/> snapshots with variant props', () => {
-  const matchTabSnapshotsWithVariant = (variant: EHorizontalTabVariant) => {
+  const matchTabSnapshotsWithVariant = (variant: Variant) => {
     test(`alignment ${variant}`, () => {
       const { asFragment } = render(
         <Tabs alignment="horizontal" variant={variant}>
@@ -68,7 +68,7 @@ describe('<Tabs/> snapshots with variant props', () => {
 });
 
 describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
-  const matchTabSnapshotsWithVariant = (theme: ETabThemeVariant) => {
+  const matchTabSnapshotsWithVariant = (theme: Theme) => {
     test(`colour ${theme}`, () => {
       const { asFragment } = render(
         <Tabs variant={EHorizontalTabVariant.UNDERLINED} theme={theme}>

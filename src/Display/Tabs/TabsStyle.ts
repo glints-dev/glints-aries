@@ -6,13 +6,14 @@ import {
   ETabAlignment,
 } from '../../Utils/StyleConfig';
 import { SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Alignment, Theme } from './Tabs';
 
 interface TabHeader {
-  theme: ETabThemeVariant;
-  alignment: string;
+  alignment: Alignment;
+  theme: Theme;
 }
 
-const isNewTab = (theme: ETabThemeVariant) => {
+const isNewTab = (theme: string) => {
   return theme !== ETabThemeVariant.BLACK;
 };
 
