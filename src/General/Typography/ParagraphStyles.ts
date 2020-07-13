@@ -28,14 +28,16 @@ export interface ParagraphProps {
   color?: string;
   ellipsis?: boolean;
   variant?: paragraphType;
-  lineHeight?: boolean;
+  shouldSetLineHeight?: boolean;
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
   margin: 0;
   font-size: ${props => PARAGRAPH_FONT_SIZES[props.variant]}px;
   line-height: ${props =>
-    props.lineHeight ? `${PARAGRAPH_LINE_HEIGHTS[props.variant]}px` : 'normal'};
+    props.shouldSetLineHeight
+      ? `${PARAGRAPH_LINE_HEIGHTS[props.variant]}px`
+      : 'normal'};
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;

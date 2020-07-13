@@ -86,12 +86,12 @@ const paragraphProps = {
       description: 'Display ellipsis when the title overflows.',
     },
     {
-      name: 'lineHeight',
+      name: 'shouldSetLineHeight',
       type: 'boolean',
       defaultValue: <code>false</code>,
       possibleValue: <code>true | false</code>,
       require: 'no',
-      description: 'Adds a lineheight value to the paragraph',
+      description: 'Adds a line-height value to the paragraph',
     },
     {
       name: 'variant',
@@ -343,37 +343,37 @@ const { Paragraph } = Typography;
 
 ReactDOM.render(
   <div style={{ display: 'grid', gridRowGap: '15px' }}>
-    <Paragraph variant="subtitle" lineHeight={true}>
+    <Paragraph variant="subtitle" shouldSetLineHeight={true}>
       Subtitle <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph variant="regular" lineHeight={true}>
+    <Paragraph variant="regular" shouldSetLineHeight={true}>
       Regular <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph variant="caption" lineHeight={true}>
+    <Paragraph variant="caption" shouldSetLineHeight={true}>
       Caption <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph variant="smallest" lineHeight={true}>
+    <Paragraph variant="smallest" shouldSetLineHeight={true}>
       Smallest <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph bold lineHeight={true}>
+    <Paragraph bold shouldSetLineHeight={true}>
       Bold Paragraph <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph color={PrimaryColor.glintsred} lineHeight={true}>
+    <Paragraph color={PrimaryColor.glintsred} shouldSetLineHeight={true}>
       Colored Paragraph <br />
       As the first sign in the zodiac, the presence of Aries always marks the
       beginning of something energetic and turbulent.
     </Paragraph>
-    <Paragraph ellipsis lineHeight={true}>
+    <Paragraph ellipsis shouldSetLineHeight={true}>
       Paragraph with Ellipses - As the first sign in the zodiac, the presence
       of Aries always marks the beginning of something energetic and
       turbulent. They are continuously looking for dynamic, speed and
@@ -388,45 +388,45 @@ ReactDOM.render(
       Typography.Paragraph With Line Height
     </Heading>
     <div style={{ display: 'grid', gridRowGap: '15px' }}>
-      <Paragraph variant="subtitle" lineHeight={true}>
+      <Paragraph variant="subtitle" shouldSetLineHeight={true}>
         Subtitle - Font Size: {PARAGRAPH_FONT_SIZES.subtitle}px and Line Height:{' '}
         {PARAGRAPH_LINE_HEIGHTS.subtitle}px
         <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph variant="regular" lineHeight={true}>
+      <Paragraph variant="regular" shouldSetLineHeight={true}>
         Regular - {PARAGRAPH_FONT_SIZES.regular}px and Line Height:{' '}
         {PARAGRAPH_LINE_HEIGHTS.regular}px
         <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph variant="caption" lineHeight={true}>
+      <Paragraph variant="caption" shouldSetLineHeight={true}>
         Caption - {PARAGRAPH_FONT_SIZES.caption}px and Line Height:{' '}
         {PARAGRAPH_LINE_HEIGHTS.caption}px
         <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph variant="smallest" lineHeight={true}>
+      <Paragraph variant="smallest" shouldSetLineHeight={true}>
         Smallest - {PARAGRAPH_FONT_SIZES.smallest}px and Line Height:{' '}
         {PARAGRAPH_LINE_HEIGHTS.smallest}px
         <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph bold lineHeight={true}>
+      <Paragraph bold shouldSetLineHeight={true}>
         Bold Paragraph <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph color={PrimaryColor.glintsred} lineHeight={true}>
+      <Paragraph color={PrimaryColor.glintsred} shouldSetLineHeight={true}>
         Colored Paragraph <br />
         As the first sign in the zodiac, the presence of Aries always marks the
         beginning of something energetic and turbulent.
       </Paragraph>
-      <Paragraph ellipsis lineHeight={true}>
+      <Paragraph ellipsis shouldSetLineHeight={true}>
         Paragraph with Ellipses - As the first sign in the zodiac, the presence
         of Aries always marks the beginning of something energetic and
         turbulent. They are continuously looking for dynamic, speed and

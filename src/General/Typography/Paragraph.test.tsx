@@ -54,13 +54,13 @@ it('display the ellipsis', () => {
   `);
 });
 
-describe('displays the correct line height, when lineHeight value is set to true', () => {
+describe('displays the correct line height, when shouldSetLineHeight value is set to true', () => {
   const variants = Object.values(PARAGRAPH_VARIANTS) as paragraphType[];
 
   const matchSnapshotWithTag = (variant: paragraphType) => {
-    test(`tag with lineHeight as true ${variant}`, () => {
+    test(`tag with shouldSetLineHeight as true ${variant}`, () => {
       const { asFragment } = render(
-        <Paragraph variant={variant} lineHeight={true}>
+        <Paragraph variant={variant} shouldSetLineHeight={true}>
           {paragraphText}
         </Paragraph>
       );
