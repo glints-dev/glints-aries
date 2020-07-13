@@ -44,13 +44,13 @@ it('display the ellipsis', () => {
     `);
 });
 
-describe('displays the correct text case, when upperCase value is set to true', () => {
+describe('displays the correct text case, when uppercase value is set to true', () => {
   const tags = Object.values(TITLE_VARIANTS) as tagType[];
 
   const matchSnapshotWithTag = (tag: tagType) => {
-    test(`tag with upperCase as true ${tag}`, () => {
+    test(`tag with uppercase as true ${tag}`, () => {
       const { asFragment } = render(
-        <Title tag={tag} upperCase={true}>
+        <Title tag={tag} uppercase={true}>
           {titleText}
         </Title>
       );

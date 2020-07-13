@@ -11,7 +11,7 @@ const Title: React.FunctionComponent<Props> = (props: Props) => {
     color = SecondaryColor.black,
     ellipsis,
     tag = 'h1',
-    upperCase = false,
+    uppercase = false,
     ...restProps
   } = props;
 
@@ -21,7 +21,7 @@ const Title: React.FunctionComponent<Props> = (props: Props) => {
       as={tag}
       color={color}
       ellipsis={ellipsis}
-      upperCase={upperCase}
+      uppercase={uppercase}
       {...restProps}
     >
       {children}
@@ -37,7 +37,7 @@ interface Props {
   color?: string;
   ellipsis?: boolean;
   tag?: tagType;
-  upperCase?: boolean;
+  uppercase?: boolean;
 }
 
 export default Title;

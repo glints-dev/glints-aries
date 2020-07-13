@@ -36,7 +36,7 @@ const titleProps = {
       description: 'Display ellipsis when the title overflows.',
     },
     {
-      name: 'upperCase',
+      name: 'uppercase',
       type: 'boolean',
       defaultValue: <code>false</code>,
       possibleValue: <code>true | false</code>,
@@ -162,7 +162,7 @@ ReactDOM.render(
   </StorybookComponent>
 );
 
-const UpperCaseTitleStory = () => (
+const UppercaseTitleStory = () => (
   <StorybookComponent
     title="Typography"
     code="import { Typography } from 'glints-aries'"
@@ -172,16 +172,16 @@ const { Title } = Typography;
 
 ReactDOM.render(
   <div style={{ display: 'grid', gridRowGap: '15px' }}>
-    <Title tag="h1" upperCase={true}>Heading 1</Title>
-    <Title tag="h2" upperCase={true}>Heading 2</Title>
-    <Title tag="h3" upperCase={true}>Heading 3</Title>
-    <Title tag="h4" upperCase={true}>Heading 4</Title>
-    <Title tag="h5" upperCase={true}>Heading 5</Title>
-    <Title tag="h6" upperCase={true}>Heading 6</Title>
-    <Title tag="h5" color={PrimaryColor.glintsred} upperCase={true}>
+    <Title tag="h1" uppercase={true}>Heading 1</Title>
+    <Title tag="h2" uppercase={true}>Heading 2</Title>
+    <Title tag="h3" uppercase={true}>Heading 3</Title>
+    <Title tag="h4" uppercase={true}>Heading 4</Title>
+    <Title tag="h5" uppercase={true}>Heading 5</Title>
+    <Title tag="h6" uppercase={true}>Heading 6</Title>
+    <Title tag="h5" color={PrimaryColor.glintsred} uppercase={true}>
       Colored Title
     </Title>
-    <Title tag="h5" ellipsis upperCase={true}>
+    <Title tag="h5" ellipsis uppercase={true}>
       Title with Ellipses - As the first sign in the zodiac, the presence of
       Aries always marks the beginning of something energetic and turbulent.
       They are continuously looking for dynamic, speed and competition, always
@@ -195,28 +195,28 @@ ReactDOM.render(
       Typography - Upper Case Title
     </Heading>
     <div style={{ display: 'grid', gridRowGap: '15px' }}>
-      <Title tag="h1" upperCase={true}>
+      <Title tag="h1" uppercase={true}>
         Heading 1 - {TITLE_FONT_SIZES.h1}px
       </Title>
-      <Title tag="h2" upperCase={true}>
+      <Title tag="h2" uppercase={true}>
         Heading 2 - {TITLE_FONT_SIZES.h2}px
       </Title>
-      <Title tag="h3" upperCase={true}>
+      <Title tag="h3" uppercase={true}>
         Heading 3 - {TITLE_FONT_SIZES.h3}px
       </Title>
-      <Title tag="h4" upperCase={true}>
+      <Title tag="h4" uppercase={true}>
         Heading 4 - {TITLE_FONT_SIZES.h4}px
       </Title>
-      <Title tag="h5" upperCase={true}>
+      <Title tag="h5" uppercase={true}>
         Heading 5 - {TITLE_FONT_SIZES.h5}px
       </Title>
-      <Title tag="h6" upperCase={true}>
+      <Title tag="h6" uppercase={true}>
         Heading 6 - {TITLE_FONT_SIZES.h6}px
       </Title>
-      <Title tag="h5" color={PrimaryColor.glintsred} upperCase={true}>
+      <Title tag="h5" color={PrimaryColor.glintsred} uppercase={true}>
         Colored Title
       </Title>
-      <Title tag="h5" ellipsis upperCase={true}>
+      <Title tag="h5" ellipsis uppercase={true}>
         Title with Ellipses - As the first sign in the zodiac, the presence of
         Aries always marks the beginning of something energetic and turbulent.
         They are continuously looking for dynamic, speed and competition, always
@@ -440,7 +440,7 @@ ReactDOM.render(
 const TypographyStory = () => (
   <React.Fragment>
     <TitleStory />
-    <UpperCaseTitleStory />
+    <UppercaseTitleStory />
     <ParagraphStory />
     <ParagraphStoryWithLineHeight />
   </React.Fragment>

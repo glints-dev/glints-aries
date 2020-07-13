@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h1 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h1 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;
@@ -27,7 +27,7 @@ exports[`displays the correct text case, when upperCase value is set to true tag
 </DocumentFragment>
 `;
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h2 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h2 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;
@@ -53,7 +53,7 @@ exports[`displays the correct text case, when upperCase value is set to true tag
 </DocumentFragment>
 `;
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h3 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h3 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;
@@ -79,7 +79,7 @@ exports[`displays the correct text case, when upperCase value is set to true tag
 </DocumentFragment>
 `;
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h4 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h4 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;
@@ -105,7 +105,7 @@ exports[`displays the correct text case, when upperCase value is set to true tag
 </DocumentFragment>
 `;
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h5 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h5 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;
@@ -131,7 +131,7 @@ exports[`displays the correct text case, when upperCase value is set to true tag
 </DocumentFragment>
 `;
 
-exports[`displays the correct text case, when upperCase value is set to true tag with upperCase as true h6 1`] = `
+exports[`displays the correct text case, when uppercase value is set to true tag with uppercase as true h6 1`] = `
 <DocumentFragment>
   .c0 {
   margin: 0;

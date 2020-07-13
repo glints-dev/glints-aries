@@ -24,7 +24,7 @@ interface TitleProps {
   as: tagType;
   color?: string;
   ellipsis?: boolean;
-  upperCase?: boolean;
+  uppercase?: boolean;
 }
 
 export const Title = styled.h1<TitleProps>`
@@ -35,7 +35,7 @@ export const Title = styled.h1<TitleProps>`
   letter-spacing: normal;
   color: ${props => props.color};
   text-transform: ${props => {
-    if (props.upperCase) return 'uppercase';
+    if (props.uppercase) return 'uppercase';
   }};
   ${props => {
     switch (props.as) {
@@ -43,17 +43,17 @@ export const Title = styled.h1<TitleProps>`
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: ${props.upperCase ? '60px' : '70px'};
+        line-height: ${props.uppercase ? '60px' : '70px'};
       `;
       case TITLE_VARIANTS.h2:
         return `
         font-size: ${TITLE_FONT_SIZES.h2}px;
-        line-height: line-height: ${props.upperCase ? '43.2px' : '50.4px'};
+        line-height: line-height: ${props.uppercase ? '43.2px' : '50.4px'};
       `;
       case TITLE_VARIANTS.h3:
         return `
         font-size: ${TITLE_FONT_SIZES.h3}px;
-        line-height: line-height: ${props.upperCase ? '36px' : '42px'};
+        line-height: line-height: ${props.uppercase ? '36px' : '42px'};
       `;
       case TITLE_VARIANTS.h4:
         return `
@@ -74,7 +74,7 @@ export const Title = styled.h1<TitleProps>`
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: ${props.upperCase ? '60px' : '70px'};
+        line-height: ${props.uppercase ? '60px' : '70px'};
     `;
     }
   }};
