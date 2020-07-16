@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Swipeable /> prop className should match snapshot when class name test is passed 1`] = `
+<DocumentFragment>
+  <div
+    class="SwipeableStyle__SwipeableContainer-xvh6jb-0 ckHALM aries-swipeable test"
+  >
+    <div
+      class="SwipeableStyle__SwipeableItemWrapper-xvh6jb-1 cIchyd swipeable-itemwrapper test"
+    >
+      Item
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Swipeable /> prop className should match snapshot when class name undefined is passed 1`] = `
+<DocumentFragment>
+  <div
+    class="SwipeableStyle__SwipeableContainer-xvh6jb-0 ckHALM aries-swipeable"
+  >
+    <div
+      class="SwipeableStyle__SwipeableItemWrapper-xvh6jb-1 cIchyd swipeable-itemwrapper"
+    >
+      Item
+    </div>
+  </div>
+</DocumentFragment>
+`;
