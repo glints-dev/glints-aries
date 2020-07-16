@@ -34,14 +34,13 @@ const Tooltip: React.FunctionComponent<Props> = ({
     []
   );
 
-  const handleTouchStart = (event: React.TouchEvent) => {
+  const handleTouchStart = () => {
     if (!isShow) {
       showTooltip();
       document.addEventListener('touchstart', hideTooltipIfTouchOutside);
-    } else {
-      hideTooltipIfTouchOutside(event);
     }
   };
+
   return (
     <TooltipContainer
       className={classNames('aries-tooltip', classes.container)}
