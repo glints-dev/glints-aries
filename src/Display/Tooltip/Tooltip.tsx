@@ -22,9 +22,9 @@ const Tooltip: React.FunctionComponent<Props> = ({
 
   const hideTooltipIfTouchOutside = React.useCallback(
     (event: TouchEvent | React.TouchEvent) => {
-      const hasTouchedOutsideOfTooltipContent = !contentRef.current.contains(
-        event.target as HTMLElement
-      );
+      const hasTouchedOutsideOfTooltipContent =
+        contentRef.current &&
+        !contentRef.current.contains(event.target as HTMLElement);
 
       if (hasTouchedOutsideOfTooltipContent) {
         hideTooltip();
