@@ -1,4 +1,5 @@
 import * as React from 'react';
+const { version } = require('../package.json');
 
 const IntroStory = () => (
   <div className="doc-mainbar">
@@ -8,7 +9,7 @@ const IntroStory = () => (
         <span
           style={{ fontWeight: 'normal', fontSize: '14px', marginLeft: '.6em' }}
         >
-          v3.0.26
+          {`v${version}`}
         </span>
       </h1>
       <p style={{ paddingRight: '25%' }}>
