@@ -9,11 +9,14 @@ import Gallery from './Gallery';
 const Component = ({
   initialVisibility,
   imagesDisplayed,
+  galleryRef,
 }: {
   initialVisibility?: boolean;
   imagesDisplayed?: number;
+  galleryRef?: React.RefObject<Gallery>;
 }) => (
   <Gallery
+    ref={galleryRef}
     initialVisibility={initialVisibility}
     imagesDisplayed={imagesDisplayed}
   >
@@ -135,5 +138,31 @@ describe('<Gallery /> active item', () => {
 
     const thumbnails = screen.queryAllByTestId('gallery_thumbnail');
     expect(thumbnails[itemIndex - 1]).toHaveClass('active');
+  });
+});
+
+// TODO: Update this test case when Slider or Gallery being converted to
+// functional component
+describe('<Gallery /> slider active item', () => {
+  test('click on gallery item', () => {
+    const ref = React.createRef<Gallery>();
+    const { rerender } = render(<Component galleryRef={ref} />);
+    const sliderWrapperWidth = 500;
+    const itemIndex = 3;
+    const item = document.querySelectorAll('.gallery-item')[itemIndex];
+    userEvent.click(item);
+
+    ref.current.sliderRef.current.getSliderContainerDOMNode = () => ({
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      getBoundingClientRect: () => ({
+        width: sliderWrapperWidth,
+      }),
+    });
+
+    rerender(<Component galleryRef={ref} />);
+    expect(document.querySelector('.slider-wrapper')).toHaveStyle(
+      `transform: translateX(-${sliderWrapperWidth * itemIndex}px)`
+    );
   });
 });
