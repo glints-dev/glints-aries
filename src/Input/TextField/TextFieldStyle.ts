@@ -18,6 +18,8 @@ export const TextFieldContainer = styled.div`
 export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   position: absolute;
   left: ${({ small }) => (small ? '16px' : '22px')};
+  right: ${({ small }) => (small ? '16px' : '22px')};
+  overflow: hidden;
   background: ${SecondaryColor.white};
   color: ${({ floating }) =>
     floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
@@ -157,6 +159,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       transition: all .2s;
       color: ${SecondaryColor.black};
       font-size: 12px;
+        right: auto;
 
       ${({ status }) => {
         if (status === 'error') {
