@@ -31,8 +31,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   background-color: rgba(0,0,0,.5);
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
+  top: 0 left:0;
   border-radius: 50%;
 }
 
@@ -121,8 +120,7 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
   background-color: rgba(0,0,0,.5);
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
+  top: 0 left:0;
   border-radius: 50%;
 }
 
@@ -388,8 +386,7 @@ exports[`<ProfilePicture/> snapshots with prop editable editable true 1`] = `
   background-color: rgba(0,0,0,.5);
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
+  top: 0 left:0;
   border-radius: 50%;
 }
 

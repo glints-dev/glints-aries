@@ -5,13 +5,13 @@ exports[`<Progress> should render 51% with a stroke color of #F5A623 1`] = `
   aria-valuemax={100}
   aria-valuemin={0}
   aria-valuenow={51}
-  className="ProgressStyle__ProgressContainer-sc-1fz52py-1 cNWIiW aries-progress"
+  className="ProgressStyle__ProgressContainer-sc-1fz52py-1 jeuxjc aries-progress"
   role="progressbar"
   size={1}
   tabIndex={0}
 >
   <div
-    className="ProgressStyle__ProgressContent-sc-1fz52py-0 kizadZ"
+    className="ProgressStyle__ProgressContent-sc-1fz52py-0 cCWeY"
     size={1}
     tabIndex={-1}
   >
@@ -41,16 +41,16 @@ exports[`<Progress> should render 51% with a stroke color of #F5A623 1`] = `
     </svg>
     <label
       aria-hidden="true"
-      className="ProgressStyle__ProgressLabelWrapper-sc-1fz52py-2 jkmcgt"
+      className="ProgressStyle__ProgressLabelWrapper-sc-1fz52py-2 cFvDfB"
     >
       <h1
         aria-label="percentage-completion"
-        className="ProgressStyle__PercentageCompletion-sc-1fz52py-3 eILgds"
+        className="ProgressStyle__PercentageCompletion-sc-1fz52py-3 gjzhhd"
       >
         51%
       </h1>
       <p
-        className="ProgressStyle__LabelText-sc-1fz52py-4 izBCNV"
+        className="ProgressStyle__LabelText-sc-1fz52py-4 iidikT"
       >
         COMPLETE
       </p>
