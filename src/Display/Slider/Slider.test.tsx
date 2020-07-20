@@ -23,7 +23,7 @@ describe('<Slider/> prop className', () => {
     });
   };
 
-  ['test', undefined].forEach(className => matchSnapshot(className));
+  ['test', undefined].forEach(matchSnapshot);
 });
 
 describe('<Slider/> prop initialItem', () => {

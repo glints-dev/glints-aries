@@ -22,7 +22,7 @@ describe('<Accordion /> prop className', () => {
     });
   };
 
-  ['test', undefined].forEach(className => matchSnapshot(className));
+  ['test', undefined].forEach(matchSnapshot);
 });
 
 describe('<Accordion.Panel /> prop iconPosition', () => {

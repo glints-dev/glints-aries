@@ -17,7 +17,7 @@ describe('<Swipeable /> prop className', () => {
     });
   };
 
-  ['test', undefined].forEach(className => matchSnapshot(className));
+  ['test', undefined].forEach(matchSnapshot);
 });
 
 describe('<Swipeable /> prop children', () => {
