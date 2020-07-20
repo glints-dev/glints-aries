@@ -132,6 +132,7 @@ class Gallery extends React.Component<Props, State> {
                   onClick={() => this.handleClickThumbs(index)}
                 >
                   <img
+                    data-testid="gallery_thumbnail"
                     src={data.props.src}
                     alt={index.toString(10)}
                     className={index === currentIndex ? 'active' : null}
