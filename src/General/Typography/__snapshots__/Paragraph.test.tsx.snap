@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`displays the correct line height, when shouldSetLineHeight value is set to true tag with shouldSetLineHeight as true caption 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 23.8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+<p
+    class="c0 aries-typography-paragraph"
+    color="#000000"
+  >
+    As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything - from work to social gatherings.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`displays the correct line height, when shouldSetLineHeight value is set to true tag with shouldSetLineHeight as true regular 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 27.2px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+<p
+    class="c0 aries-typography-paragraph"
+    color="#000000"
+  >
+    As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything - from work to social gatherings.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`displays the correct line height, when shouldSetLineHeight value is set to true tag with shouldSetLineHeight as true smallest 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20.4px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+<p
+    class="c0 aries-typography-paragraph"
+    color="#000000"
+  >
+    As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything - from work to social gatherings.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`displays the correct line height, when shouldSetLineHeight value is set to true tag with shouldSetLineHeight as true subtitle 1`] = `
+<DocumentFragment>
+  .c0 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 30.6px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+<p
+    class="c0 aries-typography-paragraph"
+    color="#000000"
+  >
+    As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything - from work to social gatherings.
+  </p>
+</DocumentFragment>
+`;

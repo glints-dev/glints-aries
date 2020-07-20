@@ -24,6 +24,7 @@ interface TitleProps {
   as: tagType;
   color?: string;
   ellipsis?: boolean;
+  uppercase?: boolean;
 }
 
 export const Title = styled.h1<TitleProps>`
@@ -33,45 +34,47 @@ export const Title = styled.h1<TitleProps>`
   font-style: normal;
   letter-spacing: normal;
   color: ${props => props.color};
-
+  text-transform: ${props => {
+    if (props.uppercase) return 'uppercase';
+  }};
   ${props => {
     switch (props.as) {
       case TITLE_VARIANTS.h1:
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: 1.2em;
+        line-height: ${props.uppercase ? '60px' : '70px'};
       `;
       case TITLE_VARIANTS.h2:
         return `
         font-size: ${TITLE_FONT_SIZES.h2}px;
-        line-height: 1.2em;
+        line-height: line-height: ${props.uppercase ? '43.2px' : '50.4px'};
       `;
       case TITLE_VARIANTS.h3:
         return `
         font-size: ${TITLE_FONT_SIZES.h3}px;
-        line-height: 1.4em;
+        line-height: line-height: ${props.uppercase ? '36px' : '42px'};
       `;
       case TITLE_VARIANTS.h4:
         return `
         font-size: ${TITLE_FONT_SIZES.h4}px;
-        line-height: 1.4em;
+        line-height: 36.4px;
       `;
       case TITLE_VARIANTS.h5:
         return `
         font-size: ${TITLE_FONT_SIZES.h5}px;
-        line-height: 1.4em;
+        line-height: 28px;
       `;
       case TITLE_VARIANTS.h6:
         return `
         font-size: ${TITLE_FONT_SIZES.h6}px;
-        line-height: 1.4em;
+        line-height: 25.2px;
       `;
       default:
         return `
         font-size: ${TITLE_FONT_SIZES.h1}px;
         font-weight: 900;
-        line-height: 1.2em;
+        line-height: ${props.uppercase ? '60px' : '70px'};
     `;
     }
   }};

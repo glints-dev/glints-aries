@@ -3,6 +3,7 @@ import Paragraph from './Paragraph';
 import { PrimaryColor } from '../../Utils/Colors';
 
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-styled-components';
 import { render } from '@testing-library/react';
 
 import {
@@ -51,4 +52,21 @@ it('display the ellipsis', () => {
       white-space: nowrap;
       text-overflow: ellipsis;
   `);
+});
+
+describe('displays the correct line height, when shouldSetLineHeight value is set to true', () => {
+  const variants = Object.values(PARAGRAPH_VARIANTS) as paragraphType[];
+
+  const matchSnapshotWithTag = (variant: paragraphType) => {
+    test(`tag with shouldSetLineHeight as true ${variant}`, () => {
+      const { asFragment } = render(
+        <Paragraph variant={variant} shouldSetLineHeight={true}>
+          {paragraphText}
+        </Paragraph>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  variants.forEach(variant => matchSnapshotWithTag(variant));
 });
