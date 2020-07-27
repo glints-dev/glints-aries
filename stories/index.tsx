@@ -10,7 +10,6 @@ import StorybookStyle from '../src/Utils/StorybookStyle';
 import IntroStory from './IntroStory';
 import AccordionStory from './Display/AccordionStory';
 import AlertStory from './General/AlertStory';
-import AutoCompleteStory from './Input/AutoCompleteStory';
 import BadgeStory from './General/BadgeStory';
 import BlockquoteStory from './Display/BlockquoteStory';
 import BrandStory from './General/BrandStory';
@@ -93,7 +92,6 @@ storiesOf('Input', module)
       <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
-  .add('Auto Complete', () => <AutoCompleteStory />)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Datepicker', () => <DatepickerStory />)
   .add('NumberInput', () => <NumberInputStory />)
