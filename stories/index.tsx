@@ -37,7 +37,6 @@ import OmniSearchStory from './Input/OmniSearchStory';
 import PointingModalStory from './Display/PointingModalStory';
 import PopoverStory from './Display/PopoverStory';
 import ProfilePictureStory from './General/ProfilePictureStory';
-import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
@@ -78,7 +77,6 @@ storiesOf('General', module)
   .add('Icon', () => <IconStory />)
   .add('Loading', () => <LoadingStory />)
   .add('Profile Picture', () => <ProfilePictureStory />)
-  .add('Psychedelic Text', () => <PsychedelicTextStory />)
   .add('Tag', () => <TagStory />)
   .add('Typography', () => <TypographyStory />);
 
