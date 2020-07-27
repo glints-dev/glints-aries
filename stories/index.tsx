@@ -29,7 +29,6 @@ import GridStory from './Layout/GridStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
 import IconStory from './General/IconStory';
-import InformationStory from './Application/InformationStory';
 import LoadingStory from './General/LoadingStory';
 import ModalStory from './Display/ModalStory';
 import NumberInputStory from './Input/NumberInputStory';
@@ -140,8 +139,7 @@ storiesOf('Application', module)
       <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
-  .add('Gallery', () => <GalleryStory />)
-  .add('Information', () => <InformationStory />);
+  .add('Gallery', () => <GalleryStory />);
 
 storiesOf('Utilities', module)
   .addDecorator(story => (

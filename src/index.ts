@@ -19,7 +19,6 @@ export { default as Dropdown } from './Navigation/Dropdown';
 export { default as Gallery } from './Application/Gallery';
 export { default as Grid } from './Layout/Grid';
 export { default as Heading } from './General/Heading';
-export { default as Information } from './Application/Information';
 export { default as Icon } from './General/Icon';
 export { default as Loading } from './General/Loading';
 export { default as Modal } from './Display/Modal';
