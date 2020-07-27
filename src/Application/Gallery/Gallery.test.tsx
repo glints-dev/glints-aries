@@ -133,8 +133,8 @@ describe('<Gallery /> active item', () => {
     const item = document.querySelectorAll('.gallery-item')[itemIndex];
     userEvent.click(item);
 
-    const nextButton = screen.queryByTestId('slider_left-arrow');
-    userEvent.click(nextButton);
+    const prevButton = screen.queryByTestId('slider_left-arrow');
+    userEvent.click(prevButton);
 
     const thumbnails = screen.queryAllByTestId('gallery_thumbnail');
     expect(thumbnails[itemIndex - 1]).toHaveClass('active');
@@ -143,8 +143,8 @@ describe('<Gallery /> active item', () => {
 
 // TODO: Update this test case when Slider or Gallery being converted to
 // functional component
-describe('<Gallery /> slider active item', () => {
-  test('click on gallery item', () => {
+describe('<Gallery /> Slider should have correct translateX to render active slide correctly', () => {
+  test('when click on gallery item', () => {
     const ref = React.createRef<Gallery>();
     const { rerender } = render(<Component galleryRef={ref} />);
     const sliderWrapperWidth = 500;
