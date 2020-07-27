@@ -5,7 +5,6 @@ import '@glints/poppins';
 export { default as Accordion } from './Display/Accordion';
 export { default as Alert } from './General/Alert';
 export { default as Badge } from './General/Badge';
-export { default as Blockquote } from './Display/Blockquote';
 export { default as Brand } from './General/Brand';
 export { default as Breadcrumb } from './Navigation/Breadcrumb';
 export { default as Button } from './General/Button';

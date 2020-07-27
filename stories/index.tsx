@@ -11,7 +11,6 @@ import IntroStory from './IntroStory';
 import AccordionStory from './Display/AccordionStory';
 import AlertStory from './General/AlertStory';
 import BadgeStory from './General/BadgeStory';
-import BlockquoteStory from './Display/BlockquoteStory';
 import BrandStory from './General/BrandStory';
 import BreadcrumbStory from './Navigation/BreadcrumbStory';
 import ButtonStory from './General/ButtonStory';
@@ -120,7 +119,6 @@ storiesOf('Display', module)
     </Provider>
   ))
   .add('Accordion', () => <AccordionStory />)
-  .add('Blockquote', () => <BlockquoteStory />)
   .add('Collapsible', () => <CollapsibleStory />)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
