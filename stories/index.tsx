@@ -48,7 +48,6 @@ import TabsStory from './Display/TabsStory';
 import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
 import TextFieldStory from './Input/TextFieldStory';
-import ToastStory from './Display/ToastStory';
 import TooltipStory from './Display/TooltipStory';
 import TypographyStory from './General/TypographyStory';
 
@@ -135,7 +134,6 @@ storiesOf('Display', module)
   .add('Slider', () => <SliderStory />)
   .add('Swipeable', () => <SwipeableStory />)
   .add('Tabs', () => <TabsStory />)
-  .add('Toast', () => <ToastStory />)
   .add('Tooltip', () => <TooltipStory />);
 
 storiesOf('Application', module)
