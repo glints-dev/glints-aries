@@ -2186,7 +2186,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   align-items: center;
 }
 
-.c3 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2202,7 +2202,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   white-space: normal;
 }
 
-.c4 {
+.c3 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2218,7 +2218,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   cursor: not-allowed;
 }
 
-.c6 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2232,10 +2232,6 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   font-size: 2em;
   right: 0;
   cursor: pointer;
-}
-
-.c7 .c2 {
-  padding: 2em 4em;
 }
 
 .c0 {
@@ -2281,7 +2277,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   background: #FFF240;
 }
 
-.c5 {
+.c4 {
   vertical-align: middle;
 }
 
@@ -2294,27 +2290,27 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
       style="transform: translateX(0px); transition: transform ease-out 0.45s;"
     >
       <div
-        class="c2 c3 slider-item"
+        class="c2 slider-item"
       >
         a
       </div>
       <div
-        class="c2 c3 slider-item"
+        class="c2 slider-item"
       >
         b
       </div>
       <div
-        class="c2 c3 slider-item"
+        class="c2 slider-item"
       >
         c
       </div>
     </div>
     <div
-      class="c4"
+      class="c3"
       data-testid="slider_left-arrow"
     >
       <svg
-        class="c5"
+        class="c4"
         data-testid="icon-svg"
         fill="#c7c7c7"
         height="1em"
@@ -2327,11 +2323,11 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
       </svg>
     </div>
     <div
-      class="c6"
+      class="c5"
       data-testid="slider_right-arrow"
     >
       <svg
-        class="c5"
+        class="c4"
         data-testid="icon-svg"
         fill="black"
         height="1em"
