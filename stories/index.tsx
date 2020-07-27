@@ -24,7 +24,7 @@ import DeviceStory from './Utilities/DeviceStory';
 import DividerStory from './General/DividerStory';
 import DropdownStory from './Navigation/DropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
-import GalleryStory from './Application/GalleryStory';
+import GalleryStory from './Display/GalleryStory';
 import GridStory from './Layout/GridStory';
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
@@ -72,6 +72,7 @@ storiesOf('General', module)
   .add('Brand', () => <BrandStory />)
   .add('Button', () => <ButtonStory />)
   .add('Divider', () => <DividerStory />)
+  .add('Gallery', () => <GalleryStory />)
   .add('Heading', () => <HeadingStory />)
   .add('Icon', () => <IconStory />)
   .add('Loading', () => <LoadingStory />)
@@ -132,14 +133,6 @@ storiesOf('Display', module)
   .add('Swipeable', () => <SwipeableStory />)
   .add('Tabs', () => <TabsStory />)
   .add('Tooltip', () => <TooltipStory />);
-
-storiesOf('Application', module)
-  .addDecorator(story => (
-    <Provider>
-      <StorybookStyle>{story()}</StorybookStyle>
-    </Provider>
-  ))
-  .add('Gallery', () => <GalleryStory />);
 
 storiesOf('Utilities', module)
   .addDecorator(story => (

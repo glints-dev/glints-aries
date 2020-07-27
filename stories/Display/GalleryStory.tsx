@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 
-import Gallery from '../../src/Application/Gallery';
+import Gallery from '../../src/Display/Gallery';
 
 const props = {
   Gallery: [
