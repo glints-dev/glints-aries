@@ -30,7 +30,6 @@ import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
 import IconStory from './General/IconStory';
 import InformationStory from './Application/InformationStory';
-import JobOverviewStory from './Application/JobOverviewStory';
 import LoadingStory from './General/LoadingStory';
 import ModalStory from './Display/ModalStory';
 import NumberInputStory from './Input/NumberInputStory';
@@ -148,8 +147,7 @@ storiesOf('Application', module)
     </Provider>
   ))
   .add('Gallery', () => <GalleryStory />)
-  .add('Information', () => <InformationStory />)
-  .add('Job Overview', () => <JobOverviewStory />);
+  .add('Information', () => <InformationStory />);
 
 storiesOf('Utilities', module)
   .addDecorator(story => (
