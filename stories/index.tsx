@@ -46,7 +46,6 @@ import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
 import StorybookComponentStory from './Utilities/StorybookComponentStory';
 import SwipeableStory from './Display/SwipeableStory';
-import SwitchStory from './Input/SwitchStory';
 import TabsStory from './Display/TabsStory';
 import TagStory from './General/TagStory';
 import TextareaStory from './Input/TextareaStory';
@@ -109,7 +108,6 @@ storiesOf('Input', module)
   .add('Range', () => <RangeStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
-  .add('Switch', () => <SwitchStory />)
   .add('Toggle Switch', () => <ToggleSwitchStory />)
   .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />);

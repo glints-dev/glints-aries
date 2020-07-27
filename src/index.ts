@@ -36,7 +36,6 @@ export { default as SearchFilter } from './Input/SearchFilter';
 export { default as Select } from './Input/Select';
 export { default as Slider } from './Display/Slider';
 export { default as Swipeable } from './Display/Swipeable';
-export { default as Switch } from './Input/Switch';
 export { default as Tabs } from './Display/Tabs';
 export { default as Tag } from './General/Tag';
 export { default as Textarea } from './Input/Textarea';
