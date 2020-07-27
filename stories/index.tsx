@@ -39,7 +39,6 @@ import PopoverStory from './Display/PopoverStory';
 import ProfilePictureStory from './General/ProfilePictureStory';
 import PsychedelicTextStory from './General/PsychedelicTextStory';
 import RadioButtonStory from './Input/RadioButtonStory';
-import RangeStory from './Input/RangeStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
@@ -104,7 +103,6 @@ storiesOf('Input', module)
   .add('NumberInput', () => <NumberInputStory />)
   .add('Omni Search', () => <OmniSearchStory />)
   .add('Radio Button', () => <RadioButtonStory />)
-  .add('Range', () => <RangeStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Toggle Switch', () => <ToggleSwitchStory />)
