@@ -40,7 +40,6 @@ export { default as Tooltip } from './Display/Tooltip';
 export { default as Typography } from './General/Typography';
 
 // Employers
-export { default as EmployersBlockquote } from './Display/EmployersBlockquote';
 export { default as ToggleSwitch } from './Input/ToggleSwitch';
 
 // Utilities

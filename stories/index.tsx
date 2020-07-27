@@ -50,7 +50,6 @@ import TooltipStory from './Display/TooltipStory';
 import TypographyStory from './General/TypographyStory';
 
 // Employers
-import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
 import ToggleSwitchStory from './Input/ToggleSwitchStory';
 
 storiesOf('Introduction', module)
@@ -125,7 +124,6 @@ storiesOf('Display', module)
   .add('Accordion', () => <AccordionStory />)
   .add('Blockquote', () => <BlockquoteStory />)
   .add('Collapsible', () => <CollapsibleStory />)
-  .add('Employers Blockquote', () => <EmployersBlockquoteStory />)
   .add('Modal', () => <ModalStory />)
   .add('Pointing Modal', () => <PointingModalStory />)
   .add('Pop Over', () => <PopoverStory />)
