@@ -10,7 +10,6 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
   block,
   small,
   tag,
-  type,
   ...defaultProps
 }) => (
   <SolidShadowContainer
@@ -26,7 +25,6 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
       block={block}
       small={small}
       as={(tag as React.ElementType) || 'button'}
-      type={type}
       {...defaultProps}
     >
       {children}

@@ -16,7 +16,6 @@ const SOLID_BUTTON_THEME_MAP = {
   [ButtonVariant.SOLID_WHITE]: ButtonTheme.WHITE,
   [ButtonVariant.SOLID_BLUE]: ButtonTheme.BLUE,
 };
-type buttonType = 'button' | 'submit' | 'reset';
 
 export const transformVariant = (variant: string, theme?: string) => {
   if (theme) {
@@ -147,7 +146,7 @@ const Button: React.FunctionComponent<Props> = props => (
   <React.Fragment>{renderButton(props)}</React.Fragment>
 );
 
-export interface Props {
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   block?: boolean;
   className?: string;
@@ -159,7 +158,6 @@ export interface Props {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   theme?: string;
-  type?: buttonType;
 }
 
 export default Button;
