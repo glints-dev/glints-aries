@@ -16,6 +16,7 @@ const SOLID_BUTTON_THEME_MAP = {
   [ButtonVariant.SOLID_WHITE]: ButtonTheme.WHITE,
   [ButtonVariant.SOLID_BLUE]: ButtonTheme.BLUE,
 };
+type buttonType = 'button' | 'submit' | 'reset';
 
 export const transformVariant = (variant: string, theme?: string) => {
   if (theme) {
@@ -55,6 +56,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   startIcon,
   endIcon,
   theme,
+  type = 'button',
   ...defaultProps
 }) => {
   const content = (
@@ -76,6 +78,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -89,6 +92,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -102,6 +106,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -114,6 +119,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           disabled={disabled}
           onClick={onClick}
           block={block}
+          type={type}
           {...defaultProps}
         >
           {children}
@@ -128,6 +134,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -152,6 +159,7 @@ export interface Props {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   theme?: string;
+  type?: buttonType;
 }
 
 export default Button;

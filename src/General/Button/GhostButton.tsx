@@ -10,6 +10,7 @@ const GhostButton: React.FunctionComponent<Props> = ({
   block,
   small,
   tag,
+  type,
   ...defaultProps
 }) => (
   <GhostBtnContainer
@@ -25,6 +26,7 @@ const GhostButton: React.FunctionComponent<Props> = ({
       block={block}
       small={small}
       as={(tag as React.ElementType) || 'button'}
+      type={type}
       {...defaultProps}
     >
       {children}

@@ -7,11 +7,13 @@ const LinkButton: React.FunctionComponent<Props> = ({
   children,
   className,
   tag,
+  type,
   ...defaultProps
 }) => (
   <LinkBtn
     className={classNames('aries-linkbtn', className)}
     as={(tag as React.ElementType) || 'button'}
+    type={type}
     {...defaultProps}
   >
     {children}
