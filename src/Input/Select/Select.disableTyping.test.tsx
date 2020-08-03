@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Select from './Select';
@@ -77,14 +77,18 @@ describe('<Select disableTyping> onBlur', () => {
     fireEvent.click(selectInput);
     expect(selectList.hasAttribute('open')).toEqual(true);
 
-    userEvent.click(outside);
+    act(() => {
+      userEvent.click(outside);
+    });
     expect(selectList.hasAttribute('open')).toEqual(false);
     expect(onBlurSpy).toHaveBeenCalledTimes(1);
 
     userEvent.click(dropIcon);
     expect(selectList.hasAttribute('open')).toEqual(true);
 
-    userEvent.click(outside);
+    act(() => {
+      userEvent.click(outside);
+    });
     expect(selectList.hasAttribute('open')).toEqual(false);
     expect(onBlurSpy).toHaveBeenCalledTimes(2);
   });
