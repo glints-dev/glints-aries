@@ -185,11 +185,16 @@ const Select: ISelect = (props: Props) => {
   );
 
   const handleClick = () => {
+    if (!isFocus) {
+      selectInputRef.current.focus();
+    } else {
+      selectInputRef.current.blur();
+    }
     setIsFocus(!isFocus);
   };
 
   const handleDropIconClick = () => {
-    if (!disableTyping && !isFocus) {
+    if (!isFocus) {
       selectInputRef.current.focus();
     }
     setIsFocus(!isFocus);
@@ -336,7 +341,7 @@ const Select: ISelect = (props: Props) => {
           status={deprecatedStatus}
           disabled={disabled}
           onFocus={disableTyping ? null : handleFocus}
-          onBlur={disableTyping ? null : handleFocusOut}
+          onBlur={handleFocusOut}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           onClick={disableTyping ? handleClick : null}
