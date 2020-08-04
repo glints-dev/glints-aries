@@ -55,6 +55,7 @@ const renderButton: React.FunctionComponent<Props> = ({
   startIcon,
   endIcon,
   theme,
+  type = 'button',
   ...defaultProps
 }) => {
   const content = (
@@ -76,6 +77,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -89,6 +91,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -102,6 +105,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -114,6 +118,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           disabled={disabled}
           onClick={onClick}
           block={block}
+          type={type}
           {...defaultProps}
         >
           {children}
@@ -128,6 +133,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           onClick={onClick}
           block={block}
           small={small}
+          type={type}
           {...defaultProps}
         >
           {content}
@@ -140,7 +146,7 @@ const Button: React.FunctionComponent<Props> = props => (
   <React.Fragment>{renderButton(props)}</React.Fragment>
 );
 
-export interface Props {
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   block?: boolean;
   className?: string;
