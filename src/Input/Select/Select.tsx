@@ -390,7 +390,8 @@ const Select: ISelect = (props: Props) => {
   );
 };
 
-interface Props extends React.ComponentPropsWithoutRef<typeof SelectInput> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof SelectInput> {
   children: React.ReactNode;
   isLoading?: boolean;
   label?: string;

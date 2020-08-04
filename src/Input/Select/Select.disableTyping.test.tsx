@@ -4,22 +4,21 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Select from './Select';
+import Select, { Props } from './Select';
 
 describe('<Select disableTyping> onBlur', () => {
+  const SelectComponent = (props: Omit<Props, 'children'>) => (
+    <Select label="disableTyping-onBlur" disableTyping={true} {...props}>
+      <Select.Option value="option">option</Select.Option>
+    </Select>
+  );
+
   it('should call onBlur when close menu', () => {
     const onBlurSpy = jest.fn();
-    const Component = () => (
-      <Select
-        label="disableTyping-onBlur"
-        onBlur={onBlurSpy}
-        disableTyping={true}
-      >
-        <Select.Option value="option">option</Select.Option>
-      </Select>
-    );
 
-    const { queryByRole, queryByTestId } = render(<Component />);
+    const { queryByRole, queryByTestId } = render(
+      <SelectComponent onBlur={onBlurSpy} />
+    );
     const selectInput = queryByRole('combobox') as HTMLInputElement;
     const selectList = queryByTestId('listbox');
     const dropIcon = document.querySelector('.select-icon');
@@ -57,13 +56,7 @@ describe('<Select disableTyping> onBlur', () => {
     const onBlurSpy = jest.fn();
     const Component = () => (
       <React.Fragment>
-        <Select
-          label="disableTyping-onBlur"
-          onBlur={onBlurSpy}
-          disableTyping={true}
-        >
-          <Select.Option value="option">option</Select.Option>
-        </Select>
+        <SelectComponent onBlur={onBlurSpy} />
         <div>outside</div>
       </React.Fragment>
     );
@@ -95,17 +88,10 @@ describe('<Select disableTyping> onBlur', () => {
 
   it('should call onBlur when click option', () => {
     const onBlurSpy = jest.fn();
-    const Component = () => (
-      <Select
-        label="disableTyping-onBlur"
-        onBlur={onBlurSpy}
-        disableTyping={true}
-      >
-        <Select.Option value="option">option</Select.Option>
-      </Select>
-    );
 
-    const { queryByRole, queryByTestId } = render(<Component />);
+    const { queryByRole, queryByTestId } = render(
+      <SelectComponent onBlur={onBlurSpy} />
+    );
     const selectInput = queryByRole('combobox') as HTMLInputElement;
     const option = queryByTestId('option');
     const selectList = queryByTestId('listbox');
