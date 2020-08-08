@@ -41,6 +41,19 @@ describe('<Dropdown/> render', () => {
     expect(optionPM).not.toBeVisible();
     expect(optionSE).not.toBeVisible();
   });
+
+  test('should be able to render with null children', () => {
+    render(
+      <Dropdown label="Career">
+        {null}
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const options = document.querySelector('.dropdown-listbox').children;
+    expect(options.length).toEqual(2);
+  });
 });
 
 describe('<Dropdown/> with DropdownHeader props', () => {

@@ -160,9 +160,9 @@ const Dropdown = (props: Props) => {
           showHoverLine={showHoverLine}
           ref={dropdownBodyRef}
         >
-          {React.Children.map(
-            children,
-            (item: React.ReactElement<DropdownItemProps>, index) => {
+          {React.Children.toArray(children)
+            .filter(Boolean)
+            .map((item: React.ReactElement<DropdownItemProps>, index) => {
               const dropDownItemClassName = item.props.className || '';
               return (
                 <DropdownItemWrapper
@@ -181,8 +181,7 @@ const Dropdown = (props: Props) => {
                   {item.props.children}
                 </DropdownItemWrapper>
               );
-            }
-          )}
+            })}
         </DropdownBody>
       </DropdownWrapper>
     </DropdownContainer>
