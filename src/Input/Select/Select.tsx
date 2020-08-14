@@ -127,10 +127,19 @@ const Select: ISelect = (props: Props) => {
   );
 
   React.useEffect(
-    function updateOptions() {
+    function updateOptionsAndActiveIndex() {
       setOptions(availableOptions);
+
+      if (!isFocus) {
+        const selectedOptionIndex = availableOptions.findIndex(option =>
+          toLower(option.props.children).includes(toLower(inputValue))
+        );
+        if (activeOptionIndex !== selectedOptionIndex) {
+          setActiveOptionIndex(selectedOptionIndex);
+        }
+      }
     },
-    [availableOptions]
+    [activeOptionIndex, availableOptions, inputValue, isFocus]
   );
 
   React.useEffect(function registerClickOutsideListener() {
