@@ -149,6 +149,7 @@ export { default as QuotationIcon } from './General/Icon/components/QuotationIco
 export { default as RefreshSolidIcon } from './General/Icon/components/RefreshSolidIcon';
 export { default as ReplyIcon } from './General/Icon/components/ReplyIcon';
 export { default as RotateIcon } from './General/Icon/components/RotateIcon';
+export { default as RssIcon } from './General/Icon/components/RssIcon';
 export { default as SaveSolidIcon } from './General/Icon/components/SaveSolidIcon';
 export { default as SearchIcon } from './General/Icon/components/SearchIcon';
 export { default as SendIcon } from './General/Icon/components/SendIcon';
