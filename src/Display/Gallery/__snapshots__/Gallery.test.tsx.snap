@@ -124,7 +124,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   cursor: pointer;
   font-size: 2em;
   left: 0;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -812,7 +812,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   cursor: pointer;
   font-size: 2em;
   left: 0;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .c15 {

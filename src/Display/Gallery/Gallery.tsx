@@ -16,7 +16,7 @@ import {
 const defaultImagesDisplayed = 8;
 
 class Gallery extends React.Component<Props, State> {
-  sliderRef: React.RefObject<Slider>;
+  sliderRef: React.RefObject<HTMLDivElement>;
 
   constructor(props: Props) {
     super(props);
@@ -61,18 +61,13 @@ class Gallery extends React.Component<Props, State> {
       });
     }
     if (this.state.visible) {
-      this.sliderRef.current.sliderContainerRef.current.focus();
+      this.sliderRef.current.focus();
     }
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
-    if (
-      !prevState.visible &&
-      this.state.visible &&
-      this.sliderRef.current &&
-      this.sliderRef.current.sliderContainerRef.current
-    ) {
-      this.sliderRef.current.sliderContainerRef.current.focus();
+    if (!prevState.visible && this.state.visible && this.sliderRef.current) {
+      this.sliderRef.current.focus();
     }
   }
 
@@ -106,7 +101,7 @@ class Gallery extends React.Component<Props, State> {
             arrowWhite
             removeDots
             afterChange={this.getCurrentIndex}
-            ref={this.sliderRef}
+            containerRef={this.sliderRef}
           >
             {React.Children.map(
               children,

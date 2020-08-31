@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Gallery from './Gallery';
+import * as ReactDOM from 'react-dom';
 
 const Component = ({
   initialVisibility,
@@ -38,6 +39,13 @@ const GalleryItemLessThanDefaultImagesDisplayed = () => (
     <img src="1" />
   </Gallery>
 );
+
+const mockContainer = (width: number) => {
+  const boundingRect = { width };
+  const element = document.createElement('div');
+  element.getBoundingClientRect = () => boundingRect as DOMRect;
+  return element;
+};
 
 describe('<Gallery /> focus', () => {
   it('Slider should be focused when Modal is open', () => {
@@ -141,8 +149,6 @@ describe('<Gallery /> active item', () => {
   });
 });
 
-// TODO: Update this test case when Slider or Gallery being converted to
-// functional component
 describe('<Gallery /> Slider should have correct translateX to render active slide correctly', () => {
   test('when click on gallery item', () => {
     const ref = React.createRef<Gallery>();
@@ -152,17 +158,15 @@ describe('<Gallery /> Slider should have correct translateX to render active sli
     const item = document.querySelectorAll('.gallery-item')[itemIndex];
     userEvent.click(item);
 
-    ref.current.sliderRef.current.getSliderContainerDOMNode = () => ({
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      getBoundingClientRect: () => ({
-        width: sliderWrapperWidth,
-      }),
-    });
+    const spy = jest
+      .spyOn(ReactDOM, 'findDOMNode')
+      .mockReturnValue(mockContainer(sliderWrapperWidth));
 
     rerender(<Component galleryRef={ref} />);
     expect(document.querySelector('.slider-wrapper')).toHaveStyle(
       `transform: translateX(-${sliderWrapperWidth * itemIndex}px)`
     );
+
+    spy.mockRestore();
   });
 });
