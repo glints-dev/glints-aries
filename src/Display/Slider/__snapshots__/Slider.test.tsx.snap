@@ -2350,186 +2350,6 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 </DocumentFragment>
 `;
 
-exports[`<Slider/> prop initialItem should match snapshot when initialItem 0 is passed 1`] = `
-<DocumentFragment>
-  .c1 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  white-space: normal;
-}
-
-.c4 {
-  position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 2em;
-  left: 0;
-  cursor: pointer;
-}
-
-.c6 {
-  position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 2em;
-  right: 0;
-  cursor: pointer;
-}
-
-.c0 {
-  position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-  outline: none;
-}
-
-.c0 .c2 {
-  padding: 2em 4em;
-}
-
-.c0 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
-  background: #FFF240;
-}
-
-.c5 {
-  vertical-align: middle;
-}
-
-<div
-    class="c0 aries-slider"
-    tabindex="0"
-  >
-    <div
-      class="c1 slider-wrapper"
-      style="transform: translateX(500px); transition: transform ease-out 0.45s;"
-    >
-      <div
-        class="c2 c3 slider-item"
-      >
-        a
-      </div>
-      <div
-        class="c2 c3 slider-item"
-      >
-        b
-      </div>
-      <div
-        class="c2 c3 slider-item"
-      >
-        c
-      </div>
-    </div>
-    <div
-      class="c4"
-      data-testid="slider_left-arrow"
-    >
-      <svg
-        class="c5"
-        data-testid="icon-svg"
-        fill="black"
-        height="1em"
-        viewBox="0 0 100 100"
-        width="1em"
-      >
-        <path
-          d="M81 88.4L42.6 50 81 11.8 69.2 0l-50 50 50 50z"
-        />
-      </svg>
-    </div>
-    <div
-      class="c6"
-      data-testid="slider_right-arrow"
-    >
-      <svg
-        class="c5"
-        data-testid="icon-svg"
-        fill="black"
-        height="1em"
-        viewBox="0 0 100 100"
-        width="1em"
-      >
-        <path
-          d="M19 88.4L57.4 50 19 11.8 30.8 0l50 50-50 50z"
-        />
-      </svg>
-    </div>
-    <ul>
-      <li />
-      <li />
-      <li />
-    </ul>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is passed 1`] = `
 <DocumentFragment>
   .c1 {
@@ -2831,7 +2651,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   >
     <div
       class="c1 slider-wrapper"
-      style="transform: translateX(-500px); transition: transform ease-out 0.45s;"
+      style="transform: translateX(0px); transition: transform ease-out 0.45s;"
     >
       <div
         class="c2 c3 slider-item"
@@ -3013,7 +2833,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   >
     <div
       class="c1 slider-wrapper"
-      style="transform: translateX(-1000px); transition: transform ease-out 0.45s;"
+      style="transform: translateX(0px); transition: transform ease-out 0.45s;"
     >
       <div
         class="c2 c3 slider-item"
@@ -3552,7 +3372,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   >
     <div
       class="c1 slider-wrapper"
-      style="transform: translateX(-1000px); transition: transform ease-out 0.45s;"
+      style="transform: translateX(0px); transition: transform ease-out 0.45s;"
     >
       <div
         class="c2 c3 slider-item"
