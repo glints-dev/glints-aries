@@ -1,8 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { has } from 'lodash';
-
 import { SecondaryColor } from '../../Utils/Colors';
 import { Toggle, ToggleBall } from './Styles';
 
