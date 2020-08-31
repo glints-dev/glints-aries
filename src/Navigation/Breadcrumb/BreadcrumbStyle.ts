@@ -27,7 +27,7 @@ export const BreadcrumbContainer = styled.div`
   background-color: ${SecondaryColor.whitesmoke};
   padding: 1em;
 
-  > label:last-child span {
+  label.aries-breadcrumb-item:last-child span {
     display: none;
   }
 `;

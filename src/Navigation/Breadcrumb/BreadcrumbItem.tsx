@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { BreadcrumbItemWrapper } from './BreadcrumbStyle';
+import classNames from 'classnames';
 
 const BreadcrumbItem: React.FunctionComponent<Props> = (props: Props) => {
   const { active, className, children, ...defaultProps } = props;
 
   return (
     <BreadcrumbItemWrapper
-      className={className}
+      className={classNames('aries-breadcrumb-item', className)}
       active={active}
       {...defaultProps}
     >
