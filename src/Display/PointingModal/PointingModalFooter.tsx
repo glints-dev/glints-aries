@@ -17,7 +17,7 @@ const PointingModalFooter: React.FunctionComponent<Props> = props => {
 
 interface Props {
   children: React.ReactNode;
-  // className: string;
+  className?: string;
 }
 
 export default PointingModalFooter;
