@@ -27,6 +27,28 @@ describe('<ToggleSwitch /> prop className', () => {
   ['test', undefined].forEach(matchSnapshot);
 });
 
+describe('<ToggleSwitch /> prop iconOptions', () => {
+  it('should match snapshot when iconOptions is passed', () => {
+    const { asFragment } = render(
+      <ToggleSwitch
+        defaultActive={false}
+        iconOptions={{
+          active: EyeIcon,
+          inactive: EyeSlashedIcon,
+        }}
+      />
+    );
+    // validate iconOptions from snapshot
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should match snapshot when no iconOptions is passed', () => {
+    const { asFragment } = render(<ToggleSwitch defaultActive={false} />);
+    // validate iconOptions from snapshot
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+
 describe('<ToggleSwitch /> prop defaultActive', () => {
   const defaultActiveOptions = [false, true];
   const matchSnapshot = (defaultActive: boolean) => {
@@ -40,7 +62,7 @@ describe('<ToggleSwitch /> prop defaultActive', () => {
           }}
         />
       );
-      // validate icon position from snapshot
+      // validate defaultActive from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
