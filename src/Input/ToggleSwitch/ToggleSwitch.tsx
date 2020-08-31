@@ -25,7 +25,9 @@ const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
 }: ToggleSwitchProps) => {
   const [active, setActive] = React.useState(defaultActive);
   const iconColor = active ? SecondaryColor.actionblue : SecondaryColor.grey;
-  const Icon = active ? iconOptions.active : iconOptions.inactive;
+  const ActiveIcon = iconOptions ? iconOptions.active : null;
+  const InactiveIcon = iconOptions ? iconOptions.inactive : null;
+  const Icon = active ? ActiveIcon : InactiveIcon;
 
   return (
     <Toggle
@@ -41,9 +43,7 @@ const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
       {...defaultProps}
     >
       <ToggleBall active={active}>
-        {has(iconOptions, 'active') && has(iconOptions, 'inactive') && (
-          <Icon color={iconColor} />
-        )}
+        {ActiveIcon && InactiveIcon && <Icon color={iconColor} />}
       </ToggleBall>
     </Toggle>
   );
