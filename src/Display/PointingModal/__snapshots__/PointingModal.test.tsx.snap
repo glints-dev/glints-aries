@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slider/> should match snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.c1 {
+  position: absolute;
+  right: 1em;
+  top: -0.7em;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: white;
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.06);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.2em;
+}
+
+.c2 > *:first-child {
+  margin-left: 0;
+}
+
+.c2 > *:last-child {
+  margin-right: 0;
+}
+
+.c2 > * {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.c2 .aries-modal-profile {
+  font-weight: 700;
+}
+
+.c2 span {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.c2 a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #000000;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 ul {
+  padding: 1.2em 0;
+  margin: 0;
+}
+
+.c4 {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5em 1.2em;
+  list-style-type: none;
+}
+
+.c4:last-child {
+  margin-bottom: 0;
+}
+
+.c4 * {
+  cursor: pointer;
+  color: #000000;
+}
+
+.c4:hover {
+  background: #F3F3F3;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 1.2em;
+}
+
+<div
+    aria-modal="true"
+    class="c0 aries-pointingmodal"
+    role="dialog"
+  >
+    <div
+      class="c1"
+      role="presentation"
+    />
+    <div
+      class="c2 pointingmodal-header"
+      role="group"
+    >
+      test 0
+    </div>
+    <div
+      class="c3 pointingmodal-body"
+      role="list"
+    >
+      <ul>
+        <li
+          class="c4 pointingmodal-item"
+        >
+          test 1
+        </li>
+        <li
+          class="c4 pointingmodal-item"
+        >
+          test 2
+        </li>
+        <li
+          class="c4 pointingmodal-item"
+        >
+          test 3
+        </li>
+      </ul>
+    </div>
+    <footer
+      class="c5 pointingmodal-footer"
+    >
+      test4
+    </footer>
+  </div>
+</DocumentFragment>
+`;
