@@ -26,7 +26,7 @@ exports[`<Breadcrumb> should render as expected 1`] = `
   padding: 1em;
 }
 
-.c0 > label:last-child span {
+.c0 label.aries-breadcrumb-item:last-child span {
   display: none;
 }
 
@@ -34,7 +34,7 @@ exports[`<Breadcrumb> should render as expected 1`] = `
   className="c0 aries-breadcrumb"
 >
   <label
-    className="c1"
+    className="c1 aries-breadcrumb-item"
   >
     one
     <span>
@@ -70,7 +70,7 @@ exports[`<Breadcrumb> should render as expected 2`] = `
   padding: 1em;
 }
 
-.c0 > label:last-child span {
+.c0 label.aries-breadcrumb-item:last-child span {
   display: none;
 }
 
@@ -78,7 +78,7 @@ exports[`<Breadcrumb> should render as expected 2`] = `
   className="c0 aries-breadcrumb"
 >
   <label
-    className="c1"
+    className="c1 aries-breadcrumb-item"
   >
     one
     <span>
@@ -86,7 +86,7 @@ exports[`<Breadcrumb> should render as expected 2`] = `
     </span>
   </label>
   <label
-    className="c1"
+    className="c1 aries-breadcrumb-item"
   >
     two
     <span>
