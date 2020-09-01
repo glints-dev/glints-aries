@@ -1,9 +1,16 @@
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { render, wait, fireEvent } from '@testing-library/react';
+import { render, wait, fireEvent, act } from '@testing-library/react';
 import * as React from 'react';
 
 import Slider, { Props } from './Slider';
+
+const mockContainer = (width: number) => {
+  const boundingRect = { width };
+  const element = document.createElement('div');
+  element.getBoundingClientRect = () => boundingRect as DOMRect;
+  return { current: element };
+};
 
 type SliderComponentProp = Omit<Props, 'children'>;
 const SliderComponent = (props: SliderComponentProp) => (
@@ -29,11 +36,11 @@ describe('<Slider/> prop className', () => {
 describe('<Slider/> prop initialItem', () => {
   const matchSnapshot = (initialItem: number) => {
     it(`should match snapshot when initialItem ${initialItem} is passed`, async () => {
-      const sliderRef: any = {
-        current: null,
-      };
-      const { rerender, asFragment } = render(
-        <Slider ref={sliderRef} initialItem={initialItem}>
+      const useRefSpy = jest
+        .spyOn(React, 'useRef')
+        .mockReturnValue(mockContainer(400));
+      const { asFragment } = render(
+        <Slider initialItem={initialItem}>
           <Slider.Item>a</Slider.Item>
           <Slider.Item>b</Slider.Item>
           <Slider.Item>c</Slider.Item>
@@ -50,28 +57,14 @@ describe('<Slider/> prop initialItem', () => {
         ).toBeTruthy();
       });
 
-      // mock getSliderContainerDOMNode to calculate translateX
-      sliderRef.current.getSliderContainerDOMNode = () => ({
-        getBoundingClientRect: () => ({
-          width: 500,
-        }),
-      });
-
-      // trigger componentWillReceiveProp to recalculate translateX
-      rerender(
-        <Slider ref={sliderRef} initialItem={initialItem}>
-          <Slider.Item>a</Slider.Item>
-          <Slider.Item>b</Slider.Item>
-          <Slider.Item>c</Slider.Item>
-        </Slider>
-      );
-
       // validate translateX from snapshot
       expect(asFragment()).toMatchSnapshot();
+
+      useRefSpy.mockRestore();
     });
   };
 
-  [0, 1, 2, 3].forEach(initialItem => matchSnapshot(initialItem));
+  [1, 2, 3].forEach(initialItem => matchSnapshot(initialItem));
 });
 
 describe('<Slider/> prop fullContent', () => {
@@ -126,7 +119,7 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    jest.advanceTimersByTime(6000);
+    act(() => jest.advanceTimersByTime(6000));
     expect(theThreeNavigationDots[1].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -142,7 +135,7 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    jest.advanceTimersByTime(6000);
+    act(() => jest.advanceTimersByTime(6000));
     expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -156,7 +149,7 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    jest.advanceTimersByTime(6000);
+    act(() => jest.advanceTimersByTime(6000));
     expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -249,46 +242,54 @@ describe('<Slider/> keydown event', () => {
 });
 
 describe('<Slider/> unmount', () => {
-  it(`should removeEventListener and clearInterval`, () => {
+  it(`should removeEventListener`, () => {
     const removeEventListenerSpy = jest.spyOn(window, 'removeEventListener');
-    const clearIntervalSpy = jest.spyOn(window, 'clearInterval');
-    const sliderRef: React.LegacyRef<Slider> = { current: null };
     const { unmount } = render(
-      <Slider ref={sliderRef}>
+      <Slider>
         <Slider.Item>a</Slider.Item>
         <Slider.Item>b</Slider.Item>
         <Slider.Item>c</Slider.Item>
       </Slider>
     );
-    const setSize = sliderRef.current.setSize;
-    const interval = sliderRef.current.interval;
     unmount();
-    expect(removeEventListenerSpy).toHaveBeenCalledWith('resize', setSize);
-    expect(clearIntervalSpy).toHaveBeenLastCalledWith(interval);
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'resize',
+      expect.any(Function)
+    );
+  });
+
+  it(`should clear the autoplay Interval`, () => {
+    const clearIntervalSpy = jest.spyOn(window, 'clearInterval');
+    const { unmount } = render(
+      <Slider autoplay={true}>
+        <Slider.Item>a</Slider.Item>
+        <Slider.Item>b</Slider.Item>
+        <Slider.Item>c</Slider.Item>
+      </Slider>
+    );
+    unmount();
+    expect(clearIntervalSpy).toHaveBeenCalled();
   });
 });
 
 describe('<Slider/> setSize', () => {
   test(`setSize should be called when resize event is triggered`, () => {
-    const sliderRef: any = {
-      current: null,
-    };
+    const useRefSpy = jest
+      .spyOn(React, 'useRef')
+      .mockReturnValue(mockContainer(500));
     const { asFragment } = render(
-      <Slider ref={sliderRef} initialItem={2}>
+      <Slider initialItem={2}>
         <Slider.Item>a</Slider.Item>
         <Slider.Item>b</Slider.Item>
         <Slider.Item>c</Slider.Item>
       </Slider>
     );
 
-    sliderRef.current.getSliderContainerDOMNode = () => ({
-      getBoundingClientRect: () => ({
-        width: 1000,
-      }),
-    });
-
+    useRefSpy.mockReturnValue(mockContainer(400));
     fireEvent(window, new Event('resize'));
     expect(asFragment()).toMatchSnapshot();
+
+    useRefSpy.mockRestore();
   });
 });
 
