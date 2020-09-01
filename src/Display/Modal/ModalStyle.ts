@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Device } from '../../Utils/StyleConfig';
+import { Device, ScreenSize } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../../Utils/Colors';
 import { sizeType } from './Modal';
 
@@ -143,24 +143,38 @@ export const ModalHeader = styled.header`
 
 export const ModalBody = styled.section<ModalBodyProps>`
   position: relative;
-  max-height: 300px;
+  ${({ centering }) => {
+    if (centering) {
+      return `
+        max-height: 300px;
+        overflow: auto;
+      `;
+    }
+  }}
   padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 30px')};
 
-  @media ${Device.mobileL} {
+  @media ${Device.mobileM} {
     padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 15px')};
   }
 `;
 
 interface ModalBodyProps {
   hideContentArea: boolean;
+  centering: boolean;
 }
 
-export const ModalFooter = styled.footer`
+export const ModalFooter = styled.footer<ModalFooterProps>`
   position: relative;
   display: flex;
+  flex-direction: ${({ shouldShowFooterButtonsInColumn }) =>
+    shouldShowFooterButtonsInColumn ? 'column' : 'row'};
   padding: 15px 30px;
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
+
+  @media (min-width: ${ScreenSize.mobileL}px) {
+    flex-direction: row;
+  }
 
   @media ${Device.mobileM} {
     padding: 15px;
@@ -169,8 +183,40 @@ export const ModalFooter = styled.footer`
   * {
     margin-left: 10px;
 
+    ${({ shouldShowFooterButtonsInColumn }) => {
+      if (shouldShowFooterButtonsInColumn) {
+        return `
+          margin-left: 0;
+          margin-top: 10px;
+          @media (min-width: ${ScreenSize.mobileL}px) {
+            margin-top: 0;
+            margin-left: 10px;
+          }
+
+          button {
+            width: 100%;
+          }
+        `;
+      }
+    }}
+
     &:first-child {
       margin-left: 0;
+
+      ${({ shouldShowFooterButtonsInColumn }) => {
+        if (shouldShowFooterButtonsInColumn) {
+          return `
+            margin-top: 0;
+            @media (min-width: ${ScreenSize.mobileL}px) {
+              margin-left: 0;
+            }
+          `;
+        }
+      }}
     }
   }
 `;
+
+interface ModalFooterProps {
+  shouldShowFooterButtonsInColumn: boolean;
+}

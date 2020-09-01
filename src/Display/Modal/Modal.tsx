@@ -84,6 +84,9 @@ const Modal = (props: Props) => {
     [mouseDownTarget, onClose]
   );
 
+  const shouldShowFooterButtonsInColumn =
+    footer && footer.length && footer.length >= 2;
+
   return (
     <ModalContainer
       data-testid="modal-container"
@@ -122,11 +125,20 @@ const Modal = (props: Props) => {
               </button>
             </ModalHeader>
           )}
-          <ModalBody className="modal-body" hideContentArea={hideContentArea}>
+          <ModalBody
+            className="modal-body"
+            hideContentArea={hideContentArea}
+            centering={centering}
+          >
             {isVisible && children}
           </ModalBody>
           {footer !== undefined && (
-            <ModalFooter className="modal-footer">{footer}</ModalFooter>
+            <ModalFooter
+              className="modal-footer"
+              shouldShowFooterButtonsInColumn={shouldShowFooterButtonsInColumn}
+            >
+              {footer}
+            </ModalFooter>
           )}
         </ModalContentArea>
       </ModalDialog>

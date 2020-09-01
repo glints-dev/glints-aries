@@ -12,7 +12,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
   >
     <div
       aria-modal="true"
-      className="ModalStyle__ModalContentArea-bg1vyz-2 gPBZPQ modal-content"
+      className="ModalStyle__ModalContentArea-bg1vyz-2 knItPX modal-content"
       data-testid="dialog"
       onClick={[Function]}
       role="dialog"
@@ -44,14 +44,14 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
         </button>
       </header>
       <section
-        className="ModalStyle__ModalBody-bg1vyz-4 cOLzyj modal-body"
+        className="ModalStyle__ModalBody-bg1vyz-4 chdliM modal-body"
       >
         <p>
           Modal Content
         </p>
       </section>
       <footer
-        className="ModalStyle__ModalFooter-bg1vyz-5 cshGeR modal-footer"
+        className="ModalStyle__ModalFooter-bg1vyz-5 hcwlFY modal-footer"
       >
         <button>
           Modal Footer
