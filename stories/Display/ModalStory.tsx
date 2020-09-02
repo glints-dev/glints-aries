@@ -219,6 +219,7 @@ class ModalStory extends React.Component {
 
         <StorybookComponent
           title="Screen Centered Modal"
+          code="import { Modal } from 'glints-aries'"
           usage={`state = {
           visible: false,
         }
@@ -253,7 +254,7 @@ class ModalStory extends React.Component {
         </Modal>`}
         >
           <Button variant="solid-blue" onClick={this.handleCenteredModalOpen}>
-            Open Centered Modal
+            Open Modal
           </Button>
           <Modal
             title="What is Lorem Ipsum?"
@@ -289,7 +290,8 @@ class ModalStory extends React.Component {
         </StorybookComponent>
 
         <StorybookComponent
-          title="Screen Centered Modal With 4 paragraphs of text"
+          title="Screen centered modal with a lot of content"
+          code="import { Modal } from 'glints-aries'"
           usage={`state = {
           visible: false,
         }
@@ -316,7 +318,7 @@ class ModalStory extends React.Component {
               Cancel
             </Button>,
             <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
-            This is a very long Submit Text
+            Save
             </Button>,
           ]}
         >
@@ -348,7 +350,7 @@ class ModalStory extends React.Component {
             variant="solid-blue"
             onClick={this.handleCenteredModalWithMoreTextOpen}
           >
-            Open Centered Modal
+            Open Modal
           </Button>
           <Modal
             title="What is Lorem Ipsum?"
@@ -370,7 +372,7 @@ class ModalStory extends React.Component {
                 small
                 onClick={this.handleCenteredModalWithMoreTextClose}
               >
-                This is a very long Submit Text
+                Save
               </Button>,
             ]}
           >

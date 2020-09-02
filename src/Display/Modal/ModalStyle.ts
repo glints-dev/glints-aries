@@ -163,18 +163,12 @@ interface ModalBodyProps {
   centering: boolean;
 }
 
-export const ModalFooter = styled.footer<ModalFooterProps>`
+export const ModalFooter = styled.footer`
   position: relative;
   display: flex;
-  flex-direction: ${({ shouldShowFooterButtonsInColumn }) =>
-    shouldShowFooterButtonsInColumn ? 'column' : 'row'};
   padding: 15px 30px;
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
-
-  @media (min-width: ${ScreenSize.mobileL}px) {
-    flex-direction: row;
-  }
 
   @media ${Device.mobileM} {
     padding: 15px;
@@ -183,40 +177,8 @@ export const ModalFooter = styled.footer<ModalFooterProps>`
   * {
     margin-left: 10px;
 
-    ${({ shouldShowFooterButtonsInColumn }) => {
-      if (shouldShowFooterButtonsInColumn) {
-        return `
-          margin-left: 0;
-          margin-top: 10px;
-          @media (min-width: ${ScreenSize.mobileL}px) {
-            margin-top: 0;
-            margin-left: 10px;
-          }
-
-          button {
-            width: 100%;
-          }
-        `;
-      }
-    }}
-
     &:first-child {
       margin-left: 0;
-
-      ${({ shouldShowFooterButtonsInColumn }) => {
-        if (shouldShowFooterButtonsInColumn) {
-          return `
-            margin-top: 0;
-            @media (min-width: ${ScreenSize.mobileL}px) {
-              margin-left: 0;
-            }
-          `;
-        }
-      }}
     }
   }
 `;
-
-interface ModalFooterProps {
-  shouldShowFooterButtonsInColumn: boolean;
-}
