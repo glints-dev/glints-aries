@@ -13,71 +13,40 @@ import {
   PopoverItemWrapper,
 } from './PopoverStyle';
 
-class Popover extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-    };
-  }
+const Popover = ({ className, children, content }: Props) => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
-  handleOnClick = () => {
-    const { isOpen } = this.state;
+  const handleOnClick = () => setIsOpen(!isOpen);
 
-    this.setState({ isOpen: !isOpen });
-  };
+  const handleClickOutside = () => setIsOpen(false);
 
-  handleClickOutside = () => {
-    this.setState({ isOpen: false });
-  };
-
-  renderChildren = () => {
-    const { content } = this.props;
-    const { isOpen } = this.state;
-
-    return (
-      <PopoverItemWrapper>
-        <PopoverIcon>
-          <ArrowDownIcon color="black" />
-        </PopoverIcon>
-        {isOpen && <PopOverContent>{content}</PopOverContent>}
-      </PopoverItemWrapper>
-    );
-  };
-
-  render() {
-    const { children, className } = this.props;
-
-    return (
-      <PopoverContainer
-        className={classNames('aries-popover', className)}
-        onBlur={this.handleClickOutside}
-        aria-haspopup="true"
-        aria-busy="false"
-        tabIndex={0}
-      >
-        <PopoverChildren
-          data-testid="popover-children"
-          onClick={this.handleOnClick}
-        >
-          {children}
-        </PopoverChildren>
-        <PopoverContentWrapper onClick={this.handleOnClick}>
-          {this.renderChildren()}
-        </PopoverContentWrapper>
-      </PopoverContainer>
-    );
-  }
-}
+  return (
+    <PopoverContainer
+      className={classNames('aries-popover', className)}
+      onBlur={handleClickOutside}
+      aria-haspopup="true"
+      aria-busy="false"
+      tabIndex={0}
+    >
+      <PopoverChildren data-testid="popover-children" onClick={handleOnClick}>
+        {children}
+      </PopoverChildren>
+      <PopoverContentWrapper onClick={handleOnClick}>
+        <PopoverItemWrapper>
+          <PopoverIcon>
+            <ArrowDownIcon color="black" />
+          </PopoverIcon>
+          {isOpen && <PopOverContent>{content}</PopOverContent>}
+        </PopoverItemWrapper>
+      </PopoverContentWrapper>
+    </PopoverContainer>
+  );
+};
 
 interface Props {
   className?: string;
   children: React.ReactNode;
   content: React.ReactNode;
-}
-
-interface State {
-  isOpen: boolean;
 }
 
 export default Popover;
