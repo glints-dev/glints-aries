@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Popover from './Popover';
 
 const PopoverContent = () => (
@@ -33,21 +33,20 @@ describe('<Popover /> prop className', () => {
     );
 
     const contentText = queryByText('Popover Content');
-    expect(contentText).toBeNull();
+    expect(contentText).not.toBeInTheDocument();
   });
 });
 
 describe('<Popover /> prop children', () => {
   test(`should render 1 Popover children`, () => {
-    render(
+    const { queryByTestId } = render(
       <Popover content={<PopoverContent />}>
         <button key="button"> Open Popover </button>
       </Popover>
     );
 
-    const childrenCount = 1;
-    const item = document.querySelectorAll('.popover-children');
-    expect(item).toHaveLength(childrenCount);
+    const item = queryByTestId('popover-children');
+    expect(item).toBeVisible();
   });
 });
 
@@ -62,11 +61,11 @@ describe('<Popover/> click event to show/close content', () => {
     );
 
     const contentTextBeforeClick = queryByText('Popover Content');
-    expect(contentTextBeforeClick).toBeNull();
+    expect(contentTextBeforeClick).not.toBeInTheDocument();
     expect(onPopoverClick).not.toHaveBeenCalled();
 
-    const children = queryByTestId('children');
-    fireEvent.click(children);
+    const children = queryByTestId('popover-children');
+    userEvent.click(children);
 
     const contentTextAfterClick = queryByText('Popover Content');
     expect(contentTextAfterClick).toBeVisible();
@@ -79,12 +78,12 @@ describe('<Popover/> click event to show/close content', () => {
       </Popover>
     );
 
-    expect(queryByText('Popover Content')).toBeNull();
-    const children = queryByTestId('children');
-    fireEvent.click(children);
+    expect(queryByText('Popover Content')).not.toBeInTheDocument();
+    const children = queryByTestId('popover-children');
+    userEvent.click(children);
 
     expect(queryByText('Popover Content')).toBeVisible();
-    fireEvent.click(children);
-    expect(queryByText('Popover Content')).toBeNull();
+    userEvent.click(children);
+    expect(queryByText('Popover Content')).not.toBeInTheDocument();
   });
 });

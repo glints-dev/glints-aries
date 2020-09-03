@@ -55,8 +55,8 @@ exports[`<Popover /> prop className should match snapshot when class name test i
     tabindex="0"
   >
     <div
-      class="c1 popover-children"
-      data-testid="children"
+      class="c1"
+      data-testid="popover-children"
     >
       <button>
          Open Popover 
@@ -145,8 +145,8 @@ exports[`<Popover /> prop className should match snapshot when class name undefi
     tabindex="0"
   >
     <div
-      class="c1 popover-children"
-      data-testid="children"
+      class="c1"
+      data-testid="popover-children"
     >
       <button>
          Open Popover 

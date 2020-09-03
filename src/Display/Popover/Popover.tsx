@@ -57,8 +57,7 @@ class Popover extends React.Component<Props, State> {
         tabIndex={0}
       >
         <PopoverChildren
-          className="popover-children"
-          data-testid="children"
+          data-testid="popover-children"
           onClick={this.handleOnClick}
         >
           {children}
