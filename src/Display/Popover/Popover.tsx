@@ -56,7 +56,11 @@ class Popover extends React.Component<Props, State> {
         aria-busy="false"
         tabIndex={0}
       >
-        <PopoverChildren onClick={this.handleOnClick}>
+        <PopoverChildren
+          className="popover-children"
+          data-testid="children"
+          onClick={this.handleOnClick}
+        >
           {children}
         </PopoverChildren>
         <PopoverContentWrapper onClick={this.handleOnClick}>
