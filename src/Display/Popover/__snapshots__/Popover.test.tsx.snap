@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Popover /> prop className should match snapshot when class name test is passed 1`] = `
+<DocumentFragment>
+  .c5 {
+  vertical-align: middle;
+}
+
+.c0 {
+  position: relative;
+  outline: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5em;
+}
+
+<div
+    aria-busy="false"
+    aria-haspopup="true"
+    class="c0 aries-popover test"
+    tabindex="0"
+  >
+    <div
+      class="c1 popover-children"
+      data-testid="children"
+    >
+      <button>
+         Open Popover 
+      </button>
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <svg
+            class="c5"
+            data-testid="icon-svg"
+            fill="black"
+            height="1em"
+            viewBox="0 0 100 100"
+            width="1em"
+          >
+            <polygon
+              points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Popover /> prop className should match snapshot when class name undefined is passed 1`] = `
+<DocumentFragment>
+  .c5 {
+  vertical-align: middle;
+}
+
+.c0 {
+  position: relative;
+  outline: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.c3 {
+  position: relative;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5em;
+}
+
+<div
+    aria-busy="false"
+    aria-haspopup="true"
+    class="c0 aries-popover"
+    tabindex="0"
+  >
+    <div
+      class="c1 popover-children"
+      data-testid="children"
+    >
+      <button>
+         Open Popover 
+      </button>
+    </div>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <svg
+            class="c5"
+            data-testid="icon-svg"
+            fill="black"
+            height="1em"
+            viewBox="0 0 100 100"
+            width="1em"
+          >
+            <polygon
+              points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
