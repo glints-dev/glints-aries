@@ -13,27 +13,27 @@ class ModalStory extends React.Component {
   };
 
   handleOpen = () => {
-    this.setState({ ...this.state, visible: true });
+    this.setState({ visible: true });
   };
 
   handleClose = () => {
-    this.setState({ ...this.state, visible: false });
+    this.setState({ visible: false });
   };
 
   handleCenteredModalOpen = () => {
-    this.setState({ ...this.state, visibleCenteredModal: true });
+    this.setState({ visibleCenteredModal: true });
   };
 
   handleCenteredModalClose = () => {
-    this.setState({ ...this.state, visibleCenteredModal: false });
+    this.setState({ visibleCenteredModal: false });
   };
 
   handleCenteredModalWithMoreTextOpen = () => {
-    this.setState({ ...this.state, visibleCenteredModalWithMoreText: true });
+    this.setState({ visibleCenteredModalWithMoreText: true });
   };
 
   handleCenteredModalWithMoreTextClose = () => {
-    this.setState({ ...this.state, visibleCenteredModalWithMoreText: false });
+    this.setState({ visibleCenteredModalWithMoreText: false });
   };
 
   render() {
@@ -149,6 +149,9 @@ class ModalStory extends React.Component {
         <StorybookComponent
           title="Modal"
           code="import { Modal } from 'glints-aries'"
+          componentDescription={`This modal is centered horizontally and it will only have a 120px top margin from the top of the screen. 
+            The recommended use but not limited to are; for content that requires an acknowledgment from the user, 
+            wherein a single confirmation button can suffice, or for modals with long reading content`}
           propsObject={props}
           usage={`state = {
             visible: false,
@@ -220,6 +223,9 @@ class ModalStory extends React.Component {
         <StorybookComponent
           title="Screen Centered Modal"
           code="import { Modal } from 'glints-aries'"
+          componentDescription={`This modal is centered horizontally and vertically. 
+            It is recommended to use this for modals with important information that requires the user to take action for the modal to be closed or completed. 
+            Avoid using long content that would cause scrolling on the modal body as this would cause the modal to overlap the screensize.`}
           usage={`state = {
           visible: false,
         }

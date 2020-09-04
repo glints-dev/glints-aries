@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Device, ScreenSize } from '../../Utils/StyleConfig';
+import { Device } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../../Utils/Colors';
 import { sizeType } from './Modal';
 

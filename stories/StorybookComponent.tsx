@@ -98,6 +98,7 @@ class StorybookComponent extends React.Component<Props> {
       disableUsage,
       children,
       propsObject,
+      componentDescription,
     } = this.props;
     return (
       <div className="doc-mainbar">
@@ -106,6 +107,10 @@ class StorybookComponent extends React.Component<Props> {
             {title && this.renderTitle(title)}
             {code && this.renderImportCode(code)}
           </div>
+        )}
+
+        {componentDescription && (
+          <div style={{ marginBottom: '2em' }}>{componentDescription}</div>
         )}
 
         <div style={{ marginBottom: '2em' }}>{children}</div>
@@ -137,6 +142,7 @@ interface Props {
   disableUsage?: boolean;
   children?: React.ReactNode;
   propsObject?: object;
+  componentDescription?: string;
 }
 
 export default StorybookComponent;
