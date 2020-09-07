@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Gallery from './Gallery';
@@ -10,14 +10,11 @@ import * as ReactDOM from 'react-dom';
 const Component = ({
   initialVisibility,
   imagesDisplayed,
-  galleryRef,
 }: {
   initialVisibility?: boolean;
   imagesDisplayed?: number;
-  galleryRef?: React.RefObject<Gallery>;
 }) => (
   <Gallery
-    ref={galleryRef}
     initialVisibility={initialVisibility}
     imagesDisplayed={imagesDisplayed}
   >
@@ -51,7 +48,7 @@ describe('<Gallery /> focus', () => {
   it('Slider should be focused when Modal is open', () => {
     render(<Component />);
     const item = document.querySelectorAll('.gallery-item')[0];
-    userEvent.click(item);
+    act(() => userEvent.click(item));
     const slider = document.querySelector('.aries-slider');
     expect(slider).toHaveFocus();
   });
@@ -151,8 +148,7 @@ describe('<Gallery /> active item', () => {
 
 describe('<Gallery /> Slider should have correct translateX to render active slide correctly', () => {
   test('when click on gallery item', () => {
-    const ref = React.createRef<Gallery>();
-    const { rerender } = render(<Component galleryRef={ref} />);
+    const { rerender } = render(<Component />);
     const sliderWrapperWidth = 500;
     const itemIndex = 3;
     const item = document.querySelectorAll('.gallery-item')[itemIndex];
@@ -162,7 +158,7 @@ describe('<Gallery /> Slider should have correct translateX to render active sli
       .spyOn(ReactDOM, 'findDOMNode')
       .mockReturnValue(mockContainer(sliderWrapperWidth));
 
-    rerender(<Component galleryRef={ref} />);
+    rerender(<Component />);
     expect(document.querySelector('.slider-wrapper')).toHaveStyle(
       `transform: translateX(-${sliderWrapperWidth * itemIndex}px)`
     );
