@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
+import { DrawerPosition } from './Drawer';
 
-const sideToLeft = keyframes`
+const openFromRight = keyframes`
   from {
     transform: translateX(100%);
   }
@@ -10,13 +11,33 @@ const sideToLeft = keyframes`
   }
 `;
 
-const sideToRight = keyframes`
+const closeToRight = keyframes`
   from {
     transform: translateX(0%);
   }
 
   to {
     transform: translateX(100%);
+  }
+`;
+
+const openFromLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+`;
+
+const closeToLeft = keyframes`
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 `;
 
@@ -64,10 +85,28 @@ export const DrawerWrapper = styled.div<DrawerWrapperProps>`
   width: 80vw;
   max-width: 300px;
   top: 0px;
-  right: 0px;
+  ${({ position }) =>
+    ({
+      left: `
+    left: 0px;
+  `,
+      right: `
+    right: 0px;
+  `,
+    }[position])}
+
   background-color: white;
-  animation: ${({ open }) => (open ? sideToLeft : sideToRight)} 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(100%)')};
+  animation: ${({ open, position }) =>
+      ({
+        right: open ? openFromRight : closeToRight,
+        left: open ? openFromLeft : closeToLeft,
+      }[position])}
+    0.3s ease-in-out;
+  transform: ${({ open, position }) =>
+    ({
+      right: open ? 'translateX(0%)' : 'translateX(100%)',
+      left: open ? 'translateX(0%)' : 'translateX(-100%)',
+    }[position])};
   outline: none;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
@@ -75,4 +114,5 @@ export const DrawerWrapper = styled.div<DrawerWrapperProps>`
 
 interface DrawerWrapperProps {
   open: boolean;
+  position: DrawerPosition;
 }

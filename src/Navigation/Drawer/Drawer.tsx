@@ -2,7 +2,13 @@ import * as React from 'react';
 
 import { DrawerContainer, DrawerWrapper } from './DrawerStyle';
 
-const Drawer = ({ children, isOpen, onClose, ...defaultProps }: Props) => {
+const Drawer = ({
+  children,
+  isOpen,
+  onClose,
+  position = 'right',
+  ...defaultProps
+}: Props) => {
   const [isDisplay, setIsDisplay] = React.useState<boolean>(false);
 
   const handleAnimationStart = () => {
@@ -39,6 +45,7 @@ const Drawer = ({ children, isOpen, onClose, ...defaultProps }: Props) => {
         role="dialog"
         data-testid="drawer-wrapper"
         open={isOpen}
+        position={position}
         tabIndex={0}
         onClick={e => e.stopPropagation()}
         {...defaultProps}
@@ -49,10 +56,13 @@ const Drawer = ({ children, isOpen, onClose, ...defaultProps }: Props) => {
   );
 };
 
+export type DrawerPosition = 'left' | 'right';
+
 interface Props {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: Function;
+  position?: DrawerPosition;
 }
 
 export default Drawer;
