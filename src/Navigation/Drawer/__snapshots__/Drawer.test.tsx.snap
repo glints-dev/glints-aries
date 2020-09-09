@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Drawer /> render should match snapshot when not open 1`] = `
+exports[`<Drawer /> render should match snapshot when position is left and drawer is closed 1`] = `
 <div
   aria-hidden="true"
   aria-modal="true"
@@ -12,7 +12,7 @@ exports[`<Drawer /> render should match snapshot when not open 1`] = `
   open={false}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 cWrfgS drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 dNGthb drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={false}
@@ -24,7 +24,7 @@ exports[`<Drawer /> render should match snapshot when not open 1`] = `
 </div>
 `;
 
-exports[`<Drawer /> render should match snapshot when open 1`] = `
+exports[`<Drawer /> render should match snapshot when position is left and drawer is open 1`] = `
 <div
   aria-hidden="true"
   aria-modal="true"
@@ -36,7 +36,103 @@ exports[`<Drawer /> render should match snapshot when open 1`] = `
   open={true}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 fkpbop drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 fPmHMH drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={true}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
+
+exports[`<Drawer /> render should match snapshot when position is right and drawer is closed 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bpymVr aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={false}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 enMoix drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={false}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
+
+exports[`<Drawer /> render should match snapshot when position is right and drawer is open 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gkEwjT aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={true}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 PuCTW drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={true}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
+
+exports[`<Drawer /> render should match snapshot when position is undefined and drawer is closed 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bpymVr aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={false}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 enMoix drawer-contentwrapper"
+    data-testid="drawer-wrapper"
+    onClick={[Function]}
+    open={false}
+    role="dialog"
+    tabIndex={0}
+  >
+    test-content
+  </div>
+</div>
+`;
+
+exports[`<Drawer /> render should match snapshot when position is undefined and drawer is open 1`] = `
+<div
+  aria-hidden="true"
+  aria-modal="true"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gkEwjT aries-drawer"
+  data-testid="drawer-container"
+  onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
+  onClick={[Function]}
+  open={true}
+>
+  <div
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 PuCTW drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={true}

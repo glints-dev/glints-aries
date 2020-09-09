@@ -47,6 +47,15 @@ class DrawerStory extends React.Component<{}, State> {
           require: 'yes',
           description: 'A function to close Drawer.',
         },
+        {
+          name: 'position',
+          type: 'string',
+          defaultValue: 'right',
+          possibleValue: 'left | right',
+          require: 'no',
+          description:
+            'Determines which side of the screen the drawer will appear on.',
+        },
       ],
     };
 
