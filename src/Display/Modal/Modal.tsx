@@ -122,7 +122,11 @@ const Modal = (props: Props) => {
               </button>
             </ModalHeader>
           )}
-          <ModalBody className="modal-body" hideContentArea={hideContentArea}>
+          <ModalBody
+            className="modal-body"
+            hideContentArea={hideContentArea}
+            centering={centering}
+          >
             {isVisible && children}
           </ModalBody>
           {footer !== undefined && (

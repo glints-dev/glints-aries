@@ -33,7 +33,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }
@@ -721,7 +721,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }
@@ -1409,7 +1409,7 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }
@@ -1640,7 +1640,7 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }
@@ -1830,7 +1830,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }
@@ -2101,7 +2101,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 .c5 {
   position: relative;
   background: transparent;
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
   width: 500px;
 }

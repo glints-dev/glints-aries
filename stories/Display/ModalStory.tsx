@@ -8,6 +8,8 @@ import Button from '../../src/General/Button';
 class ModalStory extends React.Component {
   state = {
     visible: false,
+    visibleCenteredModal: false,
+    visibleCenteredModalWithMoreText: false,
   };
 
   handleOpen = () => {
@@ -18,8 +20,28 @@ class ModalStory extends React.Component {
     this.setState({ visible: false });
   };
 
+  handleCenteredModalOpen = () => {
+    this.setState({ visibleCenteredModal: true });
+  };
+
+  handleCenteredModalClose = () => {
+    this.setState({ visibleCenteredModal: false });
+  };
+
+  handleCenteredModalWithMoreTextOpen = () => {
+    this.setState({ visibleCenteredModalWithMoreText: true });
+  };
+
+  handleCenteredModalWithMoreTextClose = () => {
+    this.setState({ visibleCenteredModalWithMoreText: false });
+  };
+
   render() {
-    const { visible } = this.state;
+    const {
+      visible,
+      visibleCenteredModal,
+      visibleCenteredModalWithMoreText,
+    } = this.state;
 
     const props = {
       Modal: [
@@ -123,11 +145,15 @@ class ModalStory extends React.Component {
     };
 
     return (
-      <StorybookComponent
-        title="Modal"
-        code="import { Modal } from 'glints-aries'"
-        propsObject={props}
-        usage={`state = {
+      <React.Fragment>
+        <StorybookComponent
+          title="Modal"
+          code="import { Modal } from 'glints-aries'"
+          componentDescription={`This modal is centered horizontally and it will only have a 120px top margin from the top of the screen. 
+            The recommended use but not limited to are; for content that requires an acknowledgment from the user, 
+            wherein a single confirmation button can suffice, or for modals with long reading content`}
+          propsObject={props}
+          usage={`state = {
             visible: false,
           }
 
@@ -158,41 +184,230 @@ class ModalStory extends React.Component {
           >
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </Modal>`}
-      >
-        <Button variant="solid-blue" onClick={this.handleOpen}>
+        >
+          <Button variant="solid-blue" onClick={this.handleOpen}>
+            Open Modal
+          </Button>
+          <Modal
+            title="What is Lorem Ipsum?"
+            isVisible={visible}
+            onClose={this.handleClose}
+            footer={[
+              <Button
+                key="cancel"
+                variant="ghost"
+                small
+                onClick={this.handleClose}
+              >
+                Cancel
+              </Button>,
+              <Button
+                key="save"
+                variant="solid-blue"
+                small
+                onClick={this.handleClose}
+              >
+                Save
+              </Button>,
+            ]}
+          >
+            <p>
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.`}
+            </p>
+          </Modal>
+        </StorybookComponent>
+
+        <StorybookComponent
+          title="Screen Centered Modal"
+          code="import { Modal } from 'glints-aries'"
+          componentDescription={`This modal is centered horizontally and vertically. 
+            It is recommended to use this for modals with important information that requires the user to take action for the modal to be closed or completed. 
+            Avoid using long content that would cause scrolling on the modal body as this would cause the modal to overlap the screensize.`}
+          usage={`state = {
+          visible: false,
+        }
+
+        handleOpen = () => {
+          this.setState({ visible: true });
+        }
+
+        handleClose = () => {
+          this.setState({ visible: false });
+        }
+
+        <Button theme="blue" onClick={this.handleOpen}>
           Open Modal
         </Button>
+
         <Modal
           title="What is Lorem Ipsum?"
           isVisible={visible}
+          centering={true}
           onClose={this.handleClose}
           footer={[
-            <Button
-              key="cancel"
-              variant="ghost"
-              small
-              onClick={this.handleClose}
-            >
+            <Button key="cancel" variant="ghost" theme="blue" small onClick={this.handleClose}>
               Cancel
             </Button>,
-            <Button
-              key="save"
-              variant="solid-blue"
-              small
-              onClick={this.handleClose}
-            >
+            <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
               Save
             </Button>,
           ]}
         >
-          <p>
-            {`Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.`}
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </Modal>`}
+        >
+          <Button variant="solid-blue" onClick={this.handleCenteredModalOpen}>
+            Open Modal
+          </Button>
+          <Modal
+            title="What is Lorem Ipsum?"
+            isVisible={visibleCenteredModal}
+            centering={true}
+            onClose={this.handleCenteredModalClose}
+            footer={[
+              <Button
+                key="cancel"
+                variant="ghost"
+                small
+                onClick={this.handleCenteredModalClose}
+              >
+                Cancel
+              </Button>,
+              <Button
+                key="save"
+                variant="solid-blue"
+                small
+                onClick={this.handleCenteredModalClose}
+              >
+                Save
+              </Button>,
+            ]}
+          >
+            <p>
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.`}
+            </p>
+          </Modal>
+        </StorybookComponent>
+
+        <StorybookComponent
+          title="Screen centered modal with a lot of content"
+          code="import { Modal } from 'glints-aries'"
+          usage={`state = {
+          visible: false,
+        }
+
+        handleOpen = () => {
+          this.setState({ visible: true });
+        }
+
+        handleClose = () => {
+          this.setState({ visible: false });
+        }
+
+        <Button theme="blue" onClick={this.handleOpen}>
+          Open Modal
+        </Button>
+
+        <Modal
+          title="What is Lorem Ipsum?"
+          isVisible={visible}
+          centering={true}
+          onClose={this.handleClose}
+          footer={[
+            <Button key="cancel" variant="ghost" theme="blue" small onClick={this.handleClose}>
+              Cancel
+            </Button>,
+            <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
+            Save
+            </Button>,
+          ]}
+        >
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. 
+          
+          Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of 
+          the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.
+
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.
+
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.
           </p>
-        </Modal>
-      </StorybookComponent>
+        </Modal>`}
+        >
+          <Button
+            variant="solid-blue"
+            onClick={this.handleCenteredModalWithMoreTextOpen}
+          >
+            Open Modal
+          </Button>
+          <Modal
+            title="What is Lorem Ipsum?"
+            isVisible={visibleCenteredModalWithMoreText}
+            centering={true}
+            onClose={this.handleCenteredModalWithMoreTextClose}
+            footer={[
+              <Button
+                key="cancel"
+                variant="ghost"
+                small
+                onClick={this.handleCenteredModalWithMoreTextClose}
+              >
+                Cancel
+              </Button>,
+              <Button
+                key="save"
+                variant="solid-blue"
+                small
+                onClick={this.handleCenteredModalWithMoreTextClose}
+              >
+                Save
+              </Button>,
+            ]}
+          >
+            <p>
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.`}{' '}
+              <br />
+              {`Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of 
+          the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.`}
+              <br />
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.`}
+              <br />
+              {`Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.`}
+            </p>
+          </Modal>
+        </StorybookComponent>
+      </React.Fragment>
     );
   }
 }

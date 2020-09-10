@@ -51,7 +51,7 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
   position: relative;
   background: ${({ hideContentArea }) =>
     hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
-  margin: 2.5em auto;
+  margin: 120px auto;
   outline: none;
 
   ${({ size }) => {
@@ -143,6 +143,14 @@ export const ModalHeader = styled.header`
 
 export const ModalBody = styled.section<ModalBodyProps>`
   position: relative;
+  ${({ centering }) => {
+    if (centering) {
+      return `
+        max-height: 300px;
+        overflow: auto;
+      `;
+    }
+  }}
   padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 30px')};
 
   @media ${Device.mobileM} {
@@ -152,6 +160,7 @@ export const ModalBody = styled.section<ModalBodyProps>`
 
 interface ModalBodyProps {
   hideContentArea: boolean;
+  centering: boolean;
 }
 
 export const ModalFooter = styled.footer`
