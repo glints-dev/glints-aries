@@ -90,8 +90,6 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       appearance: none;
       background-color: transparent;
       border: 2px solid ${SecondaryColor.lightblack};
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
       padding: 0.6em;
       display: inline-block;
       position: relative;
