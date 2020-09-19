@@ -114,6 +114,7 @@ const Modal = (props: Props) => {
             <ModalHeader className="modal-header">
               <h3>{title}</h3>
               <button
+                aria-label="Close button"
                 data-testid="close-button"
                 type="button"
                 onClick={onClose}
