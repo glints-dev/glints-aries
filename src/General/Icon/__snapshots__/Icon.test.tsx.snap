@@ -2,7 +2,7 @@
 
 exports[`<Icon> should matches snapshot 1`] = `
 <svg
-  className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+  className="IconStyle__VerticalCenteredSvg-x7d280-0 jUyiQt"
   data-testid="icon-svg"
   fill="currentColor"
   height="1em"
