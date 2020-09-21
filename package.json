@@ -72,6 +72,7 @@
     "@types/react-test-renderer": "^16.9.0",
     "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^5.1.1",
+    "@types/styled-system": "^5.1.10",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
     "async": "^3.2.0",
@@ -118,7 +119,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "create-react-context": "^0.2.3",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "styled-system": "^5.1.5"
   },
   "peerDependencies": {
     "react": "^16.3.0",
