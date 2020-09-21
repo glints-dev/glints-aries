@@ -401,6 +401,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >
@@ -1089,6 +1090,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >
@@ -1580,6 +1582,7 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >
@@ -1770,6 +1773,7 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >
@@ -2041,6 +2045,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >
@@ -2469,6 +2474,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
           >
             <h3 />
             <button
+              aria-label="Close button"
               data-testid="close-button"
               type="button"
             >

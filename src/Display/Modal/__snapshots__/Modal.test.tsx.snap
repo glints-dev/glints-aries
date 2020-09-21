@@ -25,6 +25,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
           Modal Title
         </h3>
         <button
+          aria-label="Close button"
           data-testid="close-button"
           onClick={[MockFunction]}
           type="button"
