@@ -2,17 +2,44 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
+import { ScreenSize } from '../../Utils/StyleConfig';
 import { SpacingScaleValues } from '../Spacing';
 
+// Responsive
+type BreakpointAliases =
+  | 'default'
+  | 'ms'
+  | 'mm'
+  | 'ml'
+  | 't'
+  | 'ds'
+  | 'dm'
+  | 'dl';
+export const breakpointAliasMap = {
+  ms: `${ScreenSize.mobileS}px`,
+  mm: `${ScreenSize.mobileM}px`,
+  ml: `${ScreenSize.mobileL}px`,
+  t: `${ScreenSize.tablet}px`,
+  ds: `${ScreenSize.desktopS}px`,
+  dm: `${ScreenSize.desktopM}px`,
+  dl: `${ScreenSize.desktopL}px`,
+};
+const theme = {
+  breakpoints: breakpointAliasMap,
+};
+
 // Space
+type ResponsiveSpacing = {
+  [key in BreakpointAliases]?: SpacingScaleValues;
+};
 type MarginTypes = 'm' | 'mt' | 'mb' | 'ml' | 'mr' | 'my' | 'mx';
 type MarginProps = {
-  [key in MarginTypes]?: SpacingScaleValues;
+  [key in MarginTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
 
 type PaddingTypes = 'p' | 'pt' | 'pb' | 'pl' | 'pr' | 'py' | 'px';
 type PaddingProps = {
-  [key in PaddingTypes]?: SpacingScaleValues;
+  [key in PaddingTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
 
 interface Props extends MarginProps, PaddingProps {}
@@ -21,4 +48,6 @@ const StyledBox = styled.div<Props>`
   ${space}
 `;
 
-export const Box: React.FC<Props> = props => <StyledBox {...props} />;
+export const Box: React.FC<Props> = props => (
+  <StyledBox theme={theme} {...props} />
+);

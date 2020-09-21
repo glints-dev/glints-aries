@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { linkTo } from '@storybook/addon-links';
 
-import { Box } from '../../../src/Layout/Box';
-import { SpacingScales } from '../../../src/Layout/Spacing';
-import StorybookComponent from '../../StorybookComponent';
 import Heading from '../../../src/General/Heading';
+import { Box } from '../../../src/Layout/Box';
+import { ScreenSize } from '../../../src/Utils/StyleConfig';
+import StorybookComponent from '../../StorybookComponent';
+import { BreakpointAliasTable } from './BreakpointAliasTable';
 
 const contentWidth = 80;
 const contentHeight = 30;
@@ -70,7 +71,6 @@ const paddingProps = [
   },
 ];
 
-const directions = ['top', 'right', 'bottom', 'left'];
 const Container = styled.div`
   position: relative;
   display: inline-block;
@@ -96,6 +96,19 @@ const Content = styled.span`
   background-color: white;
 `;
 
+const MobileText = styled.span`
+  @media (min-width: ${ScreenSize.desktopS}px) {
+    display: none;
+  }
+`;
+
+const DesktopText = styled.span`
+  display: none;
+  @media (min-width: ${ScreenSize.desktopS}px) {
+    display: block;
+  }
+`;
+
 const directions = ['top', 'right', 'bottom', 'left'];
 
 const usage = `import { Box,  SpacingScales } from 'glints-aries'
@@ -105,12 +118,30 @@ const responsivePadding = {
     ds: 64
 };
 
+// responsive space object
+const responsivePadding = {
+    default: SpacingScale.sp32,
+    ds: SpacingScale.sp64
+};
+
 <Box
     p={responsivePadding}
     m={64}
 >
     Content
-</Box>`;
+</Box>
+
+// equal to
+
+const Box = styled.div\` 
+    margin: 64px;
+    padding: 32px;
+    
+    @media (min-width: 1024px) {
+      padding: 64px;
+    }
+\`;
+`;
 
 const propsObject = {
   margin: marginProps.map(value => ({
@@ -132,6 +163,7 @@ const propsObject = {
 const BoxSpaceStory = () => (
   <StorybookComponent title="Box" usage={usage} propsObject={propsObject}>
     <Heading>Space</Heading>
+    <h3>Resize the viewport to see the responsive padding change</h3>
     <Container>
       {directions.map(direction => {
         const isLeftOrRight = direction === 'left' || direction === 'right';
@@ -150,32 +182,32 @@ const BoxSpaceStory = () => (
         style={{ position: 'relative', backgroundColor: '#4caf50' }}
       >
         {directions.map(direction => {
-          const position =
+          const calcPosition = (space: number) =>
             direction === 'left' || direction === 'right'
-              ? SpacingScales.sp32 / 2 - contentWidth / 2
-              : SpacingScales.sp32 / 2 - contentHeight / 2;
+              ? space / 2 - contentWidth / 2
+              : space / 2 - contentHeight / 2;
 
           return (
             <>
               <MobileText>
-                <PaddingText
+                <SpaceText
                   key={direction}
                   style={{
                     [direction]: `${calcPosition(32)}px`,
                   }}
                 >
                   32px
-                </PaddingText>
+                </SpaceText>
               </MobileText>
               <DesktopText>
-                <PaddingText
+                <SpaceText
                   key={direction}
                   style={{
                     [direction]: `${calcPosition(64)}px`,
                   }}
                 >
                   64px
-                </PaddingText>
+                </SpaceText>
               </DesktopText>
             </>
           );
