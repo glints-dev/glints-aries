@@ -33,33 +33,39 @@ const Td = styled.td`
 `;
 
 export const StorybookTable: React.FC<{
+  title?: string;
   dataSource: Data[];
   columns: Column[];
-}> = ({ dataSource, columns }) => {
+}> = ({ title, dataSource, columns }) => {
   const columnTitles = columns.map(column => column.title);
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          {columnTitles.map(title => (
-            <Th key={title}>{title}</Th>
+    <>
+      {title && <h3>{title}</h3>}
+      <Table>
+        <thead>
+          <tr>
+            {columnTitles.map(title => (
+              <Th key={title}>{title}</Th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {dataSource.map((data, index) => (
+            <Tr key={index}>
+              {columns.map(column => {
+                return (
+                  <Td key={column.dataIndex}>
+                    {column.render
+                      ? column.render(data)
+                      : data[column.dataIndex]}
+                  </Td>
+                );
+              })}
+            </Tr>
           ))}
-        </tr>
-      </thead>
-      <tbody>
-        {dataSource.map((data, index) => (
-          <Tr key={index}>
-            {columns.map(column => {
-              return (
-                <Td key={column.dataIndex}>
-                  {column.render ? column.render(data) : data[column.dataIndex]}
-                </Td>
-              );
-            })}
-          </Tr>
-        ))}
-      </tbody>
-    </Table>
+        </tbody>
+      </Table>
+    </>
   );
 };
