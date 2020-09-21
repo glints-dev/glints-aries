@@ -205,8 +205,38 @@ const Story = (
         </Select.Option>
       </Select>
     </div>
-    <div style={{ width: '300px' }}>
+    <div style={{ width: '300px', marginBottom: '3rem' }}>
       <Select label="Jobs" error="I am an error message 🙀">
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      Examples when the text fields are disabled
+    </div>
+    <div style={{ width: '300px', marginBottom: '1rem' }}>
+      <Select label="Jobs" small={true} disabled={true}>
+        <Select.Option value="accountant">Accountant</Select.Option>
+        <Select.Option value="business development">
+          Business Development
+        </Select.Option>
+        <Select.Option value="software engineer">
+          Software Engineer
+        </Select.Option>
+      </Select>
+    </div>
+    <div style={{ width: '300px' }}>
+      <Select
+        label="Jobs"
+        small={true}
+        disabled={true}
+        value="Business Development"
+      >
         <Select.Option value="accountant">Accountant</Select.Option>
         <Select.Option value="business development">
           Business Development
