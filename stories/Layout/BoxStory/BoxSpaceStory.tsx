@@ -87,12 +87,6 @@ const responsivePadding = {
     ds: 64
 };
 
-// responsive space object
-const responsivePadding = {
-    default: SpacingScale.sp32,
-    ds: SpacingScale.sp64
-};
-
 <Box
     p={responsivePadding}
     m={64}
@@ -127,7 +121,6 @@ const propsObject = {
     possibleValue: <a onClick={linkTo('Layout', 'Spacing')}>Spacing</a>,
     require: 'no',
   })),
-};
 
 const BoxSpaceStory = () => (
   <StorybookComponent title="Box" usage={usage} propsObject={propsObject}>
