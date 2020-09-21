@@ -3,12 +3,19 @@ import { linkTo } from '@storybook/addon-links';
 
 import Heading from '../../../src/General/Heading';
 import { Box } from '../../../src/Layout/Box';
-import { ScreenSize } from '../../../src/Utils/StyleConfig';
 import StorybookComponent from '../../StorybookComponent';
 import { BreakpointAliasTable } from './BreakpointAliasTable';
+import {
+  Container,
+  Content,
+  SpaceText,
+  PaddingText,
+  MobileText,
+  DesktopText,
+  contentWidth,
+  contentHeight,
+} from './BoxSpaceStoryStyle';
 
-const contentWidth = 80;
-const contentHeight = 30;
 const marginProps = [
   {
     name: 'm',
@@ -70,44 +77,6 @@ const paddingProps = [
     description: 'padding-top and padding-bottom',
   },
 ];
-
-const Container = styled.div`
-  position: relative;
-  display: inline-block;
-  background-color: #f3f3f3;
-`;
-
-const SpaceText = styled.span`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${contentWidth}px;
-  height: ${contentHeight}px;
-  color: black;
-`;
-
-const Content = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${contentWidth}px;
-  height: ${contentHeight}px;
-  background-color: white;
-`;
-
-const MobileText = styled.span`
-  @media (min-width: ${ScreenSize.desktopS}px) {
-    display: none;
-  }
-`;
-
-const DesktopText = styled.span`
-  display: none;
-  @media (min-width: ${ScreenSize.desktopS}px) {
-    display: block;
-  }
-`;
 
 const directions = ['top', 'right', 'bottom', 'left'];
 
@@ -190,7 +159,7 @@ const BoxSpaceStory = () => (
           return (
             <>
               <MobileText>
-                <SpaceText
+                <PaddingText
                   key={direction}
                   style={{
                     [direction]: `${calcPosition(32)}px`,
@@ -200,7 +169,7 @@ const BoxSpaceStory = () => (
                 </SpaceText>
               </MobileText>
               <DesktopText>
-                <SpaceText
+                <PaddingText
                   key={direction}
                   style={{
                     [direction]: `${calcPosition(64)}px`,
