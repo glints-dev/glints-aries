@@ -23,8 +23,11 @@ import DividerStory from './General/DividerStory';
 import DropdownStory from './Navigation/DropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Display/GalleryStory';
+
+import BoxStory from './Layout/BoxStory/index';
 import SpacingStory from './Layout/SpacingStory';
 import GridStory from './Layout/GridStory';
+
 import GlintsContainerStory from './Utilities/GlintsContainerStory';
 import HeadingStory from './General/HeadingStory';
 import IconStory from './General/IconStory';
@@ -83,6 +86,7 @@ storiesOf('Layout', module)
       <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
+  .add('Box', () => <BoxStory />)
   .add('Spacing', () => <SpacingStory />)
   .add('Grid', () => <GridStory />);
 
