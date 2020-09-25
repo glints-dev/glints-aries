@@ -18,7 +18,7 @@ export const TextFieldContainer = styled.div`
 export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   position: absolute;
   left: ${({ small }) => (small ? '16px' : '22px')};
-  right: ${({ small }) => (small ? '16px' : '22px')};
+  margin-right: 1px;
   overflow: hidden;
   background: ${SecondaryColor.white};
   color: ${({ floating }) =>
