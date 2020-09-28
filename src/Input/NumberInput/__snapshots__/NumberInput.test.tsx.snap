@@ -11,7 +11,7 @@ exports[`<NumberInput> should render correctly to match snapshot 1`] = `
     type="number"
   />
   <label
-    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-1 ieqcth textfield-label"
+    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-1 gEpBrC textfield-label"
     data-testid="textfield-label"
   >
     Number
