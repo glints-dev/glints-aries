@@ -160,64 +160,85 @@ const props = {
   ],
 };
 
-const Story = (
-  <div>
-    <div style={{ marginBottom: '1rem' }}>2 sizes only</div>
-    <div style={{ width: '300px', marginBottom: '1rem' }}>
-      <Select
-        label="Jobs"
-        small={true}
-        removeFloatingLabel={true}
-        disableTyping={true}
-      >
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
+const options = [
+  { value: 'acc', label: 'Accountant' },
+  { value: 'bd', label: 'Business Development' },
+  { value: 'se', label: 'Software Engineer' },
+];
+
+const Story = () => {
+  const [selected, setSelected] = React.useState(options[0].value);
+  return (
+    <div>
+      <div style={{ marginBottom: '1rem' }}>2 sizes only</div>
+      <div style={{ width: '300px', marginBottom: '1rem' }}>
+        <Select
+          label="Jobs"
+          small={true}
+          removeFloatingLabel={true}
+          disableTyping={true}
+        >
+          <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">
+            Business Development
+          </Select.Option>
+          <Select.Option value="software engineer">
+            Software Engineer
+          </Select.Option>
+        </Select>
+      </div>
+      <div style={{ width: '300px', marginBottom: '3rem' }}>
+        <Select
+          label="Jobs"
+          autoComplete="nope"
+          value={selected}
+          onChange={setSelected}
+        >
+          {options.map(option => (
+            <Select.Option key={option.value} value={option.value}>
+              {option.label}
+            </Select.Option>
+          ))}
+        </Select>
+        <button
+          onClick={() =>
+            setSelected(
+              options[Math.floor(options.length * Math.random())].value
+            )
+          }
+        >
+          Randomize
+        </button>
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        2 error states only, error message is optional, do not customize error
+        message style
+      </div>
+      <div style={{ width: '300px', marginBottom: '1rem' }}>
+        <Select label="Jobs" error={true}>
+          <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">
+            Business Development
+          </Select.Option>
+          <Select.Option value="software engineer">
+            Software Engineer
+          </Select.Option>
+        </Select>
+      </div>
+      <div style={{ width: '300px' }}>
+        <Select label="Jobs" error="I am an error message 🙀">
+          <Select.Option value="accountant">Accountant</Select.Option>
+          <Select.Option value="business development">
+            Business Development
+          </Select.Option>
+          <Select.Option value="software engineer">
+            Software Engineer
+          </Select.Option>
+        </Select>
+      </div>
     </div>
-    <div style={{ width: '300px', marginBottom: '3rem' }}>
-      <Select label="Jobs" autoComplete="nope">
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
-    <div style={{ marginBottom: '1rem' }}>
-      2 error states only, error message is optional, do not customize error
-      message style
-    </div>
-    <div style={{ width: '300px', marginBottom: '1rem' }}>
-      <Select label="Jobs" error={true}>
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
-    <div style={{ width: '300px' }}>
-      <Select label="Jobs" error="I am an error message 🙀">
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
-      </Select>
-    </div>
-  </div>
-);
+  );
+};
 
 const SelectStory = () => {
   return (
@@ -225,9 +246,11 @@ const SelectStory = () => {
       title="Select"
       code="import { Select } from 'glints-aries'"
       propsObject={props}
-      usage={jsxToString(Story)}
+      // usage={jsxToString(Story)}
     >
-      <div>{Story}</div>
+      <div>
+        <Story />
+      </div>
     </StorybookComponent>
   );
 };
