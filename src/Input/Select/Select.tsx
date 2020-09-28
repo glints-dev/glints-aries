@@ -159,7 +159,7 @@ const Select: ISelect = (props: Props) => {
   React.useEffect(
     function handleValueChange() {
       if (!value) {
-        setInputValue(value);
+        setInputValue('');
         setFloating(false);
       } else {
         const childrenOptions = React.Children.toArray(children) as Array<
@@ -170,11 +170,12 @@ const Select: ISelect = (props: Props) => {
         );
         const targetLabel = child && child.props.children;
         if (targetLabel) {
-          setFloating(true);
           setInputValue(targetLabel);
+          setFloating(true);
           return;
         } else {
-          throw new Error(`There is no child with the value ${value}`);
+          setInputValue(String(value) || '');
+          setFloating(true);
         }
       }
     },
