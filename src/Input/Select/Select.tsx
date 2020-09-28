@@ -158,17 +158,27 @@ const Select: ISelect = (props: Props) => {
 
   React.useEffect(
     function handleValueChange() {
-      if (value) {
-        setFloating(true);
-        setInputValue(String(value));
-        return;
-      }
-      if (value === '') {
+      if (!value) {
         setInputValue(value);
         setFloating(false);
+      } else {
+        const childrenOptions = React.Children.toArray(children) as Array<
+          React.ReactElement<SelectItemProps>
+        >;
+        const child = childrenOptions.find(
+          child => child.props.value === value
+        );
+        const targetLabel = child && child.props.children;
+        if (targetLabel) {
+          setFloating(true);
+          setInputValue(targetLabel);
+          return;
+        } else {
+          throw new Error(`There is no child with the value ${value}`);
+        }
       }
     },
-    [value]
+    [value, children]
   );
 
   const handleFocusOut = React.useCallback(
