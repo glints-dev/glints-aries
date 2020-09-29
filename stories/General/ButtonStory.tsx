@@ -98,7 +98,7 @@ const ButtonDisableStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Disabled</Heading>
-      {Object.values(ButtonVariantWithoutLink).map(variant => (
+      {Object.values(ButtonVariant).map(variant => (
         <ButtonRow key={variant}>
           <Button variant={variant} disabled>
             {variant}

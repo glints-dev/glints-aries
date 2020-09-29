@@ -28,6 +28,16 @@ const Button = styled.button<ButtonProps>`
   background: transparent;
   transition: all 0.2s;
   text-decoration: none;
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        &:hover {
+          cursor: not-allowed;
+        }
+      `;
+    }
+  }}
 `;
 
 /*
@@ -79,7 +89,6 @@ export const SolidBtn = styled(Button)<SolidBtnProps>`
       return `
         background-color: ${Greyscale.lightgrey};
         color: ${Greyscale.white};
-        cursor: not-allowed;
       `;
     }
   }}
@@ -194,7 +203,6 @@ export const SolidShadowBtn = styled(Button)<SolidShadowBtnProps>`
   ${props => {
     if (props.disabled) {
       return `
-        cursor: not-allowed;
         background-color: ${Greyscale.lightgrey};
         color: ${Greyscale.white};
       `;
@@ -334,7 +342,6 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
         background-color: ${SecondaryColor.lightgrey};
         color: ${SecondaryColor.white};
         border: none;
-        cursor: not-allowed;
       `;
     }
   }}
@@ -431,7 +438,6 @@ export const WhiteGreyBtn = styled(Button)<WhiteGreyBtnProps>`
     return `
       background-color: ${Greyscale.lightgrey};
       color: ${Greyscale.white};
-      cursor: not-allowed;
     `;
   }}
 `;
@@ -452,22 +458,29 @@ export const LinkBtn = styled(Button)<LinkBtnProps>`
   justify-content: flex-start;
   color: ${SecondaryColor.actionblue};
 
-  label {
-    cursor: pointer;
-  }
-
-  &:hover {
-    color: ${SecondaryColor.darkblue};
-    text-decoration: none;
-  }
-
-  &:active {
-    color: ${Greyscale.black};
-  }
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        color: ${Greyscale.grey};
+      `;
+    } else {
+      return `
+        &:hover {
+          color: ${SecondaryColor.darkblue};
+          text-decoration: none;
+        }
+      
+        &:active {
+          color: ${Greyscale.black};
+        }
+      `;
+    }
+  }}
 `;
 
 interface LinkBtnProps {
   block?: boolean;
+  disabled?: boolean;
 }
 
 export const StartIconContainer = styled.span`
