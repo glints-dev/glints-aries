@@ -116,7 +116,7 @@ const renderButton: React.FunctionComponent<Props> = ({
           block={block}
           {...defaultProps}
         >
-          {children}
+          {content}
         </LinkButton>
       );
     default:

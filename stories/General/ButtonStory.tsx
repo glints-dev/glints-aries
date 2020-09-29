@@ -181,7 +181,7 @@ const ButtonWithIconStory = () => {
   return (
     <StorybookComponent usage={usage} propsObject={propsObject}>
       <Heading>Button with Icon</Heading>
-      {Object.values(ButtonVariantWithoutLink).map(variant => (
+      {Object.values(ButtonVariant).map(variant => (
         <ButtonRow key={variant}>
           <Button variant={variant} startIcon={<ViewIcon />}>
             Button Icon Left
