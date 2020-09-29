@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
+export const IconContainer = styled.div`
+  position: absolute;
+  display: flex;
+  right: 1em;
+  cursor: pointer;
+`;
+
 export const TextFieldContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   flex-grow: 1;
-
-  .see-password {
-    position: absolute;
-    display: flex;
-    right: 1em;
-    cursor: pointer;
-  }
 `;
 
 export const TextFieldLabel = styled.label<TextFieldLabelProps>`
