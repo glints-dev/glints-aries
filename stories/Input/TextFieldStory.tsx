@@ -75,9 +75,26 @@ export const props = {
   ],
 };
 
+const clearIconProps = {
+  TextField: [
+    {
+      name: 'allowClear',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description:
+        'If allow to remove input content with clear icon. Works for type "text" only.',
+    },
+  ],
+};
+
 const TextFieldStory = () => {
   const [textValue, setTextValue] = React.useState('');
   const [passwordValue, setPasswordValue] = React.useState('');
+  const [textWithClearIconValue, setTextWithClearIconValue] = React.useState(
+    ''
+  );
 
   return (
     <React.Fragment>
@@ -117,6 +134,28 @@ const TextFieldStory = () => {
             value={passwordValue}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setPasswordValue(e.target.value)
+            }
+          />
+        </div>
+      </StorybookComponent>
+
+      <Divider theme="grey" />
+
+      <StorybookComponent
+        propsObject={clearIconProps}
+        usage={'<TextField type="text" label="Username" allowClear={true} />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Text with clear icon
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField
+            type="text"
+            label="Username"
+            value={textWithClearIconValue}
+            allowClear={true}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setTextWithClearIconValue(e.target.value)
             }
           />
         </div>

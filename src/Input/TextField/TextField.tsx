@@ -2,12 +2,18 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { EyeIcon, EyeSlashedIcon } from '../../General/Icon/components';
+import {
+  EyeIcon,
+  EyeSlashedIcon,
+  CloseCircleSolidIcon,
+} from '../../General/Icon/components';
+import { Greyscale } from '../../Utils/Colors';
 
 import {
   TextFieldContainer,
   TextFieldInput,
   TextFieldLabel,
+  IconContainer,
 } from './TextFieldStyle';
 
 export const isFilled = (type: textFieldType, value: any) => {
@@ -28,7 +34,9 @@ const TextField: React.FunctionComponent<Props> = props => {
     disabled,
     className,
     removeFloatingLabel,
+    allowClear,
     forwardedRef,
+    onChange,
     ...restProps
   } = props;
 
@@ -38,6 +46,12 @@ const TextField: React.FunctionComponent<Props> = props => {
   const handleShowPassword = React.useCallback(() => {
     setInputType(inputType === 'password' ? 'text' : 'password');
   }, [setInputType, inputType]);
+
+  const handleClearInput = (e: React.MouseEvent<SVGSVGElement>) => {
+    const event = Object.create(e);
+    event.target.value = '';
+    onChange(event);
+  };
 
   const handleKeyDown = React.useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -56,14 +70,19 @@ const TextField: React.FunctionComponent<Props> = props => {
     setFloating(isFilled(inputType, value));
   }, [setFloating, inputType, value]);
 
+  const canShowClearIcon =
+    allowClear && type === 'text' && value && value.length > 0;
+
   return (
     <TextFieldContainer className={classNames('aries-textfield', className)}>
       <TextFieldInput
+        id="test"
         ref={forwardedRef}
         type={inputType}
         placeholder={removeFloatingLabel && label}
         status={status}
         disabled={disabled}
+        onChange={onChange}
         onKeyDown={handleKeyDown}
         floating={floating}
         value={value}
@@ -83,14 +102,22 @@ const TextField: React.FunctionComponent<Props> = props => {
           {label}
         </TextFieldLabel>
       )}
+      {canShowClearIcon && (
+        <IconContainer>
+          <CloseCircleSolidIcon
+            data-testid="clear-button"
+            onClick={handleClearInput}
+          />
+        </IconContainer>
+      )}
       {type === 'password' && (
-        <div className="see-password" onClick={handleShowPassword}>
+        <IconContainer onClick={handleShowPassword}>
           {inputType === 'password' ? (
             <EyeIcon color="black" />
           ) : (
             <EyeSlashedIcon color="#777777" />
           )}
-        </div>
+        </IconContainer>
       )}
     </TextFieldContainer>
   );
@@ -105,6 +132,7 @@ export interface Props
   disabled?: boolean;
   className?: string;
   removeFloatingLabel?: boolean;
+  allowClear?: boolean;
   min?: number;
   max?: number;
   step?: number;
