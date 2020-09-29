@@ -105,22 +105,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       }
     }
   }}
-    
-
-  &:disabled {
-    cursor: not-allowed;
-    background: ${SecondaryColor.whitesmoke};
-
-    + ${TextFieldLabel} {
-      background: transparent;
-      color: ${SecondaryColor.grey};
-    }
-
-    &:hover {
-      border: 2px solid ${SecondaryColor.lightgrey};
-    }
-  }
-
+  
   &:hover {
     border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
@@ -176,6 +161,17 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
         `;
         }
       }}
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: ${SecondaryColor.whitesmoke};
+    border: 2px solid ${SecondaryColor.lightgrey};
+
+    + ${TextFieldLabel} {
+      background: transparent;
+      color: ${SecondaryColor.grey};
     }
   }
 `;
