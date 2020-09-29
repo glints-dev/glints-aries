@@ -41,14 +41,6 @@ export const props = {
       description: 'Sets different style for the Text Field based on status.',
     },
     {
-      name: 'disabled',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Disable the Text Field.',
-    },
-    {
       name: 'small',
       type: 'boolean',
       defaultValue: <code>false</code>,
@@ -85,6 +77,19 @@ const clearIconProps = {
       require: 'no',
       description:
         'If allow to remove input content with clear icon. Works for type "text" only.',
+    },
+  ],
+};
+
+const disabledProps = {
+  TextField: [
+    {
+      name: 'disabled',
+      type: 'boolean',
+      defaultValue: <code>false</code>,
+      possibleValue: <code>true | false</code>,
+      require: 'no',
+      description: 'Disable the Text Field.',
     },
   ],
 };
@@ -158,6 +163,20 @@ const TextFieldStory = () => {
               setTextWithClearIconValue(e.target.value)
             }
           />
+        </div>
+      </StorybookComponent>
+
+      <Divider theme="grey" />
+
+      <StorybookComponent
+        propsObject={disabledProps}
+        usage={'<TextField type="text" label="Username" disabled={true} />'}
+      >
+        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+          Disabled
+        </Heading>
+        <div style={{ width: '300px' }}>
+          <TextField type="text" label="Username" disabled={true} />
         </div>
       </StorybookComponent>
     </React.Fragment>
