@@ -1,11 +1,19 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 export const IconContainer = styled.div`
   position: absolute;
   display: flex;
   right: 1em;
   cursor: pointer;
+
+  svg {
+    fill: ${Greyscale.grey};
+  }
+
+  &:hover svg {
+    fill: ${Greyscale.black};
+  }
 `;
 
 export const TextFieldContainer = styled.div`
