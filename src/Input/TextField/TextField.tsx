@@ -7,7 +7,6 @@ import {
   EyeSlashedIcon,
   CloseCircleSolidIcon,
 } from '../../General/Icon/components';
-import { Greyscale } from '../../Utils/Colors';
 
 import {
   TextFieldContainer,
@@ -76,7 +75,6 @@ const TextField: React.FunctionComponent<Props> = props => {
   return (
     <TextFieldContainer className={classNames('aries-textfield', className)}>
       <TextFieldInput
-        id="test"
         ref={forwardedRef}
         type={inputType}
         placeholder={removeFloatingLabel && label}
