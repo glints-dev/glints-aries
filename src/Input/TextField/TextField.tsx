@@ -112,11 +112,7 @@ const TextField: React.FunctionComponent<Props> = props => {
       )}
       {type === 'password' && (
         <IconContainer onClick={handleShowPassword}>
-          {inputType === 'password' ? (
-            <EyeIcon color="black" />
-          ) : (
-            <EyeSlashedIcon color="#777777" />
-          )}
+          {inputType === 'password' ? <EyeIcon /> : <EyeSlashedIcon />}
         </IconContainer>
       )}
     </TextFieldContainer>
