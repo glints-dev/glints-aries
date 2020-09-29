@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { render, wait } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
@@ -237,5 +237,54 @@ describe('when a non-empty value is passed to', () => {
         expect(textFieldLabel).toHaveStyle(`color: ${SecondaryColor.black}`);
       });
     });
+  });
+});
+
+describe('when allowClear is true', () => {
+  it('should not show the clear icon when value is empty', async () => {
+    const { queryByTestId } = render(
+      <TextField
+        label="label"
+        type="text"
+        allowClear={true}
+        onChange={jest.fn()}
+      />
+    );
+
+    const clearButton = queryByTestId('clear-button');
+    expect(clearButton).not.toBeInTheDocument();
+  });
+
+  it('should show the clear icon when value is not empty', () => {
+    const { queryByTestId } = render(
+      <TextField
+        label="label"
+        type="text"
+        value="123"
+        allowClear={true}
+        onChange={jest.fn()}
+      />
+    );
+
+    const clearButton = queryByTestId('clear-button');
+    expect(clearButton).toBeInTheDocument();
+  });
+
+  it('should clear the input value and trigger onChange when click clear button', () => {
+    const onChange = jest.fn();
+
+    const { queryByTestId } = render(
+      <TextField
+        label="label"
+        type="text"
+        value="123"
+        allowClear={true}
+        onChange={onChange}
+      />
+    );
+
+    const clearButton = queryByTestId('clear-button');
+    userEvent.click(clearButton);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });
