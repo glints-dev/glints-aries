@@ -81,25 +81,9 @@ const clearIconProps = {
   ],
 };
 
-const disabledProps = {
-  TextField: [
-    {
-      name: 'disabled',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description: 'Disable the Text Field.',
-    },
-  ],
-};
-
 const TextFieldStory = () => {
   const [textValue, setTextValue] = React.useState('');
   const [passwordValue, setPasswordValue] = React.useState('');
-  const [textWithClearIconValue, setTextWithClearIconValue] = React.useState(
-    ''
-  );
 
   return (
     <React.Fragment>
@@ -143,44 +127,89 @@ const TextFieldStory = () => {
           />
         </div>
       </StorybookComponent>
-
-      <Divider theme="grey" />
-
-      <StorybookComponent
-        propsObject={clearIconProps}
-        usage={'<TextField type="text" label="Username" allowClear={true} />'}
-      >
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Text with clear icon
-        </Heading>
-        <div style={{ width: '300px' }}>
-          <TextField
-            type="text"
-            label="Username"
-            value={textWithClearIconValue}
-            allowClear={true}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setTextWithClearIconValue(e.target.value)
-            }
-          />
-        </div>
-      </StorybookComponent>
-
-      <Divider theme="grey" />
-
-      <StorybookComponent
-        propsObject={disabledProps}
-        usage={'<TextField type="text" label="Username" disabled={true} />'}
-      >
-        <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
-          Disabled
-        </Heading>
-        <div style={{ width: '300px' }}>
-          <TextField type="text" label="Username" disabled={true} />
-        </div>
-      </StorybookComponent>
     </React.Fragment>
   );
 };
 
-export default TextFieldStory;
+const TextFieldWithClearIconStory = () => {
+  const props = {
+    TextField: [
+      {
+        name: 'allowClear',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description:
+          'If allow to remove input content with clear icon. Works for type "text" only.',
+      },
+    ],
+  };
+
+  const [textWithClearIconValue, setTextWithClearIconValue] = React.useState(
+    ''
+  );
+
+  return (
+    <StorybookComponent
+      propsObject={props}
+      usage={'<TextField type="text" label="Username" allowClear={true} />'}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Text with clear icon
+      </Heading>
+      <div style={{ width: '300px' }}>
+        <TextField
+          type="text"
+          label="Username"
+          value={textWithClearIconValue}
+          allowClear={true}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setTextWithClearIconValue(e.target.value)
+          }
+        />
+      </div>
+    </StorybookComponent>
+  );
+};
+
+const TextFieldDisabledStory = () => {
+  const props = {
+    TextField: [
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: <code>false</code>,
+        possibleValue: <code>true | false</code>,
+        require: 'no',
+        description: 'Disable the Text Field.',
+      },
+    ],
+  };
+
+  return (
+    <StorybookComponent
+      propsObject={props}
+      usage={'<TextField type="text" label="Username" disabled={true} />'}
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Disabled
+      </Heading>
+      <div style={{ width: '300px' }}>
+        <TextField type="text" label="Username" disabled={true} />
+      </div>
+    </StorybookComponent>
+  );
+};
+
+const TextFieldStories = () => (
+  <React.Fragment>
+    <TextFieldStory />
+    <Divider theme="grey" />
+    <TextFieldWithClearIconStory />
+    <Divider theme="grey" />
+    <TextFieldDisabledStory />
+  </React.Fragment>
+);
+
+export default TextFieldStories;
