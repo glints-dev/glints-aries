@@ -20,7 +20,7 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       className="ButtonStyle__SolidBtnContainer-jyb3o2-2 fqPreK aries-solid-btn SearchFilterStyle__SearchFilterButton-sc-18veyec-2 FztBf"
     >
       <button
-        className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 hnveqg solid-btn-content"
+        className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 ghseIh solid-btn-content"
       >
         Search
       </button>
