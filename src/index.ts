@@ -88,6 +88,7 @@ export { default as CopyOutlinedIcon } from './General/Icon/components/CopyOutli
 export { default as CopyLinkIcon } from './General/Icon/components/CopyLinkIcon';
 export { default as CurrencyIcon } from './General/Icon/components/CurrencyIcon';
 export { default as DeleteIcon } from './General/Icon/components/DeleteIcon';
+export { default as DiscountSolidIcon } from './General/Icon/components/DiscountSolidIcon';
 export { default as DotIcon } from './General/Icon/components/DotIcon';
 export { default as DoubleCheckmarkIcon } from './General/Icon/components/DoubleCheckmarkIcon';
 export { default as DoveIcon } from './General/Icon/components/DoveIcon';
