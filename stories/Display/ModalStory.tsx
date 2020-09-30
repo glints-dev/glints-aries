@@ -4,6 +4,44 @@ import StorybookComponent from '../StorybookComponent';
 
 import Modal from '../../src/Display/Modal';
 import Button from '../../src/General/Button';
+import Divider from '../../src/General/Divider';
+
+const mockContent = `Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.`;
+
+const defaultModalUsage = `state = {
+  visible: false,
+}
+
+handleOpen = () => {
+  this.setState({ visible: true });
+}
+
+handleClose = () => {
+  this.setState({ visible: false });
+}
+
+<Button theme="blue" onClick={this.handleOpen}>
+  Open Modal
+</Button>
+
+<Modal
+  title="What is Lorem Ipsum?"
+  isVisible={visible}
+  onClose={this.handleClose}
+  footer={[
+    <Button key="cancel" variant="ghost" theme="blue" small onClick={this.handleClose}>
+      Cancel
+    </Button>,
+    <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
+      Save
+    </Button>,
+  ]}
+>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+</Modal>`;
 
 class ModalStory extends React.Component {
   state = {
@@ -139,7 +177,8 @@ class ModalStory extends React.Component {
           defaultValue: '',
           possibleValue: 'an array of React Elements',
           require: 'no',
-          description: 'Sets the footer of the modal',
+          description:
+            'Sets the footer of the modal, the maximum element count is 2',
         },
       ],
     };
@@ -153,37 +192,7 @@ class ModalStory extends React.Component {
             The recommended use but not limited to are; for content that requires an acknowledgment from the user, 
             wherein a single confirmation button can suffice, or for modals with long reading content`}
           propsObject={props}
-          usage={`state = {
-            visible: false,
-          }
-
-          handleOpen = () => {
-            this.setState({ visible: true });
-          }
-
-          handleClose = () => {
-            this.setState({ visible: false });
-          }
-
-          <Button theme="blue" onClick={this.handleOpen}>
-            Open Modal
-          </Button>
-
-          <Modal
-            title="What is Lorem Ipsum?"
-            isVisible={visible}
-            onClose={this.handleClose}
-            footer={[
-              <Button key="cancel" variant="ghost" theme="blue" small onClick={this.handleClose}>
-                Cancel
-              </Button>,
-              <Button key="save" variant="default" theme="blue" small onClick={this.handleClose}>
-                Save
-              </Button>,
-            ]}
-          >
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          </Modal>`}
+          usage={defaultModalUsage}
         >
           <Button variant="solid-blue" onClick={this.handleOpen}>
             Open Modal
@@ -412,4 +421,54 @@ class ModalStory extends React.Component {
   }
 }
 
-export default ModalStory;
+const ModalResponsiveStory = () => {
+  const [showResponsiveModal, setShowResponsiveModal] = React.useState(false);
+
+  return (
+    <StorybookComponent
+      title="Modal footer responsiveness "
+      componentDescription={`If all the buttons cannot fit in a row, then it
+        should be expanded to the 100% width of the container.`}
+      usage={defaultModalUsage}
+    >
+      <Button variant="solid-blue" onClick={() => setShowResponsiveModal(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        title="What is Lorem Ipsum?"
+        isVisible={showResponsiveModal}
+        onClose={() => setShowResponsiveModal(false)}
+        footer={[
+          <Button
+            key="cancel"
+            variant="ghost"
+            small
+            onClick={() => setShowResponsiveModal(false)}
+          >
+            Looooooong Cancel
+          </Button>,
+          <Button
+            key="save"
+            variant="solid-blue"
+            small
+            onClick={() => setShowResponsiveModal(false)}
+          >
+            Loooooooong Save
+          </Button>,
+        ]}
+      >
+        <p>{mockContent}</p>
+      </Modal>
+    </StorybookComponent>
+  );
+};
+
+const ModalStories = () => (
+  <>
+    <ModalStory />
+    <Divider theme="grey" />
+    <ModalResponsiveStory />
+  </>
+);
+
+export default ModalStories;
