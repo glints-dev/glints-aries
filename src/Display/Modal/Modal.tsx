@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { get } from 'lodash';
 
 import { CloseIcon } from '../../General/Icon/components';
 import { escEvent as createEscapeKeyEventListener } from '../../Utils/DomUtils';
-
+import { checkIsChildrenInMultiLines } from './utils';
 import {
   ModalContainer,
   ModalDialog,
@@ -30,6 +31,12 @@ const Modal = (props: Props) => {
   } = props;
 
   const modalContentAreaRef = React.useRef(null);
+  const modalFooterRef = React.useRef(null);
+  const [
+    isFooterChildrenInMultiLines,
+    setIsFooterChildrenInMultiLines,
+  ] = React.useState(false);
+  const footerElementCount = get(footer, 'length', 0);
 
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
@@ -60,6 +67,15 @@ const Modal = (props: Props) => {
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
   }, [isVisible, onClose]);
+
+  React.useEffect(() => {
+    if (footerElementCount > 1) {
+      const isChildrenInMultiLines = checkIsChildrenInMultiLines(
+        modalFooterRef
+      );
+      setIsFooterChildrenInMultiLines(isChildrenInMultiLines);
+    }
+  }, [footerElementCount]);
 
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
@@ -131,7 +147,13 @@ const Modal = (props: Props) => {
             {isVisible && children}
           </ModalBody>
           {footer !== undefined && (
-            <ModalFooter className="modal-footer">{footer}</ModalFooter>
+            <ModalFooter
+              ref={modalFooterRef}
+              className="modal-footer"
+              isChildrenInMultiLines={isFooterChildrenInMultiLines}
+            >
+              {footer}
+            </ModalFooter>
           )}
         </ModalContentArea>
       </ModalDialog>

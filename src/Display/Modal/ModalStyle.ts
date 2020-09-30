@@ -163,9 +163,11 @@ interface ModalBodyProps {
   centering: boolean;
 }
 
-export const ModalFooter = styled.footer`
+export const ModalFooter = styled.footer<{ isChildrenInMultiLines: boolean }>`
   position: relative;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 15px 30px;
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
@@ -174,11 +176,28 @@ export const ModalFooter = styled.footer`
     padding: 15px;
   }
 
-  * {
-    margin-left: 10px;
+  ${({ isChildrenInMultiLines }) => {
+    if (isChildrenInMultiLines) {
+      return `
+        flex-direction: column-reverse;
 
-    &:first-child {
-      margin-left: 0;
+        > * {
+          flex-grow: 1;
+
+          &:nth-child(2) {
+            margin-bottom: 10px; 
+          }
+
+          button {
+            width: 100%;
+          }
+        }
+      `;
     }
-  }
+    return `
+      > *:nth-child(2) {
+        margin-left: 10px;
+      }
+    `;
+  }}
 `;
