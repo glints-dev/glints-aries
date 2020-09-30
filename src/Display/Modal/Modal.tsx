@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { get } from 'lodash';
+import { debounce } from 'lodash';
 
 import { CloseIcon } from '../../General/Icon/components';
 import { escEvent as createEscapeKeyEventListener } from '../../Utils/DomUtils';
@@ -36,7 +36,6 @@ const Modal = (props: Props) => {
     isFooterChildrenInMultiLines,
     setIsFooterChildrenInMultiLines,
   ] = React.useState(false);
-  const footerElementCount = get(footer, 'length', 0);
 
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
@@ -62,20 +61,30 @@ const Modal = (props: Props) => {
     document.addEventListener('keydown', escapeKeyEventListener, false);
 
     // This function will be called on unmount and _before_ this effect is
-    // re-executed beause its dependencies changed. This gives us the chance
+    // re-executed because its dependencies changed. This gives us the chance
     // to clean up the existing escape key event listener.
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
   }, [isVisible, onClose]);
 
-  React.useEffect(() => {
-    if (footerElementCount > 1) {
-      const isChildrenInMultiLines = checkIsChildrenInMultiLines(
-        modalFooterRef
+  React.useLayoutEffect(
+    function checkFooterResponsiveStyleOnMountAndOnWindowResize() {
+      const checkIsFooterChildrenInMultiLines = () => {
+        const isChildrenInMultiLines = checkIsChildrenInMultiLines(
+          modalFooterRef
+        );
+        setIsFooterChildrenInMultiLines(isChildrenInMultiLines);
+      };
+      const debouncedCheckFooter = debounce(
+        checkIsFooterChildrenInMultiLines,
+        500
       );
-      setIsFooterChildrenInMultiLines(isChildrenInMultiLines);
-    }
-  }, [footerElementCount]);
+      debouncedCheckFooter();
+      window.addEventListener('resize', debouncedCheckFooter);
+      return () => window.removeEventListener('resize', debouncedCheckFooter);
+    },
+    []
+  );
 
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
