@@ -82,6 +82,7 @@ export { default as CloudDownloadIcon } from './General/Icon/components/CloudDow
 export { default as CloudUploadIcon } from './General/Icon/components/CloudUploadIcon';
 export { default as CodepenIcon } from './General/Icon/components/CodepenIcon';
 export { default as CompassIcon } from './General/Icon/components/CompassIcon';
+export { default as ConnectionIcon } from './General/Icon/components/ConnectionIcon';
 export { default as CopyIcon } from './General/Icon/components/CopyIcon';
 export { default as CopyOutlinedIcon } from './General/Icon/components/CopyOutlinedIcon';
 export { default as CopyLinkIcon } from './General/Icon/components/CopyLinkIcon';
