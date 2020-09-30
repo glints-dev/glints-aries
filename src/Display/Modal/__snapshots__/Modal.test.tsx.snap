@@ -52,7 +52,7 @@ exports[`<Modal> should render with a title, content, footer and an onClick hand
         </p>
       </section>
       <footer
-        className="ModalStyle__ModalFooter-bg1vyz-5 cshGeR modal-footer"
+        className="ModalStyle__ModalFooter-bg1vyz-5 eTNoyD modal-footer"
       >
         <button>
           Modal Footer
