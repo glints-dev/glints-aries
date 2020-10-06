@@ -44,7 +44,7 @@ export const transformVariant = (variant: string, theme?: string) => {
   return ButtonVariant.SOLID_WHITE;
 };
 
-const renderButton: React.FunctionComponent<Props> = ({
+const Button: React.FunctionComponent<Props> = ({
   children,
   block,
   className,
@@ -136,10 +136,6 @@ const renderButton: React.FunctionComponent<Props> = ({
   }
 };
 
-const Button: React.FunctionComponent<Props> = props => (
-  <React.Fragment>{renderButton(props)}</React.Fragment>
-);
-
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   block?: boolean;
@@ -152,6 +148,13 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   theme?: string;
+  forwardedRef?: React.RefObject<HTMLButtonElement>;
 }
 
-export default Button;
+const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
+  <Button {...props} forwardedRef={ref} />
+);
+
+forwardRef.displayName = Button.name;
+
+export default React.forwardRef(forwardRef);
