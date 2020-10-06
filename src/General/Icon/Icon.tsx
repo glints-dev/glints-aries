@@ -9,6 +9,7 @@ const Icon: React.FunctionComponent<Props> = props => {
     width = '1em',
     height = '1em',
     onClick,
+    size = 's',
     ...restProps
   } = props;
 
@@ -20,6 +21,7 @@ const Icon: React.FunctionComponent<Props> = props => {
       height={height}
       onClick={onClick}
       fill={color}
+      fontSize={size}
       viewBox="0 0 100 100"
       {...restProps}
     >
@@ -28,12 +30,23 @@ const Icon: React.FunctionComponent<Props> = props => {
   );
 };
 
+export type iconSizeType =
+  | 'xxs'
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl';
+
 export interface Props {
   className?: string;
   children: React.ReactNode;
   color?: string;
   width?: string | number;
   height?: string | number;
+  size?: iconSizeType;
   onClick?(e: React.MouseEvent<SVGSVGElement, MouseEvent>): void;
 }
 
