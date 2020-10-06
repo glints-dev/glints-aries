@@ -67,20 +67,6 @@ export const props = {
   ],
 };
 
-const clearIconProps = {
-  TextField: [
-    {
-      name: 'allowClear',
-      type: 'boolean',
-      defaultValue: <code>false</code>,
-      possibleValue: <code>true | false</code>,
-      require: 'no',
-      description:
-        'If allow to remove input content with clear icon. Works for type "text" only.',
-    },
-  ],
-};
-
 const TextFieldStory = () => {
   const [textValue, setTextValue] = React.useState('');
   const [passwordValue, setPasswordValue] = React.useState('');
