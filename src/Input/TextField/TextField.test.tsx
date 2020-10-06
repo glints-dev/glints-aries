@@ -240,51 +240,73 @@ describe('when a non-empty value is passed to', () => {
   });
 });
 
-describe('when allowClear is true', () => {
-  it('should not show the clear icon when value is empty', async () => {
-    const { queryByTestId } = render(
-      <TextField
-        label="label"
-        type="text"
-        allowClear={true}
-        onChange={jest.fn()}
-      />
-    );
+describe('when allowClear is true and type is text', () => {
+  describe('and type is text', () => {
+    it('should not show the clear icon when value is empty', async () => {
+      const { queryByTestId } = render(
+        <TextField
+          label="label"
+          type="text"
+          allowClear={true}
+          onChange={jest.fn()}
+        />
+      );
 
-    const clearButton = queryByTestId('clear-button');
-    expect(clearButton).not.toBeInTheDocument();
+      const clearButton = queryByTestId('clear-button');
+      expect(clearButton).not.toBeInTheDocument();
+    });
+
+    it('should show the clear icon when value is not empty', () => {
+      const { queryByTestId } = render(
+        <TextField
+          label="label"
+          type="text"
+          value="123"
+          allowClear={true}
+          onChange={jest.fn()}
+        />
+      );
+
+      const clearButton = queryByTestId('clear-button');
+      expect(clearButton).toBeInTheDocument();
+    });
+
+    it('should clear the input value and trigger onChange when click clear button', () => {
+      const onChange = jest.fn();
+
+      const { queryByTestId } = render(
+        <TextField
+          label="label"
+          type="text"
+          value="123"
+          allowClear={true}
+          onChange={onChange}
+        />
+      );
+
+      const clearButton = queryByTestId('clear-button');
+      userEvent.click(clearButton);
+      expect(onChange).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('should show the clear icon when value is not empty', () => {
-    const { queryByTestId } = render(
-      <TextField
-        label="label"
-        type="text"
-        value="123"
-        allowClear={true}
-        onChange={jest.fn()}
-      />
-    );
+  describe('and type is password', () => {
+    it('should show the invisible icon but not clear icon', () => {
+      const { queryByTestId } = render(
+        <TextField
+          label="label"
+          type="password"
+          value="123"
+          allowClear={true}
+          onChange={jest.fn()}
+        />
+      );
 
-    const clearButton = queryByTestId('clear-button');
-    expect(clearButton).toBeInTheDocument();
-  });
+      const clearButton = queryByTestId('clear-button');
+      expect(clearButton).not.toBeInTheDocument();
 
-  it('should clear the input value and trigger onChange when click clear button', () => {
-    const onChange = jest.fn();
-
-    const { queryByTestId } = render(
-      <TextField
-        label="label"
-        type="text"
-        value="123"
-        allowClear={true}
-        onChange={onChange}
-      />
-    );
-
-    const clearButton = queryByTestId('clear-button');
-    userEvent.click(clearButton);
-    expect(onChange).toHaveBeenCalledTimes(1);
+      const invisibleIcon = queryByTestId('invisible-icon');
+      expect(invisibleIcon).toBeInTheDocument();
+    });
   });
 });
