@@ -9315,11 +9315,6 @@ quick-lru@^1.0.0:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
   integrity sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
 
-r@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/r/-/r-0.0.5.tgz#fe33550d0c6e27eb41450f6404b1e31b71cd6531"
-  integrity sha1-/jNVDQxuJ+tBRQ9kBLHjG3HNZTE=
-
 ramda@^0.21.0:
   version "0.21.0"
   resolved "https://registry.npmjs.org/ramda/-/ramda-0.21.0.tgz#a001abedb3ff61077d4ff1d577d44de77e8d0a35"
