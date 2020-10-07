@@ -4,6 +4,7 @@ exports[`<Popover /> prop className should match snapshot when class name test i
 <DocumentFragment>
   .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 .c0 {
@@ -75,6 +76,7 @@ exports[`<Popover /> prop className should match snapshot when class name test i
             class="c5"
             data-testid="icon-svg"
             fill="black"
+            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"
@@ -94,6 +96,7 @@ exports[`<Popover /> prop className should match snapshot when class name undefi
 <DocumentFragment>
   .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 .c0 {
@@ -165,6 +168,7 @@ exports[`<Popover /> prop className should match snapshot when class name undefi
             class="c5"
             data-testid="icon-svg"
             fill="black"
+            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"

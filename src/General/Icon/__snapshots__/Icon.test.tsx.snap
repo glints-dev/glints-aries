@@ -1,10 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Icon> should display the correct size prop size l 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 cgeSuZ"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="l"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size m 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 kSoPyE"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="m"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size s 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="s"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size xl 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 cBTyxH"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="xl"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size xs 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 cuxWWi"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="xs"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size xxl 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 dWNvci"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="xxl"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size xxs 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 cNXzHi"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="xxs"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`<Icon> should display the correct size prop size xxxl 1`] = `
+<DocumentFragment>
+  <svg
+    class="IconStyle__VerticalCenteredSvg-x7d280-0 huJUMC"
+    data-testid="icon-svg"
+    fill="currentColor"
+    font-size="xxxl"
+    height="1em"
+    viewBox="0 0 100 100"
+    width="1em"
+  >
+    <path
+      d="M100 56.563H56.562V100H43.438V56.562H0V43.438h43.438V0h13.124v43.438H100z"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
 exports[`<Icon> should matches snapshot 1`] = `
 <svg
-  className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+  className="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
   data-testid="icon-svg"
   fill="currentColor"
+  fontSize="s"
   height="1em"
   viewBox="0 0 100 100"
   width="1em"

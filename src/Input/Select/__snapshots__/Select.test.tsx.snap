@@ -183,6 +183,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -214,6 +215,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
           class="c5"
           data-testid="icon-svg"
           fill="#777777"
+          font-size="s"
           height="1em"
           viewBox="0 0 100 100"
           width="1em"
@@ -427,6 +429,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -458,6 +461,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
           class="c5"
           data-testid="icon-svg"
           fill="#777777"
+          font-size="s"
           height="1em"
           viewBox="0 0 100 100"
           width="1em"
@@ -671,6 +675,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -702,6 +707,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
           class="c5"
           data-testid="icon-svg"
           fill="#777777"
+          font-size="s"
           height="1em"
           viewBox="0 0 100 100"
           width="1em"
@@ -914,6 +920,7 @@ exports[`<Select> should render with 3 options 1`] = `
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -952,6 +959,7 @@ exports[`<Select> should render with 3 options 1`] = `
         className="c5"
         data-testid="icon-svg"
         fill="#777777"
+        fontSize="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"

@@ -11,9 +11,10 @@ exports[`<ToggleSwitch /> prop className should match snapshot when class name t
       class="Styles__ToggleBall-bsue54-1 edLOMy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
         data-testid="icon-svg"
         fill="#777777"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -38,9 +39,10 @@ exports[`<ToggleSwitch /> prop className should match snapshot when class name u
       class="Styles__ToggleBall-bsue54-1 edLOMy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
         data-testid="icon-svg"
         fill="#777777"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -65,9 +67,10 @@ exports[`<ToggleSwitch /> prop defaultActive should match snapshot when defaultA
       class="Styles__ToggleBall-bsue54-1 edLOMy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
         data-testid="icon-svg"
         fill="#777777"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -92,9 +95,10 @@ exports[`<ToggleSwitch /> prop defaultActive should match snapshot when defaultA
       class="Styles__ToggleBall-bsue54-1 jjdKTE"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
         data-testid="icon-svg"
         fill="#017EB7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -119,9 +123,10 @@ exports[`<ToggleSwitch /> prop iconOptions should match snapshot when iconOption
       class="Styles__ToggleBall-bsue54-1 edLOMy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
         data-testid="icon-svg"
         fill="#777777"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"

@@ -111,6 +111,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -135,6 +136,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -152,6 +154,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -281,6 +284,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -315,6 +319,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -332,6 +337,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -463,6 +469,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -497,6 +504,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
         class="c5"
         data-testid="icon-svg"
         fill="#FFFFFF"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -514,6 +522,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
         class="c5"
         data-testid="icon-svg"
         fill="#FFFFFF"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -645,6 +654,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -679,6 +689,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -696,6 +707,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -827,6 +839,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -861,6 +874,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -878,6 +892,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1009,6 +1024,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1043,6 +1059,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1060,6 +1077,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1191,6 +1209,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1225,6 +1244,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1242,6 +1262,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1373,6 +1394,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1407,6 +1429,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1424,6 +1447,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1555,6 +1579,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1589,6 +1614,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1606,6 +1632,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1737,6 +1764,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1771,6 +1799,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1788,6 +1817,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1919,6 +1949,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -1953,6 +1984,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1970,6 +2002,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2101,6 +2134,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -2135,6 +2169,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2152,6 +2187,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2279,6 +2315,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 
 .c4 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -2313,6 +2350,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
         class="c4"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2330,6 +2368,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
         class="c4"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2461,6 +2500,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -2495,6 +2535,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2512,6 +2553,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2643,6 +2685,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -2677,6 +2720,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2694,6 +2738,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2825,6 +2870,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -2859,6 +2905,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2876,6 +2923,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3007,6 +3055,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -3041,6 +3090,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3058,6 +3108,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3189,6 +3240,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -3223,6 +3275,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
         class="c5"
         data-testid="icon-svg"
         fill="#c7c7c7"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3240,6 +3293,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3364,6 +3418,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 
 .c5 {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 <div
@@ -3398,6 +3453,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3415,6 +3471,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
         class="c5"
         data-testid="icon-svg"
         fill="black"
+        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
