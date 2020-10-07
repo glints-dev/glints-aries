@@ -157,6 +157,7 @@ const LikeButton = styled(ThumbsUpOutlineIcon)\`
     </StorybookComponent>
     <StorybookComponent
       title="Icon Sizes"
+      componentDescription="Icons are auto-scaled to provide multiple sizes. These sizes are used depending on the usage."
       usage={` <StarIcon size='xxs' />
       <StarIcon size='xs' />
       <StarIcon size='s' />
