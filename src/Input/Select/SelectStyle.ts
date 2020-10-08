@@ -115,7 +115,13 @@ export const SelectInput = styled.input<SelectInputProps>`
     cursor: not-allowed;
     background: ${SecondaryColor.whitesmoke};
     + ${SelectLabel} {
-      background: transparent;
+      ${({ floating }) => {
+        if (!floating) {
+          return `
+              background: transparent;
+            `;
+        }
+      }}
       color: ${Greyscale.grey};
     }
     &:hover {

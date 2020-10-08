@@ -65,6 +65,23 @@ exports[`<Select /> can still work when receives non-string option children or v
   font-size: 12px;
 }
 
+.c8:disabled + .c3 {
+  background: transparent;
+  color: #777777;
+}
+
+.c8:focus + .c3 {
+  padding: 0 5px;
+  top: 1em;
+  -webkit-transform: translate3d(-15px,-20px,0);
+  -ms-transform: translate3d(-15px,-20px,0);
+  transform: translate3d(-15px,-20px,0);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #000000;
+  font-size: 12px;
+}
+
 .c2 {
   width: 100%;
   outline: none;
@@ -99,7 +116,6 @@ exports[`<Select /> can still work when receives non-string option children or v
 }
 
 .c2:disabled + .c3 {
-  background: transparent;
   color: #777777;
 }
 
