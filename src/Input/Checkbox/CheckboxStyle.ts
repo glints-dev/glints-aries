@@ -1,6 +1,14 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 import { CheckboxProps } from './Checkbox';
+
+const getBoxColor = (hasBorder: boolean, isDisabled: boolean) => {
+  if (isDisabled) {
+    return hasBorder ? SecondaryColor.lightblue : SecondaryColor.lightgreen;
+  } else {
+    return hasBorder ? SecondaryColor.actionblue : SecondaryColor.darkgreen;
+  }
+};
 
 export const CheckboxContainer = styled.div<CheckboxProps>`
   position: relative;
@@ -11,6 +19,14 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
   &:focus {
     outline: none;
   }
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+           color: ${Greyscale.lightgrey};
+          `;
+    }
+  }};
 
   input {
     padding: 0;
@@ -42,15 +58,9 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     }
 
     &:checked + label:before {
-      background: ${({ border }) =>
-        border
-          ? `${SecondaryColor.actionblue}`
-          : `${SecondaryColor.darkgreen}`};
+      background: ${({ border, disabled }) => getBoxColor(border, disabled)};
       border: 2px solid
-        ${({ border }) =>
-          border
-            ? `${SecondaryColor.actionblue}`
-            : `${SecondaryColor.darkgreen}`};
+        ${({ border, disabled }) => getBoxColor(border, disabled)};
     }
   }
 
@@ -61,7 +71,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     line-height: 1.5;
     cursor: pointer;
     outline: none;
-    ${({ border }) => {
+    ${({ border, disabled }) => {
       if (border) {
         return `
           border: 1px solid #aaaaaa;
@@ -70,8 +80,8 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
           border-radius: 2px;
           padding: 10px 15px;
           &:hover {
-            background: rgba(1, 126, 183, 0.1);
-            border-color: ${SecondaryColor.actionblue};
+            background: ${!disabled && 'rgba(1, 126, 183, 0.1)'};
+            border-color: ${!disabled && SecondaryColor.actionblue};
           }
         `;
       }
@@ -89,7 +99,9 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       appearance: none;
       background-color: transparent;
-      border: 2px solid ${SecondaryColor.lightblack};
+      border: 2px solid
+        ${({ disabled }) =>
+          disabled ? SecondaryColor.lightgrey : SecondaryColor.lightblack};
       padding: 0.6em;
       display: inline-block;
       position: relative;

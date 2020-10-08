@@ -60,6 +60,17 @@ const CheckboxStory = () => (
       usage={'<Checkbox id="software-engineer" value="Software Engineer" />'}
     >
       <Checkbox id="software-engineer" value="Software Engineer" />
+      <Checkbox
+        id="software-engineer-disabled"
+        value="Software Engineer"
+        disabled={true}
+      />
+      <Checkbox
+        id="software-engineer-checked-disabled"
+        value="Software Engineer"
+        checked={true}
+        disabled={true}
+      />
     </StorybookComponent>
 
     <Divider theme="grey" />
@@ -93,6 +104,19 @@ const CheckboxStory = () => (
         id="software-engineer-border"
         value="Software Engineer"
         border={true}
+      />
+      <Checkbox
+        id="software-engineer-border-disabled"
+        value="Software Engineer"
+        border={true}
+        disabled={true}
+      />
+      <Checkbox
+        id="software-engineer-border-checked-disabled"
+        value="Software Engineer"
+        border={true}
+        checked={true}
+        disabled={true}
       />
     </StorybookComponent>
 

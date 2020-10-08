@@ -13,6 +13,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   border = false,
   className,
   checked,
+  disabled = false,
   ...restProps
 }: CheckboxProps) => {
   const [internalChecked, setInternalChecked] = React.useState(false);
@@ -36,6 +37,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       size={size}
       border={border}
       checked={combinedChecked}
+      disabled={disabled}
     >
       <input
         type="checkbox"
@@ -43,6 +45,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
         value={value}
         onClick={handleClick}
         checked={combinedChecked}
+        disabled={disabled}
         {...restProps}
       />
       <label htmlFor={id} tabIndex={-1}>
@@ -59,6 +62,7 @@ export interface CheckboxProps extends HTMLInputProps {
   size?: 'large' | 'small';
   border?: boolean;
   value?: string;
+  disabled?: boolean;
 }
 
 export default Checkbox;
