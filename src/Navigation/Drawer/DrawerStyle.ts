@@ -44,38 +44,47 @@ const closeToLeft = keyframes`
 const fadeIn = keyframes`
   from {
     opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
   }
-
+  
   to {
     opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
   }
-`;
+  `;
 
 const fadeOut = keyframes`
   from {
     opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
   }
-
+  
   to {
     opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
   }
 `;
 
 export const DrawerContainer = styled.div<DrawerContainerProps>`
   position: fixed;
-  display: ${({ isDisplay }) => (isDisplay ? 'block' : 'none')};
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
   top: 0px;
   left: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
+  opacity: ${({ open }) => (open ? '1' : '0')};
+  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
+  background-color: ${({ open }) =>
+    open ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
   animation: ${({ open }) => (open ? fadeIn : fadeOut)} 0.3s ease-in-out;
-  z-index: ${({ isDisplay }) => (isDisplay ? '9999' : '-1')};
+  z-index: 9999;
 `;
 
 interface DrawerContainerProps {
-  isDisplay: boolean;
   open: boolean;
 }
 

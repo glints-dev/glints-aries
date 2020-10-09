@@ -9,35 +9,13 @@ const Drawer = ({
   position = 'right',
   ...defaultProps
 }: Props) => {
-  const [isDisplay, setIsDisplay] = React.useState<boolean>(false);
-
-  const handleAnimationStart = () => {
-    setIsDisplay(true);
-  };
-
-  const handleAnimationEnd = () => {
-    setIsDisplay(false);
-  };
-
-  React.useEffect(
-    function startAnimationOnOpen() {
-      if (isOpen && !isDisplay) {
-        handleAnimationStart();
-      }
-    },
-    [isDisplay, isOpen]
-  );
-
   return (
     <DrawerContainer
       className="aries-drawer"
       data-testid="drawer-container"
       aria-modal="true"
-      aria-hidden={isDisplay ? 'false' : 'true'}
-      isDisplay={isDisplay}
+      aria-hidden={isOpen ? 'false' : 'true'}
       open={isOpen}
-      onAnimationStart={handleAnimationStart}
-      onAnimationEnd={handleAnimationEnd}
       onClick={() => onClose()}
     >
       <DrawerWrapper
