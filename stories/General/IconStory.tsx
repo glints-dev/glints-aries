@@ -50,30 +50,11 @@ const props = {
         >
           Size chart:
         </p>,
-        <p key="xxs" style={{ margin: '0' }}>
-          xxs: 12px
-        </p>,
-        <p key="xs" style={{ margin: '0' }}>
-          xs: 16px
-        </p>,
-        <p key="s" style={{ margin: '0' }}>
-          s: 24px
-        </p>,
-        <p key="m" style={{ margin: '0' }}>
-          m: 32px
-        </p>,
-        <p key="l" style={{ margin: '0' }}>
-          l: 48px
-        </p>,
-        <p key="xl" style={{ margin: '0' }}>
-          xl: 64px
-        </p>,
-        <p key="xxl" style={{ margin: '0' }}>
-          xxl: 96px
-        </p>,
-        <p key="xxxl" style={{ margin: '0' }}>
-          xxxl: 128px
-        </p>,
+        Object.keys(iconSizeMap).map((size: keyof typeof iconSizeMap) => (
+          <p key={size} style={{ margin: '0' }}>
+            {size}: {iconSizeMap[size]}
+          </p>
+        )),
       ],
     },
     {
@@ -169,9 +150,11 @@ const LikeButton = styled(ThumbsUpOutlineIcon)\`
       <StarIcon size='xxxl' />
       `}
     >
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div
+        style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end' }}
+      >
         {Object.keys(iconSizeMap).map((size: keyof typeof iconSizeMap) => (
-          <div style={{ flex: '1 1 20%', margin: '1em' }}>
+          <div style={{ flex: '1 1 20%', margin: '1em' }} key={size}>
             <StarIcon size={size} />
             <p style={{ marginTop: '2em', fontSize: '12px' }}>
               <code style={{ fontSize: '14px' }}>
