@@ -4,7 +4,6 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
 <DocumentFragment>
   .c2 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c1 {
@@ -78,7 +77,6 @@ exports[`<ProfilePicture/> snapshots with mouse event mouseenter and mouseleave 
         class="c2"
         data-testid="icon-svg"
         fill="white"
-        font-size="s"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"

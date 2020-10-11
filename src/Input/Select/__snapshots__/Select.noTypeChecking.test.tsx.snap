@@ -189,7 +189,6 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c5 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 <div
@@ -221,7 +220,6 @@ exports[`<Select /> can still work when receives non-string option children or v
           class="c5"
           data-testid="icon-svg"
           fill="#777777"
-          font-size="s"
           height="1em"
           viewBox="0 0 100 100"
           width="1em"
@@ -454,7 +452,6 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c5 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 <div
@@ -486,7 +483,6 @@ exports[`<Select /> can still work when receives non-string option children or v
           class="c5"
           data-testid="icon-svg"
           fill="#777777"
-          font-size="s"
           height="1em"
           viewBox="0 0 100 100"
           width="1em"

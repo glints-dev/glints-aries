@@ -4,7 +4,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -410,7 +409,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -581,7 +579,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -599,7 +596,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -697,7 +693,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -1103,7 +1098,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -1274,7 +1268,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -1292,7 +1285,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -1390,7 +1382,6 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -1599,7 +1590,6 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -1624,7 +1614,6 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -1792,7 +1781,6 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -1817,7 +1805,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -2066,7 +2053,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -2091,7 +2077,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 <DocumentFragment>
   .c7 {
   vertical-align: middle;
-  font-size: 24px;
 }
 
 .c3 {
@@ -2497,7 +2482,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
                 class="c7"
                 data-testid="icon-svg"
                 fill="white"
-                font-size="s"
                 height="1em"
                 viewBox="0 0 100 100"
                 width="1em"
@@ -2668,7 +2652,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -2686,7 +2669,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
                   class="c7"
                   data-testid="icon-svg"
                   fill="#FFFFFF"
-                  font-size="s"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"

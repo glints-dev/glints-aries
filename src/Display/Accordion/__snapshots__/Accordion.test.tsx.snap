@@ -19,10 +19,9 @@ exports[`<Accordion /> prop className should match snapshot when class name test
           class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
             data-testid="icon-svg"
             fill="currentColor"
-            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"
@@ -71,10 +70,9 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
           class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
             data-testid="icon-svg"
             fill="currentColor"
-            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"
@@ -123,10 +121,9 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
           class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
             data-testid="icon-svg"
             fill="currentColor"
-            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"
@@ -180,10 +177,9 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
           class="AccordionStyle__IconWrapper-sc-7hk6zs-6 fkCeju"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 glCnJD"
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
             data-testid="icon-svg"
             fill="currentColor"
-            font-size="s"
             height="1em"
             viewBox="0 0 100 100"
             width="1em"
