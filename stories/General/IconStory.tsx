@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import StorybookComponent from '../StorybookComponent';
 import * as AllIcons from '../../src/General/Icon/components';
 import { StarIcon } from '../../src/General/Icon/components';
+import { iconSizeMap } from '../../src/General/Icon/Icon';
 
 const props = {
   Icon: [
@@ -169,54 +170,16 @@ const LikeButton = styled(ThumbsUpOutlineIcon)\`
       `}
     >
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="xxs" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>XX-Small (12px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="xs" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>X-Small (16px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="s" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>Small (24px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="m" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>Medium (32px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="l" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>Large (48px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="xl" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>X-Large (64px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="xxl" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>XX-Large (96px)</code>
-          </p>
-        </div>
-        <div style={{ flex: '1 1 20%', margin: '1em' }}>
-          <StarIcon size="xxxl" />
-          <p style={{ marginTop: '1em', fontSize: '12px' }}>
-            <code style={{ fontSize: '14px' }}>XX-Small (12px)</code>
-          </p>
-        </div>
+        {Object.keys(iconSizeMap).map((size: keyof typeof iconSizeMap) => (
+          <div style={{ flex: '1 1 20%', margin: '1em' }}>
+            <StarIcon size={size} />
+            <p style={{ marginTop: '2em', fontSize: '12px' }}>
+              <code style={{ fontSize: '14px' }}>
+                {size} ({iconSizeMap[size]})
+              </code>
+            </p>
+          </div>
+        ))}
       </div>
     </StorybookComponent>
   </React.Fragment>

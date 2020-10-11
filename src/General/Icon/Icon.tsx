@@ -9,7 +9,7 @@ const Icon: React.FunctionComponent<Props> = props => {
     width = '1em',
     height = '1em',
     onClick,
-    size = 's',
+    size,
     ...restProps
   } = props;
 
@@ -17,11 +17,10 @@ const Icon: React.FunctionComponent<Props> = props => {
     <VerticalCenteredSvg
       data-testid="icon-svg"
       className={className}
-      width={width}
-      height={height}
+      width={iconSizeMap[size] || width}
+      height={iconSizeMap[size] || height}
       onClick={onClick}
       fill={color}
-      fontSize={size}
       viewBox="0 0 100 100"
       {...restProps}
     >
@@ -30,15 +29,16 @@ const Icon: React.FunctionComponent<Props> = props => {
   );
 };
 
-export type iconSizeType =
-  | 'xxs'
-  | 'xs'
-  | 's'
-  | 'm'
-  | 'l'
-  | 'xl'
-  | 'xxl'
-  | 'xxxl';
+export const iconSizeMap = {
+  xxs: '12px',
+  xs: '16px',
+  s: '24px',
+  m: '32px',
+  l: '48px',
+  xl: '64px',
+  xxl: '96px',
+  xxxl: '128px',
+};
 
 export interface Props {
   className?: string;
@@ -46,7 +46,7 @@ export interface Props {
   color?: string;
   width?: string | number;
   height?: string | number;
-  size?: iconSizeType;
+  size?: keyof typeof iconSizeMap;
   onClick?(e: React.MouseEvent<SVGSVGElement, MouseEvent>): void;
 }
 

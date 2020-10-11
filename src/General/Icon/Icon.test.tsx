@@ -5,7 +5,7 @@ import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import styled from 'styled-components';
 
-import Icon, { iconSizeType } from './Icon';
+import Icon, { iconSizeMap } from './Icon';
 
 const testId = 'icon-svg';
 const children = (
@@ -41,15 +41,16 @@ test('<Icon> should display the correct color prop', () => {
 });
 
 describe('<Icon> should display the correct size prop', () => {
-  const matchSnapshotWithSize = (size: iconSizeType) => {
+  const matchSnapshotWithSize = (size: keyof typeof iconSizeMap) => {
     test(`size ${size}`, () => {
       const { asFragment } = render(<Icon size={size}>{children}</Icon>);
       expect(asFragment()).toMatchSnapshot();
     });
   };
 
-  const iconSizes = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
-  iconSizes.forEach((size: iconSizeType) => matchSnapshotWithSize(size));
+  Object.keys(iconSizeMap).forEach((size: keyof typeof iconSizeMap) =>
+    matchSnapshotWithSize(size)
+  );
 });
 
 test('<Icon> should call onClick once when it is clicked', () => {
