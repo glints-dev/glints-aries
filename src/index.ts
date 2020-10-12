@@ -1,5 +1,4 @@
 // developed by Fredy Yanto (https://github.com/fredyyanto)
-import '@glints/poppins';
 
 // Candidate
 export { default as Accordion } from './Display/Accordion';
