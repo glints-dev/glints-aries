@@ -4,7 +4,7 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 dUTBbi aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 wwLow aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
@@ -26,7 +26,7 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bKOuPv aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 fYRGbP aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
@@ -48,7 +48,7 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 dUTBbi aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 wwLow aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
@@ -70,7 +70,7 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bKOuPv aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 fYRGbP aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
@@ -92,7 +92,7 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 dUTBbi aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 wwLow aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
@@ -114,7 +114,7 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bKOuPv aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 fYRGbP aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
