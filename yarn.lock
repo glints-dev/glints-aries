@@ -1111,7 +1111,7 @@
 
 "@glints/poppins@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@glints/poppins/-/poppins-1.0.0.tgz#c6c0285aba8b4571df654bc081723a9c83408ae4"
+  resolved "https://registry.yarnpkg.com/@glints/poppins/-/poppins-1.0.0.tgz#c6c0285aba8b4571df654bc081723a9c83408ae4"
   integrity sha512-4QzyZ9btZ0vxfmrta+NKdkE8qbH9o6l3jPvibdEm7gqLTweub11xkQNZFRyv1klcnyDBhEcT9+nl/dkSLxfo0Q==
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
