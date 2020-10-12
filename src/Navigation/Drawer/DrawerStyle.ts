@@ -80,12 +80,15 @@ export const DrawerContainer = styled.div<DrawerContainerProps>`
   visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
   background-color: ${({ open }) =>
     open ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
-  animation: ${({ open }) => (open ? fadeIn : fadeOut)} 0.3s ease-in-out;
+  ${({ firstRenderDone, open }) =>
+    firstRenderDone &&
+    `animation: ${open ? fadeIn : fadeOut} 0.3s ease-in-out; `}
   z-index: 9999;
 `;
 
 interface DrawerContainerProps {
   open: boolean;
+  firstRenderDone: boolean;
 }
 
 export const DrawerWrapper = styled.div<DrawerWrapperProps>`

@@ -9,6 +9,15 @@ const Drawer = ({
   position = 'right',
   ...defaultProps
 }: Props) => {
+  const [firstRenderDone, setFirstRenderDone] = React.useState(false);
+  React.useEffect(
+    function markFirstRenderAsDone() {
+      if (!firstRenderDone) {
+        setFirstRenderDone(true);
+      }
+    },
+    [firstRenderDone]
+  );
   return (
     <DrawerContainer
       className="aries-drawer"
@@ -23,6 +32,7 @@ const Drawer = ({
         role="dialog"
         data-testid="drawer-wrapper"
         open={isOpen}
+        firstRenderDone={firstRenderDone}
         position={position}
         tabIndex={0}
         onClick={e => e.stopPropagation()}
