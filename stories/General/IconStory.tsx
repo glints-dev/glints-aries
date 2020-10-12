@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import StorybookComponent from '../StorybookComponent';
 import * as AllIcons from '../../src/General/Icon/components';
+import { StarIcon } from '../../src/General/Icon/components';
+import { iconSizeMap } from '../../src/General/Icon/Icon';
 
 const props = {
   Icon: [
@@ -29,6 +31,31 @@ const props = {
       possibleValue: <code>hex-value | rba-value | string-value</code>,
       require: 'no',
       description: 'Sets color for icon.',
+    },
+    {
+      name: 'size',
+      type: 'string',
+      defaultValue: <code>s</code>,
+      possibleValue: <code>xxs | xs | s | m | l | xl | xxl | xxxl</code>,
+      require: 'no',
+      description: [
+        'Sets size of the icon',
+        <p
+          key="sizeChart"
+          style={{
+            marginBottom: '0',
+            marginTop: '1em',
+            fontWeight: 'bold',
+          }}
+        >
+          Size chart:
+        </p>,
+        Object.keys(iconSizeMap).map((size: keyof typeof iconSizeMap) => (
+          <p key={size} style={{ margin: '0' }}>
+            {size}: {iconSizeMap[size]}
+          </p>
+        )),
+      ],
     },
     {
       name: 'onClick',
@@ -108,6 +135,34 @@ const LikeButton = styled(ThumbsUpOutlineIcon)\`
               </p>
             </div>
           ))}
+      </div>
+    </StorybookComponent>
+    <StorybookComponent
+      title="Icon Sizes"
+      componentDescription="Icons are auto-scaled to provide multiple sizes. These sizes are used depending on the usage."
+      usage={` <StarIcon size='xxs' />
+      <StarIcon size='xs' />
+      <StarIcon size='s' />
+      <StarIcon size='m' />
+      <StarIcon size='l' />
+      <StarIcon size='xl' />
+      <StarIcon size='xxl' />
+      <StarIcon size='xxxl' />
+      `}
+    >
+      <div
+        style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end' }}
+      >
+        {Object.keys(iconSizeMap).map((size: keyof typeof iconSizeMap) => (
+          <div style={{ flex: '1 1 20%', margin: '1em' }} key={size}>
+            <StarIcon size={size} />
+            <p style={{ marginTop: '2em', fontSize: '12px' }}>
+              <code style={{ fontSize: '14px' }}>
+                {size} ({iconSizeMap[size]})
+              </code>
+            </p>
+          </div>
+        ))}
       </div>
     </StorybookComponent>
   </React.Fragment>
