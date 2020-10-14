@@ -2,12 +2,11 @@ import * as React from 'react';
 
 import Heading from '../../../src/General/Heading';
 import { Box } from '../../../src/Layout/Box';
-import { Spacing } from '../../../src/Layout/Spacing';
 import StorybookComponent from '../../StorybookComponent';
 import { Container, Card, List as StyledList } from './BoxLayoutStoryStyle';
 
 const usage = `<Box
-    p={Spacing.sp24}
+    p={24}
     flexDirection={{ ms: 'column', ds: 'row' }}
     component={List}
 >
@@ -49,11 +48,7 @@ const BoxLayoutStory = () => (
     <Heading>Layout</Heading>
     <h3>Resize the viewport to see the responsive flexDirection change</h3>
     <Container>
-      <Box
-        p={Spacing.sp24}
-        flexDirection={{ ms: 'column', ds: 'row' }}
-        component={List}
-      >
+      <Box p={24} flexDirection={{ ms: 'column', ds: 'row' }} component={List}>
         <Card>Card 1</Card>
         <Card>Card 2</Card>
       </Box>
