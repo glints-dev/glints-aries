@@ -120,7 +120,7 @@ const possibleValue = (
   </>
 );
 
-const propsObject = {
+export const propsObject = {
   margin: marginProps.map(value => ({
     ...value,
     type: typeValue,
