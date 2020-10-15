@@ -30,21 +30,21 @@ const theme = {
 
 // Space
 type ResponsiveSpacing = {
-  [key in BreakpointAliases]?: SpacingScaleValues;
+  [key in BreakpointAliases]?: SpacingScaleValues | 'auto';
 };
 type MarginTypes = 'm' | 'mt' | 'mb' | 'ml' | 'mr' | 'my' | 'mx';
 type MarginProps = {
-  [key in MarginTypes]?: SpacingScaleValues | ResponsiveSpacing;
+  [key in MarginTypes]?: SpacingScaleValues | 'auto' | ResponsiveSpacing;
 };
 
 type PaddingTypes = 'p' | 'pt' | 'pb' | 'pl' | 'pr' | 'py' | 'px';
 type PaddingProps = {
-  [key in PaddingTypes]?: SpacingScaleValues | ResponsiveSpacing;
+  [key in PaddingTypes]?: SpacingScaleValues | 'auto' | ResponsiveSpacing;
 };
 
-interface Props extends MarginProps, PaddingProps {}
+type Props = MarginProps & PaddingProps;
 
-const StyledBox = styled.div<Props>`
+export const StyledBox = styled.div<Props>`
   ${space}
 `;
 
