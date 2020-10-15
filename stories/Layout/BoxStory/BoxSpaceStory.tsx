@@ -107,24 +107,30 @@ const Box = styled.div\`
 \`;
 `;
 
+const typeValue = (
+  <>
+    <a onClick={linkTo('Layout', 'Spacing')}>Spacing</a> | &quot;auto&quot; |{' '}
+    <code>Responsive Space Object</code>
+  </>
+);
+
 const possibleValue = (
   <>
-    <a onClick={linkTo('Layout', 'Spacing')}>Spacing</a> |{' '}
-    <code>{'{default: 32, ds: 64}'}</code>
+    {32} | {'"auto"'} | <code>{'{default: 32, ds: 64}'}</code>
   </>
 );
 
 const propsObject = {
   margin: marginProps.map(value => ({
     ...value,
-    type: <code>number | Responsive Space Object</code>,
+    type: typeValue,
     defaultValue: '-',
     possibleValue,
     require: 'no',
   })),
   padding: paddingProps.map(value => ({
     ...value,
-    type: <code>number | Responsive Space Object</code>,
+    type: typeValue,
     defaultValue: '-',
     possibleValue,
     require: 'no',
