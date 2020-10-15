@@ -4,10 +4,8 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bpymVr aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={false}
 >
@@ -26,12 +24,10 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 
 exports[`<Drawer /> render should match snapshot when position is left and drawer is open 1`] = `
 <div
-  aria-hidden="true"
+  aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gkEwjT aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={true}
 >
@@ -52,10 +48,8 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bpymVr aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={false}
 >
@@ -74,12 +68,10 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 
 exports[`<Drawer /> render should match snapshot when position is right and drawer is open 1`] = `
 <div
-  aria-hidden="true"
+  aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gkEwjT aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={true}
 >
@@ -100,10 +92,8 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bpymVr aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={false}
 >
@@ -122,12 +112,10 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 
 exports[`<Drawer /> render should match snapshot when position is undefined and drawer is open 1`] = `
 <div
-  aria-hidden="true"
+  aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gkEwjT aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
   data-testid="drawer-container"
-  onAnimationEnd={[Function]}
-  onAnimationStart={[Function]}
   onClick={[Function]}
   open={true}
 >

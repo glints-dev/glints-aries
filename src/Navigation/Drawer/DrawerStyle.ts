@@ -41,41 +41,32 @@ const closeToLeft = keyframes`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-`;
-
 export const DrawerContainer = styled.div<DrawerContainerProps>`
   position: fixed;
-  display: ${({ isDisplay }) => (isDisplay ? 'block' : 'none')};
   min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
   top: 0px;
   left: 0px;
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: ${({ open }) => (open ? fadeIn : fadeOut)} 0.3s ease-in-out;
-  z-index: ${({ isDisplay }) => (isDisplay ? '9999' : '-1')};
+
+  ${({ open }) =>
+    open
+      ? `
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s, visibility 0.1s, background-color 0.5s;
+  `
+      : `
+    opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
+    transition: opacity 0.5s, visibility 0.4s 0.1s, background-color 0.5s;
+  `};
+  z-index: 9999;
 `;
 
 interface DrawerContainerProps {
-  isDisplay: boolean;
   open: boolean;
 }
 
