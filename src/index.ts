@@ -14,6 +14,7 @@ export { default as Divider } from './General/Divider';
 export { default as Drawer } from './Navigation/Drawer';
 export { default as Dropdown } from './Navigation/Dropdown';
 export { default as Gallery } from './Display/Gallery';
+export { Box } from './Layout/Box';
 export { default as Grid } from './Layout/Grid';
 export { default as Heading } from './General/Heading';
 export { default as Icon } from './General/Icon';
