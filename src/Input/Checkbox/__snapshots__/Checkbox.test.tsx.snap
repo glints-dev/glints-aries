@@ -11,6 +11,7 @@ exports[`<Checkbox> should render an input with id, value and onClick props and 
   tabIndex={0}
 >
   <input
+    checked={false}
     id="software-engineer"
     onClick={[Function]}
     type="checkbox"
