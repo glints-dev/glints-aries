@@ -25,6 +25,7 @@ import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Display/GalleryStory';
 
 import BoxStory from './Layout/BoxStory/index';
+import FlexStory from './Layout/FlexStory';
 import SpacingStory from './Layout/SpacingStory';
 import GridStory from './Layout/GridStory';
 
@@ -87,6 +88,7 @@ storiesOf('Layout', module)
     </Provider>
   ))
   .add('Box', () => <BoxStory />)
+  .add('Flex', () => <FlexStory />)
   .add('Spacing', () => <SpacingStory />)
   .add('Grid', () => <GridStory />);
 
