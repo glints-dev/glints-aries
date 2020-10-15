@@ -41,34 +41,6 @@ const closeToLeft = keyframes`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    visibility: hidden;
-    background-color: transparent;
-  }
-  
-  to {
-    opacity: 1;
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  `;
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  to {
-    opacity: 0;
-    visibility: hidden;
-    background-color: transparent;
-  }
-`;
-
 export const DrawerContainer = styled.div<DrawerContainerProps>`
   position: fixed;
   min-height: 100vh;
@@ -76,19 +48,26 @@ export const DrawerContainer = styled.div<DrawerContainerProps>`
   width: 100vw;
   top: 0px;
   left: 0px;
-  opacity: ${({ open }) => (open ? '1' : '0')};
-  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
-  background-color: ${({ open }) =>
-    open ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
-  ${({ firstRenderDone, open }) =>
-    firstRenderDone &&
-    `animation: ${open ? fadeIn : fadeOut} 0.3s ease-in-out; `}
+
+  ${({ open }) =>
+    open
+      ? `
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s, visibility 0.1s, background-color 0.5s;
+  `
+      : `
+    opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
+    transition: opacity 0.5s, visibility 0.4s 0.1s, background-color 0.5s;
+  `};
   z-index: 9999;
 `;
 
 interface DrawerContainerProps {
   open: boolean;
-  firstRenderDone: boolean;
 }
 
 export const DrawerWrapper = styled.div<DrawerWrapperProps>`
