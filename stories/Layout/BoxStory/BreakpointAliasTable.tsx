@@ -1,9 +1,10 @@
 import * as React from 'react';
 
 import { StorybookTable } from '../../StorybookTable';
+import { BreakpointAliases } from '../../../src/Layout/Box/types';
 
 type Data = {
-  alias: string;
+  alias: BreakpointAliases;
   device: string;
   description: string;
 };
@@ -15,37 +16,37 @@ const dataSource: Data[] = [
     description: 'define the base, non-responsive value',
   },
   {
-    alias: 'ms',
+    alias: 'mobileS',
     description: '@media screen and (min-width: 320px)',
     device: 'Mobile Small',
   },
   {
-    alias: 'mm',
+    alias: 'mobileM',
     description: '@media screen and (min-width: 480px)',
     device: 'Mobile Medium',
   },
   {
-    alias: 'ml',
+    alias: 'mobileL',
     description: '@media screen and (min-width: 640px)',
     device: 'Mobile Large',
   },
   {
-    alias: 't',
+    alias: 'tablet',
     description: '@media screen and (min-width: 768px)',
     device: 'Tablet',
   },
   {
-    alias: 'ds',
+    alias: 'desktopS',
     description: '@media screen and (min-width: 1024px)',
     device: 'Desktop Small',
   },
   {
-    alias: 'dm',
+    alias: 'desktopM',
     description: '@media screen and (min-width: 1260px)',
     device: 'Desktop Medium',
   },
   {
-    alias: 'dl',
+    alias: 'desktopL',
     device: 'Desktop Large',
     description: '@media screen and (min-width: 1440px)',
   },
