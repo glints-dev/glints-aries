@@ -2,7 +2,7 @@ import { ScreenSize } from '../../Utils/StyleConfig';
 import { SpacingScaleValues } from '../Spacing';
 
 // Responsive
-type BreakpointAliases =
+export type BreakpointAliases =
   | 'default'
   | 'mobileS'
   | 'mobileM'
