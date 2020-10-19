@@ -85,7 +85,7 @@ const usage = `import { Box } from 'glints-aries'
 // responsive space object
 const responsivePadding = {
     default: 32,
-    ds: 64
+    desktopS: 64
 };
 
 <Box
@@ -156,7 +156,7 @@ const BoxSpaceStory = () => (
       <CustomBox
         p={{
           default: 32,
-          ds: 64,
+          desktopS: 64,
         }}
         m={64}
       >

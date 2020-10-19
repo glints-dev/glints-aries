@@ -8,21 +8,21 @@ import { SpacingScaleValues } from '../Spacing';
 // Responsive
 type BreakpointAliases =
   | 'default'
-  | 'ms'
-  | 'mm'
-  | 'ml'
-  | 't'
-  | 'ds'
-  | 'dm'
-  | 'dl';
+  | 'mobileS'
+  | 'mobileM'
+  | 'mobileL'
+  | 'tablet'
+  | 'desktopS'
+  | 'desktopM'
+  | 'desktopL';
 export const breakpointAliasMap = {
-  ms: `${ScreenSize.mobileS}px`,
-  mm: `${ScreenSize.mobileM}px`,
-  ml: `${ScreenSize.mobileL}px`,
-  t: `${ScreenSize.tablet}px`,
-  ds: `${ScreenSize.desktopS}px`,
-  dm: `${ScreenSize.desktopM}px`,
-  dl: `${ScreenSize.desktopL}px`,
+  mobileS: `${ScreenSize.mobileS}px`,
+  mobileM: `${ScreenSize.mobileM}px`,
+  mobileL: `${ScreenSize.mobileL}px`,
+  tablet: `${ScreenSize.tablet}px`,
+  desktopS: `${ScreenSize.desktopS}px`,
+  desktopM: `${ScreenSize.desktopM}px`,
+  desktopL: `${ScreenSize.desktopL}px`,
 };
 const theme = {
   breakpoints: breakpointAliasMap,
