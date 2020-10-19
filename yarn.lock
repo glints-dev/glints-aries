@@ -1109,10 +1109,10 @@
   resolved "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@glints/poppins@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@glints/poppins/-/poppins-1.0.0.tgz#c6c0285aba8b4571df654bc081723a9c83408ae4"
-  integrity sha512-4QzyZ9btZ0vxfmrta+NKdkE8qbH9o6l3jPvibdEm7gqLTweub11xkQNZFRyv1klcnyDBhEcT9+nl/dkSLxfo0Q==
+"@glints/poppins@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@glints/poppins/-/poppins-1.0.2.tgz#63d5e81e46855250d1ac31ce59f052136692c20a"
+  integrity sha512-EbrJYeg5eoaIWQoX9uj2AzXMwcfw2rIeoEpg0kH8AqEduqGOnahOKglyr8foj1IgRRKytswtrw8pVZ/XpfYtxw==
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"

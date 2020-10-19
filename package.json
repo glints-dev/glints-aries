@@ -132,6 +132,6 @@
     }
   },
   "optionalDependencies": {
-    "@glints/poppins": "^1.0.0"
+    "@glints/poppins": "^1.0.2"
   }
 }
