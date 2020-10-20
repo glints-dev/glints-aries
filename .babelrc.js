@@ -16,6 +16,7 @@ module.exports = {
         targets: {
           browsers: ['> 99.5%'],
         },
+        loose: true,
       },
     ],
     '@babel/preset-react',
@@ -27,7 +28,7 @@ module.exports = {
         regenerator: true,
       },
     ],
-    '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
     [
@@ -36,5 +37,6 @@ module.exports = {
         ssr: true,
       },
     ],
+    ['@babel/plugin-proposal-private-methods', { loose: true }],
   ],
 };
