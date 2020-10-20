@@ -51,7 +51,7 @@ const Drawer = ({
 
 export type DrawerPosition = 'left' | 'right';
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: Function;
