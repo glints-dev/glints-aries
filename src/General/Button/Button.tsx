@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import SolidButton from './SolidButton';
 import SolidShadowButton from './SolidShadowButton';
@@ -44,13 +44,13 @@ export const transformVariant = (variant: string, theme?: string) => {
   return ButtonVariant.SOLID_WHITE;
 };
 
-const Button: React.FunctionComponent<Props> = ({
+export const Button: FC<Props> = ({
   children,
-  block,
+  block = false,
   className,
-  disabled,
+  disabled = false,
   onClick,
-  small,
+  small = false,
   variant = ButtonVariant.SOLID_WHITE,
   startIcon,
   endIcon,
@@ -142,17 +142,31 @@ const Button: React.FunctionComponent<Props> = ({
   }
 };
 
+export type ButtonVariantType =
+  | 'solid-white'
+  | 'solid-blue'
+  | 'yellow'
+  | 'ghost'
+  | 'white-grey'
+  | 'link';
+
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  /** Make the button fit to its parent width. */
   block?: boolean;
   className?: string;
+  /** Sets Button to disable state. */
   disabled?: boolean;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
+  /** Sets Button to small version. */
   small?: boolean;
-  variant?: string;
+  variant?: ButtonVariantType;
+  /** Changes the tag with which the button will render. */
   tag?: React.ElementType;
+  /** Element placed before the children. */
   startIcon?: React.ReactNode;
+  /** Element placed after the children. */
   endIcon?: React.ReactNode;
+  /** Deprecated! */
   theme?: string;
   forwardedRef?: React.RefObject<HTMLButtonElement>;
   isRoundedCorner?: boolean;
