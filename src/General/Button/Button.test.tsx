@@ -5,7 +5,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import { transformVariant } from './Button';
+import { ButtonVariantType, transformVariant } from './Button';
 import { ButtonVariant, ButtonTheme } from '../../Utils/StyleConfig';
 
 it('<Button> should render with text "click me" and an onClick handler', () => {
@@ -67,7 +67,9 @@ describe('contains the correct className for each variant:', () => {
 
   Object.keys(classNameMap).forEach(variant => {
     it(`${variant}`, () => {
-      const { getByText } = render(<Button variant={variant}>click me</Button>);
+      const { getByText } = render(
+        <Button variant={variant as ButtonVariantType}>click me</Button>
+      );
       if (variant === ButtonVariant.LINK) {
         const linkButton = getByText('click me');
         expect(linkButton).toHaveClass(classNameMap[variant]);
