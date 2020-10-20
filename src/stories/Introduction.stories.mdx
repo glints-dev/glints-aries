@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+const { version } = require('../../package.json');
+
+<Meta title="Introduction" />
+
+# Glints Aries
+
+<code>v{version}</code>
+
+Glints Aries is Glints' in-house component library. Most components are specific to Glints but you're free to use them in your own projects or to fork this project to build your own component library.
+
+The code is hosted on [GitHub](https://github.com/glints-dev/glints-aries). Feel free to open bug report or feature request tickets in our [issue tracker](https://github.com/glints-dev/glints-aries/issues). Or go ahead and directly submit a [pull request](https://github.com/glints-dev/glints-aries/pulls).
+
+## Installation
+
+```
+npm install -S glints-aries
+```
+
+## How To Use
+
+```
+import { Button } from 'glints-aries';
+
+const MyComponent = () => (
+  <Button variant="solid-blue" onClick={() => alert('Hello World!')}>
+    Say Hello
+  </Button>
+)
+```
+
+Browse stories documenting all components in Glints Aries now by navigating to them in the sidebar.
