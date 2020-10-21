@@ -8,13 +8,13 @@ import Checkbox, { CheckboxProps } from './Checkbox';
 const props = {
   id: 'software-engineer',
   value: 'Software Engineer',
-  onClick: jest.fn().mockImplementation(event => event.target.value),
+  onChange: jest.fn().mockImplementation(event => event.target.value),
 };
 
 function setupCheckbox(props: CheckboxProps) {
-  const { id, value, onClick, ...restProps } = props;
+  const { id, value, onChange, ...restProps } = props;
   const { getByText, getByLabelText, asFragment, ...utils } = render(
-    <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
+    <Checkbox id={id} value={value} onChange={onChange} {...restProps} />
   );
   const checkboxInput = getByLabelText(value as string) as HTMLInputElement;
   const checkboxLabel = getByText(value as string) as HTMLLabelElement;
@@ -22,7 +22,7 @@ function setupCheckbox(props: CheckboxProps) {
 }
 
 afterEach(() => {
-  props.onClick.mockClear();
+  props.onChange.mockClear();
 });
 
 describe(`<Checkbox> rendering`, () => {
@@ -44,28 +44,28 @@ describe(`<Checkbox> rendering`, () => {
   });
 });
 
-it('when toggling checkbox, it should fire onClick once and become checked, then fire onClick once and become unchecked', () => {
+it('when toggling checkbox, it should fire onChange once and become checked, then fire onChange once and become unchecked', () => {
   const { checkboxInput, checkboxLabel } = setupCheckbox(props);
 
   fireEvent.click(checkboxLabel);
-  expect(props.onClick).toHaveBeenCalledTimes(1);
+  expect(props.onChange).toHaveBeenCalledTimes(1);
   expect(checkboxInput.checked).toEqual(true);
 
-  props.onClick.mockClear();
+  props.onChange.mockClear();
 
   fireEvent.click(checkboxLabel);
-  expect(props.onClick).toHaveBeenCalledTimes(1);
+  expect(props.onChange).toHaveBeenCalledTimes(1);
   expect(checkboxInput.checked).toEqual(false);
 });
 
-it('when controlled, it should fire onClick but remain unchanged', () => {
+it('when controlled, it should fire onChange but remain unchanged', () => {
   const { checkboxInput, checkboxLabel } = setupCheckbox({
     ...props,
     checked: false,
   });
 
   fireEvent.click(checkboxLabel);
-  expect(props.onClick).toHaveBeenCalledTimes(1);
+  expect(props.onChange).toHaveBeenCalledTimes(1);
   expect(checkboxInput.checked).toEqual(false);
 });
 
@@ -93,7 +93,7 @@ it('should not react to inputs when disabled', () => {
   });
 
   fireEvent.click(checkboxLabel);
-  expect(props.onClick).toHaveBeenCalledTimes(0);
+  expect(props.onChange).toHaveBeenCalledTimes(0);
   expect(checkboxInput.checked).toEqual(false);
 });
 
@@ -133,9 +133,9 @@ describe('when it is rendered', () => {
     expect(checkboxInput.value).toEqual(props.value);
   });
 
-  it('should return the input value when onClick is passed a function: event => event.target.value', () => {
+  it('should return the input value when onChange is passed a function: event => event.target.value', () => {
     const { checkboxLabel } = setupCheckbox(props);
     fireEvent.click(checkboxLabel);
-    expect(props.onClick.mock.results[0].value).toEqual(props.value);
+    expect(props.onChange.mock.results[0].value).toEqual(props.value);
   });
 });

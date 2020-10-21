@@ -8,7 +8,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   id,
   label,
   value,
-  onClick,
+  onChange,
   size = 'small',
   border = false,
   className,
@@ -18,10 +18,10 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
 }: CheckboxProps) => {
   const [internalChecked, setInternalChecked] = React.useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInternalChecked(internalChecked => !internalChecked);
-    if (onClick !== undefined) {
-      return onClick(e);
+    if (onChange !== undefined) {
+      return onChange(e);
     }
   };
 
@@ -43,7 +43,8 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
         type="checkbox"
         id={id}
         value={value}
-        onClick={handleClick}
+        // onClick={handleClick}
+        onChange={handleChange}
         checked={combinedChecked}
         disabled={disabled}
         {...restProps}
