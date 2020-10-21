@@ -1,29 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Checkbox> should render an input with id, value and onClick props and a label with the text Software Engineer 1`] = `
-<div
-  aria-checked={false}
-  aria-labelledby="software-engineer"
-  checked={false}
-  className="CheckboxStyle__CheckboxContainer-c3ckvs-0 hMztQF aries-checkbox"
-  disabled={false}
-  role="checkbox"
-  size="small"
-  tabIndex={0}
->
-  <input
-    checked={false}
-    disabled={false}
-    id="software-engineer"
-    onClick={[Function]}
-    type="checkbox"
-    value="Software Engineer"
-  />
-  <label
-    htmlFor="software-engineer"
-    tabIndex={-1}
+exports[`<Checkbox> rendering should match snapshot when border=true 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    aria-labelledby="software-engineer"
+    class="CheckboxStyle__CheckboxContainer-c3ckvs-0 fqQViy aries-checkbox"
+    role="checkbox"
+    tabindex="0"
   >
-    Software Engineer
-  </label>
-</div>
+    <input
+      id="software-engineer"
+      type="checkbox"
+      value="Software Engineer"
+    />
+    <label
+      for="software-engineer"
+      tabindex="-1"
+    >
+      Software Engineer
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Checkbox> rendering should match snapshot when disabled=true 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    aria-labelledby="software-engineer"
+    class="CheckboxStyle__CheckboxContainer-c3ckvs-0 ggzlDu aries-checkbox"
+    disabled=""
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      disabled=""
+      id="software-engineer"
+      type="checkbox"
+      value="Software Engineer"
+    />
+    <label
+      for="software-engineer"
+      tabindex="-1"
+    >
+      Software Engineer
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Checkbox> rendering should match snapshot when no special props are passed 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    aria-labelledby="software-engineer"
+    class="CheckboxStyle__CheckboxContainer-c3ckvs-0 hMztQF aries-checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      id="software-engineer"
+      type="checkbox"
+      value="Software Engineer"
+    />
+    <label
+      for="software-engineer"
+      tabindex="-1"
+    >
+      Software Engineer
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Checkbox> rendering should match snapshot when size="large" 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    aria-labelledby="software-engineer"
+    class="CheckboxStyle__CheckboxContainer-c3ckvs-0 fScztP aries-checkbox"
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      id="software-engineer"
+      type="checkbox"
+      value="Software Engineer"
+    />
+    <label
+      for="software-engineer"
+      tabindex="-1"
+    >
+      Software Engineer
+    </label>
+  </div>
+</DocumentFragment>
 `;

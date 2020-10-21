@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
@@ -14,25 +13,35 @@ const props = {
 
 function setupCheckbox(props: CheckboxProps) {
   const { id, value, onClick, ...restProps } = props;
-  const { getByText, getByLabelText, ...utils } = render(
+  const { getByText, getByLabelText, asFragment, ...utils } = render(
     <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
   );
   const checkboxInput = getByLabelText(value as string) as HTMLInputElement;
   const checkboxLabel = getByText(value as string) as HTMLLabelElement;
-  return { checkboxInput, checkboxLabel, utils };
+  return { checkboxInput, checkboxLabel, asFragment, utils };
 }
 
 afterEach(() => {
   props.onClick.mockClear();
 });
 
-it(`<Checkbox> should render an input with id, value and onClick props and a label with the text ${props.value}`, () => {
-  const CheckboxSnapshot = renderer
-    .create(
-      <Checkbox id={props.id} value={props.value} onClick={props.onClick} />
-    )
-    .toJSON();
-  expect(CheckboxSnapshot).toMatchSnapshot();
+describe(`<Checkbox> rendering`, () => {
+  it(`should match snapshot when no special props are passed`, () => {
+    const { asFragment } = setupCheckbox(props);
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it(`should match snapshot when border=true`, () => {
+    const { asFragment } = setupCheckbox({ border: true, ...props });
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it(`should match snapshot when disabled=true`, () => {
+    const { asFragment } = setupCheckbox({ disabled: true, ...props });
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it(`should match snapshot when size="large"`, () => {
+    const { asFragment } = setupCheckbox({ size: 'large', ...props });
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 it('when toggling checkbox, it should fire onClick once and become checked, then fire onClick once and become unchecked', () => {
@@ -72,9 +81,20 @@ it('when controlled, the component should change with checked prop', () => {
   ) as HTMLInputElement;
   expect(checkboxInput.checked).toEqual(false);
 
-  rerender(<Component checked={true} />);
+  rerender(<Component {...props} checked={true} />);
 
   expect(checkboxInput.checked).toEqual(true);
+});
+
+it('should not react to inputs when disabled', () => {
+  const { checkboxInput, checkboxLabel } = setupCheckbox({
+    disabled: true,
+    ...props,
+  });
+
+  fireEvent.click(checkboxLabel);
+  expect(props.onClick).toHaveBeenCalledTimes(0);
+  expect(checkboxInput.checked).toEqual(false);
 });
 
 it('when passed label, it should render the label', () => {
