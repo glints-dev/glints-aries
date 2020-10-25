@@ -7,7 +7,7 @@ const theme = {
   breakpoints: breakpointAliasMap,
 };
 
-type Props = MarginProps & PaddingProps;
+export type Props = MarginProps & PaddingProps;
 
 export const StyledBox = styled.div<Props>`
   ${space}
