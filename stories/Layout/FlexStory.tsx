@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { kebabCase } from 'lodash';
 
 import { propsObject as SpacingProps } from './BoxStory/BoxSpaceStory';
+import { Flex } from '../../src/Layout/Flex';
 import {
-  Flex,
   FlexPropAndDefaultValueMap,
   FlexPropAndPossibleValueMap,
-} from '../../src/Layout/Flex';
+} from '../../src/Layout/Flex/types';
+
 import StorybookComponent from '../StorybookComponent';
 
 const props = {
