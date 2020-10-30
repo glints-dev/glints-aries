@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { Box, Props as BoxProps } from '../Box';
 import { FlexProps, FlexPropAndDefaultValueMap } from './types';
 
-type Props = FlexProps & BoxProps;
+type Props = FlexProps &
+  BoxProps & {
+    style?: React.CSSProperties;
+  };
 
 export const StyledFlex = styled(Box)<Props>`
   display: flex;
