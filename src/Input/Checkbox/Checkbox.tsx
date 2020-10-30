@@ -55,10 +55,17 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
 type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'size' | 'label'>;
 
 export interface CheckboxProps extends HTMLInputProps {
+  /** REQUIRED */
+  id?: string;
   label?: React.ReactNode;
   size?: 'large' | 'small';
   border?: boolean;
+  /** REQUIRED */
   value?: string;
+  /** If given, the Checkbox will be treated as controlled. Use with onClick. */
+  checked?: boolean;
+  /** Called when the checkbox changed (uncontrolled) or should change (controlled). */
+  onClick?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 }
 
 export default Checkbox;
