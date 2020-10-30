@@ -5,7 +5,10 @@ import { Box } from '../Box';
 import { BoxProps } from '../Box/types';
 import { FlexProps, FlexPropAndDefaultValueMap } from './types';
 
-type Props = FlexProps & BoxProps;
+type Props = FlexProps &
+  BoxProps & {
+    style?: React.CSSProperties;
+  };
 
 export const StyledFlex = styled(Box)<Props>`
   display: flex;

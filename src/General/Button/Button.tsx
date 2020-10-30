@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React from 'react';
 
 import SolidButton from './SolidButton';
 import SolidShadowButton from './SolidShadowButton';
@@ -44,7 +44,7 @@ export const transformVariant = (variant: string, theme?: string) => {
   return ButtonVariant.SOLID_WHITE;
 };
 
-export const Button: FC<Props> = ({
+export const Button: React.FC<Props> = ({
   children,
   block = false,
   className,
@@ -150,9 +150,11 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   /** Sets Button to disable state. */
   disabled?: boolean;
+  /** Callback when click. */
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   /** Sets Button to small version. */
   small?: boolean;
+  /** The variant of the button. */
   variant?: ButtonVariantType;
   /** Changes the tag with which the button will render. */
   tag?: React.ElementType;
@@ -166,9 +168,10 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isRoundedCorner?: boolean;
 }
 
-const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
-  <Button {...props} forwardedRef={ref} />
-);
+const forwardRef = (
+  props: Props,
+  forwardedRef: React.RefObject<HTMLButtonElement>
+) => <Button ref={forwardedRef} {...props} />;
 
 forwardRef.displayName = Button.name;
 
