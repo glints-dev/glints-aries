@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { Checkbox, CheckboxProps } from './Checkbox';
-import GlintsContainer from '../../Layout/GlintsContainer/GlintsContainer';
+import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 
 export default {
   title: 'General/Checkbox',
@@ -10,9 +10,9 @@ export default {
 } as Meta;
 
 const Template: Story<CheckboxProps> = args => (
-  <GlintsContainer>
+  <BaseContainer>
     <Checkbox {...args} />
-  </GlintsContainer>
+  </BaseContainer>
 );
 
 export const Interactive = Template.bind({});
