@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { PrimaryColor, Greyscale, SecondaryColor } from './Colors';
+import { getReadableColor } from './getReadableColor';
+import { ColorSampler, ColorSample } from './ColorsStoriesHelpers';
+
+<Meta title="Utilities/Colors" />
+
+# Color
+
+```
+import { PrimaryColor, Greyscale } from 'glints-aries';
+
+const MyComponent = styled.div`
+  background-color: ${PrimaryColor.glintsyellow};
+  color: ${PrimaryColor.grey};
+`;
+```
+
+## PrimaryColor
+
+<ColorSampler>
+  {Object.keys(PrimaryColor).map(colorName => (
+    <ColorSample
+      key={colorName}
+      bgColor={PrimaryColor[colorName]}
+      fontColor={getReadableColor(PrimaryColor[colorName])}
+      name={colorName}
+    />
+  ))}
+</ColorSampler>
+
+## Greyscale
+
+<ColorSampler>
+  {Object.keys(Greyscale).map(colorName => (
+    <ColorSample
+      key={colorName}
+      bgColor={Greyscale[colorName]}
+      fontColor={getReadableColor(Greyscale[colorName])}
+      name={colorName}
+    />
+  ))}
+</ColorSampler>
+
+## SecondaryColor
+
+<ColorSampler>
+  {Object.keys(SecondaryColor).map(colorName => (
+    <ColorSample
+      key={colorName}
+      bgColor={SecondaryColor[colorName]}
+      fontColor={getReadableColor(SecondaryColor[colorName])}
+      name={colorName}
+    />
+  ))}
+</ColorSampler>
