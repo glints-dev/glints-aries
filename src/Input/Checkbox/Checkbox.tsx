@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { CheckboxContainer } from './CheckboxStyle';
 import { isUndefined } from 'lodash';
 
-const Checkbox: React.FunctionComponent<CheckboxProps> = ({
+export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   id,
   label,
   value,
