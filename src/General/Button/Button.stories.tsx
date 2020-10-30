@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
+import { Flex } from '../../Layout/Flex';
 import { Button, Props as ButtonProps } from './Button';
 import {
   ArrowBackDoubleIcon,
@@ -9,17 +10,6 @@ import {
   ArrowNextIcon,
   ViewIcon,
 } from '../Icon/components';
-import styled from 'styled-components';
-
-const ButtonStack = styled('div')`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  > :not(:last-child) {
-    margin-bottom: 10px;
-  }
-`;
 
 export default {
   title: 'General/Button',
@@ -29,8 +19,8 @@ export default {
       control: {
         type: 'select',
         options: {
-          ArrowBackIcon: <ArrowBackIcon />,
-          ArrowBackDoubleIcon: <ArrowBackDoubleIcon />,
+          'Example: ArrowBackIcon': <ArrowBackIcon />,
+          'Example: ArrowBackDoubleIcon': <ArrowBackDoubleIcon />,
         },
       },
     },
@@ -38,10 +28,26 @@ export default {
       control: {
         type: 'select',
         options: {
-          ArrowBackIcon: <ArrowNextIcon />,
-          ArrowBackDoubleIcon: <ArrowNextDoubleIcon />,
+          'Example: ArrowBackIcon': <ArrowNextIcon />,
+          'Example: ArrowNextDoubleIcon': <ArrowNextDoubleIcon />,
         },
       },
+    },
+    tag: {
+      control: { type: 'text' },
+    },
+    className: {
+      table: {
+        disable: true,
+      },
+    },
+    ref: {
+      table: {
+        disable: true,
+      },
+    },
+    theme: {
+      control: null,
     },
   },
 } as Meta;
@@ -53,153 +59,60 @@ SolidBlue.args = {
   variant: 'solid-blue',
 };
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-  variant: 'ghost',
-};
-
 export const Variants: Story<ButtonProps> = () => (
-  <ButtonStack>
-    <Button variant="solid-white">Solid-white</Button>
-    <Button variant="solid-blue">Solid-blue</Button>
-    <Button variant="yellow">Yellow</Button>
-    <Button variant="ghost">Ghost</Button>
-    <Button variant="white-grey">White-grey</Button>
-    <Button variant="link">Link</Button>
-  </ButtonStack>
+  <Flex flexWrap="wrap" style={{ gap: '10px' }}>
+    <Button variant="solid-blue">solid-blue</Button>
+    <Button variant="ghost">ghost</Button>
+    <Button variant="white-grey">white-grey</Button>
+    <Button variant="yellow">yellow</Button>
+    <Button variant="solid-white">solid-white</Button>
+    <Button variant="link">link</Button>
+  </Flex>
 );
 
-export const Disabled: Story<ButtonProps> = () => (
-  <ButtonStack>
-    <Button variant="solid-white" disabled>
-      Solid-white
-    </Button>
-    <Button variant="solid-blue" disabled>
-      Solid-blue
-    </Button>
-    <Button variant="yellow" disabled>
-      Yellow
-    </Button>
-    <Button variant="ghost" disabled>
-      Ghost
-    </Button>
-    <Button variant="white-grey" disabled>
-      White-grey
-    </Button>
-    <Button variant="link" disabled>
-      Link
-    </Button>
-  </ButtonStack>
-);
-
-export const Small: Story<ButtonProps> = () => (
-  <ButtonStack>
-    <Button variant="solid-white" small>
-      Solid-white
-    </Button>
+export const Sizes: Story<ButtonProps> = () => (
+  <Flex alignItems="flex-end" flexWrap="wrap" style={{ gap: '10px' }}>
     <Button variant="solid-blue" small>
-      Solid-blue
+      Small
     </Button>
-    <Button variant="yellow" small>
-      Yellow
-    </Button>
-    <Button variant="ghost" small>
-      Ghost
-    </Button>
-    <Button variant="white-grey" small>
-      White-grey
-    </Button>
-    <Button variant="link" small>
-      Link
-    </Button>
-  </ButtonStack>
+    <Button variant="solid-blue">Default</Button>
+    <div style={{ width: '100%' }}>
+      <Button variant="solid-blue" block small>
+        Small Block
+      </Button>
+    </div>
+    <div style={{ width: '100%' }}>
+      <Button variant="solid-blue" block>
+        Default Block
+      </Button>
+    </div>
+  </Flex>
 );
 
-export const Block: Story<ButtonProps> = () => (
-  <ButtonStack style={{ alignItems: 'unset' }}>
-    <Button variant="solid-white" block>
-      Solid-white
+export const Disable: Story<ButtonProps> = () => (
+  <Flex style={{ gap: '10px' }}>
+    <Button variant="solid-blue">enabled</Button>
+    <Button variant="solid-blue" disabled>
+      disabled
     </Button>
-    <Button variant="solid-blue" block>
-      Solid-blue
-    </Button>
-    <Button variant="yellow" block>
-      Yellow
-    </Button>
-    <Button variant="ghost" block>
-      Ghost
-    </Button>
-    <Button variant="white-grey" block>
-      White-grey
-    </Button>
-    <Button variant="link" block>
-      Link
-    </Button>
-  </ButtonStack>
+  </Flex>
 );
 
 export const WithIcon: Story<ButtonProps> = () => (
-  <ButtonStack>
-    <Button
-      variant="solid-white"
-      startIcon={<ViewIcon />}
-      endIcon={<ArrowNextIcon />}
-    >
-      Solid-white
+  <Flex style={{ gap: '10px' }}>
+    <Button variant="solid-blue" startIcon={<ViewIcon />}>
+      button icon left
     </Button>
-    <Button
-      variant="solid-blue"
-      startIcon={<ViewIcon />}
-      endIcon={<ArrowNextIcon />}
-    >
-      Solid-blue
+    <Button variant="solid-blue" endIcon={<ArrowNextIcon />}>
+      button icon right
     </Button>
-    <Button
-      variant="yellow"
-      startIcon={<ViewIcon />}
-      endIcon={<ArrowNextIcon />}
-    >
-      Yellow
-    </Button>
-    <Button
-      variant="ghost"
-      startIcon={<ViewIcon />}
-      endIcon={<ArrowNextIcon />}
-    >
-      Ghost
-    </Button>
-    <Button
-      variant="white-grey"
-      startIcon={<ViewIcon />}
-      endIcon={<ArrowNextIcon />}
-    >
-      White-grey
-    </Button>
-    <Button variant="link" startIcon={<ViewIcon />} endIcon={<ArrowNextIcon />}>
-      Link
-    </Button>
-  </ButtonStack>
+  </Flex>
 );
 
 export const WithDifferentTag: Story<ButtonProps> = () => (
-  <ButtonStack>
-    <Button variant="solid-white" tag="a">
-      Solid-white
-    </Button>
+  <Flex style={{ gap: '10px' }}>
     <Button variant="solid-blue" tag="a">
-      Solid-blue
+      button as anchor
     </Button>
-    <Button variant="yellow" tag="a">
-      Yellow
-    </Button>
-    <Button variant="ghost" tag="a">
-      Ghost
-    </Button>
-    <Button variant="white-grey" tag="a">
-      White-grey
-    </Button>
-    <Button variant="link" tag="a">
-      Link
-    </Button>
-  </ButtonStack>
+  </Flex>
 );
