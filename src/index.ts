@@ -188,3 +188,4 @@ export { default as WarningOutlineIcon } from './General/Icon/components/Warning
 export { default as WarningSolidIcon } from './General/Icon/components/WarningSolidIcon';
 export { default as WhatsappIcon } from './General/Icon/components/WhatsappIcon';
 export { default as YoutubeIcon } from './General/Icon/components/YoutubeIcon';
+export { default as ZaloIcon } from './General/Icon/components/ZaloIcon';
