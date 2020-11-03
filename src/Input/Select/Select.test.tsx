@@ -30,11 +30,13 @@ const SelectChildren = props.options.map(option => (
   </Select.Option>
 ));
 
-const SelectComponent = (
-  <Select label={props.label} onChange={props.onChange}>
+const SelectComponentWithExtraProps = (extraProps = {}) => (
+  <Select label={props.label} onChange={props.onChange} {...extraProps}>
     {SelectChildren}
   </Select>
 );
+
+const SelectComponent = SelectComponentWithExtraProps();
 
 function setupOpenSelectMenu() {
   const { getByRole, queryAllByTestId, getByTestId } = render(SelectComponent);
@@ -49,6 +51,25 @@ function setupOpenSelectMenu() {
     selectInput,
     selectList,
     selectLabel,
+    displayedOptions,
+  };
+}
+
+function setupWithCustomFilterFunction(
+  filterFunction: (option: string, search: string) => boolean
+) {
+  const { getByRole, queryAllByTestId, getByTestId } = render(
+    SelectComponentWithExtraProps({ filterFunction })
+  );
+  const selectInput = getByRole('combobox') as HTMLInputElement;
+  const selectList = getByTestId('listbox');
+  const displayedOptions = queryAllByTestId('option');
+
+  fireEvent.focus(selectInput);
+
+  return {
+    selectInput,
+    selectList,
     displayedOptions,
   };
 }
@@ -237,6 +258,26 @@ describe('when no results are found', () => {
       target: { value: 'z' },
     });
     expect(selectList).toHaveTextContent(/^No results found$/);
+  });
+});
+
+describe('when custom filter function is given', () => {
+  it('should filter results according to custom filter function', () => {
+    const { selectInput, selectList } = setupWithCustomFilterFunction(
+      (option, search) => option.length >= search.length
+    );
+    fireEvent.change(selectInput, {
+      target: { value: 'zzzz zzzz zzzz zzzz' },
+    });
+    expect(selectList).toHaveTextContent(props.options[1].name);
+  });
+  it('should call the custom filter function', () => {
+    const mockFilter = jest.fn();
+    const { selectInput } = setupWithCustomFilterFunction(mockFilter);
+    fireEvent.change(selectInput, {
+      target: { value: 'z' },
+    });
+    expect(mockFilter).toHaveBeenCalled();
   });
 });
 

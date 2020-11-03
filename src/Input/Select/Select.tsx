@@ -39,6 +39,7 @@ const Select: ISelect = (props: Props) => {
     defaultOpen = false,
     children,
     isLoading,
+    filterFunction,
     ...defaultProps
   } = props;
 
@@ -115,12 +116,13 @@ const Select: ISelect = (props: Props) => {
       }
     }
 
-    // for search results, so we do toLower to filter matched options
-    const matchedChildrenOptions = childrenOptions.filter(data =>
-      toLower(data.props.children).includes(toLower(inputValue))
+    const matchedChildrenOptions = childrenOptions.filter(
+      filterFunction
+        ? data => filterFunction(data.props.children, inputValue)
+        : data => toLower(data.props.children).includes(toLower(inputValue))
     );
     return matchedChildrenOptions;
-  }, [children, inputValue, disableTyping, isInputChange]);
+  }, [children, inputValue, disableTyping, isInputChange, filterFunction]);
 
   const [options, setOptions] = React.useState<React.ReactNode[]>(
     availableOptions
@@ -412,6 +414,7 @@ export interface Props
   value?: string;
   defaultValue?: string;
   defaultOpen?: boolean;
+  filterFunction?: (option: string, search: string) => boolean;
 
   onFocus?(e: React.FocusEvent<HTMLInputElement>): void;
   onBlur?(e: React.FocusEvent<HTMLInputElement>): void;
