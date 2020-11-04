@@ -52,13 +52,25 @@ const GlintsContainerStory = () => (
           <td>
             <strong>Container width</strong>
           </td>
-          <td>300px</td>
-          <td>440px</td>
-          <td>600px</td>
+          <td>100%</td>
+          <td>100%</td>
+          <td>100%</td>
           <td>720px</td>
           <td>960px</td>
-          <td>1200px</td>
-          <td>1400px</td>
+          <td>1140px</td>
+          <td>1260px</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Container margin</strong>
+          </td>
+          <td>0 16px</td>
+          <td>0 16px</td>
+          <td>0 16px</td>
+          <td>0 32px</td>
+          <td>0 auto</td>
+          <td>0 auto</td>
+          <td>0 auto</td>
         </tr>
       </tbody>
     </table>
