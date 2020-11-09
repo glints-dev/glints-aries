@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { SelectInputProps } from './Select';
 
 export const SelectContainer = styled.div`
   flex-grow: 1;
@@ -73,7 +74,11 @@ interface SelectLabelProps {
   status: string;
 }
 
-export const SelectInput = styled.input<SelectInputProps>`
+interface StyledSelectInputProps extends SelectInputProps {
+  floating?: boolean;
+}
+
+export const SelectInput = styled.input<StyledSelectInputProps>`
   width: 100%;
   outline: none;
   height: ${({ small }) => (small ? '46px' : '53px')};
@@ -86,7 +91,7 @@ export const SelectInput = styled.input<SelectInputProps>`
   transition: all .5s;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
-
+  
   &::placeholder {
     color: ${Greyscale.grey};
   }
@@ -177,13 +182,6 @@ export const SelectInput = styled.input<SelectInputProps>`
     }
   }
 `;
-
-interface SelectInputProps {
-  disableTyping?: boolean;
-  floating?: boolean;
-  small?: boolean;
-  status?: string;
-}
 
 export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   position: absolute;
