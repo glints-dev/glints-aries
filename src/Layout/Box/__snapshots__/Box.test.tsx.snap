@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> should match snapshot when all margin directions are set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 ebktHH"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> should match snapshot when all padding directions are set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 jWilAT"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> should match snapshot when margin is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 cMvEap"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> should match snapshot when padding is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 hA-dxnS"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> should match snapshot when responsive margin is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 cYQtfv"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> should match snapshot when responsive padding is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 iVdNyz"
+  />
+</DocumentFragment>
+`;

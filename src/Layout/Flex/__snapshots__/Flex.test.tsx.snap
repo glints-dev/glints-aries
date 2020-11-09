@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Flex /> flex properties should match snapshot when alignItems is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 chpOLw Flex__StyledFlex-sc-11ryoct-0 hOHBUN"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> flex properties should match snapshot when flexDirection is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 chpOLw Flex__StyledFlex-sc-11ryoct-0 heKDkF"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> flex properties should match snapshot when flexWrap is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 chpOLw Flex__StyledFlex-sc-11ryoct-0 ffQToI"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> flex properties should match snapshot when justifyContent is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 chpOLw Flex__StyledFlex-sc-11ryoct-0 bkexZU"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when all margin directions are set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 ebktHH Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when all padding directions are set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 jWilAT Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when margin is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 cMvEap Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when padding is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 hA-dxnS Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when responsive margin is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 cYQtfv Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Flex /> spacing properties should match snapshot when responsive padding is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 iVdNyz Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+  />
+</DocumentFragment>
+`;
