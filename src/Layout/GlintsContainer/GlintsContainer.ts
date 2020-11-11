@@ -1,43 +1,50 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ScreenSize, Device } from '../../Utils/StyleConfig';
 
-const GlintsContainer = styled.div`
-  position: relative;
-  margin: 0 auto;
+const BaseStyles = css`
   font-family: Poppins, sans-serif;
-
-  @media ${`(min-width: ${ScreenSize.desktopL}px)`} {
-    width: 1400px;
-    padding: 0 20px;
-  }
-  @media ${`(min-width: ${ScreenSize.desktopM}px)`} and (max-width: 1439px) {
-    width: 1200px;
-    padding: 0 30px;
-  }
-  @media ${`(min-width: ${ScreenSize.desktopS}px)`} and (max-width: 1259px) {
-    padding: 0 32px;
-  }
-  @media ${`(min-width: ${ScreenSize.tablet}px)`} and (max-width: 1023px) {
-    padding: 0 32px;
-  }
-  @media ${`(min-width: ${ScreenSize.mobileL}px)`} and (max-width: 767px) {
-    padding: 0 24px;
-  }
-  @media ${`(min-width: ${ScreenSize.mobileM}px)`} and (max-width: 639px) {
-    padding: 0 20px;
-  }
-  @media ${`(min-width: ${ScreenSize.mobileS}px)`} and (max-width: 479px) {
-    padding: 0 10px;
-  }
-  @media ${Device.mobileS} {
-    padding: 0 10px;
-  }
 
   *,
   *:before,
   *:after {
     box-sizing: border-box;
   }
+`;
+
+const PageStyles = css`
+  position: relative;
+
+  @media ${`(max-width: ${ScreenSize.tablet - 1}px)`} {
+    width: 100%;
+    margin: 0 12px;
+  }
+  @media ${Device.tablet} {
+    width: 720px;
+    margin: 0 16px;
+  }
+  @media ${Device.desktopS} {
+    width: 960px;
+    margin: 0 auto;
+  }
+  @media ${Device.desktopM} {
+    width: 1140px;
+  }
+  @media ${Device.desktopL} {
+    width: 1260px;
+  }
+`;
+
+export const BaseContainer = styled.div`
+  ${BaseStyles}
+`;
+
+export const PageContainer = styled.div`
+  ${PageStyles}
+`;
+
+export const GlintsContainer = styled.div`
+  ${BaseStyles}
+  ${PageStyles}
 `;
 
 export default GlintsContainer;

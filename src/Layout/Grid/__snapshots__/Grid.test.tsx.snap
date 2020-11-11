@@ -3,9 +3,8 @@
 exports[`<Grid/> snapshots should match snapshot with props alignContent and justifyContent 1`] = `
 <DocumentFragment>
   .c0 {
-  position: relative;
-  margin: 0 auto;
   font-family: Poppins,sans-serif;
+  position: relative;
 }
 
 .c0 *,
@@ -62,53 +61,36 @@ exports[`<Grid/> snapshots should match snapshot with props alignContent and jus
   justify-items: center;
 }
 
+@media (max-width:767px) {
+  .c0 {
+    width: 100%;
+    margin: 0 12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    width: 720px;
+    margin: 0 16px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1260px) {
+  .c0 {
+    width: 1140px;
+  }
+}
+
 @media (min-width:1440px) {
   .c0 {
-    width: 1400px;
-    padding: 0 20px;
-  }
-}
-
-@media (min-width:1260px) and (max-width:1439px) {
-  .c0 {
-    width: 1200px;
-    padding: 0 30px;
-  }
-}
-
-@media (min-width:1024px) and (max-width:1259px) {
-  .c0 {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c0 {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width:640px) and (max-width:767px) {
-  .c0 {
-    padding: 0 24px;
-  }
-}
-
-@media (min-width:480px) and (max-width:639px) {
-  .c0 {
-    padding: 0 20px;
-  }
-}
-
-@media (min-width:320px) and (max-width:479px) {
-  .c0 {
-    padding: 0 10px;
-  }
-}
-
-@media (max-width:320px) {
-  .c0 {
-    padding: 0 10px;
+    width: 1260px;
   }
 }
 
@@ -290,9 +272,8 @@ exports[`<Grid/> snapshots should match snapshot with props alignContent and jus
 exports[`<Grid/> snapshots should match snapshot without props alignContent and justifyContent 1`] = `
 <DocumentFragment>
   .c0 {
-  position: relative;
-  margin: 0 auto;
   font-family: Poppins,sans-serif;
+  position: relative;
 }
 
 .c0 *,
@@ -337,53 +318,36 @@ exports[`<Grid/> snapshots should match snapshot without props alignContent and 
   flex-basis: 100%;
 }
 
+@media (max-width:767px) {
+  .c0 {
+    width: 100%;
+    margin: 0 12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    width: 720px;
+    margin: 0 16px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1260px) {
+  .c0 {
+    width: 1140px;
+  }
+}
+
 @media (min-width:1440px) {
   .c0 {
-    width: 1400px;
-    padding: 0 20px;
-  }
-}
-
-@media (min-width:1260px) and (max-width:1439px) {
-  .c0 {
-    width: 1200px;
-    padding: 0 30px;
-  }
-}
-
-@media (min-width:1024px) and (max-width:1259px) {
-  .c0 {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c0 {
-    padding: 0 32px;
-  }
-}
-
-@media (min-width:640px) and (max-width:767px) {
-  .c0 {
-    padding: 0 24px;
-  }
-}
-
-@media (min-width:480px) and (max-width:639px) {
-  .c0 {
-    padding: 0 20px;
-  }
-}
-
-@media (min-width:320px) and (max-width:479px) {
-  .c0 {
-    padding: 0 10px;
-  }
-}
-
-@media (max-width:320px) {
-  .c0 {
-    padding: 0 10px;
+    width: 1260px;
   }
 }
 

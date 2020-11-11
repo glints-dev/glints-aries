@@ -6,7 +6,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-fcjw72-0 hfOKCc aries-alert"
+  className="AlertStyle__AlertContainer-fcjw72-0 djvmce aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -64,7 +64,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-fcjw72-0 cQmTde aries-alert"
+  className="AlertStyle__AlertContainer-fcjw72-0 eXSmio aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -122,7 +122,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-fcjw72-0 cQmTde aries-alert"
+  className="AlertStyle__AlertContainer-fcjw72-0 eXSmio aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -180,7 +180,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-fcjw72-0 gYywFa aries-alert"
+  className="AlertStyle__AlertContainer-fcjw72-0 PyUvo aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
@@ -238,7 +238,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
 <div
   aria-describedby="alert-message"
   aria-hidden="false"
-  className="AlertStyle__AlertContainer-fcjw72-0 dqEtjK aries-alert"
+  className="AlertStyle__AlertContainer-fcjw72-0 iOvgNQ aries-alert"
   onKeyDown={[Function]}
   role="alertdialog"
   tabIndex={0}
