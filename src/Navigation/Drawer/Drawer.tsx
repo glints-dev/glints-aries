@@ -7,8 +7,23 @@ const Drawer = ({
   isOpen,
   onClose,
   position = 'right',
+  getContainerElement,
   ...defaultProps
 }: Props) => {
+  React.useEffect(
+    function preventContainerScrolling() {
+      if (!getContainerElement) return;
+      const containerElement = getContainerElement();
+      if (isOpen) {
+        containerElement.style.overflow = 'hidden';
+      } else {
+        containerElement.style.overflow = 'scroll';
+      }
+      return () => (containerElement.style.overflow = 'scroll');
+    },
+    [getContainerElement, isOpen]
+  );
+
   return (
     <DrawerContainer
       className="aries-drawer"
@@ -40,6 +55,7 @@ interface Props {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: Function;
+  getContainerElement?: () => HTMLElement;
   position?: DrawerPosition;
 }
 

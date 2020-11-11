@@ -56,6 +56,21 @@ class DrawerStory extends React.Component<{}, State> {
           description:
             'Determines which side of the screen the drawer will appear on.',
         },
+        {
+          name: 'getContainerElement',
+          type: 'function',
+          possibleValue: (
+            <>
+              Example:{' '}
+              <code>
+                () =&gt; document.getElementsByTagName(&apos;body&apos;)[0]
+              </code>
+            </>
+          ),
+          require: 'no',
+          description:
+            'Pass a function that returns a underlying, scrollable element to disable scrolling when the drawer is open',
+        },
       ],
     };
 
@@ -80,6 +95,7 @@ class DrawerStory extends React.Component<{}, State> {
         <Drawer
           isOpen={isOpen}
           onClose={() => this.setState({ isOpen: false })}
+          getContainerElement={() => document.getElementsByTagName('body')[0]}
         >
           {this.renderSideBar()}
         </Drawer>

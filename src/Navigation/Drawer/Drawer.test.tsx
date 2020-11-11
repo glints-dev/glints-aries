@@ -54,24 +54,41 @@ describe('<Drawer/> behaviour', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  it('should remove overflow hidden from document body after close', () => {
+  it('should add overflow hidden to container element on open', () => {
     const onClose = jest.fn();
+    const containerElement = document.body;
 
     const { rerender } = render(
-      <Drawer isOpen={false} onClose={onClose}>
+      <Drawer
+        isOpen={false}
+        onClose={onClose}
+        getContainerElement={() => containerElement}
+      >
         test-content
       </Drawer>
     );
-    const drawerContainer = queryByTestId(document.body, 'drawer-container');
-    expect(drawerContainer).toHaveAttribute('aria-hidden', 'true');
+    expect(containerElement).toHaveStyle('overflow: scroll');
 
-    // rerender here will render the same component again, thus triggering the
-    // internal update logic
     rerender(
-      <Drawer isOpen={true} onClose={onClose}>
+      <Drawer
+        isOpen={true}
+        onClose={onClose}
+        getContainerElement={() => containerElement}
+      >
         test-content
       </Drawer>
     );
-    expect(drawerContainer).toHaveAttribute('aria-hidden', 'false');
+    expect(containerElement).toHaveStyle('overflow: hidden');
+
+    rerender(
+      <Drawer
+        isOpen={false}
+        onClose={onClose}
+        getContainerElement={() => containerElement}
+      >
+        test-content
+      </Drawer>
+    );
+    expect(containerElement).toHaveStyle('overflow: scroll');
   });
 });
