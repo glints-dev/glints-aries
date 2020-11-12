@@ -26,12 +26,12 @@ exports[`when startIcon has an icon value should match the snapshot when start i
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 dGbmdG"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 cFldtE"
       type="text"
       value=""
     />
     <div
-      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 tnaXJ start-icon"
+      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 cSPpmu"
     >
       <svg
         class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"

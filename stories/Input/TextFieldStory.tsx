@@ -209,7 +209,9 @@ const TextFieldWithStartIcon = () => {
   return (
     <StorybookComponent
       propsObject={props}
-      usage={'<TextField type="text" label="Username" disabled={true} />'}
+      usage={
+        '<TextField type="text" label="Username" startIcon={<SearchIcon />} />'
+      }
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Text with Start Icon
@@ -220,7 +222,6 @@ const TextFieldWithStartIcon = () => {
           label="Username"
           value={textFieldWithIconValue}
           startIcon={<SearchIcon />}
-          allowClear={true}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setTextFieldWithIconValue(e.target.value)
           }
