@@ -6,7 +6,7 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
 >
   <input
     aria-label="Username"
-    className="TextFieldStyle__TextFieldInput-sc-5sd02x-4 kaJRTs"
+    className="TextFieldStyle__TextFieldInput-sc-5sd02x-4 irFphx"
     onKeyDown={[Function]}
     type="text"
   />
@@ -26,7 +26,7 @@ exports[`when startIcon has an icon value should match the snapshot when start i
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 iPwgbv"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 dGbmdG"
       type="text"
       value=""
     />
