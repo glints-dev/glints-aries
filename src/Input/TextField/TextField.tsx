@@ -93,11 +93,7 @@ const TextField: React.FunctionComponent<Props> = props => {
         hasStartIcon={hasStartIcon}
         {...restProps}
       />
-      {startIcon && (
-        <StartIconContainer className="start-icon">
-          {startIcon}
-        </StartIconContainer>
-      )}
+      {startIcon && <StartIconContainer>{startIcon}</StartIconContainer>}
       {!removeFloatingLabel && (
         <TextFieldLabel
           data-testid="textfield-label"

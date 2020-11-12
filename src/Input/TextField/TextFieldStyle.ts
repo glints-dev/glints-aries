@@ -9,8 +9,6 @@ export const IconContainer = styled.div`
 
   svg {
     fill: ${Greyscale.grey};
-    width: 10px;
-    height: 14px;
   }
 
   &:hover svg {
@@ -24,7 +22,7 @@ export const StartIconContainer = styled.div`
   left: 16px;
 
   svg {
-    fill: ##798899;
+    fill: #798899;
   }
 `;
 
@@ -174,7 +172,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
     ${({ hasStartIcon }) => {
       if (hasStartIcon) {
         return `
-          + .start-icon {
+          + ${StartIconContainer} {
             svg {
               fill: ${SecondaryColor.actionblue};
             }
