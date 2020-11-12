@@ -9,10 +9,22 @@ export const IconContainer = styled.div`
 
   svg {
     fill: ${Greyscale.grey};
+    width: 10px;
+    height: 14px;
   }
 
   &:hover svg {
     fill: ${Greyscale.black};
+  }
+`;
+
+export const StartIconContainer = styled.div`
+  position: absolute;
+  display: flex;
+  left: 16px;
+
+  svg {
+    fill: ##798899;
   }
 `;
 
@@ -35,6 +47,14 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   pointer-events: none;
   font-weight: 300;
   font-size: 1.1em;
+
+  ${({ hasStartIcon }) => {
+    if (hasStartIcon) {
+      return `
+        left: 38px;
+      `;
+    }
+  }}
   
   ${({ floating }) => {
     if (floating) {
@@ -71,6 +91,7 @@ interface TextFieldLabelProps {
   small: boolean;
   floating: boolean;
   status: statusType;
+  hasStartIcon?: boolean;
 }
 
 export const TextFieldInput = styled.input<TextFieldInputProps>`
@@ -105,6 +126,14 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       }
     }
   }}
+
+  ${({ hasStartIcon }) => {
+    if (hasStartIcon) {
+      return `
+        padding-left: 38px;
+      `;
+    }
+  }}
   
   &:hover {
     border: 2px solid ${SecondaryColor.actionblue};
@@ -118,7 +147,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       }
     }}
 
-    + ${TextFieldLabel} {
+    ~ ${TextFieldLabel} {
       color: ${SecondaryColor.black};
 
       ${({ status }) => {
@@ -142,7 +171,19 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       }
     }}
 
-    + ${TextFieldLabel} {
+    ${({ hasStartIcon }) => {
+      if (hasStartIcon) {
+        return `
+          + .start-icon {
+            svg {
+              fill: ${SecondaryColor.actionblue};
+            }
+          }
+        `;
+      }
+    }}
+
+    ~ ${TextFieldLabel} {
       padding: 0 5px;
       top: 1em;
       transform: ${({ small }) =>
@@ -181,4 +222,5 @@ export interface TextFieldInputProps {
   status?: statusType;
   disableTyping?: boolean;
   floating?: boolean;
+  hasStartIcon?: boolean;
 }
