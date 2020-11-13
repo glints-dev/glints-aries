@@ -1,0 +1,64 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as AllIcons from './components';
+import { IconGallery, IconSampler } from './IconStoriesHelpers';
+import { Box } from '../../Layout/Box/index.tsx';
+
+<Meta title="General/Icons" />
+
+# Icons
+
+Each icon is an individual component exported from Aries.
+
+<IconSampler />
+
+```TypeScript
+import { SettingSolidIcon } from 'glints-aries';
+
+const MyComponent = () => (
+  <p>
+    <SettingSolidIcon />
+  </p>
+);
+```
+
+## Icons
+
+<Box mb="3em">
+  <IconGallery />
+</Box>
+
+## Color
+
+By default an icon will inherit the text color of its surrounding element:
+
+<span style={{ color: 'red' }}>
+  Red text <AllIcons.SettingSolidIcon /> with red icon
+</span>
+
+```
+<span style={{ color: 'red' }}>
+  Red text <SettingSolidIcon /> with red icon
+</span>
+```
+
+You can also pass any css color through the `color` prop to specify an explicit color:
+
+<span style={{ color: 'red' }}>
+  Red text <AllIcons.SettingSolidIcon color="black" /> with black icon
+</span>
+
+```
+<span style={{ color: 'red' }}>
+  Red text <SettingSolidIcon color="black" /> with black icon
+</span>
+```
+
+## Size
+
+You can change the size of the icon with the `width` and `height` props. Note that currently you have to set **both** props to the **same** value to make this work as expected.
+
+<AllIcons.SettingSolidIcon width="32px" height="32px" />
+
+```
+<SettingSolidIcon width="32px" height="32px" />
+```
