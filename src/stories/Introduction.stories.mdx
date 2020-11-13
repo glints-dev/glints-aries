@@ -8,17 +8,19 @@ import { AriesStatus } from './story-components/AriesStatus';
 
 <code>v{version}</code>
 
-Glints Aries is Glints' in-house component library. Most components are specific to Glints but you're free to use them in your own projects or to fork this project to build your own component library.
+Glints Aries is Glints' in-house React component library. Most components are specific to Glints but you're free to use them in your own projects or to fork this project to build your own component library. We also host a number of non-component code units such as colors and breakpoints.
 
 The code is hosted on [GitHub](https://github.com/glints-dev/glints-aries). Feel free to open bug report or feature request tickets in our [issue tracker](https://github.com/glints-dev/glints-aries/issues). Or go ahead and directly submit a [pull request](https://github.com/glints-dev/glints-aries/pulls).
 
-## Installation
-
-```
-npm install -S glints-aries
-```
-
 ## How To Use
+
+Install:
+
+```
+yarn add glints-aries
+```
+
+Then start importing and using the components:
 
 ```
 import { Button } from 'glints-aries';
@@ -30,7 +32,11 @@ const MyComponent = () => (
 )
 ```
 
-Browse stories documenting all components in Glints Aries now by navigating to them in the sidebar.
+Browse stories documenting all code units in Glints Aries now by navigating to them in the sidebar.
+
+## About This Documentaion
+
+Occasionally you may come across a story where the example code is wrapped in a `<GlintsContainer__BaseContainer>` tag. This means that the component must be a descendant of a [GlintsContainer](http://localhost:6006/?path=/docs/utilities-glintscontainer--page#glintscontainer) or [BaseContainer](/?path=/docs/utilities-glintscontainer--page#basecontainer) because it depends on some "base-styles" imparted by either of those two components.
 
 ## Status
 
