@@ -1,12 +1,14 @@
-import * as React from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { LoadingContainer, Spinner } from './LoadingStyle';
 
-const Loading: React.FunctionComponent<Props> = props => {
+/** The loading spinner does not support resizing at the moment, but as a workaround you can use the <code>className</code> attribute to change it's styles manually. */
+export const Loading: FC<Props> = props => {
   const { className } = props;
 
   return (
     <LoadingContainer
+      {...props}
       className={classNames('aries-loading', className)}
       role="alert"
       data-testid="alert"
@@ -18,8 +20,6 @@ const Loading: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props {
-  className?: string;
-}
+export type Props = HTMLAttributes<HTMLDivElement>;
 
 export default Loading;
