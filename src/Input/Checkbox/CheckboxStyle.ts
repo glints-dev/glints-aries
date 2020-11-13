@@ -24,18 +24,18 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       display: block;
       position: absolute;
-      top: 0.2em;
-      left: 0.5em;
-      width: 0.4em;
-      height: 0.85em;
+      top: ${({ size }) => (size === 'small' ? '1.8px' : '3.3px')};
+      left: ${({ size }) => (size === 'small' ? '6.3px' : '7.5px')};
+      width: 6px;
+      height: 12px;
       border: solid ${SecondaryColor.white};
-      border-width: 0 0.15em 0.15em 0;
+      border-width: 0 2px 2px 0;
       transform: rotate(45deg);
-      ${({ border }) => {
+      ${({ border, size }) => {
         if (border) {
           return `
-            margin-top: 10px;
-            margin-left: 15px;
+            margin-top: ${size === 'small' ? '8.5px' : '8px'};
+            margin-left: 12.5px;
           `;
         }
       }};
@@ -46,29 +46,25 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
         border
           ? `${SecondaryColor.actionblue}`
           : `${SecondaryColor.darkgreen}`};
-      border: 2px solid
-        ${({ border }) =>
-          border
-            ? `${SecondaryColor.actionblue}`
-            : `${SecondaryColor.darkgreen}`};
+      border-color: ${({ border }) =>
+        `${border ? SecondaryColor.actionblue : SecondaryColor.darkgreen}`};
     }
   }
 
   label {
     position: relative;
     display: flex;
-    justify-content: center;
-    line-height: 1.5;
+    align-items: center;
+    line-height: 1;
     cursor: pointer;
     outline: none;
     ${({ border }) => {
       if (border) {
         return `
           border: 1px solid #aaaaaa;
-          height: ${({ size }: any) => (size === 'small' ? '40px' : '43px')};
           cursor: pointer;
-          border-radius: 2px;
-          padding: 10px 15px;
+          border-radius: 8px;
+          padding: 8px 12px;
           &:hover {
             background: rgba(1, 126, 183, 0.1);
             border-color: ${SecondaryColor.actionblue};
@@ -89,16 +85,17 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       appearance: none;
       background-color: transparent;
-      border: 2px solid ${SecondaryColor.lightblack};
+      border: 1px solid ${SecondaryColor.lightblack};
       padding: 0.6em;
       display: inline-block;
       position: relative;
       vertical-align: middle;
       cursor: pointer;
       margin-right: 10px;
-      border-radius: 2px;
+      border-radius: 4px;
       height: 18px;
       width: 18px;
+      box-sizing: border-box;
     }
   }
 `;
