@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
+const startIconPadding = '38px';
+
 export const IconContainer = styled.div`
   position: absolute;
   display: flex;
@@ -49,7 +51,7 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   ${({ hasStartIcon }) => {
     if (hasStartIcon) {
       return `
-        left: 38px;
+        left: ${startIconPadding};
       `;
     }
   }}
@@ -128,7 +130,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   ${({ hasStartIcon }) => {
     if (hasStartIcon) {
       return `
-        padding-left: 38px;
+        padding-left: ${startIconPadding};
       `;
     }
   }}
