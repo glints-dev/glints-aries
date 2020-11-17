@@ -13,6 +13,7 @@ import {
   TextFieldInput,
   TextFieldLabel,
   IconContainer,
+  StartIconContainer,
 } from './TextFieldStyle';
 
 export const isFilled = (type: textFieldType, value: any) => {
@@ -36,11 +37,13 @@ const TextField: React.FunctionComponent<Props> = props => {
     allowClear,
     forwardedRef,
     onChange,
+    startIcon,
     ...restProps
   } = props;
 
   const [floating, setFloating] = React.useState<boolean>(false);
   const [inputType, setInputType] = React.useState<textFieldType>(type);
+  const hasStartIcon = Boolean(startIcon);
 
   const handleShowPassword = React.useCallback(() => {
     setInputType(inputType === 'password' ? 'text' : 'password');
@@ -87,8 +90,10 @@ const TextField: React.FunctionComponent<Props> = props => {
         aria-label={label}
         small={small}
         disableTyping={disableTyping}
+        hasStartIcon={hasStartIcon}
         {...restProps}
       />
+      {startIcon && <StartIconContainer>{startIcon}</StartIconContainer>}
       {!removeFloatingLabel && (
         <TextFieldLabel
           data-testid="textfield-label"
@@ -96,6 +101,7 @@ const TextField: React.FunctionComponent<Props> = props => {
           floating={floating}
           status={status}
           small={small}
+          hasStartIcon={hasStartIcon}
         >
           {label}
         </TextFieldLabel>
@@ -135,6 +141,7 @@ export interface Props
   max?: number;
   step?: number;
   forwardedRef?: React.RefObject<HTMLInputElement>;
+  startIcon?: React.ReactNode;
 }
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLInputElement>) => (

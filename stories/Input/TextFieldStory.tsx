@@ -5,6 +5,7 @@ import StorybookComponent from '../StorybookComponent';
 import TextField from '../../src/Input/TextField';
 import Heading from '../../src/General/Heading';
 import Divider from '../../src/General/Divider';
+import SearchIcon from '../../src/General/Icon/components/SearchIcon';
 
 export const props = {
   TextField: [
@@ -188,6 +189,48 @@ const TextFieldDisabledStory = () => {
   );
 };
 
+const TextFieldWithStartIcon = () => {
+  const props = {
+    TextField: [
+      {
+        name: 'startIcon',
+        type: 'node',
+        defaultValue: '-',
+        possibleValue: 'any icon',
+        require: 'no',
+        description: 'Icon at the start of the input element.',
+      },
+    ],
+  };
+  const [textFieldWithIconValue, setTextFieldWithIconValue] = React.useState(
+    ''
+  );
+
+  return (
+    <StorybookComponent
+      propsObject={props}
+      usage={
+        '<TextField type="text" label="Username" startIcon={<SearchIcon />} />'
+      }
+    >
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Text with Start Icon
+      </Heading>
+      <div style={{ width: '300px' }}>
+        <TextField
+          type="text"
+          label="Username"
+          value={textFieldWithIconValue}
+          startIcon={<SearchIcon />}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setTextFieldWithIconValue(e.target.value)
+          }
+        />
+      </div>
+    </StorybookComponent>
+  );
+};
+
 const TextFieldStories = () => (
   <React.Fragment>
     <TextFieldStory />
@@ -195,6 +238,8 @@ const TextFieldStories = () => (
     <TextFieldWithClearIconStory />
     <Divider theme="grey" />
     <TextFieldDisabledStory />
+    <Divider theme="grey" />
+    <TextFieldWithStartIcon />
   </React.Fragment>
 );
 

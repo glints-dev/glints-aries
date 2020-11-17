@@ -7,6 +7,7 @@ import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
 import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
+import SearchIcon from '../../General/Icon/components/SearchIcon';
 
 const props = {
   type: 'text' as textFieldType,
@@ -308,5 +309,20 @@ describe('when allowClear is true and type is text', () => {
       const invisibleIcon = queryByTestId('invisible-icon');
       expect(invisibleIcon).toBeInTheDocument();
     });
+  });
+});
+
+describe('when startIcon has an icon value', () => {
+  it('should match the snapshot when start icon is included inside the text box', () => {
+    const { asFragment } = render(
+      <TextField
+        type={props.type}
+        label={props.label}
+        onChange={props.onChange}
+        startIcon={<SearchIcon />}
+      />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
