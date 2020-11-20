@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as ReactDOMServer from 'react-dom/server';
-import { camelCase, upperFirst } from 'lodash';
+import camelCase from 'lodash/camelCase';
+import upperFirst from 'lodash/upperFirst';
 
 import { ICONS } from './IconLibrary';
 

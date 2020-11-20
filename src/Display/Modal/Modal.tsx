@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import { CloseIcon } from '../../General/Icon/components';
 import { escEvent as createEscapeKeyEventListener } from '../../Utils/DomUtils';

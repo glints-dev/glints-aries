@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { camelCase, upperFirst } from 'lodash';
+import camelCase from 'lodash/camelCase';
+import upperFirst from 'lodash/upperFirst';
+
 import { ICONS } from '../../Utils/Icon/IconLibrary';
 
 const formatWarning = (name: string) => {

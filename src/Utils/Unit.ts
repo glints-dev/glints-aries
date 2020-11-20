@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import moment from 'moment';
 
 function memoize<K, V>(fn: (key: K) => V): (key: K) => V {
   const cacheMap: Map<K, V> = new Map();

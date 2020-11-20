@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { kebabCase } from 'lodash';
+import kebabCase from 'lodash/kebabCase';
 
 import { propsObject as SpacingProps } from './BoxStory/BoxSpaceStory';
 import { Flex } from '../../src/Layout/Flex';

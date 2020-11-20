@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { get, toLower } from 'lodash';
-
+import get from 'lodash/get';
+import toLower from 'lodash/toLower';
 import classNames from 'classnames';
 
 import SelectList, { SelectItemProps } from './SelectList';

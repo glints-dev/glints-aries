@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import classNames from 'classnames';
-import { isFunction } from 'lodash';
+import isFunction from 'lodash/isFunction';
 
 import {
   TextareaContainer,

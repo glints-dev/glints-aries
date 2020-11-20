@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 
 import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
