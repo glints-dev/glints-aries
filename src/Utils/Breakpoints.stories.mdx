@@ -1,0 +1,98 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ScreenSize, Device } from './StyleConfig';
+
+<Meta title="Utilities/Breakpoints" />
+
+# Breakpoints
+
+These utilities are used internally by components like
+[GlintsContainer](/?path=/docs/utilities-glintscontainer--page#glintscontainer).
+You should use them when building your own responsive styles to ensure that
+breaks only happen at a few well-defined viewport-widths.
+
+## Device
+
+Our device classes. Names are generally oriented upwards: For example, when you
+use `Device.desktopS`, your styles will apply for all viewport-widths greater or
+equal to `1024px`. That means that you have to override those styles with rules
+for wider viewports if needed. Thus, if you have styles for serveral widths, the
+rules for narrow viewports should be at the top and should be consecutively
+overridden by rules for wider viewports towards the bottom of your css.
+
+`mobileS` is an exception: It applies "downwards", i.e. on all screens smaller
+than `480px`.
+
+```TypeScript
+import { Device } from 'glints-aries';
+
+const MyContainer = styled.div`
+  // Applies on screens smaller than tablet
+  color: red;
+
+  // Applies from tablets to screens smaller than large desktops
+  @media ${Device.tablet} {
+    color: green;
+  }
+
+  // Applies on large desktops
+  @media ${Device.desktopL} {
+    color: blue;
+  }
+`;
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(Device).map(dev => (
+      <>
+        <tr>
+          <td>{dev}</td>
+          <td>{Device[dev]}</td>
+        </tr>
+      </>
+    ))}
+  </tbody>
+</table>
+
+## ScreenSize
+
+These are the numeric pixel values that define our breakpoints. The values are
+the smallest pixel width that should be classified as the respective constant's
+size class. For example, a viewport needs to be at least `1440px` wide to "qualify" as
+Desktop Large. Note that the values do not include the `px` prefix;
+
+```TypeScript
+import { ScreenSize } from 'glints-aries';
+
+const MyContainer = styled.div`
+  color: red;
+  @media (min-width: ${ScreenSize.desktopL}px) {
+    color: blue;
+  }
+`;
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.keys(ScreenSize).map(size => (
+      <>
+        <tr>
+          <td>{size}</td>
+          <td>{ScreenSize[size]}</td>
+        </tr>
+      </>
+    ))}
+  </tbody>
+</table>
