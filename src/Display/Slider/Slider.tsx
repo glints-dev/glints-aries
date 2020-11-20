@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
 
 import classNames from 'classnames';
 

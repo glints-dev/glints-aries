@@ -18,7 +18,8 @@
       "react-dom",
       "storybook__react",
       "styled-components"
-    ]
+    ],
+    "esModuleInterop": true
   },
   "include": ["src/**/*", "stories/**/*"]
 }
