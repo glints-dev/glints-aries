@@ -86,17 +86,11 @@ export const Disabled: Story<ButtonProps> = () => (
     <Button variant="white-grey" disabled>
       White-grey
     </Button>
-    <Button variant="link" disabled>
-      Link
-    </Button>
   </ButtonStack>
 );
 
 export const Small: Story<ButtonProps> = () => (
   <ButtonStack>
-    <Button variant="solid-white" small>
-      Solid-white
-    </Button>
     <Button variant="solid-blue" small>
       Solid-blue
     </Button>

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 import { ButtonTheme } from '../../Utils/StyleConfig';
 
-const generalButtonPadding = [15, 40];
-const smallButtonPadding = [10, 20];
+const generalButtonPadding = [20, 40];
+const smallButtonPadding = [5, 10];
 
 interface ButtonProps {
   small?: boolean;
@@ -19,7 +19,7 @@ const Button = styled.button<ButtonProps>`
   outline: none;
   cursor: pointer;
   font-weight: bold;
-  font-size: ${({ small }) => (small ? '14px' : '16px')};
+  font-size: ${({ small }) => (small ? '14px' : '20px')};
   line-height: 1.5;
   padding: ${({ small }) =>
     small
