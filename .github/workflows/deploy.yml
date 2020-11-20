@@ -1,10 +1,8 @@
-# .github/workflows/chromatic.yml
-
-# Other configuration required
+name: Deploy
 on:
-  push:
+  pull_request:
     branches:
-      - v4
+      - 'feature/**'
 jobs:
   chromatic-deployment:
     steps:
