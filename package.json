@@ -21,7 +21,8 @@
     "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -o .out -s dist/public",
-    "storybook:build:assets": "webpack"
+    "storybook:build:assets": "webpack",
+    "deploy": "yarn chromatic -b storybook:build chromatic -t CHROMATIC_PROJECT_TOKEN"
   },
   "author": "Glints",
   "license": "MIT",
@@ -81,6 +82,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.7",
     "babylon7": "npm:@babel/parser@^7",
+    "chromatic": "^5.4.0",
     "create-index": "^2.4.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
