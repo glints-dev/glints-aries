@@ -6,7 +6,7 @@ exports[`<Button> should render with text "click me" and an onClick handler 1`] 
   disabled={false}
 >
   <button
-    className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 iLyOhD solid-btn-content"
+    className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 hTiyKA solid-btn-content"
     disabled={false}
     onClick={[MockFunction]}
   >

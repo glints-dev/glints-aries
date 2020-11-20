@@ -21,7 +21,7 @@ exports[`<SearchFilter> should render with an input with a button, and a list wi
       disabled={false}
     >
       <button
-        className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 ghseIh solid-btn-content"
+        className="ButtonStyle__Button-jyb3o2-0 ButtonStyle__SolidBtn-jyb3o2-1 hkpuOS solid-btn-content"
         disabled={false}
       >
         Search
