@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { DividerContainer } from './DividerStyle';
 
-const Divider: React.FunctionComponent<Props> = props => {
+export const Divider: React.FC<Props> = props => {
   const { theme, className, style } = props;
 
   return (
@@ -14,8 +14,11 @@ const Divider: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props {
-  theme?: string;
+export type Theme = 'red' | 'blue' | 'yellow' | 'white' | 'grey' | 'default';
+
+export interface Props {
+  theme?: Theme;
+  /** Can be used to change the divider height. */
   className?: string;
   style?: React.CSSProperties;
 }
