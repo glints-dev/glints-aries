@@ -12,7 +12,7 @@ import {
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
-const Textarea: React.FunctionComponent<Props> = props => {
+export const Textarea: React.FC<Props> = props => {
   const {
     label,
     value,
@@ -116,9 +116,13 @@ const Textarea: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
+  /** Placeholder for the text area. */
   label?: string;
+  /** Called when the text area loses focus. */
   onBlur?(e: React.FocusEvent<HTMLTextAreaElement>): void;
+  /** Called when the value of the input changes. */
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
   forwardedRef?: React.RefObject<HTMLTextAreaElement>;
