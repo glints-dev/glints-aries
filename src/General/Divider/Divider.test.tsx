@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
-import Divider from './Divider';
+import Divider, { Theme } from './Divider';
 
 describe('<Divider/> snapshots', () => {
   test('should match snapshot when no props is being passed', () => {
@@ -13,7 +13,7 @@ describe('<Divider/> snapshots', () => {
 });
 
 describe('<Divider/> snapshots with theme prop', () => {
-  const matchSnapshotWithTheme = (theme: string) => {
+  const matchSnapshotWithTheme = (theme: Theme) => {
     test(`theme ${theme}`, () => {
       const { asFragment } = render(
         <Divider theme={theme} className="name" style={{ top: '10px' }} />
@@ -22,7 +22,7 @@ describe('<Divider/> snapshots with theme prop', () => {
     });
   };
 
-  ['red', 'blue', 'yellow', 'white', 'grey', 'default'].forEach(theme =>
-    matchSnapshotWithTheme(theme)
+  ['red', 'blue', 'yellow', 'white', 'grey', 'default'].forEach(
+    (theme: Theme) => matchSnapshotWithTheme(theme)
   );
 });
