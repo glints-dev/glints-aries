@@ -80,13 +80,13 @@ const Select: React.FC<Props> & {
     [value, defaultValue]
   );
 
-  const [floating, setFloating] = React.useState<boolean>(false);
-  const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
-  const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [inputValue, setInputValue] = React.useState<string>(() => {
     const initialInputValue = value || defaultValue || '';
     return String(initialInputValue);
   });
+  const [floating, setFloating] = React.useState<boolean>(Boolean(inputValue));
+  const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
+  const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
   const [
     shouldScrollToActiveOption,
