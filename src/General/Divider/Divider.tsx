@@ -2,6 +2,10 @@ import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { DividerContainer } from './DividerStyle';
 
+/**
+ * Use <code>className</code> or <code>style</code> to change the divider's
+ * height
+ */
 export const Divider: FC<Props> = ({
   theme = 'default',
   className,
