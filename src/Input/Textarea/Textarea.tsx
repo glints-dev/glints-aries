@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, HTMLAttributes, RefObject } from 'react';
 
 import classNames from 'classnames';
 import { isFunction } from 'lodash';
@@ -12,23 +12,24 @@ import {
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
-export const Textarea: React.FC<Props> = props => {
-  const {
-    label,
-    value,
-    status,
-    disabled,
-    className,
-    onBlur,
-    onChange,
-    removeFloatingLabel,
-    ...restProps
-  } = props;
-
+/** Use <code>onChange</code> to listen to input changes. Use
+ * <code>onBlur</code> to listen to focus loss. */
+export const Textarea: FC<Props> = ({
+  label,
+  value = undefined,
+  status = 'default',
+  disabled = false,
+  className,
+  onBlur,
+  onChange,
+  forwardedRef,
+  removeFloatingLabel = false,
+  ...restProps
+}) => {
   const [floating, setFloating] = React.useState<boolean>(false);
   const [rows, setRows] = React.useState<number>(MIN_ROWS);
   const innerRef = React.useRef(null);
-  const textareaInputRef = props.forwardedRef || innerRef;
+  const textareaInputRef = forwardedRef || innerRef;
 
   const [textareaMaxHeight, setTextareaMaxHeight] = React.useState<number>(0);
 
@@ -117,22 +118,21 @@ export const Textarea: React.FC<Props> = props => {
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
+export type Status = 'default' | 'error';
+
+export interface Props extends HTMLAttributes<HTMLTextAreaElement> {
+  value?: string;
+  status?: Status;
   /** Placeholder for the text area. */
   label?: string;
-  /** Called when the text area loses focus. */
-  onBlur?(e: React.FocusEvent<HTMLTextAreaElement>): void;
-  /** Called when the value of the input changes. */
-  onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
-  forwardedRef?: React.RefObject<HTMLTextAreaElement>;
+  disabled?: boolean;
+  forwardedRef?: RefObject<HTMLTextAreaElement>;
 }
 
-const forwardRef = (
-  props: Props,
-  ref: React.RefObject<HTMLTextAreaElement>
-) => <Textarea {...props} forwardedRef={ref} />;
+const forwardRef = (props: Props, ref: RefObject<HTMLTextAreaElement>) => (
+  <Textarea {...props} forwardedRef={ref} />
+);
 
 forwardRef.displayName = Textarea.name;
 

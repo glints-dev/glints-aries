@@ -1,14 +1,20 @@
-import * as React from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { DividerContainer } from './DividerStyle';
 
-export const Divider: React.FC<Props> = props => {
-  const { theme, className, style } = props;
-
+/**
+ * Use <code>className</code> or <code>style</code> to change the divider's
+ * height
+ */
+export const Divider: FC<Props> = ({
+  theme = 'default',
+  className,
+  ...props
+}) => {
   return (
     <DividerContainer
+      {...props}
       className={classNames('aries-divider', className)}
-      style={style}
       theme={theme}
     />
   );
@@ -16,11 +22,8 @@ export const Divider: React.FC<Props> = props => {
 
 export type Theme = 'red' | 'blue' | 'yellow' | 'white' | 'grey' | 'default';
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
   theme?: Theme;
-  /** Can be used to change the divider height. */
-  className?: string;
-  style?: React.CSSProperties;
 }
 
 export default Divider;
