@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, HTMLAttributes, RefObject } from 'react';
 
 import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
@@ -12,10 +12,10 @@ import {
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
-export const Textarea: React.FC<Props> = ({
+export const Textarea: FC<Props> = ({
   label,
-  value,
-  status,
+  value = undefined,
+  status = 'default',
   disabled = false,
   className,
   onBlur,
@@ -112,23 +112,21 @@ export const Textarea: React.FC<Props> = ({
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TextareaInput> {
+export type Status = 'default' | 'error';
+
+export interface Props extends HTMLAttributes<HTMLTextAreaElement> {
+  value?: string;
+  status?: Status;
   /** Placeholder for the text area. */
   label?: string;
-  /** Called when the text area loses focus. */
-  onBlur?(e: React.FocusEvent<HTMLTextAreaElement>): void;
-  /** Called when the value of the input changes. */
-  onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
-  forwardedRef?: React.RefObject<HTMLTextAreaElement>;
   disabled?: boolean;
+  forwardedRef?: RefObject<HTMLTextAreaElement>;
 }
 
-const forwardRef = (
-  props: Props,
-  ref: React.RefObject<HTMLTextAreaElement>
-) => <Textarea {...props} forwardedRef={ref} />;
+const forwardRef = (props: Props, ref: RefObject<HTMLTextAreaElement>) => (
+  <Textarea {...props} forwardedRef={ref} />
+);
 
 forwardRef.displayName = Textarea.name;
 
