@@ -2,9 +2,11 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { DividerContainer } from './DividerStyle';
 
-export const Divider: React.FC<Props> = props => {
-  const { theme, className, style } = props;
-
+export const Divider: React.FC<Props> = ({
+  theme = 'default',
+  className,
+  style,
+}) => {
   return (
     <DividerContainer
       className={classNames('aries-divider', className)}
