@@ -12,24 +12,23 @@ import {
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
-export const Textarea: React.FC<Props> = props => {
-  const {
-    label,
-    value,
-    status,
-    disabled,
-    className,
-    onBlur,
-    onChange,
-    removeFloatingLabel,
-    small,
-    ...restProps
-  } = props;
-
+export const Textarea: React.FC<Props> = ({
+  label,
+  value,
+  status,
+  disabled = false,
+  className,
+  onBlur,
+  onChange,
+  forwardedRef,
+  removeFloatingLabel = false,
+  small,
+  ...restProps
+}) => {
   const [floating, setFloating] = React.useState<boolean>(false);
   const [rows, setRows] = React.useState<number>(MIN_ROWS);
   const innerRef = React.useRef(null);
-  const textareaInputRef = props.forwardedRef || innerRef;
+  const textareaInputRef = forwardedRef || innerRef;
 
   const [textareaMaxHeight, setTextareaMaxHeight] = React.useState<number>(0);
 
@@ -126,6 +125,7 @@ export interface Props
   onChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   removeFloatingLabel?: boolean;
   forwardedRef?: React.RefObject<HTMLTextAreaElement>;
+  disabled?: boolean;
 }
 
 const forwardRef = (
