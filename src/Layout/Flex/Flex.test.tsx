@@ -1,6 +1,7 @@
 import * as React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
+import { FlexPropAndPossibleValueMap } from './types';
 
 import { Flex } from './index';
 
@@ -37,23 +38,17 @@ describe('<Flex /> spacing properties', () => {
 });
 
 describe('<Flex /> flex properties', () => {
-  it('should match snapshot when flexDirection is set', () => {
-    const { asFragment } = render(<Flex flexDirection="column" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should match snapshot when justifyContent is set', () => {
-    const { asFragment } = render(<Flex justifyContent="center" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should match snapshot when alignItems is set', () => {
-    const { asFragment } = render(<Flex alignItems="center" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should match snapshot when flexWrap is set', () => {
-    const { asFragment } = render(<Flex flexWrap="wrap" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  Object.entries(FlexPropAndPossibleValueMap).forEach(
+    ([flexProp, possibleValue]) => {
+      possibleValue.forEach((value: string) => {
+        it(`should match snapshot when ${flexProp} is set ${value}`, () => {
+          const props = {
+            [flexProp]: value,
+          };
+          const { asFragment } = render(<Flex {...props} />);
+          expect(asFragment()).toMatchSnapshot();
+        });
+      });
+    }
+  );
 });
