@@ -12,6 +12,8 @@ import {
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
+/** Use <code>onChange</code> to listen to input changes. Use
+ * <code>onBlur</code> to listen to focus loss. */
 export const Textarea: FC<Props> = ({
   label,
   value = undefined,
