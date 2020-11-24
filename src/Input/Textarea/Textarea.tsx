@@ -13,7 +13,12 @@ const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 
 /** Use <code>onChange</code> to listen to input changes. Use
- * <code>onBlur</code> to listen to focus loss. */
+ * <code>onBlur</code> to listen to focus loss.
+ * <br/>
+ * Note that currently, <code>Textarea</code> has some non-standard behaviour
+ * when forwarding standard props: The <code>className</code> will be passed to
+ * the internal 'container' while the <code>...rest</code> is passed to the
+ * internal textarea. */
 export const Textarea: FC<Props> = ({
   label,
   value = undefined,
