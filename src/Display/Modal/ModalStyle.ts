@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Device } from '../../Utils/StyleConfig';
 import { Greyscale } from '../../Utils/Colors';
-import { sizeType } from './Modal';
+import { Props } from './Modal';
 
 export const SIZES: { [s: string]: number } = {
   s: 300,
@@ -11,7 +11,11 @@ export const SIZES: { [s: string]: number } = {
   default: 500,
 };
 
-export const ModalContainer = styled.div<ModalContainerProps>`
+interface InnerProps extends Omit<Props, 'isVisible'> {
+  isOpen: boolean;
+}
+
+export const ModalContainer = styled.div<InnerProps>`
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   position: fixed;
   display: flex;
@@ -37,17 +41,11 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   }}
 `;
 
-interface ModalContainerProps {
-  isOpen: boolean;
-  centering: boolean;
-  removeAnimation: boolean;
-}
-
 export const ModalDialog = styled.div`
   position: relative;
 `;
 
-export const ModalContentArea = styled.div<ModalContentAreaProps>`
+export const ModalContentArea = styled.div<InnerProps>`
   position: relative;
   background: ${({ hideContentArea }) =>
     hideContentArea ? 'transparent' : `${Greyscale.white}`};
@@ -107,14 +105,6 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
     }
   }}
 `;
-
-interface ModalContentAreaProps {
-  hideContentArea?: boolean;
-  size?: sizeType;
-  centering?: boolean;
-  removeAnimation?: boolean;
-  isOpen?: boolean;
-}
 
 export const ModalHeader = styled.header`
   display: flex;
