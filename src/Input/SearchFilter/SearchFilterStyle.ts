@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Button from '../../General/Button';
-import { Device } from '../../Utils/StyleConfig';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 import { SecondaryColor } from '../../Utils/Colors';
 
@@ -23,7 +23,7 @@ export const SearchFilterBar = styled.div`
     color: ${SecondaryColor.lightblack};
     width: 100%;
 
-    @media ${Device.mobileL} {
+    @media (max-width: ${ScreenSize.mobileL}px) {
       padding: 1em 5em 1em 1em;
       font-size: 1em;
     }
@@ -47,7 +47,7 @@ export const SearchFilterButton = styled(Button)`
   height: 100%;
 
   button {
-    @media ${Device.mobileL} {
+    @media (max-width: ${ScreenSize.mobileL}px) {
       padding: 15px 20px;
     }
   }
@@ -73,7 +73,7 @@ export const SearchFilterResultContainer = styled.div`
   background: ${SecondaryColor.white};
   border: 1px solid ${SecondaryColor.lightgrey};
 
-  @media ${Device.mobileL} {
+  @media (max-width: ${ScreenSize.mobileL}px) {
     grid-template-columns: auto;
     grid-gap: 2em;
   }
