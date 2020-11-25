@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { ColumnContainer } from './GridStyle';
 
-const Col: React.FunctionComponent<Props> = ({
+export const Col: React.FunctionComponent<Props> = ({
   xs,
   sm,
   md,
@@ -13,11 +13,17 @@ const Col: React.FunctionComponent<Props> = ({
   ...defaultProps
 }: Props) => (
   <ColumnContainer
+    /** Set number of columns you wish to span for extra small devices like phone (<=640px) */
     xs={xs}
+    /** Set number of columns you wish to span for small devices like tablet (<=768px) */
     sm={sm}
+    /** Set number of columns you wish to span for medium devices like phone (>=1024px) */
     md={md}
+    /** Sets the order of the column for extra small devices like phone (<=640px) */
     xsOrder={xsOrder}
+    /** Sets the order of the column for small devices like tablet (<=768px) */
     smOrder={smOrder}
+    /** Sets the order of the column for medium devices like phone (>=1024px) */
     mdOrder={mdOrder}
     {...defaultProps}
   >
@@ -31,7 +37,7 @@ Col.defaultProps = {
   md: 12,
 };
 
-interface Props {
+export interface Props {
   xs?: number;
   sm?: number;
   md?: number;
