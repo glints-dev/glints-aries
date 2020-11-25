@@ -1,0 +1,124 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import Grid from './index';
+import { Cell } from './GridStoriesHelpers';
+import { times, constant } from 'lodash';
+import { Box } from '../Box'
+
+<Meta title="Layout/Grid" />
+
+# Grid
+
+The grid is divided into 12 columns. Use the properties `xs` (extra small), `sm` (small) and `md` (medium) to configure how many columns each `Col` should span in the respective size class. `xs` applies on viewports smaller than `640px`, `sm` applies on viewports `640px` wide or more but smaller than `768px`, and `md` applies on viewports `1024px` wide or more. The default is `12` for all of them.
+
+<Box my={48}>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col xs={12} sm={3} md={9}>
+        <Cell>
+          Foo
+          </Cell>
+        </Grid.Col>
+      <Grid.Col xs={12} sm={9} md={3}>
+        <Cell>
+          Bar
+        </Cell>
+      </Grid.Col>
+    </Grid.Row>
+    <Grid.Row>
+      {times(12, n => (
+        <Grid.Col xs={3} sm={2} md={1} key={n}>
+          <Cell>Foo</Cell>
+        </Grid.Col>
+      ))}
+    </Grid.Row>
+  </Grid>
+</Box>
+
+```TypeScript
+<Grid>
+  <Grid.Row>
+    <Grid.Col xs={12} sm={9} md={3}>
+      Foo
+    </Grid.Col>
+    <Grid.Col xs={12} sm={3} md={9}>
+      Bar
+    </Grid.Col>
+  </Grid.Row>
+</Grid>
+```
+
+## Grid.Row
+
+`Grid.Row` has two properties, `justifyContent` and `alignContent`, which you can use to change the horizontal and vertical alignment (respectively) of the columns in the row. They accept the same values as their counterparts in the flex model.
+
+### Horizontal (justifyContent)
+
+<Box my={48}>
+  <Grid>
+    <Grid.Row justifyContent="center">
+      <Grid.Col xs={12} md={3}>
+        <Cell>
+          Foo
+          </Cell>
+        </Grid.Col>
+      <Grid.Col xs={12} md={3}>
+        <Cell>
+          Bar
+        </Cell>
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</Box>
+
+```TypeScript
+<Grid>
+  <Grid.Row justifyContent="center">
+    <Grid.Col xs={12} md={3}>
+      <Cell>
+        Foo
+        </Cell>
+      </Grid.Col>
+    <Grid.Col xs={12} md={3}>
+      <Cell>
+        Bar
+      </Cell>
+    </Grid.Col>
+  </Grid.Row>
+</Grid>
+```
+
+### Vertical (alignContent)
+
+<Box my={48}>
+  <Grid>
+    <Grid.Row alignContent="center">
+      <Grid.Col xs={12} md={3}>
+        <Cell>
+          Foo
+          </Cell>
+        </Grid.Col>
+      <Grid.Col xs={12} md={3}>
+        <Cell>
+          Bar<br/>Foo
+        </Cell>
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</Box>
+
+```TypeScript
+<Grid>
+  <Grid.Row alignContent="center">
+    <Grid.Col xs={12} md={3}>
+      <Cell>
+        Foo
+        </Cell>
+      </Grid.Col>
+    <Grid.Col xs={12} md={3}>
+      <Cell>
+        Bar<br/>Foo
+      </Cell>
+    </Grid.Col>
+  </Grid.Row>
+</Grid>
+```
