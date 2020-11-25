@@ -5,7 +5,12 @@ const SliderItem: React.FunctionComponent<Props> = props => {
   const { children } = props;
 
   return (
-    <SliderItemWrapper className="slider-item">{children}</SliderItemWrapper>
+    <SliderItemWrapper
+      className="slider-item"
+      onClick={() => alert('clicked!')}
+    >
+      {children}
+    </SliderItemWrapper>
   );
 };
 

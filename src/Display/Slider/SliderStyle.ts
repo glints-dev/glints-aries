@@ -22,6 +22,23 @@ export const SliderItemWrapper = styled.div`
   justify-content: center;
   width: 100%;
   white-space: normal;
+
+  &.slider-item {
+    position: relative;
+    padding-top: 50%;
+
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 `;
 
 export const LeftArrowContainer = styled.div<LeftArrowContainerProps>`
