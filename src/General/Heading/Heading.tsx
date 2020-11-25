@@ -1,28 +1,32 @@
-import * as React from 'react';
+import React, { HTMLAttributes, FC } from 'react';
 import classNames from 'classnames';
 import { HeadingContainer } from './HeadingStyle';
 
-const Heading: React.FunctionComponent<Props> = props => {
-  const { className, inline, children, uppercaseText, ...defaultProps } = props;
+export const Heading: FC<Props> = props => {
+  const {
+    className,
+    inline = false,
+    children,
+    uppercaseText = false,
+    ...defaultProps
+  } = props;
 
   return (
-    <React.Fragment>
-      <HeadingContainer
-        role="heading"
-        className={classNames('aries-heading', className)}
-        inline={inline}
-        uppercaseText={uppercaseText}
-        {...defaultProps}
-      >
-        <span className="heading-text">{children}</span>
-      </HeadingContainer>
-    </React.Fragment>
+    <HeadingContainer
+      role="heading"
+      className={classNames('aries-heading', className)}
+      inline={inline}
+      uppercaseText={uppercaseText}
+      {...defaultProps}
+    >
+      <span className="heading-text">{children}</span>
+    </HeadingContainer>
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof HeadingContainer> {
-  children: React.ReactNode;
+export interface Props extends HTMLAttributes<HTMLHeadingElement> {
+  inline?: boolean;
+  uppercaseText?: boolean;
 }
 
 export default Heading;
