@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Device } from '../../Utils/StyleConfig';
+import { ScreenSize } from '../../Utils/StyleConfig';
 import { SecondaryColor } from '../../Utils/Colors';
 import { sizeType } from './Modal';
 
@@ -88,7 +88,7 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
     }
   }}
     
-  @media ${Device.mobileM} {
+  @media (max-width: ${ScreenSize.mobileM}px) {
     width: 95vw;
   }
 
@@ -153,7 +153,7 @@ export const ModalBody = styled.section<ModalBodyProps>`
   }}
   padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 30px')};
 
-  @media ${Device.mobileM} {
+  @media (max-width: ${ScreenSize.mobileM}px) {
     padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 15px')};
   }
 `;
@@ -172,7 +172,7 @@ export const ModalFooter = styled.footer<{ isChildrenInMultiLines: boolean }>`
   justify-content: flex-end;
   border-top: 1px solid ${SecondaryColor.lightgrey};
 
-  @media ${Device.mobileM} {
+  @media (max-width: ${ScreenSize.mobileM}px) {
     padding: 15px;
   }
 
