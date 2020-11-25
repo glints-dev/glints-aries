@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { HTMLAttributes, FC, useState, ReactNode } from 'react';
 import classNames from 'classnames';
 import isUndefined from 'lodash/isUndefined';
 import { ArrowDownIcon } from '../../General/Icon/components';
@@ -10,14 +10,14 @@ import {
   CollapsibleBody,
 } from './CollapsibleStyle';
 
-const Collapsible: React.FunctionComponent<Props> = ({
+export const Collapsible: FC<Props> = ({
   label,
   children,
   className,
   isOpen,
   ...defaultProps
 }) => {
-  const [isOpenInternal, setIsOpenInternal] = React.useState<boolean>(
+  const [isOpenInternal, setIsOpenInternal] = useState<boolean>(
     isUndefined(isOpen) ? true : isOpen
   );
 
@@ -57,9 +57,8 @@ const Collapsible: React.FunctionComponent<Props> = ({
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof CollapsibleContainer> {
-  label: React.ReactNode;
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+  label: ReactNode;
   isOpen?: boolean;
 }
 
