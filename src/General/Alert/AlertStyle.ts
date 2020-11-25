@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { Device } from '../../Utils/StyleConfig';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
@@ -42,7 +42,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
   line-height: 1.5;
   font-size: 1em;
 
-  @media ${Device.mobileM} {
+  @media (max-width: ${ScreenSize.mobileM}px) {
     min-width: calc(100% - 30px);
   }
 
