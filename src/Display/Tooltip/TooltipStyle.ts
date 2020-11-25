@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Greyscale } from '../../Utils/Colors';
+import { Props } from './Tooltip';
 
 export const TooltipContainer = styled.div`
   position: relative;
   display: inline-flex;
 `;
 
-export const TooltipContent = styled.div<TooltipContentProps>`
+export const TooltipContent = styled.div<Props>`
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -85,11 +86,6 @@ export const TooltipContent = styled.div<TooltipContentProps>`
     position: absolute;
   }
 `;
-
-interface TooltipContentProps {
-  text: string;
-  position: string;
-}
 
 export const TooltipMessage = styled.div`
   background: ${Greyscale.black};
