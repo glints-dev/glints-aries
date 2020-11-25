@@ -299,13 +299,13 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   border: 1px solid #FFFFFF;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
@@ -988,13 +988,13 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   border: 1px solid #FFFFFF;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
@@ -1520,13 +1520,13 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
   cursor: pointer;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
@@ -1727,13 +1727,13 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
   margin: 5px;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
@@ -1943,13 +1943,13 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
   cursor: pointer;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
@@ -2372,13 +2372,13 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   border: 1px solid #FFFFFF;
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c5 {
     width: 95vw;
   }
 }
 
-@media (min-width:480px) {
+@media (max-width:480) {
   .c8 {
     padding: 0;
   }
