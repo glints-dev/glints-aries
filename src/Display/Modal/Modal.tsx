@@ -1,4 +1,14 @@
-import * as React from 'react';
+import React, {
+  HTMLAttributes,
+  FC,
+  useRef,
+  useState,
+  useLayoutEffect,
+  useEffect,
+  useCallback,
+  ReactNode,
+  ReactElement,
+} from 'react';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 
@@ -14,30 +24,28 @@ import {
   ModalFooter,
 } from './ModalStyle';
 
-const Modal = (props: Props) => {
-  const {
-    isVisible,
-    title,
-    onClose,
-    children,
-    className,
-    hideContentArea,
-    centering,
-    removeAnimation,
-    footer,
-    size,
-    hideHeader,
-    ...restProps
-  } = props;
-
-  const modalContentAreaRef = React.useRef(null);
-  const modalFooterRef = React.useRef(null);
+export const Modal: FC<Props> = ({
+  isVisible,
+  title,
+  onClose,
+  children,
+  className,
+  hideContentArea,
+  centering,
+  removeAnimation,
+  footer,
+  size,
+  hideHeader,
+  ...restProps
+}) => {
+  const modalContentAreaRef = useRef(null);
+  const modalFooterRef = useRef(null);
   const [
     isFooterChildrenInMultiLines,
     setIsFooterChildrenInMultiLines,
-  ] = React.useState(false);
+  ] = useState(false);
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
 
     if (isVisible) {
@@ -53,7 +61,7 @@ const Modal = (props: Props) => {
     };
   }, [isVisible, modalContentAreaRef]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
       if (isVisible) onClose();
     });
@@ -67,7 +75,7 @@ const Modal = (props: Props) => {
       document.removeEventListener('keydown', escapeKeyEventListener, false);
   }, [isVisible, onClose]);
 
-  React.useLayoutEffect(
+  useLayoutEffect(
     function checkFooterResponsiveStyleOnMountAndOnWindowResize() {
       const checkIsFooterChildrenInMultiLines = () => {
         const isChildrenInMultiLines = checkIsChildrenInMultiLines(
@@ -89,18 +97,18 @@ const Modal = (props: Props) => {
   // To prevent the modal from closing
   // when a mousedown event occurs inside the ModalContentArea
   // but the subsequent mouseup event occurs outside
-  const mouseDownTarget = React.useRef<HTMLElement>(null);
+  const mouseDownTarget = useRef<HTMLElement>(null);
 
-  const handleMouseDown = React.useCallback(
-    (e: React.MouseEvent) => {
+  const handleMouseDown = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       const element = e.target as HTMLElement;
       mouseDownTarget.current = element;
     },
     [mouseDownTarget]
   );
 
-  const handleClick = React.useCallback(
-    (e: React.MouseEvent) => {
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       const element = e.target as HTMLElement;
       if (mouseDownTarget.current === element) {
         onClose();
@@ -172,25 +180,26 @@ const Modal = (props: Props) => {
 
 export type sizeType = 's' | 'm' | 'l' | 'xl';
 
-interface Props
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof ModalContentArea>,
-    'title' // we don't really use this title attribute for div element
-  > {
-  children: React.ReactNode;
-  title?: React.ReactNode;
+export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+  title?: ReactNode;
   isVisible: boolean;
   onClose?(): void;
   hideContentArea?: boolean;
   centering?: boolean;
   removeAnimation?: boolean;
-  footer?: React.ReactElement[];
+  /** An array containing 0-2 elements. */
+  footer?: ReactElement[];
   size?: sizeType;
   hideHeader?: boolean;
 }
 
 Modal.defaultProps = {
   onClose: () => undefined as () => void,
+  size: 'm',
+  hideContentArea: false,
+  hideHeader: false,
+  removeAnimation: false,
+  centering: false,
 };
 
 export default Modal;
