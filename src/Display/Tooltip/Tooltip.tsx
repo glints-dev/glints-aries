@@ -1,4 +1,10 @@
-import * as React from 'react';
+import React, {
+  HTMLAttributes,
+  FC,
+  useRef,
+  useState,
+  useCallback,
+} from 'react';
 
 import classNames from 'classnames';
 
@@ -8,19 +14,19 @@ import {
   TooltipMessage,
 } from './TooltipStyle';
 
-const Tooltip: React.FunctionComponent<Props> = ({
+export const Tooltip: FC<Props> = ({
   classes = {},
   children,
   text,
-  position,
+  position = 'top',
   ...defaultProps
 }) => {
-  const contentRef = React.useRef(null);
-  const [isShow, setIsShow] = React.useState(false);
+  const contentRef = useRef(null);
+  const [isShow, setIsShow] = useState(false);
   const showTooltip = () => setIsShow(true);
   const hideTooltip = () => setIsShow(false);
 
-  const hideTooltipIfTouchOutside = React.useCallback(
+  const hideTooltipIfTouchOutside = useCallback(
     (event: TouchEvent | React.TouchEvent) => {
       const hasTouchedOutsideOfTooltipContent =
         contentRef.current &&
@@ -74,18 +80,21 @@ const Tooltip: React.FunctionComponent<Props> = ({
   );
 };
 
-interface Classes {
+export interface Classes {
   container?: string;
   content?: string;
   message?: string;
 }
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof TooltipContainer> {
+export type Position = 'top' | 'right' | 'bottom' | 'left';
+
+export interface Props extends HTMLAttributes<HTMLHeadingElement> {
+  /** This is an object with three keys: <code>container</code>,
+   * <code>content</code> and <code>message</code>. Use them to attach
+   * additional classes to the respective elements. */
   classes?: Classes;
-  children: React.ReactNode;
   text: string;
-  position?: string;
+  position?: Position;
 }
 
 export default Tooltip;
