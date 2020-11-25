@@ -111,6 +111,23 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   white-space: normal;
 }
 
+.c12.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c12.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c12.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c14 {
   position: absolute;
   display: -webkit-box;
@@ -798,6 +815,23 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c12.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c12.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c12.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c14 {
@@ -2182,6 +2216,23 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c12.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c12.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c12.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c14 {

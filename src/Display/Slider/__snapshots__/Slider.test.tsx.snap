@@ -30,6 +30,23 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -198,6 +215,23 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -382,6 +416,23 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -562,6 +613,23 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -746,6 +814,23 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -926,6 +1011,23 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -1110,6 +1212,23 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -1290,6 +1409,23 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -1474,6 +1610,23 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -1654,6 +1807,23 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -1838,6 +2008,23 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -2018,6 +2205,23 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -2202,6 +2406,23 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   white-space: normal;
 }
 
+.c2.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c2.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c2.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c3 {
   position: absolute;
   display: -webkit-box;
@@ -2378,6 +2599,23 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -2562,6 +2800,23 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -2742,6 +2997,23 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
@@ -2926,6 +3198,23 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -3108,6 +3397,23 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   white-space: normal;
 }
 
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
+}
+
 .c4 {
   position: absolute;
   display: -webkit-box;
@@ -3281,6 +3587,23 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   justify-content: center;
   width: 100%;
   white-space: normal;
+}
+
+.c3.slider-item {
+  position: relative;
+  padding-top: 50%;
+}
+
+.c3.slider-item img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c3.slider-item img:hover {
+  cursor: pointer;
 }
 
 .c4 {
