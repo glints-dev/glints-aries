@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - v4
+    paths-ignore:
+      - package.json
 jobs:
   update-release-draft:
     runs-on: ubuntu-latest
