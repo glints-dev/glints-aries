@@ -18,11 +18,11 @@ import {
 
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
-const Alert = ({
+export const Alert = ({
   isOpen,
-  autoClose,
+  autoClose = 3000,
   onClose,
-  type,
+  type = 'info',
   className,
   message,
 }: Props) => {
@@ -130,12 +130,19 @@ const Alert = ({
   ) : null;
 };
 
-interface Props {
-  type: string;
-  message: React.ReactNode;
+export type AlertType = 'success' | 'warning' | 'danger' | 'info';
+export interface Props {
+  /** Set Alert's style. */
+  type: AlertType;
+  /** Set message for Alert. */
+  message: string;
+  /** A function to close Alert. */
   onClose(): void;
+  /** Set Alert to show. */
   isOpen: boolean;
+  /** Set classname for Alert. */
   className?: string;
+  /** Set period for Alert to close by itself. The value is in millisecond. */
   autoClose?: number;
 }
 
