@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { Flex } from '../../Layout/Flex';
+import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Button, Props as ButtonProps } from './Button';
 import {
   ArrowBackDoubleIcon,
@@ -50,6 +51,7 @@ export default {
       control: null,
     },
   },
+  decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
 const Template: Story<ButtonProps> = args => <Button {...args}>Button</Button>;
