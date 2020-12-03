@@ -13,6 +13,7 @@ export default {
     type: {
       control: {
         type: 'select',
+        options: ['success', 'warning', 'danger', 'info'],
       },
     },
   },
