@@ -6,18 +6,21 @@ import { Toggle, ToggleBall } from './Styles';
 
 export interface ToggleSwitchProps {
   active?: boolean;
+  /** This will determine whether or not the component renders with an active or inactive state at the start. */
   defaultActive?: boolean;
+  /** The icon components that will be used in both active and inactive states. Both icons have to be defined when opting to use this. */
   iconOptions?: {
     active: React.ReactType;
     inactive: React.ReactType;
   };
+  /** Called when the state of the toggle has been changed. Returns true or false depending on whether the toggle is active or inactive. */
   onChange?: (active: boolean) => void;
   className?: string;
 }
 
-const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
+export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
   active,
-  defaultActive,
+  defaultActive = false,
   iconOptions,
   onChange,
   className,
@@ -67,10 +70,6 @@ const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
       </ToggleBall>
     </Toggle>
   );
-};
-
-ToggleSwitch.defaultProps = {
-  defaultActive: false,
 };
 
 export default ToggleSwitch;
