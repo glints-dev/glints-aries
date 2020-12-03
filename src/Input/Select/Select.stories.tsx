@@ -126,9 +126,15 @@ export const Sizes: Story<SelectProps> = () => (
   </div>
 );
 
-export const CustomizeFilterFunction = Template.bind({});
-CustomizeFilterFunction.args = {
-  filterFunction: (option: string, search: string) => {
-    return !option.toLowerCase().includes(search.toLowerCase());
-  },
-};
+export const CustomizeFilterFunction: Story<SelectProps> = () => (
+  <div style={{ height: '200px' }}>
+    <Select
+      label="Jobs"
+      filterFunction={(option, search) => {
+        return !option.toLowerCase().includes(search.toLowerCase());
+      }}
+    >
+      {Options}
+    </Select>
+  </div>
+);
