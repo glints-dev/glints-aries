@@ -9,20 +9,18 @@ import {
   Border,
 } from './RadioButtonStyle';
 
-const RadioButton: React.FunctionComponent<Props> = props => {
-  const {
-    className,
-    children,
-    error,
-    label,
-    labelProps,
-    theme,
-    border,
-    disabled,
-    size = 'regular',
-    ...inputProps
-  } = props;
-
+export const RadioButton: React.FunctionComponent<Props> = ({
+  className,
+  children,
+  error = false,
+  label,
+  labelProps,
+  theme,
+  border = false,
+  disabled = false,
+  size = 'regular',
+  ...inputProps
+}) => {
   const content = (
     <>
       <RadioIcon
@@ -72,12 +70,19 @@ const RadioButton: React.FunctionComponent<Props> = props => {
 type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'size' | 'label'>;
 
 export interface Props extends HTMLInputProps {
+  /** Displays the error styles */
   error?: boolean;
-  label?: React.ReactNode;
+  /** Sets the label of Radio Button. */
+  label: React.ReactNode;
+  /** Sets the props on the label element. */
   labelProps?: React.LabelHTMLAttributes<{}>;
+  /** Sets theme for Radio Button. */
   theme?: 'white';
+  /** Sets a border around the radio button. */
   border?: boolean;
+  /** Sets the radio button to disable state. */
   disabled?: boolean;
+  /** Sets the size of the radio button. */
   size?: 'regular' | 'small';
 }
 
