@@ -30,29 +30,29 @@ Interactive.args = {
   type: 'text',
 };
 
-export const textFieldWithClearIcon = Template.bind({});
-textFieldWithClearIcon.args = {
+export const TextFieldWithClearIcon = Template.bind({});
+TextFieldWithClearIcon.args = {
   label: 'Description',
   allowClear: true,
   type: 'text',
 };
 
-export const disabled = Template.bind({});
-disabled.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
   label: 'Description',
   type: 'text',
   disabled: true,
 };
 
-export const textFieldWithStartIcon = Template.bind({});
-textFieldWithStartIcon.args = {
+export const TextFieldWithStartIcon = Template.bind({});
+TextFieldWithStartIcon.args = {
   label: 'Description',
   type: 'text',
   startIcon: <SearchIcon />,
 };
 
-export const passwordField = Template.bind({});
-passwordField.args = {
+export const PasswordField = Template.bind({});
+PasswordField.args = {
   label: 'Description',
   type: 'password',
 };
