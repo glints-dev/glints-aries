@@ -3,9 +3,11 @@
 exports[`<RadioButton> should render as expected 1`] = `
 <label
   className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fKneza aries-radiobtn"
+  disabled={false}
   tabIndex={0}
 >
   <input
+    disabled={false}
     name="job-type"
     type="radio"
     value="full-time"
@@ -13,10 +15,12 @@ exports[`<RadioButton> should render as expected 1`] = `
   <span
     className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 YTOlp"
     data-testid="radio-icon"
+    disabled={false}
     size="regular"
   />
   <span
     className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 hidUsh radiobtn-content"
+    disabled={false}
     size="regular"
     tabIndex={-1}
   >
@@ -28,9 +32,11 @@ exports[`<RadioButton> should render as expected 1`] = `
 exports[`<RadioButton> should render as expected 2`] = `
 <label
   className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fxmRfM aries-radiobtn"
+  disabled={false}
   tabIndex={0}
 >
   <input
+    disabled={false}
     name="job-type"
     type="radio"
     value="full-time"
@@ -38,10 +44,12 @@ exports[`<RadioButton> should render as expected 2`] = `
   <span
     className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 gEkgbr"
     data-testid="radio-icon"
+    disabled={false}
     size="regular"
   />
   <span
     className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 WanjR radiobtn-content"
+    disabled={false}
     size="regular"
     tabIndex={-1}
   >
@@ -54,9 +62,11 @@ exports[`<RadioButton> should render as expected 3`] = `
 Array [
   <label
     className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fKneza aries-radiobtn"
+    disabled={false}
     tabIndex={0}
   >
     <input
+      disabled={false}
       name="job-type"
       type="radio"
       value="full-time"
@@ -64,10 +74,12 @@ Array [
     <span
       className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 YTOlp"
       data-testid="radio-icon"
+      disabled={false}
       size="regular"
     />
     <span
       className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 hidUsh radiobtn-content"
+      disabled={false}
       size="regular"
       tabIndex={-1}
     >
@@ -76,9 +88,11 @@ Array [
   </label>,
   <label
     className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fKneza aries-radiobtn"
+    disabled={false}
     tabIndex={0}
   >
     <input
+      disabled={false}
       name="job-type"
       type="radio"
       value="intership"
@@ -86,10 +100,12 @@ Array [
     <span
       className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 YTOlp"
       data-testid="radio-icon"
+      disabled={false}
       size="regular"
     />
     <span
       className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 hidUsh radiobtn-content"
+      disabled={false}
       size="regular"
       tabIndex={-1}
     >
@@ -103,10 +119,12 @@ exports[`<RadioButton> should render as expected 4`] = `
 Array [
   <label
     className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fKneza aries-radiobtn"
+    disabled={false}
     tabIndex={0}
   >
     <input
       checked={true}
+      disabled={false}
       name="job-type"
       type="radio"
       value="full-time"
@@ -114,10 +132,12 @@ Array [
     <span
       className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 YTOlp"
       data-testid="radio-icon"
+      disabled={false}
       size="regular"
     />
     <span
       className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 hidUsh radiobtn-content"
+      disabled={false}
       size="regular"
       tabIndex={-1}
     >
@@ -126,9 +146,11 @@ Array [
   </label>,
   <label
     className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 fKneza aries-radiobtn"
+    disabled={false}
     tabIndex={0}
   >
     <input
+      disabled={false}
       name="job-type"
       type="radio"
       value="intership"
@@ -136,10 +158,12 @@ Array [
     <span
       className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 YTOlp"
       data-testid="radio-icon"
+      disabled={false}
       size="regular"
     />
     <span
       className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 hidUsh radiobtn-content"
+      disabled={false}
       size="regular"
       tabIndex={-1}
     >
