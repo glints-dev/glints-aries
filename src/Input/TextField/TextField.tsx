@@ -22,25 +22,30 @@ export const isFilled = (type: textFieldType, value: any) => {
   return value !== '';
 };
 
-const TextField: React.FunctionComponent<Props> = props => {
-  const {
-    value,
-    status,
-    onKeyDown,
-    disableTyping,
-    small,
-    type,
-    label,
-    disabled,
-    className,
-    removeFloatingLabel,
-    allowClear,
-    forwardedRef,
-    onChange,
-    startIcon,
-    ...restProps
-  } = props;
-
+/** Use <code>onChange</code> to listen to input changes.
+ * Use <code>onBlur</code> to listen to focus loss.
+ * <br/>
+ * Use <code>status</code> to set different styles for the Text Field based on status.
+ * <br/>
+ * Use <code>small</code> to set the size of the text field. The <code>...rest</code> is passed to the
+ * internal text field input. */
+export const TextField: React.FunctionComponent<Props> = ({
+  value,
+  status,
+  onKeyDown,
+  disableTyping,
+  small,
+  type,
+  label,
+  disabled = false,
+  className,
+  removeFloatingLabel = false,
+  allowClear = false,
+  forwardedRef,
+  onChange,
+  startIcon,
+  ...restProps
+}) => {
   const [floating, setFloating] = React.useState<boolean>(false);
   const [inputType, setInputType] = React.useState<textFieldType>(type);
   const hasStartIcon = Boolean(startIcon);
@@ -132,15 +137,21 @@ export type textFieldType = 'text' | 'password' | 'number';
 export interface Props
   extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
   type: textFieldType;
+  /** Placeholder for the text field. */
   label: string;
   disabled?: boolean;
   className?: string;
   removeFloatingLabel?: boolean;
+  /** If true, removes the input content with clear icon. Works for type "text" only. */
   allowClear?: boolean;
+  /** Minimum value of the "number" type input */
   min?: number;
+  /** Maximum value of the "number" type input. */
   max?: number;
+  /** Step value for the "number" type input */
   step?: number;
   forwardedRef?: React.RefObject<HTMLInputElement>;
+  /** Icon at the start of the input element. */
   startIcon?: React.ReactNode;
 }
 
