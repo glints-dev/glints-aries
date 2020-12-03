@@ -18,69 +18,57 @@ export default {
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
+const Options = [
+  <Select.Option key={1} value="accountant">
+    Accountant
+  </Select.Option>,
+  <Select.Option key={2} value="business development">
+    Business Development
+  </Select.Option>,
+  <Select.Option key={3} value="software engineer">
+    Software Engineer
+  </Select.Option>,
+];
+
 const Template: Story<SelectProps> = args => (
   <div style={{ height: '200px' }}>
-    <Select {...args}>
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
+    <Select
+      label="Jobs"
+      {...args}
+      // set undefined to prevent these properties are shown in code sample
+      onBlur={undefined}
+      onFocus={undefined}
+      onChange={undefined}
+      onInputChange={undefined}
+    >
+      {Options}
     </Select>
   </div>
 );
 
 export const DefaultSelect = Template.bind({});
-DefaultSelect.args = {
-  label: 'Jobs',
+
+export const BasicUsage = Template.bind({});
+BasicUsage.args = {
+  label: 'Label',
+  value: 'Accountant',
 };
 
-export const BasicUsage: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Label" value="Accountant">
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
-
-export const LoadingOptions: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" isLoading={true}>
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const LoadingOptions = Template.bind({});
+LoadingOptions.args = {
+  isLoading: true,
+};
 
 export const Error: Story<SelectProps> = () => (
   <div style={{ height: '250px' }}>
     <div style={{ marginBottom: '20px' }}>
       <Select label="Boolean" error={true}>
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
+        {Options}
       </Select>
     </div>
     <div style={{ marginBottom: '20px' }}>
       <Select label="String" error="error message">
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
+        {Options}
       </Select>
     </div>
     <Select
@@ -91,122 +79,56 @@ export const Error: Story<SelectProps> = () => (
         </div>
       }
     >
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
+      {Options}
     </Select>
   </div>
 );
 
-export const Disabled: Story<SelectProps> = () => (
-  <Select label="Jobs" disabled={true}>
-    <Select.Option value="accountant">Accountant</Select.Option>
-    <Select.Option value="business development">
-      Business Development
-    </Select.Option>
-    <Select.Option value="software engineer">Software Engineer</Select.Option>
-  </Select>
-);
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
 
-export const DefaultValue: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" defaultValue="Accountant">
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const DefaultValue = Template.bind({});
+DefaultValue.args = {
+  defaultValue: 'Accountant',
+};
 
-export const DisableTyping: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" disableTyping={true}>
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const DisableTyping = Template.bind({});
+DisableTyping.args = {
+  disableTyping: true,
+};
 
-export const CustomizeNoOptionResultMessage: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" noOptionResult="Customized no option result message">
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const CustomizeNoOptionResultMessage = Template.bind({});
+CustomizeNoOptionResultMessage.args = {
+  noOptionResult: 'Customized no option result message',
+};
 
-export const RemoveFloatingLabel: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" removeFloatingLabel={true}>
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const RemoveFloatingLabel = Template.bind({});
+RemoveFloatingLabel.args = {
+  removeFloatingLabel: true,
+};
 
-export const RemoveDropIcon: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select label="Jobs" removeDropIcon={true}>
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const RemoveDropIcon = Template.bind({});
+RemoveDropIcon.args = {
+  removeDropIcon: true,
+};
 
 export const Sizes: Story<SelectProps> = () => (
   <div style={{ height: '200px' }}>
     <div style={{ marginBottom: '20px' }}>
       <Select label="Small" small={true}>
-        <Select.Option value="accountant">Accountant</Select.Option>
-        <Select.Option value="business development">
-          Business Development
-        </Select.Option>
-        <Select.Option value="software engineer">
-          Software Engineer
-        </Select.Option>
+        {Options}
       </Select>
     </div>
 
-    <Select label="Default">
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
+    <Select label="Default">{Options}</Select>
   </div>
 );
 
-export const CustomizeFilterFunction: Story<SelectProps> = () => (
-  <div style={{ height: '200px' }}>
-    <Select
-      label="Jobs"
-      filterFunction={(option, search) => {
-        return !option.toLowerCase().includes(search.toLowerCase());
-      }}
-    >
-      <Select.Option value="accountant">Accountant</Select.Option>
-      <Select.Option value="business development">
-        Business Development
-      </Select.Option>
-      <Select.Option value="software engineer">Software Engineer</Select.Option>
-    </Select>
-  </div>
-);
+export const CustomizeFilterFunction = Template.bind({});
+CustomizeFilterFunction.args = {
+  filterFunction: (option: string, search: string) => {
+    return !option.toLowerCase().includes(search.toLowerCase());
+  },
+};
