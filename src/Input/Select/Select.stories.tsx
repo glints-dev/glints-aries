@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import Select, { Props as SelectProps } from './Select';
 import { WarningOutlineIcon } from '../../General/Icon/components';
+import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 
 export default {
   title: 'Input/Select',
@@ -14,6 +15,7 @@ export default {
       control: { type: 'boolean' },
     },
   },
+  decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
 const Template: Story<SelectProps> = args => (
