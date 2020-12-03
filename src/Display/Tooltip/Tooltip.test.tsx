@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Tooltip from './Tooltip';
+import Tooltip, { Position } from './Tooltip';
 
 describe('<Tooltip/> snapshot', () => {
   test('should match snapshot when Tooltip is hidden', () => {
@@ -25,7 +25,7 @@ describe('<Tooltip/> snapshot', () => {
 });
 
 describe('<Tooltip/> snapshots with position prop', () => {
-  const matchSnapshotWithPosition = (position: string) => {
+  const matchSnapshotWithPosition = (position: Position) => {
     test(`position ${position}`, () => {
       const { asFragment, queryByText } = render(
         <Tooltip
@@ -46,7 +46,7 @@ describe('<Tooltip/> snapshots with position prop', () => {
     });
   };
 
-  ['left', 'right', 'bottom', 'default'].forEach(position =>
+  ['left', 'right', 'bottom', 'default'].forEach((position: Position) =>
     matchSnapshotWithPosition(position)
   );
 });
