@@ -28,15 +28,15 @@ Interactive.args = {
   label: 'Number',
 };
 
-export const minimumValue3AndMaximumValue10 = Template.bind({});
-minimumValue3AndMaximumValue10.args = {
+export const MinimumValue3AndMaximumValue10 = Template.bind({});
+MinimumValue3AndMaximumValue10.args = {
   label: 'Number',
   min: 3,
   max: 10,
 };
 
-export const stepValue2 = Template.bind({});
-stepValue2.args = {
+export const StepValue2 = Template.bind({});
+StepValue2.args = {
   label: 'Number',
   step: 2,
 };
