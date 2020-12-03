@@ -92,6 +92,7 @@ exports[`<Select /> can still work when receives non-string option children or v
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {
@@ -354,6 +355,7 @@ exports[`<Select /> can still work when receives non-string option children or v
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {

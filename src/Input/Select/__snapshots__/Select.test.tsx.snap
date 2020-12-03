@@ -69,6 +69,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {
@@ -313,6 +314,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {
@@ -557,6 +559,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {
@@ -800,6 +803,7 @@ exports[`<Select> should render with 3 options 1`] = `
   transition: all .5s;
   font-size: 1.1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .c2::-webkit-input-placeholder {
