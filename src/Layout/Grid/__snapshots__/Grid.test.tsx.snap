@@ -68,27 +68,27 @@ exports[`<Grid/> snapshots should match snapshot with props alignContent and jus
   }
 }
 
-@media (min-width:768px) {
+@media (max-width:768px) {
   .c0 {
     width: 720px;
     margin: 0 16px;
   }
 }
 
-@media (min-width:1024px) {
+@media (max-width:1024px) {
   .c0 {
     width: 960px;
     margin: 0 auto;
   }
 }
 
-@media (min-width:1260px) {
+@media (max-width:1260px) {
   .c0 {
     width: 1140px;
   }
 }
 
-@media (min-width:1440px) {
+@media (max-width:1440px) {
   .c0 {
     width: 1260px;
   }
@@ -325,27 +325,27 @@ exports[`<Grid/> snapshots should match snapshot without props alignContent and 
   }
 }
 
-@media (min-width:768px) {
+@media (max-width:768px) {
   .c0 {
     width: 720px;
     margin: 0 16px;
   }
 }
 
-@media (min-width:1024px) {
+@media (max-width:1024px) {
   .c0 {
     width: 960px;
     margin: 0 auto;
   }
 }
 
-@media (min-width:1260px) {
+@media (max-width:1260px) {
   .c0 {
     width: 1140px;
   }
 }
 
-@media (min-width:1440px) {
+@media (max-width:1440px) {
   .c0 {
     width: 1260px;
   }

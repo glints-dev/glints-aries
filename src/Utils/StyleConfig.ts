@@ -61,11 +61,12 @@ export const ScreenSize = {
 };
 
 export const Device = {
-  mobileS: `(max-width: ${ScreenSize.mobileM - 1}px)`,
-  mobileM: `(min-width: ${ScreenSize.mobileM}px)`,
-  mobileL: `(min-width: ${ScreenSize.mobileL}px)`,
-  tablet: `(min-width: ${ScreenSize.tablet}px)`,
-  desktopS: `(min-width: ${ScreenSize.desktopS}px)`,
-  desktopM: `(min-width: ${ScreenSize.desktopM}px)`,
-  desktopL: `(min-width: ${ScreenSize.desktopL}px)`,
+  mobileS: `(max-width: ${ScreenSize.mobileS}px)`,
+  mobileM: `(max-width: ${ScreenSize.mobileM}px)`,
+  mobileL: `(max-width: ${ScreenSize.mobileL}px)`,
+  tablet: `(max-width: ${ScreenSize.tablet}px)`,
+  desktopS: `(max-width: ${ScreenSize.desktopS}px)`,
+  desktopM: `(max-width: ${ScreenSize.desktopM}px)`,
+  desktopL: `(max-width: ${ScreenSize.desktopL}px)`,
+  desktopXL: `(min-width: ${ScreenSize.desktopL + 1}px)`,
 };
