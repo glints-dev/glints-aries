@@ -4,7 +4,7 @@ import isNil from 'lodash/isNil';
 import { BadgeContainer } from './BadgeStyle';
 import { BadgeVariant } from './BadgeVariant';
 
-const Badge: React.FunctionComponent<Props> = ({
+export const Badge: React.FunctionComponent<Props> = ({
   label,
   sup,
   variant = BadgeVariant.DEFAULT,
@@ -26,7 +26,8 @@ const Badge: React.FunctionComponent<Props> = ({
   </React.Fragment>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
+export interface Props
+  extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
   label: string | number;
   sup?: boolean;
   variant?: string;
