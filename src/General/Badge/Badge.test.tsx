@@ -5,7 +5,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
-import Badge from './Badge';
+import Badge, { BadgeType } from './Badge';
 
 const label = '6';
 
@@ -36,12 +36,14 @@ describe('when sup is:', () => {
 });
 
 describe('<Badge/> snapshots with variant prop', () => {
-  const matchSnapshotWithVariant = (variant: string) => {
+  const matchSnapshotWithVariant = (variant: BadgeType) => {
     test(`variant ${variant}`, () => {
       const { asFragment } = render(<Badge variant={variant} label={label} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
 
-  ['default', 'dimmed'].forEach(variant => matchSnapshotWithVariant(variant));
+  ['default', 'dimmed'].forEach((variant: BadgeType) =>
+    matchSnapshotWithVariant(variant)
+  );
 });
