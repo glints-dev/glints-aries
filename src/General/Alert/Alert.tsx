@@ -20,7 +20,7 @@ import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 export const Alert = ({
   isOpen,
-  autoClose = 3000,
+  autoClose,
   onClose,
   type = 'info',
   className,
