@@ -137,7 +137,7 @@ export interface Props {
   type: AlertType;
   /** Set message for Alert. */
   message: string;
-  /** A function to close Alert. */
+  /** A function to close Alert. onClose will be triggered if the close icon is clicked or the Alert has ran its autoClose duration */
   onClose(): void;
   /** Set Alert to show. */
   isOpen: boolean;
