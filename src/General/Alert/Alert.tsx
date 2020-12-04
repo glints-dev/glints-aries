@@ -130,9 +130,11 @@ export const Alert = ({
   ) : null;
 };
 
+export type AlertType = 'success' | 'warning' | 'danger' | 'info';
+
 export interface Props {
   /** Set Alert's style. */
-  type: string;
+  type: AlertType;
   /** Set message for Alert. */
   message: string;
   /** A function to close Alert. */
