@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 const arrow = css`
   position: absolute;
@@ -26,6 +27,10 @@ export const SliderItemWrapper = styled.div`
   &.slider-item {
     position: relative;
     padding-top: 50%;
+
+    @media (min-width: ${ScreenSize.tablet}px) {
+      padding-top: 20%;
+    }
 
     img {
       position: absolute;

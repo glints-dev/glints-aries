@@ -60,8 +60,6 @@ const props = {
 
 const SliderStory = () => (
   <StorybookComponent
-    title="Slider"
-    code="import { Slider } from 'glints-aries'"
     propsObject={props}
     usage={`getCurrentIndex = (index) => {
   console.log(index);
