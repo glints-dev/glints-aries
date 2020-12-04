@@ -1,8 +1,36 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 
 import Slider from '../../src/Display/Slider';
+import { ScreenSize } from '../../src/Utils/StyleConfig';
+
+// References: https://github.com/beautifulinteractions/beautiful-react-hooks/blob/master/src/useMediaQuery.js
+export const useMediaQuery = (mediaQuery: string) => {
+  if (!('matchMedia' in window)) {
+    return null;
+  }
+
+  const [isVerified, setIsVerified] = React.useState(
+    Boolean(window.matchMedia(mediaQuery).matches)
+  );
+
+  React.useEffect(() => {
+    const mediaQueryList = window.matchMedia(mediaQuery);
+    const documentChangeHandler = () =>
+      setIsVerified(Boolean(mediaQueryList.matches));
+
+    mediaQueryList.addEventListener('change', documentChangeHandler);
+
+    documentChangeHandler();
+    return () => {
+      mediaQueryList.removeEventListener('change', documentChangeHandler);
+    };
+  }, [mediaQuery]);
+
+  return isVerified;
+};
 
 const props = {
   Slider: [
@@ -58,10 +86,19 @@ const props = {
   ],
 };
 
-const SliderStory = () => (
-  <StorybookComponent
-    propsObject={props}
-    usage={`getCurrentIndex = (index) => {
+const mobileImagePath =
+  'https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/images/expert-class/1202-mobile.png';
+const desktopImagePath =
+  'https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/images/expert-class/1202-desktop.png';
+
+const SliderStory = () => {
+  const isMobile = useMediaQuery(`(max-width: ${ScreenSize.tablet}px)`);
+  const imagePath = isMobile ? mobileImagePath : desktopImagePath;
+
+  return (
+    <StorybookComponent
+      propsObject={props}
+      usage={`getCurrentIndex = (index) => {
   console.log(index);
 }
 
@@ -77,27 +114,19 @@ const SliderStory = () => (
     <Component />
   </Slider.Item>
 </Slider>`}
-  >
-    <Slider autoplay fullContent>
-      <Slider.Item>
-        <img
-          src="https://images.unsplash.com/photo-1512979797260-1a645592b48f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fc2ca84d8c407bd48ab15ea27c87eaf&auto=format&fit=crop&h=500&q=80"
-          alt="Profile Picture"
-        />
-      </Slider.Item>
-      <Slider.Item>
-        <img
-          src="https://images.unsplash.com/photo-1599335937498-90b82b84d603?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&q=80"
-          alt="Nature"
-        />
-      </Slider.Item>
-      <Slider.Item>
-        <img
-          src="https://images.unsplash.com/photo-1598662779094-110c2bad80b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&q=80"
-          alt="Keyboard"
-        />
-      </Slider.Item>
-    </Slider>
-  </StorybookComponent>
-);
+    >
+      <Slider autoplay fullContent>
+        <Slider.Item>
+          <img src={imagePath} alt="1" />
+        </Slider.Item>
+        <Slider.Item>
+          <img src={imagePath} alt="2" />
+        </Slider.Item>
+        <Slider.Item>
+          <img src={imagePath} alt="3" />
+        </Slider.Item>
+      </Slider>
+    </StorybookComponent>
+  );
+};
 export default SliderStory;
