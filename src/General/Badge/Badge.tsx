@@ -6,7 +6,7 @@ import { BadgeVariant } from './BadgeVariant';
 
 export const Badge: React.FunctionComponent<Props> = ({
   label,
-  sup,
+  sup = false,
   variant = BadgeVariant.DEFAULT,
   className,
   ...defaultProps
@@ -26,11 +26,16 @@ export const Badge: React.FunctionComponent<Props> = ({
   </React.Fragment>
 );
 
+export type BadgeType = 'dimmed' | 'default';
+
 export interface Props
   extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
+  /** Set the label of Badge. */
   label: string | number;
+  /** Set Badge into superscript type. */
   sup?: boolean;
-  variant?: string;
+  /** Sets the variant of the Badge. */
+  variant?: BadgeType;
 }
 
 export default Badge;
