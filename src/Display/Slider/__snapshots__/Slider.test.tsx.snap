@@ -130,6 +130,12 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -315,6 +321,12 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -516,6 +528,12 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -713,6 +731,12 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -914,6 +938,12 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -1111,6 +1141,12 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -1312,6 +1348,12 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -1509,6 +1551,12 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -1710,6 +1758,12 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -1907,6 +1961,12 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -2108,6 +2168,12 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -2307,6 +2373,12 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -2500,6 +2572,12 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 
 .c4 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c2.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -2701,6 +2779,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -2898,6 +2982,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -3099,6 +3189,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -3296,6 +3392,12 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div
@@ -3497,6 +3599,12 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   vertical-align: middle;
 }
 
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-slider"
     tabindex="0"
@@ -3687,6 +3795,12 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c3.slider-item {
+    padding-top: 20%;
+  }
 }
 
 <div

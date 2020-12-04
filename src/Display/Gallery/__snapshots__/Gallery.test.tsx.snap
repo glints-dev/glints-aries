@@ -328,6 +328,12 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   }
 }
 
+@media (min-width:768px) {
+  .c12.slider-item {
+    padding-top: 20%;
+  }
+}
+
 <div
     class="c0 aries-gallery"
   >
@@ -1031,6 +1037,12 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 @media (max-width:480px) {
   .c8 {
     padding: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c12.slider-item {
+    padding-top: 20%;
   }
 }
 
@@ -2432,6 +2444,12 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 @media (max-width:480px) {
   .c8 {
     padding: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c12.slider-item {
+    padding-top: 20%;
   }
 }
 
