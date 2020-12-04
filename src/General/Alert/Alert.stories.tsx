@@ -9,6 +9,13 @@ export default {
   title: 'General/Alert',
   component: Alert,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
+  argTypes: {
+    className: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<Props> = args => {
