@@ -9,6 +9,9 @@ import {
   Border,
 } from './RadioButtonStyle';
 
+/** The <code>className</code> will be passed to
+ * the main radio button container. <code>...inputProps</code> is passed to the
+ * input tag. */
 export const RadioButton: React.FunctionComponent<Props> = ({
   className,
   children,
