@@ -92,8 +92,8 @@ const desktopImagePath =
   'https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/images/expert-class/1202-desktop.png';
 
 const SliderStory = () => {
-  const isMobile = useMediaQuery(`(max-width: ${ScreenSize.tablet}px)`);
-  const imagePath = isMobile ? mobileImagePath : desktopImagePath;
+  const isDesktop = useMediaQuery(`(min-width: ${ScreenSize.tablet}px)`);
+  const imagePath = isDesktop ? desktopImagePath : mobileImagePath;
 
   return (
     <StorybookComponent
