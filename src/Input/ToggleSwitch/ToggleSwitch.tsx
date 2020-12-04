@@ -17,6 +17,7 @@ export interface ToggleSwitchProps {
   className?: string;
 }
 
+/** The <code>className</code> and <code>...defaultProps</code> are passed to the main toggle container. */
 export const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
   defaultActive = false,
   iconOptions,
