@@ -28,5 +28,4 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   type: 'info',
   message: 'You have successfully applied to Glints as Software Engineer.',
-  autoClose: 3000,
 };
