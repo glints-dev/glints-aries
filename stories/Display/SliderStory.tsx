@@ -21,11 +21,15 @@ export const useMediaQuery = (mediaQuery: string) => {
     const documentChangeHandler = () =>
       setIsVerified(Boolean(mediaQueryList.matches));
 
-    mediaQueryList.addEventListener('change', documentChangeHandler);
+    /*
+      MediaQueryList.addEventListener() is not supported on iOS browser, so we
+      need to use addListener instead, even it is marked as deprecated.
+    */
+    mediaQueryList.addListener(documentChangeHandler);
 
     documentChangeHandler();
     return () => {
-      mediaQueryList.removeEventListener('change', documentChangeHandler);
+      mediaQueryList.removeListener(documentChangeHandler);
     };
   }, [mediaQuery]);
 
