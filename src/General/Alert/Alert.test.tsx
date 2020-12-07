@@ -57,6 +57,7 @@ describe('<Alert/> should match snapshot, when isOpen is truthy', () => {
   });
 
   test('type is not a predefined type', () => {
+    //@ts-ignore
     const snapshot = renderer.create(<AlertComponent type="xxx" />).toJSON();
     expect(snapshot).toMatchSnapshot();
   });
@@ -97,6 +98,7 @@ describe('<Alert/> should render correct icon color', () => {
   });
 
   test('type is not a predefined type', () => {
+    //@ts-ignore
     const { queryAllByTestId } = render(<AlertComponent type="xxx" />);
     const icon = queryAllByTestId('icon-svg')[0];
     expect(icon).toHaveAttribute('fill', SecondaryColor.actionblue);
