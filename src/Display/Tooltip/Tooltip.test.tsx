@@ -46,7 +46,7 @@ describe('<Tooltip/> snapshots with position prop', () => {
     });
   };
 
-  ['left', 'right', 'bottom', 'default'].forEach((position: Position) =>
+  ['left', 'right', 'bottom', 'top'].forEach((position: Position) =>
     matchSnapshotWithPosition(position)
   );
 });
