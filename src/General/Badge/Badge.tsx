@@ -34,7 +34,7 @@ export interface Props
   label: string | number;
   /** Set Badge into superscript type. */
   sup?: boolean;
-  /** Sets the variant of the Badge. */
+  /** Set the variant of the Badge. */
   variant?: BadgeType;
 }
 
