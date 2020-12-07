@@ -104,6 +104,10 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -111,8 +115,8 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -121,8 +125,9 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -133,6 +138,18 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -297,6 +314,10 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -304,8 +325,8 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -314,8 +335,9 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -326,6 +348,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -502,6 +536,10 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -509,8 +547,8 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -519,8 +557,9 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -531,6 +570,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -707,6 +758,10 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -714,8 +769,8 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -724,8 +779,9 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -736,6 +792,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -912,6 +980,10 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -919,8 +991,8 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -929,8 +1001,9 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -941,6 +1014,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -1117,6 +1202,10 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -1124,8 +1213,8 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1134,8 +1223,9 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -1146,6 +1236,18 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -1322,6 +1424,10 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -1329,8 +1435,8 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1339,8 +1445,9 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -1351,6 +1458,18 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -1527,6 +1646,10 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -1534,8 +1657,8 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1544,8 +1667,9 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -1556,6 +1680,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -1732,6 +1868,10 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -1739,8 +1879,8 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1749,8 +1889,9 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -1761,6 +1902,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -1937,6 +2090,10 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -1944,8 +2101,8 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1954,8 +2111,9 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -1966,6 +2124,18 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -2142,6 +2312,10 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -2149,8 +2323,8 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2159,8 +2333,9 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -2171,6 +2346,18 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -2347,6 +2534,10 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -2354,8 +2545,8 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2364,8 +2555,9 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -2376,6 +2568,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -2548,6 +2752,10 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -2555,8 +2763,8 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2565,8 +2773,9 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -2577,6 +2786,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 @media (min-width:768px) {
   .c2.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -2753,6 +2974,10 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -2760,8 +2985,8 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2770,8 +2995,9 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -2782,6 +3008,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -2958,6 +3196,10 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -2965,8 +3207,8 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2975,8 +3217,9 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -2987,6 +3230,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -3163,6 +3418,10 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -3170,8 +3429,8 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -3180,8 +3439,9 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -3192,6 +3452,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -3368,6 +3640,10 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -3375,8 +3651,8 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -3385,8 +3661,9 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -3397,6 +3674,18 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -3573,6 +3862,10 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -3580,8 +3873,8 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -3590,8 +3883,9 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -3602,6 +3896,18 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
@@ -3771,6 +4077,10 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 ul li {
@@ -3778,8 +4088,8 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -3788,8 +4098,9 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 }
 
 .c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
@@ -3800,6 +4111,18 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 @media (min-width:768px) {
   .c3.slider-item {
     padding-top: 20%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 ul li {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c0 ul li.active {
+    width: 30px;
+    height: 10px;
   }
 }
 
