@@ -134,7 +134,7 @@ export type AlertType = 'success' | 'warning' | 'danger' | 'info';
 
 export interface Props {
   /** Set Alert's style. */
-  type: AlertType;
+  type?: AlertType;
   /** Set message for Alert. */
   message: string;
   /** A function to close Alert. onClose will be triggered if the close icon is clicked or the Alert has ran its autoClose duration or ESC/Enter is pressed */
