@@ -93,76 +93,6 @@ exports[`<Tooltip/> snapshots with position prop position bottom 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<Tooltip/> snapshots with position prop position default 1`] = `
-<DocumentFragment>
-  .c0 {
-  position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.c1 {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  bottom: 100%;
-  left: 50%;
-  padding-bottom: 9px;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.c1:after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #000000;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.c1:after {
-  content: '';
-  position: absolute;
-}
-
-.c2 {
-  background: #000000;
-  border-radius: 3px;
-  color: #FFFFFF;
-  line-height: 1.5;
-  font-size: 12px;
-  padding: 10px;
-  text-align: center;
-}
-
-<div
-    aria-hidden="false"
-    aria-label="mock text"
-    class="c0 aries-tooltip container"
-    role="tooltip"
-  >
-    <div
-      class="c1 aries-tooltip-content content"
-    >
-      <div
-        class="c2 aries-tooltip-message message"
-      >
-        mock text
-      </div>
-    </div>
-    <span>
-      mock content
-    </span>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`<Tooltip/> snapshots with position prop position left 1`] = `
 <DocumentFragment>
   .c0 {
@@ -264,6 +194,76 @@ exports[`<Tooltip/> snapshots with position prop position right 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+}
+
+.c2 {
+  background: #000000;
+  border-radius: 3px;
+  color: #FFFFFF;
+  line-height: 1.5;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+<div
+    aria-hidden="false"
+    aria-label="mock text"
+    class="c0 aries-tooltip container"
+    role="tooltip"
+  >
+    <div
+      class="c1 aries-tooltip-content content"
+    >
+      <div
+        class="c2 aries-tooltip-message message"
+      >
+        mock text
+      </div>
+    </div>
+    <span>
+      mock content
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Tooltip/> snapshots with position prop position top 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 9px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c1:after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #000000;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .c1:after {
