@@ -13,7 +13,7 @@ export interface ToggleSwitchProps {
     active: React.ReactType;
     inactive: React.ReactType;
   };
-  /** Called when the state of the toggle has been changed. Returns true or false depending on whether the toggle is active or inactive. */
+  /** Called when the state of the toggle has been changed. Called with true or false depending on whether the toggle became active or inactive. */
   onChange?: (active: boolean) => void;
   className?: string;
 }

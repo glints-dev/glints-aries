@@ -19,11 +19,12 @@ Interactive.args = {
   defaultActive: false,
 };
 
-export const ToggleSwitchWithIcons = Template.bind({});
-ToggleSwitchWithIcons.args = {
-  defaultActive: false,
-  iconOptions: {
-    active: EyeIcon,
-    inactive: EyeSlashedIcon,
-  },
-};
+export const ToggleSwitchWithIcons: Story<ToggleSwitchProps> = () => (
+  <ToggleSwitch
+    defaultActive={false}
+    iconOptions={{
+      active: EyeIcon,
+      inactive: EyeSlashedIcon,
+    }}
+  />
+);
