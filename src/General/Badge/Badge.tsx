@@ -30,11 +30,11 @@ export type BadgeType = 'dimmed' | 'default';
 
 export interface Props
   extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
-  /** Set the label of Badge. */
+  /** Sets the label of Badge. */
   label: string | number;
-  /** Set Badge into superscript type. */
+  /** Sets Badge into superscript type. */
   sup?: boolean;
-  /** Set the variant of the Badge. */
+  /** Sets the variant of the Badge. */
   variant?: BadgeType;
 }
 
