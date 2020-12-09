@@ -4,7 +4,7 @@ import { render, fireEvent, wait, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
-import Alert from './Alert';
+import Alert, { AlertType } from './Alert';
 
 describe('<Alert/> should match snapshot, when isOpen is falsy', () => {
   test('snapshot should be null regardless of alert type', () => {
@@ -23,7 +23,7 @@ describe('<Alert/> should match snapshot, when isOpen is falsy', () => {
 });
 
 describe('<Alert/> should match snapshot, when isOpen is truthy', () => {
-  const AlertComponent = ({ type }: { type: string }) => (
+  const AlertComponent = ({ type }: { type: AlertType }) => (
     <Alert
       type={type}
       message="You have successfully applied to Glints as Software Engineer."
@@ -57,13 +57,15 @@ describe('<Alert/> should match snapshot, when isOpen is truthy', () => {
   });
 
   test('type is not a predefined type', () => {
-    const snapshot = renderer.create(<AlertComponent type="xxx" />).toJSON();
+    const snapshot = renderer
+      .create(<AlertComponent type={'xxx' as AlertType} />)
+      .toJSON();
     expect(snapshot).toMatchSnapshot();
   });
 });
 
 describe('<Alert/> should render correct icon color', () => {
-  const AlertComponent = ({ type }: { type: string }) => (
+  const AlertComponent = ({ type }: { type: AlertType }) => (
     <Alert
       type={type}
       message="You have successfully applied to Glints as Software Engineer."
@@ -97,7 +99,9 @@ describe('<Alert/> should render correct icon color', () => {
   });
 
   test('type is not a predefined type', () => {
-    const { queryAllByTestId } = render(<AlertComponent type="xxx" />);
+    const { queryAllByTestId } = render(
+      <AlertComponent type={'xxx' as AlertType} />
+    );
     const icon = queryAllByTestId('icon-svg')[0];
     expect(icon).toHaveAttribute('fill', SecondaryColor.actionblue);
   });
