@@ -48,7 +48,7 @@ const Tag: React.FunctionComponent<Props> = ({
     );
   }
   return (
-    <BasicTag block={block} outline={outline} {...resetProps}>
+    <BasicTag block={block} outline={outline} onClick={onClick} {...resetProps}>
       {children}
     </BasicTag>
   );
