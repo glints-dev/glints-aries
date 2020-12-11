@@ -116,7 +116,7 @@ const typeValue = (
 
 const possibleValue = (
   <>
-    {32} | {'"auto"'} | <code>{'{default: 32, ds: 64}'}</code>
+    {32} | {'"auto"'} | <code>{'{default: 32, desktopS: 64}'}</code>
   </>
 );
 
