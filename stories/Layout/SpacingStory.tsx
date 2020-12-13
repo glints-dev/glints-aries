@@ -3,7 +3,7 @@ import * as React from 'react';
 import StorybookComponent from '../StorybookComponent';
 import { StorybookTable } from '../StorybookTable';
 import { SecondaryColor } from '../../src/Utils/Colors';
-import { SpacingScaleValues, Spacing } from '../../src/Layout/Spacing';
+import { Spacing } from '../../src/Layout/Spacing';
 
 type Data = {
   value: number;
@@ -14,7 +14,7 @@ const dataSource: Data[] = Object.values(Spacing)
   .sort(function(a, b) {
     return b - a;
   })
-  .map((value: SpacingScaleValues) => {
+  .map(value => {
     return {
       value: value,
       usage: value > 64 ? 'Layout' : 'Element Layout',
