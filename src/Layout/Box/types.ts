@@ -1,4 +1,4 @@
-import { SpacingScaleValues } from '../Spacing';
+import { Spacing } from '../Spacing';
 
 // Responsive
 export type BreakpointAliases =
@@ -12,15 +12,17 @@ export type BreakpointAliases =
   | 'desktopL';
 
 // Space
-type ResponsiveSpacing = {
-  [key in BreakpointAliases]?: SpacingScaleValues | 'auto';
+export type SpacingScaleValues = typeof Spacing[keyof typeof Spacing] | 'auto';
+
+export type ResponsiveSpacing = {
+  [key in BreakpointAliases]?: SpacingScaleValues;
 };
 type MarginTypes = 'm' | 'mt' | 'mb' | 'ml' | 'mr' | 'my' | 'mx';
 export type MarginProps = {
-  [key in MarginTypes]?: SpacingScaleValues | 'auto' | ResponsiveSpacing;
+  [key in MarginTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
 
 type PaddingTypes = 'p' | 'pt' | 'pb' | 'pl' | 'pr' | 'py' | 'px';
 export type PaddingProps = {
-  [key in PaddingTypes]?: SpacingScaleValues | 'auto' | ResponsiveSpacing;
+  [key in PaddingTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
