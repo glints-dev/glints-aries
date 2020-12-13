@@ -1,4 +1,3 @@
-import { ScreenSize } from '../../Utils/StyleConfig';
 import { SpacingScaleValues } from '../Spacing';
 
 // Responsive
@@ -11,15 +10,6 @@ export type BreakpointAliases =
   | 'desktopS'
   | 'desktopM'
   | 'desktopL';
-export const breakpointAliasMap = {
-  mobileS: `${ScreenSize.mobileS}px`,
-  mobileM: `${ScreenSize.mobileM}px`,
-  mobileL: `${ScreenSize.mobileL}px`,
-  tablet: `${ScreenSize.tablet}px`,
-  desktopS: `${ScreenSize.desktopS}px`,
-  desktopM: `${ScreenSize.desktopM}px`,
-  desktopL: `${ScreenSize.desktopL}px`,
-};
 
 // Space
 type ResponsiveSpacing = {

@@ -1,10 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { space } from 'styled-system';
-import { breakpointAliasMap, MarginProps, PaddingProps } from './types';
+import { MarginProps, PaddingProps } from './types';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 const theme = {
-  breakpoints: breakpointAliasMap,
+  breakpoints: {
+    mobileS: `${ScreenSize.mobileS}px`,
+    mobileM: `${ScreenSize.mobileM}px`,
+    mobileL: `${ScreenSize.mobileL}px`,
+    tablet: `${ScreenSize.tablet}px`,
+    desktopS: `${ScreenSize.desktopS}px`,
+    desktopM: `${ScreenSize.desktopM}px`,
+    desktopL: `${ScreenSize.desktopL}px`,
+  },
 };
 
 export type Props = MarginProps & PaddingProps;
