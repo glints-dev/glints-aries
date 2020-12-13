@@ -16,6 +16,7 @@ import {
   contentWidth,
   contentHeight,
 } from './BoxSpaceStoryStyle';
+import { ResponsiveSpacing } from '../../../src/Layout/Box/types';
 
 const marginProps = [
   {
@@ -81,9 +82,9 @@ const paddingProps = [
 
 const directions = ['top', 'right', 'bottom', 'left'];
 
-const usage = `import { Box } from 'glints-aries'
+const usage = `import { Box, ResponsiveSpacing } from 'glints-aries'
 // responsive space object
-const responsivePadding = {
+const responsivePadding: ResponsiveSpacing = {
     default: 32,
     desktopS: 64
 };
@@ -137,6 +138,11 @@ export const propsObject = {
   })),
 };
 
+const responsivePadding: ResponsiveSpacing = {
+  default: 32,
+  desktopS: 64,
+};
+
 const BoxSpaceStory = () => (
   <StorybookComponent title="Box" usage={usage} propsObject={propsObject}>
     <Heading>Space</Heading>
@@ -153,13 +159,7 @@ const BoxSpaceStory = () => (
           </SpaceText>
         );
       })}
-      <CustomBox
-        p={{
-          default: 32,
-          desktopS: 64,
-        }}
-        m={64}
-      >
+      <CustomBox p={responsivePadding} m={64}>
         {directions.map(direction => {
           const calcPosition = (space: number) =>
             direction === 'left' || direction === 'right'
