@@ -35,3 +35,15 @@ describe('<Box />', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+describe('<Box /> ensure default space theme is overwritten', () => {
+  it('should have "padding: 4px" style when padding is 4', () => {
+    const { container } = render(<Box p={4} />);
+    expect(container.firstChild).toHaveStyle('padding: 4px');
+  });
+
+  it('should have "margin: 8px" style when margin is 8', () => {
+    const { container } = render(<Box m={8} />);
+    expect(container.firstChild).toHaveStyle('margin: 8px');
+  });
+});
