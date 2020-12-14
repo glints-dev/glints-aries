@@ -14,6 +14,12 @@ const theme = {
     desktopM: `${ScreenSize.desktopM}px`,
     desktopL: `${ScreenSize.desktopL}px`,
   },
+  /*
+    To overwrite default space theme in case <Box p={8} /> will be styled as
+    `padding: 512px` instead of `padding: 8px`. Because the index 8 of default
+    space theme is 512, can refer to https://styled-system.com/api/#defaults
+  */
+  space: [0],
 };
 
 export type Props = MarginProps & PaddingProps;
