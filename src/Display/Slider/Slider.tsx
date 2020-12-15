@@ -10,15 +10,15 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 import SliderItem from './SliderItem';
 
-const Slider = ({
+export const Slider = ({
   afterChange,
   children,
-  autoplay,
+  autoplay = false,
   initialItem,
   className,
-  fullContent,
-  arrowWhite,
-  removeDots,
+  fullContent = false,
+  arrowWhite = false,
+  removeDots = false,
   containerRef,
 }: Props) => {
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
@@ -201,11 +201,17 @@ Slider.Item = SliderItem;
 export interface Props {
   children: React.ReactNode;
   className?: string;
+  /** The index of the page that will be shown initally (before the first manual- or auto-scroll). Note that the index starts at 1. */
   initialItem?: number;
+  /** If <code>true</code>, the dot controls will be superimposed on the current page */
   fullContent?: boolean;
+  /** If <code>true</code>, the arrow controls will have a white color */
   arrowWhite?: boolean;
+  /** If <code>true</code>, dot controls will be removed */
   removeDots?: boolean;
+  /** Called with the new index after a new Slider page has been shown */
   afterChange?: Function;
+  /** If <code>true</code>, the Slider will flip through its pages at a regular interval */
   autoplay?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;
 }
