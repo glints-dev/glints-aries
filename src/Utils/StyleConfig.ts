@@ -29,6 +29,13 @@ export const ButtonVariant = {
   LINK: 'link',
 };
 
+export const RoundedCornerButtonVariant = {
+  SOLID_WHITE: 'solid-white',
+  SOLID_BLUE: 'solid-blue',
+  GHOST: 'ghost',
+  WHITE_GREY: 'white-grey',
+};
+
 export const PsychedelicTheme = {
   BLUE_DOMINANT: 'blue-dominant',
   BLUE_DEFAULT: 'blue-default',
