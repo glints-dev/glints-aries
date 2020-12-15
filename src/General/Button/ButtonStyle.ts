@@ -321,6 +321,7 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
       : `${generalButtonPadding[0] - 2}px ${generalButtonPadding[1] - 2}px`};
   border: 2px solid ${SecondaryColor.actionblue};
   color: ${SecondaryColor.actionblue};
+  border-radius: ${({ isRoundedCorner }) => (isRoundedCorner ? '8px' : '0px')};
 
   &:hover {
     transition: background-color 0.5s;
@@ -349,6 +350,7 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
 
 interface GhostBtnProps {
   block?: boolean;
+  isRoundedCorner?: boolean;
 }
 
 export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
@@ -356,7 +358,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
 
-  ${({ disabled }) => {
+  ${({ disabled, isRoundedCorner }) => {
     if (!disabled) {
       return `
         &:active {
@@ -377,6 +379,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
           z-index: -1;
           transition: all .2s;
           cursor: pointer;
+          border-radius: ${isRoundedCorner ? '8px' : '0px'};
         }
 
         &:hover:after {
@@ -410,6 +413,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
 interface GhostBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
+  isRoundedCorner?: boolean;
 }
 
 /*

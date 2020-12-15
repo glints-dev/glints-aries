@@ -149,6 +149,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   endIcon?: React.ReactNode;
   theme?: string;
   forwardedRef?: React.RefObject<HTMLButtonElement>;
+  isRoundedCorner?: boolean;
 }
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
