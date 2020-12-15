@@ -147,6 +147,8 @@ const Slider = ({
     child => !isNil(child)
   ).length;
 
+  console.log('123');
+
   return (
     <SliderContainer
       ref={sliderContainerRef}
