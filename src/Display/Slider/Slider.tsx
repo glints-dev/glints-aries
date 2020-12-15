@@ -147,7 +147,7 @@ const Slider = ({
     child => !isNil(child)
   ).length;
 
-  console.log('123456');
+  console.log('123456890');
 
   return (
     <SliderContainer
