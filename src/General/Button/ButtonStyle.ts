@@ -47,14 +47,17 @@ const Button = styled.button<ButtonProps>`
 interface SolidBtnContainerProps {
   block?: boolean;
   disabled?: boolean;
+  isRoundedCorner?: boolean;
 }
 
 interface SolidBtnProps {
   block?: boolean;
+  isRoundedCorner?: boolean;
 }
 
 export const SolidBtn = styled(Button)<SolidBtnProps>`
   width: ${({ block }) => block && '100%'};
+  border-radius: ${({ isRoundedCorner }) => (isRoundedCorner ? '8px' : '0px')};
 
   &:active {
     background-color: ${Greyscale.black};
@@ -110,8 +113,8 @@ export const SolidBtnContainer = styled.div<SolidBtnContainerProps>`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   z-index: 1;
-
-  ${({ disabled }) => {
+  border-radius: ${({ isRoundedCorner }) => (isRoundedCorner ? '8px' : '0px')};
+  ${({ disabled, isRoundedCorner }) => {
     if (!disabled) {
       return `
       &:active {
@@ -133,6 +136,7 @@ export const SolidBtnContainer = styled.div<SolidBtnContainerProps>`
         z-index: -1;
         transition: all .2s;
         cursor: pointer;
+        border-radius: ${isRoundedCorner ? '8px' : '0px'};
       }
 
       &:hover:after {
@@ -181,11 +185,6 @@ export const SolidBtnContainer = styled.div<SolidBtnContainerProps>`
  * SolidShadow Button
  */
 
-interface SolidShadowContainerProps {
-  block?: boolean;
-  disabled?: boolean;
-}
-
 interface SolidShadowBtnProps {
   block?: boolean;
 }
@@ -213,6 +212,11 @@ export const SolidShadowBtn = styled(Button)<SolidShadowBtnProps>`
     `;
   }}
 `;
+
+interface SolidShadowContainerProps {
+  block?: boolean;
+  disabled?: boolean;
+}
 
 export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
   position: relative;
@@ -311,6 +315,11 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
  * Ghost Button
  */
 
+interface GhostBtnProps {
+  block?: boolean;
+  isRoundedCorner?: boolean;
+}
+
 export const GhostBtn = styled(Button)<GhostBtnProps>`
   transition: background-color 0.5s;
   width: ${({ block }) => block && '100%'};
@@ -348,8 +357,9 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
   }}
 `;
 
-interface GhostBtnProps {
+interface GhostBtnContainerProps {
   block?: boolean;
+  disabled?: boolean;
   isRoundedCorner?: boolean;
 }
 
@@ -410,23 +420,23 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
   }
 `;
 
-interface GhostBtnContainerProps {
-  block?: boolean;
-  disabled?: boolean;
-  isRoundedCorner?: boolean;
-}
-
 /*
  * White-Grey Button
  */
+
+interface WhiteGreyBtnProps {
+  block?: boolean;
+  isRoundedCorner?: boolean;
+}
 export const WhiteGreyBtn = styled(Button)<WhiteGreyBtnProps>`
   width: ${({ block }) => block && '100%'};
 
-  ${({ disabled }) => {
+  ${({ disabled, isRoundedCorner }) => {
     if (!disabled) {
       return `
         background-color: ${Greyscale.white};
         color: ${SecondaryColor.actionblue};
+        border-radius: ${isRoundedCorner ? '8px' : '0px'};
 
         &:hover {
           background-color: ${Greyscale.softgrey};
@@ -445,10 +455,6 @@ export const WhiteGreyBtn = styled(Button)<WhiteGreyBtnProps>`
     `;
   }}
 `;
-
-interface WhiteGreyBtnProps {
-  block?: boolean;
-}
 
 /*
  * Link Button
