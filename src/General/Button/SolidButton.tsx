@@ -10,6 +10,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
   block,
   small,
   tag,
+  isRoundedCorner,
   ...defaultProps
 }) => (
   <SolidBtnContainer
@@ -17,6 +18,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
     theme={theme}
     disabled={disabled}
     block={block}
+    isRoundedCorner={isRoundedCorner}
   >
     <SolidBtn
       className="solid-btn-content"
@@ -25,6 +27,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
       block={block}
       small={small}
       as={(tag as React.ElementType) || 'button'}
+      isRoundedCorner={isRoundedCorner}
       {...defaultProps}
     >
       {children}
@@ -40,6 +43,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
   block?: boolean;
   small?: boolean;
   tag?: React.ElementType;
+  isRoundedCorner?: boolean;
 }
 
 export default SolidButton;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import omit from 'lodash/omit';
-
+import Typography from '../../src/General/Typography';
 import StorybookComponent from '../StorybookComponent';
 import Button from '../../src/General/Button';
 import Heading from '../../src/General/Heading';
@@ -11,7 +11,10 @@ import {
   ArrowRoundForwardIcon,
 } from '../../src/General/Icon/components';
 
-import { ButtonVariant } from '../../src/Utils/StyleConfig';
+import {
+  ButtonVariant,
+  RoundedCornerButtonVariant,
+} from '../../src/Utils/StyleConfig';
 
 const ButtonVariantWithoutLink = omit(ButtonVariant, ['LINK']);
 const AllButtonNamesWithoutLink =
@@ -75,6 +78,14 @@ const ButtonVariantStory = () => {
       {Object.values(ButtonVariant).map(variant => (
         <ButtonRow key={variant}>
           <Button variant={variant}>{variant}</Button>
+        </ButtonRow>
+      ))}
+      <Typography.Paragraph>Button with rounded corner</Typography.Paragraph>
+      {Object.values(RoundedCornerButtonVariant).map(variant => (
+        <ButtonRow key={variant}>
+          <Button variant={variant} isRoundedCorner={true}>
+            {variant}
+          </Button>
         </ButtonRow>
       ))}
     </StorybookComponent>
