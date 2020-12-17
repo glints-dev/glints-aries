@@ -77,7 +77,9 @@ const TextFieldStory = () => {
       <StorybookComponent
         title="Text Field"
         code="import { TextField } from 'glints-aries'"
-        usage={'<TextField type="text" label="Username" />'}
+        usage={
+          '<TextField type="text" label="Username" removeFloatingLabel={true} />'
+        }
       >
         <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
           Text
@@ -90,6 +92,7 @@ const TextFieldStory = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setTextValue(e.target.value)
             }
+            removeFloatingLabel={true}
           />
         </div>
       </StorybookComponent>
@@ -98,7 +101,9 @@ const TextFieldStory = () => {
 
       <StorybookComponent
         propsObject={props}
-        usage={'<TextField type="password" label="Password" value="..." />'}
+        usage={
+          '<TextField type="password" label="Password" value="..."  removeFloatingLabel={true} />'
+        }
       >
         <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
           Password
@@ -111,6 +116,7 @@ const TextFieldStory = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setPasswordValue(e.target.value)
             }
+            removeFloatingLabel={true}
           />
         </div>
       </StorybookComponent>
@@ -140,7 +146,9 @@ const TextFieldWithClearIconStory = () => {
   return (
     <StorybookComponent
       propsObject={props}
-      usage={'<TextField type="text" label="Username" allowClear={true} />'}
+      usage={
+        '<TextField type="text" label="Username" allowClear={true} removeFloatingLabel={true}/>'
+      }
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
         Text with clear icon
@@ -154,6 +162,7 @@ const TextFieldWithClearIconStory = () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setTextWithClearIconValue(e.target.value)
           }
+          removeFloatingLabel={true}
         />
       </div>
     </StorybookComponent>
@@ -210,7 +219,7 @@ const TextFieldWithStartIcon = () => {
     <StorybookComponent
       propsObject={props}
       usage={
-        '<TextField type="text" label="Username" startIcon={<SearchIcon />} />'
+        '<TextField type="text" label="Username" startIcon={<SearchIcon />} removeFloatingLabel={true} />'
       }
     >
       <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
@@ -224,6 +233,51 @@ const TextFieldWithStartIcon = () => {
           startIcon={<SearchIcon />}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setTextFieldWithIconValue(e.target.value)
+          }
+          removeFloatingLabel={true}
+        />
+      </div>
+    </StorybookComponent>
+  );
+};
+
+const TextFieldWithErrorState = () => (
+  <StorybookComponent
+    usage={
+      '<TextField type="text" label="Username" status="error" removeFloatingLabel={true} />'
+    }
+  >
+    <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+      Error State
+    </Heading>
+    <div style={{ width: '300px' }}>
+      <TextField
+        type="text"
+        label="Username"
+        status="error"
+        removeFloatingLabel={true}
+      />
+    </div>
+  </StorybookComponent>
+);
+
+const TextFieldWithFloatingLabel = () => {
+  const [textWithFloatingLabel, setTextWithFloatingLabel] = React.useState<
+    string
+  >('');
+
+  return (
+    <StorybookComponent usage={'<TextField type="text" label="Username" />'}>
+      <Heading style={{ fontSize: '20px', marginBottom: '1em' }}>
+        Floating label
+      </Heading>
+      <div style={{ width: '300px' }}>
+        <TextField
+          type="text"
+          label="Username"
+          value={textWithFloatingLabel}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setTextWithFloatingLabel(e.target.value)
           }
         />
       </div>
@@ -240,6 +294,10 @@ const TextFieldStories = () => (
     <TextFieldDisabledStory />
     <Divider theme="grey" />
     <TextFieldWithStartIcon />
+    <Divider theme="grey" />
+    <TextFieldWithErrorState />
+    <Divider theme="grey" />
+    <TextFieldWithFloatingLabel />
   </React.Fragment>
 );
 

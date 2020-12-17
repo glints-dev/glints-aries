@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
-import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import SearchIcon from '../../General/Icon/components/SearchIcon';
 
 const props = {
