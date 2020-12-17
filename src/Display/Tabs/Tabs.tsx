@@ -11,7 +11,7 @@ export type Variant = 'underlined' | 'colored';
 export type Alignment = 'horizontal' | 'vertical';
 export type Theme = 'blue' | 'black';
 
-const Tabs: Tabs = ({
+export const Tabs: Tabs = ({
   activeTab,
   onTabClick,
   children,
@@ -111,12 +111,17 @@ type Tabs = React.FunctionComponent<Props> & {
 
 Tabs.Pane = TabPane;
 
-interface Props {
+export interface PropsBase {
   children: React.ReactNode;
+  /** Set the change in the color pattern only for Horizontal tabs */
   variant?: Variant;
+  /** Sets alignment of Tab. The vertical tabs are changed to horizontal ones for screen size below 768 */
   alignment?: Alignment;
+  /** Sets the theme for the tabs in underlined variant */
   theme?: Theme;
+  /** Controls the currently active tab (index) */
   activeTab?: string | number;
+  /** Called when a tab gets clicked. Called with the index of the tab. */
   onTabClick?(tab: React.ReactText | React.ReactNode): void;
   className?: string;
 }
