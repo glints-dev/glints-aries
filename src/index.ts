@@ -44,6 +44,7 @@ export { default as ToggleSwitch } from './Input/ToggleSwitch';
 // Utilities
 export { Device, ScreenSize } from './Utils/StyleConfig';
 export { PrimaryColor, SecondaryColor, Greyscale } from './Utils/Colors';
+export { Shadows } from './Utils/Shadows';
 export { default as GlintsContainer } from './Layout/GlintsContainer/GlintsContainer';
 
 // Icons
