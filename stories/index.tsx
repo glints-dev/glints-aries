@@ -24,6 +24,8 @@ import DropdownStory from './Navigation/DropdownStory';
 import DrawerStory from './Navigation/DrawerStory';
 import GalleryStory from './Display/GalleryStory';
 
+import ShadowStory from './Utilities/ShadowStory';
+
 import BoxStory from './Layout/BoxStory/index';
 import FlexStory from './Layout/FlexStory';
 import SpacingStory from './Layout/SpacingStory';
@@ -143,4 +145,5 @@ storiesOf('Utilities', module)
   .add('Colors', () => <ColorStory />)
   .add('Device Size', () => <DeviceStory />)
   .add('Glints Container', () => <GlintsContainerStory />)
+  .add('Shadow', () => <ShadowStory />)
   .add('Storybook Template', () => <StorybookComponentStory />);
