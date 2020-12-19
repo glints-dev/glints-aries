@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { space } from 'styled-system';
-import { MarginProps, PaddingProps } from './types';
+import { space, shadow } from 'styled-system';
+import { BoxProps } from './types';
 import { ScreenSize } from '../../Utils/StyleConfig';
 
 const theme = {
@@ -22,12 +22,11 @@ const theme = {
   space: [0],
 };
 
-export type Props = MarginProps & PaddingProps;
-
-export const StyledBox = styled.div<Props>`
+export const StyledBox = styled.div<BoxProps>`
   ${space}
+  ${shadow}
 `;
 
-export const Box: React.FC<Props> = props => (
+export const Box: React.FC<BoxProps> = props => (
   <StyledBox theme={theme} {...props} />
 );

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Box, Props as BoxProps } from '../Box';
+import { Box } from '../Box';
+import { BoxProps } from '../Box/types';
 import { FlexProps, FlexPropAndDefaultValueMap } from './types';
 
 type Props = FlexProps & BoxProps;

@@ -1,4 +1,5 @@
 import { Spacing } from '../Spacing';
+import { ShadowValueType } from '../../Utils/Shadows';
 
 // Responsive
 export type BreakpointAliases =
@@ -18,11 +19,17 @@ export type ResponsiveSpacing = {
   [key in BreakpointAliases]?: SpacingScaleValues;
 };
 type MarginTypes = 'm' | 'mt' | 'mb' | 'ml' | 'mr' | 'my' | 'mx';
-export type MarginProps = {
+type MarginProps = {
   [key in MarginTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
 
 type PaddingTypes = 'p' | 'pt' | 'pb' | 'pl' | 'pr' | 'py' | 'px';
-export type PaddingProps = {
+type PaddingProps = {
   [key in PaddingTypes]?: SpacingScaleValues | ResponsiveSpacing;
 };
+
+type BoxShadowProps = {
+  boxShadow?: ShadowValueType;
+};
+
+export type BoxProps = MarginProps & PaddingProps & BoxShadowProps;
