@@ -51,6 +51,7 @@ export { default as AddIcon } from './General/Icon/components/AddIcon';
 export { default as AddCircleOutlineIcon } from './General/Icon/components/AddCircleOutlineIcon';
 export { default as AddCircleSolidIcon } from './General/Icon/components/AddCircleSolidIcon';
 export { default as ArrowBackIcon } from './General/Icon/components/ArrowBackIcon';
+export { default as ArrowBackSolidIcon } from './General/Icon/components/ArrowBackSolidIcon';
 export { default as ArrowBackDoubleIcon } from './General/Icon/components/ArrowBackDoubleIcon';
 export { default as ArrowDownIcon } from './General/Icon/components/ArrowDownIcon';
 export { default as ArrowDownCircleOutlineIcon } from './General/Icon/components/ArrowDownCircleOutlineIcon';
@@ -60,6 +61,7 @@ export { default as ArrowNextIcon } from './General/Icon/components/ArrowNextIco
 export { default as ArrowNextDoubleIcon } from './General/Icon/components/ArrowNextDoubleIcon';
 export { default as ArrowNextSolidIcon } from './General/Icon/components/ArrowNextSolidIcon';
 export { default as ArrowUpIcon } from './General/Icon/components/ArrowUpIcon';
+export { default as ArrowRoundBackIcon } from './General/Icon/components/ArrowRoundBackIcon';
 export { default as ArrowRoundForwardIcon } from './General/Icon/components/ArrowRoundForwardIcon';
 export { default as AsteriskSolidIcon } from './General/Icon/components/AsteriskSolidIcon';
 export { default as AttachmentIcon } from './General/Icon/components/AttachmentIcon';
@@ -117,6 +119,7 @@ export { default as GraduationHatIcon } from './General/Icon/components/Graduati
 export { default as GroupIcon } from './General/Icon/components/GroupIcon';
 export { default as GuaranteeIcon } from './General/Icon/components/GuaranteeIcon';
 export { default as GithubIcon } from './General/Icon/components/GithubIcon';
+export { default as HeartSolidIcon } from './General/Icon/components/HeartSolidIcon';
 export { default as HeartIcon } from './General/Icon/components/HeartIcon';
 export { default as HelpIcon } from './General/Icon/components/HelpIcon';
 export { default as HomeIcon } from './General/Icon/components/HomeIcon';
@@ -168,6 +171,7 @@ export { default as SpeechBubbleIcon } from './General/Icon/components/SpeechBub
 export { default as SpeechBubbleOutlineIcon } from './General/Icon/components/SpeechBubbleOutlineIcon';
 export { default as SpinnerIcon } from './General/Icon/components/SpinnerIcon';
 export { default as StackIcon } from './General/Icon/components/StackIcon';
+export { default as StarOutlineIcon } from './General/Icon/components/StarOutlineIcon';
 export { default as StarIcon } from './General/Icon/components/StarIcon';
 export { default as TagIcon } from './General/Icon/components/TagIcon';
 export { default as TaskIcon } from './General/Icon/components/TaskIcon';
