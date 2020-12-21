@@ -1,49 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Box /> should match snapshot when all margin directions are set 1`] = `
+exports[`<Box /> shadow should match snapshot when shadow down is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 ebktHH"
+    class="Box__StyledBox-pr7b7l-0 heDsCb"
   />
 </DocumentFragment>
 `;
 
-exports[`<Box /> should match snapshot when all padding directions are set 1`] = `
+exports[`<Box /> shadow should match snapshot when shadow up is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 jWilAT"
+    class="Box__StyledBox-pr7b7l-0 czeBhU"
   />
 </DocumentFragment>
 `;
 
-exports[`<Box /> should match snapshot when margin is set 1`] = `
+exports[`<Box /> space should match snapshot when all margin directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 cMvEap"
+    class="Box__StyledBox-pr7b7l-0 eILLrc"
   />
 </DocumentFragment>
 `;
 
-exports[`<Box /> should match snapshot when padding is set 1`] = `
+exports[`<Box /> space should match snapshot when all padding directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 hA-dxnS"
+    class="Box__StyledBox-pr7b7l-0 fWnIDI"
   />
 </DocumentFragment>
 `;
 
-exports[`<Box /> should match snapshot when responsive margin is set 1`] = `
+exports[`<Box /> space should match snapshot when margin is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 cYQtfv"
+    class="Box__StyledBox-pr7b7l-0 hzjWqS"
   />
 </DocumentFragment>
 `;
 
-exports[`<Box /> should match snapshot when responsive padding is set 1`] = `
+exports[`<Box /> space should match snapshot when padding is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 iVdNyz"
+    class="Box__StyledBox-pr7b7l-0 fvwbSJ"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> space should match snapshot when responsive margin is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 cVRAMY"
+  />
+</DocumentFragment>
+`;
+
+exports[`<Box /> space should match snapshot when responsive padding is set 1`] = `
+<DocumentFragment>
+  <div
+    class="Box__StyledBox-pr7b7l-0 jzFNpU"
   />
 </DocumentFragment>
 `;
