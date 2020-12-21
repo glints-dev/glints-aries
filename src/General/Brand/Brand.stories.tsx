@@ -34,3 +34,9 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   asset: 'glints-black',
 };
+
+export const RedirectToGlintsWhenRightClick = Template.bind({});
+RedirectToGlintsWhenRightClick.args = {
+  asset: 'glints-black',
+  rightClickURL: 'https://glints.com',
+};
