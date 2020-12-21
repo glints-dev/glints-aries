@@ -7,6 +7,24 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 export default {
   title: 'General/Brand',
   component: Brand,
+  argTypes: {
+    asset: {
+      control: {
+        type: 'radio',
+        options: ['glints-black', 'glints-white'],
+      },
+    },
+    className: {
+      control: {
+        disable: true,
+      },
+    },
+    onContextMenu: {
+      control: {
+        disable: true,
+      },
+    },
+  },
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
