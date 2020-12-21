@@ -1,10 +1,11 @@
 import * as React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
+import { Shadows } from '../../Utils/Shadows';
 
 import { Box } from './index';
 
-describe('<Box />', () => {
+describe('<Box /> space', () => {
   it('should match snapshot when margin is set', () => {
     const { asFragment } = render(<Box m={64} />);
     expect(asFragment()).toMatchSnapshot();
@@ -45,5 +46,17 @@ describe('<Box /> ensure default space theme is overwritten', () => {
   it('should have "margin: 8px" style when margin is 8', () => {
     const { container } = render(<Box m={8} />);
     expect(container.firstChild).toHaveStyle('margin: 8px');
+  });
+});
+
+describe('<Box /> shadow', () => {
+  it('should match snapshot when shadow down is set', () => {
+    const { asFragment } = render(<Box boxShadow={Shadows[1].down} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should match snapshot when shadow up is set', () => {
+    const { asFragment } = render(<Box boxShadow={Shadows[4].up} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
