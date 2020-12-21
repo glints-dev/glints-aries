@@ -10,7 +10,11 @@ import AccordionPanel, { Props as AccordionPanelProps } from './AccordionPanel';
 
 import { Container } from './AccordionStyle';
 
-const Accordion: Accordion = ({ children, className, iconPosition }) => {
+const Accordion: Accordion = ({
+  children,
+  className,
+  iconPosition = 'left',
+}) => {
   const [currIndex, setCurrIndex] = React.useState(-1);
   const iconOptions: IconOptions = {
     activeIcon:
@@ -57,16 +61,14 @@ export interface IconOptions {
   position: IconPosition;
 }
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   className?: string;
+  /** Sets the position of the icon. */
   iconPosition?: IconPosition;
 }
 
-Accordion.defaultProps = {
-  iconPosition: 'left' as IconPosition,
-};
-
 Accordion.Panel = AccordionPanel;
+Accordion.Panel.displayName = 'Accordion.Panel'; // To show the correct name in code sample
 
 export default Accordion;
