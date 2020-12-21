@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import classNames from 'classnames';
 
-import { ETabThemeVariant } from '../../Utils/StyleConfig';
 import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
@@ -18,7 +17,7 @@ export const Tabs: Tabs = ({
   variant = 'underlined',
   className,
   alignment = 'horizontal',
-  theme = ETabThemeVariant.BLACK,
+  theme = 'black',
 }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const activeTabOrIndex: string | number = activeTab || currentIndex;
