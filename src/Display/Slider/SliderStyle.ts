@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { ScreenSize } from '../../Utils/StyleConfig';
 
 const arrow = css`
   position: absolute;
@@ -64,11 +65,12 @@ export const SliderContainer = styled.div<SliderContainerProps>`
     margin: 10px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     li {
       display: inline-flex;
-      width: 12px;
-      height: 12px;
+      width: 4px;
+      height: 4px;
       background: ${SecondaryColor.lightgrey};
       border-radius: 50%;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
@@ -76,9 +78,20 @@ export const SliderContainer = styled.div<SliderContainerProps>`
       cursor: pointer;
 
       &.active {
-        width: 2.5em;
-        border-radius: 1em;
+        width: 20px;
+        height: 6px;
+        border-radius: 8px;
         background: ${PrimaryColor.glintsyellow};
+      }
+
+      @media (min-width: ${ScreenSize.tablet}px) {
+        width: 8px;
+        height: 8px;
+
+        &.active {
+          width: 30px;
+          height: 10px;
+        }
       }
     }
   }
