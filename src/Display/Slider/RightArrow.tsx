@@ -10,8 +10,7 @@ const RightArrow: React.FunctionComponent<Props> = props => {
 
   return (
     <RightArrowContainer
-      index={index}
-      limit={limit}
+      disabled={disabled}
       onClick={nextSlide}
       data-testid="slider_right-arrow"
     >

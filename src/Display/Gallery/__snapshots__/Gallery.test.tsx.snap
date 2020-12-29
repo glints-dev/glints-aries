@@ -538,6 +538,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
@@ -1191,6 +1192,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
@@ -2539,6 +2541,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"

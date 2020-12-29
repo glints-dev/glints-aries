@@ -10,7 +10,7 @@ const LeftArrow = (props: Props) => {
 
   return (
     <LeftArrowContainer
-      index={index}
+      disabled={disabled}
       onClick={previousSlide}
       data-testid="slider_left-arrow"
     >

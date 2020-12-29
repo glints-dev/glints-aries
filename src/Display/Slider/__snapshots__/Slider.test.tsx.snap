@@ -147,6 +147,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -164,6 +165,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -346,6 +348,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -551,6 +554,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -756,6 +760,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1183,6 +1188,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1371,6 +1377,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1576,6 +1583,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1781,6 +1789,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1986,6 +1995,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2191,6 +2201,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2396,6 +2407,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2597,6 +2609,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
     <div
       class="c3"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c4"
@@ -2802,6 +2815,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -3229,6 +3243,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -3417,6 +3432,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -3569,6 +3585,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"

@@ -25,27 +25,21 @@ export const SliderItemWrapper = styled.div`
   white-space: normal;
 `;
 
-export const LeftArrowContainer = styled.div<LeftArrowContainerProps>`
+interface ArrowContainerProps {
+  disabled: boolean;
+}
+
+export const LeftArrowContainer = styled.div<ArrowContainerProps>`
   ${arrow};
   left: 0;
-  cursor: ${({ index }) => (index === 1 ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
 
-interface LeftArrowContainerProps {
-  index: number;
-}
-
-export const RightArrowContainer = styled.div<RightArrowContainerProps>`
+export const RightArrowContainer = styled.div<ArrowContainerProps>`
   ${arrow};
   right: 0;
-  cursor: ${({ index, limit }) =>
-    index === limit ? 'not-allowed' : 'pointer'};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
-
-interface RightArrowContainerProps {
-  index: number;
-  limit: number;
-}
 
 export const SliderContainer = styled.div<SliderContainerProps>`
   position: relative;
