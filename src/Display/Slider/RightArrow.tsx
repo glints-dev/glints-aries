@@ -4,7 +4,7 @@ import { RightArrowContainer } from './SliderStyle';
 import { getArrowColor } from './utils';
 
 const RightArrow: React.FunctionComponent<Props> = props => {
-  const { index, limit, nextSlide, arrowWhite } = props;
+  const { index, limit, nextSlide, arrowWhite, renderRightIcon } = props;
   const disabled = index === limit;
   const color = getArrowColor(arrowWhite, disabled);
 
@@ -14,7 +14,11 @@ const RightArrow: React.FunctionComponent<Props> = props => {
       onClick={nextSlide}
       data-testid="slider_right-arrow"
     >
-      <ArrowNextIcon color={color} />
+      {renderRightIcon ? (
+        renderRightIcon(disabled)
+      ) : (
+        <ArrowNextIcon color={color} />
+      )}
     </RightArrowContainer>
   );
 };
@@ -24,6 +28,7 @@ interface Props {
   limit: number;
   nextSlide: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   arrowWhite: boolean;
+  renderRightIcon?: (disabled: boolean) => React.ReactElement;
 }
 
 export default RightArrow;

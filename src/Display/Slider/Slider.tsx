@@ -24,6 +24,8 @@ const Slider = ({
   fullContent,
   arrowWhite,
   removeDots,
+  renderLeftIcon,
+  renderRightIcon,
   containerRef,
 }: Props) => {
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
@@ -173,12 +175,14 @@ const Slider = ({
         previousSlide={previousSlide}
         index={index}
         arrowWhite={arrowWhite}
+        renderLeftIcon={renderLeftIcon}
       />
       <RightArrow
         nextSlide={nextSlide}
         index={index}
         limit={childrenCount}
         arrowWhite={arrowWhite}
+        renderRightIcon={renderRightIcon}
       />
       {!removeDots && (
         <NavigationContainer>
@@ -209,6 +213,8 @@ export interface Props {
   fullContent?: boolean;
   arrowWhite?: boolean;
   removeDots?: boolean;
+  renderLeftIcon?: (disabled: boolean) => React.ReactElement;
+  renderRightIcon?: (disabled: boolean) => React.ReactElement;
   afterChange?: Function;
   autoplay?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;

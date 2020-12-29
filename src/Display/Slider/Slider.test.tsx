@@ -4,6 +4,7 @@ import { render, wait, fireEvent, act } from '@testing-library/react';
 import * as React from 'react';
 
 import Slider, { Props } from './Slider';
+import { SecondaryColor } from '../../Utils/Colors';
 
 const mockContainer = (width: number) => {
   const boundingRect = { width };
@@ -224,6 +225,34 @@ describe('<Slider/> prop afterChange', () => {
     fireEvent.click(firstDot);
     expect(afterChange).toHaveBeenCalledTimes(3);
     expect(afterChange).toHaveBeenLastCalledWith(1);
+  });
+});
+
+describe('<Slider/> prop renderLeftIcon and renderRightIcon', () => {
+  const renderLeftIcon = (disabled: boolean) => {
+    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : SecondaryColor.white;
+    return <svg color={color} />;
+  };
+
+  const renderRightIcon = (disabled: boolean) => {
+    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : SecondaryColor.white;
+    return <svg color={color} />;
+  };
+
+  test(`should display the custom icons`, () => {
+    const { getByTestId } = render(
+      <SliderComponent
+        renderLeftIcon={renderLeftIcon}
+        renderRightIcon={renderRightIcon}
+      />
+    );
+
+    expect(getByTestId('slider_left-arrow').children[0]).toContainHTML(
+      'svg color="rgba(221, 221, 221, 0.4)'
+    );
+    expect(getByTestId('slider_right-arrow').children[0]).toContainHTML(
+      'svg color="#FFFFFF'
+    );
   });
 });
 
