@@ -56,43 +56,43 @@ export const SliderContainer = styled.div<SliderContainerProps>`
   ${SliderItemWrapper} {
     padding: ${({ fullContent }) => !fullContent && '2em 4em'};
   }
+`;
 
-  ul {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const NavigationContainer = styled.ul`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-    li {
-      display: inline-flex;
-      width: 4px;
-      height: 4px;
-      background: ${SecondaryColor.lightgrey};
-      border-radius: 50%;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-      margin: 0 4px;
-      cursor: pointer;
+export const NavigationItem = styled.li`
+  display: inline-flex;
+  width: 4px;
+  height: 4px;
+  background: ${SecondaryColor.lightgrey};
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  margin: 0 4px;
+  cursor: pointer;
 
-      &.active {
-        width: 20px;
-        height: 6px;
-        border-radius: 8px;
-        background: ${PrimaryColor.glintsyellow};
-      }
+  &.active {
+    width: 20px;
+    height: 6px;
+    border-radius: 8px;
+    background: ${PrimaryColor.glintsyellow};
+  }
 
-      @media (min-width: ${ScreenSize.tablet}px) {
-        width: 8px;
-        height: 8px;
+  @media (min-width: ${ScreenSize.tablet}px) {
+    width: 8px;
+    height: 8px;
 
-        &.active {
-          width: 30px;
-          height: 10px;
-        }
-      }
+    &.active {
+      width: 30px;
+      height: 10px;
     }
   }
 `;

@@ -154,47 +154,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 4px;
-  height: 4px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 20px;
-  height: 6px;
-  border-radius: 8px;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -313,18 +272,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
 @media (max-width:480px) {
   .c8 {
     padding: 0;
-  }
-}
-
-@media (min-width:768px) {
-  .c9 ul li {
-    width: 8px;
-    height: 8px;
-  }
-
-  .c9 ul li.active {
-    width: 30px;
-    height: 10px;
   }
 }
 
@@ -860,47 +807,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 4px;
-  height: 4px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 20px;
-  height: 6px;
-  border-radius: 8px;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -1019,18 +925,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 @media (max-width:480px) {
   .c8 {
     padding: 0;
-  }
-}
-
-@media (min-width:768px) {
-  .c9 ul li {
-    width: 8px;
-    height: 8px;
-  }
-
-  .c9 ul li.active {
-    width: 30px;
-    height: 10px;
   }
 }
 
@@ -2261,47 +2155,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 4px;
-  height: 4px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 20px;
-  height: 6px;
-  border-radius: 8px;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -2420,18 +2273,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 @media (max-width:480px) {
   .c8 {
     padding: 0;
-  }
-}
-
-@media (min-width:768px) {
-  .c9 ul li {
-    width: 8px;
-    height: 8px;
-  }
-
-  .c9 ul li.active {
-    width: 30px;
-    height: 10px;
   }
 }
 

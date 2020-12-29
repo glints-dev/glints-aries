@@ -4,7 +4,12 @@ import isNil from 'lodash/isNil';
 
 import classNames from 'classnames';
 
-import { SliderContainer, SliderContentWrapper } from './SliderStyle';
+import {
+  SliderContainer,
+  SliderContentWrapper,
+  NavigationContainer,
+  NavigationItem,
+} from './SliderStyle';
 
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
@@ -176,21 +181,20 @@ const Slider = ({
         arrowWhite={arrowWhite}
       />
       {!removeDots && (
-        <ul>
+        <NavigationContainer>
           {React.Children.map(children, (data, idx) => {
             if (isNil(data)) {
               return null;
             }
             return (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <li
+              <NavigationItem
                 className={idx + 1 === index ? 'active' : null}
                 onClick={() => handleDotClick(idx)}
                 key={idx}
-              ></li>
+              ></NavigationItem>
             );
           })}
-        </ul>
+        </NavigationContainer>
       )}
     </SliderContainer>
   );

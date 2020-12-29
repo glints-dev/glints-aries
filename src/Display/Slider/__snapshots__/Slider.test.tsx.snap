@@ -73,7 +73,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -93,7 +93,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -107,7 +107,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -119,12 +119,12 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -178,9 +178,11 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
     </ul>
   </div>
@@ -260,7 +262,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -280,7 +282,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -294,7 +296,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -306,12 +308,12 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -375,12 +377,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -459,7 +467,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -479,7 +487,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -493,7 +501,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -505,12 +513,12 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -574,12 +582,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -658,7 +672,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -678,7 +692,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -692,7 +706,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -704,12 +718,12 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -773,12 +787,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -857,7 +877,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -877,7 +897,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -891,7 +911,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -903,12 +923,12 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -972,12 +992,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1056,7 +1082,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1076,7 +1102,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1090,7 +1116,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -1102,12 +1128,12 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -1171,11 +1197,17 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         />
       </svg>
     </div>
-    <ul>
-      <li />
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8 active"
       />
     </ul>
   </div>
@@ -1255,7 +1287,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1275,7 +1307,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1289,7 +1321,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -1301,12 +1333,12 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -1370,12 +1402,18 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1454,7 +1492,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1474,7 +1512,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1488,7 +1526,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -1500,12 +1538,12 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -1569,12 +1607,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1653,7 +1697,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1673,7 +1717,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1687,7 +1731,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -1699,12 +1743,12 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -1768,12 +1812,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1852,7 +1902,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1872,7 +1922,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1886,7 +1936,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -1898,12 +1948,12 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -1967,12 +2017,18 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2051,7 +2107,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2071,7 +2127,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2085,7 +2141,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -2097,12 +2153,12 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -2166,12 +2222,18 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2250,7 +2312,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2270,7 +2332,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2284,7 +2346,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -2296,12 +2358,12 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -2365,12 +2427,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2445,7 +2513,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   outline: none;
 }
 
-.c0 ul {
+.c6 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2465,7 +2533,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   align-items: center;
 }
 
-.c0 ul li {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2479,7 +2547,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c7.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -2491,12 +2559,12 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c7 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c7.active {
     width: 30px;
     height: 10px;
   }
@@ -2560,12 +2628,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c6"
+    >
       <li
-        class="active"
+        class="c7 active"
       />
-      <li />
-      <li />
+      <li
+        class="c7"
+      />
+      <li
+        class="c7"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2644,7 +2718,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2664,7 +2738,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2678,7 +2752,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -2690,12 +2764,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -2759,12 +2833,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2843,7 +2923,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2863,7 +2943,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2877,7 +2957,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -2889,12 +2969,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -2958,12 +3038,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -3042,7 +3128,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -3062,7 +3148,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3076,7 +3162,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -3088,12 +3174,12 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -3157,11 +3243,17 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
         />
       </svg>
     </div>
-    <ul>
-      <li />
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8 active"
       />
     </ul>
   </div>
@@ -3241,7 +3333,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -3261,7 +3353,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3275,7 +3367,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -3287,12 +3379,12 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -3356,12 +3448,18 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -3440,61 +3538,8 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   padding: 2em 4em;
 }
 
-.c0 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 4px;
-  height: 4px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c0 ul li.active {
-  width: 20px;
-  height: 6px;
-  border-radius: 8px;
-  background: #FFF240;
-}
-
 .c5 {
   vertical-align: middle;
-}
-
-@media (min-width:768px) {
-  .c0 ul li {
-    width: 8px;
-    height: 8px;
-  }
-
-  .c0 ul li.active {
-    width: 30px;
-    height: 10px;
-  }
 }
 
 <div
@@ -3632,7 +3677,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -3652,7 +3697,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3666,7 +3711,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   cursor: pointer;
 }
 
-.c0 ul li.active {
+.c8.active {
   width: 20px;
   height: 6px;
   border-radius: 8px;
@@ -3678,12 +3723,12 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 }
 
 @media (min-width:768px) {
-  .c0 ul li {
+  .c8 {
     width: 8px;
     height: 8px;
   }
 
-  .c0 ul li.active {
+  .c8.active {
     width: 30px;
     height: 10px;
   }
@@ -3747,12 +3792,18 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
