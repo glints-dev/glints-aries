@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { ArrowBackIcon } from '../../General/Icon/components';
 import { LeftArrowContainer } from './SliderStyle';
+import { getArrowColor } from './utils';
 
 const LeftArrow = (props: Props) => {
   const { index, previousSlide, arrowWhite } = props;
-
-  let arrowColor = 'black';
-
-  if (index === 1) arrowColor = '#c7c7c7';
+  const disabled = index === 1;
+  const color = getArrowColor(arrowWhite, disabled);
 
   return (
     <LeftArrowContainer
@@ -15,7 +14,7 @@ const LeftArrow = (props: Props) => {
       onClick={previousSlide}
       data-testid="slider_left-arrow"
     >
-      <ArrowBackIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
+      <ArrowBackIcon color={color} />
     </LeftArrowContainer>
   );
 };

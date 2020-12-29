@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { ArrowNextIcon } from '../../General/Icon/components';
 import { RightArrowContainer } from './SliderStyle';
+import { getArrowColor } from './utils';
 
 const RightArrow: React.FunctionComponent<Props> = props => {
   const { index, limit, nextSlide, arrowWhite } = props;
-
-  let arrowColor = 'black';
-
-  if (limit === index) arrowColor = '#c7c7c7';
+  const disabled = index === limit;
+  const color = getArrowColor(arrowWhite, disabled);
 
   return (
     <RightArrowContainer
@@ -16,7 +15,7 @@ const RightArrow: React.FunctionComponent<Props> = props => {
       onClick={nextSlide}
       data-testid="slider_right-arrow"
     >
-      <ArrowNextIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
+      <ArrowNextIcon color={color} />
     </RightArrowContainer>
   );
 };

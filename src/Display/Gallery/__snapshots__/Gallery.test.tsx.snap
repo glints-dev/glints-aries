@@ -542,7 +542,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -1195,7 +1195,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -2543,7 +2543,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"

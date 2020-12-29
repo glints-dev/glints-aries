@@ -367,7 +367,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -555,7 +555,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="#FFFFFF"
+        fill="#c7c7c7"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -777,7 +777,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -965,7 +965,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -982,7 +982,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1170,7 +1170,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1392,7 +1392,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1597,7 +1597,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1802,7 +1802,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2007,7 +2007,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2212,7 +2212,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2417,7 +2417,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2618,7 +2618,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
       <svg
         class="c4"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2823,7 +2823,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3011,7 +3011,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3028,7 +3028,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3216,7 +3216,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3438,7 +3438,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3590,7 +3590,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3765,7 +3765,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3782,7 +3782,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
