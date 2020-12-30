@@ -11,7 +11,7 @@ exports[`<Box /> shadow should match snapshot when shadow down is set 1`] = `
 exports[`<Box /> shadow should match snapshot when shadow up is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 czeBhU"
+    class="Box__StyledBox-pr7b7l-0 dwGZWS"
   />
 </DocumentFragment>
 `;

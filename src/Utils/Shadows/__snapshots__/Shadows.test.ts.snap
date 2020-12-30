@@ -2,18 +2,13 @@
 
 exports[`Shadows should match snapshot 1`] = `
 Object {
-  "1": Object {
-    "down": "0 2px 4px 0 rgba(0, 0, 0, 0.15)",
-  },
-  "2": Object {
-    "down": "0 4px 8px 0 rgba(0, 0, 0, 0.15)",
-  },
-  "3": Object {
-    "down": "0 6px 12px 0 rgba(0, 0, 0, 0.10)",
-  },
-  "4": Object {
-    "down": "0 12px 24px 0 rgba(0, 0, 0, 0.10)",
-    "up": "0 -6px 12px 0 rgba(0, 0, 0, 0.10)",
-  },
+  "down1": "0 2px 4px 0 rgba(0, 0, 0, 0.15)",
+  "down2": "0 4px 8px 0 rgba(0, 0, 0, 0.15)",
+  "down3": "0 6px 12px 0 rgba(0, 0, 0, 0.10)",
+  "down4": "0 12px 24px 0 rgba(0, 0, 0, 0.10)",
+  "up1": "0 -2px 4px 0 rgba(0, 0, 0, 0.15)",
+  "up2": "0 -4px 8px 0 rgba(0, 0, 0, 0.15)",
+  "up3": "0 -6px 12px 0 rgba(0, 0, 0, 0.10)",
+  "up4": "0 -12px 24px 0 rgba(0, 0, 0, 0.10)",
 }
 `;
