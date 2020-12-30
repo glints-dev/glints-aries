@@ -1,21 +1,24 @@
 import * as React from 'react';
 import { ArrowBackIcon } from '../../General/Icon/components';
 import { LeftArrowContainer } from './SliderStyle';
+import { getArrowColor } from './utils';
 
 const LeftArrow = (props: Props) => {
-  const { index, previousSlide, arrowWhite } = props;
-
-  let arrowColor = 'black';
-
-  if (index === 1) arrowColor = '#c7c7c7';
+  const { index, previousSlide, arrowWhite, renderLeftIcon } = props;
+  const disabled = index === 1;
+  const color = getArrowColor(arrowWhite, disabled);
 
   return (
     <LeftArrowContainer
-      index={index}
+      disabled={disabled}
       onClick={previousSlide}
       data-testid="slider_left-arrow"
     >
-      <ArrowBackIcon color={arrowWhite ? '#FFFFFF' : arrowColor} />
+      {renderLeftIcon ? (
+        renderLeftIcon(disabled)
+      ) : (
+        <ArrowBackIcon color={color} />
+      )}
     </LeftArrowContainer>
   );
 };
@@ -24,6 +27,7 @@ interface Props {
   index: number;
   previousSlide: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   arrowWhite: boolean;
+  renderLeftIcon?: (disabled: boolean) => React.ReactElement;
 }
 
 export default LeftArrow;

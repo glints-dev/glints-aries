@@ -154,42 +154,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -574,11 +538,12 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -843,42 +808,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -1263,11 +1192,12 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
@@ -2227,42 +2157,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   padding: 2em 4em;
 }
 
-.c9 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c9 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c9 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
-  background: #FFF240;
-}
-
 .c0 {
   position: relative;
 }
@@ -2647,11 +2541,12 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"

@@ -4,7 +4,12 @@ import isNil from 'lodash/isNil';
 
 import classNames from 'classnames';
 
-import { SliderContainer, SliderContentWrapper } from './SliderStyle';
+import {
+  SliderContainer,
+  SliderContentWrapper,
+  NavigationContainer,
+  NavigationItem,
+} from './SliderStyle';
 
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
@@ -19,6 +24,8 @@ const Slider = ({
   fullContent,
   arrowWhite,
   removeDots,
+  renderLeftIcon,
+  renderRightIcon,
   containerRef,
 }: Props) => {
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
@@ -168,29 +175,30 @@ const Slider = ({
         previousSlide={previousSlide}
         index={index}
         arrowWhite={arrowWhite}
+        renderLeftIcon={renderLeftIcon}
       />
       <RightArrow
         nextSlide={nextSlide}
         index={index}
         limit={childrenCount}
         arrowWhite={arrowWhite}
+        renderRightIcon={renderRightIcon}
       />
       {!removeDots && (
-        <ul>
+        <NavigationContainer>
           {React.Children.map(children, (data, idx) => {
             if (isNil(data)) {
               return null;
             }
             return (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <li
+              <NavigationItem
                 className={idx + 1 === index ? 'active' : null}
                 onClick={() => handleDotClick(idx)}
                 key={idx}
-              ></li>
+              ></NavigationItem>
             );
           })}
-        </ul>
+        </NavigationContainer>
       )}
     </SliderContainer>
   );
@@ -205,6 +213,8 @@ export interface Props {
   fullContent?: boolean;
   arrowWhite?: boolean;
   removeDots?: boolean;
+  renderLeftIcon?: (disabled: boolean) => React.ReactElement;
+  renderRightIcon?: (disabled: boolean) => React.ReactElement;
   afterChange?: Function;
   autoplay?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;

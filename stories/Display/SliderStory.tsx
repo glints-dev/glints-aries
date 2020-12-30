@@ -55,13 +55,29 @@ const props = {
       require: 'no',
       description: 'Gets current index of item.',
     },
+    {
+      name: 'renderLeftIcon',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description:
+        'Sets the left icon. Receives the "disabled" value as an argument.',
+    },
+    {
+      name: 'renderRightIcon',
+      type: 'function',
+      defaultValue: '',
+      possibleValue: 'function',
+      require: 'no',
+      description:
+        'Sets the right icon. Receives the "disabled" value as an argument.',
+    },
   ],
 };
 
 const SliderStory = () => (
   <StorybookComponent
-    title="Slider"
-    code="import { Slider } from 'glints-aries'"
     propsObject={props}
     usage={`getCurrentIndex = (index) => {
   console.log(index);

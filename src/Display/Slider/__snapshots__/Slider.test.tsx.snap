@@ -73,7 +73,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -87,15 +87,19 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -103,14 +107,27 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -130,6 +147,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -147,6 +165,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -161,9 +180,11 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
     </ul>
   </div>
@@ -243,7 +264,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -257,15 +278,19 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -273,14 +298,27 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -310,6 +348,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -331,7 +370,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -341,12 +380,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -425,7 +470,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -439,15 +484,19 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -455,14 +504,27 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -492,11 +554,12 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="#FFFFFF"
+        fill="#c7c7c7"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -523,12 +586,18 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -607,7 +676,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -621,15 +690,19 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -637,14 +710,27 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -674,6 +760,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -695,7 +782,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -705,12 +792,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -789,7 +882,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -803,15 +896,19 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -819,14 +916,27 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -860,7 +970,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -877,7 +987,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -887,12 +997,18 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -971,7 +1087,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -985,15 +1101,19 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1001,14 +1121,27 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1042,7 +1175,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1055,6 +1188,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1069,11 +1203,17 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         />
       </svg>
     </div>
-    <ul>
-      <li />
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8 active"
       />
     </ul>
   </div>
@@ -1153,7 +1293,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1167,15 +1307,19 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1183,14 +1327,27 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1220,6 +1377,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1241,7 +1399,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1251,12 +1409,18 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1335,7 +1499,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1349,15 +1513,19 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1365,14 +1533,27 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1402,6 +1583,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1423,7 +1605,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1433,12 +1615,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1517,7 +1705,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1531,15 +1719,19 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1547,14 +1739,27 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1584,6 +1789,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1605,7 +1811,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1615,12 +1821,18 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1699,7 +1911,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1713,15 +1925,19 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1729,14 +1945,27 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1766,6 +1995,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1787,7 +2017,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1797,12 +2027,18 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -1881,7 +2117,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1895,15 +2131,19 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -1911,14 +2151,27 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -1948,6 +2201,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -1969,7 +2223,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -1979,12 +2233,18 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2063,7 +2323,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2077,15 +2337,19 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2093,14 +2357,27 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -2130,6 +2407,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2151,7 +2429,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2161,12 +2439,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2241,7 +2525,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   outline: none;
 }
 
-.c0 ul {
+.c6 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2255,15 +2539,19 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2271,14 +2559,27 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c7.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c4 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c7 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c7.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -2308,6 +2609,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
     <div
       class="c3"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c4"
@@ -2329,7 +2631,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
       <svg
         class="c4"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2339,12 +2641,18 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c6"
+    >
       <li
-        class="active"
+        class="c7 active"
       />
-      <li />
-      <li />
+      <li
+        class="c7"
+      />
+      <li
+        class="c7"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2423,7 +2731,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2437,15 +2745,19 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2453,14 +2765,27 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -2490,6 +2815,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2511,7 +2837,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2521,12 +2847,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2605,7 +2937,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2619,15 +2951,19 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2635,14 +2971,27 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -2676,7 +3025,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2693,7 +3042,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2703,12 +3052,18 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -2787,7 +3142,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2801,15 +3156,19 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2817,14 +3176,27 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -2858,7 +3230,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -2871,6 +3243,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
     <div
       class="c6"
       data-testid="slider_right-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -2885,11 +3258,17 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
         />
       </svg>
     </div>
-    <ul>
-      <li />
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8 active"
       />
     </ul>
   </div>
@@ -2969,7 +3348,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -2983,15 +3362,19 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -2999,14 +3382,27 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -3036,6 +3432,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -3057,7 +3454,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3067,12 +3464,18 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
         />
       </svg>
     </div>
-    <ul>
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8 active"
       />
-      <li />
-      <li />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
@@ -3151,42 +3554,6 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
   padding: 2em 4em;
 }
 
-.c0 ul {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 ul li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 12px;
-  height: 12px;
-  background: #C6C6C6;
-  border-radius: 50%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
-  cursor: pointer;
-}
-
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
-  background: #FFF240;
-}
-
 .c5 {
   vertical-align: middle;
 }
@@ -3218,6 +3585,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
     <div
       class="c4"
       data-testid="slider_left-arrow"
+      disabled=""
     >
       <svg
         class="c5"
@@ -3239,7 +3607,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3326,7 +3694,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   padding: 2em 4em;
 }
 
-.c0 ul {
+.c7 {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -3340,15 +3708,19 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c0 ul li {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 12px;
-  height: 12px;
+  width: 4px;
+  height: 4px;
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -3356,14 +3728,27 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   cursor: pointer;
 }
 
-.c0 ul li.active {
-  width: 2.5em;
-  border-radius: 1em;
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
   background: #FFF240;
 }
 
 .c5 {
   vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
 }
 
 <div
@@ -3397,7 +3782,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3414,7 +3799,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
       <svg
         class="c5"
         data-testid="icon-svg"
-        fill="black"
+        fill="#000000"
         height="1em"
         viewBox="0 0 100 100"
         width="1em"
@@ -3424,12 +3809,18 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
         />
       </svg>
     </div>
-    <ul>
-      <li />
+    <ul
+      class="c7"
+    >
       <li
-        class="active"
+        class="c8"
       />
-      <li />
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
     </ul>
   </div>
 </DocumentFragment>
