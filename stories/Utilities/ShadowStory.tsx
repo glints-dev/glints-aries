@@ -2,17 +2,14 @@ import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 import { StorybookTable } from '../StorybookTable';
-import { Shadows, ShadowValueType } from '../../src/Utils/Shadows';
+import { Shadows, ShadowKeyType } from '../../src/Utils/Shadows';
 import styled from 'styled-components';
 
 import { Box } from '../../src/Layout/Box';
 
 type Data = {
-  level: string;
-  value: {
-    up: ShadowValueType;
-    down: ShadowValueType;
-  };
+  level: number;
+  value: number;
   usage: string;
 };
 
@@ -25,22 +22,18 @@ const ShadowBox = styled(Box)`
 const dataSource = [
   {
     level: 1,
-    value: Shadows[1],
     usage: 'Elements that uses shadow by default',
   },
   {
     level: 2,
-    value: Shadows[2],
     usage: 'Elements in hovered state',
   },
   {
     level: 3,
-    value: Shadows[3],
     usage: 'Sticky elements, dropdown elements',
   },
   {
     level: 4,
-    value: Shadows[4],
     usage: 'Alerts',
   },
 ];
@@ -51,21 +44,18 @@ const columns = [
     title: 'Value',
     dataIndex: 'value',
     // eslint-disable-next-line react/display-name
-    render: ({ value }: Data) => {
-      const { up, down } = value;
+    render: ({ level }: Data) => {
+      const up = Shadows[`up${level}` as ShadowKeyType];
+      const down = Shadows[`down${level}` as ShadowKeyType];
 
       return (
         <div>
-          {down && (
-            <Box mt={16}>
-              down: <code>{down}</code>
-            </Box>
-          )}
-          {up && (
-            <div>
-              up: <code>{up}</code>
-            </div>
-          )}
+          <div>
+            down: <code>{down}</code>
+          </div>
+          <Box mt={16}>
+            up: <code>{up}</code>
+          </Box>
         </div>
       );
     },
@@ -74,7 +64,9 @@ const columns = [
     title: 'Example of shadow down',
     dataIndex: 'example',
     // eslint-disable-next-line react/display-name
-    render: ({ value }: Data) => <ShadowBox boxShadow={value.down} />,
+    render: ({ level }: Data) => (
+      <ShadowBox boxShadow={Shadows[`down${level}` as ShadowKeyType]} />
+    ),
   },
   {
     title: 'Recommended usage',
@@ -85,11 +77,11 @@ const columns = [
 const usage = `import { Shadows, Box } from 'glints-aries';
 
 // use with Box component
-<Box boxShadow={Shadows[1].down} />
+<Box boxShadow={Shadows.down1} />
 
 // use with box-shadow property
 const Card = styled.div\`
-  box-shadow: \$\{Shadows[1].down\};
+  box-shadow: \$\{Shadows.down1\};
 \`
 `;
 

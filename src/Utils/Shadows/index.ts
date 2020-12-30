@@ -1,28 +1,26 @@
-const ShadowOneDown = '0 2px 4px 0 rgba(0, 0, 0, 0.15)';
-const ShadowTwoDown = '0 4px 8px 0 rgba(0, 0, 0, 0.15)';
-const ShadowThreeDown = '0 6px 12px 0 rgba(0, 0, 0, 0.10)';
-const ShadowFiveDown = '0 12px 24px 0 rgba(0, 0, 0, 0.10)';
-const ShadowFiveUp = '0 -6px 12px 0 rgba(0, 0, 0, 0.10)';
+const up1 = '0 -2px 4px 0 rgba(0, 0, 0, 0.15)';
+const down1 = '0 2px 4px 0 rgba(0, 0, 0, 0.15)';
+
+const up2 = '0 -4px 8px 0 rgba(0, 0, 0, 0.15)';
+const down2 = '0 4px 8px 0 rgba(0, 0, 0, 0.15)';
+
+const up3 = '0 -6px 12px 0 rgba(0, 0, 0, 0.10)';
+const down3 = '0 6px 12px 0 rgba(0, 0, 0, 0.10)';
+
+const up4 = '0 -12px 24px 0 rgba(0, 0, 0, 0.10)';
+const down4 = '0 12px 24px 0 rgba(0, 0, 0, 0.10)';
 
 export const Shadows = {
-  1: {
-    down: ShadowOneDown,
-  },
-  2: {
-    down: ShadowTwoDown,
-  },
-  3: {
-    down: ShadowThreeDown,
-  },
-  4: {
-    down: ShadowFiveDown,
-    up: ShadowFiveUp,
-  },
+  up1,
+  down1,
+  up2,
+  down2,
+  up3,
+  down3,
+  up4,
+  down4,
 } as const;
 
-export type ShadowValueType =
-  | typeof ShadowOneDown
-  | typeof ShadowTwoDown
-  | typeof ShadowThreeDown
-  | typeof ShadowFiveDown
-  | typeof ShadowFiveUp;
+export type ShadowValueType = typeof Shadows[keyof typeof Shadows];
+
+export type ShadowKeyType = keyof typeof Shadows;
