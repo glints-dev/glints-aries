@@ -10,7 +10,7 @@ const down3 = '0 6px 12px 0 rgba(0, 0, 0, 0.10)';
 const up4 = '0 -12px 24px 0 rgba(0, 0, 0, 0.10)';
 const down4 = '0 12px 24px 0 rgba(0, 0, 0, 0.10)';
 
-export const Shadows = {
+export const Shadow = {
   up1,
   down1,
   up2,
@@ -21,6 +21,6 @@ export const Shadows = {
   down4,
 } as const;
 
-export type ShadowValueType = typeof Shadows[keyof typeof Shadows];
+export type ShadowValueType = typeof Shadow[keyof typeof Shadow];
 
-export type ShadowKeyType = keyof typeof Shadows;
+export type ShadowKeyType = keyof typeof Shadow;
