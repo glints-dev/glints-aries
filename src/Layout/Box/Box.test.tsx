@@ -51,12 +51,12 @@ describe('<Box /> ensure default space theme is overwritten', () => {
 
 describe('<Box /> shadow', () => {
   it('should match snapshot when shadow down is set', () => {
-    const { asFragment } = render(<Box boxShadow={Shadows[1].down} />);
+    const { asFragment } = render(<Box boxShadow={Shadows.down1} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should match snapshot when shadow up is set', () => {
-    const { asFragment } = render(<Box boxShadow={Shadows[4].up} />);
+    const { asFragment } = render(<Box boxShadow={Shadows.up1} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
