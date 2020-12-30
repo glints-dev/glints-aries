@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import StorybookComponent from '../StorybookComponent';
 import { StorybookTable } from '../StorybookTable';
-import { Shadows, ShadowKeyType } from '../../src/Utils/Shadows';
+import { Shadow, ShadowKeyType } from '../../src/Utils/Shadow';
 import styled from 'styled-components';
 
 import { Box } from '../../src/Layout/Box';
@@ -45,8 +45,8 @@ const columns = [
     dataIndex: 'value',
     // eslint-disable-next-line react/display-name
     render: ({ level }: Data) => {
-      const up = Shadows[`up${level}` as ShadowKeyType];
-      const down = Shadows[`down${level}` as ShadowKeyType];
+      const up = Shadow[`up${level}` as ShadowKeyType];
+      const down = Shadow[`down${level}` as ShadowKeyType];
 
       return (
         <div>
@@ -65,7 +65,7 @@ const columns = [
     dataIndex: 'example',
     // eslint-disable-next-line react/display-name
     render: ({ level }: Data) => (
-      <ShadowBox boxShadow={Shadows[`down${level}` as ShadowKeyType]} />
+      <ShadowBox boxShadow={Shadow[`down${level}` as ShadowKeyType]} />
     ),
   },
   {
@@ -74,21 +74,21 @@ const columns = [
   },
 ];
 
-const usage = `import { Shadows, Box } from 'glints-aries';
+const usage = `import { Shadow, Box } from 'glints-aries';
 
 // use with Box component
-<Box boxShadow={Shadows.down1} />
+<Box boxShadow={Shadow.down1} />
 
 // use with box-shadow property
 const Card = styled.div\`
-  box-shadow: \$\{Shadows.down1\};
+  box-shadow: \$\{Shadow.down1\};
 \`
 `;
 
 const ShadowStory = () => (
   <StorybookComponent
     title="Shadow"
-    code="import { Shadows } from 'glints-aries'"
+    code="import { Shadow } from 'glints-aries'"
     usage={usage}
   >
     <StorybookTable dataSource={dataSource} columns={columns} />

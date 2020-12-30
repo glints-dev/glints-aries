@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import { Shadows } from '../../Utils/Shadows';
+import { Shadow } from '../../Utils/Shadow';
 
 import { Box } from './index';
 
@@ -51,12 +51,12 @@ describe('<Box /> ensure default space theme is overwritten', () => {
 
 describe('<Box /> shadow', () => {
   it('should match snapshot when shadow down is set', () => {
-    const { asFragment } = render(<Box boxShadow={Shadows.down1} />);
+    const { asFragment } = render(<Box boxShadow={Shadow.down1} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should match snapshot when shadow up is set', () => {
-    const { asFragment } = render(<Box boxShadow={Shadows.up1} />);
+    const { asFragment } = render(<Box boxShadow={Shadow.up1} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import { Spacing } from '../Spacing';
-import { ShadowValueType } from '../../Utils/Shadows';
+import { ShadowValueType } from '../../Utils/Shadow';
 
 // Responsive
 export type BreakpointAliases =
