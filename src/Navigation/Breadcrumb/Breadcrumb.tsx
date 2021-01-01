@@ -3,9 +3,12 @@ import classNames from 'classnames';
 import { BreadcrumbContainer } from './BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
-const Breadcrumb: Breadcrumb = (props: Props) => {
-  const { className, children, ...defaultProps } = props;
-
+/** You can add any number of <code> <Breadcrumb.Item /> </code> components as children of the Breadcrumb component, controlling the behavior of an individual breadcrumb item.  */
+export const Breadcrumb: Breadcrumb = ({
+  className,
+  children,
+  ...defaultProps
+}) => {
   return (
     <BreadcrumbContainer
       className={classNames('aries-breadcrumb', className)}
@@ -22,7 +25,7 @@ type Breadcrumb = React.FunctionComponent<Props> & {
 
 Breadcrumb.Item = BreadcrumbItem;
 
-interface Props
+export interface Props
   extends React.ComponentPropsWithoutRef<typeof BreadcrumbContainer> {
   children: React.ReactNode;
 }
