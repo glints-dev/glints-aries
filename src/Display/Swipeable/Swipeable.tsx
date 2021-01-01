@@ -4,15 +4,12 @@ import { SwipeableContainer } from './SwipeableStyle';
 
 import SwipeableItem from './SwipeableItem';
 
-const Swipeable: Swipeable = props => {
-  const { children, className } = props;
-
-  return (
-    <SwipeableContainer className={classNames('aries-swipeable', className)}>
-      {children}
-    </SwipeableContainer>
-  );
-};
+/** You can add any number of <code> <Swipeable.Item /> </code> components as children of the Swipeable component, controlling the behavior of an individual swipeable item.  */
+export const Swipeable: Swipeable = ({ children, className }) => (
+  <SwipeableContainer className={classNames('aries-swipeable', className)}>
+    {children}
+  </SwipeableContainer>
+);
 
 type Swipeable = React.FunctionComponent<Props> & {
   Item: typeof SwipeableItem;
@@ -20,7 +17,7 @@ type Swipeable = React.FunctionComponent<Props> & {
 
 Swipeable.Item = SwipeableItem;
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
   className?: string;
 }
