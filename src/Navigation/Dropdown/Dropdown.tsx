@@ -17,24 +17,22 @@ import {
 
 import DropdownItem, { Props as DropdownItemProps } from './DropdownItem';
 
-const Dropdown = (props: Props) => {
-  const {
-    label,
-    showHoverLine = false,
-    dropDownPlacement = 'left',
-    noLineBreak = false,
-    iconDefaultColor = 'black',
-    showFullWidth = false,
-    disabled,
-    hoverToOpen,
-    onChange,
-    children,
-    leftIcon,
-    className,
-    itemElement,
-    ...defaultProps
-  } = props;
-
+export const Dropdown = ({
+  label,
+  showHoverLine = false,
+  dropDownPlacement = 'left',
+  noLineBreak = false,
+  iconDefaultColor = 'black',
+  showFullWidth = false,
+  disabled = false,
+  hoverToOpen = false,
+  onChange,
+  children,
+  leftIcon,
+  className,
+  itemElement,
+  ...defaultProps
+}: Props) => {
   const dropdownBodyRef = React.useRef<HTMLUListElement>(null);
 
   const [dropdownLabel, setDropdownLabel] = React.useState<string>(label);
@@ -139,10 +137,9 @@ const Dropdown = (props: Props) => {
           disabled={disabled}
           showHoverLine={showHoverLine}
           showFullWidth={showFullWidth}
+          iconDefaultColor={iconDefaultColor}
         >
-          {LeftIcon && (
-            <LeftIcon color={!disabled ? iconDefaultColor : '#777777'} />
-          )}
+          {LeftIcon}
           <span>{itemElement ? itemElement : dropdownLabel}</span>
           <IconWrapper isOpen={isOpen}>
             <ArrowDownIcon color={!disabled ? iconDefaultColor : '#777777'} />
@@ -205,17 +202,33 @@ type PropsFromDropdownBody = Omit<
   'open'
 >;
 
-interface Props
+export interface Props
   extends PropsFromDropdownContainer,
     PropsFromDropdownHeader,
     PropsFromDropdownBody {
   children: React.ReactNode;
+  /** Sets label of Dropdown. */
   label: string;
+  /** Opens Dropdown on hovering. */
   hoverToOpen?: boolean;
-  leftIcon?: React.ReactType;
+  /** Icon to show at the left side of dropdown button. */
+  leftIcon?: React.ReactNode;
+  /**	Dropdown label in component. */
   itemElement?: React.ReactNode;
+  /** Dropdown icon color */
   iconDefaultColor?: string;
+  /** To get value of Dropdown's item. */
   onChange?(value: string): void;
+  /** Show underline when hovered. */
+  showHoverLine?: boolean;
+  /** Placement position for dropdown. */
+  dropDownPlacement?: 'left' | 'right';
+  /**	No break line in dropdown. */
+  noLineBreak?: boolean;
+  /**	Dropdown take full width. */
+  showFullWidth?: boolean;
+  /** Disabling the dropdown. */
+  disabled?: boolean;
 }
 
 export default Dropdown;
