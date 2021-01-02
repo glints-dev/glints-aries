@@ -93,6 +93,11 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
       }`;
   }};
 
+  svg {
+    fill: ${({ disabled, iconDefaultColor }) =>
+      disabled ? Greyscale.grey : iconDefaultColor};
+  }
+
   svg:first-child {
     margin-right: 0.6em;
   }
@@ -107,6 +112,7 @@ interface DropdownHeaderProps {
   isOpen?: boolean;
   showFullWidth?: boolean;
   showHoverLine?: boolean;
+  iconDefaultColor?: string;
 }
 
 export const DropdownBody = styled.ul<DropdownBodyProps>`
