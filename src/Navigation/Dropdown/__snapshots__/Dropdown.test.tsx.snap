@@ -18,7 +18,8 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
     tabIndex={-1}
   >
     <div
-      className="DropdownStyle__DropdownHeader-sc-1sc3c6h-2 hsaULH dropdown-content"
+      className="DropdownStyle__DropdownHeader-sc-1sc3c6h-2 jTRVzJ dropdown-content"
+      disabled={false}
     >
       <span>
         Career
