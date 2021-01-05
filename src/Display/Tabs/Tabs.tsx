@@ -6,10 +6,6 @@ import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
 
-export type Variant = 'underlined' | 'colored';
-export type Alignment = 'horizontal' | 'vertical';
-export type Theme = 'blue' | 'black';
-
 export const Tabs: Tabs = ({
   activeTab,
   onTabClick,
@@ -104,13 +100,10 @@ export const Tabs: Tabs = ({
   );
 };
 
-type Tabs = React.FunctionComponent<Props> & {
-  Pane: typeof TabPane;
-};
-
-Tabs.Pane = TabPane;
-
-export interface PropsBase {
+export type Variant = 'underlined' | 'colored';
+export type Alignment = 'horizontal' | 'vertical';
+export type Theme = 'blue' | 'black';
+export interface Props {
   children: React.ReactNode;
   /** Set the change in the color pattern only for Horizontal tabs */
   variant?: Variant;
@@ -124,5 +117,11 @@ export interface PropsBase {
   onTabClick?(tab: React.ReactText | React.ReactNode): void;
   className?: string;
 }
+
+type Tabs = React.FunctionComponent<Props> & {
+  Pane: typeof TabPane;
+};
+
+Tabs.Pane = TabPane;
 
 export default Tabs;
