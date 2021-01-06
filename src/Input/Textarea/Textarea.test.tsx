@@ -10,11 +10,13 @@ import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
 interface Props {
   label: string;
+  value: string;
   onChange: jest.Mock;
 }
 
 const props: Props = {
   label: 'Description',
+  value: 'Explanation',
   onChange: jest.fn().mockImplementation(event => event.target.value),
 };
 
@@ -45,10 +47,10 @@ function createNodeMock(element: any) {
   return null;
 }
 
-it('<Textarea> should render with a label of Description', () => {
+it('<Textarea> should render with a value and label of Description', () => {
   const options = { createNodeMock };
   const TextareaSnapshot = renderer
-    .create(<Textarea label={props.label} />, options)
+    .create(<Textarea label={props.label} value={props.value} />, options)
     .toJSON();
   expect(TextareaSnapshot).toMatchSnapshot();
 });
@@ -121,14 +123,19 @@ describe('<Textarea /> forwards ref to underlying textarea element', () => {
 
   test('ref is being forwarded correctly', () => {
     const ref = React.createRef<HTMLTextAreaElement>();
-    const { queryByLabelText } = render(<Textarea ref={ref} label={label} />);
+    const { queryByLabelText } = render(
+      <Textarea ref={ref} label={label} value={props.value} />
+    );
     const textarea = queryByLabelText(label);
     expect(textarea).toEqual(ref.current);
   });
 
   test('underlying textarea can be focused/blurred through ref', () => {
     const ref = React.createRef<HTMLTextAreaElement>();
-    const { queryByLabelText } = render(<Textarea ref={ref} label={label} />);
+    const fn = jest.fn();
+    const { queryByLabelText } = render(
+      <Textarea ref={ref} label={label} onBlur={fn} />
+    );
     const textarea = queryByLabelText(label);
     expect(textarea).not.toHaveFocus();
 
