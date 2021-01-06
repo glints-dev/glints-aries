@@ -6,6 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Textarea from './Textarea';
+import { Interactive } from './Textarea.stories';
 import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
 
 interface Props {
@@ -53,6 +54,16 @@ it('<Textarea> should render with a value and label of Description', () => {
     .create(<Textarea label={props.label} value={props.value} />, options)
     .toJSON();
   expect(TextareaSnapshot).toMatchSnapshot();
+});
+
+describe('when storybook is rendered', () => {
+  it('should display the correct input label in story', () => {
+    Interactive.args = {
+      label: props.label,
+    };
+
+    expect(Interactive.args.label).toEqual(props.label);
+  });
 });
 
 describe('when it is rendered', () => {
