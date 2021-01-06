@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Textarea> should render with a label of Description 1`] = `
+exports[`<Textarea> should render with a value and label of Description 1`] = `
 <div
   className="TextareaStyle__TextareaContainer-sc-1998n74-0 RSaAJ aries-textarea"
 >
@@ -17,9 +17,10 @@ exports[`<Textarea> should render with a label of Description 1`] = `
         "maxHeight": "310px",
       }
     }
+    value="Explanation"
   />
   <label
-    className="TextareaStyle__TextareaLabel-sc-1998n74-1 cybHtx"
+    className="TextareaStyle__TextareaLabel-sc-1998n74-1 RhjRI"
     data-testid="textarea-label"
   >
     Description
