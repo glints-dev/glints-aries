@@ -152,6 +152,14 @@ describe('<Alert/> onClose', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
+  test('press any key except enter and esc should not call onClose', async () => {
+    const onClose = jest.fn();
+    const { queryByRole } = render(<AlertComponent onClose={onClose} />);
+    const alert = queryByRole('alertdialog');
+    fireEvent.keyDown(alert, { key: 'Enter', keyCode: 25 });
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
   test('press esc key should call onClose', async () => {
     const onClose = jest.fn();
     const { queryByRole } = render(<AlertComponent onClose={onClose} />);
