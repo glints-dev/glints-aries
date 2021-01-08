@@ -65,8 +65,8 @@ export const NavigationContainer = styled.ul`
 
 export const NavigationItem = styled.li`
   display: inline-flex;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: ${SecondaryColor.lightgrey};
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
