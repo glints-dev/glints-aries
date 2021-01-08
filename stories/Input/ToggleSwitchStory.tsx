@@ -7,6 +7,13 @@ import StorybookComponent from '../StorybookComponent';
 const propsObject = {
   ToggleSwitch: [
     {
+      name: 'active',
+      type: 'boolean',
+      require: 'No',
+      possibleValue: <code>true | false</code>,
+      description: 'Determine whether the ToggleSwitch is active',
+    },
+    {
       name: 'defaultActive',
       type: 'boolean',
       defaultValue: <code>false</code>,

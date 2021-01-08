@@ -5,6 +5,7 @@ import { SecondaryColor } from '../../Utils/Colors';
 import { Toggle, ToggleBall } from './Styles';
 
 export interface ToggleSwitchProps {
+  active?: boolean;
   defaultActive?: boolean;
   iconOptions?: {
     active: React.ReactType;
@@ -15,32 +16,40 @@ export interface ToggleSwitchProps {
 }
 
 const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
+  active,
   defaultActive,
   iconOptions,
   onChange,
   className,
   ...defaultProps
 }: ToggleSwitchProps) => {
-  const [active, setActive] = React.useState(defaultActive);
-  const iconColor = active ? SecondaryColor.actionblue : SecondaryColor.grey;
+  const [innerActive, setInnerActive] = React.useState(defaultActive);
+  const iconColor = innerActive
+    ? SecondaryColor.actionblue
+    : SecondaryColor.grey;
   const ActiveIcon = iconOptions ? iconOptions.active : null;
   const InactiveIcon = iconOptions ? iconOptions.inactive : null;
-  const Icon = active ? ActiveIcon : InactiveIcon;
+  const Icon = innerActive ? ActiveIcon : InactiveIcon;
+
+  const isControlled = typeof active !== 'undefined';
+  const isActive = isControlled ? active : innerActive;
+
+  const handleClick = () => {
+    const newActiveState = !isActive;
+    setInnerActive(newActiveState);
+    if (onChange) onChange(newActiveState);
+  };
 
   return (
     <Toggle
-      aria-checked={active}
+      aria-checked={isActive}
       role="switch"
       className={classNames('aries-toggle-switch', className)}
-      onClick={() => {
-        const newActiveState = !active;
-        setActive(newActiveState);
-        if (onChange) onChange(newActiveState);
-      }}
-      active={active}
+      onClick={handleClick}
+      active={isActive}
       {...defaultProps}
     >
-      <ToggleBall active={active}>
+      <ToggleBall active={isActive}>
         {ActiveIcon && InactiveIcon && <Icon color={iconColor} />}
       </ToggleBall>
     </Toggle>
