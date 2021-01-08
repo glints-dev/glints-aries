@@ -49,6 +49,27 @@ describe('<ToggleSwitch /> prop iconOptions', () => {
   });
 });
 
+describe('<ToggleSwitch /> prop active', () => {
+  const activeOptions = [false, true];
+  const matchSnapshot = (active: boolean) => {
+    it(`should match snapshot when active ${active} is passed`, () => {
+      const { asFragment } = render(
+        <ToggleSwitch
+          active={active}
+          iconOptions={{
+            active: EyeIcon,
+            inactive: EyeSlashedIcon,
+          }}
+        />
+      );
+      // validate defaultActive from snapshot
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  activeOptions.forEach(defaultActive => matchSnapshot(defaultActive));
+});
+
 describe('<ToggleSwitch /> prop defaultActive', () => {
   const defaultActiveOptions = [false, true];
   const matchSnapshot = (defaultActive: boolean) => {
@@ -71,7 +92,7 @@ describe('<ToggleSwitch /> prop defaultActive', () => {
 });
 
 describe('<ToggleSwitch /> click behavior', () => {
-  it('should change aria-checked correctly', () => {
+  it('should change aria-checked correctly when it is uncontrolled', () => {
     const { getByRole } = render(
       <ToggleSwitch
         defaultActive={false}
@@ -85,6 +106,43 @@ describe('<ToggleSwitch /> click behavior', () => {
     expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'false');
 
     userEvent.click(toggleSwitchContainer);
+    expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'true');
+  });
+
+  it('should change aria-checked correctly when it is controlled', () => {
+    let active = false;
+    const onChangeSpy = jest.fn(isActive => {
+      active = isActive;
+    });
+
+    console.log('active', active);
+
+    const { getByRole, rerender } = render(
+      <ToggleSwitch
+        active={active}
+        iconOptions={{
+          active: EyeIcon,
+          inactive: EyeSlashedIcon,
+        }}
+        onChange={onChangeSpy}
+      />
+    );
+    const toggleSwitchContainer = getByRole('switch');
+    expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'false');
+
+    userEvent.click(toggleSwitchContainer);
+    expect(onChangeSpy).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <ToggleSwitch
+        active={active}
+        iconOptions={{
+          active: EyeIcon,
+          inactive: EyeSlashedIcon,
+        }}
+        onChange={onChangeSpy}
+      />
+    );
     expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'true');
   });
 
