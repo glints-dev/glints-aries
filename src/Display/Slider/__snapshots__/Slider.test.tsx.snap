@@ -103,7 +103,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -122,6 +122,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -294,7 +295,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -313,6 +314,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -500,7 +502,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -519,6 +521,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -706,7 +709,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -725,6 +728,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -912,7 +916,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -931,6 +935,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -1117,7 +1122,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -1136,6 +1141,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -1323,7 +1329,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -1342,6 +1348,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -1529,7 +1536,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -1548,6 +1555,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -1735,7 +1743,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -1754,6 +1762,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -1941,7 +1950,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -1960,6 +1969,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -2147,7 +2157,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -2166,6 +2176,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -2353,7 +2364,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -2372,6 +2383,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -2555,7 +2567,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -2574,6 +2586,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   .c7 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c7.active {
@@ -2761,7 +2774,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -2780,6 +2793,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -2967,7 +2981,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -2986,6 +3000,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -3172,7 +3187,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -3191,6 +3206,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -3378,7 +3394,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -3397,6 +3413,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {
@@ -3724,7 +3741,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   background: #C6C6C6;
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
@@ -3743,6 +3760,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   .c8 {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
   }
 
   .c8.active {

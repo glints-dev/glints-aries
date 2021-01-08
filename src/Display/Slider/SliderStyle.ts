@@ -70,7 +70,7 @@ export const NavigationItem = styled.li`
   background: ${SecondaryColor.lightgrey};
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  margin: 0 4px;
+  margin: 0 3px;
   cursor: pointer;
 
   &.active {
@@ -83,6 +83,7 @@ export const NavigationItem = styled.li`
   @media (min-width: ${ScreenSize.tablet}px) {
     width: 8px;
     height: 8px;
+    margin: 0 4px;
 
     &.active {
       width: 30px;
