@@ -132,9 +132,9 @@ describe('<Textarea /> forwards ref to underlying textarea element', () => {
 
   test('underlying textarea can be focused/blurred through ref', () => {
     const ref = React.createRef<HTMLTextAreaElement>();
-    const fn = jest.fn();
+    const onBlur = jest.fn();
     const { queryByLabelText } = render(
-      <Textarea ref={ref} label={label} onBlur={fn} />
+      <Textarea ref={ref} label={label} onBlur={onBlur} />
     );
     const textarea = queryByLabelText(label);
     expect(textarea).not.toHaveFocus();
@@ -144,5 +144,6 @@ describe('<Textarea /> forwards ref to underlying textarea element', () => {
 
     ref.current.blur();
     expect(textarea).not.toHaveFocus();
+    expect(onBlur).toHaveBeenCalledTimes(1);
   });
 });
