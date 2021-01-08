@@ -62,7 +62,6 @@ describe('<ToggleSwitch /> prop active', () => {
           }}
         />
       );
-      // validate defaultActive from snapshot
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -115,8 +114,6 @@ describe('<ToggleSwitch /> click behavior', () => {
       active = isActive;
     });
 
-    console.log('active', active);
-
     const { getByRole, rerender } = render(
       <ToggleSwitch
         active={active}
@@ -129,20 +126,16 @@ describe('<ToggleSwitch /> click behavior', () => {
     );
     const toggleSwitchContainer = getByRole('switch');
     expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'false');
+    expect(active).toEqual(false);
 
     userEvent.click(toggleSwitchContainer);
     expect(onChangeSpy).toHaveBeenCalledTimes(1);
 
-    rerender(
-      <ToggleSwitch
-        active={active}
-        iconOptions={{
-          active: EyeIcon,
-          inactive: EyeSlashedIcon,
-        }}
-        onChange={onChangeSpy}
-      />
-    );
+    // should still be false before re-rendering
+    expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'false');
+    expect(active).toEqual(true);
+
+    rerender(<ToggleSwitch active={active} onChange={onChangeSpy} />);
     expect(toggleSwitchContainer).toHaveAttribute('aria-checked', 'true');
   });
 
