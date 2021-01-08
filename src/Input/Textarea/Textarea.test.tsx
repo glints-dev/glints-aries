@@ -123,11 +123,22 @@ describe('<Textarea /> forwards ref to underlying textarea element', () => {
 
   test('ref is being forwarded correctly', () => {
     const ref = React.createRef<HTMLTextAreaElement>();
-    const { queryByLabelText } = render(
-      <Textarea ref={ref} label={label} value={props.value} />
-    );
+    const { queryByLabelText } = render(<Textarea ref={ref} label={label} />);
     const textarea = queryByLabelText(label);
     expect(textarea).toEqual(ref.current);
+  });
+
+  test('ref is being forwarded correctly with values, textareaLabel style will follow when floating is true', () => {
+    const ref = React.createRef<HTMLTextAreaElement>();
+    const { getByTestId } = render(
+      <Textarea ref={ref} label={label} value={props.value} />
+    );
+    const textareaLabel = getByTestId('textarea-label');
+
+    expect(textareaLabel).toHaveStyle(`padding: 0 5px;
+    transform: translate3d(-15px,-20px,0);
+    transition: all .2s;
+    font-size: 12px;`);
   });
 
   test('underlying textarea can be focused/blurred through ref', () => {
