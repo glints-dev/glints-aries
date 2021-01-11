@@ -128,10 +128,9 @@ describe('<Textarea /> forwards ref to underlying textarea element', () => {
     expect(textarea).toEqual(ref.current);
   });
 
-  test('ref is being forwarded correctly with values, textareaLabel style will follow when floating is true', () => {
-    const ref = React.createRef<HTMLTextAreaElement>();
+  test('when value is passed, textareaLabel style will follow when floating is true', () => {
     const { getByTestId } = render(
-      <Textarea ref={ref} label={label} value={props.value} />
+      <Textarea label={label} value={props.value} />
     );
     const textareaLabel = getByTestId('textarea-label');
 
