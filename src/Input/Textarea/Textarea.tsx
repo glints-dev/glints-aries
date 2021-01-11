@@ -37,10 +37,6 @@ const Textarea: React.FunctionComponent<Props> = props => {
 
     if (!textarea) return;
 
-    if (textarea.value.length > 0) {
-      setFloating(true);
-    }
-
     setTextareaMaxHeight(~~(textarea.offsetHeight * 3.7 + 23 * 8 + 1));
   }, [textareaInputRef]);
 
