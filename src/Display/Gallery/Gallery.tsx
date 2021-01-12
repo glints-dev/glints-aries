@@ -13,12 +13,10 @@ import {
   GalleryThumbnailWrapper,
 } from './GalleryStyle';
 
-const defaultImagesDisplayed = 8;
-
 const Gallery = ({
-  initialVisibility,
+  initialVisibility = false,
   children,
-  imagesDisplayed = defaultImagesDisplayed,
+  imagesDisplayed = 8,
 }: Props) => {
   const sliderRef = React.useRef<HTMLDivElement>();
 
@@ -116,9 +114,11 @@ const Gallery = ({
   );
 };
 
-interface Props {
+export interface Props {
   children?: React.ReactNode;
+  /** How many thumbnails the (unopened) gallery should show */
   imagesDisplayed?: number;
+  /** If true, the Gallery will open itself on mount */
   initialVisibility?: boolean;
 }
 
