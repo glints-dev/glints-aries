@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
-const startIconPadding = '44px';
+const startIconPadding = '38px';
 
 export const IconContainer = styled.div`
   position: absolute;
@@ -10,7 +10,7 @@ export const IconContainer = styled.div`
   cursor: pointer;
 
   svg {
-    fill: #666666;
+    fill: ${Greyscale.grey};
   }
 
   &:hover svg {
@@ -24,7 +24,7 @@ export const StartIconContainer = styled.div`
   left: 16px;
 
   svg {
-    fill: #666666;
+    fill: #798899;
   }
 `;
 
@@ -40,11 +40,13 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   left: ${({ small }) => (small ? '16px' : '22px')};
   margin-right: 1px;
   overflow: hidden;
-  color: #666666;
+  background: ${SecondaryColor.white};
+  color: ${({ floating }) =>
+    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
   transition: all .2s;
   pointer-events: none;
-  font-weight: 400;
-  font-size: ${({ small }) => (small ? '14px' : '16px')};
+  font-weight: 300;
+  font-size: 1.1em;
 
   ${({ hasStartIcon }) => {
     if (hasStartIcon) {
@@ -62,7 +64,6 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
         transform: translate3d(-15px, -20px, 0);
         transition: all .2s;
         font-size: 12px;
-        background-color: ${Greyscale.white};
       `;
     }
   }}
@@ -71,6 +72,14 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
     if (floating && small) {
       return `
         transform: translate3d(-10px, -20px, 0);
+      `;
+    }
+  }}
+
+  ${({ status, floating }) => {
+    if (status === 'error' && floating) {
+      return `
+        color: ${PrimaryColor.glintsred};
       `;
     }
   }}
@@ -89,13 +98,14 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   position: relative;
   width: 100%;
   outline: none;
-  font-size: ${({ small }) => (small ? '14px' : '16px')};
-  padding: ${({ small }) => (small ? '8px 16px' : '12px 16px')};
-  border: unset;
-  border-radius: ${({ small }) => (small ? '4px' : '8px')};
+  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
+  line-height: 1.5;
+  padding: ${({ small }) => (small ? '13px 15px' : '15px 20px')};
+  border: ${({ status }) =>
+    status === 'error'
+      ? `2px solid ${PrimaryColor.glintsred}`
+      : `2px solid ${SecondaryColor.lightblack}`};
   transition: all .5s;
-  background-color: ${({ status }) =>
-    status === 'error' ? ' rgba(236, 39, 43, 0.08)' : 'rgb(1, 126, 183, 0.08)'};
 
   ${({ disableTyping }) => {
     if (disableTyping) {
@@ -104,6 +114,16 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
         text-shadow: 0 0 0 black;
         cursor: pointer;
       `;
+    }
+  }}
+
+  ${({ status, floating }) => {
+    if (status === 'error') {
+      if (floating) {
+        return `
+          border: 2px solid ${PrimaryColor.glintsred};
+        `;
+      }
     }
   }}
 
@@ -116,22 +136,40 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   }}
   
   &:hover {
+    border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
-    background-color: ${({ status }) =>
-      status === 'error'
-        ? ' rgba(236, 39, 43, 0.08)'
-        : 'rgb(1, 126, 183, 0.16)'};
+
+    ${({ status }) => {
+      if (status === 'error') {
+        return `
+          border: 2px solid ${PrimaryColor.glintsred};
+        `;
+      }
+    }}
 
     ~ ${TextFieldLabel} {
-      color: #666666;
+      color: ${SecondaryColor.black};
+
+      ${({ status }) => {
+        if (status === 'error') {
+          return `
+          color: ${PrimaryColor.glintsred};
+        `;
+        }
+      }}
     }
   }
 
   &:focus {
-    background-color: ${({ status }) =>
-      status === 'error'
-        ? ' rgba(236, 39, 43, 0.08)'
-        : 'rgb(1, 126, 183, 0.24)'};
+    border: 2px solid ${SecondaryColor.actionblue};
+
+    ${({ status }) => {
+      if (status === 'error') {
+        return `
+          border: 2px solid ${PrimaryColor.glintsred};
+        `;
+      }
+    }}
 
     ${({ hasStartIcon }) => {
       if (hasStartIcon) {
@@ -153,15 +191,24 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
+      color: ${SecondaryColor.black};
       font-size: 12px;
-      right: auto;
-      background-color: ${Greyscale.white};
+        right: auto;
+
+      ${({ status }) => {
+        if (status === 'error') {
+          return `
+          color: ${PrimaryColor.glintsred};
+        `;
+        }
+      }}
     }
   }
 
   &:disabled {
     cursor: not-allowed;
     background: ${SecondaryColor.whitesmoke};
+    border: 2px solid ${SecondaryColor.lightgrey};
 
     + ${TextFieldLabel} {
       background: transparent;
