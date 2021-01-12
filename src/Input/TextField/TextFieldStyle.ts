@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 const startIconPadding = '44px';
 
