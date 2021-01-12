@@ -84,6 +84,22 @@ describe('when a value is entered', () => {
   });
 });
 
+describe('when status is:', () => {
+  it("'success', it should display a lightblack border", () => {
+    const { textFieldInput } = setupTextField({ status: 'success' });
+    expect(textFieldInput).toHaveStyle(`
+      border-color: ${SecondaryColor.lightblack};
+    `);
+  });
+
+  it("'error', it should display a red border", () => {
+    const { textFieldInput } = setupTextField({ status: 'error' });
+    expect(textFieldInput).toHaveStyle(`
+      border-color: ${PrimaryColor.glintsred};
+    `);
+  });
+});
+
 describe('when disabled is true', () => {
   it('should display cursor: not-allowed', () => {
     const { textFieldInput } = setupTextField({ disabled: true });
@@ -99,12 +115,12 @@ describe('when disabled is true', () => {
 describe('when small is:', () => {
   it('true, it should display the correct size', () => {
     const { textFieldInput } = setupTextField({ small: true });
-    expect(textFieldInput).toHaveStyle('padding: 8px 16px;');
+    expect(textFieldInput).toHaveStyle('padding: 13px 15px;');
   });
 
   it('false, it should display the correct size', () => {
     const { textFieldInput } = setupTextField();
-    expect(textFieldInput).toHaveStyle('padding: 12px 16px;');
+    expect(textFieldInput).toHaveStyle('padding: 15px 20px;');
   });
 });
 
@@ -219,7 +235,7 @@ describe('when a non-empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).toHaveStyle(`color: #666666`);
+        expect(textFieldLabel).toHaveStyle(`color: ${SecondaryColor.black}`);
       });
     });
   });
