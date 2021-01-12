@@ -6,12 +6,12 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
 >
   <input
     aria-label="Username"
-    className="TextFieldStyle__TextFieldInput-sc-5sd02x-4 eOVSMW"
+    className="TextFieldStyle__TextFieldInput-sc-5sd02x-4 irFphx"
     onKeyDown={[Function]}
     type="text"
   />
   <label
-    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 eIevZv textfield-label"
+    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 kXPWjp textfield-label"
     data-testid="textfield-label"
   >
     Username
@@ -26,12 +26,12 @@ exports[`when startIcon has an icon value should match the snapshot when start i
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 edQWCQ"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 cFldtE"
       type="text"
       value=""
     />
     <div
-      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 gJuCgc"
+      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 cSPpmu"
     >
       <svg
         class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -47,7 +47,7 @@ exports[`when startIcon has an icon value should match the snapshot when start i
       </svg>
     </div>
     <label
-      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 gtkogB textfield-label"
+      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 iIonZo textfield-label"
       data-testid="textfield-label"
     >
       Username
