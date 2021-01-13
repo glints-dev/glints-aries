@@ -43,9 +43,10 @@ const Popover = ({ className, children, content }: Props) => {
   );
 };
 
-interface Props {
+export interface Props {
   className?: string;
   children: React.ReactNode;
+  /** The content to be displayed when the child element is clicked */
   content: React.ReactNode;
 }
 
