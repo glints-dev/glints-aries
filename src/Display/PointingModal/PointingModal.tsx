@@ -34,11 +34,15 @@ type PointingModal = React.FunctionComponent<Props> & {
 };
 
 PointingModal.Header = PointingModalHeader;
+PointingModal.Header.displayName = 'PointingModal.Header';
 PointingModal.Body = PointingModalBody;
+PointingModal.Body.displayName = 'PointingModal.Body';
 PointingModal.Item = PointingModalItem;
+PointingModal.Item.displayName = 'PointingModal.Item';
 PointingModal.Footer = PointingModalFooter;
+PointingModal.Footer.displayName = 'PointingModal.Footer';
 
-interface Props
+export interface Props
   extends React.ComponentPropsWithoutRef<typeof PointingModalContainer> {
   children: React.ReactNode;
 }
