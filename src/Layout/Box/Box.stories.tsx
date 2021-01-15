@@ -5,10 +5,31 @@ import { Box } from './index';
 import { BoxProps } from './types';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import * as S from './BoxStoryStyle';
+import { Shadow } from '../../Utils/Shadow';
 
 export default {
   title: 'Layout/Box',
   component: Box,
+  argTypes: {
+    boxShadow: {
+      type: { name: 'test', required: false },
+      control: {
+        type: 'select',
+        options: {
+          'Example: Shadow.down4': Shadow.down4,
+          'Example: Shadow.up4': Shadow.up4,
+        },
+      },
+      table: {
+        type: {
+          summary: 'import { Shadow } from "glints-aries"',
+          detail: Object.keys(Shadow)
+            .map(key => `Shadow.${key}`)
+            .join(' | '),
+        },
+      },
+    },
+  },
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
