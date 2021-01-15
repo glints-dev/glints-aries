@@ -156,7 +156,7 @@ describe('<Alert/> onClose', () => {
     const onClose = jest.fn();
     const { queryByRole } = render(<AlertComponent onClose={onClose} />);
     const alert = queryByRole('alertdialog');
-    fireEvent.keyDown(alert, { key: 'Enter', keyCode: 25 });
+    fireEvent.keyDown(alert, { key: 'a', keyCode: 65 });
     expect(onClose).not.toHaveBeenCalled();
   });
 
