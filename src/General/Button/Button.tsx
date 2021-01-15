@@ -177,7 +177,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const forwardRef = (
   props: Props,
   forwardedRef: React.RefObject<HTMLButtonElement>
-) => <Button ref={forwardedRef} {...props} />;
+) => <Button forwardedRef={forwardedRef} {...props} />;
 
 forwardRef.displayName = Button.name;
 
