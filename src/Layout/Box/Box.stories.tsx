@@ -6,13 +6,30 @@ import { BoxProps } from './types';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import * as S from './BoxStoryStyle';
 import { Shadow } from '../../Utils/Shadow';
+import { Spacing } from '../../Layout/Spacing';
+
+const allSpacingProps = [
+  'p',
+  'pl',
+  'pr',
+  'pt',
+  'pb',
+  'px',
+  'py',
+  'm',
+  'ml',
+  'mr',
+  'mt',
+  'mb',
+  'mx',
+  'my',
+] as const;
 
 export default {
   title: 'Layout/Box',
   component: Box,
   argTypes: {
     boxShadow: {
-      type: { name: 'test', required: false },
       control: {
         type: 'select',
         options: {
@@ -29,6 +46,19 @@ export default {
         },
       },
     },
+    ...allSpacingProps.reduce((acc: Record<string, any>, propName) => {
+      acc[propName] = {
+        table: {
+          type: {
+            summary: 'Spacing',
+            detail: `${Object.values(Spacing).join(
+              ' | '
+            )} | 'auto' | Responsive Space Object`,
+          },
+        },
+      };
+      return acc;
+    }, {}),
   },
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
