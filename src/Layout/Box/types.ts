@@ -22,34 +22,34 @@ export type ResponsiveSpacing = {
 type SpacingValueType = SpacingScaleValues | ResponsiveSpacing;
 
 export interface BoxProps {
-  /** padding */
+  /** CSS property padding */
   p?: SpacingValueType;
-  /** padding-top */
+  /** CSS property padding-top */
   pt?: SpacingValueType;
-  /** padding-right */
+  /** CSS property padding-right */
   pr?: SpacingValueType;
-  /** padding-bottom */
+  /** CSS property padding-bottom */
   pb?: SpacingValueType;
-  /** padding-left */
+  /** CSS property padding-left */
   pl?: SpacingValueType;
-  /** padding-left and padding-right */
+  /** CSS property padding-left and padding-right */
   px?: SpacingValueType;
-  /** padding-top and padding-bottom */
+  /** CSS property padding-top and padding-bottom */
   py?: SpacingValueType;
-  /** margin */
+  /** CSS property margin */
   m?: SpacingValueType;
-  /** margin-top */
+  /** CSS property margin-top */
   mt?: SpacingValueType;
-  /** margin-right */
+  /** CSS property margin-right */
   mr?: SpacingValueType;
-  /** margin-bottom */
+  /** CSS property margin-bottom */
   mb?: SpacingValueType;
-  /** margin-left */
+  /** CSS property margin-left */
   ml?: SpacingValueType;
-  /** margin-left and margin-right */
+  /** CSS property margin-left and margin-right */
   mx?: SpacingValueType;
-  /** margin-top and margin-bottom */
+  /** CSS property margin-top and margin-bottom */
   my?: SpacingValueType;
-  /** box-shadow */
+  /** CSS property box-shadow */
   boxShadow?: ShadowValueType;
 }
