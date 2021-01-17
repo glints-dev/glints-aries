@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { BreadcrumbContainer } from './BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
-/** You can add any number of <code> <Breadcrumb.Item /> </code> components as children of the Breadcrumb component, controlling the behavior of an individual breadcrumb item.  */
 export const Breadcrumb: Breadcrumb = ({
   className,
   children,
