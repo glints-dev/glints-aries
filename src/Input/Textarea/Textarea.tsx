@@ -22,6 +22,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
     onBlur,
     onChange,
     removeFloatingLabel,
+    small,
     ...restProps
   } = props;
 
@@ -95,6 +96,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
         floating={floating}
         value={value}
         aria-label={label}
+        small={small}
         {...restProps}
         style={{
           maxHeight: `${textareaMaxHeight}px`,
@@ -105,6 +107,7 @@ const Textarea: React.FunctionComponent<Props> = props => {
           data-testid="textarea-label"
           floating={floating}
           status={status}
+          small={small}
         >
           {label}
         </TextareaLabel>

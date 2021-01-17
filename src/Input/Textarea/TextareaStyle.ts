@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
 export const TextareaContainer = styled.div`
   flex-grow: 1;
@@ -11,13 +11,11 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
   position: absolute;
   left: 22px;
   top: 1em;
-  background: ${Greyscale.white};
-  color: ${({ floating }) =>
-    floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
+  color: #666666;
   transition: all 0.2s;
   pointer-events: none;
-  font-weight: 300;
-  font-size: 1.1em;
+  font-weight: 400;
+  font-size: 16px;
 
   ${({ floating }) => {
     if (floating) {
@@ -26,14 +24,7 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
         transform: translate3d(-15px,-20px,0);
         transition: all .2s;
         font-size: 12px;
-      `;
-    }
-  }}
-
-  ${({ status, floating }) => {
-    if (status === 'error' && floating) {
-      return `
-        color: ${PrimaryColor.glintsred};
+        background: ${Greyscale.white}
       `;
     }
   }}
@@ -42,34 +33,24 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
 interface TextareaLabelProps {
   floating: boolean;
   status?: string;
+  small?: boolean;
 }
 
 export const TextareaInput = styled.textarea<TextareaInputProps>`
   position: relative;
   width: 100%;
   outline: none;
-  font-size: 1.1em;
+  font-size: 16px;
   line-height: 1.5;
-  padding: 15px 20px;
-  border: ${({ status }) =>
-    status === 'error'
-      ? `2px solid ${PrimaryColor.glintsred}`
-      : `2px solid ${Greyscale.grey}`};
-  transition: border .5s;
+  padding: ${({ small }) => (small ? '8px 16px' : '12px 16px')};
+  background-color: ${({ status }) =>
+    status === 'error' ? ' rgba(236, 39, 43, 0.08)' : 'rgb(1, 126, 183, 0.08)'};
+  border: unset;
+  transition: border 0.5s;
   resize: vertical;
   overflow: auto;
   height: auto;
-
-  ${({ status, floating }) => {
-    if (status === 'error') {
-      if (floating) {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }
-  }}
-    
+  border-radius: ${({ small }) => (small ? '4px' : '8px')};
 
   &:disabled {
     cursor: not-allowed;
@@ -86,55 +67,31 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
   }
 
   &:hover {
-    border: 2px solid ${SecondaryColor.actionblue};
-    transition: border .5s;
-
-    ${({ status }) => {
-      if (status === 'error') {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }}
+    background-color: ${({ status }) =>
+      status === 'error'
+        ? ' rgba(236, 39, 43, 0.08)'
+        : 'rgb(1, 126, 183, 0.16)'};
+    border: unset;
 
     + ${TextareaLabel} {
-      color: ${Greyscale.black};
-
-      ${({ status }) => {
-        if (status === 'error') {
-          return `
-          color: ${PrimaryColor.glintsred};
-        `;
-        }
-      }}
+      color: #666666;
     }
   }
 
   &:focus {
-    border: 2px solid ${SecondaryColor.actionblue};
-
-    ${({ status }) => {
-      if (status === 'error') {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }}
+    background-color: ${({ status }) =>
+      status === 'error'
+        ? ' rgba(236, 39, 43, 0.08)'
+        : 'rgb(1, 126, 183, 0.24)'};
+    border: unset;
 
     + ${TextareaLabel} {
       padding: 0 5px;
-      transform: translate3d(-15px,-20px,0);
-      transition: all .2s;
-      color: ${Greyscale.black};
+      transform: translate3d(-15px, -20px, 0);
+      transition: all 0.2s;
+      color: #666666;
       font-size: 12px;
-
-      ${({ status }) => {
-        if (status === 'error') {
-          return `
-          color: ${PrimaryColor.glintsred};
-        `;
-        }
-      }}
+      background: ${Greyscale.white};
     }
   }
 `;
@@ -142,4 +99,5 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
 interface TextareaInputProps {
   floating?: boolean;
   status?: string;
+  small?: boolean;
 }
