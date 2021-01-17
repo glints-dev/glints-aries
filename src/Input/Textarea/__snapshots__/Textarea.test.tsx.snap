@@ -6,7 +6,7 @@ exports[`<Textarea> should render with a value and label of Description 1`] = `
 >
   <textarea
     aria-label="Description"
-    className="TextareaStyle__TextareaInput-sc-1998n74-2 jUQGhj"
+    className="TextareaStyle__TextareaInput-sc-1998n74-2 hNgSpA"
     onBlur={[Function]}
     onChange={[Function]}
     rows={4}
@@ -18,7 +18,7 @@ exports[`<Textarea> should render with a value and label of Description 1`] = `
     value="Explanation"
   />
   <label
-    className="TextareaStyle__TextareaLabel-sc-1998n74-1 RhjRI"
+    className="TextareaStyle__TextareaLabel-sc-1998n74-1 kLOSMy"
     data-testid="textarea-label"
   >
     Description
