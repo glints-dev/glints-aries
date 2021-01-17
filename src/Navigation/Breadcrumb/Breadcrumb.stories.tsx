@@ -10,20 +10,50 @@ export default {
 
 const Template: Story<Props> = () => {
   return (
-    <>
-      <Breadcrumb>
-        <Breadcrumb.Item>
-          <a href="/home">Home</a>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <a href="/jobs">Jobs</a>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>
-          <a href="/software-engineer">Software Engineer</a>
-        </Breadcrumb.Item>
-      </Breadcrumb>
-    </>
+    <Breadcrumb>
+      <Breadcrumb.Item>
+        <a href="/home">Home</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <a href="/jobs">Jobs</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item active>
+        <a href="/software-engineer">Software Engineer</a>
+      </Breadcrumb.Item>
+    </Breadcrumb>
   );
 };
 
 export const Default = Template.bind({});
+
+export const BreadcrumbWithFirstItemActive: Story<Props> = () => {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Item active={true}>
+        <a href="/home">Home</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <a href="/jobs">Jobs</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <a href="/software-engineer">Software Engineer</a>
+      </Breadcrumb.Item>
+    </Breadcrumb>
+  );
+};
+
+export const BreadcrumbWithNoItemActive: Story<Props> = () => {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Item>
+        <a href="/home">Home</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <a href="/jobs">Jobs</a>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <a href="/software-engineer">Software Engineer</a>
+      </Breadcrumb.Item>
+    </Breadcrumb>
+  );
+};
