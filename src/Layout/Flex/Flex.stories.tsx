@@ -5,10 +5,24 @@ import { Flex } from './index';
 import { FlexProps } from './types';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import * as S from './FlexStoryStyle';
+import { boxArgTypes } from '../Box/constants';
 
 export default {
   title: 'Layout/Flex',
   component: Flex,
+  argTypes: {
+    // to put prop at the top of table by giving empty object
+    flexDirection: {},
+    justifyContent: {},
+    alignItems: {},
+    flexWrap: {},
+    ...boxArgTypes,
+    style: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
