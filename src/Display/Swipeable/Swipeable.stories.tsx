@@ -18,17 +18,15 @@ export default {
 
 const Template: Story<Props> = ({ ...args }) => {
   return (
-    <>
-      <Swipeable {...args}>
-        {Array.from(Array(10).keys()).map(number => (
-          <Swipeable.Item key={number}>
-            <SwipeableCardExample>
-              <h1>Card. {number}</h1>
-            </SwipeableCardExample>
-          </Swipeable.Item>
-        ))}
-      </Swipeable>
-    </>
+    <Swipeable {...args}>
+      {Array.from(Array(10).keys()).map(number => (
+        <Swipeable.Item key={number}>
+          <SwipeableCardExample>
+            <h1>Card. {number}</h1>
+          </SwipeableCardExample>
+        </Swipeable.Item>
+      ))}
+    </Swipeable>
   );
 };
 
