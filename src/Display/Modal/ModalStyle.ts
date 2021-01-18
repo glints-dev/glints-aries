@@ -52,6 +52,7 @@ export const ModalContentArea = styled.div<ModalContentAreaProps>`
   background: ${({ hideContentArea }) =>
     hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
   margin: 120px auto;
+  max-width: 95vw;
   outline: none;
 
   ${({ size }) => {
