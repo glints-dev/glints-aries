@@ -375,7 +375,7 @@ const Select: ISelect = (props: Props) => {
             {label}
           </SelectLabel>
         )}
-        {!removeDropIcon && (
+        {!removeDropIcon && !disabled && (
           <div
             className="select-icon"
             aria-label="show options"
