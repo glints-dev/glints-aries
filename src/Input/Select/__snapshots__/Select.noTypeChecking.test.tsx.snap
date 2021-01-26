@@ -193,7 +193,7 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {
@@ -456,7 +456,7 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {

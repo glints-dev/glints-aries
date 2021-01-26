@@ -3,6 +3,7 @@
 exports[`Colors Greyscale 1`] = `
 Object {
   "black": "#000000",
+  "devilsgrey": "#666666",
   "grey": "#777777",
   "lightgrey": "#C6C6C6",
   "softgrey": "#F3F3F3",
@@ -21,29 +22,11 @@ Object {
 exports[`Colors SecondaryColor 1`] = `
 Object {
   "actionblue": "#017EB7",
-  "black": "#000000",
-  "blue": "#0869C2",
-  "bluegem": "#9013FE",
-  "darkblue": "#004b68",
-  "darkerblue": "#027EB7",
+  "darkblue": "#132647",
   "darkgreen": "#008464",
-  "darkgrey": "#777777",
   "green": "#93BD49",
-  "grey": "#777777",
-  "ivory": "#FFFAEA",
-  "lightblack": "#777777",
-  "lightblue": "#D6F4FF",
-  "lighterblack": "#AAAAAA",
-  "lightergrey": "#EEEEEE",
-  "lightgreen": "#EEF6F4",
-  "lightgrey": "#C6C6C6",
-  "lightorange": "#FFF6E8",
-  "lightred": "#FFF2F3",
   "magenta": "#FF00E5",
   "orange": "#F5A623",
-  "purplepizza": "#FF00E5",
   "violet": "#9013FE",
-  "white": "#FFFFFF",
-  "whitesmoke": "#F3F3F3",
 }
 `;

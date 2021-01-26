@@ -13,7 +13,7 @@ exports[`<Breadcrumb> should render as expected 1`] = `
 
 .c1 span {
   margin: 0 1em;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .c0 {
@@ -57,7 +57,7 @@ exports[`<Breadcrumb> should render as expected 2`] = `
 
 .c1 span {
   margin: 0 1em;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .c0 {

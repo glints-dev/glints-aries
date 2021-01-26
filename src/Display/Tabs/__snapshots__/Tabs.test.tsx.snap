@@ -10,11 +10,11 @@ exports[`<Tabs/> render should match snapshot 1`] = `
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -164,7 +164,7 @@ exports[`<Tabs/> render should match snapshot 1`] = `
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -297,11 +297,11 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -451,7 +451,7 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -581,11 +581,11 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -735,7 +735,7 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -865,11 +865,11 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour bla
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1019,7 +1019,7 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour bla
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -1149,11 +1149,11 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour blu
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1314,7 +1314,7 @@ exports[`<Tabs/> snapshots with colour prop and variant as underlined colour blu
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -1444,11 +1444,11 @@ exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1598,7 +1598,7 @@ exports[`<Tabs/> snapshots with variant props alignment colored 1`] = `
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -1728,11 +1728,11 @@ exports[`<Tabs/> snapshots with variant props alignment underlined 1`] = `
 }
 
 .c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #F3F3F3;
 }
 
 .c1 ul {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1882,7 +1882,7 @@ exports[`<Tabs/> snapshots with variant props alignment underlined 1`] = `
 
 @media (min-width:768px) {
   .c1 .vertical-tabs-list {
-    border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #F3F3F3;
     border-bottom: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;

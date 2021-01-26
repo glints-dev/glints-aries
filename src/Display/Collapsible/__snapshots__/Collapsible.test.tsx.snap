@@ -13,7 +13,7 @@ exports[`<Collapsible> should render as expected 1`] = `
   >
     <div
       aria-expanded={false}
-      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 hLsAsx collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 czQsN collapsible-title"
       role="tab"
     >
       label
@@ -47,7 +47,7 @@ exports[`<Collapsible> should render as expected 2`] = `
   >
     <div
       aria-expanded={true}
-      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 bGfpkD collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 ejKdhj collapsible-title"
       role="tab"
     >
       label
