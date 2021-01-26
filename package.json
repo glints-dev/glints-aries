@@ -121,6 +121,8 @@
     "classnames": "^2.2.6",
     "create-react-context": "^0.2.3",
     "moment": "^2.24.0",
+    "react-functional-select": "^2.9.5",
+    "react-window": "^1.8.6",
     "styled-system": "^5.1.5"
   },
   "peerDependencies": {

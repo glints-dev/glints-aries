@@ -43,6 +43,7 @@ import ProfilePictureStory from './General/ProfilePictureStory';
 import RadioButtonStory from './Input/RadioButtonStory';
 import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
+import SelectNextStory from './Input/SelectNextStory';
 import SliderStory from './Display/SliderStory';
 import StorybookComponentStory from './Utilities/StorybookComponentStory';
 import SwipeableStory from './Display/SwipeableStory';
@@ -106,6 +107,7 @@ storiesOf('Input', module)
   .add('Radio Button', () => <RadioButtonStory />)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
+  .add('SelectNext', () => <SelectNextStory />)
   .add('Toggle Switch', () => <ToggleSwitchStory />)
   .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />);
