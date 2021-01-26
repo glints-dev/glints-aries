@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const GalleryContainer = styled.div`
   position: relative;
@@ -40,7 +40,7 @@ export const GalleryItem = styled.div<GalleryItemProps>`
           display: flex;
           justify-content: center;
           align-items: center;
-          color: ${SecondaryColor.blue};
+          color: #0869C2;
           height: 100%;
           width: 100%;
           font-size: 18px;
@@ -83,7 +83,7 @@ export const GalleryThumbnailWrapper = styled.div`
     margin: 0.3em;
 
     &.active {
-      border: 1px solid ${SecondaryColor.white};
+      border: 1px solid ${Greyscale.white};
     }
   }
 `;

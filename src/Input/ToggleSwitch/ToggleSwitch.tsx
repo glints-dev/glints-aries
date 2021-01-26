@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { SecondaryColor } from '../../Utils/Colors';
+import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 import { Toggle, ToggleBall } from './Styles';
 
 export interface ToggleSwitchProps {
@@ -25,9 +25,7 @@ const ToggleSwitch: React.FunctionComponent<ToggleSwitchProps> = ({
 }: ToggleSwitchProps) => {
   const [innerActive, setInnerActive] = React.useState(active || defaultActive);
 
-  const iconColor = innerActive
-    ? SecondaryColor.actionblue
-    : SecondaryColor.grey;
+  const iconColor = innerActive ? SecondaryColor.actionblue : Greyscale.grey;
   const ActiveIcon = iconOptions ? iconOptions.active : null;
   const InactiveIcon = iconOptions ? iconOptions.inactive : null;
   const Icon = innerActive ? ActiveIcon : InactiveIcon;

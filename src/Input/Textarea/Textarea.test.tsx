@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Textarea from './Textarea';
-import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
+import { PrimaryColor, Greyscale } from '../../Utils/Colors';
 
 interface Props {
   label: string;
@@ -88,7 +88,7 @@ describe('when status is:', () => {
   it("'success', it should display a lightblack border", () => {
     const { textareaInput } = setupTextarea(props, { status: 'success' });
     expect(textareaInput).toHaveStyle(`
-      border-color: ${SecondaryColor.lightblack};
+      border-color: ${Greyscale.grey};
     `);
   });
 

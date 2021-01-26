@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const PointingModalContainer = styled.div`
   position: relative;
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   outline: none;
 `;
@@ -48,7 +48,7 @@ export const PointingModalHeaderWrapper = styled.div`
 
   a {
     display: flex;
-    color: ${SecondaryColor.black};
+    color: ${Greyscale.black};
     font-size: 1.2em;
     margin: 0;
   }
@@ -77,11 +77,11 @@ export const PointingModalItemWrapper = styled.li`
 
   * {
     cursor: pointer;
-    color: ${SecondaryColor.black};
+    color: ${Greyscale.black};
   }
 
   &:hover {
-    background: ${SecondaryColor.whitesmoke};
+    background: ${Greyscale.softgrey};
   }
 `;
 

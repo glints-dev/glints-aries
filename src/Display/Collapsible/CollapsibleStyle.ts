@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 const animateCollapsible = keyframes`
   from {
@@ -21,8 +21,8 @@ export const CollapsibleContent = styled.div`
 export const CollapsibleContainer = styled.div`
   cursor: pointer;
   color: black;
-  background-color: ${SecondaryColor.white};
-  border: solid 1px ${SecondaryColor.lightgrey};
+  background-color: ${Greyscale.white};
+  border: solid 1px ${Greyscale.lightgrey};
   font-size: 1em;
 
   &:focus {
@@ -35,14 +35,14 @@ export const CollapsibleContainer = styled.div`
 `;
 
 export const CollapsibleHeader = styled.div<{ isOpen: boolean }>`
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.2em;
 
   &:hover {
-    color: ${SecondaryColor.blue};
+    color: ${SecondaryColor.actionblue};
   }
 
   svg {

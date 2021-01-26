@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { PrimaryColor, Greyscale } from '../../Utils/Colors';
 
 export const DividerContainer = styled.div`
   display: flex;
@@ -22,15 +22,15 @@ export const DividerContainer = styled.div`
         `;
       case 'white':
         return `
-          background: ${SecondaryColor.white};
+          background: ${Greyscale.white};
         `;
       case 'grey':
         return `
-          background: ${SecondaryColor.lightgrey};
+          background: ${Greyscale.lightgrey};
         `;
       default:
         return `
-          background: ${SecondaryColor.black};
+          background: ${Greyscale.black};
         `;
     }
   }}

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const TagContent = styled.label`
   display: flex;
@@ -27,8 +27,8 @@ export const TagContainer = styled.div<TagContainerProps>`
   ${({ outline }) => {
     if (!outline) {
       return `
-        background: ${SecondaryColor.lightergrey};
-        border-color: ${SecondaryColor.lightgrey};
+        background: ${Greyscale.softgrey};
+        border-color: ${Greyscale.lightgrey};
       `;
     } else {
       return `

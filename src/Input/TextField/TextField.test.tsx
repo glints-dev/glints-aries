@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
-import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
+import { PrimaryColor, Greyscale } from '../../Utils/Colors';
 import SearchIcon from '../../General/Icon/components/SearchIcon';
 
 const props = {
@@ -88,7 +88,7 @@ describe('when status is:', () => {
   it("'success', it should display a lightblack border", () => {
     const { textFieldInput } = setupTextField({ status: 'success' });
     expect(textFieldInput).toHaveStyle(`
-      border-color: ${SecondaryColor.lightblack};
+      border-color: ${Greyscale.grey};
     `);
   });
 
@@ -204,9 +204,7 @@ describe('when an empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).not.toHaveStyle(
-          `color: ${SecondaryColor.black}`
-        );
+        expect(textFieldLabel).not.toHaveStyle(`color: ${Greyscale.black}`);
       });
     });
   });
@@ -235,7 +233,7 @@ describe('when a non-empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).toHaveStyle(`color: ${SecondaryColor.black}`);
+        expect(textFieldLabel).toHaveStyle(`color: ${Greyscale.black}`);
       });
     });
   });

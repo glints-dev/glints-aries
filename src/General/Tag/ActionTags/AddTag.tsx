@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { Greyscale, SecondaryColor } from '../../../Utils/Colors';
+import { Greyscale } from '../../../Utils/Colors';
 import BasicTag from '../BasicTag';
 
 export const AddTag = styled(BasicTag)`
   border-style: dashed;
-  border-color: ${SecondaryColor.lightgrey};
+  border-color: ${Greyscale.lightgrey};
 
   &:hover {
     border-color: ${Greyscale.grey};

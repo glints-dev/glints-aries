@@ -4,7 +4,7 @@ import { render, wait, fireEvent, act } from '@testing-library/react';
 import * as React from 'react';
 
 import Slider, { Props } from './Slider';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 const mockContainer = (width: number) => {
   const boundingRect = { width };
@@ -230,12 +230,12 @@ describe('<Slider/> prop afterChange', () => {
 
 describe('<Slider/> prop renderLeftIcon and renderRightIcon', () => {
   const renderLeftIcon = (disabled: boolean) => {
-    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : SecondaryColor.white;
+    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : Greyscale.white;
     return <svg color={color} />;
   };
 
   const renderRightIcon = (disabled: boolean) => {
-    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : SecondaryColor.white;
+    const color = disabled ? 'rgba(221, 221, 221, 0.4)' : Greyscale.white;
     return <svg color={color} />;
   };
 

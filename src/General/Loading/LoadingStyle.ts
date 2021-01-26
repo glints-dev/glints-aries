@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 const spin = keyframes`
   0%{
@@ -18,7 +18,7 @@ const spinnerGlobal = css`
   height: 100%;
   border-radius: 100%;
   border: 0.35em solid transparent;
-  border-top-color: ${SecondaryColor.white};
+  border-top-color: ${Greyscale.white};
 `;
 
 export const LoadingContainer = styled.div`

@@ -113,7 +113,7 @@ export const SelectInput = styled.input<SelectInputProps>`
     
   &:disabled {
     cursor: not-allowed;
-    background: ${SecondaryColor.whitesmoke};
+    background: ${Greyscale.softgrey};
     + ${SelectLabel} {
       ${({ floating }) => {
         if (!floating) {
@@ -226,7 +226,7 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
 
   &.active {
     color: ${SecondaryColor.actionblue};
-    background: ${SecondaryColor.lightergrey};
+    background: ${Greyscale.softgrey};
   }
 
   &.select-loading {
@@ -237,7 +237,7 @@ export const SelectItemWrapper = styled.li<SelectItemWrapperProps>`
     if (disabled) {
       return `
         cursor: not-allowed;
-        background: ${SecondaryColor.lightergrey};
+        background: ${Greyscale.softgrey};
         color: ${Greyscale.grey};
         font-style: italic;
       `;

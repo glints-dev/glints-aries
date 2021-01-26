@@ -40,9 +40,9 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   left: ${({ small }) => (small ? '16px' : '22px')};
   margin-right: 1px;
   overflow: hidden;
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   color: ${({ floating }) =>
-    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+    floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
   transition: all .2s;
   pointer-events: none;
   font-weight: 300;
@@ -104,7 +104,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   border: ${({ status }) =>
     status === 'error'
       ? `2px solid ${PrimaryColor.glintsred}`
-      : `2px solid ${SecondaryColor.lightblack}`};
+      : `2px solid ${Greyscale.grey}`};
   transition: all .5s;
 
   ${({ disableTyping }) => {
@@ -148,7 +148,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
     }}
 
     ~ ${TextFieldLabel} {
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
 
       ${({ status }) => {
         if (status === 'error') {
@@ -191,7 +191,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
       font-size: 12px;
         right: auto;
 
@@ -207,12 +207,12 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
 
   &:disabled {
     cursor: not-allowed;
-    background: ${SecondaryColor.whitesmoke};
-    border: 2px solid ${SecondaryColor.lightgrey};
+    background: ${Greyscale.softgrey};
+    border: 2px solid ${Greyscale.lightgrey};
 
     + ${TextFieldLabel} {
       background: transparent;
-      color: ${SecondaryColor.grey};
+      color: ${Greyscale.grey};
     }
   }
 `;

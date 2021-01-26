@@ -5,7 +5,7 @@ import {
   Paragraph as StyledParagraph,
   ParagraphProps,
 } from './ParagraphStyles';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 const Paragraph: React.FunctionComponent<Props> = props => {
   const {
@@ -13,7 +13,7 @@ const Paragraph: React.FunctionComponent<Props> = props => {
     children,
     variant = 'regular',
     bold,
-    color = SecondaryColor.black,
+    color = Greyscale.black,
     ellipsis,
     shouldSetLineHeight = false,
     ...restProps

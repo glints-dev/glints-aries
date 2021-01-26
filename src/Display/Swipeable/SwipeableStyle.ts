@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { ScreenSize } from '../../Utils/StyleConfig';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const SwipeableContainer = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ export const SwipeableItemWrapper = styled.div`
 export const SwipeableCardExample = styled.div`
   width: 150px;
   height: 150px;
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;

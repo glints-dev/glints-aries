@@ -38,19 +38,19 @@ export const TabsHeader = styled.div<TabHeader>`
   }
 
   .horizontal-tabs-list.colored {
-    border-top: 1px solid ${SecondaryColor.lightergrey};
+    border-top: 1px solid ${Greyscale.softgrey};
   }
 
   .vertical-tabs-list {
     @media (min-width: ${ScreenSize.tablet}px) {
-      border-right: 1px solid ${SecondaryColor.lightergrey};
+      border-right: 1px solid ${Greyscale.softgrey};
       border-bottom: none;
       flex-direction: column;
     }
   }
 
   ul {
-    border-bottom: 1px solid ${SecondaryColor.lightergrey};
+    border-bottom: 1px solid ${Greyscale.softgrey};
     display: flex;
     position: relative;
     white-space: nowrap;
@@ -71,7 +71,7 @@ export const TabsHeader = styled.div<TabHeader>`
     }
 
     .horizontal-tab.colored:hover {
-      background-color: ${SecondaryColor.whitesmoke};
+      background-color: ${Greyscale.softgrey};
       color: ${SecondaryColor.actionblue};
       margin: 0;
     }
@@ -129,7 +129,7 @@ export const TabsHeader = styled.div<TabHeader>`
       }
 
       &.colored.active.horizontal-tab {
-        background-color: ${SecondaryColor.whitesmoke};
+        background-color: ${Greyscale.softgrey};
 
         button {
           font-weight: bold;

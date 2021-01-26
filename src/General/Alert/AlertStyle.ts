@@ -33,7 +33,7 @@ export const AlertContainer = styled.div<AlertContainerProps>`
   display: flex;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12);
   padding: 10px;
-  background-color: ${SecondaryColor.ivory};
+  background-color: '#FFFAEA';
   z-index: 5000;
   min-width: 500px;
   max-width: 800px;
@@ -50,27 +50,27 @@ export const AlertContainer = styled.div<AlertContainerProps>`
     switch (type) {
       case 'success':
         return `
-          background: ${SecondaryColor.lightgreen};
+          background: #EEF6F4;
           border: 1px solid ${SecondaryColor.darkgreen};
         `;
       case 'warning':
         return `
-          background: ${SecondaryColor.lightorange};
+          background: #FFF6E8;
           border: 1px solid ${SecondaryColor.orange};
         `;
       case 'danger':
         return `
-          background: ${SecondaryColor.lightred};
+          background: #FFF2F3;
           border: 1px solid ${PrimaryColor.glintsred};
         `;
       case 'info':
         return `
-          background: ${SecondaryColor.lightblue};
+          background: #D6F4FF;
           border: 1px solid ${PrimaryColor.glintsblue};
         `;
       default:
         return `
-          background: ${SecondaryColor.lightblue};
+          background: #D6F4FF;
           border: 1px solid ${PrimaryColor.glintsblue};
         `;
     }
