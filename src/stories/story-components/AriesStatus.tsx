@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const QUERY = 'SELECT * WHERE H<>"Removing" ORDER BY F DESC';
+const QUERY = 'SELECT * WHERE K<>"Removing" ORDER BY I DESC';
 
 export const AriesStatus = () => {
   const [data, setData] = useState('');
