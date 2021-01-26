@@ -171,7 +171,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {
@@ -415,7 +415,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {
@@ -659,7 +659,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {
@@ -902,7 +902,7 @@ exports[`<Select> should render with 3 options 1`] = `
 
 .c7.active {
   color: #017EB7;
-  background: #EEEEEE;
+  background: #F3F3F3;
 }
 
 .c7.select-loading {
