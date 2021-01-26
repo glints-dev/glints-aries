@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 const underLine = `
   position: relative;
@@ -65,7 +65,7 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
   display: inline-flex;
   align-items: center;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  color: ${({ disabled }) => disabled && `${SecondaryColor.lightblack}`};
+  color: ${({ disabled }) => disabled && `${Greyscale.grey}`};
   transition: all 0.4s;
   ${({ showHoverLine, isOpen, disabled, showFullWidth }) => {
     if (showHoverLine) {
@@ -86,9 +86,9 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
     }
     return `
       padding: 1em 1.4em;
-      background: ${isOpen || disabled ? `${SecondaryColor.whitesmoke}` : null};
+      background: ${isOpen || disabled ? `${Greyscale.softgrey}` : null};
       &:hover {
-        background: ${SecondaryColor.whitesmoke};
+        background: ${Greyscale.softgrey};
         transition: all .4s;
       }`;
   }};
@@ -116,7 +116,7 @@ export const DropdownBody = styled.ul<DropdownBodyProps>`
   transform: ${({ open }) => (open ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
   transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
   z-index: 1000;
   padding: 0;
@@ -178,7 +178,7 @@ export const DropdownItemWrapper = styled.li<DropdownItemWrapperProps>`
   }}
 
   &.active {
-    background: ${SecondaryColor.whitesmoke};
+    background: ${Greyscale.softgrey};
   }
 
   &:hover > ${DropdownHeader} {

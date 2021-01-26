@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../../General/Button';
 import { ScreenSize } from '../../Utils/StyleConfig';
 
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 export const SearchFilterContainer = styled.div`
   position: relative;
@@ -16,11 +16,11 @@ export const SearchFilterBar = styled.div`
 
   input {
     padding: 25px 6em 25px 30px;
-    background: ${SecondaryColor.white};
-    border: 3px solid ${SecondaryColor.darkgrey};
+    background: ${Greyscale.white};
+    border: 3px solid ${Greyscale.grey};
     font-size: 1.4em;
     line-height: 1.5;
-    color: ${SecondaryColor.lightblack};
+    color: ${Greyscale.grey};
     width: 100%;
 
     @media (max-width: ${ScreenSize.mobileL}px) {
@@ -70,8 +70,8 @@ export const SearchFilterResultContainer = styled.div`
   font-size: 1.1em;
   grid-template-columns: repeat(3, 1fr);
   padding: 25px 30px;
-  background: ${SecondaryColor.white};
-  border: 1px solid ${SecondaryColor.lightgrey};
+  background: ${Greyscale.white};
+  border: 1px solid ${Greyscale.lightgrey};
 
   @media (max-width: ${ScreenSize.mobileL}px) {
     grid-template-columns: auto;
@@ -83,7 +83,7 @@ export const SearchFilterListWrapper = styled.div`
   position: relative;
 
   label {
-    color: ${SecondaryColor.lightblack};
+    color: ${Greyscale.grey};
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.3px;

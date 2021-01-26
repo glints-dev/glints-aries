@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import { Title as StyledTitle } from './TitleStyles';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 const Title: React.FunctionComponent<Props> = (props: Props) => {
   const {
     className,
     children,
-    color = SecondaryColor.black,
+    color = Greyscale.black,
     ellipsis,
     tag = 'h1',
     uppercase = false,

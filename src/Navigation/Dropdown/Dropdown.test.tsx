@@ -12,7 +12,7 @@ import {
 
 import Dropdown from './Dropdown';
 import DropdownItem from './DropdownItem';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 describe('<Dropdown/> render', () => {
   test('should match snapshot', () => {
@@ -181,9 +181,7 @@ describe('<Dropdown/> mouse event', () => {
     const dropdownHeader = document.querySelector('.dropdown-content');
     fireEvent.mouseOver(dropdownHeader);
 
-    expect(dropdownHeader).toHaveStyle(
-      `background: ${SecondaryColor.whitesmoke}`
-    );
+    expect(dropdownHeader).toHaveStyle(`background: ${Greyscale.softgrey}`);
   });
 
   test('option should be highlighted when mouse is hovering on', () => {
@@ -201,10 +199,8 @@ describe('<Dropdown/> mouse event', () => {
     const optionSE = queryByText('Software Engineer');
     fireEvent.mouseOver(optionPM);
 
-    expect(optionPM).toHaveStyle(`background: ${SecondaryColor.whitesmoke}`);
-    expect(optionSE).not.toHaveStyle(
-      `background: ${SecondaryColor.whitesmoke}`
-    );
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
   });
 
   test('selected option should be displayed', async () => {
@@ -259,22 +255,16 @@ describe('<Dropdown/> keydown event', () => {
 
     const optionPM = queryByText(document.body, 'Product Manager');
     const optionSE = queryByText(document.body, 'Software Engineer');
-    expect(optionPM).toHaveStyle(`background: ${SecondaryColor.whitesmoke}`);
-    expect(optionSE).not.toHaveStyle(
-      `background: ${SecondaryColor.whitesmoke}`
-    );
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
 
     fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
-    expect(optionPM).not.toHaveStyle(
-      `background: ${SecondaryColor.whitesmoke}`
-    );
-    expect(optionSE).toHaveStyle(`background: ${SecondaryColor.whitesmoke}`);
+    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
 
     fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
-    expect(optionPM).toHaveStyle(`background: ${SecondaryColor.whitesmoke}`);
-    expect(optionSE).not.toHaveStyle(
-      `background: ${SecondaryColor.whitesmoke}`
-    );
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
   });
 
   test('press enter key should select an highlighted option', async () => {
@@ -289,7 +279,7 @@ describe('<Dropdown/> keydown event', () => {
     fireEvent.click(dropdown);
 
     const optionPM = queryByText(document.body, 'Product Manager');
-    expect(optionPM).toHaveStyle(`background: ${SecondaryColor.whitesmoke}`);
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
 
     fireEvent.keyDown(dropdown, { key: 'Enter', keyCode: 13 });
     expect(optionPM).not.toBeVisible();

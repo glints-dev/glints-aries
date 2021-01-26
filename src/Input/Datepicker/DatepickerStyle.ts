@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 export const DatepickerContainer = styled.div`
   flex-grow: 1;
@@ -13,7 +13,7 @@ export const DatepickerWrapper = styled.div<DatepickerWrapperProps>`
   transform: ${({ isOpen }) => (isOpen ? 'scaleY(1)' : 'scaleY(0.9)')};
   transform-origin: center top;
   transition: ${({ isOpen }) => (isOpen ? 'all .2s ease' : 'all .1s ease')};
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   width: 280px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   margin-top: 0.5em;
@@ -46,13 +46,13 @@ interface DatepickerContentProps {
 
 export const DatepickerMonthYearBtn = styled.button`
   border: none;
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   padding: 0;
   cursor: pointer;
   margin: 0 4px;
 
   &:hover {
-    color: ${SecondaryColor.blue};
+    color: ${SecondaryColor.actionblue};
   }
 `;
 
@@ -66,7 +66,7 @@ export const DatepickerTodayBtn = styled.button`
   padding: 0;
 
   &:hover {
-    color: ${SecondaryColor.blue};
+    color: ${SecondaryColor.actionblue};
   }
 `;
 

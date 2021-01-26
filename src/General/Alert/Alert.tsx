@@ -16,7 +16,7 @@ import {
   AlertTypeIconContainer,
 } from './AlertStyle';
 
-import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 const Alert = ({
   isOpen,
@@ -123,7 +123,7 @@ const Alert = ({
           title="Close alert"
           onClick={onClose}
         >
-          <CloseIcon color={SecondaryColor.grey} />
+          <CloseIcon color={Greyscale.grey} />
         </AlertIcon>
       </AlertContent>
     </AlertContainer>

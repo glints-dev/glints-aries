@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const TooltipContainer = styled.div`
   position: relative;
@@ -23,7 +23,7 @@ export const TooltipContent = styled.div<TooltipContentProps>`
           &:after {
             border-left: 9px solid transparent;
             border-right: 9px solid transparent;
-            border-bottom: 9px solid ${SecondaryColor.black};
+            border-bottom: 9px solid ${Greyscale.black};
             top: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -37,7 +37,7 @@ export const TooltipContent = styled.div<TooltipContentProps>`
           transform: translateY(-50%);
           
           &:after {
-            border-left: 9px solid ${SecondaryColor.black};
+            border-left: 9px solid ${Greyscale.black};
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
             top: 50%;
@@ -53,7 +53,7 @@ export const TooltipContent = styled.div<TooltipContentProps>`
           transform: translateY(-50%);
           
           &::after {
-            border-right: 9px solid ${SecondaryColor.black};
+            border-right: 9px solid ${Greyscale.black};
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
             top: 50%;
@@ -71,7 +71,7 @@ export const TooltipContent = styled.div<TooltipContentProps>`
           &:after {
             border-left: 9px solid transparent;
             border-right: 9px solid transparent;
-            border-top: 9px solid ${SecondaryColor.black};
+            border-top: 9px solid ${Greyscale.black};
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -92,9 +92,9 @@ interface TooltipContentProps {
 }
 
 export const TooltipMessage = styled.div`
-  background: ${SecondaryColor.black};
+  background: ${Greyscale.black};
   border-radius: 3px;
-  color: ${SecondaryColor.white};
+  color: ${Greyscale.white};
   line-height: 1.5;
   font-size: 12px;
   padding: 10px;

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, PrimaryColor } from '../../Utils/Colors';
 import { ScreenSize } from '../../Utils/StyleConfig';
 
 const arrow = css`
@@ -67,7 +67,7 @@ export const NavigationItem = styled.li`
   display: inline-flex;
   width: 6px;
   height: 6px;
-  background: ${SecondaryColor.lightgrey};
+  background: ${Greyscale.lightgrey};
   border-radius: 50%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   margin: 0 3px;

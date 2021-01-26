@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 import { CheckboxProps } from './Checkbox';
 
 export const CheckboxContainer = styled.div<CheckboxProps>`
@@ -28,7 +28,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       left: ${({ size }) => (size === 'small' ? '6.3px' : '7.5px')};
       width: 6px;
       height: 12px;
-      border: solid ${SecondaryColor.white};
+      border: solid ${Greyscale.white};
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
       ${({ border, size }) => {
@@ -85,7 +85,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       appearance: none;
       background-color: transparent;
-      border: 1px solid ${SecondaryColor.lightblack};
+      border: 1px solid ${Greyscale.grey};
       padding: 0.6em;
       display: inline-block;
       position: relative;

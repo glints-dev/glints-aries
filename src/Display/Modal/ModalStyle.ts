@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Device } from '../../Utils/StyleConfig';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 import { sizeType } from './Modal';
 
 export const SIZES: { [s: string]: number } = {
@@ -50,7 +50,7 @@ export const ModalDialog = styled.div`
 export const ModalContentArea = styled.div<ModalContentAreaProps>`
   position: relative;
   background: ${({ hideContentArea }) =>
-    hideContentArea ? 'transparent' : `${SecondaryColor.white}`};
+    hideContentArea ? 'transparent' : `${Greyscale.white}`};
   margin: 120px auto;
   max-width: 95vw;
   outline: none;
@@ -122,7 +122,7 @@ export const ModalHeader = styled.header`
   align-items: center;
   align-content: center;
   font-size: 1.6em;
-  border-bottom: 1px solid ${SecondaryColor.lightgrey};
+  border-bottom: 1px solid ${Greyscale.lightgrey};
   padding: 15px;
 
   h3 {
@@ -171,7 +171,7 @@ export const ModalFooter = styled.footer<{ isChildrenInMultiLines: boolean }>`
   flex-wrap: wrap;
   padding: 15px 30px;
   justify-content: flex-end;
-  border-top: 1px solid ${SecondaryColor.lightgrey};
+  border-top: 1px solid ${Greyscale.lightgrey};
 
   @media ${Device.mobileM} {
     padding: 15px;

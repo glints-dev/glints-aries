@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 
 const DEFAULTS = {
   activeBackgroundColor: SecondaryColor.actionblue,
-  inactiveBackgroundColor: SecondaryColor.grey,
-  inactiveBallColor: SecondaryColor.white,
-  activeBallColor: SecondaryColor.white,
+  inactiveBackgroundColor: Greyscale.grey,
+  inactiveBallColor: Greyscale.white,
+  activeBallColor: Greyscale.white,
 };
 
 interface ToggleProps {

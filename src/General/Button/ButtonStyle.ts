@@ -349,8 +349,8 @@ export const GhostBtn = styled(Button)<GhostBtnProps>`
   ${({ disabled }) => {
     if (disabled) {
       return `
-        background-color: ${SecondaryColor.lightgrey};
-        color: ${SecondaryColor.white};
+        background-color: ${Greyscale.lightgrey};
+        color: ${Greyscale.white};
         border: none;
       `;
     }

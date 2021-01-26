@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 
 export const TextareaContainer = styled.div`
   flex-grow: 1;
@@ -11,9 +11,9 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
   position: absolute;
   left: 22px;
   top: 1em;
-  background: ${SecondaryColor.white};
+  background: ${Greyscale.white};
   color: ${({ floating }) =>
-    floating ? `${SecondaryColor.black}` : `${SecondaryColor.lightblack}`};
+    floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
   transition: all 0.2s;
   pointer-events: none;
   font-weight: 300;
@@ -54,7 +54,7 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
   border: ${({ status }) =>
     status === 'error'
       ? `2px solid ${PrimaryColor.glintsred}`
-      : `2px solid ${SecondaryColor.lightblack}`};
+      : `2px solid ${Greyscale.grey}`};
   transition: border .5s;
   resize: vertical;
   overflow: auto;
@@ -73,15 +73,15 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
 
   &:disabled {
     cursor: not-allowed;
-    background: ${SecondaryColor.whitesmoke};
+    background: ${Greyscale.softgrey};
 
     + ${TextareaLabel} {
       background: transparent;
-      color: ${SecondaryColor.grey};
+      color: ${Greyscale.grey};
     }
 
     &:hover {
-      border: 2px solid ${SecondaryColor.lightgrey};
+      border: 2px solid ${Greyscale.lightgrey};
     }
   }
 
@@ -98,7 +98,7 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
     }}
 
     + ${TextareaLabel} {
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
 
       ${({ status }) => {
         if (status === 'error') {
@@ -125,7 +125,7 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
       padding: 0 5px;
       transform: translate3d(-15px,-20px,0);
       transition: all .2s;
-      color: ${SecondaryColor.black};
+      color: ${Greyscale.black};
       font-size: 12px;
 
       ${({ status }) => {

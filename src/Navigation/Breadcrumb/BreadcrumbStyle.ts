@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const BreadcrumbItemWrapper = styled.label<BreadcrumbItemWrapper>`
   cursor: ${({ active }) => (active ? 'default' : 'pointer')};
@@ -8,12 +8,12 @@ export const BreadcrumbItemWrapper = styled.label<BreadcrumbItemWrapper>`
 
   * {
     color: ${({ active }) =>
-      active ? `${SecondaryColor.grey}` : `${SecondaryColor.black}`};
+      active ? `${Greyscale.grey}` : `${Greyscale.black}`};
   }
 
   span {
     margin: 0 1em;
-    color: ${SecondaryColor.lighterblack};
+    color: #aaaaaa;
   }
 `;
 
@@ -24,7 +24,7 @@ interface BreadcrumbItemWrapper {
 export const BreadcrumbContainer = styled.div`
   position: relative;
   display: flex;
-  background-color: ${SecondaryColor.whitesmoke};
+  background-color: ${Greyscale.softgrey};
   padding: 1em;
 
   label.aries-breadcrumb-item:last-child span {

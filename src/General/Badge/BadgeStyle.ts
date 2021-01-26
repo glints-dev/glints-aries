@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { PrimaryColor, Greyscale } from '../../Utils/Colors';
 import { BadgeVariant } from './BadgeVariant';
 
 export const BadgeContainer = styled.div<BadgeContainerProps>`
@@ -9,7 +9,7 @@ export const BadgeContainer = styled.div<BadgeContainerProps>`
     variant === BadgeVariant.DEFAULT
       ? `${PrimaryColor.glintsred}`
       : `${Greyscale.grey}`};
-  color: ${SecondaryColor.white};
+  color: ${Greyscale.white};
   border-radius: 10px;
   margin: 0 5px;
 
