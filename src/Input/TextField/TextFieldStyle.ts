@@ -1,18 +1,16 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 
-const startIconPadding = '38px';
+const startIconPadding = '44px';
 
 export const IconContainer = styled.div`
   position: absolute;
   display: flex;
   right: 1em;
   cursor: pointer;
-
   svg {
-    fill: ${Greyscale.grey};
+    fill: #666666;
   }
-
   &:hover svg {
     fill: ${Greyscale.black};
   }
@@ -22,9 +20,8 @@ export const StartIconContainer = styled.div`
   position: absolute;
   display: flex;
   left: 16px;
-
   svg {
-    fill: #798899;
+    fill: #666666;
   }
 `;
 
@@ -40,14 +37,11 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   left: ${({ small }) => (small ? '16px' : '22px')};
   margin-right: 1px;
   overflow: hidden;
-  background: ${Greyscale.white};
-  color: ${({ floating }) =>
-    floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
+  color: #666666;
   transition: all .2s;
   pointer-events: none;
-  font-weight: 300;
-  font-size: 1.1em;
-
+  font-weight: 400;
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
   ${({ hasStartIcon }) => {
     if (hasStartIcon) {
       return `
@@ -64,6 +58,7 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
         transform: translate3d(-15px, -20px, 0);
         transition: all .2s;
         font-size: 12px;
+        background-color: ${Greyscale.white};
       `;
     }
   }}
@@ -72,14 +67,6 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
     if (floating && small) {
       return `
         transform: translate3d(-10px, -20px, 0);
-      `;
-    }
-  }}
-
-  ${({ status, floating }) => {
-    if (status === 'error' && floating) {
-      return `
-        color: ${PrimaryColor.glintsred};
       `;
     }
   }}
@@ -98,15 +85,13 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   position: relative;
   width: 100%;
   outline: none;
-  font-size: ${({ small }) => (small ? '1em' : '1.1em')};
-  line-height: 1.5;
-  padding: ${({ small }) => (small ? '13px 15px' : '15px 20px')};
-  border: ${({ status }) =>
-    status === 'error'
-      ? `2px solid ${PrimaryColor.glintsred}`
-      : `2px solid ${Greyscale.grey}`};
+  font-size: ${({ small }) => (small ? '14px' : '16px')};
+  padding: ${({ small }) => (small ? '8px 16px' : '12px 16px')};
+  border: unset;
+  border-radius: ${({ small }) => (small ? '4px' : '8px')};
   transition: all .5s;
-
+  background-color: ${({ status }) =>
+    status === 'error' ? ' rgba(236, 39, 43, 0.08)' : 'rgb(1, 126, 183, 0.08)'};
   ${({ disableTyping }) => {
     if (disableTyping) {
       return `
@@ -116,17 +101,6 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
       `;
     }
   }}
-
-  ${({ status, floating }) => {
-    if (status === 'error') {
-      if (floating) {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }
-  }}
-
   ${({ hasStartIcon }) => {
     if (hasStartIcon) {
       return `
@@ -136,41 +110,20 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   }}
   
   &:hover {
-    border: 2px solid ${SecondaryColor.actionblue};
     transition: all .5s;
-
-    ${({ status }) => {
-      if (status === 'error') {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }}
-
+    background-color: ${({ status }) =>
+      status === 'error'
+        ? ' rgba(236, 39, 43, 0.08)'
+        : 'rgb(1, 126, 183, 0.16)'};
     ~ ${TextFieldLabel} {
-      color: ${Greyscale.black};
-
-      ${({ status }) => {
-        if (status === 'error') {
-          return `
-          color: ${PrimaryColor.glintsred};
-        `;
-        }
-      }}
+      color: #666666;
     }
   }
-
   &:focus {
-    border: 2px solid ${SecondaryColor.actionblue};
-
-    ${({ status }) => {
-      if (status === 'error') {
-        return `
-          border: 2px solid ${PrimaryColor.glintsred};
-        `;
-      }
-    }}
-
+    background-color: ${({ status }) =>
+      status === 'error'
+        ? ' rgba(236, 39, 43, 0.08)'
+        : 'rgb(1, 126, 183, 0.24)'};
     ${({ hasStartIcon }) => {
       if (hasStartIcon) {
         return `
@@ -182,7 +135,6 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
         `;
       }
     }}
-
     ~ ${TextFieldLabel} {
       padding: 0 5px;
       top: 1em;
@@ -191,25 +143,14 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
       transition: all .2s;
-      color: ${Greyscale.black};
       font-size: 12px;
-        right: auto;
-
-      ${({ status }) => {
-        if (status === 'error') {
-          return `
-          color: ${PrimaryColor.glintsred};
-        `;
-        }
-      }}
+      right: auto;
+      background-color: ${Greyscale.white};
     }
   }
-
   &:disabled {
     cursor: not-allowed;
     background: ${Greyscale.softgrey};
-    border: 2px solid ${Greyscale.lightgrey};
-
     + ${TextFieldLabel} {
       background: transparent;
       color: ${Greyscale.grey};
