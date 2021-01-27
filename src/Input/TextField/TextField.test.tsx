@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
-import { PrimaryColor, Greyscale } from '../../Utils/Colors';
+import { SecondaryColor } from '../../Utils/Colors';
 import SearchIcon from '../../General/Icon/components/SearchIcon';
 
 const props = {
@@ -84,22 +84,6 @@ describe('when a value is entered', () => {
   });
 });
 
-describe('when status is:', () => {
-  it("'success', it should display a lightblack border", () => {
-    const { textFieldInput } = setupTextField({ status: 'success' });
-    expect(textFieldInput).toHaveStyle(`
-      border-color: ${Greyscale.grey};
-    `);
-  });
-
-  it("'error', it should display a red border", () => {
-    const { textFieldInput } = setupTextField({ status: 'error' });
-    expect(textFieldInput).toHaveStyle(`
-      border-color: ${PrimaryColor.glintsred};
-    `);
-  });
-});
-
 describe('when disabled is true', () => {
   it('should display cursor: not-allowed', () => {
     const { textFieldInput } = setupTextField({ disabled: true });
@@ -115,12 +99,12 @@ describe('when disabled is true', () => {
 describe('when small is:', () => {
   it('true, it should display the correct size', () => {
     const { textFieldInput } = setupTextField({ small: true });
-    expect(textFieldInput).toHaveStyle('padding: 13px 15px;');
+    expect(textFieldInput).toHaveStyle('padding: 8px 16px;');
   });
 
   it('false, it should display the correct size', () => {
     const { textFieldInput } = setupTextField();
-    expect(textFieldInput).toHaveStyle('padding: 15px 20px;');
+    expect(textFieldInput).toHaveStyle('padding: 12px 16px;');
   });
 });
 
@@ -204,7 +188,9 @@ describe('when an empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).not.toHaveStyle(`color: ${Greyscale.black}`);
+        expect(textFieldLabel).not.toHaveStyle(
+          `color: ${SecondaryColor.black}`
+        );
       });
     });
   });
@@ -233,7 +219,7 @@ describe('when a non-empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).toHaveStyle(`color: ${Greyscale.black}`);
+        expect(textFieldLabel).toHaveStyle(`color: #666666`);
       });
     });
   });
