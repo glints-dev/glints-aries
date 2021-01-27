@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextField, { textFieldType, isFilled } from './TextField';
-import { SecondaryColor } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 import SearchIcon from '../../General/Icon/components/SearchIcon';
 
 const props = {
@@ -188,9 +188,7 @@ describe('when an empty value is passed to', () => {
           />
         );
         const textFieldLabel = getAllByTestId('textfield-label')[index];
-        expect(textFieldLabel).not.toHaveStyle(
-          `color: ${SecondaryColor.black}`
-        );
+        expect(textFieldLabel).not.toHaveStyle(`color: ${Greyscale.black}`);
       });
     });
   });
