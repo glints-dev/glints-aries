@@ -23,6 +23,7 @@ export const Flex: React.FC<Props> = ({
   justifyContent = 'flex-start',
   alignItems = 'stretch',
   flexWrap = 'nowrap',
+  // the rest of props will be passed to Box component
   ...restProps
 }) => (
   <StyledFlex
