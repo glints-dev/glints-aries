@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Greyscale } from '../../Utils/Colors';
 
 export const TextareaContainer = styled.div`
   flex-grow: 1;
@@ -11,7 +11,7 @@ export const TextareaLabel = styled.label<TextareaLabelProps>`
   position: absolute;
   left: 22px;
   top: 1em;
-  color: #666666;
+  color: ${Greyscale.devilsgrey};
   transition: all 0.2s;
   pointer-events: none;
   font-weight: 400;
@@ -74,7 +74,7 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
     border: unset;
 
     + ${TextareaLabel} {
-      color: #666666;
+      color: ${Greyscale.devilsgrey};
     }
   }
 
@@ -89,7 +89,7 @@ export const TextareaInput = styled.textarea<TextareaInputProps>`
       padding: 0 5px;
       transform: translate3d(-15px, -20px, 0);
       transition: all 0.2s;
-      color: #666666;
+      color: ${Greyscale.devilsgrey};
       font-size: 12px;
       background: ${Greyscale.white};
     }
