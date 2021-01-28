@@ -10,6 +10,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
   block,
   small,
   tag,
+  forwardedRef,
   isRoundedCorner,
   ...defaultProps
 }) => (
@@ -21,6 +22,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
     isRoundedCorner={isRoundedCorner}
   >
     <SolidBtn
+      ref={forwardedRef}
       className="solid-btn-content"
       theme={theme}
       disabled={disabled}
@@ -46,4 +48,10 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
   isRoundedCorner?: boolean;
 }
 
-export default SolidButton;
+const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
+  <SolidButton {...props} forwardedRef={ref} />
+);
+
+forwardRef.displayName = SolidButton.name;
+
+export default React.forwardRef(forwardRef);

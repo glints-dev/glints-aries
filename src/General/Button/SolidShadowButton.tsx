@@ -10,6 +10,7 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
   block,
   small,
   tag,
+  forwardedRef,
   ...defaultProps
 }) => (
   <SolidShadowContainer
@@ -19,6 +20,7 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
     block={block}
   >
     <SolidShadowBtn
+      ref={forwardedRef}
       className="solid-shadow-btn-content"
       theme={theme}
       disabled={disabled}
@@ -42,4 +44,10 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidShadowBtn> {
   tag?: React.ElementType;
 }
 
-export default SolidShadowButton;
+const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
+  <SolidShadowButton {...props} forwardedRef={ref} />
+);
+
+forwardRef.displayName = SolidShadowButton.name;
+
+export default React.forwardRef(forwardRef);
