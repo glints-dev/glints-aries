@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { BoxProps } from '../Box/types';
-import { FlexProps, FlexPropAndDefaultValueMap } from './types';
+import { FlexProps } from './types';
 
 type Props = FlexProps &
   BoxProps & {
@@ -12,14 +12,25 @@ type Props = FlexProps &
 
 export const StyledFlex = styled(Box)<Props>`
   display: flex;
-  flex-direction: ${({ flexDirection }) =>
-    flexDirection || FlexPropAndDefaultValueMap.flexDirection};
-  justify-content: ${({ justifyContent }) =>
-    justifyContent || FlexPropAndDefaultValueMap.justifyContent};
-  align-items: ${({ alignItems }) =>
-    alignItems || FlexPropAndDefaultValueMap.alignItems};
-  flex-wrap: ${({ flexWrap }) =>
-    flexWrap || FlexPropAndDefaultValueMap.flexWrap};
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+  flex-wrap: ${({ flexWrap }) => flexWrap};
 `;
 
-export const Flex: React.FC<Props> = props => <StyledFlex {...props} />;
+export const Flex: React.FC<Props> = ({
+  flexDirection = 'row',
+  justifyContent = 'flex-start',
+  alignItems = 'stretch',
+  flexWrap = 'nowrap',
+  // the rest of props will be passed to Box component
+  ...restProps
+}) => (
+  <StyledFlex
+    flexDirection={flexDirection}
+    justifyContent={justifyContent}
+    alignItems={alignItems}
+    flexWrap={flexWrap}
+    {...restProps}
+  />
+);
