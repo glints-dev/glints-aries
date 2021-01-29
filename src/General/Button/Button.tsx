@@ -66,8 +66,6 @@ const Button: React.FunctionComponent<Props> = ({
     </>
   );
 
-  console.log('forwardedRef', forwardedRef);
-
   const transformedVariant = transformVariant(variant, theme);
 
   switch (transformedVariant) {
