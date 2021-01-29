@@ -11,6 +11,7 @@ const GhostButton: React.FunctionComponent<Props> = ({
   small,
   tag,
   isRoundedCorner,
+  forwardedRef,
   ...defaultProps
 }) => (
   <GhostBtnContainer
@@ -21,6 +22,7 @@ const GhostButton: React.FunctionComponent<Props> = ({
     isRoundedCorner={isRoundedCorner}
   >
     <GhostBtn
+      ref={forwardedRef}
       className="ghostbtn-content"
       theme={theme}
       disabled={disabled}
@@ -46,4 +48,10 @@ interface Props extends React.ComponentPropsWithoutRef<typeof GhostBtn> {
   isRoundedCorner?: boolean;
 }
 
-export default GhostButton;
+const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
+  <GhostButton {...props} forwardedRef={ref} />
+);
+
+forwardRef.displayName = GhostButton.name;
+
+export default React.forwardRef(forwardRef);

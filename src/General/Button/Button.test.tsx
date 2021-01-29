@@ -121,3 +121,19 @@ describe('transform the legacy variant and theme props to corresponding variant'
     });
   });
 });
+
+describe('<Button /> forwards ref to underlying button element', () => {
+  Object.values(ButtonVariant).forEach(variant => {
+    test(`ref is being forwarded correctly for ${variant} button`, () => {
+      const ref = React.createRef<HTMLButtonElement>();
+      const { container } = render(
+        <Button ref={ref} variant={variant}>
+          ref
+        </Button>
+      );
+
+      const button = container.querySelector('button');
+      expect(button).toEqual(ref.current);
+    });
+  });
+});

@@ -55,6 +55,7 @@ const Button: React.FunctionComponent<Props> = ({
   startIcon,
   endIcon,
   theme,
+  forwardedRef,
   ...defaultProps
 }) => {
   const content = (
@@ -71,6 +72,7 @@ const Button: React.FunctionComponent<Props> = ({
     case ButtonVariant.YELLOW:
       return (
         <SolidShadowButton
+          ref={forwardedRef}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -84,6 +86,7 @@ const Button: React.FunctionComponent<Props> = ({
     case ButtonVariant.GHOST:
       return (
         <GhostButton
+          ref={forwardedRef}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -97,6 +100,7 @@ const Button: React.FunctionComponent<Props> = ({
     case ButtonVariant.WHITE_GREY:
       return (
         <WhiteGreyBtn
+          ref={forwardedRef}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -110,6 +114,7 @@ const Button: React.FunctionComponent<Props> = ({
     case ButtonVariant.LINK:
       return (
         <LinkButton
+          ref={forwardedRef}
           className={className}
           disabled={disabled}
           onClick={onClick}
@@ -122,6 +127,7 @@ const Button: React.FunctionComponent<Props> = ({
     default:
       return (
         <SolidButton
+          ref={forwardedRef}
           theme={SOLID_BUTTON_THEME_MAP[transformedVariant]}
           className={className}
           disabled={disabled}
