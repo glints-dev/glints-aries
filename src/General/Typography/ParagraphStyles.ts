@@ -24,10 +24,15 @@ export const PARAGRAPH_LINE_HEIGHTS = {
 export type paragraphType = 'subtitle' | 'regular' | 'caption' | 'smallest';
 
 export interface ParagraphProps {
+  /** Sets the Paragraph's font-weight to bold */
   bold?: boolean;
+  /** Sets the Paragraph's color */
   color?: string;
+  /** Display ellipsis when the title overflows */
   ellipsis?: boolean;
+  /** Sets the Paragraph's variant */
   variant?: paragraphType;
+  /** Adds a line-height value to the paragraph */
   shouldSetLineHeight?: boolean;
 }
 
