@@ -5,6 +5,7 @@ import { SecondaryColor, Greyscale } from '../../Utils/Colors';
 import { Toggle, ToggleBall } from './Styles';
 
 export interface ToggleSwitchProps {
+  /** Determines whether the ToggleSwitch is in an active state */
   active?: boolean;
   /** This will determine whether or not the component renders with an active or inactive state at the start. */
   defaultActive?: boolean;

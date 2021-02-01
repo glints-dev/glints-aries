@@ -28,3 +28,7 @@ export const ToggleSwitchWithIcons: Story<ToggleSwitchProps> = () => (
     }}
   />
 );
+
+export const ToggleSwitchInAnActiveState: Story<ToggleSwitchProps> = () => (
+  <ToggleSwitch active={true} />
+);
