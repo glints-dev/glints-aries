@@ -7,18 +7,16 @@ import {
 } from './ParagraphStyles';
 import { Greyscale } from '../../Utils/Colors';
 
-const Paragraph: React.FunctionComponent<Props> = props => {
-  const {
-    className,
-    children,
-    variant = 'regular',
-    bold,
-    color = Greyscale.black,
-    ellipsis,
-    shouldSetLineHeight = false,
-    ...restProps
-  } = props;
-
+export const Paragraph: React.FunctionComponent<Props> = ({
+  className,
+  children,
+  variant = 'regular',
+  bold = false,
+  color = Greyscale.black,
+  ellipsis = false,
+  shouldSetLineHeight = false,
+  ...restProps
+}) => {
   return (
     <StyledParagraph
       className={classNames('aries-typography-paragraph', className)}
@@ -34,7 +32,7 @@ const Paragraph: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props extends ParagraphProps {
+export interface Props extends ParagraphProps {
   className?: string;
   children: React.ReactNode;
   shouldSetLineHeight?: boolean;
