@@ -118,3 +118,11 @@ export const WithDifferentTag: Story<ButtonProps> = () => (
     </Button>
   </Flex>
 );
+
+export const WithRoundedCorner: Story<ButtonProps> = () => (
+  <Flex style={{ gap: '10px' }}>
+    <Button variant="solid-blue" isRoundedCorner={true}>
+      Rounded corner button
+    </Button>
+  </Flex>
+);
