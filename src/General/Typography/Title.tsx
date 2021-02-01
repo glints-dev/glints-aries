@@ -4,17 +4,15 @@ import classNames from 'classnames';
 import { Title as StyledTitle } from './TitleStyles';
 import { Greyscale } from '../../Utils/Colors';
 
-const Title: React.FunctionComponent<Props> = (props: Props) => {
-  const {
-    className,
-    children,
-    color = Greyscale.black,
-    ellipsis,
-    tag = 'h1',
-    uppercase = false,
-    ...restProps
-  } = props;
-
+export const Title: React.FunctionComponent<Props> = ({
+  className,
+  children,
+  color = Greyscale.black,
+  ellipsis = false,
+  tag = 'h1',
+  uppercase = false,
+  ...restProps
+}) => {
   return (
     <StyledTitle
       className={classNames('aries-typography-title', className)}
@@ -31,12 +29,16 @@ const Title: React.FunctionComponent<Props> = (props: Props) => {
 
 export type tagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-interface Props {
+export interface Props {
   className?: string;
   children: React.ReactNode;
+  /** Sets the Title's color */
   color?: string;
+  /** Display ellipsis when the title overflows */
   ellipsis?: boolean;
+  /** Sets the title tag to one of the heading tags */
   tag?: tagType;
+  /** Makes the title in all upper case */
   uppercase?: boolean;
 }
 
