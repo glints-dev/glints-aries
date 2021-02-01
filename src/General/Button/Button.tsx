@@ -171,6 +171,7 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Deprecated! */
   theme?: string;
   forwardedRef?: React.RefObject<HTMLButtonElement>;
+  /** Determines if the button should have rounded corners */
   isRoundedCorner?: boolean;
 }
 
