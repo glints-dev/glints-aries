@@ -217,7 +217,9 @@ export interface Props {
   arrowWhite?: boolean;
   /** If <code>true</code>, dot controls will be removed */
   removeDots?: boolean;
+  /** Sets the left icon. Receives the "disabled" value as an argument. */
   renderLeftIcon?: (disabled: boolean) => React.ReactElement;
+  /** Sets the right icon. Receives the "disabled" value as an argument. */
   renderRightIcon?: (disabled: boolean) => React.ReactElement;
   /** Called with the new index after a new Slider page has been shown */
   afterChange?: Function;
