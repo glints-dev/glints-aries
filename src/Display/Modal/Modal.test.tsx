@@ -25,14 +25,8 @@ const OpenedModal = (
   </Modal>
 );
 
-const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
-  <Modal isVisible={isVisible} onClose={props.onClose}>
-    <p>{props.content}</p>
-  </Modal>
-);
-
 type TestProps = Omit<Props, 'onClose'> & {
-  onClose?: any;
+  onClose?: () => void;
 };
 
 function setupModal(isVisible: boolean, customProps: TestProps = {}) {
