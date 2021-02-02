@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Modal, { sizeType } from './Modal';
+import Modal, { sizeType, Props } from './Modal';
 import { SIZES } from './ModalStyle';
 
 const props = {
@@ -31,7 +31,11 @@ const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
   </Modal>
 );
 
-function setupModal(isVisible: boolean) {
+type TestProps = Omit<Props, 'onClose'> & {
+  onClose?: any;
+};
+
+function setupModal(isVisible: boolean, customProps: TestProps = {}) {
   const onClose = jest.fn();
   const ModalComponent = (
     <Modal
@@ -39,6 +43,7 @@ function setupModal(isVisible: boolean) {
       isVisible={isVisible}
       footer={[<button key="button">{props.footer}</button>]}
       onClose={onClose}
+      {...customProps}
     >
       <p>{props.content}</p>
     </Modal>
@@ -139,6 +144,20 @@ describe('onClose should not have been called when:', () => {
   it('escape key is pressed on closed modal', () => {
     const { modalContainer, onClose } = setupModal(false);
     fireEvent.keyDown(modalContainer, escapeEvent);
+    expect(onClose).toHaveBeenCalledTimes(0);
+  });
+
+  it('onClose is not a function', () => {
+    const { closeButton, onClose } = setupModal(false, {
+      onClose: null,
+    });
+    fireEvent.click(closeButton);
+    expect(onClose).toHaveBeenCalledTimes(0);
+  });
+
+  it('modal-dialog is clicked', () => {
+    const { onClose } = setupModal(false);
+    fireEvent.click(document.getElementsByClassName('modal-dialog')[0]);
     expect(onClose).toHaveBeenCalledTimes(0);
   });
 });
