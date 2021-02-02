@@ -1,6 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 import { CloseIcon } from '../../General/Icon/components';
 import { escEvent as createEscapeKeyEventListener } from '../../Utils/DomUtils';
@@ -37,25 +42,31 @@ const Modal = (props: Props) => {
     setIsFooterChildrenInMultiLines,
   ] = React.useState(false);
 
+  const handleClose = React.useCallback(() => {
+    if (typeof onClose === 'function') {
+      onClose();
+    }
+  }, [onClose]);
+
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
 
     if (isVisible) {
       // On modal open
       modalContentAreaRef.current.focus();
-      document.body.style.overflow = 'hidden';
+      disableBodyScroll(modalContentAreaRef.current);
     } else {
       // On modal close
-      document.body.removeAttribute('style');
+      enableBodyScroll(modalContentAreaRef.current);
     }
     return () => {
-      document.body.removeAttribute('style');
+      clearAllBodyScrollLocks();
     };
   }, [isVisible, modalContentAreaRef]);
 
   React.useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
-      if (isVisible) onClose();
+      if (isVisible) handleClose();
     });
 
     document.addEventListener('keydown', escapeKeyEventListener, false);
@@ -65,7 +76,7 @@ const Modal = (props: Props) => {
     // to clean up the existing escape key event listener.
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
-  }, [isVisible, onClose]);
+  }, [isVisible, handleClose]);
 
   React.useLayoutEffect(
     function checkFooterResponsiveStyleOnMountAndOnWindowResize() {
@@ -103,10 +114,10 @@ const Modal = (props: Props) => {
     (e: React.MouseEvent) => {
       const element = e.target as HTMLElement;
       if (mouseDownTarget.current === element) {
-        onClose();
+        handleClose();
       }
     },
-    [mouseDownTarget, onClose]
+    [mouseDownTarget, handleClose]
   );
 
   return (
@@ -142,7 +153,7 @@ const Modal = (props: Props) => {
                 aria-label="Close button"
                 data-testid="close-button"
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
               >
                 <CloseIcon color={hideContentArea ? 'white' : 'grey'} />
               </button>
@@ -172,7 +183,7 @@ const Modal = (props: Props) => {
 
 export type sizeType = 's' | 'm' | 'l' | 'xl';
 
-interface Props
+export interface Props
   extends Omit<
     React.ComponentPropsWithoutRef<typeof ModalContentArea>,
     'title' // we don't really use this title attribute for div element

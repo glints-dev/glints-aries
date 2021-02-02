@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Modal, { sizeType } from './Modal';
+import Modal, { sizeType, Props } from './Modal';
 import { SIZES } from './ModalStyle';
 
 const props = {
@@ -25,13 +25,11 @@ const OpenedModal = (
   </Modal>
 );
 
-const ModalComponent = ({ isVisible }: { isVisible: boolean }) => (
-  <Modal isVisible={isVisible} onClose={props.onClose}>
-    <p>{props.content}</p>
-  </Modal>
-);
+type TestProps = Omit<Props, 'onClose'> & {
+  onClose?: () => void;
+};
 
-function setupModal(isVisible: boolean) {
+function setupModal(isVisible: boolean, customProps: TestProps = {}) {
   const onClose = jest.fn();
   const ModalComponent = (
     <Modal
@@ -39,6 +37,7 @@ function setupModal(isVisible: boolean) {
       isVisible={isVisible}
       footer={[<button key="button">{props.footer}</button>]}
       onClose={onClose}
+      {...customProps}
     >
       <p>{props.content}</p>
     </Modal>
@@ -141,6 +140,20 @@ describe('onClose should not have been called when:', () => {
     fireEvent.keyDown(modalContainer, escapeEvent);
     expect(onClose).toHaveBeenCalledTimes(0);
   });
+
+  it('onClose is not a function', () => {
+    const { closeButton, onClose } = setupModal(false, {
+      onClose: null,
+    });
+    fireEvent.click(closeButton);
+    expect(onClose).toHaveBeenCalledTimes(0);
+  });
+
+  it('modal-dialog is clicked', () => {
+    const { onClose } = setupModal(false);
+    fireEvent.click(document.getElementsByClassName('modal-dialog')[0]);
+    expect(onClose).toHaveBeenCalledTimes(0);
+  });
 });
 
 describe('displays the correct size', () => {
@@ -183,20 +196,6 @@ it('should center the Modal vertically when centering is true', () => {
   );
   const modalContainer = getByTestId('modal-container');
   expect(modalContainer).toHaveStyle('align-items: center;');
-});
-
-it('should remove overflow hidden from document body after unmount', () => {
-  const { unmount } = render(<ModalComponent isVisible={true} />);
-  expect(document.body).toHaveStyle('overflow: hidden');
-  unmount();
-  expect(document.body).not.toHaveStyle('overflow: hidden');
-});
-
-it('should remove overflow hidden from document body after close', () => {
-  const { rerender } = render(<ModalComponent isVisible={true} />);
-  expect(document.body).toHaveStyle('overflow: hidden');
-  rerender(<ModalComponent isVisible={false} />);
-  expect(document.body).not.toHaveStyle('overflow: hidden');
 });
 
 describe('<Modal /> not receiving prop onClose', () => {
