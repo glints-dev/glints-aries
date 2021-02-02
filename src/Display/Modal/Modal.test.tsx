@@ -204,20 +204,6 @@ it('should center the Modal vertically when centering is true', () => {
   expect(modalContainer).toHaveStyle('align-items: center;');
 });
 
-it('should remove overflow hidden from document body after unmount', () => {
-  const { unmount } = render(<ModalComponent isVisible={true} />);
-  expect(document.body).toHaveStyle('overflow: hidden');
-  unmount();
-  expect(document.body).not.toHaveStyle('overflow: hidden');
-});
-
-it('should remove overflow hidden from document body after close', () => {
-  const { rerender } = render(<ModalComponent isVisible={true} />);
-  expect(document.body).toHaveStyle('overflow: hidden');
-  rerender(<ModalComponent isVisible={false} />);
-  expect(document.body).not.toHaveStyle('overflow: hidden');
-});
-
 describe('<Modal /> not receiving prop onClose', () => {
   test('click on close button should not close the modal', () => {
     const { getByTestId } = render(

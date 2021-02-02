@@ -1,6 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 import { CloseIcon } from '../../General/Icon/components';
 import { escEvent as createEscapeKeyEventListener } from '../../Utils/DomUtils';
@@ -49,13 +54,13 @@ const Modal = (props: Props) => {
     if (isVisible) {
       // On modal open
       modalContentAreaRef.current.focus();
-      document.body.style.overflow = 'hidden';
+      disableBodyScroll(modalContentAreaRef.current);
     } else {
       // On modal close
-      document.body.removeAttribute('style');
+      enableBodyScroll(modalContentAreaRef.current);
     }
     return () => {
-      document.body.removeAttribute('style');
+      clearAllBodyScrollLocks();
     };
   }, [isVisible, modalContentAreaRef]);
 
