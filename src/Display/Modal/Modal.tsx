@@ -37,6 +37,12 @@ const Modal = (props: Props) => {
     setIsFooterChildrenInMultiLines,
   ] = React.useState(false);
 
+  const handleClose = React.useCallback(() => {
+    if (typeof onClose === 'function') {
+      onClose();
+    }
+  }, [onClose]);
+
   React.useLayoutEffect(() => {
     if (!modalContentAreaRef.current) return;
 
@@ -55,7 +61,7 @@ const Modal = (props: Props) => {
 
   React.useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
-      if (isVisible) onClose();
+      if (isVisible) handleClose();
     });
 
     document.addEventListener('keydown', escapeKeyEventListener, false);
@@ -65,7 +71,7 @@ const Modal = (props: Props) => {
     // to clean up the existing escape key event listener.
     return () =>
       document.removeEventListener('keydown', escapeKeyEventListener, false);
-  }, [isVisible, onClose]);
+  }, [isVisible, handleClose]);
 
   React.useLayoutEffect(
     function checkFooterResponsiveStyleOnMountAndOnWindowResize() {
@@ -103,10 +109,10 @@ const Modal = (props: Props) => {
     (e: React.MouseEvent) => {
       const element = e.target as HTMLElement;
       if (mouseDownTarget.current === element) {
-        onClose();
+        handleClose();
       }
     },
-    [mouseDownTarget, onClose]
+    [mouseDownTarget, handleClose]
   );
 
   return (
@@ -142,7 +148,7 @@ const Modal = (props: Props) => {
                 aria-label="Close button"
                 data-testid="close-button"
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
               >
                 <CloseIcon color={hideContentArea ? 'white' : 'grey'} />
               </button>
