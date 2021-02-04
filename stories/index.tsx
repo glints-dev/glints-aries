@@ -41,7 +41,6 @@ import PointingModalStory from './Display/PointingModalStory';
 import PopoverStory from './Display/PopoverStory';
 import ProfilePictureStory from './General/ProfilePictureStory';
 import RadioButtonStory from './Input/RadioButtonStory';
-import SearchFilterStory from './Input/SearchFilterStory';
 import SelectStory from './Input/SelectStory';
 import SliderStory from './Display/SliderStory';
 import StorybookComponentStory from './Utilities/StorybookComponentStory';
@@ -104,7 +103,6 @@ storiesOf('Input', module)
   .add('Datepicker', () => <DatepickerStory />)
   .add('NumberInput', () => <NumberInputStory />)
   .add('Radio Button', () => <RadioButtonStory />)
-  .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Toggle Switch', () => <ToggleSwitchStory />)
   .add('Textarea', () => <TextareaStory />)
