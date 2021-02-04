@@ -35,7 +35,7 @@ jobs:
         run: yarn test
   deploy:
     needs: validate
-    if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4' || github.ref == 'refs/heads/storybook6'
+    if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
