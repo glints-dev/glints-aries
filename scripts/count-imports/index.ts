@@ -1,52 +1,59 @@
-// Usage: babel-node --extensions .ts index.ts path/to/directory
-// Counts the number of imported Aries components in a given directory
+import { assignWith, chain, mapValues } from 'lodash';
+import { countImports } from './count-imports';
+import { fetchUnits } from './fetch-units';
 
-import * as fs from 'fs';
-import glob from 'glob';
-import * as async from 'async';
-import _ from 'lodash';
-
-import parse from './parser';
-import { ariesImportIdentifiers } from './filters';
-
-const cwd = process.argv[2];
-if (!cwd) throw 'Please pass the repo to count in as an argument';
-
-// Generates a list of all .js files in the given directory
-const globFiles = (
-  cwd: string,
-  callback: (error: Error, matches: string[]) => void
-) => {
-  return glob(
-    '**/!(*.spec|*.d).{ts,tsx,js,jsx}',
-    { cwd, ignore: ['node_modules/**', 'dist/**'], absolute: true },
-    callback
+const getImportsCount = cwd =>
+  new Promise<object>((resolve, reject) =>
+    countImports(cwd, (error, result: object) => {
+      if (error) reject(error);
+      else resolve(result);
+    })
   );
+
+const countUnitExportsInImports = (units, imports) =>
+  mapValues(units, exportsString => {
+    if (exportsString === null) return 0;
+    const exports = exportsString.split(/,\s?/);
+    const counted = chain(exports)
+      .map(exp =>
+        chain(imports)
+          .keys()
+          .filter(imp => new RegExp(`${exp}`).test(imp))
+          .map(imp => imports[imp])
+          .sum()
+          .value()
+      )
+      .sum()
+      .value();
+    return counted;
+  });
+
+/**
+ * This script downloads our Glints Aries Status google sheet and counts how many times exports from a code unit are imported in a given repo. Paths to repos may be specified as command line parameters. The script requires an active Internet connection and must be able to parse the source code files in the given repos. The script outputs the counts in the same order as the code units are given in the status sheet so that they can be copy-pasted over from the command-line.
+ */
+const main = async () => {
+  const cwds = process.argv.slice(2);
+  if (cwds.length === 0)
+    throw 'Please pass at least one repo to count in as an argument';
+
+  const units = await fetchUnits();
+
+  const unitCounts = await Promise.all(
+    cwds.map(async cwd => {
+      const imports = await getImportsCount(cwd);
+      const consolidated = countUnitExportsInImports(units, imports);
+      return consolidated;
+    })
+  );
+
+  const totalUnitCounts = assignWith(
+    mapValues(units, () => 0),
+    ...unitCounts,
+    (targetVal, sourceVal) => (targetVal || 0) + sourceVal
+  );
+
+  // console.log(totalUnitCounts);
+  console.log(Object.values(totalUnitCounts).join('\n'));
 };
 
-// Parses a given file and runs it against the filter that counts the imports
-const getAriesImportCountFromFile = (file: string) => {
-  const code = fs.readFileSync(file, { encoding: 'utf-8' });
-  try {
-    const ast = parse(code);
-    return ariesImportIdentifiers(ast);
-  } catch (error) {
-    console.error(`Parse error in ${file}`);
-    console.error(error);
-    return 0;
-  }
-};
-
-// async.map executes a function on every item in the input array in "parallel"
-async.waterfall(
-  [
-    async.constant(cwd),
-    globFiles,
-    _.bind(async.map, this, _, async.asyncify(getAriesImportCountFromFile)),
-    async.asyncify(_.sum),
-  ],
-  (error: Error, result: number) => {
-    if (error) console.error(error);
-    console.log(result);
-  }
-);
+main();

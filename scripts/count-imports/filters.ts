@@ -11,7 +11,8 @@ export const ariesImportIdentifiers = (ast: File) => {
     // form of component names left in the input. A regular map would result
     // in an array of specifiers array, so we use flatMap to flatten the array.
     .flatMap('specifiers')
-    .size()
+    .flatMap('imported')
+    .flatMap('name')
     .value();
   return result;
 };
