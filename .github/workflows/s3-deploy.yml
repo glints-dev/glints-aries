@@ -2,7 +2,7 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - storybook6
+      - v4
     paths-ignore:
       - package.json
 jobs:
