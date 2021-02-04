@@ -1,0 +1,72 @@
+import { Fragment } from 'react';
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Shadow } from './';
+import {
+  levels,
+  levelUsages,
+  PreviewCell,
+  PreviewBox,
+} from './ShadowsStoriesHelpers';
+import { PrimaryColor } from '../Colors';
+
+<Meta title="Utilities/Shadow" />
+
+# Shadow
+
+Depth determines the position level of each component and content depending on
+page's hierarchy and focus. Shadows are used to express depth of elements from
+each other.
+
+```TypeScript
+import { Shadow } from 'glints-aries';
+
+// In CSS
+const MyCard = styled.div`
+  box-shadow: ${Shadow.down1};
+`;
+
+// With Box
+<Box boxShadow={Shadow.down1} />
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Name</th>
+      <th>Style</th>
+      <th>Preview</th>
+      <th>Recommended Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    {levels.map((level, index) => (
+      <Fragment key={index}>
+        <tr>
+          <td rowSpan={2}>Level {index + 1}</td>
+          <td>
+            <code>up{index + 1}</code>
+          </td>
+          <td>
+            <code>{level[0]}</code>
+          </td>
+          <td rowSpan={2}>
+            <PreviewCell>
+              <PreviewBox shadow={level[0]} />
+              <PreviewBox shadow={level[1]} />
+            </PreviewCell>
+          </td>
+          <td rowSpan={2}>{levelUsages[index]}</td>
+        </tr>
+        <tr>
+          <td>
+            <code>down{index + 1}</code>
+          </td>
+          <td>
+            <code>{level[1]}</code>
+          </td>
+        </tr>
+      </Fragment>
+    ))}
+  </tbody>
+</table>
