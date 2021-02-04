@@ -25,8 +25,9 @@ const OpenedModal = (
   </Modal>
 );
 
-type TestProps = Omit<Props, 'onClose'> & {
+type TestProps = Omit<Props, 'onClose' | 'isVisible'> & {
   onClose?: () => void;
+  isVisible?: boolean;
 };
 
 function setupModal(isVisible: boolean, customProps: TestProps = {}) {

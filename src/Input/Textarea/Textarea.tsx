@@ -29,7 +29,7 @@ export const Textarea: FC<Props> = ({
   onChange,
   forwardedRef,
   removeFloatingLabel = false,
-  small,
+  small = false,
   ...restProps
 }) => {
   const [floating, setFloating] = React.useState<boolean>(false);
@@ -132,6 +132,7 @@ export interface Props extends HTMLAttributes<HTMLTextAreaElement> {
   removeFloatingLabel?: boolean;
   disabled?: boolean;
   forwardedRef?: RefObject<HTMLTextAreaElement>;
+  small?: boolean;
 }
 
 const forwardRef = (props: Props, ref: RefObject<HTMLTextAreaElement>) => (

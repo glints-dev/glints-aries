@@ -129,7 +129,7 @@ describe('<Button /> forwards ref to underlying button element', () => {
     test(`ref is being forwarded correctly for ${variant} button`, () => {
       const ref = React.createRef<HTMLButtonElement>();
       const { container } = render(
-        <Button ref={ref} variant={variant}>
+        <Button ref={ref} variant={variant as ButtonVariantType}>
           ref
         </Button>
       );
