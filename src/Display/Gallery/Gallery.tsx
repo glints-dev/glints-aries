@@ -38,6 +38,9 @@ const Gallery = ({
   React.useEffect(function componentDidMount() {
     if (React.Children.count(children) > imagesDisplayed)
       setImageLeft(React.Children.count(children) - imagesDisplayed);
+    // Disabling this warning because we want to preserver some legacy
+    // behaviour here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(

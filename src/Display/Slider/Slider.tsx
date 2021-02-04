@@ -101,6 +101,9 @@ export const Slider = ({
         setIndex(1);
       }
     }
+    // Disabling this warning because we want to preserver some legacy
+    // behaviour here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(
