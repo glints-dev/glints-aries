@@ -27,7 +27,6 @@ export { default as PointingModal } from './Display/PointingModal';
 export { default as Popover } from './Display/Popover';
 export { default as ProfilePicture } from './General/ProfilePicture';
 export { default as RadioButton } from './Input/RadioButton';
-export { default as SearchFilter } from './Input/SearchFilter';
 export { default as Select } from './Input/Select';
 export { default as Slider } from './Display/Slider';
 export { default as Swipeable } from './Display/Swipeable';
