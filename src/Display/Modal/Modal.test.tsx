@@ -104,6 +104,16 @@ describe('when modal is closed', () => {
     const children = queryByTestId('modal-children');
     expect(children).not.toBeInTheDocument();
   });
+
+  it('children should be mounted if destroyOnClose prop is false', () => {
+    const { queryByTestId } = render(
+      <Modal isVisible={false} onClose={props.onClose} destroyOnClose={false}>
+        <p data-testid="modal-children">{props.content}</p>
+      </Modal>
+    );
+    const children = queryByTestId('modal-children');
+    expect(children).toBeInTheDocument();
+  });
 });
 
 const escapeEvent = {
