@@ -105,9 +105,13 @@ describe('when modal is closed', () => {
     expect(children).not.toBeInTheDocument();
   });
 
-  it('children should be mounted if destroyOnClose prop is false', () => {
+  it('children should be mounted if keepChildrenMountedOnClose prop is true', () => {
     const { queryByTestId } = render(
-      <Modal isVisible={false} onClose={props.onClose} destroyOnClose={false}>
+      <Modal
+        isVisible={false}
+        onClose={props.onClose}
+        keepChildrenMountedOnClose={true}
+      >
         <p data-testid="modal-children">{props.content}</p>
       </Modal>
     );

@@ -41,7 +41,7 @@ export const Modal: FC<Props> = ({
   footer,
   size,
   hideHeader,
-  destroyOnClose,
+  keepChildrenMountedOnClose,
   ...restProps
 }) => {
   const modalContentAreaRef = useRef(null);
@@ -129,7 +129,7 @@ export const Modal: FC<Props> = ({
     [mouseDownTarget, handleClose]
   );
 
-  const shouldMountChildren = isVisible || (!isVisible && !destroyOnClose);
+  const shouldMountChildren = isVisible || keepChildrenMountedOnClose;
 
   return (
     <ModalContainer
@@ -213,8 +213,8 @@ export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   hideHeader?: boolean;
   /** Hides content area. */
   hideContentArea?: boolean;
-  /** Whether to unmount child components on onClose */
-  destroyOnClose?: boolean;
+  /** Whether to keep the child in the DOM when the modal is close */
+  keepChildrenMountedOnClose?: boolean;
 }
 
 Modal.defaultProps = {
@@ -224,7 +224,7 @@ Modal.defaultProps = {
   hideHeader: false,
   removeAnimation: false,
   centering: false,
-  destroyOnClose: true,
+  keepChildrenMountedOnClose: false,
 };
 
 export default Modal;
