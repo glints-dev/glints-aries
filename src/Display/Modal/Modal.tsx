@@ -41,6 +41,7 @@ export const Modal: FC<Props> = ({
   footer,
   size,
   hideHeader,
+  destroyOnClose,
   ...restProps
 }) => {
   const modalContentAreaRef = useRef(null);
@@ -128,6 +129,8 @@ export const Modal: FC<Props> = ({
     [mouseDownTarget, handleClose]
   );
 
+  const shouldMountChildren = isVisible || (!isVisible && !destroyOnClose);
+
   return (
     <ModalContainer
       data-testid="modal-container"
@@ -172,7 +175,7 @@ export const Modal: FC<Props> = ({
             hideContentArea={hideContentArea}
             centering={centering}
           >
-            {isVisible && children}
+            {shouldMountChildren && children}
           </ModalBody>
           {footer !== undefined && (
             <ModalFooter
@@ -192,16 +195,26 @@ export const Modal: FC<Props> = ({
 export type sizeType = 's' | 'm' | 'l' | 'xl';
 
 export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
-  title?: ReactNode; // we don't really use this title attribute for div element
+  /** Sets title of Modal. */
+  title?: ReactNode;
+  /** Sets the visibility of Modal. */
   isVisible: boolean;
+  /** Sets to close Modal. */
   onClose?(): void;
-  hideContentArea?: boolean;
-  centering?: boolean;
-  removeAnimation?: boolean;
   /** An array containing 0-2 elements. */
   footer?: ReactElement[];
+  /** Centering Modal. */
+  centering?: boolean;
+  /** Removes animation when opening and closing the modal. */
+  removeAnimation?: boolean;
+  /** Sets size of Modal. */
   size?: sizeType;
+  /** Hides header area. */
   hideHeader?: boolean;
+  /** Hides content area. */
+  hideContentArea?: boolean;
+  /** Whether to unmount child components on onClose */
+  destroyOnClose?: boolean;
 }
 
 Modal.defaultProps = {
@@ -211,6 +224,7 @@ Modal.defaultProps = {
   hideHeader: false,
   removeAnimation: false,
   centering: false,
+  destroyOnClose: true,
 };
 
 export default Modal;
