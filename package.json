@@ -18,7 +18,7 @@
     "lint:ts": "eslint '**/*.{ts,tsx}'",
     "test:update": "jest -u",
     "test": "jest",
-    "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/'",
+    "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/' --collectCoverageFrom='!src/**/*.stories.tsx' --collectCoverageFrom='!src/**/*StoryStyle.tsx' --collectCoverageFrom='!src/**/*StoriesHelpers.tsx' --collectCoverageFrom='!src/stories/story-components/**'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -o .out -s dist/public",
     "storybook:build:assets": "webpack"
