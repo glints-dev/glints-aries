@@ -32,10 +32,20 @@ const PageStyles = css`
   @media ${Device.desktopL} {
     width: 1260px;
   }
+
+  .rc-select-item {
+    width: 100%;
+    height: 100px;
+  }
 `;
 
 export const BaseContainer = styled.div`
   ${BaseStyles}
+
+  .rc-select-item {
+    width: 100%;
+    height: 100px;
+  }
 `;
 
 export const PageContainer = styled.div`
