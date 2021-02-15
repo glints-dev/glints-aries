@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 import { CheckboxProps } from './Checkbox';
 
@@ -24,18 +24,18 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       display: block;
       position: absolute;
-      top: ${({ size }) => (size === 'small' ? '1.8px' : '3.3px')};
-      left: ${({ size }) => (size === 'small' ? '6.3px' : '7.5px')};
-      width: 6px;
-      height: 12px;
+      top: ${({ size }) => (size === 'small' ? '0.13em' : '0.24em')};
+      left: ${({ size }) => (size === 'small' ? '0.45em' : '0.54em')};
+      width: 0.43em;
+      height: 0.86em;
       border: solid ${Greyscale.white};
-      border-width: 0 2px 2px 0;
+      border-width: 0 0.143em 0.143em 0;
       transform: rotate(45deg);
       ${({ border, size }) => {
         if (border) {
-          return `
-            margin-top: ${size === 'small' ? '8.5px' : '8px'};
-            margin-left: 12.5px;
+          return css`
+            margin-top: ${size === 'small' ? '0.61em' : '0.57em'};
+            margin-left: 0.89em;
           `;
         }
       }};
@@ -60,11 +60,11 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     outline: none;
     ${({ border }) => {
       if (border) {
-        return `
+        return css`
           border: 1px solid #aaaaaa;
           cursor: pointer;
           border-radius: 8px;
-          padding: 8px 12px;
+          padding: 0.57em 0.86em;
           &:hover {
             background: rgba(1, 126, 183, 0.1);
             border-color: ${SecondaryColor.actionblue};
@@ -75,7 +75,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
 
     ${({ checked }) => {
       if (checked) {
-        return `
+        return css`
           border-color: ${SecondaryColor.actionblue};
         `;
       }
@@ -86,15 +86,14 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       appearance: none;
       background-color: transparent;
       border: 1px solid ${Greyscale.grey};
-      padding: 0.6em;
       display: inline-block;
       position: relative;
       vertical-align: middle;
       cursor: pointer;
       margin-right: 10px;
       border-radius: 4px;
-      height: 18px;
-      width: 18px;
+      width: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')};
+      height: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')};
       box-sizing: border-box;
     }
   }
