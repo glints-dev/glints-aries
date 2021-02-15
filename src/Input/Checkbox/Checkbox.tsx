@@ -32,17 +32,16 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       role="checkbox"
       aria-labelledby={id}
       aria-checked={combinedChecked}
+      data-border={border ? 'true' : 'false'}
       tabIndex={0}
       size={size}
-      border={border}
-      checked={combinedChecked}
     >
       <input
         type="checkbox"
         id={id}
         value={value}
         onClick={handleClick}
-        checked={combinedChecked}
+        checked={combinedChecked !== 'false'}
         {...restProps}
       />
       <label htmlFor={id} tabIndex={-1}>
