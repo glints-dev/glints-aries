@@ -24,8 +24,10 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       content: '';
       display: block;
       position: absolute;
-      top: ${({ size }) => (size === 'small' ? '0.13em' : '0.24em')};
-      left: ${({ size }) => (size === 'small' ? '0.45em' : '0.54em')};
+      /* top: ${({ size }) => (size === 'small' ? '0.13em' : '0.24em')}; */
+      top: 0.13em;
+      /* left: ${({ size }) => (size === 'small' ? '0.45em' : '0.54em')}; */
+      left: 0.45em;
       width: 0.43em;
       height: 0.86em;
       border: solid ${Greyscale.white};
@@ -34,7 +36,8 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       ${({ border, size }) => {
         if (border) {
           return css`
-            margin-top: ${size === 'small' ? '0.61em' : '0.57em'};
+            /* margin-top: ${size === 'small' ? '0.61em' : '0.57em'}; */
+            margin-top: 0.61em;
             margin-left: 0.89em;
           `;
         }
@@ -92,8 +95,10 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
       cursor: pointer;
       margin-right: 10px;
       border-radius: 4px;
-      width: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')};
-      height: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')};
+      /* width: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')}; */
+      width: 1.29em;
+      /* height: ${({ size }) => (size === 'small' ? '1.29em' : '1.45em')}; */
+      height: 1.29em;
       box-sizing: border-box;
     }
   }
