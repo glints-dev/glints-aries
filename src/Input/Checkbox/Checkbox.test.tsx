@@ -14,12 +14,13 @@ const props = {
 
 function setupCheckbox(props: CheckboxProps) {
   const { id, value, onClick, ...restProps } = props;
-  const { getByText, getByLabelText, ...utils } = render(
+  const { getByText, getByLabelText, getByRole, ...utils } = render(
     <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
   );
   const checkboxInput = getByLabelText(value as string) as HTMLInputElement;
   const checkboxLabel = getByText(value as string) as HTMLLabelElement;
-  return { checkboxInput, checkboxLabel, utils };
+  const checkboxContainer = getByRole('checkbox');
+  return { checkboxInput, checkboxLabel, checkboxContainer, utils };
 }
 
 afterEach(() => {
@@ -58,6 +59,18 @@ it('when controlled, it should fire onClick but remain unchanged', () => {
   fireEvent.click(checkboxLabel);
   expect(props.onClick).toHaveBeenCalledTimes(1);
   expect(checkboxInput.checked).toEqual(false);
+});
+
+it('when in mixed syaye, it should fire onClick but remain unchanged', () => {
+  const { checkboxInput, checkboxLabel } = setupCheckbox({
+    ...props,
+    checked: false,
+    indeterminate: true,
+  });
+
+  fireEvent.click(checkboxLabel);
+  expect(props.onClick).toHaveBeenCalledTimes(1);
+  expect(checkboxInput.checked).toEqual(true);
 });
 
 it('when controlled, the component should change with checked prop', () => {
@@ -107,6 +120,35 @@ describe('when it is rendered', () => {
     expect(checkboxInput.checked).toEqual(false);
   });
 
+  it('should report as checked if intermediate=true', () => {
+    const { checkboxInput } = setupCheckbox({ ...props, indeterminate: true });
+    expect(checkboxInput.checked).toEqual(true);
+  });
+
+  it('should have attribute aria-checked=false if checked=false', () => {
+    const { checkboxContainer } = setupCheckbox({
+      ...props,
+      checked: false,
+    });
+    expect(checkboxContainer.getAttribute('aria-checked')).toEqual('false');
+  });
+
+  it('should have attribute aria-checked=true if checked=true', () => {
+    const { checkboxContainer } = setupCheckbox({
+      ...props,
+      checked: true,
+    });
+    expect(checkboxContainer.getAttribute('aria-checked')).toEqual('true');
+  });
+
+  it('should have attribute aria-checked=mixed if intermediate=true', () => {
+    const { checkboxContainer } = setupCheckbox({
+      ...props,
+      indeterminate: true,
+    });
+    expect(checkboxContainer.getAttribute('aria-checked')).toEqual('mixed');
+  });
+
   it('should have the correct input id and value', async () => {
     const { checkboxInput } = setupCheckbox(props);
     expect(checkboxInput.id).toEqual(props.id);
@@ -115,6 +157,12 @@ describe('when it is rendered', () => {
 
   it('should return the input value when onClick is passed a function: event => event.target.value', () => {
     const { checkboxLabel } = setupCheckbox(props);
+    fireEvent.click(checkboxLabel);
+    expect(props.onClick.mock.results[0].value).toEqual(props.value);
+  });
+
+  it('should return the input value when onClick is passed a function: event => event.target.value if indeterminate=true', () => {
+    const { checkboxLabel } = setupCheckbox({ ...props, indeterminate: true });
     fireEvent.click(checkboxLabel);
     expect(props.onClick.mock.results[0].value).toEqual(props.value);
   });
