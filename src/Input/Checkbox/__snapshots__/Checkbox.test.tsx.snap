@@ -2,10 +2,10 @@
 
 exports[`<Checkbox> should render an input with id, value and onClick props and a label with the text Software Engineer 1`] = `
 <div
-  aria-checked={false}
+  aria-checked="false"
   aria-labelledby="software-engineer"
-  checked={false}
-  className="CheckboxStyle__CheckboxContainer-c3ckvs-0 bbRgMp aries-checkbox"
+  className="CheckboxStyle__CheckboxContainer-c3ckvs-0 dGmkTB aries-checkbox"
+  data-border="false"
   role="checkbox"
   size="small"
   tabIndex={0}
