@@ -21,7 +21,7 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     cursor: pointer;
   }
 
-  // ---- tick box --------
+  /* tick box */
   label:before {
     content: '';
     appearance: none;
@@ -50,7 +50,11 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     background: ${SecondaryColor.darkgreen};
   }
 
-  // ---- label --------
+  &[aria-checked='mixed'] label:before {
+    background: ${Greyscale.devilsgrey};
+  }
+
+  /* label */
   label {
     position: relative;
     display: flex;
@@ -75,21 +79,31 @@ export const CheckboxContainer = styled.div<CheckboxProps>`
     }
   }
 
-  // ---- tick mark --------
-  &[aria-checked='true'] label:after {
+  /* tick mark */
+  &[aria-checked='true'] label:after,
+  &[aria-checked='mixed'] label:after {
     content: '';
     display: block;
     position: absolute;
+    border: solid ${Greyscale.white};
+  }
+  &[aria-checked='true'] label:after {
     top: 0.13em;
     left: 0.45em;
     width: 0.43em;
     height: 0.86em;
-    border: solid ${Greyscale.white};
     border-width: 0 0.143em 0.143em 0;
     transform: rotate(45deg);
   }
+  &[aria-checked='mixed'] label:after {
+    top: 0.55em;
+    left: 0.45em;
+    width: 0.43em;
+    border-width: 0.143em 0 0 0;
+  }
 
-  &[aria-checked='true'][data-border='true'] label:after {
+  &[aria-checked='true'][data-border='true'] label:after,
+  &[aria-checked='mixed'][data-border='true'] label:after {
     margin-top: 0.61em;
     margin-left: 0.89em;
   }

@@ -47,6 +47,14 @@ Sizes.args = {
   size: 'large',
 };
 
+export const Indeterminate = Template.bind({});
+Indeterminate.args = {
+  id: 'indeterminate-engineer',
+  value: 'indeterminate-engineer',
+  label: 'Indeterminate Engineer',
+  indeterminate: true,
+};
+
 const FontSizeStory: Story<CheckboxProps> = args => (
   <div>
     <TestBox fontSize="10px">
