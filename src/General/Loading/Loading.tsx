@@ -8,10 +8,10 @@ export const Loading: FC<Props> = props => {
 
   return (
     <LoadingContainer
+      data-testid="alert"
       {...props}
       className={classNames('aries-loading', className)}
       role="alert"
-      data-testid="alert"
       aria-busy="true"
       aria-live="polite"
     >
