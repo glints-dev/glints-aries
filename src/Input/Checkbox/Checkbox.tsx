@@ -4,6 +4,20 @@ import classNames from 'classnames';
 import { CheckboxContainer } from './CheckboxStyle';
 import isUndefined from 'lodash/isUndefined';
 
+export type CheckedState = 'false' | 'true' | 'mixed';
+
+const getCheckedState = (
+  internalChecked: boolean,
+  externalChecked: boolean,
+  externalIndeterminate: boolean
+): CheckedState => {
+  if (externalIndeterminate) return 'mixed';
+  if (!isUndefined(externalChecked)) {
+    return externalChecked ? 'true' : 'false';
+  }
+  return internalChecked ? 'true' : 'false';
+};
+
 export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   id,
   label,
@@ -11,6 +25,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   onClick,
   size = 'small',
   border = false,
+  indeterminate = undefined,
   className,
   checked,
   ...restProps
@@ -24,7 +39,11 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
     }
   };
 
-  const combinedChecked = isUndefined(checked) ? internalChecked : checked;
+  const combinedChecked = getCheckedState(
+    internalChecked,
+    checked,
+    indeterminate
+  );
 
   return (
     <CheckboxContainer
@@ -63,6 +82,8 @@ export interface CheckboxProps extends HTMLInputProps {
   value?: string;
   /** If given, the Checkbox will be treated as controlled. Use with onClick. */
   checked?: boolean;
+  /** If true, overrides 'checked' and puts the checkbox in mixed state */
+  indeterminate?: boolean;
   /** Called when the checkbox changed (uncontrolled) or should change (controlled). */
   onClick?: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 }
