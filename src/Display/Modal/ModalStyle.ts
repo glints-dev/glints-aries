@@ -81,8 +81,9 @@ export const ModalContentArea = styled.div<InnerProps>`
   ${({ centering }) => {
     if (centering) {
       return `
+        display: flex;
+        flex-direction: column;
         max-height: 85vh;
-        overflow: auto;
       `;
     }
   }}

@@ -44,7 +44,8 @@ export const Modal: FC<Props> = ({
   keepChildrenMountedOnClose,
   ...restProps
 }) => {
-  const modalContentAreaRef = useRef(null);
+  const modalContainerRef = useRef(null);
+  const modalBodyRef = useRef(null);
   const modalFooterRef = useRef(null);
   const [
     isFooterChildrenInMultiLines,
@@ -58,20 +59,30 @@ export const Modal: FC<Props> = ({
   }, [onClose]);
 
   useLayoutEffect(() => {
-    if (!modalContentAreaRef.current) return;
+    const scrollableTarget = centering
+      ? modalBodyRef.current
+      : modalContainerRef.current;
+
+    if (!scrollableTarget) return;
+
+    /**
+     * this tricks mobile safari into thinking the overlay is scrollable, thus
+     * intercepting the touch event from the body to prevent background scrolling
+     */
+    scrollableTarget.style['-webkit-overflow-scrolling'] = 'touch';
 
     if (isVisible) {
       // On modal open
-      modalContentAreaRef.current.focus();
-      disableBodyScroll(modalContentAreaRef.current);
+      scrollableTarget.focus();
+      disableBodyScroll(scrollableTarget);
     } else {
       // On modal close
-      enableBodyScroll(modalContentAreaRef.current);
+      enableBodyScroll(scrollableTarget);
     }
     return () => {
       clearAllBodyScrollLocks();
     };
-  }, [isVisible, modalContentAreaRef]);
+  }, [isVisible, centering, modalContainerRef]);
 
   useEffect(() => {
     const escapeKeyEventListener = createEscapeKeyEventListener(() => {
@@ -140,6 +151,7 @@ export const Modal: FC<Props> = ({
       removeAnimation={removeAnimation}
       onMouseDown={handleMouseDown}
       onClick={handleClick}
+      ref={modalContainerRef}
     >
       <ModalDialog className="modal-dialog">
         <ModalContentArea
@@ -154,7 +166,6 @@ export const Modal: FC<Props> = ({
           isOpen={isVisible}
           removeAnimation={removeAnimation}
           size={size}
-          ref={modalContentAreaRef}
           {...restProps}
         >
           {!hideHeader && (
@@ -174,6 +185,7 @@ export const Modal: FC<Props> = ({
             className="modal-body"
             hideContentArea={hideContentArea}
             centering={centering}
+            ref={modalBodyRef}
           >
             {shouldMountChildren && children}
           </ModalBody>
