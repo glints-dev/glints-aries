@@ -44,6 +44,7 @@ export const Modal: FC<Props> = ({
   keepChildrenMountedOnClose,
   ...restProps
 }) => {
+  const modalContentAreaRef = useRef(null);
   const modalContainerRef = useRef(null);
   const modalBodyRef = useRef(null);
   const modalFooterRef = useRef(null);
@@ -73,7 +74,7 @@ export const Modal: FC<Props> = ({
 
     if (isVisible) {
       // On modal open
-      scrollableTarget.focus();
+      modalContentAreaRef.current.focus();
       disableBodyScroll(scrollableTarget);
     } else {
       // On modal close
@@ -166,6 +167,7 @@ export const Modal: FC<Props> = ({
           isOpen={isVisible}
           removeAnimation={removeAnimation}
           size={size}
+          ref={modalContentAreaRef}
           {...restProps}
         >
           {!hideHeader && (
