@@ -412,3 +412,19 @@ describe('<DropdownBody/> onClick', () => {
     expect(dropdownContent).toBeVisible();
   });
 });
+
+describe('<DropdownBody/> prop disable', () => {
+  test('dropdown should not open when it is clicked', async () => {
+    const optionText = 'Product Manager';
+    const { queryByRole, queryByText } = render(
+      <Dropdown label="Career" disabled={true}>
+        <DropdownItem value="pm">{optionText}</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole('menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(optionText);
+    expect(option).not.toBeVisible();
+  });
+});
