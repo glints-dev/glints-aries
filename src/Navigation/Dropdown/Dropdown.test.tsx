@@ -152,7 +152,7 @@ describe('<Dropdown/> mouse event', () => {
     expect(optionSE).toBeVisible();
   });
 
-  test('options should appear when mouse hovering on it, if prop hoverToOpen is truthy', () => {
+  test('options should appear when mouse hovering on it and disappear when mouse leaving, if prop hoverToOpen is truthy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career" hoverToOpen={true}>
         <DropdownItem value="pm">Product Manager</DropdownItem>
@@ -168,6 +168,10 @@ describe('<Dropdown/> mouse event', () => {
 
     expect(optionPM).toBeVisible();
     expect(optionSE).toBeVisible();
+
+    fireEvent.mouseLeave(dropdown);
+    expect(optionPM).not.toBeVisible();
+    expect(optionSE).not.toBeVisible();
   });
 
   test('dropdown button should be highlighted when mouse is hovering on', () => {
