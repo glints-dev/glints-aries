@@ -391,3 +391,24 @@ describe('<DropdownItem/> onClick', () => {
     expect(option).not.toBeVisible();
   });
 });
+
+describe('<DropdownBody/> onClick', () => {
+  test('clicking DropdownBody should not close dropdown', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const dropdownContent = queryByRole(document.body, 'listbox');
+    expect(dropdownContent).toBeVisible();
+
+    const dropdownBody = document.querySelector('.dropdown-listbox');
+    fireEvent.click(dropdownBody);
+    expect(dropdownContent).toBeVisible();
+  });
+});
