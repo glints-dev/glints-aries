@@ -444,12 +444,17 @@ describe('<DropdownItem/> onClick', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  test('onClick callback should not be called when it is not a function', async () => {
+  test('invalid onClick value should not break anything', async () => {
     const onClick = 'invalid-on-click';
     const menuText = 'Product Manager';
     render(
       <Dropdown label="Career">
-        <DropdownItem value="pm" onClick={onClick}>
+        <DropdownItem
+          value="pm"
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          onClick={onClick}
+        >
           {menuText}
         </DropdownItem>
       </Dropdown>
