@@ -314,6 +314,61 @@ describe('<Dropdown/> keydown event', () => {
     ).toBeVisible();
   });
 
+  test('when the first option is highlighted, pressing up arrow key should not affect anything', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const optionPM = queryByText(document.body, 'Product Manager');
+    const optionSE = queryByText(document.body, 'Software Engineer');
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+
+    fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
+
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(document.querySelector('.dropdown-listbox')).toBeVisible();
+    expect(
+      queryByText(document.querySelector('.dropdown-content'), 'Career')
+    ).toBeVisible();
+  });
+
+  test('when the last option is highlighted, pressing down arrow key should not affect anything', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const optionPM = queryByText(document.body, 'Product Manager');
+    const optionSE = queryByText(document.body, 'Software Engineer');
+    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+
+    fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
+    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+
+    fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
+    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(document.querySelector('.dropdown-listbox')).toBeVisible();
+    expect(
+      queryByText(document.querySelector('.dropdown-content'), 'Career')
+    ).toBeVisible();
+  });
+
   test('press esc key should close dropdown', async () => {
     render(
       <Dropdown label="Career">
