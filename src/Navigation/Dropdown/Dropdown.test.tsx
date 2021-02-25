@@ -134,7 +134,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
 });
 
 describe('<Dropdown/> mouse event', () => {
-  test('options should appear when clicking on it, if prop hoverToOpen is falsy', () => {
+  test('options should appear when clicking on it and should not disappear when mouse leaving, if prop hoverToOpen is falsy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career">
         <DropdownItem value="pm">Product Manager</DropdownItem>
@@ -148,6 +148,10 @@ describe('<Dropdown/> mouse event', () => {
     const optionPM = queryByText('Product Manager');
     const optionSE = queryByText('Software Engineer');
 
+    expect(optionPM).toBeVisible();
+    expect(optionSE).toBeVisible();
+
+    fireEvent.mouseLeave(dropdown);
     expect(optionPM).toBeVisible();
     expect(optionSE).toBeVisible();
   });
@@ -172,6 +176,20 @@ describe('<Dropdown/> mouse event', () => {
     fireEvent.mouseLeave(dropdown);
     expect(optionPM).not.toBeVisible();
     expect(optionSE).not.toBeVisible();
+  });
+
+  test('options should not appear when mouse hovering on it, if prop hoverToOpen is falsy', () => {
+    const optionText = 'Product Manager';
+    const { queryByRole, queryByText } = render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">{optionText}</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole('menuitem');
+    fireEvent.mouseOver(dropdown);
+    const option = queryByText(optionText);
+    expect(option).not.toBeVisible();
   });
 
   test('dropdown button should be highlighted when mouse is hovering on', () => {
