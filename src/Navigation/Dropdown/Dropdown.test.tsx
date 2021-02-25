@@ -350,3 +350,44 @@ describe('<Dropdown/> logic', () => {
     expect(onChange.mock.calls[0][0]).toEqual('pm');
   });
 });
+
+describe('<DropdownItem/> onClick', () => {
+  test('onClick callback should be called when it is a function', async () => {
+    const onClick = jest.fn();
+    const menuText = 'Product Manager';
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm" onClick={onClick}>
+          {menuText}
+        </DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(document.body, menuText);
+    fireEvent.mouseDown(option);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  test('onClick callback should not be called when it is not a function', async () => {
+    const onClick = 'invalid-on-click';
+    const menuText = 'Product Manager';
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm" onClick={onClick}>
+          {menuText}
+        </DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(document.body, menuText);
+    expect(option).toBeVisible();
+
+    fireEvent.mouseDown(option);
+    expect(option).not.toBeVisible();
+  });
+});
