@@ -5,11 +5,8 @@ import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Tabs, { Alignment, Variant, Theme } from './Tabs';
-import {
-  EHorizontalTabVariant,
-  ETabThemeVariant,
-} from '../../Utils/StyleConfig';
+import Tabs, { Alignment, Theme } from './Tabs';
+import { ETabThemeVariant } from '../../Utils/StyleConfig';
 
 describe('<Tabs/> render', () => {
   test('should match snapshot', () => {
@@ -31,7 +28,7 @@ describe('<Tabs/> snapshots with alignment props', () => {
   const matchTabSnapshotsWithAlignment = (alignment: Alignment) => {
     test(`alignment ${alignment}`, () => {
       const { asFragment } = render(
-        <Tabs alignment={alignment} variant={EHorizontalTabVariant.UNDERLINED}>
+        <Tabs alignment={alignment}>
           <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
           <Tabs.Pane tab="Company">Glints</Tabs.Pane>
           <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
@@ -47,31 +44,11 @@ describe('<Tabs/> snapshots with alignment props', () => {
   );
 });
 
-describe('<Tabs/> snapshots with variant props', () => {
-  const matchTabSnapshotsWithVariant = (variant: Variant) => {
-    test(`alignment ${variant}`, () => {
-      const { asFragment } = render(
-        <Tabs alignment="horizontal" variant={variant}>
-          <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
-          <Tabs.Pane tab="Company">Glints</Tabs.Pane>
-          <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
-          <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
-        </Tabs>
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-  };
-
-  Object.values(EHorizontalTabVariant).forEach(variant =>
-    matchTabSnapshotsWithVariant(variant)
-  );
-});
-
-describe('<Tabs/> snapshots with colour prop and variant as underlined', () => {
+describe('<Tabs/> snapshots with theme prop', () => {
   const matchTabSnapshotsWithVariant = (theme: Theme) => {
     test(`colour ${theme}`, () => {
       const { asFragment } = render(
-        <Tabs variant={EHorizontalTabVariant.UNDERLINED} theme={theme}>
+        <Tabs theme={theme}>
           <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
           <Tabs.Pane tab="Company">Glints</Tabs.Pane>
           <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
