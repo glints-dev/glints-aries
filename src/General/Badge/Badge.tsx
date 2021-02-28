@@ -24,7 +24,7 @@ export const Badge: React.FunctionComponent<Props> = ({
   </React.Fragment>
 );
 
-export type BadgeType = 'dimmed' | 'default';
+export type BadgeType = 'dimmed' | 'default' | 'white' | 'blue';
 
 export interface Props
   extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
