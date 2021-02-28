@@ -38,11 +38,6 @@ const Template: Story<Props> = ({ ...args }) => (
 
 export const Interactive = Template.bind({});
 
-export const Variant = Template.bind({});
-Variant.args = {
-  variant: 'colored',
-};
-
 export const Alignment = Template.bind({});
 Alignment.args = {
   alignment: 'vertical',

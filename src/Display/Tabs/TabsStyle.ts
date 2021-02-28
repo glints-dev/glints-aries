@@ -63,20 +63,7 @@ export const TabsHeader = styled.div<TabHeader>`
       display: none;
     }
 
-    .horizontal-tab.colored {
-      min-width: 230px;
-      font-size: 16px;
-      text-align: center;
-      margin: 0;
-    }
-
-    .horizontal-tab.colored:hover {
-      background-color: ${Greyscale.softgrey};
-      color: ${SecondaryColor.actionblue};
-      margin: 0;
-    }
-
-    .horizontal-tab.underlined {
+    .horizontal-tab {
       margin: ${({ theme }) => (isNewTab(theme) ? '0 15px' : '0 10px')};
     }
 
@@ -108,7 +95,7 @@ export const TabsHeader = styled.div<TabHeader>`
         margin-bottom: 0;
       }
 
-      &.underlined.active.horizontal-tab,
+      &.active.horizontal-tab,
       &.active.vertical-tab {
         border-bottom: ${({ theme }) =>
           isNewTab(theme)
