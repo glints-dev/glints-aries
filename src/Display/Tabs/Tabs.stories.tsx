@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { Tabs, Props } from './Tabs';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
+import Badge from '../../General/Badge';
 
 export default {
   title: 'Display/Tabs',
@@ -29,10 +30,19 @@ export default {
 
 const Template: Story<Props> = ({ ...args }) => (
   <Tabs {...args}>
-    <Tabs.Pane tab="Location Tab">Tab Location</Tabs.Pane>
+    <Tabs.Pane tab={'Location Tab'}>Tab Location</Tabs.Pane>
     <Tabs.Pane tab="Salary">Tab Salary</Tabs.Pane>
     <Tabs.Pane tab="Job">Tab Job</Tabs.Pane>
-    <Tabs.Pane tab="Company">Tab Company</Tabs.Pane>
+    <Tabs.Pane
+      tab={
+        <div>
+          <Badge label={4} />
+          Company
+        </div>
+      }
+    >
+      Tab Company
+    </Tabs.Pane>
   </Tabs>
 );
 
