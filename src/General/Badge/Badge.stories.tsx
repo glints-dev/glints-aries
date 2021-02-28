@@ -30,10 +30,3 @@ export const Variants: Story<Props> = () => (
     <Badge label="dimmed" variant="dimmed" />
   </BadgeStack>
 );
-
-export const Sup: Story<Props> = () => (
-  <BadgeStack>
-    <Badge label="not superscript" sup={false} />
-    <Badge label="superscript" sup={true} />
-  </BadgeStack>
-);

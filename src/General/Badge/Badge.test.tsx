@@ -20,21 +20,6 @@ it('should display the correct text when rendered', () => {
   expect(BadgeContent).toBeVisible();
 });
 
-describe('when sup is:', () => {
-  it('true, should have a top property', () => {
-    const { getByRole } = render(<Badge label={label} sup />);
-    const badgeContainer = getByRole('presentation');
-    expect(badgeContainer).toHaveStyle('top: -.6em');
-  });
-
-  it('false, should not have a top property', () => {
-    const { getByRole } = render(<Badge label={label} sup={false} />);
-    const badgeContainer = getByRole('presentation');
-    const { top } = getComputedStyle(badgeContainer);
-    expect(top).toBeFalsy();
-  });
-});
-
 describe('<Badge/> snapshots with variant prop', () => {
   const matchSnapshotWithVariant = (variant: BadgeType) => {
     test(`variant ${variant}`, () => {
