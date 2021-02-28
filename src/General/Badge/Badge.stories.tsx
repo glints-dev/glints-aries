@@ -26,7 +26,9 @@ Interactive.args = {
 
 export const Variants: Story<Props> = () => (
   <BadgeStack>
-    <Badge label="default" variant="default" />
-    <Badge label="dimmed" variant="dimmed" />
+    <Badge label="4" variant="default" />
+    <Badge label="4" variant="dimmed" />
+    <Badge label="4" variant="white" />
+    <Badge label="4" variant="blue" />
   </BadgeStack>
 );
