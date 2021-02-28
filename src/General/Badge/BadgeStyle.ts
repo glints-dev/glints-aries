@@ -1,24 +1,45 @@
 import styled from 'styled-components';
-import { PrimaryColor, Greyscale } from '../../Utils/Colors';
+import { Greyscale, SecondaryColor } from '../../Utils/Colors';
 import { BadgeVariant } from './BadgeVariant';
 
 export const BadgeContainer = styled.div<BadgeContainerProps>`
   position: relative;
   display: inline-flex;
-  background: ${({ variant }) =>
-    variant === BadgeVariant.DEFAULT
-      ? `${PrimaryColor.glintsred}`
-      : `${Greyscale.grey}`};
-  color: ${Greyscale.white};
+  ${({ variant }) => {
+    switch (variant) {
+      case BadgeVariant.BLUE:
+        return `
+          background: ${SecondaryColor.actionblue};
+        `;
+      case BadgeVariant.DIMMED:
+        return `
+          background: ${Greyscale.devilsgrey};
+        `;
+      case BadgeVariant.WHITE:
+        return `
+          background: ${Greyscale.white};
+        `;
+      default:
+        return `
+          background: #ed9300;
+        `;
+    }
+  }}
+  color: ${({ variant }) =>
+    variant === BadgeVariant.WHITE
+      ? `${SecondaryColor.actionblue}`
+      : `${Greyscale.white}`};
   border-radius: 3px;
   margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  align-items: center;
+  justify-content: center;
 
   span {
-    height: 17px;
-    min-width: 19px;
     font-size: 12px;
     font-weight: 700;
-    padding: 0 5px;
     text-align: center;
   }
 `;
