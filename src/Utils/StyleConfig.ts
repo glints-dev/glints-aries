@@ -3,11 +3,6 @@ export enum ETabAlignment {
   VERTICAL = 'vertical',
 }
 
-export enum EHorizontalTabVariant {
-  UNDERLINED = 'underlined',
-  COLORED = 'colored',
-}
-
 export enum ETabThemeVariant {
   BLUE = 'blue',
   BLACK = 'black',

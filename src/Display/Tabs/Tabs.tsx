@@ -10,7 +10,6 @@ export const Tabs: Tabs = ({
   activeTab,
   onTabClick,
   children,
-  variant = 'underlined',
   className,
   alignment = 'horizontal',
   theme = 'black',
@@ -40,11 +39,7 @@ export const Tabs: Tabs = ({
         alignment={alignment}
       >
         <ul
-          className={classNames(
-            `${alignment}-tabs-list`,
-            'tabs-list',
-            `${variant}`
-          )}
+          className={classNames(`${alignment}-tabs-list`, 'tabs-list')}
           role="tablist"
         >
           {React.Children.map(
@@ -58,7 +53,6 @@ export const Tabs: Tabs = ({
                     `tab-${tabLabel}`,
                     { active: activeTabOrIndex === tabLabel },
                     `${alignment}-tab`,
-                    `${variant}`,
                     `${tabClassName}`
                   )}
                   key={index}
@@ -100,16 +94,13 @@ export const Tabs: Tabs = ({
   );
 };
 
-export type Variant = 'underlined' | 'colored';
 export type Alignment = 'horizontal' | 'vertical';
 export type Theme = 'blue' | 'black';
 export interface Props {
   children: React.ReactNode;
-  /** Set the change in the color pattern only for Horizontal tabs */
-  variant?: Variant;
   /** Sets alignment of Tab. The vertical tabs are changed to horizontal ones for screen size below 768 */
   alignment?: Alignment;
-  /** Sets the theme for the tabs in underlined variant */
+  /** Sets the theme for the tabs */
   theme?: Theme;
   /** Controls the currently active tab (index) */
   activeTab?: string | number;
