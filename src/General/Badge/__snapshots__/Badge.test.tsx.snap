@@ -10,15 +10,15 @@ exports[`<Badge/> snapshots with variant prop variant default 1`] = `
   display: inline-flex;
   background: #EC272B;
   color: #FFFFFF;
-  border-radius: 10px;
-  margin: 0 5px;
+  border-radius: 3px;
+  margin: 0 4px;
 }
 
 .c0 span {
   height: 17px;
   min-width: 19px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0 5px;
   text-align: center;
 }
@@ -46,15 +46,15 @@ exports[`<Badge/> snapshots with variant prop variant dimmed 1`] = `
   display: inline-flex;
   background: #777777;
   color: #FFFFFF;
-  border-radius: 10px;
-  margin: 0 5px;
+  border-radius: 3px;
+  margin: 0 4px;
 }
 
 .c0 span {
   height: 17px;
   min-width: 19px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0 5px;
   text-align: center;
 }
@@ -81,15 +81,15 @@ exports[`<Badge> should render a label with the text "6" 1`] = `
   display: inline-flex;
   background: #EC272B;
   color: #FFFFFF;
-  border-radius: 10px;
-  margin: 0 5px;
+  border-radius: 3px;
+  margin: 0 4px;
 }
 
 .c0 span {
   height: 17px;
   min-width: 19px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 0 5px;
   text-align: center;
 }
