@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Badge/> snapshots with variant prop variant blue 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: #017EB7;
+  color: #FFFFFF;
+  border-radius: 3px;
+  margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 span {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+<div
+    class="c0 aries-badge"
+    role="presentation"
+  >
+    <span
+      class="badge-content"
+    >
+      6
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Badge/> snapshots with variant prop variant default 1`] = `
 <DocumentFragment>
   .c0 {
@@ -8,18 +52,26 @@ exports[`<Badge/> snapshots with variant prop variant default 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background: #EC272B;
+  background: #ed9300;
   color: #FFFFFF;
   border-radius: 3px;
   margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c0 span {
-  height: 17px;
-  min-width: 19px;
   font-size: 12px;
   font-weight: 700;
-  padding: 0 5px;
   text-align: center;
 }
 
@@ -44,18 +96,70 @@ exports[`<Badge/> snapshots with variant prop variant dimmed 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background: #777777;
+  background: #666666;
   color: #FFFFFF;
   border-radius: 3px;
   margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c0 span {
-  height: 17px;
-  min-width: 19px;
   font-size: 12px;
   font-weight: 700;
-  padding: 0 5px;
+  text-align: center;
+}
+
+<div
+    class="c0 aries-badge"
+    role="presentation"
+  >
+    <span
+      class="badge-content"
+    >
+      6
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Badge/> snapshots with variant prop variant white 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: #FFFFFF;
+  color: #017EB7;
+  border-radius: 3px;
+  margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 span {
+  font-size: 12px;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -79,18 +183,26 @@ exports[`<Badge> should render a label with the text "6" 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background: #EC272B;
+  background: #ed9300;
   color: #FFFFFF;
   border-radius: 3px;
   margin: 0 4px;
+  padding: 0 4px;
+  height: 17px;
+  min-width: 18px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c0 span {
-  height: 17px;
-  min-width: 19px;
   font-size: 12px;
   font-weight: 700;
-  padding: 0 5px;
   text-align: center;
 }
 

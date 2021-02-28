@@ -6,6 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
 import Badge, { BadgeType } from './Badge';
+import { BadgeVariant } from './BadgeVariant';
 
 const label = '6';
 
@@ -28,7 +29,7 @@ describe('<Badge/> snapshots with variant prop', () => {
     });
   };
 
-  ['default', 'dimmed'].forEach((variant: BadgeType) =>
+  Object.values(BadgeVariant).forEach((variant: BadgeType) =>
     matchSnapshotWithVariant(variant)
   );
 });
