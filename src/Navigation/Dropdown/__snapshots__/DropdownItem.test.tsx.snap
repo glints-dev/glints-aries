@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DropdownItem /> prop className should match snapshot when class name test is passed 1`] = `
+<DocumentFragment>
+  <li
+    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr test"
+  >
+    Product Manager
+  </li>
+</DocumentFragment>
+`;
+
+exports[`<DropdownItem /> prop className should match snapshot when class name undefined is passed 1`] = `
+<DocumentFragment>
+  <li
+    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr"
+  >
+    Product Manager
+  </li>
+</DocumentFragment>
+`;
