@@ -221,8 +221,8 @@ describe('<Dropdown/> mouse event', () => {
     const optionSE = queryByText('Software Engineer');
     fireEvent.mouseOver(optionPM);
 
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
   });
 
   test('selected option should be displayed', async () => {
@@ -277,16 +277,16 @@ describe('<Dropdown/> keydown event', () => {
 
     const optionPM = queryByText(document.body, 'Product Manager');
     const optionSE = queryByText(document.body, 'Software Engineer');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
-    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
   });
 
   test('press enter key should select an highlighted option', async () => {
@@ -301,7 +301,7 @@ describe('<Dropdown/> keydown event', () => {
     fireEvent.click(dropdown);
 
     const optionPM = queryByText(document.body, 'Product Manager');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'Enter', keyCode: 13 });
     expect(optionPM).not.toBeVisible();
@@ -327,13 +327,13 @@ describe('<Dropdown/> keydown event', () => {
 
     const optionPM = queryByText(document.body, 'Product Manager');
     const optionSE = queryByText(document.body, 'Software Engineer');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
 
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
     expect(document.querySelector('.dropdown-listbox')).toBeVisible();
     expect(
       queryByText(document.querySelector('.dropdown-content'), 'Career')
@@ -353,16 +353,16 @@ describe('<Dropdown/> keydown event', () => {
 
     const optionPM = queryByText(document.body, 'Product Manager');
     const optionSE = queryByText(document.body, 'Software Engineer');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
-    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
-    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
     expect(document.querySelector('.dropdown-listbox')).toBeVisible();
     expect(
       queryByText(document.querySelector('.dropdown-content'), 'Career')
