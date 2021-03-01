@@ -6,6 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
 import Badge, { BadgeType } from './Badge';
+import { BadgeVariant } from './BadgeVariant';
 
 const label = '6';
 
@@ -20,21 +21,6 @@ it('should display the correct text when rendered', () => {
   expect(BadgeContent).toBeVisible();
 });
 
-describe('when sup is:', () => {
-  it('true, should have a top property', () => {
-    const { getByRole } = render(<Badge label={label} sup />);
-    const badgeContainer = getByRole('presentation');
-    expect(badgeContainer).toHaveStyle('top: -.6em');
-  });
-
-  it('false, should not have a top property', () => {
-    const { getByRole } = render(<Badge label={label} sup={false} />);
-    const badgeContainer = getByRole('presentation');
-    const { top } = getComputedStyle(badgeContainer);
-    expect(top).toBeFalsy();
-  });
-});
-
 describe('<Badge/> snapshots with variant prop', () => {
   const matchSnapshotWithVariant = (variant: BadgeType) => {
     test(`variant ${variant}`, () => {
@@ -43,7 +29,7 @@ describe('<Badge/> snapshots with variant prop', () => {
     });
   };
 
-  ['default', 'dimmed'].forEach((variant: BadgeType) =>
+  Object.values(BadgeVariant).forEach((variant: BadgeType) =>
     matchSnapshotWithVariant(variant)
   );
 });

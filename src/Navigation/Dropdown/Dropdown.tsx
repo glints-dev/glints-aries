@@ -70,18 +70,16 @@ export const Dropdown = ({
 
     if (itemElement.dataset.value) {
       setDropdownLabel(itemElement.innerHTML);
-      setIsOpen(false);
 
-      if (onChange !== undefined) {
+      if (onChange && typeof onChange === 'function') {
         onChange(itemElement.dataset.value);
       }
-    } else {
-      setIsOpen(false);
     }
 
-    if (onClick !== undefined) {
+    if (onClick && typeof onClick === 'function') {
       onClick(e);
     }
+    setIsOpen(false);
   };
 
   const handleMouseEnter = setCursor;

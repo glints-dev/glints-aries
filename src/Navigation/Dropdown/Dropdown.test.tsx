@@ -134,7 +134,7 @@ describe('<Dropdown/> with DropdownBody props', () => {
 });
 
 describe('<Dropdown/> mouse event', () => {
-  test('options should appear when clicking on it, if prop hoverToOpen is falsy', () => {
+  test('options should appear when clicking on it and should not disappear when mouse leaving, if prop hoverToOpen is falsy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career">
         <DropdownItem value="pm">Product Manager</DropdownItem>
@@ -150,9 +150,13 @@ describe('<Dropdown/> mouse event', () => {
 
     expect(optionPM).toBeVisible();
     expect(optionSE).toBeVisible();
+
+    fireEvent.mouseLeave(dropdown);
+    expect(optionPM).toBeVisible();
+    expect(optionSE).toBeVisible();
   });
 
-  test('options should appear when mouse hovering on it, if prop hoverToOpen is truthy', () => {
+  test('options should appear when mouse hovering on it and disappear when mouse leaving, if prop hoverToOpen is truthy', () => {
     const { queryByRole, queryByText } = render(
       <Dropdown label="Career" hoverToOpen={true}>
         <DropdownItem value="pm">Product Manager</DropdownItem>
@@ -168,6 +172,24 @@ describe('<Dropdown/> mouse event', () => {
 
     expect(optionPM).toBeVisible();
     expect(optionSE).toBeVisible();
+
+    fireEvent.mouseLeave(dropdown);
+    expect(optionPM).not.toBeVisible();
+    expect(optionSE).not.toBeVisible();
+  });
+
+  test('options should not appear when mouse hovering on it, if prop hoverToOpen is falsy', () => {
+    const optionText = 'Product Manager';
+    const { queryByRole, queryByText } = render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">{optionText}</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole('menuitem');
+    fireEvent.mouseOver(dropdown);
+    const option = queryByText(optionText);
+    expect(option).not.toBeVisible();
   });
 
   test('dropdown button should be highlighted when mouse is hovering on', () => {
@@ -199,8 +221,8 @@ describe('<Dropdown/> mouse event', () => {
     const optionSE = queryByText('Software Engineer');
     fireEvent.mouseOver(optionPM);
 
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
   });
 
   test('selected option should be displayed', async () => {
@@ -255,16 +277,16 @@ describe('<Dropdown/> keydown event', () => {
 
     const optionPM = queryByText(document.body, 'Product Manager');
     const optionSE = queryByText(document.body, 'Software Engineer');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
-    expect(optionPM).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
-    expect(optionSE).not.toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
   });
 
   test('press enter key should select an highlighted option', async () => {
@@ -279,7 +301,7 @@ describe('<Dropdown/> keydown event', () => {
     fireEvent.click(dropdown);
 
     const optionPM = queryByText(document.body, 'Product Manager');
-    expect(optionPM).toHaveStyle(`background: ${Greyscale.softgrey}`);
+    expect(optionPM).toHaveClass('active');
 
     fireEvent.keyDown(dropdown, { key: 'Enter', keyCode: 13 });
     expect(optionPM).not.toBeVisible();
@@ -289,6 +311,61 @@ describe('<Dropdown/> keydown event', () => {
         document.querySelector('.dropdown-content'),
         'Product Manager'
       )
+    ).toBeVisible();
+  });
+
+  test('when the first option is highlighted, pressing up arrow key should not affect anything', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const optionPM = queryByText(document.body, 'Product Manager');
+    const optionSE = queryByText(document.body, 'Software Engineer');
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
+
+    fireEvent.keyDown(dropdown, { key: 'UpArrow', keyCode: 38 });
+
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
+    expect(document.querySelector('.dropdown-listbox')).toBeVisible();
+    expect(
+      queryByText(document.querySelector('.dropdown-content'), 'Career')
+    ).toBeVisible();
+  });
+
+  test('when the last option is highlighted, pressing down arrow key should not affect anything', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const optionPM = queryByText(document.body, 'Product Manager');
+    const optionSE = queryByText(document.body, 'Software Engineer');
+    expect(optionPM).toHaveClass('active');
+    expect(optionSE).not.toHaveClass('active');
+
+    fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
+
+    fireEvent.keyDown(dropdown, { key: 'DownArrow', keyCode: 40 });
+    expect(optionPM).not.toHaveClass('active');
+    expect(optionSE).toHaveClass('active');
+    expect(document.querySelector('.dropdown-listbox')).toBeVisible();
+    expect(
+      queryByText(document.querySelector('.dropdown-content'), 'Career')
     ).toBeVisible();
   });
 
@@ -344,5 +421,88 @@ describe('<Dropdown/> logic', () => {
     fireEvent.mouseDown(option);
 
     expect(onChange.mock.calls[0][0]).toEqual('pm');
+  });
+});
+
+describe('<DropdownItem/> onClick', () => {
+  test('onClick callback should be called when it is a function', async () => {
+    const onClick = jest.fn();
+    const menuText = 'Product Manager';
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm" onClick={onClick}>
+          {menuText}
+        </DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(document.body, menuText);
+    fireEvent.mouseDown(option);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  test('invalid onClick value should not break anything', async () => {
+    const onClick = 'invalid-on-click';
+    const menuText = 'Product Manager';
+    render(
+      <Dropdown label="Career">
+        <DropdownItem
+          value="pm"
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+          // @ts-ignore
+          onClick={onClick}
+        >
+          {menuText}
+        </DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(document.body, menuText);
+    expect(option).toBeVisible();
+
+    fireEvent.mouseDown(option);
+    expect(option).not.toBeVisible();
+  });
+});
+
+describe('<DropdownBody/> onClick', () => {
+  test('clicking DropdownBody should not close dropdown', async () => {
+    render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole(document.body, 'menuitem');
+    fireEvent.click(dropdown);
+
+    const dropdownContent = queryByRole(document.body, 'listbox');
+    expect(dropdownContent).toBeVisible();
+
+    const dropdownBody = document.querySelector('.dropdown-listbox');
+    fireEvent.click(dropdownBody);
+    expect(dropdownContent).toBeVisible();
+  });
+});
+
+describe('<DropdownBody/> prop disable', () => {
+  test('dropdown should not open when it is clicked', async () => {
+    const optionText = 'Product Manager';
+    const { queryByRole, queryByText } = render(
+      <Dropdown label="Career" disabled={true}>
+        <DropdownItem value="pm">{optionText}</DropdownItem>
+      </Dropdown>
+    );
+
+    const dropdown = queryByRole('menuitem');
+    fireEvent.click(dropdown);
+    const option = queryByText(optionText);
+    expect(option).not.toBeVisible();
   });
 });
