@@ -11,6 +11,7 @@ import {
 
 const MIN_ROWS = 4;
 const MAX_ROWS = 12;
+// Rows are required to set the textarea height depending on the content added.
 
 /** Use <code>onChange</code> to listen to input changes. Use
  * <code>onBlur</code> to listen to focus loss.
@@ -49,20 +50,7 @@ export const Textarea: FC<Props> = ({
 
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const previousRows = e.target.rows;
-      e.target.rows = MIN_ROWS;
-
       const currentRows = ~~(e.target.scrollHeight / 30);
-
-      if (currentRows === previousRows) {
-        e.target.rows = currentRows;
-      }
-
-      if (currentRows >= MAX_ROWS) {
-        e.target.rows = MAX_ROWS;
-        e.target.scrollTop = e.target.scrollHeight;
-      }
-
       setRows(currentRows < MAX_ROWS ? currentRows : MAX_ROWS);
 
       if (isFunction(onChange)) {
