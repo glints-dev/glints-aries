@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { Greyscale } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
 
 export const PointingModalContainer = styled.div`
   position: relative;
   background: ${Greyscale.white};
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: ${Shadow.down2};
   outline: none;
 `;
 
