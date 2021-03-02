@@ -160,7 +160,7 @@ exports[`<Select /> can still work when receives non-string option children or v
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
@@ -423,7 +423,7 @@ exports[`<Select /> can still work when receives non-string option children or v
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;

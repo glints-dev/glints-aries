@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
 import { SelectInputProps } from './Select';
 
 export const SelectContainer = styled.div`
@@ -193,7 +194,7 @@ export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   background: ${Greyscale.white};
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: ${Shadow.down3};
   z-index: 9999;
   max-height: 200px;
   overflow: auto;

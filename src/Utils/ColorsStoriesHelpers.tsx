@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Shadow } from './Shadow';
 
 export const ColorSampler = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const ColorBox = styled.div<ColorBoxProps>`
   font-size: 14px;
   font-weight: bold;
   color: ${({ fontColor }) => fontColor};
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: ${Shadow.down1};
 `;
 
 const ColorLabel = styled.code`

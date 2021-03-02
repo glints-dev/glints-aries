@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { ScreenSize } from '../../Utils/StyleConfig';
 import { Greyscale } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
 
 export const SwipeableContainer = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export const SwipeableCardExample = styled.div`
   width: 150px;
   height: 150px;
   background: ${Greyscale.white};
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: ${Shadow.down1};
   display: flex;
   justify-content: center;
   align-items: center;
