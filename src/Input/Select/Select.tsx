@@ -157,8 +157,9 @@ const Select: React.FC<Props> & {
         setIsFocus(false);
       }
     };
-    document.addEventListener('click', onClickOutside, false);
-    return () => document.removeEventListener('click', onClickOutside, false);
+    document.addEventListener('mousedown', onClickOutside, false);
+    return () =>
+      document.removeEventListener('mousedown', onClickOutside, false);
   }, []);
 
   React.useEffect(
