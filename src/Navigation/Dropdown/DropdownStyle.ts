@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Greyscale } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
 
 const underLine = `
   position: relative;
@@ -123,7 +124,7 @@ export const DropdownBody = styled.ul<DropdownBodyProps>`
   transform-origin: center top;
   transition: ${({ open }) => (open ? 'all .2s ease' : 'all .1s ease')};
   background: ${Greyscale.white};
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: ${Shadow.down3};
   z-index: 1000;
   padding: 0;
   margin: 0;

@@ -138,7 +138,7 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
@@ -382,7 +382,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
@@ -626,7 +626,7 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
@@ -869,7 +869,7 @@ exports[`<Select> should render with 3 options 1`] = `
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
   z-index: 9999;
   max-height: 200px;
   overflow: auto;

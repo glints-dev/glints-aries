@@ -43,7 +43,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
     </div>
     <ul
       aria-hidden={true}
-      className="DropdownStyle__DropdownBody-sc-1sc3c6h-3 iYYiTC dropdown-listbox"
+      className="DropdownStyle__DropdownBody-sc-1sc3c6h-3 ustjj dropdown-listbox"
       onClick={[Function]}
       open={false}
       role="listbox"
