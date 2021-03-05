@@ -421,7 +421,7 @@ describe('<Select/> on click outside', () => {
 
     fireEvent.focus(selectInput);
     expect(selectList.hasAttribute('open')).toEqual(true);
-    fireEvent.click(outside);
+    fireEvent.mouseDown(outside);
     expect(selectList.hasAttribute('open')).toEqual(false);
   });
 
@@ -706,7 +706,7 @@ describe('<Select/> defaultOpen', () => {
     const outside = queryByText('outside');
 
     expect(selectList.hasAttribute('open')).toEqual(true);
-    fireEvent.click(outside);
+    fireEvent.mouseDown(outside);
     expect(selectList.hasAttribute('open')).toEqual(false);
   });
 
