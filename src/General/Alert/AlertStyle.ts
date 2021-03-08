@@ -1,117 +1,87 @@
 import styled, { keyframes } from 'styled-components';
 
 import { ScreenSize } from '../../Utils/StyleConfig';
-
-import { SecondaryColor, PrimaryColor } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
 
 const fadeDown = keyframes`
   0% {
-    transform: translate(-50%, -100%);
+    transform: translateY(-100%);
+    top: 0;
   }
 
   100% {
-    transform: translate(-50%, 0%);
+    transform: translateY(0%);
+    top: 16px;
   }
 `;
 
 const fadeUp = keyframes`
   0% {
-      transform: translate(-50%, 0%);
-    }
+    transform: translateY(0%);
+    top: 12px;
+  }
 
   100% {
-    transform: translate(-50%, -100%);
+    transform: translateY(-100%);
+    top: 0;
   }
 `;
 
-export const AlertContainer = styled.div<AlertContainerProps>`
+export const AlertContainer = styled.div`
   position: fixed;
-  left: 50%;
-  top: ${({ isVisible }) => (isVisible ? '10px' : '0px')};
-  transform: ${({ isVisible }) =>
-    isVisible ? 'translate(-50%, 0%)' : 'translate(-50%, -100%)'};
-  display: flex;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12);
-  padding: 10px;
-  background-color: '#FFFAEA';
-  z-index: 5000;
-  min-width: 500px;
-  max-width: 800px;
-  animation: ${({ isOpen }) => (isOpen ? fadeDown : fadeUp)} 0.3s ease-in-out;
-  outline: none;
-  line-height: 1.5;
-  font-size: 1em;
-
-  @media (max-width: ${ScreenSize.mobileM}px) {
-    min-width: calc(100% - 30px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 16px;
+  animation: ${fadeDown} 0.3s ease-in-out;
+  &[aria-hidden='true'] {
+    top: 0;
+    animation: ${fadeUp} 0.3s ease-in-out;
   }
-
-  ${({ type }) => {
-    switch (type) {
-      case 'success':
-        return `
-          background: #EEF6F4;
-          border: 1px solid ${SecondaryColor.darkgreen};
-        `;
-      case 'warning':
-        return `
-          background: #FFF6E8;
-          border: 1px solid ${SecondaryColor.orange};
-        `;
-      case 'danger':
-        return `
-          background: #FFF2F3;
-          border: 1px solid ${PrimaryColor.glintsred};
-        `;
-      case 'info':
-        return `
-          background: #D6F4FF;
-          border: 1px solid ${PrimaryColor.glintsblue};
-        `;
-      default:
-        return `
-          background: #D6F4FF;
-          border: 1px solid ${PrimaryColor.glintsblue};
-        `;
-    }
-  }}
-`;
-
-interface AlertContainerProps {
-  isOpen: boolean;
-  isVisible: boolean;
-  type: string;
-}
-
-export const AlertContent = styled.div`
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const AlertMessage = styled.p`
-  position: relative;
-  margin: 0;
-  padding-right: 20px;
-  line-height: normal;
-`;
-
-const alignSelf = `
-  height: 20px;
   display: flex;
   align-items: center;
-  align-self: flex-start;
+  box-shadow: ${Shadow.down4};
+  padding: 12px;
+  border-radius: 4px;
+  z-index: 5000;
+  min-width: 296px;
+  max-width: ${ScreenSize.tablet}px;
+  outline: none;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #454545;
+
+  @media (max-width: ${ScreenSize.tablet}px) {
+    max-width: 95%;
+  }
+
+  background: #c5ecfa;
+  &[data-type='success'] {
+    background: #c2e2da;
+  }
+  &[data-type='warning'] {
+    background: #fde9cc;
+  }
+  &[data-type='danger'] {
+    background: #facbcc;
+  }
 `;
 
 export const AlertIcon = styled.div`
-  ${alignSelf}
-  cursor: pointer;
-  font-size: 10px;
+  margin-right: 8px;
+  line-height: 1;
+  svg {
+    display: block;
+  }
 `;
 
-export const AlertTypeIconContainer = styled.div`
-  ${alignSelf}
-  font-size: 15px;
-  margin-right: 10px;
+export const AlertMessage = styled.div`
+  margin-right: 8px;
+  flex-grow: 1;
+`;
+
+export const AlertClose = styled.div`
+  line-height: 1;
+  cursor: pointer;
+  font-size: 10px;
 `;

@@ -9,58 +9,43 @@ import {
   CloseIcon,
 } from '../Icon/components';
 import {
+  AlertClose,
   AlertContainer,
-  AlertContent,
-  AlertMessage,
   AlertIcon,
-  AlertTypeIconContainer,
+  AlertMessage,
 } from './AlertStyle';
 
 import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { isUndefined } from 'lodash';
+import { DelayedUnmount } from '../../Utils/DelayedUnmount';
 
 export const Alert = ({
-  isOpen,
+  isOpen: externalIsVisible = true,
   autoClose,
-  onClose,
+  onClose: externalOnClose,
   type = 'info',
   className,
   message,
 }: Props) => {
-  const alertContainerRef = React.useRef<HTMLDivElement>();
-  const autoCloseTimeout = React.useRef<ReturnType<typeof setTimeout>>();
-  const [isVisible, setIsVisible] = React.useState<boolean>(isOpen);
+  const [internalIsVisible, setInternalIsVisible] = React.useState<boolean>(
+    true
+  );
+
+  const isVisible = isUndefined(externalIsVisible)
+    ? internalIsVisible
+    : externalIsVisible;
+
+  const internalOnClose = () => setInternalIsVisible(false);
+  const onClose = isUndefined(externalOnClose)
+    ? internalOnClose
+    : externalOnClose;
 
   React.useEffect(() => {
-    if (isOpen && !isVisible) {
-      setIsVisible(true);
+    if (isVisible && autoClose) {
+      const timeout = setTimeout(onClose, autoClose);
+      return () => clearTimeout(timeout);
     }
-    if (!isOpen && isVisible) {
-      setTimeout(() => setIsVisible(false), 300);
-    }
-  }, [isOpen, isVisible, setIsVisible]);
-
-  // focus alert element for keydown event
-  React.useEffect(() => {
-    if (isVisible && alertContainerRef.current) {
-      alertContainerRef.current.focus();
-    }
-  }, [isVisible]);
-
-  React.useEffect(() => {
-    if (autoCloseTimeout.current) {
-      clearTimeout(autoCloseTimeout.current);
-    }
-
-    if (isOpen && autoClose) {
-      autoCloseTimeout.current = setTimeout(() => {
-        onClose();
-      }, autoClose);
-    }
-  }, [isOpen, isVisible, setIsVisible, autoClose, onClose]);
-
-  React.useEffect(() => {
-    return () => clearTimeout(autoCloseTimeout.current);
-  }, []);
+  }, [isVisible, autoClose, onClose]);
 
   const handleKeyDown = React.useCallback((onClose: () => void) => {
     const listener = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -98,36 +83,37 @@ export const Alert = ({
     }
   }, [type]);
 
-  return isVisible ? (
-    <AlertContainer
-      className={classNames('aries-alert', className)}
-      type={type}
-      role="alertdialog"
-      aria-hidden={isVisible ? 'false' : 'true'}
-      aria-describedby="alert-message"
-      isOpen={isOpen}
-      isVisible={isVisible && isOpen}
-      tabIndex={0}
-      onKeyDown={handleKeyDown(onClose)}
-      ref={alertContainerRef}
-    >
-      <AlertTypeIconContainer>
-        <AlertTypeIcon color={alertColor} />
-      </AlertTypeIconContainer>
-      <AlertContent className="alert-content">
+  return (
+    // The delay is set to 290ms because the fade-out animation takes 300ms.
+    // Setting them to the same value creates a visual glitch.
+    <DelayedUnmount mount={isVisible} delay={290}>
+      <AlertContainer
+        className={classNames('aries-alert', className)}
+        data-type={type}
+        role="alertdialog"
+        aria-hidden={!isVisible}
+        data-open={isVisible}
+        aria-describedby="alert-message"
+        tabIndex={0}
+        onKeyDown={handleKeyDown(onClose)}
+        ref={node => node && node.focus()}
+      >
+        <AlertIcon>
+          <AlertTypeIcon color={alertColor} />
+        </AlertIcon>
         <AlertMessage className="alert-message">{message}</AlertMessage>
-        <AlertIcon
+        <AlertClose
           className="alert-close"
           role="button"
           aria-label="Press Escape or Enter button to close alert"
           title="Close alert"
           onClick={onClose}
         >
-          <CloseIcon color={Greyscale.grey} />
-        </AlertIcon>
-      </AlertContent>
-    </AlertContainer>
-  ) : null;
+          <CloseIcon color={Greyscale.devilsgrey} />
+        </AlertClose>
+      </AlertContainer>
+    </DelayedUnmount>
+  );
 };
 
 export type AlertType = 'success' | 'warning' | 'danger' | 'info';
@@ -140,7 +126,7 @@ export interface Props {
   /** A function to close Alert. onClose will be triggered if the close icon is clicked or the Alert has ran its autoClose duration or ESC/Enter is pressed */
   onClose(): void;
   /** Set Alert to show. */
-  isOpen: boolean;
+  isOpen?: boolean;
   /** Set classname for Alert. */
   className?: string;
   /** Set period for Alert to close by itself. The value is in millisecond. */
