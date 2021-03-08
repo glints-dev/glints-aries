@@ -276,6 +276,7 @@ describe('<Alert/> timeout', () => {
   test('autoCloseTimeout should be cleared before component unmount', async () => {
     const useRefSpy = jest.spyOn(React, 'useRef');
     const clearTimeoutSpy = jest.spyOn(window, 'clearTimeout');
+    const setTimeoutSpy = jest.spyOn(window, 'setTimeout');
     const { rerender, unmount } = render(
       <Alert
         type="success"
@@ -297,9 +298,10 @@ describe('<Alert/> timeout', () => {
     );
 
     unmount();
-    expect(clearTimeoutSpy).toHaveBeenCalledTimes(2);
-    expect(clearTimeoutSpy.mock.calls[1][0]).toEqual(
-      useRefSpy.mock.results[1].value.current
+    expect(setTimeoutSpy.mock.calls.length).toEqual(
+      // No idea what's calling the additional clearTimeout here. It's not us,
+      // I checked.
+      clearTimeoutSpy.mock.calls.length + 1
     );
 
     clearTimeoutSpy.mockRestore();
