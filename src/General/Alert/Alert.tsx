@@ -20,7 +20,7 @@ import { isUndefined } from 'lodash';
 import { DelayedUnmount } from '../../Utils/DelayedUnmount';
 
 export const Alert = ({
-  isOpen: externalIsVisible = true,
+  isOpen: externalIsVisible,
   autoClose,
   onClose: externalOnClose,
   type = 'info',
