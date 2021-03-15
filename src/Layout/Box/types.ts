@@ -1,5 +1,6 @@
 import { Spacing } from '../Spacing';
 import { ShadowValueType } from '../../Utils/Shadow';
+import { HTMLAttributes } from 'react';
 
 // Responsive
 export type BreakpointAliases =
@@ -21,7 +22,7 @@ export type ResponsiveSpacing = {
 
 type SpacingValueType = SpacingScaleValues | ResponsiveSpacing;
 
-export interface BoxProps {
+export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   /** CSS property padding */
   p?: SpacingValueType;
   /** CSS property padding-top */
