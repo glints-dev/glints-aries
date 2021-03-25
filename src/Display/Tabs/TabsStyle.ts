@@ -59,6 +59,20 @@ export const TabsHeader = styled.div<TabHeader>`
     padding: 0;
     margin: 0;
 
+    background-image: linear-gradient(to right, white, white),
+      linear-gradient(to right, white, white),
+      linear-gradient(
+        to right,
+        rgba(198, 198, 198, 0.3),
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(to left, rgba(198, 198, 198, 0.3), rgba(255, 255, 255, 0));
+
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 15px 100%, 15px 100%, 15px 100%, 15px 100%;
+    background-attachment: local, local, scroll, scroll;
+
     &::-webkit-scrollbar {
       display: none;
     }
