@@ -37,10 +37,6 @@ export const TabsHeader = styled.div<TabHeader>`
     }
   }
 
-  .horizontal-tabs-list.colored {
-    border-top: 1px solid ${Greyscale.softgrey};
-  }
-
   .vertical-tabs-list {
     @media (min-width: ${ScreenSize.tablet}px) {
       border-right: 1px solid ${Greyscale.softgrey};
@@ -126,15 +122,6 @@ export const TabsHeader = styled.div<TabHeader>`
         }
         button:hover {
           border: 0;
-        }
-      }
-
-      &.colored.active.horizontal-tab {
-        background-color: ${Greyscale.softgrey};
-
-        button {
-          font-weight: bold;
-          text-transform: uppercase;
         }
       }
 

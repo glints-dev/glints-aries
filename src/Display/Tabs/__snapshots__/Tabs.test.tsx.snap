@@ -9,10 +9,6 @@ exports[`<Tabs/> render should match snapshot 1`] = `
   position: relative;
 }
 
-.c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #F3F3F3;
-}
-
 .c1 ul {
   border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
@@ -80,15 +76,6 @@ exports[`<Tabs/> render should match snapshot 1`] = `
 .c1 ul li.active.horizontal-tab button:hover,
 .c1 ul li.active.vertical-tab button:hover {
   border: 0;
-}
-
-.c1 ul li.colored.active.horizontal-tab {
-  background-color: #F3F3F3;
-}
-
-.c1 ul li.colored.active.horizontal-tab button {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .c1 ul li.active.vertical-tab button {
@@ -288,10 +275,6 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
   position: relative;
 }
 
-.c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #F3F3F3;
-}
-
 .c1 ul {
   border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
@@ -359,15 +342,6 @@ exports[`<Tabs/> snapshots with alignment props alignment horizontal 1`] = `
 .c1 ul li.active.horizontal-tab button:hover,
 .c1 ul li.active.vertical-tab button:hover {
   border: 0;
-}
-
-.c1 ul li.colored.active.horizontal-tab {
-  background-color: #F3F3F3;
-}
-
-.c1 ul li.colored.active.horizontal-tab button {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .c1 ul li.active.vertical-tab button {
@@ -564,10 +538,6 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
   position: relative;
 }
 
-.c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #F3F3F3;
-}
-
 .c1 ul {
   border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
@@ -635,15 +605,6 @@ exports[`<Tabs/> snapshots with alignment props alignment vertical 1`] = `
 .c1 ul li.active.horizontal-tab button:hover,
 .c1 ul li.active.vertical-tab button:hover {
   border: 0;
-}
-
-.c1 ul li.colored.active.horizontal-tab {
-  background-color: #F3F3F3;
-}
-
-.c1 ul li.colored.active.horizontal-tab button {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .c1 ul li.active.vertical-tab button {
@@ -840,10 +801,6 @@ exports[`<Tabs/> snapshots with theme prop colour black 1`] = `
   position: relative;
 }
 
-.c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #F3F3F3;
-}
-
 .c1 ul {
   border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
@@ -911,15 +868,6 @@ exports[`<Tabs/> snapshots with theme prop colour black 1`] = `
 .c1 ul li.active.horizontal-tab button:hover,
 .c1 ul li.active.vertical-tab button:hover {
   border: 0;
-}
-
-.c1 ul li.colored.active.horizontal-tab {
-  background-color: #F3F3F3;
-}
-
-.c1 ul li.colored.active.horizontal-tab button {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .c1 ul li.active.vertical-tab button {
@@ -1116,10 +1064,6 @@ exports[`<Tabs/> snapshots with theme prop colour blue 1`] = `
   position: relative;
 }
 
-.c1 .horizontal-tabs-list.colored {
-  border-top: 1px solid #F3F3F3;
-}
-
 .c1 ul {
   border-bottom: 1px solid #F3F3F3;
   display: -webkit-box;
@@ -1187,15 +1131,6 @@ exports[`<Tabs/> snapshots with theme prop colour blue 1`] = `
 .c1 ul li.active.horizontal-tab button:hover,
 .c1 ul li.active.vertical-tab button:hover {
   border: 0;
-}
-
-.c1 ul li.colored.active.horizontal-tab {
-  background-color: #F3F3F3;
-}
-
-.c1 ul li.colored.active.horizontal-tab button {
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 .c1 ul li.active.vertical-tab button {
