@@ -74,6 +74,11 @@ ScreenCentered.args = {
   centering: true,
 };
 
+export const FullScreen = Template.bind({});
+FullScreen.args = {
+  fullscreen: true,
+};
+
 export const ScreenCenteredWithALotOfContent = Template.bind({});
 ScreenCenteredWithALotOfContent.args = {
   centering: true,

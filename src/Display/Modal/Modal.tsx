@@ -37,6 +37,7 @@ export const Modal: FC<Props> = ({
   className,
   hideContentArea,
   centering,
+  fullscreen,
   removeAnimation,
   footer,
   size,
@@ -162,6 +163,7 @@ export const Modal: FC<Props> = ({
           aria-modal="true"
           hideContentArea={hideContentArea}
           centering={centering}
+          fullscreen={fullscreen}
           onClick={e => e.stopPropagation()}
           tabIndex={0}
           isOpen={isVisible}
@@ -219,6 +221,8 @@ export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   footer?: ReactElement[];
   /** Centering Modal. */
   centering?: boolean;
+  /** Make modal cover the user viewport */
+  fullscreen?: boolean;
   /** Removes animation when opening and closing the modal. */
   removeAnimation?: boolean;
   /** Sets size of Modal. */
