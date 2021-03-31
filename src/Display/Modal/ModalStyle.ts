@@ -45,68 +45,6 @@ export const ModalDialog = styled.div`
   position: relative;
 `;
 
-export const ModalContentArea = styled.div<InnerProps>`
-  position: relative;
-  background: ${({ hideContentArea }) =>
-    hideContentArea ? 'transparent' : `${Greyscale.white}`};
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-
-  ${({ size }) => {
-    switch (size) {
-      case 's':
-        return `
-          width: ${SIZES.s}px;
-        `;
-      case 'm':
-        return `
-          width: ${SIZES.m}px;
-        `;
-      case 'l':
-        return `
-          width: ${SIZES.l}px;
-        `;
-      case 'xl':
-        return `
-          width: ${SIZES.xl}px;
-        `;
-      default:
-        return `
-          width: ${SIZES.default}px;
-        `;
-    }
-  }}
-
-  ${({ centering }) => {
-    if (centering) {
-      return `
-        display: flex;
-        flex-direction: column;
-        max-height: 85vh;
-      `;
-    }
-  }}
-    
-  @media ${Device.mobileM} {
-    width: 95vw;
-  }
-
-  ${({ removeAnimation, isOpen }) => {
-    if (!removeAnimation) {
-      return `
-        opacity: ${isOpen ? '1' : '0'};
-        transform: ${
-          isOpen
-            ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)'
-            : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'
-        };
-        transition: ${isOpen ? 'all .25s ease-in' : 'all .25s ease-out'};
-      `;
-    }
-  }}
-`;
-
 export const ModalHeader = styled.header`
   display: flex;
   justify-content: space-between;
@@ -191,5 +129,67 @@ export const ModalFooter = styled.footer<{ isChildrenInMultiLines: boolean }>`
         margin-left: 10px;
       }
     `;
+  }}
+`;
+
+export const ModalContentArea = styled.div<InnerProps>`
+  position: relative;
+  background: ${({ hideContentArea }) =>
+    hideContentArea ? 'transparent' : `${Greyscale.white}`};
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+
+  ${({ size }) => {
+    switch (size) {
+      case 's':
+        return `
+          width: ${SIZES.s}px;
+        `;
+      case 'm':
+        return `
+          width: ${SIZES.m}px;
+        `;
+      case 'l':
+        return `
+          width: ${SIZES.l}px;
+        `;
+      case 'xl':
+        return `
+          width: ${SIZES.xl}px;
+        `;
+      default:
+        return `
+          width: ${SIZES.default}px;
+        `;
+    }
+  }}
+
+  ${({ centering }) => {
+    if (centering) {
+      return `
+        display: flex;
+        flex-direction: column;
+        max-height: 85vh;
+      `;
+    }
+  }}
+    
+  @media ${Device.mobileM} {
+    width: 95vw;
+  }
+
+  ${({ removeAnimation, isOpen }) => {
+    if (!removeAnimation) {
+      return `
+        opacity: ${isOpen ? '1' : '0'};
+        transform: ${
+          isOpen
+            ? 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)'
+            : 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 30, 0, 1)'
+        };
+        transition: ${isOpen ? 'all .25s ease-in' : 'all .25s ease-out'};
+      `;
+    }
   }}
 `;
