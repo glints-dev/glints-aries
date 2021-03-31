@@ -77,6 +77,7 @@ ScreenCentered.args = {
 export const FullScreen = Template.bind({});
 FullScreen.args = {
   fullscreen: true,
+  children: times(1000, constant(defaultChildren)).join(' '),
 };
 
 export const ScreenCenteredWithALotOfContent = Template.bind({});
