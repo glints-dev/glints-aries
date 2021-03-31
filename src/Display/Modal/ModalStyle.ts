@@ -52,7 +52,7 @@ export const ModalHeader = styled.header`
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid ${Greyscale.lightgrey};
-  padding: 15px;
+  padding: 16px;
 
   h3 {
     font-size: 0.8em;
@@ -84,7 +84,7 @@ export const ModalBody = styled.section<ModalBodyProps>`
   padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 30px')};
 
   @media ${Device.mobileM} {
-    padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 15px')};
+    padding: ${({ hideContentArea }) => (hideContentArea ? '0' : '20px 16px')};
   }
 `;
 
@@ -98,12 +98,12 @@ export const ModalFooter = styled.footer<{ isChildrenInMultiLines: boolean }>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 15px 30px;
+  padding: 16px 30px;
   justify-content: flex-end;
   border-top: 1px solid ${Greyscale.lightgrey};
 
   @media ${Device.mobileM} {
-    padding: 15px;
+    padding: 16px;
   }
 
   ${({ isChildrenInMultiLines }) => {
