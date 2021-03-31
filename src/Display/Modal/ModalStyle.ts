@@ -174,6 +174,28 @@ export const ModalContentArea = styled.div<InnerProps>`
       `;
     }
   }}
+
+  ${({ fullscreen }) => {
+    if (fullscreen) {
+      return `
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+        max-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+
+        ${ModalBody} {
+          overflow: auto;
+        }
+
+        ${ModalFooter} {
+          margin-top: auto;
+        }
+      `;
+    }
+  }}
     
   @media ${Device.mobileM} {
     width: 95vw;
