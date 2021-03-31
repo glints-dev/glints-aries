@@ -213,6 +213,17 @@ describe('<Modal /> UI', () => {
     const modalContainer = getByTestId('modal-container');
     expect(modalContainer).toHaveStyle('align-items: center;');
   });
+
+  it('should make the Modal cover the entire screen', () => {
+    const { getByTestId } = render(
+      <Modal fullscreen isVisible={true} onClose={props.onClose}>
+        <p>{props.content}</p>
+      </Modal>
+    );
+    const modalContentArea = getByTestId('dialog');
+    expect(modalContentArea).toHaveStyle('width: 100vw;');
+    expect(modalContentArea).toHaveStyle('height: 100vh;');
+  });
 });
 
 describe('<Modal /> not receiving prop onClose', () => {
