@@ -30,15 +30,6 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -57,7 +48,7 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -82,6 +73,15 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c10 {
@@ -265,14 +265,14 @@ exports[`<Gallery /> active item click on gallery item 1`] = `
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
@@ -685,15 +685,6 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -712,7 +703,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -737,6 +728,15 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c10 {
@@ -920,14 +920,14 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
@@ -1340,15 +1340,6 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1367,7 +1358,7 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -1392,6 +1383,15 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c0 {
@@ -1454,14 +1454,14 @@ exports[`<Gallery /> rendering should match snapshot when imagesDisplayed is set
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
@@ -1573,15 +1573,6 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1600,7 +1591,7 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -1625,6 +1616,15 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c0 {
@@ -1662,14 +1662,14 @@ exports[`<Gallery /> rendering should match snapshot when item is less than defa
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
@@ -1765,15 +1765,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1792,7 +1783,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -1817,6 +1808,15 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c0 {
@@ -1879,14 +1879,14 @@ exports[`<Gallery /> rendering should match snapshot when slider is not shown 1`
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
@@ -2038,15 +2038,6 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   position: relative;
 }
 
-.c5 {
-  position: relative;
-  background: transparent;
-  margin: 120px auto;
-  max-width: 95vw;
-  outline: none;
-  width: 500px;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2065,7 +2056,7 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
   align-content: center;
   font-size: 1.6em;
   border-bottom: 1px solid #C6C6C6;
-  padding: 15px;
+  padding: 16px;
 }
 
 .c6 h3 {
@@ -2090,6 +2081,15 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 .c8 {
   position: relative;
   padding: 0;
+}
+
+.c5 {
+  position: relative;
+  background: transparent;
+  margin: 120px auto;
+  max-width: 95vw;
+  outline: none;
+  width: 500px;
 }
 
 .c10 {
@@ -2273,14 +2273,14 @@ exports[`<Gallery /> rendering should match snapshot when slider is shown 1`] = 
 }
 
 @media (max-width:480px) {
-  .c5 {
-    width: 95vw;
+  .c8 {
+    padding: 0;
   }
 }
 
 @media (max-width:480px) {
-  .c8 {
-    padding: 0;
+  .c5 {
+    width: 95vw;
   }
 }
 
