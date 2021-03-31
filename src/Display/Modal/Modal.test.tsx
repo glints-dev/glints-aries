@@ -188,29 +188,31 @@ describe('displays the correct size', () => {
   });
 });
 
-it('should not show the header when hideHeader is true', () => {
-  const { getByTestId } = render(
-    <Modal
-      hideHeader
-      title={props.title}
-      isVisible={true}
-      onClose={props.onClose}
-    >
-      <p>{props.content}</p>
-    </Modal>
-  );
-  const modalContainer = getByTestId('modal-container');
-  expect(modalContainer).not.toHaveTextContent(props.title);
-});
+describe('<Modal /> UI', () => {
+  it('should not show the header when hideHeader is true', () => {
+    const { getByTestId } = render(
+      <Modal
+        hideHeader
+        title={props.title}
+        isVisible={true}
+        onClose={props.onClose}
+      >
+        <p>{props.content}</p>
+      </Modal>
+    );
+    const modalContainer = getByTestId('modal-container');
+    expect(modalContainer).not.toHaveTextContent(props.title);
+  });
 
-it('should center the Modal vertically when centering is true', () => {
-  const { getByTestId } = render(
-    <Modal centering isVisible={true} onClose={props.onClose}>
-      <p>{props.content}</p>
-    </Modal>
-  );
-  const modalContainer = getByTestId('modal-container');
-  expect(modalContainer).toHaveStyle('align-items: center;');
+  it('should center the Modal vertically when centering is true', () => {
+    const { getByTestId } = render(
+      <Modal centering isVisible={true} onClose={props.onClose}>
+        <p>{props.content}</p>
+      </Modal>
+    );
+    const modalContainer = getByTestId('modal-container');
+    expect(modalContainer).toHaveStyle('align-items: center;');
+  });
 });
 
 describe('<Modal /> not receiving prop onClose', () => {
