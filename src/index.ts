@@ -80,6 +80,7 @@ export { default as CheckmarkSolidIcon } from './General/Icon/components/Checkma
 export { default as CheckmarkThickIcon } from './General/Icon/components/CheckmarkThickIcon';
 export { default as CircleIcon } from './General/Icon/components/CircleIcon';
 export { default as CircleAndCheckIcon } from './General/Icon/components/CircleAndCheckIcon';
+export { default as ClipboardCheckOutlineIcon } from './General/Icon/components/ClipboardCheckOutlineIcon';
 export { default as ClockIcon } from './General/Icon/components/ClockIcon';
 export { default as CloseIcon } from './General/Icon/components/CloseIcon';
 export { default as CloseCircleSolidIcon } from './General/Icon/components/CloseCircleSolidIcon';
