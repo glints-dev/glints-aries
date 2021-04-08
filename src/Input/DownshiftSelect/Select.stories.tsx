@@ -333,6 +333,7 @@ export const ControlledInputValue: Story<Props> = () => {
         <TextField
           value={inputValue}
           onChange={(e: any) => setInputValue(e.target.value)}
+          placeholder="foo"
         />
       </Box>
       <Box mb={8}>
