@@ -291,11 +291,11 @@ export const Select: React.FC<Props> & { Components: Components } = ({
           {...getInputProps({
             disabled: disabled,
             readOnly: disableTyping,
+            placeholder: placeholder,
             onFocus,
             onBlur,
             ...props,
           })}
-          placeholder={placeholder}
           aria-invalid={invalid}
           {...(helperText && { 'aria-describedby': helperId })}
           {...(selectedItem && { title: selectedItem.label })}
@@ -321,6 +321,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
             })}
             aria-label="toggle menu"
             data-testid="toggle-button"
+            ref={undefined}
           >
             {isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
           </ToggleButton>
