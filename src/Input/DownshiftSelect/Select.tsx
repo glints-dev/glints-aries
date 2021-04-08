@@ -18,7 +18,7 @@ export const defaultTransformFunction = (items: Item[], inputValue: string) =>
     item.label.toLowerCase().startsWith(inputValue.toLowerCase())
   );
 
-export const defaultItemToString = (item: Item) => item.label;
+export const defaultItemToString = (item: Item) => (item ? item.label : '');
 
 export const defaultEmptyListText =
   'No results found. Try another keyword to search for.';
@@ -238,6 +238,12 @@ export const Select: React.FC<Props> & { Components: Components } = ({
       onClear();
     }
     reset();
+    setInputValue('');
+    // reset does not call onSelectedItemChange on reset, but we want this
+    // for convenience
+    if (isFunction(onSelectedItemChangeExternal)) {
+      onSelectedItemChangeExternal(null);
+    }
   };
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
