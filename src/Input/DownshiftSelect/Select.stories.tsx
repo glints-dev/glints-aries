@@ -100,14 +100,14 @@ Interactive.parameters = {
 };
 
 export const RealisticExample: Story<Props> = () => {
-  const [selectedItem, setSelectedItem] = useState<Item>();
+  const [selectedItem, setSelectedItem] = useState<Item>(null);
   return (
     <>
       <Select
         label="Select a Job"
         items={items}
         selectedItem={selectedItem}
-        onSelectedItemChange={item => setSelectedItem(item)}
+        onSelectedItemChange={setSelectedItem}
       />
       <Box mt={16}>
         Selected Job: {selectedItem ? selectedItem.label : 'none'}
@@ -262,7 +262,7 @@ DisabledOptions.parameters = {
 };
 
 export const ControlledSelectedItem: Story<Props> = () => {
-  const [selectedItem, setSelectedItem] = useState<Item>();
+  const [selectedItem, setSelectedItem] = useState<Item>(null);
   return (
     <>
       <Box mb={8}>
@@ -271,6 +271,10 @@ export const ControlledSelectedItem: Story<Props> = () => {
           onClick={() => setSelectedItem(sample(items))}
         >
           Select Random Item
+        </Button>
+        &nbsp;&nbsp;
+        <Button variant="solid-blue" onClick={() => setSelectedItem(null)}>
+          Reset
         </Button>
         &nbsp;&nbsp;
         {selectedItem
@@ -289,7 +293,7 @@ ControlledSelectedItem.parameters = {
   docs: {
     description: {
       story:
-        "Use <code>selectedItem</code> and <code>setSelectedItem</code> to control the currently selected item. <strong>In many cases, you will want to use this to react to selections made by the user.</strong> Unfortunately, if you're doing this , at the moment there is no way to reset the Select externally.",
+        'Use <code>selectedItem</code> and <code>setSelectedItem</code> to control the currently selected item. <strong>In many cases, you will want to use this to react to selections made by the user.</strong> Use <code>null</code> as the controlled <code>selectedItem</code> when no item is selected: So if you want to have a controlled Select with no item selected by default, use <code>useState(null)</code>.',
     },
   },
 };
