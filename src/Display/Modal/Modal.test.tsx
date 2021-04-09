@@ -221,8 +221,8 @@ describe('<Modal /> UI', () => {
       </Modal>
     );
     const modalContentArea = getByTestId('dialog');
-    expect(modalContentArea).toHaveStyle('width: 100vw;');
-    expect(modalContentArea).toHaveStyle('height: 100vh;');
+    expect(modalContentArea).toHaveStyle('min-width: 100vw;');
+    expect(modalContentArea).toHaveStyle('min-height: 100vh;');
   });
 });
 
