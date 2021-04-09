@@ -242,6 +242,7 @@ Modal.defaultProps = {
   hideHeader: false,
   removeAnimation: false,
   centering: false,
+  fullscreen: false,
   keepChildrenMountedOnClose: false,
 };
 
