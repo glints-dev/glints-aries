@@ -180,10 +180,10 @@ export const ModalContentArea = styled.div<InnerProps>`
       return `
         display: flex;
         flex-direction: column;
-        max-width: 100vw;
-        max-height: 100vh;
-        width: 100vw;
-        height: 100vh;
+        max-width: none;
+        max-height: none;
+        min-width: 100vw;
+        min-height: 100vh;
         margin: 0;
 
         ${ModalBody} {
