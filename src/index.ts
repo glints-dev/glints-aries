@@ -28,6 +28,7 @@ export { default as Popover } from './Display/Popover';
 export { default as ProfilePicture } from './General/ProfilePicture';
 export { default as RadioButton } from './Input/RadioButton';
 export { default as Select } from './Input/Select';
+export { Select as DownshiftSelect, SubComponents as DownshiftSelectSubComponents, Item as DownshiftSelectItem, defaultTransformFunction as DownshiftSelectDefaultTransformFunction, itemToString as DownshiftSelectItemToString, defaultEmptyListText as defaultEmptyListText, ItemProps as DownshiftSelectItemComponentProps } from './Input/DownshiftSelect/Select';
 export { default as Slider } from './Display/Slider';
 export { default as Swipeable } from './Display/Swipeable';
 export { default as Tabs } from './Display/Tabs';

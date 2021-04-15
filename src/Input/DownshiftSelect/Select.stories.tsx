@@ -128,13 +128,13 @@ export const TransformFunctionForCustomFilter = Template.bind({});
 TransformFunctionForCustomFilter.args = {
   transformFunction: (items: Item[], inputValue: string) =>
     items.filter(item =>
-      item.label.toLowerCase().includes(inputValue.toLowerCase())
+      item.label.toLowerCase().startsWith(inputValue.toLowerCase())
     ),
 };
 TransformFunctionForCustomFilter.parameters = {
   docs: {
     description: {
-      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses <code>String.includes</code> instead of the default <code>String.startsWith</code>.`,
+      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses <code>String.startsWith</code> instead of the default <code>String.includes</code>.`,
     },
   },
 };
