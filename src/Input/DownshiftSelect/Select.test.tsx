@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import _userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
-import { Select, Props, Item, ItemProps, LabelProps } from './Select';
+import { Select, Props, Item, ItemProps } from './Select';
 import { first, identity } from 'lodash';
 import { Item as ItemComponent, Label as LabelComponent } from './SelectStyle';
 
@@ -25,7 +25,7 @@ const CustomItem: React.FC<ItemProps> = props => {
   return <ItemComponent {...props} data-test="foo" />;
 };
 
-const CustomLabel: React.FC<LabelProps> = props => {
+const CustomLabel: React.FC = props => {
   return <LabelComponent {...props} data-test="bar" />;
 };
 

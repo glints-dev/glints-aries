@@ -2,27 +2,14 @@ import styled from 'styled-components';
 import Loading from '../../General/Loading';
 import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 import { Shadow } from '../../Utils/Shadow';
-import {
-  ContainerProps,
-  ComboboxProps,
-  HelperTextProps,
-  IndicatorsContainerProps,
-  InputProps,
-  ItemProps,
-  EmptyListProps,
-  LabelProps,
-  LoadingIndicatorProps,
-  MenuProps,
-  ToggleButtonProps,
-  ClearButtonProps,
-} from './Select';
+import { ItemProps } from './Select';
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
   position: relative;
   font-size: 16px;
 `;
 
-export const Label = styled.label<LabelProps>`
+export const Label = styled.label`
   display: block;
   margin-bottom: 8px;
   color: ${Greyscale.devilsgrey};
@@ -41,7 +28,7 @@ export const Label = styled.label<LabelProps>`
   }
 `;
 
-export const Combobox = styled.div<ComboboxProps>`
+export const Combobox = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-column-gap: 0.75em;
@@ -67,7 +54,7 @@ export const Combobox = styled.div<ComboboxProps>`
   }
 `;
 
-export const Input = styled.input<InputProps>`
+export const Input = styled.input`
   border: none;
   background-color: transparent;
   outline: none;
@@ -84,7 +71,7 @@ export const Input = styled.input<InputProps>`
   }
 `;
 
-export const IndicatorsContainer = styled.div<IndicatorsContainerProps>`
+export const IndicatorsContainer = styled.div`
   display: flex;
   flex-direction: row;
   > :not(:last-child) {
@@ -100,16 +87,16 @@ export const _IndicatorButton = styled.button`
   font-size: inherit;
 `;
 
-export const ClearButton = styled(_IndicatorButton)<ClearButtonProps>``;
+export const ClearButton = styled(_IndicatorButton)``;
 
-export const ToggleButton = styled(_IndicatorButton)<ToggleButtonProps>``;
+export const ToggleButton = styled(_IndicatorButton)``;
 
-export const LoadingIndicator = styled(Loading)<LoadingIndicatorProps>`
+export const LoadingIndicator = styled(Loading)`
   align-items: center;
   font-size: 0.5625em;
 `;
 
-export const Menu = styled.ul<MenuProps>`
+export const Menu = styled.ul`
   margin-top: 4px;
   position: absolute;
   width: 100%;
@@ -118,6 +105,7 @@ export const Menu = styled.ul<MenuProps>`
   border-radius: 0.5em;
   box-shadow: ${Shadow.down3};
   background-color: white;
+  z-index: 1;
 
   [aria-expanded='false'] + & {
     visibility: hidden;
@@ -144,7 +132,7 @@ export const Item = styled.li<ItemProps>`
   }
 `;
 
-export const EmptyList = styled.li<EmptyListProps>`
+export const EmptyList = styled.li`
   padding: 0.5em 1em;
   list-style-type: none;
   white-space: nowrap;
@@ -154,7 +142,7 @@ export const EmptyList = styled.li<EmptyListProps>`
   cursor: not-allowed;
 `;
 
-export const HelperText = styled.span<HelperTextProps>`
+export const HelperText = styled.span`
   margin-top: 4px;
   color: ${Greyscale.devilsgrey};
   font-size: 0.875em;

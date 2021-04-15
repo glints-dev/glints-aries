@@ -3,7 +3,7 @@ import { useCombobox, UseComboboxProps } from 'downshift';
 
 import * as internalComponents from './SelectStyle';
 import { ArrowDownIcon, ArrowUpIcon, CloseCircleSolidIcon } from '../..';
-import { isFunction, isUndefined } from 'lodash';
+import { isFunction, isUndefined, noop } from 'lodash';
 import { useId } from 'react-id-generator';
 
 export interface Item {
@@ -15,10 +15,10 @@ export interface Item {
 
 export const defaultTransformFunction = (items: Item[], inputValue: string) =>
   items.filter(item =>
-    item.label.toLowerCase().startsWith(inputValue.toLowerCase())
+    item.label.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-export const defaultItemToString = (item: Item) => (item ? item.label : '');
+export const itemToString = (item: Item) => (item ? item.label : '');
 
 export const defaultEmptyListText =
   'No results found. Try another keyword to search for.';
@@ -26,38 +26,25 @@ export const defaultEmptyListText =
 // These are our custom props for our subcomponents. We need this because
 // sometimes we want to make additional props available to the subcomponent,
 // e.g. a Item subcomponent needs to know the item it represents.
-export type ContainerProps = {};
-export type LabelProps = {};
-export type ComboboxProps = {};
-export type InputProps = {};
-export type IndicatorsContainerProps = {};
-export type LoadingIndicatorProps = {};
-export type ClearButtonProps = {};
-export type ToggleButtonProps = {};
-export type MenuProps = {};
 export type ItemProps = {
   item: Item;
 };
-export type EmptyListProps = {};
-export type HelperTextProps = {};
 
 // These are the actual types for the subcomponents. Each subcomponent takes
 // its own, custom props (defined by us) AND the props that correspond to the
 // intrinsic html element which the subcomponent "extends".
-export type ContainerType = ContainerProps & HTMLProps<HTMLDivElement>;
-export type LabelType = LabelProps & HTMLProps<HTMLLabelElement>;
-export type ComboboxType = ComboboxProps & HTMLProps<HTMLDivElement>;
-export type InputType = InputProps & HTMLProps<HTMLInputElement>;
-export type IndicatorsContainerType = IndicatorsContainerProps &
-  HTMLProps<HTMLDivElement>;
-export type LoadingIndicatorType = LoadingIndicatorProps &
-  HTMLProps<HTMLDivElement>;
-export type ClearButtonType = ClearButtonProps & HTMLProps<HTMLButtonElement>;
-export type ToggleButtonType = ToggleButtonProps & HTMLProps<HTMLButtonElement>;
-export type MenuType = MenuProps & HTMLProps<HTMLUListElement>;
-export type ItemType = ItemProps & HTMLProps<HTMLLIElement>;
-export type EmptyListType = EmptyListProps & HTMLProps<HTMLLIElement>;
-export type HelperTextType = HelperTextProps & HTMLProps<HTMLSpanElement>;
+type ContainerType = HTMLProps<HTMLDivElement>;
+type LabelType = HTMLProps<HTMLLabelElement>;
+type ComboboxType = HTMLProps<HTMLDivElement>;
+type InputType = HTMLProps<HTMLInputElement>;
+type IndicatorsContainerType = HTMLProps<HTMLDivElement>;
+type LoadingIndicatorType = HTMLProps<HTMLDivElement>;
+type ClearButtonType = HTMLProps<HTMLButtonElement>;
+type ToggleButtonType = HTMLProps<HTMLButtonElement>;
+type MenuType = HTMLProps<HTMLUListElement>;
+type ItemType = ItemProps & HTMLProps<HTMLLIElement>;
+type EmptyListType = HTMLProps<HTMLLIElement>;
+type HelperTextType = HTMLProps<HTMLSpanElement>;
 
 // This is the type for the 'components' prop on the Select. Using
 // ComponentType allows us to take in any kind of component, e.g. class
@@ -77,7 +64,9 @@ export interface Components {
   HelperText: React.ComponentType<HelperTextType>;
 }
 
-export interface Props extends ComboboxProps {
+export const SubComponents = internalComponents;
+
+export interface Props {
   /** The items to choose from. */
   items: Item[];
 
@@ -212,7 +201,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
       setInputValue(inputValue);
     },
 
-    itemToString: defaultItemToString,
+    itemToString,
     initialIsOpen: isOpenInitially,
 
     ...(!isUndefined(isOpenExternal) && { isOpen: isOpenExternal }),
@@ -284,7 +273,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
         data-disabled={disabled}
         data-invalid={invalid}
         data-active={isFocused}
-        onClick={openMenu}
+        onClick={disabled ? noop : openMenu}
         data-testid="combobox"
       >
         <Input
@@ -321,6 +310,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
             })}
             aria-label="toggle menu"
             data-testid="toggle-button"
+            // getToggleButtonProps adds a ref here, but functional components don't support them. Overriding the ref here prevents a React warning
             ref={undefined}
           >
             {isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -339,9 +329,10 @@ export const Select: React.FC<Props> & { Components: Components } = ({
               key={item.value}
               item={item}
               title={item.label}
+              // getToggleButtonProps adds a ref here, but functional components don't support them. Overriding the ref here prevents a React warning
               ref={undefined}
             >
-              {defaultItemToString(item)}
+              {itemToString(item)}
             </Item>
           ))
         ) : (
