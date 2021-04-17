@@ -412,12 +412,15 @@ describe('<Select> (Downshift)', () => {
 
   it('should call the onClear callback', () => {
     const onClear = jest.fn();
+    const onSelectedItemChange = jest.fn();
     const { getClearButton } = renderSelect({
       onClear,
+      onSelectedItemChange,
       selectedItem: first(items),
     });
     fireEvent.click(getClearButton());
     expect(onClear).toHaveBeenCalledTimes(1);
+    expect(onSelectedItemChange).toHaveBeenCalledWith(null);
   });
 
   it('should allow configuration of empty list text', () => {
