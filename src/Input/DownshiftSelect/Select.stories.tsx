@@ -250,7 +250,8 @@ DisableTyping.parameters = {
 
 export const DisabledOptions = Template.bind({});
 DisabledOptions.args = {
-  items: items.map((item, index) => ({ ...item, disabled: index % 2 === 1 })),
+  // items: items.map((item, index) => ({ ...item, disabled: index % 2 === 1 })),
+  items: items.map((item, index) => ({ ...item, disabled: true })),
 };
 DisabledOptions.parameters = {
   docs: {

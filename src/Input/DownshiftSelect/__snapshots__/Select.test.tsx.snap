@@ -147,15 +147,15 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       data-disabled="false"
       data-invalid="true"
       data-testid="label"
-      for="downshift-91-input"
-      id="downshift-91-label"
+      for="downshift-94-input"
+      id="downshift-94-label"
     >
       Foo
     </label>
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-91-menu"
+      aria-owns="downshift-94-menu"
       class="SelectStyle__Combobox-qr1jv6-2 bvcZlQ"
       data-active="false"
       data-disabled="false"
@@ -165,14 +165,14 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
     >
       <input
         aria-autocomplete="list"
-        aria-controls="downshift-91-menu"
-        aria-describedby="description-31"
+        aria-controls="downshift-94-menu"
+        aria-describedby="description-32"
         aria-invalid="true"
-        aria-labelledby="downshift-91-label"
+        aria-labelledby="downshift-94-label"
         autocomplete="off"
         class="SelectStyle__Input-qr1jv6-3 llfDsg"
         data-testid="input"
-        id="downshift-91-input"
+        id="downshift-94-input"
         value=""
       />
       <div
@@ -183,7 +183,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
           aria-label="toggle menu"
           class="SelectStyle___IndicatorButton-qr1jv6-5 SelectStyle__ToggleButton-qr1jv6-7 cdsRlh"
           data-testid="toggle-button"
-          id="downshift-91-toggle-button"
+          id="downshift-94-toggle-button"
           tabindex="-1"
           type="button"
         >
@@ -203,10 +203,10 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       </div>
     </div>
     <ul
-      aria-labelledby="downshift-91-label"
+      aria-labelledby="downshift-94-label"
       class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
-      id="downshift-91-menu"
+      id="downshift-94-menu"
       role="listbox"
     >
       <li
@@ -220,7 +220,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       class="SelectStyle__HelperText-qr1jv6-12 eIDHSV"
       data-invalid="true"
       data-testid="helper-text"
-      id="description-31"
+      id="description-32"
     >
       Invalid
     </span>
