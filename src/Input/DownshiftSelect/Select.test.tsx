@@ -283,6 +283,19 @@ describe('<Select> (Downshift)', () => {
     });
   });
 
+  describe('when disableTyping is true', () => {
+    it('should not accept text input', () => {
+      const { getSnapshot, getInput } = renderSelect({
+        disableTyping: true,
+      });
+      expect(getSnapshot()).toMatchSnapshot();
+      expect(getInput()).toHaveAttribute('readonly');
+
+      // It would be better to test this with userInput.type, but that
+      // unfortunately ignores the readonly attribute
+    });
+  });
+
   describe('when selectedItem is controlled', () => {
     it("should change the input value to the controlled item's label", () => {
       const selectedItem = first(items);

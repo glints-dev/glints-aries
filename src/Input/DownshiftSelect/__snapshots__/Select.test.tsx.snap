@@ -35,7 +35,7 @@ exports[`<Select> (Downshift) should allow removal of components by passing a vo
     </div>
     <ul
       aria-labelledby="downshift-53-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-53-menu"
       role="listbox"
@@ -119,7 +119,7 @@ exports[`<Select> (Downshift) should have a loading indicator 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-54-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-54-menu"
       role="listbox"
@@ -147,15 +147,15 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       data-disabled="false"
       data-invalid="true"
       data-testid="label"
-      for="downshift-90-input"
-      id="downshift-90-label"
+      for="downshift-91-input"
+      id="downshift-91-label"
     >
       Foo
     </label>
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-90-menu"
+      aria-owns="downshift-91-menu"
       class="SelectStyle__Combobox-qr1jv6-2 bvcZlQ"
       data-active="false"
       data-disabled="false"
@@ -165,14 +165,14 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
     >
       <input
         aria-autocomplete="list"
-        aria-controls="downshift-90-menu"
-        aria-describedby="description-30"
+        aria-controls="downshift-91-menu"
+        aria-describedby="description-31"
         aria-invalid="true"
-        aria-labelledby="downshift-90-label"
+        aria-labelledby="downshift-91-label"
         autocomplete="off"
         class="SelectStyle__Input-qr1jv6-3 llfDsg"
         data-testid="input"
-        id="downshift-90-input"
+        id="downshift-91-input"
         value=""
       />
       <div
@@ -183,7 +183,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
           aria-label="toggle menu"
           class="SelectStyle___IndicatorButton-qr1jv6-5 SelectStyle__ToggleButton-qr1jv6-7 cdsRlh"
           data-testid="toggle-button"
-          id="downshift-90-toggle-button"
+          id="downshift-91-toggle-button"
           tabindex="-1"
           type="button"
         >
@@ -203,10 +203,10 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       </div>
     </div>
     <ul
-      aria-labelledby="downshift-90-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      aria-labelledby="downshift-91-label"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
-      id="downshift-90-menu"
+      id="downshift-91-menu"
       role="listbox"
     >
       <li
@@ -220,7 +220,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
       class="SelectStyle__HelperText-qr1jv6-12 eIDHSV"
       data-invalid="true"
       data-testid="helper-text"
-      id="description-30"
+      id="description-31"
     >
       Invalid
     </span>
@@ -286,7 +286,7 @@ exports[`<Select> (Downshift) should have an optional helper-text 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-62-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-62-menu"
       role="listbox"
@@ -378,7 +378,7 @@ exports[`<Select> (Downshift) should have an optional label 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-64-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-64-menu"
       role="listbox"
@@ -452,7 +452,7 @@ exports[`<Select> (Downshift) should have an optional placeholder 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-63-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-63-menu"
       role="listbox"
@@ -525,7 +525,7 @@ exports[`<Select> (Downshift) should match snapshot when closed 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-1-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-1-menu"
       role="listbox"
@@ -598,7 +598,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
     </div>
     <ul
       aria-labelledby="downshift-2-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-2-menu"
       role="listbox"
@@ -713,7 +713,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
     </div>
     <ul
       aria-labelledby="downshift-51-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-51-menu"
       role="listbox"
@@ -757,6 +757,80 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         title="Front-end Engineer"
       >
         Front-end Engineer
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Select> (Downshift) when disableTyping is true should not accept text input 1`] = `
+<DocumentFragment>
+  <div
+    class="SelectStyle__Container-qr1jv6-0 faXYfy"
+    data-testid="container"
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-66-menu"
+      class="SelectStyle__Combobox-qr1jv6-2 bvcZlQ"
+      data-active="false"
+      data-disabled="false"
+      data-invalid="false"
+      data-testid="combobox"
+      role="combobox"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="downshift-66-menu"
+        aria-invalid="false"
+        aria-labelledby="downshift-66-label"
+        autocomplete="off"
+        class="SelectStyle__Input-qr1jv6-3 llfDsg"
+        data-testid="input"
+        id="downshift-66-input"
+        readonly=""
+        value=""
+      />
+      <div
+        class="SelectStyle__IndicatorsContainer-qr1jv6-4 hZrLeS"
+        data-testid="indicators-container"
+      >
+        <button
+          aria-label="toggle menu"
+          class="SelectStyle___IndicatorButton-qr1jv6-5 SelectStyle__ToggleButton-qr1jv6-7 cdsRlh"
+          data-testid="toggle-button"
+          id="downshift-66-toggle-button"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            data-testid="icon-svg"
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 100 100"
+            width="1em"
+          >
+            <polygon
+              points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <ul
+      aria-labelledby="downshift-66-label"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
+      data-testid="menu"
+      id="downshift-66-menu"
+      role="listbox"
+    >
+      <li
+        class="SelectStyle__EmptyList-qr1jv6-11 jbauMg"
+        data-testid="empty-list"
+      >
+        No results found. Try another keyword to search for.
       </li>
     </ul>
   </div>
@@ -820,7 +894,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
     </div>
     <ul
       aria-labelledby="downshift-55-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-55-menu"
       role="listbox"
@@ -925,7 +999,7 @@ exports[`<Select> (Downshift) when it is disabled should have disabled styles an
     </div>
     <ul
       aria-labelledby="downshift-65-label"
-      class="SelectStyle__Menu-qr1jv6-9 bHPggC"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
       data-testid="menu"
       id="downshift-65-menu"
       role="listbox"
