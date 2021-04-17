@@ -29,11 +29,13 @@ const CustomLabel: React.FC = props => {
   return <LabelComponent {...props} data-test="bar" />;
 };
 
-const renderSelect = (
-  props: Omit<React.ComponentProps<typeof Select>, 'items'> & {
-    'data-test'?: string; // Can't figure out how to get the built-in props here
-  } = {}
-) => {
+type TestSelectProps = Omit<React.ComponentProps<typeof Select>, 'items'> & {
+  items?: Item[];
+} & {
+  'data-test'?: string; // Can't figure out how to get the built-in props here
+};
+
+const renderSelect = (props: TestSelectProps = { items }) => {
   const { asFragment, queryByTestId, queryAllByRole, rerender } = render(
     <Select items={items} {...props} />
   );
@@ -50,7 +52,7 @@ const renderSelect = (
   const getLoadingIndicator = () => queryByTestId('loading-indicator');
   const getHelperText = () => queryByTestId('helper-text');
 
-  const rerenderWithProps = (props: Omit<Props, 'items'> = {}) =>
+  const rerenderWithProps = (props: TestSelectProps = { items }) =>
     rerender(<Select items={items} {...props} />);
 
   return {
@@ -293,6 +295,20 @@ describe('<Select> (Downshift)', () => {
 
       // It would be better to test this with userInput.type, but that
       // unfortunately ignores the readonly attribute
+    });
+  });
+
+  describe('when an item is disabled', () => {
+    it('should not be clickable', () => {
+      const onSelectedItemChange = jest.fn();
+      const { getFirstItem, getToggleButton } = renderSelect({
+        onSelectedItemChange,
+        items: items.map(item => ({ ...item, disabled: true })),
+      });
+      userEvent.click(getToggleButton());
+      console.log(getFirstItem());
+      userEvent.click(getFirstItem());
+      expect(onSelectedItemChange).not.toHaveBeenCalled();
     });
   });
 
