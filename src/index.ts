@@ -132,6 +132,7 @@ export { default as InfoIcon } from './General/Icon/components/InfoIcon';
 export { default as InfoSolidIcon } from './General/Icon/components/InfoSolidIcon';
 export { default as InstagramIcon } from './General/Icon/components/InstagramIcon';
 export { default as LightbulbIcon } from './General/Icon/components/LightbulbIcon';
+export { default as LineIcon } from './General/Icon/components/LineIcon';
 export { default as LinkedinIcon } from './General/Icon/components/LinkedinIcon';
 export { default as LoadingIcon } from './General/Icon/components/LoadingIcon';
 export { default as LocationIcon } from './General/Icon/components/LocationIcon';
