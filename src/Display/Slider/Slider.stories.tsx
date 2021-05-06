@@ -78,6 +78,9 @@ ArrowWhite.args = { arrowWhite: true };
 export const RemoveDots = Template.bind({});
 RemoveDots.args = { removeDots: true };
 
+export const RemoveArrows = Template.bind({});
+RemoveArrows.args = { removeArrows: true };
+
 export const InitialItem = Template.bind({});
 InitialItem.args = { initialItem: 2 };
 

@@ -24,6 +24,7 @@ export const Slider = ({
   fullContent = false,
   arrowWhite = false,
   removeDots = false,
+  removeArrows = false,
   renderLeftIcon,
   renderRightIcon,
   containerRef,
@@ -174,19 +175,23 @@ export const Slider = ({
       >
         {children}
       </SliderContentWrapper>
-      <LeftArrow
-        previousSlide={previousSlide}
-        index={index}
-        arrowWhite={arrowWhite}
-        renderLeftIcon={renderLeftIcon}
-      />
-      <RightArrow
-        nextSlide={nextSlide}
-        index={index}
-        limit={childrenCount}
-        arrowWhite={arrowWhite}
-        renderRightIcon={renderRightIcon}
-      />
+      {!removeArrows && (
+        <>
+          <LeftArrow
+            previousSlide={previousSlide}
+            index={index}
+            arrowWhite={arrowWhite}
+            renderLeftIcon={renderLeftIcon}
+          />
+          <RightArrow
+            nextSlide={nextSlide}
+            index={index}
+            limit={childrenCount}
+            arrowWhite={arrowWhite}
+            renderRightIcon={renderRightIcon}
+          />
+        </>
+      )}
       {!removeDots && (
         <NavigationContainer>
           {React.Children.map(children, (data, idx) => {
@@ -220,6 +225,8 @@ export interface Props {
   arrowWhite?: boolean;
   /** If <code>true</code>, dot controls will be removed */
   removeDots?: boolean;
+  /** If <code>true</code>, the arrows on the sides will be removed */
+  removeArrows?: boolean;
   /** Sets the left icon. Receives the "disabled" flag as an argument. */
   renderLeftIcon?: (disabled: boolean) => React.ReactElement;
   /** Sets the right icon. Receives the "disabled" flag as an argument. */
