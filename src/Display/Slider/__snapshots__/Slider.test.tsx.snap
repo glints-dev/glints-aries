@@ -3291,6 +3291,349 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 </DocumentFragment>
 `;
 
+exports[`<Slider/> prop removeArrows should match snapshot when removeDots false is passed 1`] = `
+<DocumentFragment>
+  .c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  white-space: normal;
+}
+
+.c4 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2em;
+  left: 0;
+  cursor: not-allowed;
+}
+
+.c6 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2em;
+  right: 0;
+  cursor: pointer;
+}
+
+.c0 {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none;
+}
+
+.c0 .c2 {
+  padding: 2em 4em;
+}
+
+.c7 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 6px;
+  height: 6px;
+  background: #C6C6C6;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.c8.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
+  background: #FFF240;
+}
+
+.c5 {
+  vertical-align: middle;
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+
+  .c8.active {
+    width: 30px;
+    height: 10px;
+  }
+}
+
+<div
+    class="c0 aries-slider"
+    tabindex="0"
+  >
+    <div
+      class="c1 slider-wrapper"
+      style="transform: translateX(0px); transition: transform ease-out 0.45s;"
+    >
+      <div
+        class="c2 c3 slider-item"
+      >
+        a
+      </div>
+      <div
+        class="c2 c3 slider-item"
+      >
+        b
+      </div>
+      <div
+        class="c2 c3 slider-item"
+      >
+        c
+      </div>
+    </div>
+    <div
+      class="c4"
+      data-testid="slider_left-arrow"
+      disabled=""
+    >
+      <svg
+        class="c5"
+        data-testid="icon-svg"
+        fill="#c7c7c7"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <path
+          d="M81 88.4L42.6 50 81 11.8 69.2 0l-50 50 50 50z"
+        />
+      </svg>
+    </div>
+    <div
+      class="c6"
+      data-testid="slider_right-arrow"
+    >
+      <svg
+        class="c5"
+        data-testid="icon-svg"
+        fill="#000000"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <path
+          d="M19 88.4L57.4 50 19 11.8 30.8 0l50 50-50 50z"
+        />
+      </svg>
+    </div>
+    <ul
+      class="c7"
+    >
+      <li
+        class="c8 active"
+      />
+      <li
+        class="c8"
+      />
+      <li
+        class="c8"
+      />
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Slider/> prop removeArrows should match snapshot when removeDots true is passed 1`] = `
+<DocumentFragment>
+  .c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  white-space: normal;
+}
+
+.c0 {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none;
+}
+
+.c0 .c2 {
+  padding: 2em 4em;
+}
+
+.c4 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 6px;
+  height: 6px;
+  background: #C6C6C6;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.c5.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 8px;
+  background: #FFF240;
+}
+
+@media (min-width:768px) {
+  .c5 {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+
+  .c5.active {
+    width: 30px;
+    height: 10px;
+  }
+}
+
+<div
+    class="c0 aries-slider"
+    tabindex="0"
+  >
+    <div
+      class="c1 slider-wrapper"
+      style="transform: translateX(0px); transition: transform ease-out 0.45s;"
+    >
+      <div
+        class="c2 c3 slider-item"
+      >
+        a
+      </div>
+      <div
+        class="c2 c3 slider-item"
+      >
+        b
+      </div>
+      <div
+        class="c2 c3 slider-item"
+      >
+        c
+      </div>
+    </div>
+    <ul
+      class="c4"
+    >
+      <li
+        class="c5 active"
+      />
+      <li
+        class="c5"
+      />
+      <li
+        class="c5"
+      />
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Slider/> prop removeDots should match snapshot when removeDots false is passed 1`] = `
 <DocumentFragment>
   .c1 {

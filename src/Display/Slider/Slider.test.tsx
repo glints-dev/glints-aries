@@ -110,6 +110,20 @@ describe('<Slider/> prop removeDots', () => {
   [true, false].forEach(removeDots => matchSnapshot(removeDots));
 });
 
+describe('<Slider/> prop removeArrows', () => {
+  const matchSnapshot = (removeArrows: boolean) => {
+    it(`should match snapshot when removeDots ${removeArrows} is passed`, async () => {
+      const { asFragment } = render(
+        <SliderComponent removeArrows={removeArrows} />
+      );
+      // validate dot is not in the snapshot
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  [true, false].forEach(removeDots => matchSnapshot(removeDots));
+});
+
 describe('<Slider/> prop autoplay', () => {
   it(`should go to next slide after 6000ms when autoplay is truthy`, () => {
     jest.useFakeTimers();
