@@ -25,6 +25,7 @@ export const Slider = ({
   arrowWhite = false,
   removeDots = false,
   removeArrows = false,
+  tapControls = false,
   renderLeftIcon,
   renderRightIcon,
   containerRef,
@@ -158,6 +159,17 @@ export const Slider = ({
     child => !isNil(child)
   ).length;
 
+  const handleContentClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ): void => {
+    if (!tapControls) return;
+    if (e.clientX < screenSize / 2) {
+      previousSlide();
+    } else {
+      nextSlide();
+    }
+  };
+
   return (
     <SliderContainer
       ref={sliderContainerRef}
@@ -172,6 +184,7 @@ export const Slider = ({
           transform: `translateX(${translateValue}px)`,
           transition: 'transform ease-out 0.45s',
         }}
+        onClick={handleContentClick}
       >
         {children}
       </SliderContentWrapper>
@@ -227,6 +240,8 @@ export interface Props {
   removeDots?: boolean;
   /** If <code>true</code>, the arrows on the sides will be removed */
   removeArrows?: boolean;
+  /** If <code>true</code>, the user will be able to tap the sides of the content to flip though the pages */
+  tapControls?: boolean;
   /** Sets the left icon. Receives the "disabled" flag as an argument. */
   renderLeftIcon?: (disabled: boolean) => React.ReactElement;
   /** Sets the right icon. Receives the "disabled" flag as an argument. */

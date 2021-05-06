@@ -81,6 +81,9 @@ RemoveDots.args = { removeDots: true };
 export const RemoveArrows = Template.bind({});
 RemoveArrows.args = { removeArrows: true };
 
+export const TapControls = Template.bind({});
+TapControls.args = { tapControls: true };
+
 export const InitialItem = Template.bind({});
 InitialItem.args = { initialItem: 2 };
 
