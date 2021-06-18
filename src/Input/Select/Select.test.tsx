@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Select from './Select';
+import Select, { Props } from './Select';
 import { PrimaryColor } from '../../Utils/Colors';
 
 const props = {
@@ -38,8 +38,10 @@ const SelectComponentWithExtraProps = (extraProps = {}) => (
 
 const SelectComponent = SelectComponentWithExtraProps();
 
-function setupOpenSelectMenu() {
-  const { getByRole, queryAllByTestId, getByTestId } = render(SelectComponent);
+function setupOpenSelectMenu(extraProps?: Partial<Props>) {
+  const { getByRole, queryAllByTestId, getByTestId } = render(
+    SelectComponentWithExtraProps(extraProps)
+  );
   const selectInput = getByRole('combobox') as HTMLInputElement;
   const selectList = getByTestId('listbox');
   const selectLabel = getByTestId('select-label');
@@ -258,6 +260,18 @@ describe('when no results are found', () => {
       target: { value: 'z' },
     });
     expect(selectList).toHaveTextContent(/^No results found$/);
+  });
+});
+
+describe('when no results are found and noOptionResult is null', () => {
+  it('should display "No results found"', () => {
+    const { selectInput, selectList } = setupOpenSelectMenu({
+      noOptionResult: null,
+    });
+    fireEvent.change(selectInput, {
+      target: { value: 'z' },
+    });
+    expect(selectList).not.toHaveTextContent(/^No results found$/);
   });
 });
 

@@ -49,15 +49,17 @@ const SelectList: React.FunctionComponent<Props> = ({
         <Loading />
       </SelectItem>
     ) : (
-      <SelectItem
-        disabled
-        role="option"
-        data-testid="option"
-        aria-hidden={false}
-        aria-disabled="true"
-      >
-        {noOptionResult}
-      </SelectItem>
+      Boolean(noOptionResult) && (
+        <SelectItem
+          disabled
+          role="option"
+          data-testid="option"
+          aria-hidden={false}
+          aria-disabled="true"
+        >
+          {noOptionResult}
+        </SelectItem>
+      )
     )}
   </SelectListWrapper>
 );
