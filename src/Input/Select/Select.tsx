@@ -430,7 +430,7 @@ export interface Props
   isLoading?: boolean;
   /** Sets placeholder value for the Text Field. */
   label?: string;
-  /** Sets message to display when no option matches. */
+  /** Sets message to display when no option matches, set it to null when the message is not needed. */
   noOptionResult?: string;
   /** Removes drop icon. */
   removeDropIcon?: boolean;
