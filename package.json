@@ -84,7 +84,6 @@
     "chromatic": "^5.4.0",
     "create-index": "^2.4.0",
     "cross-env": "^6.0.3",
-    "downshift": "^6.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
@@ -126,6 +125,7 @@
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.2.6",
     "create-react-context": "^0.2.3",
+    "downshift": "^6.1.3",
     "moment": "^2.24.0",
     "styled-system": "^5.1.5"
   },

@@ -2,7 +2,9 @@ import React, { HTMLProps, useState } from 'react';
 import { useCombobox, UseComboboxProps } from 'downshift';
 
 import * as internalComponents from './SelectStyle';
-import { ArrowDownIcon, ArrowUpIcon, CloseCircleSolidIcon } from '../..';
+import { ArrowDownIcon } from '../../General/Icon/components';
+import { ArrowUpIcon } from '../../General/Icon/components';
+import { CloseCircleSolidIcon } from '../../General/Icon/components';
 import { isFunction, isUndefined, noop } from 'lodash';
 import { useId } from 'react-id-generator';
 
