@@ -259,6 +259,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
 
   return (
     <Container data-testid="container">
+      Foo
       {label && (
         <Label
           {...getLabelProps()}
