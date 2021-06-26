@@ -6,6 +6,7 @@ exports[`<Select> (Downshift) should allow removal of components by passing a vo
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -57,6 +58,7 @@ exports[`<Select> (Downshift) should have a loading indicator 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -141,6 +143,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <label
       class="SelectStyle__Label-qr1jv6-1 jHMhiv"
       data-active="false"
@@ -234,6 +237,7 @@ exports[`<Select> (Downshift) should have an optional helper-text 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -316,6 +320,7 @@ exports[`<Select> (Downshift) should have an optional label 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <label
       class="SelectStyle__Label-qr1jv6-1 jHMhiv"
       data-active="false"
@@ -400,6 +405,7 @@ exports[`<Select> (Downshift) should have an optional placeholder 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -474,6 +480,7 @@ exports[`<Select> (Downshift) should match snapshot when closed 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -547,6 +554,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
@@ -650,6 +658,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <label
       class="SelectStyle__Label-qr1jv6-1 jHMhiv"
       data-active="true"
@@ -769,6 +778,7 @@ exports[`<Select> (Downshift) when disableTyping is true should not accept text 
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
@@ -843,6 +853,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
@@ -946,6 +957,7 @@ exports[`<Select> (Downshift) when it is disabled should have disabled styles an
     class="SelectStyle__Container-qr1jv6-0 faXYfy"
     data-testid="container"
   >
+    Foo
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
