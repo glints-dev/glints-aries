@@ -186,6 +186,7 @@ export { default as ThumbsUpOutlineIcon } from './General/Icon/components/Thumbs
 export { default as TicketSolidIcon } from './General/Icon/components/TicketSolidIcon';
 export { default as TieIcon } from './General/Icon/components/TieIcon';
 export { default as TrashIcon } from './General/Icon/components/TrashIcon';
+export { default as TvPlayIcon } from './General/Icon/components/TvPlayIcon';
 export { default as TwitterIcon } from './General/Icon/components/TwitterIcon';
 export { default as UploadIcon } from './General/Icon/components/UploadIcon';
 export { default as UpvoteIcon } from './General/Icon/components/UpvoteIcon';
