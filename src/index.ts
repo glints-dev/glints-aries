@@ -68,6 +68,7 @@ export { default as ArrowRoundForwardIcon } from './General/Icon/components/Arro
 export { default as AsteriskSolidIcon } from './General/Icon/components/AsteriskSolidIcon';
 export { default as AttachmentIcon } from './General/Icon/components/AttachmentIcon';
 export { default as BehanceIcon } from './General/Icon/components/BehanceIcon';
+export { default as BellIcon } from './General/Icon/components/BellIcon';
 export { default as BookmarkIcon } from './General/Icon/components/BookmarkIcon';
 export { default as BookmarkOutlineIcon } from './General/Icon/components/BookmarkOutlineIcon';
 export { default as BoxWithHandleSolidIcon } from './General/Icon/components/BoxWithHandleSolidIcon';
