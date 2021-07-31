@@ -124,6 +124,7 @@ export { default as GraduationHatIcon } from './General/Icon/components/Graduati
 export { default as GroupIcon } from './General/Icon/components/GroupIcon';
 export { default as GuaranteeIcon } from './General/Icon/components/GuaranteeIcon';
 export { default as GithubIcon } from './General/Icon/components/GithubIcon';
+export { default as HandIcon } from './General/Icon/components/HandIcon';
 export { default as HeartSolidIcon } from './General/Icon/components/HeartSolidIcon';
 export { default as HeartIcon } from './General/Icon/components/HeartIcon';
 export { default as HelpIcon } from './General/Icon/components/HelpIcon';
