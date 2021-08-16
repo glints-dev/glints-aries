@@ -84,6 +84,7 @@ export { default as CheckmarkSolidIcon } from './General/Icon/components/Checkma
 export { default as CheckmarkThickIcon } from './General/Icon/components/CheckmarkThickIcon';
 export { default as CircleIcon } from './General/Icon/components/CircleIcon';
 export { default as CircleAndCheckIcon } from './General/Icon/components/CircleAndCheckIcon';
+export { default as ClipboardIcon } from './General/Icon/components/ClipboardIcon';
 export { default as ClipboardCheckOutlineIcon } from './General/Icon/components/ClipboardCheckOutlineIcon';
 export { default as ClockIcon } from './General/Icon/components/ClockIcon';
 export { default as CloseIcon } from './General/Icon/components/CloseIcon';
@@ -99,6 +100,7 @@ export { default as CopyLinkIcon } from './General/Icon/components/CopyLinkIcon'
 export { default as CurrencyIcon } from './General/Icon/components/CurrencyIcon';
 export { default as DeleteIcon } from './General/Icon/components/DeleteIcon';
 export { default as DiscountSolidIcon } from './General/Icon/components/DiscountSolidIcon';
+export { default as DocumentCheckIcon } from './General/Icon/components/DocumentCheckIcon';
 export { default as DotIcon } from './General/Icon/components/DotIcon';
 export { default as DoubleCheckmarkIcon } from './General/Icon/components/DoubleCheckmarkIcon';
 export { default as DoveIcon } from './General/Icon/components/DoveIcon';
@@ -140,6 +142,7 @@ export { default as InfoIcon } from './General/Icon/components/InfoIcon';
 export { default as InfoSolidIcon } from './General/Icon/components/InfoSolidIcon';
 export { default as InstagramIcon } from './General/Icon/components/InstagramIcon';
 export { default as LightbulbIcon } from './General/Icon/components/LightbulbIcon';
+export { default as LightningOutlineIcon } from './General/Icon/components/LightningOutlineIcon';
 export { default as LineIcon } from './General/Icon/components/LineIcon';
 export { default as LinkedinIcon } from './General/Icon/components/LinkedinIcon';
 export { default as LoadingIcon } from './General/Icon/components/LoadingIcon';
