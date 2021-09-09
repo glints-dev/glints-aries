@@ -142,5 +142,8 @@
   },
   "optionalDependencies": {
     "@glints/poppins": "^1.0.2"
+  },
+  "resolutions": {
+    "immer": "^9.0.6"
   }
 }
