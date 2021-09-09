@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs';
 import Grid from './index';
 import { Cell } from './GridStoriesHelpers';
 import { times, constant } from 'lodash';
-import { Box } from '../Box'
+import { Box } from '../Box';
 
 <Meta title="Layout/Grid" />
 
@@ -14,14 +14,10 @@ The grid is divided into 12 columns. Use the properties `xs` (extra small), `sm`
   <Grid>
     <Grid.Row>
       <Grid.Col xs={12} sm={3} md={9}>
-        <Cell>
-          Foo
-          </Cell>
-        </Grid.Col>
+        <Cell>Foo</Cell>
+      </Grid.Col>
       <Grid.Col xs={12} sm={9} md={3}>
-        <Cell>
-          Bar
-        </Cell>
+        <Cell>Bar</Cell>
       </Grid.Col>
     </Grid.Row>
     <Grid.Row>
@@ -57,14 +53,10 @@ The grid is divided into 12 columns. Use the properties `xs` (extra small), `sm`
   <Grid>
     <Grid.Row justifyContent="center">
       <Grid.Col xs={12} md={3}>
-        <Cell>
-          Foo
-          </Cell>
-        </Grid.Col>
+        <Cell>Foo</Cell>
+      </Grid.Col>
       <Grid.Col xs={12} md={3}>
-        <Cell>
-          Bar
-        </Cell>
+        <Cell>Bar</Cell>
       </Grid.Col>
     </Grid.Row>
   </Grid>
@@ -93,13 +85,13 @@ The grid is divided into 12 columns. Use the properties `xs` (extra small), `sm`
   <Grid>
     <Grid.Row alignContent="center">
       <Grid.Col xs={12} md={3}>
-        <Cell>
-          Foo
-          </Cell>
-        </Grid.Col>
+        <Cell>Foo</Cell>
+      </Grid.Col>
       <Grid.Col xs={12} md={3}>
         <Cell>
-          Bar<br/>Foo
+          Bar
+          <br />
+          Foo
         </Cell>
       </Grid.Col>
     </Grid.Row>
