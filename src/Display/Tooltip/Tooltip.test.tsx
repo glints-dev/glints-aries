@@ -108,3 +108,25 @@ describe('<Tooltip/> touch event', () => {
     jest.clearAllMocks();
   });
 });
+
+describe('<Tooltip/> snapshot with html content', () => {
+  test('should display the tooltip', () => {
+    const { asFragment, queryByText } = render(
+      <Tooltip
+        text={<span>Hello World</span>}
+        textAsString="Hello World"
+        position="right"
+        classes={{
+          container: 'container',
+          content: 'content',
+          message: 'message',
+        }}
+      >
+        <span>mock content</span>
+      </Tooltip>
+    );
+    const element = queryByText('mock content');
+    fireEvent.mouseOver(element);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

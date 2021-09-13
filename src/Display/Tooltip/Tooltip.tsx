@@ -18,6 +18,7 @@ export const Tooltip: FC<Props> = ({
   classes = {},
   children,
   text,
+  textAsString,
   position = 'top',
   ...defaultProps
 }) => {
@@ -47,12 +48,14 @@ export const Tooltip: FC<Props> = ({
     }
   };
 
+  const arialLabel = typeof text === 'string' ? text : textAsString;
+
   return (
     <TooltipContainer
       className={classNames('aries-tooltip', classes.container)}
       role="tooltip"
       aria-hidden={isShow ? 'false' : 'true'}
-      aria-label={text}
+      aria-label={arialLabel}
       // The tooltip does not close on iOS devices because of this issue https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event#Safari_Mobile
       // Adding onTouchStart and onTouchEnd as a workaround
       // On mobile, it shows the tooltip on touch and hides the tooltip when the touch is released
@@ -66,6 +69,7 @@ export const Tooltip: FC<Props> = ({
           ref={contentRef}
           className={classNames('aries-tooltip-content', classes.content)}
           text={text}
+          textAsString={textAsString}
           position={position}
         >
           <TooltipMessage
@@ -88,13 +92,24 @@ export interface Classes {
 
 export type Position = 'top' | 'right' | 'bottom' | 'left';
 
-export interface Props extends HTMLAttributes<HTMLHeadingElement> {
-  /** This is an object with three keys: <code>container</code>,
-   * <code>content</code> and <code>message</code>. Use them to attach
-   * additional classes to the respective elements. */
+interface BaseProps extends HTMLAttributes<HTMLHeadingElement> {
+  //   /** This is an object with three keys: <code>container</code>,
+  //    * <code>content</code> and <code>message</code>. Use them to attach
+  //    * additional classes to the respective elements. */
   classes?: Classes;
-  text: string;
   position?: Position;
 }
+
+export interface StringTooltip extends BaseProps {
+  text: string;
+  textAsString?: string;
+}
+
+export interface HtmlTooltip extends BaseProps {
+  text: React.ReactNode;
+  textAsString: string;
+}
+
+export type Props = StringTooltip | HtmlTooltip;
 
 export default Tooltip;
