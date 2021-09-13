@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import styled from 'styled-components';
 
-import { Tooltip, Props } from './Tooltip';
+import { Tooltip, StringTooltip, HtmlTooltip } from './Tooltip';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import Tag from '../../General/Tag/BasicTag';
 
@@ -22,19 +22,31 @@ export default {
   decorators: [Story => <Container>{Story()}</Container>],
 } as Meta;
 
-const Template: Story<Props> = ({ text, ...args }) => (
+const StringTooltipTemplate: Story<StringTooltip> = ({ text, ...args }) => (
   <Tooltip {...args} text={text || defaultText}>
     <Tag>Glints Aries</Tag>
   </Tooltip>
 );
 
-export const Interactive = Template.bind({});
+const HtmlTooltipTemplate: Story<HtmlTooltip> = ({ text, ...args }) => (
+  <Tooltip {...args} text={text || defaultText}>
+    <Tag>Glints Aries</Tag>
+  </Tooltip>
+);
+
+export const Interactive = StringTooltipTemplate.bind({});
 Interactive.args = {
   text: defaultText,
   position: 'top',
 };
 
-export const DifferentPosition = Template.bind({});
+export const DifferentPosition = StringTooltipTemplate.bind({});
 DifferentPosition.args = {
   position: 'left',
+};
+
+export const WithHtmlContent = HtmlTooltipTemplate.bind({});
+WithHtmlContent.args = {
+  text: <b>Hello World</b>,
+  textAsString: 'Hello World',
 };
