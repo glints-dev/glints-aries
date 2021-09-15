@@ -1,0 +1,16 @@
+name: 'Check for Security Vulnerabilities'
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # every 6 hours
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kunalnagarco/action-cve@vX.X.X
+        with:
+          token: ${{ secrets.SECURITY_PERSONAL_ACCESS_TOKEN }}
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+#           pager_duty_integration_key: ${{ secrets.PAGER_DUTY_INTEGRATION_KEY }}
+          count: 10
