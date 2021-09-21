@@ -191,6 +191,7 @@ export { default as SpeechBubbleOutlineIcon } from './General/Icon/components/Sp
 export { default as SpinnerIcon } from './General/Icon/components/SpinnerIcon';
 export { default as StackIcon } from './General/Icon/components/StackIcon';
 export { default as StarOutlineIcon } from './General/Icon/components/StarOutlineIcon';
+export { default as StarCircleIcon } from './General/Icon/components/StarCircleIcon';
 export { default as StarIcon } from './General/Icon/components/StarIcon';
 export { default as TagIcon } from './General/Icon/components/TagIcon';
 export { default as TaskIcon } from './General/Icon/components/TaskIcon';
