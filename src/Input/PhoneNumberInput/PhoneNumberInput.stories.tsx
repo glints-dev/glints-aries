@@ -12,7 +12,11 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 export default {
   title: 'Input/PhoneNumberInput',
   component: PhoneNumberInput,
-  decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
+  decorators: [
+    Story => (
+      <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+    ),
+  ],
 } as Meta;
 
 const callingCodeOptions: CallingCodeOption[] = [
@@ -27,7 +31,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
     callingCode: 123,
     significantNumber: null,
   });
-  const [filterInput, setFilterInput] = useState<string | null>(null);
+  const [filterInput, setFilterInput] = useState<string>('');
 
   const options = filterInput
     ? callingCodeOptions.filter(
@@ -37,21 +41,26 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
       )
     : callingCodeOptions;
 
-  console.log({ args });
   return (
-    <PhoneNumberInput
-      value={value}
-      callingCodeOptions={options}
-      label=""
-      featuredOptionsLabel=""
-      otherOptionsLabel=""
-      callingCodePlaceholder=""
-      callingCodeInputPlaceholder=""
-      callingCodeNoOptionsLabel=""
-      {...args}
-      onChange={setValue}
-      onInputChange={setFilterInput}
-    />
+    <>
+      <p>
+        The phone number is +{value.callingCode || '??'}{' '}
+        {value.significantNumber || '???'}
+      </p>
+      <PhoneNumberInput
+        value={value}
+        callingCodeOptions={options}
+        label="Type your phone number"
+        featuredOptionsLabel=""
+        otherOptionsLabel=""
+        callingCodePlaceholder="??"
+        callingCodeFilterInputPlaceholder="Type country code or country name"
+        callingCodeNoOptionsLabel=""
+        {...args}
+        onChange={setValue}
+        onInputChange={setFilterInput}
+      />
+    </>
   );
 };
 

@@ -1,5 +1,7 @@
-import { sample } from 'lodash';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { ArrowDownIcon, ArrowUpIcon } from '../..';
+import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
+import * as S from './PhoneNumberInputStyles';
 
 export const PhoneNumberInput = ({
   value,
@@ -7,29 +9,76 @@ export const PhoneNumberInput = ({
   callingCodeOptions,
   onInputChange,
   filterValue,
+  label,
+  callingCodePlaceholder,
+  callingCodeFilterInputPlaceholder,
 }: Props) => {
+  const [isCallingCodeInputOpen, setIsCallingCodeInputOpen] = useState(true);
+  const toggleIsCallingCodeOpen = () =>
+    setIsCallingCodeInputOpen(!isCallingCodeInputOpen);
+  const closeCallingCodeInput = () => setIsCallingCodeInputOpen(false);
+
+  const callingCodeFilterInputRef = useRef<HTMLInputElement>();
+  useEffect(
+    function focusCallingCodeFilterInputOnOpen() {
+      if (isCallingCodeInputOpen) {
+        callingCodeFilterInputRef.current.focus();
+      }
+    },
+    [isCallingCodeInputOpen]
+  );
+
+  const containerRef = useRef<HTMLDivElement>();
+  useOutsideAlerter(containerRef, closeCallingCodeInput);
+
   return (
-    <div>
-      <input
-        value={filterValue}
-        onChange={e =>
-          onInputChange(e.target.value.trim().toLowerCase() || null)
-        }
-      />
-      <button
-        onClick={() =>
-          onChange({
-            callingCode: sample(callingCodeOptions).callingCode,
-            significantNumber: '12345678',
-          })
-        }
-      >
-        Current Value: <code>{JSON.stringify(value)}</code>
-      </button>
-      <pre>
-        <code>{JSON.stringify(callingCodeOptions)}</code>
-      </pre>
-    </div>
+    <S.PhoneNumberInputContainer ref={containerRef}>
+      <S.TopRow>
+        <S.CallingCodeInputToggle onClick={toggleIsCallingCodeOpen}>
+          +{value.callingCode || callingCodePlaceholder}
+          <S.CallingCodeInputOpenIndicator>
+            {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
+          </S.CallingCodeInputOpenIndicator>
+        </S.CallingCodeInputToggle>
+        <S.SignificantNumberInput
+          value={value.significantNumber || ''}
+          onChange={e =>
+            onChange({
+              ...value,
+              significantNumber: e.target.value,
+            })
+          }
+          placeholder={label}
+        />
+      </S.TopRow>
+      <S.CallingCodeInput isOpen={isCallingCodeInputOpen}>
+        <S.CallingCodeFilterInput
+          value={filterValue}
+          onChange={e => onInputChange(e.target.value)}
+          placeholder={callingCodeFilterInputPlaceholder}
+          ref={callingCodeFilterInputRef}
+        />
+        <S.CallingCodeOptionsList>
+          {callingCodeOptions.map(({ callingCode, label }) => (
+            <S.CallingCodeOption
+              key={callingCode}
+              onClick={() => {
+                onChange({
+                  ...value,
+                  callingCode: callingCode,
+                });
+                closeCallingCodeInput();
+              }}
+            >
+              <S.CallingCodeOptionCallingCode>
+                +{callingCode}
+              </S.CallingCodeOptionCallingCode>
+              <S.CallingCodeOptionLabel>{label}</S.CallingCodeOptionLabel>
+            </S.CallingCodeOption>
+          ))}
+        </S.CallingCodeOptionsList>
+      </S.CallingCodeInput>
+    </S.PhoneNumberInputContainer>
   );
 };
 
@@ -46,7 +95,7 @@ export interface Props {
   featuredOptionsLabel: string;
   otherOptionsLabel: string;
   callingCodePlaceholder: string;
-  callingCodeInputPlaceholder: string;
+  callingCodeFilterInputPlaceholder: string;
   callingCodeNoOptionsLabel: string;
 }
 
