@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { DividerContainer } from './DividerStyle';
 
 /**
- * Use <code>className</code> or <code>style</code> to change the divider's
+ * Use className or style to change the divider's
  * height
  */
 export const Divider: FC<Props> = ({

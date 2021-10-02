@@ -94,7 +94,7 @@ Interactive.args = { label: 'Select An Item', helperText: 'Type to filter' };
 Interactive.parameters = {
   docs: {
     description: {
-      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses <code>String.includes</code> instead of the default <code>String.startsWith</code>.`,
+      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses String.includes instead of the default String.startsWith.`,
     },
   },
 };
@@ -134,7 +134,7 @@ TransformFunctionForCustomFilter.args = {
 TransformFunctionForCustomFilter.parameters = {
   docs: {
     description: {
-      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses <code>String.startsWith</code> instead of the default <code>String.includes</code>.`,
+      story: `You can pass a transformFunction to make the combobox filter the provided items according to custom logic. In the example above, the filter function uses String.startsWith instead of the default String.includes.`,
     },
   },
 };
@@ -159,7 +159,7 @@ CustomComponents.parameters = {
   docs: {
     description: {
       story: `You can override the components that comprise the Combobox. These components are available at the moment: ${componentNames.map(
-        name => `<code>${name}</code>`
+        name => `${name}`
       )}`,
     },
   },
@@ -173,7 +173,7 @@ RemoveToggleButton.parameters = {
   docs: {
     description: {
       story:
-        'Remove the toggle button by passing <code>components={{ ToggleButton: () => null }}</code>',
+        'Remove the toggle button by passing components={{ ToggleButton: () => null }}',
     },
   },
 };
@@ -191,7 +191,7 @@ InitiallyOpen.parameters = {
   docs: {
     description: {
       story:
-        'Pass <code>isOpenInitially=true</code> to open and focus the Select on render. (Set to <code>false</code> in this story because it would steal focus from the other stories otherwise).',
+        'Pass isOpenInitially=true to open and focus the Select on render. (Set to false in this story because it would steal focus from the other stories otherwise).',
     },
   },
 };
@@ -221,7 +221,7 @@ DownshiftOptions.parameters = {
   docs: {
     description: {
       story:
-        'If the options afforded by the Select component are not enough, you can also use the <code>downshift</code> prop to pass custom options to the internal <code>useCombobox</code> hook. You can read the documentation <a href="https://github.com/downshift-js/downshift/blob/master/src/hooks/useCombobox/README.md">here</a>. Use this with caution, future versions of this component might break your custom functionality.',
+        'If the options afforded by the Select component are not enough, you can also use the downshift prop to pass custom options to the internal useCombobox hook. You can read the documentation <a href="https://github.com/downshift-js/downshift/blob/master/src/hooks/useCombobox/README.md">here</a>. Use this with caution, future versions of this component might break your custom functionality.',
     },
   },
 };
@@ -243,7 +243,7 @@ DisableTyping.parameters = {
   docs: {
     description: {
       story:
-        "With <code>disableTyping=true</code>, the internal <code>input</code> will be set to <code>readonly</code>. This is helpful when there's only a small or fixed amount of items. This can be combined with setting <code>transformFunction</code> to the identity function to disable the filtering after an option has been chosen.",
+        "With disableTyping=true, the internal input will be set to readonly. This is helpful when there's only a small or fixed amount of items. This can be combined with setting transformFunction to the identity function to disable the filtering after an option has been chosen.",
     },
   },
 };
@@ -255,8 +255,7 @@ DisabledOptions.args = {
 DisabledOptions.parameters = {
   docs: {
     description: {
-      story:
-        "Use the items' <code>disabled</code> prop to disable individual items.",
+      story: "Use the items' disabled prop to disable individual items.",
     },
   },
 };
@@ -293,7 +292,7 @@ ControlledSelectedItem.parameters = {
   docs: {
     description: {
       story:
-        'Use <code>selectedItem</code> and <code>setSelectedItem</code> to control the currently selected item. <strong>In many cases, you will want to use this to react to selections made by the user.</strong> Use <code>null</code> as the controlled <code>selectedItem</code> when no item is selected: So if you want to have a controlled Select with no item selected by default, use <code>useState(null)</code>.',
+        'Use selectedItem and setSelectedItem to control the currently selected item. <strong>In many cases, you will want to use this to react to selections made by the user.</strong> Use null as the controlled selectedItem when no item is selected: So if you want to have a controlled Select with no item selected by default, use useState(null).',
     },
   },
 };
@@ -320,7 +319,7 @@ ControlledIsOpen.parameters = {
   docs: {
     description: {
       story:
-        "Use <code>isOpen</code> and <code>onIsOpenChange</code> to control the state of the Select's menu. Note that clicking outside of the Select closes the select (calls <code>onIsOpenChange</code> with <code>false</code>) so if you're trying to build a 'toggle' button, clicking that button will first close the menu.",
+        "Use isOpen and onIsOpenChange to control the state of the Select's menu. Note that clicking outside of the Select closes the select (calls onIsOpenChange with false) so if you're trying to build a 'toggle' button, clicking that button will first close the menu.",
     },
   },
 };
@@ -351,7 +350,7 @@ ControlledInputValue.parameters = {
   docs: {
     description: {
       story:
-        "Use <code>inputValue</code> and <code>setInputValue</code> to control the input value (this value is used for the search function, don't confuse it with <code>selectedItem</code>",
+        "Use inputValue and setInputValue to control the input value (this value is used for the search function, don't confuse it with selectedItem",
     },
   },
 };
@@ -366,7 +365,7 @@ Invalid.parameters = {
   docs: {
     description: {
       story:
-        'Use <code>invalid=true</code> to toggle the Select into an error state. It is recommended that you use <code>helperText</code> to describe the error when you do this.',
+        'Use invalid=true to toggle the Select into an error state. It is recommended that you use helperText to describe the error when you do this.',
     },
   },
 };
@@ -379,7 +378,7 @@ DisableAutocomplete.parameters = {
   docs: {
     description: {
       story:
-        "Intrinsic props are usually passed down to the internal <code>input</code> element, so to disable autocompletion just pass <code>autocomplete='off'</code>.",
+        "Intrinsic props are usually passed down to the internal input element, so to disable autocompletion just pass autocomplete='off'.",
     },
   },
 };
@@ -408,7 +407,7 @@ FocusCallbacks.parameters = {
   docs: {
     description: {
       story:
-        'Intrinsic props are usually passed down to the internal <code>input</code> element, so you can simply use <code>onFocus</code> and <code>onBlur</code> to capture those events.',
+        'Intrinsic props are usually passed down to the internal input element, so you can simply use onFocus and onBlur to capture those events.',
     },
   },
 };
@@ -427,8 +426,7 @@ export const OnClearCallback: Story<Props> = () => {
 OnClearCallback.parameters = {
   docs: {
     description: {
-      story:
-        'Use <code>onClear</code> to capture the when the clear-button is clicked.',
+      story: 'Use onClear to capture the when the clear-button is clicked.',
     },
   },
 };
@@ -452,7 +450,7 @@ ConfigurableWidth.parameters = {
   docs: {
     description: {
       story:
-        "By default, the select has a 100% width. To change the width, just pass a custom <code>Container</code> subcomponent. Note that you might also have to adjust other subcomponent's styles if you want to make it really short (less than 300px).",
+        "By default, the select has a 100% width. To change the width, just pass a custom Container subcomponent. Note that you might also have to adjust other subcomponent's styles if you want to make it really short (less than 300px).",
     },
   },
 };
@@ -473,7 +471,7 @@ Small.parameters = {
   docs: {
     description: {
       story:
-        "<p>By default, the Select dictates a font-size of 16px that cascades through (almost) all sub-components. Appropriate spaces are defined using <code>em</code>, so if you want to resize the Select, just change the container's font-size.</p><p>The exception to the 16px default is the helper text, which also just uses an <code>em</code> relative value.</p>",
+        "<p>By default, the Select dictates a font-size of 16px that cascades through (almost) all sub-components. Appropriate spaces are defined using em, so if you want to resize the Select, just change the container's font-size.</p><p>The exception to the 16px default is the helper text, which also just uses an em relative value.</p>",
     },
   },
 };
@@ -495,7 +493,7 @@ EmptyListText.parameters = {
   docs: {
     description: {
       story:
-        'When, after applying the <code>transformFunction</code> the list of items is empty, a special message will be shown in the dropdown. This message can be customized with <code>emptyListText</code>. You can also style this',
+        'When, after applying the transformFunction the list of items is empty, a special message will be shown in the dropdown. This message can be customized with emptyListText. You can also style this',
     },
   },
 };

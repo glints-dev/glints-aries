@@ -67,7 +67,7 @@ interface ButtonTagProps {
 
 export type TagActionType = 'add' | 'reset';
 interface ActionTagProps {
-  /** (Only for tags with <code>variant</code>=<code>action</code>). Chooses which kind of action the tag will indicate. */
+  /** (Only for tags with variant=action). Chooses which kind of action the tag will indicate. */
   action?: TagActionType;
   /** A function triggered when icon or action tag is clicked. */
   onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
@@ -76,7 +76,7 @@ interface ActionTagProps {
 export type TagVariantType = 'button' | 'action';
 export interface Props extends BasicTagProps, ButtonTagProps, ActionTagProps {
   children: React.ReactNode;
-  /** <code>button</code> tags usually show a single piece of information, while <code>action</code> tags are elements in a list (e.g. a list of selected options). */
+  /** button tags usually show a single piece of information, while action tags are elements in a list (e.g. a list of selected options). */
   variant?: TagVariantType;
 }
 

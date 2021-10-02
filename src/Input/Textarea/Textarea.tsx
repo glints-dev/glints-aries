@@ -13,12 +13,12 @@ const MIN_ROWS = 4;
 const MAX_ROWS = 12;
 // Rows are required to set the textarea height depending on the content added.
 
-/** Use <code>onChange</code> to listen to input changes. Use
- * <code>onBlur</code> to listen to focus loss.
+/** Use onChange to listen to input changes. Use
+ * onBlur to listen to focus loss.
  * <br/>
- * Note that currently, <code>Textarea</code> has some non-standard behaviour
- * when forwarding standard props: The <code>className</code> will be passed to
- * the internal 'container' while the <code>...rest</code> is passed to the
+ * Note that currently, Textarea has some non-standard behaviour
+ * when forwarding standard props: The className will be passed to
+ * the internal 'container' while the ...rest is passed to the
  * internal textarea. */
 export const Textarea: FC<Props> = ({
   label,
