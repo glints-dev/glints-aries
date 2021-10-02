@@ -214,11 +214,11 @@ export interface Props {
   className?: string;
   /** The index of the page that will be shown initally (before the first manual- or auto-scroll). Note that the index starts at 1. */
   initialItem?: number;
-  /** If <code>true</code>, the dot controls will be superimposed on the current page */
+  /** If true, the dot controls will be superimposed on the current page */
   fullContent?: boolean;
-  /** If <code>true</code>, the arrow controls will have a white color */
+  /** If true, the arrow controls will have a white color */
   arrowWhite?: boolean;
-  /** If <code>true</code>, dot controls will be removed */
+  /** If true, dot controls will be removed */
   removeDots?: boolean;
   /** Sets the left icon. Receives the "disabled" flag as an argument. */
   renderLeftIcon?: (disabled: boolean) => React.ReactElement;
@@ -226,7 +226,7 @@ export interface Props {
   renderRightIcon?: (disabled: boolean) => React.ReactElement;
   /** Called with the new index after a new Slider page has been shown */
   afterChange?: Function;
-  /** If <code>true</code>, the Slider will flip through its pages at a regular interval */
+  /** If true, the Slider will flip through its pages at a regular interval */
   autoplay?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;
 }

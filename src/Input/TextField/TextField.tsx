@@ -22,12 +22,12 @@ export const isFilled = (type: textFieldType, value: any) => {
   return value !== '';
 };
 
-/** Use <code>onChange</code> to listen to input changes.
- * Use <code>onBlur</code> to listen to focus loss.
+/** Use onChange to listen to input changes.
+ * Use onBlur to listen to focus loss.
  * <br/>
- * Use <code>status</code> to set different styles for the Text Field based on status.
+ * Use status to set different styles for the Text Field based on status.
  * <br/>
- * Use <code>small</code> to set the size of the text field. The <code>...rest</code> is passed to the
+ * Use small to set the size of the text field. The ...rest is passed to the
  * internal text field input. */
 export const TextField: React.FunctionComponent<Props> = ({
   value,

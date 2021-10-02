@@ -4,7 +4,7 @@ import { SwipeableContainer } from './SwipeableStyle';
 
 import SwipeableItem from './SwipeableItem';
 
-/** You can add any number of <code> <Swipeable.Item /> </code> components as children of the Swipeable component, controlling the behavior of an individual swipeable item.  */
+/** You can add any number of  <Swipeable.Item />  components as children of the Swipeable component, controlling the behavior of an individual swipeable item.  */
 export const Swipeable: Swipeable = ({ children, className }) => (
   <SwipeableContainer className={classNames('aries-swipeable', className)}>
     {children}

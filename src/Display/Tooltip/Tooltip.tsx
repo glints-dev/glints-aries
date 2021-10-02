@@ -93,8 +93,8 @@ export interface Classes {
 export type Position = 'top' | 'right' | 'bottom' | 'left';
 
 interface BaseProps extends HTMLAttributes<HTMLHeadingElement> {
-  //   /** This is an object with three keys: <code>container</code>,
-  //    * <code>content</code> and <code>message</code>. Use them to attach
+  //   /** This is an object with three keys: container,
+  //    * content and message. Use them to attach
   //    * additional classes to the respective elements. */
   classes?: Classes;
   position?: Position;

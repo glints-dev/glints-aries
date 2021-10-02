@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { LoadingContainer, Spinner } from './LoadingStyle';
 
-/** The loading spinner does not support resizing at the moment, but as a workaround you can use the <code>className</code> attribute to change it's styles manually. */
+/** The loading spinner does not support resizing at the moment, but as a workaround you can use the className attribute to change it's styles manually. */
 export const Loading: FC<Props> = props => {
   const { className } = props;
 

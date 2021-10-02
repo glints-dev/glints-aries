@@ -2,12 +2,12 @@ import * as React from 'react';
 import TextField from '../TextField';
 import { TextFieldInput } from '../TextField/TextFieldStyle';
 
-/** Use <code>onChange</code> to listen to input changes.
- * Use <code>onBlur</code> to listen to focus loss.
+/** Use onChange to listen to input changes.
+ * Use onBlur to listen to focus loss.
  * <br/>
- * Use <code>status</code> to set different styles for the Input Field based on status.
+ * Use status to set different styles for the Input Field based on status.
  * <br/>
- * Use <code>small</code> to set the size of the input field. The <code>...rest</code> is passed to the
+ * Use small to set the size of the input field. The ...rest is passed to the
  * internal field input. */
 export const NumberInput = (props: Props) => {
   return <TextField {...props} type="number" />;
