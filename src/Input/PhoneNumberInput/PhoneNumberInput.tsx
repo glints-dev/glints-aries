@@ -44,8 +44,7 @@ export const PhoneNumberInput = ({
     getItemProps,
   } = useCombobox<CallingCodeOption>({
     items: callingCodeOptions,
-    selectedItem:
-      find(callingCodeOptions, { callingCode: value.callingCode }) || null,
+    selectedItem: find(callingCodeOptions, { callingCode: value.callingCode }),
     onSelectedItemChange: ({ selectedItem: { callingCode } }) => {
       onChange({ ...value, callingCode });
       closeCallingCodeInput();
@@ -159,7 +158,7 @@ export interface Props {
 }
 
 export interface PhoneNumber {
-  callingCode: number | null;
+  callingCode: number;
   significantNumber: string | null;
 }
 
