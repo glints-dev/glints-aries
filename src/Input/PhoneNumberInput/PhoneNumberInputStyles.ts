@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Greyscale, SecondaryColor, Shadow } from '../..';
+import { Greyscale, PrimaryColor, SecondaryColor, Shadow } from '../..';
 
 export const PhoneNumberInputContainer = styled.div`
   position: relative;
@@ -10,6 +10,10 @@ export const TopRow = styled.div`
 
   border: 2px solid ${Greyscale.grey};
   align-items: center;
+
+  &[data-invalid='true'] {
+    border: 2px solid ${PrimaryColor.glintsred};
+  }
 `;
 
 export const CallingCodeInputToggle = styled.button`
@@ -41,6 +45,14 @@ export const SignificantNumberInput = styled.input`
   width: 100%;
   font-size: 16px;
   padding: 12px;
+
+  &:focus {
+    outline: 2px solid ${SecondaryColor.actionblue};
+  }
+
+  &[data-invalid='true']:focus {
+    outline: 2px solid ${PrimaryColor.glintsred};
+  }
 `;
 
 export const CallingCodeInput = styled.div<{ isOpen: boolean }>`
@@ -70,6 +82,12 @@ export const CallingCodeFilterInput = styled.input`
   border: 2px solid ${Greyscale.lightgrey};
   padding: 12px;
   font-size: 14px;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 2px solid ${SecondaryColor.actionblue};
+    outline: none;
+  }
 `;
 
 export const CallingCodeOptionsList = styled.ol`
@@ -110,4 +128,10 @@ export const CallingCodeOptionLabel = styled.div`
   &:hover {
     color: inherit;
   }
+`;
+
+export const Error = styled.div`
+  margin-top: 8px;
+
+  color: ${PrimaryColor.glintsred};
 `;
