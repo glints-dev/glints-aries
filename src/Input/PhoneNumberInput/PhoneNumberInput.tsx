@@ -17,6 +17,7 @@ export const PhoneNumberInput = ({
   callingCodeOptions: callingCodeOptionsExternal,
   onInputChange,
   filterValue,
+  isLoadingCallingCodeOptions,
   label,
   featuredOptionsLabel,
   otherOptionsLabel,
@@ -95,15 +96,18 @@ export const PhoneNumberInput = ({
         isOpen={isCallingCodeInputOpen}
         {...getComboboxProps()}
       >
-        <S.CallingCodeFilterInput
-          {...getInputProps(
-            {
-              placeholder: callingCodeFilterInputPlaceholder,
-            },
-            { ...refErrorFix }
-          )}
-          ref={callingCodeFilterInputRef}
-        />
+        <S.CallingCodeFilterInputGroup>
+          <S.CallingCodeFilterInput
+            {...getInputProps(
+              {
+                placeholder: callingCodeFilterInputPlaceholder,
+              },
+              { ...refErrorFix }
+            )}
+            ref={callingCodeFilterInputRef}
+          />
+          {isLoadingCallingCodeOptions && <S.CallingCodeInputLoading />}
+        </S.CallingCodeFilterInputGroup>
         <S.CallingCodeOptionsList {...getMenuProps()}>
           {callingCodeOptions.length > 0 ? (
             callingCodeOptions.map((item, index) => (

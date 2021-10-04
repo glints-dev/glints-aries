@@ -1,5 +1,11 @@
 import styled, { css } from 'styled-components';
-import { Greyscale, PrimaryColor, SecondaryColor, Shadow } from '../..';
+import {
+  Greyscale,
+  Loading,
+  PrimaryColor,
+  SecondaryColor,
+  Shadow,
+} from '../..';
 
 export const PhoneNumberInputContainer = styled.div`
   position: relative;
@@ -74,11 +80,15 @@ export const CallingCodeInput = styled.div<{ isOpen: boolean }>`
 `;
 
 const CALLING_CODE_INPUT_MARGIN = '8px';
-export const CallingCodeFilterInput = styled.input`
+export const CallingCodeFilterInputGroup = styled.div`
+  position: relative;
   width: 90%;
   width: calc(100% - 2 * ${CALLING_CODE_INPUT_MARGIN});
   margin: ${CALLING_CODE_INPUT_MARGIN};
+`;
 
+export const CallingCodeFilterInput = styled.input`
+  width: 100%;
   border: 2px solid ${Greyscale.lightgrey};
   padding: 12px;
   font-size: 14px;
@@ -88,6 +98,13 @@ export const CallingCodeFilterInput = styled.input`
     border: 2px solid ${SecondaryColor.actionblue};
     outline: none;
   }
+`;
+
+export const CallingCodeInputLoading = styled(Loading)`
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 export const CallingCodeOptionsList = styled.ol`
