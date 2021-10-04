@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 
 import {
@@ -35,6 +35,7 @@ const callingCodeOptions: CallingCodeOption[] = [
 interface StoryProps {
   initialSignificantNumber: string;
   initialFilterInput: string;
+  filterDelayMs: number;
 }
 
 const Template: ComponentStory<typeof PhoneNumberInput> = (
@@ -61,6 +62,22 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
     /[a-zA-Z]/g.test(value.significantNumber) &&
     'Please include numbers only.';
 
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(
+    function simulateLoadingOnFilterInputChange() {
+      if (args.filterDelayMs && filterInput) {
+        setIsLoading(true);
+        const stopLoading = () => setIsLoading(false);
+        const timeout = setTimeout(stopLoading, args.filterDelayMs);
+        return () => {
+          clearTimeout(timeout);
+          stopLoading();
+        };
+      }
+    },
+    [args.filterDelayMs, filterInput]
+  );
+
   return (
     <>
       <p>
@@ -71,6 +88,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         value={value}
         callingCodeOptions={options}
         filterValue={filterInput}
+        isLoadingCallingCodeOptions={isLoading}
         label="Type your phone number"
         featuredOptionsLabel="Frequently Used"
         otherOptionsLabel="The Rest Of The World"
@@ -94,3 +112,6 @@ WithError.args = { initialSignificantNumber: '1234 foo' };
 
 export const NoCallingCodeOptions = Template.bind({});
 NoCallingCodeOptions.args = { initialFilterInput: 'Buxdehude' };
+
+export const Loading = Template.bind({});
+Loading.args = { filterDelayMs: 1000 };
