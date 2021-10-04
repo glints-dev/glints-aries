@@ -1,7 +1,15 @@
+import { useCombobox } from 'downshift';
+import { find } from 'lodash';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
 import * as S from './PhoneNumberInputStyles';
+
+// Downshift wants a ref to this, but we need one ourselves, and there is no way
+// to share.
+// https://github.com/downshift-js/downshift/issues/604
+// https://github.com/downshift-js/downshift/issues/1167
+const refErrorFix = { suppressRefError: true };
 
 export const PhoneNumberInput = ({
   value,
@@ -18,10 +26,32 @@ export const PhoneNumberInput = ({
     setIsCallingCodeInputOpen(!isCallingCodeInputOpen);
   const closeCallingCodeInput = () => setIsCallingCodeInputOpen(false);
 
+  const {
+    getComboboxProps,
+    getInputProps,
+    getToggleButtonProps,
+    getMenuProps,
+    getItemProps,
+  } = useCombobox<CallingCodeOption>({
+    items: callingCodeOptions,
+    selectedItem:
+      find(callingCodeOptions, { callingCode: value.callingCode }) || null,
+    onSelectedItemChange: ({ selectedItem: { callingCode } }) => {
+      onChange({ ...value, callingCode });
+      closeCallingCodeInput();
+    },
+    inputValue: filterValue,
+    onInputValueChange: ({ type, inputValue }) => {
+      if (type !== useCombobox.stateChangeTypes.InputChange) return;
+      onInputChange(inputValue);
+    },
+    itemToString: option => (option ? option.label : ''),
+  });
+
   const callingCodeFilterInputRef = useRef<HTMLInputElement>();
   useEffect(
     function focusCallingCodeFilterInputOnOpen() {
-      if (isCallingCodeInputOpen) {
+      if (isCallingCodeInputOpen && callingCodeFilterInputRef.current) {
         callingCodeFilterInputRef.current.focus();
       }
     },
@@ -36,7 +66,7 @@ export const PhoneNumberInput = ({
       <S.TopRow>
         <S.CallingCodeInputToggle onClick={toggleIsCallingCodeOpen}>
           +{value.callingCode || callingCodePlaceholder}
-          <S.CallingCodeInputOpenIndicator>
+          <S.CallingCodeInputOpenIndicator {...getToggleButtonProps()}>
             {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
           </S.CallingCodeInputOpenIndicator>
         </S.CallingCodeInputToggle>
@@ -51,29 +81,33 @@ export const PhoneNumberInput = ({
           placeholder={label}
         />
       </S.TopRow>
-      <S.CallingCodeInput isOpen={isCallingCodeInputOpen}>
+      <S.CallingCodeInput
+        isOpen={isCallingCodeInputOpen}
+        {...getComboboxProps()}
+      >
         <S.CallingCodeFilterInput
-          value={filterValue}
-          onChange={e => onInputChange(e.target.value)}
-          placeholder={callingCodeFilterInputPlaceholder}
+          {...getInputProps(
+            {
+              placeholder: callingCodeFilterInputPlaceholder,
+            },
+            { ...refErrorFix }
+          )}
           ref={callingCodeFilterInputRef}
         />
-        <S.CallingCodeOptionsList>
-          {callingCodeOptions.map(({ callingCode, label }) => (
+        <S.CallingCodeOptionsList {...getMenuProps()}>
+          {callingCodeOptions.map((item, index) => (
             <S.CallingCodeOption
-              key={callingCode}
-              onClick={() => {
-                onChange({
-                  ...value,
-                  callingCode: callingCode,
-                });
-                closeCallingCodeInput();
-              }}
+              {...getItemProps({
+                item,
+                index,
+              })}
+              key={item.callingCode}
+              title={item.label}
             >
               <S.CallingCodeOptionCallingCode>
-                +{callingCode}
+                +{item.callingCode}
               </S.CallingCodeOptionCallingCode>
-              <S.CallingCodeOptionLabel>{label}</S.CallingCodeOptionLabel>
+              <S.CallingCodeOptionLabel>{item.label}</S.CallingCodeOptionLabel>
             </S.CallingCodeOption>
           ))}
         </S.CallingCodeOptionsList>

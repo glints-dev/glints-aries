@@ -88,6 +88,10 @@ export const CallingCodeOption = styled.li`
     color: ${SecondaryColor.actionblue};
     background: ${Greyscale.softgrey};
   }
+  &[aria-selected='true'] {
+    color: ${SecondaryColor.actionblue};
+    background: ${Greyscale.softgrey};
+  }
 `;
 
 export const CallingCodeOptionCallingCode = styled.div`
