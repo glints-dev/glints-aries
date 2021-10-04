@@ -62,8 +62,6 @@ export const CallingCodeInput = styled.div<{ isOpen: boolean }>`
   background: white;
   margin-top: 4px;
   width: 100%;
-  max-height: 300px;
-  overflow: auto;
 
   border: 1px solid ${Greyscale.lightgrey};
   box-shadow: ${Shadow.down1};
@@ -96,6 +94,8 @@ export const CallingCodeOptionsList = styled.ol`
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 260px;
+  overflow: auto;
 
   font-size: 16px;
 `;
