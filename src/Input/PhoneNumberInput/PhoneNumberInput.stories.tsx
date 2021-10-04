@@ -24,12 +24,16 @@ const callingCodeOptions: CallingCodeOption[] = [
   { label: 'Afghanistan', callingCode: 93, isFeatured: false },
 ];
 
+interface StoryProps {
+  initialSignificantNumber: string;
+}
+
 const Template: ComponentStory<typeof PhoneNumberInput> = (
-  args: Partial<Props>
+  args: Partial<Props> & Partial<StoryProps>
 ) => {
   const [value, setValue] = useState<PhoneNumber>({
     callingCode: 123,
-    significantNumber: null,
+    significantNumber: args.initialSignificantNumber || null,
   });
   const [filterInput, setFilterInput] = useState<string>('');
 
@@ -40,6 +44,11 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
           option.callingCode.toString().includes(filterInput.toLowerCase())
       )
     : callingCodeOptions;
+
+  const error =
+    value.significantNumber &&
+    /[a-zA-Z]/g.test(value.significantNumber) &&
+    'Please include numbers only.';
 
   return (
     <>
@@ -57,6 +66,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         callingCodePlaceholder="??"
         callingCodeFilterInputPlaceholder="Type country code or country name"
         callingCodeNoOptionsLabel=""
+        error={error}
         {...args}
         onChange={setValue}
         onInputChange={setFilterInput}
@@ -67,3 +77,6 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const WithError = Template.bind({});
+WithError.args = { initialSignificantNumber: '1234 foo' };
