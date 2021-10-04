@@ -14,14 +14,22 @@ export default {
   component: PhoneNumberInput,
   decorators: [
     Story => (
-      <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+      <BaseContainer style={{ height: '400px' }}>{Story()}</BaseContainer>
     ),
   ],
 } as Meta;
 
 const callingCodeOptions: CallingCodeOption[] = [
+  { label: 'Malaysia', callingCode: 60, isFeatured: true },
+  { label: 'Indonesia', callingCode: 62, isFeatured: true },
   { label: 'Singapore', callingCode: 65, isFeatured: true },
+  { label: 'Taiwan', callingCode: 886, isFeatured: true },
+  { label: 'Vietnam', callingCode: 84, isFeatured: true },
   { label: 'Afghanistan', callingCode: 93, isFeatured: false },
+  { label: 'Albania', callingCode: 355, isFeatured: false },
+  { label: 'Algeria', callingCode: 213, isFeatured: false },
+  { label: 'Germany', callingCode: 42, isFeatured: false },
+  { label: 'United States', callingCode: 1, isFeatured: false },
 ];
 
 interface StoryProps {
@@ -64,8 +72,8 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         callingCodeOptions={options}
         filterValue={filterInput}
         label="Type your phone number"
-        featuredOptionsLabel=""
-        otherOptionsLabel=""
+        featuredOptionsLabel="Frequently Used"
+        otherOptionsLabel="The Rest Of The World"
         callingCodePlaceholder="??"
         callingCodeFilterInputPlaceholder="Type country code or country name"
         callingCodeNoOptionsLabel={`Sorry, there are no results for country ${filterInput}. Please try again.`}

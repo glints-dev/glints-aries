@@ -1,6 +1,6 @@
 import { useCombobox } from 'downshift';
-import { find } from 'lodash';
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { find, orderBy } from 'lodash';
+import React, { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
 import * as S from './PhoneNumberInputStyles';
@@ -14,10 +14,12 @@ const refErrorFix = { suppressRefError: true };
 export const PhoneNumberInput = ({
   value,
   onChange,
-  callingCodeOptions,
+  callingCodeOptions: callingCodeOptionsExternal,
   onInputChange,
   filterValue,
   label,
+  featuredOptionsLabel,
+  otherOptionsLabel,
   callingCodePlaceholder,
   callingCodeFilterInputPlaceholder,
   callingCodeNoOptionsLabel,
@@ -27,6 +29,12 @@ export const PhoneNumberInput = ({
   const toggleIsCallingCodeOpen = () =>
     setIsCallingCodeInputOpen(!isCallingCodeInputOpen);
   const closeCallingCodeInput = () => setIsCallingCodeInputOpen(false);
+
+  const callingCodeOptions = orderBy(
+    callingCodeOptionsExternal,
+    ['isFeatured', 'label'],
+    ['desc', 'asc']
+  );
 
   const {
     getComboboxProps,
@@ -100,21 +108,28 @@ export const PhoneNumberInput = ({
         <S.CallingCodeOptionsList {...getMenuProps()}>
           {callingCodeOptions.length > 0 ? (
             callingCodeOptions.map((item, index) => (
-              <S.CallingCodeOption
-                {...getItemProps({
-                  item,
-                  index,
-                })}
-                key={item.callingCode}
-                title={item.label}
-              >
-                <S.CallingCodeOptionCallingCode>
-                  +{item.callingCode}
-                </S.CallingCodeOptionCallingCode>
-                <S.CallingCodeOptionLabel>
-                  {item.label}
-                </S.CallingCodeOptionLabel>
-              </S.CallingCodeOption>
+              <Fragment key={item.callingCode}>
+                {item.isFeatured !==
+                  (callingCodeOptions[index - 1] || {}).isFeatured && (
+                  <S.GroupHeader>
+                    {item.isFeatured ? featuredOptionsLabel : otherOptionsLabel}
+                  </S.GroupHeader>
+                )}
+                <S.CallingCodeOption
+                  {...getItemProps({
+                    item,
+                    index,
+                  })}
+                  title={item.label}
+                >
+                  <S.CallingCodeOptionCallingCode>
+                    +{item.callingCode}
+                  </S.CallingCodeOptionCallingCode>
+                  <S.CallingCodeOptionLabel>
+                    {item.label}
+                  </S.CallingCodeOptionLabel>
+                </S.CallingCodeOption>
+              </Fragment>
             ))
           ) : (
             <S.NoOptions>{callingCodeNoOptionsLabel}</S.NoOptions>

@@ -62,6 +62,8 @@ export const CallingCodeInput = styled.div<{ isOpen: boolean }>`
   background: white;
   margin-top: 4px;
   width: 100%;
+  max-height: 300px;
+  overflow: auto;
 
   border: 1px solid ${Greyscale.lightgrey};
   box-shadow: ${Shadow.down1};
@@ -128,6 +130,14 @@ export const CallingCodeOptionLabel = styled.div`
   &:hover {
     color: inherit;
   }
+`;
+
+export const GroupHeader = styled.div`
+  padding: 4px 8px;
+  color: ${Greyscale.devilsgrey};
+  font-size: 8px;
+  border-bottom: 1px solid ${Greyscale.softgrey};
+  text-transform: uppercase;
 `;
 
 export const NoOptions = styled.div`
