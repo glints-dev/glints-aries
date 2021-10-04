@@ -26,6 +26,7 @@ const callingCodeOptions: CallingCodeOption[] = [
 
 interface StoryProps {
   initialSignificantNumber: string;
+  initialFilterInput: string;
 }
 
 const Template: ComponentStory<typeof PhoneNumberInput> = (
@@ -35,7 +36,9 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
     callingCode: 123,
     significantNumber: args.initialSignificantNumber || null,
   });
-  const [filterInput, setFilterInput] = useState<string>('');
+  const [filterInput, setFilterInput] = useState<string>(
+    args.initialFilterInput || ''
+  );
 
   const options = filterInput
     ? callingCodeOptions.filter(
@@ -65,7 +68,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         otherOptionsLabel=""
         callingCodePlaceholder="??"
         callingCodeFilterInputPlaceholder="Type country code or country name"
-        callingCodeNoOptionsLabel=""
+        callingCodeNoOptionsLabel={`Sorry, there are no results for country ${filterInput}. Please try again.`}
         error={error}
         {...args}
         onChange={setValue}
@@ -80,3 +83,6 @@ Default.args = {};
 
 export const WithError = Template.bind({});
 WithError.args = { initialSignificantNumber: '1234 foo' };
+
+export const NoCallingCodeOptions = Template.bind({});
+NoCallingCodeOptions.args = { initialFilterInput: 'Buxdehude' };

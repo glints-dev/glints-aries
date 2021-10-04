@@ -130,6 +130,13 @@ export const CallingCodeOptionLabel = styled.div`
   }
 `;
 
+export const NoOptions = styled.div`
+  padding: 24px 8px;
+  text-align: center;
+  color: ${Greyscale.devilsgrey};
+  font-size: 14px;
+`;
+
 export const Error = styled.div`
   margin-top: 8px;
 
