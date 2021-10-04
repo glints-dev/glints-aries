@@ -20,6 +20,7 @@ export const PhoneNumberInput = ({
   label,
   callingCodePlaceholder,
   callingCodeFilterInputPlaceholder,
+  callingCodeNoOptionsLabel,
   error,
 }: Props) => {
   const [isCallingCodeInputOpen, setIsCallingCodeInputOpen] = useState(false);
@@ -97,21 +98,27 @@ export const PhoneNumberInput = ({
           ref={callingCodeFilterInputRef}
         />
         <S.CallingCodeOptionsList {...getMenuProps()}>
-          {callingCodeOptions.map((item, index) => (
-            <S.CallingCodeOption
-              {...getItemProps({
-                item,
-                index,
-              })}
-              key={item.callingCode}
-              title={item.label}
-            >
-              <S.CallingCodeOptionCallingCode>
-                +{item.callingCode}
-              </S.CallingCodeOptionCallingCode>
-              <S.CallingCodeOptionLabel>{item.label}</S.CallingCodeOptionLabel>
-            </S.CallingCodeOption>
-          ))}
+          {callingCodeOptions.length > 0 ? (
+            callingCodeOptions.map((item, index) => (
+              <S.CallingCodeOption
+                {...getItemProps({
+                  item,
+                  index,
+                })}
+                key={item.callingCode}
+                title={item.label}
+              >
+                <S.CallingCodeOptionCallingCode>
+                  +{item.callingCode}
+                </S.CallingCodeOptionCallingCode>
+                <S.CallingCodeOptionLabel>
+                  {item.label}
+                </S.CallingCodeOptionLabel>
+              </S.CallingCodeOption>
+            ))
+          ) : (
+            <S.NoOptions>{callingCodeNoOptionsLabel}</S.NoOptions>
+          )}
         </S.CallingCodeOptionsList>
       </S.CallingCodeInput>
       <S.Error>{error || null}</S.Error>
