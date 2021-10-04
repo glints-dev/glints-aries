@@ -36,8 +36,8 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
   const options = filterInput
     ? callingCodeOptions.filter(
         option =>
-          option.label.toLowerCase().includes(filterInput) ||
-          option.callingCode.toString().includes(filterInput)
+          option.label.toLowerCase().includes(filterInput.toLowerCase()) ||
+          option.callingCode.toString().includes(filterInput.toLowerCase())
       )
     : callingCodeOptions;
 
@@ -50,6 +50,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
       <PhoneNumberInput
         value={value}
         callingCodeOptions={options}
+        filterValue={filterInput}
         label="Type your phone number"
         featuredOptionsLabel=""
         otherOptionsLabel=""
