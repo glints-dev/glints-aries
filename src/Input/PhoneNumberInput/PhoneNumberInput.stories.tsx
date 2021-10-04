@@ -41,7 +41,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
   args: Partial<Props> & Partial<StoryProps>
 ) => {
   const [value, setValue] = useState<PhoneNumber>({
-    callingCode: 123,
+    callingCode: 65,
     significantNumber: args.initialSignificantNumber || null,
   });
   const [filterInput, setFilterInput] = useState<string>(
