@@ -45,6 +45,24 @@ export const CallingCodeInputOpenIndicator = styled.span`
   }
 `;
 
+export const Label = styled.label`
+  position: absolute;
+  left: 0.5em;
+  top: -0.5em;
+  visibility: hidden;
+
+  padding: 0 0.3em;
+
+  background: white;
+  color: ${Greyscale.devilsgrey};
+`;
+
+const visibleLabel = css`
+  + ${Label} {
+    visibility: visible;
+  }
+`;
+
 export const SignificantNumberInput = styled.input`
   border: none;
 
@@ -54,7 +72,13 @@ export const SignificantNumberInput = styled.input`
 
   &:focus {
     outline: 2px solid ${SecondaryColor.actionblue};
+    ::placeholder {
+      color: transparent;
+    }
+    ${visibleLabel}
   }
+
+  ${({ value }) => value && visibleLabel}
 
   &[data-invalid='true']:focus {
     outline: 2px solid ${PrimaryColor.glintsred};
