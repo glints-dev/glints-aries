@@ -1,6 +1,7 @@
 import { useCombobox } from 'downshift';
 import { find, orderBy } from 'lodash';
 import React, { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
+import { useId } from 'react-id-generator';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
 import * as S from './PhoneNumberInputStyles';
@@ -71,6 +72,8 @@ export const PhoneNumberInput = ({
   const containerRef = useRef<HTMLDivElement>();
   useOutsideAlerter(containerRef, closeCallingCodeInput);
 
+  const [significantNumberInputId] = useId(1, 'significant-number-input-');
+
   return (
     <S.PhoneNumberInputContainer ref={containerRef}>
       <S.TopRow data-invalid={Boolean(error)}>
@@ -81,6 +84,7 @@ export const PhoneNumberInput = ({
           </S.CallingCodeInputOpenIndicator>
         </S.CallingCodeInputToggle>
         <S.SignificantNumberInput
+          id={significantNumberInputId}
           value={value.significantNumber || ''}
           onChange={e =>
             onChange({
@@ -90,7 +94,9 @@ export const PhoneNumberInput = ({
           }
           placeholder={label}
           data-invalid={Boolean(error)}
+          aria-label={label}
         />
+        <S.Label htmlFor={significantNumberInputId}>{label}</S.Label>
       </S.TopRow>
       <S.CallingCodeInput
         isOpen={isCallingCodeInputOpen}
