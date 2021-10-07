@@ -77,7 +77,10 @@ export const PhoneNumberInput = ({
   return (
     <S.PhoneNumberInputContainer ref={containerRef}>
       <S.TopRow data-invalid={Boolean(error)}>
-        <S.CallingCodeInputToggle onClick={toggleIsCallingCodeOpen}>
+        <S.CallingCodeInputToggle
+          onClick={toggleIsCallingCodeOpen}
+          data-testid="calling-code-input-toggle"
+        >
           +{value.callingCode || callingCodePlaceholder}
           <S.CallingCodeInputOpenIndicator {...getToggleButtonProps()}>
             {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
@@ -85,6 +88,7 @@ export const PhoneNumberInput = ({
         </S.CallingCodeInputToggle>
         <S.SignificantNumberInput
           id={significantNumberInputId}
+          data-testid="significant-number-input"
           value={value.significantNumber || ''}
           onChange={e =>
             onChange({
@@ -101,6 +105,7 @@ export const PhoneNumberInput = ({
       <S.CallingCodeInput
         isOpen={isCallingCodeInputOpen}
         {...getComboboxProps()}
+        data-testid="calling-code-input"
       >
         <S.CallingCodeFilterInputGroup>
           <S.CallingCodeFilterInput
@@ -111,8 +116,11 @@ export const PhoneNumberInput = ({
               { ...refErrorFix }
             )}
             ref={callingCodeFilterInputRef}
+            data-testid="calling-code-filter-input"
           />
-          {isLoadingCallingCodeOptions && <S.CallingCodeInputLoading />}
+          {isLoadingCallingCodeOptions && (
+            <S.CallingCodeInputLoading data-testid="calling-code-options-loading" />
+          )}
         </S.CallingCodeFilterInputGroup>
         <S.CallingCodeOptionsList {...getMenuProps()}>
           {callingCodeOptions.length > 0 ? (
@@ -141,11 +149,13 @@ export const PhoneNumberInput = ({
               </Fragment>
             ))
           ) : (
-            <S.NoOptions>{callingCodeNoOptionsLabel}</S.NoOptions>
+            <S.NoOptions data-testid="no-options">
+              {callingCodeNoOptionsLabel}
+            </S.NoOptions>
           )}
         </S.CallingCodeOptionsList>
       </S.CallingCodeInput>
-      <S.Error>{error || null}</S.Error>
+      <S.Error data-testid="error">{error || null}</S.Error>
     </S.PhoneNumberInputContainer>
   );
 };
