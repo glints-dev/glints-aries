@@ -22,7 +22,6 @@ export const PhoneNumberInput = ({
   label,
   featuredOptionsLabel,
   otherOptionsLabel,
-  callingCodePlaceholder,
   callingCodeFilterInputPlaceholder,
   callingCodeNoOptionsLabel,
   error,
@@ -81,7 +80,7 @@ export const PhoneNumberInput = ({
           onClick={toggleIsCallingCodeOpen}
           data-testid="calling-code-input-toggle"
         >
-          +{value.callingCode || callingCodePlaceholder}
+          +{value.callingCode}
           <S.CallingCodeInputOpenIndicator {...getToggleButtonProps()}>
             {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
           </S.CallingCodeInputOpenIndicator>
@@ -172,7 +171,6 @@ export interface Props {
   label: string;
   featuredOptionsLabel: string;
   otherOptionsLabel: string;
-  callingCodePlaceholder: string;
   callingCodeFilterInputPlaceholder: string;
   callingCodeNoOptionsLabel: string;
 }

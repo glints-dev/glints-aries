@@ -34,7 +34,6 @@ const defaultProps: Props = {
   label: 'Mobile Number',
   featuredOptionsLabel: 'Frequently Used',
   otherOptionsLabel: 'The Rest Of The World',
-  callingCodePlaceholder: '??',
   callingCodeFilterInputPlaceholder: 'Type country code or country name',
   callingCodeNoOptionsLabel: `Sorry, there are no results`,
   error: undefined,
