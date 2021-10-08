@@ -78,194 +78,224 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         id="downshift-0-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-0-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-0-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-0-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>
@@ -356,194 +386,224 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         id="downshift-5-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-5-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-5-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-5-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>
@@ -634,194 +694,224 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         id="downshift-1-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-1-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-1-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-1-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>
@@ -923,194 +1013,224 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         id="downshift-12-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-12-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-12-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-12-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>
@@ -1295,194 +1415,224 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         id="downshift-9-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-9-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-9-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-9-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>
@@ -1575,194 +1725,224 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         id="downshift-2-menu"
         role="listbox"
       >
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          Frequently Used
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dfLuHJ"
           id="downshift-2-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +62
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Indonesia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +62
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Indonesia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +60
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Malaysia
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +60
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Malaysia
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +65
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Singapore
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +65
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Singapore
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +886
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Taiwan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +886
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Taiwan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +84
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Vietnam
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +84
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Vietnam
+            </div>
           </div>
         </li>
-        <div
-          class="PhoneNumberInputStyles__GroupHeader-sc-80kraj-14 giXtLT"
-        >
-          The Rest Of The World
-        </div>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 dtvrFy"
           id="downshift-2-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +93
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Afghanistan
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +93
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Afghanistan
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +355
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Albania
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +355
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Albania
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +213
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Algeria
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +213
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Algeria
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +42
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            Germany
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +42
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              Germany
+            </div>
           </div>
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 jTEbQr"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-11 kZsAjo"
           id="downshift-2-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
           >
-            +1
-          </div>
-          <div
-            class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
-          >
-            United States
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-12 hHqaKe"
+            >
+              +1
+            </div>
+            <div
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-13 bduLCR"
+            >
+              United States
+            </div>
           </div>
         </li>
       </ol>

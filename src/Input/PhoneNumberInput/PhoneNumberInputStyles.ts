@@ -141,9 +141,25 @@ export const CallingCodeOptionsList = styled.ol`
   font-size: 16px;
 `;
 
-export const CallingCodeOption = styled.li`
-  display: flex;
+interface GroupHeaderProps {
+  withGroupHeader: string;
+}
 
+const getGroupHeaderStyles = ({ withGroupHeader }: GroupHeaderProps) =>
+  withGroupHeader &&
+  css`
+      content: '${withGroupHeader}';
+      display: block;
+      padding: 4px 8px;
+      color: ${Greyscale.devilsgrey};
+      font-size: 8px;
+      border-bottom: 1px solid ${Greyscale.softgrey};
+      text-transform: uppercase;
+      background: white;
+      cursor: default;
+    `;
+
+export const CallingCodeOption = styled.li<GroupHeaderProps>`
   cursor: pointer;
   &:hover {
     color: ${SecondaryColor.actionblue};
@@ -152,6 +168,10 @@ export const CallingCodeOption = styled.li`
   &[aria-selected='true'] {
     color: ${SecondaryColor.actionblue};
     background: ${Greyscale.softgrey};
+  }
+
+  ::before {
+    ${getGroupHeaderStyles}
   }
 `;
 
