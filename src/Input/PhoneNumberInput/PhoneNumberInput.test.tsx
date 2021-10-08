@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import _userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import { PhoneNumberInput, CallingCodeOption, Props } from './PhoneNumberInput';
@@ -88,10 +88,17 @@ describe('<PhoneNumberInput>', () => {
     expect(getSnapshot()).toMatchSnapshot();
   });
 
-  it('should match snapshot when calling code input is open', () => {
-    const { getSnapshot, getToggleButton } = renderComponent();
+  it('should toggle the calling code input on clicking the toggle button', () => {
+    const {
+      getToggleButton,
+      getCallingCodeInput,
+      getSnapshot,
+    } = renderComponent();
     fireEvent.click(getToggleButton());
     expect(getSnapshot()).toMatchSnapshot();
+    expect(getCallingCodeInput()).toBeVisible();
+    fireEvent.click(getToggleButton());
+    expect(getCallingCodeInput()).not.toBeVisible();
   });
 
   it('should match snapshot after input has been made', () => {
@@ -146,17 +153,6 @@ describe('<PhoneNumberInput>', () => {
     });
   });
 
-  it('should toggle the calling code input on clicking the toggle button', () => {
-    const {
-      getToggleButton,
-      getCallingCodeInput,
-      getSnapshot,
-    } = renderComponent();
-    fireEvent.click(getToggleButton());
-    expect(getCallingCodeInput()).toBeVisible();
-    expect(getSnapshot()).toMatchSnapshot();
-  });
-
   it('should call onChange when a calling code option is selected', () => {
     const onChange = jest.fn();
     const { getToggleButton, getCallingCodeOptions } = renderComponent({
@@ -192,7 +188,7 @@ describe('<PhoneNumberInput>', () => {
     expect(document.activeElement).toBe(getCallingCodeFilterInput());
   });
 
-  it('should call onChange when a calling code option is selected', () => {
+  it('should call onInputChange when typing into calling code filter input', () => {
     const inputValue = 'Singapore';
     const onInputChange = jest.fn();
     const { getToggleButton } = renderComponent({ onInputChange });
