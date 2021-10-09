@@ -85,6 +85,13 @@ export const SignificantNumberInput = styled.input`
   }
 `;
 
+export const TopRowAddon = styled.div`
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
 export const CallingCodeInput = styled.div<{ isOpen: boolean }>`
   position: absolute;
   display: none;

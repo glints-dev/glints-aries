@@ -8,6 +8,7 @@ import {
   CallingCodeOption,
 } from './PhoneNumberInput';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
+import { Tag } from '../..';
 
 export default {
   title: 'Input/PhoneNumberInput',
@@ -114,3 +115,6 @@ NoCallingCodeOptions.args = { initialFilterInput: 'Buxdehude' };
 
 export const Loading = Template.bind({});
 Loading.args = { filterDelayMs: 1000 };
+
+export const WithAddon = Template.bind({});
+WithAddon.args = { addon: <Tag>I am an addon :)</Tag> };
