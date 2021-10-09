@@ -25,6 +25,7 @@ export const PhoneNumberInput = ({
   callingCodeFilterInputPlaceholder,
   callingCodeNoOptionsLabel,
   error,
+  addon,
 }: Props) => {
   const [isCallingCodeInputOpen, setIsCallingCodeInputOpen] = useState(false);
   const toggleIsCallingCodeOpen = () =>
@@ -100,6 +101,7 @@ export const PhoneNumberInput = ({
           aria-label={label}
         />
         <S.Label htmlFor={significantNumberInputId}>{label}</S.Label>
+        <S.TopRowAddon data-testid="addon">{addon}</S.TopRowAddon>
       </S.TopRow>
       <S.CallingCodeInput
         isOpen={isCallingCodeInputOpen}
@@ -164,6 +166,7 @@ export interface Props {
   value: PhoneNumber;
   onChange: (value: PhoneNumber) => void;
   error?: ReactNode;
+  addon?: ReactNode;
   callingCodeOptions: CallingCodeOption[];
   filterValue?: string | null;
   onInputChange?: (inputValue: string | null) => void;

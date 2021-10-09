@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { PhoneNumberInput, CallingCodeOption, Props } from './PhoneNumberInput';
 import { noop } from 'lodash';
 import { resetId } from 'react-id-generator';
+import { Tag } from '../..';
 
 // userEvent is typed incorrectly. The tab function exists, but is not declared
 // on the userEvent's type, so we have to add it manually here
@@ -37,6 +38,7 @@ const defaultProps: Props = {
   callingCodeFilterInputPlaceholder: 'Type country code or country name',
   callingCodeNoOptionsLabel: `Sorry, there are no results`,
   error: undefined,
+  addon: undefined,
   onChange: noop,
   onInputChange: noop,
 };
@@ -58,6 +60,7 @@ const renderComponent = (testProps: Partial<Props> = {}) => {
     getNoOptions: () => queryByTestId('no-options'),
     getLoading: () => queryByTestId('calling-code-options-loading'),
     getError: () => queryByTestId('error'),
+    getAddon: () => queryByTestId('addon'),
   };
 
   const rerenderWithProps = (props: Props = defaultProps) =>
@@ -119,6 +122,14 @@ describe('<PhoneNumberInput>', () => {
       error: 'You dun goofed',
     });
     expect(getError()).toBeVisible();
+    expect(getSnapshot()).toMatchSnapshot();
+  });
+
+  it('should render the given addon', () => {
+    const { getSnapshot, getAddon } = renderComponent({
+      addon: <Tag>Foo</Tag>,
+    });
+    expect(getAddon()).toBeVisible();
     expect(getSnapshot()).toMatchSnapshot();
   });
 
