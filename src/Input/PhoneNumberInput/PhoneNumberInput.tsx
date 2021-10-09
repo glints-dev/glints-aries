@@ -89,6 +89,7 @@ export const PhoneNumberInput = ({
         <S.SignificantNumberInput
           id={significantNumberInputId}
           data-testid="significant-number-input"
+          type="tel"
           value={value.significantNumber || ''}
           onChange={e =>
             onChange({
