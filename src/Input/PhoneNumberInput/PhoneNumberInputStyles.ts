@@ -1,11 +1,7 @@
 import styled, { css } from 'styled-components';
-import {
-  Greyscale,
-  Loading,
-  PrimaryColor,
-  SecondaryColor,
-  Shadow,
-} from '../..';
+import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
+import { Shadow } from '../../Utils/Shadow';
+import { Loading } from '../../General/Loading';
 
 export const PhoneNumberInputContainer = styled.div`
   position: relative;
@@ -14,8 +10,12 @@ export const PhoneNumberInputContainer = styled.div`
 export const TopRow = styled.div`
   display: flex;
 
-  border: 2px solid ${Greyscale.grey};
+  border: 2px solid ${Greyscale.lightgrey};
   align-items: center;
+
+  &:hover {
+    border: 2px solid ${SecondaryColor.actionblue};
+  }
 
   &[data-invalid='true'] {
     border: 2px solid ${PrimaryColor.glintsred};
@@ -60,6 +60,8 @@ export const Label = styled.label`
 const visibleLabel = css`
   + ${Label} {
     visibility: visible;
+    color: #646464;
+    font-size: 12px;
   }
 `;
 
