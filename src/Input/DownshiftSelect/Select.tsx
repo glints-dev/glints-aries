@@ -129,7 +129,7 @@ export interface Props {
   /** Called each time the text input loses focus */
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
 
-  /** Text to be displayed in <code>EmptyList</code> when <code>transformFunction</code> returns an empty list */
+  /** Text to be displayed in EmptyList when transformFunction returns an empty list */
   emptyListText?: string;
 }
 
