@@ -26,6 +26,7 @@ export const PhoneNumberInput = ({
   callingCodeNoOptionsLabel,
   error,
   addon,
+  ...restProps
 }: Props) => {
   const [isCallingCodeInputOpen, setIsCallingCodeInputOpen] = useState(false);
   const toggleIsCallingCodeOpen = () =>
@@ -80,7 +81,7 @@ export const PhoneNumberInput = ({
   const [significantNumberInputId] = useId(1, 'significant-number-input-');
 
   return (
-    <S.PhoneNumberInputContainer ref={containerRef}>
+    <S.PhoneNumberInputContainer ref={containerRef} {...restProps}>
       <S.TopRow data-invalid={Boolean(error)}>
         <S.CallingCodeInputToggle
           onClick={toggleIsCallingCodeOpen}
