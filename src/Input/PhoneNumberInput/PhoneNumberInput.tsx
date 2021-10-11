@@ -1,6 +1,6 @@
 import { useCombobox } from 'downshift';
 import { find, orderBy } from 'lodash';
-import React, { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { useId } from 'react-id-generator';
 import { ArrowDownIcon, ArrowUpIcon, Flex } from '../..';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
@@ -133,29 +133,28 @@ export const PhoneNumberInput = ({
         <S.CallingCodeOptionsList {...getMenuProps()}>
           {callingCodeOptions.length > 0 ? (
             callingCodeOptions.map((item, index) => (
-              <Fragment key={item.callingCode}>
-                <S.CallingCodeOption
-                  {...getItemProps({
-                    item,
-                    index,
-                  })}
-                  title={item.label}
-                  withGroupHeader={
-                    item.isFeatured !==
-                      (callingCodeOptions[index - 1] || {}).isFeatured &&
-                    (item.isFeatured ? featuredOptionsLabel : otherOptionsLabel)
-                  }
-                >
-                  <Flex>
-                    <S.CallingCodeOptionCallingCode>
-                      +{item.callingCode}
-                    </S.CallingCodeOptionCallingCode>
-                    <S.CallingCodeOptionLabel>
-                      {item.label}
-                    </S.CallingCodeOptionLabel>
-                  </Flex>
-                </S.CallingCodeOption>
-              </Fragment>
+              <S.CallingCodeOption
+                key={`${item.callingCode}-${item.label}`}
+                {...getItemProps({
+                  item,
+                  index,
+                })}
+                title={item.label}
+                withGroupHeader={
+                  item.isFeatured !==
+                    (callingCodeOptions[index - 1] || {}).isFeatured &&
+                  (item.isFeatured ? featuredOptionsLabel : otherOptionsLabel)
+                }
+              >
+                <Flex>
+                  <S.CallingCodeOptionCallingCode>
+                    +{item.callingCode}
+                  </S.CallingCodeOptionCallingCode>
+                  <S.CallingCodeOptionLabel>
+                    {item.label}
+                  </S.CallingCodeOptionLabel>
+                </Flex>
+              </S.CallingCodeOption>
             ))
           ) : (
             <S.NoOptions data-testid="no-options">

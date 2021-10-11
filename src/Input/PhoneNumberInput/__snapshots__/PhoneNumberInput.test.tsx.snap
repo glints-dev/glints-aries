@@ -6,7 +6,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -35,7 +35,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -319,7 +319,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -348,7 +348,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -632,7 +632,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -661,7 +661,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gPKDqJ"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 buMdAB"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -945,7 +945,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -974,7 +974,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1269,7 +1269,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -1298,7 +1298,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1368,7 +1368,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -1397,7 +1397,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1694,7 +1694,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="true"
     >
       <button
@@ -1723,7 +1723,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="true"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -2009,7 +2009,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 bSjcsr"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
       data-invalid="false"
     >
       <button
@@ -2038,7 +2038,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 etvgTD"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
