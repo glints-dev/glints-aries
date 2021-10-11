@@ -47,8 +47,13 @@ export const PhoneNumberInput = ({
   } = useCombobox<CallingCodeOption>({
     items: callingCodeOptions,
     selectedItem: find(callingCodeOptions, { callingCode: value.callingCode }),
-    onSelectedItemChange: ({ selectedItem: { callingCode } }) => {
-      onChange({ ...value, callingCode });
+    onSelectedItemChange: ({ selectedItem }) => {
+      onChange({
+        ...value,
+        callingCode: selectedItem
+          ? selectedItem.callingCode
+          : value.callingCode,
+      });
       closeCallingCodeInput();
     },
     inputValue: filterValue,
