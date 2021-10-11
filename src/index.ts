@@ -23,6 +23,7 @@ export { default as Icon } from './General/Icon';
 export { default as Loading } from './General/Loading';
 export { default as Modal } from './Display/Modal';
 export { default as NumberInput } from './Input/NumberInput';
+export { PhoneNumberInput, CallingCodeOption, PhoneNumber } from './Input/PhoneNumberInput/PhoneNumberInput';
 export { default as PointingModal } from './Display/PointingModal';
 export { default as Popover } from './Display/Popover';
 export { default as ProfilePicture } from './General/ProfilePicture';
