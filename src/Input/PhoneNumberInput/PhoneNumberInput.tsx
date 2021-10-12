@@ -15,6 +15,8 @@ const refErrorFix = { suppressRefError: true };
 export const PhoneNumberInput = ({
   value,
   onChange,
+  onFocus,
+  onBlur,
   callingCodeOptions: callingCodeOptionsExternal,
   onInputChange,
   filterValue,
@@ -84,11 +86,13 @@ export const PhoneNumberInput = ({
     <S.PhoneNumberInputContainer ref={containerRef} {...restProps}>
       <S.TopRow data-invalid={Boolean(error)}>
         <S.CallingCodeInputToggle
+          {...getToggleButtonProps()}
+          type="button"
           onClick={toggleIsCallingCodeOpen}
           data-testid="calling-code-input-toggle"
         >
           +{value.callingCode}
-          <S.CallingCodeInputOpenIndicator {...getToggleButtonProps()}>
+          <S.CallingCodeInputOpenIndicator>
             {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
           </S.CallingCodeInputOpenIndicator>
         </S.CallingCodeInputToggle>
@@ -103,6 +107,8 @@ export const PhoneNumberInput = ({
               significantNumber: e.target.value,
             })
           }
+          onFocus={onFocus}
+          onBlur={onBlur}
           placeholder={label}
           data-invalid={Boolean(error)}
           aria-label={label}
@@ -125,6 +131,8 @@ export const PhoneNumberInput = ({
             )}
             ref={callingCodeFilterInputRef}
             data-testid="calling-code-filter-input"
+            onFocus={onFocus}
+            onBlur={onBlur}
           />
           {isLoadingCallingCodeOptions && (
             <S.CallingCodeInputLoading data-testid="calling-code-options-loading" />
@@ -171,6 +179,8 @@ export const PhoneNumberInput = ({
 export interface Props {
   value: PhoneNumber;
   onChange: (value: PhoneNumber) => void;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   error?: ReactNode;
   addon?: ReactNode;
   callingCodeOptions: CallingCodeOption[];
