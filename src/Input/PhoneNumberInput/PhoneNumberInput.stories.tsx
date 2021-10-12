@@ -99,6 +99,7 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         {...args}
         onChange={setValue}
         onInputChange={setFilterInput}
+        onBlur={console.log}
       />
     </>
   );

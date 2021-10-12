@@ -12,12 +12,13 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-0-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-0-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -325,12 +326,13 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-5-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-5-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -638,12 +640,13 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-1-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-1-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -951,12 +954,13 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-13-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-13-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -1275,12 +1279,13 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-11-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-11-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -1374,12 +1379,13 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-10-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-10-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -1700,12 +1706,13 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-9-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-9-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
@@ -2015,12 +2022,13 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       <button
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
         data-testid="calling-code-input-toggle"
+        id="downshift-2-toggle-button"
+        tabindex="-1"
+        type="button"
       >
         +123
         <span
           class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
-          id="downshift-2-toggle-button"
-          tabindex="-1"
         >
           <svg
             class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"

@@ -207,4 +207,42 @@ describe('<PhoneNumberInput>', () => {
     userEvent.type(document.activeElement, inputValue);
     expect(onInputChange).toHaveBeenCalledWith(inputValue);
   });
+
+  it('should call onFocus when the significant number input is focused', () => {
+    const onFocus = jest.fn();
+    const { getSignificantNumberInput } = renderComponent({
+      onFocus,
+    });
+    getSignificantNumberInput().focus();
+    expect(onFocus).toHaveBeenCalled();
+  });
+
+  it('should call onFocus when the calling code input is opened', () => {
+    const onFocus = jest.fn();
+    const { getToggleButton } = renderComponent({
+      onFocus,
+    });
+    fireEvent.click(getToggleButton());
+    expect(onFocus).toHaveBeenCalled();
+  });
+
+  it('should call onBlur when the significant number input is blurred', () => {
+    const onBlur = jest.fn();
+    const { getSignificantNumberInput } = renderComponent({
+      onBlur,
+    });
+    getSignificantNumberInput().focus();
+    getSignificantNumberInput().blur();
+    expect(onBlur).toHaveBeenCalled();
+  });
+
+  it('should call onBlur when the calling code input is closed', () => {
+    const onBlur = jest.fn();
+    const { getToggleButton, getCallingCodeFilterInput } = renderComponent({
+      onBlur,
+    });
+    fireEvent.click(getToggleButton());
+    getCallingCodeFilterInput().blur();
+    expect(onBlur).toHaveBeenCalled();
+  });
 });
