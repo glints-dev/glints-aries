@@ -186,6 +186,7 @@ export { default as ShareOutlineIcon } from './General/Icon/components/ShareOutl
 export { default as ShareArrowIcon } from './General/Icon/components/ShareArrowIcon';
 export { default as ShareArrowOutlineIcon } from './General/Icon/components/ShareArrowOutlineIcon';
 export { default as ShareScreenIcon } from './General/Icon/components/ShareScreenIcon';
+export { default as ShieldCheckIcon } from './General/Icon/components/ShieldCheckIcon';
 export { default as SpeakerIcon } from './General/Icon/components/SpeakerIcon';
 export { default as SpeechBubbleIcon } from './General/Icon/components/SpeechBubbleIcon';
 export { default as SpeechBubbleOutlineIcon } from './General/Icon/components/SpeechBubbleOutlineIcon';
