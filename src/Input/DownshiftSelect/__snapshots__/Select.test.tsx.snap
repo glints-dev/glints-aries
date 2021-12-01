@@ -51,6 +51,79 @@ exports[`<Select> (Downshift) should allow removal of components by passing a vo
 </DocumentFragment>
 `;
 
+exports[`<Select> (Downshift) should group items by groupKey if given 1`] = `
+<DocumentFragment>
+  <div
+    class="SelectStyle__Container-qr1jv6-0 faXYfy"
+    data-testid="container"
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-111-menu"
+      class="SelectStyle__Combobox-qr1jv6-2 bvcZlQ"
+      data-active="false"
+      data-disabled="false"
+      data-invalid="false"
+      data-testid="combobox"
+      role="combobox"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="downshift-111-menu"
+        aria-invalid="false"
+        aria-labelledby="downshift-111-label"
+        autocomplete="off"
+        class="SelectStyle__Input-qr1jv6-3 llfDsg"
+        data-testid="input"
+        id="downshift-111-input"
+        value=""
+      />
+      <div
+        class="SelectStyle__IndicatorsContainer-qr1jv6-4 hZrLeS"
+        data-testid="indicators-container"
+      >
+        <button
+          aria-label="toggle menu"
+          class="SelectStyle___IndicatorButton-qr1jv6-5 SelectStyle__ToggleButton-qr1jv6-7 cdsRlh"
+          data-testid="toggle-button"
+          id="downshift-111-toggle-button"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            data-testid="icon-svg"
+            fill="currentColor"
+            height="1em"
+            viewBox="0 0 100 100"
+            width="1em"
+          >
+            <polygon
+              points="11.7984725 19 49.9935275 57.3950291 88.1885825 19 99.987055 30.7984725 49.9935275 80.792 0 30.7984725"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <ul
+      aria-labelledby="downshift-111-label"
+      class="SelectStyle__Menu-qr1jv6-9 eIBExb"
+      data-testid="menu"
+      id="downshift-111-menu"
+      role="listbox"
+    >
+      <li
+        class="SelectStyle__EmptyList-qr1jv6-11 jbauMg"
+        data-testid="empty-list"
+      >
+        No results found. Try another keyword to search for.
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Select> (Downshift) should have a loading indicator 1`] = `
 <DocumentFragment>
   <div
@@ -608,7 +681,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-2-item-0"
         role="option"
-        title="Software Engineer"
+        title="Software Engineer0"
       >
         Software Engineer
       </li>
@@ -617,7 +690,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-2-item-1"
         role="option"
-        title="Software Tester"
+        title="Software Tester1"
       >
         Software Tester
       </li>
@@ -626,7 +699,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-2-item-2"
         role="option"
-        title="Back-end Engineer"
+        title="Back-end Engineer2"
       >
         Back-end Engineer
       </li>
@@ -635,7 +708,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-2-item-3"
         role="option"
-        title="Front-end Engineer"
+        title="Front-end Engineer3"
       >
         Front-end Engineer
       </li>
@@ -724,7 +797,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         data-test="foo"
         id="downshift-51-item-0"
         role="option"
-        title="Software Engineer"
+        title="Software Engineer0"
       >
         Software Engineer
       </li>
@@ -734,7 +807,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         data-test="foo"
         id="downshift-51-item-1"
         role="option"
-        title="Software Tester"
+        title="Software Tester1"
       >
         Software Tester
       </li>
@@ -744,7 +817,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         data-test="foo"
         id="downshift-51-item-2"
         role="option"
-        title="Back-end Engineer"
+        title="Back-end Engineer2"
       >
         Back-end Engineer
       </li>
@@ -754,7 +827,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         data-test="foo"
         id="downshift-51-item-3"
         role="option"
-        title="Front-end Engineer"
+        title="Front-end Engineer3"
       >
         Front-end Engineer
       </li>
@@ -904,7 +977,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-55-item-0"
         role="option"
-        title="Software Engineer"
+        title="Software Engineer0"
       >
         Software Engineer
       </li>
@@ -913,7 +986,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-55-item-1"
         role="option"
-        title="Software Tester"
+        title="Software Tester1"
       >
         Software Tester
       </li>
@@ -922,7 +995,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-55-item-2"
         role="option"
-        title="Back-end Engineer"
+        title="Back-end Engineer2"
       >
         Back-end Engineer
       </li>
@@ -931,7 +1004,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
         class="SelectStyle__Item-qr1jv6-10 iabMNy"
         id="downshift-55-item-3"
         role="option"
-        title="Front-end Engineer"
+        title="Front-end Engineer3"
       >
         Front-end Engineer
       </li>

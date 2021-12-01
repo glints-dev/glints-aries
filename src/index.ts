@@ -31,7 +31,7 @@ export { default as ProfilePicture } from './General/ProfilePicture';
 export { default as RadioButton } from './Input/RadioButton';
 export { default as Select } from './Input/Select';
 export { Select as DownshiftSelect, SubComponents as DownshiftSelectSubComponents, defaultTransformFunction as DownshiftSelectDefaultTransformFunction, itemToString as DownshiftSelectItemToString, defaultEmptyListText } from './Input/DownshiftSelect/Select';
-export type { Item as DownshiftSelectItem , ItemProps as DownshiftSelectItemComponentProps } from './Input/DownshiftSelect/Select';
+export type { Item as DownshiftSelectItem , ItemProps as DownshiftSelectItemComponentProps, Props as DownshiftSelectProps } from './Input/DownshiftSelect/Select';
 export { default as Slider } from './Display/Slider';
 export { default as Swipeable } from './Display/Swipeable';
 export { default as Tabs } from './Display/Tabs';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, queryAllByAttribute } from '@testing-library/react';
 import _userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import { Select, Item, ItemProps } from './Select';
@@ -14,12 +14,14 @@ const arrowDownKey = { key: 'ArrowDown', keyCode: 40 };
 const enterKey = { key: 'Enter', keyCode: 13 };
 const escKey = { key: 'Escape', keyCode: 27 };
 
+const queryAllByTestId = queryAllByAttribute.bind(null, 'data-testid');
+
 const items: Item[] = [
   'Software Engineer',
   'Software Tester',
   'Back-end Engineer',
   'Front-end Engineer',
-].map(label => ({ value: label, label }));
+].map(label => ({ value: label, label, group: label.split(' ')[1] }));
 
 const CustomItem: React.FC<ItemProps> = props => {
   return <ItemComponent {...props} data-test="foo" />;
@@ -36,9 +38,13 @@ type TestSelectProps = Omit<React.ComponentProps<typeof Select>, 'items'> & {
 };
 
 const renderSelect = (props: TestSelectProps = { items }) => {
-  const { asFragment, queryByTestId, queryAllByRole, rerender } = render(
-    <Select items={items} {...props} />
-  );
+  const {
+    container,
+    asFragment,
+    queryByTestId,
+    queryAllByRole,
+    rerender,
+  } = render(<Select items={items} {...props} />);
   const getSnapshot = asFragment;
   const getSelectContainer = () => queryByTestId('container');
   const getLabel = () => queryByTestId('label');
@@ -51,6 +57,7 @@ const renderSelect = (props: TestSelectProps = { items }) => {
   const getFirstItem = () => first(getItems());
   const getLoadingIndicator = () => queryByTestId('loading-indicator');
   const getHelperText = () => queryByTestId('helper-text');
+  const getGroupHeadings = () => queryAllByTestId(container, 'group-heading');
 
   const rerenderWithProps = (props: TestSelectProps = { items }) =>
     rerender(<Select items={items} {...props} />);
@@ -68,6 +75,7 @@ const renderSelect = (props: TestSelectProps = { items }) => {
     getItems,
     getFirstItem,
     getHelperText,
+    getGroupHeadings,
     rerenderWithProps,
   };
 };
@@ -430,5 +438,16 @@ describe('<Select> (Downshift)', () => {
     });
     userEvent.type(getInput(), 'foo');
     expect(getMenu()).toHaveTextContent(emptyListText);
+  });
+
+  it('should group items by groupKey if given', () => {
+    const { getSnapshot, getGroupHeadings, getToggleButton } = renderSelect({
+      groupKey: 'group',
+    });
+    expect(getSnapshot()).toMatchSnapshot();
+    fireEvent.click(getToggleButton());
+    ['Engineer', 'Tester'].forEach((groupName, index) =>
+      expect(getGroupHeadings()[index]).toHaveTextContent(groupName)
+    );
   });
 });

@@ -46,11 +46,15 @@ export default {
 } as Meta;
 
 const items: Item[] = [
-  'Software Engineer',
-  'Software Tester',
-  'Back-end Engineer',
-  'Front-end Engineer',
-].map(label => ({ value: label, label }));
+  { label: 'Software Engineer', value: 'v0', category: 'Software Engineering' },
+  { label: 'Software Tester', value: 'v1', category: 'Quality Assurance' },
+  { label: 'Back-end Engineer', value: 'v2', category: 'Software Engineering' },
+  {
+    label: 'Front-end Engineer',
+    value: 'v3',
+    category: 'Software Engineering',
+  },
+];
 
 const componentNames = Object.keys(Components).filter(
   name => !name.startsWith('_')
@@ -120,6 +124,16 @@ RealisticExample.parameters = {
     description: {
       story:
         'The Select is built with async items in mind. Just update the items at any time.',
+    },
+  },
+};
+
+export const Groups = Template.bind({});
+Groups.args = { groupKey: 'category' };
+Groups.parameters = {
+  docs: {
+    description: {
+      story: `You can pass groupKey to group items by that key. This will also be used as the header for the group.`,
     },
   },
 };

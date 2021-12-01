@@ -151,3 +151,24 @@ export const HelperText = styled.span`
     color: ${PrimaryColor.glintsred};
   }
 `;
+
+export const GroupContainer = styled.li`
+  margin-bottom: 0.5em;
+  padding: 0;
+  list-style-type: none;
+`;
+
+export const Group = styled.ul`
+  padding: 0;
+`;
+
+export const GroupHeading = styled.li`
+  padding: 0.5em 1em;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${Greyscale.devilsgrey};
+  font-size: 0.75em;
+  text-transform: uppercase;
+`;

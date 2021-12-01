@@ -5,7 +5,7 @@ import * as internalComponents from './SelectStyle';
 import { ArrowDownIcon } from '../../General/Icon/components';
 import { ArrowUpIcon } from '../../General/Icon/components';
 import { CloseCircleSolidIcon } from '../../General/Icon/components';
-import { isFunction, isUndefined, noop } from 'lodash';
+import { groupBy, indexOf, isFunction, isUndefined, noop } from 'lodash';
 import { useId } from 'react-id-generator';
 
 export interface Item {
@@ -47,6 +47,9 @@ type MenuType = HTMLProps<HTMLUListElement>;
 type ItemType = ItemProps & HTMLProps<HTMLLIElement>;
 type EmptyListType = HTMLProps<HTMLLIElement>;
 type HelperTextType = HTMLProps<HTMLSpanElement>;
+type GroupContainerType = HTMLProps<HTMLLIElement>;
+type GroupType = HTMLProps<HTMLUListElement>;
+type GroupHeadingType = HTMLProps<HTMLLIElement>;
 
 // This is the type for the 'components' prop on the Select. Using
 // ComponentType allows us to take in any kind of component, e.g. class
@@ -64,6 +67,9 @@ export interface Components {
   Item: React.ComponentType<ItemType>;
   EmptyList: React.ComponentType<EmptyListType>;
   HelperText: React.ComponentType<HelperTextType>;
+  GroupContainer: React.ComponentType<GroupContainerType>;
+  Group: React.ComponentType<GroupType>;
+  GroupHeading: React.ComponentType<GroupHeadingType>;
 }
 
 export const SubComponents = internalComponents;
@@ -131,6 +137,9 @@ export interface Props {
 
   /** Text to be displayed in EmptyList when transformFunction returns an empty list */
   emptyListText?: string;
+
+  /** Key by which to group items. Also used as group */
+  groupKey?: string;
 }
 
 export const Select: React.FC<Props> & { Components: Components } = ({
@@ -156,6 +165,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
   onFocus: onFocusExternal,
   onBlur: onBlurExternal,
   emptyListText = defaultEmptyListText,
+  groupKey,
   ...props
 }) => {
   const mergedComponents = {
@@ -176,6 +186,9 @@ export const Select: React.FC<Props> & { Components: Components } = ({
     Item,
     EmptyList,
     HelperText,
+    GroupContainer,
+    Group,
+    GroupHeading,
   } = mergedComponents;
 
   const [inputValueInternal, setInputValueInternal] = useState<string>('');
@@ -257,6 +270,8 @@ export const Select: React.FC<Props> & { Components: Components } = ({
     onBlurInternal();
   };
 
+  const groups = groupKey && groupBy(displayItems, groupKey);
+
   return (
     <Container data-testid="container">
       {label && (
@@ -320,26 +335,43 @@ export const Select: React.FC<Props> & { Components: Components } = ({
         </IndicatorsContainer>
       </Combobox>
       <Menu {...getMenuProps()} data-testid="menu">
-        {isOpen && displayItems.length > 0 ? (
-          displayItems.map((item, index) => (
+        {(() => {
+          const renderItem = (item: Item) => (
             <Item
               {...getItemProps({
                 item,
-                index,
+                index: indexOf(displayItems, item),
                 disabled: disabled || item.disabled,
               })}
               key={item.value}
               item={item}
-              title={item.label}
+              title={item.label + indexOf(displayItems, item)}
               // getToggleButtonProps adds a ref here, but functional components don't support them. Overriding the ref here prevents a React warning
               ref={undefined}
             >
               {itemToString(item)}
             </Item>
-          ))
-        ) : (
-          <EmptyList data-testid="empty-list">{emptyListText}</EmptyList>
-        )}
+          );
+          if (isOpen) {
+            if (groups && Object.keys(groups).length > 0) {
+              return Object.keys(groups).map(groupKey => (
+                <GroupContainer key={groupKey}>
+                  <Group>
+                    <GroupHeading disabled={true} data-testid="group-heading">
+                      {groupKey}
+                    </GroupHeading>
+                    {groups[groupKey].map(renderItem)}
+                  </Group>
+                </GroupContainer>
+              ));
+            } else if (displayItems.length > 0) {
+              return displayItems.map(renderItem);
+            }
+          }
+          return (
+            <EmptyList data-testid="empty-list">{emptyListText}</EmptyList>
+          );
+        })()}
       </Menu>
       {helperText && (
         <HelperText
