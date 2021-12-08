@@ -1,6 +1,6 @@
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { render, wait, fireEvent, act } from '@testing-library/react';
+import { render, waitFor, fireEvent, act } from '@testing-library/react';
 import * as React from 'react';
 
 import Slider, { Props } from './Slider';
@@ -52,7 +52,7 @@ describe('<Slider/> prop initialItem', () => {
       const theThreeNavigationDots = document.querySelectorAll('li');
 
       // wait setState in componentDidMount to set active dot
-      await wait(() => {
+      await waitFor(() => {
         expect(
           theThreeNavigationDots[index].classList.contains('active')
         ).toBeTruthy();

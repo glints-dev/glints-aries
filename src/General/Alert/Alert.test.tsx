@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { render, fireEvent, wait, act } from '@testing-library/react';
+import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
@@ -197,7 +197,7 @@ describe('<Alert/> autoClose', () => {
     );
     rerender(<AlertComponent onClose={onClose} isOpen={true} />);
     expect(onClose).not.toHaveBeenCalled();
-    await wait(() => {
+    await waitFor(() => {
       // after autoClose timeout onClose should have been called
       expect(onClose).toHaveBeenCalled();
     });
@@ -223,7 +223,7 @@ describe('<Alert/> timeout', () => {
     const closeButton = queryByRole('button');
     fireEvent.click(closeButton);
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -233,7 +233,7 @@ describe('<Alert/> timeout', () => {
     const alert = queryByRole('alertdialog');
     fireEvent.keyDown(alert, { key: 'Enter', keyCode: 13 });
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -243,7 +243,7 @@ describe('<Alert/> timeout', () => {
     const alert = queryByRole('alertdialog');
     fireEvent.keyDown(alert, { key: 'Esc', keyCode: 27 });
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -268,7 +268,7 @@ describe('<Alert/> timeout', () => {
     act(() => openAlert());
     const alert = queryByRole('alertdialog');
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
