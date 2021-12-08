@@ -4,14 +4,14 @@ exports[`<ToggleSwitch /> prop active should match snapshot when active false is
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -31,14 +31,14 @@ exports[`<ToggleSwitch /> prop active should match snapshot when active true is 
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="Styles__Toggle-sc-bsue54-0 FJJUU aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 gJtxDp aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eveMVt"
+      class="Styles__ToggleBall-sc-bsue54-1 hUngEs"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#017EB7"
         height="1em"
@@ -58,14 +58,14 @@ exports[`<ToggleSwitch /> prop className should match snapshot when class name t
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -85,14 +85,14 @@ exports[`<ToggleSwitch /> prop className should match snapshot when class name u
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -112,14 +112,14 @@ exports[`<ToggleSwitch /> prop defaultActive should match snapshot when defaultA
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -139,14 +139,14 @@ exports[`<ToggleSwitch /> prop defaultActive should match snapshot when defaultA
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="Styles__Toggle-sc-bsue54-0 FJJUU aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 gJtxDp aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eveMVt"
+      class="Styles__ToggleBall-sc-bsue54-1 hUngEs"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#017EB7"
         height="1em"
@@ -166,14 +166,14 @@ exports[`<ToggleSwitch /> prop iconOptions should match snapshot when iconOption
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#777777"
         height="1em"
@@ -193,11 +193,11 @@ exports[`<ToggleSwitch /> prop iconOptions should match snapshot when no iconOpt
 <DocumentFragment>
   <button
     aria-checked="false"
-    class="Styles__Toggle-sc-bsue54-0 dgMrmW aries-toggle-switch"
+    class="Styles__Toggle-sc-bsue54-0 kUznuf aries-toggle-switch"
     role="switch"
   >
     <div
-      class="Styles__ToggleBall-sc-bsue54-1 eotbSn"
+      class="Styles__ToggleBall-sc-bsue54-1 bfYVuy"
     />
   </button>
 </DocumentFragment>

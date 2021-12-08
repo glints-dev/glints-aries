@@ -3,7 +3,7 @@
 exports[`<Flex /> flex properties should match snapshot when alignItems is set baseline 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 cJapxd"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 flOSdo"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`<Flex /> flex properties should match snapshot when alignItems is set b
 exports[`<Flex /> flex properties should match snapshot when alignItems is set center 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 hOHBUN"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 GoDxE"
   />
 </DocumentFragment>
 `;
@@ -19,7 +19,7 @@ exports[`<Flex /> flex properties should match snapshot when alignItems is set c
 exports[`<Flex /> flex properties should match snapshot when alignItems is set flex-end 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 gDzckj"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 fWGjZy"
   />
 </DocumentFragment>
 `;
@@ -27,7 +27,7 @@ exports[`<Flex /> flex properties should match snapshot when alignItems is set f
 exports[`<Flex /> flex properties should match snapshot when alignItems is set flex-start 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 jsLDeE"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 eBszyB"
   />
 </DocumentFragment>
 `;
@@ -35,7 +35,7 @@ exports[`<Flex /> flex properties should match snapshot when alignItems is set f
 exports[`<Flex /> flex properties should match snapshot when alignItems is set stretch 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -43,7 +43,7 @@ exports[`<Flex /> flex properties should match snapshot when alignItems is set s
 exports[`<Flex /> flex properties should match snapshot when flexDirection is set column 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 heKDkF"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 fIsYUk"
   />
 </DocumentFragment>
 `;
@@ -51,7 +51,7 @@ exports[`<Flex /> flex properties should match snapshot when flexDirection is se
 exports[`<Flex /> flex properties should match snapshot when flexDirection is set column-reverse 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 itCtAI"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 hMYLmV"
   />
 </DocumentFragment>
 `;
@@ -59,7 +59,7 @@ exports[`<Flex /> flex properties should match snapshot when flexDirection is se
 exports[`<Flex /> flex properties should match snapshot when flexDirection is set row 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -67,7 +67,7 @@ exports[`<Flex /> flex properties should match snapshot when flexDirection is se
 exports[`<Flex /> flex properties should match snapshot when flexDirection is set row-reverse 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 gDpYzY"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 fVSmWZ"
   />
 </DocumentFragment>
 `;
@@ -75,7 +75,7 @@ exports[`<Flex /> flex properties should match snapshot when flexDirection is se
 exports[`<Flex /> flex properties should match snapshot when flexWrap is set nowrap 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -83,7 +83,7 @@ exports[`<Flex /> flex properties should match snapshot when flexWrap is set now
 exports[`<Flex /> flex properties should match snapshot when flexWrap is set wrap 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 ffQToI"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 KBLIN"
   />
 </DocumentFragment>
 `;
@@ -91,7 +91,7 @@ exports[`<Flex /> flex properties should match snapshot when flexWrap is set wra
 exports[`<Flex /> flex properties should match snapshot when flexWrap is set wrap-reverse 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 gggyjt"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 fywGAQ"
   />
 </DocumentFragment>
 `;
@@ -99,7 +99,7 @@ exports[`<Flex /> flex properties should match snapshot when flexWrap is set wra
 exports[`<Flex /> flex properties should match snapshot when justifyContent is set center 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 bkexZU"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 UcukN"
   />
 </DocumentFragment>
 `;
@@ -107,7 +107,7 @@ exports[`<Flex /> flex properties should match snapshot when justifyContent is s
 exports[`<Flex /> flex properties should match snapshot when justifyContent is set flex-end 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 bUzYfa"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 kVxOxf"
   />
 </DocumentFragment>
 `;
@@ -115,7 +115,7 @@ exports[`<Flex /> flex properties should match snapshot when justifyContent is s
 exports[`<Flex /> flex properties should match snapshot when justifyContent is set flex-start 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -123,7 +123,7 @@ exports[`<Flex /> flex properties should match snapshot when justifyContent is s
 exports[`<Flex /> flex properties should match snapshot when justifyContent is set space-around 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 epAxeB"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 ewjidY"
   />
 </DocumentFragment>
 `;
@@ -131,7 +131,7 @@ exports[`<Flex /> flex properties should match snapshot when justifyContent is s
 exports[`<Flex /> flex properties should match snapshot when justifyContent is set space-between 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fdpNrG Flex__StyledFlex-sc-11ryoct-0 fmMDXo"
+    class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 gjlOvJ"
   />
 </DocumentFragment>
 `;
@@ -139,7 +139,7 @@ exports[`<Flex /> flex properties should match snapshot when justifyContent is s
 exports[`<Flex /> spacing properties should match snapshot when all margin directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 dGrDcd Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 cTVvps Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -147,7 +147,7 @@ exports[`<Flex /> spacing properties should match snapshot when all margin direc
 exports[`<Flex /> spacing properties should match snapshot when all padding directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 hsVeSR Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 kIRRBI Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -155,7 +155,7 @@ exports[`<Flex /> spacing properties should match snapshot when all padding dire
 exports[`<Flex /> spacing properties should match snapshot when margin is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 gJdNwj Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 cQbIpy Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -163,7 +163,7 @@ exports[`<Flex /> spacing properties should match snapshot when margin is set 1`
 exports[`<Flex /> spacing properties should match snapshot when padding is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 bEsIbk Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 eumCBp Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -171,7 +171,7 @@ exports[`<Flex /> spacing properties should match snapshot when padding is set 1
 exports[`<Flex /> spacing properties should match snapshot when responsive margin is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 cMmTOh Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 jbzyAA Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;
@@ -179,7 +179,7 @@ exports[`<Flex /> spacing properties should match snapshot when responsive margi
 exports[`<Flex /> spacing properties should match snapshot when responsive padding is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-sc-pr7b7l-0 fuUkCh Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+    class="Box__StyledBox-sc-pr7b7l-0 cUCRhM Flex__StyledFlex-sc-11ryoct-0 imdkRI"
   />
 </DocumentFragment>
 `;

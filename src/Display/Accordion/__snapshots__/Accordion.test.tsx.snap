@@ -3,23 +3,23 @@
 exports[`<Accordion /> prop className should match snapshot when class name test is passed 1`] = `
 <DocumentFragment>
   <div
-    class="AccordionStyle__Container-sc-7hk6zs-1 dYPVKP aries-accordion test"
+    class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion test"
   >
     <div
       aria-expanded="false"
-      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 khvCuq panel-wrapper test"
+      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 gyCToT panel-wrapper test"
       role="tab"
       tabindex="0"
     >
       <div
-        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 iINVGw label-wrapper"
+        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
         tabindex="-1"
       >
         <div
-          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
+          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 cJozNU"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -32,16 +32,16 @@ exports[`<Accordion /> prop className should match snapshot when class name test
           </svg>
         </div>
         <div
-          class="AccordionStyle__Label-sc-7hk6zs-5 cLFDCN"
+          class="AccordionStyle__Label-sc-7hk6zs-5 kAqwZw"
         >
           label
         </div>
       </div>
       <div
-        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 eGonwa content-wrapper"
+        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
       >
         <div
-          class="AccordionStyle__Content-sc-7hk6zs-4 hqlwgo"
+          class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
         >
           content
         </div>
@@ -54,23 +54,23 @@ exports[`<Accordion /> prop className should match snapshot when class name test
 exports[`<Accordion /> prop className should match snapshot when class name undefined is passed 1`] = `
 <DocumentFragment>
   <div
-    class="AccordionStyle__Container-sc-7hk6zs-1 dYPVKP aries-accordion"
+    class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
   >
     <div
       aria-expanded="false"
-      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 khvCuq panel-wrapper"
+      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 gyCToT panel-wrapper"
       role="tab"
       tabindex="0"
     >
       <div
-        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 iINVGw label-wrapper"
+        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
         tabindex="-1"
       >
         <div
-          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
+          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 cJozNU"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -83,16 +83,16 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
           </svg>
         </div>
         <div
-          class="AccordionStyle__Label-sc-7hk6zs-5 cLFDCN"
+          class="AccordionStyle__Label-sc-7hk6zs-5 kAqwZw"
         >
           label
         </div>
       </div>
       <div
-        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 eGonwa content-wrapper"
+        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
       >
         <div
-          class="AccordionStyle__Content-sc-7hk6zs-4 hqlwgo"
+          class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
         >
           content
         </div>
@@ -105,23 +105,23 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
 exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPosition left is passed 1`] = `
 <DocumentFragment>
   <div
-    class="AccordionStyle__Container-sc-7hk6zs-1 dYPVKP aries-accordion"
+    class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
   >
     <div
       aria-expanded="false"
-      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 khvCuq panel-wrapper"
+      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 gyCToT panel-wrapper"
       role="tab"
       tabindex="0"
     >
       <div
-        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 iINVGw label-wrapper"
+        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
         tabindex="-1"
       >
         <div
-          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 gJVdip"
+          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 cJozNU"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -134,16 +134,16 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
           </svg>
         </div>
         <div
-          class="AccordionStyle__Label-sc-7hk6zs-5 cLFDCN"
+          class="AccordionStyle__Label-sc-7hk6zs-5 kAqwZw"
         >
           label
         </div>
       </div>
       <div
-        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 eGonwa content-wrapper"
+        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
       >
         <div
-          class="AccordionStyle__Content-sc-7hk6zs-4 hqlwgo"
+          class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
         >
           content
         </div>
@@ -156,28 +156,28 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
 exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPosition right is passed 1`] = `
 <DocumentFragment>
   <div
-    class="AccordionStyle__Container-sc-7hk6zs-1 dYPVKP aries-accordion"
+    class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
   >
     <div
       aria-expanded="false"
-      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 khvCuq panel-wrapper"
+      class="AccordionStyle__PanelWrapper-sc-7hk6zs-0 gyCToT panel-wrapper"
       role="tab"
       tabindex="0"
     >
       <div
-        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 dCyECp label-wrapper"
+        class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 bQDRgc label-wrapper"
         tabindex="-1"
       >
         <div
-          class="AccordionStyle__Label-sc-7hk6zs-5 cLFDCN"
+          class="AccordionStyle__Label-sc-7hk6zs-5 kAqwZw"
         >
           label
         </div>
         <div
-          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 fkCeju"
+          class="AccordionStyle__IconWrapper-sc-7hk6zs-6 ioIpTj"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -191,10 +191,10 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
         </div>
       </div>
       <div
-        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 eGonwa content-wrapper"
+        class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
       >
         <div
-          class="AccordionStyle__Content-sc-7hk6zs-4 cGNPME"
+          class="AccordionStyle__Content-sc-7hk6zs-4 bBDEAR"
         >
           content
         </div>

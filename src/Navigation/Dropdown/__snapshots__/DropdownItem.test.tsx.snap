@@ -3,7 +3,7 @@
 exports[`<DropdownItem /> prop className should match snapshot when class name test is passed 1`] = `
 <DocumentFragment>
   <li
-    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr test"
+    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 gWcQjq test"
   >
     Product Manager
   </li>
@@ -13,7 +13,7 @@ exports[`<DropdownItem /> prop className should match snapshot when class name t
 exports[`<DropdownItem /> prop className should match snapshot when class name undefined is passed 1`] = `
 <DocumentFragment>
   <li
-    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr"
+    class="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 gWcQjq"
   >
     Product Manager
   </li>

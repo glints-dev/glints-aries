@@ -3,19 +3,19 @@
 exports[`When <Tag /> variant prop is "action" and action is "reset" should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag ResetTag-sc-be45u9-0 dGSLlB"
+    class="TagStyle__TagContainer-sc-66xi2f-1 kZQYsU aries-tag ResetTag-sc-be45u9-0 vrbGI"
     role="presentation"
     tabindex="0"
   >
     <label
-      class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+      class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
       tabindex="-1"
     >
       <span
-        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 iDBcoz"
+        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 ivafTc DcZyq"
       >
         <svg
-          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
           data-testid="icon-svg"
           fill="currentColor"
           height="1em"
@@ -36,12 +36,12 @@ exports[`When <Tag /> variant prop is "action" and action is "reset" should matc
 exports[`When <Tag /> variant prop is "action" and action is undefined should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag"
+    class="TagStyle__TagContainer-sc-66xi2f-1 kZQYsU aries-tag"
     role="presentation"
     tabindex="0"
   >
     <label
-      class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+      class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
       tabindex="-1"
     >
       Glints Aries
@@ -53,19 +53,19 @@ exports[`When <Tag /> variant prop is "action" and action is undefined should ma
 exports[`When <Tag /> variant prop is "action" and action prop is "add" should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jUUbpX aries-tag AddTag-sc-ggz15u-0 bwQOXF"
+    class="TagStyle__TagContainer-sc-66xi2f-1 dquGmO aries-tag AddTag-sc-ggz15u-0 eMUSDI"
     role="presentation"
     tabindex="0"
   >
     <label
-      class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+      class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
       tabindex="-1"
     >
       <span
-        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 iDBcoz"
+        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 ivafTc DcZyq"
       >
         <svg
-          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
           data-testid="icon-svg"
           fill="currentColor"
           height="1em"
@@ -86,17 +86,17 @@ exports[`When <Tag /> variant prop is "action" and action prop is "add" should m
 exports[`When <Tag /> variant prop is "button" should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag"
+    class="TagStyle__TagContainer-sc-66xi2f-1 kZQYsU aries-tag"
     role="presentation"
     tabindex="0"
   >
     <label
-      class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+      class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
       tabindex="-1"
     >
       Glints Aries
       <span
-        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__EndIconContainer-sc-66xi2f-4 hjbnxA"
+        class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__EndIconContainer-sc-66xi2f-4 ivafTc eTAZIR"
       />
     </label>
   </div>
@@ -106,12 +106,12 @@ exports[`When <Tag /> variant prop is "button" should match snapshot 1`] = `
 exports[`When <Tag /> variant prop is undefined should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag"
+    class="TagStyle__TagContainer-sc-66xi2f-1 kZQYsU aries-tag"
     role="presentation"
     tabindex="0"
   >
     <label
-      class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+      class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
       tabindex="-1"
     >
       Glints Aries

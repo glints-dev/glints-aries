@@ -4,7 +4,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
 <div
   aria-haspopup="true"
   aria-label="Career"
-  className="DropdownStyle__DropdownContainer-sc-1sc3c6h-1 dneJaG aries-dropdown"
+  className="DropdownStyle__DropdownContainer-sc-1sc3c6h-1 cobfRz aries-dropdown"
   onBlur={[Function]}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -14,21 +14,21 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
   tabIndex={0}
 >
   <div
-    className="DropdownStyle__DropdownWrapper-sc-1sc3c6h-0 iYCvaA dropdown-contentwrapper"
+    className="DropdownStyle__DropdownWrapper-sc-1sc3c6h-0 eUMPNd dropdown-contentwrapper"
     tabIndex={-1}
   >
     <div
-      className="DropdownStyle__DropdownHeader-sc-1sc3c6h-2 jTRVzJ dropdown-content"
+      className="DropdownStyle__DropdownHeader-sc-1sc3c6h-2 gqPljo dropdown-content"
       disabled={false}
     >
       <span>
         Career
       </span>
       <span
-        className="DropdownStyle__IconWrapper-sc-1sc3c6h-5 jOTbED"
+        className="DropdownStyle__IconWrapper-sc-1sc3c6h-5 bBjVJK"
       >
         <svg
-          className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
+          className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
           data-testid="icon-svg"
           fill="black"
           height="1em"
@@ -43,13 +43,13 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
     </div>
     <ul
       aria-hidden={true}
-      className="DropdownStyle__DropdownBody-sc-1sc3c6h-3 ustjj dropdown-listbox"
+      className="DropdownStyle__DropdownBody-sc-1sc3c6h-3 kaIozK dropdown-listbox"
       onClick={[Function]}
       open={false}
       role="listbox"
     >
       <li
-        className="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr active"
+        className="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 gWcQjq active"
         data-value="pm"
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
@@ -59,7 +59,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
         Product Manager
       </li>
       <li
-        className="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 bnpgGr"
+        className="DropdownStyle__DropdownItemWrapper-sc-1sc3c6h-4 gWcQjq"
         data-value="se"
         onMouseDown={[Function]}
         onMouseEnter={[Function]}

@@ -2,7 +2,7 @@
 
 exports[`<Heading> should match snapshot when the component is called 1`] = `
 <h1
-  className="HeadingStyle__HeadingContainer-sc-2rxtwu-0 fAWquE aries-heading test-class-name"
+  className="HeadingStyle__HeadingContainer-sc-2rxtwu-0 doRuiB aries-heading test-class-name"
   role="heading"
 >
   <span

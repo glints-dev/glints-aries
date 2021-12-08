@@ -2,11 +2,11 @@
 
 exports[`<Button> should render with text "click me" and an onClick handler 1`] = `
 <div
-  className="ButtonStyle__SolidBtnContainer-sc-jyb3o2-2 dmwUza aries-solid-btn"
+  className="ButtonStyle__SolidBtnContainer-sc-jyb3o2-2 iLxChv aries-solid-btn"
   disabled={false}
 >
   <button
-    className="ButtonStyle__Button-sc-jyb3o2-0 ButtonStyle__SolidBtn-sc-jyb3o2-1 dcCOPQ solid-btn-content"
+    className="ButtonStyle__Button-sc-jyb3o2-0 ButtonStyle__SolidBtn-sc-jyb3o2-1 IaLvt kdPJcM solid-btn-content"
     disabled={false}
     onClick={[MockFunction]}
   >
