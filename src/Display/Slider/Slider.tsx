@@ -226,7 +226,7 @@ export interface Props {
   /** Sets the right icon. Receives the "disabled" flag as an argument. */
   renderRightIcon?: (disabled: boolean) => React.ReactElement;
   /** Called with the new index after a new Slider page has been shown */
-  afterChange?: Function;
+  afterChange?: (index: number) => void;
   /** If true, the Slider will flip through its pages at a regular interval */
   autoplay?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;
