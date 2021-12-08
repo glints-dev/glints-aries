@@ -20,12 +20,12 @@ const LinkButton: React.FunctionComponent<Props> = ({
   </LinkBtn>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof LinkBtn> {
+type Props = React.ComponentPropsWithoutRef<typeof LinkBtn> & {
   children: React.ReactNode;
   className: string;
   block?: boolean;
   tag?: React.ElementType;
-}
+};
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
   <LinkButton {...props} forwardedRef={ref} />

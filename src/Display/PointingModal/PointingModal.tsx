@@ -42,9 +42,10 @@ PointingModal.Item.displayName = 'PointingModal.Item';
 PointingModal.Footer = PointingModalFooter;
 PointingModal.Footer.displayName = 'PointingModal.Footer';
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof PointingModalContainer> {
+export type Props = React.ComponentPropsWithoutRef<
+  typeof PointingModalContainer
+> & {
   children: React.ReactNode;
-}
+};
 
 export default PointingModal;

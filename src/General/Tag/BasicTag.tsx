@@ -28,9 +28,8 @@ Tag.defaultProps = {
   outline: false,
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TagContainer> {
+export type Props = React.ComponentPropsWithoutRef<typeof TagContainer> & {
   children: React.ReactNode;
-}
+};
 
 export default Tag;

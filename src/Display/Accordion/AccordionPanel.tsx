@@ -61,14 +61,13 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof PanelWrapper> {
+export type Props = React.ComponentPropsWithoutRef<typeof PanelWrapper> & {
   content: React.ReactNode;
   label: React.ReactNode;
   active?: boolean;
   iconOptions?: IconOptions;
   onOpen?(): void;
   onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
-}
+};
 
 export default AccordionPanel;

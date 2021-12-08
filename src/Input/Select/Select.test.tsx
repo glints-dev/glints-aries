@@ -3,7 +3,7 @@ import * as lodash from 'lodash';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Select, { Props } from './Select';
@@ -450,7 +450,7 @@ describe('<Select/> on click outside', () => {
     );
 
     const { unmount } = render(<Component />);
-    unmount();
+    act(() => void unmount());
     expect(removeEventListenerSpy.mock.calls[0][1]).toEqual(
       addEventListenerSpy.mock.calls[0][1]
     );

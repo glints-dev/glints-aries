@@ -15,9 +15,8 @@ const SwipeableItem: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof SwipeableItemWrapper> {
+type Props = React.ComponentPropsWithoutRef<typeof SwipeableItemWrapper> & {
   children: React.ReactNode;
-}
+};
 
 export default SwipeableItem;

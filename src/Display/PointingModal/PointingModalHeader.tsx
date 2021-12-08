@@ -16,9 +16,10 @@ const PointingModalHeader: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof PointingModalHeaderWrapper> {
+type Props = React.ComponentPropsWithoutRef<
+  typeof PointingModalHeaderWrapper
+> & {
   children: React.ReactNode;
-}
+};
 
 export default PointingModalHeader;

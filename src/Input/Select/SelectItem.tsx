@@ -18,11 +18,10 @@ const SelectItem: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof SelectItemWrapper> {
+type Props = React.ComponentPropsWithoutRef<typeof SelectItemWrapper> & {
   children: React.ReactNode;
   onClick?(event: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
   className?: string;
-}
+};
 
 export default SelectItem;

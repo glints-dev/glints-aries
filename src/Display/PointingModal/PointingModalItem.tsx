@@ -16,9 +16,8 @@ const PointingModalItem: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof PointingModalItemWrapper> {
+type Props = React.ComponentPropsWithoutRef<typeof PointingModalItemWrapper> & {
   children: React.ReactNode;
-}
+};
 
 export default PointingModalItem;

@@ -24,9 +24,10 @@ type Breadcrumb = React.FunctionComponent<Props> & {
 
 Breadcrumb.Item = BreadcrumbItem;
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof BreadcrumbContainer> {
+export type Props = React.ComponentPropsWithoutRef<
+  typeof BreadcrumbContainer
+> & {
   children: React.ReactNode;
-}
+};
 
 export default Breadcrumb;

@@ -26,12 +26,11 @@ export const Badge: React.FunctionComponent<Props> = ({
 
 export type BadgeType = 'dimmed' | 'default' | 'white' | 'blue';
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof BadgeContainer> {
+export type Props = React.ComponentPropsWithoutRef<typeof BadgeContainer> & {
   /** Sets the label of Badge. */
   label: string | number;
   /** Sets the variant of the Badge. */
   variant?: BadgeType;
-}
+};
 
 export default Badge;

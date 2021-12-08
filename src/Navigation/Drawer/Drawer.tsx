@@ -19,7 +19,9 @@ const Drawer = ({
       } else {
         containerElement.style.overflow = 'scroll';
       }
-      return () => (containerElement.style.overflow = 'scroll');
+      return () => {
+        containerElement.style.overflow = 'scroll';
+      };
     },
     [getContainerElement, isOpen]
   );

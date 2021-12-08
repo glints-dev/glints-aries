@@ -120,7 +120,9 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    act(() => jest.advanceTimersByTime(6000));
+    act(() => {
+      jest.advanceTimersByTime(6000);
+    });
     expect(theThreeNavigationDots[1].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -136,7 +138,9 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    act(() => jest.advanceTimersByTime(6000));
+    act(() => {
+      jest.advanceTimersByTime(6000);
+    });
     expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -150,7 +154,9 @@ describe('<Slider/> prop autoplay', () => {
     expect(asFragment()).toMatchSnapshot();
 
     // validate autoplay
-    act(() => jest.advanceTimersByTime(6000));
+    act(() => {
+      jest.advanceTimersByTime(6000);
+    });
     expect(theThreeNavigationDots[0].classList.contains('active')).toBeTruthy();
     expect(asFragment()).toMatchSnapshot();
   });

@@ -274,7 +274,6 @@ describe('<Alert/> timeout', () => {
   });
 
   test('autoCloseTimeout should be cleared before component unmount', async () => {
-    const useRefSpy = jest.spyOn(React, 'useRef');
     const clearTimeoutSpy = jest.spyOn(window, 'clearTimeout');
     const setTimeoutSpy = jest.spyOn(window, 'setTimeout');
     const { rerender, unmount } = render(
@@ -297,15 +296,23 @@ describe('<Alert/> timeout', () => {
       />
     );
 
-    unmount();
-    expect(setTimeoutSpy.mock.calls.length).toEqual(
-      // No idea what's calling the additional clearTimeout here. It's not us,
-      // I checked.
-      clearTimeoutSpy.mock.calls.length + 1
+    act(() => void unmount());
+
+    // The DelayedUnmount component, used by Alert, also calls setTimeout,
+    // in addition to the one Alert calls itself. Both timeouts should be
+    // unregistered. Other than this, the remaining setTimeout is called by
+    // the React framework (_flushCallback).
+    const actualSetTimeoutCalls = setTimeoutSpy.mock.calls.filter(
+      ([handler, timeout]) =>
+        timeout !== 0 && !String(handler).includes('_flushCallback')
+    );
+
+    expect(actualSetTimeoutCalls.length).toEqual(
+      clearTimeoutSpy.mock.calls.length
     );
 
     clearTimeoutSpy.mockRestore();
-    useRefSpy.mockRestore();
+    setTimeoutSpy.mockRestore();
   });
 });
 

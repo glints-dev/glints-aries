@@ -37,7 +37,7 @@ const GhostButton: React.FunctionComponent<Props> = ({
   </GhostBtnContainer>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof GhostBtn> {
+type Props = React.ComponentPropsWithoutRef<typeof GhostBtn> & {
   children: React.ReactNode;
   className?: string;
   theme?: string;
@@ -46,7 +46,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof GhostBtn> {
   small?: boolean;
   tag?: React.ElementType;
   isRoundedCorner?: boolean;
-}
+};
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
   <GhostButton {...props} forwardedRef={ref} />

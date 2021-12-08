@@ -13,8 +13,7 @@ export const NumberInput = (props: Props) => {
   return <TextField {...props} type="number" />;
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
+export type Props = React.ComponentPropsWithoutRef<typeof TextFieldInput> & {
   /** Placeholder for the text field. */
   label: string;
   disabled?: boolean;
@@ -29,6 +28,6 @@ export interface Props
   forwardedRef?: React.RefObject<HTMLInputElement>;
   /** Icon at the start of the input element. */
   startIcon?: React.ReactNode;
-}
+};
 
 export default NumberInput;
