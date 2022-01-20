@@ -157,6 +157,8 @@ export { default as MailSolidIcon } from './General/Icon/components/MailSolidIco
 export { default as MedalIcon } from './General/Icon/components/MedalIcon';
 export { default as MenuIcon } from './General/Icon/components/MenuIcon';
 export { default as MenuHalfIcon } from './General/Icon/components/MenuHalfIcon';
+export { default as MessageOutlineIcon } from './General/Icon/components/MessageOutlineIcon';
+export { default as MessageOutlineIncomingIcon } from './General/Icon/components/MessageOutlineIncomingIcon';
 export { default as MicIcon } from './General/Icon/components/MicIcon';
 export { default as MicOffIcon } from './General/Icon/components/MicOffIcon';
 export { default as MinusIcon } from './General/Icon/components/MinusIcon';
