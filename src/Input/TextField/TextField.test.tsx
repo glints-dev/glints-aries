@@ -308,3 +308,18 @@ describe('when startIcon has an icon value', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+describe('when endIcon has an icon value', () => {
+  it('should match the snapshot when start icon is included inside the text box', () => {
+    const { asFragment } = render(
+      <TextField
+        type={props.type}
+        label={props.label}
+        onChange={props.onChange}
+        endIcon={<SearchIcon />}
+      />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

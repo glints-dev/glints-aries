@@ -25,6 +25,15 @@ export const StartIconContainer = styled.div`
   }
 `;
 
+export const EndIconContainer = styled.div`
+  position: absolute;
+  display: flex;
+  right: 16px;
+  svg {
+    fill: #666666;
+  }
+`;
+
 export const TextFieldContainer = styled.div`
   position: relative;
   display: flex;
