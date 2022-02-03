@@ -14,6 +14,7 @@ import {
   TextFieldLabel,
   IconContainer,
   StartIconContainer,
+  EndIconContainer,
 } from './TextFieldStyle';
 
 export const isFilled = (type: textFieldType, value: any) => {
@@ -44,6 +45,7 @@ export const TextField: React.FunctionComponent<Props> = ({
   forwardedRef,
   onChange,
   startIcon,
+  endIcon,
   ...restProps
 }) => {
   const [floating, setFloating] = React.useState<boolean>(false);
@@ -128,6 +130,7 @@ export const TextField: React.FunctionComponent<Props> = ({
           )}
         </IconContainer>
       )}
+      {endIcon && <EndIconContainer>{endIcon}</EndIconContainer>}
     </TextFieldContainer>
   );
 };
@@ -153,6 +156,8 @@ export interface Props
   forwardedRef?: React.RefObject<HTMLInputElement>;
   /** Icon at the start of the input element. */
   startIcon?: React.ReactNode;
+  /** Icon at the end of the input element. */
+  endIcon?: React.ReactNode;
 }
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLInputElement>) => (

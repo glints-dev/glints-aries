@@ -51,6 +51,13 @@ TextFieldWithStartIcon.args = {
   startIcon: <SearchIcon />,
 };
 
+export const TextFieldWithEndIcon = Template.bind({});
+TextFieldWithEndIcon.args = {
+  label: 'Description',
+  type: 'text',
+  endIcon: <SearchIcon />,
+};
+
 export const PasswordField = Template.bind({});
 PasswordField.args = {
   label: 'Description',

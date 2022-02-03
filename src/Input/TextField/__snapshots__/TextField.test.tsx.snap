@@ -2,18 +2,18 @@
 
 exports[`<TextField> should render with a label of Username and type of text 1`] = `
 <div
-  className="TextFieldStyle__TextFieldContainer-sc-5sd02x-2 dIeDvL aries-textfield"
+  className="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
 >
   <input
     aria-label="Username"
-    className="TextFieldStyle__TextFieldInput-sc-5sd02x-4 eOVSMW"
+    className="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
     disabled={false}
     onKeyDown={[Function]}
     placeholder={false}
     type="text"
   />
   <label
-    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 eIevZv textfield-label"
+    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 fTumlk textfield-label"
     data-testid="textfield-label"
   >
     Username
@@ -21,14 +21,51 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
 </div>
 `;
 
-exports[`when startIcon has an icon value should match the snapshot when start icon is included inside the text box 1`] = `
+exports[`when endIcon has an icon value should match the snapshot when start icon is included inside the text box 1`] = `
 <DocumentFragment>
   <div
-    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-2 dIeDvL aries-textfield"
+    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-4 edQWCQ"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
+      type="text"
+      value=""
+    />
+    <label
+      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 fTumlk textfield-label"
+      data-testid="textfield-label"
+    >
+      Username
+    </label>
+    <div
+      class="TextFieldStyle__EndIconContainer-sc-5sd02x-2 fuDVWD"
+    >
+      <svg
+        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        data-testid="icon-svg"
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 100 100"
+        width="1em"
+      >
+        <path
+          d="M70 43c0-14.886-12.114-27-27-27S16 28.114 16 43s12.114 27 27 27 27-12.114 27-27zm30 49.308c0 4.206-3.486 7.692-7.692 7.692-2.044 0-4.027-.841-5.409-2.284L66.286 77.163c-7.031 4.868-15.445 7.452-23.978 7.452C18.93 84.615 0 65.685 0 42.308 0 18.93 18.93 0 42.308 0c23.377 0 42.307 18.93 42.307 42.308 0 8.533-2.584 16.947-7.452 23.978L97.776 86.9C99.16 88.281 100 90.264 100 92.308z"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`when startIcon has an icon value should match the snapshot when start icon is included inside the text box 1`] = `
+<DocumentFragment>
+  <div
+    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
+  >
+    <input
+      aria-label="Username"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 hfXycu"
       type="text"
       value=""
     />
@@ -49,7 +86,7 @@ exports[`when startIcon has an icon value should match the snapshot when start i
       </svg>
     </div>
     <label
-      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-3 gtkogB textfield-label"
+      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 buJPMm textfield-label"
       data-testid="textfield-label"
     >
       Username
