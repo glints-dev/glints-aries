@@ -101,7 +101,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "jest-styled-components": "^7.0.2",
-    "jsx-to-string": "^1.4.0",
     "lodash": "^4.17.15",
     "prettier": "1.18.2",
     "react": "^16.8.6",
