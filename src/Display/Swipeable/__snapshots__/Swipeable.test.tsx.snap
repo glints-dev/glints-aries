@@ -3,10 +3,10 @@
 exports[`<Swipeable /> prop className should match snapshot when class name test is passed 1`] = `
 <DocumentFragment>
   <div
-    class="SwipeableStyle__SwipeableContainer-xvh6jb-0 igibAj aries-swipeable test"
+    class="SwipeableStyle__SwipeableContainer-sc-xvh6jb-0 iyEtVG aries-swipeable test"
   >
     <div
-      class="SwipeableStyle__SwipeableItemWrapper-xvh6jb-1 hjtTpf swipeable-itemwrapper test"
+      class="SwipeableStyle__SwipeableItemWrapper-sc-xvh6jb-1 ikoOMe swipeable-itemwrapper test"
     >
       Item
     </div>
@@ -17,10 +17,10 @@ exports[`<Swipeable /> prop className should match snapshot when class name test
 exports[`<Swipeable /> prop className should match snapshot when class name undefined is passed 1`] = `
 <DocumentFragment>
   <div
-    class="SwipeableStyle__SwipeableContainer-xvh6jb-0 igibAj aries-swipeable"
+    class="SwipeableStyle__SwipeableContainer-sc-xvh6jb-0 iyEtVG aries-swipeable"
   >
     <div
-      class="SwipeableStyle__SwipeableItemWrapper-xvh6jb-1 hjtTpf swipeable-itemwrapper"
+      class="SwipeableStyle__SwipeableItemWrapper-sc-xvh6jb-1 ikoOMe swipeable-itemwrapper"
     >
       Item
     </div>

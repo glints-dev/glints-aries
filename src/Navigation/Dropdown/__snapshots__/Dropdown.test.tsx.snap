@@ -28,7 +28,7 @@ exports[`<Dropdown/> render should match snapshot 1`] = `
         className="DropdownStyle__IconWrapper-sc-1sc3c6h-5 jOTbED"
       >
         <svg
-          className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+          className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
           data-testid="icon-svg"
           fill="black"
           height="1em"

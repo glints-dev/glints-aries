@@ -42,7 +42,7 @@ exports[`when endIcon has an icon value should match the snapshot when start ico
       class="TextFieldStyle__EndIconContainer-sc-5sd02x-2 fuDVWD"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
         data-testid="icon-svg"
         fill="currentColor"
         height="1em"
@@ -73,7 +73,7 @@ exports[`when startIcon has an icon value should match the snapshot when start i
       class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 gJuCgc"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
         data-testid="icon-svg"
         fill="currentColor"
         height="1em"

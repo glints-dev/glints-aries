@@ -3,7 +3,7 @@
 exports[`<Icon> should display the correct size prop size l 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="48px"
@@ -20,7 +20,7 @@ exports[`<Icon> should display the correct size prop size l 1`] = `
 exports[`<Icon> should display the correct size prop size m 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="32px"
@@ -37,7 +37,7 @@ exports[`<Icon> should display the correct size prop size m 1`] = `
 exports[`<Icon> should display the correct size prop size s 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="24px"
@@ -54,7 +54,7 @@ exports[`<Icon> should display the correct size prop size s 1`] = `
 exports[`<Icon> should display the correct size prop size xl 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="64px"
@@ -71,7 +71,7 @@ exports[`<Icon> should display the correct size prop size xl 1`] = `
 exports[`<Icon> should display the correct size prop size xs 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="16px"
@@ -88,7 +88,7 @@ exports[`<Icon> should display the correct size prop size xs 1`] = `
 exports[`<Icon> should display the correct size prop size xxl 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="96px"
@@ -105,7 +105,7 @@ exports[`<Icon> should display the correct size prop size xxl 1`] = `
 exports[`<Icon> should display the correct size prop size xxs 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="12px"
@@ -122,7 +122,7 @@ exports[`<Icon> should display the correct size prop size xxs 1`] = `
 exports[`<Icon> should display the correct size prop size xxxl 1`] = `
 <DocumentFragment>
   <svg
-    class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+    class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
     data-testid="icon-svg"
     fill="currentColor"
     height="128px"
@@ -138,7 +138,7 @@ exports[`<Icon> should display the correct size prop size xxxl 1`] = `
 
 exports[`<Icon> should matches snapshot 1`] = `
 <svg
-  className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+  className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
   data-testid="icon-svg"
   fill="currentColor"
   height="1em"

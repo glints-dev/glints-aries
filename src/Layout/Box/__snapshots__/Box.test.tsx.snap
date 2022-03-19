@@ -3,7 +3,7 @@
 exports[`<Box /> shadow should match snapshot when shadow down is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 heDsCb"
+    class="Box__StyledBox-sc-pr7b7l-0 gRJcam"
   />
 </DocumentFragment>
 `;
@@ -11,7 +11,7 @@ exports[`<Box /> shadow should match snapshot when shadow down is set 1`] = `
 exports[`<Box /> shadow should match snapshot when shadow up is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 dwGZWS"
+    class="Box__StyledBox-sc-pr7b7l-0 jvsxiX"
   />
 </DocumentFragment>
 `;
@@ -19,7 +19,7 @@ exports[`<Box /> shadow should match snapshot when shadow up is set 1`] = `
 exports[`<Box /> space should match snapshot when all margin directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 eILLrc"
+    class="Box__StyledBox-sc-pr7b7l-0 dGrDcd"
   />
 </DocumentFragment>
 `;
@@ -27,7 +27,7 @@ exports[`<Box /> space should match snapshot when all margin directions are set 
 exports[`<Box /> space should match snapshot when all padding directions are set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 fWnIDI"
+    class="Box__StyledBox-sc-pr7b7l-0 hsVeSR"
   />
 </DocumentFragment>
 `;
@@ -35,7 +35,7 @@ exports[`<Box /> space should match snapshot when all padding directions are set
 exports[`<Box /> space should match snapshot when margin is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 hzjWqS"
+    class="Box__StyledBox-sc-pr7b7l-0 gJdNwj"
   />
 </DocumentFragment>
 `;
@@ -43,7 +43,7 @@ exports[`<Box /> space should match snapshot when margin is set 1`] = `
 exports[`<Box /> space should match snapshot when padding is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 fvwbSJ"
+    class="Box__StyledBox-sc-pr7b7l-0 bEsIbk"
   />
 </DocumentFragment>
 `;
@@ -51,7 +51,7 @@ exports[`<Box /> space should match snapshot when padding is set 1`] = `
 exports[`<Box /> space should match snapshot when responsive margin is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 cVRAMY"
+    class="Box__StyledBox-sc-pr7b7l-0 cMmTOh"
   />
 </DocumentFragment>
 `;
@@ -59,7 +59,7 @@ exports[`<Box /> space should match snapshot when responsive margin is set 1`] =
 exports[`<Box /> space should match snapshot when responsive padding is set 1`] = `
 <DocumentFragment>
   <div
-    class="Box__StyledBox-pr7b7l-0 jzFNpU"
+    class="Box__StyledBox-sc-pr7b7l-0 fuUkCh"
   />
 </DocumentFragment>
 `;

@@ -6,7 +6,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
 <div
   aria-describedby="alert-message"
   aria-hidden={false}
-  className="AlertStyle__AlertContainer-fcjw72-0 hJPEX aries-alert"
+  className="AlertStyle__AlertContainer-sc-fcjw72-0 ktrEBO aries-alert"
   data-open={true}
   data-type="danger"
   onKeyDown={[Function]}
@@ -14,10 +14,10 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
   tabIndex={0}
 >
   <div
-    className="AlertStyle__AlertIcon-fcjw72-1 iufUzP"
+    className="AlertStyle__AlertIcon-sc-fcjw72-1 gwqpzC"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#EC272B"
       height="1em"
@@ -30,19 +30,19 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is danger 1`
     </svg>
   </div>
   <div
-    className="AlertStyle__AlertMessage-fcjw72-2 daCdpN alert-message"
+    className="AlertStyle__AlertMessage-sc-fcjw72-2 bMCbxc alert-message"
   >
     You have successfully applied to Glints as Software Engineer.
   </div>
   <div
     aria-label="Press Escape or Enter button to close alert"
-    className="AlertStyle__AlertClose-fcjw72-3 eUeiSL alert-close"
+    className="AlertStyle__AlertClose-sc-fcjw72-3 etdXiy alert-close"
     onClick={[MockFunction]}
     role="button"
     title="Close alert"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#666666"
       height="1em"
@@ -61,7 +61,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
 <div
   aria-describedby="alert-message"
   aria-hidden={false}
-  className="AlertStyle__AlertContainer-fcjw72-0 hJPEX aries-alert"
+  className="AlertStyle__AlertContainer-sc-fcjw72-0 ktrEBO aries-alert"
   data-open={true}
   data-type="info"
   onKeyDown={[Function]}
@@ -69,10 +69,10 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
   tabIndex={0}
 >
   <div
-    className="AlertStyle__AlertIcon-fcjw72-1 iufUzP"
+    className="AlertStyle__AlertIcon-sc-fcjw72-1 gwqpzC"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#017EB7"
       height="1em"
@@ -85,19 +85,19 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is info 1`] 
     </svg>
   </div>
   <div
-    className="AlertStyle__AlertMessage-fcjw72-2 daCdpN alert-message"
+    className="AlertStyle__AlertMessage-sc-fcjw72-2 bMCbxc alert-message"
   >
     You have successfully applied to Glints as Software Engineer.
   </div>
   <div
     aria-label="Press Escape or Enter button to close alert"
-    className="AlertStyle__AlertClose-fcjw72-3 eUeiSL alert-close"
+    className="AlertStyle__AlertClose-sc-fcjw72-3 etdXiy alert-close"
     onClick={[MockFunction]}
     role="button"
     title="Close alert"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#666666"
       height="1em"
@@ -116,7 +116,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
 <div
   aria-describedby="alert-message"
   aria-hidden={false}
-  className="AlertStyle__AlertContainer-fcjw72-0 hJPEX aries-alert"
+  className="AlertStyle__AlertContainer-sc-fcjw72-0 ktrEBO aries-alert"
   data-open={true}
   data-type="xxx"
   onKeyDown={[Function]}
@@ -124,10 +124,10 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
   tabIndex={0}
 >
   <div
-    className="AlertStyle__AlertIcon-fcjw72-1 iufUzP"
+    className="AlertStyle__AlertIcon-sc-fcjw72-1 gwqpzC"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#017EB7"
       height="1em"
@@ -140,19 +140,19 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is not a pre
     </svg>
   </div>
   <div
-    className="AlertStyle__AlertMessage-fcjw72-2 daCdpN alert-message"
+    className="AlertStyle__AlertMessage-sc-fcjw72-2 bMCbxc alert-message"
   >
     You have successfully applied to Glints as Software Engineer.
   </div>
   <div
     aria-label="Press Escape or Enter button to close alert"
-    className="AlertStyle__AlertClose-fcjw72-3 eUeiSL alert-close"
+    className="AlertStyle__AlertClose-sc-fcjw72-3 etdXiy alert-close"
     onClick={[MockFunction]}
     role="button"
     title="Close alert"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#666666"
       height="1em"
@@ -171,7 +171,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
 <div
   aria-describedby="alert-message"
   aria-hidden={false}
-  className="AlertStyle__AlertContainer-fcjw72-0 hJPEX aries-alert"
+  className="AlertStyle__AlertContainer-sc-fcjw72-0 ktrEBO aries-alert"
   data-open={true}
   data-type="success"
   onKeyDown={[Function]}
@@ -179,10 +179,10 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
   tabIndex={0}
 >
   <div
-    className="AlertStyle__AlertIcon-fcjw72-1 iufUzP"
+    className="AlertStyle__AlertIcon-sc-fcjw72-1 gwqpzC"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#008464"
       height="1em"
@@ -195,19 +195,19 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is success 1
     </svg>
   </div>
   <div
-    className="AlertStyle__AlertMessage-fcjw72-2 daCdpN alert-message"
+    className="AlertStyle__AlertMessage-sc-fcjw72-2 bMCbxc alert-message"
   >
     You have successfully applied to Glints as Software Engineer.
   </div>
   <div
     aria-label="Press Escape or Enter button to close alert"
-    className="AlertStyle__AlertClose-fcjw72-3 eUeiSL alert-close"
+    className="AlertStyle__AlertClose-sc-fcjw72-3 etdXiy alert-close"
     onClick={[MockFunction]}
     role="button"
     title="Close alert"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#666666"
       height="1em"
@@ -226,7 +226,7 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
 <div
   aria-describedby="alert-message"
   aria-hidden={false}
-  className="AlertStyle__AlertContainer-fcjw72-0 hJPEX aries-alert"
+  className="AlertStyle__AlertContainer-sc-fcjw72-0 ktrEBO aries-alert"
   data-open={true}
   data-type="warning"
   onKeyDown={[Function]}
@@ -234,10 +234,10 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
   tabIndex={0}
 >
   <div
-    className="AlertStyle__AlertIcon-fcjw72-1 iufUzP"
+    className="AlertStyle__AlertIcon-sc-fcjw72-1 gwqpzC"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#F5A623"
       height="1em"
@@ -250,19 +250,19 @@ exports[`<Alert/> should match snapshot, when isOpen is truthy type is warning 1
     </svg>
   </div>
   <div
-    className="AlertStyle__AlertMessage-fcjw72-2 daCdpN alert-message"
+    className="AlertStyle__AlertMessage-sc-fcjw72-2 bMCbxc alert-message"
   >
     You have successfully applied to Glints as Software Engineer.
   </div>
   <div
     aria-label="Press Escape or Enter button to close alert"
-    className="AlertStyle__AlertClose-fcjw72-3 eUeiSL alert-close"
+    className="AlertStyle__AlertClose-sc-fcjw72-3 etdXiy alert-close"
     onClick={[MockFunction]}
     role="button"
     title="Close alert"
   >
     <svg
-      className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+      className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
       data-testid="icon-svg"
       fill="#666666"
       height="1em"

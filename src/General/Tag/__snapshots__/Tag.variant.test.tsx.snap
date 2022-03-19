@@ -3,7 +3,7 @@
 exports[`When <Tag /> variant prop is "action" and action is "reset" should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag ResetTag-be45u9-0 isapOk"
+    class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag ResetTag-sc-be45u9-0 dGSLlB"
     role="presentation"
     tabindex="0"
   >
@@ -15,7 +15,7 @@ exports[`When <Tag /> variant prop is "action" and action is "reset" should matc
         class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 iDBcoz"
       >
         <svg
-          class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
           data-testid="icon-svg"
           fill="currentColor"
           height="1em"
@@ -53,7 +53,7 @@ exports[`When <Tag /> variant prop is "action" and action is undefined should ma
 exports[`When <Tag /> variant prop is "action" and action prop is "add" should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="TagStyle__TagContainer-sc-66xi2f-1 jUUbpX aries-tag AddTag-ggz15u-0 MPgcg"
+    class="TagStyle__TagContainer-sc-66xi2f-1 jUUbpX aries-tag AddTag-sc-ggz15u-0 bwQOXF"
     role="presentation"
     tabindex="0"
   >
@@ -65,7 +65,7 @@ exports[`When <Tag /> variant prop is "action" and action prop is "add" should m
         class="TagStyle__IconContainer-sc-66xi2f-2 TagStyle__StartIconContainer-sc-66xi2f-3 iDBcoz"
       >
         <svg
-          class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+          class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 HVQub"
           data-testid="icon-svg"
           fill="currentColor"
           height="1em"
