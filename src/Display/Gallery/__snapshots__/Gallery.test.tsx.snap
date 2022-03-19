@@ -781,7 +781,7 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
   cursor: pointer;
   font-size: 2em;
   left: 0;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -1196,11 +1196,12 @@ exports[`<Gallery /> active item click on gallery thumbnail 1`] = `
               <div
                 class="c14"
                 data-testid="slider_left-arrow"
+                disabled=""
               >
                 <svg
                   class="c7"
                   data-testid="icon-svg"
-                  fill="#FFFFFF"
+                  fill="#c7c7c7"
                   height="1em"
                   viewBox="0 0 100 100"
                   width="1em"
