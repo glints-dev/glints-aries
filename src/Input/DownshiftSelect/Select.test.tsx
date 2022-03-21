@@ -314,7 +314,6 @@ describe('<Select> (Downshift)', () => {
         items: items.map(item => ({ ...item, disabled: true })),
       });
       userEvent.click(getToggleButton());
-      console.log(getFirstItem());
       userEvent.click(getFirstItem());
       expect(onSelectedItemChange).not.toHaveBeenCalled();
     });
