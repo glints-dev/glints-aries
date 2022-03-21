@@ -164,6 +164,7 @@ export const Slider = ({
       onKeyDown={handleKeyDown}
       fullContent={fullContent}
       tabIndex={0}
+      data-testid="slider"
     >
       <SliderContentWrapper
         className="slider-wrapper"

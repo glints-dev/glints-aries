@@ -133,6 +133,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -325,6 +326,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -532,6 +534,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -739,6 +742,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -946,6 +950,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -1152,6 +1157,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -1359,6 +1365,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -1566,6 +1573,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -1773,6 +1781,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -1980,6 +1989,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
 
 <div
     class="c0 aries-slider test"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -2187,6 +2197,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -2394,6 +2405,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -2597,6 +2609,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -2804,6 +2817,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -3011,6 +3025,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -3217,6 +3232,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -3424,6 +3440,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -3577,6 +3594,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots true is
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
@@ -3771,6 +3789,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
 
 <div
     class="c0 aries-slider"
+    data-testid="slider"
     tabindex="0"
   >
     <div
