@@ -43,11 +43,11 @@ function setupModal(isVisible: boolean, customProps: TestProps = {}) {
       <p>{props.content}</p>
     </Modal>
   );
-  const { getByTestId, getByRole } = render(ModalComponent);
+  const { getByTestId, queryByRole } = render(ModalComponent);
 
   return {
     modalContainer: getByTestId('modal-container') as Element,
-    modalDialog: getByRole('dialog') as Element,
+    modalDialog: queryByRole('dialog') as Element,
     closeButton: getByTestId('close-button') as Element,
     onClose,
   };
