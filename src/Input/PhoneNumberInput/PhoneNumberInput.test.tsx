@@ -205,7 +205,11 @@ describe('<PhoneNumberInput>', () => {
     const { getToggleButton } = renderComponent({ onInputChange });
     fireEvent.click(getToggleButton());
     userEvent.type(document.activeElement, inputValue);
-    expect(onInputChange).toHaveBeenCalledWith(inputValue);
+    inputValue
+      .split('')
+      .forEach((input, n) =>
+        expect(onInputChange).toHaveBeenNthCalledWith(n + 1, input)
+      );
   });
 
   it('should call onFocus when the significant number input is focused', () => {

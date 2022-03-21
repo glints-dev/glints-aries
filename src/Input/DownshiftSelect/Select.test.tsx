@@ -380,7 +380,11 @@ describe('<Select> (Downshift)', () => {
         onInputValueChange,
       });
       userEvent.type(getInput(), inputValue);
-      expect(onInputValueChange).toHaveBeenCalledWith(inputValue);
+      inputValue
+        .split('')
+        .forEach((input, n) =>
+          expect(onInputValueChange).toHaveBeenNthCalledWith(n + 1, input)
+        );
     });
   });
 
