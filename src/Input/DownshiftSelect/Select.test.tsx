@@ -413,7 +413,7 @@ describe('<Select> (Downshift)', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(0);
     userEvent.tab();
-    expect(onFocus).toHaveBeenCalledTimes(2);
+    expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
 
