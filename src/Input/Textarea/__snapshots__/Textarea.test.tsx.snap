@@ -10,7 +10,6 @@ exports[`<Textarea> should render with a value and label of Description 1`] = `
     disabled={false}
     onBlur={[Function]}
     onChange={[Function]}
-    placeholder={false}
     rows={4}
     style={
       Object {

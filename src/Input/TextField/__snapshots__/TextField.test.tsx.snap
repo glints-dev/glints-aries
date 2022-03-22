@@ -9,7 +9,6 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
     className="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
     disabled={false}
     onKeyDown={[Function]}
-    placeholder={false}
     type="text"
   />
   <label

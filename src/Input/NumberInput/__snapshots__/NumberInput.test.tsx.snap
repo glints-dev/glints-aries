@@ -9,7 +9,6 @@ exports[`<NumberInput> should render correctly to match snapshot 1`] = `
     className="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
     disabled={false}
     onKeyDown={[Function]}
-    placeholder={false}
     type="number"
   />
   <label

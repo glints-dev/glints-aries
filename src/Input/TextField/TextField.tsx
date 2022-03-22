@@ -87,7 +87,7 @@ export const TextField: React.FunctionComponent<Props> = ({
       <TextFieldInput
         ref={forwardedRef}
         type={inputType}
-        placeholder={removeFloatingLabel && label}
+        placeholder={removeFloatingLabel ? label : undefined}
         status={status}
         disabled={disabled}
         onChange={onChange}
