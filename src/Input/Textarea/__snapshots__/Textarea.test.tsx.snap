@@ -2,15 +2,14 @@
 
 exports[`<Textarea> should render with a value and label of Description 1`] = `
 <div
-  className="TextareaStyle__TextareaContainer-sc-1998n74-0 RSaAJ aries-textarea"
+  className="TextareaStyle__TextareaContainer-sc-1998n74-0 eHkxfQ aries-textarea"
 >
   <textarea
     aria-label="Description"
-    className="TextareaStyle__TextareaInput-sc-1998n74-2 kRwuQI"
+    className="TextareaStyle__TextareaInput-sc-1998n74-2 jDObl"
     disabled={false}
     onBlur={[Function]}
     onChange={[Function]}
-    placeholder={false}
     rows={4}
     style={
       Object {
@@ -20,7 +19,7 @@ exports[`<Textarea> should render with a value and label of Description 1`] = `
     value="Explanation"
   />
   <label
-    className="TextareaStyle__TextareaLabel-sc-1998n74-1 ebkWmH"
+    className="TextareaStyle__TextareaLabel-sc-1998n74-1 cyEujW"
     data-testid="textarea-label"
   >
     Description

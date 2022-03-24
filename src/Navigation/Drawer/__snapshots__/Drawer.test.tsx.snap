@@ -4,13 +4,13 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gHczcJ aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 dNGthb drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 dZtYAG drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={false}
@@ -26,13 +26,13 @@ exports[`<Drawer /> render should match snapshot when position is left and drawe
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 kJeANv aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 fPmHMH drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 dNsVqS drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={true}
@@ -48,13 +48,13 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gHczcJ aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 enMoix drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 boCHmc drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={false}
@@ -70,13 +70,13 @@ exports[`<Drawer /> render should match snapshot when position is right and draw
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 kJeANv aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 PuCTW drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 drKcjn drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={true}
@@ -92,13 +92,13 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 <div
   aria-hidden="true"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 hLxFgg aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 gHczcJ aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={false}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 enMoix drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 boCHmc drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={false}
@@ -114,13 +114,13 @@ exports[`<Drawer /> render should match snapshot when position is undefined and 
 <div
   aria-hidden="false"
   aria-modal="true"
-  className="DrawerStyle__DrawerContainer-sc-13skgii-0 bFZwly aries-drawer"
+  className="DrawerStyle__DrawerContainer-sc-13skgii-0 kJeANv aries-drawer"
   data-testid="drawer-container"
   onClick={[Function]}
   open={true}
 >
   <div
-    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 PuCTW drawer-contentwrapper"
+    className="DrawerStyle__DrawerWrapper-sc-13skgii-1 drKcjn drawer-contentwrapper"
     data-testid="drawer-wrapper"
     onClick={[Function]}
     open={true}

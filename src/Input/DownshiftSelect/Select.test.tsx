@@ -314,7 +314,6 @@ describe('<Select> (Downshift)', () => {
         items: items.map(item => ({ ...item, disabled: true })),
       });
       userEvent.click(getToggleButton());
-      console.log(getFirstItem());
       userEvent.click(getFirstItem());
       expect(onSelectedItemChange).not.toHaveBeenCalled();
     });
@@ -381,7 +380,11 @@ describe('<Select> (Downshift)', () => {
         onInputValueChange,
       });
       userEvent.type(getInput(), inputValue);
-      expect(onInputValueChange).toHaveBeenCalledWith(inputValue);
+      inputValue
+        .split('')
+        .forEach((input, n) =>
+          expect(onInputValueChange).toHaveBeenNthCalledWith(n + 1, input)
+        );
     });
   });
 
@@ -414,7 +417,7 @@ describe('<Select> (Downshift)', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(0);
     userEvent.tab();
-    expect(onFocus).toHaveBeenCalledTimes(2);
+    expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
 

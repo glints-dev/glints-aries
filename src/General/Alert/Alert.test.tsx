@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { render, fireEvent, wait, act } from '@testing-library/react';
+import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { PrimaryColor, SecondaryColor } from '../../Utils/Colors';
@@ -197,7 +197,7 @@ describe('<Alert/> autoClose', () => {
     );
     rerender(<AlertComponent onClose={onClose} isOpen={true} />);
     expect(onClose).not.toHaveBeenCalled();
-    await wait(() => {
+    await waitFor(() => {
       // after autoClose timeout onClose should have been called
       expect(onClose).toHaveBeenCalled();
     });
@@ -223,7 +223,7 @@ describe('<Alert/> timeout', () => {
     const closeButton = queryByRole('button');
     fireEvent.click(closeButton);
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -233,7 +233,7 @@ describe('<Alert/> timeout', () => {
     const alert = queryByRole('alertdialog');
     fireEvent.keyDown(alert, { key: 'Enter', keyCode: 13 });
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -243,7 +243,7 @@ describe('<Alert/> timeout', () => {
     const alert = queryByRole('alertdialog');
     fireEvent.keyDown(alert, { key: 'Esc', keyCode: 27 });
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
@@ -268,13 +268,12 @@ describe('<Alert/> timeout', () => {
     act(() => openAlert());
     const alert = queryByRole('alertdialog');
     expect(alert).toBeInTheDocument();
-    await wait(() => {
+    await waitFor(() => {
       expect(alert).not.toBeInTheDocument();
     });
   });
 
   test('autoCloseTimeout should be cleared before component unmount', async () => {
-    const useRefSpy = jest.spyOn(React, 'useRef');
     const clearTimeoutSpy = jest.spyOn(window, 'clearTimeout');
     const setTimeoutSpy = jest.spyOn(window, 'setTimeout');
     const { rerender, unmount } = render(
@@ -297,15 +296,23 @@ describe('<Alert/> timeout', () => {
       />
     );
 
-    unmount();
-    expect(setTimeoutSpy.mock.calls.length).toEqual(
-      // No idea what's calling the additional clearTimeout here. It's not us,
-      // I checked.
-      clearTimeoutSpy.mock.calls.length + 1
+    act(() => void unmount());
+
+    // The DelayedUnmount component, used by Alert, also calls setTimeout,
+    // in addition to the one Alert calls itself. Both timeouts should be
+    // unregistered. Other than this, the remaining setTimeout is called by
+    // the React framework (_flushCallback).
+    const actualSetTimeoutCalls = setTimeoutSpy.mock.calls.filter(
+      ([handler, timeout]) =>
+        timeout !== 0 && !String(handler).includes('_flushCallback')
+    );
+
+    expect(actualSetTimeoutCalls.length).toEqual(
+      clearTimeoutSpy.mock.calls.length
     );
 
     clearTimeoutSpy.mockRestore();
-    useRefSpy.mockRestore();
+    setTimeoutSpy.mockRestore();
   });
 });
 

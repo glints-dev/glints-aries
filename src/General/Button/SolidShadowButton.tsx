@@ -34,7 +34,7 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
   </SolidShadowContainer>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof SolidShadowBtn> {
+type Props = React.ComponentPropsWithoutRef<typeof SolidShadowBtn> & {
   children: React.ReactNode;
   className: string;
   theme?: string;
@@ -42,7 +42,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidShadowBtn> {
   block?: boolean;
   small?: boolean;
   tag?: React.ElementType;
-}
+};
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
   <SolidShadowButton {...props} forwardedRef={ref} />

@@ -12,11 +12,12 @@ const DropdownItem: React.FunctionComponent<Props> = props => {
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof DropdownItemWrapper> {
+export type Props = React.ComponentPropsWithoutRef<
+  typeof DropdownItemWrapper
+> & {
   value?: any;
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
   children: React.ReactNode;
-}
+};
 
 export default DropdownItem;

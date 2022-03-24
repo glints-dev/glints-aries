@@ -19,7 +19,9 @@ const Drawer = ({
       } else {
         containerElement.style.overflow = 'scroll';
       }
-      return () => (containerElement.style.overflow = 'scroll');
+      return () => {
+        containerElement.style.overflow = 'scroll';
+      };
     },
     [getContainerElement, isOpen]
   );
@@ -54,7 +56,7 @@ export type DrawerPosition = 'left' | 'right';
 export interface Props {
   children: React.ReactNode;
   isOpen: boolean;
-  onClose: Function;
+  onClose: () => void;
   getContainerElement?: () => HTMLElement;
   position?: DrawerPosition;
 }

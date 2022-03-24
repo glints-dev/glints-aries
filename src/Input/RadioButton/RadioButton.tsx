@@ -78,7 +78,7 @@ export interface Props extends HTMLInputProps {
   /** Sets the label of Radio Button. */
   label?: React.ReactNode;
   /** Sets the props on the label element. */
-  labelProps?: React.LabelHTMLAttributes<{}>;
+  labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
   /** Sets theme for Radio Button. */
   theme?: 'white';
   /** Sets a border around the radio button. */

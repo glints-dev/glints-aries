@@ -17,8 +17,10 @@ function setupCheckbox(props: CheckboxProps) {
   const { getByText, getByLabelText, getByRole, ...utils } = render(
     <Checkbox id={id} value={value} onClick={onClick} {...restProps} />
   );
-  const checkboxInput = getByLabelText(value as string) as HTMLInputElement;
-  const checkboxLabel = getByText(value as string) as HTMLLabelElement;
+  const checkboxInput = getByLabelText(value, {
+    selector: 'input',
+  }) as HTMLInputElement;
+  const checkboxLabel = getByText(value) as HTMLLabelElement;
   const checkboxContainer = getByRole('checkbox');
   return { checkboxInput, checkboxLabel, checkboxContainer, utils };
 }
@@ -80,9 +82,9 @@ it('when controlled, the component should change with checked prop', () => {
     <Component {...props} checked={false} />
   );
 
-  const checkboxInput = getByLabelText(
-    props.value as string
-  ) as HTMLInputElement;
+  const checkboxInput = getByLabelText(props.value, {
+    selector: 'input',
+  }) as HTMLInputElement;
   expect(checkboxInput.checked).toEqual(false);
 
   rerender(<Component checked={true} />);

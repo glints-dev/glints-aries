@@ -87,7 +87,7 @@ export const TextField: React.FunctionComponent<Props> = ({
       <TextFieldInput
         ref={forwardedRef}
         type={inputType}
-        placeholder={removeFloatingLabel && label}
+        placeholder={removeFloatingLabel ? label : undefined}
         status={status}
         disabled={disabled}
         onChange={onChange}
@@ -137,8 +137,7 @@ export const TextField: React.FunctionComponent<Props> = ({
 
 export type textFieldType = 'text' | 'password' | 'number';
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TextFieldInput> {
+export type Props = React.ComponentPropsWithoutRef<typeof TextFieldInput> & {
   type: textFieldType;
   /** Placeholder for the text field. */
   label: string;
@@ -158,7 +157,7 @@ export interface Props
   startIcon?: React.ReactNode;
   /** Icon at the end of the input element. */
   endIcon?: React.ReactNode;
-}
+};
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLInputElement>) => (
   <TextField {...props} forwardedRef={ref} />

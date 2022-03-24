@@ -12,12 +12,11 @@ const TabPane: React.FunctionComponent<Props> = props => {
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof TabsContent> {
+export type Props = React.ComponentPropsWithoutRef<typeof TabsContent> & {
   children?: React.ReactNode;
   tab?: string | React.ReactNode;
   label?: string | number;
   tabClassName?: string;
-}
+};
 
 export default TabPane;

@@ -3,14 +3,14 @@
 exports[`<PhoneNumberInput> should match default snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-0-toggle-button"
         tabindex="-1"
@@ -18,10 +18,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -36,7 +36,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -45,13 +45,13 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -59,19 +59,19 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-0-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 bzsSEv"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-0-menu"
           aria-labelledby="downshift-0-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-0-input"
           placeholder="Type country code or country name"
@@ -80,27 +80,27 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       </div>
       <ol
         aria-labelledby="downshift-0-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-0-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-0-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -108,21 +108,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -130,21 +130,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -152,21 +152,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -174,21 +174,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -196,21 +196,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-0-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -218,21 +218,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -240,21 +240,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -262,21 +262,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -284,21 +284,21 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-0-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -307,7 +307,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -317,14 +317,14 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
 exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-5-toggle-button"
         tabindex="-1"
@@ -332,10 +332,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -350,7 +350,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -359,13 +359,13 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -373,19 +373,19 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-5-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 bzsSEv"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-5-menu"
           aria-labelledby="downshift-5-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-5-input"
           placeholder="Type country code or country name"
@@ -394,27 +394,27 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       </div>
       <ol
         aria-labelledby="downshift-5-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-5-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-5-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -422,21 +422,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -444,21 +444,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -466,21 +466,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -488,21 +488,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -510,21 +510,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-5-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -532,21 +532,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -554,21 +554,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -576,21 +576,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -598,21 +598,21 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-5-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -621,7 +621,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -631,14 +631,14 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
 exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-1-toggle-button"
         tabindex="-1"
@@ -646,10 +646,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -664,7 +664,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 buMdAB"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gVdvEE"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -673,13 +673,13 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         value="12345678"
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -687,19 +687,19 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-1-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 bzsSEv"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-1-menu"
           aria-labelledby="downshift-1-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-1-input"
           placeholder="Type country code or country name"
@@ -708,27 +708,27 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       </div>
       <ol
         aria-labelledby="downshift-1-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-1-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-1-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -736,21 +736,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -758,21 +758,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -780,21 +780,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -802,21 +802,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -824,21 +824,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-1-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -846,21 +846,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -868,21 +868,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -890,21 +890,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -912,21 +912,21 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-1-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -935,7 +935,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -945,14 +945,14 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
 exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-13-toggle-button"
         tabindex="-1"
@@ -960,10 +960,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -978,7 +978,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -987,13 +987,13 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -1001,19 +1001,19 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-13-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jTxNga"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-13-menu"
           aria-labelledby="downshift-13-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-13-input"
           placeholder="Type country code or country name"
@@ -1022,38 +1022,38 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         <div
           aria-busy="true"
           aria-live="polite"
-          class="LoadingStyle__LoadingContainer-fg2qx3-0 ioHJOi aries-loading PhoneNumberInputStyles__CallingCodeInputLoading-sc-80kraj-10 ihorHh"
+          class="LoadingStyle__LoadingContainer-sc-fg2qx3-0 dTLHiG aries-loading PhoneNumberInputStyles__CallingCodeInputLoading-sc-80kraj-10 jNhPMw"
           data-testid="calling-code-options-loading"
           role="alert"
         >
           <div
-            class="LoadingStyle__Spinner-fg2qx3-1 fQRrhB"
+            class="LoadingStyle__Spinner-sc-fg2qx3-1 jHIaBd"
           />
         </div>
       </div>
       <ol
         aria-labelledby="downshift-13-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-13-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-13-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -1061,21 +1061,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -1083,21 +1083,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -1105,21 +1105,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -1127,21 +1127,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -1149,21 +1149,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-13-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -1171,21 +1171,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -1193,21 +1193,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -1215,21 +1215,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -1237,21 +1237,21 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-13-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -1260,7 +1260,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -1270,14 +1270,14 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
 exports[`<PhoneNumberInput> should render an empty state when there are no calling code options 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-11-toggle-button"
         tabindex="-1"
@@ -1285,10 +1285,10 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -1303,7 +1303,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1312,13 +1312,13 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -1326,19 +1326,19 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-11-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jTxNga"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-11-menu"
           aria-labelledby="downshift-11-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-11-input"
           placeholder="Type country code or country name"
@@ -1347,12 +1347,12 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       </div>
       <ol
         aria-labelledby="downshift-11-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-11-menu"
         role="listbox"
       >
         <div
-          class="PhoneNumberInputStyles__NoOptions-sc-80kraj-16 gMXdMt"
+          class="PhoneNumberInputStyles__NoOptions-sc-80kraj-16 VaNAw"
           data-testid="no-options"
         >
           Sorry, there are no results
@@ -1360,7 +1360,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -1370,14 +1370,14 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
 exports[`<PhoneNumberInput> should render the given addon 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-10-toggle-button"
         tabindex="-1"
@@ -1385,10 +1385,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -1403,7 +1403,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1412,22 +1412,22 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       >
         <div
-          class="TagStyle__TagContainer-sc-66xi2f-1 jSyrlx aries-tag"
+          class="TagStyle__TagContainer-sc-66xi2f-1 kZQYsU aries-tag"
           role="presentation"
           tabindex="0"
         >
           <label
-            class="TagStyle__TagContent-sc-66xi2f-0 geReKz tag-content"
+            class="TagStyle__TagContent-sc-66xi2f-0 lkuJWS tag-content"
             tabindex="-1"
           >
             Foo
@@ -1439,19 +1439,19 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-10-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 bzsSEv"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-10-menu"
           aria-labelledby="downshift-10-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-10-input"
           placeholder="Type country code or country name"
@@ -1460,27 +1460,27 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </div>
       <ol
         aria-labelledby="downshift-10-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-10-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-10-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -1488,21 +1488,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -1510,21 +1510,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -1532,21 +1532,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -1554,21 +1554,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -1576,21 +1576,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-10-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -1598,21 +1598,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -1620,21 +1620,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -1642,21 +1642,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -1664,21 +1664,21 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-10-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -1687,7 +1687,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>
@@ -1697,14 +1697,14 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
 exports[`<PhoneNumberInput> should render the given error 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="true"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-9-toggle-button"
         tabindex="-1"
@@ -1712,10 +1712,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -1730,7 +1730,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="true"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1739,13 +1739,13 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -1753,19 +1753,19 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-9-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 bzsSEv"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-9-menu"
           aria-labelledby="downshift-9-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-9-input"
           placeholder="Type country code or country name"
@@ -1774,27 +1774,27 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       </div>
       <ol
         aria-labelledby="downshift-9-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-9-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-9-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -1802,21 +1802,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -1824,21 +1824,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -1846,21 +1846,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -1868,21 +1868,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -1890,21 +1890,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-9-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -1912,21 +1912,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -1934,21 +1934,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -1956,21 +1956,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -1978,21 +1978,21 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-9-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -2001,7 +2001,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     >
       You dun goofed
@@ -2013,14 +2013,14 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
 exports[`<PhoneNumberInput> should toggle the calling code input on clicking the toggle button 1`] = `
 <DocumentFragment>
   <div
-    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 bBjGkf"
+    class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 ecZrTO"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
       data-invalid="false"
     >
       <button
-        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 jtvyf"
+        class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
         id="downshift-2-toggle-button"
         tabindex="-1"
@@ -2028,10 +2028,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       >
         +123
         <span
-          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 ibEuCp"
+          class="PhoneNumberInputStyles__CallingCodeInputOpenIndicator-sc-80kraj-3 bQgMvM"
         >
           <svg
-            class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+            class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
             data-testid="icon-svg"
             fill="currentColor"
             height="1em"
@@ -2046,7 +2046,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gcYwNH"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -2055,13 +2055,13 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 hYHKGJ"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
         for="significant-number-input-1"
       >
         Mobile Number
       </label>
       <div
-        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cnoRYQ"
+        class="PhoneNumberInputStyles__TopRowAddon-sc-80kraj-6 cNGbWN"
         data-testid="addon"
       />
     </div>
@@ -2069,19 +2069,19 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="downshift-2-menu"
-      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jTxNga"
+      class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
       role="combobox"
     >
       <div
-        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 kdzBiN"
+        class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
           aria-autocomplete="list"
           aria-controls="downshift-2-menu"
           aria-labelledby="downshift-2-label"
           autocomplete="off"
-          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 jybfmh"
+          class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
           id="downshift-2-input"
           placeholder="Type country code or country name"
@@ -2090,27 +2090,27 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       </div>
       <ol
         aria-labelledby="downshift-2-label"
-        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 geNvIQ"
+        class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
         id="downshift-2-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 gMEijG"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
           id="downshift-2-item-0"
           role="option"
           title="Indonesia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +62
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Indonesia
             </div>
@@ -2118,21 +2118,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-1"
           role="option"
           title="Malaysia"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +60
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Malaysia
             </div>
@@ -2140,21 +2140,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-2"
           role="option"
           title="Singapore"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +65
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Singapore
             </div>
@@ -2162,21 +2162,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-3"
           role="option"
           title="Taiwan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +886
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Taiwan
             </div>
@@ -2184,21 +2184,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-4"
           role="option"
           title="Vietnam"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +84
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Vietnam
             </div>
@@ -2206,21 +2206,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 iSowxl"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
           id="downshift-2-item-5"
           role="option"
           title="Afghanistan"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +93
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Afghanistan
             </div>
@@ -2228,21 +2228,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-6"
           role="option"
           title="Albania"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +355
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Albania
             </div>
@@ -2250,21 +2250,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-7"
           role="option"
           title="Algeria"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +213
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Algeria
             </div>
@@ -2272,21 +2272,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-8"
           role="option"
           title="Germany"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +42
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               Germany
             </div>
@@ -2294,21 +2294,21 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         </li>
         <li
           aria-selected="false"
-          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 honsdf"
+          class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
           id="downshift-2-item-9"
           role="option"
           title="United States"
         >
           <div
-            class="Box__StyledBox-pr7b7l-0 dKzFLf Flex__StyledFlex-sc-11ryoct-0 jfpAHx"
+            class="Box__StyledBox-sc-pr7b7l-0 jTBzNv Flex__StyledFlex-sc-11ryoct-0 imdkRI"
           >
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jWmjH"
+              class="PhoneNumberInputStyles__CallingCodeOptionCallingCode-sc-80kraj-13 jUUhvS"
             >
               +1
             </div>
             <div
-              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 kvycWm"
+              class="PhoneNumberInputStyles__CallingCodeOptionLabel-sc-80kraj-14 fwPJPv"
             >
               United States
             </div>
@@ -2317,7 +2317,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       </ol>
     </div>
     <div
-      class="PhoneNumberInputStyles__Error-sc-80kraj-17 EDVOx"
+      class="PhoneNumberInputStyles__Error-sc-80kraj-17 iabqWY"
       data-testid="error"
     />
   </div>

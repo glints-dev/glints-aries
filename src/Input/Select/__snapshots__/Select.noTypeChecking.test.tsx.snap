@@ -325,9 +325,9 @@ exports[`<Select /> can still work when receives non-string option children or v
 }
 
 .c1 .select-icon svg {
-  -webkit-transform: rotate(0);
-  -ms-transform: rotate(0);
-  transform: rotate(0);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
   -webkit-transition: -webkit-transform .5s;
   -webkit-transition: transform .5s;
   transition: transform .5s;
@@ -410,16 +410,16 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c6 {
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: scaleY(0.9);
-  -ms-transform: scaleY(0.9);
-  transform: scaleY(0.9);
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
   -webkit-transform-origin: center top;
   -ms-transform-origin: center top;
   transform-origin: center top;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   background: #FFFFFF;
   min-width: 100%;
   height: auto;
@@ -478,7 +478,7 @@ exports[`<Select /> can still work when receives non-string option children or v
     >
       <input
         aria-autocomplete="list"
-        aria-expanded="false"
+        aria-expanded="true"
         class="c2"
         role="combobox"
         type="text"
@@ -510,9 +510,10 @@ exports[`<Select /> can still work when receives non-string option children or v
       </div>
     </div>
     <ul
-      aria-hidden="true"
+      aria-hidden="false"
       class="c6 select-listbox"
       data-testid="listbox"
+      open=""
       role="listbox"
     >
       <li

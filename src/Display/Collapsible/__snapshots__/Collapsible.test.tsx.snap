@@ -2,23 +2,23 @@
 
 exports[`<Collapsible> should render as expected 1`] = `
 <div
-  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 jNlBkd aries-collapsible"
+  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 iLODoM aries-collapsible"
   data-testid="collapsible-container"
   onClick={[Function]}
   tabIndex={0}
 >
   <div
-    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 CnasS"
+    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 lhhVzD"
     tabIndex={-1}
   >
     <div
       aria-expanded={false}
-      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 czQsN collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 erqJDM collapsible-title"
       role="tab"
     >
       label
       <svg
-        className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#000000"
         height="1em"
@@ -36,23 +36,23 @@ exports[`<Collapsible> should render as expected 1`] = `
 
 exports[`<Collapsible> should render as expected 2`] = `
 <div
-  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 jNlBkd aries-collapsible"
+  className="CollapsibleStyle__CollapsibleContainer-sc-133mwvh-1 iLODoM aries-collapsible"
   data-testid="collapsible-container"
   onClick={[Function]}
   tabIndex={0}
 >
   <div
-    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 CnasS"
+    className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 lhhVzD"
     tabIndex={-1}
   >
     <div
       aria-expanded={true}
-      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 ejKdhj collapsible-title"
+      className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 icCCTS collapsible-title"
       role="tab"
     >
       label
       <svg
-        className="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="#000000"
         height="1em"
@@ -65,7 +65,7 @@ exports[`<Collapsible> should render as expected 2`] = `
       </svg>
     </div>
     <div
-      className="CollapsibleStyle__CollapsibleBody-sc-133mwvh-3 kBAYuJ collapsible-content"
+      className="CollapsibleStyle__CollapsibleBody-sc-133mwvh-3 kkQRvY collapsible-content"
       data-testid="collapsible-content"
       onClick={[Function]}
     >

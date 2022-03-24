@@ -17,9 +17,8 @@ const BreadcrumbItem: React.FunctionComponent<Props> = (props: Props) => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof BreadcrumbItemWrapper> {
+type Props = React.ComponentPropsWithoutRef<typeof BreadcrumbItemWrapper> & {
   children: React.ReactNode;
-}
+};
 
 export default BreadcrumbItem;

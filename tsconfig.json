@@ -10,6 +10,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "types": [
+      "@testing-library/jest-dom",
       "classnames",
       "jest",
       "lodash",
@@ -19,8 +20,7 @@
       "react-dom",
       // "storybook__react",
       "styled-components"
-    ],
-    "esModuleInterop": true
+    ]
   },
   "include": ["src/**/*", "stories/**/*"]
 }

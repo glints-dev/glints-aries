@@ -57,8 +57,7 @@ const Brand = ({
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof BrandContainer> {
+export type Props = React.ComponentPropsWithoutRef<typeof BrandContainer> & {
   /** There are 3 available values for asset props. The first and second one are Glints logo, but you can also custom the logo by parsing url or path of the logo. */
   asset: string;
   /** HTML <img> alt Attribute */
@@ -68,6 +67,6 @@ export interface Props
   rightClickURL?: string;
   /** Executes when the user right-clicks on the component */
   onContextMenu?(): void;
-}
+};
 
 export default Brand;

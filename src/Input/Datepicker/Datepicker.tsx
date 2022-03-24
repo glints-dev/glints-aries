@@ -255,7 +255,7 @@ class Datepicker extends React.Component<Props, State> {
   };
 
   renderDayRow = (
-    array: React.ReactNodeArray = [],
+    array: React.ReactNode[] = [],
     startingCount = 0
   ): React.ReactNode => {
     const {

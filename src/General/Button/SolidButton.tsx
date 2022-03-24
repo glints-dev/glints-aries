@@ -37,7 +37,7 @@ const SolidButton: React.FunctionComponent<Props> = ({
   </SolidBtnContainer>
 );
 
-interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
+type Props = React.ComponentPropsWithoutRef<typeof SolidBtn> & {
   children: React.ReactNode;
   className?: string;
   theme?: string;
@@ -46,7 +46,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof SolidBtn> {
   small?: boolean;
   tag?: React.ElementType;
   isRoundedCorner?: boolean;
-}
+};
 
 const forwardRef = (props: Props, ref: React.RefObject<HTMLButtonElement>) => (
   <SolidButton {...props} forwardedRef={ref} />

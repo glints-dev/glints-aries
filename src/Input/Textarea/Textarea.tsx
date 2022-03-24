@@ -81,7 +81,7 @@ export const Textarea: FC<Props> = ({
     <TextareaContainer className={classNames('aries-textarea', className)}>
       <TextareaInput
         ref={textareaInputRef}
-        placeholder={removeFloatingLabel && label}
+        placeholder={removeFloatingLabel ? label : undefined}
         rows={rows}
         status={status}
         disabled={disabled}

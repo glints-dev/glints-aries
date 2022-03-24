@@ -2,18 +2,17 @@
 
 exports[`<TextField> should render with a label of Username and type of text 1`] = `
 <div
-  className="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
+  className="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 SzXyD aries-textfield"
 >
   <input
     aria-label="Username"
-    className="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
+    className="TextFieldStyle__TextFieldInput-sc-5sd02x-5 hytRJV"
     disabled={false}
     onKeyDown={[Function]}
-    placeholder={false}
     type="text"
   />
   <label
-    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 fTumlk textfield-label"
+    className="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 lmsuTp textfield-label"
     data-testid="textfield-label"
   >
     Username
@@ -24,25 +23,25 @@ exports[`<TextField> should render with a label of Username and type of text 1`]
 exports[`when endIcon has an icon value should match the snapshot when start icon is included inside the text box 1`] = `
 <DocumentFragment>
   <div
-    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
+    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 SzXyD aries-textfield"
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 kTWZjQ"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 hytRJV"
       type="text"
       value=""
     />
     <label
-      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 fTumlk textfield-label"
+      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 lmsuTp textfield-label"
       data-testid="textfield-label"
     >
       Username
     </label>
     <div
-      class="TextFieldStyle__EndIconContainer-sc-5sd02x-2 fuDVWD"
+      class="TextFieldStyle__EndIconContainer-sc-5sd02x-2 grwtoW"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="currentColor"
         height="1em"
@@ -61,19 +60,19 @@ exports[`when endIcon has an icon value should match the snapshot when start ico
 exports[`when startIcon has an icon value should match the snapshot when start icon is included inside the text box 1`] = `
 <DocumentFragment>
   <div
-    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 egtYKi aries-textfield"
+    class="TextFieldStyle__TextFieldContainer-sc-5sd02x-3 SzXyD aries-textfield"
   >
     <input
       aria-label="Username"
-      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 hfXycu"
+      class="TextFieldStyle__TextFieldInput-sc-5sd02x-5 chBxUb"
       type="text"
       value=""
     />
     <div
-      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 gJuCgc"
+      class="TextFieldStyle__StartIconContainer-sc-5sd02x-1 RFWjB"
     >
       <svg
-        class="IconStyle__VerticalCenteredSvg-x7d280-0 cJSNzi"
+        class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
         data-testid="icon-svg"
         fill="currentColor"
         height="1em"
@@ -86,7 +85,7 @@ exports[`when startIcon has an icon value should match the snapshot when start i
       </svg>
     </div>
     <label
-      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 buJPMm textfield-label"
+      class="TextFieldStyle__TextFieldLabel-sc-5sd02x-4 eSlFLn textfield-label"
       data-testid="textfield-label"
     >
       Username

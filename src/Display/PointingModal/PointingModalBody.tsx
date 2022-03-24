@@ -16,9 +16,8 @@ const PointingModalBody: React.FunctionComponent<Props> = props => {
   );
 };
 
-interface Props
-  extends React.ComponentPropsWithoutRef<typeof PointingModalBodyWrapper> {
+type Props = React.ComponentPropsWithoutRef<typeof PointingModalBodyWrapper> & {
   children: React.ReactNode;
-}
+};
 
 export default PointingModalBody;

@@ -50,11 +50,12 @@ const ProfilePicture = ({
   );
 };
 
-export interface Props
-  extends React.ComponentPropsWithoutRef<typeof ProfilePictureContainer> {
+export type Props = React.ComponentPropsWithoutRef<
+  typeof ProfilePictureContainer
+> & {
   /** Showing edit icon when it's hovered. */
   editable?: boolean;
   children: React.ReactNode;
-}
+};
 
 export default ProfilePicture;
