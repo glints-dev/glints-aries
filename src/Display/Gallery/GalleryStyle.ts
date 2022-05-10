@@ -64,7 +64,7 @@ export const GalleryImageWrapper = styled.div`
 
   img {
     height: 50vh;
-    width: auto;
+    width: 100%;
     object-fit: contain;
   }
 `;
