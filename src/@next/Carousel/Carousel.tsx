@@ -49,6 +49,7 @@ export const Carousel = ({
   showArrows = true,
 }: CarouselProps) => {
   const slideRef = useRef(null);
+  const slideTimeout = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
   const [hideArrows, setHideArrows] = useState(autoRotate);
 
@@ -98,7 +99,8 @@ export const Carousel = ({
 
   useEffect(() => {
     if (autoRotate) {
-      setTimeout(() => {
+      if (slideTimeout.current) clearTimeout(slideTimeout.current);
+      slideTimeout.current = setTimeout(() => {
         updateActiveIndex(activeIndex + 1);
       }, duration);
     }
