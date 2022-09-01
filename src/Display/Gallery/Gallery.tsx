@@ -55,14 +55,14 @@ const Gallery = ({
       <GalleryItemWrapper className="gallery-wrapper">
         {React.Children.toArray(children)
           .slice(0, imagesDisplayed)
-          .map((data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+          .map((data: React.ReactElement<any>, index: number) => (
             <GalleryItem
               className="gallery-item"
               key={`${data.props.src}_${index}`}
               imageLeft={imageLeft}
               onClick={() => handleClick(index)}
             >
-              <img src={data.props.src} alt={index.toString(10)} />
+              <data />
             </GalleryItem>
           ))}
       </GalleryItemWrapper>
@@ -81,14 +81,10 @@ const Gallery = ({
         >
           {React.Children.map(
             children,
-            (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+            (data: React.ReactElement<any>, index) => (
               <Slider.Item key={`${data.props.src}_${index}`}>
                 <GalleryImageWrapper role="banner" tabIndex={0}>
-                  <img
-                    src={data.props.src}
-                    key={`${data.props.src}_${index}`}
-                    alt={index.toString(10)}
-                  />
+                  <data />
                 </GalleryImageWrapper>
               </Slider.Item>
             )
@@ -97,17 +93,12 @@ const Gallery = ({
         <GalleryThumbnailWrapper>
           {React.Children.map(
             children,
-            (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+            (data: React.ReactElement<any>, index) => (
               <div
                 key={`${data.props.src}_${index}`}
                 onClick={() => handleClickThumbs(index)}
               >
-                <img
-                  data-testid="gallery_thumbnail"
-                  src={data.props.src}
-                  alt={index.toString(10)}
-                  className={index === currentIndex ? 'active' : null}
-                />
+                <data />
               </div>
             )
           )}
