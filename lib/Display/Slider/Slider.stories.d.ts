@@ -1,0 +1,12 @@
+import { Story, Meta } from '@storybook/react';
+import { Props } from './Slider';
+declare const _default: Meta<import("@storybook/react").Args>;
+export default _default;
+export declare const Interactive: any;
+export declare const Autoplay: any;
+export declare const FullContent: any;
+export declare const ArrowWhite: any;
+export declare const RemoveDots: any;
+export declare const InitialItem: any;
+export declare const CustomizedRenderLeftIcon: Story<Props>;
+export declare const CustomizedRenderRightIcon: Story<Props>;

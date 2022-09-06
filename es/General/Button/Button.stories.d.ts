@@ -1,0 +1,11 @@
+import { Story, Meta } from '@storybook/react';
+import { Props as ButtonProps } from './Button';
+declare const _default: Meta<import("@storybook/react").Args>;
+export default _default;
+export declare const SolidBlue: any;
+export declare const Variants: Story<ButtonProps>;
+export declare const Sizes: Story<ButtonProps>;
+export declare const Disable: Story<ButtonProps>;
+export declare const WithIcon: Story<ButtonProps>;
+export declare const WithDifferentTag: Story<ButtonProps>;
+export declare const WithRoundedCorner: Story<ButtonProps>;

@@ -1,0 +1,16 @@
+import { Story, Meta } from '@storybook/react';
+import { Props as SelectProps } from './Select';
+declare const _default: Meta<import("@storybook/react").Args>;
+export default _default;
+export declare const DefaultSelect: any;
+export declare const BasicUsage: any;
+export declare const LoadingOptions: any;
+export declare const Error: Story<SelectProps>;
+export declare const Disabled: any;
+export declare const DefaultValue: any;
+export declare const DisableTyping: any;
+export declare const CustomizeNoOptionResultMessage: any;
+export declare const RemoveFloatingLabel: any;
+export declare const RemoveDropIcon: any;
+export declare const Sizes: Story<SelectProps>;
+export declare const CustomizeFilterFunction: Story<SelectProps>;
