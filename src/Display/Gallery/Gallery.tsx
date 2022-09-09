@@ -35,6 +35,13 @@ const Gallery = ({
 
   const getCurrentIndex = (index: number) => setCurrentIndex(index - 1);
 
+  const hasImage = React.Children.toArray(children).some(child => {
+    return React.isValidElement(child) && child.type === 'img';
+  });
+  if (!hasImage) {
+    console.error('Only img components allowed as children.');
+  }
+
   React.useEffect(function componentDidMount() {
     if (React.Children.count(children) > imagesDisplayed)
       setImageLeft(React.Children.count(children) - imagesDisplayed);
@@ -62,7 +69,9 @@ const Gallery = ({
               imageLeft={imageLeft}
               onClick={() => handleClick(index)}
             >
-              <img src={data.props.src} alt={index.toString(10)} />
+              {React.cloneElement(data, {
+                alt: index.toString(10),
+              })}
             </GalleryItem>
           ))}
       </GalleryItemWrapper>
@@ -84,11 +93,9 @@ const Gallery = ({
             (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
               <Slider.Item key={`${data.props.src}_${index}`}>
                 <GalleryImageWrapper role="banner" tabIndex={0}>
-                  <img
-                    src={data.props.src}
-                    key={`${data.props.src}_${index}`}
-                    alt={index.toString(10)}
-                  />
+                  {React.cloneElement(data, {
+                    alt: index.toString(10),
+                  })}
                 </GalleryImageWrapper>
               </Slider.Item>
             )
@@ -97,17 +104,21 @@ const Gallery = ({
         <GalleryThumbnailWrapper>
           {React.Children.map(
             children,
-            (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
+            (
+              data: React.ReactElement<
+                React.HTMLProps<'img'> & { 'data-testid': string }
+              >,
+              index
+            ) => (
               <div
                 key={`${data.props.src}_${index}`}
                 onClick={() => handleClickThumbs(index)}
               >
-                <img
-                  data-testid="gallery_thumbnail"
-                  src={data.props.src}
-                  alt={index.toString(10)}
-                  className={index === currentIndex ? 'active' : null}
-                />
+                {React.cloneElement(data, {
+                  className: index === currentIndex ? 'active' : null,
+                  'data-testid': 'gallery_thumbnail',
+                  alt: index.toString(10),
+                })}
               </div>
             )
           )}
