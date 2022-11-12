@@ -1,6 +1,5 @@
 import * as React from 'react';
-import camelCase from 'lodash/camelCase';
-import upperFirst from 'lodash/upperFirst';
+import { camelCase, upperFirst } from 'lodash-es';
 
 import { ICONS } from '../../Utils/Icon/IconLibrary';
 

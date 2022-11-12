@@ -1,6 +1,7 @@
-import { sampleSize } from 'lodash';
+import { sampleSize } from 'lodash-es';
 import React, { useState, FC } from 'react';
 import styled from 'styled-components';
+
 import TextField from '../../Input/TextField';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Greyscale } from '../../Utils/Colors';

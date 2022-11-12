@@ -2,8 +2,9 @@ import React from 'react';
 import { render, fireEvent, queryAllByAttribute } from '@testing-library/react';
 import _userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
+import { first, identity } from 'lodash-es';
+
 import { Select, Item, ItemProps } from './Select';
-import { first, identity } from 'lodash';
 import { Item as ItemComponent, Label as LabelComponent } from './SelectStyle';
 
 // userEvent is typed incorrectly. The tab function exists, but is not declared

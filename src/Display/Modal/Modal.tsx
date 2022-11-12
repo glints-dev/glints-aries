@@ -10,7 +10,7 @@ import React, {
   ReactElement,
 } from 'react';
 import classNames from 'classnames';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 import {
   disableBodyScroll,
   enableBodyScroll,

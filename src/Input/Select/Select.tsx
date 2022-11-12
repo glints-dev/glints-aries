@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import get from 'lodash/get';
-import toLower from 'lodash/toLower';
+import { get, toLower } from 'lodash-es';
 import classNames from 'classnames';
 
 import SelectList, { SelectItemProps } from './SelectList';
@@ -127,9 +126,12 @@ const Select: React.FC<Props> & {
     return matchedChildrenOptions;
   }, [children, inputValue, disableTyping, isInputChange, filterFunction]);
 
-  const [options, setOptions] = React.useState<React.ReactNode[]>(
-    availableOptions
-  );
+  const [options, setOptions] = React.useState<
+    React.ReactElement<
+      SelectItemProps,
+      string | React.JSXElementConstructor<unknown>
+    >[]
+  >(availableOptions);
 
   React.useEffect(
     function updateOptionsAndActiveIndex() {

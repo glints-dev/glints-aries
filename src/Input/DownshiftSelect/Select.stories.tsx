@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Select, Props, ItemProps, Item } from './Select';
-import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
+import { identity, sample, sampleSize } from 'lodash-es';
 import styled from 'styled-components';
 
-import * as Components from './SelectStyle';
 import { SecondaryColor } from '../../Utils/Colors';
 import { Button } from '../../General/Button/Button';
 import { Box } from '../../Layout/Box';
-import { identity, sample, sampleSize } from 'lodash';
+import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { TextField } from '../..';
+
+import { Select, Props, ItemProps, Item } from './Select';
+import * as Components from './SelectStyle';
 
 const StoryContainer = styled(BaseContainer)`
   min-height: 250px;

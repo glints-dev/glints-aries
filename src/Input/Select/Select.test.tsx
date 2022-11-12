@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as lodash from 'lodash';
+import { times } from 'lodash-es';
 import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
@@ -105,9 +105,7 @@ function setupSelectOptionFromMenuWithKeyHandling() {
   const arrowDownEvent = { key: 'ArrowDown', keyCode: 40 };
   const enterEvent = { key: 'Enter', keyCode: 13 };
 
-  lodash.times(randomIndex, () =>
-    fireEvent.keyDown(selectInput, arrowDownEvent)
-  );
+  times(randomIndex, () => fireEvent.keyDown(selectInput, arrowDownEvent));
   fireEvent.keyDown(selectInput, enterEvent);
   fireEvent.change(selectInput, {
     target: { value: randomOption.textContent },

@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import _userEvent from '@testing-library/user-event';
+import { noop } from 'lodash-es';
+import { resetId } from 'react-id-generator';
+
 import '@testing-library/jest-dom/extend-expect';
 import { PhoneNumberInput, CallingCodeOption, Props } from './PhoneNumberInput';
-import { noop } from 'lodash';
-import { resetId } from 'react-id-generator';
 import { Tag } from '../..';
 
 // userEvent is typed incorrectly. The tab function exists, but is not declared

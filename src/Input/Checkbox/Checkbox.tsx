@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { isUndefined } from 'lodash-es';
 
 import { CheckboxContainer } from './CheckboxStyle';
-import isUndefined from 'lodash/isUndefined';
 
 export type CheckedState = 'false' | 'true' | 'mixed';
 

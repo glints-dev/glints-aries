@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import classNames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
 
 import {
   CheckmarkSolidIcon,
@@ -16,7 +17,6 @@ import {
 } from './AlertStyle';
 
 import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
-import { isUndefined } from 'lodash';
 import { DelayedUnmount } from '../../Utils/DelayedUnmount';
 
 export const Alert = ({

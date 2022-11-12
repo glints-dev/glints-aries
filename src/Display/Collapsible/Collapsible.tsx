@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, FC, useState, ReactNode } from 'react';
 import classNames from 'classnames';
-import isUndefined from 'lodash/isUndefined';
+import { isUndefined } from 'lodash-es';
+
 import { ArrowDownIcon } from '../../General/Icon/components';
 
 import {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { times, constant } from 'lodash';
+import { constant, times } from 'lodash-es';
 
 import { Modal, Props } from './Modal';
 import { Button } from '../../General/Button/Button';
