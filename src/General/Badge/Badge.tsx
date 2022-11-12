@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import isNil from 'lodash/isNil';
+import { isNil } from 'lodash-es';
 import { BadgeContainer } from './BadgeStyle';
 import { BadgeVariant } from './BadgeVariant';
 

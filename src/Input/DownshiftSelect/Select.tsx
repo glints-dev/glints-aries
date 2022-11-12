@@ -1,12 +1,12 @@
 import React, { HTMLProps, useState } from 'react';
 import { useCombobox, UseComboboxProps } from 'downshift';
+import { groupBy, indexOf, isFunction, isUndefined, noop } from 'lodash-es';
+import { useId } from 'react-id-generator';
 
 import * as internalComponents from './SelectStyle';
 import { ArrowDownIcon } from '../../General/Icon/components';
 import { ArrowUpIcon } from '../../General/Icon/components';
 import { CloseCircleSolidIcon } from '../../General/Icon/components';
-import { groupBy, indexOf, isFunction, isUndefined, noop } from 'lodash';
-import { useId } from 'react-id-generator';
 
 export interface Item {
   value: string;

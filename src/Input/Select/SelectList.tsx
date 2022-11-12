@@ -80,7 +80,7 @@ interface Props {
 export interface SelectItemProps {
   children: string;
   value?: string;
-  onOptionClick?(e: React.MouseEvent<HTMLLIElement, MouseEvent>): void;
+  onOptionClick?(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export default SelectList;

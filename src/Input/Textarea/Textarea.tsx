@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes, RefObject } from 'react';
 
 import classNames from 'classnames';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 
 import {
   TextareaContainer,

@@ -1,7 +1,8 @@
 import { useCombobox } from 'downshift';
-import { find, orderBy } from 'lodash';
+import { find, orderBy } from 'lodash-es';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { useId } from 'react-id-generator';
+
 import { ArrowDownIcon, ArrowUpIcon, Flex } from '../..';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
 import * as S from './PhoneNumberInputStyles';
