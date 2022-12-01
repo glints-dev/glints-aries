@@ -49,6 +49,8 @@ export { Device, ScreenSize } from './Utils/StyleConfig';
 export { PrimaryColor, SecondaryColor, Greyscale } from './Utils/Colors';
 export { Shadow } from './Utils/Shadow';
 export { default as GlintsContainer } from './Layout/GlintsContainer/GlintsContainer';
+import * as colors from './Utils/@next/colors';
+export { colors };
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
