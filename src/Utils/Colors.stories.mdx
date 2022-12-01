@@ -1,7 +1,13 @@
-import { Meta } from '@storybook/addon-docs';
+import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs';
 import { PrimaryColor, Greyscale, SecondaryColor } from './Colors';
 import { getReadableColor } from './getReadableColor';
 import { ColorSampler, ColorSample } from './ColorsStoriesHelpers';
+import blue from './@next/colors/blue';
+import green from './@next/colors/green';
+import neutral from './@next/colors/neutral';
+import orange from './@next/colors/orange';
+import red from './@next/colors/red';
+import yellow from './@next/colors/yellow';
 
 <Meta title="Utilities/Colors" />
 
@@ -54,3 +60,50 @@ const MyComponent = styled.div`
     />
   ))}
 </ColorSampler>
+
+# @next
+
+## Brand Colors
+
+<ColorSampler>
+  <ColorSample key={yellow.Brand} bgColor={yellow.Brand} name="yellow.Brand" />
+  <ColorSample key={red.Brand} bgColor={red.Brand} name="red.Brand" />
+  <ColorSample key={blue.Brand} bgColor={blue.Brand} name="blue.Brand" />
+  <ColorSample key={orange.Brand} bgColor={orange.Brand} name="orange.Brand" />
+</ColorSampler>
+
+## Product Colors
+
+<ColorPalette>
+  <ColorItem
+    title="blue"
+    subtitle="blue.codeName"
+    colors={Object.fromEntries(Object.entries(blue).slice(1, 7))}
+  />
+  <ColorItem title="green" subtitle="green.codeName" colors={green} />
+  <ColorItem
+    title="neutral whites"
+    subtitle="neutral.codeName"
+    colors={Object.fromEntries(Object.entries(neutral).slice(0, 5))}
+  />
+  <ColorItem
+    title="neutral blacks"
+    subtitle="neutral.codeName"
+    colors={Object.fromEntries(Object.entries(neutral).slice(5, 10))}
+  />
+  <ColorItem
+    title="orange"
+    subtitle="orange.codeName"
+    colors={Object.fromEntries(Object.entries(orange).slice(1, 6))}
+  />
+  <ColorItem
+    title="red"
+    subtitle="red.codeName"
+    colors={Object.fromEntries(Object.entries(red).slice(1, 6))}
+  />
+  <ColorItem
+    title="yellow"
+    subtitle="yellow.codeName"
+    colors={Object.fromEntries(Object.entries(yellow).slice(1, 6))}
+  />
+</ColorPalette>
