@@ -1,6 +1,8 @@
-export { default as blue } from './blue';
-export { default as green } from './green';
-export { default as neutral } from './neutral';
-export { default as orange } from './orange';
-export { default as red } from './red';
-export { default as yellow } from './yellow';
+import * as Blue from './blue';
+import * as Green from './green';
+import * as Neutral from './neutral';
+import * as Orange from './orange';
+import * as Red from './red';
+import * as Yellow from './yellow';
+
+export { Blue, Green, Neutral, Orange, Red, Yellow };

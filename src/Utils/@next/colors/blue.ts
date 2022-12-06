@@ -1,11 +1,7 @@
-const blue = {
-  Brand: '#0BAEEC',
-  S8: '#EAF9FF',
-  S20: '#CAEEFB',
-  S54: '#6CC9EC',
-  S95: '#0BAEEC',
-  S99: '#017EB7',
-  S100: '#00568C',
-};
-
-export default blue;
+export const Brand = '#0BAEEC';
+export const S08 = '#EAF9FF';
+export const S20 = '#CAEEFB';
+export const S54 = '#6CC9EC';
+export const S95 = '#0BAEEC';
+export const S99 = '#017EB7';
+export const S100 = '#00568C';

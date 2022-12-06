@@ -2,12 +2,12 @@ import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs';
 import { PrimaryColor, Greyscale, SecondaryColor } from './Colors';
 import { getReadableColor } from './getReadableColor';
 import { ColorSampler, ColorSample } from './ColorsStoriesHelpers';
-import blue from './@next/colors/blue';
-import green from './@next/colors/green';
-import neutral from './@next/colors/neutral';
-import orange from './@next/colors/orange';
-import red from './@next/colors/red';
-import yellow from './@next/colors/yellow';
+import * as Blue from './@next/colors/blue';
+import * as Green from './@next/colors/green';
+import * as Neutral from './@next/colors/neutral';
+import * as Orange from './@next/colors/orange';
+import * as Red from './@next/colors/red';
+import * as Yellow from './@next/colors/yellow';
 
 <Meta title="Utilities/Colors" />
 
@@ -66,44 +66,44 @@ const MyComponent = styled.div`
 ## Brand Colors
 
 <ColorSampler>
-  <ColorSample key={yellow.Brand} bgColor={yellow.Brand} name="yellow.Brand" />
-  <ColorSample key={red.Brand} bgColor={red.Brand} name="red.Brand" />
-  <ColorSample key={blue.Brand} bgColor={blue.Brand} name="blue.Brand" />
-  <ColorSample key={orange.Brand} bgColor={orange.Brand} name="orange.Brand" />
+  <ColorSample key={Yellow.Brand} bgColor={Yellow.Brand} name="Yellow.Brand" />
+  <ColorSample key={Red.Brand} bgColor={Red.Brand} name="Red.Brand" />
+  <ColorSample key={Blue.Brand} bgColor={Blue.Brand} name="Blue.Brand" />
+  <ColorSample key={Orange.Brand} bgColor={Orange.Brand} name="Orange.Brand" />
 </ColorSampler>
 
 ## Product Colors
 
 <ColorPalette>
   <ColorItem
-    title="blue"
-    subtitle="blue.codeName"
-    colors={Object.fromEntries(Object.entries(blue).slice(1, 7))}
+    title="Blue"
+    subtitle="Blue.CodeName"
+    colors={Object.fromEntries(Object.entries(Blue).slice(1, 7))}
   />
-  <ColorItem title="green" subtitle="green.codeName" colors={green} />
+  <ColorItem title="Green" subtitle="Green.CodeName" colors={Green} />
   <ColorItem
-    title="neutral whites"
-    subtitle="neutral.codeName"
-    colors={Object.fromEntries(Object.entries(neutral).slice(0, 5))}
-  />
-  <ColorItem
-    title="neutral blacks"
-    subtitle="neutral.codeName"
-    colors={Object.fromEntries(Object.entries(neutral).slice(5, 10))}
+    title="Neutral Whites"
+    subtitle="Neutral.CodeName"
+    colors={Object.fromEntries(Object.entries(Neutral).slice(0, 5))}
   />
   <ColorItem
-    title="orange"
-    subtitle="orange.codeName"
-    colors={Object.fromEntries(Object.entries(orange).slice(1, 6))}
+    title="Neutral Blacks"
+    subtitle="Neutral.CodeName"
+    colors={Object.fromEntries(Object.entries(Neutral).slice(5, 10))}
   />
   <ColorItem
-    title="red"
-    subtitle="red.codeName"
-    colors={Object.fromEntries(Object.entries(red).slice(1, 6))}
+    title="Orange"
+    subtitle="Orange.CodeName"
+    colors={Object.fromEntries(Object.entries(Orange).slice(1, 6))}
   />
   <ColorItem
-    title="yellow"
-    subtitle="yellow.codeName"
-    colors={Object.fromEntries(Object.entries(yellow).slice(1, 6))}
+    title="Red"
+    subtitle="Red.CodeName"
+    colors={Object.fromEntries(Object.entries(Red).slice(1, 6))}
+  />
+  <ColorItem
+    title="Yellow"
+    subtitle="Yellow.CodeName"
+    colors={Object.fromEntries(Object.entries(Yellow).slice(1, 6))}
   />
 </ColorPalette>

@@ -1,10 +1,6 @@
-const red = {
-  Brand: '#EC272B',
-  B100: '#FFC7C2',
-  B99: '#FC6568',
-  B93: '#EC272B',
-  B74: '#BD3638',
-  B65: '#8F393B',
-};
-
-export default red;
+export const Brand = '#EC272B';
+export const B100 = '#FFC7C2';
+export const B99 = '#FC6568';
+export const B93 = '#EC272B';
+export const B74 = '#BD3638';
+export const B65 = '#8F393B';
