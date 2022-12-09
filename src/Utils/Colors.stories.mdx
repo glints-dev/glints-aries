@@ -1,7 +1,13 @@
-import { Meta } from '@storybook/addon-docs';
+import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs';
 import { PrimaryColor, Greyscale, SecondaryColor } from './Colors';
 import { getReadableColor } from './getReadableColor';
 import { ColorSampler, ColorSample } from './ColorsStoriesHelpers';
+import * as Blue from './@next/colors/blue';
+import * as Green from './@next/colors/green';
+import * as Neutral from './@next/colors/neutral';
+import * as Orange from './@next/colors/orange';
+import * as Red from './@next/colors/red';
+import * as Yellow from './@next/colors/yellow';
 
 <Meta title="Utilities/Colors" />
 
@@ -54,3 +60,50 @@ const MyComponent = styled.div`
     />
   ))}
 </ColorSampler>
+
+# @next
+
+## Brand Colors
+
+<ColorSampler>
+  <ColorSample key={Yellow.Brand} bgColor={Yellow.Brand} name="Yellow.Brand" />
+  <ColorSample key={Red.Brand} bgColor={Red.Brand} name="Red.Brand" />
+  <ColorSample key={Blue.Brand} bgColor={Blue.Brand} name="Blue.Brand" />
+  <ColorSample key={Orange.Brand} bgColor={Orange.Brand} name="Orange.Brand" />
+</ColorSampler>
+
+## Product Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Blue"
+    subtitle="Blue.CodeName"
+    colors={Object.fromEntries(Object.entries(Blue).slice(1, 7))}
+  />
+  <ColorItem title="Green" subtitle="Green.CodeName" colors={Green} />
+  <ColorItem
+    title="Neutral Whites"
+    subtitle="Neutral.CodeName"
+    colors={Object.fromEntries(Object.entries(Neutral).slice(0, 5))}
+  />
+  <ColorItem
+    title="Neutral Blacks"
+    subtitle="Neutral.CodeName"
+    colors={Object.fromEntries(Object.entries(Neutral).slice(5, 10))}
+  />
+  <ColorItem
+    title="Orange"
+    subtitle="Orange.CodeName"
+    colors={Object.fromEntries(Object.entries(Orange).slice(1, 6))}
+  />
+  <ColorItem
+    title="Red"
+    subtitle="Red.CodeName"
+    colors={Object.fromEntries(Object.entries(Red).slice(1, 6))}
+  />
+  <ColorItem
+    title="Yellow"
+    subtitle="Yellow.CodeName"
+    colors={Object.fromEntries(Object.entries(Yellow).slice(1, 6))}
+  />
+</ColorPalette>
