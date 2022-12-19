@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ElementType, FunctionComponent, ReactNode } from 'react';
 
 import { StyledTypography } from './TypographyStyles';
 
@@ -18,19 +18,23 @@ export type Variant =
   | 'overline';
 
 export interface TypographyProps {
-  as?: React.ElementType;
+  /** Sets the Typography's element */
+  as?: ElementType;
   children: ReactNode;
+  /** Sets the Typography's color */
+  color?: string;
+  /** Sets the Typography's variant */
   variant?: Variant;
 }
 
-export const Typography = ({
-  as,
+export const Typography: FunctionComponent<TypographyProps> = ({
+  as = 'p',
   children,
   variant,
   ...props
-}: TypographyProps) => {
+}) => {
   return (
-    <StyledTypography as={as ? as : 'p'} variant={variant} {...props}>
+    <StyledTypography as={as} variant={variant} {...props}>
       {children}
     </StyledTypography>
   );
