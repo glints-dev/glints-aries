@@ -12,6 +12,7 @@ export default {
   component: Typography,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
   argTypes: {
+    as: { control: 'text' },
     color: { control: 'color' },
   },
 } as Meta;
