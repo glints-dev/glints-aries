@@ -34,7 +34,7 @@ const headline4 = css`
 `;
 
 const headline5 = css`
-  font-weight: 600;
+  font-weight: 700;
   font-size: 24px;
   line-height: 150%;
   letter-spacing: 0;
