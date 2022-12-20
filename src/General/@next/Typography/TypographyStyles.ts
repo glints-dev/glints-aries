@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { TypographyProps, Variant } from './Typography';
+import * as Breakpoints from '../../../Utils/@next/breakpoints';
 
 const headline1 = css`
   font-family: Poppins, sans-serif;
@@ -7,6 +8,10 @@ const headline1 = css`
   font-size: 60px;
   line-height: 140%;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 36px;
+  }
 `;
 
 const headline2 = css`
@@ -15,6 +20,12 @@ const headline2 = css`
   font-size: 50px;
   line-height: normal;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
+  }
 `;
 
 const headline3 = css`
@@ -23,6 +34,12 @@ const headline3 = css`
   font-size: 36px;
   line-height: normal;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+  }
 `;
 
 const headline4 = css`
@@ -31,6 +48,12 @@ const headline4 = css`
   font-size: 36px;
   line-height: 140%;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+  }
 `;
 
 const headline5 = css`
@@ -38,70 +61,125 @@ const headline5 = css`
   font-size: 24px;
   line-height: 150%;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    font-size: 20px;
+  }
 `;
 
-// typeface: Noto Sans
 const headline6 = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
   letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.15px;
+  }
 `;
 
-// typeface: Noto Sans
 const subtitle1 = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 150%;
   letter-spacing: 0.15px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 16px;
+  }
 `;
 
-// typeface: Noto Sans
 const subtitle2 = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.25px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 12px;
+    letter-spacing: 0;
+  }
 `;
 
-// typeface: Noto Sans
 const body1 = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 14px;
+  }
 `;
 
-// typeface: Noto Sans
 const body2 = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.25px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+  }
 `;
 
-// typeface: Noto Sans
 const button = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 1.25px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+  }
 `;
 
-// typeface: Noto Sans
 const caption = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0.4px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
 `;
 
-// typeface: Noto Sans
 const overline = css`
+  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
+    sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 140%;
   letter-spacing: 1.5px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+  }
 `;
 
 const variantCssMapping: {
