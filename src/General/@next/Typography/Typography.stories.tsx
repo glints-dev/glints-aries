@@ -29,15 +29,5 @@ Interactive.args = {};
 export const Color = Template.bind({});
 Color.args = { color: Colors.Blue.Brand };
 
-export const Ellipsis = Template.bind({});
-Ellipsis.args = {
-  ellipsis: true,
-  children:
-    "'Quel re amrun undome Beikaerea lle auta yeste' Mellonea. Guinahiroo ai' atar diola lle Mith'quessir. Tanya nae sai eina quel undome mani naa tanya nat' loomi en gurth. A! manke naa nae lle tinechor Tarion. Guinahiroo tanya awra! Heruamin Hallaerea. Mani uma lle merna ten' ta toror' taur'ohtarie Iire Cermie. Mankoi bragol alaa Morierea tal dagore.",
-};
-
-export const Bold = Template.bind({});
-Bold.args = { bold: true };
-
 export const Variant = Template.bind({});
 Variant.args = { variant: 'body1' };
