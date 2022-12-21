@@ -141,6 +141,9 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!lodash-es)"
+    ],
+    "modulePathIgnorePatterns": [
+      "test/e2e/"
     ]
   },
   "optionalDependencies": {
