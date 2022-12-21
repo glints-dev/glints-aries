@@ -10,3 +10,6 @@ flow-typed
 .vscode
 .idea
 coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
