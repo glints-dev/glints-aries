@@ -1,9 +1,10 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { TypographyProps, Variant } from './Typography';
 import * as Breakpoints from '../../../Utils/@next/breakpoints';
+import { NotoSans, Poppins } from '../../../Utils/@next/fonts';
 
 const headline1 = css`
-  font-family: Poppins, sans-serif;
+  font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 140%;
@@ -15,7 +16,7 @@ const headline1 = css`
 `;
 
 const headline2 = css`
-  font-family: Poppins, sans-serif;
+  font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 50px;
   line-height: normal;
@@ -29,7 +30,7 @@ const headline2 = css`
 `;
 
 const headline3 = css`
-  font-family: Poppins, sans-serif;
+  font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: normal;
@@ -43,7 +44,7 @@ const headline3 = css`
 `;
 
 const headline4 = css`
-  font-family: Poppins, sans-serif;
+  font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 140%;
@@ -69,8 +70,7 @@ const headline5 = css`
 `;
 
 const headline6 = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
@@ -84,8 +84,7 @@ const headline6 = css`
 `;
 
 const subtitle1 = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 150%;
@@ -97,8 +96,7 @@ const subtitle1 = css`
 `;
 
 const subtitle2 = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -111,8 +109,7 @@ const subtitle2 = css`
 `;
 
 const body1 = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -124,8 +121,7 @@ const body1 = css`
 `;
 
 const body2 = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
@@ -139,8 +135,7 @@ const body2 = css`
 `;
 
 const button = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
@@ -154,8 +149,7 @@ const button = css`
 `;
 
 const caption = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
@@ -169,8 +163,7 @@ const caption = css`
 `;
 
 const overline = css`
-  font-family: Noto Sans TC, Noto Sans SC, Noto Sans KR, Noto Sans JP, Noto Sans,
-    sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 140%;

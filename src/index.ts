@@ -56,8 +56,9 @@ import * as Breakpoints from './Utils/@next/breakpoints';
 import * as BorderRadius from './Utils/@next/borderRadius';
 import * as Colors from './Utils/@next/colors';
 import * as DropShadow from './Utils/@next/dropShadow';
+import * as Fonts from './Utils/@next/fonts';
 import * as Spacing from './Utils/@next/spacing';
-export { Breakpoints, BorderRadius, Colors, DropShadow, Spacing };
+export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
