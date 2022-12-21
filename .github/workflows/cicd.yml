@@ -33,10 +33,12 @@ jobs:
         run: yarn lint
       - name: Test
         run: yarn test
+      - name: Run storybook
+        run: yarn storybook
       - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
+        run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
-        run: yarn playwright test
+        run: npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
