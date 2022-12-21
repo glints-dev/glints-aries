@@ -51,8 +51,9 @@ export { Shadow } from './Utils/Shadow';
 export { default as GlintsContainer } from './Layout/GlintsContainer/GlintsContainer';
 import * as BorderRadius from './Utils/@next/borderRadius';
 import * as Colors from './Utils/@next/colors';
+import * as DropShadow from './Utils/@next/dropShadow';
 import * as Spacing from './Utils/@next/spacing';
-export { BorderRadius, Colors, Spacing };
+export { BorderRadius, Colors, DropShadow, Spacing };
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
