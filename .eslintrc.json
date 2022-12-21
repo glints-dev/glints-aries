@@ -20,6 +20,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-find-dom-node": "off",
     "react/prop-types": "off",
+    "jest/no-test-callback": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
