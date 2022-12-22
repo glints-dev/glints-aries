@@ -25,8 +25,8 @@ jobs:
           node-version: "14.x"
       - name: Install dependencies
         run: yarn install
-      - name: Build storybook
-        run: yarn storybook:build
+      - name: Build storybook for test
+        run: yarn storybook:build:test
       - name: Build package
         run: yarn build
       - name: Lint
@@ -38,7 +38,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
-        run: npx playwright test
+        run: yarn start-server-and-test 'npx http-server ./storybook-static -p 6006' 6006  'npx playwright test'
       - uses: actions/upload-artifact@v3
         if: always()
         with:

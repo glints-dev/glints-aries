@@ -21,6 +21,7 @@
     "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/' --collectCoverageFrom='!src/**/*.stories.tsx' --collectCoverageFrom='!src/**/*StoryStyle.tsx' --collectCoverageFrom='!src/**/*StoriesHelpers.tsx' --collectCoverageFrom='!src/stories/story-components/**'",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && build-storybook -o .out -s dist/public",
+    "storybook:build:test": "rm -rf storybook-static && npm run storybook:build:assets && npm run build:icon && build-storybook -o storybook-static -s dist/public",
     "storybook:build:assets": "webpack"
   },
   "author": "Glints",
@@ -109,6 +110,7 @@
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "react-test-renderer": "^17.0.2",
+    "start-server-and-test": "^1.15.2",
     "styled-components": "^5.1.1",
     "stylelint": "^10.0.1",
     "stylelint-config-recommended": "^2.2.0",
