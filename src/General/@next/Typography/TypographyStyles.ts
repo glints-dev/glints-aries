@@ -46,7 +46,7 @@ const headline3 = css`
 const headline4 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 140%;
   letter-spacing: 0;
 
@@ -59,8 +59,8 @@ const headline4 = css`
 
 const headline5 = css`
   font-weight: 700;
-  font-size: 24px;
-  line-height: 150%;
+  font-size: 26px;
+  line-height: normal;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
