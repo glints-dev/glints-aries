@@ -25,6 +25,8 @@ jobs:
           node-version: "16"
       - name: Install dependencies
         run: yarn install
+      - name: Build
+        run: yarn build
       - name: Lint
         run: yarn lint
       - name: Test
@@ -66,7 +68,7 @@ jobs:
           retention-days: 30
 
   deploy:
-    needs: [validate, visual-test]
+    needs: validate
     if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4'
     runs-on: ubuntu-latest
     steps:
