@@ -22,7 +22,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "16"
       - name: Install dependencies
         run: yarn install
       - name: Build storybook
@@ -37,7 +37,7 @@ jobs:
   visual-test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.30.0-focal
+      image: mcr.microsoft.com/playwright:v1.29.0-focal
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -90,7 +90,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "16"
       - name: Install dependencies
         run: yarn install
       - name: Deploy to Chromatic
