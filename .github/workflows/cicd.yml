@@ -35,6 +35,7 @@ jobs:
         run: yarn test
 
   visual-test:
+    needs: validate
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.29.0-focal
@@ -69,7 +70,7 @@ jobs:
           retention-days: 30
 
   deploy:
-    needs: [validate, visual-test]
+    needs: validate
     if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4'
     runs-on: ubuntu-latest
     steps:
