@@ -49,8 +49,11 @@ export { Device, ScreenSize } from './Utils/StyleConfig';
 export { PrimaryColor, SecondaryColor, Greyscale } from './Utils/Colors';
 export { Shadow } from './Utils/Shadow';
 export { default as GlintsContainer } from './Layout/GlintsContainer/GlintsContainer';
+import * as BorderRadius from './Utils/@next/borderRadius';
 import * as Colors from './Utils/@next/colors';
-export { Colors };
+import * as DropShadow from './Utils/@next/dropShadow';
+import * as Spacing from './Utils/@next/spacing';
+export { BorderRadius, Colors, DropShadow, Spacing };
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
