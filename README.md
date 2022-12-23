@@ -83,6 +83,23 @@ Currently there is an issue where the above leads to react complaining about mul
 4. Open terminal in `glints-aries`.
 5. Run `yarn link react`.
 
+### Adding visual test
+
+We use [playwright](https://playwright.dev/docs/test-snapshots) visual comparison test for components to check for regressions, since images in every browser and machine can be rendered differently we'll use docker image to generate and compare the screenshots.
+
+All visual test and screenshots can be found in `test/e2e` directory
+
+To generate new screenshots locally:
+
+Create docker image with `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.29.0-focal /bin/bash`
+
+Run following commands in that image:
+
+1. Install the dependencies `yarn install` or `npm install`
+2. Run storybook `yarn storybook`
+3. Generate screenshot of your tests with `npx playwright test --update-snapshots`
+4. Commit and push your test screenshots
+
 ### Code structure in glints-aries
 
 1. Always do alphabetically when importing file.
