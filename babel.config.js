@@ -38,5 +38,16 @@ module.exports = {
       },
     ],
     ['@babel/plugin-proposal-private-methods', { loose: true }],
+    ...(isEs
+      ? []
+      : [
+          [
+            'transform-rename-import',
+            {
+              original: 'lodash-es',
+              replacement: 'lodash',
+            },
+          ],
+        ]),
   ],
 };
