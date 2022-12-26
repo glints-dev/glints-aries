@@ -51,8 +51,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   left: 22px;
   background: #FFFFFF;
   color: #000000;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
   padding: 0 5px;
@@ -76,8 +76,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }
@@ -88,8 +88,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -125,8 +125,8 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -139,8 +139,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }
@@ -338,8 +338,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   left: 22px;
   background: #FFFFFF;
   color: #777777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
 }
@@ -350,8 +350,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -388,8 +388,8 @@ exports[`<Select /> can still work when receives non-string option children or v
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -402,8 +402,8 @@ exports[`<Select /> can still work when receives non-string option children or v
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }

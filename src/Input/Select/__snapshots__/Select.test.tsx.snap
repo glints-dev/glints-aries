@@ -53,8 +53,8 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   left: 22px;
   background: #FFFFFF;
   color: #777777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
 }
@@ -65,8 +65,8 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -103,8 +103,8 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -117,8 +117,8 @@ exports[`<Select/> handleMouseEnterOption it should match snapshot, the option e
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }
@@ -297,8 +297,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   left: 22px;
   background: #FFFFFF;
   color: #777777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
 }
@@ -309,8 +309,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -347,8 +347,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -361,8 +361,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 1`] = `
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }
@@ -541,8 +541,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   left: 22px;
   background: #FFFFFF;
   color: #777777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
 }
@@ -553,8 +553,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -591,8 +591,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -605,8 +605,8 @@ exports[`<Select/> onBlur onFocus should call onBlur and onFocus 2`] = `
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }
@@ -784,8 +784,8 @@ exports[`<Select> should render with 3 options 1`] = `
   left: 22px;
   background: #FFFFFF;
   color: #777777;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: 16px;
 }
@@ -796,8 +796,8 @@ exports[`<Select> should render with 3 options 1`] = `
   height: 53px;
   padding: 15px 42px 15px 20px;
   border: 2px solid #777777;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -834,8 +834,8 @@ exports[`<Select> should render with 3 options 1`] = `
 
 .c2:hover {
   border: 2px solid #017EB7;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .c2:focus {
@@ -848,8 +848,8 @@ exports[`<Select> should render with 3 options 1`] = `
   -webkit-transform: translate3d(-15px,-20px,0);
   -ms-transform: translate3d(-15px,-20px,0);
   transform: translate3d(-15px,-20px,0);
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   color: #000000;
   font-size: 12px;
 }

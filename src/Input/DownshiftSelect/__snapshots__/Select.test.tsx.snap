@@ -29,7 +29,7 @@ exports[`<Select> (Downshift) should allow removal of components by passing a vo
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       />
     </div>
@@ -80,7 +80,7 @@ exports[`<Select> (Downshift) should group items by groupKey if given 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -153,7 +153,7 @@ exports[`<Select> (Downshift) should have a loading indicator 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <div
@@ -249,7 +249,7 @@ exports[`<Select> (Downshift) should have an invalid state 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -331,7 +331,7 @@ exports[`<Select> (Downshift) should have an optional helper-text 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -423,7 +423,7 @@ exports[`<Select> (Downshift) should have an optional label 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -497,7 +497,7 @@ exports[`<Select> (Downshift) should have an optional placeholder 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -570,7 +570,7 @@ exports[`<Select> (Downshift) should match snapshot when closed 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -643,7 +643,7 @@ exports[`<Select> (Downshift) should match snapshot when open 1`] = `
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -758,7 +758,7 @@ exports[`<Select> (Downshift) should use custom subcomponents when provided 1`] 
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -866,7 +866,7 @@ exports[`<Select> (Downshift) when disableTyping is true should not accept text 
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -939,7 +939,7 @@ exports[`<Select> (Downshift) when isOpenInitially=true should be open on render
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
@@ -1043,7 +1043,7 @@ exports[`<Select> (Downshift) when it is disabled should have disabled styles an
         value=""
       />
       <div
-        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 eYroGe"
+        class="SelectStyle__IndicatorsContainer-sc-qr1jv6-4 gRkXme"
         data-testid="indicators-container"
       >
         <button
