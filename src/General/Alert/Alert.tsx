@@ -27,9 +27,8 @@ export const Alert = ({
   className,
   message,
 }: Props) => {
-  const [internalIsVisible, setInternalIsVisible] = React.useState<boolean>(
-    true
-  );
+  const [internalIsVisible, setInternalIsVisible] =
+    React.useState<boolean>(true);
 
   const isVisible = isUndefined(externalIsVisible)
     ? internalIsVisible

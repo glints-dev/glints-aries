@@ -94,12 +94,8 @@ function setupSelectOptionFromMenu() {
 }
 
 function setupSelectOptionFromMenuWithKeyHandling() {
-  const {
-    selectInput,
-    selectList,
-    selectLabel,
-    displayedOptions,
-  } = setupOpenSelectMenu();
+  const { selectInput, selectList, selectLabel, displayedOptions } =
+    setupOpenSelectMenu();
   const randomIndex = Math.floor(Math.random() * displayedOptions.length);
   const randomOption = displayedOptions[randomIndex];
   const arrowDownEvent = { key: 'ArrowDown', keyCode: 40 };
@@ -233,10 +229,8 @@ describe('when the enter key is pressed on an option', () => {
   });
 
   it('should show the value of the option on the select input', () => {
-    const {
-      selectInput,
-      randomOption,
-    } = setupSelectOptionFromMenuWithKeyHandling();
+    const { selectInput, randomOption } =
+      setupSelectOptionFromMenuWithKeyHandling();
     expect(selectInput.value).toEqual(randomOption.textContent);
   });
 

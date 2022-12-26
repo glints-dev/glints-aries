@@ -87,8 +87,8 @@ export const Slider = ({
     const childrenCount = React.Children.toArray(children).filter(
       child => !isNil(child)
     ).length;
-    const windowWidth = getSliderContainerDOMNode().getBoundingClientRect()
-      .width;
+    const windowWidth =
+      getSliderContainerDOMNode().getBoundingClientRect().width;
 
     setScreenSize(windowWidth);
 
@@ -109,8 +109,8 @@ export const Slider = ({
   React.useEffect(
     function registerAutoplay() {
       const setSize = () => {
-        const windowWidth = getSliderContainerDOMNode().getBoundingClientRect()
-          .width;
+        const windowWidth =
+          getSliderContainerDOMNode().getBoundingClientRect().width;
         setScreenSize(
           getSliderContainerDOMNode().getBoundingClientRect().width
         );
@@ -144,8 +144,8 @@ export const Slider = ({
   React.useEffect(
     function receiveProps() {
       if (initialItem === undefined) return;
-      const windowWidth = getSliderContainerDOMNode().getBoundingClientRect()
-        .width;
+      const windowWidth =
+        getSliderContainerDOMNode().getBoundingClientRect().width;
 
       setTranslateValue(-(windowWidth * (initialItem - 1)));
       setIndex(initialItem);

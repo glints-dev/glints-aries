@@ -40,9 +40,8 @@ function writeComponentsIndex(content: string) {
 
 function writeSrcIndex(content: string) {
   const prevSrcIndexContent = fs.readFileSync(SRC_INDEX_FILE, 'utf8');
-  const iconContentStartIndex = prevSrcIndexContent.indexOf(
-    ICON_HEADING_CONTENT
-  );
+  const iconContentStartIndex =
+    prevSrcIndexContent.indexOf(ICON_HEADING_CONTENT);
 
   // delete old content for icon exports
   if (iconContentStartIndex !== -1) {

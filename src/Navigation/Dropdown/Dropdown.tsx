@@ -63,24 +63,24 @@ export const Dropdown = ({
     setCursor(0);
   };
 
-  const handleClickItem = (
-    onClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void
-  ) => (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const itemElement = e.target as HTMLLIElement;
+  const handleClickItem =
+    (onClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void) =>
+    (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+      const itemElement = e.target as HTMLLIElement;
 
-    if (itemElement.dataset.value) {
-      setDropdownLabel(itemElement.innerHTML);
+      if (itemElement.dataset.value) {
+        setDropdownLabel(itemElement.innerHTML);
 
-      if (onChange && typeof onChange === 'function') {
-        onChange(itemElement.dataset.value);
+        if (onChange && typeof onChange === 'function') {
+          onChange(itemElement.dataset.value);
+        }
       }
-    }
 
-    if (onClick && typeof onClick === 'function') {
-      onClick(e);
-    }
-    setIsOpen(false);
-  };
+      if (onClick && typeof onClick === 'function') {
+        onClick(e);
+      }
+      setIsOpen(false);
+    };
 
   const handleMouseEnter = setCursor;
 

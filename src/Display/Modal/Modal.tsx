@@ -49,10 +49,8 @@ export const Modal: FC<Props> = ({
   const modalContainerRef = useRef(null);
   const modalBodyRef = useRef(null);
   const modalFooterRef = useRef(null);
-  const [
-    isFooterChildrenInMultiLines,
-    setIsFooterChildrenInMultiLines,
-  ] = useState(false);
+  const [isFooterChildrenInMultiLines, setIsFooterChildrenInMultiLines] =
+    useState(false);
 
   const handleClose = React.useCallback(() => {
     if (typeof onClose === 'function') {
@@ -103,9 +101,8 @@ export const Modal: FC<Props> = ({
   useLayoutEffect(
     function checkFooterResponsiveStyleOnMountAndOnWindowResize() {
       const checkIsFooterChildrenInMultiLines = () => {
-        const isChildrenInMultiLines = checkIsChildrenInMultiLines(
-          modalFooterRef
-        );
+        const isChildrenInMultiLines =
+          checkIsChildrenInMultiLines(modalFooterRef);
         setIsFooterChildrenInMultiLines(isChildrenInMultiLines);
       };
       const debouncedCheckFooter = debounce(

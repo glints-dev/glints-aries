@@ -47,7 +47,7 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   margin-right: 1px;
   overflow: hidden;
   color: #666666;
-  transition: all .2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-weight: 400;
   font-size: ${({ small }) => (small ? '14px' : '16px')};
@@ -58,7 +58,7 @@ export const TextFieldLabel = styled.label<TextFieldLabelProps>`
       `;
     }
   }}
-  
+
   ${({ floating }) => {
     if (floating) {
       return `
@@ -98,7 +98,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   padding: ${({ small }) => (small ? '8px 16px' : '12px 16px')};
   border: unset;
   border-radius: ${({ small }) => (small ? '4px' : '8px')};
-  transition: all .5s;
+  transition: all 0.5s;
   background-color: ${({ status }) =>
     status === 'error' ? ' rgba(236, 39, 43, 0.08)' : 'rgb(1, 126, 183, 0.08)'};
   ${({ disableTyping }) => {
@@ -119,7 +119,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
   }}
   
   &:hover {
-    transition: all .5s;
+    transition: all 0.5s;
     background-color: ${({ status }) =>
       status === 'error'
         ? ' rgba(236, 39, 43, 0.08)'
@@ -151,7 +151,7 @@ export const TextFieldInput = styled.input<TextFieldInputProps>`
         small
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
-      transition: all .2s;
+      transition: all 0.2s;
       font-size: 12px;
       right: auto;
       background-color: ${Greyscale.white};

@@ -93,11 +93,8 @@ describe('<PhoneNumberInput>', () => {
   });
 
   it('should toggle the calling code input on clicking the toggle button', () => {
-    const {
-      getToggleButton,
-      getCallingCodeInput,
-      getSnapshot,
-    } = renderComponent();
+    const { getToggleButton, getCallingCodeInput, getSnapshot } =
+      renderComponent();
     fireEvent.click(getToggleButton());
     expect(getSnapshot()).toMatchSnapshot();
     expect(getCallingCodeInput()).toBeVisible();

@@ -18,7 +18,7 @@ const typographyVariant = [
   'overline',
 ] as const;
 
-export type Variant = (typeof typographyVariant)[number];
+export type Variant = typeof typographyVariant[number];
 
 export interface TypographyProps {
   /** Sets the Typography's element */

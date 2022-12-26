@@ -157,16 +157,16 @@ interface GroupHeaderProps {
 const getGroupHeaderStyles = ({ withGroupHeader }: GroupHeaderProps) =>
   withGroupHeader &&
   css`
-      content: '${withGroupHeader}';
-      display: block;
-      padding: 4px 8px;
-      color: ${Greyscale.devilsgrey};
-      font-size: 8px;
-      border-bottom: 1px solid ${Greyscale.softgrey};
-      text-transform: uppercase;
-      background: white;
-      cursor: default;
-    `;
+    content: '${withGroupHeader}';
+    display: block;
+    padding: 4px 8px;
+    color: ${Greyscale.devilsgrey};
+    font-size: 8px;
+    border-bottom: 1px solid ${Greyscale.softgrey};
+    text-transform: uppercase;
+    background: white;
+    cursor: default;
+  `;
 
 export const CallingCodeOption = styled.li<GroupHeaderProps>`
   cursor: pointer;

@@ -38,10 +38,10 @@ export const SelectLabel = styled.label<SelectLabelProps>`
   background: ${Greyscale.white};
   color: ${({ floating }) =>
     floating ? `${Greyscale.black}` : `${Greyscale.grey}`};
-  transition: all .2s;
+  transition: all 0.2s;
   pointer-events: none;
   font-size: ${({ small }) => (small ? '14px' : '16px')};
-  
+
   ${({ floating }) => {
     if (floating) {
       return `
@@ -89,10 +89,10 @@ export const SelectInput = styled.input<StyledSelectInputProps>`
     status === 'error'
       ? `2px solid ${PrimaryColor.glintsred}`
       : `2px solid ${Greyscale.grey}`};
-  transition: all .5s;
+  transition: all 0.5s;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   line-height: 1.5;
-  
+
   &::placeholder {
     color: ${Greyscale.grey};
   }
@@ -136,7 +136,7 @@ export const SelectInput = styled.input<StyledSelectInputProps>`
   }
   &:hover {
     border: 2px solid ${SecondaryColor.actionblue};
-    transition: all .5s;
+    transition: all 0.5s;
     ${({ status }) => {
       if (status === 'error') {
         return `
@@ -170,7 +170,7 @@ export const SelectInput = styled.input<StyledSelectInputProps>`
         small
           ? 'translate3d(-10px, -20px, 0)'
           : 'translate3d(-15px, -20px, 0)'};
-      transition: all .2s;
+      transition: all 0.2s;
       color: ${Greyscale.black};
       font-size: 12px;
       ${({ status }) => {

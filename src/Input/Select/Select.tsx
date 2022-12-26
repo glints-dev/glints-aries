@@ -87,10 +87,8 @@ const Select: React.FC<Props> & {
   const [isFocus, setIsFocus] = React.useState<boolean>(defaultOpen);
   const [isInputChange, setIsInputChange] = React.useState<boolean>(false);
   const [activeOptionIndex, setActiveOptionIndex] = React.useState<number>(0);
-  const [
-    shouldScrollToActiveOption,
-    setShouldScrollToActiveOption,
-  ] = React.useState<boolean>(false);
+  const [shouldScrollToActiveOption, setShouldScrollToActiveOption] =
+    React.useState<boolean>(false);
 
   const selectContainerRef: React.RefObject<HTMLDivElement> = React.useRef();
   const selectInputRef: React.RefObject<HTMLInputElement> = React.useRef();
@@ -126,12 +124,13 @@ const Select: React.FC<Props> & {
     return matchedChildrenOptions;
   }, [children, inputValue, disableTyping, isInputChange, filterFunction]);
 
-  const [options, setOptions] = React.useState<
-    React.ReactElement<
-      SelectItemProps,
-      string | React.JSXElementConstructor<unknown>
-    >[]
-  >(availableOptions);
+  const [options, setOptions] =
+    React.useState<
+      React.ReactElement<
+        SelectItemProps,
+        string | React.JSXElementConstructor<unknown>
+      >[]
+    >(availableOptions);
 
   React.useEffect(
     function updateOptionsAndActiveIndex() {

@@ -219,12 +219,8 @@ class Datepicker extends React.Component<Props, State> {
   };
 
   renderFirstWeekRow = () => {
-    const {
-      firstDay,
-      currentMonth,
-      currentYear,
-      currentActiveDate,
-    } = this.state;
+    const { firstDay, currentMonth, currentYear, currentActiveDate } =
+      this.state;
     let tempArray = [];
     tempArray = this.renderOffSetDay();
     for (let i = 1; i <= 7 - firstDay; i++) {
@@ -258,13 +254,8 @@ class Datepicker extends React.Component<Props, State> {
     array: React.ReactNode[] = [],
     startingCount = 0
   ): React.ReactNode => {
-    const {
-      firstDay,
-      lastDate,
-      currentMonth,
-      currentYear,
-      currentActiveDate,
-    } = this.state;
+    const { firstDay, lastDate, currentMonth, currentYear, currentActiveDate } =
+      this.state;
     const functionArray = array;
     const functionStartingCount =
       startingCount === 0 ? 8 - firstDay : startingCount;
@@ -381,13 +372,8 @@ class Datepicker extends React.Component<Props, State> {
 
   render() {
     const { label } = this.props;
-    const {
-      getFullDate,
-      currentYear,
-      monthValue,
-      isOpen,
-      showMonths,
-    } = this.state;
+    const { getFullDate, currentYear, monthValue, isOpen, showMonths } =
+      this.state;
 
     return (
       <DatepickerContainer className="aries-datepicker">

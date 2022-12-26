@@ -39,13 +39,8 @@ type TestSelectProps = Omit<React.ComponentProps<typeof Select>, 'items'> & {
 };
 
 const renderSelect = (props: TestSelectProps = { items }) => {
-  const {
-    container,
-    asFragment,
-    queryByTestId,
-    queryAllByRole,
-    rerender,
-  } = render(<Select items={items} {...props} />);
+  const { container, asFragment, queryByTestId, queryAllByRole, rerender } =
+    render(<Select items={items} {...props} />);
   const getSnapshot = asFragment;
   const getSelectContainer = () => queryByTestId('container');
   const getLabel = () => queryByTestId('label');
@@ -87,12 +82,8 @@ describe('<Select> (Downshift)', () => {
   });
 
   it('should render', () => {
-    const {
-      getSelectContainer,
-      getLabel,
-      getCombobox,
-      getMenu,
-    } = renderSelect();
+    const { getSelectContainer, getLabel, getCombobox, getMenu } =
+      renderSelect();
     expect(getSelectContainer()).toBeVisible();
     expect(getLabel()).toBe(null);
     expect(getCombobox()).toBeVisible();
