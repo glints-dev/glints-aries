@@ -28,8 +28,6 @@ module.exports = {
         regenerator: true,
       },
     ],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-    '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
     [
       'babel-plugin-styled-components',
@@ -37,7 +35,6 @@ module.exports = {
         ssr: true,
       },
     ],
-    ['@babel/plugin-proposal-private-methods', { loose: true }],
     ...(isEs
       ? []
       : [
