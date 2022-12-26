@@ -5,7 +5,8 @@ import { Typography, TypographyProps } from './Typography';
 import { BaseContainer } from '../../../Layout/GlintsContainer/GlintsContainer';
 import * as Colors from '../../../Utils/@next/colors';
 
-Typography.displayName = 'Typography.Paragraph';
+(Typography as React.FunctionComponent<TypographyProps>).displayName =
+  'Typography.Paragraph';
 
 export default {
   title: 'Typography/@next/Typography',

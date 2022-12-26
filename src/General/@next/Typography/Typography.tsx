@@ -32,12 +32,12 @@ export interface TypographyProps {
 
 const isVariant = (str: any): str is Variant => typographyVariant.includes(str);
 
-export const Typography: FunctionComponent<TypographyProps> = ({
+export const Typography = ({
   as = 'p',
   children,
   variant,
   ...props
-}) => {
+}: TypographyProps) => {
   if (!isVariant(variant)) {
     console.warn(
       `Variant: ${variant} is not of type Variant | undefined. \ntype Variant ${typographyVariant}`
