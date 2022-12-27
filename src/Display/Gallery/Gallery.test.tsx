@@ -17,16 +17,16 @@ const Component = ({
     initialVisibility={initialVisibility}
     imagesDisplayed={imagesDisplayed}
   >
-    <img src="1" />
-    <img src="2" />
-    <img src="3" />
-    <img src="4" />
-    <img src="5" />
-    <img src="6" />
-    <img src="7" />
-    <img src="8" />
-    <img src="9" />
-    <img src="10" />
+    <img src="1" alt="0" />
+    <img src="2" alt="1" />
+    <img src="3" alt="2" />
+    <img src="4" alt="3" />
+    <img src="5" alt="4" />
+    <img src="6" alt="5" />
+    <img src="7" alt="6" />
+    <img src="8" alt="7" />
+    <img src="9" alt="8" />
+    <img src="10" alt="9" />
   </Gallery>
 );
 
@@ -73,14 +73,6 @@ describe('<Gallery /> rendering', () => {
       <GalleryItemLessThanDefaultImagesDisplayed />
     );
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should return console error when item is invalid children', () => {
-    const error = jest.spyOn(console, 'error').mockImplementation();
-    render(<GalleryItemWithInvalidChildren />);
-
-    expect(error).toBeCalledWith('Only img components allowed as children.');
-    error.mockRestore();
   });
 });
 

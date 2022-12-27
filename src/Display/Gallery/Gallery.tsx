@@ -35,13 +35,6 @@ const Gallery = ({
 
   const getCurrentIndex = (index: number) => setCurrentIndex(index - 1);
 
-  const hasImage = React.Children.toArray(children).some(child => {
-    return React.isValidElement(child) && child.type === 'img';
-  });
-  if (!hasImage) {
-    console.error('Only img components allowed as children.');
-  }
-
   React.useEffect(function componentDidMount() {
     if (React.Children.count(children) > imagesDisplayed)
       setImageLeft(React.Children.count(children) - imagesDisplayed);
@@ -93,9 +86,7 @@ const Gallery = ({
             (data: React.ReactElement<React.HTMLProps<'img'>>, index) => (
               <Slider.Item key={`${data.props.src}_${index}`}>
                 <GalleryImageWrapper role="banner" tabIndex={0}>
-                  {React.cloneElement(data, {
-                    alt: index.toString(10),
-                  })}
+                  {data}
                 </GalleryImageWrapper>
               </Slider.Item>
             )
@@ -117,7 +108,6 @@ const Gallery = ({
                 {React.cloneElement(data, {
                   className: index === currentIndex ? 'active' : null,
                   'data-testid': 'gallery_thumbnail',
-                  alt: index.toString(10),
                 })}
               </div>
             )
