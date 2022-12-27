@@ -1,1 +1,1 @@
-export const large = '768px';
+export * from './Breakpoints';
