@@ -59,6 +59,10 @@ export const iconNames = [
   'ri-send-plane-line',
   'ri-settings-fill',
   'ri-settings-line',
+  'ri-checkbox-fill',
+  'ri-checkbox-line',
+  'ri-checkbox-indeterminate-fill',
+  'ri-checkbox-indeterminate-line',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -122,4 +126,8 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-send-plane-line']: Icons.RiSendPlaneLine,
   ['ri-settings-fill']: Icons.RiSettingsFill,
   ['ri-settings-line']: Icons.RiSettingsLine,
+  ['ri-checkbox-fill']: Icons.RiCheckboxFill,
+  ['ri-checkbox-line']: Icons.RiCheckboxLine,
+  ['ri-checkbox-indeterminate-fill']: Icons.RiCheckboxIndeterminateFill,
+  ['ri-checkbox-indeterminate-line']: Icons.RiCheckboxIndeterminateLine,
 };
