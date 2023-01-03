@@ -16,5 +16,5 @@ export const layer = `0 31px 41px 0 rgba(32, 42, 53, 0.2),
 export const modal = `0 26px 80px rgba(0, 0, 0, 0.2), 
   0 0px 1px rgba(0, 0, 0, 0.2)`;
 export const insetButton = 'inset 0 -1px 0 rgba(0, 0, 0, 0.2)';
-export const insetButtonPressed = 'inset 0 1px 0 rgba(0, 0, 0, 0.15)';
+export const insetButtonPressed = 'inset 0px 1px 0px rgba(0, 0, 0, 0.05)';
 export const focus = '0 0 0 2px rgb(106, 201, 236)';
