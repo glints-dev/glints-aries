@@ -1,4 +1,4 @@
-import React, { ElementType, FunctionComponent, ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react';
 
 import { StyledTypography } from './TypographyStyles';
 
