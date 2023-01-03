@@ -8,6 +8,8 @@ export const iconNames = [
   'ri-arrow-m-left-line',
   'ri-arrow-m-right-line',
   'ri-arrow-up-down-fill',
+  'ri-checkbox-fill',
+  'ri-checkbox-line',
   'ri-error-warning-fill',
   'ri-error-warning-line',
 ] as const;
@@ -22,6 +24,8 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-arrow-m-left-line']: Icons.RiArrowMLeftLine,
   ['ri-arrow-m-right-line']: Icons.RiArrowMRightLine,
   ['ri-arrow-up-down-fill']: Icons.RiArrowUpDownFill,
+  ['ri-checkbox-fill']: Icons.RiCheckboxFill,
+  ['ri-checkbox-line']: Icons.RiCheckboxLine,
   ['ri-error-warning-fill']: Icons.RiErrorWarningFill,
   ['ri-error-warning-line']: Icons.RiErrorWarningLine,
 };
