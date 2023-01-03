@@ -29,5 +29,10 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["es/", "lib/", "node_modules/"]
+  "ignorePatterns": [
+    "es/",
+    "lib/",
+    "node_modules/",
+    "src/General/Icon/components"
+  ]
 }
