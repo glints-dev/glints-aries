@@ -6,7 +6,7 @@
   "module": "./es/index.js",
   "sideEffects": false,
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^14 || ^16"
   },
   "scripts": {
     "build": "npm run build:icon && npm run build:lib && npm run build:es && npm run build:ts",
