@@ -44,9 +44,6 @@ export { default as Typography } from './General/Typography';
 // Employers
 export { default as ToggleSwitch } from './Input/ToggleSwitch';
 
-// @next rename after deprecation
-export { default as NTypography } from './General/@next/Typography'
-
 // Utilities
 export { Device, ScreenSize } from './Utils/StyleConfig';
 export { PrimaryColor, SecondaryColor, Greyscale } from './Utils/Colors';
@@ -59,6 +56,9 @@ import * as DropShadow from './Utils/@next/dropShadow';
 import * as Fonts from './Utils/@next/fonts';
 import * as Spacing from './Utils/@next/spacing';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
+
+//@next
+export * from './@next';
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
