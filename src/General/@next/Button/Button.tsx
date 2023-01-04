@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '../Typography';
+import { Typography } from '../Typography';
 import { BasicButton } from './ButtonStyle';
 
 export type ButtonSize = 'default' | 'slim' | 'large';

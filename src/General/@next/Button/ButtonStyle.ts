@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import styled from 'styled-components';
-import { Breakpoints } from '../../..';
+import * as Breakpoints from '../../../Utils/@next/breakpoints';
 import { borderRadius4 } from '../../../Utils/@next/borderRadius';
 import { Neutral } from '../../../Utils/@next/colors';
 import {
