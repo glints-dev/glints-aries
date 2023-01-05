@@ -3,6 +3,7 @@ dist
 es
 lib
 src/General/Icon/components
+src/General/@next/Icon/components
 *.log
 .out
 .DS_Store

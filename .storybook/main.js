@@ -9,4 +9,7 @@ module.exports = {
     './*.stories.mdx',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  features: {
+    storyStoreV7: true,
+  },
 };

@@ -9,11 +9,12 @@
     "node": "^14 || ^16"
   },
   "scripts": {
-    "build": "npm run build:icon && npm run build:lib && npm run build:es && npm run build:ts",
+    "build": "npm run build:icon && npm run build:next:icon && npm run build:lib && npm run build:es && npm run build:ts",
     "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
     "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
     "build:ts": "tsc --project tsconfig.declaration.json -d --declarationDir lib && tsc --project tsconfig.declaration.json -d --declarationDir es",
     "build:icon": "rm -rf src/General/Icon/components && babel-node --extensions .ts,.tsx src/Utils/Icon/generateIcons.ts && npm run format:icon",
+    "build:next:icon": "npx @svgr/cli --typescript --out-dir src/General/@next/Icon/components -- src/General/@next/Icon/icons",
     "format:icon": "prettier --write src/General/Icon/components/*.tsx",
     "imports": "babel-node --extensions .ts scripts/count-imports/index.ts",
     "lint": "npm run lint:css && npm run lint:ts",
@@ -62,6 +63,7 @@
     "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack5": "^6.5.15",
     "@storybook/react": "^6.5.15",
+    "@svgr/cli": "^6.5.1",
     "@testing-library/dom": "^8.11.3",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^11.2.7",
