@@ -4,7 +4,7 @@ import { StoryBookPage } from '../storybookPage';
 test('Button Group', async ({ page }) => {
   const buttonGroupPage = new StoryBookPage(
     page,
-    '?path=/story/buttongroup-next-buttongroup--interactive'
+    '?path=/story/next-buttongroup--interactive'
   );
   await buttonGroupPage.goto();
   await expect(buttonGroupPage.container).toHaveScreenshot('button-group.png');

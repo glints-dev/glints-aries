@@ -3,17 +3,13 @@ import { ButtonPage } from './buttonPage';
 
 const getPage = (page: Page) => {
   const buttonPage = new ButtonPage(page);
-  buttonPage.setPath(
-    '?path=/story/button-next-outlinemonochromebutton--interactive'
-  );
+  buttonPage.setPath('?path=/story/next-outlinemonochromebutton--interactive');
   return buttonPage;
 };
 
 test('Outline Monochrome Button', async ({ page }) => {
   const buttonPage = getPage(page);
-  buttonPage.setPath(
-    '?path=/story/button-next-outlinemonochromebutton--interactive'
-  );
+
   await buttonPage.goto();
 
   await expect(buttonPage.container).toHaveScreenshot(
