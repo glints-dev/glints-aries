@@ -3,7 +3,7 @@ import { ButtonPage } from './buttonPage';
 
 test('Outline Button', async ({ page }) => {
   const buttonPage = new ButtonPage(page);
-  buttonPage.setPath('?path=/story/button-next-outlinebutton--interactive');
+  buttonPage.setPath('?path=/story/next-outlinebutton--interactive');
   await buttonPage.goto();
 
   await expect(buttonPage.container).toHaveScreenshot('outline-button.png');

@@ -1,0 +1,8 @@
+import * as React from 'react';
+import { SVGProps } from 'react';
+const SvgRiReplyFill = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M11 20 1 12l10-8v5c5.523 0 10 4.477 10 10 0 .273-.01.543-.032.81A9 9 0 0 0 13 15h-2v5Z" />
+  </svg>
+);
+export default SvgRiReplyFill;

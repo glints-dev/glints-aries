@@ -1,0 +1,96 @@
+import { Meta } from '@storybook/addon-docs';
+import { iconNames } from './icons/icons';
+import { Typography } from '../Typography';
+import {
+  StyledIcon,
+  StyledItemList,
+  StyledUnorderedList,
+} from './IconStoriesStyles';
+import { Icon } from './Icon';
+import * as Colors from '../utilities/colors';
+
+<Meta title="@next/Icon" />
+
+# Icons
+
+<StyledUnorderedList>
+  {iconNames.map(name => (
+    <StyledItemList key={name}>
+      <StyledIcon name={name} height={28} />
+      <Typography variant="subtitle2">{name}</Typography>
+    </StyledItemList>
+  ))}
+</StyledUnorderedList>
+
+## How to use
+
+- import NIcon component from glints-aries and pass name prop to use the specific ico
+
+  n
+
+<div style={{ display: 'flex' }}>
+  <StyledIcon name="ri-account-circle-fill" height={48} />
+  <Typography variant="subtitle2">ri-account-circle-fill</Typography>
+</div>
+
+```ts
+import { NIcon as Icon } from 'glints-aries';
+
+export const MyComponent = () => <Icon name="ri-account-circle-fill" />;
+```
+
+### Color
+
+- you can change the color of the icon by passing the color to `fill` prop.
+
+<StyledIcon
+  name="ri-account-circle-fill"
+  height={48}
+  fill={Colors.Blue.Brand}
+/>
+
+```
+Import { Colors } from 'glints-aries'
+
+<Icon name="ri-account-circle-fill" height={48} fill={Colors.Blue.Brand} />
+```
+
+### Size
+
+- you can change the size of the icon by either passing a height or width as **props** or using **styles**.
+- passing at least either the `height` or `width` automatically sets the other with the same value.
+
+#### Props
+
+- Passing height or width as props
+
+```ts
+<Icon name="ri-account-circle-fill" height={48} />
+```
+
+#### Style
+
+- Resizing by specifying height or width in styles
+
+```ts
+import { NIcon as Icon } from 'glints-aries';
+import styled from 'styled-components';
+
+const StyledIcon = styled(Icon)`
+  height: '48px';
+`;
+
+export const MyComponent = () => <StyledIcon name="ri-account-circle-fill" />;
+```
+
+## Adding new icons
+
+1. Add svg file to `src/General/@next/Icon/icons`
+
+- make sure only viewBox is defined. Remove height, width or fill. This is to make sure the generated React component generates correct props for styles to work.
+
+2. Generate SVG React Component. Run `yarn build`. Components can be found in `src/General/@next/Icon/components`
+3. Update `src/General/@next/Icon/icons/icons.ts` file.
+
+- insert the new icon's name to `iconNames` in alphabetical order. Refer to Iconography naming convention.
+- update `iconsMappingComponent` with it's corresponding component name.

@@ -3,7 +3,7 @@ import { ButtonPage } from './buttonPage';
 
 test('Primary Button', async ({ page }) => {
   const buttonPage = new ButtonPage(page);
-  buttonPage.setPath('?path=/story/button-next-primarybutton--interactive');
+  buttonPage.setPath('?path=/story/next-primarybutton--interactive');
   await buttonPage.goto();
 
   await expect(buttonPage.container).toHaveScreenshot('primary-button.png');

@@ -3,7 +3,7 @@ import { ButtonPage } from './buttonPage';
 
 test('Desctructive Button', async ({ page }) => {
   const buttonPage = new ButtonPage(page);
-  buttonPage.setPath('?path=/story/button-next-destructivebutton--interactive');
+  buttonPage.setPath('?path=/story/next-destructivebutton--interactive');
   await buttonPage.goto();
 
   await expect(buttonPage.container).toHaveScreenshot('destructive-button.png');

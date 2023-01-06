@@ -5,7 +5,7 @@ export class ButtonPage extends StoryBookPage {
   readonly button: Locator;
 
   constructor(page: Page) {
-    super(page, '?path=/story/button-next-button--interactive');
+    super(page, '?path=/story/next-button--interactive');
     this.button = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('button', { name: 'Label' });
