@@ -1,16 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { AppProvider } from '@shopify/polaris';
-import { Table, TableProps, useIndexResourceState } from './Table';
+import {
+  IndexTable,
+  IndexTableProps,
+  useIndexResourceState,
+} from './IndexTable';
 import { BaseContainer } from '../../../Layout/GlintsContainer/GlintsContainer';
 import { Typography } from '../../../@next';
-import '@shopify/polaris/build/esm/styles.css';
+import { AppProvider } from 'polaris-glints';
+import enTranslations from 'polaris-glints/locales/en.json';
+import 'polaris-glints/build/esm/styles.css';
 
-(Table as React.FunctionComponent<TableProps>).displayName = 'Table';
+(IndexTable as React.FunctionComponent<IndexTableProps>).displayName = 'Table';
 
 export default {
-  title: 'Table/@next/Table',
-  component: Table,
+  title: 'IndexTable/@next/IndexTable',
+  component: IndexTable,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
   argTypes: {
     disabled: {
@@ -42,7 +47,7 @@ const resourceName = {
   plural: 'customers',
 };
 
-const Template: Story<TableProps> = args => {
+const Template: Story<IndexTableProps> = args => {
   const { selectedResources, allResourcesSelected, handleSelectionChange } =
     useIndexResourceState(customers);
 
@@ -69,43 +74,43 @@ const Template: Story<TableProps> = args => {
 
   const rowMarkup = customers.map(
     ({ id, name, location, orders, amountSpent }, index) => (
-      <Table.Row
+      <IndexTable.Row
         id={id}
         key={id}
         selected={selectedResources.includes(id)}
         position={index}
       >
-        <Table.Cell>
+        <IndexTable.Cell>
           <Typography variant="caption">{name}</Typography>
-        </Table.Cell>
-        <Table.Cell>{location}</Table.Cell>
-        <Table.Cell>{orders}</Table.Cell>
-        <Table.Cell>{amountSpent}</Table.Cell>
-      </Table.Row>
+        </IndexTable.Cell>
+        <IndexTable.Cell>{location}</IndexTable.Cell>
+        <IndexTable.Cell>{orders}</IndexTable.Cell>
+        <IndexTable.Cell>{amountSpent}</IndexTable.Cell>
+      </IndexTable.Row>
     )
   );
   return (
-    <AppProvider>
-      <Table
-        resourceName={resourceName}
-        itemCount={customers.length}
-        selectedItemsCount={
-          allResourcesSelected ? 'All' : selectedResources.length
-        }
-        onSelectionChange={handleSelectionChange}
-        bulkActions={bulkActions}
-        promotedBulkActions={promotedBulkActions}
-        headings={[
-          { title: 'Name' },
-          { title: 'Location' },
-          { title: 'Order count' },
-          { title: 'Amount spent' },
-        ]}
-        {...args}
-      >
-        {rowMarkup}
-      </Table>
-    </AppProvider>
+    // <AppProvider i18n={enTranslations}>
+    <IndexTable
+      resourceName={resourceName}
+      itemCount={customers.length}
+      selectedItemsCount={
+        allResourcesSelected ? 'All' : selectedResources.length
+      }
+      onSelectionChange={handleSelectionChange}
+      bulkActions={bulkActions}
+      promotedBulkActions={promotedBulkActions}
+      headings={[
+        { title: 'Name' },
+        { title: 'Location' },
+        { title: 'Order count' },
+        { title: 'Amount spent' },
+      ]}
+      {...args}
+    >
+      {rowMarkup}
+    </IndexTable>
+    // </AppProvider>
   );
 };
 
