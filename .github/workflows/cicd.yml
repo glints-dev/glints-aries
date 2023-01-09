@@ -38,8 +38,6 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install --prefer-offline
-      - name: Build Icons
-        run: yarn build:next:icon
       - name: Build storybook
         run: yarn storybook:build:test
       - name: Run Playwright tests
@@ -67,8 +65,6 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install --prefer-offline
-      - name: Build Icons
-        run: yarn build:next:icon
       - name: Deploy to Chromatic
         uses: chromaui/action@v1
         with:
