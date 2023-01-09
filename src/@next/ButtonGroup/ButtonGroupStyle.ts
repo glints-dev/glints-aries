@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
-import { B68 } from '../utilities/colors/neutral';
+import { Neutral } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
 
 export interface ButtonGroupProps
@@ -15,9 +15,6 @@ export const ButtonGroup = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  > button {
-    z-index: 1;
-  }
   ${({ segmented }: ButtonGroupProps) =>
     segmented
       ? `> button {
@@ -30,9 +27,18 @@ export const ButtonGroup = styled.div`
 
             :nth-last-child(1) {
              border-radius: 0px ${borderRadius4} ${borderRadius4} 0px;
-             border-right: 1px solid ${B68}
+             border-right: 1px solid ${Neutral.B68}
             }
-           }`
+           }
+           > button:focus {
+            z-index: 1;
+            border: 1px solid ${Neutral.B68}
+           }
+
+           button[data-active='true'] {
+            border: 1px solid ${Neutral.B40}
+           }
+           `
       : `gap: ${space8};`}
   ${({ fullWidth }: ButtonGroupProps) =>
     fullWidth

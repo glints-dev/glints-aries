@@ -17,4 +17,5 @@ export const StyledItemList = styled.li`
 
 export const StyledIcon = styled(Icon)<IconProps>`
   margin-right: 1em;
+  fill: currentColor;
 `;

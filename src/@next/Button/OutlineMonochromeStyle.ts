@@ -1,17 +1,10 @@
 import styled from 'styled-components';
 import { Red } from '../utilities/colors';
-import { B100 } from '../utilities/colors/neutral';
+import { Neutral } from '../utilities/colors/';
 import { button } from '../utilities/dropShadow';
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 
 export const OutlineMonochromeButton = styled(Button)`
-  ${({ active }: ButtonProps) =>
-    active
-      ? `&[style] {
-    color: ${B100} !important;
-    background: ${Red.B93} !important;
-    }`
-      : ``}
   color: ${Red.B93};
   border: 1px solid ${Red.B93};
   filter: drop-shadow(${button});
@@ -26,5 +19,10 @@ export const OutlineMonochromeButton = styled(Button)`
     background: ${Red.B100};
     opacity: 1;
     border: 1px solid ${Red.B93};
+  }
+
+  &[data-active='true'] {
+    color: ${Neutral.B100};
+    background: ${Red.B93};
   }
 `;

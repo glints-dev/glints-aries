@@ -36,3 +36,21 @@ test('Button - full width', async ({ page }) => {
   await buttonPage.goto('args=fullWidth:true');
   await expect(buttonPage.container).toHaveScreenshot('button-full-width.png');
 });
+
+test('Button - loading', async ({ page }) => {
+  const buttonPage = new ButtonPage(page);
+  await buttonPage.goto('args=loading:true');
+  await expect(buttonPage.container).toHaveScreenshot('button-loading.png');
+});
+
+test('Button - icons', async ({ page }) => {
+  const buttonPage = new ButtonPage(page);
+  buttonPage.setPath('?path=/story/next-button--with-icon');
+  await buttonPage.goto();
+  await expect(buttonPage.container).toHaveScreenshot('button-with-icons.png');
+
+  await buttonPage.goto('args=iconPosition:right');
+  await expect(buttonPage.container).toHaveScreenshot(
+    'button-with-icons-right.png'
+  );
+});

@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius4 } from '../utilities/borderRadius';
@@ -18,32 +17,32 @@ import {
 import { ButtonProps, ButtonSize } from './Button';
 
 const defaultButtonSizeStyle = `
-  width: 75px;
+  min-width: 75px;
   height: 36px;
   padding: ${space8} ${space16};
 
   @media (max-width: ${Breakpoints.large}) {
-    width: 71px;
+    min-width: 71px;
   }
 `;
 
 const largeButtonSizeStyle = `
-  width: 91px;
+min-width: 91px;
   height: 44px;
   padding: ${space12} ${space24};
 
   @media (max-width: ${Breakpoints.large}) {
-    width: 87px;
+    min-width: 87px;
   }
 `;
 
 const slimButtonSizeStyle = `
-  width: 67px;
+min-width: 67px;
   height: 32px;
   padding: ${space4} ${space12};
 
   @media (max-width: ${Breakpoints.large}) {
-    width: 63px;
+    min-width: 63px;
   }
 `;
 
@@ -53,23 +52,9 @@ const buttonSizeStyleMap: Record<ButtonSize, string> = {
   large: largeButtonSizeStyle,
 };
 
-export const BasicButton = styled.button.attrs(
-  ({ active, fullWidth }: ButtonProps) => {
-    const activeStyle = {
-      color: `${Neutral.B100}`,
-      background: `${Neutral.B40}`,
-    };
-    const widthStyle = { width: '100%' };
-    return {
-      style: {
-        ...(active && activeStyle),
-        ...(fullWidth && widthStyle),
-      } as CSSProperties,
-    };
-  }
-)`
+export const StyledButton = styled.button<ButtonProps>`
   display: flex;
-  gap: 10px;
+  gap: 8px;
   border-width: 1px;
   border-style: solid;
   border-radius: ${borderRadius4};
@@ -88,29 +73,77 @@ export const BasicButton = styled.button.attrs(
     cursor: pointer;
     background: ${Neutral.B99};
   }
+
   &:focus {
     outline: none;
-    border-color: ${Neutral.B100};
+    border-color: ${Neutral.B68};
     box-shadow: ${buttonFocused};
   }
+
   &:active {
     background: ${Neutral.B95};
     border: 1px solid ${Neutral.B68};
     box-shadow: ${insetButtonPressed};
   }
+
+  &:active > svg {
+    fill: ${Neutral.B40};
+  }
+
   &:disabled {
     color: ${Neutral.B68};
     background: ${Neutral.B95};
   }
-  ${({ size }: ButtonProps) => {
+
+  &:disabled svg {
+    fill: ${Neutral.B85};
+  }
+
+  ${({ size = 'default' }: ButtonProps) => {
     const sizeStyle = buttonSizeStyleMap[size];
     if (size && !sizeStyle) {
       console.warn(`${size} is not a valid ButtonSize, default will be used`);
     }
     return buttonSizeStyleMap[size] || defaultButtonSizeStyle;
   }}
-  > svg {
-    width: 18px;
-    height: 18px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: ${Neutral.B40};
+  }
+
+  .spinner-container {
+    position: absolute;
+  }
+
+  &[data-active='true'] {
+    color: ${Neutral.B100};
+    background: ${Neutral.B40};
+  }
+
+  &[data-full-width='true'] {
+    width: 100%;
+  }
+
+  &[data-icon='true'] {
+    gap: 4px;
+  }
+
+  &[data-active='true'] svg {
+    fill: ${Neutral.B100};
+  }
+
+  &[data-loading='true'] {
+    background: ${Neutral.B99};
+    color: transparent;
+  }
+
+  &[data-loading='true'] svg {
+    fill: transparent;
+  }
+
+  &[data-loading='true'] .spinner-container svg {
+    fill: ${Neutral.B85};
   }
 `;

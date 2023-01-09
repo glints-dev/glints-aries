@@ -18,4 +18,12 @@ export const PrimaryButton = styled(Button)`
     background: ${Blue.S100};
     opacity: 1;
   }
+
+  &[data-loading='true'] {
+    background: ${Neutral.B95};
+  }
+
+  svg {
+    fill: ${Neutral.B100};
+  }
 `;
