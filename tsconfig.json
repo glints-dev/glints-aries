@@ -22,5 +22,5 @@
       "styled-components"
     ]
   },
-  "include": ["src/**/*", "stories/**/*"]
+  "include": ["src/**/*", "stories/**/*", "typings/**/*"]
 }
