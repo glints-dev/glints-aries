@@ -63,6 +63,7 @@ export const iconNames = [
   'ri-checkbox-line',
   'ri-checkbox-indeterminate-fill',
   'ri-checkbox-indeterminate-line',
+  'ri-search',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -130,4 +131,5 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-checkbox-line']: Icons.RiCheckboxLine,
   ['ri-checkbox-indeterminate-fill']: Icons.RiCheckboxIndeterminateFill,
   ['ri-checkbox-indeterminate-line']: Icons.RiCheckboxIndeterminateLine,
+  ['ri-search']: Icons.RiSearch,
 };

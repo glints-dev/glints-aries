@@ -149,6 +149,9 @@
     ],
     "modulePathIgnorePatterns": [
       "test/e2e/"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.ts"
     ]
   },
   "optionalDependencies": {
