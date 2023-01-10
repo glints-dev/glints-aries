@@ -8,6 +8,7 @@ export {
 export { ButtonGroup } from './ButtonGroup';
 export { Icon } from './Icon';
 export { Typography } from './Typography';
+export { Tab, Tabs, TabProps, TabsProps } from './Tabs';
 
 // Utilities
 import * as Breakpoints from './utilities/breakpoints';
