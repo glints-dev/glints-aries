@@ -11,7 +11,6 @@ import {
 import { noop } from 'lodash-es';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
-import { Neutral, Red, Blue } from '../utilities/colors';
 
 export interface CheckboxProps
   extends Omit<
@@ -28,8 +27,6 @@ export interface CheckboxProps
   onChange?(newChecked: boolean, id: string): void;
 }
 
-const randomId = nanoid();
-
 export const Checkbox = ({
   label,
   id,
@@ -41,6 +38,7 @@ export const Checkbox = ({
   helpText,
   ...otherProps
 }: CheckboxProps) => {
+  const randomId = nanoid();
   const checkBoxId = id ? id : randomId;
   const labelId = `label-${checkBoxId}`;
 
@@ -50,7 +48,6 @@ export const Checkbox = ({
   const checkedIcon = indeterminate
     ? 'ri-checkbox-indeterminate-fill'
     : 'ri-checkbox-fill';
-  const iconFill = disabled ? Neutral.B95 : hasError ? Red.B93 : Blue.S99;
 
   useEffect(() => {
     const value = indeterminate ? 'mixed' : checked;
@@ -68,7 +65,7 @@ export const Checkbox = ({
   };
 
   return (
-    <StyledContainer aria-disabled={disabled}>
+    <StyledContainer aria-disabled={disabled} data-error={hasError}>
       <StyledRow>
         <StyledLeftColumn>
           <StyledCheckboxContainer>
@@ -94,12 +91,7 @@ export const Checkbox = ({
                 {...otherProps}
               />
             </StyledCheckbox>
-            <Icon
-              name={checkedIcon}
-              height="20px"
-              width="20px"
-              fill={iconFill}
-            />
+            <Icon name={checkedIcon} />
           </StyledCheckboxContainer>
         </StyledLeftColumn>
         <StyledColumn>

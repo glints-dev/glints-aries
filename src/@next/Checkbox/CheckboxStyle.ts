@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Breakpoints } from '../..';
 import { borderRadius4 } from '../utilities/borderRadius';
-import { Neutral, Red } from '../utilities/colors';
+import { Blue, Neutral, Red } from '../utilities/colors';
 import { space4 } from '../utilities/spacing';
 
 import { CheckboxProps } from './Checkbox';
@@ -21,22 +21,32 @@ export const StyledContainer = styled.div`
   svg {
     border-radius: 4px;
     position: absolute;
+    height: 20px;
+    width: 20px;
     top: 0;
     left: 0;
     opacity: 0;
     pointer-events: none;
+    fill: ${Blue.S99};
   }
 
   &[aria-disabled='true'],
   &[aria-disabled='true'] .help-text {
     color: ${Neutral.B68};
   }
+
   &[aria-disabled='true'] div[role='checkbox'] {
     border-color: ${Neutral.B85};
     background: ${Neutral.B95};
   }
+
   &[aria-disabled='true'] svg {
     background: ${Neutral.B68};
+    fill: ${Neutral.B95};
+  }
+
+  &[data-error='true'] svg {
+    fill: ${Red.B93};
   }
 `;
 
