@@ -14,7 +14,7 @@ import { Typography } from '../Typography';
 
 export interface CheckboxProps
   extends Omit<
-    React.HtmlHTMLAttributes<HTMLInputElement>,
+    React.InputHTMLAttributes<HTMLInputElement>,
     'type' | 'onChange'
   > {
   id?: string;
@@ -55,13 +55,13 @@ export const Checkbox = ({
   }, [checked, indeterminate]);
 
   const handleClick = () => {
-    if (!onChange || !inputNode.current || disabled) {
+    if (!inputNode.current || disabled) {
       return;
     }
 
     const checkedValue = !checkedState;
     setCheckedState(checkedValue);
-    onChange(checkedValue, checkBoxId);
+    onChange?.(checkedValue, checkBoxId);
   };
 
   return (
