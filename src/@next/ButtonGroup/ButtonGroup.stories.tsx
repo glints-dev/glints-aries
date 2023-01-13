@@ -25,7 +25,7 @@ const Template: Story<ButtonGroupProps> = args => {
     <>
       <OutlineButton>Label</OutlineButton>
       <OutlineButton>Label</OutlineButton>
-      <OutlineButton>Label</OutlineButton>
+      <OutlineButton active={true}>Label</OutlineButton>
       <OutlineButton>Label</OutlineButton>
       <OutlineButton>Label</OutlineButton>
     </>
