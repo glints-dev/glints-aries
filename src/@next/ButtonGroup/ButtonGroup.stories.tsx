@@ -1,10 +1,10 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ButtonGroup, ButtonGroupProps } from './ButtonGroupStyle';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { PrimaryButton } from '../Button/PrimaryButtonStyle';
 import { Button } from '../Button/Button';
 import { OutlineButton } from '../Button/OutlineButtonStyle';
+import { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 
 (ButtonGroup as React.FunctionComponent<ButtonGroupProps>).displayName =
   'ButtonGroup';

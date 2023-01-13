@@ -11,6 +11,7 @@ export { Icon } from './Icon';
 export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
 export { Typography } from './Typography';
 export { Avatar } from './Avatar';
+export { Popover } from './Popover';
 
 // Utilities
 import * as BorderRadius from './utilities/borderRadius';

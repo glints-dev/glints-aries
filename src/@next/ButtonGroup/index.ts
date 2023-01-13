@@ -1,3 +1,1 @@
-import { ButtonGroup } from './ButtonGroupStyle';
-
-export { ButtonGroup };
+export { ButtonGroup } from './ButtonGroup';

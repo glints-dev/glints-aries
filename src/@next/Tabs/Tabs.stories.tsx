@@ -151,7 +151,7 @@ Interactive.parameters = {
         </Tabs>
       );
     };`,
-      language: 'html',
+      language: 'javascript',
       type: 'auto',
     },
   },
