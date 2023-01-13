@@ -91,7 +91,7 @@ All visual test and screenshots can be found in `test/e2e` directory
 
 To generate new screenshots locally:
 
-Create docker image with `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.29.0-focal /bin/bash`
+Create docker image with `docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.29.2-focal /bin/bash`
 
 Run following commands in that image:
 

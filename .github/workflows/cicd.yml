@@ -12,8 +12,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          cache: 'yarn'
+          node-version: "16"
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Build
@@ -26,7 +26,7 @@ jobs:
   visual-test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.29.0-focal
+      image: mcr.microsoft.com/playwright:v1.29.2-focal
       options: --user 1001
     steps:
       - name: Checkout repository
@@ -34,8 +34,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          cache: 'yarn'
+          node-version: "16"
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Build storybook
@@ -61,8 +61,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          cache: 'yarn'
+          node-version: "16"
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Deploy to Chromatic
