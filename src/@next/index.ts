@@ -1,18 +1,19 @@
+export { Badge } from './Badge';
 export {
   Button,
-  OutlineButton,
   DestructiveButton,
+  OutlineButton,
   OutlineMonochromeButton,
   PrimaryButton,
 } from './Button';
 export { ButtonGroup } from './ButtonGroup';
 export { Icon } from './Icon';
+export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
 export { Typography } from './Typography';
-export { Tab, Tabs, TabProps, TabsProps } from './Tabs';
 
 // Utilities
-import * as Breakpoints from './utilities/breakpoints';
 import * as BorderRadius from './utilities/borderRadius';
+import * as Breakpoints from './utilities/breakpoints';
 import * as Colors from './utilities/colors';
 import * as DropShadow from './utilities/dropShadow';
 import * as Fonts from './utilities/fonts';
