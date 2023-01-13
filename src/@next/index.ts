@@ -10,6 +10,7 @@ export { ButtonGroup } from './ButtonGroup';
 export { Icon } from './Icon';
 export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
 export { Typography } from './Typography';
+export { Avatar } from './Avatar';
 
 // Utilities
 import * as BorderRadius from './utilities/borderRadius';
