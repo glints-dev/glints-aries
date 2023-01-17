@@ -49,11 +49,11 @@ export const iconNames = [
   'ri-delete-bin-line',
   'ri-error-warning-fill',
   'ri-error-warning-line',
-  'ri-facebook',
+  'ri-facebook-circle-line',
   'ri-information-fill',
   'ri-information-line',
   'ri-loader',
-  'ri-location',
+  'ri-map-line',
   'ri-message-fill',
   'ri-message-line',
   'ri-pencil-fill',
@@ -67,7 +67,7 @@ export const iconNames = [
   'ri-send-plane-line',
   'ri-settings-fill',
   'ri-settings-line',
-  'ri-twitter',
+  'ri-twitter-line',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -121,11 +121,11 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-delete-bin-line']: Icons.RiDeleteBinLine,
   ['ri-error-warning-fill']: Icons.RiErrorWarningFill,
   ['ri-error-warning-line']: Icons.RiErrorWarningLine,
-  ['ri-facebook']: Icons.RiFacebook,
+  ['ri-facebook-circle-line']: Icons.RiFacebookCircleLine,
   ['ri-information-fill']: Icons.RiInformationFill,
   ['ri-information-line']: Icons.RiInformationLine,
   ['ri-loader']: Icons.RiLoader,
-  ['ri-location']: Icons.RiLocation,
+  ['ri-map-line']: Icons.RiMapLine,
   ['ri-message-fill']: Icons.RiMessageFill,
   ['ri-message-line']: Icons.RiMessageLine,
   ['ri-pencil-fill']: Icons.RiPencilFill,
@@ -139,5 +139,5 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-send-plane-line']: Icons.RiSendPlaneLine,
   ['ri-settings-fill']: Icons.RiSettingsFill,
   ['ri-settings-line']: Icons.RiSettingsLine,
-  ['ri-twitter']: Icons.RiTwitter,
+  ['ri-twitter-line']: Icons.RiTwitterLine,
 };
