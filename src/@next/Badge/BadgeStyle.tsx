@@ -32,4 +32,5 @@ export const BadgeStyle = styled.div<BadgeProps>`
   width: fit-content;
   padding: 2px ${space8};
   border-radius: ${borderRadius20};
+  line-height: 0;
 `;
