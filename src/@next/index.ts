@@ -22,4 +22,6 @@ export { Popover } from './Popover';
 export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag } from './Tag';
 export { Typography } from './Typography';
+export { Banner } from './Banner';
+
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
