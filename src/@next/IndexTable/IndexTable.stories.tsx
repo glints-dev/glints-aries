@@ -5,16 +5,16 @@ import {
   IndexTableProps,
   useIndexResourceState,
 } from './IndexTable';
-import { BaseContainer } from '../../../Layout/GlintsContainer/GlintsContainer';
-import { Typography } from '../../../@next';
-import { AppProvider } from 'polaris-glints';
-import enTranslations from 'polaris-glints/locales/en.json';
+import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
+import { Typography } from '..';
 import 'polaris-glints/build/esm/styles.css';
+import { Checkbox } from '../Checkbox';
+import { Icon } from '../Icon';
 
 (IndexTable as React.FunctionComponent<IndexTableProps>).displayName = 'Table';
 
 export default {
-  title: 'IndexTable/@next/IndexTable',
+  title: '@next/IndexTable',
   component: IndexTable,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
   argTypes: {
@@ -24,32 +24,32 @@ export default {
   },
 } as Meta;
 
-const customers = [
+const candidates = [
   {
     id: '3413',
-    url: 'customers/341',
-    name: 'Mae Jemison',
-    location: 'Decatur, USA',
-    orders: 20,
-    amountSpent: '$2,400',
+    url: 'candidate/341',
+    name: 'Dwi Nugraha Putri',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
   },
   {
     id: '2563',
-    url: 'customers/256',
-    name: 'Ellen Ochoa',
-    location: 'Los Angeles, USA',
-    orders: 30,
-    amountSpent: '$140',
+    url: 'candidate/256',
+    name: 'Ahmad Dani',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
   },
 ];
 const resourceName = {
-  singular: 'customer',
-  plural: 'customers',
+  singular: 'candidate',
+  plural: 'candidates',
 };
 
 const Template: Story<IndexTableProps> = args => {
   const { selectedResources, allResourcesSelected, handleSelectionChange } =
-    useIndexResourceState(customers);
+    useIndexResourceState(candidates);
 
   const promotedBulkActions = [
     {
@@ -72,28 +72,35 @@ const Template: Story<IndexTableProps> = args => {
     },
   ];
 
-  const rowMarkup = customers.map(
-    ({ id, name, location, orders, amountSpent }, index) => (
+  const rowMarkup = candidates.map(
+    ({ id, name, location, expectedSalary, yearsExperience }, index) => (
       <IndexTable.Row
         id={id}
         key={id}
         selected={selectedResources.includes(id)}
         position={index}
+        checkbox={<Checkbox />}
+        // checkbox="text"
       >
         <IndexTable.Cell>
-          <Typography variant="caption">{name}</Typography>
+          <Icon name="ri-account-circle-fill" height={40} />
         </IndexTable.Cell>
-        <IndexTable.Cell>{location}</IndexTable.Cell>
-        <IndexTable.Cell>{orders}</IndexTable.Cell>
-        <IndexTable.Cell>{amountSpent}</IndexTable.Cell>
+        <IndexTable.Cell>
+          <Typography variant="body2">{name}</Typography>
+          <Typography variant="body1">{location}</Typography>
+        </IndexTable.Cell>
+        <IndexTable.Cell>{expectedSalary}</IndexTable.Cell>
+        <IndexTable.Cell>{yearsExperience}</IndexTable.Cell>
+        <IndexTable.Cell>ButtonGroup</IndexTable.Cell>
       </IndexTable.Row>
     )
   );
   return (
-    // <AppProvider i18n={enTranslations}>
+    // <AppProvider i18n={translations}>
     <IndexTable
+      // checkbox={<Checkbox />}
       resourceName={resourceName}
-      itemCount={customers.length}
+      itemCount={candidates.length}
       selectedItemsCount={
         allResourcesSelected ? 'All' : selectedResources.length
       }
@@ -101,10 +108,11 @@ const Template: Story<IndexTableProps> = args => {
       bulkActions={bulkActions}
       promotedBulkActions={promotedBulkActions}
       headings={[
-        { title: 'Name' },
-        { title: 'Location' },
-        { title: 'Order count' },
-        { title: 'Amount spent' },
+        { title: '' },
+        { title: 'Name & Location' },
+        { title: 'Expected Salary' },
+        { title: 'Years of Experience' },
+        { title: 'Actions' },
       ]}
       {...args}
     >
@@ -115,4 +123,3 @@ const Template: Story<IndexTableProps> = args => {
 };
 
 export const Interactive = Template.bind({});
-Interactive.args = { size: 'default', disabled: false };

@@ -1,7 +1,9 @@
+export const space2 = '2px';
 export const space4 = '4px';
 export const space8 = '8px';
 export const space12 = '12px';
 export const space16 = '16px';
+export const space18 = '18px';
 export const space24 = '24px';
 export const space32 = '32px';
 export const space40 = '40px';
