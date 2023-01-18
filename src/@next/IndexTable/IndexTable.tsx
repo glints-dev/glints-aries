@@ -1,27 +1,21 @@
 import React from 'react';
 import {
   Cell,
-  // IndexTable,
   IndexTable as PolarisIndexTable,
   IndexTableProps as PolarisIndexTableProps,
-  IndexTableSelectionType,
   Row,
   useIndexResourceState,
-  useIndexTableIndexSelectionChange,
 } from 'polaris-glints';
-// import { Checkbox } from './components/Checkbox/Checkbox';
-// "@shopify/polaris"
+import { Checkbox } from '../Checkbox';
+import { CheckboxProps } from '../Checkbox';
 
 interface IndexTableProps extends PolarisIndexTableProps {}
 const IndexTable = ({ children, ...props }: IndexTableProps) => {
-  const handleSelectionChange = useIndexTableIndexSelectionChange();
-
-  const handleSelectPage = (checked: boolean) => {
-    handleSelectionChange(IndexTableSelectionType.Page, checked); // SelectionType
-  };
-
+  const renderCheckbox = ({ onChange, checked, ...props }: CheckboxProps) => (
+    <Checkbox onChange={onChange} checked={checked} {...props} />
+  );
   return (
-    <PolarisIndexTable checkbox={<Checkbox />} {...props}>
+    <PolarisIndexTable checkbox={renderCheckbox} {...props}>
       {children}
     </PolarisIndexTable>
   );
