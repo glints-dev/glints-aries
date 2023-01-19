@@ -53,6 +53,8 @@ jobs:
     needs: validate
     if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -72,5 +74,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: storybook:build
-      - name: Publish Summary
-        run: echo -e "| Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |" >> $GITHUB_STEP_SUMMARY
+      - name: Publish as comment
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Storybook Preview: ${{steps.chromatic.outputs.storybookUrl}}
