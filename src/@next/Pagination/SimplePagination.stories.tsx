@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Pagination } from './Pagination';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { PaginationProps } from './paginationUtils';
+import { SimplePagination } from './SimplePagination';
 
-(Pagination as React.FunctionComponent<PaginationProps>).displayName =
+(SimplePagination as React.FunctionComponent<PaginationProps>).displayName =
   'Pagination';
 
 export default {
-  title: '@next/Pagination',
-  component: Pagination,
+  title: '@next/SimplePagination',
+  component: SimplePagination,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
@@ -17,9 +17,8 @@ const Template: Story<PaginationProps> = args => {
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
-    <Pagination
-      pageSize={args.pageSize}
-      totalItems={args.totalItems}
+    <SimplePagination
+      {...args}
       currentPage={currentPage}
       onPageChanged={setCurrentPage}
     />

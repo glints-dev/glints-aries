@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '../Icon';
 import { PageButtonProps, PageButton } from './PageButton';
 import { StyledNav } from './PaginationStyle';
 import {
@@ -35,7 +34,6 @@ export const Pagination = ({
   const Pager = ({ value, ...props }: Partial<PageButtonProps>) => (
     <PageButton
       {...props}
-      key={value}
       value={value}
       onClick={handlePagerClick}
       disabled={disabled}
@@ -49,7 +47,7 @@ export const Pagination = ({
     (currentPage === beginFoldPage && currentPage === endFoldPage)
   ) {
     for (let i = 1; i <= totalPages; i++) {
-      pageList.push(<Pager value={i} />);
+      pageList.push(<Pager key={i} value={i} />);
     }
   } else {
     let left = 1;
@@ -84,21 +82,29 @@ export const Pagination = ({
     }
 
     for (let i = left; i <= right; i++) {
-      pageList.push(<Pager value={i} />);
+      pageList.push(<Pager key={i} value={i} />);
     }
     const jumpPre = calculateNextJumpPage(-(bufferSize * 2 + 1));
     const jumpNext = calculateNextJumpPage(bufferSize * 2 + 1);
 
-    const FirstPager = <Pager value={1} />;
-    const LastPager = <Pager value={totalPages} />;
+    const FirstPager = <Pager value={1} key={1} />;
+    const LastPager = <Pager value={totalPages} key={totalPages} />;
 
     if (hasJumpPre) {
-      pageList.unshift(<Pager value={jumpPre}>...</Pager>);
+      pageList.unshift(
+        <Pager key={jumpPre} value={jumpPre}>
+          ...
+        </Pager>
+      );
       pageList.unshift(FirstPager);
     }
 
     if (hasJumpNext) {
-      pageList.push(<Pager value={jumpNext}>...</Pager>);
+      pageList.push(
+        <Pager key={jumpNext} value={jumpNext}>
+          ...
+        </Pager>
+      );
       pageList.push(LastPager);
     }
   }
