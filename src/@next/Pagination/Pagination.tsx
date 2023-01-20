@@ -92,7 +92,7 @@ export const Pagination = ({
 
     if (hasJumpPre) {
       pageList.unshift(
-        <Pager key={jumpPre} value={jumpPre}>
+        <Pager key="jump-pre" value={jumpPre}>
           ...
         </Pager>
       );
@@ -101,7 +101,7 @@ export const Pagination = ({
 
     if (hasJumpNext) {
       pageList.push(
-        <Pager key={jumpNext} value={jumpNext}>
+        <Pager key="jump-next" value={jumpNext}>
           ...
         </Pager>
       );
