@@ -6,6 +6,15 @@ import * as DropShadow from './utilities/dropShadow';
 import * as Fonts from './utilities/fonts';
 import * as Spacing from './utilities/spacing';
 
+export {
+  Alert,
+  AlertContext,
+  AlertContextProps,
+  AlertProps,
+  AlertProvider,
+  AlertWithProvider,
+  useAlert,
+} from './Alert';
 export { Avatar, AvatarProps } from './Avatar';
 export { Badge, BadgeProps } from './Badge';
 export { Banner, BannerProps } from './Banner';
