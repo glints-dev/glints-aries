@@ -115,7 +115,7 @@ export const Pagination = ({
     <PreviousStepper
       key="prev-stepper"
       value={currentPage - 1}
-      disabled={!hasPrevious}
+      disabled={!hasPrevious || disabled}
       onClick={handlePagerClick}
     />
   );
@@ -123,7 +123,7 @@ export const Pagination = ({
     <NextStepper
       key="next-stepper"
       value={currentPage + 1}
-      disabled={!hasNext}
+      disabled={!hasNext || disabled}
       onClick={handlePagerClick}
     />
   );

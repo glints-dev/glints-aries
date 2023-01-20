@@ -18,8 +18,7 @@ const Template: Story<PaginationProps> = args => {
 
   return (
     <Pagination
-      pageSize={args.pageSize}
-      totalItems={args.totalItems}
+      {...args}
       currentPage={currentPage}
       onPageChanged={setCurrentPage}
     />
