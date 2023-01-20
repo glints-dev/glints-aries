@@ -6,6 +6,7 @@ import { space4, space8 } from '../utilities/spacing';
 import { TagProps } from './Tag';
 
 export const TagStyle = styled.div<TagProps>`
+  display: inline-flex;
   background-color: ${Blue.S08};
   width: fit-content;
   padding: ${space4} ${space8};

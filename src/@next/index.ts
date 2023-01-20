@@ -16,6 +16,7 @@ export {
   PrimaryButton,
 } from './Button';
 export { ButtonGroup } from './ButtonGroup';
+export { Divider } from './Divider';
 export { Icon } from './Icon';
 export { Popover } from './Popover';
 export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
