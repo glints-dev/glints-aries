@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadius2 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
-import { space4, space8 } from '../utilities/spacing';
+import { space4 } from '../utilities/spacing';
 
 export const StyledNav = styled.nav`
   display: flex;
