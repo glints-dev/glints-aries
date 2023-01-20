@@ -31,7 +31,7 @@ export const SimplePagination = ({
     <StyledNav>
       <PreviousStepper
         value={currentPage - 1}
-        disabled={!hasPrevious}
+        disabled={!hasPrevious || disabled}
         onClick={handlePagerClick}
       />
       <PageButton
@@ -40,19 +40,19 @@ export const SimplePagination = ({
         onClick={handlePagerClick}
         active={true}
       />
-      <StyledSimplePaginationButton>
+      <StyledSimplePaginationButton disabled={disabled}>
         <Typography as="div" variant="body1">
           /
         </Typography>
       </StyledSimplePaginationButton>
-      <StyledSimplePaginationButton>
+      <StyledSimplePaginationButton disabled={disabled}>
         <Typography as="div" variant="body1">
           {totalPages}
         </Typography>
       </StyledSimplePaginationButton>
       <NextStepper
         value={currentPage + 1}
-        disabled={!hasNext}
+        disabled={!hasNext || disabled}
         onClick={handlePagerClick}
       />
     </StyledNav>
