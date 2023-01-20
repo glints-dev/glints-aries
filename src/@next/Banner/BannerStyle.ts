@@ -5,15 +5,15 @@ import { Blue, Green, Neutral, Orange, Red } from '../utilities/colors';
 
 export const StyledCloseIconWrapper = styled.div`
   cursor: pointer;
-  svg {
+  &&& svg {
     right: 0;
-    top: 0 !important;
-    fill: ${Neutral.B40} !important;
+    top: 0;
+    fill: ${Neutral.B40};
   }
 
   @media (max-width: ${Breakpoints.large}) {
-    svg {
-      top: -1px !important;
+    &&& svg {
+      top: -1px;
     }
   }
 `;

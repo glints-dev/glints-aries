@@ -38,6 +38,7 @@ export const iconNames = [
   'ri-calendar-fill',
   'ri-calendar-line',
   'ri-check',
+  'ri-checkbox-circle-fill',
   'ri-checkbox-fill',
   'ri-checkbox-indeterminate-fill',
   'ri-checkbox-indeterminate-line',
@@ -67,13 +68,6 @@ export const iconNames = [
   'ri-send-plane-line',
   'ri-settings-fill',
   'ri-settings-line',
-  'ri-checkbox-fill',
-  'ri-checkbox-line',
-  'ri-checkbox-indeterminate-fill',
-  'ri-checkbox-indeterminate-line',
-  'ri-search',
-  'ri-loader',
-  'ri-checkbox-circle-fill',
   'ri-twitter-line',
 ] as const;
 
@@ -117,6 +111,7 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-calendar-fill']: Icons.RiCalendarFill,
   ['ri-calendar-line']: Icons.RiCalendarLine,
   ['ri-check']: Icons.RiCheck,
+  ['ri-checkbox-circle-fill']: Icons.RiCheckboxCircleFill,
   ['ri-checkbox-fill']: Icons.RiCheckboxFill,
   ['ri-checkbox-indeterminate-fill']: Icons.RiCheckboxIndeterminateFill,
   ['ri-checkbox-indeterminate-line']: Icons.RiCheckboxIndeterminateLine,
@@ -146,6 +141,5 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-send-plane-line']: Icons.RiSendPlaneLine,
   ['ri-settings-fill']: Icons.RiSettingsFill,
   ['ri-settings-line']: Icons.RiSettingsLine,
-  ['ri-checkbox-circle-fill']: Icons.RiCheckboxCircleFill,
   ['ri-twitter-line']: Icons.RiTwitterLine,
 };

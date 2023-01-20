@@ -22,7 +22,7 @@ export type BannerProps = {
   onDismiss?: () => void;
 };
 
-const iconNameStatusMap = {
+const iconNameStatusMap: Record<BannerProps['status'], IconNames> = {
   success: 'ri-checkbox-circle-fill',
   info: 'ri-information-fill',
   warning: 'ri-error-warning-fill',
@@ -49,36 +49,34 @@ export const Banner = ({
     : iconByStatus || iconNameStatusMap['info'];
 
   return (
-    <div>
-      <StyledBanner data-titled={!!title} data-status={status} {...props}>
-        <StyledBannerTitleContainer>
-          <Icon name={iconNameValue as IconNames} />
-          <StyledBannerContentContainer>
-            <Typography as="span" variant="subtitle1">
-              {title}
-            </Typography>
-          </StyledBannerContentContainer>
-          {dismissable && (
-            <StyledCloseIconWrapper onClick={() => onDismiss?.()}>
-              <Icon name="ri-close" />
-            </StyledCloseIconWrapper>
-          )}
-        </StyledBannerTitleContainer>
+    <StyledBanner data-titled={!!title} data-status={status} {...props}>
+      <StyledBannerTitleContainer>
+        <Icon name={iconNameValue} />
         <StyledBannerContentContainer>
-          <Typography as="div" variant="body1">
-            {children}
+          <Typography as="span" variant="subtitle1">
+            {title}
           </Typography>
         </StyledBannerContentContainer>
-        <StyledBannerContentContainer>
-          {action ||
-            (secondaryAction && (
-              <ButtonGroup>
-                {action}
-                {secondaryAction}
-              </ButtonGroup>
-            ))}
-        </StyledBannerContentContainer>
-      </StyledBanner>
-    </div>
+        {dismissable && (
+          <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
+            <Icon name="ri-close" />
+          </StyledCloseIconWrapper>
+        )}
+      </StyledBannerTitleContainer>
+      <StyledBannerContentContainer>
+        <Typography as="div" variant="body1">
+          {children}
+        </Typography>
+      </StyledBannerContentContainer>
+      <StyledBannerContentContainer>
+        {action ||
+          (secondaryAction && (
+            <ButtonGroup>
+              {action}
+              {secondaryAction}
+            </ButtonGroup>
+          ))}
+      </StyledBannerContentContainer>
+    </StyledBanner>
   );
 };
