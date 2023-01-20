@@ -8,6 +8,7 @@ import * as Spacing from './utilities/spacing';
 
 export { Avatar } from './Avatar';
 export { Badge } from './Badge';
+export { Banner, BannerProps } from './Banner';
 export {
   Button,
   DestructiveButton,
@@ -22,4 +23,5 @@ export { Popover } from './Popover';
 export { Tab, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag } from './Tag';
 export { Typography } from './Typography';
+
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };

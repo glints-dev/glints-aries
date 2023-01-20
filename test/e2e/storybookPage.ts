@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 // eslint-disable-next-line prettier/prettier
-type Args = `args=${string}`;
+export type Args = `args=${string}`;
 
 export class StoryBookPage {
   readonly page: Page;
