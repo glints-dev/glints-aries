@@ -78,7 +78,7 @@ export const StyledAlertContainer = styled.div`
       transform: translateX(-10px);
     }
     100% {
-      transfomr: translateX(0px);
+      transform: translateX(0px);
     }
   }
 `;
