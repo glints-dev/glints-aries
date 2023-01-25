@@ -1,13 +1,5 @@
-import { Button } from './Button';
-import { DestructiveButton } from './DesctructiveButtonStyle';
-import { OutlineButton } from './OutlineButtonStyle';
-import { OutlineMonochromeButton } from './OutlineMonochromeStyle';
-import { PrimaryButton } from './PrimaryButtonStyle';
-
-export {
-  Button,
-  DestructiveButton,
-  OutlineButton,
-  OutlineMonochromeButton,
-  PrimaryButton,
-};
+export * from './Button';
+export * from './DesctructiveButtonStyle';
+export * from './OutlineButtonStyle';
+export * from './OutlineMonochromeStyle';
+export * from './PrimaryButtonStyle';

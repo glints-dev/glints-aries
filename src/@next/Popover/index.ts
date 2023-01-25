@@ -1,1 +1,1 @@
-export { Popover, PopoverProps } from './Popover';
+export * from './Popover';
