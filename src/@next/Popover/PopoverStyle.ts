@@ -92,6 +92,7 @@ export const StyledPopover: any = createGlobalStyle`
 .Polaris-Popover__Pane {
   flex: 1 1;
   max-width: 100%;
+  padding: ${space8};
 }
 
 .Polaris-Popover__Pane + .Polaris-Popover__Pane {
@@ -112,12 +113,12 @@ export const StyledPopover: any = createGlobalStyle`
 }
 
 .Polaris-Popover__Section {
-  padding: ${space16};
+  padding: ${space8} ${space16};
   color: ${Neutral.B40};
 }
 
 .Polaris-Popover__Section + .Polaris-Popover__Section {
-  border-top: 1px solid #e1e3e5;
+  border-top: 1px solid ${Neutral.B85};
 }
 
 .Polaris-Popover__FocusTracker {
