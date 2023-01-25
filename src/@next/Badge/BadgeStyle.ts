@@ -28,7 +28,7 @@ const getBadgeBackgroundColor = (status: BadgeStatusVariant) => {
 export const BadgeStyle = styled.div<BadgeProps>`
   ${({ status }: BadgeProps) => ({
     'background-color': getBadgeBackgroundColor(status),
-  })}}
+  })}
   width: fit-content;
   padding: 2px ${space8};
   border-radius: ${borderRadius20};

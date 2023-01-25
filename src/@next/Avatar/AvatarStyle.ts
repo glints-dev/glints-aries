@@ -70,11 +70,11 @@ const getAvatarSizeStyle = (sizeVariant: AvatarSizeVariant) => {
 export const AvatarStyle = styled.div<AvatarProps>`
   ${({ size }: AvatarProps) => {
     return getAvatarSizeStyle(size);
-  }}}
+  }}
 
   ${({ variant }: AvatarProps) => ({
     'background-color': getAvatarBackgroundColor(variant),
-  })}}
+  })}
 
   display: flex;
   align-items: center;
