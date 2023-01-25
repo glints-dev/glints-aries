@@ -1,33 +1,42 @@
 import {
   IndexTableRowContext,
-  IndexTableSelectionType,
-  useIndexTableIndexSelectionChange,
+  // IndexTableSelectionType,
+  // useIndexSelectionChange,
 } from 'polaris-glints';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { Checkbox as GlintsCheckbox } from '../../../Checkbox';
 import { CheckboxCellContentContainer, CheckboxWrapper } from './CheckboxStyle';
 
 export const Checkbox = () => {
   const { itemId, selected, disabled, onInteraction } =
     useContext(IndexTableRowContext);
-  const handleSelectionChange = useIndexTableIndexSelectionChange();
+  // const handleSelectionChange = useIndexSelectionChange();
 
-  const handleSelectPage = (checked: boolean) => {
-    handleSelectionChange(IndexTableSelectionType.Page, checked); // SelectionType
-  };
+  console.log('itemId', itemId, 'selected', selected);
+  // const handleSelectPage = (checked: boolean) => {
+  //   // console.log(
+  //   //   'checked',
+  //   //   IndexTableSelectionType,
+  //   //   checked,
+  //   //   handleSelectionChange
+  //   // );
+  //   handleSelectionChange(IndexTableSelectionType.Page, checked); // SelectionType
+  // };
 
   return (
-    <CheckboxWrapper onClick={onInteraction}>
+    <CheckboxWrapper>
       <CheckboxCellContentContainer>
         <div onClick={onInteraction}>
           <GlintsCheckbox
             id={itemId}
             checked={selected}
             disabled={disabled}
-            onChange={handleSelectPage}
+            // onChange={handleSelectPage}
           />
         </div>
       </CheckboxCellContentContainer>
     </CheckboxWrapper>
   );
 };
+
+export const MemoizedCheckbox = memo(Checkbox);

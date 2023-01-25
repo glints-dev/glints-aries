@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import { Spacing } from '../../..';
 
-export const CheckboxWrapper = styled.td`
+export const CheckboxWrapper = styled.div`
   margin: 0;
   position: relative;
   top: 15%;
