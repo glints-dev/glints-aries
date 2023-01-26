@@ -1,8 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Input } from '../Input/Input';
-import { NumberInput } from '../NumberInput';
+import React, { useState } from 'react';
 import { Typography } from '../Typography';
-import { PageButton } from './PageButton';
 import {
   ActiveSimplePaginationButton,
   SimplePaginationInput,
