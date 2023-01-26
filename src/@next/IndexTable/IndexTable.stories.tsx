@@ -39,7 +39,7 @@ export default {
 const candidates = [
   {
     id: '1',
-    url: 'candidate/341',
+    url: 'candidate/1',
     name: 'Dwi Nugraha Putri',
     location: 'Jakarta, Indonesia',
     expectedSalary: 'Rp 11,400,000/mo',
@@ -49,8 +49,28 @@ const candidates = [
   },
   {
     id: '2',
-    url: 'candidate/256',
+    url: 'candidate/2',
     name: 'Ahmad Dani',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '3',
+    url: 'candidate/3',
+    name: 'Syed Ali',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '4',
+    url: 'candidate/4',
+    name: 'Muhammad Danial',
     location: 'Jakarta, Indonesia',
     expectedSalary: 'Rp 11,400,000/mo',
     yearsExperience: '4 years, 3 months',
@@ -67,20 +87,31 @@ const Template: Story<IndexTableProps> = args => {
   const { selectedResources, allResourcesSelected, handleSelectionChange } =
     useIndexResourceState(candidates);
 
-  // const handleSelectionChange = () => {
-  //   console.log('handleSelection');
-  // };
-
-  console.log('handleSelectionChange stories', handleSelectionChange);
-
-  const bulkActions = [
+  const promotedBulkActions = [
     {
       content: 'Reject',
       onAction: () => console.log('Reject'),
     },
     {
-      content: 'Move to',
-      onAction: () => console.log('Move to'),
+      title: 'Move to',
+      actions: [
+        {
+          content: 'Assessment',
+          onAction: () => console.log('Assessment'),
+        },
+        {
+          content: 'Interviewing',
+          onAction: () => console.log('Interviewing'),
+        },
+        {
+          content: 'Offered',
+          onAction: () => console.log('Offered'),
+        },
+        {
+          content: 'Hired',
+          onAction: () => console.log('Hired'),
+        },
+      ],
     },
   ];
 
@@ -135,7 +166,7 @@ const Template: Story<IndexTableProps> = args => {
         allResourcesSelected ? 'All' : selectedResources.length
       }
       onSelectionChange={handleSelectionChange}
-      bulkActions={bulkActions}
+      promotedBulkActions={promotedBulkActions}
       headings={[
         { title: '' },
         { title: 'Name & Location' },
