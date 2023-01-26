@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Breakpoints } from '../..';
+import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral, Red } from '../utilities/colors';
 import { InputProps } from './Input';
 
