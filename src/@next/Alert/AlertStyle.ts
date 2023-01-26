@@ -91,5 +91,5 @@ export const StyledAlertCloseIconContainer = styled.div`
 `;
 
 export const StyledAlertContentColumn = styled.div`
-  padding: 0 ${space8};
+  padding: 0;
 `;
