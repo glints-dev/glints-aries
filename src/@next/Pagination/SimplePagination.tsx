@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Input } from '../Input/Input';
+import { NumberInput } from '../NumberInput';
 import { Typography } from '../Typography';
 import { PageButton } from './PageButton';
-import { StyledNav, StyledSimplePaginationButton } from './PaginationStyle';
+import {
+  ActiveSimplePaginationButton,
+  SimplePaginationInput,
+  StyledNav,
+  StyledSimplePaginationButton,
+} from './PaginationStyle';
 import {
   defaultPageSize,
   getAllPages,
@@ -16,15 +23,32 @@ export const SimplePagination = ({
   pageSize = defaultPageSize,
   onPageChanged,
 }: PaginationProps) => {
+  const [editMode, setEditMode] = useState(false);
+
   const totalPages = getAllPages(pageSize, totalItems);
   const hasPrevious = currentPage - 1 > 0;
   const hasNext = currentPage + 1 <= totalPages;
 
-  const handlePagerClick = (value: number) => {
-    if (value < 1 || value > totalPages) {
+  const handlePageNumberChange = (value: number) => {
+    let page = value;
+    if (value < 1) {
+      page = 1;
+    }
+    if (value > totalPages) {
+      page = totalPages;
+    }
+    onPageChanged?.(page);
+  };
+
+  const handleEditMode = () => {
+    if (editMode) {
       return;
     }
-    onPageChanged?.(value);
+    setEditMode(true);
+  };
+
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.select();
   };
 
   return (
@@ -32,14 +56,32 @@ export const SimplePagination = ({
       <PreviousStepper
         value={currentPage - 1}
         disabled={!hasPrevious || disabled}
-        onClick={handlePagerClick}
+        onClick={handlePageNumberChange}
       />
-      <PageButton
-        value={currentPage}
-        disabled={disabled}
-        onClick={handlePagerClick}
-        active={true}
-      />
+      <div onClick={handleEditMode}>
+        {!editMode && (
+          <ActiveSimplePaginationButton
+            value={currentPage}
+            disabled={disabled}
+            onClick={handlePageNumberChange}
+          >
+            <Typography as="div" variant="body1">
+              {currentPage}
+            </Typography>
+          </ActiveSimplePaginationButton>
+        )}
+        {editMode && (
+          <SimplePaginationInput
+            autoFocus
+            onFocus={handleFocus}
+            onChange={e => {
+              handlePageNumberChange(Number(e.currentTarget.value));
+            }}
+            onBlur={() => setEditMode(false)}
+            value={currentPage}
+          />
+        )}
+      </div>
       <StyledSimplePaginationButton disabled={disabled}>
         <Typography as="div" variant="body1">
           /
@@ -53,7 +95,7 @@ export const SimplePagination = ({
       <NextStepper
         value={currentPage + 1}
         disabled={!hasNext || disabled}
-        onClick={handlePagerClick}
+        onClick={handlePageNumberChange}
       />
     </StyledNav>
   );
