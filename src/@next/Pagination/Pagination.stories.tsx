@@ -27,3 +27,20 @@ const Template: Story<PaginationProps> = args => {
 
 export const Interactive = Template.bind({});
 Interactive.args = { totalItems: 200, pageSize: 10 };
+Interactive.parameters = {
+  docs: {
+    source: {
+      code: `  const [currentPage, setCurrentPage] = useState(1);
+
+      return (
+        <Pagination
+          {...args}
+          currentPage={currentPage}
+          onPageChanged={setCurrentPage}
+        />
+      );`,
+      language: 'javascript',
+      type: 'auto',
+    },
+  },
+};

@@ -11,7 +11,7 @@ export const StyledNav = styled.nav`
 export const StyledPageButton = styled.button`
   cursor: pointer;
   height: 32px;
-  width: 32px;
+  min-width: 32px;
   border: 0;
   background: ${Neutral.B100};
   border-radius: ${borderRadius2};
