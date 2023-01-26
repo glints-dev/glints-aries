@@ -20,9 +20,11 @@ const IndexTable = ({
 }: IndexTableProps) => {
   const [showBulkActions, setShowBulkActions] = useState(false);
 
-  console.log('props', props);
-  //checkbox header
-  const renderCheckbox = ({ checked, onChange, ...props }: CheckboxProps) => {
+  const renderCheckboxHeader = ({
+    checked,
+    onChange,
+    ...props
+  }: CheckboxProps) => {
     return <Checkbox onChange={onChange} checked={checked} {...props} />;
   };
 
@@ -53,7 +55,7 @@ const IndexTable = ({
   return (
     <PolarisIndexTable
       bulkActions={bulkActions}
-      checkbox={renderCheckbox}
+      checkbox={renderCheckboxHeader}
       itemCount={itemCount}
       selectedItemsCount={selectedItemsCount}
       renderBulkActions={renderBulkActions}
