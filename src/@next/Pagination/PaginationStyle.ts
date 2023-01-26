@@ -53,7 +53,7 @@ export const StyledSimplePaginationButton = styled(StyledPageButton)`
   pointer-events: none;
 `;
 
-export const ActiveSimplePaginationButton = styled(PageButton)`
+export const StyledActiveSimplePaginationButton = styled(PageButton)`
   background: ${Blue.S08};
   color: ${Blue.S99};
 
@@ -63,7 +63,7 @@ export const ActiveSimplePaginationButton = styled(PageButton)`
   }
 `;
 
-export const SimplePaginationInput = styled(NumberInput)`
+export const StyledSimplePaginationInput = styled(NumberInput)`
   padding: 0;
   text-align: center;
   height: 32px;

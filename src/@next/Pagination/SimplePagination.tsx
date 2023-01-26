@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Typography } from '../Typography';
 import {
-  ActiveSimplePaginationButton,
-  SimplePaginationInput,
+  StyledActiveSimplePaginationButton,
+  StyledSimplePaginationInput,
   StyledNav,
   StyledSimplePaginationButton,
 } from './PaginationStyle';
@@ -57,7 +57,7 @@ export const SimplePagination = ({
       />
       <div onClick={handleEditMode}>
         {!editMode && (
-          <ActiveSimplePaginationButton
+          <StyledActiveSimplePaginationButton
             value={currentPage}
             disabled={disabled}
             onClick={handlePageNumberChange}
@@ -65,10 +65,10 @@ export const SimplePagination = ({
             <Typography as="div" variant="body1">
               {currentPage}
             </Typography>
-          </ActiveSimplePaginationButton>
+          </StyledActiveSimplePaginationButton>
         )}
         {editMode && (
-          <SimplePaginationInput
+          <StyledSimplePaginationInput
             autoFocus
             onFocus={handleFocus}
             onChange={e => {
