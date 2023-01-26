@@ -2,14 +2,12 @@ import styled from 'styled-components';
 import { Breakpoints } from '../..';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Blue, Neutral, Red } from '../utilities/colors';
-import { space4 } from '../utilities/spacing';
 
 import { CheckboxProps } from './Checkbox';
 
 export const StyledContainer = styled.div`
   flex-direction: row;
   align-items: flex-start;
-  padding: ${space4} 0px;
   gap: 8px;
   color: ${Neutral.B18};
 
