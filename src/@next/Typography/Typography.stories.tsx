@@ -19,7 +19,7 @@ export default {
 } as Meta;
 
 const defaultText =
-  "Tanya farnuva naar cam utinu en lokirim tanka tel' taurnin. Lirimaerea vedui' il'er Lotesse Shaalth.";
+  "Tanya farnuva naar cam utinu en lokirim tanka tel' taurnin. Lirimaerea vedui' il'er Lotesse Shaalth";
 
 const Template: Story<TypographyProps> = args => (
   <Typography {...args}>{args.children || defaultText}</Typography>
