@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Icon } from '../Icon';
 import { IconNames } from '../Icon/icons/icons';
 import { Typography } from '../Typography';

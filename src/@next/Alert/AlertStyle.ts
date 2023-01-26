@@ -18,7 +18,7 @@ export const StyledAlertContainer = styled.div`
     0px 3px 6px -3px rgba(71, 71, 71, 0.08);
   animation: slide-from-right 400ms cubic-bezier(0.35, 0.8, 1, 0.86);
   z-index: 100;
-
+  color: ${Neutral.B18};
   svg {
     display: block;
     height: 24px;
@@ -85,11 +85,11 @@ export const StyledAlertContainer = styled.div`
 
 export const StyledAlertCloseIconContainer = styled.div`
   cursor: pointer;
-  svg {
+  &&& svg {
     fill: ${Neutral.B40};
   }
 `;
 
 export const StyledAlertContentColumn = styled.div`
-  padding: 0 ${space12};
+  padding: 0;
 `;
