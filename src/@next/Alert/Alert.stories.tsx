@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Button } from '../Button';
+import { Typography } from '../Typography';
 import { Alert, AlertProps } from './Alert';
 
 (Alert as React.FunctionComponent<AlertProps>).displayName = 'Alert';
@@ -37,5 +38,9 @@ Interactive.args = {
   title: 'Title',
   content: 'Alert content',
   status: 'info',
-  children: null,
+  children: (
+    <Typography as="span" variant="body2" color="#017EB7">
+      Learn more
+    </Typography>
+  ),
 };
