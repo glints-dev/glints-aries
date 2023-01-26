@@ -113,14 +113,16 @@ export const Checkbox = ({
           </label>
         </StyledColumn>
       </StyledRow>
-      <StyledRow>
-        <StyledLeftColumn></StyledLeftColumn>
-        <StyledColumn className="help-text">
-          <Typography as="span" variant="subtitle2">
-            {helpText}
-          </Typography>
-        </StyledColumn>
-      </StyledRow>
+      {helpText && (
+        <StyledRow>
+          <StyledLeftColumn></StyledLeftColumn>
+          <StyledColumn className="help-text">
+            <Typography as="span" variant="subtitle2">
+              {helpText}
+            </Typography>
+          </StyledColumn>
+        </StyledRow>
+      )}
     </StyledContainer>
   );
 };
