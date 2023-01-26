@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { PaginationProps } from './paginationUtils';
@@ -14,14 +14,14 @@ export default {
 } as Meta;
 
 const Template: Story<PaginationProps> = args => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [page, setPage] = useState(1);
 
+  const { currentPage, ...rest } = args;
+  useEffect(() => {
+    setPage(currentPage);
+  }, [currentPage]);
   return (
-    <SimplePagination
-      {...args}
-      currentPage={currentPage}
-      onPageChanged={setCurrentPage}
-    />
+    <SimplePagination {...rest} currentPage={page} onPageChanged={setPage} />
   );
 };
 
