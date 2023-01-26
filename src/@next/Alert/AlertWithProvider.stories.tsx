@@ -1,11 +1,12 @@
 import { Meta, Story } from '@storybook/react';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Button } from '../Button';
 import { AlertProps } from './Alert';
 import { useAlert } from './useAlert';
 import { AlertWithProvider } from './AlertWithProvider';
 import { withAlertProvider } from '../../../.storybook/Decorators';
+import { Typography } from '../Typography';
 
 (AlertWithProvider as React.FunctionComponent<AlertProps>).displayName =
   'AlertWithProvider';
@@ -15,7 +16,7 @@ export default {
   component: AlertWithProvider,
 } as Meta;
 
-const Template: Story = () => {
+const Template: Story<AlertProps> = args => {
   const { showAlert } = useAlert();
 
   return (
@@ -24,9 +25,7 @@ const Template: Story = () => {
       <Button
         onClick={() =>
           showAlert({
-            title: 'Title',
-            content: 'Content',
-            children: <a href="#">Learn more</a>,
+            ...args,
           })
         }
       >
@@ -38,7 +37,17 @@ const Template: Story = () => {
 
 export const Interactive = Template.bind({});
 
-Interactive.args = {};
+Interactive.args = {
+  title: 'Title',
+  content: 'Alert content',
+  status: 'info',
+  children: (
+    <Typography as="span" variant="body2" color="#017EB7">
+      Learn more
+    </Typography>
+  ),
+};
+
 Interactive.decorators = [withAlertProvider];
 Interactive.parameters = {
   docs: {
