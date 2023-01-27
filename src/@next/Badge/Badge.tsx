@@ -18,14 +18,34 @@ export type BadgeStatusVariant = typeof badgeStatusVariant[number];
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   status?: BadgeStatusVariant;
+  textColor?: string;
 }
 
-export const Badge = ({ children, status, ...props }: BadgeProps) => {
+const renderTextColor = (
+  textColor: string,
+  status: BadgeStatusVariant
+): string => {
+  if (textColor) {
+    return textColor;
+  }
+
+  if (status === 'new') {
+    return Neutral.B100;
+  }
+
+  return Neutral.B18;
+};
+export const Badge = ({
+  children,
+  status,
+  textColor,
+  ...props
+}: BadgeProps) => {
   const content =
-    typeof children === 'string' ? (
+    typeof children === 'string' || typeof children === 'number' ? (
       <Typography
         variant="overline"
-        color={status === 'new' ? Neutral.B100 : Neutral.B18}
+        color={renderTextColor(textColor, status)}
         as={'span'}
       >
         {children}
@@ -33,7 +53,6 @@ export const Badge = ({ children, status, ...props }: BadgeProps) => {
     ) : (
       children
     );
-
   return (
     <BadgeStyle status={status ? status : 'neutral'} {...props}>
       <div>{content}</div>

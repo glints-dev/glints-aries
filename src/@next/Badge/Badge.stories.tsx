@@ -12,6 +12,15 @@ export default {
   title: '@next/Badge',
   component: Badge,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
+  argTypes: {
+    textColor: {
+      description: 'Text color of the badge',
+      control: 'color',
+      table: {
+        category: 'Colors',
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<BadgeProps> = args => (
