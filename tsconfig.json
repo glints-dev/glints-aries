@@ -20,7 +20,6 @@
       "react-dom",
       // "storybook__react",
       "styled-components"
-      // "@shopify/polaris"
     ]
   },
   "include": ["src/**/*", "stories/**/*", "typings/**/*"]
