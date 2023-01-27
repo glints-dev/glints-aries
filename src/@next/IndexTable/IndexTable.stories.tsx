@@ -33,6 +33,12 @@ export default {
     disabled: {
       control: 'boolean',
     },
+    loading: {
+      control: 'boolean',
+    },
+    loadingLabel: {
+      control: 'text',
+    },
   },
 } as Meta;
 
