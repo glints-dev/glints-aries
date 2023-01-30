@@ -1,27 +1,41 @@
 import styled from 'styled-components';
 import { Breakpoints } from '..';
-import { borderRadius4 } from '../utilities/borderRadius';
+import {
+  borderRadius2,
+  borderRadius4,
+  borderRadiusHalf,
+} from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space4, space8 } from '../utilities/spacing';
-import { TagContentProps, TagRemoveContainerProps, TagStyleProps } from './Tag';
+import { TagContentProps, TagProps, TagRemoveContainerProps } from './Tag';
 
 export const TagContentStyle = styled.span<TagContentProps>`
-  padding-top: ${space4};
-  padding-bottom: ${space4};
-  padding-left: ${space8};
+  padding: ${space4} ${space8};
 
-  ${({ onRemove }: TagContentProps) => {
-    return { 'padding-right': onRemove ? 0 : space8 };
-  }}
+  &[data-removeable='true'] {
+    padding-right: 0;
+  }
 `;
 
 export const TagRemoveContainerStyle = styled.div<TagRemoveContainerProps>`
   padding: ${space4};
   display: flex;
-  box-sizing: border-box;
 `;
 
-export const TagStyle = styled.div<TagStyleProps>`
+export const TagIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    margin: -2px;
+    outline: none;
+    border: 2px solid ${Blue.S100};
+    border-radius: ${borderRadius4};
+  }
+`;
+
+export const TagStyle = styled.div<TagProps>`
   display: inline-flex;
   align-items: center;
   background-color: ${Blue.S08};
@@ -33,20 +47,20 @@ export const TagStyle = styled.div<TagStyleProps>`
     font-size: 12px;
   }
 
-  ${({ onRemove, isPressed, isHover }: TagStyleProps) => {
-    if (onRemove && isHover) {
-      return `
-      &:hover {
-        border: 1px solid ${isPressed ? Blue.S100 : `${Blue.S100}FA`}; 
-        margin: -1px;
-      }
-      `;
-    }
-  }}
+  & svg {
+    padding: 0;
+  }
 
   & svg:hover {
     cursor: pointer;
     background-color: ${Neutral.B95};
-    border-radius: 99px;
+    border-radius: ${borderRadiusHalf};
+  }
+
+  & svg:active {
+    cursor: pointer;
+    background-color: ${Neutral.B40};
+    fill: ${Neutral.B100};
+    border: 2px solid yellow;
   }
 `;

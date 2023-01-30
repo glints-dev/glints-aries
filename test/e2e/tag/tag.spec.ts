@@ -39,4 +39,66 @@ test.describe('removeable tag', () => {
       'tag-removeable-small-size.png'
     );
   });
+
+  test.describe('hover state', () => {
+    test('removeable tag hover state - standard size', async ({ page }) => {
+      const tagPage = getRemoveableTagPage(page);
+      await tagPage.goto();
+
+      await tagPage.page
+        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+        .getByRole('button')
+        .first()
+        .hover({ force: true });
+
+      await expect(tagPage.container).toHaveScreenshot(
+        'tag-removeable-hover-standard-size.png'
+      );
+    });
+
+    test('removeable tag hover state - small size', async ({ page }) => {
+      page.setViewportSize({ width: 768, height: 600 });
+      const tagPage = getRemoveableTagPage(page);
+      await tagPage.goto();
+      await tagPage.page
+        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+        .getByRole('button')
+        .first()
+        .hover({ force: true });
+      await expect(tagPage.container).toHaveScreenshot(
+        'tag-removeable-hover-small-size.png'
+      );
+    });
+  });
+
+  test.describe('focus state', () => {
+    test('removeable tag focused state - standard size', async ({ page }) => {
+      const tagPage = getRemoveableTagPage(page);
+      await tagPage.goto();
+
+      await tagPage.page
+        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+        .getByRole('button')
+        .first()
+        .focus();
+
+      await expect(tagPage.container).toHaveScreenshot(
+        'tag-removeable-focus-standard-size.png'
+      );
+    });
+
+    test('removeable tag focused state - small size', async ({ page }) => {
+      page.setViewportSize({ width: 768, height: 600 });
+      const tagPage = getRemoveableTagPage(page);
+      await tagPage.goto();
+      await tagPage.page
+        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+        .getByRole('button')
+        .first()
+        .focus();
+      await expect(tagPage.container).toHaveScreenshot(
+        'tag-removeable-focus-small-size.png'
+      );
+    });
+  });
 });
