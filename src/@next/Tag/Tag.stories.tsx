@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Tag, TagProps } from './Tag';
@@ -42,23 +42,32 @@ const DefaultTemplate: Story<TagProps> = () => {
 };
 
 const RemoveableTemplate: Story<TagProps> = () => {
-  const [removedTagText, setRemoveTagText] = useState('');
+  const [selectedTags, setSelectedTags] = useState([
+    'Years of Experience: 0 to 3 Years, 3 to 5 Years',
+    'Expected Salary: $1.000.000 to $3.000.000',
+    'Current Location: Agats, Indonesia',
+  ]);
 
-  return (
-    <>
-      <Tag
-        value={'removeable tag value'}
-        onRemove={(value: string) => {
-          setRemoveTagText(
-            `on remove function is clicked, with argument of '${value}'`
-          );
-        }}
-      >
-        Tag
-      </Tag>
-      <div>{removedTagText}</div>
-    </>
+  const removeTag = useCallback(
+    tag => () => {
+      setSelectedTags(previousTags =>
+        previousTags.filter(previousTag => previousTag !== tag)
+      );
+    },
+    []
   );
+
+  const tagMarkup = selectedTags.map(option => (
+    <Tag
+      style={{ marginRight: '4px' }}
+      key={option}
+      onRemove={removeTag(option)}
+    >
+      {option}
+    </Tag>
+  ));
+
+  return <>{tagMarkup}</>;
 };
 
 export const Default = DefaultTemplate.bind({});
