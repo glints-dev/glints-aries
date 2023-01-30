@@ -55,7 +55,7 @@ export const SimplePagination = ({
         disabled={!hasPrevious || disabled}
         onClick={handlePageNumberChange}
       />
-      <div onClick={handleEditMode}>
+      <div data-testid="current-page-btn" onClick={handleEditMode}>
         {!editMode && (
           <StyledActiveSimplePaginationButton
             value={currentPage}
@@ -69,6 +69,7 @@ export const SimplePagination = ({
         )}
         {editMode && (
           <StyledSimplePaginationInput
+            data-testid="current-page-input"
             autoFocus
             onFocus={handleFocus}
             onChange={e => {

@@ -20,6 +20,27 @@ test('Simple Pagination', async ({ page }) => {
   );
 });
 
+test('Simple Pagination - current page button', async ({ page }) => {
+  const paginationPage = new SimplePaginationPage(page);
+  await paginationPage.goto();
+
+  paginationPage.currentPageButton.hover();
+  await expect(paginationPage.container).toHaveScreenshot(
+    'simple-pagination-current-page-hover.png'
+  );
+
+  paginationPage.currentPageButton.click();
+  await expect(paginationPage.container).toHaveScreenshot(
+    'simple-pagination-current-page-edit-mode.png'
+  );
+
+  paginationPage.currentPageInput.fill('5');
+  paginationPage.container.click();
+  await expect(paginationPage.container).toHaveScreenshot(
+    'simple-pagination-current-page-edited.png'
+  );
+});
+
 test('Simple Pagination - disabled', async ({ page }) => {
   const paginationPage = new SimplePaginationPage(page);
   await paginationPage.goto('args=disabled:true');
