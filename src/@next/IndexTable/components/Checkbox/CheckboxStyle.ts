@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { Spacing } from '../../..';
 
 export const CheckboxWrapper = styled.div`
   margin: 0;
@@ -11,4 +10,3 @@ export const CheckboxCellContentContainer = styled.div`
   display: flex;
   align-items: center;
 `;
-// margin: ${Spacing.space16} ${Spacing.space18};
