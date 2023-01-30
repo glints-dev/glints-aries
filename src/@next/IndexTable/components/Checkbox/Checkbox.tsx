@@ -11,12 +11,7 @@ const Checkbox = () => {
     <CheckboxWrapper>
       <CheckboxCellContentContainer>
         <div onClick={onInteraction}>
-          <GlintsCheckbox
-            id={itemId}
-            checked={selected}
-            disabled={disabled}
-            // onChange={handleSelectPage}
-          />
+          <GlintsCheckbox id={itemId} checked={selected} disabled={disabled} />
         </div>
       </CheckboxCellContentContainer>
     </CheckboxWrapper>
