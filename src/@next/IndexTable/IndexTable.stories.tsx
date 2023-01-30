@@ -189,3 +189,4 @@ const Template: Story<IndexTableProps> = args => {
 };
 
 export const Interactive = Template.bind({});
+Interactive.args = { loadingLabel: 'Loading...' };
