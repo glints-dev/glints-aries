@@ -11344,7 +11344,7 @@ pnp-webpack-plugin@1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polaris-glints@^15.2.0:
+polaris-glints@^15.3.0:
   version "15.4.0"
   resolved "https://registry.yarnpkg.com/polaris-glints/-/polaris-glints-15.4.0.tgz#9c329b4bd932146764098f3a5ce2021017bc13d0"
   integrity sha512-vMPgjNZNnfEIoqBBERBD5wib06BsCm7GGOxTB/gNEOP2aId98JQaHRqxsYO3fsjpExeaW1MqnIIA+9KRb3ztJA==
