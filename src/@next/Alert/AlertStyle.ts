@@ -58,6 +58,8 @@ export const StyledAlertContainer = styled.div`
   }
 
   @media (max-width: ${Breakpoints.large}) {
+    top: 60px;
+
     &[data-titled='true'] {
       margin-top: -1px;
     }
@@ -66,7 +68,6 @@ export const StyledAlertContainer = styled.div`
     }
     padding: ${space8};
     min-height: 37px;
-    top: 60px;
   }
 
   @media (max-width: 480px) {
@@ -106,4 +107,8 @@ export const StyledAlertContentColumn = styled.div`
   min-width: 240px;
   max-width: 560px;
   padding: 0;
+
+  @media (max-width: 480px) {
+    min-width: unset;
+  }
 `;
