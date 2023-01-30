@@ -40,7 +40,7 @@ export const Alert = ({
       return;
     }
     const timeId = setTimeout(() => {
-      // onDismissed?.();
+      onDismissed?.();
     }, duration);
 
     return () => {
@@ -62,7 +62,11 @@ export const Alert = ({
   }
 
   return (
-    <StyledAlertContainer data-titled={hasTitle} data-status={status || 'info'}>
+    <StyledAlertContainer
+      role="alert"
+      data-titled={hasTitle}
+      data-status={status || 'info'}
+    >
       <div>
         <Icon name={iconName} />
       </div>
@@ -89,7 +93,10 @@ export const Alert = ({
           </StyledAlertContentColumn>
         </div>
       </div>
-      <StyledAlertCloseIconContainer onClick={() => onDismissed?.()}>
+      <StyledAlertCloseIconContainer
+        role="button"
+        onClick={() => onDismissed?.()}
+      >
         <Icon name="ri-close" />
       </StyledAlertCloseIconContainer>
     </StyledAlertContainer>
