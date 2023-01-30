@@ -3,7 +3,6 @@ import { Typography } from '../Typography';
 import {
   StyledActiveSimplePaginationButton,
   StyledSimplePaginationInput,
-  StyledNav,
   StyledSimplePaginationButton,
   SimplePaginationStyledNav,
 } from './PaginationStyle';
