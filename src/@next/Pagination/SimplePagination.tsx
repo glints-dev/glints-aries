@@ -5,6 +5,7 @@ import {
   StyledSimplePaginationInput,
   StyledNav,
   StyledSimplePaginationButton,
+  SimplePaginationStyledNav,
 } from './PaginationStyle';
 import {
   defaultPageSize,
@@ -49,7 +50,7 @@ export const SimplePagination = ({
   };
 
   return (
-    <StyledNav>
+    <SimplePaginationStyledNav>
       <PreviousStepper
         value={currentPage - 1}
         disabled={!hasPrevious || disabled}
@@ -94,6 +95,6 @@ export const SimplePagination = ({
         disabled={!hasNext || disabled}
         onClick={handlePageNumberChange}
       />
-    </StyledNav>
+    </SimplePaginationStyledNav>
   );
 };

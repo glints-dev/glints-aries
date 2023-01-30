@@ -11,6 +11,10 @@ export const StyledNav = styled.nav`
   gap: 10px;
 `;
 
+export const SimplePaginationStyledNav = styled(StyledNav)`
+  gap: 4px;
+`;
+
 export const StyledPageButton = styled.button<PageButtonProps>`
   cursor: pointer;
   height: 32px;
