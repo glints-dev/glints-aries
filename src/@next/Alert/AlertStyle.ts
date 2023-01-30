@@ -58,12 +58,24 @@ export const StyledAlertContainer = styled.div`
   }
 
   @media (max-width: ${Breakpoints.large}) {
+    &[data-titled='true'] {
+      margin-top: -1px;
+    }
+    &[data-titled='true'] svg {
+      margin-top: 0;
+    }
     padding: ${space8};
     min-height: 37px;
     top: 60px;
   }
 
   @media (max-width: 480px) {
+    &[data-titled='true'] {
+      margin-top: -1px;
+    }
+    &[data-titled='true'] svg {
+      margin-top: 0;
+    }
     max-width: calc(100vw - 48px);
   }
 
@@ -94,8 +106,4 @@ export const StyledAlertContentColumn = styled.div`
   min-width: 240px;
   max-width: 560px;
   padding: 0;
-
-  @media (max-width: 480px) {
-    min-width: unset;
-  }
 `;
