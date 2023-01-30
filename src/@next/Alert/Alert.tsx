@@ -40,7 +40,7 @@ export const Alert = ({
       return;
     }
     const timeId = setTimeout(() => {
-      onDismissed?.();
+      // onDismissed?.();
     }, duration);
 
     return () => {

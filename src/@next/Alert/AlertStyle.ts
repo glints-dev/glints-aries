@@ -91,5 +91,10 @@ export const StyledAlertCloseIconContainer = styled.div`
 `;
 
 export const StyledAlertContentColumn = styled.div`
+  min-width: 240px;
   padding: 0;
+
+  @media (max-width: 480px) {
+    min-width: unset;
+  }
 `;
