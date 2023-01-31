@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { nanoid } from 'nanoid';
 import {
   StyledCheckbox,
   StyledCheckboxContainer,
@@ -11,6 +10,7 @@ import {
 import { noop } from 'lodash-es';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import nextId from 'react-id-generator';
 
 export interface CheckboxProps
   extends Omit<
@@ -40,7 +40,7 @@ export const Checkbox = ({
   isPadded = true,
   ...otherProps
 }: CheckboxProps) => {
-  const randomId = nanoid();
+  const randomId = nextId('glints-checkbox');
   const checkBoxId = id ? id : randomId;
   const labelId = `label-${checkBoxId}`;
 
