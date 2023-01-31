@@ -7,98 +7,92 @@ const getPage = (page: Page) =>
 const getRemoveableTagPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-tag--removeable');
 
-test.describe('default tag', () => {
-  test('tag - standard size', async ({ page }) => {
-    const tagPage = getPage(page);
+test('tag - standard size', async ({ page }) => {
+  const tagPage = getPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot('tag-standard-size.png');
+});
+
+test('tag - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const tagPage = getPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot('tag-small-size.png');
+});
+
+test('removeable tag - standard size', async ({ page }) => {
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-standard-size.png'
+  );
+});
+
+test('removeable tag - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-small-size.png'
+  );
+});
+
+test.describe('hover state', () => {
+  test('removeable tag hover state - standard size', async ({ page }) => {
+    const tagPage = getRemoveableTagPage(page);
     await tagPage.goto();
-    await expect(tagPage.container).toHaveScreenshot('tag-standard-size.png');
+
+    await tagPage.page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .getByRole('button')
+      .first()
+      .hover({ force: true });
+
+    await expect(tagPage.container).toHaveScreenshot(
+      'tag-removeable-hover-standard-size.png'
+    );
   });
 
-  test('tag - small size', async ({ page }) => {
+  test('removeable tag hover state - small size', async ({ page }) => {
     page.setViewportSize({ width: 768, height: 600 });
-    const tagPage = getPage(page);
+    const tagPage = getRemoveableTagPage(page);
     await tagPage.goto();
-    await expect(tagPage.container).toHaveScreenshot('tag-small-size.png');
+    await tagPage.page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .getByRole('button')
+      .first()
+      .hover({ force: true });
+    await expect(tagPage.container).toHaveScreenshot(
+      'tag-removeable-hover-small-size.png'
+    );
   });
 });
 
-test.describe('removeable tag', () => {
-  test('removeable tag - standard size', async ({ page }) => {
-    const tagPage = getRemoveableTagPage(page);
-    await tagPage.goto();
-    await expect(tagPage.container).toHaveScreenshot(
-      'tag-removeable-standard-size.png'
-    );
-  });
+test('removeable tag focused state - standard size', async ({ page }) => {
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
 
-  test('removeable tag - small size', async ({ page }) => {
-    page.setViewportSize({ width: 768, height: 600 });
-    const tagPage = getRemoveableTagPage(page);
-    await tagPage.goto();
-    await expect(tagPage.container).toHaveScreenshot(
-      'tag-removeable-small-size.png'
-    );
-  });
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('button')
+    .first()
+    .focus();
 
-  test.describe('hover state', () => {
-    test('removeable tag hover state - standard size', async ({ page }) => {
-      const tagPage = getRemoveableTagPage(page);
-      await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-focus-standard-size.png'
+  );
+});
 
-      await tagPage.page
-        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-        .getByRole('button')
-        .first()
-        .hover({ force: true });
-
-      await expect(tagPage.container).toHaveScreenshot(
-        'tag-removeable-hover-standard-size.png'
-      );
-    });
-
-    test('removeable tag hover state - small size', async ({ page }) => {
-      page.setViewportSize({ width: 768, height: 600 });
-      const tagPage = getRemoveableTagPage(page);
-      await tagPage.goto();
-      await tagPage.page
-        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-        .getByRole('button')
-        .first()
-        .hover({ force: true });
-      await expect(tagPage.container).toHaveScreenshot(
-        'tag-removeable-hover-small-size.png'
-      );
-    });
-  });
-
-  test.describe('focus state', () => {
-    test('removeable tag focused state - standard size', async ({ page }) => {
-      const tagPage = getRemoveableTagPage(page);
-      await tagPage.goto();
-
-      await tagPage.page
-        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-        .getByRole('button')
-        .first()
-        .focus();
-
-      await expect(tagPage.container).toHaveScreenshot(
-        'tag-removeable-focus-standard-size.png'
-      );
-    });
-
-    test('removeable tag focused state - small size', async ({ page }) => {
-      page.setViewportSize({ width: 768, height: 600 });
-      const tagPage = getRemoveableTagPage(page);
-      await tagPage.goto();
-      await tagPage.page
-        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-        .getByRole('button')
-        .first()
-        .focus();
-      await expect(tagPage.container).toHaveScreenshot(
-        'tag-removeable-focus-small-size.png'
-      );
-    });
-  });
+test('removeable tag focused state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('button')
+    .first()
+    .focus();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-focus-small-size.png'
+  );
 });

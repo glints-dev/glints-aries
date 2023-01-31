@@ -27,7 +27,7 @@ export const TagIconWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  &:focus {
+  &:focus-visible {
     margin: -2px;
     outline: none;
     border: 2px solid ${Blue.S100};
@@ -61,6 +61,6 @@ export const TagStyle = styled.div<TagProps>`
     cursor: pointer;
     background-color: ${Neutral.B40};
     fill: ${Neutral.B100};
-    border: 2px solid yellow;
+    border-radius: ${borderRadiusHalf};
   }
 `;
