@@ -72,6 +72,9 @@ Interactive.parameters = {
       </>  
 
       // Call "showAlert" anywhere from your component
+      import { useAlert } from 'glints-aries/lib/@next';
+
+      const { showAlert } = useAlert();
       <Button
         onClick={() =>
           showAlert({
