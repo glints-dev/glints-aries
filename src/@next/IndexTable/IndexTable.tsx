@@ -20,7 +20,14 @@ const IndexTable = ({
     onChange,
     ...props
   }: CheckboxProps) => {
-    return <Checkbox onChange={onChange} checked={checked} {...props} />;
+    return (
+      <Checkbox
+        onChange={onChange}
+        checked={checked}
+        isPadded={false}
+        {...props}
+      />
+    );
   };
 
   return (
