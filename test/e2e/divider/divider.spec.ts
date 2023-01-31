@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { StoryBookPage } from '../storybookPage';
 
-test.skip('Divider', async ({ page }) => {
+test('Divider', async ({ page }) => {
   const dividerPage = new StoryBookPage(
     page,
     '?path=/story/next-divider--interactive'
