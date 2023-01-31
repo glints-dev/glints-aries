@@ -11,7 +11,12 @@ const Checkbox = () => {
     <CheckboxWrapper>
       <CheckboxCellContentContainer>
         <div onClick={onInteraction}>
-          <GlintsCheckbox id={itemId} checked={selected} disabled={disabled} />
+          <GlintsCheckbox
+            id={itemId}
+            checked={selected}
+            disabled={disabled}
+            isPadded={false}
+          />
         </div>
       </CheckboxCellContentContainer>
     </CheckboxWrapper>

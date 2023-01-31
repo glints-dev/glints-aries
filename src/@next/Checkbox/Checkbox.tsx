@@ -25,6 +25,7 @@ export interface CheckboxProps
   disabled?: boolean;
   helpText?: string;
   onChange?(newChecked: boolean, id: string): void;
+  isPadded?: boolean;
 }
 
 export const Checkbox = ({
@@ -36,6 +37,7 @@ export const Checkbox = ({
   indeterminate,
   hasError,
   helpText,
+  isPadded = true,
   ...otherProps
 }: CheckboxProps) => {
   const randomId = nanoid();
@@ -65,7 +67,11 @@ export const Checkbox = ({
   };
 
   return (
-    <StyledContainer aria-disabled={disabled} data-error={hasError}>
+    <StyledContainer
+      aria-disabled={disabled}
+      data-error={hasError}
+      data-spacing={isPadded}
+    >
       <StyledRow>
         <StyledLeftColumn>
           <StyledCheckboxContainer>
