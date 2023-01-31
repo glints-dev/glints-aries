@@ -7,9 +7,5 @@ test('Divider', async ({ page }) => {
     '?path=/story/next-divider--interactive'
   );
   await dividerPage.goto();
-  await expect(
-    dividerPage.page
-      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-      .locator('body')
-  ).toHaveScreenshot('divider.png');
+  await expect(dividerPage.container).toHaveScreenshot('divider.png');
 });
