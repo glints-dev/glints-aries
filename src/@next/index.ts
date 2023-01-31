@@ -36,6 +36,7 @@ export {
 } from './IndexTable';
 export { Pagination, SimplePagination, PaginationProps } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
+export { RadioButton, RadioButtonProps } from './RadioButton';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
 export { Typography, TypographyProps } from './Typography';
