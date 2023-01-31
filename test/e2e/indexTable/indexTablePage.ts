@@ -4,13 +4,11 @@ import { StoryBookPage } from '../storybookPage';
 export class IndexTablePage extends StoryBookPage {
   [x: string]: any;
   readonly checkboxes: Locator;
-  readonly canvas: Locator;
   readonly tableRow: Locator;
   readonly moveToAction: Locator;
 
   constructor(page: Page) {
     super(page, '?path=/story/next-indextable--interactive');
-    this.canvas = page.locator('#storybook-preview-wrapper');
     this.checkboxes = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('checkbox');
