@@ -29,6 +29,11 @@ export {
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 export { Divider } from './Divider';
 export { Icon, IconProps } from './Icon';
+export {
+  IndexTable,
+  IndexTableProps,
+  useIndexResourceState,
+} from './IndexTable';
 export { Pagination, SimplePagination, PaginationProps } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
