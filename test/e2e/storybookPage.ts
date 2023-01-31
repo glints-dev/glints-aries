@@ -5,6 +5,7 @@ export type Args = `args=${string}`;
 export class StoryBookPage {
   readonly page: Page;
   readonly container: Locator;
+  readonly canvas: Locator;
   private path: string;
 
   constructor(page: Page, path: string) {
@@ -13,6 +14,7 @@ export class StoryBookPage {
     this.container = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .locator('body');
+    this.canvas = page.locator('#storybook-preview-wrapper');
   }
 
   async goto(args?: Args) {

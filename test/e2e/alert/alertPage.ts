@@ -1,11 +1,9 @@
-import { Locator, Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { Args, StoryBookPage } from '../storybookPage';
 
 export class AlertPage extends StoryBookPage {
-  readonly container: Locator;
   constructor(page: Page) {
     super(page, '?path=/story/next-alert--interactive');
-    this.container = page.locator('#storybook-preview-wrapper');
   }
 
   async gotoWithProviderPage(args?: Args) {
