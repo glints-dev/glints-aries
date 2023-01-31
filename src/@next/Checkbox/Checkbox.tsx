@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { nanoid } from 'nanoid';
 import {
   StyledCheckbox,
   StyledCheckboxContainer,
@@ -11,6 +10,7 @@ import {
 import { noop } from 'lodash-es';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import nextId from 'react-id-generator';
 
 export interface CheckboxProps
   extends Omit<
@@ -25,6 +25,7 @@ export interface CheckboxProps
   disabled?: boolean;
   helpText?: string;
   onChange?(newChecked: boolean, id: string): void;
+  isPadded?: boolean;
 }
 
 export const Checkbox = ({
@@ -36,9 +37,10 @@ export const Checkbox = ({
   indeterminate,
   hasError,
   helpText,
+  isPadded = true,
   ...otherProps
 }: CheckboxProps) => {
-  const randomId = nanoid();
+  const randomId = nextId('glints-checkbox');
   const checkBoxId = id ? id : randomId;
   const labelId = `label-${checkBoxId}`;
 
@@ -65,7 +67,11 @@ export const Checkbox = ({
   };
 
   return (
-    <StyledContainer aria-disabled={disabled} data-error={hasError}>
+    <StyledContainer
+      aria-disabled={disabled}
+      data-error={hasError}
+      data-spacing={isPadded}
+    >
       <StyledRow>
         <StyledLeftColumn>
           <StyledCheckboxContainer>
@@ -113,14 +119,16 @@ export const Checkbox = ({
           </label>
         </StyledColumn>
       </StyledRow>
-      <StyledRow>
-        <StyledLeftColumn></StyledLeftColumn>
-        <StyledColumn className="help-text">
-          <Typography as="span" variant="subtitle2">
-            {helpText}
-          </Typography>
-        </StyledColumn>
-      </StyledRow>
+      {helpText && (
+        <StyledRow>
+          <StyledLeftColumn></StyledLeftColumn>
+          <StyledColumn className="help-text">
+            <Typography as="span" variant="subtitle2">
+              {helpText}
+            </Typography>
+          </StyledColumn>
+        </StyledRow>
+      )}
     </StyledContainer>
   );
 };
