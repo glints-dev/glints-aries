@@ -40,8 +40,8 @@ jobs:
         run: yarn install --prefer-offline
       - name: Build storybook
         run: yarn storybook:build:test
-      - name: Run Playwright tests -- divider
-        run: yarn start-server-and-test 'npx http-server ./storybook-static -p 6006' 6006  'npx playwright test'
+      - name: Run Playwright tests
+        run: yarn start-server-and-test 'npx http-server ./storybook-static -p 6006' 6006  'yarn playwright test'
       - uses: actions/upload-artifact@v3
         if: always()
         with:
