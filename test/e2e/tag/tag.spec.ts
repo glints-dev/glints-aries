@@ -7,13 +7,13 @@ const getPage = (page: Page) =>
 const getRemoveableTagPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-tag--removeable');
 
-test('tag - standard size', async ({ page }) => {
+test('Tag - standard size', async ({ page }) => {
   const tagPage = getPage(page);
   await tagPage.goto();
   await expect(tagPage.container).toHaveScreenshot('tag-standard-size.png');
 });
 
-test('tag - small size', async ({ page }) => {
+test('Tag - small size', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const tagPage = getPage(page);
   await tagPage.goto();

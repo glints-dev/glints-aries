@@ -6,15 +6,13 @@ test('Popover', async ({ page }) => {
   await popoverPage.goto();
 
   await popoverPage.activators.first().click();
-  await expect(popoverPage.container).toHaveScreenshot('popover.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover.png');
 
   await popoverPage.activators.nth(1).click();
-  await expect(popoverPage.container).toHaveScreenshot('popover-pane.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-pane.png');
 
   await popoverPage.activators.last().click();
-  await expect(popoverPage.container).toHaveScreenshot(
-    'popover-bulk-actions.png'
-  );
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-bulk-actions.png');
 });
 
 test('Popover - position above', async ({ page }) => {
@@ -22,10 +20,10 @@ test('Popover - position above', async ({ page }) => {
   await popoverPage.goto('args=preferredPosition:above');
 
   await popoverPage.activators.first().click();
-  await expect(popoverPage.container).toHaveScreenshot('popover-above.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-above.png');
 
   await popoverPage.activators.last().click();
-  await expect(popoverPage.container).toHaveScreenshot(
+  await expect(popoverPage.canvas).toHaveScreenshot(
     'popover-bulk-actions-above.png'
   );
 });
@@ -35,13 +33,13 @@ test('Popover - alignment - left', async ({ page }) => {
   await popoverPage.goto('args=preferredAlignment:left');
 
   await popoverPage.activators.first().click();
-  await expect(popoverPage.container).toHaveScreenshot('popover-left.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-left.png');
 
   await popoverPage.activators.nth(1).click();
-  await expect(popoverPage.container).toHaveScreenshot('popover-pane-left.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-pane-left.png');
 
   await popoverPage.activators.last().click();
-  await expect(popoverPage.container).toHaveScreenshot(
+  await expect(popoverPage.canvas).toHaveScreenshot(
     'popover-bulk-actions-left.png'
   );
 });
@@ -51,15 +49,13 @@ test('Popover - alignment - right', async ({ page }) => {
   await popoverPage.goto('args=preferredAlignment:right');
 
   await popoverPage.activators.first().click();
-  await expect(popoverPage.container).toHaveScreenshot('popover-right.png');
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-right.png');
 
   await popoverPage.activators.nth(1).click();
-  await expect(popoverPage.container).toHaveScreenshot(
-    'popover-pane-right.png'
-  );
+  await expect(popoverPage.canvas).toHaveScreenshot('popover-pane-right.png');
 
   await popoverPage.activators.last().click();
-  await expect(popoverPage.container).toHaveScreenshot(
+  await expect(popoverPage.canvas).toHaveScreenshot(
     'popover-bulk-actions-right.png'
   );
 });

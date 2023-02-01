@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Breakpoints } from '..';
-import {
-  borderRadius2,
-  borderRadius4,
-  borderRadiusHalf,
-} from '../utilities/borderRadius';
+import { borderRadius4, borderRadiusHalf } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space4, space8 } from '../utilities/spacing';
 import { TagContentProps, TagProps, TagRemoveContainerProps } from './Tag';
