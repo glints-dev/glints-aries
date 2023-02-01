@@ -96,3 +96,34 @@ test('removeable tag focused state - small size', async ({ page }) => {
     'tag-removeable-focus-small-size.png'
   );
 });
+
+test('removeable tag pressed state - standard size', async ({ page }) => {
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('button')
+    .first()
+    .hover();
+
+  await tagPage.page.mouse.down();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-pressed-standard-size.png'
+  );
+});
+
+test('removeable tag pressed state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const tagPage = getRemoveableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('button')
+    .first()
+    .hover();
+
+  await tagPage.page.mouse.down();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-removeable-pressed-small-size.png'
+  );
+});
