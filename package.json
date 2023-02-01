@@ -10,8 +10,8 @@
   },
   "scripts": {
     "build": "npm run build:icon && npm run build:next:icon && npm run build:lib && npm run build:es && npm run build:ts",
-    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
-    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore src/**/*.test.tsx,src/**/*.test.ts",
+    "build:lib": "rm -rf lib && babel src -d lib --extensions .ts,.tsx --ignore .storybook/**/*,src/**/*.test.tsx,src/**/*.test.ts,src/**/*.spec.tsx,src/**/*.spec.ts,src/**/*.stories.tsx",
+    "build:es": "rm -rf es && cross-env BABEL_ENV=es babel src -d es --extensions .ts,.tsx --ignore .storybook/**/*,src/**/*.test.tsx,src/**/*.test.ts,src/**/*.spec.tsx,src/**/*.spec.ts,src/**/*.stories.tsx",
     "build:ts": "tsc --project tsconfig.declaration.json -d --declarationDir lib && tsc --project tsconfig.declaration.json -d --declarationDir es",
     "build:icon": "rm -rf src/General/Icon/components && babel-node --extensions .ts,.tsx src/Utils/Icon/generateIcons.ts && npm run format:icon",
     "build:next:icon": "npx @svgr/cli --typescript --out-dir src/@next/Icon/components -- src/@next/Icon/icons",

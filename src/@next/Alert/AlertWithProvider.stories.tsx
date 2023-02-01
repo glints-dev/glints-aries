@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { AlertProps } from './Alert';
 import { useAlert } from './useAlert';
 import { AlertWithProvider } from './AlertWithProvider';
-import { withAlertProvider } from '../../../.storybook/Decorators';
+import { withAlertProvider } from '../../helpers/storybook/Decorators';
 import { Typography } from '../Typography';
 
 (AlertWithProvider as React.FunctionComponent<AlertProps>).displayName =
