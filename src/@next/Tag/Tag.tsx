@@ -1,13 +1,25 @@
 import React from 'react';
+import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { TagStyle } from './TagStyle';
+import {
+  TagContentStyle,
+  TagIconWrapper,
+  TagRemoveContainerStyle,
+  TagStyle,
+} from './TagStyle';
 
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+  value?: string;
+  onRemove?: (() => void) | null;
 }
 
-export const Tag = ({ children, ...props }: TagProps) => {
+export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
+
+export type TagContentProps = React.HTMLAttributes<HTMLSpanElement> & TagProps;
+
+export const Tag = ({ children, onRemove, value, ...props }: TagProps) => {
   const content =
     typeof children === 'string' ? (
       <Typography variant="caption" color={Neutral.B18} as={'span'}>
@@ -17,5 +29,23 @@ export const Tag = ({ children, ...props }: TagProps) => {
       children
     );
 
-  return <TagStyle {...props}>{content}</TagStyle>;
+  const removeButton = onRemove && (
+    <TagRemoveContainerStyle>
+      <TagIconWrapper role="button" tabIndex={0}>
+        <Icon
+          name="ri-close"
+          fill={Neutral.B40}
+          height={20}
+          onClick={onRemove}
+        />
+      </TagIconWrapper>
+    </TagRemoveContainerStyle>
+  );
+
+  return (
+    <TagStyle {...props} value={value}>
+      <TagContentStyle data-removeable={!!onRemove}>{content}</TagContentStyle>
+      {removeButton}
+    </TagStyle>
+  );
 };
