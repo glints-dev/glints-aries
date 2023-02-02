@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
@@ -18,9 +18,13 @@ export type ModalAction = {
   action: (...args: any[]) => void;
 };
 
+const modalSizes = ['default', 'small', 'large'] as const;
+
+export type ModalSize = typeof modalSizes[number];
+
 export type ModalProps = {
   isOpen?: boolean;
-  size?: 'default' | 'small' | 'large';
+  size?: ModalSize;
   header?: React.ReactNode;
   children?: React.ReactNode;
   primaryAction?: ModalAction;
@@ -36,11 +40,18 @@ export const Modal = ({
   secondaryAction,
   primaryAction,
   customActions,
-  size,
+  size = 'default',
   onClose,
 }: ModalProps) => {
   if (!isOpen) {
     return null;
+  }
+
+  if (!modalSizes.includes(size)) {
+    console.warn(
+      `Size "${size}" is not a valid Modal size, default will be used instead`
+    );
+    size = 'default';
   }
 
   const defaultActionContent = (
@@ -80,7 +91,10 @@ export const Modal = ({
               <Typography as="div" variant="subtitle1">
                 {header}
               </Typography>
-              <StyledModalCloseButton onClick={() => onClose?.()}>
+              <StyledModalCloseButton
+                data-testid="modal-close-btn"
+                onClick={() => onClose?.()}
+              >
                 <Icon name="ri-close" />
               </StyledModalCloseButton>
             </StyledModalHeader>

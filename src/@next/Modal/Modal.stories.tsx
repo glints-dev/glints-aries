@@ -88,6 +88,14 @@ const WithCustomActionsTemplate: Story<void> = () => {
   };
 
   const customActions = <PrimaryButton fullWidth> Custom Action</PrimaryButton>;
+  const primaryAction = {
+    label: 'Primary Action',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'Secondary Action',
+    action: () => console.log('Secondary action!'),
+  };
 
   return (
     <>
@@ -96,6 +104,8 @@ const WithCustomActionsTemplate: Story<void> = () => {
         isOpen={showModal}
         header="Title"
         onClose={() => setShowModal(false)}
+        primaryAction={primaryAction}
+        secondaryAction={secondaryAction}
         customActions={customActions}
       >
         Content

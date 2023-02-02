@@ -3,7 +3,7 @@ import { Modal } from './Modal';
 import { useModal } from './useModal';
 
 export const ModalWithProvider = () => {
-  const { close: closeModal, onClose, ...rest } = useModal();
+  const { close, onClose, ...rest } = useModal();
   const { isOpen, ...modalProps } = rest;
 
   if (!isOpen) {
@@ -15,7 +15,7 @@ export const ModalWithProvider = () => {
       {...modalProps}
       isOpen={isOpen}
       onClose={() => {
-        closeModal();
+        close();
         onClose?.();
       }}
     />
