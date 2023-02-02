@@ -2,9 +2,9 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { Divider } from './Divider';
+import { Divider, DividerProps } from './Divider';
 
-(Divider as React.FunctionComponent<void>).displayName = 'Divider';
+(Divider as React.FunctionComponent<DividerProps>).displayName = 'Divider';
 
 export default {
   title: '@next/Divider',

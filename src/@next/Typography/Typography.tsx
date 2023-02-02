@@ -32,21 +32,21 @@ export interface TypographyProps {
 
 const isVariant = (str: any): str is Variant => typographyVariant.includes(str);
 
-export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  function Typography(
-    { as = 'p', children, variant, ...props }: TypographyProps,
-    ref
-  ) {
-    if (!isVariant(variant)) {
-      console.warn(
-        `Variant: ${variant} is not of type Variant | undefined. \ntype Variant ${typographyVariant}`
-      );
-    }
-
-    return (
-      <StyledTypography ref={ref} as={as} variant={variant} {...props}>
-        {children}
-      </StyledTypography>
+export const Typography = ({
+  as = 'p',
+  children,
+  variant,
+  ...props
+}: TypographyProps) => {
+  if (!isVariant(variant)) {
+    console.warn(
+      `Variant: ${variant} is not of type Variant | undefined. \ntype Variant ${typographyVariant}`
     );
   }
-);
+
+  return (
+    <StyledTypography as={as} variant={variant} {...props}>
+      {children}
+    </StyledTypography>
+  );
+};
