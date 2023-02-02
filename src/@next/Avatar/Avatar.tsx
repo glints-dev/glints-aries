@@ -24,21 +24,26 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   initials?: string;
 }
 
-export const Avatar = ({
-  variant = 'supplementary',
-  size = 'medium',
-  initials,
-  ...props
-}: AvatarProps) => {
-  return (
-    <AvatarStyle variant={variant} size={size} {...props}>
-      <Typography
-        variant={size === 'medium' ? 'body1' : 'headline6'}
-        color={Neutral.B18}
-        as={'span'}
-      >
-        {initials.slice(0, 2)}
-      </Typography>
-    </AvatarStyle>
-  );
-};
+export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+  function Avatar(
+    {
+      variant = 'supplementary',
+      size = 'medium',
+      initials,
+      ...props
+    }: AvatarProps,
+    ref
+  ) {
+    return (
+      <AvatarStyle ref={ref} variant={variant} size={size} {...props}>
+        <Typography
+          variant={size === 'medium' ? 'body1' : 'headline6'}
+          color={Neutral.B18}
+          as={'span'}
+        >
+          {initials.slice(0, 2)}
+        </Typography>
+      </AvatarStyle>
+    );
+  }
+);

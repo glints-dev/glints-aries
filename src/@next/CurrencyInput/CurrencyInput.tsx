@@ -11,12 +11,13 @@ export type CurrencyInputProps = Omit<
   onChange?: (value: number) => void;
 };
 
-export const CurrencyInput = ({
-  locale = 'en',
-  value = 0,
-  onChange,
-  ...props
-}: CurrencyInputProps) => {
+export const CurrencyInput = React.forwardRef<
+  HTMLInputElement,
+  CurrencyInputProps
+>(function CurrencyInput(
+  { locale = 'en', value = 0, onChange, ...props }: CurrencyInputProps,
+  ref
+) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const supportedLocale = Intl.ListFormat.supportedLocalesOf(locale);
@@ -58,6 +59,7 @@ export const CurrencyInput = ({
 
   return (
     <StyledCurrency
+      ref={ref}
       type="text"
       prefix={<div>$</div>}
       {...props}
@@ -65,4 +67,4 @@ export const CurrencyInput = ({
       onChange={handleChange}
     />
   );
-};
+});

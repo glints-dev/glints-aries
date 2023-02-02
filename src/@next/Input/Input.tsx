@@ -13,31 +13,35 @@ export interface InputProps
   suffix?: React.ReactNode;
 }
 
-export const Input = ({
-  error,
-  disabled,
-  prefix,
-  suffix,
-  ...props
-}: InputProps) => {
-  const hasPrefix = !!prefix;
-  const hasSuffix = !!suffix;
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  function Input(
+    { error, disabled, prefix, suffix, ...props }: InputProps,
+    ref
+  ) {
+    const hasPrefix = !!prefix;
+    const hasSuffix = !!suffix;
 
-  const Prefix = () =>
-    hasPrefix ? <StyledPrefixContainer>{prefix}</StyledPrefixContainer> : null;
+    const Prefix = () =>
+      hasPrefix ? (
+        <StyledPrefixContainer>{prefix}</StyledPrefixContainer>
+      ) : null;
 
-  const Suffix = () =>
-    hasSuffix ? <StyledSuffixContainer>{suffix}</StyledSuffixContainer> : null;
+    const Suffix = () =>
+      hasSuffix ? (
+        <StyledSuffixContainer>{suffix}</StyledSuffixContainer>
+      ) : null;
 
-  return (
-    <StyledContainer
-      data-prefix={hasPrefix}
-      data-error={error}
-      data-disabled={disabled}
-    >
-      <Prefix />
-      <StyledInput disabled={disabled} {...props} />
-      <Suffix />
-    </StyledContainer>
-  );
-};
+    return (
+      <StyledContainer
+        ref={ref}
+        data-prefix={hasPrefix}
+        data-error={error}
+        data-disabled={disabled}
+      >
+        <Prefix />
+        <StyledInput disabled={disabled} {...props} />
+        <Suffix />
+      </StyledContainer>
+    );
+  }
+);
