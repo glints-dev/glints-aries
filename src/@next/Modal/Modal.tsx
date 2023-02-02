@@ -33,78 +33,83 @@ export type ModalProps = {
   onClose?: () => void;
 };
 
-export const Modal = ({
-  isOpen,
-  header,
-  children,
-  secondaryAction,
-  primaryAction,
-  customActions,
-  size = 'default',
-  onClose,
-}: ModalProps) => {
-  if (!isOpen) {
-    return null;
-  }
+export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
+  function Modal(
+    {
+      isOpen,
+      header,
+      children,
+      secondaryAction,
+      primaryAction,
+      customActions,
+      size = 'default',
+      onClose,
+    }: ModalProps,
+    ref
+  ) {
+    if (!isOpen) {
+      return null;
+    }
 
-  if (!modalSizes.includes(size)) {
-    console.warn(
-      `Size "${size}" is not a valid Modal size, default will be used instead`
-    );
-    size = 'default';
-  }
+    if (!modalSizes.includes(size)) {
+      console.warn(
+        `Size "${size}" is not a valid Modal size, default will be used instead`
+      );
+      size = 'default';
+    }
 
-  const defaultActionContent = (
-    <ButtonGroup>
-      {secondaryAction && (
-        <Button onClick={() => secondaryAction.action?.()}>
-          {secondaryAction.label}
-        </Button>
-      )}
-      {primaryAction && (
-        <PrimaryButton onClick={() => primaryAction.action?.()}>
-          {primaryAction.label}
-        </PrimaryButton>
-      )}
-    </ButtonGroup>
-  );
-
-  const actionsContent = customActions ? customActions : defaultActionContent;
-
-  const hasActions = !!customActions || !!primaryAction || !!secondaryAction;
-
-  const content =
-    typeof children === 'string' ? (
-      <Typography as="div" variant="body1">
-        {children}
-      </Typography>
-    ) : (
-      children
+    const defaultActionContent = (
+      <ButtonGroup>
+        {secondaryAction && (
+          <Button onClick={() => secondaryAction.action?.()}>
+            {secondaryAction.label}
+          </Button>
+        )}
+        {primaryAction && (
+          <PrimaryButton onClick={() => primaryAction.action?.()}>
+            {primaryAction.label}
+          </PrimaryButton>
+        )}
+      </ButtonGroup>
     );
 
-  return (
-    <Portal>
-      <StyledModalWrapper>
-        <StyledModalContainer data-size={size}>
-          {header && (
-            <StyledModalHeader>
-              <Typography as="div" variant="subtitle1">
-                {header}
-              </Typography>
-              <StyledModalCloseButton
-                data-testid="modal-close-btn"
-                onClick={() => onClose?.()}
-              >
-                <Icon name="ri-close" />
-              </StyledModalCloseButton>
-            </StyledModalHeader>
-          )}
-          <StyledModalContent>{content}</StyledModalContent>
-          {hasActions && (
-            <StyledModalActions>{actionsContent}</StyledModalActions>
-          )}
-        </StyledModalContainer>
-      </StyledModalWrapper>
-    </Portal>
-  );
-};
+    const actionsContent = customActions ? customActions : defaultActionContent;
+
+    const hasActions = !!customActions || !!primaryAction || !!secondaryAction;
+
+    const content =
+      typeof children === 'string' ? (
+        <Typography as="div" variant="body1">
+          {children}
+        </Typography>
+      ) : (
+        children
+      );
+
+    return (
+      <Portal>
+        <StyledModalWrapper>
+          <StyledModalContainer ref={ref} data-size={size}>
+            {header && (
+              <StyledModalHeader>
+                <Typography as="div" variant="subtitle1">
+                  {header}
+                </Typography>
+                <StyledModalCloseButton
+                  data-testid="modal-close-btn"
+                  onClick={() => onClose?.()}
+                >
+                  <Icon name="ri-close" />
+                </StyledModalCloseButton>
+              </StyledModalHeader>
+            )}
+            <StyledModalContent>{content}</StyledModalContent>
+            {hasActions && (
+              <StyledModalActions>{actionsContent}</StyledModalActions>
+            )}
+          </StyledModalContainer>
+        </StyledModalWrapper>
+      </Portal>
+    );
+  }
+);
