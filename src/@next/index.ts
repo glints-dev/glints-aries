@@ -37,6 +37,7 @@ export {
 export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
+export { Spinner, SpinnerProps } from './Spinner';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
 export { TextInput, TextInputProps } from './TextInput';

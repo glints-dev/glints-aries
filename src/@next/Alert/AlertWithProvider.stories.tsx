@@ -17,7 +17,7 @@ export default {
 } as Meta;
 
 const Template: Story<AlertProps> = args => {
-  const { showAlert } = useAlert();
+  const { open: showAlert } = useAlert();
 
   return (
     <>

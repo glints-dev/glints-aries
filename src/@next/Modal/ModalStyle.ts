@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Neutral } from '../utilities/colors';
-import { space16 } from '../utilities/spacing';
+import { space16, space18 } from '../utilities/spacing';
+import * as Breakpoints from '../utilities/breakpoints';
 
 export const StyledModalWrapper = styled.div`
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(45, 45, 45, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +27,20 @@ export const StyledModalContainer = styled.div`
   box-shadow: 0px 26px 80px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.2);
   border-radius: ${borderRadius8};
   width: 620px;
+
+  &[data-size='large'] {
+    width: 980px;
+  }
+
+  &[data-size='small'] {
+    width: 380px;
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    &&& {
+      width: 320px;
+    }
+  }
 `;
 
 export const StyledModalHeader = styled.div`
@@ -47,6 +62,8 @@ export const StyledModalContent = styled.div`
   min-height: 24px;
   color: #202223;
   padding: 20px;
+  width: 100%;
+  padding: ${space18} 20px;
 `;
 
 export const StyledModalActions = styled.div`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
@@ -36,6 +36,8 @@ export const Modal = ({
   secondaryAction,
   primaryAction,
   customActions,
+  size,
+  onClose,
 }: ModalProps) => {
   if (!isOpen) {
     return null;
@@ -60,25 +62,30 @@ export const Modal = ({
 
   const hasActions = !!customActions || !!primaryAction || !!secondaryAction;
 
+  const content =
+    typeof children === 'string' ? (
+      <Typography as="div" variant="body1">
+        {children}
+      </Typography>
+    ) : (
+      children
+    );
+
   return (
     <Portal>
       <StyledModalWrapper>
-        <StyledModalContainer>
-          <StyledModalHeader>
-            <Typography as="div" variant="subtitle1">
-              {header}
-            </Typography>
-            <StyledModalCloseButton>
-              <Icon name="ri-close" />
-            </StyledModalCloseButton>
-          </StyledModalHeader>
-          <div>
-            <StyledModalContent>
-              <Typography as="div" variant="body1">
-                {children}
+        <StyledModalContainer data-size={size}>
+          {header && (
+            <StyledModalHeader>
+              <Typography as="div" variant="subtitle1">
+                {header}
               </Typography>
-            </StyledModalContent>
-          </div>
+              <StyledModalCloseButton onClick={() => onClose?.()}>
+                <Icon name="ri-close" />
+              </StyledModalCloseButton>
+            </StyledModalHeader>
+          )}
+          <StyledModalContent>{content}</StyledModalContent>
           {hasActions && (
             <StyledModalActions>{actionsContent}</StyledModalActions>
           )}

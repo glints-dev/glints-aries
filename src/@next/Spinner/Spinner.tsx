@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon, IconProps } from '../Icon';
 
+export type SpinnerProps = Omit<IconProps, 'name'>;
+
 const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
   @keyframes p-keyframes-spin {
     to {
       transform: rotate(1turn);
@@ -13,7 +18,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export const Spinner = (props: Omit<IconProps, 'name'>) => (
+export const Spinner = (props: SpinnerProps) => (
   <StyledWrapper className="spinner-container">
     <Icon name="ri-loader" {...props} />
   </StyledWrapper>
