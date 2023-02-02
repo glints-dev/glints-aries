@@ -29,54 +29,64 @@ const iconNameStatusMap: Record<BannerProps['status'], IconNames> = {
   critical: 'ri-error-warning-fill',
 };
 
-export const Banner = ({
-  title,
-  status,
-  iconName,
-  children,
-  action,
-  secondaryAction,
-  dismissable = true,
-  onDismiss,
-  ...props
-}: BannerProps) => {
-  const iconByStatus = iconNameStatusMap[status];
-  if (!iconByStatus) {
-    console.warn(`Status ${status} is not valid, default style will be used`);
-  }
-  const iconNameValue = iconName
-    ? iconName
-    : iconByStatus || iconNameStatusMap['info'];
+export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
+  function Banner(
+    {
+      title,
+      status,
+      iconName,
+      children,
+      action,
+      secondaryAction,
+      dismissable = true,
+      onDismiss,
+      ...props
+    }: BannerProps,
+    ref
+  ) {
+    const iconByStatus = iconNameStatusMap[status];
+    if (!iconByStatus) {
+      console.warn(`Status ${status} is not valid, default style will be used`);
+    }
+    const iconNameValue = iconName
+      ? iconName
+      : iconByStatus || iconNameStatusMap['info'];
 
-  return (
-    <StyledBanner data-titled={!!title} data-status={status} {...props}>
-      <StyledBannerTitleContainer>
-        <Icon name={iconNameValue} />
+    return (
+      <StyledBanner
+        ref={ref}
+        data-titled={!!title}
+        data-status={status}
+        {...props}
+      >
+        <StyledBannerTitleContainer>
+          <Icon name={iconNameValue} />
+          <StyledBannerContentContainer>
+            <Typography as="span" variant="subtitle1">
+              {title}
+            </Typography>
+          </StyledBannerContentContainer>
+          {dismissable && (
+            <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
+              <Icon name="ri-close" />
+            </StyledCloseIconWrapper>
+          )}
+        </StyledBannerTitleContainer>
         <StyledBannerContentContainer>
-          <Typography as="span" variant="subtitle1">
-            {title}
+          <Typography as="div" variant="body1">
+            {children}
           </Typography>
         </StyledBannerContentContainer>
-        {dismissable && (
-          <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
-            <Icon name="ri-close" />
-          </StyledCloseIconWrapper>
-        )}
-      </StyledBannerTitleContainer>
-      <StyledBannerContentContainer>
-        <Typography as="div" variant="body1">
-          {children}
-        </Typography>
-      </StyledBannerContentContainer>
-      <StyledBannerContentContainer>
-        {action ||
-          (secondaryAction && (
-            <ButtonGroup>
-              {action}
-              {secondaryAction}
-            </ButtonGroup>
-          ))}
-      </StyledBannerContentContainer>
-    </StyledBanner>
-  );
-};
+        <StyledBannerContentContainer>
+          {action ||
+            (secondaryAction && (
+              <ButtonGroup>
+                {action}
+                {secondaryAction}
+              </ButtonGroup>
+            ))}
+        </StyledBannerContentContainer>
+      </StyledBanner>
+    );
+  }
+);

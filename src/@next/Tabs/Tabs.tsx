@@ -29,13 +29,16 @@ export type TabsProps = {
   onSelected?: (index: number) => void;
 };
 
-export const Tabs = ({
-  tabs,
-  selected: selectedIndex = 0,
-  children,
-  fitted,
-  onSelected,
-}: TabsProps) => {
+export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
+  {
+    tabs,
+    selected: selectedIndex = 0,
+    children,
+    fitted,
+    onSelected,
+  }: TabsProps,
+  ref
+) {
   const tabLength = tabs.length;
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -69,11 +72,11 @@ export const Tabs = ({
   });
 
   return (
-    <StyledTabsContainer>
+    <StyledTabsContainer ref={ref}>
       <StyledTabHeaderContainer>
         <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
       </StyledTabHeaderContainer>
       <div>{children}</div>
     </StyledTabsContainer>
   );
-};
+});

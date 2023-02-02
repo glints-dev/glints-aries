@@ -19,7 +19,10 @@ export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
 export type TagContentProps = React.HTMLAttributes<HTMLSpanElement> & TagProps;
 
-export const Tag = ({ children, onRemove, value, ...props }: TagProps) => {
+export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
+  { children, onRemove, value, ...props }: TagProps,
+  ref
+) {
   const content =
     typeof children === 'string' ? (
       <Typography variant="caption" color={Neutral.B18} as={'span'}>
@@ -43,9 +46,9 @@ export const Tag = ({ children, onRemove, value, ...props }: TagProps) => {
   );
 
   return (
-    <TagStyle {...props} value={value}>
+    <TagStyle ref={ref} {...props} value={value}>
       <TagContentStyle data-removeable={!!onRemove}>{content}</TagContentStyle>
       {removeButton}
     </TagStyle>
   );
-};
+});
