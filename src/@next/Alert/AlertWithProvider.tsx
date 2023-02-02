@@ -4,7 +4,7 @@ import { useAlert } from './useAlert';
 
 export const AlertWithProvider = React.forwardRef<HTMLDivElement, unknown>(
   function AlertWithProvider(_, alertRef) {
-    const { closeAlert, ...rest } = useAlert();
+    const { close, onDismissed, ...rest } = useAlert();
     const { show, ...alertProps } = rest;
 
     if (!show) {
@@ -16,7 +16,10 @@ export const AlertWithProvider = React.forwardRef<HTMLDivElement, unknown>(
         ref={alertRef}
         {...alertProps}
         show={show}
-        onDismissed={() => closeAlert()}
+        onDismissed={() => {
+          close();
+          onDismissed?.();
+        }}
       />
     );
   }
