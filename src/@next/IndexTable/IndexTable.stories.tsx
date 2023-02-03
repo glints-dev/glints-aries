@@ -7,7 +7,6 @@ import {
 } from './IndexTable';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Typography } from '..';
-import 'polaris-glints/build/esm/styles.css';
 import { Icon } from '../Icon';
 import { PrimaryButton } from '../Button';
 import {
@@ -145,14 +144,34 @@ const Template: Story<IndexTableProps> = args => {
           <Icon name="ri-account-circle-fill" height={40} fill={Neutral.B40} />
         </IndexTable.Cell>
         <IndexTable.Cell>
-          <Typography variant="body2">{name}</Typography>
-          <Typography variant="body1">{location}</Typography>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography as="span" variant="body2">
+              {name}
+            </Typography>
+            <Typography as="span" variant="body1">
+              {location}
+            </Typography>
+          </div>
         </IndexTable.Cell>
-        <IndexTable.Cell>{expectedSalary}</IndexTable.Cell>
-        <IndexTable.Cell>{yearsExperience}</IndexTable.Cell>
         <IndexTable.Cell>
-          <Typography variant="body1">{latestWorkExperience}</Typography>
-          <Typography variant="caption">{latestWorkDuration}</Typography>
+          <Typography as="span" variant="body1">
+            {expectedSalary}
+          </Typography>
+        </IndexTable.Cell>
+        <IndexTable.Cell>
+          <Typography as="span" variant="body1">
+            {yearsExperience}
+          </Typography>
+        </IndexTable.Cell>
+        <IndexTable.Cell>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography as="span" variant="body1">
+              {latestWorkExperience}
+            </Typography>
+            <Typography as="span" variant="caption">
+              {latestWorkDuration}
+            </Typography>
+          </div>
         </IndexTable.Cell>
         <IndexTable.Cell>
           <StyledButtonGroup>
