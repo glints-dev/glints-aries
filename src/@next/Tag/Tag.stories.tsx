@@ -25,6 +25,10 @@ export default {
         type: null,
       },
     },
+    textColor: {
+      description: 'Text color of the tag',
+      control: 'color',
+    },
   },
 
   parameters: {
@@ -37,8 +41,8 @@ export default {
   },
 } as Meta;
 
-const DefaultTemplate: Story<TagProps> = () => {
-  return <Tag>Basic Tag</Tag>;
+const DefaultTemplate: Story<TagProps> = args => {
+  return <Tag {...args}>Basic Tag</Tag>;
 };
 
 const RemoveableTemplate: Story<TagProps> = () => {
