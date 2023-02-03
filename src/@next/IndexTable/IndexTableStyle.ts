@@ -787,48 +787,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     justify-content: var(--pc-inline-align);
   }
 
-  @media (min-width: 30.625em) {
-    .Polaris-Inline {
-      gap: var(--pc-inline-gap-sm, var(--pc-inline-gap-xs));
-    }
-  }
-
-  @media (min-width: 48em) {
-    .Polaris-Inline {
-      gap: var(
-        --pc-inline-gap-md,
-        var(--pc-inline-gap-sm, var(--pc-inline-gap-xs))
-      );
-    }
-  }
-
-  @media (min-width: 65em) {
-    .Polaris-Inline {
-      gap: var(
-        --pc-inline-gap-lg,
-        var(
-          --pc-inline-gap-md,
-          var(--pc-inline-gap-sm, var(--pc-inline-gap-xs))
-        )
-      );
-    }
-  }
-
-  @media (min-width: 90em) {
-    .Polaris-Inline {
-      gap: var(
-        --pc-inline-gap-xl,
-        var(
-          --pc-inline-gap-lg,
-          var(
-            --pc-inline-gap-md,
-            var(--pc-inline-gap-sm, var(--pc-inline-gap-xs))
-          )
-        )
-      );
-    }
-  }
-
   .Polaris-BulkActions__Group {
     /* stylelint-disable -- polaris: Used to apply dark theme to action buttons */
     --p-surface: var(--p-surface-dark);
