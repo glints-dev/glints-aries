@@ -20,6 +20,12 @@ test('Tag - small size', async ({ page }) => {
   await expect(tagPage.container).toHaveScreenshot('tag-small-size.png');
 });
 
+test('Tag - custom text color', async ({ page }) => {
+  const tagPage = getPage(page);
+  await tagPage.goto('args=textColor:!hex(3fde00)');
+  await expect(tagPage.container).toHaveScreenshot('tag-custom-text-color.png');
+});
+
 test('removeable tag - standard size', async ({ page }) => {
   const tagPage = getRemoveableTagPage(page);
   await tagPage.goto();
