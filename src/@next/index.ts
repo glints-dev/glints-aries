@@ -34,6 +34,13 @@ export {
   IndexTableProps,
   useIndexResourceState,
 } from './IndexTable';
+export {
+  Modal,
+  ModalProps,
+  ModalContext,
+  ModalProvider,
+  useModal,
+} from './Modal';
 export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
