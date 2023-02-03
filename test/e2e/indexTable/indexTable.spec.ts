@@ -5,6 +5,7 @@ test('IndexTable', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
+  page.waitForLoadState('domcontentloaded');
   await expect(indexTablePage.canvas).toHaveScreenshot('indexTable.png');
 
   await indexTablePage.tableRow.hover();
