@@ -52,5 +52,6 @@ export { Spinner, SpinnerProps } from './Spinner';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
 export { TextInput, TextInputProps } from './TextInput';
+export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
 export { Typography, TypographyProps } from './Typography';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
