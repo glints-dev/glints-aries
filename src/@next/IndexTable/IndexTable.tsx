@@ -7,6 +7,7 @@ import {
 import { Checkbox } from '../Checkbox';
 import { CheckboxProps } from '../Checkbox';
 import { Row } from './components/Row/Row';
+import { StyledIndexTable } from './IndexTableStyle';
 
 const IndexTable = ({
   bulkActions,
@@ -31,15 +32,18 @@ const IndexTable = ({
   };
 
   return (
-    <PolarisIndexTable
-      bulkActions={bulkActions}
-      checkbox={renderCheckboxHeader}
-      itemCount={itemCount}
-      selectedItemsCount={selectedItemsCount}
-      {...props}
-    >
-      {children}
-    </PolarisIndexTable>
+    <>
+      <StyledIndexTable />
+      <PolarisIndexTable
+        bulkActions={bulkActions}
+        checkbox={renderCheckboxHeader}
+        itemCount={itemCount}
+        selectedItemsCount={selectedItemsCount}
+        {...props}
+      >
+        {children}
+      </PolarisIndexTable>
+    </>
   );
 };
 
