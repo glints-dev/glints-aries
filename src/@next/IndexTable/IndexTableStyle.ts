@@ -151,7 +151,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     margin: 0.3125rem var(--p-space-2) var(--p-space-4);
     box-shadow: var(--p-shadow-popover);
     border-radius: var(--p-border-radius-2);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: left, top;
   }
@@ -330,10 +329,8 @@ export const StyledIndexTable: any = createGlobalStyle`
     --pc-action-list-item-vertical-padding: calc(
       (var(--pc-action-list-item-min-height) - 1.25rem) / 2
     );
-    -webkit-appearance: none;
     appearance: none;
     margin: 0;
-    padding: 0;
     background: none;
     border: none;
     font-size: inherit;
@@ -346,11 +343,9 @@ export const StyledIndexTable: any = createGlobalStyle`
     min-height: var(--pc-action-list-item-min-height);
     text-align: left;
     text-decoration: none;
-    cursor: pointer;
     padding: var(--pc-action-list-item-vertical-padding) var(--p-space-2);
     border-radius: var(--p-border-radius-1);
     border-top: var(--p-border-width-1) solid transparent;
-    color: inherit;
   }
 
   .Polaris-ActionList__Item:focus {
@@ -370,12 +365,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     box-shadow: 0 0 0 -0.0625rem var(--p-focused);
     transition: box-shadow var(--p-duration-100) cubic-bezier(0.25, 0.1, 0.25, 1);
     border-radius: var(--p-border-radius-1);
-  }
-
-  @media (forced-colors: active) {
-    .Polaris-ActionList__Item {
-      border: var(--p-border-width-1) solid transparent;
-    }
   }
 
   .Polaris-ActionList__Item:hover {
@@ -587,7 +576,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     --pc-button-focused: 20;
     --pc-button-disclosure-icon-offset: -0.375rem;
     position: relative;
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -608,7 +596,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     line-height: 1;
     text-align: center;
     cursor: pointer;
-    -webkit-user-select: none;
     user-select: none;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
@@ -870,7 +857,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     transition-property: transform, opacity;
     transform: translateY(7.5rem);
     padding: 0 var(--p-space-4);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: transform, opacity;
   }
@@ -1511,7 +1497,6 @@ export const StyledIndexTable: any = createGlobalStyle`
   }
 
   .Polaris-IndexTable__ScrollBar::-webkit-scrollbar {
-    -webkit-appearance: none;
     appearance: none;
     height: var(--p-space-2);
     width: var(--p-space-2);
@@ -1521,7 +1506,6 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__ScrollBar::-webkit-scrollbar-thumb {
     border-radius: var(--p-border-radius-1);
     background-color: var(--p-border-neutral-subdued);
-    -webkit-transition: background-color var(--p-duration-100) cubic-bezier(0, 0, 0.58, 1);
     transition: background-color var(--p-duration-100) cubic-bezier(0, 0, 0.58, 1);
   }
 
@@ -1530,7 +1514,6 @@ export const StyledIndexTable: any = createGlobalStyle`
   }
 
   .Polaris-IndexTable--disableTextSelection {
-    -webkit-user-select: none;
     user-select: none;
   }
 
@@ -1646,7 +1629,6 @@ export const StyledIndexTable: any = createGlobalStyle`
       calc((2.375rem - 1.25rem - var(--p-space-05)) / 2)
       var(--p-space-4);
     cursor: pointer;
-    -webkit-user-select: none;
     user-select: none;
     text-decoration: none;
     text-align: left;
@@ -1692,7 +1674,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     gap: var(--p-space-025);
     align-items: center;
     justify-content: flex-start;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: opacity;
   }
