@@ -9,7 +9,6 @@ import {
   StyledModalContainer,
   StyledModalHeader,
   StyledModalContent,
-  StyledModalButton,
   StyledModalActions,
   StyledButtonContainer,
   StyledModalCloseButton,
