@@ -34,11 +34,11 @@ export {
   IndexTableProps,
   useIndexResourceState,
 } from './IndexTable';
-export { Pagination, SimplePagination, PaginationProps } from './Pagination';
+export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
+export { TextInput, TextInputProps } from './TextInput';
 export { Typography, TypographyProps } from './Typography';
-
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
