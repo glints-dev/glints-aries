@@ -89,7 +89,6 @@ export const StyledModalButton = styled.button`
   border: 0;
   background: transparent;
   padding: 0;
-  margin-top: -20px;
 
   svg {
     width: 24px;
@@ -97,8 +96,14 @@ export const StyledModalButton = styled.button`
     fill: ${Neutral.B40};
   }
 
+  &[data-has-decription='true'] {
+    margin-top: -20px;
+  }
+
   @media (max-width: ${Breakpoints.large}) {
-    margin-top: -18px;
+    &[data-has-decription='true'] {
+      margin-top: -18px;
+    }
   }
 `;
 

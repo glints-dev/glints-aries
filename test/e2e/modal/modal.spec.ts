@@ -11,17 +11,12 @@ test('Modal', async ({ page }) => {
   await expect(modalPage.canvas).toHaveScreenshot('modal-closed.png');
 });
 
-test('Modal - small', async ({ page }) => {
+test('Modal - large content', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
-  await modalPage.triggerModal('args=size:small');
-  await expect(modalPage.canvas).toHaveScreenshot('modal-small.png');
-});
-
-test('Modal - large', async ({ page }) => {
-  const modalPage = new ModalPage(page);
-
-  await modalPage.triggerModal('args=size:large');
+  await modalPage.triggerModal(
+    'args=children:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  );
   await expect(modalPage.canvas).toHaveScreenshot('modal-large.png');
 });
 

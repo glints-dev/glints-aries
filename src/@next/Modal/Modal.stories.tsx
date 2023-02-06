@@ -23,11 +23,11 @@ const Template: Story<ModalProps> = args => {
   };
 
   const primaryAction = {
-    label: 'Primary Action',
+    label: 'Yes',
     action: () => console.log('Primary action!'),
   };
   const secondaryAction = {
-    label: 'Secondary Action',
+    label: 'No',
     action: () => console.log('Secondary action!'),
   };
 
@@ -40,14 +40,20 @@ const Template: Story<ModalProps> = args => {
         primaryAction={primaryAction}
         secondaryAction={secondaryAction}
         onClose={() => setShowModal(false)}
-      ></Modal>
+      />
     </>
   );
 };
 
 export const Interactive = Template.bind({});
 
-Interactive.args = { header: 'Title', children: 'Content' };
+Interactive.args = {
+  header: 'Title',
+  headerDescription: 'Description',
+  children: 'Content',
+  showBackButton: true,
+  showCloseButton: true,
+};
 
 const WithSpinnerTemplate: Story<void> = () => {
   const [iOpen, setOpen] = useState(false);

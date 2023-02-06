@@ -104,6 +104,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                   <StyledButtonContainer>
                     <StyledModalBackButton
                       data-testid="modal-back-btn"
+                      data-has-decription={!!headerDescription}
                       onClick={() => onBack?.()}
                     >
                       <Icon name="ri-arrow-left-line" />
@@ -120,6 +121,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                   <StyledButtonContainer>
                     <StyledModalCloseButton
                       data-testid="modal-close-btn"
+                      data-has-decription={!!headerDescription}
                       onClick={() => onClose?.()}
                     >
                       <Icon name="ri-close" />
