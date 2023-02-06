@@ -61,7 +61,6 @@ export const StyledModalHeader = styled.div`
 export const StyledModalContent = styled.div`
   min-height: 24px;
   color: #202223;
-  padding: 20px;
   width: 100%;
   padding: ${space18} 20px;
 `;
@@ -75,7 +74,7 @@ export const StyledModalActions = styled.div`
   padding: ${space16};
   gap: 10px;
   box-shadow: inset 0px 1px 0px ${Neutral.B95};
-  border-radius: 0p ${borderRadius8};
+  border-radius: 0 ${borderRadius8};
 `;
 
 export const StyledModalCloseButton = styled.button`
