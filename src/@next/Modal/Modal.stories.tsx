@@ -40,16 +40,14 @@ const Template: Story<ModalProps> = args => {
         primaryAction={primaryAction}
         secondaryAction={secondaryAction}
         onClose={() => setShowModal(false)}
-      >
-        Content
-      </Modal>
+      ></Modal>
     </>
   );
 };
 
 export const Interactive = Template.bind({});
 
-Interactive.args = { size: 'default', header: 'Title' };
+Interactive.args = { header: 'Title', children: 'Content' };
 
 const WithSpinnerTemplate: Story<void> = () => {
   const [iOpen, setOpen] = useState(false);

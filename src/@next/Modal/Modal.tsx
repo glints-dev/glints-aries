@@ -9,8 +9,11 @@ import {
   StyledModalContainer,
   StyledModalHeader,
   StyledModalContent,
-  StyledModalCloseButton,
+  StyledModalButton,
   StyledModalActions,
+  StyledButtonContainer,
+  StyledModalCloseButton,
+  StyledModalBackButton,
 } from './ModalStyle';
 
 export type ModalAction = {
@@ -18,19 +21,20 @@ export type ModalAction = {
   action: (...args: any[]) => void;
 };
 
-const modalSizes = ['default', 'small', 'large'] as const;
-
-export type ModalSize = typeof modalSizes[number];
-
 export type ModalProps = {
   isOpen?: boolean;
-  size?: ModalSize;
-  header?: React.ReactNode;
+  header?: string;
+  headerDescription?: string;
   children?: React.ReactNode;
   primaryAction?: ModalAction;
   secondaryAction?: ModalAction;
   customActions?: React.ReactNode;
+  showBackButton?: boolean;
+  showCloseButton?: boolean;
+  showHeaderBorder?: boolean;
+  closeOnClickOutside?: boolean;
   onClose?: () => void;
+  onBack?: () => void;
 };
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
@@ -38,24 +42,22 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     {
       isOpen,
       header,
+      headerDescription,
       children,
       secondaryAction,
       primaryAction,
       customActions,
-      size = 'default',
+      showBackButton,
+      showCloseButton = true,
+      showHeaderBorder = true,
+      closeOnClickOutside,
       onClose,
+      onBack,
     }: ModalProps,
     ref
   ) {
     if (!isOpen) {
       return null;
-    }
-
-    if (!modalSizes.includes(size)) {
-      console.warn(
-        `Size "${size}" is not a valid Modal size, default will be used instead`
-      );
-      size = 'default';
     }
 
     const defaultActionContent = (
@@ -86,21 +88,44 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         children
       );
 
+    const handleClickOutside = () => {
+      if (closeOnClickOutside) {
+        onClose?.();
+      }
+    };
+
     return (
       <Portal>
-        <StyledModalWrapper>
-          <StyledModalContainer ref={ref} data-size={size}>
+        <StyledModalWrapper onClick={() => handleClickOutside()}>
+          <StyledModalContainer ref={ref} onClick={e => e.stopPropagation()}>
             {header && (
-              <StyledModalHeader>
+              <StyledModalHeader data-show-border={showHeaderBorder}>
+                {showBackButton && (
+                  <StyledButtonContainer>
+                    <StyledModalBackButton
+                      data-testid="modal-back-btn"
+                      onClick={() => onBack?.()}
+                    >
+                      <Icon name="ri-arrow-left-line" />
+                    </StyledModalBackButton>
+                  </StyledButtonContainer>
+                )}
                 <Typography as="div" variant="subtitle1">
                   {header}
+                  <Typography as="div" variant="body1">
+                    {headerDescription}
+                  </Typography>
                 </Typography>
-                <StyledModalCloseButton
-                  data-testid="modal-close-btn"
-                  onClick={() => onClose?.()}
-                >
-                  <Icon name="ri-close" />
-                </StyledModalCloseButton>
+                {showCloseButton && (
+                  <StyledButtonContainer>
+                    <StyledModalCloseButton
+                      data-testid="modal-close-btn"
+                      onClick={() => onClose?.()}
+                    >
+                      <Icon name="ri-close" />
+                    </StyledModalCloseButton>
+                  </StyledButtonContainer>
+                )}
               </StyledModalHeader>
             )}
             <StyledModalContent>{content}</StyledModalContent>
