@@ -96,7 +96,10 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
 
     return (
       <Portal>
-        <StyledModalWrapper onClick={() => handleClickOutside()}>
+        <StyledModalWrapper
+          data-testid="modal-wrapper"
+          onClick={() => handleClickOutside()}
+        >
           <StyledModalContainer ref={ref} onClick={e => e.stopPropagation()}>
             {header && (
               <StyledModalHeader data-show-border={showHeaderBorder}>

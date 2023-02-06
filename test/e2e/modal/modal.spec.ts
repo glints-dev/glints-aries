@@ -11,13 +11,64 @@ test('Modal', async ({ page }) => {
   await expect(modalPage.canvas).toHaveScreenshot('modal-closed.png');
 });
 
-test('Modal - large content', async ({ page }) => {
+test('Modal - close on click outside', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.triggerModal('args=closeOnClickOutside:true');
+  await modalPage.wrapper.click({ position: { x: 1, y: 1 } });
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-close-on-click-outside.png'
+  );
+});
+
+test('Modal - no header description', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.triggerModal('args=headerDescription:');
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-no-header-description.png'
+  );
+});
+
+test('Modal - no back button', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.triggerModal('args=showBackButton:false');
+  await expect(modalPage.canvas).toHaveScreenshot('modal-no-back-button.png');
+});
+
+test('Modal - no header description and no back button', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.triggerModal('args=headerDescription:;showBackButton:false');
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-no-header-description-no-back-button.png'
+  );
+});
+
+test('Modal - no close button', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.triggerModal('args=showCloseButton:false');
+  await expect(modalPage.canvas).toHaveScreenshot('modal-no-close-button.png');
+});
+
+test('Modal - header only', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
   await modalPage.triggerModal(
-    'args=children:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    'args=headerDescription:;showCloseButton:false;showBackButton:false'
   );
-  await expect(modalPage.canvas).toHaveScreenshot('modal-large.png');
+  await expect(modalPage.canvas).toHaveScreenshot('modal-header-only.png');
+});
+
+test('Modal - with large content', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.gotoWithLargeContentPage();
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-with-large-content.png'
+  );
 });
 
 test('Modal - with custom actions', async ({ page }) => {
