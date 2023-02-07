@@ -28,6 +28,7 @@ export {
 } from './Button';
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 export { Divider } from './Divider';
+export { EmptyState } from './EmptyState';
 export { Icon, IconProps } from './Icon';
 export {
   IndexTable,
