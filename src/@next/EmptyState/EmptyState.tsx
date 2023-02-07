@@ -8,7 +8,7 @@ import {
   StyledImage,
 } from './EmptyStateStyle';
 
-enum ImageName {
+export enum ImageName {
   EMPTY_CARTON = 'empty-carton',
   EMPTY_MAILBOX = 'empty-mailbox',
   SAFETY_CONE = 'safety-cone',
