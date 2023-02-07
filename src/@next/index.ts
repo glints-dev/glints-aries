@@ -38,6 +38,7 @@ export {
   IndexTableProps,
   useIndexResourceState,
 } from './IndexTable';
+export { Link } from './Link';
 export {
   Modal,
   ModalContext,
