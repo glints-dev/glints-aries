@@ -1482,6 +1482,8 @@ export const StyledIndexTable: any = createGlobalStyle`
 
   .Polaris-IndexTable__EmptySearchResultWrapper {
     padding: var(--p-space-4);
+    width: 100%;
+    position: absolute;
   }
 
   .Polaris-IndexTable--condensedRow {
