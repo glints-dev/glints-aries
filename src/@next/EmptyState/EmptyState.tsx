@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Typography } from '../Typography';
+import { Neutral } from '../utilities/colors';
 import {
   EmptyStateContainer,
   EmptyStateContentContainer,
@@ -43,12 +44,12 @@ export const EmptyState = ({
       )}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
-          <Typography as="span" variant="subtitle1">
+          <Typography as="span" variant="subtitle1" color={Neutral.B18}>
             {title}
           </Typography>
         )}
         {description && (
-          <Typography as="span" variant="body1">
+          <Typography as="span" variant="body1" color={Neutral.B40}>
             {description}
           </Typography>
         )}
@@ -61,7 +62,7 @@ export const EmptyState = ({
           </ButtonGroup>
         )}
         {helpText && (
-          <Typography as="span" variant="subtitle2">
+          <Typography as="span" variant="subtitle2" color={Neutral.B40}>
             {helpText}
           </Typography>
         )}
