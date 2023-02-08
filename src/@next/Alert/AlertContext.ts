@@ -1,12 +1,11 @@
 import { createContext } from 'react';
+import { ComponentWithProviderProps } from '../../types/componentWithProvider';
 import { AlertProps } from './Alert';
 
-export type showAlertProps = Omit<AlertProps, 'show'>;
+export type ShowAlertProps = Omit<AlertProps, 'show'>;
 
-export type AlertContextProps = AlertProps & {
-  showAlert: (props: showAlertProps) => void;
-  closeAlert: () => void;
-};
+export type AlertContextProps = AlertProps &
+  ComponentWithProviderProps<ShowAlertProps>;
 export const AlertContext = createContext<AlertContextProps | undefined>(
   undefined
 );
