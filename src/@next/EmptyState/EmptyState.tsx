@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button, PrimaryButton } from '../Button';
-import { ButtonGroup } from '../ButtonGroup';
-import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import {
   EmptyStateContainer,
   EmptyStateContentContainer,
+  StyledButtonGroup,
+  StyledDescription,
+  StyledHelpText,
   StyledImage,
+  StyledTitle,
 } from './EmptyStateStyle';
 
 export enum ImageName {
@@ -44,27 +46,27 @@ export const EmptyState = ({
       )}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
-          <Typography as="span" variant="subtitle1" color={Neutral.B18}>
+          <StyledTitle variant="subtitle1" color={Neutral.B18}>
             {title}
-          </Typography>
+          </StyledTitle>
         )}
         {description && (
-          <Typography as="span" variant="body1" color={Neutral.B40}>
+          <StyledDescription variant="body1" color={Neutral.B40}>
             {description}
-          </Typography>
+          </StyledDescription>
         )}
         {displayButtons && (
-          <ButtonGroup>
+          <StyledButtonGroup>
             {showPrimaryButton && (
               <PrimaryButton>{buttonPrimaryContent}</PrimaryButton>
             )}
             {showBasicButton && <Button>{buttonBasicContent}</Button>}
-          </ButtonGroup>
+          </StyledButtonGroup>
         )}
         {helpText && (
-          <Typography as="span" variant="subtitle2" color={Neutral.B40}>
+          <StyledHelpText variant="subtitle2" color={Neutral.B40}>
             {helpText}
-          </Typography>
+          </StyledHelpText>
         )}
       </EmptyStateContentContainer>
     </EmptyStateContainer>

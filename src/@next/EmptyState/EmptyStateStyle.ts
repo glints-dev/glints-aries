@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Breakpoints } from '..';
+import { ButtonGroup } from '../ButtonGroup';
+import { Typography } from '../Typography';
 import { space16, space24 } from '../utilities/spacing';
 
 export const EmptyStateContainer = styled.div`
@@ -13,7 +15,6 @@ export const EmptyStateContentContainer = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  gap: ${space16};
   margin: ${space24} 20px 20px;
 
   &[data-full-width='false'] {
@@ -29,4 +30,23 @@ export const EmptyStateContentContainer = styled.div`
 export const StyledImage = styled.img`
   height: 200px;
   width: 200px;
+`;
+
+export const StyledButtonGroup = styled(ButtonGroup)`
+  margin-bottom: ${space16};
+`;
+
+export const StyledTitle = styled(Typography)`
+  text-align: center;
+  margin: 0 0 ${space16};
+`;
+
+export const StyledDescription = styled(Typography)`
+  text-align: center;
+  margin: 0 0 ${space24};
+`;
+
+export const StyledHelpText = styled(Typography)`
+  text-align: center;
+  margin: 0;
 `;
