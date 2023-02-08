@@ -6,18 +6,13 @@ export class EmptyStatePage extends StoryBookPage {
     super(page, '?path=/story/next-emptystate--interactive');
   }
 
-  async gotoWithPrimaryButtonPage(args?: Args) {
-    this.setPath('?path=/story/next-emptystate--with-buttons');
+  async gotoWithLeastInfoPage(args?: Args) {
+    this.setPath('?path=/story/next-emptystate--with-least-info');
     await this.goto(args);
   }
 
-  async gotoWithBasicButtonPage(args?: Args) {
-    this.setPath('?path=/story/next-emptystate--with-buttons');
-    await this.goto(args);
-  }
-
-  async gotoWithMinimum(args?: Args) {
-    this.setPath('?path=/story/next-emptystate--with-buttons');
+  async gotoWithBasicButtonOnlyPage(args?: Args) {
+    this.setPath('?path=/story/next-emptystate--with-basic-button-only');
     await this.goto(args);
   }
 }

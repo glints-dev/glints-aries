@@ -1,53 +1,87 @@
 import { test, expect } from '@playwright/test';
-import { IndexTablePage } from './indexTablePage';
+import { EmptyStatePage } from './emptyStatePage';
 
-test('IndexTable', async ({ page }) => {
-  const indexTablePage = new IndexTablePage(page);
-  await indexTablePage.goto();
+test('EmptyState - most information', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.goto();
 
-  page.waitForLoadState('domcontentloaded');
-  await expect(indexTablePage.canvas).toHaveScreenshot('indexTable.png');
-
-  await indexTablePage.tableRow.hover();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-hover-row.png'
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-most-info.png'
   );
 });
 
-test('IndexTable - bulk action', async ({ page }) => {
-  const indexTablePage = new IndexTablePage(page);
-  await indexTablePage.goto();
+test('EmptyState - most information with basic button only', async ({
+  page,
+}) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithBasicButtonOnlyPage();
 
-  await indexTablePage.checkboxes.first().click();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-selectall-rows.png'
-  );
-
-  await indexTablePage.checkboxes.last().click();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-selectsome-rows.png'
-  );
-
-  await indexTablePage.moveToAction.click();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-click-bulkactionmenu.png'
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-most-info-basic-button.png'
   );
 });
 
-test('IndexTable - loading state', async ({ page }) => {
-  const indexTablePage = new IndexTablePage(page);
-  await indexTablePage.goto('args=loading:true');
+test('EmptyState - least information', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithLeastInfoPage();
 
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indexTable-loading.png'
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-least-info.png'
   );
 });
 
-test('IndexTable - empty state', async ({ page }) => {
-  const indexTablePage = new IndexTablePage(page);
-  await indexTablePage.goto('args=itemCount:0');
+test('EmptyState - with primary button only', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithLeastInfoPage(
+    'args=description:Lorem%20ipsum%20dolor%20sit%20amet'
+  );
 
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indexTable-empty-state.png'
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-with-primary-button.png'
+  );
+});
+
+test('EmptyState - full width', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.goto();
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-full-width.png'
+  );
+});
+
+test('EmptyState - fixed width', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.goto('args=fullWidth:false');
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-fixed-width.png'
+  );
+});
+
+test('EmptyState - empty carton image', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithLeastInfoPage('args=imageName:empty-carton');
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-empty-carton.png'
+  );
+});
+
+test('EmptyState - empty mailbox image', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithLeastInfoPage('args=imageName:empty-mailbox');
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-empty-mailbox.png'
+  );
+});
+
+test('EmptyState - safety cone image', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithLeastInfoPage('args=imageName:safety-cone');
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-safety-cone.png'
   );
 });
