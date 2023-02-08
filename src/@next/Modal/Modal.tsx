@@ -25,12 +25,17 @@ export type ModalProps = {
   header?: string;
   headerDescription?: string;
   children?: React.ReactNode;
+  /** This action will be tied to primary button on footer */
   primaryAction?: ModalAction;
+  /** This action will be tied to basic button on footer */
   secondaryAction?: ModalAction;
+  /** Defining custom actions will not show primary and secondary actions */
   customActions?: React.ReactNode;
   showBackButton?: boolean;
   showCloseButton?: boolean;
+  /** Use this if you don't want to see the header border bottom */
   showHeaderBorder?: boolean;
+  /** Setting this to true will close modal when clicking outside of Modal body */
   closeOnClickOutside?: boolean;
   onClose?: () => void;
   onBack?: () => void;
