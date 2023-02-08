@@ -42,3 +42,12 @@ test('IndexTable - loading state', async ({ page }) => {
     'indexTable-loading.png'
   );
 });
+
+test('IndexTable - empty state', async ({ page }) => {
+  const indexTablePage = new IndexTablePage(page);
+  await indexTablePage.goto('args=itemCount:0');
+
+  await expect(indexTablePage.canvas).toHaveScreenshot(
+    'indexTable-empty-state.png'
+  );
+});
