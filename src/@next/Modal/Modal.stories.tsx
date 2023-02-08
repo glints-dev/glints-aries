@@ -18,7 +18,7 @@ export default {
 
 const Template: Story<ModalProps> = args => {
   const [showModal, setShowModal] = useState(false);
-  const triggerAlert = () => {
+  const triggerModal = () => {
     setShowModal(true);
   };
 
@@ -33,7 +33,7 @@ const Template: Story<ModalProps> = args => {
 
   return (
     <>
-      <Button onClick={() => triggerAlert()}>Show Modal</Button>
+      <Button onClick={() => triggerModal()}>Show Modal</Button>
       <Modal
         {...args}
         isOpen={showModal}
