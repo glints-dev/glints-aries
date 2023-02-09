@@ -10,9 +10,6 @@ export const StyledButton = styled(Button)`
   margin-right: ${Spacing.space8};
 `;
 
-export const EmptyStateContainer = styled.div`
+export const EmptyStateContainer = styled.td`
   height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;

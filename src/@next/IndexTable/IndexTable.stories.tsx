@@ -204,7 +204,7 @@ const Template: Story<IndexTableProps> = args => {
       ]}
       selectedLabel="selected candidates"
       emptyState={
-        <EmptyStateContainer>
+        <EmptyStateContainer colSpan={7}>
           <EmptyState
             title="No pending candidates"
             description="Any candidates that are not processed will appear here"
