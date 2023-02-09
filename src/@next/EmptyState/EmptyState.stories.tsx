@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { EmptyState, EmptyStateProps } from './EmptyState';
+import { EmptyState, EmptyStateProps, imageName } from './EmptyState';
 
 (EmptyState as React.FunctionComponent<EmptyStateProps>).displayName =
   'Empty State';
@@ -11,6 +11,12 @@ export default {
   title: '@next/EmptyState',
   component: EmptyState,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
+  argTypes: {
+    imageName: {
+      control: 'select',
+      options: imageName,
+    },
+  },
 } as Meta;
 
 const Template: Story<EmptyStateProps> = args => {
