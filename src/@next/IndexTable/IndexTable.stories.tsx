@@ -209,7 +209,7 @@ const Template: Story<IndexTableProps> = args => {
             title="No pending candidates"
             description="Any candidates that are not processed will appear here"
             buttonPrimaryContent="Back to Dashboard"
-            imageName={ImageName.EMPTY_CARTON}
+            imageName="empty-carton"
           />
         </EmptyStateContainer>
       }

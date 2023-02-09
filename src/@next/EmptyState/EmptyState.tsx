@@ -11,12 +11,8 @@ import {
   StyledTitle,
 } from './EmptyStateStyle';
 
-export enum ImageName {
-  EMPTY_CARTON = 'empty-carton',
-  EMPTY_MAILBOX = 'empty-mailbox',
-  SAFETY_CONE = 'safety-cone',
-}
-
+const imageName = ['empty-carton', 'empty-mailbox', 'safety-cone'];
+export type ImageName = typeof imageName[number];
 export interface EmptyStateProps {
   buttonBasicContent?: React.ReactNode;
   buttonPrimaryContent?: React.ReactNode;

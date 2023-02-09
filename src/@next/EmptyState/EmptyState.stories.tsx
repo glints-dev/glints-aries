@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { EmptyState, EmptyStateProps, ImageName } from './EmptyState';
+import { EmptyState, EmptyStateProps } from './EmptyState';
 
 (EmptyState as React.FunctionComponent<EmptyStateProps>).displayName =
   'Empty State';
@@ -22,7 +22,7 @@ const buttonBasicContent = 'Basic Button';
 
 export const Interactive = Template.bind({});
 Interactive.args = {
-  imageName: ImageName.EMPTY_CARTON,
+  imageName: 'empty-carton',
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
@@ -48,7 +48,7 @@ const WithBasicButtonOnlyTemplate: Story<EmptyStateProps> = args => {
 
 export const WithBasicButtonOnly = WithBasicButtonOnlyTemplate.bind({});
 WithBasicButtonOnly.args = {
-  imageName: ImageName.EMPTY_CARTON,
+  imageName: 'empty-carton',
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
