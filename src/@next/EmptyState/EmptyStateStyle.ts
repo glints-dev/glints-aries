@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { Breakpoints } from '..';
 import { ButtonGroup } from '../ButtonGroup';
 import { Typography } from '../Typography';
-import { space16, space24 } from '../utilities/spacing';
+import { space16, space24, space40 } from '../utilities/spacing';
 
 export const EmptyStateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: ${space40} 0 60px;
 `;
 
 export const EmptyStateContentContainer = styled.div`

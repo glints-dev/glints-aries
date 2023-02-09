@@ -9,12 +9,13 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { EmptyState, Typography } from '..';
 import { Icon } from '../Icon';
 import { PrimaryButton } from '../Button';
-import {
-  StyledButton,
-  StyledButtonGroup,
-} from './indexTableStoryHelper/ButtonGroupStyle';
 import { Neutral } from '../utilities/colors';
 import { ImageName } from '../EmptyState';
+import {
+  EmptyStateContainer,
+  StyledButton,
+  StyledButtonGroup,
+} from './indexTableStoryHelper/IndexTableStoryStyle';
 
 (IndexTable as React.FunctionComponent<IndexTableProps>).displayName = 'Table';
 
@@ -203,12 +204,14 @@ const Template: Story<IndexTableProps> = args => {
       ]}
       selectedLabel="selected candidates"
       emptyState={
-        <EmptyState
-          title="No pending candidates"
-          description="Any candidates that are not processed will appear here"
-          buttonPrimaryContent="Back to Dashboard"
-          imageName={ImageName.EMPTY_CARTON}
-        />
+        <EmptyStateContainer>
+          <EmptyState
+            title="No pending candidates"
+            description="Any candidates that are not processed will appear here"
+            buttonPrimaryContent="Back to Dashboard"
+            imageName={ImageName.EMPTY_CARTON}
+          />
+        </EmptyStateContainer>
       }
     >
       {rowMarkup}
