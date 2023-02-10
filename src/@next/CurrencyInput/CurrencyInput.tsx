@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { InputProps } from '../Input/Input';
-import { StyledCurrency } from './CurrencyStyles';
+import { Input, InputProps } from '../Input/Input';
 
 export type CurrencyInputProps = Omit<
   InputProps,
@@ -9,13 +8,14 @@ export type CurrencyInputProps = Omit<
   locale?: string;
   value?: number;
   onChange?: (value: number) => void;
+  prefix?: string;
 };
 
 export const CurrencyInput = React.forwardRef<
   HTMLInputElement,
   CurrencyInputProps
 >(function CurrencyInput(
-  { locale = 'en', value = 0, onChange, ...props }: CurrencyInputProps,
+  { locale = 'en', value = 0, onChange, prefix, ...props }: CurrencyInputProps,
   ref
 ) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -58,10 +58,10 @@ export const CurrencyInput = React.forwardRef<
   };
 
   return (
-    <StyledCurrency
+    <Input
       ref={ref}
       type="text"
-      prefix={<div>$</div>}
+      prefix={<div>{prefix ?? '$'}</div>}
       {...props}
       value={formattedValue === '0' ? '' : formattedValue}
       onChange={handleChange}

@@ -23,3 +23,11 @@ test('Currency - locale', async ({ page }) => {
   await currencyPage.goto('args=locale:id');
   await expect(currencyPage.container).toHaveScreenshot('currency-id.png');
 });
+
+test('Currency - long currency prefix', async ({ page }) => {
+  const currencyPage = getPage(page);
+  await currencyPage.goto('args=prefix:CAD');
+  await expect(currencyPage.container).toHaveScreenshot(
+    'currency-long-prefix.png'
+  );
+});
