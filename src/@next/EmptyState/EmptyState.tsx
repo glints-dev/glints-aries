@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { Neutral } from '../utilities/colors';
 import {
@@ -10,9 +10,6 @@ import {
   StyledImage,
   StyledTitle,
 } from './EmptyStateStyle';
-import emptyCartonImage from './assets/emptyCarton';
-import emptyMailboxImage from './assets/emptyMailbox';
-import safetyConeImage from './assets/safetyCone';
 
 export const imageNames = [
   'empty-carton',
@@ -22,10 +19,16 @@ export const imageNames = [
 
 export type ImageName = typeof imageNames[number];
 
+// const imageMapping: Record<ImageName, string> = {
+//   'empty-carton': emptyCartonImage,
+//   'empty-mailbox': emptyMailboxImage,
+//   'safety-cone': safetyConeImage,
+// };
+
 const imageMapping: Record<ImageName, string> = {
-  'empty-carton': emptyCartonImage,
-  'empty-mailbox': emptyMailboxImage,
-  'safety-cone': safetyConeImage,
+  'empty-carton': 'emptyCarton',
+  'empty-mailbox': 'emptyMailbox',
+  'safety-cone': 'safetyCone',
 };
 
 export type ButtonAction = {
@@ -53,15 +56,25 @@ export const EmptyState = ({
   title,
 }: EmptyStateProps) => {
   const displayButtons = !!primaryButtonAction || !!basicButtonAction;
+  const [image, setImage] = useState(null);
 
   const isValidImageName = imageNames.includes(imageName);
   if (imageName && !isValidImageName) {
     console.warn(`imageName "${imageName}" is not a valid Image Name.`);
   }
 
+  useEffect(() => {
+    const loadImage = async () => {
+      const img = await import(`./assets/${imageMapping[imageName]}.js`);
+      setImage(img.default);
+    };
+
+    loadImage();
+  }, [imageName]);
+
   return (
     <EmptyStateContainer>
-      {imageName && <StyledImage src={imageMapping[imageName]} />}
+      {imageName && <StyledImage src={image} />}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
           <StyledTitle variant="subtitle1" color={Neutral.B18}>
