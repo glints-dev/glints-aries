@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { EmptyState, EmptyStateProps, imageName } from './EmptyState';
+import { EmptyState, EmptyStateProps } from './EmptyState';
 
 (EmptyState as React.FunctionComponent<EmptyStateProps>).displayName =
   'Empty State';
@@ -11,20 +11,14 @@ export default {
   title: '@next/EmptyState',
   component: EmptyState,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
-  argTypes: {
-    imageName: {
-      control: 'select',
-      options: imageName,
-    },
-  },
 } as Meta;
 
 const Template: Story<EmptyStateProps> = args => {
   return <EmptyState {...args} />;
 };
 
-const buttonPrimaryContent = 'Primary Button';
-const buttonBasicContent = 'Basic Button';
+const primaryButtonAction = { label: 'Primary Button' };
+const basicButtonAction = { label: 'Basic Button' };
 
 export const Interactive = Template.bind({});
 Interactive.args = {
@@ -32,8 +26,8 @@ Interactive.args = {
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
-  buttonPrimaryContent,
-  buttonBasicContent,
+  basicButtonAction,
+  primaryButtonAction,
   helpText:
     'Morbi gravida, neque at accumsan tempus, ante ante pulvinar lacus, eget tempor nisl libero eu metus.',
 };
@@ -45,7 +39,7 @@ const WithLeastInfoTemplate: Story<EmptyStateProps> = args => {
 export const WithLeastInfo = WithLeastInfoTemplate.bind({});
 WithLeastInfo.args = {
   title: 'Title',
-  buttonPrimaryContent,
+  primaryButtonAction,
 };
 
 const WithBasicButtonOnlyTemplate: Story<EmptyStateProps> = args => {
@@ -58,7 +52,7 @@ WithBasicButtonOnly.args = {
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
-  buttonBasicContent,
+  basicButtonAction,
   helpText:
     'Morbi gravida, neque at accumsan tempus, ante ante pulvinar lacus, eget tempor nisl libero eu metus.',
 };

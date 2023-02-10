@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { Neutral } from '../utilities/colors';
 import {
@@ -10,16 +10,32 @@ import {
   StyledImage,
   StyledTitle,
 } from './EmptyStateStyle';
+import emptyCartonImage from './assets/emptyCarton';
+import emptyMailboxImage from './assets/emptyMailbox';
+import safetyConeImage from './assets/safetyCone';
 
-export const imageName = ['empty-carton', 'empty-mailbox', 'safety-cone'];
-export type ImageName = typeof imageName[number];
+export const imageNames = [
+  'empty-carton',
+  'empty-mailbox',
+  'safety-cone',
+] as const;
+
+export type ImageName = typeof imageNames[number];
+
+const imageMapping: Record<ImageName, string> = {
+  'empty-carton': emptyCartonImage,
+  'empty-mailbox': emptyMailboxImage,
+  'safety-cone': safetyConeImage,
+};
+
+export type ButtonAction = {
+  label: string;
+  loading?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
 export interface EmptyStateProps {
-  buttonBasicContent?: React.ReactNode;
-  buttonBasicLoading?: boolean;
-  buttonBasicOnClick?: React.MouseEventHandler<HTMLButtonElement>;
-  buttonPrimaryContent?: React.ReactNode;
-  buttonPrimaryLoading?: boolean;
-  buttonPrimaryOnClick?: React.MouseEventHandler<HTMLButtonElement>;
+  basicButtonAction?: ButtonAction;
+  primaryButtonAction?: ButtonAction;
   description?: string;
   fullWidth?: boolean;
   helpText?: string;
@@ -28,35 +44,24 @@ export interface EmptyStateProps {
 }
 
 export const EmptyState = ({
-  buttonBasicContent,
-  buttonBasicLoading,
-  buttonBasicOnClick,
-  buttonPrimaryContent,
-  buttonPrimaryLoading,
-  buttonPrimaryOnClick,
+  basicButtonAction,
+  primaryButtonAction,
   description,
   fullWidth = true,
   helpText,
   imageName,
   title,
 }: EmptyStateProps) => {
-  const showPrimaryButton = !!buttonPrimaryContent;
-  const showBasicButton = !!buttonBasicContent;
-  const displayButtons = showPrimaryButton || showBasicButton;
-  const [image, setImage] = useState(null);
+  const displayButtons = !!primaryButtonAction || !!basicButtonAction;
 
-  useEffect(() => {
-    const loadImage = async () => {
-      const img = await import(`./assets/${imageName}.png`);
-      setImage(img.default);
-    };
-
-    loadImage();
-  }, [imageName]);
+  const isValidImageName = imageNames.includes(imageName);
+  if (imageName && !isValidImageName) {
+    console.warn(`imageName "${imageName}" is not a valid Image Name.`);
+  }
 
   return (
     <EmptyStateContainer>
-      {imageName && <StyledImage src={image} />}
+      {imageName && <StyledImage src={imageMapping[imageName]} />}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
           <StyledTitle variant="subtitle1" color={Neutral.B18}>
@@ -70,17 +75,20 @@ export const EmptyState = ({
         )}
         {displayButtons && (
           <StyledButtonGroup>
-            {showPrimaryButton && (
+            {primaryButtonAction && (
               <PrimaryButton
-                loading={buttonPrimaryLoading}
-                onClick={buttonPrimaryOnClick}
+                loading={primaryButtonAction?.loading}
+                onClick={primaryButtonAction?.onClick}
               >
-                {buttonPrimaryContent}
+                {primaryButtonAction?.label}
               </PrimaryButton>
             )}
-            {showBasicButton && (
-              <Button loading={buttonBasicLoading} onClick={buttonBasicOnClick}>
-                {buttonBasicContent}
+            {basicButtonAction && (
+              <Button
+                loading={basicButtonAction?.loading}
+                onClick={basicButtonAction.onClick}
+              >
+                {basicButtonAction?.label}
               </Button>
             )}
           </StyledButtonGroup>

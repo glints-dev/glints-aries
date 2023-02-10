@@ -10,7 +10,6 @@ import { EmptyState, Typography } from '..';
 import { Icon } from '../Icon';
 import { PrimaryButton } from '../Button';
 import { Neutral } from '../utilities/colors';
-import { ImageName } from '../EmptyState';
 import {
   EmptyStateContainer,
   StyledButton,
@@ -208,7 +207,7 @@ const Template: Story<IndexTableProps> = args => {
           <EmptyState
             title="No pending candidates"
             description="Any candidates that are not processed will appear here"
-            buttonPrimaryContent="Back to Dashboard"
+            primaryButtonAction={{ label: 'Back to Dashboard' }}
             imageName="empty-carton"
           />
         </EmptyStateContainer>
