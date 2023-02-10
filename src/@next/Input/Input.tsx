@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   StyledContainer,
   StyledInput,
@@ -21,9 +21,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const hasPrefix = !!prefix;
     const hasSuffix = !!suffix;
 
+    const prefixRef = useRef(null);
+
     const Prefix = () =>
       hasPrefix ? (
-        <StyledPrefixContainer>{prefix}</StyledPrefixContainer>
+        <StyledPrefixContainer ref={prefixRef}>{prefix}</StyledPrefixContainer>
       ) : null;
 
     const Suffix = () =>
@@ -31,12 +33,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <StyledSuffixContainer>{suffix}</StyledSuffixContainer>
       ) : null;
 
+    const [prefixWidth, setPrefixWidth] = React.useState(0);
+
+    useEffect(() => {
+      if (hasPrefix) {
+        const prefixWidth = prefixRef.current.getBoundingClientRect().width;
+        setPrefixWidth(prefixWidth);
+      }
+    }, [hasPrefix, prefix]);
+
     return (
       <StyledContainer
         ref={ref}
         data-prefix={hasPrefix}
         data-error={error}
         data-disabled={disabled}
+        prefixWidth={prefixWidth}
       >
         <Prefix />
         <StyledInput disabled={disabled} {...props} />

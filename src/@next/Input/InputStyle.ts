@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral, Red } from '../utilities/colors';
 import { InputProps } from './Input';
+import { space4, space8 } from '../utilities/spacing';
 
-export const StyledContainer = styled.div<InputProps>`
+export const StyledContainer = styled.div<InputProps & { prefixWidth: number }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,7 +18,7 @@ export const StyledContainer = styled.div<InputProps>`
   line-height: 150%;
 
   &[data-prefix='true'] input {
-    padding-left: 40px;
+    padding-left: ${props => props.prefixWidth}px;
   }
 
   &[data-error='true'] input {
@@ -58,18 +59,28 @@ export const StyledPrefixContainer = styled.div`
     height: 17px;
     width: 17px;
     margin: 10px 14px;
+    margin-right: ${space8};
     fill: ${Neutral.B40};
   }
 
   div {
     color: ${Neutral.B40};
     margin: 18px 12px;
+    margin-right: ${space4};
   }
 `;
 
 export const StyledSuffixContainer = styled(StyledPrefixContainer)`
   left: auto;
   right: 0;
+
+  svg {
+    margin: 10px 14px;
+  }
+
+  div {
+    margin: 18px 12px;
+  }
 `;
 
 export const StyledInput = styled.input<InputProps>`
