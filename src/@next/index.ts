@@ -30,6 +30,7 @@ export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
 export { Divider } from './Divider';
+export { EmptyState } from './EmptyState';
 export { Icon, IconProps } from './Icon';
 export {
   IndexTable,
