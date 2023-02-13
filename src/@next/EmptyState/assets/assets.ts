@@ -10,6 +10,6 @@ export type ImageName = typeof imageNames[number];
 
 export const imageMapping: Record<ImageName, string> = {
   'empty-carton': Images.emptyCarton,
-  'empty-mailbox': Images.emptyCarton,
-  'safety-cone': Images.emptyCarton,
+  'empty-mailbox': Images.emptyMailbox,
+  'safety-cone': Images.safetyCone,
 };

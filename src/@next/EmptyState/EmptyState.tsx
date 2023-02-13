@@ -43,6 +43,8 @@ export const EmptyState = ({
     console.warn(`imageName "${imageName}" is not a valid Image Name.`);
   }
 
+  console.log('ImageName: ', imageName);
+
   return (
     <EmptyStateContainer>
       {imageName && <StyledImage src={imageMapping[imageName]} />}
