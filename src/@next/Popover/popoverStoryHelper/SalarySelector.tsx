@@ -22,11 +22,11 @@ export const SalarySelector = ({ onFromChanged, onToChanged }: Props) => {
           IDR
         </Typography>
         <div>
-          <CurrencyInput onChange={onFromChanged} />
+          <CurrencyInput currencyCode="USD" onChange={onFromChanged} />
         </div>
         <div>-</div>
         <div>
-          <CurrencyInput onChange={onToChanged} />
+          <CurrencyInput currencyCode="USD" onChange={onToChanged} />
         </div>
       </div>
     </div>
