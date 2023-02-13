@@ -6,7 +6,9 @@ describe('<Currency />', () => {
   it('should call onChange with number', async () => {
     const onChange = jest.fn();
 
-    const screen = render(<CurrencyInput onChange={onChange} />);
+    const screen = render(
+      <CurrencyInput currencyCode="USD" onChange={onChange} />
+    );
     const input = screen.getByRole('textbox');
 
     fireEvent.change(input, { target: { value: 1000 } });
