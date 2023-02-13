@@ -71,10 +71,10 @@ Interactive.parameters = {
         <Dashboard />
       </>  
 
-      // Call "showModal" anywhere from your component
+      // Call "open" anywhere from your component
       import { useModal } from 'glints-aries/lib/@next';
 
-      const { showModal } = useModal();
+      const { open } = useModal();
       const primaryAction = {
         label: 'Primary Action',
         action: () => console.log('Primary action!'),
@@ -93,7 +93,7 @@ Interactive.parameters = {
 
       <Button
         onClick={() =>
-          showModal(showModalArgs)
+          open(showModalArgs)
         }
       >
         Show Modal
