@@ -71,13 +71,13 @@ Interactive.parameters = {
         <Dashboard />
       </>  
 
-      // Call "showAlert" anywhere from your component
-      import { useAlert } from 'glints-aries/lib/@next';
+      // Call "open" anywhere from your component
+      import { open } from 'glints-aries/lib/@next';
 
-      const { showAlert } = useAlert();
+      const { open } = useAlert();
       <Button
         onClick={() =>
-          showAlert({
+          open({
             title: 'Title',
             content: 'Content',
             children: <a href="#">Learn more</a>,
