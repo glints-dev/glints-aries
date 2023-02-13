@@ -27,6 +27,8 @@ export {
   PrimaryButton,
 } from './Button';
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
+export { Checkbox, CheckboxProps } from './Checkbox';
+export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
 export { Divider } from './Divider';
 export { EmptyState } from './EmptyState';
 export { Icon, IconProps } from './Icon';
@@ -37,11 +39,12 @@ export {
 } from './IndexTable';
 export {
   Modal,
-  ModalProps,
   ModalContext,
+  ModalProps,
   ModalProvider,
   useModal,
 } from './Modal';
+export { NumberInput, NumberInputProps } from './NumberInput';
 export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
