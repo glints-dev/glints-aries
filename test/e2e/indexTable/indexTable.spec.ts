@@ -5,7 +5,8 @@ test('IndexTable', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
-  page.waitForLoadState('domcontentloaded');
+  await page.waitForLoadState('domcontentloaded');
+
   await expect(indexTablePage.canvas).toHaveScreenshot('indexTable.png');
 
   await indexTablePage.tableRow.hover();
@@ -17,6 +18,8 @@ test('IndexTable', async ({ page }) => {
 test('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
+
+  await page.waitForLoadState('domcontentloaded');
 
   await indexTablePage.checkboxes.first().click();
   await expect(indexTablePage.canvas).toHaveScreenshot(
@@ -38,6 +41,8 @@ test('IndexTable - loading state', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto('args=loading:true');
 
+  await page.waitForLoadState('domcontentloaded');
+
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indexTable-loading.png'
   );
@@ -45,7 +50,10 @@ test('IndexTable - loading state', async ({ page }) => {
 
 test('IndexTable - empty state', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
+
   await indexTablePage.goto('args=itemCount:0');
+
+  await page.waitForLoadState('domcontentloaded');
 
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indexTable-empty-state.png'
