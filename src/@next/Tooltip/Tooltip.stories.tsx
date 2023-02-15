@@ -29,3 +29,20 @@ Interactive.args = {
   content: 'Tooltip',
   preferredPosition: 'top-center',
 };
+Interactive.parameters = {
+  docs: {
+    source: {
+      code: `
+  <Tooltip content="Tooltip" preferredPosition="top-center">
+    <Icon
+      name="ri-information-line"
+      height="24px"
+      width="24px"
+    />
+  </Tooltip>
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};

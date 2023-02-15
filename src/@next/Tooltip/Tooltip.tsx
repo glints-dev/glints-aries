@@ -22,6 +22,7 @@ import {
   StyledTooltipArrow,
   StyledTooltipContainer,
 } from './TooltipStyle';
+
 const topPositions = ['top-center', 'top-left', 'top-right'] as const;
 const bottomPositions = [
   'bottom-center',
