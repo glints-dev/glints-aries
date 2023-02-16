@@ -13,7 +13,7 @@ test('IndexTable', async ({ page }) => {
   );
 });
 
-test.only('IndexTable - bulk action', async ({ page }) => {
+test('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
