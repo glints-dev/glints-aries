@@ -21,9 +21,7 @@ test('IndexTable - bulk action', async ({ page }) => {
   await expect(
     page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-      .locator(
-        '.Polaris-BulkActions__Group Polaris-BulkActions--groupNotSticky'
-      )
+      .locator('.Polaris-BulkActions--groupNotSticky')
   ).toBeVisible();
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectall-rows.png'
