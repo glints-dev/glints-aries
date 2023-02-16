@@ -1,5 +1,4 @@
 import React from 'react';
-import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { Icon } from '../Icon';
@@ -16,15 +15,20 @@ import {
   StyledModalBackButton,
 } from './ModalStyle';
 
+export type ModalAction = {
+  label: string;
+  action: (...args: any[]) => void;
+};
+
 export type ModalProps = {
   isOpen?: boolean;
   header?: string;
   headerDescription?: string;
   children?: React.ReactNode;
   /** This action will be tied to primary button on footer */
-  primaryAction?: ComponentAction;
+  primaryAction?: ModalAction;
   /** This action will be tied to basic button on footer */
-  secondaryAction?: ComponentAction;
+  secondaryAction?: ModalAction;
   /** Defining custom actions will not show primary and secondary actions */
   customActions?: React.ReactNode;
   showBackButton?: boolean;
