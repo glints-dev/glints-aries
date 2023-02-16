@@ -18,13 +18,13 @@ test('IndexTable - bulk action', async ({ page }) => {
   await indexTablePage.goto();
 
   await indexTablePage.checkboxes.first().click();
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectall-rows.png'
   );
 
   await indexTablePage.checkboxes.last().click();
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectsome-rows.png'
   );
