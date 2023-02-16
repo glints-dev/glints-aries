@@ -3,7 +3,7 @@ import { ModalProps } from './Modal';
 import { ModalContext, ShowModalProps } from './ModalContext';
 
 export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, setState] = useState<ModalProps>(undefined);
+  const [state, setState] = useState<ModalProps>({ isOpen: false });
 
   const open = (props: ShowModalProps) => setState({ ...props, isOpen: true });
 

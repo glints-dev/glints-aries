@@ -3,7 +3,7 @@ import { AlertProps } from './Alert';
 import { AlertContext, ShowAlertProps } from './AlertContext';
 
 export const AlertProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, setState] = useState<AlertProps>(undefined);
+  const [state, setState] = useState<AlertProps>({ show: false });
 
   const open = (props: ShowAlertProps) => setState({ ...props, show: true });
 
