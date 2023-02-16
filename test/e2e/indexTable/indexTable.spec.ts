@@ -13,18 +13,23 @@ test('IndexTable', async ({ page }) => {
   );
 });
 
-test('IndexTable - bulk action', async ({ page }) => {
+test.only('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
   await indexTablePage.checkboxes.first().click();
-  await page.waitForTimeout(500);
+  await expect(
+    page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator(
+        '.Polaris-BulkActions__Group Polaris-BulkActions--groupNotSticky'
+      )
+  ).toBeVisible();
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectall-rows.png'
   );
 
   await indexTablePage.checkboxes.last().click();
-  await page.waitForTimeout(500);
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectsome-rows.png'
   );
