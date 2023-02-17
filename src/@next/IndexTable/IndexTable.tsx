@@ -8,14 +8,23 @@ import { Checkbox } from '../Checkbox';
 import { CheckboxProps } from '../Checkbox';
 import { Row } from './components/Row/Row';
 import { StyledIndexTable } from './IndexTableStyle';
+import { LoadingState } from './components/LoadingState';
+
+export interface CustomIndexTableProps
+  extends Omit<IndexTableProps, 'emptySearchTitle'> {
+  emptySearchTitle?: string;
+}
 
 const IndexTable = ({
   bulkActions,
   children,
   itemCount,
   selectedItemsCount,
+  loading,
+  emptyState,
+  emptySearchTitle,
   ...props
-}: IndexTableProps) => {
+}: CustomIndexTableProps) => {
   const renderCheckboxHeader = ({
     checked,
     onChange,
@@ -37,8 +46,19 @@ const IndexTable = ({
       <PolarisIndexTable
         bulkActions={bulkActions}
         checkbox={renderCheckboxHeader}
-        itemCount={itemCount}
+        itemCount={loading ? 0 : itemCount}
         selectedItemsCount={selectedItemsCount}
+        emptySearchTitle={emptySearchTitle ?? ''}
+        emptyState={
+          loading ? (
+            <LoadingState
+              label={props.loadingLabel}
+              colSpan={props.headings.length}
+            />
+          ) : (
+            emptyState
+          )
+        }
         {...props}
       >
         {children}
