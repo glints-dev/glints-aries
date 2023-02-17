@@ -19,12 +19,7 @@ test('IndexTable - bulk action', async ({ page }) => {
 
   await indexTablePage.checkboxes.first().click();
 
-  // this class is responsible for turning off the transformation prop, adding this to make sure everything is properly in place before taking the screenshot
-  const bulkActionStickyEl = page
-    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-    .locator('.Polaris-BulkActions--groupNotSticky');
-
-  await expect(bulkActionStickyEl).toBeVisible();
+  await expect(indexTablePage.bulkAction).toBeVisible();
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-selectall-rows.png'
   );
