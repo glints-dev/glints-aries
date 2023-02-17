@@ -3,10 +3,12 @@ import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Neutral } from '../utilities/colors';
 import { space12, space16, space24, space4 } from '../utilities/spacing';
+import { NotoSans } from '../utilities/fonts';
 
 export const StyledCardContainer = styled.div`
   border-radius: ${borderRadius8};
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  color: ${Neutral.B18};
 `;
 
 export const StyledCardHeaderWrapper = styled.div`
@@ -36,6 +38,11 @@ export const StyledCardContentWrapper = styled.div`
 
 export const StyledCardSection = styled.div`
   padding: ${space16} 20px;
+  font-family: ${NotoSans}, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
 
   .section + .section {
     border-top: solid 1px ${Neutral.B85};
@@ -43,6 +50,7 @@ export const StyledCardSection = styled.div`
 
   @media (max-width: ${Breakpoints.large}) {
     padding: ${space16} ${space12};
+    font-size: 14px;
   }
 `;
 
