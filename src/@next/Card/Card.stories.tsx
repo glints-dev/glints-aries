@@ -29,17 +29,11 @@ const Template: Story<CardProps> = args => {
       secondaryAction={secondaryAction}
     >
       <Card.Section>
-        <Typography as="div">This is a section</Typography>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
       </Card.Section>
-      <Card.Section>
-        <Typography as="div">This is a section</Typography>
-      </Card.Section>
+      <Card.Section>This is a section</Card.Section>
     </Card>
   );
 };
@@ -67,24 +61,16 @@ Interactive.parameters = {
       subheading="Subheading"
     >
       <Card.Section>
-        <Typography as="div">
           This is a section
-        </Typography>
         <Card.Section>
-          <Typography as="div">
             This is a subsection
-          </Typography>
         </Card.Section>
         <Card.Section>
-          <Typography as="div">
             This is a subsection
-          </Typography>
         </Card.Section>
       </Card.Section>
       <Card.Section>
-      <Typography as="div">
         This is a section
-      </Typography>
       </Card.Section>
     </Card>
     `,
@@ -98,13 +84,9 @@ const NoActionsTemplate: Story<CardProps> = args => {
   return (
     <Card {...args}>
       <Card.Section>
-        <Typography as="div">This is a section</Typography>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
       </Card.Section>
       <Card.Section>This is a section</Card.Section>
     </Card>
@@ -124,13 +106,9 @@ const PrimaryActionOnlyTemplate: Story<CardProps> = args => {
   return (
     <Card {...args} primaryAction={primaryAction}>
       <Card.Section>
-        <Typography as="div">This is a section</Typography>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
       </Card.Section>
       <Card.Section>This is a section</Card.Section>
     </Card>
@@ -150,13 +128,9 @@ const SecondaryActionOnlyTemplate: Story<CardProps> = args => {
   return (
     <Card {...args} secondaryAction={secondaryAction}>
       <Card.Section>
-        <Typography as="div">This is a section</Typography>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
-        <Card.Section>
-          <Typography as="div">This is a subsection</Typography>
-        </Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
       </Card.Section>
       <Card.Section>This is a section</Card.Section>
     </Card>
