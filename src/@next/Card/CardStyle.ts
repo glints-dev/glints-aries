@@ -38,11 +38,6 @@ export const StyledCardContentWrapper = styled.div`
 
 export const StyledCardSection = styled.div`
   padding: ${space16} 20px;
-  font-family: ${NotoSans}, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0px;
 
   .section + .section {
     border-top: solid 1px ${Neutral.B85};
@@ -50,7 +45,6 @@ export const StyledCardSection = styled.div`
 
   @media (max-width: ${Breakpoints.large}) {
     padding: ${space16} ${space12};
-    font-size: 14px;
   }
 `;
 
