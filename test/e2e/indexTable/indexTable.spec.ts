@@ -23,6 +23,8 @@ test('IndexTable - bulk action', async ({ page }) => {
 
   await indexTablePage.checkboxes.last().click();
 
+  await expect(indexTablePage.bulkAction).toBeVisible();
+
   await indexTablePage.moveToAction.click();
   await expect(indexTablePage.canvas).toHaveScreenshot(
     'indextable-click-bulkactionmenu.png'
