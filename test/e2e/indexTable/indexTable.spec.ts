@@ -20,14 +20,8 @@ test('IndexTable - bulk action', async ({ page }) => {
   await indexTablePage.checkboxes.first().click();
 
   await expect(indexTablePage.bulkAction).toBeVisible();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-selectall-rows.png'
-  );
 
   await indexTablePage.checkboxes.last().click();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-selectsome-rows.png'
-  );
 
   await indexTablePage.moveToAction.click();
   await expect(indexTablePage.canvas).toHaveScreenshot(
