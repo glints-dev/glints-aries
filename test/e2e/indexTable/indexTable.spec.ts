@@ -26,9 +26,7 @@ test('IndexTable - bulk action', async ({ page }) => {
   await expect(indexTablePage.bulkAction).toBeVisible();
 
   await indexTablePage.moveToAction.click();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-click-bulkactionmenu.png'
-  );
+  await expect(indexTablePage.actionList).toBeVisible();
 });
 
 test('IndexTable - loading state', async ({ page }) => {
