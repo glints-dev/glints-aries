@@ -3,7 +3,6 @@ import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Neutral } from '../utilities/colors';
 import { space12, space16, space24, space4 } from '../utilities/spacing';
-import { NotoSans } from '../utilities/fonts';
 
 export const StyledCardContainer = styled.div`
   border-radius: ${borderRadius8};
