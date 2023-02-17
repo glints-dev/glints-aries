@@ -24,7 +24,7 @@ export const StyledCardHeaderWrapper = styled.div`
   border-bottom: solid 1px ${Neutral.B85};
 
   @media (max-width: ${Breakpoints.large}) {
-    padding: ${space12} ${space12} 10px;
+    padding: ${space12} ${space16} 10px;
   }
 `;
 
@@ -48,7 +48,7 @@ export const StyledCardSection = styled.div`
   }
 
   @media (max-width: ${Breakpoints.large}) {
-    padding: ${space16} ${space8};
+    padding: ${space16} ${space12};
   }
 `;
 
@@ -65,6 +65,6 @@ export const StyledCardActionWrapper = styled.div`
   }
 
   @media (max-width: ${Breakpoints.large}) {
-    padding: ${space12};
+    padding: 10px ${space16} ${space12};
   }
 `;
