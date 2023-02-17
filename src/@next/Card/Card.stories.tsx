@@ -3,7 +3,6 @@ import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Card, CardProps } from './Card';
-import { Typography } from '../Typography';
 
 (Card as React.FunctionComponent<CardProps>).displayName = 'Card';
 
