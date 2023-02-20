@@ -27,6 +27,7 @@ export {
   PrimaryButton,
 } from './Button';
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
+export { Card, CardProps } from './Card';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
 export { Divider } from './Divider';
