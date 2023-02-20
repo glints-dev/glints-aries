@@ -56,3 +56,4 @@ export { TextInput, TextInputProps } from './TextInput';
 export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
 export { Typography, TypographyProps } from './Typography';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
+export { Switch } from './Switch';
