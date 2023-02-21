@@ -7,6 +7,12 @@ const getPage = (page: Page) =>
 const getRemoveableTagPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-tag--removeable');
 
+const getClickableTagPage = (page: Page) =>
+  new StoryBookPage(page, '?path=/story/next-tag--clickable');
+
+const getClickableDisabledTagPage = (page: Page) =>
+  new StoryBookPage(page, '?path=/story/next-tag--clickable-disabled');
+
 test('Tag - standard size', async ({ page }) => {
   const tagPage = getPage(page);
   await tagPage.goto();
@@ -131,5 +137,109 @@ test('removeable tag pressed state - small size', async ({ page }) => {
   await tagPage.page.mouse.down();
   await expect(tagPage.container).toHaveScreenshot(
     'tag-removeable-pressed-small-size.png'
+  );
+});
+
+test('clickable tag hover state', async ({ page }) => {
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .hover({ force: true });
+  await expect(tagPage.container).toHaveScreenshot('tag-clickable-hover.png');
+});
+
+test('clickable tag hover state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .hover({ force: true });
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-clickable-hover-small-size.png'
+  );
+});
+
+test('clickable tag active state', async ({ page }) => {
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .click();
+
+  await tagPage.page.mouse.down();
+  await expect(tagPage.container).toHaveScreenshot('tag-clickable-active.png');
+});
+
+test('clickable tag active state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .click();
+
+  await tagPage.page.mouse.down();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-clickable-active-small-size.png'
+  );
+});
+
+test('clickable tag focus state', async ({ page }) => {
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .focus();
+
+  await expect(tagPage.container).toHaveScreenshot('tag-clickable-focus.png');
+});
+
+test('clickable tag focus state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+
+  const tagPage = getClickableTagPage(page);
+  await tagPage.goto();
+  await tagPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByText('Clickable Tag')
+    .first()
+    .focus();
+
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-clickable-focus-small-size.png'
+  );
+});
+
+test('clickable tag disabled state', async ({ page }) => {
+  const tagPage = getClickableDisabledTagPage(page);
+  await tagPage.goto();
+
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-clickable-disabled.png'
+  );
+});
+
+test('clickable tag disabled state - small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+
+  const tagPage = getClickableDisabledTagPage(page);
+  await tagPage.goto();
+
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-clickable-disabled-small-size.png'
   );
 });
