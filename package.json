@@ -26,7 +26,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && npm run build:next:icon && build-storybook -o .out -s dist/public",
     "storybook:build:test": "rm -rf storybook-static && npm run storybook:build:assets && npm run build:icon && npm run build:next:icon && build-storybook -o storybook-static -s dist/public",
-    "storybook:build:assets": "webpack"
+    "storybook:build:assets": "webpack",
+    "prepare": "husky install"
   },
   "author": "Glints",
   "license": "MIT",
@@ -102,9 +103,11 @@
     "fork-ts-checker-webpack-plugin": "^1.3.4",
     "generate-changelog": "^1.7.1",
     "glob": "^7.1.6",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.2",
+    "lint-staged": "^13.1.2",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "prettier": "^2.8.1",
@@ -162,5 +165,11 @@
     "immer": "^9.0.6",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "yarn lint",
+      "prettier --write"
+    ]
   }
 }
