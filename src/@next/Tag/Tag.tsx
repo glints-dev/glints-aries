@@ -14,6 +14,7 @@ export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   value?: string;
   onRemove?: (() => void) | null;
   textColor?: string;
+  disabled?: boolean;
 }
 
 export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
@@ -21,16 +22,32 @@ export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
 export type TagContentProps = React.HTMLAttributes<HTMLSpanElement> & TagProps;
 
 export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
-  { children, onRemove, value, textColor, ...props }: TagProps,
+  {
+    children,
+    onRemove,
+    value,
+    textColor,
+    onClick,
+    disabled,
+    ...props
+  }: TagProps,
   ref
 ) {
+  const handleTextColor = () => {
+    if (disabled) {
+      return Neutral.B85;
+    }
+
+    if (textColor) {
+      return textColor;
+    }
+
+    return Neutral.B18;
+  };
+
   const content =
     typeof children === 'string' || typeof children === 'number' ? (
-      <Typography
-        variant="caption"
-        color={textColor ?? Neutral.B18}
-        as={'span'}
-      >
+      <Typography variant="caption" color={handleTextColor()} as={'span'}>
         {children}
       </Typography>
     ) : (
@@ -51,7 +68,16 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
   );
 
   return (
-    <TagStyle ref={ref} {...props} value={value}>
+    <TagStyle
+      ref={ref}
+      {...props}
+      value={value}
+      onClick={!disabled && onClick}
+      data-clickable={!!onClick}
+      role={!!onClick ? 'button' : undefined}
+      data-disabled={disabled}
+      as={!!onClick ? 'button' : 'div'}
+    >
       <TagContentStyle data-removeable={!!onRemove}>{content}</TagContentStyle>
       {removeButton}
     </TagStyle>

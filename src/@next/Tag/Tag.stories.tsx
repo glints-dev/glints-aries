@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Tag, TagProps } from './Tag';
+import { Blue } from '../utilities/colors';
 
 (Tag as React.FunctionComponent<TagProps>).displayName = 'Tag';
 
@@ -25,9 +26,21 @@ export default {
         type: null,
       },
     },
+    onClick: {
+      description:
+        'A function callback to pass in to when the tag is clicked, if this is supplied, the tag will be clickable',
+      control: {
+        type: null,
+      },
+    },
     textColor: {
       description: 'Text color of the tag',
       control: 'color',
+    },
+    disabled: {
+      description:
+        'A prop to disable the tag, only works when onClick is supplied',
+      control: null,
     },
   },
 
@@ -74,10 +87,47 @@ const RemoveableTemplate: Story<TagProps> = () => {
   return <>{tagMarkup}</>;
 };
 
+const ClickableTemplate: Story<TagProps> = args => {
+  return (
+    <Tag textColor={args.textColor} onClick={() => window.alert('Clicked')}>
+      Clickable Tag
+    </Tag>
+  );
+};
+
+const ClickableDisabledTemplate: Story<TagProps> = args => {
+  return (
+    <Tag
+      textColor={args.textColor}
+      onClick={() => window.alert('Clicked')}
+      disabled
+    >
+      Clickable Tag - Disabled
+    </Tag>
+  );
+};
+
 export const Default = DefaultTemplate.bind({});
 
-Default.args = {};
+Default.args = {
+  onRemove: undefined,
+  onClick: undefined,
+};
 
 export const Removeable = RemoveableTemplate.bind({});
 
 Removeable.args = {};
+
+export const Clickable = ClickableTemplate.bind({});
+
+Clickable.args = {
+  onRemove: null,
+  textColor: Blue.S99,
+};
+
+export const ClickableDisabled = ClickableDisabledTemplate.bind({});
+ClickableDisabled.args = {
+  onRemove: null,
+  textColor: Blue.S99,
+  disabled: true,
+};
