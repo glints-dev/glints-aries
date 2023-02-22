@@ -8,11 +8,12 @@ import {
   StyledSpinnerContainer,
   StyledTable,
   StyledTableCell,
+  StyledTableFooterRow,
   StyledTableLoadingRow,
   StyledTableRow,
 } from './DataTableStyle';
 import { TableCell } from './TableCell';
-import { TableFooterRow } from './TableFooterRow';
+import { TableFooter } from './TableFooter';
 import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
 
@@ -85,8 +86,8 @@ const DataTableComponent = ({
 
   for (const child of React.Children.toArray(children)) {
     const reactEl = child as React.ReactElement;
-    if (reactEl.type === TableFooterRow) {
-      footer = child;
+    if (reactEl.type === TableFooter) {
+      footer = reactEl.props.children;
       continue;
     }
     rows.push(reactEl);
@@ -114,7 +115,7 @@ const DataTableComponent = ({
 
   return (
     <StyledDataTableContainer>
-      <StyledTable data-loading={loading} {...props}>
+      <StyledTable data-loading={loading} data-has-footer={!!footer} {...props}>
         <thead>
           <StyledTableRow>{rowHeaderMarkup}</StyledTableRow>
         </thead>
@@ -125,8 +126,16 @@ const DataTableComponent = ({
           )}
           {rowsMarkup}
         </tbody>
+        {hasRows && !!footer && (
+          <tfoot>
+            <StyledTableFooterRow>
+              <StyledTableCell colSpan={headings.length}>
+                {footer}
+              </StyledTableCell>
+            </StyledTableFooterRow>
+          </tfoot>
+        )}
       </StyledTable>
-      {hasRows && footer}
     </StyledDataTableContainer>
   );
 };
@@ -134,5 +143,5 @@ const DataTableComponent = ({
 export const DataTable = Object.assign(DataTableComponent, {
   Row: TableRow,
   Cell: TableCell,
-  Footer: TableFooterRow,
+  Footer: TableFooter,
 });

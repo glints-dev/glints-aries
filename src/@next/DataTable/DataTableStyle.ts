@@ -7,10 +7,14 @@ export const StyledTable = styled.table`
   width: 100%;
   height: 100%;
   border: 1px solid ${Neutral.B85};
-  border-bottom: 0;
   border-spacing: 0;
   color: ${Neutral.B18};
   max-width: 100vw;
+  border-bottom: 0;
+
+  &[data-has-footer='true'] {
+    border-bottom: 1px solid ${Neutral.B85};
+  }
 
   &[data-loading='true'] {
     tbody {
@@ -101,18 +105,13 @@ export const StyledTableCell = styled.td`
   }
 `;
 
-export const StyledTableFooterRow = styled.div`
-  padding: ${space16};
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  min-height: 64px;
+export const StyledTableFooterRow = styled.tr`
   background: ${Neutral.B99};
-  border-radius: 0px 0px ${borderRadius8} ${borderRadius8};
-  border: 1px solid ${Neutral.B85};
   border-top: 0;
+  border-radius: 0px 0px ${borderRadius8} ${borderRadius8};
+  td {
+    padding: ${space16};
+  }
 `;
 
 export const StyledTableLoadingRow = styled(StyledTableRow)`

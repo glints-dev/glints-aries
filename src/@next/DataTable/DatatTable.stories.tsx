@@ -25,7 +25,10 @@ export default {
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
-const Template: Story<DataTableProps> = args => {
+const Template: Story<DataTableProps> = ({
+  loading,
+  ...args
+}: DataTableProps) => {
   const headings: TableHeading[] = [
     { title: 'Label' },
     { title: 'Variant' },
@@ -142,14 +145,24 @@ const Template: Story<DataTableProps> = args => {
       totals={totals}
       onSortChanged={handleSort}
       emptyState={emptyState}
+      loading={loading}
     >
       {rowMarkup}
-      <DataTable.Footer>
-        <Typography as="div" variant="body1" color={Neutral.B40}>
-          Showing 5 of 100
-        </Typography>
-        <Pagination totalItems={100} pageSize={5} />
-      </DataTable.Footer>
+      {!loading && (
+        <DataTable.Footer>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography as="div" variant="body1" color={Neutral.B40}>
+              Showing 5 of 100
+            </Typography>
+            <Pagination totalItems={100} pageSize={5} />
+          </div>
+        </DataTable.Footer>
+      )}
     </DataTable>
   );
 };
