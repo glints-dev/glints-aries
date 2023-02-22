@@ -101,6 +101,7 @@ const DataTableComponent = ({
 
   const hasRows = rows.length > 0;
   const rowsMarkup = hasRows ? rows : emptyRow;
+  const showFooter = hasRows && !!footer;
 
   const LoadingRow = () => (
     <StyledTableLoadingRow className="loader-container">
@@ -115,7 +116,11 @@ const DataTableComponent = ({
 
   return (
     <StyledDataTableContainer>
-      <StyledTable data-loading={loading} data-has-footer={!!footer} {...props}>
+      <StyledTable
+        data-loading={loading}
+        data-has-footer={showFooter}
+        {...props}
+      >
         <thead>
           <StyledTableRow>{rowHeaderMarkup}</StyledTableRow>
         </thead>
@@ -126,7 +131,7 @@ const DataTableComponent = ({
           )}
           {rowsMarkup}
         </tbody>
-        {hasRows && !!footer && (
+        {showFooter && (
           <tfoot>
             <StyledTableFooterRow>
               <StyledTableCell colSpan={headings.length}>
