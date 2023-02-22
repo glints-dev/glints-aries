@@ -370,7 +370,7 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
           </DataTable.Row>
         );
       })}
-      {!loading && (
+      {!loading && data.length > 0 && (
         <DataTable.Footer>
           <div
             style={{

@@ -101,7 +101,7 @@ const DataTableComponent = ({
 
   const hasRows = rows.length > 0;
   const rowsMarkup = hasRows ? rows : emptyRow;
-  const showFooter = hasRows && !!footer;
+  const showFooter = !!footer;
 
   const LoadingRow = () => (
     <StyledTableLoadingRow className="loader-container">
