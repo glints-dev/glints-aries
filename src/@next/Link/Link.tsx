@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '../Icon';
 import { Blue } from '../utilities/colors';
 import { StyledIcon, StyledLink, StyledTypography } from './LinkStyle';
 
@@ -33,6 +32,7 @@ export const Link = ({
       href={url}
       data-underline={!removeUnderline}
       data-monochrome={monochrome}
+      {...(external && { target: '_blank' })}
       {...props}
     >
       {content}
