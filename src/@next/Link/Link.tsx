@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Blue } from '../utilities/colors';
 import { StyledIcon, StyledLink, StyledTypography } from './LinkStyle';
 
@@ -20,6 +20,9 @@ export const Link = ({
   url,
   ...props
 }: LinkProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
   const content =
     typeof children === 'string' && !monochrome ? (
       <StyledTypography variant="body1">{children}</StyledTypography>
@@ -27,16 +30,43 @@ export const Link = ({
       children
     );
 
+  const setIconColor = () => {
+    let color = Blue.S99;
+
+    if (isHovered) {
+      color = Blue.S100;
+    }
+
+    if (isActive) {
+      color = 'rgba(0, 86, 140, 0.9)';
+    }
+    return color;
+  };
+
   return (
-    <StyledLink
-      href={url}
-      data-underline={!removeUnderline}
-      data-monochrome={monochrome}
-      {...(external && { target: '_blank' })}
-      {...props}
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onMouseDown={() => setIsActive(true)}
+      onMouseUp={() => setIsActive(false)}
     >
-      {content}
-      {external && <StyledIcon fill={Blue.S99} name="ri-external-link-line" />}
-    </StyledLink>
+      <StyledLink
+        href={url}
+        data-underline={!removeUnderline}
+        data-monochrome={monochrome}
+        {...(external && { target: '_blank' })}
+        {...props}
+      >
+        {content}
+        {external && (
+          <StyledIcon
+            fill={setIconColor()}
+            name="ri-external-link-line"
+            data-hover={isHovered}
+            data-active={isActive}
+          />
+        )}
+      </StyledLink>
+    </div>
   );
 };
