@@ -312,3 +312,83 @@ Interactive.parameters = {
     type: 'auto',
   },
 };
+
+const WithEmptyStateTemplate: Story<DataTableProps> = ({
+  loading,
+  ...args
+}: DataTableProps) => {
+  const headings: TableHeading[] = [
+    { title: 'Label' },
+    { title: 'Variant' },
+    { title: 'SKU Number' },
+    {
+      id: 'unit-sold',
+      title: 'Unit sold',
+      defaultSortDirection: 'ASCENDING',
+      align: 'right',
+    },
+    {
+      title: 'Total Price',
+      align: 'right',
+    },
+    {
+      title: 'Actions',
+      align: 'center',
+    },
+  ];
+
+  const data: any[] = [];
+
+  const emptyState = (
+    <EmptyState
+      title="No result"
+      primaryButtonAction={{ label: 'Back to Dashboard' }}
+      imageName="empty-carton"
+    />
+  );
+
+  return (
+    <DataTable
+      {...args}
+      headings={headings}
+      emptyState={emptyState}
+      loading={loading}
+    >
+      {data.map((dt: any, index: number) => {
+        return (
+          <DataTable.Row key={index}>
+            <DataTable.Cell>{dt.label}</DataTable.Cell>
+            <DataTable.Cell>{dt.variant}</DataTable.Cell>
+            <DataTable.Cell>{dt.skuNumber}</DataTable.Cell>
+            <DataTable.Cell align="right">{dt.unitSold}</DataTable.Cell>
+            <DataTable.Cell align="right">{dt.totalPrice}</DataTable.Cell>
+            <DataTable.Cell align="center">
+              <ButtonGroup>
+                <Button>Move</Button> <PrimaryButton>Update</PrimaryButton>
+              </ButtonGroup>
+            </DataTable.Cell>
+          </DataTable.Row>
+        );
+      })}
+      {!loading && (
+        <DataTable.Footer>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography as="div" variant="body1" color={Neutral.B40}>
+              Showing 5 of 100
+            </Typography>
+            <Pagination totalItems={100} pageSize={5} />
+          </div>
+        </DataTable.Footer>
+      )}
+    </DataTable>
+  );
+};
+
+export const WithEmptyState = WithEmptyStateTemplate.bind({});
+
+WithEmptyState.args = { loadingLabel: 'Loading...' };
