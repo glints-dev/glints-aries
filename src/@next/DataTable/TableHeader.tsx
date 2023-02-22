@@ -47,7 +47,11 @@ export const TableHeader = ({
   };
 
   const sortableCellMarkup = (
-    <Button icon={iconMarkup} onClick={() => handleSortableClick()}>
+    <Button
+      data-testid={`data-table-sort-button-${title}`}
+      icon={iconMarkup}
+      onClick={() => handleSortableClick()}
+    >
       {titleMarkup}
     </Button>
   );
