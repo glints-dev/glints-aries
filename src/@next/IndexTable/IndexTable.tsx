@@ -36,12 +36,14 @@ const IndexTable = ({
     );
   };
 
+  const checkbox = !loading && itemCount > 0 ? renderCheckboxHeader : undefined;
+
   return (
     <>
       <StyledIndexTable />
       <PolarisIndexTable
         bulkActions={bulkActions}
-        checkbox={renderCheckboxHeader}
+        checkbox={checkbox}
         itemCount={loading ? 0 : itemCount}
         selectedItemsCount={selectedItemsCount}
         emptySearchTitle={null}
