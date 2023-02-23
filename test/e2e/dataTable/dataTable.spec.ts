@@ -19,6 +19,12 @@ test('DataTable', async ({ page }) => {
 
   await sortButton.click();
   await expect(tablePage.container).toHaveScreenshot('dataTable-sorted.png');
+
+  const row = page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByTestId('data-table-row');
+  await row.first().hover();
+  await expect(tablePage.container).toHaveScreenshot('dataTable-row-hover.png');
 });
 
 test('DataTable - loading', async ({ page }) => {

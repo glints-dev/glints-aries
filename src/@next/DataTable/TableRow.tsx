@@ -8,5 +8,9 @@ export interface TableRowProps
 }
 
 export const TableRow = ({ children, ...props }: TableRowProps) => {
-  return <StyledTableRow {...props}>{children}</StyledTableRow>;
+  return (
+    <StyledTableRow data-testid="data-table-row" {...props}>
+      {children}
+    </StyledTableRow>
+  );
 };

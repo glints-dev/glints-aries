@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableTypography } from './DataTable';
+import { Typography } from '../Typography';
 import { StyledTableCell } from './DataTableStyle';
 
 export interface TableCellProps
@@ -10,9 +10,9 @@ export interface TableCellProps
 export const TableCell = ({ align, children }: TableCellProps) => {
   return (
     <StyledTableCell data-text-align={align}>
-      <TableTypography as="div" variant="body1">
+      <Typography as="div" variant="body1">
         {children}
-      </TableTypography>
+      </Typography>
     </StyledTableCell>
   );
 };

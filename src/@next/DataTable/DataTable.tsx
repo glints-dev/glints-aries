@@ -1,7 +1,7 @@
 import React from 'react';
 import { EmptyStateProps } from '../EmptyState';
 import { Spinner } from '../Spinner';
-import { Typography, TypographyProps } from '../Typography';
+import { Typography } from '../Typography';
 import {
   StyledDataTableContainer,
   StyledLoaderWrapper,
@@ -37,10 +37,6 @@ export interface DataTableProps
   loadingLabel?: string;
   onSortChanged?: (context: string, sortDirection: SortDirection) => void;
 }
-
-export const TableTypography = (props: Omit<TypographyProps, 'style'>) => (
-  <Typography {...props} style={{ whiteSpace: 'nowrap' }} />
-);
 
 const DataTableComponent = ({
   headings,

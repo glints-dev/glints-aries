@@ -47,6 +47,9 @@ export const StyledTableRow = styled.tr`
   background: ${Neutral.B100};
   box-shadow: inset 0px -1px 0px ${Neutral.B85};
 
+  &:hover {
+    background: ${Neutral.B99};
+  }
   &[data-total='true'] {
     background: ${Neutral.B99};
   }
