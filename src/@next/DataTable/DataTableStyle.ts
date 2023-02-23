@@ -90,6 +90,7 @@ export const StyledTabledHeader = styled.th`
 export const StyledTableCell = styled.td`
   text-align: left;
   padding: ${space16};
+  vertical-align: top;
 
   ${alignmentStyle}
 `;
