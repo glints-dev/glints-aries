@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '../Typography';
-import { StyledTableCell } from './DataTableStyle';
+import { StyledTableCell, StyledTextWrapper } from './DataTableStyle';
 
 export interface TableCellProps
   extends React.TdHTMLAttributes<HTMLTableColElement> {
@@ -12,7 +12,7 @@ export const TableCell = ({ align, children }: TableCellProps) => {
     <StyledTableCell data-text-align={align}>
       <div>
         <Typography as="div" variant="body1">
-          {children}
+          <StyledTextWrapper>{children}</StyledTextWrapper>
         </Typography>
       </div>
     </StyledTableCell>

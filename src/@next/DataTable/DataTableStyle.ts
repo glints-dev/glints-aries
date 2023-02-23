@@ -45,7 +45,6 @@ export const StyledTable = styled.table`
 
 export const StyledTableRow = styled.tr`
   background: ${Neutral.B100};
-  min-height: 56px;
   box-shadow: inset 0px -1px 0px ${Neutral.B85};
 
   &[data-total='true'] {
@@ -56,7 +55,6 @@ export const StyledTableRow = styled.tr`
 export const StyledTabledHeader = styled.th`
   padding: ${space16};
   text-align: left;
-  white-space: no-wrap;
 
   ${alignmentStyle}
 
@@ -91,7 +89,6 @@ export const StyledTabledHeader = styled.th`
 export const StyledTableCell = styled.td`
   text-align: left;
   padding: ${space16};
-  white-space: no-wrap;
 
   ${alignmentStyle}
 `;
@@ -136,4 +133,8 @@ export const StyledSpinnerContainer = styled.div`
 export const StyledDataTableContainer = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
+`;
+
+export const StyledTextWrapper = styled.div`
+  white-space: no-wrap;
 `;

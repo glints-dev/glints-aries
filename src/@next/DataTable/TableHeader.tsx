@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 import { SortDirection } from './DataTable';
-import { StyledTabledHeader } from './DataTableStyle';
+import { StyledTabledHeader, StyledTextWrapper } from './DataTableStyle';
 
 export interface TableHeaderProps
   extends React.ThHTMLAttributes<HTMLTableColElement> {
@@ -32,7 +32,7 @@ export const TableHeader = ({
   const iconMarkup = sortDirection ? <Icon name={iconName} /> : null;
   const titleMarkup = (
     <Typography as="span" variant="body1">
-      {title}
+      <StyledTextWrapper>{title}</StyledTextWrapper>
     </Typography>
   );
 
