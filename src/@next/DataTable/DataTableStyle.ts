@@ -61,6 +61,7 @@ export const StyledTabledHeader = styled.th`
   button {
     padding: 0;
     margin: 0;
+    height: auto;
     border: none;
     box-shadow: none;
   }
