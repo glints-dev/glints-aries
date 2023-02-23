@@ -20,7 +20,6 @@ export const StyledPageButton = styled.button<PageButtonProps>`
   height: 32px;
   min-width: 32px;
   border: 0;
-  background: ${Neutral.B100};
   border-radius: ${borderRadius2};
   padding: ${space4};
   color: ${Neutral.B18};

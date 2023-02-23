@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
-import { SortDirection } from './DataTable';
+import { SortDirection, TableTypography } from './DataTable';
 import { StyledTabledHeader, StyledTextWrapper } from './DataTableStyle';
 
 export interface TableHeaderProps
@@ -31,9 +31,9 @@ export const TableHeader = ({
 
   const iconMarkup = sortDirection ? <Icon name={iconName} /> : null;
   const titleMarkup = (
-    <Typography as="span" variant="body1">
-      <StyledTextWrapper>{title}</StyledTextWrapper>
-    </Typography>
+    <TableTypography as="span" variant="body1">
+      {title}
+    </TableTypography>
   );
 
   const handleSortableClick = () => {

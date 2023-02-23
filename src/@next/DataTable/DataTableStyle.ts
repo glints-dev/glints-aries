@@ -134,7 +134,3 @@ export const StyledDataTableContainer = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
 `;
-
-export const StyledTextWrapper = styled.div`
-  white-space: no-wrap;
-`;
