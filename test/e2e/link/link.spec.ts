@@ -27,6 +27,16 @@ test('Link - without underline', async ({ page }) => {
 
 test('Link - monochrome', async ({ page }) => {
   const linkPage = new LinkPage(page);
-  await linkPage.gotoMonochromePage();
+  await linkPage.goto('args=monochrome:true');
   await expect(linkPage.container).toHaveScreenshot('link-monochrome.png');
+
+  await linkPage.link.hover();
+  await expect(linkPage.container).toHaveScreenshot(
+    'link-monochrome-hover.png'
+  );
+
+  await linkPage.page.mouse.down();
+  await expect(linkPage.container).toHaveScreenshot(
+    'link-monochrome-pressed.png'
+  );
 });
