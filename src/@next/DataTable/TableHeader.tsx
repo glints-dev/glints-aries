@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { Typography } from '../Typography';
 import { SortDirection, TableTypography } from './DataTable';
-import { StyledTabledHeader, StyledTextWrapper } from './DataTableStyle';
+import { StyledTabledHeader } from './DataTableStyle';
 
 export interface TableHeaderProps
   extends React.ThHTMLAttributes<HTMLTableColElement> {
