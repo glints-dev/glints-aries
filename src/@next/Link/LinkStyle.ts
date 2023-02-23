@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { Icon } from '../Icon';
-import { Typography } from '../Typography';
-import { Blue } from '../utilities/colors';
+import { Blue, Neutral } from '../utilities/colors';
 import { space2 } from '../utilities/spacing';
 import { LinkProps } from './Link';
 
@@ -13,22 +11,36 @@ export const StyledLink = styled.a<LinkProps>`
   &[data-underline='false'] {
     text-decoration: none;
   }
-`;
 
-export const StyledTypography = styled(Typography)`
-  color: ${Blue.S99};
+  &[data-monochrome='true'] {
+    color: ${Neutral.B18};
+
+    &:hover,
+    &:active {
+      color: ${Neutral.B00};
+    }
+  }
 
   &:hover {
     color: rgba(0, 86, 140, 0.9);
+
+    svg {
+      fill: rgba(0, 86, 140, 0.9);
+    }
   }
 
   &:active {
     color: ${Blue.S100};
-  }
-`;
 
-export const StyledIcon = styled(Icon)`
-  margin-left: ${space2};
-  padding-bottom: ${space2};
-  height: 18px;
+    svg {
+      fill: ${Blue.S100};
+    }
+  }
+
+  svg {
+    fill: ${Blue.S99};
+    margin-left: ${space2};
+    padding-bottom: ${space2};
+    height: 18px;
+  }
 `;
