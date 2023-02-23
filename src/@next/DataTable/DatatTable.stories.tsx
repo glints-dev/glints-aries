@@ -151,6 +151,7 @@ const Template: Story<DataTableProps> = ({
           <div
             style={{
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'space-between',
             }}
           >
@@ -375,6 +376,7 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
           <div
             style={{
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'space-between',
             }}
           >

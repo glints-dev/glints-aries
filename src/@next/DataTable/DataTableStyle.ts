@@ -3,6 +3,21 @@ import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
 
+const alignmentStyle = `
+&[data-text-align='right'] {
+  > div {
+    display: flex;
+    justify-content: right;
+  }
+}
+
+&[data-text-align='center'] {
+  > div {
+    display: flex;
+    justify-content: center;
+  }
+}
+`;
 export const StyledTable = styled.table`
   width: 100%;
   height: 100%;
@@ -43,19 +58,7 @@ export const StyledTabledHeader = styled.th`
   text-align: left;
   white-space: no-wrap;
 
-  &[data-text-align='right'] {
-    > div {
-      display: flex;
-      justify-content: right;
-    }
-  }
-
-  &[data-text-align='center'] {
-    > div {
-      display: flex;
-      justify-content: center;
-    }
-  }
+  ${alignmentStyle}
 
   button {
     padding: 0;
@@ -90,19 +93,7 @@ export const StyledTableCell = styled.td`
   padding: ${space16};
   white-space: no-wrap;
 
-  &[data-text-align='right'] {
-    > div {
-      display: flex;
-      justify-content: right;
-    }
-  }
-
-  &[data-text-align='center'] {
-    > div {
-      display: flex;
-      justify-content: center;
-    }
-  }
+  ${alignmentStyle}
 `;
 
 export const StyledTableFooterRow = styled.tr`
