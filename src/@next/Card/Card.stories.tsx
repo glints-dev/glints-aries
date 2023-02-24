@@ -5,6 +5,7 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Card, CardProps } from './Card';
 import { Typography } from '../Typography';
 import { Red } from '../utilities/colors';
+import styled from 'styled-components';
 
 (Card as React.FunctionComponent<CardProps>).displayName = 'Card';
 
@@ -144,16 +145,20 @@ SecondaryActionOnly.args = {
 };
 
 const CustomHeadingSubHeadingTemplate: Story<CardProps> = args => {
+  const StyledTypography = styled(Typography)`
+    margin: 0;
+  `;
+
   const heading = (
-    <Typography variant="subtitle1" color={Red.B74}>
+    <StyledTypography variant="subtitle1" color={Red.B74}>
       Custom Heading
-    </Typography>
+    </StyledTypography>
   );
 
   const subheading = (
-    <Typography variant="subtitle2" color={Red.B65}>
+    <StyledTypography variant="subtitle2" color={Red.B65}>
       Custom Sub Heading
-    </Typography>
+    </StyledTypography>
   );
 
   return (

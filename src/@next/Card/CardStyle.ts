@@ -6,7 +6,8 @@ import { space12, space16, space24, space4 } from '../utilities/spacing';
 
 export const StyledCardContainer = styled.div`
   border-radius: ${borderRadius8};
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 5px 0px rgba(71, 71, 71, 0.1),
+    0px 1px 2px 0px rgba(71, 71, 71, 0.2);
   color: ${Neutral.B18};
 `;
 
