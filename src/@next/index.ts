@@ -30,6 +30,13 @@ export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
 export { Card, CardProps } from './Card';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
+export {
+  DataTable,
+  DataTableProps,
+  TableCellProps,
+  TableHeaderProps,
+  TableRowProps,
+} from './DataTable';
 export { Divider } from './Divider';
 export { EmptyState } from './EmptyState';
 export { Icon, IconProps } from './Icon';
