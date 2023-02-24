@@ -1,25 +1,39 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
 import { Icon, IconProps } from '../Icon';
+import { Variant as TypographyVariant } from '../Typography';
+import { Label, StyledWrapper } from './SpinnerStyle';
 
-export type SpinnerProps = Omit<IconProps, 'name'>;
+export type Size = 'small' | 'large';
+export type SpinnerProps = Omit<IconProps, 'name'> & {
+  label?: string;
+  size?: Size;
+};
 
-const StyledWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const iconSizeMapping = {
+  ['small']: '18px',
+  ['large']: '48px',
+};
 
-  @keyframes p-keyframes-spin {
-    to {
-      transform: rotate(1turn);
-    }
-  }
-  svg {
-    animation: p-keyframes-spin 800ms linear infinite;
-  }
-`;
+const labelVariantMapping: { [size in Size]: TypographyVariant } = {
+  ['small']: 'body1',
+  ['large']: 'subtitle1',
+};
 
-export const Spinner = (props: SpinnerProps) => (
-  <StyledWrapper className="spinner-container">
-    <Icon name="ri-loader" {...props} />
-  </StyledWrapper>
-);
+export const Spinner = ({ label, size, ...props }: SpinnerProps) => {
+  const [iconSize, setIconSize] = useState(null);
+
+  useEffect(() => {
+    setIconSize(iconSizeMapping[size]);
+  }, [size]);
+
+  return (
+    <StyledWrapper className="spinner-container">
+      <Icon name="ri-loader" height={iconSize} width={iconSize} {...props} />
+      {label && (
+        <Label variant={labelVariantMapping[size]} data-size={size}>
+          {label}
+        </Label>
+      )}
+    </StyledWrapper>
+  );
+};
