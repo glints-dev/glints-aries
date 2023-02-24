@@ -2,7 +2,7 @@ import { StoryBookPage } from '../storybookPage';
 import { Page, test, expect } from '@playwright/test';
 
 const getPage = (page: Page) =>
-  new StoryBookPage(page, '?path=/story/next-switch--default');
+  new StoryBookPage(page, '?path=/story/next-switch--with-icon');
 
 test('default', async ({ page }) => {
   const switchPage = getPage(page);
