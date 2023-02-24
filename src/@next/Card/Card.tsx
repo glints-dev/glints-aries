@@ -10,11 +10,8 @@ import {
   StyledCardHeaderSection,
   StyledCardHeaderSectionHalf,
   StyledCardHeaderWrapper,
-  StyledCustomHeader,
 } from './CardStyle';
 import { Section } from './Section';
-
-const PRIMITIVE_TYPES = ['string', 'number'];
 
 export type CardProps = {
   heading?: React.ReactNode;
@@ -36,20 +33,16 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
   }: CardProps,
   ref
 ) {
-  const headingMarkup = PRIMITIVE_TYPES.includes(typeof heading) ? (
-    <Typography as="div" variant="body2">
+  const headingMarkup = (
+    <Typography as="div" variant="subtitle1">
       {heading}
     </Typography>
-  ) : (
-    <StyledCustomHeader>{heading}</StyledCustomHeader>
   );
 
-  const subHeadingMarkup = PRIMITIVE_TYPES.includes(typeof subheading) ? (
+  const subHeadingMarkup = (
     <Typography as="div" variant="subtitle2">
       {subheading}
     </Typography>
-  ) : (
-    <StyledCustomHeader>{subheading}</StyledCustomHeader>
   );
 
   const headerMarkup = () => {
