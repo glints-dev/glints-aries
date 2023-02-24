@@ -3,6 +3,8 @@ import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Card, CardProps } from './Card';
+import { Typography } from '../Typography';
+import { Red } from '../utilities/colors';
 
 (Card as React.FunctionComponent<CardProps>).displayName = 'Card';
 
@@ -140,3 +142,25 @@ export const SecondaryActionOnly = SecondaryActionOnlyTemplate.bind({});
 SecondaryActionOnly.args = {
   heading: 'Heading',
 };
+
+const CustomHeadingSubHeadingTemplate: Story<CardProps> = args => {
+  const heading = (
+    <Typography variant="subtitle1" color={Red.B74}>
+      Custom Heading
+    </Typography>
+  );
+
+  const subheading = (
+    <Typography variant="subtitle2" color={Red.B65}>
+      Custom Sub Heading
+    </Typography>
+  );
+
+  return (
+    <Card {...args} heading={heading} subheading={subheading}>
+      <Card.Section>This is a section</Card.Section>
+    </Card>
+  );
+};
+
+export const CustomHeadingSubHeading = CustomHeadingSubHeadingTemplate.bind({});
