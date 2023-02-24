@@ -28,6 +28,7 @@ export interface TypographyProps {
   color?: string;
   /** Sets the Typography's variant */
   variant?: Variant;
+  style?: React.CSSProperties;
 }
 
 const isVariant = (str: any): str is Variant => typographyVariant.includes(str);
@@ -36,6 +37,7 @@ export const Typography = ({
   as = 'p',
   children,
   variant,
+  style,
   ...props
 }: TypographyProps) => {
   if (!isVariant(variant)) {
@@ -45,7 +47,7 @@ export const Typography = ({
   }
 
   return (
-    <StyledTypography as={as} variant={variant} {...props}>
+    <StyledTypography style={style} as={as} variant={variant} {...props}>
       {children}
     </StyledTypography>
   );
