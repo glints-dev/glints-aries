@@ -19,7 +19,7 @@
 
 - **id:** replace it to className to avoid duplicate id ([d82dc0c4](https://github.com/glints-dev/glints-aries/commit/d82dc0c4d898f0fd36872a0c6a0ced794b06bfcb))
 
-##### Code Style Change
+##### Code Style Changes
 
 - **Profile picture:** fix style glitch on safari browser ([4fc1464c](https://github.com/glints-dev/glints-aries/commit/4fc1464c1cf44272fc364d3aa268a048dc140f97))
 - **Button:** adding yellow theme props for button ([fe850b1f](https://github.com/glints-dev/glints-aries/commit/fe850b1fdc89b2f223c006179f3b77796223ebf1))
