@@ -63,3 +63,9 @@ export const StyledCardActionWrapper = styled.div`
     padding: 10px ${space16} ${space12};
   }
 `;
+
+export const StyledCustomHeader = styled.div`
+  & > * {
+    margin: 0;
+  }
+`;
