@@ -18,6 +18,14 @@ export const StyledLink = styled.a<LinkProps>`
     &:hover,
     &:active {
       color: ${Neutral.B00};
+
+      svg {
+        fill: ${Neutral.B00};
+      }
+    }
+
+    svg {
+      fill: ${Neutral.B18};
     }
   }
 
