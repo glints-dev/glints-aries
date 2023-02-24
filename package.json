@@ -28,7 +28,7 @@
     "storybook:build:test": "rm -rf storybook-static && npm run storybook:build:assets && npm run build:icon && npm run build:next:icon && build-storybook -o storybook-static -s dist/public",
     "storybook:build:assets": "webpack",
     "prepare": "husky install",
-    "check-definition-files": "node checkDefinitionFile.js"
+    "check-definition-files": "node checkdefinitionfile.js"
   },
   "author": "Glints",
   "license": "MIT",
