@@ -1,6 +1,6 @@
 {
   "name": "glints-aries",
-  "version": "4.0.202",
+  "version": "4.0.203",
   "description": "Glints ui-kit for frontend",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -27,7 +27,8 @@
     "storybook:build": "rm -rf .out && npm run storybook:build:assets && npm run build:icon && npm run build:next:icon && build-storybook -o .out -s dist/public",
     "storybook:build:test": "rm -rf storybook-static && npm run storybook:build:assets && npm run build:icon && npm run build:next:icon && build-storybook -o storybook-static -s dist/public",
     "storybook:build:assets": "webpack",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "check-definition-files": "node checkDefinitionFiles.js"
   },
   "author": "Glints",
   "license": "MIT",
