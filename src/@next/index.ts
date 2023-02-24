@@ -65,3 +65,4 @@ export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
 export { Typography, TypographyProps } from './Typography';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
 export { Switch } from './Switch';
+export { InlineError, InlineErrorProps } from './InlineError';
