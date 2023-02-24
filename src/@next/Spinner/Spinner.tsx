@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Icon, IconProps } from '../Icon';
 import { Variant as TypographyVariant } from '../Typography';
 import { Label, StyledWrapper } from './SpinnerStyle';
@@ -19,21 +19,18 @@ const labelVariantMapping: { [size in Size]: TypographyVariant } = {
   ['large']: 'subtitle1',
 };
 
-export const Spinner = ({ label, size, ...props }: SpinnerProps) => {
-  const [iconSize, setIconSize] = useState(null);
-
-  useEffect(() => {
-    setIconSize(iconSizeMapping[size]);
-  }, [size]);
-
-  return (
-    <StyledWrapper className="spinner-container">
-      <Icon name="ri-loader" height={iconSize} width={iconSize} {...props} />
-      {label && (
-        <Label variant={labelVariantMapping[size]} data-size={size}>
-          {label}
-        </Label>
-      )}
-    </StyledWrapper>
-  );
-};
+export const Spinner = ({ label, size, ...props }: SpinnerProps) => (
+  <StyledWrapper className="spinner-container">
+    <Icon
+      name="ri-loader"
+      height={iconSizeMapping[size]}
+      width={iconSizeMapping[size]}
+      {...props}
+    />
+    {label && (
+      <Label variant={labelVariantMapping[size]} data-size={size}>
+        {label}
+      </Label>
+    )}
+  </StyledWrapper>
+);
