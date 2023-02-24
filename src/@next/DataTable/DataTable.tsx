@@ -38,112 +38,127 @@ export interface DataTableProps
   onSortChanged?: (context: string, sortDirection: SortDirection) => void;
 }
 
-const DataTableComponent = ({
-  headings,
-  totals,
-  onSortChanged,
-  children,
-  emptyState,
-  loading,
-  loadingLabel = 'loading',
-  ...props
-}: DataTableProps) => {
-  const handleSortChanged = (context: string, sortDirection: SortDirection) => {
-    onSortChanged?.(context, sortDirection);
-  };
+const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
+  function DataTable(
+    {
+      headings,
+      totals,
+      onSortChanged,
+      children,
+      emptyState,
+      loading,
+      loadingLabel = 'loading',
+      ...props
+    }: DataTableProps,
+    ref
+  ) {
+    const handleSortChanged = (
+      context: string,
+      sortDirection: SortDirection
+    ) => {
+      onSortChanged?.(context, sortDirection);
+    };
 
-  const rowHeaderMarkup = headings.map((heading, index) => {
-    const { id, title, defaultSortDirection, align } = heading;
-    const key = `table-header-heading-${title}-${index}`;
-    return (
-      <TableHeader
-        key={key}
-        title={title}
-        sortDirection={defaultSortDirection}
-        align={align}
-        onSort={sortDirection => handleSortChanged(id || title, sortDirection)}
-      />
-    );
-  });
+    const rowHeaderMarkup = headings.map((heading, index) => {
+      const { id, title, defaultSortDirection, align } = heading;
+      const key = `table-header-heading-${title}-${index}`;
+      return (
+        <TableHeader
+          key={key}
+          title={title}
+          sortDirection={defaultSortDirection}
+          align={align}
+          onSort={sortDirection =>
+            handleSortChanged(id || title, sortDirection)
+          }
+        />
+      );
+    });
 
-  const totalsRowMarkup = totals
-    ? totals.map((total, index) => {
-        const { title, align } = total || { title: '' };
-        const key = `${total}-${index}`;
+    const totalsRowMarkup = totals
+      ? totals.map((total, index) => {
+          const { title, align } = total || { title: '' };
+          const key = `${total}-${index}`;
 
-        return (
-          <TableCell key={key} align={align}>
-            <Typography as="div" variant="body2">
-              {title}
-            </Typography>
-          </TableCell>
-        );
-      })
-    : null;
+          return (
+            <TableCell key={key} align={align}>
+              <Typography as="div" variant="body2">
+                {title}
+              </Typography>
+            </TableCell>
+          );
+        })
+      : null;
 
-  let footer;
-  const rows: React.ReactNode[] = [];
+    let footer;
+    const rows: React.ReactNode[] = [];
 
-  for (const child of React.Children.toArray(children)) {
-    const reactEl = child as React.ReactElement;
-    if (reactEl.type === TableFooter) {
-      footer = reactEl.props.children;
-      continue;
+    for (const child of React.Children.toArray(children)) {
+      const reactEl = child as React.ReactElement;
+      if (reactEl.type === TableFooter) {
+        footer = reactEl.props.children;
+        continue;
+      }
+      rows.push(reactEl);
     }
-    rows.push(reactEl);
-  }
 
-  const emptyRow = (
-    <StyledTableRow>
-      <StyledTableCell colSpan={headings.length}>{emptyState}</StyledTableCell>
-    </StyledTableRow>
-  );
+    const emptyRow = (
+      <StyledTableRow>
+        <StyledTableCell colSpan={headings.length}>
+          {emptyState}
+        </StyledTableCell>
+      </StyledTableRow>
+    );
 
-  const hasRows = rows.length > 0;
-  const rowsMarkup = hasRows ? rows : emptyRow;
-  const showFooter = !!footer;
+    const hasRows = rows.length > 0;
+    const rowsMarkup = hasRows ? rows : emptyRow;
+    const showFooter = !!footer;
 
-  const LoadingRow = () => (
-    <StyledTableLoadingRow className="loader-container">
-      <StyledLoaderWrapper>
-        <StyledSpinnerContainer>
-          <Spinner />
-          <Typography variant="subtitle1">{loadingLabel}</Typography>
-        </StyledSpinnerContainer>
-      </StyledLoaderWrapper>
-    </StyledTableLoadingRow>
-  );
+    const LoadingRow = () => (
+      <StyledTableLoadingRow className="loader-container">
+        <StyledLoaderWrapper>
+          <StyledSpinnerContainer>
+            <Spinner />
+            <Typography variant="subtitle1">{loadingLabel}</Typography>
+          </StyledSpinnerContainer>
+        </StyledLoaderWrapper>
+      </StyledTableLoadingRow>
+    );
 
-  return (
-    <StyledDataTableContainer>
-      <StyledTable
-        data-loading={loading}
-        data-has-footer={showFooter}
-        {...props}
-      >
-        <thead>
-          <StyledTableRow>{rowHeaderMarkup}</StyledTableRow>
-        </thead>
-        <tbody>
-          <LoadingRow />
-          {totalsRowMarkup && hasRows && (
-            <StyledTableRow data-total="true">{totalsRowMarkup}</StyledTableRow>
+    return (
+      <StyledDataTableContainer>
+        <StyledTable
+          ref={ref}
+          data-loading={loading}
+          data-has-footer={showFooter}
+          {...props}
+        >
+          <thead>
+            <StyledTableRow>{rowHeaderMarkup}</StyledTableRow>
+          </thead>
+          <tbody>
+            <LoadingRow />
+            {totalsRowMarkup && hasRows && (
+              <StyledTableRow data-total="true">
+                {totalsRowMarkup}
+              </StyledTableRow>
+            )}
+            {rowsMarkup}
+          </tbody>
+          {showFooter && (
+            <tfoot>
+              <StyledTableFooterRow>
+                <StyledTableCell colSpan={headings.length}>
+                  {footer}
+                </StyledTableCell>
+              </StyledTableFooterRow>
+            </tfoot>
           )}
-          {rowsMarkup}
-        </tbody>
-        {showFooter && (
-          <tfoot>
-            <StyledTableFooterRow>
-              <StyledTableCell colSpan={headings.length}>
-                {footer}
-              </StyledTableCell>
-            </StyledTableFooterRow>
-          </tfoot>
-        )}
-      </StyledTable>
-    </StyledDataTableContainer>
-  );
-};
+        </StyledTable>
+      </StyledDataTableContainer>
+    );
+  }
+);
 
 export const DataTable = Object.assign(DataTableComponent, {
   Row: TableRow,
