@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Card, CardProps } from './Card';
 import { Typography } from '../Typography';
-import { Red } from '../utilities/colors';
+import { Neutral, Red } from '../utilities/colors';
 import styled from 'styled-components';
 
 (Card as React.FunctionComponent<CardProps>).displayName = 'Card';
@@ -162,9 +162,11 @@ const CustomHeadingSubHeadingTemplate: Story<CardProps> = args => {
   );
 
   return (
-    <Card {...args} heading={heading} subheading={subheading}>
-      <Card.Section>This is a section</Card.Section>
-    </Card>
+    <div style={{ backgroundColor: Neutral.B99, padding: 24 }}>
+      <Card {...args} heading={heading} subheading={subheading}>
+        <Card.Section>This is a section</Card.Section>
+      </Card>
+    </div>
   );
 };
 
