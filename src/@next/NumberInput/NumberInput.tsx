@@ -16,6 +16,8 @@ const StyledInput = styled(Input)`
   }
 `;
 
-export const NumberInput = (props: NumberInputProps) => {
-  return <StyledInput type="number" {...props} />;
-};
+export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
+  function NumberInput(props: NumberInputProps, ref) {
+    return <StyledInput ref={ref} type="number" {...props} />;
+  }
+);

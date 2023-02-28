@@ -36,12 +36,6 @@ const GalleryItemLessThanDefaultImagesDisplayed = () => (
   </Gallery>
 );
 
-const GalleryItemWithInvalidChildren = () => (
-  <Gallery>
-    <span>Content</span>
-  </Gallery>
-);
-
 describe('<Gallery /> focus', () => {
   it('Slider should be focused when Modal is open', () => {
     render(<Component />);

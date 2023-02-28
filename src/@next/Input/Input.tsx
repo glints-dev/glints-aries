@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   StyledContainer,
   StyledInput,
@@ -13,31 +13,58 @@ export interface InputProps
   suffix?: React.ReactNode;
 }
 
-export const Input = ({
-  error,
-  disabled,
-  prefix,
-  suffix,
-  ...props
-}: InputProps) => {
-  const hasPrefix = !!prefix;
-  const hasSuffix = !!suffix;
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  function Input(
+    { error, disabled, prefix, suffix, ...props }: InputProps,
+    ref
+  ) {
+    const hasPrefix = !!prefix;
+    const hasSuffix = !!suffix;
 
-  const Prefix = () =>
-    hasPrefix ? <StyledPrefixContainer>{prefix}</StyledPrefixContainer> : null;
+    const prefixRef = useRef(null);
+    const suffixRef = useRef(null);
 
-  const Suffix = () =>
-    hasSuffix ? <StyledSuffixContainer>{suffix}</StyledSuffixContainer> : null;
+    const Prefix = () =>
+      hasPrefix ? (
+        <StyledPrefixContainer ref={prefixRef}>{prefix}</StyledPrefixContainer>
+      ) : null;
 
-  return (
-    <StyledContainer
-      data-prefix={hasPrefix}
-      data-error={error}
-      data-disabled={disabled}
-    >
-      <Prefix />
-      <StyledInput disabled={disabled} {...props} />
-      <Suffix />
-    </StyledContainer>
-  );
-};
+    const Suffix = () =>
+      hasSuffix ? (
+        <StyledSuffixContainer ref={suffixRef}>{suffix}</StyledSuffixContainer>
+      ) : null;
+
+    const [prefixWidth, setPrefixWidth] = React.useState(0);
+    const [suffixWidth, setSuffixWidth] = React.useState(0);
+
+    useEffect(() => {
+      if (hasPrefix) {
+        const prefixWidth = prefixRef.current.getBoundingClientRect().width;
+        setPrefixWidth(prefixWidth);
+      }
+    }, [hasPrefix, prefix]);
+
+    useEffect(() => {
+      if (hasSuffix) {
+        const suffixWidth = suffixRef.current.getBoundingClientRect().width;
+        setSuffixWidth(suffixWidth);
+      }
+    }, [hasSuffix, suffix]);
+
+    return (
+      <StyledContainer
+        ref={ref}
+        data-prefix={hasPrefix}
+        data-suffix={hasSuffix}
+        data-error={error}
+        data-disabled={disabled}
+        prefixWidth={prefixWidth}
+        suffixWidth={suffixWidth}
+      >
+        <Prefix />
+        <StyledInput disabled={disabled} {...props} />
+        <Suffix />
+      </StyledContainer>
+    );
+  }
+);

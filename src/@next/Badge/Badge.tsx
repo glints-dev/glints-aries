@@ -35,27 +35,24 @@ const renderTextColor = (
 
   return Neutral.B18;
 };
-export const Badge = ({
-  children,
-  status,
-  textColor,
-  ...props
-}: BadgeProps) => {
-  const content =
-    typeof children === 'string' || typeof children === 'number' ? (
-      <Typography
-        variant="overline"
-        color={renderTextColor(textColor, status)}
-        as={'span'}
-      >
-        {children}
-      </Typography>
-    ) : (
-      children
+export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
+  function Badge({ children, status, textColor, ...props }: BadgeProps, ref) {
+    const content =
+      typeof children === 'string' || typeof children === 'number' ? (
+        <Typography
+          variant="overline"
+          color={renderTextColor(textColor, status)}
+          as={'span'}
+        >
+          {children}
+        </Typography>
+      ) : (
+        children
+      );
+    return (
+      <BadgeStyle ref={ref} status={status ? status : 'neutral'} {...props}>
+        <div>{content}</div>
+      </BadgeStyle>
     );
-  return (
-    <BadgeStyle status={status ? status : 'neutral'} {...props}>
-      <div>{content}</div>
-    </BadgeStyle>
-  );
-};
+  }
+);

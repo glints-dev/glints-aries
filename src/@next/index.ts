@@ -27,17 +27,42 @@ export {
   PrimaryButton,
 } from './Button';
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
+export { Card, CardProps } from './Card';
+export { Checkbox, CheckboxProps } from './Checkbox';
+export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
+export {
+  DataTable,
+  DataTableProps,
+  TableCellProps,
+  TableHeaderProps,
+  TableRowProps,
+} from './DataTable';
 export { Divider } from './Divider';
+export { EmptyState } from './EmptyState';
 export { Icon, IconProps } from './Icon';
 export {
   IndexTable,
   IndexTableProps,
   useIndexResourceState,
 } from './IndexTable';
-export { Pagination, SimplePagination, PaginationProps } from './Pagination';
+export { Link, LinkProps } from './Link';
+export {
+  Modal,
+  ModalContext,
+  ModalProps,
+  ModalProvider,
+  useModal,
+} from './Modal';
+export { NumberInput, NumberInputProps } from './NumberInput';
+export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
+export { RadioButton, RadioButtonProps } from './RadioButton';
+export { Spinner, SpinnerProps } from './Spinner';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
+export { TextInput, TextInputProps } from './TextInput';
+export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
 export { Typography, TypographyProps } from './Typography';
-
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
+export { Switch } from './Switch';
+export { InlineError, InlineErrorProps } from './InlineError';

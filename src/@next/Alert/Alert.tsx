@@ -26,79 +26,85 @@ const iconNameStatusMap: Record<AlertProps['status'], IconNames> = {
   error: 'ri-error-warning-fill',
 };
 
-export const Alert = ({
-  show,
-  title,
-  content,
-  status,
-  duration = 4000,
-  children,
-  onDismissed,
-}: AlertProps) => {
-  useEffect(() => {
-    if (!show) {
-      return;
+export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
+  function Alert(
+    {
+      show,
+      title,
+      content,
+      status,
+      duration = 4000,
+      children,
+      onDismissed,
+    }: AlertProps,
+    ref
+  ) {
+    useEffect(() => {
+      if (!show) {
+        return;
+      }
+      const timeId = setTimeout(() => {
+        onDismissed?.();
+      }, duration);
+
+      return () => {
+        clearTimeout(timeId);
+      };
+    }, [duration, onDismissed, show]);
+
+    const hasTitle = !!title;
+    const iconStatus = iconNameStatusMap[status];
+    if (status && !iconStatus) {
+      console.warn(
+        `Status "${status}" is not a valid Alert status, "info" will be used instead`
+      );
     }
-    const timeId = setTimeout(() => {
-      onDismissed?.();
-    }, duration);
+    const iconName = iconStatus || iconNameStatusMap['info'];
 
-    return () => {
-      clearTimeout(timeId);
-    };
-  }, [duration, onDismissed, show]);
+    if (!show) {
+      return null;
+    }
 
-  const hasTitle = !!title;
-  const iconStatus = iconNameStatusMap[status];
-  if (status && !iconStatus) {
-    console.warn(
-      `Status "${status}" is not a valid Alert status, "info" will be used instead`
+    return (
+      <StyledAlertContainer
+        ref={ref}
+        role="alert"
+        data-titled={hasTitle}
+        data-status={status || 'info'}
+      >
+        <div>
+          <Icon name={iconName} />
+        </div>
+        <div>
+          {hasTitle && (
+            <StyledAlertContentColumn>
+              <Typography as="div" variant="subtitle1">
+                {title}
+              </Typography>
+            </StyledAlertContentColumn>
+          )}
+          <div>
+            <StyledAlertContentColumn>
+              <Typography as="div" variant="body1">
+                {content}
+              </Typography>
+            </StyledAlertContentColumn>
+          </div>
+          <div>
+            <StyledAlertContentColumn>
+              <Typography as="div" variant="body1">
+                {children}
+              </Typography>
+            </StyledAlertContentColumn>
+          </div>
+        </div>
+        <StyledAlertCloseIconContainer
+          role="button"
+          onClick={() => onDismissed?.()}
+        >
+          <Icon name="ri-close" />
+        </StyledAlertCloseIconContainer>
+      </StyledAlertContainer>
     );
   }
-  const iconName = iconStatus || iconNameStatusMap['info'];
-
-  if (!show) {
-    return null;
-  }
-
-  return (
-    <StyledAlertContainer
-      role="alert"
-      data-titled={hasTitle}
-      data-status={status || 'info'}
-    >
-      <div>
-        <Icon name={iconName} />
-      </div>
-      <div>
-        {hasTitle && (
-          <StyledAlertContentColumn>
-            <Typography as="div" variant="subtitle1">
-              {title}
-            </Typography>
-          </StyledAlertContentColumn>
-        )}
-        <div>
-          <StyledAlertContentColumn>
-            <Typography as="div" variant="body1">
-              {content}
-            </Typography>
-          </StyledAlertContentColumn>
-        </div>
-        <div>
-          <StyledAlertContentColumn>
-            <Typography as="div" variant="body1">
-              {children}
-            </Typography>
-          </StyledAlertContentColumn>
-        </div>
-      </div>
-      <StyledAlertCloseIconContainer
-        role="button"
-        onClick={() => onDismissed?.()}
-      >
-        <Icon name="ri-close" />
-      </StyledAlertCloseIconContainer>
-    </StyledAlertContainer>
-  );
-};
+);

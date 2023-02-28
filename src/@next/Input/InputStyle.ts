@@ -2,8 +2,14 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral, Red } from '../utilities/colors';
 import { InputProps } from './Input';
+import { space12, space4, space8 } from '../utilities/spacing';
 
-export const StyledContainer = styled.div<InputProps>`
+interface PreffixSuffixWidthProps {
+  prefixWidth: number;
+  suffixWidth: number;
+}
+
+export const StyledContainer = styled.div<InputProps & PreffixSuffixWidthProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,7 +23,11 @@ export const StyledContainer = styled.div<InputProps>`
   line-height: 150%;
 
   &[data-prefix='true'] input {
-    padding-left: 40px;
+    padding-left: ${props => props.prefixWidth}px;
+  }
+
+  &[data-suffix='true'] input {
+    padding-right: ${props => props.suffixWidth}px;
   }
 
   &[data-error='true'] input {
@@ -49,27 +59,25 @@ export const StyledContainer = styled.div<InputProps>`
 
 export const StyledPrefixContainer = styled.div`
   position: absolute;
-  padding: 0;
   left: 0;
-  line-height: 0;
   color: ${Neutral.B40};
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0px ${space8} 0 ${space12};
 
   svg {
     height: 17px;
     width: 17px;
-    margin: 10px 14px;
     fill: ${Neutral.B40};
-  }
-
-  div {
-    color: ${Neutral.B40};
-    margin: 18px 12px;
   }
 `;
 
 export const StyledSuffixContainer = styled(StyledPrefixContainer)`
   left: auto;
   right: 0;
+
+  padding: 0px ${space12} 0 ${space4};
 `;
 
 export const StyledInput = styled.input<InputProps>`

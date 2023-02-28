@@ -17,43 +17,49 @@ export interface ButtonProps
   loading?: boolean;
 }
 
-export const Button = ({
-  children,
-  icon,
-  iconPosition = 'left',
-  active,
-  fullWidth,
-  loading,
-  ...otherProps
-}: ButtonProps) => {
-  const content =
-    typeof children === 'string' ? (
-      <Typography variant="button"> {children}</Typography>
-    ) : (
-      children
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  function Button(
+    {
+      children,
+      icon,
+      iconPosition = 'left',
+      active,
+      fullWidth,
+      loading,
+      ...otherProps
+    }: ButtonProps,
+    ref
+  ) {
+    const content =
+      typeof children === 'string' ? (
+        <Typography variant="button"> {children}</Typography>
+      ) : (
+        children
+      );
+
+    const renderIcon = (position: IconPosition) => {
+      if (icon && position === iconPosition) {
+        return icon;
+      }
+
+      return null;
+    };
+
+    return (
+      <StyledButton
+        ref={ref}
+        data-active={active}
+        data-full-width={fullWidth}
+        data-loading={loading}
+        data-icon={!!icon}
+        {...otherProps}
+        onMouseUp={e => e.currentTarget.blur()}
+      >
+        {loading && <Spinner />}
+        {renderIcon('left')}
+        {content}
+        {renderIcon('right')}
+      </StyledButton>
     );
-
-  const renderIcon = (position: IconPosition) => {
-    if (icon && position === iconPosition) {
-      return icon;
-    }
-
-    return null;
-  };
-
-  return (
-    <StyledButton
-      data-active={active}
-      data-full-width={fullWidth}
-      data-loading={loading}
-      data-icon={!!icon}
-      {...otherProps}
-      onMouseUp={e => e.currentTarget.blur()}
-    >
-      {loading && <Spinner />}
-      {renderIcon('left')}
-      {content}
-      {renderIcon('right')}
-    </StyledButton>
-  );
-};
+  }
+);

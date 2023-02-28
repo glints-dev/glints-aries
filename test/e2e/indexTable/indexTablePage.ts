@@ -6,6 +6,8 @@ export class IndexTablePage extends StoryBookPage {
   readonly checkboxes: Locator;
   readonly tableRow: Locator;
   readonly moveToAction: Locator;
+  readonly bulkAction: Locator;
+  readonly actionList: Locator;
 
   constructor(page: Page) {
     super(page, '?path=/story/next-indextable--interactive');
@@ -18,5 +20,11 @@ export class IndexTablePage extends StoryBookPage {
     this.moveToAction = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('button', { name: 'Move to' });
+    this.bulkAction = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator('.Polaris-BulkActions--groupNotSticky');
+    this.actionList = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator('.Polaris-ActionList');
   }
 }

@@ -9,18 +9,19 @@ export interface ButtonGroupProps
   isButtonWrapped?: boolean;
 }
 
-export const ButtonGroup = ({
-  segmented,
-  fullWidth,
-  isButtonWrapped,
-  ...props
-}: ButtonGroupProps) => {
-  return (
-    <StyledButtonGroup
-      data-segmented={segmented}
-      data-full-width={fullWidth}
-      data-button-wrapped={isButtonWrapped}
-      {...props}
-    />
-  );
-};
+export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+  function ButtonGroup(
+    { segmented, fullWidth, isButtonWrapped, ...props }: ButtonGroupProps,
+    ref
+  ) {
+    return (
+      <StyledButtonGroup
+        ref={ref}
+        data-segmented={segmented}
+        data-full-width={fullWidth}
+        data-button-wrapped={isButtonWrapped}
+        {...props}
+      />
+    );
+  }
+);

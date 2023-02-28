@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { AlertProps } from './Alert';
-import { AlertContext, showAlertProps } from './AlertContext';
+import { AlertContext, ShowAlertProps } from './AlertContext';
 
 export const AlertProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, setState] = useState<AlertProps>(undefined);
+  const [state, setState] = useState<AlertProps>({ show: false });
 
-  const showAlert = (props: showAlertProps) =>
-    setState({ ...props, show: true });
+  const open = (props: ShowAlertProps) => setState({ ...props, show: true });
 
-  const closeAlert = () => setState({ show: false });
+  const close = () => setState({ show: false });
 
-  const alertContextValue = { ...state, showAlert, closeAlert };
+  const alertContextValue = { ...state, open, close };
 
   return (
     <AlertContext.Provider value={alertContextValue}>

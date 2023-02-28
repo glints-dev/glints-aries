@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { AlertProps } from './Alert';
 import { useAlert } from './useAlert';
 import { AlertWithProvider } from './AlertWithProvider';
-import { withAlertProvider } from '../../../.storybook/Decorators';
+import { withAlertProvider } from '../../helpers/storybook/Decorators';
 import { Typography } from '../Typography';
 
 (AlertWithProvider as React.FunctionComponent<AlertProps>).displayName =
@@ -17,7 +17,7 @@ export default {
 } as Meta;
 
 const Template: Story<AlertProps> = args => {
-  const { showAlert } = useAlert();
+  const { open: showAlert } = useAlert();
 
   return (
     <>
@@ -71,13 +71,13 @@ Interactive.parameters = {
         <Dashboard />
       </>  
 
-      // Call "showAlert" anywhere from your component
-      import { useAlert } from 'glints-aries/lib/@next';
+      // Call "open" anywhere from your component
+      import { open } from 'glints-aries/lib/@next';
 
-      const { showAlert } = useAlert();
+      const { open } = useAlert();
       <Button
         onClick={() =>
-          showAlert({
+          open({
             title: 'Title',
             content: 'Content',
             children: <a href="#">Learn more</a>,

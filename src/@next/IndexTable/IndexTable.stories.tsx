@@ -6,15 +6,15 @@ import {
   useIndexResourceState,
 } from './IndexTable';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { Typography } from '..';
-import 'polaris-glints/build/esm/styles.css';
+import { EmptyState, Typography } from '..';
 import { Icon } from '../Icon';
 import { PrimaryButton } from '../Button';
+import { Neutral } from '../utilities/colors';
 import {
+  EmptyStateContainer,
   StyledButton,
   StyledButtonGroup,
-} from './indexTableStoryHelper/ButtonGroupStyle';
-import { Neutral } from '../utilities/colors';
+} from './indexTableStoryHelper/IndexTableStoryStyle';
 
 (IndexTable as React.FunctionComponent<IndexTableProps>).displayName = 'Table';
 
@@ -30,8 +30,8 @@ export default {
     ),
   ],
   argTypes: {
-    disabled: {
-      control: 'boolean',
+    itemCount: {
+      control: 'number',
     },
     loading: {
       control: 'boolean',
@@ -89,37 +89,37 @@ const resourceName = {
   plural: 'candidates',
 };
 
+const promotedBulkActions = [
+  {
+    content: 'Reject',
+    onAction: () => console.log('Reject'),
+  },
+  {
+    title: 'Move to',
+    actions: [
+      {
+        content: 'Assessment',
+        onAction: () => console.log('Assessment'),
+      },
+      {
+        content: 'Interviewing',
+        onAction: () => console.log('Interviewing'),
+      },
+      {
+        content: 'Offered',
+        onAction: () => console.log('Offered'),
+      },
+      {
+        content: 'Hired',
+        onAction: () => console.log('Hired'),
+      },
+    ],
+  },
+];
+
 const Template: Story<IndexTableProps> = args => {
   const { selectedResources, allResourcesSelected, handleSelectionChange } =
     useIndexResourceState(candidates);
-
-  const promotedBulkActions = [
-    {
-      content: 'Reject',
-      onAction: () => console.log('Reject'),
-    },
-    {
-      title: 'Move to',
-      actions: [
-        {
-          content: 'Assessment',
-          onAction: () => console.log('Assessment'),
-        },
-        {
-          content: 'Interviewing',
-          onAction: () => console.log('Interviewing'),
-        },
-        {
-          content: 'Offered',
-          onAction: () => console.log('Offered'),
-        },
-        {
-          content: 'Hired',
-          onAction: () => console.log('Hired'),
-        },
-      ],
-    },
-  ];
 
   const rowMarkup = candidates.map(
     (
@@ -145,14 +145,34 @@ const Template: Story<IndexTableProps> = args => {
           <Icon name="ri-account-circle-fill" height={40} fill={Neutral.B40} />
         </IndexTable.Cell>
         <IndexTable.Cell>
-          <Typography variant="body2">{name}</Typography>
-          <Typography variant="body1">{location}</Typography>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography as="span" variant="body2">
+              {name}
+            </Typography>
+            <Typography as="span" variant="body1">
+              {location}
+            </Typography>
+          </div>
         </IndexTable.Cell>
-        <IndexTable.Cell>{expectedSalary}</IndexTable.Cell>
-        <IndexTable.Cell>{yearsExperience}</IndexTable.Cell>
         <IndexTable.Cell>
-          <Typography variant="body1">{latestWorkExperience}</Typography>
-          <Typography variant="caption">{latestWorkDuration}</Typography>
+          <Typography as="span" variant="body1">
+            {expectedSalary}
+          </Typography>
+        </IndexTable.Cell>
+        <IndexTable.Cell>
+          <Typography as="span" variant="body1">
+            {yearsExperience}
+          </Typography>
+        </IndexTable.Cell>
+        <IndexTable.Cell>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography as="span" variant="body1">
+              {latestWorkExperience}
+            </Typography>
+            <Typography as="span" variant="caption">
+              {latestWorkDuration}
+            </Typography>
+          </div>
         </IndexTable.Cell>
         <IndexTable.Cell>
           <StyledButtonGroup>
@@ -165,9 +185,9 @@ const Template: Story<IndexTableProps> = args => {
   );
   return (
     <IndexTable
+      itemCount={candidates.length}
       {...args}
       resourceName={resourceName}
-      itemCount={candidates.length}
       selectedItemsCount={
         allResourcesSelected ? 'All' : selectedResources.length
       }
@@ -182,6 +202,16 @@ const Template: Story<IndexTableProps> = args => {
         { title: 'Actions' },
       ]}
       selectedLabel="selected candidates"
+      emptyState={
+        <EmptyStateContainer colSpan={7}>
+          <EmptyState
+            title="No pending candidates"
+            description="Any candidates that are not processed will appear here"
+            primaryButtonAction={{ label: 'Back to Dashboard' }}
+            imageName="empty-carton"
+          />
+        </EmptyStateContainer>
+      }
     >
       {rowMarkup}
     </IndexTable>

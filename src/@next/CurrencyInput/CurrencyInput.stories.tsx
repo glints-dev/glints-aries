@@ -24,4 +24,6 @@ Interactive.args = {
   onChange: (value: number) => {
     console.log('Currency on changed value: ', value);
   },
+  currencyCode: 'USD',
+  currencySymbol: '',
 };
