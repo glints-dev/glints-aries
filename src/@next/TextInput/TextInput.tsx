@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import { Input, InputProps } from '../Input/Input';
 
@@ -31,6 +31,10 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       setSuffixValue(currSuffix);
       onChange?.(e);
     };
+
+    useEffect(() => {
+      setSuffixValue(suffix);
+    }, [suffix]);
 
     return (
       <Input
