@@ -30,7 +30,7 @@ const options = [
     value: 'All status',
   },
   {
-    active: true,
+    active: false,
     disabled: false,
     id: '2',
     label: 'Completed',
@@ -45,43 +45,49 @@ const options = [
   },
   {
     active: false,
-    disabled: true,
+    disabled: false,
     id: '4',
     label: 'Expired',
     value: 'Expired',
   },
   {
-    active: true,
+    active: false,
     disabled: false,
     id: '5',
     label: 'Cancelled',
     value: 'Cancelled',
   },
 ];
-const DefaultTemplate: Story<MenuProps> = args => {
-  const [popoverActive, setPopoverActive] = useState(false);
+const BasicTemplate: Story<MenuProps> = args => {
+  const [popoverActive, setPopoverActive] = useState(true);
   const [selected, setSelected] = useState([]);
 
   const togglePopoverActive = useCallback(
     () => setPopoverActive(popoverActive => !popoverActive),
     []
   );
-  const activator = <Button onClick={togglePopoverActive}>Show</Button>;
+  const activator = <Button onClick={togglePopoverActive}>Basic Menu</Button>;
 
   return (
-    <Popover active={popoverActive} activator={activator}>
-      <Menu
-        {...args}
-        title="Basic Menu"
-        onChange={setSelected}
-        selected={selected}
-      />
+    <Popover
+      active={popoverActive}
+      activator={activator}
+      onClose={() => setPopoverActive(false)}
+    >
+      <Popover.Pane>
+        <Menu
+          {...args}
+          title="Basic Menu"
+          onChange={setSelected}
+          selected={selected}
+        />
+      </Popover.Pane>
     </Popover>
   );
 };
 
-export const Default = DefaultTemplate.bind({});
+export const Basic = BasicTemplate.bind({});
 
-Default.args = {
+Basic.args = {
   options,
 };
