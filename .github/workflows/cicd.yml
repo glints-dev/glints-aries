@@ -12,8 +12,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
-          cache: "yarn"
+          node-version: '16'
+          cache: 'yarn'
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Build
@@ -26,6 +26,10 @@ jobs:
         run: yarn test
 
   visual-test:
+    name: visual-test (${{ matrix.shard }}/${{ strategy.job-total }})
+    strategy:
+      matrix:
+        shard: [1, 2, 3]
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.29.0-focal
@@ -36,14 +40,14 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
-          cache: "yarn"
+          node-version: '16'
+          cache: 'yarn'
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Build storybook
         run: yarn storybook:build:test
       - name: Run Playwright tests
-        run: yarn start-server-and-test 'npx http-server ./storybook-static -p 6006' 6006  'npx playwright test'
+        run: yarn start-server-and-test 'npx http-server ./storybook-static -p 6006' 6006  'npx playwright test --shard=${{ matrix.shard }}/${{ strategy.job-total }}'
       - uses: actions/upload-artifact@v3
         if: always()
         with:
@@ -65,8 +69,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
-          cache: "yarn"
+          node-version: '16'
+          cache: 'yarn'
       - name: Install dependencies
         run: yarn install --prefer-offline
       - name: Deploy to Chromatic
