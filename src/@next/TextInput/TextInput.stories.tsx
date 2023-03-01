@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { TextInputProps, TextInput } from './TextInput';
@@ -21,14 +21,22 @@ Interactive.args = {
   disabled: false,
 };
 
-const WithIconsTemplate: Story<TextInputProps> = args => (
-  <TextInput {...args} />
-);
-export const WithPrefixAndSuffix = WithIconsTemplate.bind({});
+const WithPrefixAndSuffixTemplate: Story<TextInputProps> = args => {
+  const [value, setValue] = useState('Hi');
+
+  return (
+    <TextInput
+      {...args}
+      value={value}
+      onChange={e => setValue(e.target.value)}
+      suffix={<div>{value.length}/20</div>}
+    />
+  );
+};
+
+export const WithPrefixAndSuffix = WithPrefixAndSuffixTemplate.bind({});
 WithPrefixAndSuffix.args = {
   placeholder: 'Placeholder',
   prefix: <Icon name="ri-search" />,
-  suffix: <div>2/20</div>,
-  value: 'Hi',
   disabled: false,
 };
