@@ -45,7 +45,7 @@ const options = [
   },
   {
     active: false,
-    disabled: false,
+    disabled: true,
     id: '4',
     label: 'Expired',
     value: 'Expired',
