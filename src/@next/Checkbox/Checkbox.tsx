@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import {
   StyledCheckbox,
   StyledCheckboxContainer,
@@ -18,7 +18,7 @@ export interface CheckboxProps
     'type' | 'onChange'
   > {
   id?: string;
-  label?: string;
+  label?: ReactNode;
   hasError?: boolean;
   indeterminate?: boolean;
   checked?: boolean;
