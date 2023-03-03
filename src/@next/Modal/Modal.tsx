@@ -16,7 +16,7 @@ import {
   StyledModalBackButton,
 } from './ModalStyle';
 
-export type ModalProps = {
+export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
   header?: string;
   headerDescription?: string;
@@ -35,7 +35,7 @@ export type ModalProps = {
   closeOnClickOutside?: boolean;
   onClose?: () => void;
   onBack?: () => void;
-};
+}
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
   function Modal(
@@ -53,6 +53,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       closeOnClickOutside,
       onClose,
       onBack,
+      ...props
     }: ModalProps,
     ref
   ) {
@@ -100,7 +101,11 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           data-testid="modal-wrapper"
           onClick={() => handleClickOutside()}
         >
-          <StyledModalContainer ref={ref} onClick={e => e.stopPropagation()}>
+          <StyledModalContainer
+            ref={ref}
+            onClick={e => e.stopPropagation()}
+            {...props}
+          >
             {header && (
               <StyledModalHeader data-show-border={showHeaderBorder}>
                 {showBackButton && (
