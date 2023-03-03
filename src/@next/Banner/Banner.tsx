@@ -6,6 +6,7 @@ import { Typography } from '../Typography';
 import {
   StyledBanner,
   StyledBannerContentContainer,
+  StyledBannerTitle,
   StyledBannerTitleContainer,
   StyledCloseIconWrapper,
 } from './BannerStyle';
@@ -61,11 +62,13 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       >
         <StyledBannerTitleContainer>
           <Icon name={iconNameValue} />
-          <StyledBannerContentContainer>
-            <Typography as="span" variant="subtitle1">
-              {title}
-            </Typography>
-          </StyledBannerContentContainer>
+          {title && (
+            <StyledBannerTitle>
+              <Typography as="span" variant="subtitle1">
+                {title}
+              </Typography>
+            </StyledBannerTitle>
+          )}
           {dismissable && (
             <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
               <Icon name="ri-close" />

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Green, Neutral, Orange, Red } from '../utilities/colors';
+import { space4 } from '../utilities/spacing';
 
 export const StyledCloseIconWrapper = styled.div`
   cursor: pointer;
@@ -90,4 +91,13 @@ export const StyledBannerContentContainer = styled.div`
 
 export const StyledBannerTitleContainer = styled.div`
   position: relative;
+`;
+
+export const StyledBannerTitle = styled.div`
+  margin-bottom: ${space4};
+  padding-left: 40px;
+
+  button {
+    margin-top: 10px;
+  }
 `;
