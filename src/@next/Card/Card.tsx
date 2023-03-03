@@ -76,7 +76,9 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
       {showHeader && (
         <StyledCardHeaderWrapper>{headerMarkup()} </StyledCardHeaderWrapper>
       )}
-      <StyledCardContentWrapper>{children}</StyledCardContentWrapper>
+      <StyledCardContentWrapper data-actions={showActions}>
+        {children}
+      </StyledCardContentWrapper>
       {showActions && (
         <StyledCardActionWrapper data-align={actionsAlignment}>
           <ButtonGroup>

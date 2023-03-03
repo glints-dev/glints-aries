@@ -34,18 +34,38 @@ export const StyledCardHeaderSectionHalf = styled.div`
 `;
 
 export const StyledCardContentWrapper = styled.div`
-  padding-left: ${space4};
+  padding-bottom: ${space4};
+
+  @media (max-width: ${Breakpoints.large}) {
+    padding-bottom: 0px;
+  }
+
+  &[data-actions='true'] {
+    padding-bottom: 0px;
+  }
 `;
 
 export const StyledCardSection = styled.div`
-  padding: ${space16} 20px;
+  padding: 20px ${space24};
+
+  .section {
+    padding: ${space16} ${space24};
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
 
   .section + .section {
     border-top: solid 1px ${Neutral.B85};
   }
 
   @media (max-width: ${Breakpoints.large}) {
-    padding: ${space16} ${space12};
+    padding: ${space12} ${space16};
+
+    .section {
+      padding: ${space12} ${space16};
+    }
   }
 `;
 
