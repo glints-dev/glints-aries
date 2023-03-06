@@ -27,7 +27,7 @@ export const StyledMenu = styled.ul<MenuProps>`
     &:focus {
       outline: none;
       background: rgba(255, 255, 255, 0.001);
-      box-shadow: 0px 0px 0px 2px ${Blue.S54};
+      border: 2px solid ${Blue.S54};
       border-radius: ${space4};
     }
 
