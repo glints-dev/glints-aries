@@ -46,6 +46,7 @@ export {
   useIndexResourceState,
 } from './IndexTable';
 export { Link, LinkProps } from './Link';
+export { Menu, MenuProps } from './Menu';
 export {
   Modal,
   ModalContext,
