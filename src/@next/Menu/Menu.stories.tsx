@@ -79,7 +79,7 @@ const BasicTemplate: Story<MenuProps> = args => {
           {...args}
           title="Basic Menu"
           onChange={setSelected}
-          selected={selected}
+          selectedValues={selected}
         />
       </Popover.Pane>
     </Popover>

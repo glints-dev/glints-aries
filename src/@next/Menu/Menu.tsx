@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import nextId from 'react-id-generator';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { ListContainer, StyledMenu, TitleContainer } from './MenuStyle';
 
 interface Option {
-  active?: boolean;
   disabled?: boolean;
   id?: string;
   label: React.ReactNode;
@@ -14,27 +14,35 @@ export interface MenuProps {
   id?: string;
   onChange?: (selected: string[]) => void;
   options?: Option[];
-  selected?: string[];
+  /** Selected value based on Option.value */
+  selectedValues?: string[];
   title?: string;
 }
 
-export const Menu = ({ id, onChange, options, selected, title }: MenuProps) => {
-  const handleClick = useCallback(
-    (value: string) => {
-      onChange([value]);
-    },
-    [onChange]
-  );
+export const Menu = ({
+  id,
+  onChange,
+  options,
+  selectedValues,
+  title,
+}: MenuProps) => {
+  const randomId = nextId('glints-menu');
+  const menuId = id ? id : randomId;
+
+  const handleClick = (value: string) => {
+    onChange([value]);
+  };
+
   return (
-    <StyledMenu id={id}>
+    <StyledMenu id={menuId}>
       <TitleContainer>
         <Typography variant="subtitle2" as="span" color={Neutral.B40}>
           {title}
         </Typography>
       </TitleContainer>
       {options.map(option => {
-        const { value, label, disabled, active, id } = option;
-        const isSelected = selected.includes(value) || active;
+        const { value, label, disabled, id } = option;
+        const isSelected = selectedValues?.includes(value);
         return (
           <ListContainer key={id}>
             <li
