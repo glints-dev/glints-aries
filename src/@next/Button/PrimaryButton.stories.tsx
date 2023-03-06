@@ -21,4 +21,4 @@ const Template: Story<ButtonProps> = args => (
 );
 
 export const Interactive = Template.bind({});
-Interactive.args = { size: 'default' };
+Interactive.args = { size: 'default', disabled: false };
