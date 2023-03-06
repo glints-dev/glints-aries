@@ -7,6 +7,12 @@ import * as Fonts from './utilities/fonts';
 import * as Spacing from './utilities/spacing';
 
 export {
+  ActionList,
+  ActionListProps,
+  Item as ActionListItem,
+  Section as ActionListSection,
+} from './ActionList';
+export {
   Alert,
   AlertContext,
   AlertContextProps,
