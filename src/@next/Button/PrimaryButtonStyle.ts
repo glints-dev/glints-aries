@@ -17,6 +17,7 @@ export const PrimaryButton = styled(Button)`
   &:active {
     background: ${Blue.S100};
     opacity: 1;
+    border: 0;
   }
 
   &[data-loading='true'] {
