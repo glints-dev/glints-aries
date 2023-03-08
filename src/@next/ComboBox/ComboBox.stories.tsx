@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Blue } from '../utilities/colors';
@@ -34,6 +34,8 @@ const countries = [
 const MultiSelectTemplate: Story<ComboBoxProps> = args => {
   const [inputValue, setInputValue] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [isSearchEmpty, setIsSearchEmpty] = useState(false);
+
   const [options, setOptions] = useState(countries);
 
   const handleInputChange = (value: string) => {
@@ -94,6 +96,16 @@ const MultiSelectTemplate: Story<ComboBoxProps> = args => {
     </StyledTag>
   ));
 
+  useEffect(() => {
+    if (options.length === 0) {
+      setIsSearchEmpty(true);
+    }
+
+    if (options.length > 0 && isSearchEmpty === true) {
+      setIsSearchEmpty(false);
+    }
+  }, [isSearchEmpty, options]);
+
   return (
     <div style={{ width: '500px' }}>
       <ComboBox.Label>Label</ComboBox.Label>
@@ -103,10 +115,11 @@ const MultiSelectTemplate: Story<ComboBoxProps> = args => {
           <ComboBox.TextInput
             value={inputValue}
             onChange={(value: string) => handleInputChange(value)}
+            placeholder="Search"
           />
         }
       >
-        <ComboBox.OptionList onSelect={handleSelect}>
+        <ComboBox.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
           {optionsMarkup}
         </ComboBox.OptionList>
       </ComboBox>

@@ -9,10 +9,11 @@ interface OptionListContainerProps {
 
 export const OptionListContainer = styled.div<OptionListContainerProps>`
   width: ${props => props.textInputWidth}px;
+  padding: ${space8} 0;
 `;
 export const StyledOptionList = styled.ul`
   list-style: none;
-  margin: ${space8} 0;
+  margin: 0 ${space8};
   padding: 0;
 
   li {
@@ -29,38 +30,10 @@ export const StyledOptionList = styled.ul`
       cursor: pointer;
     }
 
-    &:focus {
-      outline: none;
-      background: rgba(255, 255, 255, 0.001);
-      border: 2px solid ${Blue.S54};
-      border-radius: ${space4};
-    }
-
-    &[aria-disabled='true'] {
-      cursor: default;
-      pointer-events: none;
-
-      span {
-        color: ${Neutral.B85};
-      }
-    }
-
     &[data-active='true'] {
       background: ${Blue.S08};
       border-radius: ${borderRadius4};
       cursor: default;
-
-      ::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: -${space8};
-        height: 44px;
-        width: 3px;
-        background-color: ${Blue.S99};
-        border-radius: 0px 4px 4px 0px;
-      }
     }
 
     svg {
@@ -68,4 +41,11 @@ export const StyledOptionList = styled.ul`
       width: 24px;
     }
   }
+`;
+
+export const EmptyOptionContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 `;

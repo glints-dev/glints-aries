@@ -11,8 +11,6 @@ export interface ComboBoxProps {
   allowMultiple?: boolean;
   children?: React.ReactNode;
   label?: React.ReactNode;
-  /** Text to display when there are no options */
-  noOptionsMessage?: React.ReactNode;
   onClose?: () => void;
 }
 

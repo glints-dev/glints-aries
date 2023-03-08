@@ -37,7 +37,7 @@ export const TextInput = ({
       ref={inputRef}
       prefix={<Icon name="ri-search" />}
       value={value}
-      onChange={e => handleChange(e.currentTarget.value)}
+      onChange={value => handleChange(value)}
       onFocus={onFocus}
     ></GlintsTextInput>
   );
