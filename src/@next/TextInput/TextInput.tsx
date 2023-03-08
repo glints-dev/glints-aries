@@ -36,6 +36,10 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       setSuffixValue(suffix);
     }, [suffix]);
 
+    useEffect(() => {
+      setCurrentValue(value);
+    }, [value]);
+
     return (
       <Input
         ref={ref}

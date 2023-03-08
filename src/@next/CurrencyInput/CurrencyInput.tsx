@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Input, InputProps } from '../Input/Input';
 
 export type CurrencyInputProps = Omit<
@@ -35,25 +35,31 @@ export const CurrencyInput = React.forwardRef<
     console.warn(`Locale value of ${locale} is unsupported, "en" will be used`);
   }
 
-  const formatter = new Intl.NumberFormat(localeValue);
+  const formatter = useMemo(
+    () => new Intl.NumberFormat(localeValue),
+    [localeValue]
+  );
 
-  const getRawNumber = (value: string) => {
-    if (typeof value === 'number') {
-      return value;
-    }
+  const getRawNumber = useCallback(
+    (value: string) => {
+      if (typeof value === 'number') {
+        return value;
+      }
 
-    const parts = formatter.formatToParts(1000.1);
-    const thousandSeparator = parts[1].value;
-    const decimalSeparator = parts[3].value;
+      const parts = formatter.formatToParts(1000.1);
+      const thousandSeparator = parts[1].value;
+      const decimalSeparator = parts[3].value;
 
-    const cleanedValue = parseFloat(
-      value
-        .replace(new RegExp('\\' + thousandSeparator, 'g'), '')
-        .replace(new RegExp('\\' + decimalSeparator), '.')
-    );
+      const cleanedValue = parseFloat(
+        value
+          .replace(new RegExp('\\' + thousandSeparator, 'g'), '')
+          .replace(new RegExp('\\' + decimalSeparator), '.')
+      );
 
-    return Number.isNaN(cleanedValue) ? 0 : cleanedValue;
-  };
+      return Number.isNaN(cleanedValue) ? 0 : cleanedValue;
+    },
+    [formatter]
+  );
 
   const getCurrencySymbol = (
     locale: string,
@@ -94,6 +100,10 @@ export const CurrencyInput = React.forwardRef<
     onChange(rawValue);
     setFormattedValue(formatter.format(rawValue));
   };
+
+  useEffect(() => {
+    setFormattedValue(formatter.format(getRawNumber(value.toString())));
+  }, [formatter, getRawNumber, value]);
 
   return (
     <Input
