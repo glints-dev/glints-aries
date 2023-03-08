@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space12, space16, space8 } from '../utilities/spacing';
+import * as Breakpoints from '../utilities/breakpoints';
 
 export const StyledActionListContainer = styled.div`
   padding: ${space8} 0;
@@ -48,7 +49,7 @@ export const StyledActionListItemWrapper = styled.div`
 
 export const StyledActionListItem = styled.div`
   display: flex;
-  gap: ${space16};
+  gap: ${space8};
   padding: ${space8};
   align-items: center;
 
@@ -56,6 +57,13 @@ export const StyledActionListItem = styled.div`
     height: 24px;
     width: 24px;
     fill: ${Neutral.B40};
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    svg {
+      height: 20px;
+      width: 20px;
+    }
   }
 `;
 

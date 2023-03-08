@@ -38,7 +38,7 @@ export const ActionList = ({ items, sections }: ActionListProps) => {
       return (
         <li key={`${title}-${index}`}>
           <StyledActionListSection key={`${title}-${index}`}>
-            <Typography as="div" variant="body1">
+            <Typography as="div" variant="subtitle2">
               {title}
             </Typography>
           </StyledActionListSection>
