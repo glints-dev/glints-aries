@@ -13,9 +13,6 @@ describe('<Currency />', () => {
 
     fireEvent.change(input, { target: { value: 1000 } });
 
-    const inputEl = screen.getByRole('textbox');
-    expect(inputEl).toHaveValue('1,000');
-
     expect(onChange).toHaveBeenCalledWith(1000);
   });
 });

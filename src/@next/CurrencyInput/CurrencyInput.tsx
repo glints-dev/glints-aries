@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Input, InputProps } from '../Input/Input';
 
 export type CurrencyInputProps = Omit<
@@ -85,14 +85,11 @@ export const CurrencyInput = React.forwardRef<
     return '$';
   };
 
-  const [formattedValue, setFormattedValue] = useState(
-    formatter.format(getRawNumber(value.toString()))
-  );
+  const formattedValue = formatter.format(getRawNumber(value.toString()));
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = getRawNumber(e.currentTarget.value);
     onChange(rawValue);
-    setFormattedValue(formatter.format(rawValue));
   };
 
   return (
