@@ -138,7 +138,9 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                 )}
               </StyledModalHeader>
             )}
-            <StyledModalContent>{content}</StyledModalContent>
+            <StyledModalContent className="modal-content">
+              {content}
+            </StyledModalContent>
             {hasActions && (
               <StyledModalActions>{actionsContent}</StyledModalActions>
             )}
