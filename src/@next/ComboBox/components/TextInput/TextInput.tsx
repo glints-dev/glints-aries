@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Icon } from '../../../Icon';
 
 import {
@@ -10,6 +10,8 @@ import { useComboBoxTextInput } from './TextInputContext';
 export interface ComboBoxTextInputProps
   extends Omit<TextInputProps, 'onChange'> {
   onChange?(value: string): void;
+  textInputWidth?: number;
+  setTextInputWidth?: React.Dispatch<(prevState: undefined) => undefined>;
 }
 
 export const TextInput = ({
@@ -17,8 +19,13 @@ export const TextInput = ({
   value,
   ...props
 }: ComboBoxTextInputProps) => {
+  const inputRef = useRef(null);
   const textInputContext = useComboBoxTextInput();
-  const { onFocus } = textInputContext;
+  const { onFocus, setTextInputWidth } = textInputContext;
+
+  useEffect(() => {
+    setTextInputWidth(inputRef.current.getBoundingClientRect().width);
+  }, [inputRef, setTextInputWidth]);
 
   const handleChange = (value: string) => {
     if (onChange) onChange(value);
@@ -27,11 +34,11 @@ export const TextInput = ({
   return (
     <GlintsTextInput
       {...props}
+      ref={inputRef}
       prefix={<Icon name="ri-search" />}
       value={value}
       onChange={e => handleChange(e.currentTarget.value)}
       onFocus={onFocus}
-      // onBlur={onBlur}
     ></GlintsTextInput>
   );
 };

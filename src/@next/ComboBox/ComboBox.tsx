@@ -23,6 +23,7 @@ export const ComboBox = ({
   onClose,
 }: ComboBoxProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
+  const [textInputWidth, setTextInputWidth] = useState();
 
   const handleClose = useCallback(() => {
     setPopoverActive(false);
@@ -42,6 +43,8 @@ export const ComboBox = ({
   const textInputContextValue = {
     onFocus: handleFocus,
     onBlur: handleBlur,
+    textInputWidth,
+    setTextInputWidth,
   };
 
   const optionContextValue = {
@@ -59,10 +62,13 @@ export const ComboBox = ({
       onClose={handleClose}
       autofocusTarget="none"
       preventFocusOnClose
+      fullWidth
     >
       <Popover.Pane>
         <ComboboxOptionContext.Provider value={optionContextValue}>
-          {children}
+          <ComboboxTextInputContext.Provider value={textInputContextValue}>
+            {children}
+          </ComboboxTextInputContext.Provider>
         </ComboboxOptionContext.Provider>
       </Popover.Pane>
     </Popover>

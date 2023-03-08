@@ -3,6 +3,13 @@ import { borderRadius4 } from '../../../utilities/borderRadius';
 import { Blue, Neutral } from '../../../utilities/colors';
 import { space4, space8 } from '../../../utilities/spacing';
 
+interface OptionListContainerProps {
+  textInputWidth?: number;
+}
+
+export const OptionListContainer = styled.div<OptionListContainerProps>`
+  width: ${props => props.textInputWidth}px;
+`;
 export const StyledOptionList = styled.ul`
   list-style: none;
   margin: ${space8} 0;
