@@ -18,3 +18,22 @@ export const useOption = () => {
   }
   return context;
 };
+
+type ComboboxOptionListType = {
+  onOptionSelect(value: string): void;
+  selectedOptions?: string[];
+};
+
+export const ComboboxOptionListContext = createContext<
+  ComboboxOptionListType | undefined
+>(undefined);
+
+export const useOptionList = () => {
+  const context = useContext(ComboboxOptionListContext);
+  if (!context) {
+    throw new Error(
+      'No ComboboxOptionListContext was provided. Your component must be wrapped in a <ComboboxOptionListContext.Provider>'
+    );
+  }
+  return context;
+};

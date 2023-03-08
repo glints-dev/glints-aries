@@ -1,12 +1,16 @@
 import React, { useCallback, useState } from 'react';
 import { Popover } from '../Popover';
+import { Typography } from '../Typography';
+import { Neutral } from '../utilities/colors';
 import { TextInput, OptionList, Option } from './components';
-import { TextInputContext } from './components/TextInput/TextInputContext';
+import { ComboboxOptionContext } from './components/OptionList/OptionListContext';
+import { ComboboxTextInputContext } from './components/TextInput/TextInputContext';
 
 export interface ComboBoxProps {
   activator: React.ReactElement;
   allowMultiple?: boolean;
   children?: React.ReactNode;
+  label?: React.ReactNode;
   /** Text to display when there are no options */
   noOptionsMessage?: React.ReactNode;
   onClose?: () => void;
@@ -14,7 +18,7 @@ export interface ComboBoxProps {
 
 export const ComboBox = ({
   activator,
-  // allowMultiple = false,
+  allowMultiple = false,
   children,
   onClose,
 }: ComboBoxProps) => {
@@ -40,23 +44,38 @@ export const ComboBox = ({
     onBlur: handleBlur,
   };
 
+  const optionContextValue = {
+    allowMultiple,
+  };
+
   return (
     <Popover
       active={popoverActive}
       activator={
-        <TextInputContext.Provider value={textInputContextValue}>
+        <ComboboxTextInputContext.Provider value={textInputContextValue}>
           {activator}
-        </TextInputContext.Provider>
+        </ComboboxTextInputContext.Provider>
       }
       onClose={handleClose}
       autofocusTarget="none"
       preventFocusOnClose
     >
-      <Popover.Pane>{children}</Popover.Pane>
+      <Popover.Pane>
+        <ComboboxOptionContext.Provider value={optionContextValue}>
+          {children}
+        </ComboboxOptionContext.Provider>
+      </Popover.Pane>
     </Popover>
   );
 };
 
+const Label = ({ children }: { children: React.ReactNode }) => (
+  <Typography as="span" variant="subtitle2" color={Neutral.B18}>
+    {children}
+  </Typography>
+);
+
+ComboBox.Label = Label;
 ComboBox.TextInput = TextInput;
 ComboBox.OptionList = OptionList;
 ComboBox.Option = Option;

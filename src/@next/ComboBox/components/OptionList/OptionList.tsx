@@ -1,17 +1,26 @@
 import React from 'react';
-import { Option, OptionType } from './Option';
+import { ComboboxOptionListContext } from './OptionListContext';
 import { StyledOptionList } from './OptionListStyle';
 
 export interface OptionListProps {
-  options: OptionType[];
+  children: React.ReactNode;
+  onSelect?(value: string): void;
 }
 
-export const OptionList = ({ options }: OptionListProps) => {
+export const OptionList = ({ children, onSelect }: OptionListProps) => {
+  const onOptionSelect = (value: string) => {
+    if (onSelect) onSelect(value);
+  };
+
+  const optionListContextValue = {
+    onOptionSelect,
+  };
+
   return (
     <StyledOptionList>
-      {options.map(({ label, value }) => (
-        <Option key={value} label={label} value={value} />
-      ))}
+      <ComboboxOptionListContext.Provider value={optionListContextValue}>
+        {children}
+      </ComboboxOptionListContext.Provider>
     </StyledOptionList>
   );
 };

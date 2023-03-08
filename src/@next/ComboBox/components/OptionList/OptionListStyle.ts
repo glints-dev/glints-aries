@@ -55,5 +55,10 @@ export const StyledOptionList = styled.ul`
         border-radius: 0px 4px 4px 0px;
       }
     }
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
   }
 `;
