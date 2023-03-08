@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import { Input, InputProps } from '../Input/Input';
 
-export type TextInputProps = Omit<InputProps, 'type'> & { canClear?: boolean };
+export type TextInputProps = Omit<InputProps, 'type' | 'onChange'> & {
+  canClear?: boolean;
+  onChange?: (value: string) => void;
+};
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   function TextInput(
@@ -17,19 +20,17 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       />
     );
     const [suffixValue, setSuffixValue] = useState(suffix);
-    const [currentValue, setCurrentValue] = useState(value);
 
     const handleClearIconClick = () => {
-      setCurrentValue('');
+      onChange?.('');
       setSuffixValue(suffix);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const val = e.currentTarget.value;
       const currSuffix = canClear && !!val ? <ClearIcon /> : suffixValue;
-      setCurrentValue(val);
       setSuffixValue(currSuffix);
-      onChange?.(e);
+      onChange?.(val);
     };
 
     useEffect(() => {
@@ -41,7 +42,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         ref={ref}
         type="text"
         suffix={suffixValue}
-        value={currentValue}
+        value={value}
         onChange={handleChange}
         {...props}
       />

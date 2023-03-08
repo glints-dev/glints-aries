@@ -8,6 +8,14 @@ test('Currency', async ({ page }) => {
   const currencyPage = getPage(page);
   await currencyPage.goto();
   await expect(currencyPage.container).toHaveScreenshot('currency.png');
+
+  const textBox = page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('textbox');
+
+  await textBox.clear();
+  await textBox.type('2000');
+  await expect(currencyPage.container).toHaveScreenshot('currency-changed.png');
 });
 
 test('Currency - disabled', async ({ page }) => {

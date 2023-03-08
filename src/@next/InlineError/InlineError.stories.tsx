@@ -38,11 +38,7 @@ const WithInputTemplate: Story<InlineErrorProps> = args => {
 
   return (
     <>
-      <TextInput
-        value={value}
-        onChange={e => setValue(e.target.value)}
-        error={!!error}
-      />
+      <TextInput value={value} onChange={e => setValue(e)} error={!!error} />
       <InlineError style={{ marginTop: 4 }} text={error} />
     </>
   );

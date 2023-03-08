@@ -13,7 +13,10 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<TextInputProps> = args => <TextInput {...args} />;
+const Template: Story<TextInputProps> = args => {
+  const [value, setValue] = React.useState('');
+  return <TextInput {...args} value={value} onChange={setValue} />;
+};
 export const Interactive = Template.bind({});
 Interactive.args = {
   placeholder: 'Placeholder',
@@ -28,7 +31,7 @@ const WithPrefixAndSuffixTemplate: Story<TextInputProps> = args => {
     <TextInput
       {...args}
       value={value}
-      onChange={e => setValue(e.target.value)}
+      onChange={e => setValue(e)}
       suffix={<div>{value.length}/20</div>}
     />
   );
