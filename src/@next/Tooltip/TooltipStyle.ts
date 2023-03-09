@@ -20,7 +20,7 @@ export const StyledTooltipContainer = styled.div`
 `;
 
 export const StyledTooltip = styled.div`
-  position: absolute;
+  position: fixed;
   text-align: left;
   height: fit-content;
   width: fit-content;
