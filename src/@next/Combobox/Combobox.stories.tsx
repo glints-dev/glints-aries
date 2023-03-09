@@ -5,14 +5,14 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Blue } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
 
-import { ComboBox, ComboBoxProps } from './ComboBox';
+import { Combobox, ComboboxProps } from './Combobox';
 import { StyledTag } from './comboboxStoryHelper/TagStyle';
 
-(ComboBox as React.FunctionComponent<ComboBoxProps>).displayName = 'ComboBox';
+(Combobox as React.FunctionComponent<ComboboxProps>).displayName = 'Combobox';
 
 export default {
-  title: '@next/ComboBox',
-  component: ComboBox,
+  title: '@next/Combobox',
+  component: Combobox,
   decorators: [
     Story => (
       <>
@@ -31,7 +31,7 @@ const countries = [
   { label: 'Vietnam', value: 'Vietnam' },
 ];
 
-const MultiSelectTemplate: Story<ComboBoxProps> = args => {
+const MultiSelectTemplate: Story<ComboboxProps> = args => {
   const [inputValue, setInputValue] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isSearchEmpty, setIsSearchEmpty] = useState(false);
@@ -67,7 +67,7 @@ const MultiSelectTemplate: Story<ComboBoxProps> = args => {
           const { label, value } = option;
 
           return (
-            <ComboBox.Option
+            <Combobox.Option
               key={value}
               label={label}
               value={value}
@@ -108,21 +108,21 @@ const MultiSelectTemplate: Story<ComboBoxProps> = args => {
 
   return (
     <div style={{ width: '500px' }}>
-      <ComboBox.Label>Label</ComboBox.Label>
-      <ComboBox
+      <Combobox.Label>Label</Combobox.Label>
+      <Combobox
         {...args}
         activator={
-          <ComboBox.TextInput
+          <Combobox.TextInput
             value={inputValue}
             onChange={(value: string) => handleInputChange(value)}
             placeholder="Search"
           />
         }
       >
-        <ComboBox.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
+        <Combobox.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
           {optionsMarkup}
-        </ComboBox.OptionList>
-      </ComboBox>
+        </Combobox.OptionList>
+      </Combobox>
       <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
     </div>
   );
@@ -181,7 +181,7 @@ MultiSelect.parameters = {
               const { label, value } = option;
     
               return (
-                <ComboBox.Option
+                <Combobox.Option
                   key={value}
                   label={label}
                   value={value}
@@ -222,21 +222,21 @@ MultiSelect.parameters = {
     
       return (
         <div style={{ width: '500px' }}>
-          <ComboBox.Label>Label</ComboBox.Label>
-          <ComboBox
+          <Combobox.Label>Label</Combobox.Label>
+          <Combobox
             {...args}
             activator={
-              <ComboBox.TextInput
+              <Combobox.TextInput
                 value={inputValue}
                 onChange={(value: string) => handleInputChange(value)}
                 placeholder="Search"
               />
             }
           >
-            <ComboBox.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
+            <Combobox.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
               {optionsMarkup}
-            </ComboBox.OptionList>
-          </ComboBox>
+            </Combobox.OptionList>
+          </Combobox>
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>
       );

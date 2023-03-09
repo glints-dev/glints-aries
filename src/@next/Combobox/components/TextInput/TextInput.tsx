@@ -5,9 +5,9 @@ import {
   TextInput as GlintsTextInput,
   TextInputProps,
 } from '../../../TextInput';
-import { useComboBoxTextInput } from './TextInputContext';
+import { useComboboxTextInput } from './TextInputContext';
 
-export interface ComboBoxTextInputProps
+export interface ComboboxTextInputProps
   extends Omit<TextInputProps, 'onChange'> {
   onChange?(value: string): void;
   textInputWidth?: number;
@@ -18,9 +18,9 @@ export const TextInput = ({
   onChange,
   value,
   ...props
-}: ComboBoxTextInputProps) => {
+}: ComboboxTextInputProps) => {
   const inputRef = useRef(null);
-  const textInputContext = useComboBoxTextInput();
+  const textInputContext = useComboboxTextInput();
   const { onFocus, setTextInputWidth } = textInputContext;
 
   useEffect(() => {

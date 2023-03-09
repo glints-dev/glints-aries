@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
-import { ComboBoxTextInputProps } from './TextInput';
+import { ComboboxTextInputProps } from './TextInput';
 
 export const ComboboxTextInputContext = createContext<
-  ComboBoxTextInputProps | undefined
+  ComboboxTextInputProps | undefined
 >(undefined);
 
-export const useComboBoxTextInput = () => {
+export const useComboboxTextInput = () => {
   const context = useContext(ComboboxTextInputContext);
   if (!context) {
     throw new Error(

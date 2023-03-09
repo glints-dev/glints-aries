@@ -1,5 +1,5 @@
 import React from 'react';
-import { useComboBoxTextInput } from '../TextInput/TextInputContext';
+import { useComboboxTextInput } from '../TextInput/TextInputContext';
 import { NoOptionList, NoOptionListProps } from './Option';
 import { ComboboxOptionListContext } from './OptionListContext';
 import { OptionListContainer, StyledOptionList } from './OptionListStyle';
@@ -16,7 +16,7 @@ export const OptionList = ({
   noOptionsMessage,
   onSelect,
 }: OptionListProps) => {
-  const textInputContext = useComboBoxTextInput();
+  const textInputContext = useComboboxTextInput();
   const { textInputWidth } = textInputContext;
   const hasChildren = !isEmpty;
 

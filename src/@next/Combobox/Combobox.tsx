@@ -6,7 +6,7 @@ import { TextInput, OptionList, Option } from './components';
 import { ComboboxOptionContext } from './components/OptionList/OptionListContext';
 import { ComboboxTextInputContext } from './components/TextInput/TextInputContext';
 
-export interface ComboBoxProps {
+export interface ComboboxProps {
   activator: React.ReactElement;
   allowMultiple?: boolean;
   children?: React.ReactNode;
@@ -14,12 +14,12 @@ export interface ComboBoxProps {
   onClose?: () => void;
 }
 
-export const ComboBox = ({
+export const Combobox = ({
   activator,
   allowMultiple = false,
   children,
   onClose,
-}: ComboBoxProps) => {
+}: ComboboxProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [textInputWidth, setTextInputWidth] = useState();
 
@@ -79,7 +79,7 @@ const Label = ({ children }: { children: React.ReactNode }) => (
   </Typography>
 );
 
-ComboBox.Label = Label;
-ComboBox.TextInput = TextInput;
-ComboBox.OptionList = OptionList;
-ComboBox.Option = Option;
+Combobox.Label = Label;
+Combobox.TextInput = TextInput;
+Combobox.OptionList = OptionList;
+Combobox.Option = Option;
