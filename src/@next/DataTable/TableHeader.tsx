@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import { Neutral } from '../utilities/colors';
 import { SortDirection } from './DataTable';
 import { StyledTabledHeader } from './DataTableStyle';
 
@@ -31,7 +32,12 @@ export const TableHeader = ({
 
   const iconMarkup = sortDirection ? <Icon name={iconName} /> : null;
   const titleMarkup = (
-    <Typography as="span" variant="body1" style={{ whiteSpace: 'nowrap' }}>
+    <Typography
+      as="span"
+      variant="body2"
+      color={Neutral.B18}
+      style={{ whiteSpace: 'nowrap' }}
+    >
       {title}
     </Typography>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Shadow } from '../../Utils/Shadow';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
@@ -27,6 +28,10 @@ export const StyledTable = styled.table`
   max-width: 100vw;
   border-bottom: 0;
 
+  thead tr {
+    background: ${Neutral.B99};
+  }
+
   &[data-has-footer='true'] {
     border-bottom: 1px solid ${Neutral.B85};
   }
@@ -50,9 +55,6 @@ export const StyledTableRow = styled.tr`
   &:hover {
     background: ${Neutral.B99};
   }
-  &[data-total='true'] {
-    background: ${Neutral.B99};
-  }
 `;
 
 export const StyledTabledHeader = styled.th`
@@ -67,6 +69,7 @@ export const StyledTabledHeader = styled.th`
     height: auto;
     border: none;
     box-shadow: none;
+    background: ${Neutral.B99};
   }
 
   button:hover {
@@ -99,7 +102,7 @@ export const StyledTableCell = styled.td`
 `;
 
 export const StyledTableFooterRow = styled.tr`
-  background: ${Neutral.B99};
+  background: ${Neutral.B100};
   border-top: 0;
   border-radius: 0px 0px ${borderRadius8} ${borderRadius8};
   td {
@@ -138,4 +141,5 @@ export const StyledSpinnerContainer = styled.div`
 export const StyledDataTableContainer = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
+  box-shadow: ${Shadow.card};
 `;

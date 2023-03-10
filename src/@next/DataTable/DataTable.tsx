@@ -139,9 +139,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
           <tbody>
             <LoadingRow />
             {totalsRowMarkup && hasRows && (
-              <StyledTableRow data-total="true">
-                {totalsRowMarkup}
-              </StyledTableRow>
+              <StyledTableRow>{totalsRowMarkup}</StyledTableRow>
             )}
             {rowsMarkup}
           </tbody>
