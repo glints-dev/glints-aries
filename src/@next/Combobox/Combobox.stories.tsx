@@ -100,7 +100,7 @@ const MultiSelectTemplate: Story<ComboboxProps> = args => {
   }, [isSearchEmpty, options]);
 
   return (
-    <div style={{ width: '500px' }}>
+    <div style={{ maxWidth: '500px' }}>
       <Combobox.Label>Label</Combobox.Label>
       <Combobox
         {...args}
