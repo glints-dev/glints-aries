@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Shadow } from '../../Utils/Shadow';
+import * as DropShadow from '../utilities/dropShadow';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
@@ -141,5 +141,5 @@ export const StyledSpinnerContainer = styled.div`
 export const StyledDataTableContainer = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
-  box-shadow: ${Shadow.card};
+  box-shadow: ${DropShadow.card};
 `;

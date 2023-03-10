@@ -10,9 +10,6 @@ const down3 = '0 6px 12px 0 rgba(0, 0, 0, 0.10)';
 const up4 = '0 -12px 24px 0 rgba(0, 0, 0, 0.10)';
 const down4 = '0 12px 24px 0 rgba(0, 0, 0, 0.10)';
 
-const card =
-  '0px 0px 5px rgba(71, 71, 71, 0.1), 0px 1px 2px rgba(71, 71, 71, 0.2)';
-
 export const Shadow = {
   up1,
   down1,
@@ -22,7 +19,6 @@ export const Shadow = {
   down3,
   up4,
   down4,
-  card,
 } as const;
 
 export type ShadowValueType = typeof Shadow[keyof typeof Shadow];
