@@ -1,20 +1,25 @@
 import React from 'react';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
+import { Label } from './SelectFieldStyle';
 import { OptionType, renderOptions } from './SelectOption';
 import { HelpTextContainer, StyledSelect } from './SelectStyle';
 
 export interface SelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options?: string[] | OptionType[];
+  label?: React.ReactNode;
   helpText?: React.ReactNode;
   disabled?: boolean;
+  hasError?: boolean;
 }
 
 export const Select = ({
   disabled,
+  hasError,
   helpText,
   id,
+  label,
   name,
   options,
   placeholder,
@@ -22,11 +27,17 @@ export const Select = ({
 }: SelectProps) => {
   return (
     <div>
+      <Label htmlFor={name}>
+        <Typography as="span" variant="subtitle2" color={Neutral.B18}>
+          {label}
+        </Typography>
+      </Label>
       <StyledSelect
         id={id}
         name={name}
         placeholder={placeholder}
         disabled={disabled}
+        data-error={hasError}
         {...props}
       >
         {renderOptions({ options })}

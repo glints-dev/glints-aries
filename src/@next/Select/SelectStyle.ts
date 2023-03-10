@@ -50,10 +50,6 @@ export const StyledSelect = styled.select<SelectProps>`
   }
 `;
 
-export const Label = styled.label`
-  margin-bottom: ${space4};
-`;
-
 export const HelpTextContainer = styled.div`
   margin-top: ${space4};
 `;
