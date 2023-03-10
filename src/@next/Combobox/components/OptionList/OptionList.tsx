@@ -20,7 +20,7 @@ export const OptionList = ({
   const { textInputWidth } = textInputContext;
   const hasChildren = !isEmpty;
 
-  const onOptionSelect = (value: string) => {
+  const onOptionSelect = ({ value }: { value: string }) => {
     if (onSelect) onSelect(value);
   };
 

@@ -20,7 +20,7 @@ export const useOption = () => {
 };
 
 type ComboboxOptionListType = {
-  onOptionSelect(value: string): void;
+  onOptionSelect({ value }: { value: string }): void;
   selectedOptions?: string[];
 };
 

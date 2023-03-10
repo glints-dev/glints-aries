@@ -28,7 +28,7 @@ export const Option = ({ label, value, selected }: OptionProps) => {
     event.preventDefault();
     event.stopPropagation();
 
-    onOptionSelect(value);
+    onOptionSelect({ value });
   };
 
   return (
