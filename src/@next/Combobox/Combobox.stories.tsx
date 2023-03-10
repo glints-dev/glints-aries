@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React, { useCallback, useEffect, useState } from 'react';
+import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 
-import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Blue } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
 
@@ -13,14 +13,7 @@ import { StyledTag } from './comboboxStoryHelper/TagStyle';
 export default {
   title: '@next/Combobox',
   component: Combobox,
-  decorators: [
-    Story => (
-      <>
-        <BaseContainer>{Story()}</BaseContainer>
-        <div id="glints-portal-container"></div>
-      </>
-    ),
-  ],
+  decorators: [withGlintsPortalContainer],
 } as Meta;
 
 const countries = [
