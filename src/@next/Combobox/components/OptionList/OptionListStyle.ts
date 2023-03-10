@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { borderRadius4 } from '../../../utilities/borderRadius';
-import { Blue, Neutral } from '../../../utilities/colors';
+import { Neutral } from '../../../utilities/colors';
 import { space4, space8 } from '../../../utilities/spacing';
 
 interface OptionListContainerProps {
@@ -31,7 +31,6 @@ export const StyledOptionList = styled.ul`
     }
 
     &[data-active='true'] {
-      background: ${Blue.S08};
       border-radius: ${borderRadius4};
       cursor: default;
     }
