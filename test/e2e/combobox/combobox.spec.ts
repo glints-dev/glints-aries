@@ -36,6 +36,11 @@ test('Combobox - multi select', async ({ page }) => {
 
   await comboboxPage.options.nth(1).click();
   await expect(comboboxPage.canvas).toHaveScreenshot(
+    'combobox-multi-select-option-hover-selected.png'
+  );
+  await comboboxPage.label.click();
+  await comboboxPage.textInput.focus();
+  await expect(comboboxPage.canvas).toHaveScreenshot(
     'combobox-multi-select-option-selected.png'
   );
 
