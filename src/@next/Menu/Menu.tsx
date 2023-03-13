@@ -35,11 +35,13 @@ export const Menu = ({
 
   return (
     <StyledMenu id={menuId}>
-      <TitleContainer>
-        <Typography variant="subtitle2" as="span" color={Neutral.B40}>
-          {title}
-        </Typography>
-      </TitleContainer>
+      {title && (
+        <TitleContainer>
+          <Typography variant="subtitle2" as="span" color={Neutral.B40}>
+            {title}
+          </Typography>
+        </TitleContainer>
+      )}
       {options.map(option => {
         const { value, label, disabled, id } = option;
         const isSelected = selectedValues?.includes(value);
