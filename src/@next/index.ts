@@ -24,6 +24,7 @@ export {
 export { Avatar, AvatarProps } from './Avatar';
 export { Badge, BadgeProps } from './Badge';
 export { Banner, BannerProps } from './Banner';
+export { Bar, BarProps } from './Bar';
 export {
   Button,
   ButtonProps,
