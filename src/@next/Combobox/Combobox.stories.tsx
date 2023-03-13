@@ -5,6 +5,7 @@ import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 import { Blue } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
 
+import { Option, OptionList, TextInput } from './components';
 import { Combobox, ComboboxProps } from './Combobox';
 import { StyledTag } from './comboboxStoryHelper/TagStyle';
 
@@ -13,6 +14,11 @@ import { StyledTag } from './comboboxStoryHelper/TagStyle';
 export default {
   title: '@next/Combobox',
   component: Combobox,
+  subcomponents: {
+    'Combobox.Option': Option,
+    'Combobox.OptionList': OptionList,
+    'Combobox.TextInput': TextInput,
+  },
   decorators: [withGlintsPortalContainer],
 } as Meta;
 
