@@ -75,12 +75,7 @@ const BasicTemplate: Story<MenuProps> = args => {
       onClose={() => setPopoverActive(false)}
     >
       <Popover.Pane>
-        <Menu
-          {...args}
-          title="Basic Menu"
-          onChange={setSelected}
-          selectedValues={selected}
-        />
+        <Menu {...args} onChange={setSelected} selectedValues={selected} />
       </Popover.Pane>
     </Popover>
   );
@@ -90,4 +85,5 @@ export const Basic = BasicTemplate.bind({});
 
 Basic.args = {
   options,
+  title: 'Basic Menu',
 };
