@@ -5,11 +5,14 @@ import { space4, space8 } from '../../../utilities/spacing';
 
 interface OptionListContainerProps {
   textInputWidth?: number;
+  height?: string;
 }
 
 export const OptionListContainer = styled.div<OptionListContainerProps>`
   width: ${props => props.textInputWidth}px;
+  height: ${props => props.height};
   padding: ${space8} 0;
+  overflow-y: auto;
 `;
 export const StyledOptionList = styled.ul`
   list-style: none;

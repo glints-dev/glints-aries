@@ -7,12 +7,14 @@ import { OptionListContainer, StyledOptionList } from './OptionListStyle';
 export interface OptionListProps extends NoOptionListProps {
   children: React.ReactNode;
   isEmpty?: boolean;
+  height?: string;
   onSelect?(value: string): void;
 }
 
 export const OptionList = ({
   children,
   isEmpty,
+  height = '188px',
   noOptionsMessage,
   onSelect,
 }: OptionListProps) => {
@@ -29,7 +31,7 @@ export const OptionList = ({
   };
 
   return (
-    <OptionListContainer textInputWidth={textInputWidth}>
+    <OptionListContainer textInputWidth={textInputWidth} height={height}>
       <StyledOptionList>
         <ComboboxOptionListContext.Provider value={optionListContextValue}>
           {hasChildren ? (
