@@ -12,6 +12,7 @@ export interface ComboboxProps {
   children?: React.ReactNode;
   label?: React.ReactNode;
   onClose?: () => void;
+  optionListHeight?: string;
 }
 
 export const Combobox = ({
@@ -19,6 +20,7 @@ export const Combobox = ({
   allowMultiple = false,
   children,
   onClose,
+  optionListHeight = '208px',
 }: ComboboxProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [textInputWidth, setTextInputWidth] = useState();
@@ -62,7 +64,7 @@ export const Combobox = ({
       preventFocusOnClose
       fullWidth
     >
-      <Popover.Pane>
+      <Popover.Pane height={optionListHeight}>
         <ComboboxOptionContext.Provider value={optionContextValue}>
           <ComboboxTextInputContext.Provider value={textInputContextValue}>
             {children}

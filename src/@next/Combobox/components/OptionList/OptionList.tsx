@@ -14,7 +14,6 @@ export interface OptionListProps extends NoOptionListProps {
 export const OptionList = ({
   children,
   isEmpty,
-  height = '188px',
   noOptionsMessage,
   onSelect,
 }: OptionListProps) => {
@@ -31,7 +30,7 @@ export const OptionList = ({
   };
 
   return (
-    <OptionListContainer textInputWidth={textInputWidth} height={height}>
+    <OptionListContainer textInputWidth={textInputWidth}>
       <StyledOptionList>
         <ComboboxOptionListContext.Provider value={optionListContextValue}>
           {hasChildren ? (

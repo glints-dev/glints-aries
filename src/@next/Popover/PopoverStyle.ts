@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { borderRadius8 } from '../utilities/borderRadius';
-import { Neutral } from '../utilities/colors';
+import { Blue, Neutral } from '../utilities/colors';
 import { space16, space4, space8 } from '../utilities/spacing';
 
 // we need to use global style here because popover is created outside the root element for react app
@@ -155,4 +155,46 @@ export const StyledPopover: any = createGlobalStyle`
 .Polaris-PositionedOverlay--preventInteraction {
   pointer-events: none;
 }
+
+.Polaris-Scrollable {
+  position: relative;
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &:focus {
+    outline: 0.125rem solid ${Blue.S54};
+    outline-offset: 0.125rem;
+  }
+}
+
+.Polaris-Scrollable--horizontal {
+  overflow-x: auto;
+}
+
+.Polaris-Scrollable--vertical {
+  overflow-y: auto;
+}
+
+.Polaris-Scrollable--hasTopShadow {
+  box-shadow: inset 0 1.25rem
+    1.25rem calc(-1 * 1.25rem)
+    rgba(0,0,0,.15);
+}
+
+.Polaris-Scrollable--hasBottomShadow {
+  box-shadow: inset 0
+    calc(-1 * 1.25rem) 1.25rem
+    calc(-1 * 1.25rem) rgba(0,0,0,.15);
+}
+
+.Polaris-Scrollable--hasTopShadow.Polaris-Scrollable--hasBottomShadow {
+  box-shadow: inset 0 1.25rem
+    1.25rem calc(-1 * 1.25rem)
+    rgba(0,0,0,.15),
+    inset 0
+    calc(-1 * 1.25rem) 1.25rem
+    calc(-1 * 1.25rem) rgba(0,0,0,.15);
+}
+
 `;
