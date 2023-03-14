@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { StoryBookPage } from '../storybookPage';
+import { Args, StoryBookPage } from '../storybookPage';
 
 export class ComboboxPage extends StoryBookPage {
   readonly textInput: Locator;
@@ -19,5 +19,10 @@ export class ComboboxPage extends StoryBookPage {
     this.label = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByText('Label');
+  }
+
+  async gotoMultiSelectScrollablePage(args?: Args) {
+    this.setPath('?path=/story/next-combobox--multi-select-scrollable');
+    await this.goto(args);
   }
 }

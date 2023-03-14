@@ -22,12 +22,13 @@ export default {
 const countries = [
   { label: 'Indonesia', value: 'Indonesia' },
   { label: 'Malaysia', value: 'Malaysia' },
+  { label: 'Philippines', value: 'Philippines' },
   { label: 'Singapore', value: 'Singapore' },
   { label: 'Taiwan', value: 'Taiwan' },
   { label: 'Vietnam', value: 'Vietnam' },
 ];
 
-const slicedCountries = countries.slice(0, 4);
+const slicedCountries = countries.slice(0, 5);
 
 const MultiSelectTemplate: Story<ComboboxProps> = args => (
   <ComboboxMultiSelect {...args} countries={slicedCountries} />

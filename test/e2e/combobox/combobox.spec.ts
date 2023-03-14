@@ -49,3 +49,14 @@ test('Combobox - multi select', async ({ page }) => {
     'combobox-multi-select-tags-selected-below.png'
   );
 });
+
+test('Combobox - multi select scrollable', async ({ page }) => {
+  const comboboxPage = new ComboboxPage(page);
+  await comboboxPage.gotoMultiSelectScrollablePage();
+
+  await comboboxPage.textInput.waitFor();
+  await comboboxPage.textInput.focus();
+  await expect(comboboxPage.canvas).toHaveScreenshot(
+    'combobox-multi-select-scrollable.png'
+  );
+});

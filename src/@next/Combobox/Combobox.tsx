@@ -20,7 +20,7 @@ export const Combobox = ({
   allowMultiple = false,
   children,
   onClose,
-  optionListHeight = '208px',
+  optionListHeight = '256px',
 }: ComboboxProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [textInputWidth, setTextInputWidth] = useState();
