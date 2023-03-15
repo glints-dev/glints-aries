@@ -4,7 +4,7 @@ import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { ListContainer, StyledMenu, TitleContainer } from './MenuStyle';
 
-interface Option {
+export interface Option {
   disabled?: boolean;
   id?: string;
   label: React.ReactNode;

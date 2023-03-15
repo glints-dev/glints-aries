@@ -68,17 +68,17 @@ export const SingleSelect = SingleSelectTemplate.bind({});
 
 SingleSelect.args = {};
 
-const AutocompleteMultiSelectTemplate: Story<SelectProps> = args => {
+const SearchableMultiSelectTemplate: Story<SelectProps> = args => {
   return <SearchableSelect data={countries} {...args} />;
 };
 
-export const AutocompleteMultiSelect = AutocompleteMultiSelectTemplate.bind({});
+export const SearchableMultiSelect = SearchableMultiSelectTemplate.bind({});
 
-AutocompleteMultiSelect.args = {
+SearchableMultiSelect.args = {
   allowMultiple: true,
 };
 
-AutocompleteMultiSelect.parameters = {
+SearchableMultiSelect.parameters = {
   docs: {
     source: {
       code: `

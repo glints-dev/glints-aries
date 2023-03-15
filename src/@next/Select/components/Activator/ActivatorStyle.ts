@@ -14,6 +14,7 @@ export const StyledSelect = styled.button`
   border: 1px solid ${Neutral.B68};
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
   border-radius: ${borderRadius4};
+  background: ${Neutral.B100};
 
   color: ${Neutral.B18};
   font-family: ${NotoSans}, sans-serif;
