@@ -1,10 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
-import { Button } from '../Button';
-import { Popover } from '../Popover';
 import { Menu, MenuProps } from './Menu';
+import { PopoverMenu } from './menuStoryHelper/PopoverMenu';
 
 (Menu as React.FunctionComponent<MenuProps>).displayName = 'Menu';
 
@@ -58,32 +57,162 @@ const options = [
     value: 'Cancelled',
   },
 ];
-const BasicTemplate: Story<MenuProps> = args => {
-  const [popoverActive, setPopoverActive] = useState(true);
-  const [selected, setSelected] = useState([]);
-
-  const togglePopoverActive = useCallback(
-    () => setPopoverActive(popoverActive => !popoverActive),
-    []
-  );
-  const activator = <Button onClick={togglePopoverActive}>Basic Menu</Button>;
-
-  return (
-    <Popover
-      active={popoverActive}
-      activator={activator}
-      onClose={() => setPopoverActive(false)}
-    >
-      <Popover.Pane>
-        <Menu {...args} onChange={setSelected} selectedValues={selected} />
-      </Popover.Pane>
-    </Popover>
-  );
-};
-
+const BasicTemplate: Story<MenuProps> = args => (
+  <PopoverMenu activatorLabel="Basic Menu" {...args} />
+);
 export const Basic = BasicTemplate.bind({});
 
 Basic.args = {
   options,
   title: 'Basic Menu',
+};
+
+Basic.parameters = {
+  docs: {
+    source: {
+      code: `
+      const options = [
+        {
+          active: false,
+          disabled: false,
+          id: '1',
+          label: 'All status',
+          value: 'All status',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '2',
+          label: 'Completed',
+          value: 'Completed',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '3',
+          label: 'Pending',
+          value: 'Pending',
+        },
+        {
+          active: false,
+          disabled: true,
+          id: '4',
+          label: 'Expired',
+          value: 'Expired',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '5',
+          label: 'Cancelled',
+          value: 'Cancelled',
+        },
+      ];
+      
+      const [popoverActive, setPopoverActive] = useState(true);
+      const [selected, setSelected] = useState([]);
+    
+      const togglePopoverActive = useCallback(
+        () => setPopoverActive(popoverActive => !popoverActive),
+        []
+      );
+      const activator = (
+        <Button onClick={togglePopoverActive}>Basic Menu</Button>
+      );
+    
+      return (
+        <Popover
+          active={popoverActive}
+          activator={activator}
+          onClose={() => setPopoverActive(false)}
+        >
+          <Popover.Pane>
+            <Menu title='Basic Menu' onClick={setSelected} selectedValues={selected} />
+          </Popover.Pane>
+        </Popover>
+      );
+      `,
+    },
+  },
+};
+
+const AllowMultipleTemplate: Story<MenuProps> = args => (
+  <PopoverMenu activatorLabel="Allow Multiple Menu" {...args} />
+);
+
+export const AllowMultiple = AllowMultipleTemplate.bind({});
+
+AllowMultiple.args = {
+  options,
+  title: 'Allow Multiple Menu',
+  allowMultiple: true,
+};
+
+Basic.parameters = {
+  docs: {
+    source: {
+      code: `
+      const options = [
+        {
+          active: false,
+          disabled: false,
+          id: '1',
+          label: 'All status',
+          value: 'All status',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '2',
+          label: 'Completed',
+          value: 'Completed',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '3',
+          label: 'Pending',
+          value: 'Pending',
+        },
+        {
+          active: false,
+          disabled: true,
+          id: '4',
+          label: 'Expired',
+          value: 'Expired',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '5',
+          label: 'Cancelled',
+          value: 'Cancelled',
+        },
+      ];
+      
+      const [popoverActive, setPopoverActive] = useState(true);
+      const [selected, setSelected] = useState([]);
+    
+      const togglePopoverActive = useCallback(
+        () => setPopoverActive(popoverActive => !popoverActive),
+        []
+      );
+      const activator = (
+        <Button onClick={togglePopoverActive}>Allow Multiple Menu</Button>
+      );
+    
+      return (
+        <Popover
+          active={popoverActive}
+          activator={activator}
+          onClose={() => setPopoverActive(false)}
+        >
+          <Popover.Pane>
+            <Menu title='Allow Multiple Menu' allowMultiple={true} onClick={setSelected} selectedValues={selected} />
+          </Popover.Pane>
+        </Popover>
+      );
+      `,
+    },
+  },
 };
