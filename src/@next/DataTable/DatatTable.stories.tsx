@@ -140,7 +140,8 @@ const Template: Story<DataTableProps> = ({
             <DataTable.Cell align="right">{dt.totalPrice}</DataTable.Cell>
             <DataTable.Cell align="center">
               <ButtonGroup>
-                <Button>Move</Button> <PrimaryButton>Update</PrimaryButton>
+                <Button>Move</Button>
+                <PrimaryButton>Very long label</PrimaryButton>
               </ButtonGroup>
             </DataTable.Cell>
           </DataTable.Row>
