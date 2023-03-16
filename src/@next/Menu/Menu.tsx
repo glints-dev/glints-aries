@@ -2,7 +2,8 @@ import React from 'react';
 import nextId from 'react-id-generator';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { ListContainer, StyledMenu, TitleContainer } from './MenuStyle';
+import { MenuOption } from './MenuOption';
+import { StyledMenu, TitleContainer } from './MenuStyle';
 
 export interface Option {
   disabled?: boolean;
@@ -10,28 +11,32 @@ export interface Option {
   label: React.ReactNode;
   value: string;
 }
+
+export interface Section {
+  title?: string;
+  options: Option[];
+}
 export interface MenuProps {
   id?: string;
-  onChange?: (selected: string[]) => void;
+  onClick?: (selected: string[]) => void;
   options?: Option[];
   /** Selected value based on Option.value */
   selectedValues?: string[];
   title?: string;
+  allowMultiple?: boolean;
+  sections?: Section[];
 }
 
 export const Menu = ({
+  allowMultiple,
   id,
-  onChange,
+  onClick,
   options,
   selectedValues,
   title,
 }: MenuProps) => {
   const randomId = nextId('glints-menu');
   const menuId = id ? id : randomId;
-
-  const handleClick = (value: string) => {
-    onChange([value]);
-  };
 
   return (
     <StyledMenu id={menuId}>
@@ -42,23 +47,22 @@ export const Menu = ({
           </Typography>
         </TitleContainer>
       )}
-      {options.map(option => {
+      {options.map((option: Option) => {
         const { value, label, disabled, id } = option;
+        const randomId = nextId('glints-menu-option');
+        const menuOptionId = id ? id : randomId;
         const isSelected = selectedValues?.includes(value);
+
         return (
-          <ListContainer key={id}>
-            <li
-              key={id}
-              aria-disabled={disabled}
-              data-active={isSelected}
-              value={value}
-              onClick={() => handleClick(value)}
-            >
-              <Typography as="span" variant="body1" color={Neutral.B18}>
-                {label}
-              </Typography>
-            </li>
-          </ListContainer>
+          <MenuOption
+            key={menuOptionId}
+            value={value}
+            label={label}
+            disabled={disabled}
+            isSelected={isSelected}
+            onClick={onClick}
+            allowMultiple={allowMultiple}
+          />
         );
       })}
     </StyledMenu>

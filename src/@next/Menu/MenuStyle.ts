@@ -18,6 +18,11 @@ export const StyledMenu = styled.ul<MenuProps>`
     padding: 0 ${space8};
     margin-bottom: ${space4};
 
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+
     &:hover {
       background: ${Neutral.B99};
       border-radius: ${borderRadius4};
@@ -55,6 +60,10 @@ export const StyledMenu = styled.ul<MenuProps>`
         width: 3px;
         background-color: ${Blue.S99};
         border-radius: 0px 4px 4px 0px;
+      }
+
+      &[data-multiple='true'] {
+        background: ${Neutral.B100};
       }
     }
   }

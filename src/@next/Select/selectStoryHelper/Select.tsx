@@ -31,7 +31,7 @@ export const Select = ({
       >
         <GlintsSelect.Menu
           options={options}
-          onChange={setSelected}
+          onClick={setSelected}
           selectedValues={selected}
         />
       </GlintsSelect>
