@@ -99,6 +99,10 @@ export const StyledTableCell = styled.td`
   vertical-align: top;
 
   ${alignmentStyle}
+
+  &[data-no-wrap='true'] {
+    white-space: nowrap;
+  }
 `;
 
 export const StyledTableFooterRow = styled.tr`

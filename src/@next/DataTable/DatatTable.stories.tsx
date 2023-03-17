@@ -15,6 +15,9 @@ import {
   TableHeading,
   Total,
 } from './DataTable';
+import { TableCell } from './TableCell';
+import { TableFooter } from './TableFooter';
+import { TableRow } from './TableRow';
 
 (DataTable as React.FunctionComponent<DataTableProps>).displayName =
   'DataTable';
@@ -22,6 +25,11 @@ import {
 export default {
   title: '@next/DataTable',
   component: DataTable,
+  subcomponents: {
+    'DataTable.Row': TableRow,
+    'DataTable.Cell': TableCell,
+    'DataTable.Footer': TableFooter,
+  },
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
@@ -140,7 +148,8 @@ const Template: Story<DataTableProps> = ({
             <DataTable.Cell align="right">{dt.totalPrice}</DataTable.Cell>
             <DataTable.Cell align="center">
               <ButtonGroup>
-                <Button>Move</Button> <PrimaryButton>Update</PrimaryButton>
+                <Button>Move</Button>
+                <PrimaryButton>Update</PrimaryButton>
               </ButtonGroup>
             </DataTable.Cell>
           </DataTable.Row>
@@ -394,3 +403,170 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
 export const WithEmptyState = WithEmptyStateTemplate.bind({});
 
 WithEmptyState.args = { loadingLabel: 'Loading...' };
+
+const WithNoWrapCellTemplate: Story<DataTableProps> = ({
+  ...args
+}: DataTableProps) => {
+  const headings: TableHeading[] = [
+    { title: 'Label' },
+    { title: 'Variant' },
+    { title: 'SKU Number' },
+    {
+      id: 'unit-sold',
+      title: 'Unit sold',
+      defaultSortDirection: 'ASCENDING',
+      align: 'right',
+    },
+    {
+      title: 'Total Price',
+      align: 'right',
+    },
+    {
+      title: 'Actions',
+      align: 'center',
+    },
+  ];
+
+  const data: any[] = [
+    {
+      label: 'Item 1',
+      variant:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at eros eget justo consequat lacinia non eu tellus.',
+      skuNumber: '001',
+      unitSold: 1,
+      totalPrice: '$10,000',
+    },
+    {
+      label: 'Item 1',
+      variant: 'Variant 2',
+      skuNumber: '0012',
+      unitSold: 2,
+      totalPrice: '$11,000',
+    },
+    {
+      label: 'Item 2',
+      variant: 'Variant 2',
+      skuNumber: '002',
+      unitSold: 3,
+      totalPrice: '$12,000',
+    },
+  ];
+
+  const emptyState = (
+    <EmptyState
+      title="No result"
+      primaryButtonAction={{ label: 'Back to Dashboard' }}
+      imageName="empty-carton"
+    />
+  );
+
+  return (
+    <DataTable {...args} headings={headings} emptyState={emptyState}>
+      {data.map((dt: any, index: number) => {
+        return (
+          <DataTable.Row key={index}>
+            <DataTable.Cell>{dt.label}</DataTable.Cell>
+            <DataTable.Cell>{dt.variant}</DataTable.Cell>
+            <DataTable.Cell>{dt.skuNumber}</DataTable.Cell>
+            <DataTable.Cell align="right">{dt.unitSold}</DataTable.Cell>
+            <DataTable.Cell align="right">{dt.totalPrice}</DataTable.Cell>
+            <DataTable.Cell align="center" noWrap>
+              <ButtonGroup>
+                <Button>Move</Button>
+                <PrimaryButton>Very long label</PrimaryButton>
+              </ButtonGroup>
+            </DataTable.Cell>
+          </DataTable.Row>
+        );
+      })}
+    </DataTable>
+  );
+};
+
+export const WithNoWrapCell = WithNoWrapCellTemplate.bind({});
+
+WithNoWrapCell.args = { loadingLabel: 'Loading...' };
+WithNoWrapCell.parameters = {
+  docs: {
+    source: {
+      code: `
+      const headings: TableHeading[] = [
+        { title: 'Label' },
+        { title: 'Variant' },
+        { title: 'SKU Number' },
+        {
+          id: 'unit-sold',
+          title: 'Unit sold',
+          defaultSortDirection: 'ASCENDING',
+          align: 'right',
+        },
+        {
+          title: 'Total Price',
+          align: 'right',
+        },
+        {
+          title: 'Actions',
+          align: 'center',
+        },
+      ];
+    
+      const data: any[] = [
+        {
+          label: 'Item 1',
+          variant:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at eros eget justo consequat lacinia non eu tellus.',
+          skuNumber: '001',
+          unitSold: 1,
+          totalPrice: '$10,000',
+        },
+        {
+          label: 'Item 1',
+          variant: 'Variant 2',
+          skuNumber: '0012',
+          unitSold: 2,
+          totalPrice: '$11,000',
+        },
+        {
+          label: 'Item 2',
+          variant: 'Variant 2',
+          skuNumber: '002',
+          unitSold: 3,
+          totalPrice: '$12,000',
+        },
+      ];
+    
+      const emptyState = (
+        <EmptyState
+          title="No result"
+          primaryButtonAction={{ label: 'Back to Dashboard' }}
+          imageName="empty-carton"
+        />
+      );
+    
+      return (
+        <DataTable {...args} headings={headings} emptyState={emptyState}>
+          {data.map((dt: any, index: number) => {
+            return (
+              <DataTable.Row key={index}>
+                <DataTable.Cell>{dt.label}</DataTable.Cell>
+                <DataTable.Cell>{dt.variant}</DataTable.Cell>
+                <DataTable.Cell>{dt.skuNumber}</DataTable.Cell>
+                <DataTable.Cell align="right">{dt.unitSold}</DataTable.Cell>
+                <DataTable.Cell align="right">{dt.totalPrice}</DataTable.Cell>
+                <DataTable.Cell align="center" noWrap>
+                  <ButtonGroup>
+                    <Button>Move</Button>
+                    <PrimaryButton>Very long label</PrimaryButton>
+                  </ButtonGroup>
+                </DataTable.Cell>
+              </DataTable.Row>
+            );
+          })}
+        </DataTable>
+      );
+      `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};
