@@ -43,3 +43,14 @@ test('DataTable - empty state', async ({ page }) => {
     'dataTable-empty-state.png'
   );
 });
+
+test('DataTable - no wrap cell', async ({ page }) => {
+  const tablePage = getPage(
+    page,
+    '?path=/story/next-datatable--with-no-wrap-cell'
+  );
+  await tablePage.goto();
+  await expect(tablePage.container).toHaveScreenshot(
+    'dataTable-no-wrap-cell.png'
+  );
+});

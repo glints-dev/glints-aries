@@ -97,9 +97,12 @@ export const StyledTableCell = styled.td`
   text-align: left;
   padding: ${space16};
   vertical-align: top;
-  white-space: nowrap;
 
   ${alignmentStyle}
+
+  &[data-no-wrap='true'] {
+    white-space: nowrap;
+  }
 `;
 
 export const StyledTableFooterRow = styled.tr`
