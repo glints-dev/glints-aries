@@ -102,6 +102,10 @@ export const StyledTableCell = styled.td`
 
   &[data-no-wrap='true'] {
     white-space: nowrap;
+
+    div {
+      width: max-content;
+    }
   }
 `;
 
