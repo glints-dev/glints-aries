@@ -6,6 +6,6 @@ export type ShowAlertProps = Omit<AlertProps, 'show'>;
 
 export type AlertContextProps = AlertProps &
   ComponentWithProviderProps<ShowAlertProps>;
-export const AlertContext = createContext<AlertContextProps | undefined>(
-  undefined
-);
+export const AlertContext = createContext<
+  AlertContextProps | Record<string, never>
+>({});

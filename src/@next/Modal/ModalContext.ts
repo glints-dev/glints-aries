@@ -6,6 +6,6 @@ export type ShowModalProps = Omit<ModalProps, 'isOpen'>;
 export type ModalContextProps = ModalProps &
   ComponentWithProviderProps<ShowModalProps>;
 
-export const ModalContext = createContext<ModalContextProps | undefined>(
-  undefined
-);
+export const ModalContext = createContext<
+  ModalContextProps | Record<string, never>
+>({});
