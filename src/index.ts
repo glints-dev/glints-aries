@@ -50,8 +50,6 @@ export { PrimaryColor, SecondaryColor, Greyscale } from './Utils/Colors';
 export { Shadow } from './Utils/Shadow';
 export { default as GlintsContainer } from './Layout/GlintsContainer/GlintsContainer';
 
-//@next
-export * from './@next';
 
 // Icons
 export { default as AddIcon } from './General/Icon/components/AddIcon';
