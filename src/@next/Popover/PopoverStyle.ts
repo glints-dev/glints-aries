@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { borderRadius8 } from '../utilities/borderRadius';
+import { borderRadius4, borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16, space4, space8 } from '../utilities/spacing';
 
@@ -156,6 +156,17 @@ export const StyledPopover: any = createGlobalStyle`
   pointer-events: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: ${Neutral.B68};
+  border-radius: ${borderRadius4};
+}
+
 .Polaris-Scrollable {
   position: relative;
   max-height: none;
@@ -180,12 +191,6 @@ export const StyledPopover: any = createGlobalStyle`
   box-shadow: inset 0 1.25rem
     1.25rem calc(-1 * 1.25rem)
     rgba(0,0,0,.15);
-}
-
-.Polaris-Scrollable--hasBottomShadow {
-  box-shadow: inset 0
-    calc(-1 * 1.25rem) 1.25rem
-    calc(-1 * 1.25rem) rgba(0,0,0,.15);
 }
 
 .Polaris-Scrollable--hasTopShadow.Polaris-Scrollable--hasBottomShadow {
