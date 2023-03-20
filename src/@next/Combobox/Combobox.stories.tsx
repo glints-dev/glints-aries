@@ -20,11 +20,13 @@ export default {
 } as Meta;
 
 const countries = [
+  { label: 'Cambodia', value: 'Cambodia' },
   { label: 'Indonesia', value: 'Indonesia' },
   { label: 'Malaysia', value: 'Malaysia' },
   { label: 'Philippines', value: 'Philippines' },
   { label: 'Singapore', value: 'Singapore' },
   { label: 'Taiwan', value: 'Taiwan' },
+  { label: 'Thailand', value: 'Thailand' },
   { label: 'Vietnam', value: 'Vietnam' },
 ];
 
