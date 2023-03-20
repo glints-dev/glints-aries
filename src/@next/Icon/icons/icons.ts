@@ -73,6 +73,8 @@ export const iconNames = [
   'ri-send-plane-line',
   'ri-settings-fill',
   'ri-settings-line',
+  'ri-timer3-fill',
+  'ri-timer3-line',
   'ri-twitter-line',
 ] as const;
 
@@ -151,5 +153,7 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-send-plane-line']: Icons.RiSendPlaneLine,
   ['ri-settings-fill']: Icons.RiSettingsFill,
   ['ri-settings-line']: Icons.RiSettingsLine,
+  ['ri-timer3-fill']: Icons.RiTimer3Fill,
+  ['ri-timer3-line']: Icons.RiTimer3Line,
   ['ri-twitter-line']: Icons.RiTwitterLine,
 };
