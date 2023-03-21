@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
@@ -12,8 +12,10 @@ export interface ComboboxProps {
   children?: React.ReactNode;
   label?: React.ReactNode;
   onClose?: () => void;
-  /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; default by 6 options */
-  optionListHeight?: number;
+  /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
+  listHeight?: number;
+  /** true = Allow vertical scroll, default by 6 options. */
+  scrollable?: boolean;
 }
 
 export const Combobox = ({
@@ -21,10 +23,26 @@ export const Combobox = ({
   allowMultiple = false,
   children,
   onClose,
-  optionListHeight = 296,
+  listHeight,
+  scrollable,
 }: ComboboxProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [textInputWidth, setTextInputWidth] = useState();
+  const [optionListHeight, setOptionListHeight] = useState('');
+
+  useEffect(() => {
+    if (listHeight) {
+      setOptionListHeight(`${listHeight + 24}px`);
+
+      return;
+    }
+
+    if (scrollable) {
+      setOptionListHeight(`${296 + 24}px`);
+
+      return;
+    }
+  }, [listHeight, scrollable]);
 
   const handleClose = useCallback(() => {
     setPopoverActive(false);
@@ -65,7 +83,7 @@ export const Combobox = ({
       preventFocusOnClose
       fullWidth
     >
-      <Popover.Pane height={`${optionListHeight + 24}px`}>
+      <Popover.Pane height={optionListHeight}>
         <ComboboxOptionContext.Provider value={optionContextValue}>
           <ComboboxTextInputContext.Provider value={textInputContextValue}>
             {children}

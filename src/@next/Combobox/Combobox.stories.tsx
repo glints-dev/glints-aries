@@ -160,4 +160,5 @@ export const MultiSelectScrollable = MultiSelectScrollableTemplate.bind({});
 
 MultiSelectScrollable.args = {
   allowMultiple: true,
+  scrollable: true,
 };
