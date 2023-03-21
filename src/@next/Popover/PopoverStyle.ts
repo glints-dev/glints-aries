@@ -1,9 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import {
-  borderRadius30,
-  borderRadius4,
-  borderRadius8,
-} from '../utilities/borderRadius';
+import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16, space4, space8 } from '../utilities/spacing';
 
@@ -165,27 +161,6 @@ export const StyledPopover: any = createGlobalStyle`
   max-height: none;
   overflow-x: hidden;
   overflow-y: hidden;
-  scrollbar-gutter: stable;
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 14px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    width: 12px;
-    margin: ${space8} 0;
-    border-radius: ${borderRadius4};
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    border: 4px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    background-color: ${Neutral.B68};
-    border-radius: ${borderRadius30};
-  }
 
   :focus {
     outline: 0.125rem solid ${Blue.S54};

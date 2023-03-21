@@ -99,7 +99,7 @@ const PopoverExample = (props: PopoverProps) => {
         activator={example2Activator}
         onClose={togglePopoverActive2}
       >
-        <Popover.Pane>
+        <Popover.Pane fixed>
           <Popover.Section>
             <Typography as="span" variant="subtitle2">
               AVAILABLE SALES CHANNEL
