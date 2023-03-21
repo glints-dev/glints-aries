@@ -8,7 +8,7 @@ interface OptionListContainerProps {
 }
 
 export const OptionListContainer = styled.div<OptionListContainerProps>`
-  width: ${props => props.textInputWidth}px;
+  width: ${props => props.textInputWidth - 14}px;
   padding: ${space8} 0;
 `;
 

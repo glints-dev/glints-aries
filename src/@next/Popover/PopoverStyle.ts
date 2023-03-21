@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import { borderRadius4, borderRadius8 } from '../utilities/borderRadius';
+import {
+  borderRadius30,
+  borderRadius4,
+  borderRadius8,
+} from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
 import { space16, space4, space8 } from '../utilities/spacing';
 
@@ -156,24 +160,34 @@ export const StyledPopover: any = createGlobalStyle`
   pointer-events: none;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: ${Neutral.B68};
-  border-radius: ${borderRadius4};
-}
-
 .Polaris-Scrollable {
   position: relative;
   max-height: none;
   overflow-x: hidden;
   overflow-y: hidden;
+  scrollbar-gutter: stable;
 
-  &:focus {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    width: 12px;
+    margin: ${space8} 0;
+    border-radius: ${borderRadius4};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: ${Neutral.B68};
+    border-radius: ${borderRadius30};
+  }
+
+  :focus {
     outline: 0.125rem solid ${Blue.S54};
     outline-offset: 0.125rem;
   }
@@ -186,20 +200,4 @@ export const StyledPopover: any = createGlobalStyle`
 .Polaris-Scrollable--vertical {
   overflow-y: auto;
 }
-
-.Polaris-Scrollable--hasTopShadow {
-  box-shadow: inset 0 1.25rem
-    1.25rem calc(-1 * 1.25rem)
-    rgba(0,0,0,.15);
-}
-
-.Polaris-Scrollable--hasTopShadow.Polaris-Scrollable--hasBottomShadow {
-  box-shadow: inset 0 1.25rem
-    1.25rem calc(-1 * 1.25rem)
-    rgba(0,0,0,.15),
-    inset 0
-    calc(-1 * 1.25rem) 1.25rem
-    calc(-1 * 1.25rem) rgba(0,0,0,.15);
-}
-
 `;
