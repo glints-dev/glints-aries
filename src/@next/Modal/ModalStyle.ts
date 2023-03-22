@@ -58,7 +58,6 @@ export const StyledModalContent = styled.div`
   color: #202223;
   width: fit-content;
   padding: 20px;
-  word-break: break-all;
 
   @media (max-width: ${Breakpoints.large}) {
     padding: 20px ${space16};
