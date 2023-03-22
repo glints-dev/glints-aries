@@ -7,6 +7,7 @@ import { OptionListContainer, StyledOptionList } from './OptionListStyle';
 export interface OptionListProps extends NoOptionListProps {
   children: React.ReactNode;
   isEmpty?: boolean;
+  height?: string;
   onSelect?(value: string): void;
 }
 

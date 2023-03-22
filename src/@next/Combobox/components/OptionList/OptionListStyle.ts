@@ -11,6 +11,7 @@ export const OptionListContainer = styled.div<OptionListContainerProps>`
   width: ${props => props.textInputWidth}px;
   padding: ${space8} 0;
 `;
+
 export const StyledOptionList = styled.ul`
   list-style: none;
   margin: 0 ${space8};
