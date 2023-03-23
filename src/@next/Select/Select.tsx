@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Menu } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
@@ -17,6 +17,10 @@ export interface SelectProps {
   helpText?: React.ReactNode;
   label?: React.ReactNode;
   onClose?: () => void;
+  /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
+  listHeight?: number;
+  /** true = Allow vertical scroll, default by 6 options. */
+  scrollable?: boolean;
 }
 
 export const Select = ({
@@ -26,9 +30,12 @@ export const Select = ({
   disabled,
   helpText,
   onClose,
+  listHeight,
+  scrollable,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [textInputWidth, setTextInputWidth] = useState();
+  const [optionListHeight, setOptionListHeight] = useState('');
 
   const handleClose = useCallback(() => {
     setPopoverActive(false);
@@ -61,6 +68,20 @@ export const Select = ({
     allowMultiple,
   };
 
+  useEffect(() => {
+    if (listHeight) {
+      setOptionListHeight(`${listHeight + 24}px`);
+
+      return;
+    }
+
+    if (scrollable) {
+      setOptionListHeight(`${296 + 24}px`);
+
+      return;
+    }
+  }, [listHeight, scrollable]);
+
   return (
     <Popover
       active={popoverActive}
@@ -85,7 +106,7 @@ export const Select = ({
       preventFocusOnClose
       fullWidth
     >
-      <Popover.Pane>
+      <Popover.Pane height={optionListHeight}>
         <SelectOptionContext.Provider value={optionContextValue}>
           <ActivatorContext.Provider value={activatorContextValue}>
             {children}

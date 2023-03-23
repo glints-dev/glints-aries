@@ -15,10 +15,13 @@ export default {
 } as Meta;
 
 const countries = [
+  { label: 'Cambodia', value: 'Cambodia' },
   { label: 'Indonesia', value: 'Indonesia' },
   { label: 'Malaysia', value: 'Malaysia' },
+  { label: 'Philippines', value: 'Philippines' },
   { label: 'Singapore', value: 'Singapore' },
   { label: 'Taiwan', value: 'Taiwan' },
+  { label: 'Thailand', value: 'Thailand' },
   { label: 'Vietnam', value: 'Vietnam' },
 ];
 
@@ -68,8 +71,10 @@ export const SingleSelect = SingleSelectTemplate.bind({});
 
 SingleSelect.args = {};
 
+const slicedCountries = countries.slice(0, 5);
+
 const SearchableMultiSelectTemplate: Story<SelectProps> = args => {
-  return <SearchableSelect data={countries} {...args} />;
+  return <SearchableSelect data={slicedCountries} {...args} />;
 };
 
 export const SearchableMultiSelect = SearchableMultiSelectTemplate.bind({});
@@ -187,4 +192,15 @@ SearchableMultiSelect.parameters = {
       `,
     },
   },
+};
+
+const MultiSelectScrollableTemplate: Story<SelectProps> = args => (
+  <SearchableMultiSelect {...args} data={countries} />
+);
+
+export const MultiSelectScrollable = MultiSelectScrollableTemplate.bind({});
+
+MultiSelectScrollable.args = {
+  allowMultiple: true,
+  scrollable: true,
 };
