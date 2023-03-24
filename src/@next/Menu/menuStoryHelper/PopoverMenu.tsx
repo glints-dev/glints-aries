@@ -12,12 +12,21 @@ export const PopoverMenu = ({
   ...props
 }: PopoverMenuProps) => {
   const [popoverActive, setPopoverActive] = useState(true);
-  const [selected, setSelected] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const togglePopoverActive = useCallback(
     () => setPopoverActive(popoverActive => !popoverActive),
     []
   );
+
+  const handleSelect = ({ value }: { value: string }) => {
+    if (selectedOptions.includes(value)) {
+      setSelectedOptions(selectedOptions.filter(option => option !== value));
+    } else {
+      setSelectedOptions([...selectedOptions, value]);
+    }
+  };
+
   const activator = (
     <Button onClick={togglePopoverActive}>{activatorLabel}</Button>
   );
@@ -29,7 +38,11 @@ export const PopoverMenu = ({
       onClose={() => setPopoverActive(false)}
     >
       <Popover.Pane>
-        <Menu {...props} onClick={setSelected} selectedValues={selected} />
+        <Menu
+          {...props}
+          onClick={handleSelect}
+          selectedValues={selectedOptions}
+        />
       </Popover.Pane>
     </Popover>
   );

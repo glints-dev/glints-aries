@@ -80,3 +80,9 @@ export const TitleContainer = styled.div`
 export const ListContainer = styled.div`
   padding: 0 ${space8};
 `;
+
+export const StyledSections = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: ${space8} 0;
+`;

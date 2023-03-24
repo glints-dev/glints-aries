@@ -148,7 +148,7 @@ AllowMultiple.args = {
   allowMultiple: true,
 };
 
-Basic.parameters = {
+AllowMultiple.parameters = {
   docs: {
     source: {
       code: `
@@ -206,6 +206,7 @@ Basic.parameters = {
           active={popoverActive}
           activator={activator}
           onClose={() => setPopoverActive(false)}
+          allowMultiple
         >
           <Popover.Pane>
             <Menu title='Allow Multiple Menu' allowMultiple={true} onClick={setSelected} selectedValues={selected} />
@@ -215,4 +216,36 @@ Basic.parameters = {
       `,
     },
   },
+};
+
+const sections = [
+  {
+    title: 'Most commonly used',
+    options: [
+      { label: 'Cambodia', value: 'Cambodia' },
+      { label: 'Indonesia', value: 'Indonesia' },
+      { label: 'Malaysia', value: 'Malaysia' },
+    ],
+  },
+  {
+    title: 'Countries',
+    options: [
+      { label: 'Philippines', value: 'Philippines' },
+      { label: 'Singapore', value: 'Singapore' },
+      { label: 'Taiwan', value: 'Taiwan' },
+      { label: 'Thailand', value: 'Thailand' },
+      { label: 'Vietnam', value: 'Vietnam' },
+    ],
+  },
+];
+
+const WithSectionsTemplate: Story<MenuProps> = args => (
+  <PopoverMenu activatorLabel="Sections Menu" {...args} />
+);
+
+export const WithSections = WithSectionsTemplate.bind({});
+
+WithSections.args = {
+  sections,
+  allowMultiple: true,
 };

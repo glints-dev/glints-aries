@@ -11,7 +11,7 @@ export interface MenuOptionProps
   isSelected?: boolean;
   value: string;
   label: React.ReactNode;
-  onClick?(selected: string[]): void;
+  onClick?({ value }: { value: string }): void;
   allowMultiple?: boolean;
 }
 export const MenuOption = ({
@@ -23,12 +23,20 @@ export const MenuOption = ({
   allowMultiple,
 }: MenuOptionProps) => {
   const handleClick = (value: string) => {
-    onClick([value]);
+    onClick({ value });
   };
 
-  const renderLabelContent = ({ isSelected }: { isSelected: boolean }) => {
+  const renderLabelContent = ({
+    isSelected,
+    disabled,
+  }: {
+    isSelected: boolean;
+    disabled?: boolean;
+  }) => {
     if (allowMultiple) {
-      return <Checkbox label={label} checked={isSelected} />;
+      return (
+        <Checkbox label={label} checked={isSelected} disabled={disabled} />
+      );
     } else {
       return (
         <Typography as="span" variant="body1" color={Neutral.B18}>
@@ -47,7 +55,7 @@ export const MenuOption = ({
         value={value}
         onClick={() => handleClick(value)}
       >
-        {renderLabelContent({ isSelected })}
+        {renderLabelContent({ isSelected, disabled })}
       </li>
     </ListContainer>
   );
