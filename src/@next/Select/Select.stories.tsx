@@ -11,6 +11,13 @@ import { Select as SelectHelper } from './selectStoryHelper/Select';
 export default {
   title: '@next/Select',
   component: Select,
+  subcomponents: {
+    'Select.Label': Select.Label,
+    'Select.OptionList': Select.OptionList,
+    'Select.Option': Select.Option,
+    'Select.ActivatorTextInput': Select.ActivatorTextInput,
+    'Select.ActivatorSelect': Select.ActivatorSelect,
+  },
   decorators: [withGlintsPortalContainer],
 } as Meta;
 
@@ -63,13 +70,25 @@ const options = [
   },
 ];
 
-const SingleSelectTemplate: Story<SelectProps> = args => {
+const NonSearchableSingleSelectTemplate: Story<SelectProps> = args => {
   return <SelectHelper options={options} {...args} />;
 };
 
-export const SingleSelect = SingleSelectTemplate.bind({});
+export const NonSearchableSingleSelect = NonSearchableSingleSelectTemplate.bind(
+  {}
+);
 
-SingleSelect.args = {};
+NonSearchableSingleSelect.args = {};
+
+const NonSearchableMultiSelectTemplate: Story<SelectProps> = args => {
+  return <SelectHelper options={options} {...args} allowMultiple />;
+};
+
+export const NonSearchableMultiSelect = NonSearchableMultiSelectTemplate.bind(
+  {}
+);
+
+NonSearchableMultiSelect.args = {};
 
 const slicedCountries = countries.slice(0, 5);
 

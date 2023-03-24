@@ -3,7 +3,7 @@ import { Blue } from '../../utilities/colors';
 import { space8 } from '../../utilities/spacing';
 import { Select } from '../Select';
 import { OptionType } from '../SelectOption';
-import { StyledTag } from './TagStyle';
+import { StyledTag } from './SelectStoryStyle';
 
 interface SearchableProps {
   data?: OptionType[];
@@ -85,7 +85,7 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
   }, [isSearchEmpty, options]);
 
   return (
-    <div style={{ maxWidth: '500px' }}>
+    <div style={{ maxWidth: '200px' }}>
       <Select.Label>Label</Select.Label>
       <Select
         {...args}
