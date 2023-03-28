@@ -7,8 +7,8 @@ import { MenuProps } from './Menu';
 
 export const StyledMenu = styled.ul<MenuProps>`
   list-style: none;
-  margin: ${space8} 0;
   padding: 0;
+  margin: 0;
 
   li {
     display: flex;
@@ -74,6 +74,7 @@ export const StyledMenu = styled.ul<MenuProps>`
 `;
 
 export const TitleContainer = styled.div`
+  margin: ${space8} 0 ${space4};
   padding: ${space8} ${space16};
 
   span {
