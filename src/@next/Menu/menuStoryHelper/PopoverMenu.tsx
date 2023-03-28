@@ -9,6 +9,7 @@ interface PopoverMenuProps extends MenuProps {
 
 export const PopoverMenu = ({
   activatorLabel = 'Menu',
+  allowMultiple,
   ...props
 }: PopoverMenuProps) => {
   const [popoverActive, setPopoverActive] = useState(true);
@@ -20,10 +21,14 @@ export const PopoverMenu = ({
   );
 
   const handleSelect = ({ value }: { value: string }) => {
-    if (selectedOptions.includes(value)) {
-      setSelectedOptions(selectedOptions.filter(option => option !== value));
+    if (allowMultiple) {
+      if (selectedOptions.includes(value)) {
+        setSelectedOptions(selectedOptions.filter(option => option !== value));
+      } else {
+        setSelectedOptions([...selectedOptions, value]);
+      }
     } else {
-      setSelectedOptions([...selectedOptions, value]);
+      setSelectedOptions([value]);
     }
   };
 
@@ -40,6 +45,7 @@ export const PopoverMenu = ({
       <Popover.Pane>
         <Menu
           {...props}
+          allowMultiple={allowMultiple}
           onClick={handleSelect}
           selectedValues={selectedOptions}
         />

@@ -62,7 +62,7 @@ export const ActivatorSelect = ({
     const hasSelectedValues = selectedValues.length > 0;
 
     if (!hasSelectedValues) {
-      return { placeholderMarkup };
+      return placeholderMarkup;
     }
 
     if (hasSelectedValues) {

@@ -65,6 +65,7 @@ export const Basic = BasicTemplate.bind({});
 Basic.args = {
   options,
   title: 'Basic Menu',
+  allowMultiple: false,
 };
 
 Basic.parameters = {
