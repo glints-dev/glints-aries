@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Breakpoints } from '../../..';
+import { Breakpoints, Tag } from '../../..';
 import { borderRadius4 } from '../../../utilities/borderRadius';
 import { Neutral, Red } from '../../../utilities/colors';
 import { NotoSans } from '../../../utilities/fonts';
+import { space8 } from '../../../utilities/spacing';
+import { ActivatorSelectProps } from './ActivatorSelect';
 
-export const StyledSelect = styled.button`
+export const StyledSelect = styled.button<ActivatorSelectProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,14 +35,26 @@ export const StyledSelect = styled.button`
   }
 
   &:disabled {
-    color: ${Neutral.B85};
+    background: ${Neutral.B95};
     pointer-events: none;
     cursor: default;
+    border: 1px solid ${Neutral.B85};
   }
 
   &[data-error='true'] {
-    height: 36px;
     border: 1px solid ${Red.B93};
     border-radius: ${borderRadius4};
   }
+`;
+
+export const TagsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const StyledTag = styled(Tag)`
+  height: 28px;
+  margin-right: ${space8};
 `;

@@ -65,12 +65,15 @@ export const Select = ({
   };
 
   const activatorContextValue = {
+    allowMultiple,
+    disabled,
+    hasError,
     onFocus: handleFocus,
     onBlur: handleBlur,
     onSelectClick: handleSelectClick,
-    width,
+    selectedValues,
     setWidth,
-    hasError,
+    width,
   };
 
   useEffect(() => {

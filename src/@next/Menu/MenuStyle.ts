@@ -64,6 +64,10 @@ export const StyledMenu = styled.ul<MenuProps>`
 
       &[data-multiple='true'] {
         background: ${Neutral.B100};
+
+        ::before {
+          content: none;
+        }
       }
     }
   }

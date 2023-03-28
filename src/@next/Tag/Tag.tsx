@@ -12,7 +12,7 @@ import {
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   value?: string;
-  onRemove?: (() => void) | null;
+  onRemove?: (() => void) | null | void;
   textColor?: string;
   disabled?: boolean;
 }

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Select as GlintsSelect, SelectProps } from '../Select';
 import { ActivatorSelectStyled } from './SelectStoryStyle';
 
-export const Select = ({
+export const SingleSelect = ({
   options,
-  disabled,
   allowMultiple,
+  disabled,
   ...args
 }: SelectProps) => {
+  console.log('args', args, disabled);
   const [selected, setSelected] = useState('');
 
   const handleSelect = ({ value }: { value: string }) => {
@@ -20,13 +21,10 @@ export const Select = ({
       <GlintsSelect
         {...args}
         activator={
-          <ActivatorSelectStyled
-            disabled={disabled}
-            placeholder="Placeholder"
-            value={selected}
-          />
+          <ActivatorSelectStyled placeholder="Placeholder" value={selected} />
         }
         allowMultiple={allowMultiple}
+        disabled={disabled}
         options={options}
         onSelect={handleSelect}
         selectedValues={[selected]}

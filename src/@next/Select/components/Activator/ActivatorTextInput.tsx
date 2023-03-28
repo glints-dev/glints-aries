@@ -22,7 +22,7 @@ export const ActivatorTextInput = ({
 }: ActivatorTextInputProps) => {
   const activatorRef = useRef(null);
   const activatorContext = useSelectActivator() as ActivatorTextInputProps;
-  const { onFocus, setWidth, hasError } = activatorContext;
+  const { disabled, onFocus, setWidth, hasError } = activatorContext;
 
   useEffect(() => {
     setWidth(activatorRef.current.getBoundingClientRect().width);
@@ -41,6 +41,7 @@ export const ActivatorTextInput = ({
       onChange={value => handleChange({ value })}
       onFocus={onFocus}
       hasError={hasError}
+      disabled={disabled}
     ></GlintsTextInput>
   );
 };

@@ -7,6 +7,7 @@ import { TagContentProps, TagProps, TagRemoveContainerProps } from './Tag';
 
 export const TagContentStyle = styled.span<TagContentProps>`
   padding: ${space4} ${space8};
+  white-space: nowrap;
 
   transform: translateY(1px);
 

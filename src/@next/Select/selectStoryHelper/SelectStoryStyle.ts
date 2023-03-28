@@ -8,5 +8,5 @@ export const StyledTag = styled(Tag)`
 `;
 
 export const ActivatorSelectStyled = styled(Select.ActivatorSelect)`
-  width: 180px;
+  width: 400px;
 `;

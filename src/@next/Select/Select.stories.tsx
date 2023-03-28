@@ -4,8 +4,9 @@ import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 import { InlineError } from '../InlineError';
 
 import { Select, SelectProps } from './Select';
+import { NonSearchableMultiSelect } from './selectStoryHelper/NonSearchableMultiSelect';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
-import { Select as SelectHelper } from './selectStoryHelper/Select';
+import { SingleSelect } from './selectStoryHelper/SingleSelect';
 
 (Select as React.FunctionComponent<SelectProps>).displayName = 'Select';
 
@@ -56,7 +57,7 @@ const options = [
   },
   {
     active: false,
-    disabled: true,
+    disabled: false,
     id: '4',
     label: 'Expired',
     value: 'Expired',
@@ -71,7 +72,7 @@ const options = [
 ];
 
 const NonSearchableSingleSelectTemplate: Story<SelectProps> = args => {
-  return <SelectHelper options={options} {...args} />;
+  return <SingleSelect options={options} {...args} />;
 };
 
 export const NonSearchableSingleSelect = NonSearchableSingleSelectTemplate.bind(
@@ -80,18 +81,16 @@ export const NonSearchableSingleSelect = NonSearchableSingleSelectTemplate.bind(
 
 NonSearchableSingleSelect.args = {};
 
-const NonSearchableMultiSelectTemplate: Story<SelectProps> = args => {
-  return <SelectHelper options={options} {...args} allowMultiple />;
+const NonSearchableAllowMultiTemplate: Story<SelectProps> = args => {
+  return <NonSearchableMultiSelect options={options} {...args} allowMultiple />;
 };
 
-export const NonSearchableMultiSelect = NonSearchableMultiSelectTemplate.bind(
-  {}
-);
+export const NonSearchableAllowMulti = NonSearchableAllowMultiTemplate.bind({});
 
-NonSearchableMultiSelect.args = {};
+NonSearchableAllowMulti.args = {};
 
 const WithErrorNonSearchableTemplate: Story<SelectProps> = args => {
-  return <SelectHelper options={options} {...args} />;
+  return <SingleSelect options={options} {...args} />;
 };
 
 export const WithErrorNonSearchable = WithErrorNonSearchableTemplate.bind({});
@@ -99,6 +98,14 @@ export const WithErrorNonSearchable = WithErrorNonSearchableTemplate.bind({});
 WithErrorNonSearchable.args = {
   hasError: true,
 };
+
+const NonSearchableDisabledTemplate: Story<SelectProps> = args => {
+  return <SingleSelect options={options} {...args} disabled />;
+};
+
+export const NonSearchableDisabled = NonSearchableDisabledTemplate.bind({});
+
+NonSearchableDisabledTemplate.args = {};
 
 const slicedCountries = countries.slice(0, 5);
 
@@ -245,4 +252,14 @@ WithInlineError.args = {
   scrollable: true,
   helpText: <InlineError text="Error message" />,
   hasError: true,
+};
+
+const SearchableDisabledTemplate: Story<SelectProps> = args => (
+  <SearchableMultiSelect {...args} data={countries} />
+);
+
+export const SearchableDisabled = SearchableDisabledTemplate.bind({});
+
+SearchableDisabled.args = {
+  disabled: true,
 };

@@ -4,10 +4,17 @@ import { ActivatorTextInputProps } from './ActivatorTextInput';
 
 export interface ActivatorSelectContextProps extends ActivatorSelectProps {
   onSelectClick(): void;
+  selectedValues?: string[];
+  disabled?: boolean;
+}
+
+export interface ActivatorTextInputContextProps
+  extends ActivatorTextInputProps {
+  disabled?: boolean;
 }
 
 export const ActivatorContext = createContext<
-  ActivatorTextInputProps | ActivatorSelectContextProps | undefined
+  ActivatorTextInputContextProps | ActivatorSelectContextProps | undefined
 >(undefined);
 
 export const useSelectActivator = () => {
