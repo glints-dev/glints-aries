@@ -24,7 +24,7 @@ export default {
         smallHeightDesktop: {
           name: 'Small Height Desktop',
           styles: {
-            width: '1240px',
+            width: '1024px',
             height: '400px',
           },
         },

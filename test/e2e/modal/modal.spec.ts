@@ -71,6 +71,15 @@ test('Modal - with large content', async ({ page }) => {
   );
 });
 
+test('Modal - with overflowing content', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.gotoWithOverflowContentPage();
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-with-overflowing-content.png'
+  );
+});
+
 test('Modal - with custom actions', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
