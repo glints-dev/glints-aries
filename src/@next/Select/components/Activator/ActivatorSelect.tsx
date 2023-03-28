@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Icon } from '../../../Icon';
 
 import { Typography } from '../../../Typography';
@@ -14,18 +14,24 @@ export interface ActivatorSelectProps
   value?: string;
   placeholder?: string;
   hasError?: boolean;
+  width?: number;
+  setWidth?: React.Dispatch<(prevState: undefined) => undefined>;
 }
 export const ActivatorSelect = ({
   disabled = false,
-  hasError,
   placeholder,
   value,
   onClick,
   ...props
 }: ActivatorSelectProps) => {
+  const activatorRef = useRef(null);
   const hasValue = !!value;
   const activatorContext = useSelectActivator() as ActivatorSelectContextProps;
-  const { onSelectClick } = activatorContext;
+  const { onSelectClick, hasError, setWidth } = activatorContext;
+
+  useEffect(() => {
+    setWidth(activatorRef.current.getBoundingClientRect().width);
+  }, [activatorRef, setWidth]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onSelectClick();
@@ -34,6 +40,7 @@ export const ActivatorSelect = ({
 
   return (
     <StyledSelect
+      ref={activatorRef}
       disabled={disabled}
       data-error={hasError}
       onClick={handleClick}

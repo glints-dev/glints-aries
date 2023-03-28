@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
 import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
+import { InlineError } from '../InlineError';
 
 import { Select, SelectProps } from './Select';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
@@ -14,7 +15,6 @@ export default {
   subcomponents: {
     'Select.Label': Select.Label,
     'Select.OptionList': Select.OptionList,
-    'Select.Option': Select.Option,
     'Select.ActivatorTextInput': Select.ActivatorTextInput,
     'Select.ActivatorSelect': Select.ActivatorSelect,
   },
@@ -89,6 +89,16 @@ export const NonSearchableMultiSelect = NonSearchableMultiSelectTemplate.bind(
 );
 
 NonSearchableMultiSelect.args = {};
+
+const WithErrorNonSearchableTemplate: Story<SelectProps> = args => {
+  return <SelectHelper options={options} {...args} />;
+};
+
+export const WithErrorNonSearchable = WithErrorNonSearchableTemplate.bind({});
+
+WithErrorNonSearchable.args = {
+  hasError: true,
+};
 
 const slicedCountries = countries.slice(0, 5);
 
@@ -222,4 +232,17 @@ export const MultiSelectScrollable = MultiSelectScrollableTemplate.bind({});
 MultiSelectScrollable.args = {
   allowMultiple: true,
   scrollable: true,
+};
+
+const WithInlineErrorTemplate: Story<SelectProps> = args => (
+  <SearchableMultiSelect {...args} data={countries} />
+);
+
+export const WithInlineError = WithInlineErrorTemplate.bind({});
+
+WithInlineError.args = {
+  allowMultiple: true,
+  scrollable: true,
+  helpText: <InlineError text="Error message" />,
+  hasError: true,
 };

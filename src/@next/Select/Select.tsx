@@ -1,12 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Menu } from '../Menu';
+import { Menu, Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { ActivatorTextInput, OptionList, Option } from './components';
+import { ActivatorTextInput, OptionList } from './components';
 import { ActivatorContext } from './components/Activator/ActivatorContext';
 import { ActivatorSelect } from './components/Activator/ActivatorSelect';
-import { SelectOptionContext } from './components/OptionList/OptionListContext';
 import { HelpTextContainer } from './SelectStyle';
 
 export interface SelectProps {
@@ -14,27 +13,36 @@ export interface SelectProps {
   allowMultiple?: boolean;
   children?: React.ReactNode;
   disabled?: boolean;
+  hasError?: boolean;
   helpText?: React.ReactNode;
   label?: React.ReactNode;
+  listHeight?: number;
   onClose?: () => void;
   /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
-  listHeight?: number;
+  onSelect?({ value }: { value: string }): void;
+  options?: Option[];
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
+  sections?: Section[];
+  selectedValues?: string[];
 }
 
 export const Select = ({
   activator,
   allowMultiple = false,
-  children,
   disabled,
+  hasError,
   helpText,
   onClose,
+  onSelect,
+  options,
   listHeight,
   scrollable,
+  sections,
+  selectedValues,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
-  const [textInputWidth, setTextInputWidth] = useState();
+  const [width, setWidth] = useState();
   const [optionListHeight, setOptionListHeight] = useState('');
 
   const handleClose = useCallback(() => {
@@ -60,12 +68,9 @@ export const Select = ({
     onFocus: handleFocus,
     onBlur: handleBlur,
     onSelectClick: handleSelectClick,
-    textInputWidth,
-    setTextInputWidth,
-  };
-
-  const optionContextValue = {
-    allowMultiple,
+    width,
+    setWidth,
+    hasError,
   };
 
   useEffect(() => {
@@ -107,11 +112,15 @@ export const Select = ({
       fullWidth
     >
       <Popover.Pane height={optionListHeight}>
-        <SelectOptionContext.Provider value={optionContextValue}>
-          <ActivatorContext.Provider value={activatorContextValue}>
-            {children}
-          </ActivatorContext.Provider>
-        </SelectOptionContext.Provider>
+        <ActivatorContext.Provider value={activatorContextValue}>
+          <OptionList
+            allowMultiple={allowMultiple}
+            onSelect={onSelect}
+            options={options}
+            sections={sections}
+            selectedValues={selectedValues}
+          />
+        </ActivatorContext.Provider>
       </Popover.Pane>
     </Popover>
   );
@@ -127,5 +136,4 @@ Select.Label = Label;
 Select.ActivatorTextInput = ActivatorTextInput;
 Select.ActivatorSelect = ActivatorSelect;
 Select.OptionList = OptionList;
-Select.Option = Option;
 Select.Menu = Menu;

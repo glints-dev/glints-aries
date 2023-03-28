@@ -31,29 +31,13 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
     setOptions(filterOptions);
   };
 
-  const handleSelect = (selected: string) => {
-    if (selectedOptions.includes(selected)) {
-      setSelectedOptions(selectedOptions.filter(option => option !== selected));
+  const handleSelect = ({ value }: { value: string }) => {
+    if (selectedOptions.includes(value)) {
+      setSelectedOptions(selectedOptions.filter(option => option !== value));
     } else {
-      setSelectedOptions([...selectedOptions, selected]);
+      setSelectedOptions([...selectedOptions, value]);
     }
   };
-
-  const optionsMarkup =
-    options?.length > 0
-      ? options.map(option => {
-          const { label, value } = option;
-
-          return (
-            <Select.Option
-              key={value}
-              label={label}
-              value={value}
-              selected={selectedOptions.includes(value)}
-            />
-          );
-        })
-      : null;
 
   const removeTag = useCallback(
     tag => () => {
@@ -85,7 +69,7 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
   }, [isSearchEmpty, options]);
 
   return (
-    <div style={{ maxWidth: '200px' }}>
+    <div style={{ maxWidth: '600px' }}>
       <Select.Label>Label</Select.Label>
       <Select
         {...args}
@@ -96,11 +80,10 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
             placeholder="Search"
           />
         }
-      >
-        <Select.OptionList onSelect={handleSelect} isEmpty={isSearchEmpty}>
-          {optionsMarkup}
-        </Select.OptionList>
-      </Select>
+        onSelect={handleSelect}
+        options={options}
+        selectedValues={selectedOptions}
+      />
       <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
     </div>
   );

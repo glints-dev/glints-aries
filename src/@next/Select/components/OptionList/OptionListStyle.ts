@@ -4,11 +4,11 @@ import { Neutral } from '../../../utilities/colors';
 import { space4, space8 } from '../../../utilities/spacing';
 
 interface OptionListContainerProps {
-  textInputWidth?: number;
+  width?: number;
 }
 
 export const OptionListContainer = styled.div<OptionListContainerProps>`
-  width: ${props => props.textInputWidth}px;
+  width: ${props => props.width}px;
   padding: ${space8} 0;
 `;
 export const StyledOptionList = styled.ul`
