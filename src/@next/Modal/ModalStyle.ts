@@ -29,6 +29,8 @@ export const StyledModalContainer = styled.div`
   min-width: 320px;
   width: fit-content;
   max-width: calc(100vw - 32px);
+  height: fit-content;
+  max-height: calc(100vh - 96px);
 `;
 
 export const StyledModalHeader = styled.div`
@@ -58,6 +60,7 @@ export const StyledModalContent = styled.div`
   color: #202223;
   width: fit-content;
   padding: 20px;
+  overflow: auto;
 
   @media (max-width: ${Breakpoints.large}) {
     padding: 20px ${space16};
