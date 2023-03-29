@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select as GlintsSelect, SelectProps } from '../Select';
+import { Select, SelectProps } from '../Select';
 import { ActivatorSelectStyled } from './SelectStoryStyle';
 
 export const SingleSelect = ({
@@ -16,8 +16,8 @@ export const SingleSelect = ({
 
   return (
     <div style={{ width: '200px' }}>
-      <GlintsSelect.Label>Label</GlintsSelect.Label>
-      <GlintsSelect
+      <Select.Label>Label</Select.Label>
+      <Select
         {...args}
         activator={
           <ActivatorSelectStyled placeholder="Placeholder" value={selected} />

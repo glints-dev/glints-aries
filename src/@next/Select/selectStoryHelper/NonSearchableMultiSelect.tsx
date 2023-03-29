@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Select as GlintsSelect, SelectProps } from '../Select';
+import { Select, SelectProps } from '../Select';
 import { ActivatorSelectStyled } from './SelectStoryStyle';
 
 export const NonSearchableMultiSelect = ({
@@ -19,8 +19,9 @@ export const NonSearchableMultiSelect = ({
 
   const removeTag = useCallback(
     ({ option }: { option: string }) =>
-      () => {
-        console.log('option', option);
+      (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.stopPropagation();
+
         const options = [...selected];
         options.splice(options.indexOf(option), 1);
         setSelected(options);
@@ -28,11 +29,10 @@ export const NonSearchableMultiSelect = ({
     [selected]
   );
 
-  console.log('selected', selected);
   return (
     <div>
-      <GlintsSelect.Label>Label</GlintsSelect.Label>
-      <GlintsSelect
+      <Select.Label>Label</Select.Label>
+      <Select
         {...args}
         activator={
           <ActivatorSelectStyled

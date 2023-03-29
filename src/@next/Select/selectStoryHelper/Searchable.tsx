@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Option } from '../../Menu';
 import { Blue } from '../../utilities/colors';
 import { space8 } from '../../utilities/spacing';
 import { Select } from '../Select';
-import { OptionType } from '../SelectOption';
 import { StyledTag } from './SelectStoryStyle';
 
 interface SearchableProps {
-  data?: OptionType[];
+  data?: Option[];
 }
 
 export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
@@ -25,8 +25,8 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
     }
 
     const filterRegex = new RegExp(value, 'i');
-    const filterOptions = options.filter(option =>
-      option.label.match(filterRegex)
+    const filterOptions = options.filter((option: Option) =>
+      (option.label as string).match(filterRegex)
     );
     setOptions(filterOptions);
   };

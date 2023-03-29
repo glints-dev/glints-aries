@@ -8,7 +8,7 @@ import { StyledMenu, StyledSections, TitleContainer } from './MenuStyle';
 export interface Option {
   disabled?: boolean;
   id?: string;
-  label: React.ReactNode;
+  label: string | React.ReactNode;
   value: string;
 }
 
