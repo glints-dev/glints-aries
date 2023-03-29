@@ -112,6 +112,10 @@ Basic.parameters = {
       
       const [popoverActive, setPopoverActive] = useState(true);
       const [selected, setSelected] = useState([]);
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value)
+      };
     
       const togglePopoverActive = useCallback(
         () => setPopoverActive(popoverActive => !popoverActive),
@@ -128,7 +132,7 @@ Basic.parameters = {
           onClose={() => setPopoverActive(false)}
         >
           <Popover.Pane>
-            <Menu title='Basic Menu' onClick={setSelected} selectedValues={selected} />
+            <Menu options={options} title='Basic Menu' onClick={handleSelect} selectedValues={selected} />
           </Popover.Pane>
         </Popover>
       );
@@ -193,6 +197,14 @@ AllowMultiple.parameters = {
       
       const [popoverActive, setPopoverActive] = useState(true);
       const [selected, setSelected] = useState([]);
+
+      const handleSelect = ({ value }: { value: string }) => {
+        if (selected.includes(value)) {
+          setSelected(selected.filter(option => option !== value));
+        } else {
+          setSelected([...selected, value]);
+        }
+      };
     
       const togglePopoverActive = useCallback(
         () => setPopoverActive(popoverActive => !popoverActive),
@@ -210,7 +222,7 @@ AllowMultiple.parameters = {
           allowMultiple
         >
           <Popover.Pane>
-            <Menu title='Allow Multiple Menu' allowMultiple={true} onClick={setSelected} selectedValues={selected} />
+            <Menu options={options} title='Allow Multiple Menu' allowMultiple onClick={handleSelect} selectedValues={selected} />
           </Popover.Pane>
         </Popover>
       );
@@ -249,4 +261,65 @@ export const WithSections = WithSectionsTemplate.bind({});
 WithSections.args = {
   sections,
   allowMultiple: true,
+};
+
+WithSections.parameters = {
+  docs: {
+    source: {
+      code: `
+      const sections = [
+        {
+          title: 'Most commonly used',
+          options: [
+            { label: 'Cambodia', value: 'Cambodia' },
+            { label: 'Indonesia', value: 'Indonesia' },
+            { label: 'Malaysia', value: 'Malaysia' },
+          ],
+        },
+        {
+          title: 'Countries',
+          options: [
+            { label: 'Philippines', value: 'Philippines' },
+            { label: 'Singapore', value: 'Singapore' },
+            { label: 'Taiwan', value: 'Taiwan' },
+            { label: 'Thailand', value: 'Thailand' },
+            { label: 'Vietnam', value: 'Vietnam' },
+          ],
+        },
+      ];
+      
+      const [popoverActive, setPopoverActive] = useState(true);
+      const [selected, setSelected] = useState([]);
+
+      const handleSelect = ({ value }: { value: string }) => {
+        if (selected.includes(value)) {
+          setSelected(selected.filter(option => option !== value));
+        } else {
+          setSelected([...selected, value]);
+        }
+      };
+    
+      const togglePopoverActive = useCallback(
+        () => setPopoverActive(popoverActive => !popoverActive),
+        []
+      );
+      const activator = (
+        <Button onClick={togglePopoverActive}>Sections Menu</Button>
+      );
+    
+      return (
+        <Popover
+          active={popoverActive}
+          activator={activator}
+          onClose={() => setPopoverActive(false)}
+          allowMultiple
+        >
+          <Popover.Pane>
+            <Menu sections={section} allowMultiple={true} onClick={handleSelect} selectedValues={selected} />
+          </Popover.Pane>
+        </Popover>
+      );
+      `,
+    },
+  },
 };
