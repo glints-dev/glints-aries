@@ -151,13 +151,12 @@ const NonSearchableMultiSelectTemplate: Story<SelectProps> = args => {
   return <NonSearchableMultiSelect options={options} {...args} allowMultiple />;
 };
 
-export const NonSearchableAllowMulti = NonSearchableMultiSelectTemplate.bind(
-  {}
-);
+export const NonSearchableMultipleSelect =
+  NonSearchableMultiSelectTemplate.bind({});
 
-NonSearchableAllowMulti.args = {};
+NonSearchableMultipleSelect.args = {};
 
-NonSearchableAllowMulti.parameters = {
+NonSearchableMultipleSelect.parameters = {
   docs: {
     source: {
       code: `
