@@ -8,7 +8,6 @@ export const SingleSelect = ({
   disabled,
   ...args
 }: SelectProps) => {
-  console.log('args', args, disabled);
   const [selected, setSelected] = useState('');
 
   const handleSelect = ({ value }: { value: string }) => {

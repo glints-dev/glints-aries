@@ -3,7 +3,6 @@ import { Menu, MenuProps } from '../../../Menu';
 import { Typography } from '../../../Typography';
 import { Neutral } from '../../../utilities/colors';
 import { useSelectActivator } from '../Activator/ActivatorContext';
-import { ActivatorTextInputProps } from '../Activator/ActivatorTextInput';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
@@ -37,9 +36,8 @@ export const OptionList = ({
   selectedValues,
   title,
 }: OptionListProps) => {
-  const textInputContext: ActivatorTextInputProps =
-    useSelectActivator() as ActivatorTextInputProps;
-  const { width } = textInputContext;
+  const activatorContext = useSelectActivator();
+  const { width } = activatorContext;
   const hasOptions = options.length > 0;
 
   const onOptionSelect = ({ value }: { value: string }) => {

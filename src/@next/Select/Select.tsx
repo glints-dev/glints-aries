@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Menu, Option, Section } from '../Menu';
+import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
@@ -11,14 +11,12 @@ import { HelpTextContainer } from './SelectStyle';
 export interface SelectProps {
   activator: React.ReactElement;
   allowMultiple?: boolean;
-  children?: React.ReactNode;
   disabled?: boolean;
   hasError?: boolean;
   helpText?: React.ReactNode;
-  label?: React.ReactNode;
+  /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   listHeight?: number;
   onClose?: () => void;
-  /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   onSelect?({ value }: { value: string }): void;
   options?: Option[];
   /** true = Allow vertical scroll, default by 6 options. */
@@ -61,7 +59,7 @@ export const Select = ({
   };
 
   const handleSelectClick = () => {
-    setPopoverActive(true);
+    setPopoverActive(!popoverActive);
   };
 
   const activatorContextValue = {
@@ -138,5 +136,3 @@ const Label = ({ children }: { children: React.ReactNode }) => (
 Select.Label = Label;
 Select.ActivatorTextInput = ActivatorTextInput;
 Select.ActivatorSelect = ActivatorSelect;
-Select.OptionList = OptionList;
-Select.Menu = Menu;

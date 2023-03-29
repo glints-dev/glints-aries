@@ -3,9 +3,12 @@ import { ActivatorSelectProps } from './ActivatorSelect';
 import { ActivatorTextInputProps } from './ActivatorTextInput';
 
 export interface ActivatorSelectContextProps extends ActivatorSelectProps {
+  allowMultiple?: boolean;
+  disabled?: boolean;
+  hasError?: boolean;
   onSelectClick(): void;
   selectedValues?: string[];
-  disabled?: boolean;
+  setWidth?: React.Dispatch<(prevState: undefined) => undefined>;
 }
 
 export interface ActivatorTextInputContextProps

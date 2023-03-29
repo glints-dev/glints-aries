@@ -11,19 +11,17 @@ import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  allowMultiple?: boolean;
   value?: string;
   placeholder?: string;
-  hasError?: boolean;
   onRemoveTag?({ option }: { option: string }): void;
   width?: number;
-  setWidth?: React.Dispatch<(prevState: undefined) => undefined>;
 }
 export const ActivatorSelect = ({
   placeholder,
   value,
   onClick,
   onRemoveTag,
+  width,
   ...props
 }: ActivatorSelectProps) => {
   const activatorRef = useRef(null);
@@ -50,10 +48,12 @@ export const ActivatorSelect = ({
     onClick;
   };
 
-  console.log('disabled', disabled);
-
   const placeholderMarkup = (
-    <Typography variant="body1" color={disabled ? Neutral.B85 : Neutral.B40}>
+    <Typography
+      variant="body1"
+      as="span"
+      color={disabled ? Neutral.B85 : Neutral.B40}
+    >
       {placeholder}
     </Typography>
   );
@@ -90,11 +90,12 @@ export const ActivatorSelect = ({
 
   return (
     <StyledSelect
+      {...props}
       ref={activatorRef}
       data-error={hasError}
       onClick={handleClick}
       disabled={disabled}
-      {...props}
+      width={width}
     >
       {allowMultiple ? (
         tagsMarkup()
