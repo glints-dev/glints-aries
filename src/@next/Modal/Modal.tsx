@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
@@ -57,6 +57,16 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     }: ModalProps,
     ref
   ) {
+    useEffect(() => {
+      if (isOpen) {
+        if (typeof window != 'undefined' && window.document) {
+          document.body.style.overflow = 'hidden';
+        }
+      } else {
+        document.body.style.overflow = 'unset';
+      }
+    }, [isOpen]);
+
     if (!isOpen) {
       return null;
     }
