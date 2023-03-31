@@ -121,6 +121,7 @@ export const StyledRow = styled.div`
   gap: 8px;
 
   &[data-in-table='true'] {
+    align-items: center;
     gap: unset;
   }
 `;

@@ -59,6 +59,16 @@ test('Checkbox - disabled', async ({ page }) => {
   );
 });
 
+test('Checkbox - in table on hover state', async ({ page }) => {
+  const checkboxPage = getCheckboxPage(page);
+  await checkboxPage.goto('args=inTable:true');
+
+  await checkboxPage.checkbox.locator('input').hover();
+  await expect(checkboxPage.container).toHaveScreenshot(
+    'checkbox-in-table-onhover.png'
+  );
+});
+
 test('Checkbox - hasError', async ({ page }) => {
   const checkboxPage = getCheckboxPage(page);
 
