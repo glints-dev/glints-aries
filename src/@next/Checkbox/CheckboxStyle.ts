@@ -70,6 +70,11 @@ export const StyledCheckboxContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &[data-hover='true'] {
+      background-color: rgba(1, 126, 183, 0.2);
+      border-radius: ${borderRadius16};
+    }
   }
 
   &:hover {

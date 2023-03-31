@@ -3,7 +3,11 @@ import React, { memo, useContext, useRef } from 'react';
 import { Checkbox as GlintsCheckbox } from '../../../Checkbox';
 import { CheckboxCellContentContainer, CheckboxWrapper } from './CheckboxStyle';
 
-const Checkbox = () => {
+interface CheckboxProps {
+  isHovered?: boolean;
+}
+
+const Checkbox = ({ isHovered = false }: CheckboxProps) => {
   const checkboxRef = useRef(null);
 
   const { itemId, selected, disabled, onInteraction } =
@@ -14,6 +18,7 @@ const Checkbox = () => {
       <CheckboxCellContentContainer>
         <div onClick={onInteraction}>
           <GlintsCheckbox
+            isHovered={isHovered}
             ref={checkboxRef}
             id={itemId}
             checked={selected}
