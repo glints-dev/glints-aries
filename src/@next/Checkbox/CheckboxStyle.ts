@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Breakpoints } from '..';
-import { borderRadius4 } from '../utilities/borderRadius';
+import { borderRadius16, borderRadius4 } from '../utilities/borderRadius';
 import { Blue, Neutral, Red } from '../utilities/colors';
 import { space4 } from '../utilities/spacing';
 
@@ -27,6 +27,13 @@ export const StyledContainer = styled.div`
     opacity: 0;
     pointer-events: none;
     fill: ${Blue.S99};
+  }
+
+  &[data-in-table='true'] {
+    svg {
+      top: unset;
+      left: unset;
+    }
   }
 
   &[data-spacing='true'] {
@@ -56,6 +63,21 @@ export const StyledContainer = styled.div`
 export const StyledCheckboxContainer = styled.div`
   position: relative;
   cursor: pointer;
+
+  &[data-in-table='true'] {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    &[data-in-table='true'] {
+      background-color: rgba(1, 126, 183, 0.2);
+      border-radius: ${borderRadius16};
+    }
+  }
 `;
 
 export const StyledCheckbox = styled.div<CheckboxProps>`
@@ -92,6 +114,10 @@ export const StyledRow = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
+
+  &[data-in-table='true'] {
+    gap: unset;
+  }
 `;
 export const StyledColumn = styled.div`
   display: flex;

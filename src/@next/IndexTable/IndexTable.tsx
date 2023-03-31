@@ -31,6 +31,7 @@ const IndexTable = ({
         onChange={onChange}
         checked={checked}
         isPadded={false}
+        inTable
         {...props}
       />
     );

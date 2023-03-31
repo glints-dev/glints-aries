@@ -26,6 +26,7 @@ export interface CheckboxProps
   helpText?: string;
   onChange?(newChecked: boolean, id: string): void;
   isPadded?: boolean;
+  inTable?: boolean;
 }
 
 export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
@@ -40,6 +41,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
       hasError,
       helpText,
       isPadded = true,
+      inTable = false,
       ...otherProps
     }: CheckboxProps,
     ref
@@ -76,10 +78,11 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         aria-disabled={disabled}
         data-error={hasError}
         data-spacing={isPadded}
+        data-in-table={inTable}
       >
-        <StyledRow>
+        <StyledRow data-in-table={inTable}>
           <StyledLeftColumn>
-            <StyledCheckboxContainer>
+            <StyledCheckboxContainer data-in-table={inTable}>
               <StyledCheckbox
                 role="checkbox"
                 aria-labelledby={labelId}
