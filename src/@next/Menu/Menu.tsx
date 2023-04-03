@@ -2,8 +2,10 @@ import React from 'react';
 import nextId from 'react-id-generator';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { MenuOption } from './MenuOption';
 import { StyledMenu, StyledSections, TitleContainer } from './MenuStyle';
+import { MenuOptionLabel } from './components/MenuOptionLabel';
+import { MenuOption } from './components/MenuOption';
+import { MenuOptionCheckbox } from './components/MenuOptionCheckbox';
 
 export interface Option {
   disabled?: boolean;
@@ -62,12 +64,21 @@ export const Menu = ({
             <MenuOption
               key={menuOptionId}
               value={value}
-              label={label}
               disabled={disabled}
               isSelected={isSelected}
               onClick={onClick}
               allowMultiple={allowMultiple}
-            />
+            >
+              {allowMultiple ? (
+                <MenuOptionCheckbox
+                  isSelected={isSelected}
+                  disabled={disabled}
+                  label={label}
+                />
+              ) : (
+                <MenuOptionLabel label={label} />
+              )}
+            </MenuOption>
           );
         })}
       </StyledMenu>
