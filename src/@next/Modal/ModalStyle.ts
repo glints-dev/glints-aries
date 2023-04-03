@@ -31,6 +31,7 @@ export const StyledModalContainer = styled.div`
   max-width: calc(100vw - 32px);
   height: fit-content;
   max-height: calc(100vh - 96px);
+  overflow: hidden;
 `;
 
 export const StyledModalHeader = styled.div`
@@ -39,7 +40,7 @@ export const StyledModalHeader = styled.div`
   align-items: center;
   padding: ${space16} 20px;
   box-shadow: inset 0px -1px 0px ${Neutral.B95};
-  border-radius: ${borderRadius8} 0;
+  border-radius: ${borderRadius8} ${borderRadius8} 0 0;
   align-self: stretch;
 
   div {
@@ -76,7 +77,7 @@ export const StyledModalActions = styled.div`
   padding: ${space16} 20px;
   gap: 10px;
   box-shadow: inset 0px 1px 0px ${Neutral.B95};
-  border-radius: 0 ${borderRadius8};
+  border-radius: 0 0 ${borderRadius8} ${borderRadius8};
 
   @media (max-width: ${Breakpoints.large}) {
     padding: ${space16};
