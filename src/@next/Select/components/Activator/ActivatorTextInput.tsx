@@ -40,7 +40,7 @@ export const ActivatorTextInput = ({
       value={value}
       onChange={value => handleChange({ value })}
       onFocus={onFocus}
-      hasError={hasError}
+      error={hasError}
       disabled={disabled}
     ></GlintsTextInput>
   );
