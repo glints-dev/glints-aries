@@ -58,13 +58,21 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     ref
   ) {
     useEffect(() => {
-      if (isOpen) {
-        if (typeof window != 'undefined' && window.document) {
-          document.body.style.overflow = 'hidden';
-        }
-      } else {
+      if (typeof window === 'undefined' || !window.document) return;
+
+      const enableScroll = () => {
         document.body.style.overflow = 'unset';
+      };
+
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        enableScroll();
       }
+
+      return () => {
+        enableScroll();
+      };
     }, [isOpen]);
 
     if (!isOpen) {
