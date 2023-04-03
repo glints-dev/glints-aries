@@ -6,10 +6,6 @@ export const ModalWithProvider = () => {
   const { close, onClose, ...rest } = useModal();
   const { isOpen, ...modalProps } = rest;
 
-  if (!isOpen) {
-    return null;
-  }
-
   return (
     <Modal
       {...modalProps}
