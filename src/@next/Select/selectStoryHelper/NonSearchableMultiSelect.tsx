@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { Select, SelectProps } from '../Select';
 import { ActivatorSelectStyled } from './SelectStoryStyle';
 
@@ -17,17 +17,15 @@ export const NonSearchableMultiSelect = ({
     }
   };
 
-  const removeTag = useCallback(
+  const removeTag =
     ({ option }: { option: string }) =>
-      (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.stopPropagation();
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      e.stopPropagation();
 
-        const options = [...selected];
-        options.splice(options.indexOf(option), 1);
-        setSelected(options);
-      },
-    [selected]
-  );
+      const options = [...selected];
+      options.splice(options.indexOf(option), 1);
+      setSelected(options);
+    };
 
   return (
     <div>

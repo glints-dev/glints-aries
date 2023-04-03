@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Option } from '../../Menu';
 import { Blue } from '../../utilities/colors';
 import { space8 } from '../../utilities/spacing';
@@ -39,14 +39,11 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
     }
   };
 
-  const removeTag = useCallback(
-    tag => () => {
-      const options = [...selectedOptions];
-      options.splice(options.indexOf(tag), 1);
-      setSelectedOptions(options);
-    },
-    [selectedOptions]
-  );
+  const removeTag = (tag: Option) => () => {
+    const options = [...selectedOptions];
+    options.splice(options.indexOf(tag), 1);
+    setSelectedOptions(options);
+  };
 
   const tagsMarkup = selectedOptions.map(option => (
     <StyledTag
