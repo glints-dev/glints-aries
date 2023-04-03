@@ -85,7 +85,7 @@ export const CurrencyInput = React.forwardRef<
     return '$';
   };
 
-  const formattedValue = formatter.format(getRawNumber(value.toString()));
+  const formattedValue = formatter.format(getRawNumber(value.toString())) ?? '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = getRawNumber(e.currentTarget.value);
@@ -102,7 +102,7 @@ export const CurrencyInput = React.forwardRef<
         </div>
       }
       {...props}
-      value={formattedValue === '0' ? '' : formattedValue}
+      value={formattedValue}
       onChange={handleChange}
     />
   );
