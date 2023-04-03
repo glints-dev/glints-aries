@@ -9,6 +9,7 @@ import { CheckboxProps } from '../Checkbox';
 import { Row } from './components/Row/Row';
 import { StyledIndexTable } from './IndexTableStyle';
 import { LoadingState } from './components/LoadingState';
+import { CheckboxCellContentContainer } from './components/Checkbox/CheckboxStyle';
 
 type IndexTableProps = Omit<PolarisIndexTableProps, 'emptySearchTitle'>;
 
@@ -27,13 +28,14 @@ const IndexTable = ({
     ...props
   }: CheckboxProps) => {
     return (
-      <Checkbox
-        onChange={onChange}
-        checked={checked}
-        isPadded={false}
-        inTable
-        {...props}
-      />
+      <CheckboxCellContentContainer>
+        <Checkbox
+          onChange={onChange}
+          checked={checked}
+          isPadded={false}
+          {...props}
+        />
+      </CheckboxCellContentContainer>
     );
   };
 

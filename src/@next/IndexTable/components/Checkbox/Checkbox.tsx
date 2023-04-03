@@ -15,16 +15,14 @@ const Checkbox = ({ isHovered = false }: CheckboxProps) => {
 
   return (
     <CheckboxWrapper>
-      <CheckboxCellContentContainer>
+      <CheckboxCellContentContainer data-hover={isHovered}>
         <div onClick={onInteraction}>
           <GlintsCheckbox
-            isHovered={isHovered}
             ref={checkboxRef}
             id={itemId}
             checked={selected}
             disabled={disabled}
             isPadded={false}
-            inTable
           />
         </div>
       </CheckboxCellContentContainer>
