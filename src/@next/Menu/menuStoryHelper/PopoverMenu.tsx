@@ -21,15 +21,17 @@ export const PopoverMenu = ({
   );
 
   const handleSelect = ({ value }: { value: string }) => {
-    if (allowMultiple) {
-      if (selectedOptions.includes(value)) {
-        setSelectedOptions(selectedOptions.filter(option => option !== value));
-      } else {
-        setSelectedOptions([...selectedOptions, value]);
-      }
-    } else {
+    if (!allowMultiple) {
       setSelectedOptions([value]);
+      return;
     }
+
+    if (!selectedOptions.includes(value)) {
+      setSelectedOptions([...selectedOptions, value]);
+      return;
+    }
+
+    setSelectedOptions(selectedOptions.filter(option => option !== value));
   };
 
   const activator = (

@@ -32,11 +32,12 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
   };
 
   const handleSelect = ({ value }: { value: string }) => {
-    if (selectedOptions.includes(value)) {
-      setSelectedOptions(selectedOptions.filter(option => option !== value));
-    } else {
+    if (!selectedOptions.includes(value)) {
       setSelectedOptions([...selectedOptions, value]);
+      return;
     }
+
+    setSelectedOptions(selectedOptions.filter(option => option !== value));
   };
 
   const removeTag = (tag: Option) => () => {

@@ -10,11 +10,12 @@ export const NonSearchableMultiSelect = ({
   const [selected, setSelected] = useState([]);
 
   const handleSelect = ({ value }: { value: string }) => {
-    if (selected.includes(value)) {
-      setSelected(selected.filter(option => option !== value));
-    } else {
+    if (!selected.includes(value)) {
       setSelected([...selected, value]);
+      return;
     }
+
+    setSelected(selected.filter(option => option !== value));
   };
 
   const removeTag =
