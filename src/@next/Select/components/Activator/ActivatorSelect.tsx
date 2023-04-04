@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Icon } from '../../../Icon';
 
 import { Typography } from '../../../Typography';
@@ -8,34 +8,25 @@ import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  value?: string;
+  values?: string[];
   placeholder?: string;
   onRemoveTag?({ option }: { option: string }): void;
-  width?: number;
+  width?: string;
 }
 export const ActivatorSelect = ({
   placeholder,
-  value,
+  values,
   onClick,
   onRemoveTag,
   width,
   ...props
 }: ActivatorSelectProps) => {
   const activatorRef = useRef(null);
-  const hasValue = !!value;
+  const filteredValues = values?.filter(value => value != '');
+  const hasValue = filteredValues.length > 0;
   const activatorContext = useActivatorSelect();
-  const {
-    allowMultiple,
-    disabled,
-    onSelectClick,
-    hasError,
-    setWidth,
-    selectedValues,
-  } = activatorContext;
-
-  useEffect(() => {
-    setWidth(activatorRef.current.getBoundingClientRect().width);
-  }, [activatorRef, setWidth]);
+  const { allowMultiple, disabled, onSelectClick, hasError, selectedValues } =
+    activatorContext;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -101,7 +92,7 @@ export const ActivatorSelect = ({
           variant="body1"
           color={disabled ? Neutral.B85 : Neutral.B40}
         >
-          {hasValue ? value : placeholderMarkup}
+          {hasValue ? filteredValues[0] : placeholderMarkup}
         </Typography>
       )}
       <Icon

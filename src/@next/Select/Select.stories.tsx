@@ -13,11 +13,6 @@ import { SingleSelect } from './selectStoryHelper/NonSearchableSingleSelect';
 export default {
   title: '@next/Select',
   component: Select,
-  subcomponents: {
-    'Select.Label': Select.Label,
-    'Select.ActivatorTextInput': Select.ActivatorTextInput,
-    'Select.ActivatorSelect': Select.ActivatorSelect,
-  },
   decorators: [withGlintsPortalContainer],
 } as Meta;
 
@@ -129,18 +124,14 @@ NonSearchableSingleSelect.parameters = {
       };
     
       return (
-        <div style={{ width: '200px' }}>
-          <Select.Label>Label</Select.Label>
-          <Select
-            options={options}
-            activator={
-              <Select.ActivatorSelect placeholder="Placeholder" value={selected} />
-            }
-            options={options}
-            onSelect={handleSelect}
-            selectedValues={[selected]}
-          />
-        </div>
+        <Select
+          allowMultiple={allowMultiple}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={[selected]}
+          width="400px"
+          label="Label"
+        />
       );
       `,
     },
@@ -154,7 +145,9 @@ const NonSearchableMultiSelectTemplate: Story<SelectProps> = args => {
 export const NonSearchableMultipleSelect =
   NonSearchableMultiSelectTemplate.bind({});
 
-NonSearchableMultipleSelect.args = {};
+NonSearchableMultipleSelect.args = {
+  label: 'Label',
+};
 
 NonSearchableMultipleSelect.parameters = {
   docs: {
@@ -221,22 +214,14 @@ NonSearchableMultipleSelect.parameters = {
       );
     
       return (
-        <div>
-          <Select.Label>Label</Select.Label>
-          <Select
-            allowMultiple
-            activator={
-              <Select.ActivatorSelect
-                disabled={disabled}
-                placeholder="Placeholder"
-                onRemoveTag={removeTag}
-              />
-            }
-            options={options}
-            onSelect={handleSelect}
-            selectedValues={selected}
-          />
-        </div>
+        <Select
+          allowMultiple
+          onRemoveTag={removeTag}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={selected}
+          width="400px"
+        />
       );
       `,
     },
@@ -251,6 +236,7 @@ export const WithErrorNonSearchable = WithErrorNonSearchableTemplate.bind({});
 
 WithErrorNonSearchable.args = {
   hasError: true,
+  label: 'Label',
 };
 
 WithErrorNonSearchable.parameters = {
@@ -318,23 +304,15 @@ WithErrorNonSearchable.parameters = {
       );
     
       return (
-        <div>
-          <Select.Label>Label</Select.Label>
-          <Select
-            allowMultiple
-            activator={
-              <Select.ActivatorSelect
-                disabled={disabled}
-                placeholder="Placeholder"
-                onRemoveTag={removeTag}
-              />
-            }
-            hasError
-            options={options}
-            onSelect={handleSelect}
-            selectedValues={selected}
-          />
-        </div>
+        <Select
+          allowMultiple
+          hasError
+          onRemoveTag={removeTag}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={selected}
+          width="400px"
+        />
       );
       `,
     },
@@ -342,7 +320,7 @@ WithErrorNonSearchable.parameters = {
 };
 
 const NonSearchableDisabledTemplate: Story<SelectProps> = args => {
-  return <SingleSelect options={options} {...args} disabled />;
+  return <SingleSelect options={options} disabled {...args} />;
 };
 
 export const NonSearchableDisabled = NonSearchableDisabledTemplate.bind({});
@@ -412,23 +390,15 @@ NonSearchableDisabledTemplate.parameters = {
       );
     
       return (
-        <div>
-          <Select.Label>Label</Select.Label>
-          <Select
-            allowMultiple
-            activator={
-              <Select.ActivatorSelect
-                disabled={disabled}
-                placeholder="Placeholder"
-                onRemoveTag={removeTag}
-              />
-            }
-            disabled
-            options={options}
-            onSelect={handleSelect}
-            selectedValues={selected}
-          />
-        </div>
+        <Select
+          allowMultiple
+          disabled
+          onRemoveTag={removeTag}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={selected}
+          width="400px"
+        />
       );
       `,
     },
@@ -481,22 +451,20 @@ SearchableMultiSelect.parameters = {
       };
     
       const handleSelect = ({ value }: { value: string }) => {
-        if (selectedOptions.includes(value)) {
-          setSelectedOptions(selectedOptions.filter(option => option !== value));
-        } else {
+        if (!selectedOptions.includes(value)) {
           setSelectedOptions([...selectedOptions, value]);
+          return;
         }
+    
+        setSelectedOptions(selectedOptions.filter(option => option !== value));
       };
     
-      const removeTag = useCallback(
-        tag => () => {
-          const options = [...selectedOptions];
-          options.splice(options.indexOf(tag), 1);
-          setSelectedOptions(options);
-        },
-        [selectedOptions]
-      );
-    
+      const removeTag = (tag: Option) => () => {
+        const options = [...selectedOptions];
+        options.splice(options.indexOf(tag), 1);
+        setSelectedOptions(options);
+      };
+
       const tagsMarkup = selectedOptions.map(option => (
         <StyledTag
           key={\`option-\${option}\`}
@@ -518,20 +486,18 @@ SearchableMultiSelect.parameters = {
       }, [isSearchEmpty, options]);
     
       return (
-        <div style={{ maxWidth: '600px' }}>
-          <Select.Label>Label</Select.Label>
+        <div>
           <Select
             allowMultiple
-            activator={
-              <Select.ActivatorTextInput
-                value={inputValue}
-                onChange={(value: string) => handleInputChange(value)}
-                placeholder="Search"
-              />
-            }
             onSelect={handleSelect}
             options={options}
             selectedValues={selectedOptions}
+            width="600px"
+            searchableProps={{
+              inputValue,
+              onInputChange: (value: string) => handleInputChange(value),
+            }}
+            label="Label"
           />
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>
@@ -589,21 +555,20 @@ MultiSelectScrollable.parameters = {
       };
     
       const handleSelect = ({ value }: { value: string }) => {
-        if (selectedOptions.includes(value)) {
-          setSelectedOptions(selectedOptions.filter(option => option !== value));
-        } else {
+        if (!selectedOptions.includes(value)) {
           setSelectedOptions([...selectedOptions, value]);
+          return;
         }
+    
+        setSelectedOptions(selectedOptions.filter(option => option !== value));
       };
     
-      const removeTag = useCallback(
-        tag => () => {
-          const options = [...selectedOptions];
-          options.splice(options.indexOf(tag), 1);
-          setSelectedOptions(options);
-        },
-        [selectedOptions]
-      );
+      const removeTag = (tag: Option) => () => {
+        const options = [...selectedOptions];
+        options.splice(options.indexOf(tag), 1);
+        setSelectedOptions(options);
+      };
+
     
       const tagsMarkup = selectedOptions.map(option => (
         <StyledTag
@@ -626,21 +591,19 @@ MultiSelectScrollable.parameters = {
       }, [isSearchEmpty, options]);
     
       return (
-        <div style={{ maxWidth: '600px' }}>
-          <Select.Label>Label</Select.Label>
+        <div>
           <Select
             allowMultiple
             scrollable
-            activator={
-              <Select.ActivatorTextInput
-                value={inputValue}
-                onChange={(value: string) => handleInputChange(value)}
-                placeholder="Search"
-              />
-            }
             onSelect={handleSelect}
             options={options}
             selectedValues={selectedOptions}
+            width="600px"
+            searchableProps={{
+              inputValue,
+              onInputChange: (value: string) => handleInputChange(value),
+            }}
+            label="Label"
           />
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>
@@ -732,24 +695,22 @@ WithInlineError.parameters = {
           setIsSearchEmpty(false);
         }
       }, [isSearchEmpty, options]);
-    
+
       return (
-        <div style={{ maxWidth: '600px' }}>
-          <Select.Label>Label</Select.Label>
+        <div>
           <Select
             allowMultiple
-            hasError
-            helpText={<InlineError text="Error message" />}
-            activator={
-              <Select.ActivatorTextInput
-                value={inputValue}
-                onChange={(value: string) => handleInputChange(value)}
-                placeholder="Search"
-              />
-            }
             onSelect={handleSelect}
             options={options}
             selectedValues={selectedOptions}
+            width="600px"
+            searchableProps={{
+              inputValue,
+              onInputChange: (value: string) => handleInputChange(value),
+            }}
+            label="Label"
+            hasError
+            helpText={<InlineError text="Error message" />}
           />
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>
@@ -839,22 +800,23 @@ SearchableDisabled.parameters = {
         }
       }, [isSearchEmpty, options]);
     
+      
       return (
-        <div style={{ maxWidth: '600px' }}>
-          <Select.Label>Label</Select.Label>
+        <div>
           <Select
             allowMultiple
             disabled
-            activator={
-              <Select.ActivatorTextInput
-                value={inputValue}
-                onChange={(value: string) => handleInputChange(value)}
-                placeholder="Search"
-              />
-            }
             onSelect={handleSelect}
             options={options}
             selectedValues={selectedOptions}
+            width="600px"
+            searchableProps={{
+              inputValue,
+              onInputChange: (value: string) => handleInputChange(value),
+            }}
+            label="Label"
+            hasError
+            helpText={<InlineError text="Error message" />}
           />
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>

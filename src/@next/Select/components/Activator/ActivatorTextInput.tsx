@@ -1,39 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import { Icon } from '../../../Icon';
-import {
-  TextInput as GlintsTextInput,
-  TextInputProps,
-} from '../../../TextInput';
+import { TextInputProps } from '../../../TextInput';
 import { useActivatorTextInput } from './ActivatorContext';
+import { StyledTextInput } from './ActivatorStyle';
 
 export interface ActivatorTextInputProps
   extends Omit<TextInputProps, 'onChange'> {
   hasError?: boolean;
   onChange?(value: string): void;
-  width?: number;
-  setWidth?: React.Dispatch<(prevState: undefined) => undefined>;
+  width?: string;
 }
 
 export const ActivatorTextInput = ({
   onChange,
   value,
+  width,
   ...props
 }: ActivatorTextInputProps) => {
   const activatorRef = useRef(null);
   const activatorContext = useActivatorTextInput();
-  const { disabled, onFocus, setWidth, hasError } = activatorContext;
-
-  useEffect(() => {
-    setWidth(activatorRef.current.getBoundingClientRect().width);
-  }, [activatorRef, setWidth]);
+  const { disabled, onFocus, hasError } = activatorContext;
 
   const handleChange = ({ value }: { value: string }) => {
     if (onChange) onChange(value);
   };
 
   return (
-    <GlintsTextInput
+    <StyledTextInput
       {...props}
       ref={activatorRef}
       prefix={<Icon name="ri-search" />}
@@ -42,6 +36,7 @@ export const ActivatorTextInput = ({
       onFocus={onFocus}
       error={hasError}
       disabled={disabled}
-    ></GlintsTextInput>
+      width={width}
+    />
   );
 };

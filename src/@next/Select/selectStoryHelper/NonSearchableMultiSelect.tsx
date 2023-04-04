@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Select, SelectProps } from '../Select';
-import { ActivatorSelectStyled } from './SelectStoryStyle';
 
 export const NonSearchableMultiSelect = ({
   options,
@@ -29,21 +28,14 @@ export const NonSearchableMultiSelect = ({
     };
 
   return (
-    <div>
-      <Select.Label>Label</Select.Label>
-      <Select
-        {...args}
-        activator={
-          <ActivatorSelectStyled
-            disabled={disabled}
-            placeholder="Placeholder"
-            onRemoveTag={removeTag}
-          />
-        }
-        options={options}
-        onSelect={handleSelect}
-        selectedValues={selected}
-      />
-    </div>
+    <Select
+      {...args}
+      disabled={disabled}
+      onRemoveTag={removeTag}
+      options={options}
+      onSelect={handleSelect}
+      selectedValues={selected}
+      width="400px"
+    />
   );
 };

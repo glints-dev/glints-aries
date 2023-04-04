@@ -109,7 +109,9 @@ test('Select - searchable multi select', async ({ page }) => {
     'select-searchable-multi-select-option-selected.png'
   );
 
-  await selectPage.label.click();
+  await selectPage.canvas.click({
+    position: { x: 1, y: 1 },
+  });
   await expect(selectPage.canvas).toHaveScreenshot(
     'select-searchable-multi-select-tags-selected-below.png'
   );

@@ -9,41 +9,57 @@ import {
   ActivatorTextInputContext,
 } from './components/Activator/ActivatorContext';
 import { ActivatorSelect } from './components/Activator/ActivatorSelect';
-import { HelpTextContainer } from './SelectStyle';
+import { Label } from './components/Label/Label';
+import { ActivatorWrapper, HelpTextContainer } from './SelectStyle';
 
+interface SearchableProps {
+  /** value of TextInput activator when Select is searchable */
+  inputValue?: string;
+  /** onChange of TextInput activator when Select is searchable */
+  onInputChange?(value: string): void;
+}
 export interface SelectProps {
-  activator: React.ReactElement;
   allowMultiple?: boolean;
   disabled?: boolean;
   hasError?: boolean;
   helpText?: React.ReactNode;
+  label?: React.ReactNode;
   /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   listHeight?: number;
   onClose?: () => void;
+  onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
   options?: Option[];
+  placeholder?: string;
+  /** sets whether to be able to type in to search from the options*/
+  searchableProps?: SearchableProps;
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
   sections?: Section[];
   selectedValues?: string[];
+  /** sets a width for the Select component*/
+  width: string;
 }
 
 export const Select = ({
-  activator,
   allowMultiple = false,
   disabled,
   hasError,
   helpText,
+  label,
   onClose,
+  onRemoveTag,
   onSelect,
   options,
+  placeholder,
   listHeight,
+  searchableProps,
   scrollable,
   sections,
   selectedValues,
+  width,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
-  const [width, setWidth] = useState();
   const [optionListHeight, setOptionListHeight] = useState('');
 
   const handleClose = useCallback(() => {
@@ -71,8 +87,6 @@ export const Select = ({
     hasError,
     onSelectClick: handleSelectClick,
     selectedValues,
-    setWidth,
-    width,
   };
 
   const activatorTextInputContextValue = {
@@ -80,8 +94,6 @@ export const Select = ({
     hasError,
     onFocus: handleFocus,
     onBlur: handleBlur,
-    setWidth,
-    width,
   };
 
   useEffect(() => {
@@ -98,28 +110,55 @@ export const Select = ({
     }
   }, [listHeight, scrollable]);
 
+  const activator = () => {
+    if (searchableProps) {
+      const { inputValue, onInputChange } = searchableProps;
+      return (
+        <ActivatorTextInputContext.Provider
+          value={activatorTextInputContextValue}
+        >
+          <ActivatorTextInput
+            value={inputValue}
+            onChange={onInputChange}
+            placeholder={placeholder ?? 'Search'}
+            width={width}
+          />
+        </ActivatorTextInputContext.Provider>
+      );
+    }
+
+    return (
+      <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
+        <ActivatorSelect
+          disabled={disabled}
+          placeholder="Placeholder"
+          onRemoveTag={onRemoveTag}
+          width={width}
+          values={selectedValues}
+        />
+      </ActivatorSelectContext.Provider>
+    );
+  };
+
   return (
     <Popover
       active={popoverActive}
       activator={
-        <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
-          <ActivatorTextInputContext.Provider
-            value={activatorTextInputContextValue}
-          >
-            {activator}
-            {helpText && (
-              <HelpTextContainer>
-                <Typography
-                  as="span"
-                  variant="subtitle2"
-                  color={disabled ? Neutral.B85 : Neutral.B40}
-                >
-                  {helpText}
-                </Typography>
-              </HelpTextContainer>
-            )}
-          </ActivatorTextInputContext.Provider>
-        </ActivatorSelectContext.Provider>
+        <ActivatorWrapper width={width}>
+          {label && <Label>{label}</Label>}
+          {activator()}
+          {helpText && (
+            <HelpTextContainer>
+              <Typography
+                as="span"
+                variant="subtitle2"
+                color={disabled ? Neutral.B85 : Neutral.B40}
+              >
+                {helpText}
+              </Typography>
+            </HelpTextContainer>
+          )}
+        </ActivatorWrapper>
       }
       onClose={handleClose}
       autofocusTarget="none"
@@ -127,30 +166,15 @@ export const Select = ({
       fullWidth
     >
       <Popover.Pane height={optionListHeight}>
-        <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
-          <ActivatorTextInputContext.Provider
-            value={activatorTextInputContextValue}
-          >
-            <OptionList
-              allowMultiple={allowMultiple}
-              onSelect={onSelect}
-              options={options}
-              sections={sections}
-              selectedValues={selectedValues}
-            />
-          </ActivatorTextInputContext.Provider>
-        </ActivatorSelectContext.Provider>
+        <OptionList
+          allowMultiple={allowMultiple}
+          onSelect={onSelect}
+          options={options}
+          sections={sections}
+          selectedValues={selectedValues}
+          width={width}
+        />
       </Popover.Pane>
     </Popover>
   );
 };
-
-const Label = ({ children }: { children: React.ReactNode }) => (
-  <Typography as="span" variant="subtitle2" color={Neutral.B18}>
-    {children}
-  </Typography>
-);
-
-Select.Label = Label;
-Select.ActivatorTextInput = ActivatorTextInput;
-Select.ActivatorSelect = ActivatorSelect;

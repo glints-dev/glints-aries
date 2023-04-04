@@ -67,20 +67,18 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
   }, [isSearchEmpty, options]);
 
   return (
-    <div style={{ maxWidth: '600px' }}>
-      <Select.Label>Label</Select.Label>
+    <div>
       <Select
         {...args}
-        activator={
-          <Select.ActivatorTextInput
-            value={inputValue}
-            onChange={(value: string) => handleInputChange(value)}
-            placeholder="Search"
-          />
-        }
         onSelect={handleSelect}
         options={options}
         selectedValues={selectedOptions}
+        width="600px"
+        searchableProps={{
+          inputValue,
+          onInputChange: (value: string) => handleInputChange(value),
+        }}
+        label="Label"
       />
       <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
     </div>

@@ -8,7 +8,6 @@ export interface ActivatorSelectContextProps extends ActivatorSelectProps {
   hasError?: boolean;
   onSelectClick(): void;
   selectedValues?: string[];
-  setWidth?: React.Dispatch<(prevState: undefined) => undefined>;
 }
 
 export interface ActivatorTextInputContextProps
