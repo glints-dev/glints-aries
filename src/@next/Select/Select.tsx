@@ -4,7 +4,10 @@ import { Popover } from '../Popover';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { ActivatorTextInput, OptionList } from './components';
-import { ActivatorContext } from './components/Activator/ActivatorContext';
+import {
+  ActivatorSelectContext,
+  ActivatorTextInputContext,
+} from './components/Activator/ActivatorContext';
 import { ActivatorSelect } from './components/Activator/ActivatorSelect';
 import { HelpTextContainer } from './SelectStyle';
 
@@ -62,14 +65,21 @@ export const Select = ({
     setPopoverActive(!popoverActive);
   };
 
-  const activatorContextValue = {
+  const activatorSelectContextValue = {
     allowMultiple,
+    disabled,
+    hasError,
+    onSelectClick: handleSelectClick,
+    selectedValues,
+    setWidth,
+    width,
+  };
+
+  const activatorTextInputContextValue = {
     disabled,
     hasError,
     onFocus: handleFocus,
     onBlur: handleBlur,
-    onSelectClick: handleSelectClick,
-    selectedValues,
     setWidth,
     width,
   };
@@ -92,20 +102,24 @@ export const Select = ({
     <Popover
       active={popoverActive}
       activator={
-        <ActivatorContext.Provider value={activatorContextValue}>
-          {activator}
-          {helpText && (
-            <HelpTextContainer>
-              <Typography
-                as="span"
-                variant="subtitle2"
-                color={disabled ? Neutral.B85 : Neutral.B40}
-              >
-                {helpText}
-              </Typography>
-            </HelpTextContainer>
-          )}
-        </ActivatorContext.Provider>
+        <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
+          <ActivatorTextInputContext.Provider
+            value={activatorTextInputContextValue}
+          >
+            {activator}
+            {helpText && (
+              <HelpTextContainer>
+                <Typography
+                  as="span"
+                  variant="subtitle2"
+                  color={disabled ? Neutral.B85 : Neutral.B40}
+                >
+                  {helpText}
+                </Typography>
+              </HelpTextContainer>
+            )}
+          </ActivatorTextInputContext.Provider>
+        </ActivatorSelectContext.Provider>
       }
       onClose={handleClose}
       autofocusTarget="none"
@@ -113,15 +127,19 @@ export const Select = ({
       fullWidth
     >
       <Popover.Pane height={optionListHeight}>
-        <ActivatorContext.Provider value={activatorContextValue}>
-          <OptionList
-            allowMultiple={allowMultiple}
-            onSelect={onSelect}
-            options={options}
-            sections={sections}
-            selectedValues={selectedValues}
-          />
-        </ActivatorContext.Provider>
+        <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
+          <ActivatorTextInputContext.Provider
+            value={activatorTextInputContextValue}
+          >
+            <OptionList
+              allowMultiple={allowMultiple}
+              onSelect={onSelect}
+              options={options}
+              sections={sections}
+              selectedValues={selectedValues}
+            />
+          </ActivatorTextInputContext.Provider>
+        </ActivatorSelectContext.Provider>
       </Popover.Pane>
     </Popover>
   );

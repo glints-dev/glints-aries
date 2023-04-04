@@ -2,7 +2,10 @@ import React from 'react';
 import { Menu, MenuProps } from '../../../Menu';
 import { Typography } from '../../../Typography';
 import { Neutral } from '../../../utilities/colors';
-import { useSelectActivator } from '../Activator/ActivatorContext';
+import {
+  useActivatorSelect,
+  useActivatorTextInput,
+} from '../Activator/ActivatorContext';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
@@ -36,8 +39,10 @@ export const OptionList = ({
   selectedValues,
   title,
 }: OptionListProps) => {
-  const activatorContext = useSelectActivator();
-  const { width } = activatorContext;
+  const activatorSelectContext = useActivatorSelect();
+  const activatorTextInputContext = useActivatorTextInput();
+  const { width: selectWidth } = activatorSelectContext;
+  const { width: textInputWidth } = activatorTextInputContext;
   const hasOptions = options.length > 0;
 
   const onOptionSelect = ({ value }: { value: string }) => {
@@ -48,7 +53,7 @@ export const OptionList = ({
   };
 
   return (
-    <OptionListContainer width={width}>
+    <OptionListContainer width={selectWidth ?? textInputWidth}>
       {hasOptions ? (
         <Menu
           allowMultiple={allowMultiple}

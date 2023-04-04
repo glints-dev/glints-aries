@@ -5,7 +5,7 @@ import {
   TextInput as GlintsTextInput,
   TextInputProps,
 } from '../../../TextInput';
-import { useSelectActivator } from './ActivatorContext';
+import { useActivatorTextInput } from './ActivatorContext';
 
 export interface ActivatorTextInputProps
   extends Omit<TextInputProps, 'onChange'> {
@@ -21,7 +21,7 @@ export const ActivatorTextInput = ({
   ...props
 }: ActivatorTextInputProps) => {
   const activatorRef = useRef(null);
-  const activatorContext = useSelectActivator() as ActivatorTextInputProps;
+  const activatorContext = useActivatorTextInput();
   const { disabled, onFocus, setWidth, hasError } = activatorContext;
 
   useEffect(() => {

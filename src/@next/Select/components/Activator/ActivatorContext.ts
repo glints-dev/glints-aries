@@ -16,15 +16,29 @@ export interface ActivatorTextInputContextProps
   disabled?: boolean;
 }
 
-export const ActivatorContext = createContext<
-  ActivatorTextInputContextProps | ActivatorSelectContextProps | undefined
+export const ActivatorSelectContext = createContext<
+  ActivatorSelectContextProps | undefined
 >(undefined);
 
-export const useSelectActivator = () => {
-  const context = useContext(ActivatorContext);
+export const ActivatorTextInputContext = createContext<
+  ActivatorTextInputContextProps | undefined
+>(undefined);
+
+export const useActivatorSelect = () => {
+  const context = useContext(ActivatorSelectContext);
   if (!context) {
     throw new Error(
-      'No ActivatorContext was provided. Your component must be wrapped in a <ActivatorContext.Provider>'
+      'No ActivatorSelectContext was provided. Your component must be wrapped in a <ActivatorSelectContext.Provider>'
+    );
+  }
+  return context;
+};
+
+export const useActivatorTextInput = () => {
+  const context = useContext(ActivatorTextInputContext);
+  if (!context) {
+    throw new Error(
+      'No ActivatorTextInputContext was provided. Your component must be wrapped in a <ActivatorTextInputContext.Provider>'
     );
   }
   return context;

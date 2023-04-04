@@ -3,10 +3,7 @@ import { Icon } from '../../../Icon';
 
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
-import {
-  ActivatorSelectContextProps,
-  useSelectActivator,
-} from './ActivatorContext';
+import { useActivatorSelect } from './ActivatorContext';
 import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
@@ -26,7 +23,7 @@ export const ActivatorSelect = ({
 }: ActivatorSelectProps) => {
   const activatorRef = useRef(null);
   const hasValue = !!value;
-  const activatorContext = useSelectActivator() as ActivatorSelectContextProps;
+  const activatorContext = useActivatorSelect();
   const {
     allowMultiple,
     disabled,
