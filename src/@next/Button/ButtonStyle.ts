@@ -146,5 +146,6 @@ export const StyledButton = styled.button<ButtonProps>`
 
   &[data-loading='true'] .spinner-container svg {
     fill: ${Neutral.B85};
+    position: static;
   }
 `;
