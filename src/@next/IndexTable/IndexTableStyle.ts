@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { borderRadius16 } from '../utilities/borderRadius';
 import { space8 } from '../utilities/spacing';
 
 export const StyledIndexTable: any = createGlobalStyle`
@@ -1199,6 +1200,11 @@ export const StyledIndexTable: any = createGlobalStyle`
     z-index: var(--pc-index-table-sticky-cell);
     padding: var(--p-space-2) 0;
     vertical-align: middle;
+  }
+
+  .Polaris-IndexTable__TableCellCheckbox:hover .checkbox-wrapper{
+    background-color: rgba(1, 126, 183, 0.2);
+    border-radius: ${borderRadius16};
   }
 
   .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell {

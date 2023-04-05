@@ -18,11 +18,6 @@ export const CheckboxCellContentContainer = styled.div`
     border-radius: ${borderRadius16};
   }
 
-  &[data-hover='true'] {
-    background-color: rgba(1, 126, 183, 0.2);
-    border-radius: ${borderRadius16};
-  }
-
   div {
     display: flex;
     align-items: center;
