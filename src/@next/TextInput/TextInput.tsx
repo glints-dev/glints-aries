@@ -9,7 +9,7 @@ export type TextInputProps = Omit<InputProps, 'type' | 'onChange'> & {
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   function TextInput(
-    { canClear, suffix, value, onChange, ...props }: TextInputProps,
+    { canClear, suffix, value, onChange, error, ...props }: TextInputProps,
     ref
   ) {
     const ClearIcon = () => (
@@ -44,6 +44,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         suffix={suffixValue}
         value={value}
         onChange={handleChange}
+        error={error}
         {...props}
       />
     );

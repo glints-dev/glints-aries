@@ -7,8 +7,8 @@ import { MenuProps } from './Menu';
 
 export const StyledMenu = styled.ul<MenuProps>`
   list-style: none;
-  margin: ${space8} 0;
   padding: 0;
+  margin: 0;
 
   li {
     display: flex;
@@ -17,6 +17,11 @@ export const StyledMenu = styled.ul<MenuProps>`
     align-items: center;
     padding: 0 ${space8};
     margin-bottom: ${space4};
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
 
     &:hover {
       background: ${Neutral.B99};
@@ -56,11 +61,20 @@ export const StyledMenu = styled.ul<MenuProps>`
         background-color: ${Blue.S99};
         border-radius: 0px 4px 4px 0px;
       }
+
+      &[data-multiple='true'] {
+        background: ${Neutral.B100};
+
+        ::before {
+          content: none;
+        }
+      }
     }
   }
 `;
 
 export const TitleContainer = styled.div`
+  margin: ${space8} 0 ${space4};
   padding: ${space8} ${space16};
 
   span {
@@ -70,4 +84,10 @@ export const TitleContainer = styled.div`
 
 export const ListContainer = styled.div`
   padding: 0 ${space8};
+`;
+
+export const StyledSections = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: ${space8} 0;
 `;

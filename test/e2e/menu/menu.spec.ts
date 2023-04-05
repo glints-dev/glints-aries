@@ -25,3 +25,19 @@ test('Menu - basic with disabled option', async ({ page }) => {
     'menu-basic-option-selected.png'
   );
 });
+
+test('Menu - allow multiple', async ({ page }) => {
+  const menuPage = new MenuPage(page);
+  await menuPage.gotoAllowMultiplePage();
+  await expect(menuPage.canvas).toHaveScreenshot('menu-allow-multiple.png');
+
+  await menuPage.options.nth(1).hover();
+  await expect(menuPage.canvas).toHaveScreenshot(
+    'menu-allow-multi-option-hover.png'
+  );
+
+  await menuPage.options.nth(1).click();
+  await expect(menuPage.canvas).toHaveScreenshot(
+    'menu-allow-multi-option-selected.png'
+  );
+});

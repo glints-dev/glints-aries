@@ -2,65 +2,133 @@ import React from 'react';
 import nextId from 'react-id-generator';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { ListContainer, StyledMenu, TitleContainer } from './MenuStyle';
+import { StyledMenu, StyledSections, TitleContainer } from './MenuStyle';
+import { MenuOptionLabel } from './components/MenuOptionLabel';
+import { MenuOption } from './components/MenuOption';
+import { MenuOptionCheckbox } from './components/MenuOptionCheckbox';
 
-interface Option {
+export interface Option {
   disabled?: boolean;
   id?: string;
-  label: React.ReactNode;
+  label: string | React.ReactNode;
   value: string;
+}
+
+export interface Section {
+  title?: string;
+  options: Option[];
 }
 export interface MenuProps {
   id?: string;
-  onChange?: (selected: string[]) => void;
+  onClick?: ({ value }: { value: string }) => void;
   options?: Option[];
   /** Selected value based on Option.value */
   selectedValues?: string[];
   title?: string;
+  allowMultiple?: boolean;
+  sections?: Section[];
 }
 
 export const Menu = ({
+  allowMultiple,
   id,
-  onChange,
+  onClick,
   options,
+  sections,
   selectedValues,
   title,
 }: MenuProps) => {
   const randomId = nextId('glints-menu');
   const menuId = id ? id : randomId;
 
-  const handleClick = (value: string) => {
-    onChange([value]);
+  const renderTitle = ({ title }: { title: string }) => {
+    return (
+      <TitleContainer>
+        <Typography variant="subtitle2" as="span" color={Neutral.B40}>
+          {title}
+        </Typography>
+      </TitleContainer>
+    );
+  };
+
+  const renderOptions = ({ options }: { options: Option[] }) => {
+    return (
+      <StyledMenu>
+        {options?.map((option: Option) => {
+          const { value, label, disabled, id } = option;
+          const randomId = nextId('glints-menu-option');
+          const menuOptionId = id ? id : randomId;
+          const isSelected = selectedValues?.includes(value);
+
+          return (
+            <MenuOption
+              key={menuOptionId}
+              value={value}
+              disabled={disabled}
+              isSelected={isSelected}
+              onClick={onClick}
+              allowMultiple={allowMultiple}
+            >
+              <MenuOptionLabel label={label} />
+            </MenuOption>
+          );
+        })}
+      </StyledMenu>
+    );
+  };
+
+  const renderOptionsWithCheckbox = ({ options }: { options: Option[] }) => {
+    return (
+      <StyledMenu>
+        {options?.map((option: Option) => {
+          const { value, label, disabled, id } = option;
+          const randomId = nextId('glints-menu-option');
+          const menuOptionId = id ? id : randomId;
+          const isSelected = selectedValues?.includes(value);
+
+          return (
+            <MenuOption
+              key={menuOptionId}
+              value={value}
+              disabled={disabled}
+              isSelected={isSelected}
+              onClick={onClick}
+              allowMultiple={allowMultiple}
+            >
+              <MenuOptionCheckbox
+                isSelected={isSelected}
+                disabled={disabled}
+                label={label}
+              />
+            </MenuOption>
+          );
+        })}
+      </StyledMenu>
+    );
+  };
+
+  const renderSections = ({ sections }: { sections: Section[] }) => {
+    return (
+      <StyledSections>
+        {sections.map((section, index) => (
+          <li key={`menu-section-${title}-${index}`}>
+            {renderTitle({ title: section?.title })}
+            {allowMultiple
+              ? renderOptionsWithCheckbox({ options: section?.options })
+              : renderOptions({ options: section?.options })}
+          </li>
+        ))}
+      </StyledSections>
+    );
   };
 
   return (
-    <StyledMenu id={menuId}>
-      {title && (
-        <TitleContainer>
-          <Typography variant="subtitle2" as="span" color={Neutral.B40}>
-            {title}
-          </Typography>
-        </TitleContainer>
-      )}
-      {options.map(option => {
-        const { value, label, disabled, id } = option;
-        const isSelected = selectedValues?.includes(value);
-        return (
-          <ListContainer key={id}>
-            <li
-              key={id}
-              aria-disabled={disabled}
-              data-active={isSelected}
-              value={value}
-              onClick={() => handleClick(value)}
-            >
-              <Typography as="span" variant="body1" color={Neutral.B18}>
-                {label}
-              </Typography>
-            </li>
-          </ListContainer>
-        );
-      })}
-    </StyledMenu>
+    <div id={menuId}>
+      {title && renderTitle({ title })}
+      {allowMultiple
+        ? renderOptionsWithCheckbox({ options })
+        : renderOptions({ options })}
+      {sections && renderSections({ sections })}
+    </div>
   );
 };
