@@ -23,6 +23,14 @@ test('Banner - with - disabled - button', async ({ page }) => {
   );
 });
 
+test('Banner - with - loading - button', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoWithButtonsPage('args=buttonLoading:true');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'banner-with-loading-buttons.png'
+  );
+});
+
 test('Banner - without title', async ({ page }) => {
   const bannerPage = new BannerPage(page);
   await bannerPage.goto('args=title:');

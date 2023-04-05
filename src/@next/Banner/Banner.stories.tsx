@@ -23,9 +23,13 @@ export const Interactive = Template.bind({});
 Interactive.args = { title: 'Title' };
 
 const WithButtonsTemplate: Story<
-  BannerProps & { buttonDisabled: boolean }
+  BannerProps & { buttonDisabled: boolean; buttonLoading: boolean }
 > = args => {
-  const action = <Button disabled={args.buttonDisabled}>Action</Button>;
+  const action = (
+    <Button disabled={args.buttonDisabled} loading={args.buttonLoading}>
+      Action
+    </Button>
+  );
   return (
     <Banner action={action} {...args}>
       {defaultText}
@@ -34,4 +38,8 @@ const WithButtonsTemplate: Story<
 };
 
 export const WithButtons = WithButtonsTemplate.bind({});
-WithButtons.args = { buttonDisabled: false, title: 'Title' };
+WithButtons.args = {
+  buttonDisabled: false,
+  title: 'Title',
+  buttonLoading: false,
+};
