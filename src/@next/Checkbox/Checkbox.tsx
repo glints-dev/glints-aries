@@ -77,7 +77,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         data-error={hasError}
         data-spacing={isPadded}
       >
-        <StyledRow>
+        <StyledRow className="glints-checkbox-styled-row">
           <StyledLeftColumn>
             <StyledCheckboxContainer>
               <StyledCheckbox

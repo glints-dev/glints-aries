@@ -93,6 +93,7 @@ export const StyledRow = styled.div`
   flex-wrap: wrap;
   gap: 8px;
 `;
+
 export const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;

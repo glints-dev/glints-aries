@@ -9,7 +9,7 @@ const Checkbox = () => {
 
   return (
     <CheckboxWrapper>
-      <CheckboxCellContentContainer>
+      <CheckboxCellContentContainer className="checkbox-wrapper">
         <div onClick={onInteraction}>
           <GlintsCheckbox
             id={itemId}

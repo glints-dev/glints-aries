@@ -11524,10 +11524,10 @@ pnp-webpack-plugin@1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polaris-glints@^15.6.0:
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/polaris-glints/-/polaris-glints-15.6.0.tgz#e9081ee20fdb6224c8e023f5920c836024982383"
-  integrity sha512-tPHjzOc9rDGSQ2hHQuLQpTeJRK0geII/q33U38acP99WzIT765rYCIh1nyv8Lc02LV5EYwWP06HuOVOqpt/uEw==
+polaris-glints@^15.9.0:
+  version "15.9.0"
+  resolved "https://registry.yarnpkg.com/polaris-glints/-/polaris-glints-15.9.0.tgz#f5d0c80357f5aff231d981a0634b4efa7aa562c0"
+  integrity sha512-XEl9ASnDP1wEf9BU/WhL9CGvd+V+VKT6/Pz09RczpRzBj8X3sy38s1UdM40HNBiIwnvf3rkGk6QnF8oQUTKWxg==
   dependencies:
     "@shopify/polaris-icons" "^6.7.0"
     "@shopify/polaris-tokens" "^6.3.0"

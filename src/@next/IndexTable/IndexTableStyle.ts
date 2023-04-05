@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import { borderRadius16 } from '../utilities/borderRadius';
+import { space8 } from '../utilities/spacing';
 
 export const StyledIndexTable: any = createGlobalStyle`
   :root {
@@ -1200,6 +1202,11 @@ export const StyledIndexTable: any = createGlobalStyle`
     vertical-align: middle;
   }
 
+  .Polaris-IndexTable__TableCellCheckbox:hover .checkbox-wrapper{
+    background-color: rgba(1, 126, 183, 0.2);
+    border-radius: ${borderRadius16};
+  }
+
   .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell {
     left: var(--pc-checkbox-offset);
     padding-left: 0;
@@ -1626,6 +1633,8 @@ export const StyledIndexTable: any = createGlobalStyle`
       'Noto Sans', sans-serif;
     padding: var(--p-space-025) 0;
     margin-left: calc(var(--p-space-5) - 0.125rem);
+    position: relative;
+    bottom: -${space8};
   }
 
   .Polaris-SelectAllActions {
