@@ -95,7 +95,7 @@ export const PhoneNumberInput = ({
         >
           +{value.callingCode}
           <S.CallingCodeInputOpenIndicator>
-            {isCallingCodeInputOpen ? <ArrowDownIcon /> : <ArrowUpIcon />}
+            {isCallingCodeInputOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
           </S.CallingCodeInputOpenIndicator>
         </S.CallingCodeInputToggle>
         <S.SignificantNumberInput
