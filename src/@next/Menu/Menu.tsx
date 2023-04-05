@@ -54,7 +54,7 @@ export const Menu = ({
   const renderOptions = ({ options }: { options: Option[] }) => {
     return (
       <StyledMenu>
-        {options.map((option: Option) => {
+        {options?.map((option: Option) => {
           const { value, label, disabled, id } = option;
           const randomId = nextId('glints-menu-option');
           const menuOptionId = id ? id : randomId;
@@ -69,15 +69,37 @@ export const Menu = ({
               onClick={onClick}
               allowMultiple={allowMultiple}
             >
-              {allowMultiple ? (
-                <MenuOptionCheckbox
-                  isSelected={isSelected}
-                  disabled={disabled}
-                  label={label}
-                />
-              ) : (
-                <MenuOptionLabel label={label} />
-              )}
+              <MenuOptionLabel label={label} />
+            </MenuOption>
+          );
+        })}
+      </StyledMenu>
+    );
+  };
+
+  const renderOptionsWithCheckbox = ({ options }: { options: Option[] }) => {
+    return (
+      <StyledMenu>
+        {options?.map((option: Option) => {
+          const { value, label, disabled, id } = option;
+          const randomId = nextId('glints-menu-option');
+          const menuOptionId = id ? id : randomId;
+          const isSelected = selectedValues?.includes(value);
+
+          return (
+            <MenuOption
+              key={menuOptionId}
+              value={value}
+              disabled={disabled}
+              isSelected={isSelected}
+              onClick={onClick}
+              allowMultiple={allowMultiple}
+            >
+              <MenuOptionCheckbox
+                isSelected={isSelected}
+                disabled={disabled}
+                label={label}
+              />
             </MenuOption>
           );
         })}
@@ -91,7 +113,9 @@ export const Menu = ({
         {sections.map((section, index) => (
           <li key={`menu-section-${title}-${index}`}>
             {renderTitle({ title: section?.title })}
-            {renderOptions({ options: section.options })}
+            {allowMultiple
+              ? renderOptionsWithCheckbox({ options: section?.options })
+              : renderOptions({ options: section?.options })}
           </li>
         ))}
       </StyledSections>
@@ -101,7 +125,9 @@ export const Menu = ({
   return (
     <div id={menuId}>
       {title && renderTitle({ title })}
-      {options && renderOptions({ options })}
+      {allowMultiple
+        ? renderOptionsWithCheckbox({ options })
+        : renderOptions({ options })}
       {sections && renderSections({ sections })}
     </div>
   );
