@@ -28,3 +28,19 @@ Interactive.args = {
   iconPosition: 'left',
   disabled: false,
 };
+
+Interactive.parameters = {
+  docs: {
+    source: {
+      code: `
+<PlainButton
+  size='default'
+  icon={<Icon name="ri-arrow-up-down-fill" />}
+  iconPosition='left'
+>
+  Label
+</PlainButton>
+      `,
+    },
+  },
+};

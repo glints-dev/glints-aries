@@ -29,6 +29,7 @@ export const PlainButton = styled(Button)`
 
   &:active {
     color: ${Blue.S100};
+    border: none;
 
     svg {
       fill: ${Blue.S100};
