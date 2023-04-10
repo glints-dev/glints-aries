@@ -1202,7 +1202,7 @@ export const StyledIndexTable: any = createGlobalStyle`
     vertical-align: middle;
   }
 
-  .Polaris-IndexTable__TableCellCheckbox:hover .checkbox-wrapper{
+  .Polaris-IndexTable__TableCellCheckbox:hover .checkbox-wrapper {
     background-color: rgba(1, 126, 183, 0.2);
     border-radius: ${borderRadius16};
   }
