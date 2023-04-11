@@ -25,3 +25,13 @@ export const Default = Template.bind({});
 Default.args = {
   size: '48px',
 };
+
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+      <SkeletonImageCircle size='48px' />
+      `,
+    },
+  },
+};

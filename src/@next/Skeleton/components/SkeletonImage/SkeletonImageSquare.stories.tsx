@@ -26,3 +26,13 @@ Default.args = {
   height: '80px',
   width: '80px',
 };
+
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+      <SkeletonImageSquare height='80px' width='80px' />
+      `,
+    },
+  },
+};

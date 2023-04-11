@@ -1,7 +1,4 @@
-import styled from 'styled-components';
 import { Neutral } from '../utilities/colors';
-
-export const SkeletonContainer = styled.div``;
 
 export const SkeletonShimmer = `
 background: linear-gradient(
