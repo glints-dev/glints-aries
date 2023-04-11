@@ -19,21 +19,18 @@ export const SkeletonText = ({
       ? Array.from({ length: rows }, () => width)
       : width;
 
-  const variantArray =
+  const variantArray: TypographyVariant[] =
     typeof variant === 'string'
       ? Array.from({ length: rows }, () => variant)
       : variant;
-
-  console.log('widthArray', widthArray);
-  console.log('variantArray', widthArray);
 
   const renderTexts = () => {
     return [...Array(rows)].map((_, index) => {
       return (
         <StyledSkeletonText
-          width={widthArray[index]}
-          variant={variantArray[index] as TypographyVariant}
           key={`skeleton-text-${index}`}
+          width={widthArray[index]}
+          variant={variantArray[index]}
         />
       );
     });

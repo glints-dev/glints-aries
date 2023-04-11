@@ -1,10 +1,14 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import * as Breakpoints from '../../../utilities/breakpoints';
-import { Neutral } from '../../../utilities/colors';
 import { Variant as TypographyVariant } from '../../../Typography';
-import { SkeletonTextProps } from './SkeletonText';
 import { space4 } from '../../../utilities/spacing';
+import { SkeletonShimmer } from '../../SkeletonStyle';
+
+interface StyledSkeletonTextProps {
+  width?: string;
+  variant?: TypographyVariant;
+}
 
 const headline1 = css`
   height: 60px;
@@ -124,13 +128,18 @@ const variantHeightMapping: {
   ['overline']: overline,
 };
 
-export const StyledSkeletonText = styled.div<SkeletonTextProps>`
-  background-color: ${Neutral.B95};
-  ${props => variantHeightMapping[props.variant] as TypographyVariant}
+export const StyledSkeletonText = styled.li<StyledSkeletonTextProps>`
+  ${props => variantHeightMapping[props.variant]}
   width: ${props => props.width};
-  margin-bottom: ${space4};
+
+  ${SkeletonShimmer}
 `;
 
-export const SkeletonTextContainer = styled.div<SkeletonTextProps>`
-  width: ${props => props.width};
+export const SkeletonTextContainer = styled.ul`
+  list-style: none;
+  width: 100%;
+
+  li:not(:last-child) {
+    margin-bottom: ${space4};
+  }
 `;
