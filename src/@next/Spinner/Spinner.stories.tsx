@@ -22,12 +22,22 @@ Default.args = {
   size: 'large',
 };
 
-const WithLabelTemplate: Story<SpinnerProps> = args => {
+const LoadingWithLabelTemplate: Story<SpinnerProps> = args => {
   return <Spinner {...args} fill={Blue.S99} />;
 };
 
-export const WithLabel = WithLabelTemplate.bind({});
-WithLabel.args = {
+export const LoadingWithLabel = LoadingWithLabelTemplate.bind({});
+LoadingWithLabel.args = {
   size: 'large',
   label: 'Loading...',
+};
+
+const ProcessingWithLabelTemplate: Story<SpinnerProps> = args => {
+  return <Spinner {...args} fill={Blue.S99} variant="processing" />;
+};
+
+export const ProcessingWithLabel = ProcessingWithLabelTemplate.bind({});
+ProcessingWithLabel.args = {
+  size: 'large',
+  label: 'Task Processing...',
 };

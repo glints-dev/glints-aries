@@ -13,8 +13,15 @@ export const StyledWrapper = styled.div`
       transform: rotate(1turn);
     }
   }
+
   svg {
     animation: p-keyframes-spin 800ms linear infinite;
+  }
+
+  &[data-processing='true'] {
+    svg {
+      animation: p-keyframes-spin 1200ms linear infinite;
+    }
   }
 `;
 
