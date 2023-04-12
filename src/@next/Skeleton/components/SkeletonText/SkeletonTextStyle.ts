@@ -11,7 +11,7 @@ interface StyledSkeletonTextProps {
 }
 
 const headline1 = css`
-  height: 60px;
+  height: 84px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 36px;
@@ -19,7 +19,7 @@ const headline1 = css`
 `;
 
 const headline2 = css`
-  height: 50px;
+  height: 75px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 32px;
@@ -27,7 +27,7 @@ const headline2 = css`
 `;
 
 const headline3 = css`
-  height: 36px;
+  height: 54px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 28px;
@@ -35,7 +35,7 @@ const headline3 = css`
 `;
 
 const headline4 = css`
-  height: 30px;
+  height: 42px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 24px;
@@ -43,7 +43,7 @@ const headline4 = css`
 `;
 
 const headline5 = css`
-  height: 26px;
+  height: 39px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 20px;
@@ -51,7 +51,7 @@ const headline5 = css`
 `;
 
 const headline6 = css`
-  height: 24px;
+  height: 36px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 18px;
@@ -59,7 +59,7 @@ const headline6 = css`
 `;
 
 const subtitle1 = css`
-  height: 20px;
+  height: 32px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 16px;
@@ -67,26 +67,26 @@ const subtitle1 = css`
 `;
 
 const subtitle2 = css`
-  height: 14px;
+  height: 21px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 12px;
+    height: 18px;
   }
 `;
 
 const body1 = css`
-  height: 16px;
+  height: 24px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 14px;
+    height: 21px;
   }
 `;
 
 const body2 = css`
-  height: 16px;
+  height: 24px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 14px;
+    height: 21px;
   }
 `;
 
@@ -95,18 +95,18 @@ const button = css`
 `;
 
 const caption = css`
-  height: 14px;
+  height: 20px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 12px;
+    height: 17px;
   }
 `;
 
 const overline = css`
-  height: 12px;
+  height: 17px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 10px;
+    height: 14px;
   }
 `;
 
