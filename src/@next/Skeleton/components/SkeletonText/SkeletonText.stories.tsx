@@ -35,19 +35,27 @@ const WithCustomRowsTemplate: Story<SkeletonTextProps> = args => {
 
 export const WithCustomRows = WithCustomRowsTemplate.bind({});
 WithCustomRows.args = {
-  rows: 5,
-  width: ['50%', '45%', '800px', '100%', '90%'],
-  variant: ['headline1', 'headline3', 'body1', 'subtitle2', 'overline'],
+  rows: [
+    { width: '50%', variant: 'headline1' },
+    { width: '45%', variant: 'headline3' },
+    { width: '800px', variant: 'body1' },
+    { width: '100%', variant: 'subtitle2' },
+    { width: '90%', variant: 'overline' },
+  ],
 };
 WithCustomRows.parameters = {
   docs: {
     source: {
       code: `
-<SkeletonText
-  rows={5}
-  width={['50%', '45%', '800px', '100%', '90%']}
-  variant={['headline1', 'headline3', 'body1', 'subtitle2', 'overline']}
-/>
+      <SkeletonText
+      rows={[
+        { width: '50%', variant: 'headline1' },
+        { width: '45%', variant: 'headline3' },
+        { width: '800px', variant: 'body1' },
+        { width: '100%', variant: 'subtitle2' },
+        { width: '90%', variant: 'overline' },
+      ]}
+    />
       `,
     },
   },

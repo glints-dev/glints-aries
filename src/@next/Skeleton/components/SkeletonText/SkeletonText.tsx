@@ -3,39 +3,31 @@ import React from 'react';
 import { Variant as TypographyVariant } from '../../../Typography';
 import { SkeletonTextContainer, StyledSkeletonText } from './SkeletonTextStyle';
 
+type Row = {
+  width?: string;
+  variant?: TypographyVariant;
+};
 export interface SkeletonTextProps {
-  rows?: number;
-  width?: string | string[];
-  variant?: TypographyVariant | TypographyVariant[];
+  rows?: number | Row[];
 }
 
-export const SkeletonText = ({
-  rows = 4,
-  width = '100%',
-  variant = 'body1',
-}: SkeletonTextProps) => {
+export const SkeletonText = ({ rows = 4 }: SkeletonTextProps) => {
+  const defaultWidth = '100%';
   const defaultVariant = 'body1';
-  const widthArray =
-    typeof width === 'string'
-      ? Array.from({ length: rows }, () => width)
-      : width;
 
-  const variantArray: TypographyVariant[] =
-    typeof variant === 'string'
-      ? Array.from({ length: rows }, () => variant)
-      : variant;
+  const renderRows = () => {
+    const rowsToArray = typeof rows === 'number' ? [...Array(rows)] : rows;
 
-  const renderTexts = () => {
-    return [...Array(rows)].map((_, index) => {
+    return rowsToArray.map((row, index) => {
       return (
         <StyledSkeletonText
           key={`skeleton-text-${index}`}
-          width={widthArray[index]}
-          variant={variantArray[index] || defaultVariant}
+          width={row?.width || defaultWidth}
+          variant={row?.variant || defaultVariant}
         />
       );
     });
   };
 
-  return <SkeletonTextContainer>{renderTexts()}</SkeletonTextContainer>;
+  return <SkeletonTextContainer>{renderRows()}</SkeletonTextContainer>;
 };
