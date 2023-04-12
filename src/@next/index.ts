@@ -67,6 +67,14 @@ export { Pagination, PaginationProps, SimplePagination } from './Pagination';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
 export { Select, SelectProps } from './Select';
+export {
+  SkeletonImageCircle,
+  SkeletonImageCircleProps,
+  SkeletonImageSquare,
+  SkeletonImageSquareProps,
+  SkeletonText,
+  SkeletonTextProps,
+} from './Skeleton';
 export { Spinner, SpinnerProps } from './Spinner';
 export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
 export { Tag, TagProps } from './Tag';
