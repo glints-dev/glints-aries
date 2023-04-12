@@ -14,6 +14,7 @@ export const SkeletonText = ({
   width = '100%',
   variant = 'body1',
 }: SkeletonTextProps) => {
+  const defaultVariant = 'body1';
   const widthArray =
     typeof width === 'string'
       ? Array.from({ length: rows }, () => width)
@@ -30,7 +31,7 @@ export const SkeletonText = ({
         <StyledSkeletonText
           key={`skeleton-text-${index}`}
           width={widthArray[index]}
-          variant={variantArray[index]}
+          variant={variantArray[index] || defaultVariant}
         />
       );
     });

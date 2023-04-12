@@ -8,8 +8,8 @@ export interface SkeletonImageSquareProps {
 }
 
 export const SkeletonImageSquare = ({
-  height,
-  width,
+  height = '80px',
+  width = '80px',
 }: SkeletonImageSquareProps) => {
   return <StyledSkeletonImageSquare height={height} width={width} />;
 };
