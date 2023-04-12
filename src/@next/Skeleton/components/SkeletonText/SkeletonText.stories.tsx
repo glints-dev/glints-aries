@@ -18,7 +18,14 @@ const Template: Story<SkeletonTextProps> = args => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  rows: [
+    { width: '100%', variant: 'body1' },
+    { width: '100%', variant: 'body1' },
+    { width: '100%', variant: 'body1' },
+    { width: '100%', variant: 'body1' },
+  ],
+};
 Default.parameters = {
   docs: {
     source: {
