@@ -2,11 +2,14 @@ import React from 'react';
 import { Menu, MenuProps } from '../../../Menu';
 import { Typography } from '../../../Typography';
 import { Neutral } from '../../../utilities/colors';
+import { useActivatorTextInput } from '../Activator/ActivatorContext';
+import { useOptionList } from './OptionListContext';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
   isEmpty?: boolean;
   noOptionsMessage?: React.ReactNode;
+  onMenuClose?: () => void;
   onSelect?({ value }: { value: string }): void;
   width?: string;
 }
@@ -30,28 +33,39 @@ export const NoOptionList = ({
 export const OptionList = ({
   allowMultiple,
   noOptionsMessage,
+  onMenuClose,
   onSelect,
-  options,
   sections,
   selectedValues,
   title,
   width,
 }: OptionListProps) => {
-  const hasOptions = options.length > 0;
+  const activatorContext = useActivatorTextInput();
+  const optionListContext = useOptionList();
+  const { updateSearchableSelectState } = activatorContext;
+  const { menuOptions, options, updateMenuOptions } = optionListContext;
+  const hasMenuOptions = menuOptions.length > 0;
 
   const onOptionSelect = ({ value }: { value: string }) => {
     if (onSelect) {
+      updateSearchableSelectState({
+        showSelected: true,
+        showInput: false,
+        showPlaceholder: false,
+      });
       onSelect({ value });
+      onMenuClose();
+      updateMenuOptions(options);
       return;
     }
   };
 
   return (
     <OptionListContainer width={width}>
-      {hasOptions ? (
+      {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}
-          options={options}
+          options={menuOptions}
           onClick={onOptionSelect}
           sections={sections}
           selectedValues={selectedValues}

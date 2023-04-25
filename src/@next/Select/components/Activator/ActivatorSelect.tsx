@@ -15,7 +15,7 @@ export interface ActivatorSelectProps
 }
 export const ActivatorSelect = ({
   placeholder,
-  values,
+  values, //rename to selectedValues
   onClick,
   onRemoveTag,
   width,
@@ -25,8 +25,7 @@ export const ActivatorSelect = ({
   const filteredValues = values?.filter(value => value != '');
   const hasValue = filteredValues.length > 0;
   const activatorContext = useActivatorSelect();
-  const { allowMultiple, disabled, onSelectClick, hasError, selectedValues } =
-    activatorContext;
+  const { allowMultiple, disabled, onSelectClick, hasError } = activatorContext;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -47,7 +46,7 @@ export const ActivatorSelect = ({
   );
 
   const tagsMarkup = () => {
-    const hasSelectedValues = selectedValues.length > 0;
+    const hasSelectedValues = values.length > 0;
 
     if (!hasSelectedValues) {
       return placeholderMarkup;
@@ -57,18 +56,18 @@ export const ActivatorSelect = ({
       return (
         <TagsContainer>
           <StyledTag
-            key={`option-${selectedValues[0]}`}
-            onRemove={onRemoveTag({ option: selectedValues[0] })}
+            key={`option-${values[0]}`}
+            onRemove={onRemoveTag({ option: values[0] })}
             textColor={Blue.S99}
           >
-            {selectedValues[0]}
+            {values[0]}
           </StyledTag>
-          {selectedValues.length > 1 && (
+          {values.length > 1 && (
             <Typography
               variant="caption"
               color={disabled ? Neutral.B85 : Neutral.B40}
             >
-              ... and {selectedValues.length - 1} more
+              ... and {values.length - 1} more
             </Typography>
           )}
         </TagsContainer>

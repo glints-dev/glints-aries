@@ -3,8 +3,10 @@ import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral, Red } from '../utilities/colors';
 import { InputProps } from './Input';
 import { space12, space4, space8 } from '../utilities/spacing';
+import { NotoSans } from '../utilities/fonts';
+import { borderRadius4 } from '../utilities/borderRadius';
 
-interface PreffixSuffixWidthProps {
+export interface PreffixSuffixWidthProps {
   prefixWidth: number;
   suffixWidth: number;
 }
@@ -84,10 +86,10 @@ export const StyledInput = styled.input<InputProps>`
   background: ${Neutral.B100};
   box-sizing: border-box;
   border: 1px solid ${Neutral.B68};
-  border-radius: 4px;
+  border-radius: ${borderRadius4};
   padding: 0 12px;
 
-  font-family: 'Noto Sans', sans-serif;
+  font-family: ${NotoSans}, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

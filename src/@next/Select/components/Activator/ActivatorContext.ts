@@ -7,12 +7,19 @@ export interface ActivatorSelectContextProps extends ActivatorSelectProps {
   disabled?: boolean;
   hasError?: boolean;
   onSelectClick(): void;
-  selectedValues?: string[];
+}
+
+export interface SearchableSelectState {
+  showSelected: boolean;
+  showInput: boolean;
+  showPlaceholder: boolean;
 }
 
 export interface ActivatorTextInputContextProps
   extends ActivatorTextInputProps {
   disabled?: boolean;
+  searchableSelectState?: SearchableSelectState;
+  updateSearchableSelectState?: (newState: SearchableSelectState) => void;
 }
 
 export const ActivatorSelectContext = createContext<
