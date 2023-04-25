@@ -6,6 +6,7 @@ import { InlineError } from '../InlineError';
 import { Select, SelectProps } from './Select';
 import { NonSearchableMultiSelect } from './selectStoryHelper/NonSearchableMultiSelect';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
+import { SearchableSingle } from './selectStoryHelper/SearchableSingleSelect';
 import { SingleSelect } from './selectStoryHelper/NonSearchableSingleSelect';
 import { Icon } from '..';
 
@@ -502,6 +503,50 @@ SearchableMultiSelect.parameters = {
           />
           <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
         </div>
+      );
+      `,
+    },
+  },
+};
+
+const SearchableSingleSelectTemplate: Story<SelectProps> = args => {
+  return <SearchableSingle data={slicedCountries} {...args} />;
+};
+
+export const SearchableSingleSelect = SearchableSingleSelectTemplate.bind({});
+
+SearchableSingleSelect.args = {
+  allowMultiple: false,
+};
+
+SearchableSingleSelect.parameters = {
+  docs: {
+    source: {
+      code: `
+      const countries = [
+        { label: 'Indonesia', value: 'Indonesia' },
+        { label: 'Malaysia', value: 'Malaysia' },
+        { label: 'Singapore', value: 'Singapore' },
+        { label: 'Taiwan', value: 'Taiwan' },
+        { label: 'Vietnam', value: 'Vietnam' },
+      ];
+
+      const [selected, setSelected] = useState('');
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+    
+      return (
+        <Select
+          allowMultiple={false}
+          onSelect={handleSelect}
+          options={countries}
+          selectedValues={[selected]}
+          width="600px"
+          searchable
+          label="Label"
+        />
       );
       `,
     },
