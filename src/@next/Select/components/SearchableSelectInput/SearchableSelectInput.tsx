@@ -138,7 +138,7 @@ export const SearchableSelectInput = forwardRef<
         <InputContainer>
           <StyledInput
             onChange={handleInputChange}
-            placeholder={showPlaceholder && placeholder}
+            placeholder={showPlaceholder ? placeholder : null}
             value={inputValue}
             {...props}
           />

@@ -54,9 +54,11 @@ export const OptionList = ({
         showPlaceholder: false,
       });
       onSelect({ value });
+
+      if (allowMultiple) return;
+
       onMenuClose();
       updateMenuOptions(options);
-      return;
     }
   };
 
@@ -65,7 +67,7 @@ export const OptionList = ({
       {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}
-          options={menuOptions}
+          options={allowMultiple ? options : menuOptions}
           onClick={onOptionSelect}
           sections={sections}
           selectedValues={selectedValues}
