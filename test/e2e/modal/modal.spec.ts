@@ -24,7 +24,7 @@ test('Modal - close on click outside', async ({ page }) => {
 test('Modal - no header description', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
-  await modalPage.triggerModal('args=headerDescription:');
+  await modalPage.triggerModal('args=headerDescription:!null');
   await expect(modalPage.canvas).toHaveScreenshot(
     'modal-no-header-description.png'
   );
@@ -40,7 +40,9 @@ test('Modal - no back button', async ({ page }) => {
 test('Modal - no header description and no back button', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
-  await modalPage.triggerModal('args=headerDescription:;showBackButton:false');
+  await modalPage.triggerModal(
+    'args=headerDescription:!null;showBackButton:false'
+  );
   await expect(modalPage.canvas).toHaveScreenshot(
     'modal-no-header-description-no-back-button.png'
   );
@@ -57,7 +59,7 @@ test('Modal - header only', async ({ page }) => {
   const modalPage = new ModalPage(page);
 
   await modalPage.triggerModal(
-    'args=headerDescription:;showCloseButton:false;showBackButton:false'
+    'args=headerDescription:!null;showCloseButton:false;showBackButton:false'
   );
   await expect(modalPage.canvas).toHaveScreenshot('modal-header-only.png');
 });
