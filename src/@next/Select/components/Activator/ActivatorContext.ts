@@ -18,6 +18,8 @@ export interface SearchableSelectState {
 export interface ActivatorTextInputContextProps
   extends ActivatorTextInputProps {
   disabled?: boolean;
+  inputValue?: string;
+  updateInputValue?: (newValue: string) => void;
   searchableSelectState?: SearchableSelectState;
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
 }

@@ -44,7 +44,7 @@ export const OptionList = ({
   const optionListContext = useOptionList();
   const { updateSearchableSelectState } = activatorContext;
   const { menuOptions, options, updateMenuOptions } = optionListContext;
-  const hasMenuOptions = menuOptions.length > 0;
+  const hasMenuOptions = menuOptions?.length > 0;
 
   const onOptionSelect = ({ value }: { value: string }) => {
     if (onSelect) {

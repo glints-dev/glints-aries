@@ -69,6 +69,8 @@ export const Select = ({
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
   const [menuOptions, setMenuOptions] = useState(options);
+  const [inputValue, setInputValue] = useState(searchableProps?.inputValue);
+
   const [searchableSelectState, setSearchableSelectState] =
     useState<SearchableSelectState>({
       showSelected: false,
@@ -83,6 +85,13 @@ export const Select = ({
     [setSearchableSelectState]
   );
 
+  const updateInputValue = useCallback(
+    (newValue: string) => {
+      setInputValue(newValue);
+    },
+    [setInputValue]
+  );
+
   const updateMenuOptions = useCallback(
     (newState: Option[]) => {
       setMenuOptions(newState);
@@ -90,10 +99,16 @@ export const Select = ({
     [setMenuOptions]
   );
 
+  const resetMenuOptions = useCallback(() => {
+    updateMenuOptions(options);
+    updateInputValue('');
+  }, [options, updateInputValue, updateMenuOptions]);
+
   const handleClose = useCallback(() => {
     setPopoverActive(false);
     onClose?.();
-  }, [onClose]);
+    resetMenuOptions();
+  }, [onClose, resetMenuOptions]);
 
   const handleFocus = () => {
     setPopoverActive(true);
@@ -115,6 +130,8 @@ export const Select = ({
   const activatorTextInputContextValue = {
     disabled,
     hasError,
+    inputValue,
+    updateInputValue,
     onFocus: handleFocus,
     onBlur: handleBlur,
     searchableSelectState,
@@ -149,7 +166,6 @@ export const Select = ({
         >
           <ActivatorTextInput
             allowMultiple={allowMultiple}
-            value={searchableProps?.inputValue}
             onChange={searchableProps?.onInputChange}
             placeholder={placeholder ?? 'Search'}
             prefix={prefix}

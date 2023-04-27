@@ -18,7 +18,6 @@ export type SearchableSelectInputProps = Omit<
   canClear?: boolean;
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
-  updateInputValue?(newValue: string): void;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -33,9 +32,7 @@ export const SearchableSelectInput = forwardRef<
     placeholder,
     prefix,
     selectedValue,
-    value: inputValue,
     width,
-    updateInputValue,
     ...props
   }: SearchableSelectInputProps,
   ref
@@ -46,6 +43,8 @@ export const SearchableSelectInput = forwardRef<
   const activatorContext = useActivatorTextInput();
   const optionListContext = useOptionList();
   const {
+    inputValue,
+    updateInputValue,
     searchableSelectState: { showInput, showPlaceholder, showSelected },
     updateSearchableSelectState,
   } = activatorContext;
@@ -55,6 +54,20 @@ export const SearchableSelectInput = forwardRef<
 
   const prefixRef = useRef(null);
   const suffixRef = useRef(null);
+
+  const filterOptions = (str: string) => {
+    if (str === '') {
+      updateMenuOptions(options);
+      return options;
+    }
+
+    const filterRegex = new RegExp(str, 'i');
+    const filterOptions = options.filter((option: Option) =>
+      (option.label as string).match(filterRegex)
+    );
+
+    return filterOptions;
+  };
 
   const handleClearIconClick = () => {
     setHasSuffix(false);
@@ -66,19 +79,11 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.currentTarget.value;
-    updateInputValue(value);
+    const str = e.currentTarget.value;
+    updateInputValue(str);
 
-    if (value === '') {
-      updateMenuOptions(options);
-      return;
-    }
-
-    const filterRegex = new RegExp(value, 'i');
-    const filterOptions = options.filter((option: Option) =>
-      (option.label as string).match(filterRegex)
-    );
-    updateMenuOptions(filterOptions);
+    const filteredOptions = filterOptions(str);
+    updateMenuOptions(filteredOptions);
 
     updateSearchableSelectState({
       showSelected: false,
@@ -95,7 +100,21 @@ export const SearchableSelectInput = forwardRef<
     });
 
     updateInputValue('');
+    updateMenuOptions(options);
     setHasSuffix(true);
+  };
+
+  const handleInputBlur = () => {
+    if (selectedValue) {
+      // allow onClick event handler in Menu before onBlur of input
+      setTimeout(() => {
+        updateSearchableSelectState({
+          showSelected: true,
+          showInput: false,
+          showPlaceholder: false,
+        });
+      }, 100);
+    }
   };
 
   useLayoutEffect(() => {
@@ -140,6 +159,7 @@ export const SearchableSelectInput = forwardRef<
             onChange={handleInputChange}
             placeholder={showPlaceholder ? placeholder : null}
             value={inputValue}
+            onBlur={handleInputBlur}
             {...props}
           />
         </InputContainer>

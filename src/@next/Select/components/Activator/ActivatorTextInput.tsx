@@ -22,7 +22,6 @@ export const ActivatorTextInput = ({
   prefix = <Icon name="ri-search" />,
   onSelect,
   selectedValues,
-  value = '',
   width,
   ...props
 }: ActivatorTextInputProps) => {
@@ -30,11 +29,7 @@ export const ActivatorTextInput = ({
   const activatorContext = useActivatorTextInput();
   const { disabled, onFocus, hasError } = activatorContext;
   const [hasSelectedValues, setHasSelectedValues] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
 
-  const updateInputValue = (newValue: string) => {
-    setInputValue(newValue);
-  };
   const handleChange = ({ value }: { value: string }) => {
     if (onChange) {
       onChange(value);
@@ -53,7 +48,6 @@ export const ActivatorTextInput = ({
           {...props}
           ref={activatorRef}
           prefix={prefix}
-          // value={inputValue}
           onChange={value => handleChange({ value })}
           onFocus={onFocus}
           error={hasError}
@@ -65,8 +59,6 @@ export const ActivatorTextInput = ({
           {...props}
           ref={activatorRef}
           prefix={prefix}
-          value={inputValue}
-          updateInputValue={updateInputValue}
           onFocus={onFocus}
           onSelect={onSelect}
           error={hasError}
