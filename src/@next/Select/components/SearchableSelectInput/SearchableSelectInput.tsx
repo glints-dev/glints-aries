@@ -16,6 +16,7 @@ export type SearchableSelectInputProps = Omit<
   'type' | 'onChange' | 'onSelect'
 > & {
   canClear?: boolean;
+  filterOptions?: (str: string) => Option[];
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
 };
@@ -28,6 +29,7 @@ export const SearchableSelectInput = forwardRef<
     canClear = false,
     disabled = false,
     error,
+    filterOptions,
     onSelect,
     placeholder,
     prefix,
@@ -54,20 +56,6 @@ export const SearchableSelectInput = forwardRef<
 
   const prefixRef = useRef(null);
   const suffixRef = useRef(null);
-
-  const filterOptions = (str: string) => {
-    if (str === '') {
-      updateMenuOptions(options);
-      return options;
-    }
-
-    const filterRegex = new RegExp(str, 'i');
-    const filterOptions = options.filter((option: Option) =>
-      (option.label as string).match(filterRegex)
-    );
-
-    return filterOptions;
-  };
 
   const handleClearIconClick = () => {
     setHasSuffix(false);

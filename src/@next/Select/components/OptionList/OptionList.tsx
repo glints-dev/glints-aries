@@ -67,7 +67,7 @@ export const OptionList = ({
       {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}
-          options={allowMultiple ? options : menuOptions}
+          options={menuOptions}
           onClick={onOptionSelect}
           sections={sections}
           selectedValues={selectedValues}

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Icon } from '../../../Icon';
+import { Option } from '../../../Menu';
 import { TextInputProps } from '../../../TextInput';
+import { useOptionList } from '../OptionList/OptionListContext';
 import { SearchableSelectInput } from '../SearchableSelectInput/SearchableSelectInput';
 import { useActivatorTextInput } from './ActivatorContext';
 import { StyledTextInput } from './ActivatorStyle';
@@ -29,10 +31,28 @@ export const ActivatorTextInput = ({
   const activatorContext = useActivatorTextInput();
   const { disabled, onFocus, hasError } = activatorContext;
   const [hasSelectedValues, setHasSelectedValues] = useState(false);
+  const optionListContext = useOptionList();
+  const { options, updateMenuOptions } = optionListContext;
+
+  const filterOptions = (str: string) => {
+    if (str === '') {
+      updateMenuOptions(options);
+      return options;
+    }
+
+    const filterRegex = new RegExp(str, 'i');
+    const filterOptions = options.filter((option: Option) =>
+      (option.label as string).match(filterRegex)
+    );
+
+    return filterOptions;
+  };
 
   const handleChange = ({ value }: { value: string }) => {
     if (onChange) {
       onChange(value);
+      const filteredOptions = filterOptions(value);
+      updateMenuOptions(filteredOptions);
       return;
     }
   };
@@ -59,6 +79,7 @@ export const ActivatorTextInput = ({
           {...props}
           ref={activatorRef}
           prefix={prefix}
+          filterOptions={filterOptions}
           onFocus={onFocus}
           onSelect={onSelect}
           error={hasError}
