@@ -40,22 +40,11 @@ export const ActivatorTextInput = ({
       onChange(value);
       return;
     }
-
-    // setInputValue(value);
   };
 
   useEffect(() => {
     setHasSelectedValues(selectedValues.filter(v => v != '').length > 0);
   }, [selectedValues]);
-
-  // useEffect(() => {
-  //   if (!allowMultiple && !hasSelectedValues) {
-  //     setInputValue(selectedValues[0]);
-  //     return;
-  //   }
-
-  //   setInputValue(value);
-  // }, [value, selectedValues, allowMultiple, hasSelectedValues]);
 
   return (
     <>

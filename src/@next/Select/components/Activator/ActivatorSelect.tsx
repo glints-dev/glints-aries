@@ -8,21 +8,21 @@ import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  values?: string[];
+  selectedValues?: string[];
   placeholder?: string;
   onRemoveTag?({ option }: { option: string }): void;
   width?: string;
 }
 export const ActivatorSelect = ({
   placeholder,
-  values, //rename to selectedValues
+  selectedValues, //rename to selectedValues
   onClick,
   onRemoveTag,
   width,
   ...props
 }: ActivatorSelectProps) => {
   const activatorRef = useRef(null);
-  const filteredValues = values?.filter(value => value != '');
+  const filteredValues = selectedValues?.filter(value => value != '');
   const hasValue = filteredValues.length > 0;
   const activatorContext = useActivatorSelect();
   const { allowMultiple, disabled, onSelectClick, hasError } = activatorContext;
@@ -46,7 +46,7 @@ export const ActivatorSelect = ({
   );
 
   const tagsMarkup = () => {
-    const hasSelectedValues = values.length > 0;
+    const hasSelectedValues = selectedValues.length > 0;
 
     if (!hasSelectedValues) {
       return placeholderMarkup;
@@ -56,18 +56,18 @@ export const ActivatorSelect = ({
       return (
         <TagsContainer>
           <StyledTag
-            key={`option-${values[0]}`}
-            onRemove={onRemoveTag({ option: values[0] })}
+            key={`option-${selectedValues[0]}`}
+            onRemove={onRemoveTag({ option: selectedValues[0] })}
             textColor={Blue.S99}
           >
-            {values[0]}
+            {selectedValues[0]}
           </StyledTag>
-          {values.length > 1 && (
+          {selectedValues.length > 1 && (
             <Typography
               variant="caption"
               color={disabled ? Neutral.B85 : Neutral.B40}
             >
-              ... and {values.length - 1} more
+              ... and {selectedValues.length - 1} more
             </Typography>
           )}
         </TagsContainer>

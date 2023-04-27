@@ -34,8 +34,9 @@ export interface SelectProps {
   options?: Option[];
   placeholder?: string;
   prefix?: React.ReactNode;
+  /** sets whether Select is searchable */
   searchable?: boolean;
-  /** sets whether to be able to type in to search from the options*/
+  /** props used for searchable Select */
   searchableProps?: SearchableProps;
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
@@ -92,18 +93,13 @@ export const Select = ({
   const handleClose = useCallback(() => {
     setPopoverActive(false);
     onClose?.();
-    console.log('handleClose');
   }, [onClose]);
 
   const handleFocus = () => {
     setPopoverActive(true);
   };
 
-  const handleBlur = () => {
-    if (popoverActive) {
-      handleClose();
-    }
-  };
+  const handleBlur = () => popoverActive && handleClose();
 
   const handleSelectClick = () => {
     setPopoverActive(!popoverActive);
@@ -172,7 +168,7 @@ export const Select = ({
           placeholder="Placeholder"
           onRemoveTag={onRemoveTag}
           width={width}
-          values={selectedValues}
+          selectedValues={selectedValues}
         />
       </ActivatorSelectContext.Provider>
     );

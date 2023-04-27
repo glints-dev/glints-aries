@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useLayoutEffect, useRef, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
@@ -26,8 +26,8 @@ export const SearchableSelectInput = forwardRef<
   SearchableSelectInputProps
 >(function SearchableSelectInput(
   {
-    canClear,
-    disabled,
+    canClear = false,
+    disabled = false,
     error,
     onSelect,
     placeholder,
@@ -98,14 +98,14 @@ export const SearchableSelectInput = forwardRef<
     setHasSuffix(true);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (hasPrefix) {
       const prefixWidth = prefixRef.current.getBoundingClientRect().width;
       setPrefixWidth(prefixWidth);
     }
   }, [hasPrefix, prefix]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (hasSuffix) {
       const suffixWidth = suffixRef.current.getBoundingClientRect().width;
       setSuffixWidth(suffixWidth);
@@ -147,7 +147,6 @@ export const SearchableSelectInput = forwardRef<
       {canClear && (
         <ClearSelected
           ref={suffixRef}
-          canClear={canClear}
           onSelect={onSelect}
           handleClearIconClick={handleClearIconClick}
           updateInputValue={updateInputValue}
