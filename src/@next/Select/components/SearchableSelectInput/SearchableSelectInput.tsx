@@ -25,7 +25,6 @@ export type SearchableSelectInputProps = Omit<
   filterOptions?: (str: string) => Option[];
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
-  hasSelectedValues?: boolean;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -36,13 +35,11 @@ export const SearchableSelectInput = forwardRef<
     disabled = false,
     error,
     filterOptions,
-    onFocus,
     onSelect,
     placeholder,
     prefix,
     selectedValue,
     width,
-    hasSelectedValues,
     ...props
   }: SearchableSelectInputProps,
   ref
@@ -56,6 +53,7 @@ export const SearchableSelectInput = forwardRef<
   const optionListContext = useOptionList();
   const {
     inputValue,
+    onFocus,
     updateInputValue,
     searchableSelectState: { showInput, showPlaceholder, showSelected },
     updateSearchableSelectState,
@@ -110,13 +108,14 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputBlur = () => {
-    setShowClear(true);
-    setHasSuffix(true);
     setIsInputFocused(false);
 
     if (selectedValue) {
       // allow onClick event handler in Menu before onBlur of input
       setTimeout(() => {
+        setShowClear(true);
+        setHasSuffix(true);
+
         updateSearchableSelectState({
           showSelected: true,
           showInput: false,
@@ -127,13 +126,13 @@ export const SearchableSelectInput = forwardRef<
   };
 
   useEffect(() => {
-    if (hasSelectedValues) {
+    if (selectedValue) {
       setShowClear(true);
       return;
     }
 
     setShowClear(false);
-  }, [hasSelectedValues]);
+  }, [selectedValue]);
 
   useLayoutEffect(() => {
     if (hasPrefix) {
