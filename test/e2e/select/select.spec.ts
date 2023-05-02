@@ -21,6 +21,7 @@ test('Select - non-searchable single select', async ({ page }) => {
   );
 
   await selectPage.options.nth(1).click();
+  await selectPage.activatorSelect.click();
   await expect(selectPage.canvas).toHaveScreenshot(
     'select-non-searchable-single-select-option-selected.png'
   );
