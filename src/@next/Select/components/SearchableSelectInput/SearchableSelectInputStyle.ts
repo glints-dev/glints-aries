@@ -68,6 +68,10 @@ export const StyledSelectedValue = styled.div`
 
   color: ${Neutral.B18};
 
+  &[data-input-focus='true'] {
+    color: ${Neutral.B40};
+  }
+
   @media (max-width: ${Breakpoints.large}) {
     font-size: 14px;
   }

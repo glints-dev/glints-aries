@@ -47,6 +47,7 @@ export const SearchableSelectInput = forwardRef<
   }: SearchableSelectInputProps,
   ref
 ) {
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const [showClear, setShowClear] = useState(false);
   const [hasSuffix, setHasSuffix] = useState(false);
   const [prefixWidth, setPrefixWidth] = React.useState(0);
@@ -68,6 +69,7 @@ export const SearchableSelectInput = forwardRef<
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     setShowClear(false);
+    setIsInputFocused(true);
 
     onFocus(e);
   };
@@ -110,6 +112,7 @@ export const SearchableSelectInput = forwardRef<
   const handleInputBlur = () => {
     setShowClear(true);
     setHasSuffix(true);
+    setIsInputFocused(false);
 
     if (selectedValue) {
       // allow onClick event handler in Menu before onBlur of input
@@ -164,6 +167,7 @@ export const SearchableSelectInput = forwardRef<
         <StyledSelectedValue
           className="searchable-select"
           onClick={handleSelectedClick}
+          data-input-focus={isInputFocused}
         >
           {selectedValue}
         </StyledSelectedValue>
