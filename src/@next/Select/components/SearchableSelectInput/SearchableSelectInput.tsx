@@ -1,4 +1,10 @@
-import React, { forwardRef, useLayoutEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
@@ -19,6 +25,7 @@ export type SearchableSelectInputProps = Omit<
   filterOptions?: (str: string) => Option[];
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
+  hasSelectedValues?: boolean;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -26,19 +33,21 @@ export const SearchableSelectInput = forwardRef<
   SearchableSelectInputProps
 >(function SearchableSelectInput(
   {
-    canClear = false,
     disabled = false,
     error,
     filterOptions,
+    onFocus,
     onSelect,
     placeholder,
     prefix,
     selectedValue,
     width,
+    hasSelectedValues,
     ...props
   }: SearchableSelectInputProps,
   ref
 ) {
+  const [showClear, setShowClear] = useState(false);
   const [hasSuffix, setHasSuffix] = useState(false);
   const [prefixWidth, setPrefixWidth] = React.useState(0);
   const [suffixWidth, setSuffixWidth] = useState(0);
@@ -57,8 +66,14 @@ export const SearchableSelectInput = forwardRef<
   const prefixRef = useRef(null);
   const suffixRef = useRef(null);
 
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    setShowClear(false);
+
+    onFocus(e);
+  };
+
   const handleClearIconClick = () => {
-    setHasSuffix(false);
+    setShowClear(false);
     updateSearchableSelectState({
       showSelected: false,
       showPlaceholder: true,
@@ -93,6 +108,9 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputBlur = () => {
+    setShowClear(true);
+    setHasSuffix(true);
+
     if (selectedValue) {
       // allow onClick event handler in Menu before onBlur of input
       setTimeout(() => {
@@ -104,6 +122,15 @@ export const SearchableSelectInput = forwardRef<
       }, 100);
     }
   };
+
+  useEffect(() => {
+    if (hasSelectedValues) {
+      setShowClear(true);
+      return;
+    }
+
+    setShowClear(false);
+  }, [hasSelectedValues]);
 
   useLayoutEffect(() => {
     if (hasPrefix) {
@@ -148,11 +175,12 @@ export const SearchableSelectInput = forwardRef<
             placeholder={showPlaceholder ? placeholder : null}
             value={inputValue}
             onBlur={handleInputBlur}
+            onFocus={handleFocus}
             {...props}
           />
         </InputContainer>
       )}
-      {canClear && (
+      {showClear && (
         <ClearSelected
           ref={suffixRef}
           onSelect={onSelect}

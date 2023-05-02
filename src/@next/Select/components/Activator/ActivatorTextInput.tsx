@@ -85,7 +85,7 @@ export const ActivatorTextInput = ({
           error={hasError}
           disabled={disabled}
           selectedValue={hasSelectedValues ? selectedValues[0] : null}
-          canClear={!allowMultiple && hasSelectedValues}
+          hasSelectedValues={hasSelectedValues}
           width={width}
         />
       )}
