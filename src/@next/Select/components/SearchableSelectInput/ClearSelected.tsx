@@ -20,15 +20,13 @@ export const ClearSelected = forwardRef<HTMLDivElement, ClearSelectedProps>(
     };
 
     return (
-      <>
-        <ClearSelectedContainer ref={ref}>
-          <Icon
-            name="ri-close-circle-fill"
-            style={{ cursor: 'pointer' }}
-            onClick={onClearIconClick}
-          />
-        </ClearSelectedContainer>
-      </>
+      <ClearSelectedContainer ref={ref} className="clear-button">
+        <Icon
+          name="ri-close-circle-fill"
+          style={{ cursor: 'pointer' }}
+          onClick={onClearIconClick}
+        />
+      </ClearSelectedContainer>
     );
   }
 );
