@@ -45,10 +45,29 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    setDragStartX(event.clientX);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    const element = tabsHeaderRef.current;
+    const dx = event.clientX - dragStartX;
+    element.scrollLeft = scrollLeft - dx;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   useEffect(() => {
-    const el = tabsHeaderRef.current;
-    const isElOverFlowX = el?.scrollWidth > el?.clientWidth;
+    const element = tabsHeaderRef.current;
+    const isElOverFlowX = element?.scrollWidth > element?.clientWidth;
     setCanScrollRight(isElOverFlowX);
   }, []);
 
@@ -66,6 +85,8 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     setCanScrollRight(
       element.scrollLeft < element.scrollWidth - element.clientWidth
     );
+
+    setScrollLeft(element.scrollLeft);
   };
 
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -103,6 +124,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         ref={tabsHeaderRef}
         onScroll={handleScroll}
         onWheel={handleWheel}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
         data-scroll-left={canScrollLeft}
         data-scroll-right={canScrollRight}
         data-scroll-both={canScrollLeft && canScrollRight}
