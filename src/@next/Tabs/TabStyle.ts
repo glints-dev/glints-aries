@@ -13,6 +13,7 @@ export const StyledTabHeaderContainer = styled.div`
   white-space: nowrap;
   background: transparent;
   position: relative;
+  margin: ${space16} 0;
 
   ::-webkit-scrollbar {
     display: none;
@@ -38,6 +39,7 @@ export const StyledUl = styled.ul`
   align-items: flex-start;
   padding: 0;
   gap: ${space8};
+  margin: 0;
 
   &[data-fitted='true'] li {
     flex: 1;
