@@ -68,6 +68,15 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     );
   };
 
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const element = tabsHeaderRef.current;
+    element.scrollTo({
+      left: element.scrollLeft + e.deltaY * 1,
+      behavior: 'smooth',
+    });
+    e.preventDefault();
+  };
+
   const handleSelectedIndexChanged = (index: number) => {
     setSelectedTabIndex(index);
     onSelected?.(index);
@@ -93,6 +102,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
       <StyledTabHeaderContainer
         ref={tabsHeaderRef}
         onScroll={handleScroll}
+        onWheel={handleWheel}
         data-scroll-left={canScrollLeft}
         data-scroll-right={canScrollRight}
         data-scroll-both={canScrollLeft && canScrollRight}
