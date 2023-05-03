@@ -1,5 +1,5 @@
 import nextId from 'react-id-generator';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Tab } from './Tab';
 import {
   StyledLi,
@@ -39,9 +39,18 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   }: TabsProps,
   ref
 ) {
+  const tabsHeaderRef = useRef(null);
   const tabLength = tabs.length;
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  useEffect(() => {
+    const el = tabsHeaderRef.current;
+    const isElOverFlowX = el?.scrollWidth > el?.clientWidth;
+    setCanScrollRight(isElOverFlowX);
+  }, []);
 
   useEffect(() => {
     if (selectedIndex < 0 || selectedIndex >= tabLength) {
@@ -50,6 +59,14 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
 
     setSelectedTabIndex(selectedIndex);
   }, [selectedIndex, tabLength]);
+
+  const handleScroll = () => {
+    const element = tabsHeaderRef.current;
+    setCanScrollLeft(element?.scrollLeft > 0);
+    setCanScrollRight(
+      element.scrollLeft < element.scrollWidth - element.clientWidth
+    );
+  };
 
   const handleSelectedIndexChanged = (index: number) => {
     setSelectedTabIndex(index);
@@ -73,7 +90,13 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
 
   return (
     <StyledTabsContainer ref={ref}>
-      <StyledTabHeaderContainer>
+      <StyledTabHeaderContainer
+        ref={tabsHeaderRef}
+        onScroll={handleScroll}
+        data-scroll-left={canScrollLeft}
+        data-scroll-right={canScrollRight}
+        data-scroll-both={canScrollLeft && canScrollRight}
+      >
         <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
       </StyledTabHeaderContainer>
       <div>{children}</div>
