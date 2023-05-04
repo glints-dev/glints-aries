@@ -20,7 +20,7 @@ export type ButtonAction = {
 export interface EmptyStateProps {
   basicButtonAction?: ButtonAction;
   primaryButtonAction?: ButtonAction;
-  description?: string;
+  description?: React.ReactNode;
   fullWidth?: boolean;
   helpText?: string;
   imageName?: ImageName;
