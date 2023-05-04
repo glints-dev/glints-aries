@@ -45,6 +45,7 @@ export const StyledTitle = styled(Typography)`
 export const StyledDescription = styled(Typography)`
   text-align: center;
   margin: 0 0 ${space24};
+  white-space: pre-wrap;
 `;
 
 export const StyledHelpText = styled(Typography)`
