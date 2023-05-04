@@ -11,6 +11,11 @@ export class EmptyStatePage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoWithPrimaryButtonOnlyPage(args?: Args) {
+    this.setPath('?path=/story/next-emptystate--with-primary-button-only');
+    await this.goto(args);
+  }
+
   async gotoWithBasicButtonOnlyPage(args?: Args) {
     this.setPath('?path=/story/next-emptystate--with-basic-button-only');
     await this.goto(args);

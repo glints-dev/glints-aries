@@ -32,9 +32,7 @@ test('EmptyState - least information', async ({ page }) => {
 
 test('EmptyState - with primary button only', async ({ page }) => {
   const emptyStatePage = new EmptyStatePage(page);
-  await emptyStatePage.gotoWithLeastInfoPage(
-    'args=description:Lorem%20ipsum%20dolor%20sit%20amet'
-  );
+  await emptyStatePage.gotoWithPrimaryButtonOnlyPage();
 
   await expect(emptyStatePage.container).toHaveScreenshot(
     'emptyState-with-primary-button.png'

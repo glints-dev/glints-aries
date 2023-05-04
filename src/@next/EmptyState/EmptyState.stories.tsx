@@ -42,6 +42,17 @@ WithLeastInfo.args = {
   primaryButtonAction,
 };
 
+const WithPrimaryButtonOnlyTemplate: Story<EmptyStateProps> = args => {
+  return <EmptyState {...args} />;
+};
+
+export const WithPrimaryButtonOnly = WithPrimaryButtonOnlyTemplate.bind({});
+WithPrimaryButtonOnly.args = {
+  title: 'Title',
+  description: 'Lorem ipsum dolor sit amet',
+  primaryButtonAction,
+};
+
 const WithBasicButtonOnlyTemplate: Story<EmptyStateProps> = args => {
   return <EmptyState {...args} />;
 };
