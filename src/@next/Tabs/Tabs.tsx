@@ -49,22 +49,6 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   const [dragStartX, setDragStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    setDragStartX(event.clientX);
-  };
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-    const element = tabsHeaderRef.current;
-    const dx = event.clientX - dragStartX;
-    element.scrollLeft = scrollLeft - dx;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
   useEffect(() => {
     const element = tabsHeaderRef.current;
     const isElOverFlowX = element?.scrollWidth > element?.clientWidth;
@@ -79,23 +63,43 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     setSelectedTabIndex(selectedIndex);
   }, [selectedIndex, tabLength]);
 
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    const startX = event.clientX - tabsHeaderRef.current.offsetLeft;
+    setDragStartX(startX);
+    setScrollLeft(tabsHeaderRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    const x = event.clientX - tabsHeaderRef.current.offsetLeft;
+    const scrollMultiplier = (x - dragStartX) * 3;
+    tabsHeaderRef.current.scrollLeft = scrollLeft - scrollMultiplier;
+  };
+
   const handleScroll = () => {
     const element = tabsHeaderRef.current;
     setCanScrollLeft(element?.scrollLeft > 0);
     setCanScrollRight(
       element.scrollLeft < element.scrollWidth - element.clientWidth
     );
-
-    setScrollLeft(element.scrollLeft);
   };
 
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     const element = tabsHeaderRef.current;
     element.scrollTo({
-      left: element.scrollLeft + e.deltaY * 1,
+      left: element.scrollLeft + event.deltaY * 1,
       behavior: 'smooth',
     });
-    e.preventDefault();
   };
 
   const handleSelectedIndexChanged = (index: number) => {
@@ -127,9 +131,10 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
         data-scroll-left={canScrollLeft}
         data-scroll-right={canScrollRight}
-        data-scroll-both={canScrollLeft && canScrollRight}
+        data-grabbing={isDragging}
       >
         <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
       </StyledTabHeaderContainer>

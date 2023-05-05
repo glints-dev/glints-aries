@@ -27,9 +27,13 @@ export const StyledTabHeaderContainer = styled.div`
     box-shadow: -30px 0px 50px -50px #474747 inset;
   }
 
-  &[data-scroll-both='true'] {
+  &[data-scroll-left='true'][data-scroll-right='true'] {
     box-shadow: 30px 0 50px -50px #474747 inset,
       -30px 0px 50px -50px #474747 inset;
+  }
+
+  &[data-grabbing='true'] {
+    cursor: grabbing;
   }
 `;
 

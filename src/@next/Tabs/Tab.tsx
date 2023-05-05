@@ -12,7 +12,8 @@ export type TabProps = {
 export const Tab = ({ content, id, selected, onSelect }: TabProps) => {
   const tabRef = useRef(null);
 
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     tabRef.current.scrollIntoView({ behavior: 'smooth' });
     onSelect();
   };
