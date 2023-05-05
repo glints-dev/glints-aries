@@ -57,7 +57,7 @@ test('Button - icons', async ({ page }) => {
 
 test('Button - with floating Badge', async ({ page }) => {
   const buttonPage = new ButtonPage(page);
-  await buttonPage.gotoWithBadgePage();
+  await buttonPage.gotoWithFloatingBadgePage();
 
   await expect(buttonPage.container).toHaveScreenshot(
     'button-with-floating-badge.png'

@@ -11,8 +11,8 @@ export class ButtonPage extends StoryBookPage {
       .getByRole('button', { name: 'Label' });
   }
 
-  async gotoWithBadgePage(args?: Args) {
-    this.setPath('?path=/story/next-button--with-badge');
+  async gotoWithFloatingBadgePage(args?: Args) {
+    this.setPath('?path=/story/next-button--with-floating-badge');
     await this.goto(args);
   }
 }

@@ -51,7 +51,7 @@ WithIcon.args = {
   disabled: false,
 };
 
-const WithBadgeTemplate: Story<ButtonProps> = args => (
+const WithFloatingBadgeTemplate: Story<ButtonProps> = args => (
   <div style={{ display: 'flex', gap: '10px' }}>
     <div style={{ position: 'relative', marginRight: space12 }}>
       <Button {...args} type="button">
@@ -72,8 +72,8 @@ const WithBadgeTemplate: Story<ButtonProps> = args => (
   </div>
 );
 
-export const WithBadge = WithBadgeTemplate.bind({});
-WithBadge.args = {
+export const WithFloatingBadge = WithFloatingBadgeTemplate.bind({});
+WithFloatingBadge.args = {
   size: 'default',
   icon: <Icon name="ri-message-line" />,
   iconPosition: 'left',
