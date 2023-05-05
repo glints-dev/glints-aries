@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
+
 import { Neutral } from '../utilities/colors';
 import { Badge, BadgeProps } from './Badge';
 

@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { Args, StoryBookPage } from '../storybookPage';
+import { StoryBookPage } from '../storybookPage';
 
 export class ButtonPage extends StoryBookPage {
   readonly button: Locator;
@@ -9,10 +9,5 @@ export class ButtonPage extends StoryBookPage {
     this.button = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('button', { name: 'Label' });
-  }
-
-  async gotoWithFloatingBadgePage(args?: Args) {
-    this.setPath('?path=/story/next-button--with-floating-badge');
-    await this.goto(args);
   }
 }

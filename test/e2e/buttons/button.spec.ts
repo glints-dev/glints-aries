@@ -54,12 +54,3 @@ test('Button - icons', async ({ page }) => {
     'button-with-icons-right.png'
   );
 });
-
-test('Button - with floating Badge', async ({ page }) => {
-  const buttonPage = new ButtonPage(page);
-  await buttonPage.gotoWithFloatingBadgePage();
-
-  await expect(buttonPage.container).toHaveScreenshot(
-    'button-with-floating-badge.png'
-  );
-});

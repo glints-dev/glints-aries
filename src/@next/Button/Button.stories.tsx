@@ -5,8 +5,6 @@ import { Button, ButtonProps } from './Button';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Icon } from '../Icon';
 import { PrimaryButton } from './PrimaryButtonStyle';
-import { StyledBadge } from './ButtonStoriesSyle';
-import { space12 } from '../utilities/spacing';
 
 (Button as React.FunctionComponent<ButtonProps>).displayName = 'Button';
 
@@ -47,35 +45,6 @@ export const WithIcon = WithIconsTemplate.bind({});
 WithIcon.args = {
   size: 'default',
   icon: <Icon name="ri-arrow-up-down-fill" />,
-  iconPosition: 'left',
-  disabled: false,
-};
-
-const WithFloatingBadgeTemplate: Story<ButtonProps> = args => (
-  <div style={{ display: 'flex', gap: '10px' }}>
-    <div style={{ position: 'relative', marginRight: space12 }}>
-      <Button {...args} type="button">
-        Chat
-      </Button>
-      <StyledBadge hasBorder status="attention">
-        10
-      </StyledBadge>
-    </div>
-    <div style={{ position: 'relative', marginRight: space12 }}>
-      <PrimaryButton {...args} type="button">
-        Chat
-      </PrimaryButton>
-      <StyledBadge hasBorder status="attention">
-        1
-      </StyledBadge>
-    </div>
-  </div>
-);
-
-export const WithFloatingBadge = WithFloatingBadgeTemplate.bind({});
-WithFloatingBadge.args = {
-  size: 'default',
-  icon: <Icon name="ri-message-line" />,
   iconPosition: 'left',
   disabled: false,
 };
