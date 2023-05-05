@@ -1,22 +1,23 @@
 import React from 'react';
 import { Typography } from '../Typography';
-import { Neutral } from '../utilities/colors';
-import { BadgeStyle } from './BadgeStyle';
+import { BadgeStyle, badgeTextColor } from './BadgeStyle';
 
 const badgeStatusVariant = [
   'neutral',
   'success',
-  'informational',
+  'information',
   'warning',
   'critical',
   'promotion',
-  'new',
+  'enticing',
+  'attention',
 ] as const;
 
 export type BadgeStatusVariant = typeof badgeStatusVariant[number];
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+  hasBorder?: boolean;
   status?: BadgeStatusVariant;
   textColor?: string;
 }
@@ -29,14 +30,14 @@ const renderTextColor = (
     return textColor;
   }
 
-  if (status === 'new') {
-    return Neutral.B100;
-  }
-
-  return Neutral.B18;
+  return badgeTextColor[status];
 };
+
 export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
-  function Badge({ children, status, textColor, ...props }: BadgeProps, ref) {
+  function Badge(
+    { children, hasBorder, status, textColor, ...props }: BadgeProps,
+    ref
+  ) {
     const content =
       typeof children === 'string' || typeof children === 'number' ? (
         <Typography
@@ -50,7 +51,12 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         children
       );
     return (
-      <BadgeStyle ref={ref} status={status ? status : 'neutral'} {...props}>
+      <BadgeStyle
+        ref={ref}
+        status={status ? status : 'neutral'}
+        data-border={hasBorder}
+        {...props}
+      >
         <div>{content}</div>
       </BadgeStyle>
     );

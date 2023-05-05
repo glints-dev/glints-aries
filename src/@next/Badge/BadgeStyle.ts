@@ -9,11 +9,25 @@ const badgeBackgroundColor: {
 } = {
   ['neutral']: Neutral.B95,
   ['success']: Green.B89,
-  ['informational']: Blue.S08,
+  ['information']: Blue.S08,
   ['warning']: Orange.S42,
   ['critical']: Red.B100,
   ['promotion']: Yellow.S75,
-  ['new']: Orange.S87,
+  ['enticing']: Orange.S87,
+  ['attention']: Red.B93,
+};
+
+export const badgeTextColor: {
+  [variant in BadgeStatusVariant]: string;
+} = {
+  ['neutral']: Neutral.B18,
+  ['success']: Neutral.B18,
+  ['information']: Neutral.B18,
+  ['warning']: Neutral.B18,
+  ['critical']: Neutral.B18,
+  ['promotion']: Neutral.B18,
+  ['enticing']: Neutral.B100,
+  ['attention']: Neutral.B100,
 };
 
 const getBadgeBackgroundColor = (status: BadgeStatusVariant) => {
@@ -33,4 +47,8 @@ export const BadgeStyle = styled.div<BadgeProps>`
   padding: 2px ${space8};
   border-radius: ${borderRadius20};
   line-height: 0;
+
+  &[data-border='true'] {
+    border: 1px solid ${Neutral.B100};
+  }
 `;
