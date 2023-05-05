@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { StoryBookPage } from '../storybookPage';
+import { Args, StoryBookPage } from '../storybookPage';
 
 export class TabsPage extends StoryBookPage {
   readonly tabHeaders: Locator;
@@ -9,5 +9,10 @@ export class TabsPage extends StoryBookPage {
     this.tabHeaders = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('button');
+  }
+
+  async gotoOverflowTabsPage(args?: Args) {
+    this.setPath('?path=/story/next-tabs--overflow');
+    await this.goto(args);
   }
 }

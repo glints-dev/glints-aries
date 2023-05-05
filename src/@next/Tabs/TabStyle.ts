@@ -9,6 +9,32 @@ export const StyledTabsContainer = styled.div`
 
 export const StyledTabHeaderContainer = styled.div`
   box-shadow: inset 0px -1px 0px #e1e3e5;
+  overflow-x: auto;
+  white-space: nowrap;
+  background: transparent;
+  position: relative;
+  margin: ${space16} 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  &[data-scroll-left='true'] {
+    box-shadow: 30px 0 50px -50px #474747 inset;
+  }
+
+  &[data-scroll-right='true'] {
+    box-shadow: -30px 0px 50px -50px #474747 inset;
+  }
+
+  &[data-scroll-left='true'][data-scroll-right='true'] {
+    box-shadow: 30px 0 50px -50px #474747 inset,
+      -30px 0px 50px -50px #474747 inset;
+  }
+
+  &[data-grabbing='true'] {
+    cursor: grabbing;
+  }
 `;
 
 export const StyledUl = styled.ul`
@@ -17,6 +43,7 @@ export const StyledUl = styled.ul`
   align-items: flex-start;
   padding: 0;
   gap: ${space8};
+  margin: 0;
 
   &[data-fitted='true'] li {
     flex: 1;
@@ -63,7 +90,7 @@ export const StyledSpan = styled.span`
 
 export const StyledTabButton = styled.button`
   border: 0;
-  background: ${Neutral.B100};
+  background: transparent;
   height: 56px;
   cursor: pointer;
   color: ${Neutral.B40};

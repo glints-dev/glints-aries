@@ -19,3 +19,19 @@ test('Tabs - fitted', async ({ page }) => {
 
   await expect(tabsPage.container).toHaveScreenshot('tabs-fitted.png');
 });
+
+test('Tabs - overflow', async ({ page }) => {
+  const tabsPage = new TabsPage(page);
+  await tabsPage.gotoOverflowTabsPage();
+
+  await expect(tabsPage.container).toHaveScreenshot('tabs-overflow.png');
+
+  await tabsPage.tabHeaders.nth(10).scrollIntoViewIfNeeded();
+  await expect(tabsPage.container).toHaveScreenshot('tabs-scroll-center.png');
+
+  await tabsPage.tabHeaders.last().scrollIntoViewIfNeeded();
+  await expect(tabsPage.container).toHaveScreenshot('tabs-scroll-end.png');
+
+  await tabsPage.tabHeaders.first().scrollIntoViewIfNeeded();
+  await expect(tabsPage.container).toHaveScreenshot('tabs-scroll-start.png');
+});
