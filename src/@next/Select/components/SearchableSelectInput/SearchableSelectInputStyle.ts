@@ -23,6 +23,10 @@ export const StyledContainer = styled(StyledInputContainer)`
     width: ${props => props.width};
   }
 
+  &:has(> div > input:focus) > .searchable-select {
+    color: ${Neutral.B40};
+  }
+
   &[data-prefix='true'] .searchable-select,
   input {
     padding-left: ${props => props.prefixWidth}px;
@@ -67,10 +71,6 @@ export const StyledSelectedValue = styled.div`
   line-height: 150%;
 
   color: ${Neutral.B18};
-
-  &[data-input-focus='true'] {
-    color: ${Neutral.B40};
-  }
 
   @media (max-width: ${Breakpoints.large}) {
     font-size: 14px;
