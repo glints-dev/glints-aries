@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
@@ -45,9 +39,6 @@ export const SearchableSelectInput = forwardRef<
   ref
 ) {
   const [showClear, setShowClear] = useState(false);
-  const [hasSuffix, setHasSuffix] = useState(false);
-  const [prefixWidth, setPrefixWidth] = React.useState(0);
-  const [suffixWidth, setSuffixWidth] = useState(0);
   const activatorContext = useActivatorTextInput();
   const optionListContext = useOptionList();
   const {
@@ -59,9 +50,6 @@ export const SearchableSelectInput = forwardRef<
   } = activatorContext;
   const { options, updateMenuOptions } = optionListContext;
 
-  const hasPrefix = !!prefix;
-
-  const prefixRef = useRef(null);
   const suffixRef = useRef(null);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
@@ -102,7 +90,6 @@ export const SearchableSelectInput = forwardRef<
 
     updateInputValue('');
     updateMenuOptions(options);
-    setHasSuffix(true);
   };
 
   const handleInputBlur = () => {
@@ -110,7 +97,6 @@ export const SearchableSelectInput = forwardRef<
       // allow onClick event handler in Menu before onBlur of input
       setTimeout(() => {
         setShowClear(true);
-        setHasSuffix(true);
 
         updateSearchableSelectState({
           showSelected: true,
@@ -130,34 +116,16 @@ export const SearchableSelectInput = forwardRef<
     setShowClear(false);
   }, [selectedValue]);
 
-  useLayoutEffect(() => {
-    if (hasPrefix) {
-      const prefixWidth = prefixRef.current.getBoundingClientRect().width;
-      setPrefixWidth(prefixWidth);
-    }
-  }, [hasPrefix, prefix]);
-
-  useLayoutEffect(() => {
-    if (hasSuffix) {
-      const suffixWidth = suffixRef.current.getBoundingClientRect().width;
-      setSuffixWidth(suffixWidth);
-    }
-  }, [hasSuffix]);
-
   return (
     <StyledContainer
       ref={ref}
-      data-prefix={hasPrefix}
-      data-suffix={hasSuffix}
       data-error={error}
       data-disabled={disabled}
-      prefixWidth={prefixWidth}
-      suffixWidth={suffixWidth}
+      prefixWidth={37}
+      suffixWidth={33}
       width={width}
     >
-      {hasPrefix && (
-        <StyledPrefixContainer ref={prefixRef}>{prefix}</StyledPrefixContainer>
-      )}
+      <StyledPrefixContainer>{prefix}</StyledPrefixContainer>
       {showSelected && (
         <StyledSelectedValue
           className="searchable-select"

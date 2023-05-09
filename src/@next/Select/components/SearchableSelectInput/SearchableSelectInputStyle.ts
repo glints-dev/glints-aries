@@ -27,13 +27,9 @@ export const StyledContainer = styled(StyledInputContainer)`
     color: ${Neutral.B40};
   }
 
-  &[data-prefix='true'] .searchable-select,
+  .searchable-select,
   input {
     padding-left: ${props => props.prefixWidth}px;
-  }
-
-  &[data-suffix='true'] .searchable-select,
-  input {
     padding-right: ${props => props.suffixWidth}px;
   }
 

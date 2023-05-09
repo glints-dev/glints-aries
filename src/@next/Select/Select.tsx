@@ -37,7 +37,7 @@ export interface SelectProps {
   /** sets whether Select is searchable */
   searchable?: boolean;
   /** props used for searchable Select */
-  searchableProps?: SearchableProps;
+  searchableProps?: SearchableProps; // TODO: remove
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
   sections?: Section[];
@@ -78,12 +78,9 @@ export const Select = ({
       showPlaceholder: true,
     });
 
-  const updateSearchableSelectState = useCallback(
-    (newState: SearchableSelectState) => {
-      setSearchableSelectState(newState);
-    },
-    [setSearchableSelectState]
-  );
+  const updateSearchableSelectState = (newState: SearchableSelectState) => {
+    setSearchableSelectState(newState);
+  };
 
   const updateInputValue = useCallback(
     (newValue: string) => {
