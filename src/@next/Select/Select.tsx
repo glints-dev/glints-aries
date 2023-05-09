@@ -5,7 +5,6 @@ import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { ActivatorTextInput, OptionList } from './components';
 import {
-  ActivatorSelectContext,
   ActivatorTextInputContext,
   SearchableSelectState,
 } from './components/Activator/ActivatorContext';
@@ -117,13 +116,6 @@ export const Select = ({
     setPopoverActive(!popoverActive);
   };
 
-  const activatorSelectContextValue = {
-    allowMultiple,
-    disabled,
-    hasError,
-    onSelectClick: handleSelectClick,
-  };
-
   const activatorTextInputContextValue = {
     disabled,
     hasError,
@@ -175,15 +167,16 @@ export const Select = ({
     }
 
     return (
-      <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
-        <ActivatorSelect
-          disabled={disabled}
-          placeholder="Placeholder"
-          onRemoveTag={onRemoveTag}
-          width={width}
-          selectedValues={selectedValues}
-        />
-      </ActivatorSelectContext.Provider>
+      <ActivatorSelect
+        allowMultiple={allowMultiple}
+        disabled={disabled}
+        hasError={hasError}
+        placeholder="Placeholder"
+        onRemoveTag={onRemoveTag}
+        onSelectClick={handleSelectClick}
+        width={width}
+        selectedValues={selectedValues}
+      />
     );
   };
 

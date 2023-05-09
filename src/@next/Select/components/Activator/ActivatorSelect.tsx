@@ -3,14 +3,16 @@ import { Icon } from '../../../Icon';
 
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
-import { useActivatorSelect } from './ActivatorContext';
 import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  allowMultiple?: boolean;
+  hasError?: boolean;
   selectedValues?: string[];
   placeholder?: string;
   onRemoveTag?({ option }: { option: string }): void;
+  onSelectClick?(): void;
   width?: string;
 }
 export const ActivatorSelect = ({
@@ -19,13 +21,15 @@ export const ActivatorSelect = ({
   onClick,
   onRemoveTag,
   width,
+  allowMultiple = false,
+  disabled,
+  onSelectClick,
+  hasError = false,
   ...props
 }: ActivatorSelectProps) => {
   const activatorRef = useRef(null);
   const filteredValues = selectedValues?.filter(value => value != '');
   const hasValue = filteredValues.length > 0;
-  const activatorContext = useActivatorSelect();
-  const { allowMultiple, disabled, onSelectClick, hasError } = activatorContext;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
