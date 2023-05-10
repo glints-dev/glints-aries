@@ -44,7 +44,7 @@ export const StyledAlertContainer = styled.div`
   }
 
   &[data-status='warning'] {
-    background: ${Orange.S42};
+    background: ${Orange.S21};
   }
   &[data-status='warning'] svg {
     fill: ${Orange.S86};

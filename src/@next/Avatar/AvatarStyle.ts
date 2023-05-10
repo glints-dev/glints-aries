@@ -31,7 +31,7 @@ const avatarBackgroundColor: {
   [variant in AvatarBackgroundColorVariant]: string;
 } = {
   ['supplementary']: Neutral.B99,
-  ['warning']: Orange.S42,
+  ['warning']: Orange.S21,
   ['danger']: Red.B100,
   ['success']: Green.B89,
   ['outstanding']: Blue.S08,
