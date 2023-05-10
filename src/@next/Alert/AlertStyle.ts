@@ -40,7 +40,7 @@ export const StyledAlertContainer = styled.div`
     background: ${Blue.S08};
   }
   &[data-status='info'] svg {
-    fill: ${Blue.Brand};
+    fill: ${Blue.S99};
   }
 
   &[data-status='warning'] {
