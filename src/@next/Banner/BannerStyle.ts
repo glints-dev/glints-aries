@@ -57,7 +57,7 @@ export const StyledBanner = styled.div`
   }
 
   &[data-status='warning'] {
-    background: ${Orange.S42};
+    background: ${Orange.S21};
     border: 1px solid ${Orange.S86};
   }
   &[data-status='warning'] svg {
