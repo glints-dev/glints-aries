@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
-import { useActivatorTextInput } from '../Activator/ActivatorContext';
+// import { useActivatorTextInput } from '../Activator/ActivatorContext';
 import { useOptionList } from '../OptionList/OptionListContext';
 import { ClearSelected } from './ClearSelected';
 import {
@@ -10,6 +10,12 @@ import {
   StyledContainer,
   StyledSelectedValue,
 } from './SearchableSelectInputStyle';
+
+export interface SearchableSelectState {
+  showSelected: boolean;
+  showInput: boolean;
+  showPlaceholder: boolean;
+}
 
 export type SearchableSelectInputProps = Omit<
   InputProps,
@@ -19,6 +25,10 @@ export type SearchableSelectInputProps = Omit<
   filterOptions?: (str: string) => Option[];
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
+  inputValue?: string;
+  updateInputValue?: (newValue: string) => void;
+  searchableSelectState?: SearchableSelectState;
+  updateSearchableSelectState?: (newState: SearchableSelectState) => void;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -34,20 +44,22 @@ export const SearchableSelectInput = forwardRef<
     prefix,
     selectedValue,
     width,
+    inputValue,
+    updateInputValue,
+    onFocus,
+    searchableSelectState: { showInput, showPlaceholder, showSelected },
+    updateSearchableSelectState,
     ...props
   }: SearchableSelectInputProps,
   ref
 ) {
   const [showClear, setShowClear] = useState(false);
-  const activatorContext = useActivatorTextInput();
+  // const activatorContext = useActivatorTextInput();
   const optionListContext = useOptionList();
-  const {
-    inputValue,
-    onFocus,
-    updateInputValue,
-    searchableSelectState: { showInput, showPlaceholder, showSelected },
-    updateSearchableSelectState,
-  } = activatorContext;
+  // const {
+  //   searchableSelectState: { showInput, showPlaceholder, showSelected },
+  //   updateSearchableSelectState,
+  // } = activatorContext;
   const { options, updateMenuOptions } = optionListContext;
 
   const suffixRef = useRef(null);

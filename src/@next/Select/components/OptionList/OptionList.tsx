@@ -1,9 +1,8 @@
-import React from 'react';
-import { Menu, MenuProps } from '../../../Menu';
+import React, { useEffect, useState } from 'react';
+import { Menu, MenuProps, Option } from '../../../Menu';
 import { Typography } from '../../../Typography';
 import { Neutral } from '../../../utilities/colors';
-import { useActivatorTextInput } from '../Activator/ActivatorContext';
-import { useOptionList } from './OptionListContext';
+import { SearchableSelectState } from '../SearchableSelectInput/SearchableSelectInput';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
@@ -12,6 +11,10 @@ export interface OptionListProps extends MenuProps {
   onMenuClose?: () => void;
   onSelect?({ value }: { value: string }): void;
   width?: string;
+  updateSearchableSelectState?: (newState: SearchableSelectState) => void;
+  options?: Option[];
+  menuOptions?: Option[];
+  updateMenuOptions?: (newState: Option[]) => void;
 }
 
 export interface NoOptionListProps {
@@ -38,25 +41,28 @@ export const OptionList = ({
   sections,
   selectedValues,
   title,
+  updateSearchableSelectState,
   width,
+  options,
+  menuOptions,
+  updateMenuOptions,
 }: OptionListProps) => {
-  const activatorContext = useActivatorTextInput();
-  const optionListContext = useOptionList();
-  const { updateSearchableSelectState } = activatorContext;
-  const { menuOptions, options, updateMenuOptions } = optionListContext;
-  const hasMenuOptions = menuOptions?.length > 0;
+  const [hasMenuOptions, setHasMenuOptions] = useState(false);
+
+  useEffect(() => {
+    setHasMenuOptions(menuOptions?.length > 0);
+  }, [menuOptions]);
 
   const onOptionSelect = ({ value }: { value: string }) => {
     if (onSelect) {
+      onSelect({ value });
+      if (allowMultiple) return;
+
       updateSearchableSelectState({
         showSelected: true,
         showInput: false,
         showPlaceholder: false,
       });
-      onSelect({ value });
-
-      if (allowMultiple) return;
-
       onMenuClose();
       updateMenuOptions(options);
     }

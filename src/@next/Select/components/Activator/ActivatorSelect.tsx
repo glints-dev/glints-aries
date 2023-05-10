@@ -17,7 +17,7 @@ export interface ActivatorSelectProps
 }
 export const ActivatorSelect = ({
   placeholder,
-  selectedValues, //rename to selectedValues
+  selectedValues,
   onClick,
   onRemoveTag,
   width,
