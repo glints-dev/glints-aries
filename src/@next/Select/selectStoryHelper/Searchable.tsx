@@ -18,7 +18,6 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
   };
 
   const handleSelect = ({ value }: { value: string }) => {
-    console.log('handleSelect');
     if (!selectedOptions.includes(value)) {
       setSelectedOptions([...selectedOptions, value]);
       return;

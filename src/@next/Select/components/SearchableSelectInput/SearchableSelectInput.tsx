@@ -1,9 +1,7 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
-// import { useActivatorTextInput } from '../Activator/ActivatorContext';
-import { useOptionList } from '../OptionList/OptionListContext';
 import { ClearSelected } from './ClearSelected';
 import {
   InputContainer,
@@ -29,6 +27,8 @@ export type SearchableSelectInputProps = Omit<
   updateInputValue?: (newValue: string) => void;
   searchableSelectState?: SearchableSelectState;
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
+  options?: Option[];
+  updateMenuOptions?: (newState: Option[]) => void;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -49,20 +49,13 @@ export const SearchableSelectInput = forwardRef<
     onFocus,
     searchableSelectState: { showInput, showPlaceholder, showSelected },
     updateSearchableSelectState,
+    options,
+    updateMenuOptions,
     ...props
   }: SearchableSelectInputProps,
   ref
 ) {
   const [showClear, setShowClear] = useState(false);
-  // const activatorContext = useActivatorTextInput();
-  const optionListContext = useOptionList();
-  // const {
-  //   searchableSelectState: { showInput, showPlaceholder, showSelected },
-  //   updateSearchableSelectState,
-  // } = activatorContext;
-  const { options, updateMenuOptions } = optionListContext;
-
-  const suffixRef = useRef(null);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     setShowClear(false);
@@ -160,7 +153,6 @@ export const SearchableSelectInput = forwardRef<
       )}
       {showClear && (
         <ClearSelected
-          ref={suffixRef}
           onSelect={onSelect}
           handleClearIconClick={handleClearIconClick}
           updateInputValue={updateInputValue}

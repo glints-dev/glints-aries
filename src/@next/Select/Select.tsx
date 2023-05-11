@@ -108,8 +108,6 @@ export const Select = ({
     setPopoverActive(true);
   };
 
-  const handleBlur = () => popoverActive && handleClose();
-
   const handleSelectClick = () => {
     setPopoverActive(!popoverActive);
   };
@@ -141,7 +139,6 @@ export const Select = ({
           selectedValues={selectedValues}
           onSelect={onSelect}
           onFocus={handleFocus}
-          onBlur={handleBlur}
           inputValue={inputValue}
           updateInputValue={updateInputValue}
           searchableSelectState={searchableSelectState}
