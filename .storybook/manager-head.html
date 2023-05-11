@@ -1,0 +1,12 @@
+<!-- DO NOT REMOVE
+  Suppress Storybook Popup Notification in Dev Environment (workaround)
+  https://github.com/storybookjs/storybook/issues/6194#issuecomment-532618113
+  By default, this is turned off in Production build but we are using dev environment
+  to take screenshots for our visual tests.
+-->
+
+<style type="text/css">
+  [href='/?path=/settings/about'] {
+    display: none !important;
+  }
+</style>
