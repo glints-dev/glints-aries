@@ -78,28 +78,44 @@ const MyComponent = styled.div`
   <ColorItem
     title="Blue"
     subtitle="Blue.CodeName"
-    colors={Object.fromEntries(Object.entries(Blue).slice(1, 7))}
+    colors={Object.fromEntries(Object.entries(Blue).slice(1, 7).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ))}
   />
-  <ColorItem title="Green" subtitle="Green.CodeName" colors={Green} />
+  <ColorItem
+    title="Green"
+    subtitle="Green.CodeName"
+    colors={Object.fromEntries(Object.entries(Green).slice(0, 5).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ))}
+  />
   <ColorItem
     title="Neutral Whites"
     subtitle="Neutral.CodeName"
-    colors={Object.fromEntries(Object.entries(Neutral).slice(0, 5))}
+    colors={Object.fromEntries(Object.entries(Neutral).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ).slice(5, 10))}
   />
   <ColorItem
     title="Neutral Blacks"
     subtitle="Neutral.CodeName"
-    colors={Object.fromEntries(Object.entries(Neutral).slice(5, 10))}
+    colors={Object.fromEntries(Object.entries(Neutral).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ).slice(0, 5))}
   />
   <ColorItem
     title="Orange"
     subtitle="Orange.CodeName"
-    colors={Object.fromEntries(Object.entries(Orange).slice(1, 6))}
+    colors={Object.fromEntries(Object.entries(Orange).slice(1, 6).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ))}
   />
   <ColorItem
     title="Red"
     subtitle="Red.CodeName"
-    colors={Object.fromEntries(Object.entries(Red).slice(1, 6))}
+    colors={Object.fromEntries(Object.entries(Red).slice(0, 5).sort(
+      (a, b) => parseInt(a[0].slice(1)) - parseInt(b[0].slice(1))
+    ))}
   />
   <ColorItem
     title="Yellow"
