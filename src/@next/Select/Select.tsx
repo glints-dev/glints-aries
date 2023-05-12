@@ -130,7 +130,9 @@ export const Select = ({
           inputValue={inputValue}
           updateInputValue={updateInputValue}
           searchableSelectState={searchableSelectState}
-          updateSearchableSelectState={updateSearchableSelectState}
+          updateSearchableSelectState={newState =>
+            updateSearchableSelectState(newState)
+          }
           options={options}
           updateMenuOptions={updateMenuOptions}
           prefix={prefix}
@@ -187,7 +189,9 @@ export const Select = ({
             selectedValues={selectedValues}
             width={width}
             onMenuClose={handleClose}
-            updateSearchableSelectState={updateSearchableSelectState}
+            updateSearchableSelectState={newState =>
+              updateSearchableSelectState(newState)
+            }
           />
         </Popover.Pane>
       )}
