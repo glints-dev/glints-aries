@@ -43,9 +43,7 @@ export const OptionList = ({
   title,
   updateSearchableSelectState,
   width,
-  options,
   menuOptions,
-  updateMenuOptions,
 }: OptionListProps) => {
   const [hasMenuOptions, setHasMenuOptions] = useState(false);
 
@@ -64,7 +62,6 @@ export const OptionList = ({
         showPlaceholder: false,
       });
       onMenuClose();
-      updateMenuOptions(options);
     }
   };
 

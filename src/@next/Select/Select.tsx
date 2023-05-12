@@ -93,16 +93,10 @@ export const Select = ({
     [setMenuOptions]
   );
 
-  const resetMenuOptions = useCallback(() => {
-    updateMenuOptions(options);
-    updateInputValue('');
-  }, [options, updateInputValue, updateMenuOptions]);
-
   const handleClose = useCallback(() => {
     setPopoverActive(false);
     onClose?.();
-    resetMenuOptions();
-  }, [onClose, resetMenuOptions]);
+  }, [onClose]);
 
   const handleFocus = () => {
     setPopoverActive(true);
