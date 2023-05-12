@@ -20,8 +20,9 @@ export const MenuOption = ({
   value,
   allowMultiple,
 }: MenuOptionProps) => {
-  const handleClick = (value: string) => {
-    onClick({ value });
+  const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    event.stopPropagation();
+    onClick({ value: event.currentTarget.dataset.value });
   };
 
   return (
@@ -30,8 +31,8 @@ export const MenuOption = ({
         aria-disabled={disabled}
         data-active={isSelected}
         data-multiple={allowMultiple}
-        value={value}
-        onClick={() => handleClick(value)}
+        data-value={value}
+        onClick={handleClick}
       >
         {children}
       </li>

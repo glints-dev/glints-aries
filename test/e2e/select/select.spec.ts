@@ -21,6 +21,7 @@ test('Select - non-searchable single select', async ({ page }) => {
   );
 
   await selectPage.options.nth(1).click();
+  await selectPage.activatorSelect.click();
   await expect(selectPage.canvas).toHaveScreenshot(
     'select-non-searchable-single-select-option-selected.png'
   );
@@ -75,6 +76,50 @@ test('Select - non-searchable disabled', async ({ page }) => {
   await selectPage.activatorSelect.waitFor();
   await expect(selectPage.canvas).toHaveScreenshot(
     'select-non-searchable-disabled.png'
+  );
+});
+
+test('Select - searchable single select', async ({ page }) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoSearchableSingleSelectPage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-option-list.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-filter-options.png'
+  );
+
+  await selectPage.activatorTextInput.fill('empty');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-filter-options-no-match.png'
+  );
+
+  await selectPage.activatorTextInput.fill('');
+  await selectPage.options.nth(1).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-option-hover.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-option-selected.png'
+  );
+
+  await selectPage.searchableSelect.click();
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-hasselected-focus-input.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-hasselected-searching.png'
   );
 });
 

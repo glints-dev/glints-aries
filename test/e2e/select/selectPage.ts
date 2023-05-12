@@ -6,6 +6,7 @@ export class SelectPage extends StoryBookPage {
   readonly activatorTextInput: Locator;
   readonly options: Locator;
   readonly label: Locator;
+  readonly searchableSelect: Locator;
 
   constructor(page: Page) {
     super(page, '?path=/story/next-select--non-searchable-single-select');
@@ -24,6 +25,10 @@ export class SelectPage extends StoryBookPage {
     this.label = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByText('Label');
+
+    this.searchableSelect = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator('.searchable-select');
   }
 
   async gotoNonSearchableMultiSelectPage(args?: Args) {
@@ -38,6 +43,11 @@ export class SelectPage extends StoryBookPage {
 
   async gotoNonSearchableDisabledPage(args?: Args) {
     this.setPath('?path=/story/next-select--non-searchable-disabled');
+    await this.goto(args);
+  }
+
+  async gotoSearchableSingleSelectPage(args?: Args) {
+    this.setPath('?path=/story/next-select--searchable-single-select');
     await this.goto(args);
   }
 

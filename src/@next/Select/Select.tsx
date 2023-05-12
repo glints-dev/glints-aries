@@ -1,15 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { ActivatorTextInput, OptionList } from './components';
-import {
-  ActivatorSelectContext,
-  ActivatorTextInputContext,
-} from './components/Activator/ActivatorContext';
 import { ActivatorSelect } from './components/Activator/ActivatorSelect';
 import { Label } from './components/Label/Label';
+import { SearchableSelectState } from './components/SearchableSelectInput/SearchableSelectInput';
 import { ActivatorWrapper, HelpTextContainer } from './SelectStyle';
 
 interface SearchableProps {
@@ -32,8 +29,10 @@ export interface SelectProps {
   options?: Option[];
   placeholder?: string;
   prefix?: React.ReactNode;
-  /** sets whether to be able to type in to search from the options*/
-  searchableProps?: SearchableProps;
+  /** sets whether Select is searchable */
+  searchable?: boolean;
+  /** props used for searchable Select */
+  searchableProps?: SearchableProps; // TODO: remove
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
   sections?: Section[];
@@ -44,58 +43,61 @@ export interface SelectProps {
 
 export const Select = ({
   allowMultiple = false,
-  disabled,
-  hasError,
+  disabled = false,
+  hasError = false,
   helpText,
   label,
   onClose,
   onRemoveTag,
   onSelect,
-  options,
+  options = [],
   placeholder,
   listHeight,
   prefix,
+  searchable = false,
   searchableProps,
-  scrollable,
+  scrollable = false,
   sections,
   selectedValues,
   width,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
+  const [menuOptions, setMenuOptions] = useState(options);
+  const [inputValue, setInputValue] = useState(
+    searchableProps?.inputValue || ''
+  );
 
-  const handleClose = useCallback(() => {
+  const [searchableSelectState, setSearchableSelectState] =
+    useState<SearchableSelectState>({
+      showSelected: false,
+      showInput: true,
+      showPlaceholder: true,
+    });
+
+  const updateSearchableSelectState = (newState: SearchableSelectState) => {
+    setSearchableSelectState(newState);
+  };
+
+  const updateInputValue = (newValue: string) => {
+    setInputValue(newValue);
+  };
+
+  const updateMenuOptions = (newState: Option[]) => {
+    setMenuOptions(newState);
+  };
+
+  const handleClose = () => {
     setPopoverActive(false);
     onClose?.();
-  }, [onClose]);
+  };
 
   const handleFocus = () => {
     setPopoverActive(true);
   };
 
-  const handleBlur = () => {
-    if (popoverActive) {
-      handleClose();
-    }
-  };
-
   const handleSelectClick = () => {
     setPopoverActive(!popoverActive);
-  };
-
-  const activatorSelectContextValue = {
-    allowMultiple,
-    disabled,
-    hasError,
-    onSelectClick: handleSelectClick,
-    selectedValues,
-  };
-
-  const activatorTextInputContextValue = {
-    disabled,
-    hasError,
-    onFocus: handleFocus,
-    onBlur: handleBlur,
   };
 
   useEffect(() => {
@@ -113,33 +115,42 @@ export const Select = ({
   }, [listHeight, scrollable]);
 
   const activator = () => {
-    if (searchableProps) {
-      const { inputValue, onInputChange } = searchableProps;
+    if (searchable || searchableProps) {
       return (
-        <ActivatorTextInputContext.Provider
-          value={activatorTextInputContextValue}
-        >
-          <ActivatorTextInput
-            value={inputValue}
-            onChange={onInputChange}
-            placeholder={placeholder ?? 'Search'}
-            prefix={prefix}
-            width={width}
-          />
-        </ActivatorTextInputContext.Provider>
+        <ActivatorTextInput
+          allowMultiple={allowMultiple}
+          disabled={disabled}
+          hasError={hasError}
+          onChange={searchableProps?.onInputChange}
+          placeholder={placeholder ?? 'Search'}
+          width={width}
+          selectedValues={selectedValues}
+          onSelect={onSelect}
+          onFocus={handleFocus}
+          inputValue={inputValue}
+          updateInputValue={updateInputValue}
+          searchableSelectState={searchableSelectState}
+          updateSearchableSelectState={newState =>
+            updateSearchableSelectState(newState)
+          }
+          options={options}
+          updateMenuOptions={updateMenuOptions}
+          prefix={prefix}
+        />
       );
     }
 
     return (
-      <ActivatorSelectContext.Provider value={activatorSelectContextValue}>
-        <ActivatorSelect
-          disabled={disabled}
-          placeholder="Placeholder"
-          onRemoveTag={onRemoveTag}
-          width={width}
-          values={selectedValues}
-        />
-      </ActivatorSelectContext.Provider>
+      <ActivatorSelect
+        allowMultiple={allowMultiple}
+        disabled={disabled}
+        hasError={hasError}
+        placeholder="Placeholder"
+        onRemoveTag={onRemoveTag}
+        onSelectClick={handleSelectClick}
+        width={width}
+        selectedValues={selectedValues}
+      />
     );
   };
 
@@ -168,16 +179,22 @@ export const Select = ({
       preventFocusOnClose
       fullWidth
     >
-      <Popover.Pane height={optionListHeight}>
-        <OptionList
-          allowMultiple={allowMultiple}
-          onSelect={onSelect}
-          options={options}
-          sections={sections}
-          selectedValues={selectedValues}
-          width={width}
-        />
-      </Popover.Pane>
+      {!disabled && (
+        <Popover.Pane height={optionListHeight}>
+          <OptionList
+            menuOptions={menuOptions}
+            allowMultiple={allowMultiple}
+            onSelect={onSelect}
+            sections={sections}
+            selectedValues={selectedValues}
+            width={width}
+            onMenuClose={handleClose}
+            updateSearchableSelectState={newState =>
+              updateSearchableSelectState(newState)
+            }
+          />
+        </Popover.Pane>
+      )}
     </Popover>
   );
 };

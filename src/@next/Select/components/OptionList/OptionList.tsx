@@ -1,14 +1,18 @@
-import React from 'react';
-import { Menu, MenuProps } from '../../../Menu';
+import React, { useEffect, useState } from 'react';
+import { Menu, MenuProps, Option } from '../../../Menu';
 import { Typography } from '../../../Typography';
 import { Neutral } from '../../../utilities/colors';
+import { SearchableSelectState } from '../SearchableSelectInput/SearchableSelectInput';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
   isEmpty?: boolean;
   noOptionsMessage?: React.ReactNode;
+  onMenuClose?: () => void;
   onSelect?({ value }: { value: string }): void;
   width?: string;
+  updateSearchableSelectState?: (newState: SearchableSelectState) => void;
+  menuOptions?: Option[];
 }
 
 export interface NoOptionListProps {
@@ -30,28 +34,41 @@ export const NoOptionList = ({
 export const OptionList = ({
   allowMultiple,
   noOptionsMessage,
+  onMenuClose,
   onSelect,
-  options,
   sections,
   selectedValues,
   title,
+  updateSearchableSelectState,
   width,
+  menuOptions,
 }: OptionListProps) => {
-  const hasOptions = options.length > 0;
+  const [hasMenuOptions, setHasMenuOptions] = useState(false);
+
+  useEffect(() => {
+    setHasMenuOptions(menuOptions?.length > 0);
+  }, [menuOptions]);
 
   const onOptionSelect = ({ value }: { value: string }) => {
     if (onSelect) {
       onSelect({ value });
-      return;
+      if (allowMultiple) return;
+
+      updateSearchableSelectState({
+        showSelected: true,
+        showInput: false,
+        showPlaceholder: false,
+      });
+      onMenuClose();
     }
   };
 
   return (
     <OptionListContainer width={width}>
-      {hasOptions ? (
+      {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}
-          options={options}
+          options={menuOptions}
           onClick={onOptionSelect}
           sections={sections}
           selectedValues={selectedValues}
