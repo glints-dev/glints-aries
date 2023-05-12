@@ -59,4 +59,9 @@ export class SelectPage extends StoryBookPage {
     this.setPath('?path=/story/next-select--searchable-disabled');
     await this.goto(args);
   }
+
+  async gotoWithCustomPrefixPage(args?: Args) {
+    this.setPath('?path=/story/next-select--with-custom-prefix');
+    await this.goto(args);
+  }
 }
