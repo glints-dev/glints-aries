@@ -12,9 +12,7 @@ export interface OptionListProps extends MenuProps {
   onSelect?({ value }: { value: string }): void;
   width?: string;
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
-  options?: Option[];
   menuOptions?: Option[];
-  updateMenuOptions?: (newState: Option[]) => void;
 }
 
 export interface NoOptionListProps {

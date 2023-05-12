@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
@@ -79,24 +79,18 @@ export const Select = ({
     setSearchableSelectState(newState);
   };
 
-  const updateInputValue = useCallback(
-    (newValue: string) => {
-      setInputValue(newValue);
-    },
-    [setInputValue]
-  );
+  const updateInputValue = (newValue: string) => {
+    setInputValue(newValue);
+  };
 
-  const updateMenuOptions = useCallback(
-    (newState: Option[]) => {
-      setMenuOptions(newState);
-    },
-    [setMenuOptions]
-  );
+  const updateMenuOptions = (newState: Option[]) => {
+    setMenuOptions(newState);
+  };
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     setPopoverActive(false);
     onClose?.();
-  }, [onClose]);
+  };
 
   const handleFocus = () => {
     setPopoverActive(true);
@@ -185,9 +179,7 @@ export const Select = ({
     >
       <Popover.Pane height={optionListHeight}>
         <OptionList
-          options={options}
           menuOptions={menuOptions}
-          updateMenuOptions={updateMenuOptions}
           allowMultiple={allowMultiple}
           onSelect={onSelect}
           sections={sections}
