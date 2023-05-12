@@ -177,18 +177,20 @@ export const Select = ({
       preventFocusOnClose
       fullWidth
     >
-      <Popover.Pane height={optionListHeight}>
-        <OptionList
-          menuOptions={menuOptions}
-          allowMultiple={allowMultiple}
-          onSelect={onSelect}
-          sections={sections}
-          selectedValues={selectedValues}
-          width={width}
-          onMenuClose={handleClose}
-          updateSearchableSelectState={updateSearchableSelectState}
-        />
-      </Popover.Pane>
+      {!disabled && (
+        <Popover.Pane height={optionListHeight}>
+          <OptionList
+            menuOptions={menuOptions}
+            allowMultiple={allowMultiple}
+            onSelect={onSelect}
+            sections={sections}
+            selectedValues={selectedValues}
+            width={width}
+            onMenuClose={handleClose}
+            updateSearchableSelectState={updateSearchableSelectState}
+          />
+        </Popover.Pane>
+      )}
     </Popover>
   );
 };

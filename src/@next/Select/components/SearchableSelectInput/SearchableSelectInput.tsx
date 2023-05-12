@@ -57,8 +57,10 @@ export const SearchableSelectInput = forwardRef<
 ) {
   const inputRef = useRef(null);
   const [showClear, setShowClear] = useState(false);
+  const [isSelectedClicked, setIsSelectedClicked] = useState(false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    setIsSelectedClicked(false);
     setShowClear(false);
 
     onFocus(e);
@@ -91,6 +93,7 @@ export const SearchableSelectInput = forwardRef<
   const handleSelectedClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
 
+    setIsSelectedClicked(true);
     updateSearchableSelectState({
       showSelected: true,
       showInput: true,
@@ -102,6 +105,8 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputBlur = () => {
+    setIsSelectedClicked(false);
+
     if (selectedValue) {
       // allow onClick event handler in Menu before onBlur of input
       setTimeout(() => {
@@ -117,12 +122,12 @@ export const SearchableSelectInput = forwardRef<
   };
 
   useEffect(() => {
-    if (showInput) {
+    if (isSelectedClicked && showInput) {
       inputRef.current.focus();
     }
 
     return;
-  }, [showInput]);
+  }, [isSelectedClicked, showInput]);
 
   useEffect(() => {
     if (selectedValue) {
