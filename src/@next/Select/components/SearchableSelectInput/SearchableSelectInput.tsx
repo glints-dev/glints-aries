@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
 import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
@@ -55,6 +55,7 @@ export const SearchableSelectInput = forwardRef<
   }: SearchableSelectInputProps,
   ref
 ) {
+  const inputRef = useRef(null);
   const [showClear, setShowClear] = useState(false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
@@ -70,6 +71,7 @@ export const SearchableSelectInput = forwardRef<
       showPlaceholder: true,
       showInput: true,
     });
+    updateMenuOptions(options);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,7 +88,9 @@ export const SearchableSelectInput = forwardRef<
     });
   };
 
-  const handleSelectedClick = () => {
+  const handleSelectedClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+
     updateSearchableSelectState({
       showSelected: true,
       showInput: true,
@@ -111,6 +115,14 @@ export const SearchableSelectInput = forwardRef<
       }, 100);
     }
   };
+
+  useEffect(() => {
+    if (showInput) {
+      inputRef.current.focus();
+    }
+
+    return;
+  }, [showInput]);
 
   useEffect(() => {
     if (selectedValue) {
@@ -142,6 +154,7 @@ export const SearchableSelectInput = forwardRef<
       {showInput && (
         <InputContainer>
           <StyledInput
+            ref={inputRef}
             onChange={handleInputChange}
             placeholder={showPlaceholder ? placeholder : null}
             value={inputValue}
