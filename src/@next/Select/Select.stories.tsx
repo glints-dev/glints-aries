@@ -7,6 +7,7 @@ import { Select, SelectProps } from './Select';
 import { NonSearchableMultiSelect } from './selectStoryHelper/NonSearchableMultiSelect';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
 import { SingleSelect } from './selectStoryHelper/NonSearchableSingleSelect';
+import { Icon } from '..';
 
 (Select as React.FunctionComponent<SelectProps>).displayName = 'Select';
 
@@ -815,6 +816,112 @@ SearchableDisabled.parameters = {
               onInputChange: (value: string) => handleInputChange(value),
             }}
             label="Label"
+            hasError
+            helpText={<InlineError text="Error message" />}
+          />
+          <div style={{ paddingTop: space8 }}>{tagsMarkup}</div>
+        </div>
+      );
+      `,
+    },
+  },
+};
+
+const WithCustomPrefixTemplate: Story<SelectProps> = args => (
+  <SearchableMultiSelect {...args} data={countries} />
+);
+
+export const WithCustomPrefix = WithCustomPrefixTemplate.bind({});
+
+WithCustomPrefix.args = {
+  prefix: <Icon name="ri-account-circle-fill" />,
+};
+
+WithCustomPrefix.parameters = {
+  docs: {
+    source: {
+      code: `
+      const countries = [
+        { label: 'Indonesia', value: 'Indonesia' },
+        { label: 'Malaysia', value: 'Malaysia' },
+        { label: 'Singapore', value: 'Singapore' },
+        { label: 'Taiwan', value: 'Taiwan' },
+        { label: 'Vietnam', value: 'Vietnam' },
+      ];
+
+      const [inputValue, setInputValue] = useState('');
+      const [selectedOptions, setSelectedOptions] = useState([]);
+      const [isSearchEmpty, setIsSearchEmpty] = useState(false);
+
+      const [options, setOptions] = useState(countries);
+
+      const handleInputChange = (value: string) => {
+        setInputValue(value);
+
+        if (value === '') {
+          setOptions(countries);
+          return;
+        }
+
+        const filterRegex = new RegExp(value, 'i');
+        const filterOptions = options.filter((option: Option) =>
+          (option.label as string).match(filterRegex)
+        );
+        setOptions(filterOptions);
+      }
+
+      const handleSelect = ({ value }: { value: string }) => {
+        if (selectedOptions.includes(value)) {
+          setSelectedOptions(selectedOptions.filter(option => option !== value));
+        } else {
+          setSelectedOptions([...selectedOptions, value]);
+        }
+      }
+
+      const removeTag = useCallback(
+        tag => () => {
+          const options = [...selectedOptions];
+          options.splice(options.indexOf(tag), 1);
+          setSelectedOptions(options);
+        }
+        , [selectedOptions]
+      );
+        
+      const tagsMarkup = selectedOptions.map(option => (
+        <StyledTag
+          key={\`option-\${option}\`}
+          onRemove={removeTag(option)}
+          textColor={Blue.S99}
+        >
+          {option}
+        </StyledTag>
+      ));
+
+      useEffect(() => {
+        if (options.length === 0) {
+          setIsSearchEmpty(true);
+        }
+
+        if (options.length > 0 && isSearchEmpty === true) {
+          setIsSearchEmpty(false);
+        }
+      }
+      , [isSearchEmpty, options]);
+
+      return (
+        <div>
+          <Select
+            allowMultiple
+            onSelect={handleSelect}
+            options={options}
+            selectedValues={selectedOptions}
+            width="600px"
+            searchableProps={{
+              inputValue,
+              onInputChange: (value: string) => handleInputChange(value),
+            }}
+            label="Label"
+            prefix={<Icon name="ri-account-circle-fill" />}
             hasError
             helpText={<InlineError text="Error message" />}
           />

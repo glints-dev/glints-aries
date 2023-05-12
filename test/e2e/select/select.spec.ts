@@ -147,3 +147,13 @@ test('Searchable - with inline error', async ({ page }) => {
     'select-with-inline-error.png'
   );
 });
+
+test('Searchable - with custom prefix', async ({ page }) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoWithCustomPrefixPage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-with-custom-prefix-icon.png'
+  );
+});

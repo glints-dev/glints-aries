@@ -14,6 +14,7 @@ export interface ActivatorTextInputProps
 
 export const ActivatorTextInput = ({
   onChange,
+  prefix = <Icon name="ri-search" />,
   value,
   width,
   ...props
@@ -30,7 +31,7 @@ export const ActivatorTextInput = ({
     <StyledTextInput
       {...props}
       ref={activatorRef}
-      prefix={<Icon name="ri-search" />}
+      prefix={prefix}
       value={value}
       onChange={value => handleChange({ value })}
       onFocus={onFocus}

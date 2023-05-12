@@ -31,6 +31,7 @@ export interface SelectProps {
   onSelect?({ value }: { value: string }): void;
   options?: Option[];
   placeholder?: string;
+  prefix?: React.ReactNode;
   /** sets whether to be able to type in to search from the options*/
   searchableProps?: SearchableProps;
   /** true = Allow vertical scroll, default by 6 options. */
@@ -53,6 +54,7 @@ export const Select = ({
   options,
   placeholder,
   listHeight,
+  prefix,
   searchableProps,
   scrollable,
   sections,
@@ -121,6 +123,7 @@ export const Select = ({
             value={inputValue}
             onChange={onInputChange}
             placeholder={placeholder ?? 'Search'}
+            prefix={prefix}
             width={width}
           />
         </ActivatorTextInputContext.Provider>
