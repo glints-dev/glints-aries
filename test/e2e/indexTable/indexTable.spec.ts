@@ -24,26 +24,65 @@ test('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
+  let isCheckboxCorrect: boolean, tempText: string | null;
+  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(5).fill(false)
+  );
+  expect(isCheckboxCorrect).toBe(true);
+
   await indexTablePage.checkboxes.first().click();
   await expect(indexTablePage.bulkAction).toBeVisible();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-selected-all.png'
+
+  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(5).fill(true)
   );
+  expect(isCheckboxCorrect).toBe(true);
+
+  tempText = await indexTablePage.tableHeadRow.textContent();
+  expect(tempText).toBe('4 selected candidates');
+
+  tempText = await indexTablePage.bulkAction.textContent();
+  expect(tempText).toContain('Reject');
+  expect(tempText).toContain('Move to');
 
   await indexTablePage.checkboxes.last().click();
 
   await expect(indexTablePage.bulkAction).toBeVisible();
 
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-selected-row.png'
-  );
+  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues([
+    false,
+    true,
+    true,
+    true,
+    true,
+  ]);
+  expect(isCheckboxCorrect).toBe(true);
+
+  tempText = await indexTablePage.tableHeadRow.textContent();
+  expect(tempText).toBe('3 selected candidates');
+
+  tempText = await indexTablePage.bulkAction.textContent();
+  expect(tempText).toContain('Reject');
+  expect(tempText).toContain('Move to');
 
   await indexTablePage.moveToAction.click();
   await expect(indexTablePage.actionList).toBeVisible();
 
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-action-list.png'
-  );
+  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues([
+    false,
+    true,
+    true,
+    true,
+    true,
+  ]);
+  expect(isCheckboxCorrect).toBe(true);
+
+  tempText = await indexTablePage.tableHeadRow.textContent();
+  expect(tempText).toBe('3 selected candidates');
+
+  tempText = await indexTablePage.bulkAction.textContent();
+  expect(tempText).toContain('Reject');
+  expect(tempText).toContain('Move to');
 });
 
 test('IndexTable - loading state', async ({ page }) => {
