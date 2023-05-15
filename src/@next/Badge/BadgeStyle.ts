@@ -10,7 +10,7 @@ const badgeBackgroundColor: {
   ['neutral']: Neutral.B95,
   ['success']: Green.B89,
   ['information']: Blue.S08,
-  ['warning']: Orange.S42,
+  ['warning']: Orange.S21,
   ['critical']: Red.B100,
   ['promotion']: Yellow.S75,
   ['enticing']: Orange.S87,
