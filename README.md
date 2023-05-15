@@ -28,11 +28,30 @@ import { GlintsContainer } from 'glints-aries';
 
 ### Development
 
+Before that, make sure you already have git, node (version >= 14), and yarn installed.
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/glints-dev/glints-aries.git
+```
+
+2. Install the project dependencies (preferably use yarn here), then build the project
+
+```bash
+yarn
+yarn build
+```
+
+3. Start the application
+
 ```bash
 yarn storybook
 ```
 
-then open your browser on port 9001
+4. Open your browser on (port 6006)[http://localhost:6006].
+
+Note: For Windows user, please use [WSL2 Linux](https://learn.microsoft.com/en-us/windows/wsl/install) to execute all the commands above. Make sure that the repository is cloned on the linux folder, not on your C drive.
 
 ### How to test local changes in glints-aries in your project
 
