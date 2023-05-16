@@ -24,26 +24,60 @@ test('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
-  await indexTablePage.checkboxes.first().click();
-  await expect(indexTablePage.bulkAction).toBeVisible();
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-selected-all.png'
+  let isCheckboxValuesCorrect: boolean, selectAllTableHeadText: string | null;
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(4).fill(false)
   );
+  expect(isCheckboxValuesCorrect).toBe(true);
+  await expect(indexTablePage.bulkAction).toBeHidden();
+  expect(await indexTablePage.selectAllCheckbox.isChecked()).toBe(false);
+
+  await indexTablePage.selectAllCheckbox.click();
+  await expect(indexTablePage.bulkAction).toBeVisible();
+  expect(await indexTablePage.selectAllCheckbox.isChecked()).toBe(true);
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(4).fill(true)
+  );
+  expect(isCheckboxValuesCorrect).toBe(true);
+
+  selectAllTableHeadText = await indexTablePage.tableHeadRow.textContent();
+  expect(selectAllTableHeadText).toBe('4 selected candidates');
+
+  selectAllTableHeadText = await indexTablePage.bulkAction.textContent();
+  expect(selectAllTableHeadText).toContain('Reject');
+  expect(selectAllTableHeadText).toContain('Move to');
 
   await indexTablePage.checkboxes.last().click();
 
   await expect(indexTablePage.bulkAction).toBeVisible();
-
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-selected-row.png'
+  await expect(indexTablePage.selectAllCheckbox).toHaveAttribute(
+    'aria-checked',
+    'mixed'
   );
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues([
+    true,
+    true,
+    true,
+    false,
+  ]);
+  expect(isCheckboxValuesCorrect).toBe(true);
+
+  selectAllTableHeadText = await indexTablePage.tableHeadRow.textContent();
+  expect(selectAllTableHeadText).toBe('3 selected candidates');
+
+  selectAllTableHeadText = await indexTablePage.bulkAction.textContent();
+  expect(selectAllTableHeadText).toContain('Reject');
+  expect(selectAllTableHeadText).toContain('Move to');
 
   await indexTablePage.moveToAction.click();
   await expect(indexTablePage.actionList).toBeVisible();
 
-  await expect(indexTablePage.canvas).toHaveScreenshot(
-    'indextable-bulk-action-action-list.png'
-  );
+  const bulkOptionActionListText =
+    await indexTablePage.actionList.textContent();
+  expect(bulkOptionActionListText).toContain('Assessment');
+  expect(bulkOptionActionListText).toContain('Interviewing');
+  expect(bulkOptionActionListText).toContain('Offered');
+  expect(bulkOptionActionListText).toContain('Hired');
 });
 
 test('IndexTable - loading state', async ({ page }) => {
