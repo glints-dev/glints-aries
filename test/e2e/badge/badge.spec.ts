@@ -15,7 +15,7 @@ test('Badge - default', async ({ page }) => {
 
 test('Badge - information', async ({ page }) => {
   const badgePage = getPage(page);
-  await badgePage.goto('args=status:informational');
+  await badgePage.goto('args=status:information');
   await expect(badgePage.container).toHaveScreenshot('badge-information.png');
 });
 
@@ -65,7 +65,7 @@ test('Badge - default - small', async ({ page }) => {
 test('Badge - information - small', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const badgePage = getPage(page);
-  await badgePage.goto('args=status:informational');
+  await badgePage.goto('args=status:information');
   await expect(badgePage.container).toHaveScreenshot(
     'badge-information-small.png'
   );
