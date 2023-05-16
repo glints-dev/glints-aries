@@ -24,65 +24,60 @@ test('IndexTable - bulk action', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
   await indexTablePage.goto();
 
-  let isCheckboxCorrect: boolean, tempText: string | null;
-  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues(
-    new Array(5).fill(false)
+  let isCheckboxValuesCorrect: boolean, selectAllTableHeadText: string | null;
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(4).fill(false)
   );
-  expect(isCheckboxCorrect).toBe(true);
+  expect(isCheckboxValuesCorrect).toBe(true);
+  await expect(indexTablePage.bulkAction).toBeHidden();
+  expect(await indexTablePage.selectAllCheckbox.isChecked()).toBe(false);
 
-  await indexTablePage.checkboxes.first().click();
+  await indexTablePage.selectAllCheckbox.click();
   await expect(indexTablePage.bulkAction).toBeVisible();
-
-  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues(
-    new Array(5).fill(true)
+  expect(await indexTablePage.selectAllCheckbox.isChecked()).toBe(true);
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues(
+    new Array(4).fill(true)
   );
-  expect(isCheckboxCorrect).toBe(true);
+  expect(isCheckboxValuesCorrect).toBe(true);
 
-  tempText = await indexTablePage.tableHeadRow.textContent();
-  expect(tempText).toBe('4 selected candidates');
+  selectAllTableHeadText = await indexTablePage.tableHeadRow.textContent();
+  expect(selectAllTableHeadText).toBe('4 selected candidates');
 
-  tempText = await indexTablePage.bulkAction.textContent();
-  expect(tempText).toContain('Reject');
-  expect(tempText).toContain('Move to');
+  selectAllTableHeadText = await indexTablePage.bulkAction.textContent();
+  expect(selectAllTableHeadText).toContain('Reject');
+  expect(selectAllTableHeadText).toContain('Move to');
 
   await indexTablePage.checkboxes.last().click();
 
   await expect(indexTablePage.bulkAction).toBeVisible();
-
-  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues([
+  await expect(indexTablePage.selectAllCheckbox).toHaveAttribute(
+    'aria-checked',
+    'mixed'
+  );
+  isCheckboxValuesCorrect = await indexTablePage.verifyCheckboxValues([
+    true,
+    true,
+    true,
     false,
-    true,
-    true,
-    true,
-    true,
   ]);
-  expect(isCheckboxCorrect).toBe(true);
+  expect(isCheckboxValuesCorrect).toBe(true);
 
-  tempText = await indexTablePage.tableHeadRow.textContent();
-  expect(tempText).toBe('3 selected candidates');
+  selectAllTableHeadText = await indexTablePage.tableHeadRow.textContent();
+  expect(selectAllTableHeadText).toBe('3 selected candidates');
 
-  tempText = await indexTablePage.bulkAction.textContent();
-  expect(tempText).toContain('Reject');
-  expect(tempText).toContain('Move to');
+  selectAllTableHeadText = await indexTablePage.bulkAction.textContent();
+  expect(selectAllTableHeadText).toContain('Reject');
+  expect(selectAllTableHeadText).toContain('Move to');
 
   await indexTablePage.moveToAction.click();
   await expect(indexTablePage.actionList).toBeVisible();
 
-  isCheckboxCorrect = await indexTablePage.verifyCheckboxValues([
-    false,
-    true,
-    true,
-    true,
-    true,
-  ]);
-  expect(isCheckboxCorrect).toBe(true);
-
-  tempText = await indexTablePage.tableHeadRow.textContent();
-  expect(tempText).toBe('3 selected candidates');
-
-  tempText = await indexTablePage.bulkAction.textContent();
-  expect(tempText).toContain('Reject');
-  expect(tempText).toContain('Move to');
+  const bulkOptionActionListText =
+    await indexTablePage.actionList.textContent();
+  expect(bulkOptionActionListText).toContain('Assessment');
+  expect(bulkOptionActionListText).toContain('Interviewing');
+  expect(bulkOptionActionListText).toContain('Offered');
+  expect(bulkOptionActionListText).toContain('Hired');
 });
 
 test('IndexTable - loading state', async ({ page }) => {

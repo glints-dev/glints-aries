@@ -3,6 +3,7 @@ import { StoryBookPage } from '../storybookPage';
 
 export class IndexTablePage extends StoryBookPage {
   [x: string]: any;
+  readonly selectAllCheckbox: Locator;
   readonly checkboxes: Locator;
   readonly tableHeadRow: Locator;
   readonly tableRow: Locator;
@@ -15,7 +16,11 @@ export class IndexTablePage extends StoryBookPage {
     super(page, '?path=/story/next-indextable--interactive');
     this.checkboxes = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-      .getByRole('checkbox');
+      .locator('.CheckboxStyle__StyledCheckboxContainer-sc-a9bf1h-1');
+    this.selectAllCheckbox = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .getByRole('checkbox')
+      .first();
     this.tableHeadRow = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByText('selected candidates');
@@ -28,18 +33,18 @@ export class IndexTablePage extends StoryBookPage {
     this.bulkAction = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .locator('.Polaris-BulkActions--groupNotSticky');
-    this.bulkActionOption = page
-      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-      .getByText('Assessment');
     this.actionList = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .locator('.Polaris-ActionList');
   }
 
   async verifyCheckboxValues(expectedValues: boolean[]): Promise<boolean> {
-    for (let i = 0; i < expectedValues.length; i++) {
-      const checkbox = this.checkboxes.locator(`nth=${i}`);
-      if ((await checkbox.isChecked()) !== expectedValues[i]) return false;
+    for (let i = 2; i < 6; i++) {
+      const checkbox = this.page
+        .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+        .locator('input')
+        .nth(i);
+      if ((await checkbox.isChecked()) !== expectedValues[i - 2]) return false;
     }
     return true;
   }
