@@ -135,6 +135,7 @@ const indicatorTypeStyleMapping = {
 
 export const Indicator = styled.button<Pick<CarouselProps, 'indicatorType'>>`
   cursor: pointer;
+  opacity: 0.5;
 
   &.active {
     background: ${Yellow.Brand};
