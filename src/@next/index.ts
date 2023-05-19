@@ -34,6 +34,7 @@ export {
   PrimaryButton,
 } from './Button';
 export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
+export { Carousel, CarouselProps } from './Carousel';
 export { Card, CardProps } from './Card';
 export { Checkbox, CheckboxProps } from './Checkbox';
 export { Combobox, ComboboxProps } from './Combobox';
