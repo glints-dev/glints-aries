@@ -45,7 +45,7 @@ export const Carousel = ({
 }: CarouselProps) => {
   const slideRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [hideArrows, setHideArrows] = useState(false);
+  const [hideArrows, setHideArrows] = useState(autoRotate);
 
   const childrenList = React.Children.toArray(children).filter(child =>
     React.isValidElement(child)
