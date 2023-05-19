@@ -117,7 +117,9 @@ export const Carousel = ({
         height={height}
         width={width}
       >
-        <ItemsContainer activeIndex={activeIndex}>{children}</ItemsContainer>
+        <ItemsContainer activeIndex={activeIndex}>
+          {childrenList}
+        </ItemsContainer>
       </SlideContainer>
       <ArrowsContainer data-hidden={hideArrows}>
         <PreviousArrow onClick={handlePreviousClick}>
