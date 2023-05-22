@@ -18,13 +18,25 @@ export const StyledSideSheetContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 480px;
-  height: 90vh;
+  height: 100vh;
   background: ${Neutral.B100};
   box-shadow: 0px 26px 80px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  animation: fade-in 0.2s;
+  top: 0;
+  right: 0;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media (max-width: ${Breakpoints.large}) {
-    width: 100vh;
+    width: 100vw;
   }
 `;
 
@@ -40,10 +52,6 @@ export const StyledButtonContainer = styled.div`
   svg {
     width: 24px;
     fill: ${Neutral.B40};
-
-    &:hover {
-      fill: ${Neutral.B18};
-    }
   }
 `;
 
@@ -56,10 +64,6 @@ export const StyledHorizontalLine = styled.hr`
   background-color: #eeeeee;
   margin: 0px 0px;
   border: none;
-`;
-
-export const StyledSideSheetContent = styled.div`
-  margin: 10px;
 `;
 
 export const StyledSideSheetFooter = styled.div`

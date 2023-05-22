@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { ComponentAction } from '../../types/componentAction';
@@ -11,7 +11,6 @@ import {
   StyledButtonContainer,
   StyledRightContainer,
   StyledHorizontalLine,
-  StyledSideSheetContent,
   StyledSideSheetFooter,
   StyledButtonGroupContainer,
 } from './SideSheetStyle';
@@ -23,8 +22,8 @@ export interface SideSheetProps {
   description?: string;
   showHorizontalLine?: boolean;
   children?: React.ReactNode;
-  leftButtonAction?: ComponentAction;
-  rightButtonAction?: ComponentAction;
+  basicButtonAction?: ComponentAction;
+  primaryButtonAction?: ComponentAction;
   showBackButton?: boolean;
   onBack?: () => void;
   showCloseButton?: boolean;
@@ -39,8 +38,8 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
       description,
       showHorizontalLine = true,
       children,
-      leftButtonAction,
-      rightButtonAction,
+      basicButtonAction,
+      primaryButtonAction,
       showBackButton = true,
       onBack,
       showCloseButton = true,
@@ -49,11 +48,39 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
     }: SideSheetProps,
     ref
   ) {
+    useEffect(() => {
+      if (typeof window === 'undefined' || !window.document) return;
+      const enableScroll = () => (document.body.style.overflow = 'unset');
+      isOpen ? (document.body.style.overflow = 'hidden') : enableScroll();
+      return () => {
+        enableScroll();
+      };
+    }, [isOpen]);
+
+    // fade out effect for 0.2seconds when closed
+    const handleClose = () => {
+      const containerDiv = document.getElementById(
+        'side-sheet-container-unique'
+      );
+      let opacity = 1;
+      const interval = setInterval(function () {
+        if (opacity > 0) {
+          containerDiv.style.opacity = `${(opacity -= 0.05)}`;
+        } else {
+          clearInterval(interval);
+          onClose();
+        }
+      }, 10);
+    };
+
     return (
       <>
         {isOpen && (
           <Portal>
-            <StyledSideSheetWrapper>
+            <StyledSideSheetWrapper
+              id="side-sheet-container-unique"
+              onClick={() => handleClose()}
+            >
               <StyledSideSheetContainer
                 ref={ref}
                 onClick={e => e.stopPropagation()}
@@ -73,29 +100,29 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                   </Typography>
                   {showCloseButton && (
                     <StyledRightContainer>
-                      <StyledButtonContainer onClick={onClose}>
+                      <StyledButtonContainer onClick={handleClose}>
                         <Icon name="ri-close" />
                       </StyledButtonContainer>
                     </StyledRightContainer>
                   )}
                 </StyledSideSheetHeader>
                 {showHorizontalLine && <StyledHorizontalLine />}
-                <StyledSideSheetContent>{children}</StyledSideSheetContent>
+                {children}
                 <StyledSideSheetFooter>
                   <StyledHorizontalLine />
                   <StyledButtonGroupContainer>
                     <ButtonGroup fullWidth>
-                      {leftButtonAction && (
+                      {basicButtonAction && (
                         <Button
-                          onClick={leftButtonAction.action}
+                          onClick={basicButtonAction.action}
                           fullWidth={true}
                         >
-                          {leftButtonAction.label}
+                          {basicButtonAction.label}
                         </Button>
                       )}
-                      {rightButtonAction && (
-                        <PrimaryButton onClick={rightButtonAction.action}>
-                          {rightButtonAction.label}
+                      {primaryButtonAction && (
+                        <PrimaryButton onClick={primaryButtonAction.action}>
+                          {primaryButtonAction.label}
                         </PrimaryButton>
                       )}
                     </ButtonGroup>
