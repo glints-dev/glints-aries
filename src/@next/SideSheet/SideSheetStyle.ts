@@ -11,6 +11,16 @@ export const StyledSideSheetWrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   z-index: 999;
+  animation: fade-in2 0.2s;
+
+  @keyframes fade-in2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const StyledSideSheetContainer = styled.div`
@@ -22,13 +32,14 @@ export const StyledSideSheetContainer = styled.div`
   background: ${Neutral.B100};
   box-shadow: 0px 26px 80px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  animation: fade-in 0.2s;
+  animation: slide-in 0.2s;
   top: 0;
   right: 0;
 
-  @keyframes fade-in {
+  @keyframes slide-in {
     0% {
       opacity: 0;
+      transform: translateX(100%);
     }
     100% {
       opacity: 1;

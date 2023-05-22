@@ -59,13 +59,16 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
 
     // fade out effect for 0.2seconds when closed
     const handleClose = () => {
+      const wrapperDiv = document.getElementById('side-sheet-wrapper-unique');
       const containerDiv = document.getElementById(
         'side-sheet-container-unique'
       );
       let opacity = 1;
+      let translateX = 0;
       const interval = setInterval(function () {
         if (opacity > 0) {
-          containerDiv.style.opacity = `${(opacity -= 0.05)}`;
+          wrapperDiv.style.opacity = `${(opacity -= 0.05)}`;
+          containerDiv.style.transform = `translateX(${(translateX += 5)}%)`;
         } else {
           clearInterval(interval);
           onClose();
@@ -78,10 +81,11 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
         {isOpen && (
           <Portal>
             <StyledSideSheetWrapper
-              id="side-sheet-container-unique"
+              id="side-sheet-wrapper-unique"
               onClick={() => handleClose()}
             >
               <StyledSideSheetContainer
+                id="side-sheet-container-unique"
                 ref={ref}
                 onClick={e => e.stopPropagation()}
                 {...props}
