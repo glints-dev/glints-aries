@@ -57,6 +57,8 @@ export const iconNames = [
   'ri-error-warning-line',
   'ri-external-link-line',
   'ri-facebook-circle-line',
+  'ri-file-fill',
+  'ri-file-line',
   'ri-information-fill',
   'ri-information-line',
   'ri-instagram-line',
@@ -82,6 +84,8 @@ export const iconNames = [
   'ri-timer3-fill',
   'ri-timer3-line',
   'ri-twitter-line',
+  'ri-upload-fill',
+  'ri-upload-line',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -143,6 +147,8 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-error-warning-line']: Icons.RiErrorWarningLine,
   ['ri-external-link-line']: Icons.RiExternalLinkLine,
   ['ri-facebook-circle-line']: Icons.RiFacebookCircleLine,
+  ['ri-file-fill']: Icons.RiFileFill,
+  ['ri-file-line']: Icons.RiFileLine,
   ['ri-information-fill']: Icons.RiInformationFill,
   ['ri-information-line']: Icons.RiInformationLine,
   ['ri-instagram-line']: Icons.RiInstagramLine,
@@ -168,4 +174,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-timer3-fill']: Icons.RiTimer3Fill,
   ['ri-timer3-line']: Icons.RiTimer3Line,
   ['ri-twitter-line']: Icons.RiTwitterLine,
+  ['ri-upload-fill']: Icons.RiUploadFill,
+  ['ri-upload-line']: Icons.RiUploadLine,
 };
