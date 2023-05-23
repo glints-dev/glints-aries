@@ -146,8 +146,8 @@ const CustomSpacingBarTemplate: Story<BarProps> = args => {
   );
 };
 
-export const SmallScreenBar = CustomSpacingBarTemplate.bind({});
-SmallScreenBar.parameters = {
+export const CustomSpacingBar = CustomSpacingBarTemplate.bind({});
+CustomSpacingBar.parameters = {
   docs: {
     source: {
       code: `
