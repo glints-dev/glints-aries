@@ -2,14 +2,20 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
+import React from 'react';
 
-export const StyledBar = styled.div`
+interface StyledBarProp extends React.HTMLAttributes<HTMLDivElement> {
+  smallScreen: boolean;
+}
+
+export const StyledBar = styled.div<StyledBarProp>`
   display: flex;
   flex-direction: row;
-  padding: 20px 0;
+  padding: ${props => (props.smallScreen ? '8' : '12')}px 0;
   width: 100%;
   position: absolute;
-  height: 90px;
+  min-height: ${props => (props.smallScreen ? '70' : '90')}px;
+  height: fit-content;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 70px;
@@ -39,10 +45,10 @@ export const StyledBarActionWrapper = styled.div`
   align-items: flex-end;
 `;
 
-export const StyledBarContainer = styled.div`
+export const StyledBarContainer = styled.div<StyledBarProp>`
   position: relative;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 ${props => (props.smallScreen ? '16' : '50')}px;
   width: 100%;
 
   *,
@@ -66,4 +72,13 @@ export const StyledCustomHeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: ${space8};
+`;
+
+export const StyledButtonContainer = styled.div<StyledBarProp>`
+  cursor: pointer;
+  margin-right: ${props => (props.smallScreen ? '16' : '24')}px;
+  svg {
+    width: ${props => (props.smallScreen ? '16' : '24')}px;
+    fill: ${Neutral.B40};
+  }
 `;

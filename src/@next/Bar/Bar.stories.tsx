@@ -117,3 +117,54 @@ const CustomHeadingTemplate: Story<BarProps> = args => {
 };
 
 export const CustomHeading = CustomHeadingTemplate.bind({});
+
+const CustomSpacingBarTemplate: Story<BarProps> = args => {
+  const primaryAction = {
+    label: 'Yes',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'No',
+    action: () => console.log('Secondary action!'),
+  };
+  const tertiaryAction = {
+    label: 'No',
+    action: () => console.log('Tertiary action!'),
+  };
+  return (
+    <Bar
+      {...args}
+      heading={'Page Title'}
+      subheading={'Additional Content'}
+      primaryAction={primaryAction}
+      secondaryAction={secondaryAction}
+      tertiaryAction={tertiaryAction}
+      showBackButton={true}
+      onBack={() => console.log('back button clicked')}
+      buttonSpacing={[8, 16]}
+    />
+  );
+};
+
+export const SmallScreenBar = CustomSpacingBarTemplate.bind({});
+SmallScreenBar.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Bar
+        {...args}
+        heading={'Page Title'}
+        subheading={'Additional Content'}
+        primaryAction={primaryAction}
+        secondaryAction={secondaryAction}
+        tertiaryAction={tertiaryAction}
+        showBackButton={true}
+        onBack={() => console.log('back button clicked')}
+        buttonSpacing={[8, 16]}
+      />
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};
