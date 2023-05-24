@@ -32,7 +32,7 @@ export interface SelectProps {
   /** sets whether Select is searchable */
   searchable?: boolean;
   /** props used for searchable Select */
-  searchableProps?: SearchableProps; // TODO: remove
+  searchableProps?: SearchableProps;
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
   sections?: Section[];

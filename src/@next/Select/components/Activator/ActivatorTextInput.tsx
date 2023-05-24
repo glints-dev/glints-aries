@@ -92,6 +92,7 @@ export const ActivatorTextInput = ({
           prefix={prefix}
           filterOptions={filterOptions}
           onFocus={onFocus}
+          onInputChange={onChange}
           onSelect={onSelect}
           error={hasError}
           disabled={disabled}

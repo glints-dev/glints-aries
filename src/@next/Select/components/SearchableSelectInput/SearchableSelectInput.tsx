@@ -21,6 +21,7 @@ export type SearchableSelectInputProps = Omit<
 > & {
   canClear?: boolean;
   filterOptions?: (str: string) => Option[];
+  onInputChange?(value: string): void;
   onSelect?({ value }: { value: string }): void;
   selectedValue?: string;
   inputValue?: string;
@@ -46,6 +47,7 @@ export const SearchableSelectInput = forwardRef<
     width,
     inputValue,
     updateInputValue,
+    onInputChange,
     onFocus,
     searchableSelectState: { showInput, showPlaceholder, showSelected },
     updateSearchableSelectState,
@@ -78,6 +80,11 @@ export const SearchableSelectInput = forwardRef<
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const str = e.currentTarget.value;
+
+    if (onInputChange) {
+      onInputChange(str);
+    }
+
     updateInputValue(str);
 
     const filteredOptions = filterOptions(str);
