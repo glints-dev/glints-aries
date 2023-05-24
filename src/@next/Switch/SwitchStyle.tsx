@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { Breakpoints, Spacing } from '..';
+import { Breakpoints, Spacing, Typography } from '..';
 
 import { Blue, Neutral } from '../utilities/colors';
+
+export const SwitchTextStyle = styled(Typography)``;
 
 export const SwitchStyle = styled.div`
   display: flex;
@@ -13,11 +15,15 @@ export const SwitchStyle = styled.div`
 
   width: ${Spacing.space40};
 
-  &[data-with-icon] {
+  &[data-with-icon='true'] {
     width: 48px;
   }
 
-  &[data-with-icon] svg {
+  &[data-with-text='true'] {
+    width: max-content;
+  }
+
+  &[data-with-icon='true'] svg {
     height: 16px;
   }
 
@@ -39,11 +45,11 @@ export const SwitchStyle = styled.div`
   @media (max-width: ${Breakpoints.large}) {
     width: 38px;
 
-    &[data-with-icon] {
+    &[data-with-icon='true'] {
       width: 44px;
     }
 
-    &[data-with-icon] svg {
+    &[data-with-icon='true'] svg {
       height: 14px;
     }
 
@@ -52,17 +58,17 @@ export const SwitchStyle = styled.div`
 
   &:before {
     transition: 100ms all;
-    content: '';
+    content: ' ';
+    cursor: pointer;
     position: absolute;
     width: 16px;
     height: 16px;
-    border-radius: 16px;
-    top: 50%;
     left: 4px;
+    right: 0;
+    border-radius: 16px;
     background: ${Neutral.B100};
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    transform: translate(0, -50%);
-
+    transform: scale(1);
     @media (max-width: ${Breakpoints.large}) {
       width: 14px;
       height: 14px;
@@ -70,25 +76,31 @@ export const SwitchStyle = styled.div`
   }
 `;
 
-export const InputStyle = styled.input`
+export const InputStyle = styled.input<{
+  backgroundColor: string;
+}>`
   opacity: 0;
   position: absolute;
+  & + ${SwitchStyle} {
+    ${SwitchTextStyle} {
+      padding-inline-start: 18px;
+    }
+  }
 
   &:checked + ${SwitchStyle} {
-    background-color: ${Blue.S99};
+    ${SwitchTextStyle} {
+      padding-inline-start: unset;
+      padding-inline-end: 18px;
+    }
+    background-color: ${({ backgroundColor }) => backgroundColor || Blue.S99};
 
     &[data-disabled='true'] {
       background-color: ${Neutral.B95};
     }
 
     &:before {
-      transform: translate(16px, -50%);
-    }
-
-    &[data-with-icon] {
-      &:before {
-        transform: translate(24px, -50%);
-      }
+      right: 4px;
+      left: unset;
     }
   }
 
@@ -98,12 +110,29 @@ export const InputStyle = styled.input`
   & + ${SwitchStyle} svg:nth-child(2) {
     visibility: visible;
   }
+  & + ${SwitchStyle} ${SwitchTextStyle}:nth-child(1) {
+    visibility: hidden;
+    display: none;
+  }
+  & + ${SwitchStyle} ${SwitchTextStyle}:nth-child(2) {
+    visibility: visible;
+    display: block;
+  }
 
   &:checked + ${SwitchStyle} svg:nth-child(1) {
     visibility: visible;
   }
   &:checked + ${SwitchStyle} svg:nth-child(2) {
     visibility: hidden;
+  }
+
+  &:checked + ${SwitchStyle} ${SwitchTextStyle}:nth-child(1) {
+    visibility: visible;
+    display: block;
+  }
+  &:checked + ${SwitchStyle} ${SwitchTextStyle}:nth-child(2) {
+    visibility: hidden;
+    display: none;
   }
 `;
 
