@@ -53,13 +53,13 @@ export const StyledSideSheetContainer = styled.div`
 
 export const StyledSideSheetHeader = styled.div`
   display: flex;
-  align-items: center;
+  align-items: top;
   padding: 16px 20px;
 `;
 
 export const StyledButtonContainer = styled.div`
   cursor: pointer;
-  margin-right: 8px;
+  margin: 4px 8px 4px 0px;
   svg {
     width: 24px;
     fill: ${Neutral.B40};
@@ -72,7 +72,7 @@ export const StyledRightContainer = styled.div`
 
 export const StyledHorizontalLine = styled.hr`
   height: 1px;
-  background-color: #eeeeee;
+  background-color: ${Neutral.B95};
   margin: 0px 0px;
   border: none;
 `;
@@ -82,5 +82,5 @@ export const StyledSideSheetFooter = styled.div`
 `;
 
 export const StyledButtonGroupContainer = styled.div`
-  margin: 10px 20px;
+  margin: 16px 20px;
 `;

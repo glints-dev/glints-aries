@@ -10,6 +10,7 @@ import { TabModel } from '../Tabs';
 import { Tabs } from '../Tabs';
 import { Typography } from '../Typography';
 import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
+import { Neutral } from '../utilities/colors';
 
 export default {
   title: '@next/SideSheet',
@@ -45,7 +46,11 @@ const Template: Story<SideSheetProps> = args => {
         basicButtonAction={basicButtonAction}
         primaryButtonAction={primaryButtonAction}
       >
-        <Typography as="div" variant="body1" style={{ margin: space16 }}>
+        <Typography
+          as="div"
+          variant="body1"
+          style={{ margin: space16, color: Neutral.B18 }}
+        >
           Side Sheet Content here...
         </Typography>
       </SideSheet>
@@ -72,7 +77,11 @@ Interactive.parameters = {
             basicButtonAction={basicButtonAction}
             primaryButtonAction={primaryButtonAction}
           >
-            <Typography as="div" variant="body1" style={{ margin: space16 }}>
+            <Typography
+              as="div"
+              variant="body1"
+              style={{ margin: space16, color: Neutral.B18 }}
+            >
               Side Sheet Content here...
             </Typography>
           </SideSheet>
@@ -131,7 +140,11 @@ const WithTabsTemplate: Story<SideSheetProps> = args => {
         primaryButtonAction={primaryButtonAction}
         showHorizontalLine={false}
       >
-        <Typography as="div" variant="body1" style={{ paddingRight: space16 }}>
+        <Typography
+          as="div"
+          variant="body1"
+          style={{ paddingRight: space16, color: Neutral.B18 }}
+        >
           <Tabs
             tabs={tabs}
             selected={selected}
@@ -197,7 +210,11 @@ WithTabsInteractive.parameters = {
             primaryButtonAction={primaryButtonAction}
             showHorizontalLine={false}
           >
-            <Typography as="div" variant="body1" style={{ paddingRight: space16 }}>
+            <Typography
+              as="div"
+              variant="body1"
+              style={{ paddingRight: space16, color: Neutral.B18 }}
+            >
               <Tabs
                 tabs={tabs}
                 selected={selected}
@@ -241,7 +258,11 @@ const WithLockedScrollableBackdropTemplate: Story<SideSheetProps> = args => {
         basicButtonAction={basicButtonAction}
         primaryButtonAction={primaryButtonAction}
       >
-        <Typography as="div" variant="body1" style={{ margin: space16 }}>
+        <Typography
+          as="div"
+          variant="body1"
+          style={{ margin: space16, color: Neutral.B18 }}
+        >
           Side Sheet Content here...
         </Typography>
       </SideSheet>

@@ -3,6 +3,7 @@ import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { ComponentAction } from '../../types/componentAction';
 import { Icon } from '../Icon';
+import { Neutral } from '../utilities/colors';
 import { Portal } from '../Portal/Portal';
 import {
   StyledSideSheetContainer,
@@ -96,9 +97,17 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                       <Icon name="ri-arrow-left-line" />
                     </StyledButtonContainer>
                   )}
-                  <Typography as="div" variant="subtitle1">
+                  <Typography
+                    as="div"
+                    variant="subtitle1"
+                    style={{ color: Neutral.B18 }}
+                  >
                     {title}
-                    <Typography as="div" variant="body1">
+                    <Typography
+                      as="div"
+                      variant="body1"
+                      style={{ color: Neutral.B18 }}
+                    >
                       {description}
                     </Typography>
                   </Typography>
