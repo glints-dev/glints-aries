@@ -110,7 +110,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   const renderTabs = tabs.map((tab: TabModel, index: number) => {
     const tabId = tab.id || nextId();
     return (
-      <StyledLi key={`${tabId}-${index}`}>
+      <StyledLi key={`${tabId}-${index}`} className="tab-item">
         <Tab
           id={tabId}
           key={`tab-${tabId}-${index}`}
@@ -125,6 +125,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   return (
     <StyledTabsContainer ref={ref}>
       <StyledTabHeaderContainer
+        className="tabs-header-container"
         ref={tabsHeaderRef}
         onScroll={handleScroll}
         onWheel={handleWheel}
@@ -138,7 +139,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
       >
         <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
       </StyledTabHeaderContainer>
-      <div>{children}</div>
+      <div className="tab-item-content">{children}</div>
     </StyledTabsContainer>
   );
 });
