@@ -17,10 +17,6 @@ export const StyledBar = styled.div<StyledBarProp>`
   min-height: ${props => (props.smallScreen ? '70' : '90')}px;
   height: fit-content;
 
-  @media (max-width: ${Breakpoints.large}) {
-    height: 70px;
-  }
-
   &[data-align='bottom'] {
     bottom: 0;
   }
