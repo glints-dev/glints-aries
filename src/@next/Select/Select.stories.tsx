@@ -7,6 +7,7 @@ import { Select, SelectProps } from './Select';
 import { NonSearchableMultiSelect } from './selectStoryHelper/NonSearchableMultiSelect';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
 import {
+  AsyncSearchableSingleWithInputState as AsyncSearchableSingleSelectWithInputState,
   SearchableSingle,
   SearchableSingleWithInputState as SearchableSingleSelectWithInputState,
 } from './selectStoryHelper/SearchableSingleSelect';
@@ -570,6 +571,65 @@ SearchableSingleWithInputState.args = {
 };
 
 SearchableSingleWithInputState.parameters = {
+  docs: {
+    source: {
+      code: `
+      const countries = [
+        { label: 'Indonesia', value: 'Indonesia' },
+        { label: 'Malaysia', value: 'Malaysia' },
+        { label: 'Singapore', value: 'Singapore' },
+        { label: 'Taiwan', value: 'Taiwan' },
+        { label: 'Vietnam', value: 'Vietnam' },
+      ];
+      const [inputValue, setInputValue] = useState('');
+      const [selected, setSelected] = useState('');
+
+      const handleInputChange = (value: string) => {
+        setInputValue(value);
+      };
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+    
+      return (
+        <Select
+          allowMultiple={false}
+          onSelect={handleSelect}
+          options={countries}
+          searchableProps={{
+            inputValue,
+            onInputChange: (value: string) => handleInputChange(value),
+          }}
+          width="600px"
+          searchable
+          label="Label"
+        />
+      );
+      `,
+    },
+  },
+};
+
+const AsyncSearchableSingleWithInputStateTemplate: Story<
+  SelectProps
+> = args => {
+  return (
+    <AsyncSearchableSingleSelectWithInputState
+      data={slicedCountries}
+      {...args}
+    />
+  );
+};
+
+export const AsyncSearchableSingleWithInputState =
+  AsyncSearchableSingleWithInputStateTemplate.bind({});
+
+AsyncSearchableSingleWithInputState.args = {
+  allowMultiple: false,
+};
+
+AsyncSearchableSingleWithInputState.parameters = {
   docs: {
     source: {
       code: `

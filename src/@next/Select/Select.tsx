@@ -23,6 +23,7 @@ export interface SelectProps {
   label?: React.ReactNode;
   /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   listHeight?: number;
+  loadingOptions?: boolean;
   onClose?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
@@ -47,6 +48,7 @@ export const Select = ({
   hasError = false,
   helpText,
   label,
+  loadingOptions,
   onClose,
   onRemoveTag,
   onSelect,
@@ -182,6 +184,7 @@ export const Select = ({
       {!disabled && (
         <Popover.Pane height={optionListHeight}>
           <OptionList
+            loading={loadingOptions}
             menuOptions={menuOptions}
             allowMultiple={allowMultiple}
             onSelect={onSelect}
