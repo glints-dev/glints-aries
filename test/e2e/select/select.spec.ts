@@ -202,3 +202,47 @@ test('Searchable - with custom prefix', async ({ page }) => {
     'select-with-custom-prefix-icon.png'
   );
 });
+
+test('Select - Async searchable single select', async ({ page }) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoSearchableSingleSelectPage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-list.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-filter-options.png'
+  );
+
+  await selectPage.activatorTextInput.fill('empty');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-filter-options-no-match.png'
+  );
+
+  await selectPage.activatorTextInput.fill('');
+  await selectPage.options.nth(1).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-hover.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-selected.png'
+  );
+
+  await selectPage.searchableSelect.click();
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-hasselected-focus-input.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-hasselected-searching.png'
+  );
+});
