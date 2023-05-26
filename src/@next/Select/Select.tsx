@@ -48,7 +48,7 @@ export const Select = ({
   hasError = false,
   helpText,
   label,
-  loadingOptions,
+  loadingOptions = false,
   onClose,
   onRemoveTag,
   onSelect,
@@ -69,6 +69,7 @@ export const Select = ({
   const [inputValue, setInputValue] = useState(
     searchableProps?.inputValue || ''
   );
+  const [hasInputValue, setHasInputValue] = useState(inputValue != '');
 
   const [searchableSelectState, setSearchableSelectState] =
     useState<SearchableSelectState>({
@@ -95,12 +96,27 @@ export const Select = ({
   };
 
   const handleFocus = () => {
+    if (!hasInputValue && menuOptions.length < 1) {
+      setPopoverActive(false);
+
+      return;
+    }
+
     setPopoverActive(true);
   };
 
   const handleSelectClick = () => {
     setPopoverActive(!popoverActive);
   };
+
+  useEffect(() => {
+    setMenuOptions(options);
+  }, [options]);
+
+  useEffect(() => {
+    setHasInputValue(inputValue != '');
+    setPopoverActive(inputValue != '');
+  }, [inputValue]);
 
   useEffect(() => {
     if (listHeight) {

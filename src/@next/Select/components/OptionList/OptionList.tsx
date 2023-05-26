@@ -7,7 +7,6 @@ import { SearchableSelectState } from '../SearchableSelectInput/SearchableSelect
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
-  isEmpty?: boolean;
   loading?: boolean;
   noOptionsMessage?: React.ReactNode;
   onMenuClose?: () => void;
@@ -41,7 +40,7 @@ export const NoOptionList = ({
 
 export const OptionList = ({
   allowMultiple,
-  loading,
+  loading = false,
   noOptionsMessage,
   onMenuClose,
   onSelect,

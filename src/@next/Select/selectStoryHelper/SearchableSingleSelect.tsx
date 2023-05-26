@@ -47,7 +47,6 @@ export const SearchableSingleWithInputState = ({
   return (
     <Select
       {...args}
-      loadingOptions
       onSelect={handleSelect}
       options={data}
       selectedValues={[selected]}
@@ -87,7 +86,7 @@ export const AsyncSearchableSingleWithInputState = ({
   data,
   ...args
 }: SearchableSingleSelectProps) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [mockData, setMockData] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [selected, setSelected] = useState('');
@@ -106,16 +105,16 @@ export const AsyncSearchableSingleWithInputState = ({
         setLoading(true);
         const response = await mockAsyncOptions(inputValue, data);
         setMockData(response);
-        console.log(response);
 
         setLoading(false);
-        return response;
       } catch {
         setLoading(false);
       }
     };
 
-    fetchMockData();
+    if (inputValue != '') {
+      fetchMockData();
+    }
   }, [data, inputValue]);
 
   return (
