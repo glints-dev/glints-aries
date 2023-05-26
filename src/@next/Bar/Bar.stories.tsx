@@ -121,7 +121,7 @@ const CustomHeadingTemplate: Story<BarProps> = args => {
 
 export const CustomHeading = CustomHeadingTemplate.bind({});
 
-const BackButtonBarTemplate: Story<BarProps> = args => {
+const BackButtonTemplate: Story<BarProps> = args => {
   const primaryAction = {
     label: 'Yes',
     action: () => console.log('Primary action!'),
@@ -148,8 +148,8 @@ const BackButtonBarTemplate: Story<BarProps> = args => {
   );
 };
 
-export const BackButtonBar = BackButtonBarTemplate.bind({});
-BackButtonBar.parameters = {
+export const BackButton = BackButtonTemplate.bind({});
+BackButton.parameters = {
   docs: {
     source: {
       code: `
@@ -194,7 +194,7 @@ const options = [
   },
 ];
 
-const customActionGroupBarTemplate: Story<BarProps> = args => {
+const customActionGroupTemplate: Story<BarProps> = args => {
   const customActionGroup = (
     <>
       <PopoverMenu
@@ -216,8 +216,8 @@ const customActionGroupBarTemplate: Story<BarProps> = args => {
   );
 };
 
-export const customActionGroupBar = customActionGroupBarTemplate.bind({});
-customActionGroupBar.parameters = {
+export const customActionGroup = customActionGroupTemplate.bind({});
+customActionGroup.parameters = {
   docs: {
     source: {
       code: `
