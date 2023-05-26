@@ -5,6 +5,7 @@ import { Bar, BarProps } from './Bar';
 import { Colors, Typography } from '..';
 import { PopoverMenu } from '../Menu/menuStoryHelper/PopoverMenu';
 import { StyledCustomHeadingWrapper } from './BarStyle';
+import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 
 (Bar as React.FunctionComponent<BarProps>).displayName = 'Bar';
 
@@ -15,9 +16,9 @@ export default {
     Story => (
       <>
         <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
-        <div id="glints-portal-container"></div>
       </>
     ),
+    withGlintsPortalContainer,
   ],
 } as Meta;
 
