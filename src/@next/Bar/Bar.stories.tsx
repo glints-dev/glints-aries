@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Bar, BarProps } from './Bar';
 import { Colors, Typography } from '..';
+import { PopoverMenu } from '../Menu/menuStoryHelper/PopoverMenu';
 import { StyledCustomHeadingWrapper } from './BarStyle';
 
 (Bar as React.FunctionComponent<BarProps>).displayName = 'Bar';
@@ -13,7 +13,10 @@ export default {
   component: Bar,
   decorators: [
     Story => (
-      <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+      <>
+        <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+        <div id="glints-portal-container"></div>
+      </>
     ),
   ],
 } as Meta;
@@ -118,7 +121,7 @@ const CustomHeadingTemplate: Story<BarProps> = args => {
 
 export const CustomHeading = CustomHeadingTemplate.bind({});
 
-const CustomSpacingBarTemplate: Story<BarProps> = args => {
+const BackButtonBarTemplate: Story<BarProps> = args => {
   const primaryAction = {
     label: 'Yes',
     action: () => console.log('Primary action!'),
@@ -141,13 +144,12 @@ const CustomSpacingBarTemplate: Story<BarProps> = args => {
       tertiaryAction={tertiaryAction}
       showBackButton={true}
       onBack={() => console.log('back button clicked')}
-      buttonSpacing={[8, 16]}
     />
   );
 };
 
-export const CustomSpacingBar = CustomSpacingBarTemplate.bind({});
-CustomSpacingBar.parameters = {
+export const BackButtonBar = BackButtonBarTemplate.bind({});
+BackButtonBar.parameters = {
   docs: {
     source: {
       code: `
@@ -160,8 +162,84 @@ CustomSpacingBar.parameters = {
         tertiaryAction={tertiaryAction}
         showBackButton={true}
         onBack={() => console.log('back button clicked')}
-        buttonSpacing={[8, 16]}
       />
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};
+
+const options = [
+  {
+    active: false,
+    disabled: false,
+    id: '1',
+    label: 'All status',
+    value: 'All status',
+  },
+  {
+    active: false,
+    disabled: false,
+    id: '2',
+    label: 'Completed',
+    value: 'Completed',
+  },
+  {
+    active: false,
+    disabled: false,
+    id: '3',
+    label: 'Pending',
+    value: 'Pending',
+  },
+];
+
+const customActionGroupBarTemplate: Story<BarProps> = args => {
+  const customActionGroup = (
+    <>
+      <PopoverMenu
+        title="Select"
+        options={options}
+        activatorLabel="Basic Menu"
+        {...args}
+      />
+    </>
+  );
+
+  return (
+    <Bar
+      {...args}
+      heading={'Page Title 2'}
+      subheading={'Additional Content'}
+      customActionGroup={customActionGroup}
+    />
+  );
+};
+
+export const customActionGroupBar = customActionGroupBarTemplate.bind({});
+customActionGroupBar.parameters = {
+  docs: {
+    source: {
+      code: `
+      const customActionGroup = (
+        <>
+          <PopoverMenu
+            title="Select"
+            options={options}
+            activatorLabel="Basic Menu"
+            {...args}
+          />
+        </>
+      );
+    
+      return (
+        <Bar
+          {...args}
+          heading={'Page Title 2'}
+          subheading={'Additional Content'}
+          customActionGroup={customActionGroup}
+        />
+      );
     `,
     },
     language: 'javascript',

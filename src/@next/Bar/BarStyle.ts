@@ -2,19 +2,14 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral } from '../utilities/colors';
 import { space8 } from '../utilities/spacing';
-import React from 'react';
 
-interface StyledBarProp extends React.HTMLAttributes<HTMLDivElement> {
-  smallScreen: boolean;
-}
-
-export const StyledBar = styled.div<StyledBarProp>`
+export const StyledBar = styled.div`
   display: flex;
   flex-direction: row;
-  padding: ${props => (props.smallScreen ? '8' : '12')}px 0;
+  padding: 12px 0;
   width: 100%;
   position: absolute;
-  min-height: ${props => (props.smallScreen ? '70' : '90')}px;
+  min-height: 90px;
   height: fit-content;
 
   &[data-align='bottom'] {
@@ -27,6 +22,11 @@ export const StyledBar = styled.div<StyledBarProp>`
   box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05),
     0px 1px 3px rgba(63, 63, 68, 0.15);
   background: ${Neutral.B100};
+
+  @media (max-width: ${Breakpoints.large}) {
+    padding: 8px 0;
+    min-height: 70px;
+  }
 `;
 
 export const StyledBarHeaderWrapper = styled.div`
@@ -41,10 +41,10 @@ export const StyledBarActionWrapper = styled.div`
   align-items: flex-end;
 `;
 
-export const StyledBarContainer = styled.div<StyledBarProp>`
+export const StyledBarContainer = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 0 ${props => (props.smallScreen ? '16' : '50')}px;
+  padding: 0 50px;
   width: 100%;
 
   *,
@@ -60,7 +60,7 @@ export const StyledBarContainer = styled.div<StyledBarProp>`
 
   @media (max-width: ${Breakpoints.large}) {
     gap: 16px;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 `;
 
@@ -70,11 +70,19 @@ export const StyledCustomHeadingWrapper = styled.div`
   gap: ${space8};
 `;
 
-export const StyledButtonContainer = styled.div<StyledBarProp>`
+export const StyledButtonContainer = styled.div`
   cursor: pointer;
-  margin-right: ${props => (props.smallScreen ? '16' : '24')}px;
+  margin-right: 24px;
   svg {
-    width: ${props => (props.smallScreen ? '16' : '24')}px;
+    width: 24px;
     fill: ${Neutral.B40};
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    margin-right: 16px;
+
+    svg {
+      width: 16px;
+    }
   }
 `;

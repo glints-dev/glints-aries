@@ -21,13 +21,9 @@ export type BarProps = {
   secondaryAction?: ComponentAction;
   tertiaryAction?: ComponentAction;
   position?: 'top' | 'bottom';
-  smallScreen?: boolean;
   showBackButton?: boolean;
   onBack?: () => void;
-  // array of 2 numbers (in pixels)
-  // index 0: horizontal distance from primary to secondary button
-  // index 1: horizontal distance from secondary to tertiary button
-  buttonSpacing?: number[];
+  customActionGroup?: React.ReactNode;
 };
 
 export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
@@ -40,7 +36,7 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
     position,
     showBackButton = false,
     onBack,
-    buttonSpacing = [8, 8],
+    customActionGroup,
   }: BarProps,
   ref
 ) {
@@ -67,39 +63,36 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
   const breakpointWidth = parseInt(Breakpoints.large.slice(0, -2));
   const buttonSize: 'default' | 'large' =
     width <= breakpointWidth ? 'default' : 'large';
-  const smallScreen: boolean = width <= breakpointWidth ? true : false;
 
   return (
-    <StyledBar data-align={position} ref={ref} smallScreen={smallScreen}>
-      <StyledBarContainer smallScreen={smallScreen}>
+    <StyledBar data-align={position} ref={ref}>
+      <StyledBarContainer>
         {showBackButton && (
-          <StyledButtonContainer onClick={onBack} smallScreen={smallScreen}>
+          <StyledButtonContainer onClick={onBack}>
             <Icon name="ri-arrow-left-line" />
           </StyledButtonContainer>
         )}
         <StyledBarHeaderWrapper>{headerMarkup()} </StyledBarHeaderWrapper>
         <StyledBarActionWrapper>
-          <ButtonGroup>
-            {tertiaryAction && (
-              <Button onClick={tertiaryAction.action} size={buttonSize}>
-                {tertiaryAction.label}
-              </Button>
-            )}
-            {buttonSpacing[1] && (
-              <div style={{ marginRight: buttonSpacing[1] - 16 }}></div>
-            )}
-            {secondaryAction && (
-              <Button onClick={secondaryAction.action} size={buttonSize}>
-                {secondaryAction.label}
-              </Button>
-            )}
-            {buttonSpacing[0] && (
-              <div style={{ marginRight: buttonSpacing[0] - 16 }}></div>
-            )}
-            <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
-              {primaryAction.label}
-            </PrimaryButton>
-          </ButtonGroup>
+          {customActionGroup ? (
+            customActionGroup
+          ) : (
+            <ButtonGroup>
+              {tertiaryAction && (
+                <Button onClick={tertiaryAction.action} size={buttonSize}>
+                  {tertiaryAction.label}
+                </Button>
+              )}
+              {secondaryAction && (
+                <Button onClick={secondaryAction.action} size={buttonSize}>
+                  {secondaryAction.label}
+                </Button>
+              )}
+              <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
+                {primaryAction.label}
+              </PrimaryButton>
+            </ButtonGroup>
+          )}
         </StyledBarActionWrapper>
       </StyledBarContainer>
     </StyledBar>
