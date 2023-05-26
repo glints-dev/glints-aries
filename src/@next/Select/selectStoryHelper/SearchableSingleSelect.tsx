@@ -60,7 +60,7 @@ export const SearchableSingleWithInputState = ({
   );
 };
 
-const filterOptions = (str: string, data: Option[]) => {
+const filterOptions = (str: string, data: Option[]): Option[] => {
   if (str === '') {
     return data;
   }
@@ -73,7 +73,7 @@ const filterOptions = (str: string, data: Option[]) => {
   return filterOptions;
 };
 
-const mockAsyncOptions = (str: string, data: Option[]) => {
+const mockAsyncOptions = (str: string, data: Option[]): Promise<Option[]> => {
   return new Promise(resolve => {
     setTimeout(() => {
       const filteredOptions = filterOptions(str, data);
@@ -87,7 +87,7 @@ export const AsyncSearchableSingleWithInputState = ({
   ...args
 }: SearchableSingleSelectProps) => {
   const [loading, setLoading] = useState(false);
-  const [mockData, setMockData] = useState([]);
+  const [mockData, setMockData] = useState<Option[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [selected, setSelected] = useState('');
 
