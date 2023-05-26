@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { debounce } from '../../../helpers/debounce';
 import { Option } from '../../Menu';
 import { Select } from '../Select';
 
@@ -95,6 +96,8 @@ export const AsyncSearchableSingleWithInputState = ({
     setInputValue(value);
   };
 
+  const debounceHandleInputChange = debounce(handleInputChange);
+
   const handleSelect = ({ value }: { value: string }) => {
     setSelected(value);
   };
@@ -112,9 +115,12 @@ export const AsyncSearchableSingleWithInputState = ({
       }
     };
 
-    if (inputValue != '') {
-      fetchMockData();
+    if (inputValue === '') {
+      setMockData([]);
+      return;
     }
+
+    fetchMockData();
   }, [data, inputValue]);
 
   return (
@@ -126,7 +132,7 @@ export const AsyncSearchableSingleWithInputState = ({
       selectedValues={[selected]}
       searchableProps={{
         inputValue,
-        onInputChange: (value: string) => handleInputChange(value),
+        onInputChange: (value: string) => debounceHandleInputChange(value),
       }}
       width="600px"
       label="Label"

@@ -640,28 +640,53 @@ AsyncSearchableSingleWithInputState.parameters = {
         { label: 'Taiwan', value: 'Taiwan' },
         { label: 'Vietnam', value: 'Vietnam' },
       ];
+      const [loading, setLoading] = useState(false);
+      const [mockData, setMockData] = useState<Option[]>([]);
       const [inputValue, setInputValue] = useState('');
       const [selected, setSelected] = useState('');
-
-      const handleInputChange = (value: string) => {
+    
+      const handleInputChange = async (value: string) => {
         setInputValue(value);
       };
-
+    
+      const debounceHandleInputChange = debounce(handleInputChange);
+    
       const handleSelect = ({ value }: { value: string }) => {
         setSelected(value);
       };
     
+      useEffect(() => {
+        const fetchMockData = async () => {
+          try {
+            setLoading(true);
+            const response = await mockAsyncOptions(inputValue, data);
+            setMockData(response);
+    
+            setLoading(false);
+          } catch {
+            setLoading(false);
+          }
+        };
+    
+        if (inputValue === '') {
+          setMockData([]);
+          return;
+        }
+    
+        fetchMockData();
+      }, [data, inputValue]);
+    
       return (
         <Select
-          allowMultiple={false}
+          loadingOptions={loading}
           onSelect={handleSelect}
-          options={countries}
+          options={mockData}
+          selectedValues={[selected]}
           searchableProps={{
             inputValue,
-            onInputChange: (value: string) => handleInputChange(value),
+            onInputChange: (value: string) => debounceHandleInputChange(value),
           }}
           width="600px"
-          searchable
           label="Label"
         />
       );
