@@ -113,7 +113,10 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                   </Typography>
                   {showCloseButton && (
                     <StyledRightContainer>
-                      <StyledButtonContainer onClick={handleClose}>
+                      <StyledButtonContainer
+                        data-testid="sidesheet-close-btn"
+                        onClick={handleClose}
+                      >
                         <Icon name="ri-close" />
                       </StyledButtonContainer>
                     </StyledRightContainer>
