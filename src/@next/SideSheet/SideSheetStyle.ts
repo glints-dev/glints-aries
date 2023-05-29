@@ -13,12 +13,25 @@ export const StyledSideSheetWrapper = styled.div`
   z-index: 999;
   animation: fade-in2 0.2s;
 
+  &.closed {
+    animation: fade-out2 0.2s;
+  }
+
   @keyframes fade-in2 {
     0% {
       opacity: 0;
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes fade-out2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 `;
@@ -36,6 +49,10 @@ export const StyledSideSheetContainer = styled.div`
   top: 0;
   right: 0;
 
+  &.closed {
+    animation: slide-out 0.2s;
+  }
+
   @keyframes slide-in {
     0% {
       opacity: 0;
@@ -43,6 +60,16 @@ export const StyledSideSheetContainer = styled.div`
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(100%);
     }
   }
 

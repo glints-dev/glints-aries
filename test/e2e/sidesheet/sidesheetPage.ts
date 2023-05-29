@@ -8,7 +8,7 @@ export class SidesheetPage extends StoryBookPage {
     super(page, '?path=/story/next-sidesheet--interactive');
     this.wrapper = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
-      .getByTestId('side-sheet-wrapper-unique');
+      .locator('.side-sheet-wrapper-unique');
   }
 
   async gotoWithTabsPage() {

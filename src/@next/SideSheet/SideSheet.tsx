@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { ComponentAction } from '../../types/componentAction';
@@ -58,23 +58,24 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
       };
     }, [isOpen]);
 
+    // store state for closing animation, and cleanup when unmounting
+    const [isClosedAnimation, setIsClosedAnimation] = useState(false);
+    const timeoutId = useRef(null);
+    useEffect(() => {
+      return () => {
+        if (timeoutId.current) {
+          clearTimeout(timeoutId.current);
+        }
+      };
+    }, []);
+
     // fade out effect for 0.2seconds when closed
     const handleClose = () => {
-      const wrapperDiv = document.getElementById('side-sheet-wrapper-unique');
-      const containerDiv = document.getElementById(
-        'side-sheet-container-unique'
-      );
-      let opacity = 1;
-      let translateX = 0;
-      const interval = setInterval(function () {
-        if (opacity > 0) {
-          wrapperDiv.style.opacity = `${(opacity -= 0.05)}`;
-          containerDiv.style.transform = `translateX(${(translateX += 5)}%)`;
-        } else {
-          clearInterval(interval);
-          onClose();
-        }
-      }, 10);
+      setIsClosedAnimation(true);
+      timeoutId.current = setTimeout(() => {
+        setIsClosedAnimation(false);
+        onClose();
+      }, 190); // purposefully made this 0.19sec (to prevent rare animation glitch)
     };
 
     return (
@@ -82,11 +83,13 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
         {isOpen && (
           <Portal>
             <StyledSideSheetWrapper
-              id="side-sheet-wrapper-unique"
-              onClick={() => handleClose()}
+              className={`side-sheet-wrapper ${
+                isClosedAnimation ? 'closed' : ''
+              }`}
+              onClick={handleClose}
             >
               <StyledSideSheetContainer
-                id="side-sheet-container-unique"
+                className={`${isClosedAnimation ? 'closed' : ''}`}
                 ref={ref}
                 onClick={e => e.stopPropagation()}
                 {...props}
