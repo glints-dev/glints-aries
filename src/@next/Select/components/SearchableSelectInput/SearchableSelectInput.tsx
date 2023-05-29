@@ -147,6 +147,7 @@ export const SearchableSelectInput = forwardRef<
 
   return (
     <StyledContainer
+      className="select-input-container"
       ref={ref}
       data-error={error}
       data-disabled={disabled}

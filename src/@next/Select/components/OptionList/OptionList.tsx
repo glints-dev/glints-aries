@@ -17,7 +17,7 @@ export interface OptionListProps extends MenuProps {
 }
 
 export const MenuOptionLoading = () => (
-  <EmptyOptionContainer>
+  <EmptyOptionContainer className="menu-option-loading">
     <Spinner size="small" fill={Blue.S99} />
   </EmptyOptionContainer>
 );
@@ -30,7 +30,7 @@ export const NoOptionList = ({
   noOptionsMessage = 'No matching results',
 }: NoOptionListProps) => {
   return (
-    <EmptyOptionContainer>
+    <EmptyOptionContainer className="menu-option-empty">
       <Typography as="span" variant="body2" color={Neutral.B40}>
         {noOptionsMessage}
       </Typography>
@@ -80,7 +80,7 @@ export const OptionList = ({
   }
 
   return (
-    <OptionListContainer width={width}>
+    <OptionListContainer width={width} className="menu-option-list">
       {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}
