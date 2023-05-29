@@ -72,6 +72,27 @@ export const StyledBanner = styled.div`
     fill: ${Red.B93};
   }
 
+  &[data-type='fixed'],
+  &[data-type='fixed-noicon'] {
+    position: fixed;
+    border: 0;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    min-height: 0;
+    padding-block: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 20px;
+      width: 20px;
+      position: static;
+      margin-top: 4px;
+    }
+  }
+
   @media (max-width: ${Breakpoints.large}) {
     min-height: 89px;
 
@@ -82,10 +103,18 @@ export const StyledBanner = styled.div`
 `;
 
 export const StyledBannerContentContainer = styled.div`
-  padding-left: 40px;
+  &[data-type='static'] {
+    padding-left: 40px;
 
-  button {
-    margin-top: 10px;
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  &[data-type='fixed'],
+  &[data-type='fixed-noicon'] {
+    padding-right: 14px;
+    margin: 0 0;
   }
 `;
 
@@ -97,7 +126,14 @@ export const StyledBannerTitle = styled.div`
   margin-bottom: ${space4};
   padding-left: 40px;
 
-  button {
-    margin-top: 10px;
+  &[data-type='static'] {
+    button {
+      margin-top: 10px;
+    }
   }
+`;
+
+export const StyledFixedCloseIconWrapper = styled.div`
+  position: absolute;
+  right: 20px;
 `;

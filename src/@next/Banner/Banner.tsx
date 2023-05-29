@@ -9,9 +9,10 @@ import {
   StyledBannerTitle,
   StyledBannerTitleContainer,
   StyledCloseIconWrapper,
+  StyledFixedCloseIconWrapper,
 } from './BannerStyle';
 
-export type BannerProps = {
+export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   /** If set will take precedent of status */
   iconName?: IconNames;
@@ -21,7 +22,8 @@ export type BannerProps = {
   secondaryAction?: React.ReactNode;
   dismissable?: boolean;
   onDismiss?: () => void;
-};
+  type?: 'static' | 'fixed' | 'fixed-noicon';
+}
 
 const iconNameStatusMap: Record<BannerProps['status'], IconNames> = {
   success: 'ri-checkbox-circle-fill',
@@ -41,6 +43,7 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       secondaryAction,
       dismissable = true,
       onDismiss,
+      type = 'static',
       ...props
     }: BannerProps,
     ref
@@ -58,37 +61,60 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
         ref={ref}
         data-titled={!!title}
         data-status={status}
+        data-type={type}
         {...props}
       >
-        <StyledBannerTitleContainer>
-          <Icon name={iconNameValue} />
-          {title && (
-            <StyledBannerTitle>
-              <Typography as="span" variant="subtitle1">
-                {title}
-              </Typography>
-            </StyledBannerTitle>
-          )}
-          {dismissable && (
-            <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
-              <Icon name="ri-close" />
-            </StyledCloseIconWrapper>
-          )}
-        </StyledBannerTitleContainer>
-        <StyledBannerContentContainer>
+        {type === 'static' ? (
+          <StyledBannerTitleContainer>
+            <Icon name={iconNameValue} />
+            {title && (
+              <StyledBannerTitle data-type={type}>
+                <Typography as="span" variant="subtitle1">
+                  {title}
+                </Typography>
+              </StyledBannerTitle>
+            )}
+            {dismissable && (
+              <StyledCloseIconWrapper
+                role="button"
+                onClick={() => onDismiss?.()}
+              >
+                <Icon name="ri-close" />
+              </StyledCloseIconWrapper>
+            )}
+          </StyledBannerTitleContainer>
+        ) : (
+          type === 'fixed' && (
+            <StyledBannerContentContainer data-type={type}>
+              <Icon name={iconNameValue} />
+            </StyledBannerContentContainer>
+          )
+        )}
+        <StyledBannerContentContainer data-type={type}>
           <Typography as="div" variant="body1">
             {children}
           </Typography>
         </StyledBannerContentContainer>
-        <StyledBannerContentContainer>
-          {action ||
-            (secondaryAction && (
+        <StyledBannerContentContainer data-type={type}>
+          {action &&
+            (secondaryAction !== 'undefined' ? (
               <ButtonGroup>
                 {action}
                 {secondaryAction}
               </ButtonGroup>
+            ) : (
+              { action }
             ))}
         </StyledBannerContentContainer>
+        {type !== 'static' && dismissable && (
+          <StyledFixedCloseIconWrapper
+            data-type={type}
+            role="button"
+            onClick={() => onDismiss?.()}
+          >
+            <Icon name="ri-close" />
+          </StyledFixedCloseIconWrapper>
+        )}
       </StyledBanner>
     );
   }
