@@ -7,6 +7,7 @@ import { Select, SelectProps } from './Select';
 import { NonSearchableMultiSelect } from './selectStoryHelper/NonSearchableMultiSelect';
 import { SearchableSelect } from './selectStoryHelper/Searchable';
 import {
+  AsyncSearchableSingleWithInputState as AsyncSearchableSingleSelectWithInputState,
   SearchableSingle,
   SearchableSingleWithInputState as SearchableSingleSelectWithInputState,
 } from './selectStoryHelper/SearchableSingleSelect';
@@ -602,6 +603,90 @@ SearchableSingleWithInputState.parameters = {
           }}
           width="600px"
           searchable
+          label="Label"
+        />
+      );
+      `,
+    },
+  },
+};
+
+const AsyncSearchableSingleWithInputStateTemplate: Story<
+  SelectProps
+> = args => {
+  return (
+    <AsyncSearchableSingleSelectWithInputState
+      data={slicedCountries}
+      {...args}
+    />
+  );
+};
+
+export const AsyncSearchableSingleWithInputState =
+  AsyncSearchableSingleWithInputStateTemplate.bind({});
+
+AsyncSearchableSingleWithInputState.args = {
+  allowMultiple: false,
+};
+
+AsyncSearchableSingleWithInputState.parameters = {
+  docs: {
+    source: {
+      code: `
+      const countries = [
+        { label: 'Indonesia', value: 'Indonesia' },
+        { label: 'Malaysia', value: 'Malaysia' },
+        { label: 'Singapore', value: 'Singapore' },
+        { label: 'Taiwan', value: 'Taiwan' },
+        { label: 'Vietnam', value: 'Vietnam' },
+      ];
+      const [loading, setLoading] = useState(false);
+      const [mockData, setMockData] = useState<Option[]>([]);
+      const [inputValue, setInputValue] = useState('');
+      const [selected, setSelected] = useState('');
+    
+      const handleInputChange = async (value: string) => {
+        setInputValue(value);
+      };
+    
+      const debounceHandleInputChange = debounce(handleInputChange);
+    
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+    
+      useEffect(() => {
+        const fetchMockData = async () => {
+          try {
+            setLoading(true);
+            const response = await mockAsyncOptions(inputValue, data);
+            setMockData(response);
+    
+            setLoading(false);
+          } catch {
+            setLoading(false);
+          }
+        };
+    
+        if (inputValue === '') {
+          setMockData([]);
+          return;
+        }
+    
+        fetchMockData();
+      }, [data, inputValue]);
+    
+      return (
+        <Select
+          loadingOptions={loading}
+          onSelect={handleSelect}
+          options={mockData}
+          selectedValues={[selected]}
+          searchableProps={{
+            inputValue,
+            onInputChange: (value: string) => debounceHandleInputChange(value),
+          }}
+          width="600px"
           label="Label"
         />
       );

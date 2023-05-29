@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, MenuProps, Option } from '../../../Menu';
+import { Spinner } from '../../../Spinner';
 import { Typography } from '../../../Typography';
-import { Neutral } from '../../../utilities/colors';
+import { Blue, Neutral } from '../../../utilities/colors';
 import { SearchableSelectState } from '../SearchableSelectInput/SearchableSelectInput';
 import { EmptyOptionContainer, OptionListContainer } from './OptionListStyle';
 
 export interface OptionListProps extends MenuProps {
-  isEmpty?: boolean;
+  loading?: boolean;
   noOptionsMessage?: React.ReactNode;
   onMenuClose?: () => void;
   onSelect?({ value }: { value: string }): void;
@@ -14,6 +15,12 @@ export interface OptionListProps extends MenuProps {
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
   menuOptions?: Option[];
 }
+
+export const MenuOptionLoading = () => (
+  <EmptyOptionContainer className="menu-option-loading">
+    <Spinner size="small" fill={Blue.S99} />
+  </EmptyOptionContainer>
+);
 
 export interface NoOptionListProps {
   noOptionsMessage?: React.ReactNode;
@@ -23,7 +30,7 @@ export const NoOptionList = ({
   noOptionsMessage = 'No matching results',
 }: NoOptionListProps) => {
   return (
-    <EmptyOptionContainer>
+    <EmptyOptionContainer className="menu-option-empty">
       <Typography as="span" variant="body2" color={Neutral.B40}>
         {noOptionsMessage}
       </Typography>
@@ -33,6 +40,7 @@ export const NoOptionList = ({
 
 export const OptionList = ({
   allowMultiple,
+  loading = false,
   noOptionsMessage,
   onMenuClose,
   onSelect,
@@ -63,8 +71,16 @@ export const OptionList = ({
     }
   };
 
+  if (loading) {
+    return (
+      <OptionListContainer width={width}>
+        <MenuOptionLoading />
+      </OptionListContainer>
+    );
+  }
+
   return (
-    <OptionListContainer width={width}>
+    <OptionListContainer width={width} className="menu-option-list">
       {hasMenuOptions ? (
         <Menu
           allowMultiple={allowMultiple}

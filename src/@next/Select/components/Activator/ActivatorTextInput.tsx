@@ -77,6 +77,7 @@ export const ActivatorTextInput = ({
       {allowMultiple ? (
         <StyledTextInput
           {...props}
+          className="select-input"
           ref={activatorRef}
           prefix={prefix}
           onChange={value => handleChange({ value })}

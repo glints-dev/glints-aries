@@ -23,6 +23,7 @@ export interface SelectProps {
   label?: React.ReactNode;
   /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   listHeight?: number;
+  loadingOptions?: boolean;
   onClose?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
@@ -47,6 +48,7 @@ export const Select = ({
   hasError = false,
   helpText,
   label,
+  loadingOptions = false,
   onClose,
   onRemoveTag,
   onSelect,
@@ -64,10 +66,10 @@ export const Select = ({
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
   const [menuOptions, setMenuOptions] = useState(options);
+  const { length: optionsLength } = options;
   const [inputValue, setInputValue] = useState(
     searchableProps?.inputValue || ''
   );
-
   const [searchableSelectState, setSearchableSelectState] =
     useState<SearchableSelectState>({
       showSelected: false,
@@ -93,12 +95,32 @@ export const Select = ({
   };
 
   const handleFocus = () => {
+    if (options.length < 1) {
+      setPopoverActive(false);
+
+      return;
+    }
+
     setPopoverActive(true);
   };
 
   const handleSelectClick = () => {
     setPopoverActive(!popoverActive);
   };
+
+  useEffect(() => {
+    setMenuOptions(options);
+  }, [options]);
+
+  useEffect(() => {
+    if (inputValue != '' && optionsLength > 0) {
+      setPopoverActive(true);
+    }
+
+    if (inputValue === '' && optionsLength < 1) {
+      setPopoverActive(false);
+    }
+  }, [inputValue, optionsLength]);
 
   useEffect(() => {
     if (listHeight) {
@@ -182,6 +204,7 @@ export const Select = ({
       {!disabled && (
         <Popover.Pane height={optionListHeight}>
           <OptionList
+            loading={loadingOptions}
             menuOptions={menuOptions}
             allowMultiple={allowMultiple}
             onSelect={onSelect}

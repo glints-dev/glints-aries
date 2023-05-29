@@ -202,3 +202,59 @@ test('Searchable - with custom prefix', async ({ page }) => {
     'select-with-custom-prefix-icon.png'
   );
 });
+
+test('Select - Async searchable single select', async ({ page }) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoAsyncSearchableSingleSelectPage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.optionList).not.toBeVisible();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-list.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await selectPage.optionSingapore.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-filter-options.png'
+  );
+
+  await selectPage.activatorTextInput.fill('empty');
+  await selectPage.optionListEmpty.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-filter-options-no-match.png'
+  );
+
+  await selectPage.activatorTextInput.fill('');
+  await expect(selectPage.optionList).not.toBeVisible();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-blank-input.png'
+  );
+
+  await selectPage.activatorTextInput.fill('in');
+  await selectPage.optionSingapore.waitFor();
+  // hover Indonesia
+  await selectPage.options.nth(0).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-hover.png'
+  );
+  // click Indonesia
+  await selectPage.options.nth(0).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-selected.png'
+  );
+
+  await selectPage.searchableSelect.click();
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-hasselected-focus-input.png'
+  );
+
+  await selectPage.activatorTextInput.fill('singapore');
+  await selectPage.optionSingapore.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-hasselected-searching.png'
+  );
+});

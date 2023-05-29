@@ -4,7 +4,10 @@ import { Args, StoryBookPage } from '../storybookPage';
 export class SelectPage extends StoryBookPage {
   readonly activatorSelect: Locator;
   readonly activatorTextInput: Locator;
+  readonly optionList: Locator;
+  readonly optionListEmpty: Locator;
   readonly options: Locator;
+  readonly optionSingapore: Locator;
   readonly label: Locator;
   readonly searchableSelect: Locator;
 
@@ -18,9 +21,21 @@ export class SelectPage extends StoryBookPage {
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('textbox');
 
+    this.optionList = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator('.Polaris-PositionedOverlay');
+
+    this.optionListEmpty = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .getByText('No matching results');
+
     this.options = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByRole('listitem');
+
+    this.optionSingapore = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .getByText('Singapore');
 
     this.label = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
@@ -48,6 +63,13 @@ export class SelectPage extends StoryBookPage {
 
   async gotoSearchableSingleSelectPage(args?: Args) {
     this.setPath('?path=/story/next-select--searchable-single-select');
+    await this.goto(args);
+  }
+
+  async gotoAsyncSearchableSingleSelectPage(args?: Args) {
+    this.setPath(
+      '?path=/story/next-select--async-searchable-single-with-input-state'
+    );
     await this.goto(args);
   }
 
