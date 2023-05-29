@@ -1,10 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Bar, BarProps } from './Bar';
 import { Colors, Typography } from '..';
+import { PopoverMenu } from '../Menu/menuStoryHelper/PopoverMenu';
 import { StyledCustomHeadingWrapper } from './BarStyle';
+import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 
 (Bar as React.FunctionComponent<BarProps>).displayName = 'Bar';
 
@@ -13,8 +14,11 @@ export default {
   component: Bar,
   decorators: [
     Story => (
-      <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+      <>
+        <BaseContainer style={{ height: '200px' }}>{Story()}</BaseContainer>
+      </>
     ),
+    withGlintsPortalContainer,
   ],
 } as Meta;
 
@@ -117,3 +121,129 @@ const CustomHeadingTemplate: Story<BarProps> = args => {
 };
 
 export const CustomHeading = CustomHeadingTemplate.bind({});
+
+const BackButtonTemplate: Story<BarProps> = args => {
+  const primaryAction = {
+    label: 'Yes',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'No',
+    action: () => console.log('Secondary action!'),
+  };
+  const tertiaryAction = {
+    label: 'No',
+    action: () => console.log('Tertiary action!'),
+  };
+  return (
+    <Bar
+      {...args}
+      heading={'Page Title'}
+      subheading={'Additional Content'}
+      primaryAction={primaryAction}
+      secondaryAction={secondaryAction}
+      tertiaryAction={tertiaryAction}
+      showBackButton={true}
+      onBack={() => console.log('back button clicked')}
+    />
+  );
+};
+
+export const BackButton = BackButtonTemplate.bind({});
+BackButton.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Bar
+        {...args}
+        heading={'Page Title'}
+        subheading={'Additional Content'}
+        primaryAction={primaryAction}
+        secondaryAction={secondaryAction}
+        tertiaryAction={tertiaryAction}
+        showBackButton={true}
+        onBack={() => console.log('back button clicked')}
+      />
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};
+
+const options = [
+  {
+    active: false,
+    disabled: false,
+    id: '1',
+    label: 'All status',
+    value: 'All status',
+  },
+  {
+    active: false,
+    disabled: false,
+    id: '2',
+    label: 'Completed',
+    value: 'Completed',
+  },
+  {
+    active: false,
+    disabled: false,
+    id: '3',
+    label: 'Pending',
+    value: 'Pending',
+  },
+];
+
+const customActionGroupTemplate: Story<BarProps> = args => {
+  const customActionGroup = (
+    <>
+      <PopoverMenu
+        title="Select"
+        options={options}
+        activatorLabel="Basic Menu"
+        {...args}
+      />
+    </>
+  );
+
+  return (
+    <Bar
+      {...args}
+      heading={'Page Title 2'}
+      subheading={'Additional Content'}
+      customActionGroup={customActionGroup}
+    />
+  );
+};
+
+export const customActionGroup = customActionGroupTemplate.bind({});
+customActionGroup.parameters = {
+  docs: {
+    source: {
+      code: `
+      const customActionGroup = (
+        <>
+          <PopoverMenu
+            title="Select"
+            options={options}
+            activatorLabel="Basic Menu"
+            {...args}
+          />
+        </>
+      );
+    
+      return (
+        <Bar
+          {...args}
+          heading={'Page Title 2'}
+          subheading={'Additional Content'}
+          customActionGroup={customActionGroup}
+        />
+      );
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};

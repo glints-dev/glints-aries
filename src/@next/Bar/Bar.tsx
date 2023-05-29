@@ -3,12 +3,14 @@ import { Breakpoints, Colors } from '..';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
+import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 import {
   StyledBarActionWrapper,
   StyledBar,
   StyledBarHeaderWrapper,
   StyledBarContainer,
+  StyledButtonContainer,
 } from './BarStyle';
 import { useWindowSize } from './useWindowSize';
 
@@ -19,6 +21,9 @@ export type BarProps = {
   secondaryAction?: ComponentAction;
   tertiaryAction?: ComponentAction;
   position?: 'top' | 'bottom';
+  showBackButton?: boolean;
+  onBack?: () => void;
+  customActionGroup?: React.ReactNode;
 };
 
 export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
@@ -29,6 +34,9 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
     secondaryAction,
     tertiaryAction,
     position,
+    showBackButton = false,
+    onBack,
+    customActionGroup,
   }: BarProps,
   ref
 ) {
@@ -59,23 +67,32 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
   return (
     <StyledBar data-align={position} ref={ref}>
       <StyledBarContainer>
+        {showBackButton && (
+          <StyledButtonContainer onClick={onBack}>
+            <Icon name="ri-arrow-left-line" />
+          </StyledButtonContainer>
+        )}
         <StyledBarHeaderWrapper>{headerMarkup()} </StyledBarHeaderWrapper>
         <StyledBarActionWrapper>
-          <ButtonGroup>
-            {tertiaryAction && (
-              <Button onClick={tertiaryAction.action} size={buttonSize}>
-                {tertiaryAction.label}
-              </Button>
-            )}
-            {secondaryAction && (
-              <Button onClick={secondaryAction.action} size={buttonSize}>
-                {secondaryAction.label}
-              </Button>
-            )}
-            <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
-              {primaryAction.label}
-            </PrimaryButton>
-          </ButtonGroup>
+          {customActionGroup ? (
+            customActionGroup
+          ) : (
+            <ButtonGroup>
+              {tertiaryAction && (
+                <Button onClick={tertiaryAction.action} size={buttonSize}>
+                  {tertiaryAction.label}
+                </Button>
+              )}
+              {secondaryAction && (
+                <Button onClick={secondaryAction.action} size={buttonSize}>
+                  {secondaryAction.label}
+                </Button>
+              )}
+              <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
+                {primaryAction.label}
+              </PrimaryButton>
+            </ButtonGroup>
+          )}
         </StyledBarActionWrapper>
       </StyledBarContainer>
     </StyledBar>

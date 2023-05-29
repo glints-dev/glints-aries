@@ -6,14 +6,11 @@ import { space8 } from '../utilities/spacing';
 export const StyledBar = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 20px 0;
+  padding: 12px 0;
   width: 100%;
   position: absolute;
-  height: 90px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    height: 70px;
-  }
+  min-height: 90px;
+  height: fit-content;
 
   &[data-align='bottom'] {
     bottom: 0;
@@ -25,6 +22,11 @@ export const StyledBar = styled.div`
   box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05),
     0px 1px 3px rgba(63, 63, 68, 0.15);
   background: ${Neutral.B100};
+
+  @media (max-width: ${Breakpoints.large}) {
+    padding: 8px 0;
+    min-height: 70px;
+  }
 `;
 
 export const StyledBarHeaderWrapper = styled.div`
@@ -58,7 +60,7 @@ export const StyledBarContainer = styled.div`
 
   @media (max-width: ${Breakpoints.large}) {
     gap: 16px;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 `;
 
@@ -66,4 +68,21 @@ export const StyledCustomHeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: ${space8};
+`;
+
+export const StyledButtonContainer = styled.div`
+  cursor: pointer;
+  margin-right: 24px;
+  svg {
+    width: 24px;
+    fill: ${Neutral.B40};
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    margin-right: 16px;
+
+    svg {
+      width: 16px;
+    }
+  }
 `;

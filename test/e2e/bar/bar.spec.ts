@@ -47,3 +47,18 @@ test('Bar - Custom Heading and Sub Heading', async ({ page }) => {
   await barPage.goto();
   await expect(barPage.canvas).toHaveScreenshot('bar-custom-heading.png');
 });
+
+test('Bar - with back button', async ({ page }) => {
+  const barPage = new StoryBookPage(page, '?path=/story/next-bar--back-button');
+  await barPage.goto();
+  await expect(barPage.canvas).toHaveScreenshot('bar-back-button.png');
+});
+
+test('Bar - with custom action group (menu)', async ({ page }) => {
+  const barPage = new StoryBookPage(
+    page,
+    '?path=/story/next-bar--custom-action-group'
+  );
+  await barPage.goto();
+  await expect(barPage.canvas).toHaveScreenshot('bar-custom-action-group.png');
+});
