@@ -66,6 +66,7 @@ export const Select = ({
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
   const [menuOptions, setMenuOptions] = useState(options);
+  const { length: optionsLength } = options;
   const [inputValue, setInputValue] = useState(
     searchableProps?.inputValue || ''
   );
@@ -112,14 +113,14 @@ export const Select = ({
   }, [options]);
 
   useEffect(() => {
-    if (inputValue != '' && options.length > 0) {
+    if (inputValue != '' && optionsLength > 0) {
       setPopoverActive(true);
     }
 
-    if (inputValue === '' && options.length < 1) {
+    if (inputValue === '' && optionsLength < 1) {
       setPopoverActive(false);
     }
-  }, [inputValue, options]);
+  }, [inputValue, optionsLength]);
 
   useEffect(() => {
     if (listHeight) {
