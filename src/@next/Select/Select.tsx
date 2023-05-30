@@ -175,6 +175,7 @@ export const Select = ({
         onSelectClick={handleSelectClick}
         width={width}
         selectedValues={selectedValues}
+        options={options}
       />
     );
   };
