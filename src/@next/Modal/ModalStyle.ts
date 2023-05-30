@@ -3,8 +3,9 @@ import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Neutral } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
+import { ModalProps } from './Modal';
 
-export const StyledModalWrapper = styled.div`
+export const StyledModalWrapper = styled.div<Pick<ModalProps, 'zIndex'>>`
   position: fixed;
   inset: 0;
   background-color: rgba(45, 45, 45, 0.5);
@@ -13,7 +14,7 @@ export const StyledModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 999;
+  z-index: ${props => props.zIndex};
 `;
 
 export const StyledModalContainer = styled.div`
