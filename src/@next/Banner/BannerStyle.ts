@@ -79,11 +79,11 @@ export const StyledBanner = styled.div`
     border-radius: 0;
     left: 0;
     right: 0;
-    min-height: 0;
-    padding-block: 10px;
+    height: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-inline: 48px;
 
     svg {
       height: 20px;
@@ -99,6 +99,26 @@ export const StyledBanner = styled.div`
     &[data-titled='true'] svg {
       top: 0;
     }
+
+    &[data-type='fixed'],
+    &[data-type='fixed-noicon'] {
+      padding: 16px;
+      height: 100px;
+
+      svg {
+        margin-top: 0px;
+      }
+    }
+  }
+`;
+
+export const StyledFixedIconWrapper = styled.div`
+  padding-right: 12px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    position: absolute;
+    left: 16px;
+    top: 16px;
   }
 `;
 
@@ -113,8 +133,25 @@ export const StyledBannerContentContainer = styled.div`
 
   &[data-type='fixed'],
   &[data-type='fixed-noicon'] {
-    padding-right: 14px;
+    padding-right: 16px;
     margin: 0 0;
+  }
+  &[data-button='true'] {
+    padding-right: 0;
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    &[data-type='fixed'],
+    &[data-type='fixed-noicon'] {
+      position: absolute;
+      top: 16px;
+      left: 52px;
+
+      &[data-button='true'] {
+        top: 48px;
+        left: 52px;
+      }
+    }
   }
 `;
 
@@ -134,6 +171,18 @@ export const StyledBannerTitle = styled.div`
 `;
 
 export const StyledFixedCloseIconWrapper = styled.div`
+  cursor: pointer;
+  color: ${Neutral.B40};
   position: absolute;
-  right: 20px;
+  right: 48px;
+  padding-left: 16px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    &[data-type='fixed'],
+    &[data-type='fixed-noicon'] {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }
 `;

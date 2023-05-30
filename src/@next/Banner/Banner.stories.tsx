@@ -4,6 +4,8 @@ import { Story, Meta } from '@storybook/react';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Banner, BannerProps } from './Banner';
 import { Button } from '../Button';
+import { PlainButton } from '../Button/PlainButtonStyle';
+import { Neutral } from '../utilities/colors';
 
 (Banner as React.FunctionComponent<BannerProps>).displayName = 'Banner';
 
@@ -45,8 +47,14 @@ WithButtons.args = {
 };
 
 const FixedBannerTemplate: Story<BannerProps> = args => {
-  const action1 = <Button>Action 1</Button>;
-  const action2 = <Button>Action 2</Button>;
+  const action1 = <Button>Label</Button>;
+  const action2 = (
+    <PlainButton
+      style={{ color: Neutral.B18, marginLeft: '-16px', padding: '0' }}
+    >
+      Label
+    </PlainButton>
+  );
 
   return (
     <>
@@ -55,7 +63,6 @@ const FixedBannerTemplate: Story<BannerProps> = args => {
         type="fixed"
         action={action1}
         secondaryAction={action2}
-        status="success"
         {...args}
       >
         {defaultText}

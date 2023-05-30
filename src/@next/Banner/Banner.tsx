@@ -10,6 +10,7 @@ import {
   StyledBannerTitleContainer,
   StyledCloseIconWrapper,
   StyledFixedCloseIconWrapper,
+  StyledFixedIconWrapper,
 } from './BannerStyle';
 
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -85,9 +86,9 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
           </StyledBannerTitleContainer>
         ) : (
           type === 'fixed' && (
-            <StyledBannerContentContainer data-type={type}>
+            <StyledFixedIconWrapper>
               <Icon name={iconNameValue} />
-            </StyledBannerContentContainer>
+            </StyledFixedIconWrapper>
           )
         )}
         <StyledBannerContentContainer data-type={type}>
@@ -95,7 +96,7 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             {children}
           </Typography>
         </StyledBannerContentContainer>
-        <StyledBannerContentContainer data-type={type}>
+        <StyledBannerContentContainer data-type={type} data-button="true">
           {action &&
             (secondaryAction !== 'undefined' ? (
               <ButtonGroup>
