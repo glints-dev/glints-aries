@@ -109,18 +109,23 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
         </StyledBanner>
       );
     return (
-      <StyledFixedBanner ref={ref} data-status={status} {...props}>
+      <StyledFixedBanner
+        ref={ref}
+        data-status={status}
+        data-nobutton={action ? '' : 'true'}
+        {...props}
+      >
         {showIcon && (
           <StyledFixedIconWrapper data-status={status}>
             <Icon name={iconNameValue} />
           </StyledFixedIconWrapper>
         )}
-        <StyledFixedBannerContentContainer>
+        <StyledFixedBannerContentContainer data-noicon={showIcon ? '' : 'true'}>
           <Typography as="div" variant="body1">
             {children}
           </Typography>
         </StyledFixedBannerContentContainer>
-        <StyledFixedBannerButtonContainer>
+        <StyledFixedBannerButtonContainer data-noicon={showIcon ? '' : 'true'}>
           {action &&
             (secondaryAction !== 'undefined' ? (
               <ButtonGroup>

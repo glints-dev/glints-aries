@@ -42,6 +42,10 @@ export const StyledFixedBanner = styled.div`
     svg {
       margin-top: 0px;
     }
+
+    &[data-nobutton='true'] {
+      height: 52px;
+    }
   }
 `;
 
@@ -75,6 +79,10 @@ export const StyledFixedBannerContentContainer = styled.div`
     position: absolute;
     top: 16px;
     left: 52px;
+
+    &[data-noicon='true'] {
+      left: 16px;
+    }
   }
 `;
 
@@ -83,6 +91,10 @@ export const StyledFixedBannerButtonContainer = styled.div`
     position: absolute;
     top: 48px;
     left: 52px;
+
+    &[data-noicon='true'] {
+      left: 16px;
+    }
   }
 `;
 

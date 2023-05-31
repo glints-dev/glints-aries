@@ -46,8 +46,14 @@ WithButtons.args = {
   buttonLoading: false,
 };
 
-const FixedBannerTemplate: Story<BannerProps> = args => {
-  const action1 = <Button>Label</Button>;
+const WithTwoButtonsTemplate: Story<
+  BannerProps & { buttonDisabled: boolean; buttonLoading: boolean }
+> = args => {
+  const action = (
+    <Button disabled={args.buttonDisabled} loading={args.buttonLoading}>
+      Label
+    </Button>
+  );
   const action2 = (
     <PlainButton
       style={{ color: Neutral.B18, marginLeft: '-16px', padding: '0' }}
@@ -55,16 +61,24 @@ const FixedBannerTemplate: Story<BannerProps> = args => {
       Label
     </PlainButton>
   );
+  return (
+    <Banner action={action} secondaryAction={action2} {...args}>
+      {defaultText}
+    </Banner>
+  );
+};
 
+export const WithTwoButtons = WithTwoButtonsTemplate.bind({});
+WithButtons.args = {
+  buttonDisabled: false,
+  title: 'Title',
+  buttonLoading: false,
+};
+
+const FixedBannerTemplate: Story<BannerProps> = args => {
   return (
     <>
-      <Banner
-        status="critical"
-        type="fixed"
-        action={action1}
-        secondaryAction={action2}
-        {...args}
-      >
+      <Banner type="fixed" {...args}>
         {defaultText}
       </Banner>
       Etiam vel mauris vehicula, bibendum elit id, rutrum sapien. Fusce
@@ -137,3 +151,24 @@ const FixedBannerTemplate: Story<BannerProps> = args => {
   );
 };
 export const FixedBanner = FixedBannerTemplate.bind({});
+
+const FixedBannerWithButtonsTemplate: Story<BannerProps> = args => {
+  const action1 = <Button>Label</Button>;
+  const action2 = (
+    <PlainButton
+      style={{ color: Neutral.B18, marginLeft: '-16px', padding: '0' }}
+    >
+      Label
+    </PlainButton>
+  );
+
+  return (
+    <>
+      <Banner type="fixed" action={action1} secondaryAction={action2} {...args}>
+        {defaultText}
+      </Banner>
+      <div style={{ height: '120px' }}></div>
+    </>
+  );
+};
+export const FixedBannerWithButtons = FixedBannerWithButtonsTemplate.bind({});
