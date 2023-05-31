@@ -59,7 +59,7 @@ const FixedBannerTemplate: Story<BannerProps> = args => {
   return (
     <>
       <Banner
-        title="Title"
+        status="critical"
         type="fixed"
         action={action1}
         secondaryAction={action2}

@@ -72,86 +72,20 @@ export const StyledBanner = styled.div`
     fill: ${Red.B93};
   }
 
-  &[data-type='fixed'],
-  &[data-type='fixed-noicon'] {
-    position: fixed;
-    border: 0;
-    border-radius: 0;
-    left: 0;
-    right: 0;
-    height: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 48px;
-
-    svg {
-      height: 20px;
-      width: 20px;
-      position: static;
-      margin-top: 4px;
-    }
-  }
-
   @media (max-width: ${Breakpoints.large}) {
     min-height: 89px;
 
     &[data-titled='true'] svg {
       top: 0;
     }
-
-    &[data-type='fixed'],
-    &[data-type='fixed-noicon'] {
-      padding: 16px;
-      height: 100px;
-
-      svg {
-        margin-top: 0px;
-      }
-    }
-  }
-`;
-
-export const StyledFixedIconWrapper = styled.div`
-  padding-right: 12px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    position: absolute;
-    left: 16px;
-    top: 16px;
   }
 `;
 
 export const StyledBannerContentContainer = styled.div`
-  &[data-type='static'] {
-    padding-left: 40px;
+  padding-left: 40px;
 
-    button {
-      margin-top: 10px;
-    }
-  }
-
-  &[data-type='fixed'],
-  &[data-type='fixed-noicon'] {
-    padding-right: 16px;
-    margin: 0 0;
-  }
-  &[data-button='true'] {
-    padding-right: 0;
-  }
-
-  @media (max-width: ${Breakpoints.large}) {
-    &[data-type='fixed'],
-    &[data-type='fixed-noicon'] {
-      position: absolute;
-      top: 16px;
-      left: 52px;
-
-      &[data-button='true'] {
-        top: 48px;
-        left: 52px;
-      }
-    }
+  button {
+    margin-top: 10px;
   }
 `;
 
@@ -163,26 +97,7 @@ export const StyledBannerTitle = styled.div`
   margin-bottom: ${space4};
   padding-left: 40px;
 
-  &[data-type='static'] {
-    button {
-      margin-top: 10px;
-    }
-  }
-`;
-
-export const StyledFixedCloseIconWrapper = styled.div`
-  cursor: pointer;
-  color: ${Neutral.B40};
-  position: absolute;
-  right: 48px;
-  padding-left: 16px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    &[data-type='fixed'],
-    &[data-type='fixed-noicon'] {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-    }
+  button {
+    margin-top: 10px;
   }
 `;

@@ -9,9 +9,14 @@ import {
   StyledBannerTitle,
   StyledBannerTitleContainer,
   StyledCloseIconWrapper,
-  StyledFixedCloseIconWrapper,
-  StyledFixedIconWrapper,
 } from './BannerStyle';
+import {
+  StyledFixedBanner,
+  StyledFixedIconWrapper,
+  StyledFixedBannerContentContainer,
+  StyledFixedBannerButtonContainer,
+  StyledFixedCloseIconWrapper,
+} from './FixedBannerStyle';
 
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -23,7 +28,8 @@ export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   secondaryAction?: React.ReactNode;
   dismissable?: boolean;
   onDismiss?: () => void;
-  type?: 'static' | 'fixed' | 'fixed-noicon';
+  type?: 'static' | 'fixed';
+  showIcon?: boolean;
 }
 
 const iconNameStatusMap: Record<BannerProps['status'], IconNames> = {
@@ -45,6 +51,7 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       dismissable = true,
       onDismiss,
       type = 'static',
+      showIcon = true,
       ...props
     }: BannerProps,
     ref
@@ -57,19 +64,18 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       ? iconName
       : iconByStatus || iconNameStatusMap['info'];
 
-    return (
-      <StyledBanner
-        ref={ref}
-        data-titled={!!title}
-        data-status={status}
-        data-type={type}
-        {...props}
-      >
-        {type === 'static' ? (
+    if (type === 'static')
+      return (
+        <StyledBanner
+          ref={ref}
+          data-titled={!!title}
+          data-status={status}
+          {...props}
+        >
           <StyledBannerTitleContainer>
             <Icon name={iconNameValue} />
             {title && (
-              <StyledBannerTitle data-type={type}>
+              <StyledBannerTitle>
                 <Typography as="span" variant="subtitle1">
                   {title}
                 </Typography>
@@ -84,19 +90,37 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
               </StyledCloseIconWrapper>
             )}
           </StyledBannerTitleContainer>
-        ) : (
-          type === 'fixed' && (
-            <StyledFixedIconWrapper>
-              <Icon name={iconNameValue} />
-            </StyledFixedIconWrapper>
-          )
+          <StyledBannerContentContainer>
+            <Typography as="div" variant="body1">
+              {children}
+            </Typography>
+          </StyledBannerContentContainer>
+          <StyledBannerContentContainer>
+            {action &&
+              (secondaryAction !== 'undefined' ? (
+                <ButtonGroup>
+                  {action}
+                  {secondaryAction}
+                </ButtonGroup>
+              ) : (
+                { action }
+              ))}
+          </StyledBannerContentContainer>
+        </StyledBanner>
+      );
+    return (
+      <StyledFixedBanner ref={ref} data-status={status} {...props}>
+        {showIcon && (
+          <StyledFixedIconWrapper data-status={status}>
+            <Icon name={iconNameValue} />
+          </StyledFixedIconWrapper>
         )}
-        <StyledBannerContentContainer data-type={type}>
+        <StyledFixedBannerContentContainer>
           <Typography as="div" variant="body1">
             {children}
           </Typography>
-        </StyledBannerContentContainer>
-        <StyledBannerContentContainer data-type={type} data-button="true">
+        </StyledFixedBannerContentContainer>
+        <StyledFixedBannerButtonContainer>
           {action &&
             (secondaryAction !== 'undefined' ? (
               <ButtonGroup>
@@ -106,17 +130,16 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             ) : (
               { action }
             ))}
-        </StyledBannerContentContainer>
-        {type !== 'static' && dismissable && (
+        </StyledFixedBannerButtonContainer>
+        {dismissable && (
           <StyledFixedCloseIconWrapper
-            data-type={type}
             role="button"
             onClick={() => onDismiss?.()}
           >
             <Icon name="ri-close" />
           </StyledFixedCloseIconWrapper>
         )}
-      </StyledBanner>
+      </StyledFixedBanner>
     );
   }
 );
