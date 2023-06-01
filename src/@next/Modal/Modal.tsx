@@ -35,6 +35,7 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   closeOnClickOutside?: boolean;
   onClose?: () => void;
   onBack?: () => void;
+  zIndexOverride?: number;
 }
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
@@ -53,6 +54,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       closeOnClickOutside,
       onClose,
       onBack,
+      zIndexOverride = 999,
       ...props
     }: ModalProps,
     ref
@@ -118,6 +120,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         <StyledModalWrapper
           data-testid="modal-wrapper"
           onClick={() => handleClickOutside()}
+          zIndexOverride={zIndexOverride}
         >
           <StyledModalContainer
             ref={ref}

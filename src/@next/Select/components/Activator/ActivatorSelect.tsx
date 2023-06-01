@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Icon } from '../../../Icon';
+import { Option } from '../../../Menu';
 
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
@@ -13,6 +14,7 @@ export interface ActivatorSelectProps
   placeholder?: string;
   onRemoveTag?({ option }: { option: string }): void;
   onSelectClick?(): void;
+  options?: Option[];
   width?: string;
 }
 export const ActivatorSelect = ({
@@ -22,14 +24,26 @@ export const ActivatorSelect = ({
   onRemoveTag,
   width,
   allowMultiple = false,
-  disabled,
+  disabled = false,
   onSelectClick,
   hasError = false,
+  options,
   ...props
 }: ActivatorSelectProps) => {
+  const [filteredValues, setFilteredValues] = useState([]);
+  const [selectedLabels, setSelectedLabels] = useState([]);
   const activatorRef = useRef(null);
-  const filteredValues = selectedValues?.filter(value => value != '');
-  const hasValue = filteredValues.length > 0;
+  const hasSelectedValues = filteredValues.length > 0;
+
+  useEffect(() => {
+    const values = selectedValues?.filter(value => value != '');
+    setFilteredValues(values);
+
+    const selectedOptions = options?.filter(({ value }) =>
+      values.includes(value)
+    );
+    setSelectedLabels(selectedOptions.map(option => option.label));
+  }, [options, selectedValues]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -50,8 +64,6 @@ export const ActivatorSelect = ({
   );
 
   const tagsMarkup = () => {
-    const hasSelectedValues = selectedValues.length > 0;
-
     if (!hasSelectedValues) {
       return placeholderMarkup;
     }
@@ -64,7 +76,7 @@ export const ActivatorSelect = ({
             onRemove={onRemoveTag({ option: selectedValues[0] })}
             textColor={Blue.S99}
           >
-            {selectedValues[0]}
+            {selectedLabels[0]}
           </StyledTag>
           {selectedValues.length > 1 && (
             <Typography
@@ -95,7 +107,7 @@ export const ActivatorSelect = ({
           variant="body1"
           color={disabled ? Neutral.B85 : Neutral.B40}
         >
-          {hasValue ? filteredValues[0] : placeholderMarkup}
+          {hasSelectedValues ? selectedLabels[0] : placeholderMarkup}
         </Typography>
       )}
       <Icon

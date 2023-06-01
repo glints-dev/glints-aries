@@ -40,6 +40,8 @@ export interface SelectProps {
   selectedValues?: string[];
   /** sets a width for the Select component*/
   width: string;
+  /** sets z-index override for option list dropdown. z-index default to 400 */
+  zIndexOverride?: number;
 }
 
 export const Select = ({
@@ -62,6 +64,7 @@ export const Select = ({
   sections,
   selectedValues,
   width,
+  zIndexOverride,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
@@ -172,6 +175,7 @@ export const Select = ({
         onSelectClick={handleSelectClick}
         width={width}
         selectedValues={selectedValues}
+        options={options}
       />
     );
   };
@@ -199,7 +203,9 @@ export const Select = ({
       onClose={handleClose}
       autofocusTarget="none"
       preventFocusOnClose
+      preferredPosition="below"
       fullWidth
+      zIndexOverride={zIndexOverride}
     >
       {!disabled && (
         <Popover.Pane height={optionListHeight}>
