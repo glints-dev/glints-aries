@@ -35,8 +35,6 @@ export const ActivatorSelect = ({
   const activatorRef = useRef(null);
   const hasSelectedValues = filteredValues.length > 0;
 
-  console.log(selectedLabels);
-
   useEffect(() => {
     const values = selectedValues?.filter(value => value != '');
     setFilteredValues(values);

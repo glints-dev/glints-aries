@@ -5,7 +5,9 @@ import { Neutral } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
 import { ModalProps } from './Modal';
 
-export const StyledModalWrapper = styled.div<Pick<ModalProps, 'zIndex'>>`
+export const StyledModalWrapper = styled.div<
+  Pick<ModalProps, 'zIndexOverride'>
+>`
   position: fixed;
   inset: 0;
   background-color: rgba(45, 45, 45, 0.5);
@@ -14,7 +16,7 @@ export const StyledModalWrapper = styled.div<Pick<ModalProps, 'zIndex'>>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: ${props => props.zIndex};
+  z-index: ${props => props.zIndexOverride};
 `;
 
 export const StyledModalContainer = styled.div`
