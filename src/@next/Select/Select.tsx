@@ -203,6 +203,7 @@ export const Select = ({
       onClose={handleClose}
       autofocusTarget="none"
       preventFocusOnClose
+      preferredPosition="below"
       fullWidth
       zIndexOverride={zIndex}
     >

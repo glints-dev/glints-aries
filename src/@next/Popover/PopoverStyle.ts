@@ -44,7 +44,7 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-Popover--fullWidth {
   margin: 0.3125rem auto 0 auto;
-  width: fit-content;
+  width: 100%;
 }
 
 .Polaris-Popover--fullWidth .Polaris-Popover__Content {
