@@ -13,6 +13,10 @@ const background = Neutral.B18;
 export const StyledTooltipContainer = styled.div`
   display: inline-block;
   position: relative;
+
+  > svg {
+    display: block;
+  }
 `;
 
 export const StyledTooltip = styled.div<{ zIndex?: number }>`

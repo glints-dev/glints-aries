@@ -442,7 +442,7 @@ const WithCustomActionsTemplate: Story<void> = () => {
 export const WithCustomActions = WithCustomActionsTemplate.bind({});
 WithCustomActions.args = {};
 
-const WithNumberInputTemplate: Story<void> = () => {
+const WithNumberInputAndTooltipTemplate: Story<void> = () => {
   const [showModal, setShowModal] = useState(false);
   const triggerAlert = () => {
     setShowModal(true);
@@ -474,7 +474,7 @@ const WithNumberInputTemplate: Story<void> = () => {
           content={<Typography variant="body1"> Sample content</Typography>}
         >
           <NumberInput
-            placeholder="entenr test content"
+            placeholder="enter test content"
             suffix={<div>posts</div>}
           />
         </Tooltip>
@@ -483,5 +483,7 @@ const WithNumberInputTemplate: Story<void> = () => {
   );
 };
 
-export const WithNumberInputActions = WithNumberInputTemplate.bind({});
-WithNumberInputActions.args = {};
+export const WithNumberInputAndTooltip = WithNumberInputAndTooltipTemplate.bind(
+  {}
+);
+WithNumberInputAndTooltip.args = {};
