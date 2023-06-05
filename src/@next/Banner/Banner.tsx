@@ -66,10 +66,10 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
 
     const actionComponent = (
       <>
-        {action && (
+        {(action || secondaryAction) && (
           <ButtonGroup>
             {action}
-            {secondaryAction && secondaryAction}
+            {secondaryAction}
           </ButtonGroup>
         )}
       </>
