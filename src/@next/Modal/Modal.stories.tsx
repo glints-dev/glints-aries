@@ -470,6 +470,7 @@ const WithNumberInputTemplate: Story<void> = () => {
         customActions={customActions}
       >
         <Tooltip
+          zIndex={10000}
           content={<Typography variant="body1"> Sample content</Typography>}
         >
           <NumberInput

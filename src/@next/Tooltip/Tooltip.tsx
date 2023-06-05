@@ -144,6 +144,7 @@ export type TooltipProps = {
   preferredPosition?: TooltipPosition;
   children: React.ReactNode;
   content: React.ReactNode;
+  zIndex?: number;
 };
 
 const defaultPosition = 'top-center';
@@ -152,6 +153,7 @@ export const Tooltip = ({
   children,
   content,
   preferredPosition = defaultPosition,
+  zIndex,
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const elRef = useRef<HTMLDivElement>(null);
@@ -253,6 +255,7 @@ export const Tooltip = ({
           <StyledTooltip
             data-position={position}
             ref={tooltipRef}
+            zIndex={zIndex}
             style={{
               top: toolTipCoord?.top + 'px',
               left: toolTipCoord?.left + 'px',
