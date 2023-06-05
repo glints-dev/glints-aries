@@ -10,8 +10,15 @@ import {
   StyledBannerTitleContainer,
   StyledCloseIconWrapper,
 } from './BannerStyle';
+import {
+  StyledFixedBanner,
+  StyledFixedIconWrapper,
+  StyledFixedBannerContentContainer,
+  StyledFixedBannerButtonContainer,
+  StyledFixedCloseIconWrapper,
+} from './FixedBannerStyle';
 
-export type BannerProps = {
+export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   /** If set will take precedent of status */
   iconName?: IconNames;
@@ -21,7 +28,9 @@ export type BannerProps = {
   secondaryAction?: React.ReactNode;
   dismissable?: boolean;
   onDismiss?: () => void;
-};
+  type?: 'static' | 'fixed';
+  showIcon?: boolean;
+}
 
 const iconNameStatusMap: Record<BannerProps['status'], IconNames> = {
   success: 'ri-checkbox-circle-fill',
@@ -41,6 +50,8 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       secondaryAction,
       dismissable = true,
       onDismiss,
+      type = 'static',
+      showIcon = true,
       ...props
     }: BannerProps,
     ref
@@ -53,43 +64,82 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       ? iconName
       : iconByStatus || iconNameStatusMap['info'];
 
+    const actionComponent = (
+      <>
+        {(action || secondaryAction) && (
+          <ButtonGroup>
+            {action}
+            {secondaryAction}
+          </ButtonGroup>
+        )}
+      </>
+    );
+
+    if (type === 'static')
+      return (
+        <StyledBanner
+          ref={ref}
+          data-titled={!!title}
+          data-status={status}
+          {...props}
+        >
+          <StyledBannerTitleContainer>
+            <Icon name={iconNameValue} />
+            {title && (
+              <StyledBannerTitle>
+                <Typography as="span" variant="subtitle1">
+                  {title}
+                </Typography>
+              </StyledBannerTitle>
+            )}
+            {dismissable && (
+              <StyledCloseIconWrapper
+                role="button"
+                onClick={() => onDismiss?.()}
+              >
+                <Icon name="ri-close" />
+              </StyledCloseIconWrapper>
+            )}
+          </StyledBannerTitleContainer>
+          <StyledBannerContentContainer>
+            <Typography as="div" variant="body1">
+              {children}
+            </Typography>
+          </StyledBannerContentContainer>
+          <StyledBannerContentContainer>
+            {actionComponent}
+          </StyledBannerContentContainer>
+        </StyledBanner>
+      );
     return (
-      <StyledBanner
+      <StyledFixedBanner
         ref={ref}
-        data-titled={!!title}
         data-status={status}
+        data-nobutton={action ? '' : 'true'}
         {...props}
       >
-        <StyledBannerTitleContainer>
-          <Icon name={iconNameValue} />
-          {title && (
-            <StyledBannerTitle>
-              <Typography as="span" variant="subtitle1">
-                {title}
-              </Typography>
-            </StyledBannerTitle>
-          )}
-          {dismissable && (
-            <StyledCloseIconWrapper role="button" onClick={() => onDismiss?.()}>
-              <Icon name="ri-close" />
-            </StyledCloseIconWrapper>
-          )}
-        </StyledBannerTitleContainer>
-        <StyledBannerContentContainer>
+        {showIcon && (
+          <StyledFixedIconWrapper data-status={status}>
+            <Icon name={iconNameValue} />
+          </StyledFixedIconWrapper>
+        )}
+        <StyledFixedBannerContentContainer data-noicon={showIcon ? '' : 'true'}>
           <Typography as="div" variant="body1">
             {children}
           </Typography>
-        </StyledBannerContentContainer>
-        <StyledBannerContentContainer>
-          {action ||
-            (secondaryAction && (
-              <ButtonGroup>
-                {action}
-                {secondaryAction}
-              </ButtonGroup>
-            ))}
-        </StyledBannerContentContainer>
-      </StyledBanner>
+        </StyledFixedBannerContentContainer>
+        <StyledFixedBannerButtonContainer data-noicon={showIcon ? '' : 'true'}>
+          {actionComponent}
+        </StyledFixedBannerButtonContainer>
+        {dismissable && (
+          <StyledFixedCloseIconWrapper
+            role="button"
+            onClick={() => onDismiss?.()}
+          >
+            <Icon name="ri-close" />
+          </StyledFixedCloseIconWrapper>
+        )}
+      </StyledFixedBanner>
     );
   }
 );

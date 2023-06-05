@@ -76,3 +76,105 @@ test('Banner - critical', async ({ page }) => {
   await bannerPage.goto('args=status:critical');
   await expect(bannerPage.container).toHaveScreenshot('banner-critical.png');
 });
+
+test('Banner - two buttons', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoWithTwoButtonsPage();
+  await expect(bannerPage.container).toHaveScreenshot('banner-two-buttons.png');
+});
+
+test('Fixed Banner', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage();
+  await expect(bannerPage.container).toHaveScreenshot('fixed-banner.png');
+});
+
+test('Fixed Banner - success', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=status:success');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-success.png'
+  );
+});
+
+test('Fixed Banner - info', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=status:info');
+  await expect(bannerPage.container).toHaveScreenshot('fixed-banner-info.png');
+});
+
+test('Fixed Banner - warning', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=status:warning');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-warning.png'
+  );
+});
+
+test('Fixed Banner - critical', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=status:critical');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-critical.png'
+  );
+});
+
+test('Fixed Banner - no icon', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=showIcon:false');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-no-icon.png'
+  );
+});
+
+test('Fixed Banner - non dismissable', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=dismissable:false');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-non-dismissable.png'
+  );
+});
+
+test('Fixed Banner - no icon and non dismissable', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerPage('args=dismissable:false;showIcon:false');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-no-icon-and-non-dismissable.png'
+  );
+});
+
+test('Fixed Banner - with buttons', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerWithButtonsPage();
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-with-buttons.png'
+  );
+});
+
+test('Fixed Banner - with buttons - no icon', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerWithButtonsPage('args=showIcon:false');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-with-buttons-no-icon.png'
+  );
+});
+
+test('Fixed Banner - with buttons - non dismissable', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerWithButtonsPage('args=dismissable:false');
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-with-buttons-non-dismissable.png'
+  );
+});
+
+test('Fixed Banner - with buttons - no icon and non dismissable', async ({
+  page,
+}) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.gotoFixedBannerWithButtonsPage(
+    'args=dismissable:false;showIcon:false'
+  );
+  await expect(bannerPage.container).toHaveScreenshot(
+    'fixed-banner-with-buttons-no-icon-and-non-dismissable.png'
+  );
+});
