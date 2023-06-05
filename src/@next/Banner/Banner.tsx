@@ -64,6 +64,17 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
       ? iconName
       : iconByStatus || iconNameStatusMap['info'];
 
+    const actionComponent = (
+      <>
+        {action && (
+          <ButtonGroup>
+            {action}
+            {secondaryAction && secondaryAction}
+          </ButtonGroup>
+        )}
+      </>
+    );
+
     if (type === 'static')
       return (
         <StyledBanner
@@ -96,15 +107,7 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             </Typography>
           </StyledBannerContentContainer>
           <StyledBannerContentContainer>
-            {action &&
-              (secondaryAction !== 'undefined' ? (
-                <ButtonGroup>
-                  {action}
-                  {secondaryAction}
-                </ButtonGroup>
-              ) : (
-                { action }
-              ))}
+            {actionComponent}
           </StyledBannerContentContainer>
         </StyledBanner>
       );
@@ -126,15 +129,7 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
           </Typography>
         </StyledFixedBannerContentContainer>
         <StyledFixedBannerButtonContainer data-noicon={showIcon ? '' : 'true'}>
-          {action &&
-            (secondaryAction !== 'undefined' ? (
-              <ButtonGroup>
-                {action}
-                {secondaryAction}
-              </ButtonGroup>
-            ) : (
-              { action }
-            ))}
+          {actionComponent}
         </StyledFixedBannerButtonContainer>
         {dismissable && (
           <StyledFixedCloseIconWrapper
