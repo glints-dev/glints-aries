@@ -79,12 +79,17 @@ export const StyledFixedBannerContentContainer = styled.div`
 
   @media (max-width: ${Breakpoints.large}) {
     padding-left: 36px;
+    padding-right: 0px;
 
-    &[data-hasaction='true'] {
+    &[data-dismissable='true'] {
+      padding-right: 36px;
+    }
+
+    &[data-has-action='true'] {
       padding-bottom: 48px;
     }
 
-    &[data-noicon='true'] {
+    &:not([data-show-icon='true']) {
       padding-left: 0px;
     }
   }
@@ -96,7 +101,7 @@ export const StyledFixedBannerButtonContainer = styled.div`
     bottom: 16px;
     left: 52px;
 
-    &[data-noicon='true'] {
+    &:not([data-show-icon='true']) {
       left: 16px;
     }
   }
