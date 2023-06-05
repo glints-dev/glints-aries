@@ -9,6 +9,8 @@ import { Typography } from '../Typography';
 import { Blue } from '../utilities/colors';
 import { space16 } from '../utilities/spacing';
 import { Modal, ModalProps } from './Modal';
+import { NumberInput } from '../NumberInput';
+import { Tooltip } from '../Tooltip';
 
 (Modal as React.FunctionComponent<ModalProps>).displayName = 'Modal';
 
@@ -439,3 +441,46 @@ const WithCustomActionsTemplate: Story<void> = () => {
 
 export const WithCustomActions = WithCustomActionsTemplate.bind({});
 WithCustomActions.args = {};
+
+const WithNumberInputTemplate: Story<void> = () => {
+  const [showModal, setShowModal] = useState(false);
+  const triggerAlert = () => {
+    setShowModal(true);
+  };
+
+  const customActions = <PrimaryButton fullWidth> Custom Action</PrimaryButton>;
+  const primaryAction = {
+    label: 'Primary Action',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'Secondary Action',
+    action: () => console.log('Secondary action!'),
+  };
+
+  return (
+    <>
+      <Button onClick={() => triggerAlert()}>Show Modal</Button>
+      <Modal
+        isOpen={showModal}
+        header="Title"
+        onClose={() => setShowModal(false)}
+        primaryAction={primaryAction}
+        secondaryAction={secondaryAction}
+        customActions={customActions}
+      >
+        <Tooltip
+          content={<Typography variant="body1"> Sample content</Typography>}
+        >
+          <NumberInput
+            placeholder="entenr test content"
+            suffix={<div>posts</div>}
+          />
+        </Tooltip>
+      </Modal>
+    </>
+  );
+};
+
+export const WithNumberInputActions = WithNumberInputTemplate.bind({});
+WithNumberInputActions.args = {};
