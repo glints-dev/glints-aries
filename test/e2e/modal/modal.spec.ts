@@ -92,6 +92,20 @@ test('Modal - with custom actions', async ({ page }) => {
   );
 });
 
+test('Modal - with tooltip and input', async ({ page }) => {
+  const modalPage = new ModalPage(page);
+
+  await modalPage.gotoWithNumberInputAndTooltip();
+  await modalPage.triggerModal();
+  await modalPage.page
+    .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+    .getByRole('spinbutton')
+    .hover();
+  await expect(modalPage.canvas).toHaveScreenshot(
+    'modal-with-input-tooltip.png'
+  );
+});
+
 test('Modal - with provider', async ({ page }) => {
   const modalPage = new ModalPage(page);
 

@@ -14,12 +14,12 @@ export const StyledTooltipContainer = styled.div`
   display: inline-block;
   position: relative;
 
-  * {
+  > svg {
     display: block;
   }
 `;
 
-export const StyledTooltip = styled.div`
+export const StyledTooltip = styled.div<{ zIndex?: number }>`
   position: fixed;
   text-align: left;
   height: fit-content;
@@ -32,10 +32,9 @@ export const StyledTooltip = styled.div`
   padding: ${space8} ${space12};
   color: ${Neutral.B100};
   background: ${background};
-  z-index: 100;
   overflow-wrap: break-word;
   line-height: 1;
-
+  z-index: ${props => (props.zIndex ? props.zIndex : 100)};
   &[data-position='top-left'],
   &[data-position='bottom-left'] {
     transform: translateX(
