@@ -4,7 +4,12 @@ import { Option } from '../../../Menu';
 
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
-import { StyledSelect, StyledTag, TagsContainer } from './ActivatorStyle';
+import {
+  StyledSelect,
+  StyledSelectTypography,
+  StyledTag,
+  TagsContainer,
+} from './ActivatorStyle';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -103,12 +108,13 @@ export const ActivatorSelect = ({
       {allowMultiple ? (
         tagsMarkup()
       ) : (
-        <Typography
+        <StyledSelectTypography
           variant="body1"
-          color={disabled ? Neutral.B85 : Neutral.B40}
+          data-disabled={disabled}
+          color={hasSelectedValues ? Neutral.B18 : Neutral.B40}
         >
           {hasSelectedValues ? selectedLabels[0] : placeholderMarkup}
-        </Typography>
+        </StyledSelectTypography>
       )}
       <Icon
         height={24}

@@ -30,6 +30,11 @@ export class ModalPage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoWithNumberInputAndTooltip(args?: Args) {
+    this.setPath('?path=/story/next-modal--with-number-input-and-tooltip');
+    await this.goto(args);
+  }
+
   async triggerModal(args?: Args) {
     await this.goto(args);
     await this.page
