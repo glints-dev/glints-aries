@@ -125,10 +125,10 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
         )}
         <StyledFixedBannerContentContainer
           data-show-icon={showIcon}
-          data-has-action={action || secondaryAction ? 'true' : ''}
+          data-has-action={!!(action || secondaryAction)}
           data-dismissable={dismissable}
         >
-          <Typography as="div" variant="body1">
+          <Typography as="div" variant="body2">
             {children}
           </Typography>
         </StyledFixedBannerContentContainer>

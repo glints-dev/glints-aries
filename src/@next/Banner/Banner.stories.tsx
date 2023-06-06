@@ -6,7 +6,6 @@ import { Banner, BannerProps } from './Banner';
 import { Button } from '../Button';
 import { PlainButton } from '../Button/PlainButtonStyle';
 import { Neutral } from '../utilities/colors';
-import { Typography } from '../Typography';
 
 (Banner as React.FunctionComponent<BannerProps>).displayName = 'Banner';
 
@@ -80,9 +79,7 @@ const FixedBannerTemplate: Story<BannerProps> = args => {
   return (
     <>
       <Banner type="fixed" {...args}>
-        <Typography as="span" variant="subtitle1">
-          {defaultText}
-        </Typography>
+        {defaultText}
       </Banner>
       Etiam vel mauris vehicula, bibendum elit id, rutrum sapien. Fusce
       efficitur dolor vel lorem gravida lacinia. Donec at malesuada diam. Nullam
@@ -168,9 +165,7 @@ const FixedBannerWithButtonsTemplate: Story<BannerProps> = args => {
   return (
     <>
       <Banner type="fixed" action={action1} secondaryAction={action2} {...args}>
-        <Typography as="span" variant="subtitle1">
-          {defaultText}
-        </Typography>
+        {defaultText}
       </Banner>
       <div style={{ height: '120px' }}></div>
     </>

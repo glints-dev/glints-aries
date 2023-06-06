@@ -17,9 +17,9 @@ export const StyledFixedBanner = styled.div`
   svg {
     position: static;
     fill: ${Neutral.B40};
-    height: 20px;
-    width: 20px;
-    margin-top: 4px;
+    height: 24px;
+    width: 24px;
+    margin-top: 2px;
   }
 
   &[data-status='success'] {
@@ -42,7 +42,7 @@ export const StyledFixedBanner = styled.div`
     align-items: flex-start;
 
     svg {
-      margin-top: 0px;
+      margin-top: -2px;
     }
 
     &[data-nobutton='true'] {
