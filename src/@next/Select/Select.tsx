@@ -28,6 +28,8 @@ export interface SelectProps {
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
   options?: Option[];
+  /** sets whether OptionList will follow content's width */
+  optionListFitContent?: boolean;
   placeholder?: string;
   prefix?: React.ReactNode;
   /** sets whether Select is searchable */
@@ -50,13 +52,14 @@ export const Select = ({
   hasError = false,
   helpText,
   label,
+  listHeight,
   loadingOptions = false,
   onClose,
   onRemoveTag,
   onSelect,
+  optionListFitContent = false,
   options = [],
   placeholder,
-  listHeight,
   prefix,
   searchable = false,
   searchableProps,
@@ -203,8 +206,10 @@ export const Select = ({
       onClose={handleClose}
       autofocusTarget="none"
       preventFocusOnClose
+      preferredAlignment="left"
       preferredPosition="below"
       fullWidth
+      fitContent={optionListFitContent}
       zIndexOverride={zIndexOverride}
     >
       {!disabled && (

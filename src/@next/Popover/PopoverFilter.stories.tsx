@@ -87,6 +87,8 @@ const PopoverAsFilterExample = () => {
           activator={cityActivator}
           autofocusTarget="first-node"
           onClose={togglePopoverCityActive}
+          fullWidth
+          fitContent
         >
           <Popover.Pane fixed>
             <Popover.Section>
@@ -117,6 +119,7 @@ const PopoverAsFilterExample = () => {
           autofocusTarget="first-node"
           onClose={toggleSalaryActive}
           fullWidth
+          fitContent
         >
           <Popover.Pane fixed>
             <Popover.Section>
