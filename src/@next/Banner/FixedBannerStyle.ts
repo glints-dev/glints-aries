@@ -86,7 +86,7 @@ export const StyledFixedBannerContentContainer = styled.div`
     }
 
     &[data-has-action='true'] {
-      padding-bottom: 48px;
+      padding-bottom: 52px;
     }
 
     &:not([data-show-icon='true']) {
