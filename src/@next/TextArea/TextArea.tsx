@@ -1,4 +1,10 @@
-import React, { useState, useEffect, TextareaHTMLAttributes } from 'react';
+import React, {
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+  TextareaHTMLAttributes,
+} from 'react';
 import {
   StyledTextAreaContainer,
   StyledTextArea,
@@ -29,11 +35,28 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     ref
   ) {
     const [charCount, setCharCount] = useState<number>(0);
+    const [isFocused, setIsFocused] = useState<boolean>(false);
     const isError: boolean = error || charCount > maxLength;
+
+    const localRef = useRef<HTMLTextAreaElement>(null);
+    const setRefs = (node: HTMLTextAreaElement) => {
+      localRef.current = node;
+      if (typeof ref === 'function') {
+        (ref as (instance: HTMLTextAreaElement | null) => void)(node);
+      } else if (ref) {
+        (ref as MutableRefObject<HTMLTextAreaElement | null>).current = node;
+      }
+    };
 
     useEffect(() => {
       setCharCount(value.length);
     }, [value]);
+
+    const handleContainerClick = () => {
+      if (localRef.current) {
+        localRef.current.focus();
+      }
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const val = e.currentTarget.value;
@@ -41,19 +64,25 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     };
 
     return (
-      <StyledTextAreaContainer>
+      <StyledTextAreaContainer
+        data-error={isError}
+        data-disabled={disabled}
+        data-focus={isFocused}
+        onClick={handleContainerClick}
+      >
         <StyledTextArea
-          ref={ref}
+          ref={setRefs}
           value={value}
           rows={rows}
           onChange={handleChange}
-          data-error={isError}
           data-disabled={disabled}
           disabled={disabled}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           {...props}
         />
         <StyledWordCountContainer data-disabled={disabled} data-error={isError}>
-          <Typography as="span" variant="caption">
+          <Typography as="span" variant="overline" style={{ fontSize: '12px' }}>
             {charCount} / {maxLength}
           </Typography>
         </StyledWordCountContainer>

@@ -7,14 +7,35 @@ export const StyledTextAreaContainer = styled.div`
   position: relative;
   width: 100%;
   max-width: 520px;
+
+  border: 1px solid ${Neutral.B68};
+  border-radius: ${borderRadius4};
+  padding: 8px 12px 25px 12px;
+  cursor: text;
+
+  &[data-focus='true'] {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px ${Neutral.B100}, 0px 0px 0px 3px #6ac9ec;
+  }
+
+  &[data-error='true'] {
+    border: 1px solid ${Red.B93};
+
+    &[data-focus='true'] {
+      box-shadow: none;
+    }
+  }
+
+  &[data-disabled='true'] {
+    border: 1px solid ${Neutral.B85};
+    background: ${Neutral.B95};
+  }
 `;
 
 export const StyledTextArea = styled.textarea`
   background: ${Neutral.B100};
   box-sizing: border-box;
-  border: 1px solid ${Neutral.B68};
-  border-radius: ${borderRadius4};
-  padding: 8px 0px 25px 8px;
+  border: none;
 
   font-family: ${NotoSans}, sans-serif;
   font-style: normal;
@@ -28,13 +49,11 @@ export const StyledTextArea = styled.textarea`
   max-width: 520px;
 
   ::-webkit-scrollbar {
-    width: 30px;
+    width: 4px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: ${Neutral.B68};
-    border: 13px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    border-radius: 15px;
+    border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color: ${Neutral.B40};
@@ -46,19 +65,9 @@ export const StyledTextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 1px ${Neutral.B100}, 0px 0px 0px 3px #6ac9ec;
-  }
-
-  &[data-error='true'] {
-    border: 1px solid ${Red.B93};
-
-    &:focus {
-      box-shadow: none;
-    }
   }
 
   &[data-disabled='true'] {
-    border: 1px solid ${Neutral.B85};
     background: ${Neutral.B95};
 
     ::placeholder {
@@ -73,11 +82,11 @@ export const StyledWordCountContainer = styled.div`
   right: 12px;
   color: ${Neutral.B40};
 
-  &[data-disabled='true'] {
-    color: ${Neutral.B85};
-  }
-
   &[data-error='true'] {
     color: ${Red.B93};
+  }
+
+  &[data-disabled='true'] {
+    color: ${Neutral.B85};
   }
 `;
