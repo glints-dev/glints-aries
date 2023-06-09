@@ -3,15 +3,22 @@ import { borderRadius4 } from '../utilities/borderRadius';
 import { Neutral, Red } from '../utilities/colors';
 import { NotoSans } from '../utilities/fonts';
 
-export const StyledTextAreaContainer = styled.div`
+interface TextAreaProp {
+  width: string;
+}
+
+export const StyledTextAreaContainer = styled.div<TextAreaProp>`
   position: relative;
-  width: 100%;
-  max-width: 520px;
+  width: ${props => props.width};
 
   border: 1px solid ${Neutral.B68};
   border-radius: ${borderRadius4};
   padding: 8px 12px 25px 12px;
   cursor: text;
+
+  &:not([data-has-counter='true']) {
+    padding-bottom: 8px;
+  }
 
   &[data-focus='true'] {
     outline: none;
@@ -32,7 +39,7 @@ export const StyledTextAreaContainer = styled.div`
   }
 `;
 
-export const StyledTextArea = styled.textarea`
+export const StyledTextArea = styled.textarea<TextAreaProp>`
   background: ${Neutral.B100};
   box-sizing: border-box;
   border: none;
@@ -46,7 +53,6 @@ export const StyledTextArea = styled.textarea`
   color: ${Neutral.B18};
   resize: none;
   width: 100%;
-  max-width: 520px;
 
   ::-webkit-scrollbar {
     width: 4px;

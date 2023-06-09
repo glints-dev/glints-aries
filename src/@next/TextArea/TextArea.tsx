@@ -19,6 +19,7 @@ export type TextAreaProps = Omit<
   value: string;
   onChange: (value: string) => void;
   error?: boolean;
+  width?: string;
 };
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
@@ -26,9 +27,10 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     {
       value,
       rows = 3,
-      maxLength = 60,
+      maxLength,
       error = false,
       disabled = false,
+      width = '520px',
       onChange,
       ...props
     }: TextAreaProps,
@@ -36,7 +38,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ) {
     const [charCount, setCharCount] = useState<number>(0);
     const [isFocused, setIsFocused] = useState<boolean>(false);
-    const isError: boolean = error || charCount > maxLength;
+    const isError: boolean = error || (!!maxLength && charCount > maxLength);
 
     const localRef = useRef<HTMLTextAreaElement>(null);
     const setRefs = (node: HTMLTextAreaElement) => {
@@ -68,12 +70,15 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         data-error={isError}
         data-disabled={disabled}
         data-focus={isFocused}
+        data-has-counter={!!maxLength}
+        width={width}
         onClick={handleContainerClick}
       >
         <StyledTextArea
           ref={setRefs}
           value={value}
           rows={rows}
+          width={width}
           onChange={handleChange}
           data-disabled={disabled}
           disabled={disabled}
@@ -81,11 +86,20 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           onBlur={() => setIsFocused(false)}
           {...props}
         />
-        <StyledWordCountContainer data-disabled={disabled} data-error={isError}>
-          <Typography as="span" variant="overline" style={{ fontSize: '12px' }}>
-            {charCount} / {maxLength}
-          </Typography>
-        </StyledWordCountContainer>
+        {!!maxLength && (
+          <StyledWordCountContainer
+            data-disabled={disabled}
+            data-error={isError}
+          >
+            <Typography
+              as="span"
+              variant="overline"
+              style={{ fontSize: '12px' }}
+            >
+              {charCount} / {maxLength}
+            </Typography>
+          </StyledWordCountContainer>
+        )}
       </StyledTextAreaContainer>
     );
   }

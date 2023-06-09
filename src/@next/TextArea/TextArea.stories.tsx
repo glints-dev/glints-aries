@@ -24,8 +24,10 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   placeholder: 'Please enter...',
   disabled: false,
+  error: false,
   rows: 3,
-  maxLength: 60,
+  maxLength: 0,
+  width: '520px',
 };
 
 const WithPopulatedValueTemplate: Story<TextAreaProps> = args => {
@@ -42,8 +44,9 @@ const WithPopulatedValueTemplate: Story<TextAreaProps> = args => {
 export const WithPopulatedValue = WithPopulatedValueTemplate.bind({});
 WithPopulatedValue.args = {
   placeholder: 'Please enter...',
-  rows: 3,
-  maxLength: 120,
   disabled: false,
   error: false,
+  rows: 3,
+  maxLength: 120,
+  width: '520px',
 };
