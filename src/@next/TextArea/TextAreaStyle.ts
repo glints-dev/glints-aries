@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Neutral, Red } from '../utilities/colors';
-import { NotoSans } from '../utilities/fonts';
+import { variantCssMapping } from '../Typography/TypographyStyles';
 
 interface TextAreaProp {
   width: string;
@@ -44,11 +44,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
   box-sizing: border-box;
   border: none;
 
-  font-family: ${NotoSans}, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
+  ${variantCssMapping['body1']}
 
   color: ${Neutral.B18};
   resize: none;
@@ -73,7 +69,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
     outline: none;
   }
 
-  &[data-disabled='true'] {
+  :disabled {
     background: ${Neutral.B95};
 
     ::placeholder {

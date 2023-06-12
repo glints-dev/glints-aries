@@ -29,24 +29,3 @@ Interactive.args = {
   maxLength: 0,
   width: '520px',
 };
-
-const WithPopulatedValueTemplate: Story<TextAreaProps> = args => {
-  const defaultValue =
-    'The quick brown fox jumps over the lazy dog and finds a hidden treasure in the deep forest.';
-  const [value, setValue] = useState<string>(defaultValue);
-
-  return (
-    <>
-      <TextArea {...args} value={value} onChange={val => setValue(val)} />
-    </>
-  );
-};
-export const WithPopulatedValue = WithPopulatedValueTemplate.bind({});
-WithPopulatedValue.args = {
-  placeholder: 'Please enter...',
-  disabled: false,
-  error: false,
-  rows: 3,
-  maxLength: 120,
-  width: '520px',
-};

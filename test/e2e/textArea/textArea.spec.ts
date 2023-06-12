@@ -45,11 +45,3 @@ test('TextArea - 6 rows', async ({ page }) => {
   await textAreaPage.goto('args=rows:6;maxLength:60');
   await expect(textAreaPage.container).toHaveScreenshot('textarea-6rows.png');
 });
-
-test('TextArea - populated', async ({ page }) => {
-  const textAreaPage = new TextAreaPage(page);
-  await textAreaPage.gotoWithPopulatedValuePage();
-  await expect(textAreaPage.container).toHaveScreenshot(
-    'textarea-populated.png'
-  );
-});

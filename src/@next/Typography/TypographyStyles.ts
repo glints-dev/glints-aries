@@ -175,7 +175,7 @@ const overline = css`
   }
 `;
 
-const variantCssMapping: {
+export const variantCssMapping: {
   [variant in Variant]: FlattenSimpleInterpolation;
 } = {
   ['headline1']: headline1,

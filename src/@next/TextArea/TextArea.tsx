@@ -80,7 +80,6 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           rows={rows}
           width={width}
           onChange={handleChange}
-          data-disabled={disabled}
           disabled={disabled}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
@@ -91,11 +90,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
             data-disabled={disabled}
             data-error={isError}
           >
-            <Typography
-              as="span"
-              variant="overline"
-              style={{ fontSize: '12px' }}
-            >
+            <Typography as="span" variant="overline">
               {charCount} / {maxLength}
             </Typography>
           </StyledWordCountContainer>
