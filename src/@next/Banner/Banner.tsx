@@ -123,12 +123,16 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
             <Icon name={iconNameValue} />
           </StyledFixedIconWrapper>
         )}
-        <StyledFixedBannerContentContainer data-noicon={showIcon ? '' : 'true'}>
-          <Typography as="div" variant="body1">
+        <StyledFixedBannerContentContainer
+          data-show-icon={showIcon}
+          data-has-action={!!(action || secondaryAction)}
+          data-dismissable={dismissable}
+        >
+          <Typography as="div" variant="body2">
             {children}
           </Typography>
         </StyledFixedBannerContentContainer>
-        <StyledFixedBannerButtonContainer data-noicon={showIcon ? '' : 'true'}>
+        <StyledFixedBannerButtonContainer data-show-icon={showIcon}>
           {actionComponent}
         </StyledFixedBannerButtonContainer>
         {dismissable && (

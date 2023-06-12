@@ -6,7 +6,7 @@ export const StyledFixedBanner = styled.div`
   position: fixed;
   left: 0;
   right: 0;
-  height: 56px;
+  min-height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,9 +17,9 @@ export const StyledFixedBanner = styled.div`
   svg {
     position: static;
     fill: ${Neutral.B40};
-    height: 20px;
-    width: 20px;
-    margin-top: 4px;
+    height: 24px;
+    width: 24px;
+    margin-top: 2px;
   }
 
   &[data-status='success'] {
@@ -37,14 +37,16 @@ export const StyledFixedBanner = styled.div`
 
   @media (max-width: ${Breakpoints.large}) {
     padding: 16px;
-    height: 100px;
+    min-height: 100px;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     svg {
-      margin-top: 0px;
+      margin-top: -2px;
     }
 
     &[data-nobutton='true'] {
-      height: 52px;
+      min-height: 52px;
     }
   }
 `;
@@ -76,12 +78,19 @@ export const StyledFixedBannerContentContainer = styled.div`
   padding-right: 16px;
 
   @media (max-width: ${Breakpoints.large}) {
-    position: absolute;
-    top: 16px;
-    left: 52px;
+    padding-left: 36px;
+    padding-right: 0px;
 
-    &[data-noicon='true'] {
-      left: 16px;
+    &[data-dismissable='true'] {
+      padding-right: 36px;
+    }
+
+    &[data-has-action='true'] {
+      padding-bottom: 52px;
+    }
+
+    &:not([data-show-icon='true']) {
+      padding-left: 0px;
     }
   }
 `;
@@ -89,10 +98,10 @@ export const StyledFixedBannerContentContainer = styled.div`
 export const StyledFixedBannerButtonContainer = styled.div`
   @media (max-width: ${Breakpoints.large}) {
     position: absolute;
-    top: 48px;
+    bottom: 16px;
     left: 52px;
 
-    &[data-noicon='true'] {
+    &:not([data-show-icon='true']) {
       left: 16px;
     }
   }
