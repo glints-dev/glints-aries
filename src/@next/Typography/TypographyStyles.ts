@@ -3,7 +3,7 @@ import { TypographyProps, Variant } from './Typography';
 import * as Breakpoints from '../utilities/breakpoints';
 import { NotoSans, Poppins } from '../utilities/fonts';
 
-const headline1 = css`
+export const headline1 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 60px;
@@ -15,7 +15,7 @@ const headline1 = css`
   }
 `;
 
-const headline2 = css`
+export const headline2 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 50px;
@@ -29,7 +29,7 @@ const headline2 = css`
   }
 `;
 
-const headline3 = css`
+export const headline3 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 36px;
@@ -43,7 +43,7 @@ const headline3 = css`
   }
 `;
 
-const headline4 = css`
+export const headline4 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 30px;
@@ -57,7 +57,7 @@ const headline4 = css`
   }
 `;
 
-const headline5 = css`
+export const headline5 = css`
   font-weight: 700;
   font-size: 26px;
   line-height: normal;
@@ -69,7 +69,7 @@ const headline5 = css`
   }
 `;
 
-const headline6 = css`
+export const headline6 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -83,7 +83,7 @@ const headline6 = css`
   }
 `;
 
-const subtitle1 = css`
+export const subtitle1 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -95,7 +95,7 @@ const subtitle1 = css`
   }
 `;
 
-const subtitle2 = css`
+export const subtitle2 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -108,7 +108,7 @@ const subtitle2 = css`
   }
 `;
 
-const body1 = css`
+export const body1 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -120,7 +120,7 @@ const body1 = css`
   }
 `;
 
-const body2 = css`
+export const body2 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -134,7 +134,7 @@ const body2 = css`
   }
 `;
 
-const button = css`
+export const button = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -148,7 +148,7 @@ const button = css`
   }
 `;
 
-const caption = css`
+export const caption = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -162,7 +162,7 @@ const caption = css`
   }
 `;
 
-const overline = css`
+export const overline = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 500;
   font-size: 12px;

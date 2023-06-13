@@ -45,3 +45,14 @@ test('TextArea - 6 rows', async ({ page }) => {
   await textAreaPage.goto('args=rows:6;maxLength:60');
   await expect(textAreaPage.container).toHaveScreenshot('textarea-6rows.png');
 });
+
+test('TextArea - populated', async ({ page }) => {
+  const textAreaPage = new TextAreaPage(page);
+  await textAreaPage.goto('args=rows:2;maxLength:120');
+  await textAreaPage.text.fill(
+    'The quick brown fox jumps over the lay dog and finds a hidden treasure in the deep forest.'
+  );
+  await expect(textAreaPage.container).toHaveScreenshot(
+    'textarea-populated.png'
+  );
+});

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Neutral, Red } from '../utilities/colors';
-import { variantCssMapping } from '../Typography/TypographyStyles';
+import { body1 as typographyBody1 } from '../Typography/TypographyStyles';
 
 interface TextAreaProp {
   width: string;
@@ -44,7 +44,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
   box-sizing: border-box;
   border: none;
 
-  ${variantCssMapping['body1']}
+  ${typographyBody1}
 
   color: ${Neutral.B18};
   resize: none;
