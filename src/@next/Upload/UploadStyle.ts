@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Neutral } from '../utilities/colors';
+import { Blue, Neutral, Red } from '../utilities/colors';
 
 export const StyledInvisibleInput = styled.input`
   display: none;
@@ -26,6 +26,12 @@ export const StyledUploadContainer = styled.div`
   &[data-type='non-image'] {
     border: 1px solid ${Neutral.B68};
   }
+  &[data-type='loading'] {
+    background-color: ${Neutral.B95};
+  }
+  &[data-error='true'] {
+    border: 1px dashed ${Red.B93};
+  }
 `;
 
 export const StyledTextContainer = styled.div`
@@ -39,7 +45,8 @@ export const StyledTextContainer = styled.div`
 export const StyledIconContainer = styled.div`
   position: absolute;
   top: 12.5px;
-  left: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
 
   svg {
@@ -47,6 +54,15 @@ export const StyledIconContainer = styled.div`
     color: ${Neutral.B40};
     height: 24px;
     width: 24px;
+  }
+
+  &[data-type='loading'] {
+    top: 17.5px;
+    svg {
+      fill: ${Blue.S99};
+      height: 18px;
+      width: 18px;
+    }
   }
 `;
 
@@ -68,10 +84,9 @@ export const StyledUploadedHoverContainer = styled.div`
   opacity: 0.7;
 `;
 
-export const StyledEditIconContainer = styled.div`
+export const StyledHoveredIconContainer = styled.div`
   position: absolute;
   top: 30px;
-  left: 16px;
   z-index: 3;
   cursor: pointer;
 
@@ -80,19 +95,12 @@ export const StyledEditIconContainer = styled.div`
     height: 16px;
     width: 16px;
   }
-`;
 
-export const StyledDeleteIconContainer = styled.div`
-  position: absolute;
-  top: 30px;
-  left: 48px;
-  z-index: 3;
-  cursor: pointer;
-
-  svg {
-    fill: ${Neutral.B100};
-    height: 16px;
-    width: 16px;
+  &[data-type='edit'] {
+    left: 16px;
+  }
+  &[data-type='delete'] {
+    left: 48px;
   }
 `;
 
@@ -105,4 +113,26 @@ export const StyledFileNameContainer = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const StyledErrorContainer = styled.div`
+  position: relative;
+`;
+
+export const StyledErrorIconContainer = styled.div`
+  position: absolute;
+  top: 4px;
+
+  svg {
+    fill: ${Red.B93};
+    height: 20px;
+    width: 20px;
+  }
+`;
+
+export const StyledErrorTextContainer = styled.div`
+  position: absolute;
+  top: 4px;
+  left: 24px;
+  color: ${Red.B93};
 `;

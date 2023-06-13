@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Icon } from '../Icon';
 import {
   StyledInvisibleInput,
@@ -7,10 +7,13 @@ import {
   StyledIconContainer,
   StyledUploadedImage,
   StyledUploadedHoverContainer,
-  StyledEditIconContainer,
-  StyledDeleteIconContainer,
+  StyledHoveredIconContainer,
   StyledFileNameContainer,
+  StyledErrorContainer,
+  StyledErrorIconContainer,
+  StyledErrorTextContainer,
 } from './UploadStyle';
+import { Spinner } from '../Spinner';
 import { Typography } from '../Typography';
 
 export interface UploadProps {
@@ -23,6 +26,8 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
     const [attachmentUrl, setAttachmentUrl] = useState<string>('');
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [isImage, setIsImage] = useState<boolean>(true);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isError, setIsError] = useState<boolean>(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -30,6 +35,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       reader.onloadend = () => {
         setAttachmentUrl(reader.result as string);
         setIsImage(reader.result?.toString().startsWith('data:image') ?? false);
+        setIsLoading(false);
       };
       if (file) reader.readAsDataURL(file);
     }, [file]);
@@ -40,63 +46,121 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       }
     };
 
+    const MAX_FILE_SIZE = 5; // in MB
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      setIsLoading(true);
+      const newFile = event.target.files?.[0];
+      if (newFile && newFile.size > MAX_FILE_SIZE * 1024 * 1024) {
+        setIsError(true);
+        setIsLoading(false);
+      } else {
+        setIsError(false);
+        setFile(newFile);
+      }
+    };
+
     const handleDelete = () => {
       setAttachmentUrl('');
       setFile(null);
       setIsHovered(false);
     };
 
+    const unuploadedComponent = (
+      <StyledUploadContainer
+        onClick={handleClick}
+        data-type="initial"
+        data-error={isError}
+      >
+        <StyledIconContainer>
+          <Icon name="ri-add" />
+        </StyledIconContainer>
+        <StyledTextContainer>
+          <Typography as="span" variant="button">
+            Upload
+          </Typography>
+        </StyledTextContainer>
+      </StyledUploadContainer>
+    );
+
+    const loadingComponent = (
+      <StyledUploadContainer data-type="loading">
+        <StyledIconContainer data-type="loading">
+          <Spinner />
+        </StyledIconContainer>
+        <StyledTextContainer>
+          <Typography as="span" variant="overline">
+            loading...
+          </Typography>
+        </StyledTextContainer>
+      </StyledUploadContainer>
+    );
+
+    const errorComponent = (
+      <StyledErrorContainer>
+        <StyledErrorIconContainer>
+          <Icon name="ri-error-warning-fill" />
+        </StyledErrorIconContainer>
+        <StyledErrorTextContainer>
+          <Typography as="span" variant="subtitle2">
+            File too big
+          </Typography>
+        </StyledErrorTextContainer>
+      </StyledErrorContainer>
+    );
+
+    const uploadedImageComponent = <StyledUploadedImage src={attachmentUrl} />;
+
+    const uploadedNonImageComponent = (
+      <>
+        <StyledIconContainer>
+          <Icon name="ri-attachment-fill" />
+        </StyledIconContainer>
+        <StyledFileNameContainer>
+          <Typography as="span" variant="overline">
+            {file && file.name}
+          </Typography>
+        </StyledFileNameContainer>
+      </>
+    );
+
+    const hoveredOverlayComponent = (
+      <>
+        <StyledUploadedHoverContainer />
+        <StyledHoveredIconContainer data-type="edit" onClick={handleClick}>
+          <Icon name="ri-pencil-line" />
+        </StyledHoveredIconContainer>
+        <StyledHoveredIconContainer data-type="delete" onClick={handleDelete}>
+          <Icon name="ri-delete-bin-line" />
+        </StyledHoveredIconContainer>
+      </>
+    );
+
     return (
       <>
         <StyledInvisibleInput
           type="file"
-          onChange={e => setFile(e.target.files?.[0])}
+          onChange={handleChange}
           ref={ref || fileInputRef}
           {...props}
         />
-        {attachmentUrl ? (
+        {attachmentUrl && !isLoading ? (
           <StyledUploadContainer
             data-type={isImage ? 'image' : 'non-image'}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             {isImage ? (
-              <StyledUploadedImage src={attachmentUrl} />
+              <>{uploadedImageComponent}</>
             ) : (
-              <>
-                <StyledIconContainer>
-                  <Icon name="ri-attachment-fill" />
-                </StyledIconContainer>
-                <StyledFileNameContainer>
-                  <Typography as="span" variant="overline">
-                    {file && file.name}
-                  </Typography>
-                </StyledFileNameContainer>
-              </>
+              <>{uploadedNonImageComponent}</>
             )}
-            {isHovered && (
-              <>
-                <StyledUploadedHoverContainer />
-                <StyledEditIconContainer onClick={handleClick}>
-                  <Icon name="ri-pencil-line" />
-                </StyledEditIconContainer>
-                <StyledDeleteIconContainer onClick={handleDelete}>
-                  <Icon name="ri-delete-bin-line" />
-                </StyledDeleteIconContainer>
-              </>
-            )}
+            {isHovered && <>{hoveredOverlayComponent}</>}
           </StyledUploadContainer>
         ) : (
-          <StyledUploadContainer onClick={handleClick} data-type="initial">
-            <StyledIconContainer>
-              <Icon name="ri-add" />
-            </StyledIconContainer>
-            <StyledTextContainer>
-              <Typography as="span" variant="button">
-                Upload
-              </Typography>
-            </StyledTextContainer>
-          </StyledUploadContainer>
+          <>
+            {isLoading ? <>{loadingComponent}</> : <>{unuploadedComponent}</>}
+            {isError && <>{errorComponent}</>}
+          </>
         )}
       </>
     );
