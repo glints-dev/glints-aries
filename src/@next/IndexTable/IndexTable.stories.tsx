@@ -39,6 +39,9 @@ export default {
     loadingLabel: {
       control: 'text',
     },
+    selectable: {
+      control: 'boolean',
+    },
   },
 } as Meta;
 

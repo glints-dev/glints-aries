@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { borderRadius16 } from '../utilities/borderRadius';
 import { space8 } from '../utilities/spacing';
+import { Blue, Neutral } from '../utilities/colors';
 
 export const StyledIndexTable: any = createGlobalStyle`
   :root {
@@ -1029,7 +1030,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__TableRow {
     background-color: var(--p-surface);
     cursor: pointer;
-    box-shadow: inset 0 -0.0625rem 0 #d4d5d8;
+    box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
   }
 
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--unclickable {
@@ -1060,7 +1061,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered
     .Polaris-IndexTable__TableCell--first
     + .Polaris-IndexTable__TableCell {
-    background-color: #eaf9ff;
+    background-color: ${Blue.S08};
   }
 
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected,
@@ -1073,7 +1074,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected
     .Polaris-IndexTable__TableCell--first
     + .Polaris-IndexTable__TableCell {
-    background-color: #eaf9ff;
+    background-color: ${Blue.S08};
   }
 
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected,
@@ -1082,7 +1083,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected
     .Polaris-IndexTable__TableCell--first
     + .Polaris-IndexTable__TableCell {
-    background-color: #eaf9ff;
+    background-color: ${Blue.S08};
   }
 
   .Polaris-IndexTable__TableRow--subdued {
@@ -1105,7 +1106,7 @@ export const StyledIndexTable: any = createGlobalStyle`
     letter-spacing: 0.01563rem;
     white-space: nowrap;
     border: 0;
-    box-shadow: inset 0 -0.0625rem 0 #d4d5d8;
+    box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
     font-family: 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans JP',
     'Noto Sans', sans-serif;
   }
@@ -1242,9 +1243,9 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky
     .Polaris-IndexTable__TableCell:first-child {
     left: 0;
-    background-color: var(--p-surface);
     z-index: var(--pc-index-table-sticky-cell);
     position: sticky;
+    box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
   }
 
   .Polaris-IndexTable__Table--unselectable
@@ -1262,7 +1263,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__Table--unselectable
     .Polaris-IndexTable__TableRow--hovered
     .Polaris-IndexTable__TableCell:first-child {
-    background-color: var(--p-surface-hovered);
+    background-color: ${Blue.S08}
   }
 
   @media (min-width: 30.625em) {
@@ -1309,7 +1310,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable--tableStickyLast
     .Polaris-IndexTable__TableRow--hovered
     .Polaris-IndexTable__TableCell:last-child {
-    background-color: var(--p-surface-hovered);
+    background-color: ${Blue.S08};
   }
 
   .Polaris-IndexTable--tableStickyLast
