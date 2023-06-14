@@ -57,6 +57,8 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       if (newFile && newFile.size > MAX_FILE_SIZE * 1024 * 1024) {
         setIsError(true);
         setIsLoading(false);
+        setAttachmentUrl('');
+        setFile(null);
       } else {
         setIsError(false);
         setFile(newFile);
