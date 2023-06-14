@@ -21,3 +21,15 @@ const Template: Story<UploadProps> = args => {
 };
 export const Interactive = Template.bind({});
 Interactive.args = {};
+
+const LoadingTemplate: Story<UploadProps> = args => {
+  const [file, setFile] = useState<File | null>(null);
+
+  return (
+    <>
+      <Upload {...args} file={file} setFile={setFile} loading={true} />
+    </>
+  );
+};
+export const LoadingInteractive = LoadingTemplate.bind({});
+LoadingInteractive.args = {};

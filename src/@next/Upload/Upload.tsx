@@ -19,14 +19,18 @@ import { Typography } from '../Typography';
 export interface UploadProps {
   file: File | null;
   setFile: React.Dispatch<any>;
+  loading?: boolean;
 }
 
 export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
-  function Upload({ file, setFile, ...props }: UploadProps, ref) {
+  function Upload(
+    { file, setFile, loading = false, ...props }: UploadProps,
+    ref
+  ) {
     const [attachmentUrl, setAttachmentUrl] = useState<string>('');
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [isImage, setIsImage] = useState<boolean>(true);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(loading);
     const [isError, setIsError] = useState<boolean>(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -70,6 +74,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
         onClick={handleClick}
         data-type="initial"
         data-error={isError}
+        data-testid="upload-container"
       >
         <StyledIconContainer>
           <Icon name="ri-add" />
@@ -148,6 +153,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
             data-type={isImage ? 'image' : 'non-image'}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            data-testid="upload-container"
           >
             {isImage ? (
               <>{uploadedImageComponent}</>
