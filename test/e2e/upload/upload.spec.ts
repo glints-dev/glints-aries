@@ -23,48 +23,30 @@ test('Upload - image', async ({ page }) => {
   await expect(uploadPage.container).toHaveScreenshot('upload-image.png');
 });
 
-test('Upload - image - hover', async ({ page }) => {
-  const uploadPage = new UploadPage(page);
-  await uploadPage.goto();
-  await uploadPage.input.setInputFiles(
-    'test/e2e/upload/assets/sample-image.png'
-  );
-  await uploadPage.uploadContainer.hover();
-  await expect(uploadPage.container).toHaveScreenshot('upload-image-hover.png');
-});
-
-test('Upload - nonimage', async ({ page }) => {
-  const uploadPage = new UploadPage(page);
-  await uploadPage.goto();
-  await uploadPage.input.setInputFiles(
-    'test/e2e/upload/assets/sample-nonimage.pdf'
-  );
-  await expect(uploadPage.container).toHaveScreenshot('upload-nonimage.png');
-});
-
-test('Upload - nonimage - hover', async ({ page }) => {
-  const uploadPage = new UploadPage(page);
-  await uploadPage.goto();
-  await uploadPage.input.setInputFiles(
-    'test/e2e/upload/assets/sample-nonimage.pdf'
-  );
-  await uploadPage.uploadContainer.hover();
-  await expect(uploadPage.container).toHaveScreenshot(
-    'upload-nonimage-hover.png'
-  );
-});
-
 test('Upload - loading', async ({ page }) => {
   const uploadPage = new UploadPage(page);
-  await uploadPage.gotoLoadingPage();
+  await uploadPage.goto('args=loading:true');
   await expect(uploadPage.container).toHaveScreenshot('upload-loading.png');
 });
 
-test('Upload - error', async ({ page }) => {
+test('Upload - error - nonimage', async ({ page }) => {
   const uploadPage = new UploadPage(page);
   await uploadPage.goto();
   await uploadPage.input.setInputFiles(
-    'test/e2e/upload/assets/sample-large-file.zip'
+    'test/e2e/upload/assets/sample-nonimage.pdf'
   );
-  await expect(uploadPage.container).toHaveScreenshot('upload-error.png');
+  await expect(uploadPage.container).toHaveScreenshot(
+    'upload-error-nonimage.png'
+  );
+});
+
+test('Upload - error - large image', async ({ page }) => {
+  const uploadPage = new UploadPage(page);
+  await uploadPage.goto();
+  await uploadPage.input.setInputFiles(
+    'test/e2e/upload/assets/sample-large-image.jpg'
+  );
+  await expect(uploadPage.container).toHaveScreenshot(
+    'upload-error-largeimage.png'
+  );
 });

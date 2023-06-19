@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as Breakpoints from '../utilities/breakpoints';
 import { Blue, Neutral, Red } from '../utilities/colors';
 
 export const StyledInvisibleInput = styled.input`
@@ -22,9 +23,6 @@ export const StyledUploadContainer = styled.div`
   }
   &[data-type='image'] {
     border: none;
-  }
-  &[data-type='non-image'] {
-    border: 1px solid ${Neutral.B68};
   }
   &[data-type='loading'] {
     background-color: ${Neutral.B95};
@@ -75,44 +73,50 @@ export const StyledUploadedImage = styled.img`
   border-radius: 2px;
 `;
 
-export const StyledUploadedHoverContainer = styled.div`
+export const StyledDeleteButtonContainer = styled.div`
   position: absolute;
-  height: 80px;
-  width: 80px;
-  z-index: 2;
-  background-color: rgb(71, 71, 71);
-  opacity: 0.7;
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+
+  cursor: pointer;
+  z-index: 3;
+
+  @media (max-width: ${Breakpoints.large}) {
+    height: 32px;
+    width: 32px;
+    left: 0px;
+    bottom: 0px;
+  }
 `;
 
-export const StyledHoveredIconContainer = styled.div`
+export const StyledDeleteIconContainer = styled.div`
   position: absolute;
-  top: 30px;
-  z-index: 3;
-  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  left: 0px;
+  bottom: 0px;
+
+  background-color: ${Neutral.B100};
+  border: 1px solid ${Neutral.B68};
+  border-radius: 50%;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
-    fill: ${Neutral.B100};
     height: 16px;
     width: 16px;
+    fill: ${Neutral.B40};
   }
 
-  &[data-type='edit'] {
-    left: 16px;
+  @media (max-width: ${Breakpoints.large}) {
+    left: 4px;
+    bottom: 4px;
   }
-  &[data-type='delete'] {
-    left: 48px;
-  }
-`;
-
-export const StyledFileNameContainer = styled.div`
-  position: absolute;
-  top: 48.5px;
-  left: 8px;
-  width: 64px;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const StyledErrorContainer = styled.div`
