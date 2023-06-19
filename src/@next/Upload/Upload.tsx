@@ -19,11 +19,18 @@ export interface UploadProps {
   file: File | null;
   setFile: React.Dispatch<any>;
   loading?: boolean;
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
 
 export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
   function Upload(
-    { file, setFile, loading = false, ...props }: UploadProps,
+    {
+      file,
+      setFile,
+      loading = false,
+      objectFit = 'cover',
+      ...props
+    }: UploadProps,
     ref
   ) {
     const [attachmentUrl, setAttachmentUrl] = useState<string>('');
@@ -113,7 +120,9 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       </StyledErrorContainer>
     );
 
-    const uploadedImageComponent = <StyledUploadedImage src={attachmentUrl} />;
+    const uploadedImageComponent = (
+      <StyledUploadedImage src={attachmentUrl} objectFit={objectFit} />
+    );
 
     return (
       <>

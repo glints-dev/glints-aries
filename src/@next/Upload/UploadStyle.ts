@@ -64,13 +64,16 @@ export const StyledIconContainer = styled.div`
   }
 `;
 
-export const StyledUploadedImage = styled.img`
+export const StyledUploadedImage = styled.img<{
+  objectFit: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+}>`
   position: absolute;
   height: 80px;
   width: 80px;
   z-index: 1;
   border: 1px solid ${Neutral.B68};
   border-radius: 2px;
+  object-fit: ${props => props.objectFit};
 `;
 
 export const StyledDeleteButtonContainer = styled.div`

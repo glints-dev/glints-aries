@@ -14,9 +14,4 @@ export class UploadPage extends StoryBookPage {
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByTestId('upload-container');
   }
-
-  async gotoLoadingPage() {
-    this.setPath('?path=/story/next-upload--loading-interactive');
-    await this.goto();
-  }
 }
