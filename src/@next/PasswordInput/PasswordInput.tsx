@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Icon } from '../Icon';
 import { Input } from '../Input/Input';
 import { StyledSuffixContainer } from './PasswordInputStyle';
+import { useMimicPassword } from './PasswordInputHook';
 
 export type PasswordInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -18,6 +19,15 @@ export const PasswordInput = React.forwardRef<
   { value, onChange, error, ...props }: PasswordInputProps,
   ref
 ) {
+  const [unmaskedPassword, maskedPassword, currOnChange] = useMimicPassword({
+    mask: '•',
+    delay: 1000,
+    mode: 'delayed',
+  });
+  // useEffect(() => {
+  //   onChange?.(unmaskedPassword);
+  // }, [unmaskedPassword]);
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const suffixComponent = (
@@ -37,11 +47,12 @@ export const PasswordInput = React.forwardRef<
 
   return (
     <>
+      unm: {unmaskedPassword}
       <Input
         ref={ref}
-        type={showPassword ? 'text' : 'password'}
-        value={value}
-        onChange={e => onChange?.(e.currentTarget.value)}
+        type="text"
+        value={showPassword ? unmaskedPassword : maskedPassword}
+        onChange={currOnChange}
         error={error}
         suffix={!props.disabled && suffixComponent}
         {...props}
