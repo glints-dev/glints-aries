@@ -17,22 +17,28 @@ import { Typography } from '../Typography';
 
 export interface UploadProps {
   file: File | null;
-  setFile: React.Dispatch<any>;
+  handleSetFile: (file: File | null) => void;
   loading?: boolean;
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  uploadMessage?: React.ReactNode;
+  loadingMessage?: React.ReactNode;
 }
 
 export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
   function Upload(
     {
       file,
-      setFile,
+      handleSetFile,
       loading = false,
       objectFit = 'cover',
+      uploadMessage = 'Upload',
+      loadingMessage = 'loading...',
       ...props
     }: UploadProps,
     ref
   ) {
+    const MAX_FILE_SIZE = 5; // in MB
+
     const [attachmentUrl, setAttachmentUrl] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(loading);
     const [error, setError] = useState<string>('');
@@ -53,27 +59,26 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       }
     };
 
-    const MAX_FILE_SIZE = 5; // in MB
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       setIsLoading(true);
       const newFile = event.target.files?.[0];
       if (newFile && !newFile.type.startsWith('image')) {
         setError('Image required');
-        setFile(null);
+        handleSetFile(null);
         setIsLoading(false);
       } else if (newFile && newFile.size > MAX_FILE_SIZE * 1024 * 1024) {
         setError('File too big');
-        setFile(null);
+        handleSetFile(null);
         setIsLoading(false);
       } else {
         setError('');
-        setFile(newFile);
+        handleSetFile(newFile);
       }
     };
 
     const handleDelete = () => {
       setAttachmentUrl('');
-      setFile(null);
+      handleSetFile(null);
     };
 
     const unuploadedComponent = (
@@ -88,7 +93,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
         </StyledIconContainer>
         <StyledTextContainer>
           <Typography as="span" variant="button">
-            Upload
+            {uploadMessage}
           </Typography>
         </StyledTextContainer>
       </StyledUploadContainer>
@@ -101,7 +106,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
         </StyledIconContainer>
         <StyledTextContainer>
           <Typography as="span" variant="overline">
-            loading...
+            {loadingMessage}
           </Typography>
         </StyledTextContainer>
       </StyledUploadContainer>
@@ -128,7 +133,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       <>
         <StyledInvisibleInput
           type="file"
-          accept="image/png, image/jpeg"
+          accept="image/*"
           onChange={handleChange}
           ref={ref || fileInputRef}
           {...props}

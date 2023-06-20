@@ -12,12 +12,11 @@ export default {
 
 const Template: Story<UploadProps> = args => {
   const [file, setFile] = useState<File | null>(null);
+  const handleSetFile = (file: File | null) => {
+    setFile(file);
+  };
 
-  return (
-    <>
-      <Upload {...args} file={file} setFile={setFile} />
-    </>
-  );
+  return <Upload {...args} file={file} handleSetFile={handleSetFile} />;
 };
 export const Interactive = Template.bind({});
 Interactive.args = {};
