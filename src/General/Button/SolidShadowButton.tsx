@@ -22,7 +22,7 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
   >
     <SolidShadowBtn
       ref={forwardedRef}
-      className="solid-shadow-btn-content"
+      className="aries-solid-shadow-btn"
       theme={theme}
       disabled={disabled}
       block={block}
