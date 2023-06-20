@@ -1,6 +1,7 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import { SolidShadowContainer, SolidShadowBtn } from './ButtonStyle';
+import * as React from 'react';
+import { Typography } from '../../@next';
+import { SolidShadowBtn, SolidShadowContainer } from './ButtonStyle';
 
 const SolidShadowButton: React.FunctionComponent<Props> = ({
   children,
@@ -29,7 +30,9 @@ const SolidShadowButton: React.FunctionComponent<Props> = ({
       as={(tag as React.ElementType) || 'button'}
       {...defaultProps}
     >
-      {children}
+      <Typography variant="button" as="span">
+        {children}
+      </Typography>
     </SolidShadowBtn>
   </SolidShadowContainer>
 );
