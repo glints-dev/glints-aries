@@ -24,3 +24,9 @@ export const StyledHeaderColumn = styled.th`
   text-align: left;
   padding: 8px;
 `;
+
+export const CustomMarginModificationContainer = styled.div`
+  .tabs-header-container {
+    margin-bottom: 8px;
+  }
+`;
