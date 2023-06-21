@@ -18,7 +18,7 @@ import {
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
-  header?: string;
+  header?: React.ReactNode;
   headerDescription?: React.ReactNode;
   children?: React.ReactNode;
   /** This action will be tied to primary button on footer */
