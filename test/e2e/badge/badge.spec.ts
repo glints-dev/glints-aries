@@ -55,6 +55,12 @@ test('Badge - attention', async ({ page }) => {
   await expect(badgePage.container).toHaveScreenshot('badge-attention.png');
 });
 
+test('Badge - primary', async ({ page }) => {
+  const badgePage = getPage(page);
+  await badgePage.goto('args=status:primary');
+  await expect(badgePage.container).toHaveScreenshot('badge-primary.png');
+});
+
 test('Badge - default - small', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const badgePage = getPage(page);
@@ -119,6 +125,13 @@ test('Badge - attention - small', async ({ page }) => {
   await expect(badgePage.container).toHaveScreenshot(
     'badge-attention-small.png'
   );
+});
+
+test('Badge - primary - small', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const badgePage = getPage(page);
+  await badgePage.goto('args=status:primary');
+  await expect(badgePage.container).toHaveScreenshot('badge-primary-small.png');
 });
 
 test('Badge - with border', async ({ page }) => {
