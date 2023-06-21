@@ -15,6 +15,7 @@ const badgeBackgroundColor: {
   ['promotion']: Yellow.S75,
   ['enticing']: Orange.S87,
   ['attention']: Red.B93,
+  ['primary']: Blue.S99,
 };
 
 export const badgeTextColor: {
@@ -28,6 +29,7 @@ export const badgeTextColor: {
   ['promotion']: Neutral.B18,
   ['enticing']: Neutral.B100,
   ['attention']: Neutral.B100,
+  ['primary']: Neutral.B100,
 };
 
 const getBadgeBackgroundColor = (status: BadgeStatusVariant) => {
