@@ -11,6 +11,7 @@ const badgeStatusVariant = [
   'promotion',
   'enticing',
   'attention',
+  'primary',
 ] as const;
 
 export type BadgeStatusVariant = typeof badgeStatusVariant[number];
