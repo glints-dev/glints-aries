@@ -84,6 +84,7 @@ export { TextArea, TextAreaProps } from './TextArea';
 export { TextInput, TextInputProps } from './TextInput';
 export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
 export { Typography, TypographyProps } from './Typography';
+export { Upload, UploadProps } from './Upload';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
 export { Switch } from './Switch';
 export { InlineError, InlineErrorProps } from './InlineError';
