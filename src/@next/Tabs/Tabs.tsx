@@ -137,7 +137,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         data-scroll-right={canScrollRight}
         data-grabbing={isDragging}
       >
-        <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
+        <StyledUl className="tabs-ul" data-fitted={fitted}>
+          {renderTabs}
+        </StyledUl>
       </StyledTabHeaderContainer>
       <div className="tab-item-content">{children}</div>
     </StyledTabsContainer>
