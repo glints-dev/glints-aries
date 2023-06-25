@@ -27,6 +27,12 @@ export const StyledContainer = styled(StyledInputContainer)`
     color: ${Neutral.B40};
   }
 
+  .searchable-select {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .searchable-select,
   input {
     padding-left: ${props => props.prefixWidth}px;
