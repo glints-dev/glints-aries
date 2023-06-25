@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { PrimaryColor, SecondaryColor, Greyscale } from '../../Utils/Colors';
+import { Neutral } from '../../@next/utilities/colors';
+import { Greyscale, PrimaryColor, SecondaryColor } from '../../Utils/Colors';
 import { ButtonTheme } from '../../Utils/StyleConfig';
 
 const generalButtonPadding = [15, 40];
@@ -194,6 +195,7 @@ export const SolidShadowBtn = styled(Button)<SolidShadowBtnProps>`
   cursor: pointer;
   position: relative;
   width: 100%;
+  border-radius: 4px;
 
   &:hover {
     text-decoration: none;
@@ -208,7 +210,7 @@ export const SolidShadowBtn = styled(Button)<SolidShadowBtnProps>`
     }
     return `
       background-color: ${PrimaryColor.glintsyellow};
-      color: ${Greyscale.black};
+      color: ${Neutral.B18};
     `;
   }}
 `;
@@ -272,6 +274,7 @@ export const SolidShadowContainer = styled.div<SolidShadowContainerProps>`
     top: 5px;
     left: 5px;
     transition: all 0.2s;
+    border-radius: 4px;
 
     ${props => {
       if (props.disabled) {
@@ -372,7 +375,7 @@ export const GhostBtnContainer = styled.div<GhostBtnContainerProps>`
     if (!disabled) {
       return `
         &:active {
-          transition: background-color .5s; 
+          transition: background-color .5s;
           transform: translate3d(2px, 2px, 0);
           transition: all .2s;
         }
@@ -479,7 +482,7 @@ export const LinkBtn = styled(Button)<LinkBtnProps>`
           color: ${SecondaryColor.darkblue};
           text-decoration: none;
         }
-      
+
         &:active {
           color: ${Greyscale.black};
         }
