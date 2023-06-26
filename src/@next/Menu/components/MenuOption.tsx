@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ListContainer } from '../MenuStyle';
+import { List, ListContainer } from '../MenuStyle';
 
 export interface MenuOptionProps
   extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
@@ -27,7 +27,7 @@ export const MenuOption = ({
 
   return (
     <ListContainer>
-      <li
+      <List
         aria-disabled={disabled}
         data-active={isSelected}
         data-multiple={allowMultiple}
@@ -35,7 +35,7 @@ export const MenuOption = ({
         onClick={handleClick}
       >
         {children}
-      </li>
+      </List>
     </ListContainer>
   );
 };

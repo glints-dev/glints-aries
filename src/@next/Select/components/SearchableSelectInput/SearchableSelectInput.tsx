@@ -6,6 +6,7 @@ import { ClearSelected } from './ClearSelected';
 import {
   InputContainer,
   StyledContainer,
+  StyledSelected,
   StyledSelectedValue,
 } from './SearchableSelectInputStyle';
 
@@ -161,7 +162,7 @@ export const SearchableSelectInput = forwardRef<
           className="searchable-select"
           onClick={handleSelectedClick}
         >
-          {selectedValue}
+          <StyledSelected>{selectedValue}</StyledSelected>
         </StyledSelectedValue>
       )}
       {showInput && (

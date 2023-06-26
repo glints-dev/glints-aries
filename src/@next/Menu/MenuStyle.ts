@@ -86,6 +86,15 @@ export const ListContainer = styled.div`
   padding: 0 ${space8};
 `;
 
+export const List = styled.li`
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+`;
+
 export const StyledSections = styled.ul`
   list-style: none;
   padding: 0;
