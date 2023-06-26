@@ -123,6 +123,35 @@ test('Select - searchable single select', async ({ page }) => {
   );
 });
 
+test('Select - searchable single select with overflowing input', async ({
+  page,
+}) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoSearchableSingleSelectWithOverflowingInputStatePage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-overflowing-input-state-option-list.png'
+  );
+
+  await selectPage.activatorTextInput.fill('ke');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-overflowing-input-state-filter-options.png'
+  );
+
+  await selectPage.activatorTextInput.fill('');
+  await selectPage.options.nth(1).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-overflowing-input-state-option-hover.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-overflowing-input-state-option-selected.png'
+  );
+});
+
 test('Select - searchable multi select', async ({ page }) => {
   const selectPage = new SelectPage(page);
   await selectPage.gotoSearchableMultiSelectPage();

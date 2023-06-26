@@ -66,6 +66,13 @@ export class SelectPage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoSearchableSingleSelectWithOverflowingInputStatePage(args?: Args) {
+    this.setPath(
+      '?path=/story/next-select--searchable-single-select-with-overflowing-input-state'
+    );
+    await this.goto(args);
+  }
+
   async gotoAsyncSearchableSingleSelectPage(args?: Args) {
     this.setPath(
       '?path=/story/next-select--async-searchable-single-with-input-state'
