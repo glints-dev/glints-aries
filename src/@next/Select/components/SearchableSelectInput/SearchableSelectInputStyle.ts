@@ -54,6 +54,12 @@ export const StyledContainer = styled(StyledInputContainer)`
   }
 `;
 
+export const StyledSelected = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 export const StyledSelectedValue = styled.div`
   border: 1px solid ${Neutral.B68};
   border-radius: ${borderRadius4};

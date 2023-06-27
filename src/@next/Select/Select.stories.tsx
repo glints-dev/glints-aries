@@ -557,6 +557,70 @@ SearchableSingleSelect.parameters = {
   },
 };
 
+const SearchableSingleSelectWithOverflowingInputStateTemplate: Story<
+  SelectProps
+> = args => {
+  const longPlaceNames = [
+    {
+      label:
+        'Kelurahan Kelapa Gading Barat, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+      value:
+        'Kelurahan Kelapa Gading Barat, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+    },
+    {
+      label:
+        'Kelurahan Kelapa Gading Timur, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+      value:
+        'Kelurahan Kelapa Gading Timur, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+    },
+  ];
+  return <SearchableSingle data={longPlaceNames} {...args} />;
+};
+
+export const SearchableSingleSelectWithOverflowingInputState =
+  SearchableSingleSelectWithOverflowingInputStateTemplate.bind({});
+
+SearchableSingleSelectWithOverflowingInputState.args = {
+  allowMultiple: false,
+};
+
+SearchableSingleSelectWithOverflowingInputState.parameters = {
+  docs: {
+    source: {
+      code: `
+      const locations = [
+        {
+          label: 'Kelurahan Kelapa Gading Barat, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+          value: 'Kelurahan Kelapa Gading Barat, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+        },
+        {
+          label: 'Kelurahan Kelapa Gading Timur, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+          value: 'Kelurahan Kelapa Gading Timur, Kecamatan Kelapa Gading, Kota Jakarta Utara, DKI Jakarta, Indonesia',
+        },
+      ];
+
+      const [selected, setSelected] = useState('');
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+    
+      return (
+        <Select
+          allowMultiple={false}
+          onSelect={handleSelect}
+          options={locations}
+          selectedValues={[selected]}
+          width="600px"
+          searchable
+          label="Label"
+        />
+      );
+      `,
+    },
+  },
+};
+
 const SearchableSingleWithInputStateTemplate: Story<SelectProps> = args => {
   return (
     <SearchableSingleSelectWithInputState data={slicedCountries} {...args} />

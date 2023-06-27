@@ -12,7 +12,7 @@ export const StyledMenu = styled.ul<MenuProps>`
 
   li {
     display: flex;
-    height: 44px;
+    min-height: 44px;
     position: relative;
     align-items: center;
     padding: 0 ${space8};
@@ -84,6 +84,14 @@ export const TitleContainer = styled.div`
 
 export const ListContainer = styled.div`
   padding: 0 ${space8};
+`;
+
+export const List = styled.li`
+  height: max-content;
+  span {
+    overflow: hidden;
+    width: 100%;
+  }
 `;
 
 export const StyledSections = styled.ul`
