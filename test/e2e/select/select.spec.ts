@@ -150,6 +150,13 @@ test('Select - searchable single select with overflowing input', async ({
   await expect(selectPage.canvas).toHaveScreenshot(
     'select-searchable-single-select-with-overflowing-input-state-option-selected.png'
   );
+
+  await selectPage.searchableSelect.click();
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-overflowing-input-state-hasselected-focus-input.png'
+  );
 });
 
 test('Select - searchable multi select', async ({ page }) => {

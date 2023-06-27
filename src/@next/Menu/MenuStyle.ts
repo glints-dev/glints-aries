@@ -12,7 +12,7 @@ export const StyledMenu = styled.ul<MenuProps>`
 
   li {
     display: flex;
-    height: 44px;
+    min-height: 44px;
     position: relative;
     align-items: center;
     padding: 0 ${space8};
@@ -87,10 +87,9 @@ export const ListContainer = styled.div`
 `;
 
 export const List = styled.li`
+  height: max-content;
   span {
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 100%;
   }
 `;
