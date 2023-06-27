@@ -65,6 +65,7 @@ export {
 } from './Modal';
 export { NumberInput, NumberInputProps } from './NumberInput';
 export { Pagination, PaginationProps, SimplePagination } from './Pagination';
+export { PasswordInput, PasswordInputProps } from './PasswordInput';
 export { Popover, PopoverProps } from './Popover';
 export { RadioButton, RadioButtonProps } from './RadioButton';
 export { Select, SelectProps } from './Select';
