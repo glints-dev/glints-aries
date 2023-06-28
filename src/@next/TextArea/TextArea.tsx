@@ -1,8 +1,8 @@
 import React, {
-  MutableRefObject,
   useRef,
   useState,
   TextareaHTMLAttributes,
+  RefObject,
 } from 'react';
 import {
   StyledTextAreaContainer,
@@ -19,81 +19,80 @@ export type TextAreaProps = Omit<
   onChange: (value: string) => void;
   error?: boolean;
   width?: string;
+  forwardedRef?: RefObject<HTMLTextAreaElement>;
 };
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  function TextArea(
-    {
-      value,
-      rows = 3,
-      maxLength,
-      error = false,
-      disabled = false,
-      width = '520px',
-      onChange,
-      ...props
-    }: TextAreaProps,
-    ref
-  ) {
-    const [isFocused, setIsFocused] = useState<boolean>(false);
-    const charCount = value.length;
+const _TextArea = ({
+  value,
+  rows = 3,
+  maxLength,
+  error = false,
+  disabled = false,
+  width = '520px',
+  onChange,
+  forwardedRef,
+  ...props
+}: TextAreaProps) => {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const charCount = value.length;
 
-    const transformedMaxLength: number = maxLength || undefined;
+  const transformedMaxLength: number = maxLength || undefined;
 
-    const hasMaxLengthEnforced = Boolean(
-      transformedMaxLength && transformedMaxLength > 0
-    );
+  const hasMaxLengthEnforced = Boolean(
+    transformedMaxLength && transformedMaxLength > 0
+  );
 
-    const localRef = useRef<HTMLTextAreaElement>(null);
-    const setRefs = (node: HTMLTextAreaElement) => {
-      localRef.current = node;
-      if (typeof ref === 'function') {
-        (ref as (instance: HTMLTextAreaElement | null) => void)(node);
-      } else if (ref) {
-        (ref as MutableRefObject<HTMLTextAreaElement | null>).current = node;
-      }
-    };
+  const localRef = useRef<HTMLTextAreaElement>(null);
+  const textAreaInputRef = forwardedRef || localRef;
 
-    const handleContainerClick = () => {
-      if (localRef.current) {
-        localRef.current.focus();
-      }
-    };
+  const handleContainerClick = () => {
+    if (textAreaInputRef.current) {
+      localRef.current.focus();
+    }
+  };
 
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const val = e.currentTarget.value;
-      onChange(val);
-    };
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const val = e.currentTarget.value;
+    onChange(val);
+  };
 
-    return (
-      <StyledTextAreaContainer
-        data-error={error}
-        data-disabled={disabled}
-        data-focus={isFocused}
-        data-has-counter={hasMaxLengthEnforced}
+  return (
+    <StyledTextAreaContainer
+      data-error={error}
+      data-disabled={disabled}
+      data-focus={isFocused}
+      data-has-counter={hasMaxLengthEnforced}
+      width={width}
+      onClick={handleContainerClick}
+    >
+      <StyledTextArea
+        ref={textAreaInputRef}
+        value={value}
+        rows={rows}
         width={width}
-        onClick={handleContainerClick}
-      >
-        <StyledTextArea
-          ref={setRefs}
-          value={value}
-          rows={rows}
-          width={width}
-          onChange={handleChange}
-          disabled={disabled}
-          maxLength={transformedMaxLength}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          {...props}
-        />
-        {hasMaxLengthEnforced && (
-          <StyledWordCountContainer data-disabled={disabled} data-error={error}>
-            <Typography as="span" variant="overline">
-              {charCount} / {transformedMaxLength}
-            </Typography>
-          </StyledWordCountContainer>
-        )}
-      </StyledTextAreaContainer>
-    );
-  }
-);
+        onChange={handleChange}
+        disabled={disabled}
+        maxLength={transformedMaxLength}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        {...props}
+      />
+      {hasMaxLengthEnforced && (
+        <StyledWordCountContainer data-disabled={disabled} data-error={error}>
+          <Typography as="span" variant="overline">
+            {charCount} / {transformedMaxLength}
+          </Typography>
+        </StyledWordCountContainer>
+      )}
+    </StyledTextAreaContainer>
+  );
+};
+
+const forwardRef = (
+  props: TextAreaProps,
+  ref: RefObject<HTMLTextAreaElement>
+) => <_TextArea {...props} forwardedRef={ref} />;
+
+forwardRef.displayName = _TextArea.name;
+
+export const TextArea = React.forwardRef(forwardRef);
