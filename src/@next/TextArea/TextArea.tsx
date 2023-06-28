@@ -1,6 +1,5 @@
 import React, {
   MutableRefObject,
-  useEffect,
   useRef,
   useState,
   TextareaHTMLAttributes,
@@ -36,9 +35,14 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     }: TextAreaProps,
     ref
   ) {
-    const [charCount, setCharCount] = useState<number>(0);
     const [isFocused, setIsFocused] = useState<boolean>(false);
-    const isError: boolean = error || (!!maxLength && charCount > maxLength);
+    const charCount = value.length;
+
+    const transformedMaxLength: number = maxLength || undefined;
+
+    const hasMaxLengthEnforced = Boolean(
+      transformedMaxLength && transformedMaxLength > 0
+    );
 
     const localRef = useRef<HTMLTextAreaElement>(null);
     const setRefs = (node: HTMLTextAreaElement) => {
@@ -49,10 +53,6 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         (ref as MutableRefObject<HTMLTextAreaElement | null>).current = node;
       }
     };
-
-    useEffect(() => {
-      setCharCount(value.length);
-    }, [value]);
 
     const handleContainerClick = () => {
       if (localRef.current) {
@@ -67,10 +67,10 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     return (
       <StyledTextAreaContainer
-        data-error={isError}
+        data-error={error}
         data-disabled={disabled}
         data-focus={isFocused}
-        data-has-counter={!!maxLength}
+        data-has-counter={hasMaxLengthEnforced}
         width={width}
         onClick={handleContainerClick}
       >
@@ -81,17 +81,15 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           width={width}
           onChange={handleChange}
           disabled={disabled}
+          maxLength={transformedMaxLength}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           {...props}
         />
-        {!!maxLength && (
-          <StyledWordCountContainer
-            data-disabled={disabled}
-            data-error={isError}
-          >
+        {hasMaxLengthEnforced && (
+          <StyledWordCountContainer data-disabled={disabled} data-error={error}>
             <Typography as="span" variant="overline">
-              {charCount} / {maxLength}
+              {charCount} / {transformedMaxLength}
             </Typography>
           </StyledWordCountContainer>
         )}
