@@ -32,6 +32,8 @@ export interface CarouselProps {
   indicatorType?: 'dot' | 'line' | 'slider';
   /** When to show arrows*/
   showArrow?: 'always' | 'hover' | 'never';
+  /** When `autoRotate` is `true`, specify milliseconds until next slide shows */
+  duration?: number;
 }
 
 export const Carousel = ({
@@ -42,6 +44,7 @@ export const Carousel = ({
   width,
   indicatorPosition = 'outer',
   indicatorType = 'line',
+  duration = 3000,
 }: CarouselProps) => {
   const slideRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -95,7 +98,7 @@ export const Carousel = ({
     if (autoRotate) {
       setTimeout(() => {
         updateActiveIndex(activeIndex + 1);
-      }, 3000);
+      }, duration);
     }
   }, [activeIndex, autoRotate, updateActiveIndex]);
 
