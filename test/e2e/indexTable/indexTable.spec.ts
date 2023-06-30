@@ -98,3 +98,13 @@ test('IndexTable - empty state', async ({ page }) => {
     'indexTable-empty-state.png'
   );
 });
+
+test('IndexTable - scrollable', async ({ page }) => {
+  const indexTablePage = new IndexTablePage(page);
+
+  await indexTablePage.gotoScrollablePage();
+
+  await expect(indexTablePage.canvas).toHaveScreenshot(
+    'indexTable-scrollable.png'
+  );
+});
