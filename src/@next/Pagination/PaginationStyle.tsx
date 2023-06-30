@@ -15,6 +15,11 @@ export const SimplePaginationStyledNav = styled(StyledNav)`
   gap: 4px;
 `;
 
+export const IconOnlyPaginationStyledNav = styled(StyledNav)`
+  gap: 0px;
+  align-items: center;
+`;
+
 export const StyledPageButton = styled.button<PageButtonProps>`
   cursor: pointer;
   height: 32px;
@@ -56,6 +61,30 @@ export const StyledPageButton = styled.button<PageButtonProps>`
 
 export const StyledSimplePaginationButton = styled(StyledPageButton)`
   pointer-events: none;
+`;
+
+export const StyledBorderPaginationButton = styled(StyledPageButton)`
+  border: 1px solid ${Neutral.B68};
+
+  &:first-of-type {
+    border-radius: ${borderRadius2} 0 0 ${borderRadius2};
+  }
+
+  &:last-of-type {
+    border-radius: 0 ${borderRadius2} ${borderRadius2} 0;
+  }
+
+  &:hover {
+    background: ${Blue.S08};
+  }
+
+  &:disabled {
+    background: ${Neutral.B95};
+  }
+`;
+
+export const StyledLabel = styled.div`
+  padding: ${space4};
 `;
 
 export const StyledActiveSimplePaginationButton = styled(

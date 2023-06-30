@@ -9,8 +9,9 @@ export type PaginationProps = {
   onPageChanged?: (currentPage: number) => void;
 };
 
-export type SimplifiedPaginationProps = {
+export type IconOnlyPaginationProps = {
   disabled?: boolean;
+  label?: string;
   onPageChanged?: () => void;
 };
 

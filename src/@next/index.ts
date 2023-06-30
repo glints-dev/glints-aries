@@ -65,11 +65,11 @@ export {
 } from './Modal';
 export { NumberInput, NumberInputProps } from './NumberInput';
 export {
+  IconOnlyPagination,
+  IconOnlyPaginationProps,
   Pagination,
   PaginationProps,
-  PaginationWithoutNumber,
   SimplePagination,
-  SimplifiedPaginationProps,
 } from './Pagination';
 export { PasswordInput, PasswordInputProps } from './PasswordInput';
 export { Popover, PopoverProps } from './Popover';

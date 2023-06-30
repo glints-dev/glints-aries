@@ -1,4 +1,4 @@
 export * from './Pagination';
-export * from './PaginationWithoutNumber';
+export * from './IconOnlyPagination';
 export * from './SimplePagination';
-export { PaginationProps, SimplifiedPaginationProps } from './paginationUtils';
+export { PaginationProps, IconOnlyPaginationProps } from './paginationUtils';
