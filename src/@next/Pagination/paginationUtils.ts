@@ -9,6 +9,11 @@ export type PaginationProps = {
   onPageChanged?: (currentPage: number) => void;
 };
 
+export type SimplifiedPaginationProps = {
+  disabled?: boolean;
+  onPageChanged?: () => void;
+};
+
 export const defaultPageSize = 10;
 export const defaultBufferSize = 2;
 
