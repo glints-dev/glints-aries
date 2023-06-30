@@ -86,6 +86,126 @@ const candidates = [
     latestWorkExperience: 'Backend Engineer at Google',
     latestWorkDuration: 'Jan 2021 - Jan 2022',
   },
+  {
+    id: '1',
+    url: 'candidate/1',
+    name: 'Dwi Nugraha Putri',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '2',
+    url: 'candidate/2',
+    name: 'Ahmad Dani',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '3',
+    url: 'candidate/3',
+    name: 'Syed Ali',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '4',
+    url: 'candidate/4',
+    name: 'Muhammad Danial',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '1',
+    url: 'candidate/1',
+    name: 'Dwi Nugraha Putri',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '2',
+    url: 'candidate/2',
+    name: 'Ahmad Dani',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '3',
+    url: 'candidate/3',
+    name: 'Syed Ali',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '4',
+    url: 'candidate/4',
+    name: 'Muhammad Danial',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '1',
+    url: 'candidate/1',
+    name: 'Dwi Nugraha Putri',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '2',
+    url: 'candidate/2',
+    name: 'Ahmad Dani',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '3',
+    url: 'candidate/3',
+    name: 'Syed Ali',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
+  {
+    id: '4',
+    url: 'candidate/4',
+    name: 'Muhammad Danial',
+    location: 'Jakarta, Indonesia',
+    expectedSalary: 'Rp 11,400,000/mo',
+    yearsExperience: '4 years, 3 months',
+    latestWorkExperience: 'Backend Engineer at Google',
+    latestWorkDuration: 'Jan 2021 - Jan 2022',
+  },
 ];
 const resourceName = {
   singular: 'candidate',
@@ -215,6 +335,7 @@ const Template: Story<IndexTableProps> = args => {
           />
         </EmptyStateContainer>
       }
+      selectable={false}
     >
       {rowMarkup}
     </IndexTable>
@@ -222,4 +343,4 @@ const Template: Story<IndexTableProps> = args => {
 };
 
 export const Interactive = Template.bind({});
-Interactive.args = { loadingLabel: 'Loading...' };
+Interactive.args = { loadingLabel: 'Loading...', height: '500px' };

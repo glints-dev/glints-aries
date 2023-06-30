@@ -4,7 +4,7 @@ import { space8 } from '../utilities/spacing';
 import { Blue, Neutral } from '../utilities/colors';
 import { body2 as typographyBody2 } from '../Typography/TypographyStyles';
 
-export const StyledIndexTable: any = createGlobalStyle`
+export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
   :root {
     --p-surface: rgba(255, 255, 255, 1);
     --p-surface-dark: rgba(32, 33, 35, 1);
@@ -915,7 +915,8 @@ export const StyledIndexTable: any = createGlobalStyle`
     --pc-index-table-loading-panel: 37;
     position: relative;
     border-radius: inherit;
-
+    height: ${props => props.height};
+    overflow: auto;
   }
 
   .Polaris-IndexTable__IndexTableWrapper {

@@ -11,11 +11,14 @@ import { StyledIndexTable } from './IndexTableStyle';
 import { LoadingState } from './components/LoadingState';
 import { CheckboxCellContentContainer } from './components/Checkbox/CheckboxStyle';
 
-type IndexTableProps = Omit<PolarisIndexTableProps, 'emptySearchTitle'>;
+type IndexTableProps = Omit<PolarisIndexTableProps, 'emptySearchTitle'> & {
+  height?: string;
+};
 
 const IndexTable = ({
   bulkActions,
   children,
+  height,
   itemCount,
   selectedItemsCount,
   loading,
@@ -43,7 +46,7 @@ const IndexTable = ({
 
   return (
     <>
-      <StyledIndexTable />
+      <StyledIndexTable height={height} />
       <PolarisIndexTable
         bulkActions={bulkActions}
         checkbox={checkbox}
