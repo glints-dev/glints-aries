@@ -65,8 +65,8 @@ export {
 } from './Modal';
 export { NumberInput, NumberInputProps } from './NumberInput';
 export {
-  IconOnlyPagination,
-  IconOnlyPaginationProps,
+  IconPagination,
+  IconPaginationProps,
   Pagination,
   PaginationProps,
   SimplePagination,

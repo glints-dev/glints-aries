@@ -11,7 +11,7 @@ export type PaginationProps = {
   onPageChanged?: (currentPage: number) => void;
 };
 
-export type IconOnlyPaginationProps = {
+export type IconPaginationProps = {
   label?: React.ReactNode;
   hasNext?: boolean;
   hasPrevious?: boolean;

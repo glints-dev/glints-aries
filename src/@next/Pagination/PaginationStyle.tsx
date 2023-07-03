@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NumberInput } from '../NumberInput';
-import { borderRadius2 } from '../utilities/borderRadius';
+import { borderRadius2, borderRadius4 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
-import { space4 } from '../utilities/spacing';
+import { space12, space4 } from '../utilities/spacing';
 import { PageButton, PageButtonProps } from './PageButton';
 
 export const StyledNav = styled.nav`
@@ -15,7 +15,7 @@ export const SimplePaginationStyledNav = styled(StyledNav)`
   gap: 4px;
 `;
 
-export const IconOnlyPaginationStyledNav = styled(StyledNav)`
+export const IconPaginationStyledNav = styled(StyledNav)`
   gap: 0px;
   align-items: center;
 `;
@@ -64,14 +64,16 @@ export const StyledSimplePaginationButton = styled(StyledPageButton)`
 `;
 
 export const StyledBorderPaginationButton = styled(StyledPageButton)`
-  border: 1px solid ${Neutral.B68};
+  border: 1px solid ${Neutral.B85};
 
   &:first-of-type {
-    border-radius: ${borderRadius2} 0 0 ${borderRadius2};
+    border-radius: ${borderRadius4} 0 0 ${borderRadius4};
+    border-right-style: none;
   }
 
   &:last-of-type {
-    border-radius: 0 ${borderRadius2} ${borderRadius2} 0;
+    border-radius: 0 ${borderRadius4} ${borderRadius4} 0;
+    border-left-style: none;
   }
 
   &:hover {
@@ -84,7 +86,8 @@ export const StyledBorderPaginationButton = styled(StyledPageButton)`
 `;
 
 export const StyledLabel = styled.div`
-  padding: ${space4};
+  padding: 0 ${space12} 0;
+  vertical-align: middle;
 `;
 
 export const StyledActiveSimplePaginationButton = styled(
