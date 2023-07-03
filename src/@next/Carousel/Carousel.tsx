@@ -29,9 +29,10 @@ export interface CarouselProps {
   /** sets width of Carousel */
   width?: string;
   indicatorPosition?: 'top' | 'bottom' | 'left' | 'right' | 'outer';
-  indicatorType?: 'dot' | 'line' | 'slider';
-  /** When to show arrows*/
-  showArrow?: 'always' | 'hover' | 'never';
+  /** Sets indicator type. Default is line and can be `null` to remove the component */
+  indicatorType?: 'dot' | 'line' | 'slider' | null;
+  /** Sets whether to show arrows */
+  showArrows?: boolean;
   /** When `autoRotate` is `true`, specify milliseconds until next slide shows */
   duration?: number;
 }
@@ -45,6 +46,7 @@ export const Carousel = ({
   indicatorPosition = 'outer',
   indicatorType = 'line',
   duration = 3000,
+  showArrows = true,
 }: CarouselProps) => {
   const slideRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -100,7 +102,7 @@ export const Carousel = ({
         updateActiveIndex(activeIndex + 1);
       }, duration);
     }
-  }, [activeIndex, autoRotate, updateActiveIndex]);
+  }, [activeIndex, autoRotate, duration, updateActiveIndex]);
 
   return (
     <CarouselContainer
@@ -124,32 +126,36 @@ export const Carousel = ({
           {childrenList}
         </ItemsContainer>
       </SlideContainer>
-      <ArrowsContainer data-hidden={hideArrows}>
-        <PreviousArrow onClick={handlePreviousClick}>
-          <Icon name="ri-arrow-m-left-line" fill={Neutral.B40} />
-        </PreviousArrow>
-        <NextArrow onClick={handleNextClick}>
-          <Icon name="ri-arrow-m-right-line" fill={Neutral.B40} />
-        </NextArrow>
-      </ArrowsContainer>
-      <IndicatorsContainer
-        indicatorType={indicatorType}
-        indicatorPosition={indicatorPosition}
-      >
-        <div>
-          {Array.from(Array(childrenLength).keys()).map((n: number) => {
-            const isActive = activeIndex === n;
-            return (
-              <Indicator
-                indicatorType={indicatorType}
-                key={`carousel-indicator-${n}`}
-                onClick={() => updateActiveIndex(n)}
-                className={isActive ? 'active' : null}
-              />
-            );
-          })}
-        </div>
-      </IndicatorsContainer>
+      {showArrows && (
+        <ArrowsContainer data-hidden={hideArrows}>
+          <PreviousArrow onClick={handlePreviousClick}>
+            <Icon name="ri-arrow-m-left-line" fill={Neutral.B40} />
+          </PreviousArrow>
+          <NextArrow onClick={handleNextClick}>
+            <Icon name="ri-arrow-m-right-line" fill={Neutral.B40} />
+          </NextArrow>
+        </ArrowsContainer>
+      )}
+      {!!indicatorType && (
+        <IndicatorsContainer
+          indicatorType={indicatorType}
+          indicatorPosition={indicatorPosition}
+        >
+          <div>
+            {Array.from(Array(childrenLength).keys()).map((n: number) => {
+              const isActive = activeIndex === n;
+              return (
+                <Indicator
+                  indicatorType={indicatorType}
+                  key={`carousel-indicator-${n}`}
+                  onClick={() => updateActiveIndex(n)}
+                  className={isActive ? 'active' : null}
+                />
+              );
+            })}
+          </div>
+        </IndicatorsContainer>
+      )}
     </CarouselContainer>
   );
 };

@@ -18,3 +18,21 @@ test('Carousel - autoRotate', async ({ page }) => {
     'carousel-autoRotate.png'
   );
 });
+
+test('Carousel - showArrows is false', async ({ page }) => {
+  const carouselPage = new CarouselPage(page);
+  await carouselPage.goto('args=showArrows:false');
+
+  await expect(carouselPage.container).toHaveScreenshot(
+    'carousel-showArrows-false.png'
+  );
+});
+
+test('Carousel - showIndicator is false', async ({ page }) => {
+  const carouselPage = new CarouselPage(page);
+  await carouselPage.gotoHideIndicatorPage();
+
+  await expect(carouselPage.container).toHaveScreenshot(
+    'carousel-showIndicator-false.png'
+  );
+});
