@@ -30,7 +30,7 @@ test('Carousel - showArrows is false', async ({ page }) => {
 
 test('Carousel - showIndicator is false', async ({ page }) => {
   const carouselPage = new CarouselPage(page);
-  await carouselPage.goto('args=showIndicator:false');
+  await carouselPage.gotoHideIndicatorPage();
 
   await expect(carouselPage.container).toHaveScreenshot(
     'carousel-showIndicator-false.png'

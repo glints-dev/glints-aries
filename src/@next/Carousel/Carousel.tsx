@@ -29,9 +29,8 @@ export interface CarouselProps {
   /** sets width of Carousel */
   width?: string;
   indicatorPosition?: 'top' | 'bottom' | 'left' | 'right' | 'outer';
-  indicatorType?: 'dot' | 'line' | 'slider';
-  /** Sets whether to show indicator */
-  showIndicator?: boolean;
+  /** Sets indicator type. Default is line and can be `null` to remove the component */
+  indicatorType?: 'dot' | 'line' | 'slider' | null;
   /** Sets whether to show arrows */
   showArrows?: boolean;
   /** When `autoRotate` is `true`, specify milliseconds until next slide shows */
@@ -48,7 +47,6 @@ export const Carousel = ({
   indicatorType = 'line',
   duration = 3000,
   showArrows = true,
-  showIndicator = true,
 }: CarouselProps) => {
   const slideRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -138,7 +136,7 @@ export const Carousel = ({
           </NextArrow>
         </ArrowsContainer>
       )}
-      {showIndicator && (
+      {!!indicatorType && (
         <IndicatorsContainer
           indicatorType={indicatorType}
           indicatorPosition={indicatorPosition}
