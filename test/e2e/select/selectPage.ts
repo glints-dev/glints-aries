@@ -10,6 +10,7 @@ export class SelectPage extends StoryBookPage {
   readonly optionSingapore: Locator;
   readonly label: Locator;
   readonly searchableSelect: Locator;
+  readonly clearButton: Locator;
 
   constructor(page: Page) {
     super(page, '?path=/story/next-select--non-searchable-single-select');
@@ -44,6 +45,10 @@ export class SelectPage extends StoryBookPage {
     this.searchableSelect = page
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .locator('.searchable-select');
+
+    this.clearButton = page
+      .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
+      .locator('.clear-icon');
   }
 
   async gotoNonSearchableMultiSelectPage(args?: Args) {
@@ -69,6 +74,13 @@ export class SelectPage extends StoryBookPage {
   async gotoSearchableSingleSelectWithOverflowingInputStatePage(args?: Args) {
     this.setPath(
       '?path=/story/next-select--searchable-single-select-with-overflowing-input-state'
+    );
+    await this.goto(args);
+  }
+
+  async gotoSearchableSingleSelectWithInitialValuePage(args?: Args) {
+    this.setPath(
+      '?path=/story/next-select--searchable-single-select-with-initial-value'
     );
     await this.goto(args);
   }

@@ -25,6 +25,7 @@ export const ClearSelected = ({
         name="ri-close-circle-fill"
         style={{ cursor: 'pointer' }}
         onClick={onClearIconClick}
+        className="clear-icon"
       />
     </ClearSelectedContainer>
   );
