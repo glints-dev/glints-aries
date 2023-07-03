@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type PaginationProps = {
   /** Total items to be displayed, must be positive integer and above 0 */
   totalItems: number;
@@ -10,9 +12,11 @@ export type PaginationProps = {
 };
 
 export type IconOnlyPaginationProps = {
-  disabled?: boolean;
-  label?: string;
-  onPageChanged?: () => void;
+  label?: React.ReactNode;
+  hasNext?: boolean;
+  hasPrevious?: boolean;
+  onNext?: () => void;
+  onPrevious?: () => void;
 };
 
 export const defaultPageSize = 10;

@@ -12,12 +12,12 @@ export const IconOnlyPagination = React.forwardRef<
   HTMLElement,
   IconOnlyPaginationProps
 >(function IconOnlyPagination(
-  { disabled, label, onPageChanged }: IconOnlyPaginationProps,
+  { label, hasNext, hasPrevious, onNext, onPrevious }: IconOnlyPaginationProps,
   ref
 ) {
   return (
     <IconOnlyPaginationStyledNav ref={ref}>
-      <StyledBorderPaginationButton disabled={disabled} onClick={onPageChanged}>
+      <StyledBorderPaginationButton disabled={hasPrevious} onClick={onPrevious}>
         <Icon name="ri-arrow-m-left-line" />
       </StyledBorderPaginationButton>
       {label && (
@@ -27,7 +27,7 @@ export const IconOnlyPagination = React.forwardRef<
           </Typography>
         </StyledLabel>
       )}
-      <StyledBorderPaginationButton disabled={disabled} onClick={onPageChanged}>
+      <StyledBorderPaginationButton disabled={hasNext} onClick={onNext}>
         <Icon name="ri-arrow-m-right-line" />
       </StyledBorderPaginationButton>
     </IconOnlyPaginationStyledNav>
