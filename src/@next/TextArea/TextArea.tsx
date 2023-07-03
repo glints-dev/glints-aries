@@ -20,6 +20,14 @@ export type TextAreaProps = Omit<
   error?: boolean;
   width?: string;
   forwardedRef?: RefObject<HTMLTextAreaElement>;
+  /**
+   * if true, allows the user to type more than the maxLength.
+   * if false, the user will not be able to type more than the maxLength,
+   * all the characters typed after the maxLength will be ignored.
+   *
+   * **defaults to** `true`
+   */
+  canExceedMaxLength: boolean;
 };
 
 const _TextArea = ({
@@ -31,6 +39,7 @@ const _TextArea = ({
   width = '520px',
   onChange,
   forwardedRef,
+  canExceedMaxLength = true,
   ...props
 }: TextAreaProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -38,9 +47,10 @@ const _TextArea = ({
 
   const transformedMaxLength: number = maxLength || undefined;
 
-  const hasMaxLengthEnforced = Boolean(
-    transformedMaxLength && transformedMaxLength > 0
-  );
+  const hasMaxLengthEnforced = Boolean(transformedMaxLength > 0);
+
+  const hasError =
+    error || (canExceedMaxLength && charCount > transformedMaxLength);
 
   const localRef = useRef<HTMLTextAreaElement>(null);
   const textAreaInputRef = forwardedRef || localRef;
@@ -58,7 +68,7 @@ const _TextArea = ({
 
   return (
     <StyledTextAreaContainer
-      data-error={error}
+      data-error={hasError}
       data-disabled={disabled}
       data-focus={isFocused}
       data-has-counter={hasMaxLengthEnforced}
@@ -72,13 +82,16 @@ const _TextArea = ({
         width={width}
         onChange={handleChange}
         disabled={disabled}
-        maxLength={transformedMaxLength}
+        maxLength={!canExceedMaxLength && transformedMaxLength}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         {...props}
       />
       {hasMaxLengthEnforced && (
-        <StyledWordCountContainer data-disabled={disabled} data-error={error}>
+        <StyledWordCountContainer
+          data-disabled={disabled}
+          data-error={hasError}
+        >
           <Typography as="span" variant="overline">
             {charCount} / {transformedMaxLength}
           </Typography>
