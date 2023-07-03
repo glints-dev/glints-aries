@@ -61,6 +61,29 @@ export const SearchableSingleWithInputState = ({
   );
 };
 
+export const SearchableSingleWithInitialValue = ({
+  data,
+  ...args
+}: SearchableSingleSelectProps) => {
+  const [selected, setSelected] = useState('Singapore');
+
+  const handleSelect = ({ value }: { value: string }) => {
+    setSelected(value);
+  };
+
+  return (
+    <Select
+      {...args}
+      onSelect={handleSelect}
+      options={data}
+      selectedValues={[selected]}
+      width="600px"
+      searchable
+      label="Label"
+    />
+  );
+};
+
 const filterOptions = (str: string, data: Option[]): Option[] => {
   if (str === '') {
     return data;

@@ -137,14 +137,28 @@ export const SearchableSelectInput = forwardRef<
     return;
   }, [isSelectedClicked, showInput]);
 
+  const handleUpdateSearchableSelectState = React.useRef(
+    updateSearchableSelectState
+  );
+
   useEffect(() => {
     if (selectedValue) {
       setShowClear(true);
+      handleUpdateSearchableSelectState.current({
+        showSelected: true,
+        showInput: false,
+        showPlaceholder: false,
+      });
       return;
     }
 
     setShowClear(false);
-  }, [selectedValue]);
+    handleUpdateSearchableSelectState.current({
+      showSelected: false,
+      showInput: true,
+      showPlaceholder: true,
+    });
+  }, [selectedValue, handleUpdateSearchableSelectState]);
 
   return (
     <StyledContainer

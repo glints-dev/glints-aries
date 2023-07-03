@@ -10,6 +10,7 @@ import {
   AsyncSearchableSingleWithInputState as AsyncSearchableSingleSelectWithInputState,
   SearchableSingle,
   SearchableSingleWithInputState as SearchableSingleSelectWithInputState,
+  SearchableSingleWithInitialValue,
 } from './selectStoryHelper/SearchableSingleSelect';
 import { SingleSelect } from './selectStoryHelper/NonSearchableSingleSelect';
 import { Icon } from '..';
@@ -610,6 +611,53 @@ SearchableSingleSelectWithOverflowingInputState.parameters = {
           allowMultiple={false}
           onSelect={handleSelect}
           options={locations}
+          selectedValues={[selected]}
+          width="600px"
+          searchable
+          label="Label"
+        />
+      );
+      `,
+    },
+  },
+};
+
+const SearchableSingleSelectWithInitialValueTemplate: Story<
+  SelectProps
+> = args => {
+  return <SearchableSingleWithInitialValue data={slicedCountries} {...args} />;
+};
+
+export const SearchableSingleSelectWithInitialValue =
+  SearchableSingleSelectWithInitialValueTemplate.bind({});
+
+SearchableSingleSelectWithInitialValue.args = {
+  allowMultiple: false,
+};
+
+SearchableSingleSelectWithInitialValue.parameters = {
+  docs: {
+    source: {
+      code: `
+      const countries = [
+        { label: 'Indonesia', value: 'Indonesia' },
+        { label: 'Malaysia', value: 'Malaysia' },
+        { label: 'Singapore', value: 'Singapore' },
+        { label: 'Taiwan', value: 'Taiwan' },
+        { label: 'Vietnam', value: 'Vietnam' },
+      ];
+
+      const [selected, setSelected] = useState('Singapore');
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+    
+      return (
+        <Select
+          allowMultiple={false}
+          onSelect={handleSelect}
+          options={countries}
           selectedValues={[selected]}
           width="600px"
           searchable

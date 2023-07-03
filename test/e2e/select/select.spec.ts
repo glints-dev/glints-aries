@@ -159,6 +159,27 @@ test('Select - searchable single select with overflowing input', async ({
   );
 });
 
+test('Select - searchable single select with initial state', async ({
+  page,
+}) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoSearchableSingleSelectWithInitialValuePage();
+
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-initial-value.png'
+  );
+
+  await selectPage.clearButton.click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-initial-value-option-list-cleared.png'
+  );
+
+  await selectPage.activatorTextInput.fill('si');
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-searchable-single-select-with-initial-value-filter-options.png'
+  );
+});
+
 test('Select - searchable multi select', async ({ page }) => {
   const selectPage = new SelectPage(page);
   await selectPage.gotoSearchableMultiSelectPage();
