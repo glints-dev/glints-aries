@@ -234,7 +234,7 @@ export const Tooltip = ({
 
   const contentMarkup =
     typeof content === 'string' ? (
-      <Typography as="div" variant="body1">
+      <Typography as="div" variant="subtitle2">
         {content}
       </Typography>
     ) : (
