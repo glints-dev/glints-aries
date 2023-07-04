@@ -4,6 +4,7 @@ import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { IconPaginationProps } from './paginationUtils';
 import { IconPagination } from './IconPagination';
 import { Typography } from '../Typography';
+import { Neutral } from '../utilities/colors';
 
 (IconPagination as React.FunctionComponent<IconPaginationProps>).displayName =
   'Pagination';
@@ -36,7 +37,7 @@ const WithLabelTemplate: Story<IconPaginationProps> = args => {
 export const WithLabel = WithLabelTemplate.bind({});
 WithLabel.args = {
   label: (
-    <Typography as="div" variant="caption">
+    <Typography as="div" variant="caption" color={Neutral.B18}>
       Label
     </Typography>
   ),
