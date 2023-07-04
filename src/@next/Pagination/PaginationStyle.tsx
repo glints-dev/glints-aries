@@ -69,6 +69,10 @@ export const StyledBorderPaginationButton = styled(StyledPageButton)`
   height: 36px;
   min-width: 36px;
 
+  svg {
+    vertical-align: middle;
+  }
+
   &:first-of-type {
     border-radius: ${borderRadius4} 0 0 ${borderRadius4};
   }
