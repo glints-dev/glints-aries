@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { StoryBookPage } from '../storybookPage';
+import { Args, StoryBookPage } from '../storybookPage';
 
 export class IndexTablePage extends StoryBookPage {
   [x: string]: any;
@@ -47,5 +47,10 @@ export class IndexTablePage extends StoryBookPage {
       if ((await checkbox.isChecked()) !== expectedValues[i - 2]) return false;
     }
     return true;
+  }
+
+  async gotoScrollablePage(args?: Args) {
+    this.setPath('?path=/story/next-indextable--scrollable');
+    await this.goto(args);
   }
 }

@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { borderRadius16 } from '../utilities/borderRadius';
 import { space8 } from '../utilities/spacing';
 import { Blue, Neutral } from '../utilities/colors';
+import { body2 as typographyBody2 } from '../Typography/TypographyStyles';
 
-export const StyledIndexTable: any = createGlobalStyle`
+export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
   :root {
     --p-surface: rgba(255, 255, 255, 1);
     --p-surface-dark: rgba(32, 33, 35, 1);
@@ -914,7 +915,8 @@ export const StyledIndexTable: any = createGlobalStyle`
     --pc-index-table-loading-panel: 37;
     position: relative;
     border-radius: inherit;
-
+    height: ${props => props.height};
+    overflow: auto;
   }
 
   .Polaris-IndexTable__IndexTableWrapper {
@@ -1000,7 +1002,7 @@ export const StyledIndexTable: any = createGlobalStyle`
   .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first,
   .Polaris-IndexTable__Table--scrolling
     .Polaris-IndexTable__TableHeading--first {
-    filter: drop-shadow(0.0625rem 0 0 var(--p-divider));
+    filter: drop-shadow(0.0625rem 0 0 ${Neutral.B85});
   }
 
   @media (min-width: 30.625em) {
@@ -1009,7 +1011,7 @@ export const StyledIndexTable: any = createGlobalStyle`
       + .Polaris-IndexTable__TableCell,
     .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky
       .Polaris-IndexTable__TableHeading--second {
-      filter: drop-shadow(0.0625rem 0 0 var(--p-divider));
+      filter: drop-shadow(0.0625rem 0 0 ${Neutral.B85});
     }
   }
 
@@ -1017,7 +1019,8 @@ export const StyledIndexTable: any = createGlobalStyle`
     .Polaris-IndexTable__TableHeading--second,
   .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky.Polaris-IndexTable__Table--unselectable
     .Polaris-IndexTable__TableCell:first-child {
-    filter: drop-shadow(0.0625rem 0 0 var(--p-divider));
+    filter: drop-shadow(0.0625rem 0 0 ${Neutral.B85});
+    background: ${Neutral.B100};
   }
 
   .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--unselectable
@@ -1096,19 +1099,14 @@ export const StyledIndexTable: any = createGlobalStyle`
   }
 
   .Polaris-IndexTable__TableHeading {
-    background: #f8fafc;
+    background: ${Neutral.B99};
     padding: var(--p-space-2) var(--p-space-4);
     text-align: left;
-    font-weight: 600;
-    color: #2d2d2d;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.01563rem;
+    color: ${Neutral.B18};
     white-space: nowrap;
     border: 0;
     box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
-    font-family: 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans JP',
-    'Noto Sans', sans-serif;
+    ${typographyBody2}
   }
 
   .Polaris-IndexTable__TableHeading--sortable {
@@ -1232,20 +1230,10 @@ export const StyledIndexTable: any = createGlobalStyle`
       left: 0;
     }
   }
-
-  .Polaris-IndexTable__Table--sticky
-    .Polaris-IndexTable__TableHeading--second.Polaris-IndexTable__TableHeading--unselectable {
+  
+  .Polaris-IndexTable-ScrollContainer .Polaris-IndexTable__Table.Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableHeading.Polaris-IndexTable__TableHeading--unselectable {
     position: sticky;
-    z-index: auto;
-    left: 0;
-  }
-
-  .Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky
-    .Polaris-IndexTable__TableCell:first-child {
-    left: 0;
-    z-index: var(--pc-index-table-sticky-cell);
-    position: sticky;
-    box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
+    top: 0;
   }
 
   .Polaris-IndexTable__Table--unselectable
@@ -1271,7 +1259,7 @@ export const StyledIndexTable: any = createGlobalStyle`
       .Polaris-IndexTable__TableCell:last-child,
     .Polaris-IndexTable--tableStickyScrolling
       .Polaris-IndexTable__TableHeading--last {
-      filter: drop-shadow(-0.0625rem 0 0 var(--p-divider));
+      filter: drop-shadow(-0.0625rem 0 0 ${Neutral.B85});
     }
   }
 
@@ -1435,7 +1423,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     position: sticky;
     z-index: var(--pc-index-table-scroll-bar);
     bottom: 0;
-    padding: var(--p-space-05);
     background-color: var(--p-surface);
     border-bottom-right-radius: var(--p-border-radius-2);
     border-bottom-left-radius: var(--p-border-radius-2);
@@ -1457,26 +1444,26 @@ export const StyledIndexTable: any = createGlobalStyle`
     padding: 0;
   }
 
-  .Polaris-IndexTable__ScrollBar::-webkit-scrollbar-track {
-    border-radius: var(--p-border-radius-1);
-    background-color: transparent;
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: ${Neutral.B68} ${Neutral.B100};
   }
 
-  .Polaris-IndexTable__ScrollBar::-webkit-scrollbar {
-    appearance: none;
-    height: var(--p-space-2);
-    width: var(--p-space-2);
-    background-color: transparent;
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
   }
 
-  .Polaris-IndexTable__ScrollBar::-webkit-scrollbar-thumb {
-    border-radius: var(--p-border-radius-1);
-    background-color: var(--p-border-neutral-subdued);
-    transition: background-color var(--p-duration-100) cubic-bezier(0, 0, 0.58, 1);
+  *::-webkit-scrollbar-track {
+    background: ${Neutral.B100};
   }
 
-  .Polaris-IndexTable__ScrollBar:hover::-webkit-scrollbar-thumb {
-    background-color: var(--p-border-depressed);
+  *::-webkit-scrollbar-thumb {
+    background-color: ${Neutral.B68};
+    border-radius: 10px;
+    border: 5px solid ${Neutral.B100};
   }
 
   .Polaris-IndexTable--disableTextSelection {
@@ -1537,11 +1524,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     padding: var(--p-space-4) var(--p-space-4) var(--p-space-2);
   }
 
-  .Polaris-IndexTable__ScrollBarContent {
-    height: 0.0625rem;
-    width: var(--pc-index-table-scroll-bar-content-width);
-  }
-
   .Polaris-IndexTable-Checkbox__TableCellContentContainer {
     display: flex;
     align-items: center;
@@ -1563,18 +1545,6 @@ export const StyledIndexTable: any = createGlobalStyle`
     min-width: 3.125rem;
     min-height: 2.75rem;
     margin-right: calc(var(--p-space-4) * -1);
-  }
-
-  .Polaris-IndexTable-ScrollContainer {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    border-radius: inherit;
-  }
-
-  .Polaris-IndexTable-ScrollContainer::-webkit-scrollbar {
-    display: none;
   }
 
   .Polaris-CheckableButton {
