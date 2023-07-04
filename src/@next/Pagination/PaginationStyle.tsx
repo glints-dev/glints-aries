@@ -66,6 +66,8 @@ export const StyledSimplePaginationButton = styled(StyledPageButton)`
 
 export const StyledBorderPaginationButton = styled(StyledPageButton)`
   outline: 1px solid ${Neutral.B85};
+  height: 36px;
+  min-width: 36px;
 
   &:first-of-type {
     border-radius: ${borderRadius4} 0 0 ${borderRadius4};
