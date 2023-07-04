@@ -24,11 +24,22 @@ const Template: Story<CardProps> = args => {
     label: 'No',
     action: () => console.log('Secondary action!'),
   };
+  const headerPrimaryAction = {
+    label: 'Label',
+    action: () => console.log('Header primary action!'),
+  };
+  const headerSecondaryAction = {
+    label: 'Label',
+    action: () => console.log('Header secondary action!'),
+  };
+
   return (
     <Card
       {...args}
       primaryAction={primaryAction}
       secondaryAction={secondaryAction}
+      headerPrimaryAction={headerPrimaryAction}
+      headerSecondaryAction={headerSecondaryAction}
     >
       <Card.Section>
         This is a section
