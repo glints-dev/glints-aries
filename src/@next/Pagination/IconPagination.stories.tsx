@@ -9,7 +9,7 @@ import { Typography } from '../Typography';
   'Pagination';
 
 export default {
-  title: '@next/IconOnlyPagination',
+  title: '@next/IconPagination',
   component: IconPagination,
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
@@ -22,7 +22,7 @@ export const Interactive = Template.bind({});
 Interactive.parameters = {
   docs: {
     source: {
-      code: `return <IconOnlyPagination />;`,
+      code: `return <IconPagination />;`,
       language: 'javascript',
       type: 'auto',
     },
