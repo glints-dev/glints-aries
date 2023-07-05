@@ -16,11 +16,14 @@ export const IconPagination = React.forwardRef<
 ) {
   return (
     <IconPaginationStyledNav ref={ref}>
-      <StyledBorderPaginationButton disabled={hasPrevious} onClick={onPrevious}>
+      <StyledBorderPaginationButton
+        disabled={!hasPrevious}
+        onClick={onPrevious}
+      >
         <Icon name="ri-arrow-m-left-line" />
       </StyledBorderPaginationButton>
       {label && <StyledLabel>{label}</StyledLabel>}
-      <StyledBorderPaginationButton disabled={hasNext} onClick={onNext}>
+      <StyledBorderPaginationButton disabled={!hasNext} onClick={onNext}>
         <Icon name="ri-arrow-m-right-line" />
       </StyledBorderPaginationButton>
     </IconPaginationStyledNav>
