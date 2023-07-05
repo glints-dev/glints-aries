@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type PaginationProps = {
   /** Total items to be displayed, must be positive integer and above 0 */
   totalItems: number;
@@ -7,6 +9,14 @@ export type PaginationProps = {
   pageSize?: number;
   disabled?: boolean;
   onPageChanged?: (currentPage: number) => void;
+};
+
+export type IconPaginationProps = {
+  label?: React.ReactNode;
+  disableNext?: boolean;
+  disablePrevious?: boolean;
+  onNext?: () => void;
+  onPrevious?: () => void;
 };
 
 export const defaultPageSize = 10;

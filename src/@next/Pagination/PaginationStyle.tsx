@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NumberInput } from '../NumberInput';
-import { borderRadius2 } from '../utilities/borderRadius';
+import { borderRadius2, borderRadius4 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
-import { space4 } from '../utilities/spacing';
+import { space12, space4 } from '../utilities/spacing';
 import { PageButton, PageButtonProps } from './PageButton';
 
 export const StyledNav = styled.nav`
@@ -13,6 +13,12 @@ export const StyledNav = styled.nav`
 
 export const SimplePaginationStyledNav = styled(StyledNav)`
   gap: 4px;
+`;
+
+export const IconPaginationStyledNav = styled(StyledNav)`
+  gap: 0px;
+  align-items: center;
+  column-gap: 1px;
 `;
 
 export const StyledPageButton = styled.button<PageButtonProps>`
@@ -56,6 +62,37 @@ export const StyledPageButton = styled.button<PageButtonProps>`
 
 export const StyledSimplePaginationButton = styled(StyledPageButton)`
   pointer-events: none;
+`;
+
+export const StyledBorderPaginationButton = styled(StyledPageButton)`
+  outline: 1px solid ${Neutral.B85};
+  height: 36px;
+  min-width: 36px;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &:first-of-type {
+    border-radius: ${borderRadius4} 0 0 ${borderRadius4};
+  }
+
+  &:last-of-type {
+    border-radius: 0 ${borderRadius4} ${borderRadius4} 0;
+  }
+
+  &:hover {
+    background: ${Blue.S08};
+  }
+
+  &:disabled {
+    background: ${Neutral.B95};
+  }
+`;
+
+export const StyledLabel = styled.div`
+  padding: 0 ${space12} 0;
+  vertical-align: middle;
 `;
 
 export const StyledActiveSimplePaginationButton = styled(
