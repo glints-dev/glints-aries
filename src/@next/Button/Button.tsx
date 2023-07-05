@@ -3,7 +3,7 @@ import { Spinner } from '../Spinner/Spinner';
 import { Typography } from '../Typography';
 import { StyledButton } from './ButtonStyle';
 
-export type ButtonSize = 'default' | 'slim' | 'large' | 'verySlim';
+export type ButtonSize = 'default' | 'slim' | 'large';
 export type IconPosition = 'left' | 'right';
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

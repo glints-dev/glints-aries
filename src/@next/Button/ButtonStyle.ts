@@ -13,7 +13,6 @@ import {
   space24,
   space4,
   space8,
-  space2,
 } from '../utilities/spacing';
 import { ButtonProps, ButtonSize } from './Button';
 
@@ -38,21 +37,7 @@ const largeButtonSizeStyle = `
 `;
 
 const slimButtonSizeStyle = `
-  min-width: 67px;
-  height: 32px;
-  padding: ${space4} ${space12};
-
-  @media (max-width: ${Breakpoints.large}) {
-    min-width: 63px;
-  }
-`;
-
-const verySlimButtonSizeStyle = `
-  padding: 5px ${space2};
-
-  @media (max-width: ${Breakpoints.large}) {
-    padding: 0px 0px;
-  }
+  padding: ${space4};
 
   p {
     margin-block-start: 0px;
@@ -64,7 +49,6 @@ const buttonSizeStyleMap: Record<ButtonSize, string> = {
   default: defaultButtonSizeStyle,
   slim: slimButtonSizeStyle,
   large: largeButtonSizeStyle,
-  verySlim: verySlimButtonSizeStyle,
 };
 
 export const StyledButton = styled.button<ButtonProps>`

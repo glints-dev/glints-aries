@@ -87,20 +87,21 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
             {headerMarkup()}
           </StyledCardHeaderLeftContainer>
           <StyledCardHeaderRightContainer>
-            <ButtonGroup fullWidth={false} isButtonWrapped={true}>
+            <ButtonGroup
+              fullWidth={false}
+              isButtonWrapped={true}
+              style={{ gap: '4px' }}
+            >
               {headerSecondaryAction && (
                 <DestructivePlainButton
                   onClick={headerSecondaryAction.action}
-                  size="verySlim"
+                  size="slim"
                 >
                   {headerSecondaryAction.label}
                 </DestructivePlainButton>
               )}
               {headerPrimaryAction && (
-                <PlainButton
-                  onClick={headerPrimaryAction.action}
-                  size="verySlim"
-                >
+                <PlainButton onClick={headerPrimaryAction.action} size="slim">
                   {headerPrimaryAction.label}
                 </PlainButton>
               )}
