@@ -56,3 +56,21 @@ test('Icon Pagination - disable previous', async ({ page }) => {
     'icon-pagination-disable-previous.png'
   );
 });
+
+test('Icon Pagination With Label - disable next', async ({ page }) => {
+  const paginationPage = new IconPaginationPage(page);
+  await paginationPage.gotoWithLabel('args=disableNext:true');
+
+  await expect(paginationPage.container).toHaveScreenshot(
+    'icon-pagination-with-label-disable-next.png'
+  );
+});
+
+test('Icon Pagination With Label - disable previous', async ({ page }) => {
+  const paginationPage = new IconPaginationPage(page);
+  await paginationPage.gotoWithLabel('args=disablePrevious:true');
+
+  await expect(paginationPage.container).toHaveScreenshot(
+    'icon-pagination-with-label-disable-previous.png'
+  );
+});
