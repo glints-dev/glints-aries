@@ -13,8 +13,8 @@ export type PaginationProps = {
 
 export type IconPaginationProps = {
   label?: React.ReactNode;
-  hasNext?: boolean;
-  hasPrevious?: boolean;
+  disableNext?: boolean;
+  disablePrevious?: boolean;
   onNext?: () => void;
   onPrevious?: () => void;
 };

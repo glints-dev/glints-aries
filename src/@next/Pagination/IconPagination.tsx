@@ -11,19 +11,30 @@ export const IconPagination = React.forwardRef<
   HTMLElement,
   IconPaginationProps
 >(function IconPagination(
-  { label, hasNext, hasPrevious, onNext, onPrevious }: IconPaginationProps,
+  {
+    label,
+    disableNext,
+    disablePrevious,
+    onNext,
+    onPrevious,
+  }: IconPaginationProps,
   ref
 ) {
   return (
     <IconPaginationStyledNav ref={ref}>
       <StyledBorderPaginationButton
-        disabled={!hasPrevious}
+        data-testid="previous-page"
+        disabled={disablePrevious}
         onClick={onPrevious}
       >
         <Icon name="ri-arrow-m-left-line" />
       </StyledBorderPaginationButton>
       {label && <StyledLabel>{label}</StyledLabel>}
-      <StyledBorderPaginationButton disabled={!hasNext} onClick={onNext}>
+      <StyledBorderPaginationButton
+        data-testid="next-page"
+        disabled={disableNext}
+        onClick={onNext}
+      >
         <Icon name="ri-arrow-m-right-line" />
       </StyledBorderPaginationButton>
     </IconPaginationStyledNav>

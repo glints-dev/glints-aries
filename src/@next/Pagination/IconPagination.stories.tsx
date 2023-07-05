@@ -20,10 +20,7 @@ const Template: Story<IconPaginationProps> = args => {
 };
 
 export const Interactive = Template.bind({});
-Interactive.args = {
-  hasNext: true,
-  hasPrevious: true,
-};
+Interactive.args = {};
 
 const WithLabelTemplate: Story<IconPaginationProps> = args => {
   return <IconPagination {...args} />;
@@ -36,6 +33,4 @@ WithLabel.args = {
       Label
     </Typography>
   ),
-  hasNext: true,
-  hasPrevious: true,
 };
