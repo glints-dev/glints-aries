@@ -45,12 +45,9 @@ const _TextArea = ({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const charCount = value.length;
 
-  const transformedMaxLength: number = maxLength || undefined;
+  const hasMaxLengthEnforced = maxLength > 0;
 
-  const hasMaxLengthEnforced = Boolean(transformedMaxLength > 0);
-
-  const hasError =
-    error || (canExceedMaxLength && charCount > transformedMaxLength);
+  const hasError = error || (canExceedMaxLength && charCount > maxLength);
 
   const localRef = useRef<HTMLTextAreaElement>(null);
   const textAreaInputRef = forwardedRef || localRef;
@@ -82,7 +79,7 @@ const _TextArea = ({
         width={width}
         onChange={handleChange}
         disabled={disabled}
-        maxLength={!canExceedMaxLength && transformedMaxLength}
+        maxLength={!canExceedMaxLength && maxLength}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         {...props}
@@ -93,7 +90,7 @@ const _TextArea = ({
           data-error={hasError}
         >
           <Typography as="span" variant="overline">
-            {charCount} / {transformedMaxLength}
+            {charCount} / {maxLength}
           </Typography>
         </StyledWordCountContainer>
       )}
