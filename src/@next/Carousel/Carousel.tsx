@@ -49,7 +49,7 @@ export const Carousel = ({
   showArrows = true,
 }: CarouselProps) => {
   const slideRef = useRef(null);
-  const slideTimeout = useRef();
+  const slideTimeout = useRef<NodeJS.Timeout>();
   const [activeIndex, setActiveIndex] = useState(0);
   const [hideArrows, setHideArrows] = useState(autoRotate);
 
