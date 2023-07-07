@@ -1,12 +1,16 @@
 import React from 'react';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
+import { DestructivePlainButton } from '../Button/DestructivePlainButtonStyle';
+import { PlainButton } from '../Button/PlainButtonStyle';
 import { ButtonGroup } from '../ButtonGroup';
 import { Typography } from '../Typography';
 import {
   StyledCardActionWrapper,
   StyledCardContainer,
   StyledCardContentWrapper,
+  StyledCardHeaderLeftContainer,
+  StyledCardHeaderRightContainer,
   StyledCardHeaderSection,
   StyledCardHeaderSectionHalf,
   StyledCardHeaderWrapper,
@@ -19,6 +23,8 @@ export type CardProps = {
   children?: React.ReactNode;
   primaryAction?: ComponentAction;
   secondaryAction?: ComponentAction;
+  headerPrimaryAction?: ComponentAction;
+  headerSecondaryAction?: ComponentAction;
   actionsAlignment?: 'left' | 'right';
 };
 
@@ -28,6 +34,8 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
     subheading,
     primaryAction,
     secondaryAction,
+    headerPrimaryAction,
+    headerSecondaryAction,
     actionsAlignment = 'right',
     children,
   }: CardProps,
@@ -74,7 +82,32 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
   return (
     <StyledCardContainer ref={ref}>
       {showHeader && (
-        <StyledCardHeaderWrapper>{headerMarkup()} </StyledCardHeaderWrapper>
+        <StyledCardHeaderWrapper>
+          <StyledCardHeaderLeftContainer>
+            {headerMarkup()}
+          </StyledCardHeaderLeftContainer>
+          <StyledCardHeaderRightContainer>
+            <ButtonGroup
+              fullWidth={false}
+              isButtonWrapped={true}
+              style={{ gap: '4px' }}
+            >
+              {headerSecondaryAction && (
+                <DestructivePlainButton
+                  onClick={headerSecondaryAction.action}
+                  size="slim"
+                >
+                  {headerSecondaryAction.label}
+                </DestructivePlainButton>
+              )}
+              {headerPrimaryAction && (
+                <PlainButton onClick={headerPrimaryAction.action} size="slim">
+                  {headerPrimaryAction.label}
+                </PlainButton>
+              )}
+            </ButtonGroup>
+          </StyledCardHeaderRightContainer>
+        </StyledCardHeaderWrapper>
       )}
       <StyledCardContentWrapper data-actions={showActions}>
         {children}

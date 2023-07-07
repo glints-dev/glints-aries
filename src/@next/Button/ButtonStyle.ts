@@ -27,7 +27,7 @@ const defaultButtonSizeStyle = `
 `;
 
 const largeButtonSizeStyle = `
-min-width: 91px;
+  min-width: 91px;
   height: 44px;
   padding: ${space12} ${space24};
 
@@ -37,12 +37,11 @@ min-width: 91px;
 `;
 
 const slimButtonSizeStyle = `
-min-width: 67px;
-  height: 32px;
-  padding: ${space4} ${space12};
+  padding: ${space4};
 
-  @media (max-width: ${Breakpoints.large}) {
-    min-width: 63px;
+  p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
   }
 `;
 

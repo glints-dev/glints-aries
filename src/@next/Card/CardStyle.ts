@@ -15,8 +15,8 @@ export const StyledCardContainer = styled.div`
 export const StyledCardHeaderWrapper = styled.div`
   display: flex;
   padding: ${space24} ${space24} 20px;
-  flex-wrap: wrap;
-  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-direction: row;
   height: max-content;
   border-bottom: solid 1px ${Neutral.B85};
 
@@ -27,6 +27,9 @@ export const StyledCardHeaderWrapper = styled.div`
 
 export const StyledCardHeaderSection = styled.div`
   flex: 0 0 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const StyledCardHeaderSectionHalf = styled.div`
@@ -89,5 +92,24 @@ export const StyledCardActionWrapper = styled.div`
 export const StyledCustomHeader = styled.div`
   & > * {
     margin: 0;
+  }
+`;
+
+export const StyledCardHeaderLeftContainer = styled.div`
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+`;
+
+export const StyledCardHeaderRightContainer = styled.div`
+  margin-left: 16px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: ${Breakpoints.large}) {
+    align-items: flex-end;
   }
 `;
