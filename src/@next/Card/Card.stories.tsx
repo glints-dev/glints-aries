@@ -59,8 +59,9 @@ Interactive.parameters = {
   docs: {
     source: {
       code: `
-      <Card
+    <Card
       heading="Heading"
+      subheading="Subheading"
       primaryAction={{
         action: () => {console.log('Primary action!')},
         label: 'Yes'
@@ -69,7 +70,14 @@ Interactive.parameters = {
         action: () => {console.log('Secondary action!')},
         label: 'No'
       }}
-      subheading="Subheading"
+      headerPrimaryAction = {{
+        action: () => console.log('Header primary action!'),
+        label: 'Label'
+      }}
+      headerSecondaryAction = {{
+        action: () => console.log('Header secondary action!'),
+        label: 'Label'
+      }}
     >
       <Card.Section>
           This is a section
