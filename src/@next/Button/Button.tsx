@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Spinner } from '../Spinner/Spinner';
 import { Typography } from '../Typography';
 import { StyledButton } from './ButtonStyle';
@@ -53,7 +53,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-loading={loading}
         data-icon={!!icon}
         {...otherProps}
-        onMouseUp={e => e.currentTarget.blur()}
+        onMouseUp={(e: MouseEvent<HTMLButtonElement>) => e.currentTarget.blur()}
       >
         {loading && <Spinner />}
         {renderIcon('left')}

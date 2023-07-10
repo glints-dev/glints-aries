@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
+import { Colors } from '..';
+import { Typography } from '../Typography';
 import {
   LabelWrapper,
   RadioButtonInput,
   RadioButtonWrapper,
 } from './RadioButtonStyle';
-import { Typography } from '../Typography';
-import { Colors } from '..';
 
 export interface RadioButtonProps
   extends Omit<React.HTMLAttributes<HTMLInputElement>, 'onChange'> {
@@ -45,7 +45,7 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           value={value}
           type="radio"
           onChange={onChange}
-          onMouseDown={e => e.preventDefault()}
+          onMouseDown={(e: MouseEvent<HTMLInputElement>) => e.preventDefault()}
           {...props}
         />
         <LabelWrapper data-disabled={disabled}>

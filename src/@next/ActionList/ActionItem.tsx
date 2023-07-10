@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { Item } from './ActionList';
@@ -10,11 +10,12 @@ import {
 
 export const ActionItem = ({ content, description, icon, action }: Item) => {
   const hasDescription = !!description;
+
   return (
     <StyledActionListItemWrapper
       tabIndex={0}
       role="button"
-      onMouseUp={e => e.currentTarget.blur()}
+      onMouseUp={(e: MouseEvent<HTMLDivElement>) => e.currentTarget.blur()}
       onClick={() => action?.()}
     >
       <StyledActionListItem>

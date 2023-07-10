@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { MouseEvent, useEffect } from 'react';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
@@ -124,7 +124,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         >
           <StyledModalContainer
             ref={ref}
-            onClick={e => e.stopPropagation()}
+            onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
             {...props}
           >
             {header && (

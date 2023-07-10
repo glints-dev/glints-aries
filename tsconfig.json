@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "alwaysStrict": true,
+    "skipLibCheck": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "jsx": "preserve",
@@ -18,7 +19,6 @@
       "node",
       "react",
       "react-dom",
-      // "storybook__react",
       "styled-components"
     ]
   },
