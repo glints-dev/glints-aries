@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import React from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
@@ -12,7 +12,7 @@ export default {
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
-const Template: Story<void> = () => (
+const Template = () => (
   <div>
     some text
     <Divider />

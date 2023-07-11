@@ -17,8 +17,8 @@ Interactive.args = {
   label: 'Description',
 };
 
-export const removeFloatingLabelIsTrue = Template.bind({});
-removeFloatingLabelIsTrue.args = {
+export const RemoveFloatingLabelIsTrue = Template.bind({});
+RemoveFloatingLabelIsTrue.args = {
   label: 'Remove Floating Label Is True',
   removeFloatingLabel: true,
 };

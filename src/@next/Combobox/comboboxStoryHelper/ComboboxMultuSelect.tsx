@@ -87,7 +87,7 @@ export const ComboboxMultiSelect = ({
   }, [isSearchEmpty, options]);
 
   return (
-    <div style={{ maxWidth: '500px' }}>
+    <div style={{ maxWidth: 500 }}>
       <Combobox.Label>Label</Combobox.Label>
       <Combobox
         {...args}

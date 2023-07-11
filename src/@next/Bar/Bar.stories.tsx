@@ -217,12 +217,12 @@ const customActionGroupTemplate: Story<BarProps> = args => {
   );
 };
 
-export const customActionGroup = customActionGroupTemplate.bind({});
-customActionGroup.parameters = {
+export const CustomActionGroup = customActionGroupTemplate.bind({});
+CustomActionGroup.parameters = {
   docs: {
     source: {
       code: `
-      const customActionGroup = (
+      const CustomActionGroup = (
         <>
           <PopoverMenu
             title="Select"
@@ -238,7 +238,7 @@ customActionGroup.parameters = {
           {...args}
           heading={'Page Title 2'}
           subheading={'Additional Content'}
-          customActionGroup={customActionGroup}
+          customActionGroup={CustomActionGroup}
         />
       );
     `,

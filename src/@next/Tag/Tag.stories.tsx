@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
@@ -54,11 +54,11 @@ export default {
   },
 } as Meta;
 
-const DefaultTemplate: Story<TagProps> = args => {
+const DefaultTemplate: StoryFn<TagProps> = args => {
   return <Tag {...args}>Basic Tag</Tag>;
 };
 
-const RemoveableTemplate: Story<TagProps> = () => {
+const RemoveableTemplate: StoryFn<TagProps> = () => {
   const [selectedTags, setSelectedTags] = useState([
     'Years of Experience: 0 to 3 Years, 3 to 5 Years',
     'Expected Salary: $1.000.000 to $3.000.000',
@@ -87,7 +87,7 @@ const RemoveableTemplate: Story<TagProps> = () => {
   return <>{tagMarkup}</>;
 };
 
-const ClickableTemplate: Story<TagProps> = args => {
+const ClickableTemplate: StoryFn<TagProps> = args => {
   return (
     <Tag textColor={args.textColor} onClick={() => window.alert('Clicked')}>
       Clickable Tag
@@ -95,7 +95,7 @@ const ClickableTemplate: Story<TagProps> = args => {
   );
 };
 
-const ClickableDisabledTemplate: Story<TagProps> = args => {
+const ClickableDisabledTemplate: StoryFn<TagProps> = args => {
   return (
     <Tag
       textColor={args.textColor}

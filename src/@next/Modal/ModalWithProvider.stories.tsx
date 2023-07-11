@@ -1,14 +1,14 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import React from 'react';
 
-import { Button } from '../Button';
-import { useModal } from './useModal';
-import { ModalWithProvider } from './ModalWithProvider';
 import {
   withGlintsPortalContainer,
   withModalProvider,
 } from '../../helpers/storybook/Decorators';
+import { Button } from '../Button';
 import { space16 } from '../utilities/spacing';
+import { ModalWithProvider } from './ModalWithProvider';
+import { useModal } from './useModal';
 
 (ModalWithProvider as React.FunctionComponent<void>).displayName =
   'ModalWithProvider';
@@ -18,7 +18,7 @@ export default {
   component: ModalWithProvider,
 } as Meta;
 
-const Template: Story<void> = () => {
+const Template = () => {
   const { open: showModal } = useModal();
 
   const primaryAction = {
@@ -106,7 +106,7 @@ Interactive.parameters = {
   },
 };
 
-const WithLockedScrollableBackdropTemplate: Story<void> = () => {
+const WithLockedScrollableBackdropTemplate = () => {
   const { open: showModal } = useModal();
 
   const primaryAction = {
