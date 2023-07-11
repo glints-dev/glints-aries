@@ -24,14 +24,14 @@ export default {
 } as Meta;
 
 const countries = [
-  { label: 'Cambodia', value: 'Cambodia' },
-  { label: 'Indonesia', value: 'Indonesia' },
-  { label: 'Malaysia', value: 'Malaysia' },
-  { label: 'Philippines', value: 'Philippines' },
-  { label: 'Singapore', value: 'Singapore' },
-  { label: 'Taiwan', value: 'Taiwan' },
-  { label: 'Thailand', value: 'Thailand' },
-  { label: 'Vietnam', value: 'Vietnam' },
+  { label: 'Cambodia', value: 'CAMBODIA' },
+  { label: 'Indonesia', value: 'INDONESIA' },
+  { label: 'Malaysia', value: 'MALAYSIA' },
+  { label: 'Philippines', value: 'PHILIPPINES' },
+  { label: 'Singapore', value: 'SINGAPORE' },
+  { label: 'Taiwan', value: 'TAIWAN' },
+  { label: 'Thailand', value: 'THAILAND' },
+  { label: 'Vietnam', value: 'VIETNAM' },
 ];
 
 const options = [
@@ -429,11 +429,11 @@ SearchableMultiSelect.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [inputValue, setInputValue] = useState('');
@@ -529,11 +529,11 @@ SearchableSingleSelect.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [selected, setSelected] = useState('');
@@ -640,11 +640,11 @@ SearchableSingleSelectWithInitialValue.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [selected, setSelected] = useState('Singapore');
@@ -687,11 +687,11 @@ SearchableSingleWithInputState.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
       const [inputValue, setInputValue] = useState('');
       const [selected, setSelected] = useState('');
@@ -746,11 +746,11 @@ AsyncSearchableSingleWithInputState.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
       const [loading, setLoading] = useState(false);
       const [mockData, setMockData] = useState<Option[]>([]);
@@ -823,14 +823,14 @@ MultiSelectScrollable.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Cambodia', value: 'Cambodia' },
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Philippines', value: 'Philippines' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Thailand', value: 'Thailand' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Cambodia', value: 'CAMBODIA' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Philippines', value: 'PHILIPPINES' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Thailand', value: 'THAILAND' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [inputValue, setInputValue] = useState('');
@@ -931,11 +931,11 @@ WithInlineError.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [inputValue, setInputValue] = useState('');
@@ -1035,11 +1035,11 @@ SearchableDisabled.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [inputValue, setInputValue] = useState('');
@@ -1141,11 +1141,11 @@ WithCustomPrefix.parameters = {
     source: {
       code: `
       const countries = [
-        { label: 'Indonesia', value: 'Indonesia' },
-        { label: 'Malaysia', value: 'Malaysia' },
-        { label: 'Singapore', value: 'Singapore' },
-        { label: 'Taiwan', value: 'Taiwan' },
-        { label: 'Vietnam', value: 'Vietnam' },
+        { label: 'Indonesia', value: 'INDONESIA' },
+        { label: 'Malaysia', value: 'MALAYSIA' },
+        { label: 'Singapore', value: 'SINGAPORE' },
+        { label: 'Taiwan', value: 'TAIWAN' },
+        { label: 'Vietnam', value: 'VIETNAM' },
       ];
 
       const [inputValue, setInputValue] = useState('');
