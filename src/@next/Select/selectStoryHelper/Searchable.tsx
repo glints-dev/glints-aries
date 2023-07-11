@@ -32,13 +32,13 @@ export const SearchableSelect = ({ data, ...args }: SearchableProps) => {
     setSelectedOptions(options);
   };
 
-  const tagsMarkup = selectedOptions.map(option => (
+  const tagsMarkup = selectedOptions.map(value => (
     <StyledTag
-      key={`option-${option}`}
-      onRemove={removeTag(option)}
+      key={`option-${value}`}
+      onRemove={removeTag(value)}
       textColor={Blue.S99}
     >
-      {option}
+      {data.find(option => option.value === value)?.label || value}
     </StyledTag>
   ));
 
