@@ -14,7 +14,7 @@ const Template: Story<Props> = args => <Divider {...args} />;
 
 export const Interactive = Template.bind({});
 
-export const dividerWithGreyTheme = Template.bind({});
-dividerWithGreyTheme.args = {
+export const DividerWithGreyTheme = Template.bind({});
+DividerWithGreyTheme.args = {
   theme: 'grey',
 };

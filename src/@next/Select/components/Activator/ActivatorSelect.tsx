@@ -7,9 +7,10 @@ import { Blue, Neutral } from '../../../utilities/colors';
 import {
   StyledSelect,
   StyledSelectTypography,
-  StyledTag,
   TagsContainer,
 } from './ActivatorStyle';
+import { Tag } from '../../../Tag';
+import { space8 } from '../../../utilities/spacing/Spacing';
 
 export interface ActivatorSelectProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -76,13 +77,14 @@ export const ActivatorSelect = ({
     if (hasSelectedValues) {
       return (
         <TagsContainer>
-          <StyledTag
+          <Tag
+            style={{ width: 28, marginRight: space8 }}
             key={`option-${selectedValues[0]}`}
             onRemove={onRemoveTag({ option: selectedValues[0] })}
             textColor={Blue.S99}
           >
             {selectedLabels[0]}
-          </StyledTag>
+          </Tag>
           {selectedValues.length > 1 && (
             <Typography
               variant="caption"

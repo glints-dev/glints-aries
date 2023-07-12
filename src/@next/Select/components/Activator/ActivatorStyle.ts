@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-import * as Breakpoints from '../../../utilities/breakpoints/Breakpoints';
+import { TextInput } from '../../../TextInput';
+import { Typography } from '../../../Typography';
 import { borderRadius4 } from '../../../utilities/borderRadius';
+import * as Breakpoints from '../../../utilities/breakpoints/Breakpoints';
 import { Neutral, Red } from '../../../utilities/colors';
 import { NotoSans } from '../../../utilities/fonts';
-import { space8 } from '../../../utilities/spacing';
 import { ActivatorSelectProps } from './ActivatorSelect';
-import { TextInput } from '../../../TextInput';
-import { Tag } from '../../../Tag';
-import { Typography } from '../../../Typography';
 
 export const StyledSelect = styled.button<ActivatorSelectProps>`
   display: flex;
@@ -59,10 +57,10 @@ export const TagsContainer = styled.div`
   align-items: center;
 `;
 
-export const StyledTag = styled(Tag)`
-  height: 28px;
-  margin-right: ${space8};
-`;
+// export const StyledTag = styled(Tag)`
+//   height: 28px;
+//   margin-right: ${space8};
+// `;
 
 export const StyledTextInput = styled(TextInput)`
   width: ${props => props.width};

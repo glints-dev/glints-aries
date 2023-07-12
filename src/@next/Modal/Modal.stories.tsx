@@ -75,7 +75,7 @@ Interactive.args = {
   showCloseButton: true,
 };
 
-const WithLargeContentTemplate: Story<void> = () => {
+const WithLargeContentTemplate = () => {
   const [iOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -117,7 +117,7 @@ const WithLargeContentTemplate: Story<void> = () => {
 export const WithLargeContent = WithLargeContentTemplate.bind({});
 WithLargeContent.args = {};
 
-const WithOverlflowContentTemplate: Story<void> = () => {
+const WithOverlflowContentTemplate = () => {
   const [iOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -376,7 +376,7 @@ WithLockedScrollableBackdrop.args = {
   showCloseButton: true,
 };
 
-const WithSpinnerTemplate: Story<void> = () => {
+const WithSpinnerTemplate = () => {
   const [iOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -406,7 +406,7 @@ const WithSpinnerTemplate: Story<void> = () => {
 export const WithSpinner = WithSpinnerTemplate.bind({});
 WithSpinner.args = {};
 
-const WithCustomActionsTemplate: Story<void> = () => {
+const WithCustomActionsTemplate = () => {
   const [showModal, setShowModal] = useState(false);
   const triggerAlert = () => {
     setShowModal(true);
@@ -442,7 +442,7 @@ const WithCustomActionsTemplate: Story<void> = () => {
 export const WithCustomActions = WithCustomActionsTemplate.bind({});
 WithCustomActions.args = {};
 
-const WithNumberInputAndTooltipTemplate: Story<void> = () => {
+const WithNumberInputAndTooltipTemplate = () => {
   const [showModal, setShowModal] = useState(false);
   const triggerAlert = () => {
     setShowModal(true);

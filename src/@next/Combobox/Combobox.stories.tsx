@@ -1,10 +1,10 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
-import { Option, OptionList, TextInput } from './components';
 import { Combobox, ComboboxProps } from './Combobox';
 import { ComboboxMultiSelect } from './comboboxStoryHelper/ComboboxMultuSelect';
+import { Option, OptionList, TextInput } from './components';
 
 (Combobox as React.FunctionComponent<ComboboxProps>).displayName = 'Combobox';
 
@@ -32,7 +32,7 @@ const countries = [
 
 const slicedCountries = countries.slice(0, 5);
 
-const MultiSelectTemplate: Story<ComboboxProps> = args => (
+const MultiSelectTemplate: StoryFn<ComboboxProps> = args => (
   <ComboboxMultiSelect {...args} countries={slicedCountries} />
 );
 
@@ -152,7 +152,7 @@ MultiSelect.parameters = {
   },
 };
 
-const MultiSelectScrollableTemplate: Story<ComboboxProps> = args => (
+const MultiSelectScrollableTemplate: StoryFn<ComboboxProps> = args => (
   <ComboboxMultiSelect {...args} countries={countries} />
 );
 
