@@ -176,7 +176,10 @@ export const SearchableSelectInput = forwardRef<
           className="searchable-select"
           onClick={handleSelectedClick}
         >
-          <StyledSelected>{selectedValue}</StyledSelected>
+          <StyledSelected>
+            {options.find(option => option.value === selectedValue)?.label ||
+              selectedValue}
+          </StyledSelected>
         </StyledSelectedValue>
       )}
       {showInput && (
