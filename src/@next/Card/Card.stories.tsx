@@ -15,41 +15,39 @@ export default {
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
-const Template: Story<CardProps> = args => {
-  const primaryAction = {
-    label: 'Yes',
-    action: () => console.log('Primary action!'),
-  };
-  const secondaryAction = {
-    label: 'No',
-    action: () => console.log('Secondary action!'),
-  };
-  const headerPrimaryAction = {
-    label: 'Label',
-    action: () => console.log('Header primary action!'),
-  };
-  const headerSecondaryAction = {
-    label: 'Label',
-    action: () => console.log('Header secondary action!'),
-  };
-
-  return (
-    <Card
-      {...args}
-      primaryAction={primaryAction}
-      secondaryAction={secondaryAction}
-      headerPrimaryAction={headerPrimaryAction}
-      headerSecondaryAction={headerSecondaryAction}
-    >
-      <Card.Section>
-        This is a section
-        <Card.Section>This is a subsection</Card.Section>
-        <Card.Section>This is a subsection</Card.Section>
-      </Card.Section>
-      <Card.Section>This is a section</Card.Section>
-    </Card>
-  );
+const primaryAction = {
+  label: 'Yes',
+  action: () => console.log('Primary action!'),
 };
+const secondaryAction = {
+  label: 'No',
+  action: () => console.log('Secondary action!'),
+};
+const headerPrimaryAction = {
+  label: 'Label',
+  action: () => console.log('Header primary action!'),
+};
+const headerSecondaryAction = {
+  label: 'Label',
+  action: () => console.log('Header secondary action!'),
+};
+
+const Template: Story<CardProps> = args => (
+  <Card
+    {...args}
+    primaryAction={primaryAction}
+    secondaryAction={secondaryAction}
+    headerPrimaryAction={headerPrimaryAction}
+    headerSecondaryAction={headerSecondaryAction}
+  >
+    <Card.Section>
+      This is a section
+      <Card.Section>This is a subsection</Card.Section>
+      <Card.Section>This is a subsection</Card.Section>
+    </Card.Section>
+    <Card.Section>This is a section</Card.Section>
+  </Card>
+);
 
 export const Interactive = Template.bind({});
 Interactive.args = {
@@ -111,22 +109,16 @@ NoAction.args = {
   heading: 'Heading',
 };
 
-const PrimaryActionOnlyTemplate: Story<CardProps> = args => {
-  const primaryAction = {
-    label: 'Yes',
-    action: () => console.log('Primary action!'),
-  };
-  return (
-    <Card {...args} primaryAction={primaryAction}>
-      <Card.Section>
-        This is a section
-        <Card.Section>This is a subsection</Card.Section>
-        <Card.Section>This is a subsection</Card.Section>
-      </Card.Section>
-      <Card.Section>This is a section</Card.Section>
-    </Card>
-  );
-};
+const PrimaryActionOnlyTemplate: Story<CardProps> = args => (
+  <Card {...args} primaryAction={primaryAction}>
+    <Card.Section>
+      This is a section
+      <Card.Section>This is a subsection</Card.Section>
+      <Card.Section>This is a subsection</Card.Section>
+    </Card.Section>
+    <Card.Section>This is a section</Card.Section>
+  </Card>
+);
 
 export const PrimaryActionOnly = PrimaryActionOnlyTemplate.bind({});
 PrimaryActionOnly.args = {
@@ -134,12 +126,8 @@ PrimaryActionOnly.args = {
 };
 
 const SecondaryActionOnlyTemplate: Story<CardProps> = args => {
-  const secondaryAction = {
-    label: 'Yes',
-    action: () => console.log('Primary action!'),
-  };
   return (
-    <Card {...args} secondaryAction={secondaryAction}>
+    <Card {...args} secondaryAction={{ ...secondaryAction, label: 'Yes' }}>
       <Card.Section>
         This is a section
         <Card.Section>This is a subsection</Card.Section>
@@ -179,6 +167,32 @@ const CustomHeadingSubHeadingTemplate: Story<CardProps> = args => {
       </Card>
     </div>
   );
+};
+
+const DisabledActionsTemplate: Story<CardProps> = args => {
+  return (
+    <Card
+      {...args}
+      primaryAction={{ ...primaryAction, disabled: true }}
+      secondaryAction={{ ...secondaryAction, disabled: true }}
+      headerPrimaryAction={{ ...headerPrimaryAction, disabled: true }}
+      headerSecondaryAction={{ ...headerSecondaryAction, disabled: true }}
+    >
+      <Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
+      </Card.Section>
+      <Card.Section>This is a section</Card.Section>
+    </Card>
+  );
+};
+
+export const DisabledActions = DisabledActionsTemplate.bind({});
+DisabledActions.args = {
+  heading: 'Heading',
+  subheading: 'SubHeading',
+  actionsAlignment: 'right',
 };
 
 export const CustomHeadingSubHeading = CustomHeadingSubHeadingTemplate.bind({});

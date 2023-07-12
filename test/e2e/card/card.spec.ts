@@ -74,3 +74,14 @@ test('Card - Custom Heading and Sub Heading', async ({ page }) => {
     'card-custom-heading-sub-heading.png'
   );
 });
+
+test('Card - header and card actions disabled', async ({ page }) => {
+  const cardPage = new StoryBookPage(
+    page,
+    '?path=/story/next-card--disabled-actions'
+  );
+  await cardPage.goto();
+  await expect(cardPage.container).toHaveScreenshot(
+    'card-disabled-actions.png'
+  );
+});
