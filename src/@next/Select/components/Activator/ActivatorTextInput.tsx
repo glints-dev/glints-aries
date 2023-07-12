@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 import { Icon } from '../../../Icon';
 import { Option } from '../../../Menu';
@@ -80,7 +80,9 @@ export const ActivatorTextInput = ({
           className="select-input"
           ref={activatorRef}
           prefix={prefix}
-          onChange={value => handleChange({ value })}
+          onChange={(value: ChangeEvent<HTMLInputElement>) =>
+            handleChange({ value })
+          }
           onFocus={onFocus}
           error={hasError}
           disabled={disabled}

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Typography } from '../Typography';
 import {
-  StyledActiveSimplePaginationButton,
-  StyledSimplePaginationInput,
-  StyledSimplePaginationButton,
   SimplePaginationStyledNav,
+  StyledActiveSimplePaginationButton,
+  StyledSimplePaginationButton,
+  StyledSimplePaginationInput,
 } from './PaginationStyle';
+import { NextStepper, PreviousStepper } from './Stepper';
 import {
+  PaginationProps,
   defaultPageSize,
   getAllPages,
-  PaginationProps,
 } from './paginationUtils';
-import { NextStepper, PreviousStepper } from './Stepper';
 
 export const SimplePagination = React.forwardRef<HTMLElement, PaginationProps>(
   function SimplePagination(
@@ -76,7 +76,7 @@ export const SimplePagination = React.forwardRef<HTMLElement, PaginationProps>(
               data-testid="current-page-input"
               autoFocus
               onFocus={handleFocus}
-              onChange={e => {
+              onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 handlePageNumberChange(Number(e.currentTarget.value));
               }}
               onBlur={() => setEditMode(false)}

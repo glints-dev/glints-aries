@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, MouseEvent } from 'react';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { ComponentAction } from '../../types/componentAction';
@@ -91,7 +91,7 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
               <StyledSideSheetContainer
                 className={`${isClosedAnimation ? 'closed' : ''}`}
                 ref={ref}
-                onClick={e => e.stopPropagation()}
+                onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
                 {...props}
               >
                 <StyledSideSheetHeader>
