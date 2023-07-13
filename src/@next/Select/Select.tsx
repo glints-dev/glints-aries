@@ -24,6 +24,7 @@ export interface SelectProps {
   /** Margin Top = 8 ; Option height = 48 ; optionListHeight = (n options * option height) + margin top; */
   listHeight?: number;
   loadingOptions?: boolean;
+  name?: string;
   onClose?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
@@ -54,6 +55,7 @@ export const Select = ({
   label,
   listHeight,
   loadingOptions = false,
+  name,
   onClose,
   onRemoveTag,
   onSelect,
@@ -164,6 +166,7 @@ export const Select = ({
           options={options}
           updateMenuOptions={updateMenuOptions}
           prefix={prefix}
+          name={name}
         />
       );
     }
@@ -179,6 +182,7 @@ export const Select = ({
         width={width}
         selectedValues={selectedValues}
         options={options}
+        name={name}
       />
     );
   };
