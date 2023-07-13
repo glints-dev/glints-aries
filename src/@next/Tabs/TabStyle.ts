@@ -13,7 +13,7 @@ export const StyledTabHeaderContainer = styled.div`
   white-space: nowrap;
   background: transparent;
   position: relative;
-  margin: ${space16} 0;
+  margin: 0;
 
   ::-webkit-scrollbar {
     display: none;
@@ -94,7 +94,6 @@ export const StyledTabButton = styled.button`
   height: 56px;
   cursor: pointer;
   color: ${Neutral.B40};
-  margin-bottom: 1px;
   width: 100%;
   padding: 0 ${space4};
 
