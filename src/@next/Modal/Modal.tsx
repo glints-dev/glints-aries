@@ -84,12 +84,18 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     const defaultActionContent = (
       <ButtonGroup>
         {secondaryAction && (
-          <Button onClick={() => secondaryAction.action?.()}>
+          <Button
+            onClick={() => secondaryAction.action?.()}
+            {...secondaryAction}
+          >
             {secondaryAction.label}
           </Button>
         )}
         {primaryAction && (
-          <PrimaryButton onClick={() => primaryAction.action?.()}>
+          <PrimaryButton
+            onClick={() => primaryAction.action?.()}
+            {...primaryAction}
+          >
             {primaryAction.label}
           </PrimaryButton>
         )}
