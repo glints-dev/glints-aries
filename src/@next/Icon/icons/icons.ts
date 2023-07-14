@@ -102,6 +102,8 @@ export const iconNames = [
   'ri-upload-line',
   'ri-sparkling2-line',
   'ri-sparkling2-fill',
+  'ri-money-dollar-circle-fill',
+  'ri-money-dollar-circle-line',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -208,4 +210,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-upload-line']: Icons.RiUploadLine,
   ['ri-sparkling2-line']: Icons.RiSparkling2Line,
   ['ri-sparkling2-fill']: Icons.RiSparkling2Fill,
+  ['ri-money-dollar-circle-fill']: Icons.RiMoneyDollarCircleFill,
+  ['ri-money-dollar-circle-line']: Icons.RiMoneyDollarCircleLine,
 };
