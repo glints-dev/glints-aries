@@ -83,8 +83,22 @@ const WithLargeContentTemplate: Story<void> = () => {
 
     return () => clearTimeout(timeId);
   }, []);
+
+  const primaryAction = {
+    label: 'Yes',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'No',
+    action: () => console.log('Secondary action!'),
+  };
   return (
-    <Modal isOpen={iOpen} header="Desiderata">
+    <Modal
+      isOpen={iOpen}
+      header="Desiderata"
+      primaryAction={primaryAction}
+      secondaryAction={secondaryAction}
+    >
       Go placidly amid the noise and the haste, and remember what peace there
       may be in silence. As far as possible, without surrender, be on good terms
       with all persons. Speak your truth quietly and clearly; and listen to
@@ -386,18 +400,25 @@ const WithSpinnerTemplate: Story<void> = () => {
   }, []);
   return (
     <Modal isOpen={iOpen}>
-      <Spinner fill={Blue.S99} height="36px" width="36px" />
       <div
-        style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+        style={{
+          width: '100vw',
+          padding: '20px 0',
+        }}
       >
-        <Typography as="div" variant="subtitle1">
-          Redirecting to payment...
-        </Typography>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Typography as="div" variant="body1">
-          If you haven’t been redirected, please click <a href="#">here</a>
-        </Typography>
+        <Spinner fill={Blue.S99} height="36px" width="36px" />
+        <div
+          style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+        >
+          <Typography as="div" variant="subtitle1">
+            Redirecting to payment...
+          </Typography>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography as="div" variant="body1">
+            If you haven’t been redirected, please click <a href="#">here</a>
+          </Typography>
+        </div>
       </div>
     </Modal>
   );

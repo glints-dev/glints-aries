@@ -35,6 +35,15 @@ export const StyledModalContainer = styled.div`
   height: fit-content;
   max-height: calc(100vh - 96px);
   overflow: hidden;
+
+  @media (max-width: ${Breakpoints.large}) {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    max-width: none;
+    max-height: calc(100vh - 70px);
+    border-radius: 0;
+  }
 `;
 
 export const StyledModalHeader = styled.div`
@@ -66,8 +75,24 @@ export const StyledModalContent = styled.div`
   padding: 20px;
   overflow: auto;
 
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${Neutral.B68};
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: ${Neutral.B40};
+  }
+
   @media (max-width: ${Breakpoints.large}) {
-    padding: 20px ${space16};
+    padding: 20px 16px;
+
+    &[data-has-scrollbar='true'] {
+      padding: 20px 6px 20px 16px;
+      width: calc(100vw - 27px);
+    }
   }
 `;
 
