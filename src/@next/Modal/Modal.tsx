@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
@@ -59,6 +59,26 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     }: ModalProps,
     ref
   ) {
+    const [isContentHasScrollbar, setIsContentHasScrollbar] =
+      useState<boolean>(false);
+    const modalContentRef = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+      const checkScrollbar = () => {
+        const modalContent = modalContentRef.current;
+        if (modalContent) {
+          setIsContentHasScrollbar(
+            modalContent.scrollHeight > modalContent.clientHeight
+          );
+        }
+      };
+      checkScrollbar();
+      const handleResize = () => checkScrollbar();
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    });
+
     useEffect(() => {
       if (typeof window === 'undefined' || !window.document) return;
 
@@ -165,7 +185,11 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                 )}
               </StyledModalHeader>
             )}
-            <StyledModalContent className="modal-content">
+            <StyledModalContent
+              className="modal-content"
+              ref={modalContentRef}
+              data-has-scrollbar={isContentHasScrollbar}
+            >
               {content}
             </StyledModalContent>
             {hasActions && (
