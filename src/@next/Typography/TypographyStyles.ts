@@ -139,26 +139,24 @@ export const button = css`
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
-  letter-spacing: 1.25px;
+  letter-spacing: 0.75px;
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 600;
-    line-height: 150%;
     letter-spacing: 0.25px;
   }
 `;
 
 export const caption = css`
   font-family: ${NotoSans}, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
-  line-height: 140%;
-  letter-spacing: 0.4px;
+  line-height: 150%;
+  letter-spacing: 0.25px;
 
   @media (max-width: ${Breakpoints.large}) {
-    font-weight: 500;
     font-size: 12px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0px;
   }
 `;
 
