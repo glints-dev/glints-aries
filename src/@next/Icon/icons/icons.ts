@@ -109,6 +109,8 @@ export const iconNames = [
   'ri-bard-fill',
   'ri-bard-line',
   'ri-infinity',
+  'ri-discuss-fill',
+  'ri-discuss-line',
 ] as const;
 
 export type IconNames = typeof iconNames[number];
@@ -222,4 +224,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-bard-fill']: Icons.RiBardFill,
   ['ri-bard-line']: Icons.RiBardLine,
   ['ri-infinity']: Icons.RiInfinity,
+  ['ri-discuss-fill']: Icons.RiDiscussFill,
+  ['ri-discuss-line']: Icons.RiDiscussLine,
 };
