@@ -18,7 +18,7 @@ export const SalarySelector = ({ onFromChanged, onToChanged }: Props) => {
           alignItems: 'center',
         }}
       >
-        <Typography as="div" variant="caption">
+        <Typography as="div" variant="subtitle2">
           IDR
         </Typography>
         <div>
