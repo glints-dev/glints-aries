@@ -23,7 +23,8 @@
     "react/prop-types": "off",
     "jest/no-test-callback": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "jest/no-conditional-expect": "off"
   },
   "settings": {
     "react": {

@@ -21,6 +21,6 @@ export const Shadow = {
   down4,
 } as const;
 
-export type ShadowValueType = typeof Shadow[keyof typeof Shadow];
+export type ShadowValueType = (typeof Shadow)[keyof typeof Shadow];
 
 export type ShadowKeyType = keyof typeof Shadow;

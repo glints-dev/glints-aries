@@ -5,7 +5,7 @@ import { render, fireEvent } from '@testing-library/react';
 
 import Brand from './Brand';
 
-describe('<Brand/> ', () => {
+describe('<Brand/>', () => {
   it('should render as expected', () => {
     const blackLogoSnapshot = renderer
       .create(<Brand asset="glints-black" />)

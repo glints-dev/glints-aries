@@ -30,7 +30,7 @@ export type PreferredVerticalAligmentFuncsType = (
 ) => VerticalAlignmentCalculatorResult;
 
 export type TryCalculateAlignmentArgs<
-  T extends HorizontalAlignmentType | VerticalAlignmentType
+  T extends HorizontalAlignmentType | VerticalAlignmentType,
 > = {
   preferredAlignmentFuncs: T extends HorizontalAlignmentType
     ? PreferredHorizontalAligmentFuncsType[]
@@ -199,7 +199,7 @@ export const canStayOnRight = (tooltipRect: DOMRect) => {
 };
 
 export const tryCalculateAligment = <
-  T extends HorizontalAlignmentType | VerticalAlignmentType
+  T extends HorizontalAlignmentType | VerticalAlignmentType,
 >(
   args: TryCalculateAlignmentArgs<T>
 ) => {

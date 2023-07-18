@@ -84,20 +84,20 @@ export const DrawerWrapper = styled.div<DrawerWrapperProps>`
       right: `
     right: 0px;
   `,
-    }[position])}
+    })[position]}
 
   background-color: white;
   animation: ${({ open, position }) =>
       ({
         right: open ? openFromRight : closeToRight,
         left: open ? openFromLeft : closeToLeft,
-      }[position])}
+      })[position]}
     0.3s ease-in-out;
   transform: ${({ open, position }) =>
     ({
       right: open ? 'translateX(0%)' : 'translateX(100%)',
       left: open ? 'translateX(0%)' : 'translateX(-100%)',
-    }[position])};
+    })[position]};
   outline: none;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   overflow-y: auto;

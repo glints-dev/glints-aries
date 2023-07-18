@@ -2,7 +2,7 @@
 
 exports[`<Select.Option/> should match snapshot 1`] = `<DocumentFragment />`;
 
-exports[`<Select/> handleMouseEnterOption it should match snapshot, the option element should have active class name 1`] = `
+exports[`<Select/> handleMouseEnterOption should match snapshot, the option element should have active class name 1`] = `
 <DocumentFragment>
   .c0 {
   -webkit-box-flex: 1;
