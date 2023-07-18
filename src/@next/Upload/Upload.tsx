@@ -51,8 +51,8 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
         setIsLoading(false);
       };
       if (file) reader.readAsDataURL(file);
-      else setIsLoading(false);
-    }, [file]);
+      else if (!loading) setIsLoading(false);
+    }, [file, loading]);
 
     const handleClick = () => {
       if (fileInputRef.current) {
