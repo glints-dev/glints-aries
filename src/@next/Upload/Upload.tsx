@@ -26,7 +26,7 @@ export interface UploadProps {
 
 export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
   function Upload(
-    { 
+    {
       file,
       handleSetFile,
       loading = false,
