@@ -56,7 +56,9 @@ export const TagStyle = styled.div<TagProps>`
 
     &:focus-visible {
       outline: 1px solid ${Blue.S100};
-      box-shadow: 0px 0px 0px 2px ${Neutral.B100}, 0px 0px 0px 4px ${Blue.S54};
+      box-shadow:
+        0px 0px 0px 2px ${Neutral.B100},
+        0px 0px 0px 4px ${Blue.S54};
     }
 
     &[data-disabled='true'] {

@@ -10,7 +10,8 @@ export const DestructiveButton = styled(Button)`
 
   &:hover {
     background: ${Red.B74};
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08),
+    box-shadow:
+      0px 1px 0px rgba(0, 0, 0, 0.08),
       inset 0px -1px 0px rgba(0, 0, 0, 0.2);
   }
 

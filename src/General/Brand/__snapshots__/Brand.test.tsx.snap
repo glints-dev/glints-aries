@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Brand/>  should render as expected 1`] = `
+exports[`<Brand/> should render as expected 1`] = `
 .c0 {
   position: relative;
   display: -webkit-inline-box;
@@ -39,7 +39,7 @@ exports[`<Brand/>  should render as expected 1`] = `
 </div>
 `;
 
-exports[`<Brand/>  should render as expected 2`] = `
+exports[`<Brand/> should render as expected 2`] = `
 .c0 {
   position: relative;
   display: -webkit-inline-box;
@@ -78,7 +78,7 @@ exports[`<Brand/>  should render as expected 2`] = `
 </div>
 `;
 
-exports[`<Brand/>  should render as expected 3`] = `
+exports[`<Brand/> should render as expected 3`] = `
 .c0 {
   position: relative;
   display: -webkit-inline-box;

@@ -36,7 +36,9 @@ export const StyledSelect = styled.button<ActivatorSelectProps>`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 1px #ffffff, 0px 0px 0px 3px #6cc9ec;
+    box-shadow:
+      0px 0px 0px 1px #ffffff,
+      0px 0px 0px 3px #6cc9ec;
   }
 
   &:disabled {

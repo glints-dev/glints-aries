@@ -6,6 +6,7 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
 }
 
 export const Icon = ({ name, ...props }: IconProps) => {
-  const IconComponent = iconsMappingComponent[name as typeof iconNames[number]];
+  const IconComponent =
+    iconsMappingComponent[name as (typeof iconNames)[number]];
   return <IconComponent {...props} />;
 };

@@ -14,7 +14,8 @@ export const StyledAlertContainer = styled.div`
   max-width: 640px;
   width: fit-content;
   border-radius: ${borderRadius4};
-  box-shadow: 0px 8px 20px rgba(71, 71, 71, 0.2),
+  box-shadow:
+    0px 8px 20px rgba(71, 71, 71, 0.2),
     0px 3px 6px -3px rgba(71, 71, 71, 0.08);
   animation: slide-from-right 400ms cubic-bezier(0.35, 0.8, 1, 0.86);
   z-index: 100;

@@ -10,7 +10,8 @@ export const PrimaryButton = styled(Button)`
   &:hover {
     background: ${Blue.S100};
     opacity: 0.9;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08),
+    box-shadow:
+      0px 1px 0px rgba(0, 0, 0, 0.08),
       inset 0px -1px 0px rgba(0, 0, 0, 0.2);
   }
 

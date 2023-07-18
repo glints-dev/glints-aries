@@ -239,7 +239,7 @@ describe('when the enter key is pressed on an option', () => {
     expect(selectList.hasAttribute('open')).toBe(false);
   });
 
-  it('should float the label ', () => {
+  it('should float the label', () => {
     const { selectLabel } = setupSelectOptionFromMenuWithKeyHandling();
     expect(selectLabel).toHaveStyle('transform: translate3d(-15px,-20px,0);');
   });
@@ -753,7 +753,7 @@ describe('<Select/> esc key', () => {
 });
 
 describe('<Select/> handleMouseEnterOption', () => {
-  it('it should match snapshot, the option element should have active class name', async () => {
+  it('should match snapshot, the option element should have active class name', async () => {
     const Component = () => (
       <Select label="handleMouseEnterOption">
         <Select.Option value="handleMouseEnterOption">

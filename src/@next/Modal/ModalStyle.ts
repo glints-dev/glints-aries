@@ -27,7 +27,9 @@ export const StyledModalContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 0;
-  box-shadow: 0px 26px 80px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0px 26px 80px rgba(0, 0, 0, 0.2),
+    0px 0px 1px rgba(0, 0, 0, 0.2);
   border-radius: ${borderRadius8};
   min-width: 320px;
   width: fit-content;

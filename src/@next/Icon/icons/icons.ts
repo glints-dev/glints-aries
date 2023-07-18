@@ -114,7 +114,7 @@ export const iconNames = [
   'ri-file-copy2-line',
 ] as const;
 
-export type IconNames = typeof iconNames[number];
+export type IconNames = (typeof iconNames)[number];
 type SVGComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 
 export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
