@@ -145,6 +145,9 @@ export type TooltipProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   zIndex?: number;
+  clickable?: boolean; // if true, tooltip will be shown on click instead of hover
+  timeout?: number; // if clickable is true, timeout will be used to determine how long tooltip will be shown (in ms)
+  onClick?: () => void; // if clickable is true, onClick will be called when tooltip is clicked
 };
 
 const defaultPosition = 'top-center';
@@ -154,6 +157,9 @@ export const Tooltip = ({
   content,
   preferredPosition = defaultPosition,
   zIndex,
+  clickable = false,
+  timeout = 1000,
+  onClick,
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const elRef = useRef<HTMLDivElement>(null);
@@ -241,12 +247,35 @@ export const Tooltip = ({
       content
     );
 
+  const handleMouseEnter = () => setIsActive(true);
+  const handleMouseLeave = () => setIsActive(false);
+
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [animate, setAnimate] = useState<boolean>(false);
+  const handleClick = () => {
+    onClick();
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+      setAnimate(false);
+    }
+    setIsActive(true);
+    timeoutRef.current = setTimeout(() => {
+      setAnimate(true);
+      setTimeout(() => {
+        setIsActive(false);
+        setAnimate(false);
+      }, 180); // animation is 200ms, make this slightly lower to prevent visual glitch
+    }, timeout);
+  };
+
   return (
     <>
       <StyledTooltipContainer
         ref={elRef}
-        onMouseEnter={() => setIsActive(true)}
-        onMouseLeave={() => setIsActive(false)}
+        onMouseEnter={!clickable && handleMouseEnter}
+        onMouseLeave={!clickable && handleMouseLeave}
+        onClick={clickable && handleClick}
       >
         {children}
       </StyledTooltipContainer>
@@ -254,6 +283,7 @@ export const Tooltip = ({
         <Portal>
           <StyledTooltip
             data-position={position}
+            className={animate ? 'closed-animation' : ''}
             ref={tooltipRef}
             zIndex={zIndex}
             style={{
