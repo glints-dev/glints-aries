@@ -174,7 +174,7 @@ describe('<Slider/> prop afterChange', () => {
     const firstDot = document.querySelectorAll('li')[0];
 
     fireEvent.click(leftArrow);
-    expect(afterChange).not.toHaveBeenCalled();
+    expect(afterChange).not.toBeCalled();
     fireEvent.click(rightArrow);
     expect(afterChange).toHaveBeenCalledTimes(1);
     expect(afterChange).toHaveBeenLastCalledWith(2);
