@@ -131,6 +131,19 @@ export const StyledTooltip = styled.div<{ zIndex?: number }>`
     bottom: ${nonCentralArrowMargin};
   }
 
+  &.closed-animation {
+    animation: fade-out2 0.5s;
+  }
+
+  @keyframes fade-out2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   @media (max-width: ${Breakpoints.large}) {
     min-width: 69px;
   }

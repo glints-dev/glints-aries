@@ -28,6 +28,8 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   content: 'Tooltip',
   preferredPosition: 'top-center',
+  clickable: false,
+  timeout: 1000,
 };
 Interactive.parameters = {
   docs: {
