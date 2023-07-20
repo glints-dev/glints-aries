@@ -147,7 +147,7 @@ export type TooltipProps = {
   zIndex?: number;
   clickable?: boolean; // if true, tooltip will be shown on click instead of hover
   timeout?: number; // how long tooltip will still be shown after clicked or when not hovered anymore
-  onClick?: () => void; // onClick will be called when tooltip is clicked or hovered
+  onAction?: () => void; // onAction will be called when tooltip is clicked or hovered out
 };
 
 const defaultPosition = 'top-center';
@@ -159,7 +159,7 @@ export const Tooltip = ({
   zIndex,
   clickable = false,
   timeout = 0,
-  onClick,
+  onAction,
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const elRef = useRef<HTMLDivElement>(null);
@@ -247,39 +247,45 @@ export const Tooltip = ({
       content
     );
 
-  const handleMouseEnter = () => setIsActive(true);
+  const handleMouseEnter = () => {
+    if (!clickable) setIsActive(true);
+  };
   const handleMouseLeave = () => {
-    setIsActive(false);
-    handleClick();
+    if (!clickable) {
+      setIsActive(false);
+      handleClick();
+    }
   };
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
   const handleClick = () => {
-    onClick?.();
-    // if you click during the tooltip's lifespan, it should reset the timeout
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-      setAnimate(false);
-    }
-    setIsActive(true);
-    timeoutRef.current = setTimeout(() => {
-      setAnimate(true);
-      timeoutRef.current = setTimeout(() => {
-        setIsActive(false);
+    if (clickable) {
+      onAction?.();
+      // if you click during the tooltip's lifespan, it should reset the timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
         setAnimate(false);
-      }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
-    }, timeout);
+      }
+      setIsActive(true);
+      timeoutRef.current = setTimeout(() => {
+        setAnimate(true);
+        timeoutRef.current = setTimeout(() => {
+          setIsActive(false);
+          setAnimate(false);
+        }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
+      }, timeout);
+    }
   };
 
   return (
     <>
       <StyledTooltipContainer
         ref={elRef}
-        onMouseEnter={!clickable && handleMouseEnter}
-        onMouseLeave={!clickable && handleMouseLeave}
-        onClick={clickable && handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         {children}
       </StyledTooltipContainer>
