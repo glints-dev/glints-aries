@@ -145,9 +145,12 @@ export type TooltipProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   zIndex?: number;
-  clickable?: boolean; // if true, tooltip will be shown on click instead of hover
-  timeout?: number; // how long tooltip will still be shown after clicked or when not hovered anymore
-  onAction?: () => void; // onAction will be called when tooltip is clicked or hovered out
+  /** if true, tooltip will be shown on click instead of hover */
+  clickable?: boolean;
+  /** how long tooltip will still be shown after clicked or when not hovered anymore */
+  timeout?: number; //
+  /** if clickable it true, onClick will be called when tooltip is clicked */
+  onClick?: () => void;
 };
 
 const defaultPosition = 'top-center';
@@ -159,7 +162,7 @@ export const Tooltip = ({
   zIndex,
   clickable = false,
   timeout = 0,
-  onAction,
+  onClick,
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const elRef = useRef<HTMLDivElement>(null);
@@ -253,30 +256,33 @@ export const Tooltip = ({
   const handleMouseLeave = () => {
     if (!clickable) {
       setIsActive(false);
-      handleClick();
+      handleAnimation();
+    }
+  };
+  const handleClick = () => {
+    if (clickable) {
+      onClick();
+      handleAnimation();
     }
   };
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
-  const handleClick = () => {
-    if (clickable) {
-      onAction?.();
-      // if you click during the tooltip's lifespan, it should reset the timeout
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-        setAnimate(false);
-      }
-      setIsActive(true);
-      timeoutRef.current = setTimeout(() => {
-        setAnimate(true);
-        timeoutRef.current = setTimeout(() => {
-          setIsActive(false);
-          setAnimate(false);
-        }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
-      }, timeout);
+  const handleAnimation = () => {
+    // if you click during the tooltip's lifespan, it should reset the timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+      setAnimate(false);
     }
+    setIsActive(true);
+    timeoutRef.current = setTimeout(() => {
+      setAnimate(true);
+      timeoutRef.current = setTimeout(() => {
+        setIsActive(false);
+        setAnimate(false);
+      }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
+    }, timeout);
   };
 
   return (
