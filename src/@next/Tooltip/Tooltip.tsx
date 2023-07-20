@@ -145,9 +145,12 @@ export type TooltipProps = {
   children: React.ReactNode;
   content: React.ReactNode;
   zIndex?: number;
-  clickable?: boolean; // if true, tooltip will be shown on click instead of hover
-  timeout?: number; // how long tooltip will still be shown after clicked or when not hovered anymore
-  onClick?: () => void; // onClick will be called when tooltip is clicked or hovered
+  /** if true, tooltip will be shown on click instead of hover */
+  clickable?: boolean;
+  /** how long tooltip will still be shown after clicked or when not hovered anymore */
+  timeout?: number; //
+  /** if clickable it true, onClick will be called when tooltip is clicked */
+  onClick?: () => void;
 };
 
 const defaultPosition = 'top-center';
@@ -247,16 +250,25 @@ export const Tooltip = ({
       content
     );
 
-  const handleMouseEnter = () => setIsActive(true);
+  const handleMouseEnter = () => {
+    if (!clickable) setIsActive(true);
+  };
   const handleMouseLeave = () => {
-    setIsActive(false);
-    handleClick();
+    if (!clickable) {
+      setIsActive(false);
+      handleAnimation();
+    }
+  };
+  const handleClick = () => {
+    if (clickable) {
+      onClick();
+      handleAnimation();
+    }
   };
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
-  const handleClick = () => {
-    onClick();
+  const handleAnimation = () => {
     // if you click during the tooltip's lifespan, it should reset the timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -277,9 +289,9 @@ export const Tooltip = ({
     <>
       <StyledTooltipContainer
         ref={elRef}
-        onMouseEnter={!clickable && handleMouseEnter}
-        onMouseLeave={!clickable && handleMouseLeave}
-        onClick={clickable && handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         {children}
       </StyledTooltipContainer>
