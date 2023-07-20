@@ -29,7 +29,7 @@ Interactive.args = {
   content: 'Tooltip',
   preferredPosition: 'top-center',
   clickable: false,
-  timeout: 1000,
+  timeout: 0,
 };
 Interactive.parameters = {
   docs: {

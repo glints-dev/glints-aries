@@ -146,8 +146,8 @@ export type TooltipProps = {
   content: React.ReactNode;
   zIndex?: number;
   clickable?: boolean; // if true, tooltip will be shown on click instead of hover
-  timeout?: number; // if clickable is true, timeout will be used to determine how long tooltip will be shown (in ms)
-  onClick?: () => void; // if clickable is true, onClick will be called when tooltip is clicked
+  timeout?: number; // how long tooltip will still be shown after clicked or when not hovered anymore
+  onClick?: () => void; // onClick will be called when tooltip is clicked or hovered
 };
 
 const defaultPosition = 'top-center';
@@ -158,7 +158,7 @@ export const Tooltip = ({
   preferredPosition = defaultPosition,
   zIndex,
   clickable = false,
-  timeout = 1000,
+  timeout = 0,
   onClick,
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -248,7 +248,10 @@ export const Tooltip = ({
     );
 
   const handleMouseEnter = () => setIsActive(true);
-  const handleMouseLeave = () => setIsActive(false);
+  const handleMouseLeave = () => {
+    setIsActive(false);
+    handleClick();
+  };
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
@@ -284,7 +287,6 @@ export const Tooltip = ({
         <Portal>
           <StyledTooltip
             data-position={position}
-            data-clickable={clickable}
             className={animate ? 'closed-animation' : ''}
             ref={tooltipRef}
             zIndex={zIndex}
