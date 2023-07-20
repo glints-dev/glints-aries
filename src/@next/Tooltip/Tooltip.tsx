@@ -254,6 +254,7 @@ export const Tooltip = ({
   const [animate, setAnimate] = useState<boolean>(false);
   const handleClick = () => {
     onClick();
+    // if you click during the tooltip's lifespan, it should reset the timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -262,10 +263,10 @@ export const Tooltip = ({
     setIsActive(true);
     timeoutRef.current = setTimeout(() => {
       setAnimate(true);
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setIsActive(false);
         setAnimate(false);
-      }, 180); // animation is 200ms, make this slightly lower to prevent visual glitch
+      }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
     }, timeout);
   };
 
@@ -283,6 +284,7 @@ export const Tooltip = ({
         <Portal>
           <StyledTooltip
             data-position={position}
+            data-clickable={clickable}
             className={animate ? 'closed-animation' : ''}
             ref={tooltipRef}
             zIndex={zIndex}
