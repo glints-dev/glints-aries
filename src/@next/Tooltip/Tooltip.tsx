@@ -256,7 +256,7 @@ export const Tooltip = ({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
   const handleClick = () => {
-    onClick();
+    onClick?.();
     // if you click during the tooltip's lifespan, it should reset the timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
