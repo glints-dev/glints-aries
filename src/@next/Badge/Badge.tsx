@@ -14,7 +14,7 @@ const badgeStatusVariant = [
   'primary',
 ] as const;
 
-export type BadgeStatusVariant = typeof badgeStatusVariant[number];
+export type BadgeStatusVariant = (typeof badgeStatusVariant)[number];
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;

@@ -174,7 +174,7 @@ describe('<Slider/> prop afterChange', () => {
     const firstDot = document.querySelectorAll('li')[0];
 
     fireEvent.click(leftArrow);
-    expect(afterChange).not.toBeCalled();
+    expect(afterChange).not.toHaveBeenCalled();
     fireEvent.click(rightArrow);
     expect(afterChange).toHaveBeenCalledTimes(1);
     expect(afterChange).toHaveBeenLastCalledWith(2);
@@ -221,7 +221,7 @@ describe('<Slider/> prop afterChange', () => {
     const firstDot = document.querySelectorAll('li')[0];
 
     fireEvent.click(rightArrow);
-    expect(afterChange).not.toBeCalled();
+    expect(afterChange).not.toHaveBeenCalled();
     fireEvent.click(leftArrow);
     expect(afterChange).toHaveBeenCalledTimes(1);
     expect(afterChange).toHaveBeenLastCalledWith(2);

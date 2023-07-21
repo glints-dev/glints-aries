@@ -45,7 +45,8 @@ export const RadioButtonInput = styled.input`
   }
 
   :focus-visible {
-    box-shadow: 0px 0px 0px 1px ${Colors.Neutral.B100},
+    box-shadow:
+      0px 0px 0px 1px ${Colors.Neutral.B100},
       0px 0px 0px 3px ${Colors.Blue.S54};
     outline: none;
   }

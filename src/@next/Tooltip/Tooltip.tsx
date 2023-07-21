@@ -38,7 +38,7 @@ const allPositions = [
   ...leftPositions,
 ] as const;
 
-export type TooltipPosition = typeof allPositions[number];
+export type TooltipPosition = (typeof allPositions)[number];
 
 type TooltipPositionResolverFunction = (
   tooltipRect: DOMRect,

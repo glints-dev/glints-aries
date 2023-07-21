@@ -6,7 +6,7 @@ export const imageNames = [
   'safety-cone',
 ] as const;
 
-export type ImageName = typeof imageNames[number];
+export type ImageName = (typeof imageNames)[number];
 
 export const imageMapping: Record<ImageName, string> = {
   'empty-carton': Images.emptyCarton,

@@ -109,7 +109,9 @@ export const StyledInput = styled.input<InputProps>`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 1px ${Neutral.B100}, 0px 0px 0px 3px #6ac9ec;
+    box-shadow:
+      0px 0px 0px 1px ${Neutral.B100},
+      0px 0px 0px 3px #6ac9ec;
   }
 
   @media (max-width: ${Breakpoints.large}) {

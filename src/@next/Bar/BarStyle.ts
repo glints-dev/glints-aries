@@ -19,7 +19,8 @@ export const StyledBar = styled.div`
     top: 0;
   }
 
-  box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05),
+  box-shadow:
+    0px 0px 0px 1px rgba(63, 63, 68, 0.05),
     0px 1px 3px rgba(63, 63, 68, 0.15);
   background: ${Neutral.B100};
 

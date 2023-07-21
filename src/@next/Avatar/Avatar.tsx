@@ -14,9 +14,9 @@ const avatarBackgroundColorVariant = [
 const avatarSizeVariant = ['large', 'medium'] as const;
 
 export type AvatarBackgroundColorVariant =
-  typeof avatarBackgroundColorVariant[number];
+  (typeof avatarBackgroundColorVariant)[number];
 
-export type AvatarSizeVariant = typeof avatarSizeVariant[number];
+export type AvatarSizeVariant = (typeof avatarSizeVariant)[number];
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: AvatarBackgroundColorVariant;

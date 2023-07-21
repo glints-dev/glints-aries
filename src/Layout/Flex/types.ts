@@ -9,11 +9,11 @@ export const FlexPropAndPossibleValueMap = {
 
 export type FlexProps = {
   /** CSS property flex-direction */
-  flexDirection?: typeof FlexPropAndPossibleValueMap.flexDirection[number];
+  flexDirection?: (typeof FlexPropAndPossibleValueMap.flexDirection)[number];
   /** CSS property justify-content */
-  justifyContent?: typeof FlexPropAndPossibleValueMap.justifyContent[number];
+  justifyContent?: (typeof FlexPropAndPossibleValueMap.justifyContent)[number];
   /** CSS property align-items */
-  alignItems?: typeof FlexPropAndPossibleValueMap.alignItems[number];
+  alignItems?: (typeof FlexPropAndPossibleValueMap.alignItems)[number];
   /** CSS property flex-wrap */
-  flexWrap?: typeof FlexPropAndPossibleValueMap.flexWrap[number];
+  flexWrap?: (typeof FlexPropAndPossibleValueMap.flexWrap)[number];
 };
