@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { ButtonProps } from '../@next';
 
 export type ComponentAction = ButtonProps & {
-  label: ReactElement;
+  label: ReactNode;
   action: (...args: any[]) => void;
 };
