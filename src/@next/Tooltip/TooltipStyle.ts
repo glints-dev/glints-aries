@@ -131,6 +131,30 @@ export const StyledTooltip = styled.div<{ zIndex?: number }>`
     bottom: ${nonCentralArrowMargin};
   }
 
+  animation: fade-in-tooltip 400ms ease-in forwards;
+  &.closed-animation {
+    animation: fade-out-tooltip 400ms ease-out forwards;
+  }
+  animation-fill-mode: forwards;
+
+  @keyframes fade-in-tooltip {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out-tooltip {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   @media (max-width: ${Breakpoints.large}) {
     min-width: 69px;
   }

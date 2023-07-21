@@ -47,7 +47,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
 
   const content =
     typeof children === 'string' || typeof children === 'number' ? (
-      <Typography variant="caption" color={handleTextColor()} as={'span'}>
+      <Typography variant="subtitle2" color={handleTextColor()} as={'span'}>
         {children}
       </Typography>
     ) : (

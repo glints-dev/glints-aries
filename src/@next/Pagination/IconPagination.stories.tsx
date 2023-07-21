@@ -29,7 +29,7 @@ const WithLabelTemplate: Story<IconPaginationProps> = args => {
 export const WithLabel = WithLabelTemplate.bind({});
 WithLabel.args = {
   label: (
-    <Typography as="div" variant="caption" color={Neutral.B18}>
+    <Typography as="div" variant="subtitle2" color={Neutral.B18}>
       Label
     </Typography>
   ),
