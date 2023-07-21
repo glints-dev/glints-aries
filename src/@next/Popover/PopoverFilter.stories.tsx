@@ -123,7 +123,7 @@ const PopoverAsFilterExample = () => {
         >
           <Popover.Pane fixed>
             <Popover.Section>
-              <Typography as="span" variant="caption">
+              <Typography as="span" variant="subtitle2">
                 Salary
               </Typography>
             </Popover.Section>
@@ -137,12 +137,12 @@ const PopoverAsFilterExample = () => {
         </Popover>
       </ButtonGroup>
       <div style={{ marginTop: '10px' }}>
-        <Typography as="span" variant="caption">
+        <Typography as="span" variant="subtitle2">
           Selected cities: {selectedCities.join(',')}
         </Typography>
       </div>
       <div>
-        <Typography as="span" variant="caption">
+        <Typography as="span" variant="subtitle2">
           Selected salary range: {new Intl.NumberFormat().format(salaryFrom)} to{' '}
           {new Intl.NumberFormat().format(salaryTo)}
         </Typography>
@@ -258,7 +258,7 @@ Interactive.parameters = {
             >
               <Popover.Pane fixed>
                 <Popover.Section>
-                  <Typography as="span" variant="caption">
+                  <Typography as="span" variant="subtitle2">
                     Salary
                   </Typography>
                 </Popover.Section>
@@ -272,12 +272,12 @@ Interactive.parameters = {
             </Popover>
           </ButtonGroup>
           <div style={{ marginTop: '10px' }}>
-            <Typography as="span" variant="caption">
+            <Typography as="span" variant="subtitle2">
               Selected cities: {selectedCities.join(',')}
             </Typography>
           </div>
           <div>
-            <Typography as="span" variant="caption">
+            <Typography as="span" variant="subtitle2">
               Selected salary range: {new Intl.NumberFormat().format(salaryFrom)} to{' '}
               {new Intl.NumberFormat().format(salaryTo)}
             </Typography>

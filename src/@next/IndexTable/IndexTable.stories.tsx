@@ -294,7 +294,7 @@ const Template: Story<IndexTableProps> = args => {
             <Typography as="span" variant="body1">
               {latestWorkExperience}
             </Typography>
-            <Typography as="span" variant="caption">
+            <Typography as="span" variant="subtitle2">
               {latestWorkDuration}
             </Typography>
           </div>
@@ -398,7 +398,7 @@ const ScrollableTemplate: Story<IndexTableProps> = args => {
             <Typography as="span" variant="body1">
               {latestWorkExperience}
             </Typography>
-            <Typography as="span" variant="caption">
+            <Typography as="span" variant="subtitle2">
               {latestWorkDuration}
             </Typography>
           </div>

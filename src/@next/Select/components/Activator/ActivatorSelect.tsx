@@ -85,7 +85,7 @@ export const ActivatorSelect = ({
           </StyledTag>
           {selectedValues.length > 1 && (
             <Typography
-              variant="caption"
+              variant="subtitle2"
               color={disabled ? Neutral.B85 : Neutral.B40}
             >
               ... and {selectedValues.length - 1} more
