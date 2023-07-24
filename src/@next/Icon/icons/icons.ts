@@ -112,6 +112,7 @@ export const iconNames = [
   'ri-discuss-fill',
   'ri-discuss-line',
   'ri-file-copy2-line',
+  'ri-checkbox-circle-line',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -228,4 +229,5 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-discuss-fill']: Icons.RiDiscussFill,
   ['ri-discuss-line']: Icons.RiDiscussLine,
   ['ri-file-copy2-line']: Icons.RiFileCopy2Line,
+  ['ri-checkbox-circle-line']: Icons.RiCheckboxCircleLine,
 };
