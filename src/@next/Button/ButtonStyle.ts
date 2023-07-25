@@ -126,10 +126,6 @@ export const StyledButton = styled.button<ButtonProps>`
     width: 100%;
   }
 
-  &[data-icon='true'] {
-    gap: 4px;
-  }
-
   &[data-active='true'] svg {
     fill: ${Neutral.B100};
   }
