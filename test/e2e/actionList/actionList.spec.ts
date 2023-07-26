@@ -5,9 +5,11 @@ test('Action list', async ({ page }) => {
   const actionListPage = new ActionListPage(page);
   await actionListPage.goto();
 
+  const exportAction = actionListPage.getActionByLabelName('Export').first();
+  exportAction.waitFor();
+
   await expect(actionListPage.canvas).toHaveScreenshot('action-list.png');
 
-  const exportAction = actionListPage.getActionByLabelName('Export').first();
   await exportAction.focus();
   await expect(actionListPage.canvas).toHaveScreenshot('action-list-focus.png');
   await actionListPage.canvas.click();
@@ -26,6 +28,9 @@ test('Action list - with icons', async ({ page }) => {
   const actionListPage = new ActionListPage(page);
   actionListPage.setPath('?path=/story/next-actionlist--with-icons');
   await actionListPage.goto();
+
+  const exportAction = actionListPage.getActionByLabelName('Add').first();
+  exportAction.waitFor();
 
   await expect(actionListPage.canvas).toHaveScreenshot(
     'action-list-with-icons.png'
