@@ -11,13 +11,13 @@ export const StyledSideSheetWrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   z-index: 999;
-  animation: fade-in2 0.2s;
+  animation: ga-fade-in2 0.2s;
 
   &.closed {
-    animation: fade-out2 0.2s;
+    animation: ga-fade-out2 0.2s;
   }
 
-  @keyframes fade-in2 {
+  @keyframes ga-fade-in2 {
     0% {
       opacity: 0;
     }
@@ -26,7 +26,7 @@ export const StyledSideSheetWrapper = styled.div`
     }
   }
 
-  @keyframes fade-out2 {
+  @keyframes ga-fade-out2 {
     0% {
       opacity: 1;
     }
@@ -47,15 +47,15 @@ export const StyledSideSheetContainer = styled.div`
     0px 26px 80px rgba(0, 0, 0, 0.2),
     0px 0px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  animation: slide-in 0.2s;
+  animation: ga-slide-in 0.2s;
   top: 0;
   right: 0;
 
   &.closed {
-    animation: slide-out 0.2s;
+    animation: ga-slide-out 0.2s;
   }
 
-  @keyframes slide-in {
+  @keyframes ga-slide-in {
     0% {
       opacity: 0;
       transform: translateX(100%);
@@ -65,7 +65,7 @@ export const StyledSideSheetContainer = styled.div`
     }
   }
 
-  @keyframes slide-out {
+  @keyframes ga-slide-out {
     0% {
       opacity: 0;
     }
