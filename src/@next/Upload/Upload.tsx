@@ -22,6 +22,8 @@ export interface UploadProps {
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
   uploadMessage?: React.ReactNode;
   loadingMessage?: React.ReactNode;
+  disableDefaultValidation?: boolean;
+  accept?: string;
 }
 
 export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
@@ -29,10 +31,12 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
     {
       file,
       handleSetFile,
-      loading = false,
+      loading,
       objectFit = 'cover',
       uploadMessage = 'Upload',
       loadingMessage = 'loading...',
+      disableDefaultValidation = false,
+      accept,
       ...props
     }: UploadProps,
     ref
@@ -50,8 +54,9 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
         setAttachmentUrl(reader.result as string);
         setIsLoading(false);
       };
+      reader.onloadstart = () => setIsLoading(true);
+
       if (file) reader.readAsDataURL(file);
-      else if (!loading) setIsLoading(false);
     }, [file, loading]);
 
     const handleClick = () => {
@@ -61,16 +66,18 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
     };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-      setIsLoading(true);
       const newFile = event.target.files?.[0];
+      if (disableDefaultValidation) {
+        handleSetFile(event.target.files?.[0] || null);
+        return;
+      }
+
       if (newFile && !newFile.type.startsWith('image')) {
         setError('Image required');
         handleSetFile(null);
-        setIsLoading(false);
       } else if (newFile && newFile.size > MAX_FILE_SIZE * 1024 * 1024) {
         setError('File too big');
         handleSetFile(null);
-        setIsLoading(false);
       } else {
         setError('');
         handleSetFile(newFile);
@@ -134,12 +141,12 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
       <>
         <StyledInvisibleInput
           type="file"
-          accept="image/*"
+          accept={accept || 'image/*'}
           onChange={handleChange}
           ref={ref || fileInputRef}
           {...props}
         />
-        {attachmentUrl && !isLoading ? (
+        {attachmentUrl && !(loading || isLoading) ? (
           <StyledUploadContainer
             data-type="image"
             data-testid="upload-container"
@@ -153,7 +160,11 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
           </StyledUploadContainer>
         ) : (
           <>
-            {isLoading ? <>{loadingComponent}</> : <>{unuploadedComponent}</>}
+            {loading || isLoading ? (
+              <>{loadingComponent}</>
+            ) : (
+              <>{unuploadedComponent}</>
+            )}
             {!!error && <>{errorComponent}</>}
           </>
         )}
