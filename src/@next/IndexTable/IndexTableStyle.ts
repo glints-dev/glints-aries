@@ -2,7 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 import { borderRadius16 } from '../utilities/borderRadius';
 import { space8 } from '../utilities/spacing';
 import { Blue, Neutral } from '../utilities/colors';
-import { body2 as typographyBody2 } from '../Typography/TypographyStyles';
+import {
+  subtitle2,
+  body2 as typographyBody2,
+} from '../Typography/TypographyStyles';
 
 export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
   :root {
@@ -905,7 +908,7 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
     fill: var(--p-icon-disabled);
   }
 
-  .Polaris-IndexTable {
+  .Polaris-IndexTable { 
     --pc-index-table-translate-offset: 2.1875rem;
     --pc-index-table-table-header-offset: 2.25rem;
     --pc-index-table-cell: 1;
@@ -917,6 +920,7 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
     border-radius: inherit;
     height: ${props => props.height};
     overflow: auto;
+    ${subtitle2}
   }
 
   .Polaris-IndexTable__IndexTableWrapper {
