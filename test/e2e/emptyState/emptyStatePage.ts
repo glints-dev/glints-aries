@@ -20,4 +20,9 @@ export class EmptyStatePage extends StoryBookPage {
     this.setPath('?path=/story/next-emptystate--with-basic-button-only');
     await this.goto(args);
   }
+
+  async gotoWithCustomImagePage(args?: Args) {
+    this.setPath('?path=/story/next-emptystate--with-custom-image');
+    await this.goto(args);
+  }
 }

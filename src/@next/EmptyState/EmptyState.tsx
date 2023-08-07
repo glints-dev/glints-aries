@@ -24,6 +24,8 @@ export interface EmptyStateProps {
   fullWidth?: boolean;
   helpText?: string;
   imageName?: ImageName;
+  /** Renders a custom image */
+  customImage?: React.ReactNode;
   title?: string;
 }
 
@@ -34,6 +36,7 @@ export const EmptyState = ({
   fullWidth = true,
   helpText,
   imageName,
+  customImage,
   title,
 }: EmptyStateProps) => {
   const displayButtons = !!primaryButtonAction || !!basicButtonAction;
@@ -46,6 +49,7 @@ export const EmptyState = ({
   return (
     <EmptyStateContainer>
       {imageName && <StyledImage src={imageMapping[imageName]} />}
+      {customImage}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
           <StyledTitle variant="subtitle1" color={Neutral.B18}>

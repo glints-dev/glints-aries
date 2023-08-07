@@ -3,6 +3,8 @@ import { Story, Meta } from '@storybook/react';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { EmptyState, EmptyStateProps } from './EmptyState';
+import { Icon } from '../Icon';
+import { Blue } from '../utilities/colors';
 
 (EmptyState as React.FunctionComponent<EmptyStateProps>).displayName =
   'Empty State';
@@ -60,6 +62,23 @@ const WithBasicButtonOnlyTemplate: Story<EmptyStateProps> = args => {
 export const WithBasicButtonOnly = WithBasicButtonOnlyTemplate.bind({});
 WithBasicButtonOnly.args = {
   imageName: 'empty-carton',
+  title: 'Title',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
+  basicButtonAction,
+  helpText:
+    'Morbi gravida, neque at accumsan tempus, ante ante pulvinar lacus, eget tempor nisl libero eu metus.',
+};
+
+const WithCustomImageTemplate: Story<EmptyStateProps> = args => {
+  return <EmptyState {...args} />;
+};
+
+export const WithCustomImage = WithCustomImageTemplate.bind({});
+WithCustomImage.args = {
+  customImage: (
+    <Icon name="ri-sparkling2-fill" height="200px" fill={Blue.S99} />
+  ),
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
