@@ -274,29 +274,16 @@ const Template: Story<IndexTableProps> = args => {
             <Typography as="span" variant="body2">
               {name}
             </Typography>
-            <Typography as="span" variant="body1">
-              {location}
-            </Typography>
+            <span>{location}</span>
           </div>
         </IndexTable.Cell>
-        <IndexTable.Cell>
-          <Typography as="span" variant="body1">
-            {expectedSalary}
-          </Typography>
-        </IndexTable.Cell>
-        <IndexTable.Cell>
-          <Typography as="span" variant="body1">
-            {yearsExperience}
-          </Typography>
-        </IndexTable.Cell>
+        <IndexTable.Cell>{expectedSalary}</IndexTable.Cell>
+        <IndexTable.Cell>{yearsExperience}</IndexTable.Cell>
         <IndexTable.Cell>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography as="span" variant="body1">
-              {latestWorkExperience}
-            </Typography>
-            <Typography as="span" variant="subtitle2">
-              {latestWorkDuration}
-            </Typography>
+            {latestWorkExperience}
+            <br />
+            {latestWorkDuration}
           </div>
         </IndexTable.Cell>
         <IndexTable.Cell>
@@ -378,29 +365,16 @@ const ScrollableTemplate: Story<IndexTableProps> = args => {
             <Typography as="span" variant="body2">
               {name}
             </Typography>
-            <Typography as="span" variant="body1">
-              {location}
-            </Typography>
+            {location}
           </div>
         </IndexTable.Cell>
-        <IndexTable.Cell>
-          <Typography as="span" variant="body1">
-            {expectedSalary}
-          </Typography>
-        </IndexTable.Cell>
-        <IndexTable.Cell>
-          <Typography as="span" variant="body1">
-            {yearsExperience}
-          </Typography>
-        </IndexTable.Cell>
+        <IndexTable.Cell>{expectedSalary}</IndexTable.Cell>
+        <IndexTable.Cell>{yearsExperience}</IndexTable.Cell>
         <IndexTable.Cell>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography as="span" variant="body1">
-              {latestWorkExperience}
-            </Typography>
-            <Typography as="span" variant="subtitle2">
-              {latestWorkDuration}
-            </Typography>
+            {latestWorkExperience}
+            <br />
+            {latestWorkDuration}
           </div>
         </IndexTable.Cell>
         <IndexTable.Cell>
