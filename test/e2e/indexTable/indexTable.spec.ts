@@ -102,6 +102,7 @@ test('IndexTable - empty state', async ({ page }) => {
 test('IndexTable - scrollable', async ({ page }) => {
   const indexTablePage = new IndexTablePage(page);
 
+  page.setViewportSize({ width: 500, height: 500 });
   await indexTablePage.gotoScrollablePage();
 
   await expect(indexTablePage.canvas).toHaveScreenshot(
