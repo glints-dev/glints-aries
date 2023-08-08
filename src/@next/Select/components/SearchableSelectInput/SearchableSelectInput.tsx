@@ -63,6 +63,7 @@ export const SearchableSelectInput = forwardRef<
   const [isSelectedClicked, setIsSelectedClicked] = useState(false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    if (disabled) return;
     setIsSelectedClicked(false);
     setShowClear(false);
 
@@ -70,6 +71,7 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleClearIconClick = () => {
+    if (disabled) return;
     setShowClear(false);
     updateSearchableSelectState({
       showSelected: false,
@@ -80,6 +82,7 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (disabled) return;
     const str = e.currentTarget.value;
 
     if (onInputChange) {
@@ -99,6 +102,7 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleSelectedClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (disabled) return;
     e.stopPropagation();
 
     setIsSelectedClicked(true);
@@ -113,6 +117,7 @@ export const SearchableSelectInput = forwardRef<
   };
 
   const handleInputBlur = () => {
+    if (disabled) return;
     setIsSelectedClicked(false);
 
     if (selectedValue) {
@@ -187,6 +192,7 @@ export const SearchableSelectInput = forwardRef<
           <StyledInput
             ref={inputRef}
             onChange={handleInputChange}
+            disabled={disabled}
             placeholder={showPlaceholder ? placeholder : null}
             value={inputValue}
             onBlur={handleInputBlur}
@@ -195,7 +201,7 @@ export const SearchableSelectInput = forwardRef<
           />
         </InputContainer>
       )}
-      {showClear && (
+      {showClear && !disabled && (
         <ClearSelected
           onSelect={onSelect}
           handleClearIconClick={handleClearIconClick}
