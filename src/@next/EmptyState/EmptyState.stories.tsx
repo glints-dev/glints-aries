@@ -24,7 +24,7 @@ const basicButtonAction = { label: 'Basic Button' };
 
 export const Interactive = Template.bind({});
 Interactive.args = {
-  imageName: 'empty-carton',
+  image: 'empty-carton',
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
@@ -61,7 +61,7 @@ const WithBasicButtonOnlyTemplate: Story<EmptyStateProps> = args => {
 
 export const WithBasicButtonOnly = WithBasicButtonOnlyTemplate.bind({});
 WithBasicButtonOnly.args = {
-  imageName: 'empty-carton',
+  image: 'empty-carton',
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
@@ -76,9 +76,7 @@ const WithCustomImageTemplate: Story<EmptyStateProps> = args => {
 
 export const WithCustomImage = WithCustomImageTemplate.bind({});
 WithCustomImage.args = {
-  customImage: (
-    <Icon name="ri-sparkling2-fill" height="200px" fill={Blue.S99} />
-  ),
+  image: <Icon name="ri-sparkling2-fill" height="200px" fill={Blue.S99} />,
   title: 'Title',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis scelerisque dui sed pharetra.',
