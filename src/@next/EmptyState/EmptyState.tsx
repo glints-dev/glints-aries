@@ -101,6 +101,7 @@ export const EmptyState = ({
           <StyledButtonGroup>
             {primaryButtonAction && (
               <PrimaryButton
+                {...primaryButtonAction}
                 loading={primaryButtonAction?.loading}
                 onClick={primaryButtonAction?.onClick}
                 className="empty-state-primary-button"
@@ -110,6 +111,7 @@ export const EmptyState = ({
             )}
             {basicButtonAction && (
               <Button
+                {...basicButtonAction}
                 loading={basicButtonAction?.loading}
                 onClick={basicButtonAction.onClick}
                 className="empty-state-basic-button"
