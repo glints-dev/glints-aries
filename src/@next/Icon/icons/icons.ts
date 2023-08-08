@@ -2,6 +2,8 @@ import { SVGProps } from 'react';
 import * as Icons from '../components';
 
 export const iconNames = [
+  'custom-sparkling-fill',
+  'custom-sparkling-line',
   'ri-account-circle-fill',
   'ri-account-circle-line',
   'ri-add-circle-fill',
@@ -115,8 +117,6 @@ export const iconNames = [
   'ri-money-dollar-circle-line',
   'ri-shining2-line',
   'ri-shining2-fill',
-  'ri-bard-fill',
-  'ri-bard-line',
   'ri-infinity',
   'ri-discuss-fill',
   'ri-discuss-line',
@@ -144,6 +144,8 @@ export type IconNames = (typeof iconNames)[number];
 type SVGComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 
 export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
+  ['custom-sparkling-fill']: Icons.CustomSparklingFill,
+  ['custom-sparkling-line']: Icons.CustomSparklingLine,
   ['ri-account-circle-fill']: Icons.RiAccountCircleFill,
   ['ri-account-circle-line']: Icons.RiAccountCircleLine,
   ['ri-add-circle-fill']: Icons.RiAddCircleFill,
@@ -257,8 +259,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-money-dollar-circle-line']: Icons.RiMoneyDollarCircleLine,
   ['ri-shining2-line']: Icons.RiShining2Line,
   ['ri-shining2-fill']: Icons.RiShining2Fill,
-  ['ri-bard-fill']: Icons.RiBardFill,
-  ['ri-bard-line']: Icons.RiBardLine,
   ['ri-infinity']: Icons.RiInfinity,
   ['ri-discuss-fill']: Icons.RiDiscussFill,
   ['ri-discuss-line']: Icons.RiDiscussLine,
