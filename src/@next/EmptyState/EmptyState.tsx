@@ -62,7 +62,7 @@ export const EmptyState = ({
   }
 
   const renderImage = () => {
-    if (imageName || typeof image === 'string') {
+    if (imageName || (image && typeof image === 'string')) {
       const imageString = imageName ? imageName : (image as ImageName);
       return (
         <StyledImage
