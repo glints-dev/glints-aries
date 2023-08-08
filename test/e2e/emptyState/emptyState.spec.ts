@@ -39,6 +39,15 @@ test('EmptyState - with primary button only', async ({ page }) => {
   );
 });
 
+test('EmptyState - with custom image', async ({ page }) => {
+  const emptyStatePage = new EmptyStatePage(page);
+  await emptyStatePage.gotoWithCustomImagePage();
+
+  await expect(emptyStatePage.container).toHaveScreenshot(
+    'emptyState-with-custom-image.png'
+  );
+});
+
 test('EmptyState - full width', async ({ page }) => {
   const emptyStatePage = new EmptyStatePage(page);
   await emptyStatePage.goto();

@@ -11,21 +11,28 @@ import {
   StyledImage,
   StyledTitle,
 } from './EmptyStateStyle';
+import { ComponentAction } from '../../types/componentAction';
 
-export type ButtonAction = {
-  label: string;
-  loading?: boolean;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
-export interface EmptyStateProps {
-  basicButtonAction?: ButtonAction;
-  primaryButtonAction?: ButtonAction;
+type CommonProps = {
+  basicButtonAction?: ComponentAction;
+  primaryButtonAction?: ComponentAction;
   description?: React.ReactNode;
   fullWidth?: boolean;
   helpText?: string;
-  imageName?: ImageName;
   title?: string;
-}
+};
+
+export type EmptyStateProps = CommonProps &
+  (
+    | {
+        /** will soon be @deprecated. Please use image prop instead */
+        imageName?: ImageName;
+      }
+    | {
+        /** Renders an image based on ImageName or a custom image */
+        image?: ImageName | React.ReactNode;
+      }
+  );
 
 export const EmptyState = ({
   basicButtonAction,
@@ -33,27 +40,60 @@ export const EmptyState = ({
   description,
   fullWidth = true,
   helpText,
-  imageName,
   title,
+  ...props
 }: EmptyStateProps) => {
   const displayButtons = !!primaryButtonAction || !!basicButtonAction;
+  const imageName = 'imageName' in props ? props.imageName : undefined;
+  const image = 'image' in props ? props.image : undefined;
 
-  const isValidImageName = imageNames.includes(imageName);
-  if (imageName && !isValidImageName) {
-    console.warn(`imageName "${imageName}" is not a valid Image Name.`);
+  if (imageName) {
+    console.warn(
+      'imageName will soon be deprecated. Please use image prop instead'
+    );
+
+    if (!imageNames.includes(imageName)) {
+      console.warn(`image "${imageName}" is not a valid Image Name.`);
+    }
   }
+
+  if (typeof image === 'string' && !imageNames.includes(imageName)) {
+    console.warn(`image "${imageName}" is not a valid Image Name.`);
+  }
+
+  const renderImage = () => {
+    if (imageName || (image && typeof image === 'string')) {
+      const imageString = imageName ? imageName : (image as ImageName);
+      return (
+        <StyledImage
+          src={imageMapping[imageString]}
+          className="empty-state-image"
+        />
+      );
+    }
+
+    return image;
+  };
 
   return (
     <EmptyStateContainer>
-      {imageName && <StyledImage src={imageMapping[imageName]} />}
+      {renderImage()}
       <EmptyStateContentContainer data-full-width={fullWidth}>
         {title && (
-          <StyledTitle variant="subtitle1" color={Neutral.B18}>
+          <StyledTitle
+            variant="subtitle1"
+            color={Neutral.B18}
+            className="empty-state-title"
+          >
             {title}
           </StyledTitle>
         )}
         {description && (
-          <StyledDescription variant="body1" color={Neutral.B40}>
+          <StyledDescription
+            variant="body1"
+            color={Neutral.B40}
+            className="empty-state-description"
+          >
             {description}
           </StyledDescription>
         )}
@@ -61,16 +101,20 @@ export const EmptyState = ({
           <StyledButtonGroup>
             {primaryButtonAction && (
               <PrimaryButton
+                {...primaryButtonAction}
                 loading={primaryButtonAction?.loading}
                 onClick={primaryButtonAction?.onClick}
+                className="empty-state-primary-button"
               >
                 {primaryButtonAction?.label}
               </PrimaryButton>
             )}
             {basicButtonAction && (
               <Button
+                {...basicButtonAction}
                 loading={basicButtonAction?.loading}
                 onClick={basicButtonAction.onClick}
+                className="empty-state-basic-button"
               >
                 {basicButtonAction?.label}
               </Button>
@@ -78,7 +122,11 @@ export const EmptyState = ({
           </StyledButtonGroup>
         )}
         {helpText && (
-          <StyledHelpText variant="subtitle2" color={Neutral.B40}>
+          <StyledHelpText
+            variant="subtitle2"
+            color={Neutral.B40}
+            className="empty-state-help-text"
+          >
             {helpText}
           </StyledHelpText>
         )}
