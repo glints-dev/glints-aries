@@ -11,16 +11,11 @@ import {
   StyledImage,
   StyledTitle,
 } from './EmptyStateStyle';
-
-export type ButtonAction = {
-  label: string;
-  loading?: boolean;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
+import { ComponentAction } from '../../types/componentAction';
 
 type CommonProps = {
-  basicButtonAction?: ButtonAction;
-  primaryButtonAction?: ButtonAction;
+  basicButtonAction?: ComponentAction;
+  primaryButtonAction?: ComponentAction;
   description?: React.ReactNode;
   fullWidth?: boolean;
   helpText?: string;

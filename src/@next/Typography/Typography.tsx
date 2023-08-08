@@ -23,6 +23,7 @@ export type Variant = (typeof typographyVariant)[number];
 export interface TypographyProps {
   /** Sets the Typography's element */
   as?: ElementType;
+  className?: string;
   children: ReactNode;
   /** Sets the Typography's color */
   color?: string;
