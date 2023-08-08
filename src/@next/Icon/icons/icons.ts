@@ -43,6 +43,7 @@ export const iconNames = [
   'ri-briefcase-fill',
   'ri-briefcase-line',
   'ri-calendar-check-line',
+  'ri-calendar-check-fill',
   'ri-calendar-event-fill',
   'ri-calendar-event-line',
   'ri-calendar-fill',
@@ -138,6 +139,8 @@ export const iconNames = [
   'ri-phone-line',
   'ri-survey-fill',
   'ri-survey-line',
+  'ri-hand-coin-fill',
+  'ri-hand-coin-line',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -189,6 +192,7 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-calendar-fill']: Icons.RiCalendarFill,
   ['ri-calendar-line']: Icons.RiCalendarLine,
   ['ri-calendar-check-line']: Icons.RiCalendarCheckLine,
+  ['ri-calendar-check-fill']: Icons.RiCalendarCheckFill,
   ['ri-check']: Icons.RiCheck,
   ['ri-checkbox-circle-fill']: Icons.RiCheckboxCircleFill,
   ['ri-checkbox-fill']: Icons.RiCheckboxFill,
@@ -280,4 +284,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-phone-line']: Icons.RiPhoneLine,
   ['ri-survey-fill']: Icons.RiSurveyFill,
   ['ri-survey-line']: Icons.RiSurveyLine,
+  ['ri-hand-coin-fill']: Icons.RiHandCoinFill,
+  ['ri-hand-coin-line']: Icons.RiHandCoinLine,
 };
