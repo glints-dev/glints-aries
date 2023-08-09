@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/addon-docs';
-import * as Spacing from './';
+import { spaces } from './';
 import * as Neutral from '../colors/neutral';
 
 <Meta title="@next/Utilities/Spacing" />
@@ -12,7 +12,7 @@ import * as Neutral from '../colors/neutral';
     <th>Token name</th>
     <th>Value</th>
   </tr>
-  {Object.entries(Spacing).map(([tokenName, value]) => (
+  {Object.entries(spaces).map(([tokenName, value]) => (
     <tr>
       <td style={{ display: 'flex' }}>
         ●
