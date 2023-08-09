@@ -4,8 +4,8 @@ import classNames from 'classnames';
 
 import { BrandContainer, BrandImage } from './BrandStyle';
 
-const GlintsBlack = require('../../../assets/image/glints-logo-black.svg');
-const GlintsWhite = require('../../../assets/image/glints-logo-white.svg');
+import GlintsBlack from '../../../assets/image/glints-logo-black.svg';
+import GlintsWhite from '../../../assets/image/glints-logo-white.svg';
 
 const Brand = ({
   alt,

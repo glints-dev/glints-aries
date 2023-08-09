@@ -1,4 +1,4 @@
 export * from './Pagination';
 export * from './IconPagination';
 export * from './SimplePagination';
-export { PaginationProps, IconPaginationProps } from './paginationUtils';
+export type { PaginationProps, IconPaginationProps } from './paginationUtils';

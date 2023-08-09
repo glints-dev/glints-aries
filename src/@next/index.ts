@@ -6,94 +6,108 @@ import * as DropShadow from './utilities/dropShadow';
 import * as Fonts from './utilities/fonts';
 import * as Spacing from './utilities/spacing';
 
-export {
-  ActionList,
-  ActionListProps,
+export { ActionList } from './ActionList';
+export type {
   Item as ActionListItem,
   Section as ActionListSection,
+  ActionListProps,
 } from './ActionList';
 export {
   Alert,
-  AlertContext,
-  AlertContextProps,
-  AlertProps,
   AlertProvider,
   AlertWithProvider,
+  AlertContext,
   useAlert,
 } from './Alert';
-export { Avatar, AvatarProps } from './Avatar';
-export { Badge, BadgeProps } from './Badge';
-export { Banner, BannerProps } from './Banner';
-export { Bar, BarProps } from './Bar';
+export type { AlertProps, ShowAlertProps, AlertContextProps } from './Alert';
+export { Avatar } from './Avatar';
+export type { AvatarProps } from './Avatar';
+export type { BadgeProps } from './Badge';
+export { Badge } from './Badge';
+export type { BannerProps } from './Banner';
+export { Banner } from './Banner';
+export type { BarProps } from './Bar';
+export { Bar } from './Bar';
+export type { ButtonProps } from './Button';
 export {
   Button,
-  ButtonProps,
   DestructiveButton,
   OutlineButton,
   OutlineMonochromeButton,
   PrimaryButton,
 } from './Button';
-export { ButtonGroup, ButtonGroupProps } from './ButtonGroup';
-export { Carousel, CarouselProps } from './Carousel';
-export { Card, CardProps } from './Card';
-export { Checkbox, CheckboxProps } from './Checkbox';
-export { Combobox, ComboboxProps } from './Combobox';
-export { CurrencyInput, CurrencyInputProps } from './CurrencyInput';
-export {
-  DataTable,
+export type { ButtonGroupProps } from './ButtonGroup';
+export { ButtonGroup } from './ButtonGroup';
+export type { CarouselProps } from './Carousel';
+export { Carousel } from './Carousel';
+export type { CardProps } from './Card';
+export { Card } from './Card';
+export type { CheckboxProps } from './Checkbox';
+export { Checkbox } from './Checkbox';
+export type { ComboboxProps } from './Combobox';
+export { Combobox } from './Combobox';
+export type { CurrencyInputProps } from './CurrencyInput';
+export { CurrencyInput } from './CurrencyInput';
+export type {
   DataTableProps,
   TableCellProps,
   TableHeaderProps,
   TableRowProps,
 } from './DataTable';
+export { DataTable } from './DataTable';
 export { Divider } from './Divider';
 export { EmptyState } from './EmptyState';
-export { Icon, IconProps } from './Icon';
-export {
-  IndexTable,
-  IndexTableProps,
-  useIndexResourceState,
-} from './IndexTable';
-export { Link, LinkProps } from './Link';
-export { Menu, MenuProps } from './Menu';
-export {
-  Modal,
-  ModalContext,
-  ModalProps,
-  ModalProvider,
-  ModalWithProvider,
-  useModal,
-} from './Modal';
-export { NumberInput, NumberInputProps } from './NumberInput';
-export {
-  IconPagination,
-  IconPaginationProps,
-  Pagination,
-  PaginationProps,
-  SimplePagination,
-} from './Pagination';
-export { PasswordInput, PasswordInputProps } from './PasswordInput';
-export { Popover, PopoverProps } from './Popover';
-export { Portal } from './Portal';
-export { RadioButton, RadioButtonProps } from './RadioButton';
-export { Select, SelectProps } from './Select';
-export { SideSheet, SideSheetProps } from './SideSheet';
-export {
-  SkeletonImageCircle,
+export type { IconProps } from './Icon';
+export { Icon } from './Icon';
+export type { IndexTableProps } from './IndexTable';
+export { IndexTable, useIndexResourceState } from './IndexTable';
+export type { LinkProps } from './Link';
+export { Link } from './Link';
+export type { MenuProps } from './Menu';
+export { Menu } from './Menu';
+export type { ModalProps } from './Modal';
+export { Modal, ModalContext, ModalProvider, useModal } from './Modal';
+export type { NumberInputProps } from './NumberInput';
+export { NumberInput } from './NumberInput';
+export type { IconPaginationProps, PaginationProps } from './Pagination';
+export { IconPagination, Pagination, SimplePagination } from './Pagination';
+export type { PasswordInputProps } from './PasswordInput';
+export { PasswordInput } from './PasswordInput';
+export type { PopoverProps } from './Popover';
+export { Popover } from './Popover';
+export type { RadioButtonProps } from './RadioButton';
+export { RadioButton } from './RadioButton';
+export type { SelectProps } from './Select';
+export { Select } from './Select';
+export type { SideSheetProps } from './SideSheet';
+export { SideSheet } from './SideSheet';
+export type {
   SkeletonImageCircleProps,
-  SkeletonImageSquare,
   SkeletonImageSquareProps,
-  SkeletonText,
   SkeletonTextProps,
 } from './Skeleton';
-export { Spinner, SpinnerProps } from './Spinner';
-export { Tab, TabModel, TabProps, Tabs, TabsProps } from './Tabs';
-export { Tag, TagProps } from './Tag';
-export { TextArea, TextAreaProps } from './TextArea';
-export { TextInput, TextInputProps } from './TextInput';
-export { Tooltip, TooltipPosition, TooltipProps } from './Tooltip';
-export { Typography, TypographyProps } from './Typography';
-export { Upload, UploadProps } from './Upload';
+export {
+  SkeletonImageCircle,
+  SkeletonImageSquare,
+  SkeletonText,
+} from './Skeleton';
+export type { SpinnerProps } from './Spinner';
+export { Spinner } from './Spinner';
+export type { TabModel, TabProps, TabsProps } from './Tabs';
+export { Tab, Tabs } from './Tabs';
+export type { TagProps } from './Tag';
+export { Tag } from './Tag';
+export type { TextAreaProps } from './TextArea';
+export { TextArea } from './TextArea';
+export type { TextInputProps } from './TextInput';
+export { TextInput } from './TextInput';
+export type { TooltipPosition, TooltipProps } from './Tooltip';
+export { Tooltip } from './Tooltip';
+export type { TypographyProps } from './Typography';
+export { Typography } from './Typography';
+export type { UploadProps } from './Upload';
+export { Upload } from './Upload';
 export { Breakpoints, BorderRadius, Colors, DropShadow, Fonts, Spacing };
 export { Switch } from './Switch';
-export { InlineError, InlineErrorProps } from './InlineError';
+export type { InlineErrorProps } from './InlineError';
+export { InlineError } from './InlineError';

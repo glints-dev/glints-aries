@@ -75,4 +75,5 @@ const IndexTable = ({
 IndexTable.Cell = Cell;
 IndexTable.Row = Row;
 export { useIndexResourceState } from 'polaris-glints';
-export { IndexTable, IndexTableProps };
+export type { IndexTableProps };
+export { IndexTable };

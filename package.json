@@ -19,6 +19,7 @@
     "imports": "babel-node --extensions .ts scripts/count-imports/index.ts",
     "lint": "npm run lint:css && npm run lint:ts",
     "lint:css": "stylelint '**/*Style.ts' --max-warnings=0",
+    "lint:ts:fix": "eslint '**/*.{ts,tsx}' --fix",
     "lint:ts": "eslint '**/*.{ts,tsx}' --max-warnings=0",
     "test:update": "jest --env jsdom -u",
     "test": "jest --env jsdom",

@@ -22,5 +22,14 @@
       "styled-components"
     ]
   },
-  "include": ["src/**/*", "stories/**/*", "typings/**/*"]
+  "files": ["typings/custom.d.ts"],
+  "include": [
+    "src/**/*",
+    "stories/**/*",
+    "typings/**/*",
+    "test/**/*",
+    "jest.setup.ts",
+    "playwright.config.ts",
+    "scripts/**/*"
+  ]
 }
