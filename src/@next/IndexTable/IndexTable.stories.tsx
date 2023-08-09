@@ -271,7 +271,7 @@ const Template: Story<IndexTableProps> = args => {
         </IndexTable.Cell>
         <IndexTable.Cell>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography as="span" variant="body2">
+            <Typography as="span" variant="caption">
               {name}
             </Typography>
             <span>{location}</span>
@@ -362,7 +362,7 @@ const ScrollableTemplate: Story<IndexTableProps> = args => {
         </IndexTable.Cell>
         <IndexTable.Cell>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography as="span" variant="body2">
+            <Typography as="span" variant="caption">
               {name}
             </Typography>
             {location}

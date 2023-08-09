@@ -3,6 +3,7 @@ import { borderRadius16 } from '../utilities/borderRadius';
 import { space8 } from '../utilities/spacing';
 import { Blue, Neutral } from '../utilities/colors';
 import {
+  caption,
   subtitle2,
   body2 as typographyBody2,
 } from '../Typography/TypographyStyles';
@@ -921,6 +922,10 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
     height: ${props => props.height};
     overflow: auto;
     ${subtitle2}
+
+    .Polaris-IndexTable__TableHeading {
+      ${caption}
+    }
   }
 
   .Polaris-IndexTable__IndexTableWrapper {
