@@ -58,6 +58,7 @@ export const headline4 = css`
 `;
 
 export const headline5 = css`
+  font-family: ${Poppins}, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: normal;
