@@ -13,6 +13,7 @@ import { CheckboxCellContentContainer } from './components/Checkbox/CheckboxStyl
 
 type IndexTableProps = Omit<PolarisIndexTableProps, 'emptySearchTitle'> & {
   height?: string;
+  hasCustomScrollbar?: boolean;
 };
 
 const IndexTable = ({
@@ -23,6 +24,7 @@ const IndexTable = ({
   selectedItemsCount,
   loading,
   emptyState,
+  hasCustomScrollbar = false,
   ...props
 }: IndexTableProps) => {
   const renderCheckboxHeader = ({
@@ -46,7 +48,10 @@ const IndexTable = ({
 
   return (
     <>
-      <StyledIndexTable height={height} />
+      <StyledIndexTable
+        height={height}
+        data-customscrollbar={hasCustomScrollbar}
+      />
       <PolarisIndexTable
         bulkActions={bulkActions}
         checkbox={checkbox}

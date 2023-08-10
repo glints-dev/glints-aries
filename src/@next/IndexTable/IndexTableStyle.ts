@@ -1455,24 +1455,26 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
 
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: ${Neutral.B68} ${Neutral.B100};
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: ${Neutral.B100};
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: ${Neutral.B68};
-    border-radius: 10px;
-    border: 5px solid ${Neutral.B100};
+  [data-customscrollbar='true'] {
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: ${Neutral.B68} ${Neutral.B100};
+    }
+  
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 16px;
+    }
+  
+    *::-webkit-scrollbar-track {
+      background: ${Neutral.B100};
+    }
+  
+    *::-webkit-scrollbar-thumb {
+      background-color: ${Neutral.B68};
+      border-radius: 10px;
+      border: 5px solid ${Neutral.B100};
+    }
   }
 
   .Polaris-IndexTable--disableTextSelection {
