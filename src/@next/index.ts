@@ -74,6 +74,7 @@ export {
 } from './Pagination';
 export { PasswordInput, PasswordInputProps } from './PasswordInput';
 export { Popover, PopoverProps } from './Popover';
+export { Portal } from './Portal';
 export { RadioButton, RadioButtonProps } from './RadioButton';
 export { Select, SelectProps } from './Select';
 export { SideSheet, SideSheetProps } from './SideSheet';
