@@ -61,6 +61,7 @@ export {
   ModalContext,
   ModalProps,
   ModalProvider,
+  ModalWithProvider,
   useModal,
 } from './Modal';
 export { NumberInput, NumberInputProps } from './NumberInput';
