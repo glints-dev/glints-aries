@@ -6,22 +6,22 @@ import * as DropShadow from './utilities/dropShadow';
 import * as Fonts from './utilities/fonts';
 import * as Spacing from './utilities/spacing';
 
-export { ActionList } from './ActionList';
 export type {
+  ActionListProps,
   Item as ActionListItem,
   Section as ActionListSection,
-  ActionListProps,
 } from './ActionList';
+export { ActionList } from './ActionList';
+export type { AlertContextProps, AlertProps } from './Alert';
 export {
   Alert,
+  AlertContext,
   AlertProvider,
   AlertWithProvider,
-  AlertContext,
   useAlert,
 } from './Alert';
-export type { AlertProps, ShowAlertProps, AlertContextProps } from './Alert';
-export { Avatar } from './Avatar';
 export type { AvatarProps } from './Avatar';
+export { Avatar } from './Avatar';
 export type { BadgeProps } from './Badge';
 export { Badge } from './Badge';
 export type { BannerProps } from './Banner';
@@ -75,6 +75,7 @@ export type { PasswordInputProps } from './PasswordInput';
 export { PasswordInput } from './PasswordInput';
 export type { PopoverProps } from './Popover';
 export { Popover } from './Popover';
+export { Portal } from './Portal';
 export type { RadioButtonProps } from './RadioButton';
 export { RadioButton } from './RadioButton';
 export type { SelectProps } from './Select';

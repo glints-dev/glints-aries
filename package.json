@@ -17,10 +17,13 @@
     "build:next:icon": "npx @svgr/cli --typescript --out-dir src/@next/Icon/components -- src/@next/Icon/icons",
     "format:icon": "prettier --write src/General/Icon/components/*.tsx",
     "imports": "babel-node --extensions .ts scripts/count-imports/index.ts",
-    "lint": "npm run lint:css && npm run lint:ts",
+    "lint:fix": "npm run lint:ts:fix && npm run prettier:fix",
+    "lint": "npm run lint:css && npm run lint:ts && npm run prettier",
     "lint:css": "stylelint '**/*Style.ts' --max-warnings=0",
     "lint:ts:fix": "eslint '**/*.{ts,tsx}' --fix",
     "lint:ts": "eslint '**/*.{ts,tsx}' --max-warnings=0",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --check --write .",
     "test:update": "jest --env jsdom -u",
     "test": "jest --env jsdom",
     "coverage:src": "jest --coverage --collectCoverageFrom 'src/**/*.tsx' --coveragePathIgnorePatterns 'src/General/Icon/components/' --collectCoverageFrom='!src/**/*.stories.tsx' --collectCoverageFrom='!src/**/*StoryStyle.tsx' --collectCoverageFrom='!src/**/*StoriesHelpers.tsx' --collectCoverageFrom='!src/stories/story-components/**'",
@@ -170,8 +173,8 @@
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "yarn lint",
-      "prettier --write"
+      "yarn lint:fix",
+      "yarn lint"
     ]
   }
 }
