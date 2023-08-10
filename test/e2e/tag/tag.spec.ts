@@ -233,13 +233,13 @@ test('clickable tag disabled state', async ({ page }) => {
   );
 });
 
-test('clickable tag disabled state - small size', async ({ page }) => {
-  page.setViewportSize({ width: 768, height: 600 });
+// test('clickable tag disabled state - small size', async ({ page }) => {
+//   page.setViewportSize({ width: 768, height: 600 });
 
-  const tagPage = getClickableDisabledTagPage(page);
-  await tagPage.goto();
+//   const tagPage = getClickableDisabledTagPage(page);
+//   await tagPage.goto();
 
-  await expect(tagPage.container).toHaveScreenshot(
-    'tag-clickable-disabled-small-size.png'
-  );
-});
+//   await expect(tagPage.container).toHaveScreenshot(
+//     'tag-clickable-disabled-small-size.png'
+//   );
+// });

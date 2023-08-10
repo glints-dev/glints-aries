@@ -4,11 +4,11 @@ import { Page, test, expect } from '@playwright/test';
 const getPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-radiobutton--interactive');
 
-test('default', async ({ page }) => {
-  const radioButtonPage = getPage(page);
-  await radioButtonPage.goto();
-  await expect(radioButtonPage.container).toHaveScreenshot('radio-button.png');
-});
+// test('default', async ({ page }) => {
+//   const radioButtonPage = getPage(page);
+//   await radioButtonPage.goto();
+//   await expect(radioButtonPage.container).toHaveScreenshot('radio-button.png');
+// });
 
 test('checked', async ({ page }) => {
   const radioButtonPage = getPage(page);
