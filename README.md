@@ -33,7 +33,7 @@ Before that, make sure you already have git, node (version >= 14), and yarn inst
 1. Clone the repository
 
 ```bash
-git clone https://github.com/glints-dev/glints-aries.git
+git clone git@github.com:glints-dev/glints-aries.git
 ```
 
 2. Install the project dependencies (preferably use yarn here), then build the project

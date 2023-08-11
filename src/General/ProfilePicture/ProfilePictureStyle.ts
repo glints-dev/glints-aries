@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CrossPattern = require('../../../assets/image/cross-pattern.svg');
+import CrossPattern from '../../../assets/image/cross-pattern.svg';
 
 export const ProfilePictureContent = styled.div<ProfilePictureContentProps>`
   position: relative;
