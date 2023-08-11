@@ -12,3 +12,19 @@ export const space80 = '80px';
 export const space96 = '96px';
 export const space112 = '112px';
 export const space128 = '128px';
+export const spaces = {
+  space2,
+  space4,
+  space8,
+  space12,
+  space16,
+  space18,
+  space24,
+  space32,
+  space40,
+  space64,
+  space80,
+  space96,
+  space112,
+  space128,
+};
