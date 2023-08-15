@@ -32,6 +32,7 @@ export type Total = TableHeading | null;
 
 export interface DataTableProps
   extends React.TableHTMLAttributes<HTMLTableElement> {
+  /** If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading */
   headings: TableHeading[];
   children: React.ReactNode;
   emptyState: React.ReactElement<EmptyStateProps>;
@@ -65,6 +66,12 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
     const rowHeaderMarkup = headings.map((heading, index) => {
       const { id, title, defaultSortDirection, align } = heading;
       const key = `table-header-heading-${title}-${index}`;
+
+      if (handleSortChanged && typeof title !== 'string' && !id)
+        console.warn(
+          "Warning: If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading."
+        );
+
       return (
         <TableHeader
           key={key}
