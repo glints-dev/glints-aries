@@ -19,8 +19,11 @@ import { TableRow } from './TableRow';
 
 export type SortDirection = 'ASCENDING' | 'DESCENDING';
 
-export type TableHeading = React.ThHTMLAttributes<HTMLTableColElement> & {
-  title?: string;
+export type TableHeading = Omit<
+  React.ThHTMLAttributes<HTMLTableColElement>,
+  'title'
+> & {
+  title?: React.ReactNode;
   id?: string;
   defaultSortDirection?: SortDirection;
 };
@@ -69,7 +72,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
           sortDirection={defaultSortDirection}
           align={align}
           onSort={sortDirection =>
-            handleSortChanged(id || title, sortDirection)
+            handleSortChanged(id || title.toString(), sortDirection)
           }
         />
       );
