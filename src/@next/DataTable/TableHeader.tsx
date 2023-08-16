@@ -7,8 +7,8 @@ import { SortDirection } from './DataTable';
 import { StyledTabledHeader } from './DataTableStyle';
 
 export interface TableHeaderProps
-  extends React.ThHTMLAttributes<HTMLTableColElement> {
-  title: string;
+  extends Omit<React.ThHTMLAttributes<HTMLTableColElement>, 'title'> {
+  title: React.ReactNode;
   sortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
 }

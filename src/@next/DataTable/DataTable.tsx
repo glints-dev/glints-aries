@@ -19,8 +19,11 @@ import { TableRow } from './TableRow';
 
 export type SortDirection = 'ASCENDING' | 'DESCENDING';
 
-export type TableHeading = React.ThHTMLAttributes<HTMLTableColElement> & {
-  title?: string;
+export type TableHeading = Omit<
+  React.ThHTMLAttributes<HTMLTableColElement>,
+  'title'
+> & {
+  title?: React.ReactNode;
   id?: string;
   defaultSortDirection?: SortDirection;
 };
@@ -29,6 +32,7 @@ export type Total = TableHeading | null;
 
 export interface DataTableProps
   extends React.TableHTMLAttributes<HTMLTableElement> {
+  /** If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading */
   headings: TableHeading[];
   children: React.ReactNode;
   emptyState: React.ReactElement<EmptyStateProps>;
@@ -62,6 +66,12 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
     const rowHeaderMarkup = headings.map((heading, index) => {
       const { id, title, defaultSortDirection, align } = heading;
       const key = `table-header-heading-${title}-${index}`;
+
+      if (handleSortChanged && typeof title !== 'string' && !id)
+        console.warn(
+          "Warning: If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading."
+        );
+
       return (
         <TableHeader
           key={key}
@@ -69,7 +79,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
           sortDirection={defaultSortDirection}
           align={align}
           onSort={sortDirection =>
-            handleSortChanged(id || title, sortDirection)
+            handleSortChanged(id || title.toString(), sortDirection)
           }
         />
       );
