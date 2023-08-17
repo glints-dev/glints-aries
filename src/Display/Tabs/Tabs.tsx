@@ -6,7 +6,7 @@ import TabPane, { Props as TabPaneProps } from './TabPane';
 
 import { TabsContainer, TabsHeader, TabsBody } from './TabsStyle';
 
-export const Tabs: Tabs = ({
+export const Tabs: TabsType = ({
   activeTab,
   onTabClick,
   children,
@@ -109,7 +109,7 @@ export interface Props {
   className?: string;
 }
 
-type Tabs = React.FunctionComponent<Props> & {
+type TabsType = React.FunctionComponent<Props> & {
   Pane: typeof TabPane;
 };
 

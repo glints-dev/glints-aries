@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BreadcrumbContainer } from './BreadcrumbStyle';
 import BreadcrumbItem from './BreadcrumbItem';
 
-export const Breadcrumb: Breadcrumb = ({
+export const Breadcrumb: BreadcrumbType = ({
   className,
   children,
   ...defaultProps
@@ -18,7 +18,7 @@ export const Breadcrumb: Breadcrumb = ({
   );
 };
 
-type Breadcrumb = React.FunctionComponent<Props> & {
+type BreadcrumbType = React.FunctionComponent<Props> & {
   Item: typeof BreadcrumbItem;
 };
 
