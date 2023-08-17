@@ -183,6 +183,7 @@ export const Select = ({
         selectedValues={selectedValues}
         options={options}
         name={name}
+        prefix={prefix}
       />
     );
   };

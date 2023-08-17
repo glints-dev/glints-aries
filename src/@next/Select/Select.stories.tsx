@@ -14,6 +14,7 @@ import {
 } from './selectStoryHelper/SearchableSingleSelect';
 import { SingleSelect } from './selectStoryHelper/NonSearchableSingleSelect';
 import { Icon } from '..';
+import { Neutral } from '../utilities/colors';
 
 (Select as React.FunctionComponent<SelectProps>).displayName = 'Select';
 
@@ -405,6 +406,105 @@ NonSearchableDisabledTemplate.parameters = {
           onSelect={handleSelect}
           selectedValues={selected}
           width="400px"
+        />
+      );
+      `,
+    },
+  },
+};
+
+const NonSearchablePrefixedTemplate: Story<SelectProps> = args => {
+  return (
+    <SingleSelect
+      options={options}
+      prefix={
+        <Icon name="ri-equalizer-line" height="17px" fill={Neutral.B40} />
+      }
+      {...args}
+    />
+  );
+};
+
+export const NonSearchablePrefixed = NonSearchablePrefixedTemplate.bind({});
+
+NonSearchablePrefixedTemplate.args = {
+  prefix: <Icon name="ri-equalizer-line" height="17px" fill={Neutral.B40} />,
+};
+
+NonSearchablePrefixedTemplate.parameters = {
+  docs: {
+    source: {
+      code: `
+      const options = [
+        {
+          active: false,
+          disabled: false,
+          id: '1',
+          label: 'All status',
+          value: 'All status',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '2',
+          label: 'Completed',
+          value: 'Completed',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '3',
+          label: 'Pending',
+          value: 'Pending',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '4',
+          label: 'Expired',
+          value: 'Expired',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '5',
+          label: 'Cancelled',
+          value: 'Cancelled',
+        },
+      ];
+
+      const [selected, setSelected] = useState([]);
+
+      const handleSelect = ({ value }: { value: string }) => {
+        if (selected.includes(value)) {
+          setSelected(selected.filter(option => option !== value));
+        } else {
+          setSelected([...selected, value]);
+        }
+      };
+    
+      const removeTag = useCallback(
+        ({ option }: { option: string }) =>
+          () => {
+            const options = [...selected];
+            options.splice(options.indexOf(option), 1);
+            setSelected(options);
+          },
+        [selected]
+      );
+    
+      return (
+        <Select
+          allowMultiple
+          disabled
+          onRemoveTag={removeTag}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={selected}
+          width="400px"
+          prefix={
+            <Icon name="ri-equalizer-line" height="17px" fill={Neutral.B40} />
+          }
         />
       );
       `,

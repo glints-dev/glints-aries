@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Select, SelectProps } from '../Select';
-import { SelectWrapper } from './SelectStoryStyle';
 
 export const SingleSelect = ({
   options,
@@ -15,17 +14,15 @@ export const SingleSelect = ({
   };
 
   return (
-    <SelectWrapper style={{ display: 'flex', width: '400px' }}>
-      <Select
-        {...args}
-        allowMultiple={allowMultiple}
-        disabled={disabled}
-        options={options}
-        onSelect={handleSelect}
-        selectedValues={[selected]}
-        width="100%"
-        label="Label"
-      />
-    </SelectWrapper>
+    <Select
+      {...args}
+      allowMultiple={allowMultiple}
+      disabled={disabled}
+      options={options}
+      onSelect={handleSelect}
+      selectedValues={[selected]}
+      width="400px"
+      label="Label"
+    />
   );
 };

@@ -1,22 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Icon } from '../../../Icon';
 import { Option } from '../../../Menu';
 
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
 import {
+  StyledIcon,
+  StyledPrefixContainer,
   StyledSelect,
   StyledSelectTypography,
   StyledTag,
   TagsContainer,
+  WithPrefixContainer,
 } from './ActivatorStyle';
 
 export interface ActivatorSelectProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
   allowMultiple?: boolean;
   hasError?: boolean;
   selectedValues?: string[];
   placeholder?: string;
+  prefix?: React.ReactNode;
   onRemoveTag?({ option }: { option: string }): void;
   onSelectClick?(): void;
   options?: Option[];
@@ -33,6 +36,7 @@ export const ActivatorSelect = ({
   onSelectClick,
   hasError = false,
   options,
+  prefix,
   ...props
 }: ActivatorSelectProps) => {
   const [filteredValues, setFilteredValues] = useState([]);
@@ -105,18 +109,21 @@ export const ActivatorSelect = ({
       disabled={disabled}
       width={width}
     >
-      {allowMultiple ? (
-        tagsMarkup()
-      ) : (
-        <StyledSelectTypography
-          variant="body1"
-          data-disabled={disabled}
-          color={hasSelectedValues ? Neutral.B18 : Neutral.B40}
-        >
-          {hasSelectedValues ? selectedLabels[0] : placeholderMarkup}
-        </StyledSelectTypography>
-      )}
-      <Icon
+      <WithPrefixContainer>
+        {prefix && <StyledPrefixContainer>{prefix}</StyledPrefixContainer>}
+        {allowMultiple ? (
+          tagsMarkup()
+        ) : (
+          <StyledSelectTypography
+            variant="body1"
+            data-disabled={disabled}
+            color={hasSelectedValues ? Neutral.B18 : Neutral.B40}
+          >
+            {hasSelectedValues ? selectedLabels[0] : placeholderMarkup}
+          </StyledSelectTypography>
+        )}
+      </WithPrefixContainer>
+      <StyledIcon
         height={24}
         name="ri-arrow-m-down-line"
         fill={disabled ? Neutral.B85 : Neutral.B40}
