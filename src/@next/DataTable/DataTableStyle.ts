@@ -87,9 +87,10 @@ export const StyledTabledHeader = styled.th`
   }
 
   button svg {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     fill: ${Neutral.B40};
+    margin-bottom: 2px;
   }
 `;
 
