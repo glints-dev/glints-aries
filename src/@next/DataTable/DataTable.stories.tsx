@@ -164,7 +164,7 @@ const Template: Story<DataTableProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <Typography as="div" variant="body1" color={Neutral.B40}>
+            <Typography as="div" variant="subtitle2" color={Neutral.B40}>
               Showing 5 of 100
             </Typography>
             <Pagination totalItems={100} pageSize={5} />
@@ -307,7 +307,7 @@ Interactive.parameters = {
                   justifyContent: 'space-between',
                 }}
               >
-                <Typography as="div" variant="body1" color={Neutral.B40}>
+                <Typography as="div" variant="subtitle2" color={Neutral.B40}>
                   Showing 5 of 100
                 </Typography>
                 <Pagination totalItems={100} pageSize={5} />
@@ -389,7 +389,7 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <Typography as="div" variant="body1" color={Neutral.B40}>
+            <Typography as="div" variant="subtitle2" color={Neutral.B40}>
               Showing 5 of 100
             </Typography>
             <Pagination totalItems={100} pageSize={5} />
