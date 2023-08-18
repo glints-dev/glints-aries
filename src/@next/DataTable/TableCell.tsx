@@ -16,7 +16,7 @@ export const TableCell = ({
 }: TableCellProps) => {
   return (
     <StyledTableCell data-text-align={align} data-no-wrap={noWrap}>
-      <Typography as="div" variant="body1">
+      <Typography as="div" variant="subtitle2">
         {children}
       </Typography>
     </StyledTableCell>

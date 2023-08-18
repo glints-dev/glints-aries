@@ -92,7 +92,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
 
           return (
             <TableCell key={key} align={align}>
-              <Typography as="div" variant="body2">
+              <Typography as="div" variant="caption">
                 {title}
               </Typography>
             </TableCell>
