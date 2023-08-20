@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs';
+import { screenBreakPoints } from './Breakpoints';
+import * as Neutral from '../colors/neutral';
+
+<Meta title="@next/Utilities/ScreenBreakpoints" />
+
+# Screen Breakpoints
+
+<table>
+  <tr>
+    <th>Token name</th>
+    <th>Value</th>
+  </tr>
+  {Object.entries(screenBreakPoints).map(([tokenName, value]) => (
+    <tr>
+      <td>{tokenName}</td>
+      <td>{value}</td>
+    </tr>
+  ))}
+</table>
