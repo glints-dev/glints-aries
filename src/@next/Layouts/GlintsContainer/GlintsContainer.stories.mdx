@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs';
+import {
+  GlintsContainer,
+  BaseContainer,
+  PageContainer,
+} from './GlintsContainer';
+
+<Meta title="@next/Layouts/GlintsContainer" />
+
+# GlintsContainer
+
+`GlintsContainer` is a combination of `BaseContainer` and `PageContainer`.
+
+<GlintsContainer style={{ border: '1px solid black' }}>
+  <div style={{ background: 'lightBlue', width: '100%' }}>Content</div>
+</GlintsContainer>
+
+```
+<GlintsContainer>
+  <Loading />
+</GlintsContainer>
+```
+
+## GlintsContainerFluid
+
+`GlintsContainerFluid` defines common styles that are required by some Aries components. It also sets the font-family to Noto Sans. It is a fluid container that is not responsive
+
+<GlintsContainerFluid style={{ border: '1px solid black' }}>
+  <div style={{ background: 'lightBlue', width: '100%' }}>Content</div>
+</GlintsContainerFluid>
+
+```
+<GlintsContainerFluid>
+  <Loading />
+</GlintsContainerFluid>
+```

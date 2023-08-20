@@ -57,6 +57,10 @@ export type {
 export { DataTable } from './DataTable';
 export { Divider } from './Divider';
 export { EmptyState } from './EmptyState';
+export {
+  GlintsContainerFluid,
+  GlintsContainer,
+} from './Layouts/GlintsContainer';
 export type { IconProps } from './Icon';
 export { Icon } from './Icon';
 export type { IndexTableProps } from './IndexTable';
