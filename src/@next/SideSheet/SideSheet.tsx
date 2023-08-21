@@ -127,26 +127,28 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                 </StyledSideSheetHeader>
                 {showHorizontalLine && <StyledHorizontalLine />}
                 {children}
-                <StyledSideSheetFooter>
-                  <StyledHorizontalLine />
-                  <StyledButtonGroupContainer>
-                    <ButtonGroup fullWidth>
-                      {basicButtonAction && (
-                        <Button
-                          onClick={basicButtonAction.action}
-                          fullWidth={true}
-                        >
-                          {basicButtonAction.label}
-                        </Button>
-                      )}
-                      {primaryButtonAction && (
-                        <PrimaryButton onClick={primaryButtonAction.action}>
-                          {primaryButtonAction.label}
-                        </PrimaryButton>
-                      )}
-                    </ButtonGroup>
-                  </StyledButtonGroupContainer>
-                </StyledSideSheetFooter>
+                {(basicButtonAction || primaryButtonAction) && (
+                  <StyledSideSheetFooter>
+                    <StyledHorizontalLine />
+                    <StyledButtonGroupContainer>
+                      <ButtonGroup fullWidth>
+                        {basicButtonAction && (
+                          <Button
+                            onClick={basicButtonAction.action}
+                            fullWidth={true}
+                          >
+                            {basicButtonAction.label}
+                          </Button>
+                        )}
+                        {primaryButtonAction && (
+                          <PrimaryButton onClick={primaryButtonAction.action}>
+                            {primaryButtonAction.label}
+                          </PrimaryButton>
+                        )}
+                      </ButtonGroup>
+                    </StyledButtonGroupContainer>
+                  </StyledSideSheetFooter>
+                )}
               </StyledSideSheetContainer>
             </StyledSideSheetWrapper>
           </Portal>
