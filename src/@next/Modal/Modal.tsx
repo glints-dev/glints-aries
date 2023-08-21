@@ -105,7 +105,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       <ButtonGroup>
         {secondaryAction && (
           <Button
-            onClick={() => secondaryAction.action?.()}
+            onClick={e => primaryAction.onClick?.(e)}
             {...secondaryAction}
           >
             {secondaryAction.label}
@@ -113,7 +113,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         )}
         {primaryAction && (
           <PrimaryButton
-            onClick={() => primaryAction.action?.()}
+            onClick={e => primaryAction.onClick?.(e)}
             {...primaryAction}
           >
             {primaryAction.label}

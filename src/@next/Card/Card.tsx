@@ -90,7 +90,7 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
             <ButtonGroup fullWidth={false} isButtonWrapped={true}>
               {headerSecondaryAction && (
                 <DestructivePlainButton
-                  onClick={headerSecondaryAction.action}
+                  onClick={headerSecondaryAction.onClick}
                   size="slim"
                   {...headerSecondaryAction}
                 >
@@ -99,7 +99,7 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
               )}
               {headerPrimaryAction && (
                 <PlainButton
-                  onClick={headerPrimaryAction.action}
+                  onClick={headerPrimaryAction.onClick}
                   size="slim"
                   {...headerPrimaryAction}
                 >
@@ -117,12 +117,12 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
         <StyledCardActionWrapper data-align={actionsAlignment}>
           <ButtonGroup>
             {secondaryAction && (
-              <Button onClick={secondaryAction.action} {...secondaryAction}>
+              <Button onClick={secondaryAction.onClick} {...secondaryAction}>
                 {secondaryAction.label}
               </Button>
             )}
             {primaryAction && (
-              <PrimaryButton onClick={primaryAction.action} {...primaryAction}>
+              <PrimaryButton onClick={primaryAction.onClick} {...primaryAction}>
                 {primaryAction.label}
               </PrimaryButton>
             )}
