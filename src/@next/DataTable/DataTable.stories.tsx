@@ -33,30 +33,30 @@ export default {
   decorators: [Story => <BaseContainer>{Story()}</BaseContainer>],
 } as Meta;
 
+const headings: TableHeading[] = [
+  { title: 'Label' },
+  { title: 'Variant' },
+  { title: 'SKU Number' },
+  {
+    id: 'unit-sold',
+    title: 'Unit sold',
+    defaultSortDirection: 'ASCENDING',
+    align: 'right',
+  },
+  {
+    title: 'Total Price',
+    align: 'right',
+  },
+  {
+    title: 'Actions',
+    align: 'center',
+  },
+];
+
 const Template: Story<DataTableProps> = ({
   loading,
   ...args
 }: DataTableProps) => {
-  const headings: TableHeading[] = [
-    { title: 'Label' },
-    { title: 'Variant' },
-    { title: 'SKU Number' },
-    {
-      id: 'unit-sold',
-      title: 'Unit sold',
-      defaultSortDirection: 'ASCENDING',
-      align: 'right',
-    },
-    {
-      title: 'Total Price',
-      align: 'right',
-    },
-    {
-      title: 'Actions',
-      align: 'center',
-    },
-  ];
-
   const rawData: any[] = [
     {
       label: 'Item 1',
@@ -164,7 +164,7 @@ const Template: Story<DataTableProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <Typography as="div" variant="body1" color={Neutral.B40}>
+            <Typography as="div" variant="subtitle2" color={Neutral.B40}>
               Showing 5 of 100
             </Typography>
             <Pagination totalItems={100} pageSize={5} />
@@ -307,7 +307,7 @@ Interactive.parameters = {
                   justifyContent: 'space-between',
                 }}
               >
-                <Typography as="div" variant="body1" color={Neutral.B40}>
+                <Typography as="div" variant="subtitle2" color={Neutral.B40}>
                   Showing 5 of 100
                 </Typography>
                 <Pagination totalItems={100} pageSize={5} />
@@ -327,26 +327,6 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
   loading,
   ...args
 }: DataTableProps) => {
-  const headings: TableHeading[] = [
-    { title: 'Label' },
-    { title: 'Variant' },
-    { title: 'SKU Number' },
-    {
-      id: 'unit-sold',
-      title: 'Unit sold',
-      defaultSortDirection: 'ASCENDING',
-      align: 'right',
-    },
-    {
-      title: 'Total Price',
-      align: 'right',
-    },
-    {
-      title: 'Actions',
-      align: 'center',
-    },
-  ];
-
   const data: any[] = [];
 
   const emptyState = (
@@ -389,7 +369,7 @@ const WithEmptyStateTemplate: Story<DataTableProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <Typography as="div" variant="body1" color={Neutral.B40}>
+            <Typography as="div" variant="subtitle2" color={Neutral.B40}>
               Showing 5 of 100
             </Typography>
             <Pagination totalItems={100} pageSize={5} />
@@ -562,6 +542,223 @@ WithNoWrapCell.parameters = {
               </DataTable.Row>
             );
           })}
+        </DataTable>
+      );
+      `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};
+
+const VerticalAlignCenterCellTemplate: Story<DataTableProps> = ({
+  loading,
+  ...args
+}: DataTableProps) => {
+  const headings: TableHeading[] = [
+    { title: 'Label' },
+    { title: 'Variant' },
+    { title: 'SKU Number' },
+    {
+      id: 'unit-sold',
+      title: 'Unit sold',
+      defaultSortDirection: 'ASCENDING',
+      align: 'right',
+    },
+    {
+      title: 'Total Price',
+      align: 'right',
+    },
+    {
+      title: 'Actions',
+      align: 'center',
+    },
+  ];
+
+  const data: any[] = [
+    {
+      label: 'Item 1',
+      variant: 'Variant 1',
+      skuNumber: '001',
+      unitSold: 1,
+      totalPrice: '$10,000',
+    },
+    {
+      label: 'Item 1',
+      variant: 'Variant 2',
+      skuNumber: '0012',
+      unitSold: 2,
+      totalPrice: '$11,000',
+    },
+    {
+      label: 'Item 2',
+      variant: 'Variant 2',
+      skuNumber: '002',
+      unitSold: 3,
+      totalPrice: '$12,000',
+    },
+    {
+      label: 'Item 3',
+      variant: 'Variant 3',
+      skuNumber: '003',
+      unitSold: 4,
+      totalPrice: '$13,000',
+    },
+    {
+      label: 'Item 4',
+      variant: 'Variant 4',
+      skuNumber: '004',
+      unitSold: 5,
+      totalPrice: '$14,000',
+    },
+  ];
+
+  return (
+    <DataTable {...args} headings={headings} loading={loading}>
+      {data.map((dt: any, index: number) => {
+        return (
+          <DataTable.Row key={index}>
+            <DataTable.Cell verticalAlign="center">{dt.label}</DataTable.Cell>
+            <DataTable.Cell verticalAlign="center">{dt.variant}</DataTable.Cell>
+            <DataTable.Cell verticalAlign="center">
+              {dt.skuNumber}
+            </DataTable.Cell>
+            <DataTable.Cell verticalAlign="center" align="right">
+              {dt.unitSold}
+            </DataTable.Cell>
+            <DataTable.Cell verticalAlign="center" align="right">
+              {dt.totalPrice}
+            </DataTable.Cell>
+            <DataTable.Cell verticalAlign="center" align="center">
+              <ButtonGroup>
+                <Button>Move</Button>
+                <PrimaryButton>Update</PrimaryButton>
+              </ButtonGroup>
+            </DataTable.Cell>
+          </DataTable.Row>
+        );
+      })}
+      {!loading && (
+        <DataTable.Footer>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography as="div" variant="subtitle2" color={Neutral.B40}>
+              Showing 5 of 100
+            </Typography>
+            <Pagination totalItems={100} pageSize={5} />
+          </div>
+        </DataTable.Footer>
+      )}
+    </DataTable>
+  );
+};
+
+export const VerticalAlignCenterCell = VerticalAlignCenterCellTemplate.bind({});
+
+VerticalAlignCenterCell.args = { loadingLabel: 'Loading...' };
+VerticalAlignCenterCell.parameters = {
+  docs: {
+    source: {
+      code: `
+      const headings: TableHeading[] = [
+        { title: 'Label' },
+        { title: 'Variant' },
+        { title: 'SKU Number' },
+        {
+          id: 'unit-sold',
+          title: 'Unit sold',
+          defaultSortDirection: 'ASCENDING',
+          align: 'right',
+        },
+        {
+          title: 'Total Price',
+          align: 'right',
+        },
+        {
+          title: 'Actions',
+          align: 'center',
+        },
+      ];
+    
+      const data: any[] = [
+        {
+          label: 'Item 1',
+          variant: 'Variant 1',
+          skuNumber: '001',
+          unitSold: 1,
+          totalPrice: '$10,000',
+        },
+        {
+          label: 'Item 1',
+          variant: 'Variant 2',
+          skuNumber: '0012',
+          unitSold: 2,
+          totalPrice: '$11,000',
+        },
+        {
+          label: 'Item 2',
+          variant: 'Variant 2',
+          skuNumber: '002',
+          unitSold: 3,
+          totalPrice: '$12,000',
+        },
+        {
+          label: 'Item 3',
+          variant: 'Variant 3',
+          skuNumber: '003',
+          unitSold: 4,
+          totalPrice: '$13,000',
+        },
+        {
+          label: 'Item 4',
+          variant: 'Variant 4',
+          skuNumber: '004',
+          unitSold: 5,
+          totalPrice: '$14,000',
+        },
+      ];
+    
+      return (
+        <DataTable
+          headings={headings}
+          loading={loading}
+        >
+          {data.map((dt: any, index: number) => {
+            return (
+              <DataTable.Row key={index}>
+                <DataTable.Cell verticalAlign="center">{dt.label}</DataTable.Cell>
+                <DataTable.Cell verticalAlign="center">{dt.variant}</DataTable.Cell>
+                <DataTable.Cell verticalAlign="center">{dt.skuNumber}</DataTable.Cell>
+                <DataTable.Cell verticalAlign="center" align="right">{dt.unitSold}</DataTable.Cell>
+                <DataTable.Cell verticalAlign="center" align="right">{dt.totalPrice}</DataTable.Cell>
+                <DataTable.Cell verticalAlign="center" align="center">
+                  <ButtonGroup>
+                    <Button>Move</Button> <PrimaryButton>Update</PrimaryButton>
+                  </ButtonGroup>
+                </DataTable.Cell>
+              </DataTable.Row>
+            );
+          })}
+          {!loading && (
+            <DataTable.Footer>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Typography as="div" variant="subtitle2" color={Neutral.B40}>
+                  Showing 5 of 100
+                </Typography>
+                <Pagination totalItems={100} pageSize={5} />
+              </div>
+            </DataTable.Footer>
+          )}
         </DataTable>
       );
       `,

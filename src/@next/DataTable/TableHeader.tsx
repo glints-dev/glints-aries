@@ -26,15 +26,20 @@ export const TableHeader = ({
   }, [sortDirectionProp]);
 
   const iconName =
-    sortDirection === 'ASCENDING'
-      ? 'ri-arrow-xs-up-fill'
-      : 'ri-arrow-xs-down-fill';
+    sortDirection === 'ASCENDING' ? 'ri-arrow-up-line' : 'ri-arrow-down-line';
 
-  const iconMarkup = sortDirection ? <Icon name={iconName} /> : null;
+  const iconMarkup = sortDirection ? (
+    <Icon
+      className="data-table-sort-button-icon"
+      name={iconName}
+      height="10px"
+      fill={Neutral.B40}
+    />
+  ) : null;
   const titleMarkup = (
     <Typography
       as="span"
-      variant="body2"
+      variant="caption"
       color={Neutral.B18}
       style={{ whiteSpace: 'nowrap' }}
     >
@@ -54,6 +59,7 @@ export const TableHeader = ({
 
   const sortableCellMarkup = (
     <Button
+      className="data-table-sort-button"
       data-testid={`data-table-sort-button-${title}`}
       icon={iconMarkup}
       onClick={() => handleSortableClick()}

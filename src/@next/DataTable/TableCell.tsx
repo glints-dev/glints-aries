@@ -7,16 +7,22 @@ export interface TableCellProps
   children: React.ReactNode;
   /** Sets table cell content to not wrap*/
   noWrap?: boolean;
+  verticalAlign?: 'top' | 'center';
 }
 
 export const TableCell = ({
   align,
   children,
   noWrap = false,
+  verticalAlign = 'top',
 }: TableCellProps) => {
   return (
-    <StyledTableCell data-text-align={align} data-no-wrap={noWrap}>
-      <Typography as="div" variant="body1">
+    <StyledTableCell
+      data-text-align={align}
+      data-no-wrap={noWrap}
+      data-vertical-align={verticalAlign}
+    >
+      <Typography as="div" variant="subtitle2">
         {children}
       </Typography>
     </StyledTableCell>

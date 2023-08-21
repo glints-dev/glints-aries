@@ -54,3 +54,14 @@ test('DataTable - no wrap cell', async ({ page }) => {
     'dataTable-no-wrap-cell.png'
   );
 });
+
+test('DataTable - vertical align center cells', async ({ page }) => {
+  const tablePage = getPage(
+    page,
+    '?path=/story/next-datatable--vertical-align-center-cell'
+  );
+  await tablePage.goto();
+  await expect(tablePage.container).toHaveScreenshot(
+    'dataTable-vertical-align-center-cell.png'
+  );
+});
