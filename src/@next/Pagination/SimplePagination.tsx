@@ -66,7 +66,7 @@ export const SimplePagination = React.forwardRef<HTMLElement, PaginationProps>(
               disabled={disabled}
               onClick={handlePageNumberChange}
             >
-              <Typography as="div" variant="body1">
+              <Typography as="div" variant="subtitle2">
                 {currentPage}
               </Typography>
             </StyledActiveSimplePaginationButton>
@@ -85,12 +85,12 @@ export const SimplePagination = React.forwardRef<HTMLElement, PaginationProps>(
           )}
         </div>
         <StyledSimplePaginationButton disabled={disabled}>
-          <Typography as="div" variant="body1">
+          <Typography as="div" variant="subtitle2">
             /
           </Typography>
         </StyledSimplePaginationButton>
         <StyledSimplePaginationButton disabled={disabled}>
-          <Typography as="div" variant="body1">
+          <Typography as="div" variant="subtitle2">
             {totalPages}
           </Typography>
         </StyledSimplePaginationButton>

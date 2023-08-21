@@ -24,7 +24,7 @@ export const PageButton = ({
       onClick={() => onClick?.(value)}
       {...props}
     >
-      <Typography as="div" variant="body1">
+      <Typography as="div" variant="subtitle2">
         {content}
       </Typography>
     </StyledPageButton>
