@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as DropShadow from '../utilities/dropShadow';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Blue, Neutral } from '../utilities/colors';
-import { space16 } from '../utilities/spacing';
+import { space16, space8 } from '../utilities/spacing';
 
 const alignmentStyle = `
 &[data-text-align='right'] {
@@ -19,6 +19,17 @@ const alignmentStyle = `
   }
 }
 `;
+
+const cellVerticalAlign = `
+&[data-vertical-align='top'] {
+  vertical-align: top;
+}
+
+&[data-vertical-align='center'] {
+  vertical-align: center;
+}
+`;
+
 export const StyledTable = styled.table`
   width: 100%;
   height: 100%;
@@ -96,10 +107,10 @@ export const StyledTabledHeader = styled.th`
 
 export const StyledTableCell = styled.td`
   text-align: left;
-  padding: ${space16};
-  vertical-align: top;
+  padding: ${space8} ${space16};
 
   ${alignmentStyle}
+  ${cellVerticalAlign}
 
   &[data-no-wrap='true'] {
     white-space: nowrap;
