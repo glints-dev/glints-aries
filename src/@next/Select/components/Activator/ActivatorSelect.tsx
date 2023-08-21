@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Option } from '../../../Menu';
 
+import { IconNames } from '../../../Icon/icons/icons';
 import { Typography } from '../../../Typography';
 import { Blue, Neutral } from '../../../utilities/colors';
 import {
@@ -16,6 +17,7 @@ import {
 export interface ActivatorSelectProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
   allowMultiple?: boolean;
+  customActivatorIcon?: IconNames;
   hasError?: boolean;
   selectedValues?: string[];
   placeholder?: string;
@@ -26,6 +28,7 @@ export interface ActivatorSelectProps
   width?: string;
 }
 export const ActivatorSelect = ({
+  customActivatorIcon,
   placeholder,
   selectedValues,
   onClick,
@@ -125,7 +128,7 @@ export const ActivatorSelect = ({
       </WithPrefixContainer>
       <StyledIcon
         height={24}
-        name="ri-arrow-m-down-line"
+        name={customActivatorIcon || 'ri-arrow-m-down-line'}
         fill={disabled ? Neutral.B85 : Neutral.B40}
       />
     </StyledSelect>

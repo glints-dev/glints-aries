@@ -7,6 +7,7 @@ import { ActivatorTextInput, OptionList } from './components';
 import { ActivatorSelect } from './components/Activator/ActivatorSelect';
 import { Label } from './components/Label/Label';
 import { SearchableSelectState } from './components/SearchableSelectInput/SearchableSelectInput';
+import { IconNames } from '../Icon/icons/icons';
 import { ActivatorWrapper, HelpTextContainer } from './SelectStyle';
 
 interface SearchableProps {
@@ -17,6 +18,7 @@ interface SearchableProps {
 }
 export interface SelectProps {
   allowMultiple?: boolean;
+  customActivatorIcon?: IconNames;
   disabled?: boolean;
   hasError?: boolean;
   helpText?: React.ReactNode;
@@ -49,6 +51,7 @@ export interface SelectProps {
 
 export const Select = ({
   allowMultiple = false,
+  customActivatorIcon,
   disabled = false,
   hasError = false,
   helpText,
@@ -174,6 +177,7 @@ export const Select = ({
     return (
       <ActivatorSelect
         allowMultiple={allowMultiple}
+        customActivatorIcon={customActivatorIcon}
         disabled={disabled}
         hasError={hasError}
         placeholder={placeholder ?? 'Placeholder'}
