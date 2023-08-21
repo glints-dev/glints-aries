@@ -9,6 +9,7 @@ import { ActivatorSelectProps } from './ActivatorSelect';
 import { TextInput } from '../../../TextInput';
 import { Tag } from '../../../Tag';
 import { Typography } from '../../../Typography';
+import { Icon } from '../../../Icon';
 
 export const StyledSelect = styled.button<ActivatorSelectProps>`
   display: flex;
@@ -71,7 +72,24 @@ export const StyledTextInput = styled(TextInput)`
 `;
 
 export const StyledSelectTypography = styled(Typography)`
+  display: flex;
+  margin-left: auto;
   &[data-disabled='true'] {
     color: ${Neutral.B85};
   }
+`;
+
+export const WithPrefixContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledPrefixContainer = styled.div`
+  display: flex;
+  width: 20px;
+  margin-right: 8px;
+`;
+
+export const StyledIcon = styled(Icon)`
+  margin-left: auto;
 `;

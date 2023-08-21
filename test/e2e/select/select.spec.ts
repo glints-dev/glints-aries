@@ -79,6 +79,16 @@ test('Select - non-searchable disabled', async ({ page }) => {
   );
 });
 
+test('Select - non-searchable prefixed', async ({ page }) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoNonSearchablePrefixedPage();
+
+  await selectPage.activatorSelect.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-prefixed.png'
+  );
+});
+
 test('Select - searchable single select', async ({ page }) => {
   const selectPage = new SelectPage(page);
   await selectPage.gotoSearchableSingleSelectPage();

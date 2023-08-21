@@ -66,6 +66,11 @@ export class SelectPage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoNonSearchablePrefixedPage(args?: Args) {
+    this.setPath('?path=/story/next-select--non-searchable-prefixed');
+    await this.goto(args);
+  }
+
   async gotoSearchableSingleSelectPage(args?: Args) {
     this.setPath('?path=/story/next-select--searchable-single-select');
     await this.goto(args);
