@@ -35,7 +35,7 @@ export interface DataTableProps
   /** If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading */
   headings: TableHeading[];
   children: React.ReactNode;
-  emptyState: React.ReactElement<EmptyStateProps>;
+  emptyState?: React.ReactElement<EmptyStateProps>;
   totals?: Total[];
   loading?: boolean;
   loadingLabel?: string;
@@ -112,13 +112,13 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
       rows.push(reactEl);
     }
 
-    const emptyRow = (
+    const emptyRow = emptyState ? (
       <StyledTableRow>
         <StyledTableCell colSpan={headings.length}>
           {emptyState}
         </StyledTableCell>
       </StyledTableRow>
-    );
+    ) : null;
 
     const hasRows = rows.length > 0;
     const rowsMarkup = hasRows ? rows : emptyRow;
