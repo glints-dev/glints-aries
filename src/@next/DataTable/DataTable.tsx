@@ -67,7 +67,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
       const { id, title, defaultSortDirection, align } = heading;
       const key = `table-header-heading-${title}-${index}`;
 
-      if (handleSortChanged && typeof title !== 'string' && !id)
+      if (onSortChanged && typeof title !== 'string' && !id)
         console.warn(
           "Warning: If the title in TableHeading is of type ReactNode and you require sorting functionality, please make sure to provide 'id' for the TableHeading."
         );
