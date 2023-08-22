@@ -66,7 +66,13 @@ export { Link } from './Link';
 export type { MenuProps } from './Menu';
 export { Menu } from './Menu';
 export type { ModalProps } from './Modal';
-export { Modal, ModalContext, ModalProvider, useModal } from './Modal';
+export {
+  Modal,
+  ModalContext,
+  ModalProvider,
+  useModal,
+  ModalWithProvider,
+} from './Modal';
 export type { NumberInputProps } from './NumberInput';
 export { NumberInput } from './NumberInput';
 export type { IconPaginationProps, PaginationProps } from './Pagination';
