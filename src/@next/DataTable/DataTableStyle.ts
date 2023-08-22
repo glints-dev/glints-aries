@@ -126,7 +126,7 @@ export const StyledTableFooterRow = styled.tr`
   border-top: 0;
   border-radius: 0px 0px ${borderRadius8} ${borderRadius8};
   td {
-    padding: ${space16};
+    padding: ${space8} ${space16};
   }
 `;
 
