@@ -247,3 +247,24 @@ customActionGroup.parameters = {
     type: 'auto',
   },
 };
+
+const WithoutPrimaryActionTemplate: Story<BarProps> = args => {
+  return <Bar {...args} />;
+};
+
+export const WithoutPrimaryAction = WithoutPrimaryActionTemplate.bind({});
+WithoutPrimaryAction.args = {
+  heading: 'Heading',
+  subheading: 'Sub heading',
+};
+WithoutPrimaryAction.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Bar {...args} />
+    `,
+    },
+    language: 'javascript',
+    type: 'auto',
+  },
+};

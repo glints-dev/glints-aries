@@ -62,3 +62,14 @@ test('Bar - with custom action group (menu)', async ({ page }) => {
   await barPage.goto();
   await expect(barPage.canvas).toHaveScreenshot('bar-custom-action-group.png');
 });
+
+test('Bar - without primary action', async ({ page }) => {
+  const barPage = new StoryBookPage(
+    page,
+    '?path=/story/next-bar--without-primary-action'
+  );
+  await barPage.goto();
+  await expect(barPage.canvas).toHaveScreenshot(
+    'bar-without-primary-action.png'
+  );
+});

@@ -17,7 +17,7 @@ import { useWindowSize } from './useWindowSize';
 export type BarProps = {
   heading: React.ReactNode;
   subheading?: React.ReactNode;
-  primaryAction: ComponentAction;
+  primaryAction?: ComponentAction;
   secondaryAction?: ComponentAction;
   tertiaryAction?: ComponentAction;
   position?: 'top' | 'bottom';
@@ -88,9 +88,11 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
                   {secondaryAction.label}
                 </Button>
               )}
-              <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
-                {primaryAction.label}
-              </PrimaryButton>
+              {primaryAction && (
+                <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
+                  {primaryAction.label}
+                </PrimaryButton>
+              )}
             </ButtonGroup>
           )}
         </StyledBarActionWrapper>
