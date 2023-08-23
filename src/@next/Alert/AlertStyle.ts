@@ -4,7 +4,7 @@ import * as Breakpoints from '../utilities/breakpoints';
 import { Green, Neutral, Blue, Orange, Red } from '../utilities/colors';
 import { space12, space8 } from '../utilities/spacing';
 
-export const StyledAlertContainer = styled.div`
+export const StyledAlertContainer = styled.div<{ zIndex?: number }>`
   position: fixed;
   top: 90px;
   right: 24px;
@@ -18,7 +18,7 @@ export const StyledAlertContainer = styled.div`
     0px 8px 20px rgba(71, 71, 71, 0.2),
     0px 3px 6px -3px rgba(71, 71, 71, 0.08);
   animation: slide-from-right 400ms cubic-bezier(0.35, 0.8, 1, 0.86);
-  z-index: 100;
+  z-index: ${props => (props.zIndex ? props.zIndex : 100)};
   color: ${Neutral.B18};
   svg {
     display: block;
