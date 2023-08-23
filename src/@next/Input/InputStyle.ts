@@ -5,6 +5,7 @@ import { InputProps } from './Input';
 import { space12, space4, space8 } from '../utilities/spacing';
 import { NotoSans } from '../utilities/fonts';
 import { borderRadius4 } from '../utilities/borderRadius';
+import { theme } from '../utilities/colors/theme';
 
 export interface PreffixSuffixWidthProps {
   prefixWidth: number;
@@ -104,7 +105,7 @@ export const StyledInput = styled.input<InputProps>`
   height: 36px;
 
   &::placeholder {
-    color: ${Neutral.B40};
+    color: ${theme.placeholder};
   }
 
   &:focus {

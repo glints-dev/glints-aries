@@ -13,6 +13,7 @@ import {
   TagsContainer,
   WithPrefixContainer,
 } from './ActivatorStyle';
+import { theme } from '../../../utilities/colors/theme';
 
 export interface ActivatorSelectProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
@@ -69,7 +70,7 @@ export const ActivatorSelect = ({
     <Typography
       variant="body1"
       as="span"
-      color={disabled ? Neutral.B85 : Neutral.B40}
+      color={disabled ? Neutral.B85 : theme.placeholder}
     >
       {placeholder}
     </Typography>
