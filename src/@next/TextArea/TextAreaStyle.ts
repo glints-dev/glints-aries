@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Neutral, Red } from '../utilities/colors';
 import { body1 as typographyBody1 } from '../Typography/TypographyStyles';
-import { theme } from '../utilities/colors/theme';
 
 interface TextAreaProp {
   width: string;
@@ -65,7 +64,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
   }
 
   &::placeholder {
-    color: ${theme.placeholder};
+    color: ${Neutral.B68};
   }
 
   &:focus {
