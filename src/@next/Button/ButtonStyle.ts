@@ -92,6 +92,7 @@ export const StyledButton = styled.button<ButtonProps>`
   &:disabled {
     color: ${Neutral.B68};
     background: ${Neutral.B95};
+    border-color: ${Neutral.B95};
     pointer-events: none;
   }
 
