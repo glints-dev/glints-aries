@@ -104,7 +104,7 @@ export const StyledInput = styled.input<InputProps>`
   height: 36px;
 
   &::placeholder {
-    color: ${Neutral.B40};
+    color: ${Neutral.B68};
   }
 
   &:focus {

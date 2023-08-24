@@ -64,7 +64,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
   }
 
   &::placeholder {
-    color: ${Neutral.B40};
+    color: ${Neutral.B68};
   }
 
   &:focus {

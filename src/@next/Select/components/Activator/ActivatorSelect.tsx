@@ -69,7 +69,7 @@ export const ActivatorSelect = ({
     <Typography
       variant="body1"
       as="span"
-      color={disabled ? Neutral.B85 : Neutral.B40}
+      color={disabled ? Neutral.B85 : Neutral.B68}
     >
       {placeholder}
     </Typography>
