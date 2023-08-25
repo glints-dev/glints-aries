@@ -11,6 +11,7 @@ export type Item = {
   description?: React.ReactNode;
   icon?: React.ReactElement<React.SVGProps<SVGSVGElement>>;
   action?: (...args: any) => void;
+  disabled?: boolean;
 };
 
 export type Section = {
