@@ -47,7 +47,7 @@ test('Action list - with descriptions', async ({ page }) => {
   );
 });
 
-test('Action list - with sections', async ({ page }) => {
+test('Action list - with sections with disabled items', async ({ page }) => {
   const actionListPage = new ActionListPage(page);
   actionListPage.setPath('?path=/story/next-actionlist--with-sections');
   await actionListPage.goto();

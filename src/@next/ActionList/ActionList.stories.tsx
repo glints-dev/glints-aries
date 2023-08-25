@@ -188,14 +188,22 @@ const WithSectionsTemplate: Story<ActionListProps> = () => {
   const sections: ActionListSection[] = [
     {
       title: 'Sections',
-      items: [{ content: 'Add' }, { content: 'Move Up' }, { content: 'Reply' }],
+      items: [
+        { content: 'Add' },
+        { content: 'Move Up' },
+        { content: 'Reply', disabled: true },
+      ],
     },
     {
       title: 'Section With Icons',
       items: [
         { content: 'Add', icon: <Icon name="ri-add-circle-line" /> },
         { content: 'Move Up', icon: <Icon name="ri-arrow-up-line" /> },
-        { content: 'Reply', icon: <Icon name="ri-reply-line" /> },
+        {
+          content: 'Reply',
+          icon: <Icon name="ri-reply-line" />,
+          disabled: true,
+        },
       ],
     },
     {
@@ -212,6 +220,7 @@ const WithSectionsTemplate: Story<ActionListProps> = () => {
         {
           content: 'Duplicate',
           description: 'Duplicate blogs published to your Online Store',
+          disabled: true,
         },
       ],
     },
@@ -240,14 +249,14 @@ WithSections.parameters = {
       const sections: ActionListSection[] = [
         {
           title: 'Sections',
-          items: [{ content: 'Add' }, { content: 'Move Up' }, { content: 'Reply' }],
+          items: [{ content: 'Add' }, { content: 'Move Up' }, { content: 'Reply', disabled: true }],
         },
         {
           title: 'Section With Icons',
           items: [
             { content: 'Add', icon: <Icon name="ri-add-circle-line" /> },
             { content: 'Move Up', icon: <Icon name="ri-arrow-up-line" /> },
-            { content: 'Reply', icon: <Icon name="ri-reply-line" /> },
+            { content: 'Reply', icon: <Icon name="ri-reply-line" />, disabled: true },
           ],
         },
         {
@@ -264,6 +273,7 @@ WithSections.parameters = {
             {
               content: 'Duplicate',
               description: 'Duplicate blogs published to your Online Store',
+              disabled: true
             },
           ],
         },

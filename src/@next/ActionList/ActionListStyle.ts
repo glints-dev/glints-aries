@@ -45,6 +45,19 @@ export const StyledActionListItemWrapper = styled.div`
     border: 2px solid ${Blue.S54};
     border-radius: ${borderRadius4};
   }
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+
+    svg {
+      fill: ${Neutral.B85};
+    }
+
+    .action-item-content,
+    .action-item-description {
+      color: ${Neutral.B85};
+    }
+  }
 `;
 
 export const StyledActionListItem = styled.div`
