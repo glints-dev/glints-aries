@@ -87,6 +87,7 @@ export const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
     const handleDelete = () => {
       setAttachmentUrl('');
       handleSetFile(null);
+      fileInputRef.current.value = null;
     };
 
     const unuploadedComponent = (
