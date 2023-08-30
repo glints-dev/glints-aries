@@ -136,7 +136,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
     );
 
     return (
-      <StyledDataTableContainer>
+      <StyledDataTableContainer className="data-table-container">
         <StyledTable
           ref={ref}
           data-loading={loading}
