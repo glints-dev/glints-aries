@@ -30,6 +30,8 @@ export interface SelectProps {
   onClose?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
+  /** callback function when select component is clicked (opened) */
+  onSelectClick?: () => void;
   options?: Option[];
   /** sets whether OptionList will follow content's width */
   optionListFitContent?: boolean;
@@ -62,6 +64,7 @@ export const Select = ({
   onClose,
   onRemoveTag,
   onSelect,
+  onSelectClick,
   optionListFitContent = false,
   options = [],
   placeholder,
@@ -188,6 +191,7 @@ export const Select = ({
         options={options}
         name={name}
         prefix={prefix}
+        onClick={onSelectClick}
       />
     );
   };
