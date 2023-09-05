@@ -62,7 +62,7 @@ export const ActivatorSelect = ({
     e.stopPropagation();
 
     onSelectClick();
-    onClick(e);
+    onClick?.(e);
   };
 
   const placeholderMarkup = (
