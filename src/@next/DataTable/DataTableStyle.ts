@@ -64,7 +64,7 @@ export const StyledTableRow = styled.tr`
   box-shadow: inset 0px -1px 0px ${Neutral.B85};
 
   &:hover {
-    background: ${Neutral.B99};
+    background: ${Blue.S08};
   }
 `;
 
