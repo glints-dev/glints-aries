@@ -42,6 +42,14 @@ export default {
         'A prop to disable the tag, only works when onClick is supplied',
       control: null,
     },
+    contentType: {
+      description:
+        'Background color of the tag, 3 options to choose from: neutral, success, warning; by default neutral is selected',
+      control: {
+        type: 'select',
+        options: ['neutral', 'success', 'warning'],
+      },
+    },
   },
 
   parameters: {

@@ -32,6 +32,18 @@ test('Tag - custom text color', async ({ page }) => {
   await expect(tagPage.container).toHaveScreenshot('tag-custom-text-color.png');
 });
 
+test('Tag - success content type', async ({ page }) => {
+  const tagPage = getPage(page);
+  await tagPage.goto('args=contentType:success');
+  await expect(tagPage.container).toHaveScreenshot('tag-content-success.png');
+});
+
+test('Tag - warning content type', async ({ page }) => {
+  const tagPage = getPage(page);
+  await tagPage.goto('args=contentType:warning');
+  await expect(tagPage.container).toHaveScreenshot('tag-content-warning.png');
+});
+
 test('removeable tag - standard size', async ({ page }) => {
   const tagPage = getRemoveableTagPage(page);
   await tagPage.goto();

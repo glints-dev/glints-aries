@@ -15,6 +15,7 @@ export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   onRemove?: (() => void) | null | void;
   textColor?: string;
   disabled?: boolean;
+  contentType?: 'neutral' | 'success' | 'warning';
 }
 
 export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
@@ -29,6 +30,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
     textColor,
     onClick,
     disabled,
+    contentType = 'neutral',
     ...props
   }: TagProps,
   ref
@@ -57,12 +59,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
   const removeButton = onRemove && (
     <TagRemoveContainerStyle>
       <TagIconWrapper role="button" tabIndex={0}>
-        <Icon
-          name="ri-close"
-          fill={Neutral.B40}
-          height={20}
-          onClick={onRemove}
-        />
+        <Icon name="ri-close" fill={Neutral.B40} onClick={onRemove} />
       </TagIconWrapper>
     </TagRemoveContainerStyle>
   );
@@ -74,6 +71,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
       value={value}
       onClick={!disabled && onClick}
       data-clickable={!!onClick}
+      data-content-type={contentType}
       role={!!onClick ? 'button' : undefined}
       data-disabled={disabled}
       as={!!onClick ? 'button' : 'div'}

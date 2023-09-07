@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Breakpoints } from '..';
 import { borderRadius4, borderRadiusHalf } from '../utilities/borderRadius';
-import { Blue, Neutral } from '../utilities/colors';
+import { Blue, Green, Orange, Neutral } from '../utilities/colors';
 import { space4, space8 } from '../utilities/spacing';
 import { TagContentProps, TagProps, TagRemoveContainerProps } from './Tag';
 
@@ -19,6 +19,18 @@ export const TagContentStyle = styled.span<TagContentProps>`
 export const TagRemoveContainerStyle = styled.div<TagRemoveContainerProps>`
   padding: ${space4};
   display: flex;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
 `;
 
 export const TagIconWrapper = styled.div`
@@ -37,14 +49,22 @@ export const TagIconWrapper = styled.div`
 export const TagStyle = styled.div<TagProps>`
   display: inline-flex;
   align-items: center;
-  background-color: ${Blue.S08};
+  background-color: ${Neutral.B95};
   border: 0;
   border-radius: ${borderRadius4};
   width: fit-content;
   padding: 0;
 
+  &[data-content-type='success'] {
+    background-color: ${Green.B89};
+  }
+  &[data-content-type='warning'] {
+    background-color: ${Orange.S21};
+  }
+
   &[data-clickable='true'] {
     cursor: pointer;
+    background-color: ${Blue.S08};
 
     &:hover {
       outline: 1px solid ${Blue.S100}E6;
