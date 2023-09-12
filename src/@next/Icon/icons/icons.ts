@@ -147,6 +147,8 @@ export const iconNames = [
   'ri-survey-line',
   'ri-hand-coin-fill',
   'ri-hand-coin-line',
+  'ri-lock-fill',
+  'ri-lock-line',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -298,4 +300,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-survey-line']: Icons.RiSurveyLine,
   ['ri-hand-coin-fill']: Icons.RiHandCoinFill,
   ['ri-hand-coin-line']: Icons.RiHandCoinLine,
+  ['ri-lock-fill']: Icons.RiLockFill,
+  ['ri-lock-line']: Icons.RiLockLine,
 };
