@@ -66,6 +66,10 @@ const DefaultTemplate: Story<TagProps> = args => {
   return <Tag {...args}>Basic Tag</Tag>;
 };
 
+const WithIconTemplate: Story<TagProps> = args => {
+  return <Tag {...args}>Tag with Icon</Tag>;
+};
+
 const RemoveableTemplate: Story<TagProps> = () => {
   const [selectedTags, setSelectedTags] = useState([
     'Years of Experience: 0 to 3 Years, 3 to 5 Years',
@@ -120,6 +124,14 @@ export const Default = DefaultTemplate.bind({});
 Default.args = {
   onRemove: undefined,
   onClick: undefined,
+};
+
+export const WithIcon = WithIconTemplate.bind({});
+
+WithIcon.args = {
+  onRemove: undefined,
+  onClick: undefined,
+  iconName: 'ri-building-line',
 };
 
 export const Removeable = RemoveableTemplate.bind({});

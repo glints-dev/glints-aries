@@ -7,7 +7,9 @@ import {
   TagIconWrapper,
   TagRemoveContainerStyle,
   TagStyle,
+  TagContentWrapper,
 } from './TagStyle';
+import { IconNames } from '../Icon/icons/icons';
 
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -16,6 +18,7 @@ export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   textColor?: string;
   disabled?: boolean;
   contentType?: 'neutral' | 'success' | 'warning';
+  iconName?: IconNames;
 }
 
 export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
@@ -31,6 +34,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
     onClick,
     disabled,
     contentType = 'neutral',
+    iconName,
     ...props
   }: TagProps,
   ref
@@ -76,7 +80,10 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
       data-disabled={disabled}
       as={!!onClick ? 'button' : 'div'}
     >
-      <TagContentStyle data-removeable={!!onRemove}>{content}</TagContentStyle>
+      <TagContentStyle data-removeable={!!onRemove}>
+        {iconName && <Icon name={iconName} fill={Neutral.B40} height={20} />}
+        <TagContentWrapper>{content}</TagContentWrapper>
+      </TagContentStyle>
       {removeButton}
     </TagStyle>
   );

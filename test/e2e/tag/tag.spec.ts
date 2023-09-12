@@ -4,6 +4,9 @@ import { StoryBookPage } from '../storybookPage';
 const getPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-tag--default');
 
+const getTagWithIconPage = (page: Page) =>
+  new StoryBookPage(page, '?path=/story/next-tag--with-icon');
+
 const getRemoveableTagPage = (page: Page) =>
   new StoryBookPage(page, '?path=/story/next-tag--removeable');
 
@@ -19,11 +22,28 @@ test('Tag - standard size', async ({ page }) => {
   await expect(tagPage.container).toHaveScreenshot('tag-standard-size.png');
 });
 
+test('Tag - with icon standard size', async ({ page }) => {
+  const tagPage = getTagWithIconPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-with-icon-standard-size.png'
+  );
+});
+
 test('Tag - small size', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const tagPage = getPage(page);
   await tagPage.goto();
   await expect(tagPage.container).toHaveScreenshot('tag-small-size.png');
+});
+
+test('Tag - with icon small size', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const tagPage = getTagWithIconPage(page);
+  await tagPage.goto();
+  await expect(tagPage.container).toHaveScreenshot(
+    'tag-with-icon-small-size.png'
+  );
 });
 
 test('Tag - custom text color', async ({ page }) => {
