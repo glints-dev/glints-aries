@@ -9,7 +9,8 @@ interface AuthenticationInputSingleProps
   error?: boolean;
   disabled?: boolean;
   isLast?: boolean;
-  onChange: (value: number, index: number) => void;
+  onIndexChanged?: (index: number) => void;
+  onChange: (value: number | '', index: number) => void;
 }
 export const AuthenticationInputSingle = ({
   index,
@@ -17,6 +18,7 @@ export const AuthenticationInputSingle = ({
   value,
   shouldFocus,
   isLast,
+  onIndexChanged,
   ...rest
 }: AuthenticationInputSingleProps) => {
   const ref = useRef<HTMLInputElement>(null);
@@ -32,7 +34,10 @@ export const AuthenticationInputSingle = ({
     <NumberInput
       {...rest}
       maxLength={1}
-      onFocus={e => e.currentTarget.select()}
+      onFocus={e => {
+        e.currentTarget.select();
+        onIndexChanged?.(index);
+      }}
       inputRef={ref}
       value={value}
       onChange={e => {

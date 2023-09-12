@@ -23,12 +23,19 @@ const AuthenticationInputComponent = ({
   const inputArray = new Array(numberOfInputs).fill('');
 
   const handleOnChange = (value: number, index: number) => {
-    const newValue = Number.isNaN(value) ? '' : value;
+    if (Number.isNaN(value)) {
+      const newInputValues = [...inputValues];
+      newInputValues[index] = '';
+      setInputValues(newInputValues);
+      setCurrentIndex(index);
+      return;
+    }
     const newInputValues = [...inputValues];
-    newInputValues[index] = newValue;
+    newInputValues[index] = value;
     setInputValues(newInputValues);
     const nextInputIndex = index + 1;
-    if (nextInputIndex <= numberOfInputs - 1 && Number(newValue) >= 0) {
+
+    if (nextInputIndex <= numberOfInputs - 1) {
       setCurrentIndex(nextInputIndex);
     }
 
@@ -82,6 +89,7 @@ const AuthenticationInputComponent = ({
             value={inputValues[index]}
             error={error}
             onPaste={handlePaste}
+            onIndexChanged={setCurrentIndex}
             {...rest}
           />
         );
