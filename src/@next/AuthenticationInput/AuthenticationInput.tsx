@@ -17,25 +17,23 @@ const AuthenticationInputComponent = ({
   ...rest
 }: AuthenticationInputProps) => {
   const [inputValues, setInputValues] = useState(
-    new Array<number>(numberOfInputs)
+    new Array<number | ''>(numberOfInputs).fill('')
   );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const inputArray = new Array(numberOfInputs).fill(null);
+  const inputArray = new Array(numberOfInputs).fill('');
 
   const handleOnChange = (value: number, index: number) => {
-    if (Number.isNaN(value)) {
-      return;
-    }
+    const newValue = Number.isNaN(value) ? '' : value;
     const newInputValues = [...inputValues];
-    newInputValues[index] = value;
+    newInputValues[index] = newValue;
     setInputValues(newInputValues);
     const nextInputIndex = index + 1;
-    if (nextInputIndex <= numberOfInputs - 1) {
+    if (nextInputIndex <= numberOfInputs - 1 && newValue) {
       setCurrentIndex(nextInputIndex);
     }
 
     if (inputValues.some(v => !Number.isNaN(v))) {
-      onChange?.(null);
+      onChange?.('');
       return;
     }
     onChange?.(inputValues.join(''));

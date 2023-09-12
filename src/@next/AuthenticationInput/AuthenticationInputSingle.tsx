@@ -4,7 +4,7 @@ import { NumberInput } from '../NumberInput';
 interface AuthenticationInputSingleProps
   extends Omit<React.HTMLAttributes<HTMLInputElement>, 'onChange'> {
   index: number;
-  value: number;
+  value: number | '';
   shouldFocus?: boolean;
   error?: boolean;
   disabled?: boolean;
@@ -27,6 +27,7 @@ export const AuthenticationInputSingle = ({
       ref?.current?.select();
     }
   }, [shouldFocus]);
+  console.log({ value });
 
   return (
     <NumberInput
@@ -36,8 +37,9 @@ export const AuthenticationInputSingle = ({
       inputRef={ref}
       value={value}
       onChange={e => {
-        onChange(e.currentTarget.valueAsNumber, index);
-        if (isLast) {
+        const currentValue = e.currentTarget.valueAsNumber;
+        onChange(currentValue, index);
+        if (isLast && currentValue) {
           ref?.current?.blur();
         }
       }}
