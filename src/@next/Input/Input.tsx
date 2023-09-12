@@ -11,11 +11,12 @@ export interface InputProps
   error?: boolean;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   function Input(
-    { error, disabled, prefix, suffix, ...props }: InputProps,
+    { error, disabled, prefix, suffix, inputRef, ...props }: InputProps,
     ref
   ) {
     const hasPrefix = !!prefix;
@@ -62,7 +63,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         suffixWidth={suffixWidth}
       >
         <Prefix />
-        <StyledInput disabled={disabled} {...props} />
+        <StyledInput ref={inputRef} disabled={disabled} {...props} />
         <Suffix />
       </StyledContainer>
     );
