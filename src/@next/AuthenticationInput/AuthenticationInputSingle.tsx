@@ -27,7 +27,6 @@ export const AuthenticationInputSingle = ({
       ref?.current?.select();
     }
   }, [shouldFocus]);
-  console.log({ value });
 
   return (
     <NumberInput

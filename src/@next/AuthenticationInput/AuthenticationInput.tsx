@@ -28,7 +28,7 @@ const AuthenticationInputComponent = ({
     newInputValues[index] = newValue;
     setInputValues(newInputValues);
     const nextInputIndex = index + 1;
-    if (nextInputIndex <= numberOfInputs - 1 && newValue) {
+    if (nextInputIndex <= numberOfInputs - 1 && Number(newValue) >= 0) {
       setCurrentIndex(nextInputIndex);
     }
 
