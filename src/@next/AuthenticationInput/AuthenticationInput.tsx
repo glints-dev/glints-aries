@@ -8,7 +8,7 @@ export interface AuthenticationInputProps
   disabled?: boolean;
   error?: boolean;
   forwardedRef?: RefObject<HTMLDivElement>;
-  onChange?: (value: string) => void;
+  onChange?: (value: string | null) => void;
 }
 const AuthenticationInputComponent = ({
   numberOfInputs = 6,
@@ -24,7 +24,7 @@ const AuthenticationInputComponent = ({
 
   useEffect(() => {
     if (inputValues.some(v => !Number.isInteger(v))) {
-      onChange?.('');
+      onChange?.(null);
       return;
     }
     onChange?.(inputValues.join(''));

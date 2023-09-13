@@ -14,7 +14,7 @@ export default {
 } as Meta;
 
 const Template: Story<AuthenticationInputProps> = args => {
-  const handleChange = (value: string) => {
+  const handleChange = (value: string | null) => {
     console.log({ value });
   };
 
