@@ -14,6 +14,7 @@ const AuthenticationInputComponent = ({
   numberOfInputs = 6,
   error,
   onChange,
+  forwardedRef,
   ...rest
 }: AuthenticationInputProps) => {
   const [inputValues, setInputValues] = useState(
@@ -78,6 +79,7 @@ const AuthenticationInputComponent = ({
     <StyledInputsContainer
       className="authentication-inputs-container"
       onPaste={handlePaste}
+      ref={forwardedRef}
     >
       {inputArray.map((_value, index) => {
         return (
