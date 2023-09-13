@@ -32,11 +32,10 @@ const AuthenticationInputComponent = ({
   }, [inputValues, onChange]);
 
   const handleOnChange = (value: number, index: number) => {
-    if (Number.isNaN(value)) {
+    if (!Number.isInteger(value)) {
       const newInputValues = [...inputValues];
       newInputValues[index] = '';
       setInputValues(newInputValues);
-      setCurrentIndex(index);
       return;
     }
     const newInputValues = [...inputValues];
