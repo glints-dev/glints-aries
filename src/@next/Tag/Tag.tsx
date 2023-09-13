@@ -75,6 +75,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
       value={value}
       onClick={!disabled && onClick}
       data-clickable={!!onClick}
+      data-removeable={!!onRemove}
       data-content-type={contentType}
       role={!!onClick ? 'button' : undefined}
       data-disabled={disabled}

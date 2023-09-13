@@ -54,17 +54,22 @@ export const TagIconWrapper = styled.div`
 export const TagStyle = styled.div<TagProps>`
   display: inline-flex;
   align-items: center;
-  background-color: ${Neutral.B95};
+  background-color: ${Blue.S08};
   border: 0;
   border-radius: ${borderRadius4};
   width: fit-content;
   padding: 0;
 
-  &[data-content-type='success'] {
-    background-color: ${Green.B89};
-  }
-  &[data-content-type='warning'] {
-    background-color: ${Orange.S21};
+  &:not([data-removeable='true']):not([data-clickable='true']) {
+    &[data-content-type='neutral'] {
+      background-color: ${Neutral.B95};
+    }
+    &[data-content-type='success'] {
+      background-color: ${Green.B89};
+    }
+    &[data-content-type='warning'] {
+      background-color: ${Orange.S21};
+    }
   }
 
   &[data-clickable='true'] {
@@ -97,15 +102,6 @@ export const TagStyle = styled.div<TagProps>`
     }
   }
 
-  @media (max-width: ${Breakpoints.large}) {
-    font-size: 12px;
-
-    & svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
   & svg {
     padding: 0;
     width: 20px;
@@ -123,5 +119,12 @@ export const TagStyle = styled.div<TagProps>`
     background-color: ${Neutral.B40};
     fill: ${Neutral.B100};
     border-radius: ${borderRadiusHalf};
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    & svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
