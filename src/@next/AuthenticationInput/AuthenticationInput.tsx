@@ -1,4 +1,10 @@
-import React, { ClipboardEvent, RefObject, useEffect, useState } from 'react';
+import React, {
+  ClipboardEvent,
+  RefObject,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { StyledInputsContainer } from './AuthenticationInputStyle';
 import { AuthenticationInputSingle } from './AuthenticationInputSingle';
 
@@ -23,13 +29,15 @@ const AuthenticationInputComponent = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const inputArray = new Array(numberOfInputs).fill('');
 
+  const onChangeRef = useRef(onChange);
+
   useEffect(() => {
     if (inputValues.some(v => !Number.isInteger(v))) {
-      onChange?.(null);
+      onChangeRef.current?.(null);
       return;
     }
-    onChange?.(inputValues.join(''));
-  }, [inputValues, onChange]);
+    onChangeRef.current?.(inputValues.join(''));
+  }, [inputValues]);
 
   const handleOnChange = (value: number, index: number) => {
     if (!Number.isInteger(value)) {
