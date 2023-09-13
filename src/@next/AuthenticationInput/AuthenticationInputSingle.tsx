@@ -47,6 +47,11 @@ export const AuthenticationInputSingle = ({
           ref?.current?.blur();
         }
       }}
+      onKeyUp={e => {
+        if (e.key === 'Backspace') {
+          onIndexChanged(index - 1);
+        }
+      }}
     />
   );
 };

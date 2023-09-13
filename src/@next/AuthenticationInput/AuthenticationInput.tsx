@@ -93,7 +93,12 @@ const AuthenticationInputComponent = ({
             value={inputValues[index]}
             error={error}
             onPaste={handlePaste}
-            onIndexChanged={setCurrentIndex}
+            onIndexChanged={index => {
+              if (index >= numberOfInputs || index < 0) {
+                return;
+              }
+              setCurrentIndex(index);
+            }}
             {...rest}
           />
         );
