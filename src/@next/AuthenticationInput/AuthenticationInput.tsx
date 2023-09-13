@@ -1,4 +1,4 @@
-import React, { ClipboardEvent, RefObject, useState } from 'react';
+import React, { ClipboardEvent, RefObject, useEffect, useState } from 'react';
 import { StyledInputsContainer } from './AuthenticationInputStyle';
 import { AuthenticationInputSingle } from './AuthenticationInputSingle';
 
@@ -22,6 +22,14 @@ const AuthenticationInputComponent = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const inputArray = new Array(numberOfInputs).fill('');
 
+  useEffect(() => {
+    if (inputValues.some(v => !Number.isInteger(v))) {
+      onChange?.(null);
+      return;
+    }
+    onChange?.(inputValues.join(''));
+  }, [inputValues, onChange]);
+
   const handleOnChange = (value: number, index: number) => {
     if (Number.isNaN(value)) {
       const newInputValues = [...inputValues];
@@ -38,12 +46,6 @@ const AuthenticationInputComponent = ({
     if (nextInputIndex <= numberOfInputs - 1) {
       setCurrentIndex(nextInputIndex);
     }
-
-    if (inputValues.some(v => !Number.isNaN(v))) {
-      onChange?.('');
-      return;
-    }
-    onChange?.(inputValues.join(''));
   };
 
   const handlePaste = (event: ClipboardEvent) => {

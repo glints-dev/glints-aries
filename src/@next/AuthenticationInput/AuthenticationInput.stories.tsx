@@ -13,9 +13,13 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<AuthenticationInputProps> = args => (
-  <AuthenticationInput {...args} />
-);
+const Template: Story<AuthenticationInputProps> = args => {
+  const handleChange = (value: string) => {
+    console.log({ value });
+  };
+
+  return <AuthenticationInput {...args} onChange={handleChange} />;
+};
 
 export const Interactive = Template.bind({});
 Interactive.args = {};
