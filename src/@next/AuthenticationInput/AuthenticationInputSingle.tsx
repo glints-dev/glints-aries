@@ -30,8 +30,6 @@ export const AuthenticationInputSingle = ({
     }
   }, [shouldFocus]);
 
-  console.log({ singleValue: value });
-
   return (
     <NumberInput
       {...rest}
@@ -43,7 +41,6 @@ export const AuthenticationInputSingle = ({
       inputRef={ref}
       value={value}
       onChange={e => {
-        console.log({ currentTarget: e.currentTarget.value });
         const currentValue = e.currentTarget.valueAsNumber;
         onChange(currentValue, index);
         if (isLast && currentValue) {

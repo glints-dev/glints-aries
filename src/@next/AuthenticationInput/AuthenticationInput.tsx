@@ -14,6 +14,7 @@ export interface AuthenticationInputProps
   disabled?: boolean;
   error?: boolean;
   forwardedRef?: RefObject<HTMLDivElement>;
+  /** will always return null when not all inputs are filled */
   onChange?: (value: string | null) => void;
 }
 const AuthenticationInputComponent = ({
