@@ -24,7 +24,7 @@ const AuthenticationInputComponent = ({
 
   useEffect(() => {
     if (inputValues.some(v => !Number.isInteger(v))) {
-      onChange?.(null);
+      onChange?.('');
       return;
     }
     onChange?.(inputValues.join(''));
