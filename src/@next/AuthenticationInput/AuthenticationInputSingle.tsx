@@ -49,7 +49,7 @@ export const AuthenticationInputSingle = ({
       }}
       onKeyDown={e => {
         const allowedKeys = ['Backspace', 'Delete', ' ', 'Tab', 'Enter'];
-        if (allowedKeys.includes(e.key)) {
+        if (allowedKeys.includes(e.key) || e.metaKey || e.ctrlKey) {
           return;
         }
         const reg = new RegExp('^[0-9]$');

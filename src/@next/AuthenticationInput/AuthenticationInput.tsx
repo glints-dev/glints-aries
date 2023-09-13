@@ -66,7 +66,7 @@ const AuthenticationInputComponent = ({
       return;
     }
 
-    const newValues = new Array<number>(numberOfInputs).fill(null);
+    const newValues = new Array<number | ''>(numberOfInputs).fill('');
 
     for (let i = 0; i < numberOfInputs; i++) {
       const currentValue =
