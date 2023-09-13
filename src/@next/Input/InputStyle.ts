@@ -44,7 +44,7 @@ export const StyledContainer = styled.div<InputProps & PreffixSuffixWidthProps>`
     border: 1px solid ${Neutral.B85};
     background: ${Neutral.B95};
     color: ${Neutral.B85};
-    cursor: pointer;
+    cursor: not-allowed;
   }
 
   &[data-disabled='true'] input::placeholder {

@@ -30,7 +30,8 @@ const AuthenticationInputComponent = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const inputArray = new Array(numberOfInputs).fill('');
 
-  const onChangeRef = useRef(onChange);
+  const onChangeRef = useRef(null);
+  onChangeRef.current = onChange;
 
   useEffect(() => {
     if (inputValues.some(v => !Number.isInteger(v))) {
