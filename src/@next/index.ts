@@ -20,6 +20,8 @@ export {
   AlertWithProvider,
   useAlert,
 } from './Alert';
+export { AuthenticationInput } from './AuthenticationInput';
+export type { AuthenticationInputProps } from './AuthenticationInput';
 export type { AvatarProps } from './Avatar';
 export { Avatar } from './Avatar';
 export type { BadgeProps } from './Badge';
