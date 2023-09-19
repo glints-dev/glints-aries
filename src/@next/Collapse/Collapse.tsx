@@ -5,9 +5,9 @@ import { CollapseComponentContainer } from './CollapseStyle';
 export interface CollapseProps extends React.HTMLAttributes<HTMLDivElement> {
   /** If true, there is outer 1px border with 4px border radius, default is true */
   hasBorder?: boolean;
-  /** The children should all use 'Collapse.Item' */
+  /** The children should all be 'Collapse.Item' components */
   children?: React.ReactElement<CollapseItemProps>[];
-  /** Arrow indicator to be put on the very left or right of the header, default is left, applies to all children div */
+  /** Arrow indicator to be put on the very left or right of the header (or none), default is left, applies to all children collapse items */
   indicator?: 'left' | 'right' | 'none';
 }
 
