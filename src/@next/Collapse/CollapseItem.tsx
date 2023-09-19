@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
+
+import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { Icon } from '../Icon';
 import {
   CollapseContent,
   CollapseContentWrapper,
   CollapseItemHeader,
   CollapseItemContent,
+  IndicatorIconWrapper,
   RightHeaderSection,
 } from './CollapseItemStyle';
 
 export interface CollapseItemProps {
   /** Content to be displayed when the item is not collapsed, 8px padding applied by default */
   children: React.ReactNode;
-  /** Title for each collapse item, simply can pass in a string */
-  header: React.ReactNode;
+  /** Title for each collapse item on the header, simply can pass in a string */
+  title: React.ReactNode;
   /** Extra components to be displayed on the left side of heading, on the right of indicator (if it is left-aligned) and header (title), flex row with gap of 4px is applied */
-  headerLeftExtra?: React.ReactNode;
+  headerLeft?: React.ReactNode;
   /** Extra components to be displayed on the right side of heading, on the left of indicator (if it is right-aligned), flex row with gap of 4px is applied */
-  headerRightExtra?: React.ReactNode;
+  headerRight?: React.ReactNode;
   /** If this is false, it is not collapsed at the beginning (you can see children content directly), default is true */
   defaultCollapsed?: boolean;
   /** If this is true, you cannot collapse or uncollapsed the item, default is false */
@@ -31,9 +33,9 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
   function CollapseItem(
     {
       children,
-      header,
-      headerLeftExtra,
-      headerRightExtra,
+      title,
+      headerLeft,
+      headerRight,
       defaultCollapsed = true,
       disabled = false,
       indicator = 'left',
@@ -56,30 +58,31 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
           ref={ref}
         >
           {indicator === 'left' && (
-            <>
-              {!isCollapsed && <Icon name="ri-arrow-m-down-fill" />}
-              {isCollapsed && <Icon name="ri-arrow-m-right-fill" />}
-            </>
+            <IndicatorIconWrapper isCollapsed={isCollapsed}>
+              <Icon name="ri-arrow-m-right-fill" />
+            </IndicatorIconWrapper>
           )}
           <Typography
             as="span"
             variant="body1"
             color={disabled ? Neutral.B85 : Neutral.B18}
           >
-            {header}
+            {title}
           </Typography>
-          {headerLeftExtra}
+          {headerLeft}
           <RightHeaderSection>
-            {headerRightExtra}
+            {headerRight}
             {indicator === 'right' && (
-              <>
-                {!isCollapsed && <Icon name="ri-arrow-m-down-fill" />}
-                {isCollapsed && <Icon name="ri-arrow-m-left-fill" />}
-              </>
+              <IndicatorIconWrapper
+                isCollapsed={isCollapsed}
+                data-anticlockwise={true}
+              >
+                <Icon name="ri-arrow-m-left-fill" />
+              </IndicatorIconWrapper>
             )}
           </RightHeaderSection>
         </CollapseItemHeader>
-        <CollapseItemContent open={!isCollapsed}>
+        <CollapseItemContent isCollapsed={isCollapsed}>
           <CollapseContentWrapper>
             <CollapseContent>{children}</CollapseContent>
           </CollapseContentWrapper>

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { CollapseItem, CollapseItemProps } from './CollapseItem';
 import { CollapseComponentContainer } from './CollapseStyle';
 

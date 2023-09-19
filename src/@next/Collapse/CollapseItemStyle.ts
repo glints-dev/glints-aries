@@ -1,7 +1,10 @@
 import styled from 'styled-components';
-import { space4, space8 } from '../utilities/spacing';
-import { Neutral } from '../utilities/colors';
+
 import { subtitle2 } from '../Typography/TypographyStyles';
+import { Neutral } from '../utilities/colors';
+import { space4, space8 } from '../utilities/spacing';
+
+const ANIMATION_DURATION = '200ms';
 
 export const CollapseItemHeader = styled.div`
   display: flex;
@@ -37,12 +40,12 @@ export const RightHeaderSection = styled.div`
   margin-left: auto;
 `;
 
-export const CollapseItemContent = styled.div<{ open: boolean }>`
+export const CollapseItemContent = styled.div<{ isCollapsed: boolean }>`
   display: grid;
-  grid-template-rows: ${props => (props.open ? '1fr' : '0fr')};
+  grid-template-rows: ${props => (props.isCollapsed ? '0fr' : '1fr')};
 
-  transition: all 0.2s ease-in-out;
-  opacity: ${props => (props.open ? 1 : 0)};
+  transition: all ${ANIMATION_DURATION} ease-in-out;
+  opacity: ${props => (props.isCollapsed ? 0 : 1)};
 
   width: 100%;
   background-color: ${Neutral.B99};
@@ -56,4 +59,21 @@ export const CollapseContent = styled.div`
   padding: ${space8};
   border-bottom: 1px solid ${Neutral.B85};
   ${subtitle2}
+`;
+
+export const IndicatorIconWrapper = styled.div<{ isCollapsed: boolean }>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    transform: rotate(${props => (props.isCollapsed ? '0deg' : '90deg')});
+    transition: transform ${ANIMATION_DURATION} ease-in-out;
+  }
+
+  &[data-anticlockwise='true'] {
+    svg {
+      transform: rotate(${props => (props.isCollapsed ? '0deg' : '-90deg')});
+    }
+  }
 `;
