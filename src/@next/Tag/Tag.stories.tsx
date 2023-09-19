@@ -42,6 +42,14 @@ export default {
         'A prop to disable the tag, only works when onClick is supplied',
       control: null,
     },
+    contentType: {
+      description:
+        'Background color of the tag, 3 options to choose from: neutral, success, warning; by default neutral is selected',
+      control: {
+        type: 'select',
+        options: ['neutral', 'success', 'warning'],
+      },
+    },
   },
 
   parameters: {
@@ -56,6 +64,10 @@ export default {
 
 const DefaultTemplate: Story<TagProps> = args => {
   return <Tag {...args}>Basic Tag</Tag>;
+};
+
+const WithIconTemplate: Story<TagProps> = args => {
+  return <Tag {...args}>Tag with Icon</Tag>;
 };
 
 const RemoveableTemplate: Story<TagProps> = () => {
@@ -112,6 +124,14 @@ export const Default = DefaultTemplate.bind({});
 Default.args = {
   onRemove: undefined,
   onClick: undefined,
+};
+
+export const WithIcon = WithIconTemplate.bind({});
+
+WithIcon.args = {
+  onRemove: undefined,
+  onClick: undefined,
+  iconName: 'ri-building-line',
 };
 
 export const Removeable = RemoveableTemplate.bind({});

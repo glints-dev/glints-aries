@@ -7,7 +7,9 @@ import {
   TagIconWrapper,
   TagRemoveContainerStyle,
   TagStyle,
+  TagContentWrapper,
 } from './TagStyle';
+import { IconNames } from '../Icon/icons/icons';
 
 export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -15,6 +17,8 @@ export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   onRemove?: (() => void) | null | void;
   textColor?: string;
   disabled?: boolean;
+  contentType?: 'neutral' | 'success' | 'warning';
+  iconName?: IconNames;
 }
 
 export type TagRemoveContainerProps = React.HTMLAttributes<HTMLDivElement>;
@@ -29,6 +33,8 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
     textColor,
     onClick,
     disabled,
+    contentType = 'neutral',
+    iconName,
     ...props
   }: TagProps,
   ref
@@ -60,8 +66,8 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
         <Icon
           name="ri-close"
           fill={Neutral.B40}
-          height={20}
           onClick={onRemove}
+          className="remove-button-icon"
         />
       </TagIconWrapper>
     </TagRemoveContainerStyle>
@@ -74,11 +80,16 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
       value={value}
       onClick={!disabled && onClick}
       data-clickable={!!onClick}
+      data-removeable={!!onRemove}
+      data-content-type={contentType}
       role={!!onClick ? 'button' : undefined}
       data-disabled={disabled}
       as={!!onClick ? 'button' : 'div'}
     >
-      <TagContentStyle data-removeable={!!onRemove}>{content}</TagContentStyle>
+      <TagContentStyle data-removeable={!!onRemove}>
+        {iconName && <Icon name={iconName} fill={Neutral.B40} height={20} />}
+        <TagContentWrapper>{content}</TagContentWrapper>
+      </TagContentStyle>
       {removeButton}
     </TagStyle>
   );
