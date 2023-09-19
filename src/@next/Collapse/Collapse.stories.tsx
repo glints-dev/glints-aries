@@ -5,6 +5,7 @@ import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
 import { Typography } from '../Typography';
 import { Collapse, CollapseProps } from './Collapse';
 import { Badge } from '../Badge';
+import { Neutral } from '../utilities/colors';
 import { Icon } from '../Icon';
 
 export default {
@@ -18,15 +19,14 @@ export default {
 
 const Template: Story<CollapseProps> = args => {
   const getItemContent = (index: number) => (
-    <Typography as="span" variant="subtitle2">
+    <Typography as="span" variant="subtitle2" color={Neutral.B18}>
       Sample Content No {index}
     </Typography>
   );
 
   return (
     <>
-      <Badge>testtt</Badge>
-      <Collapse name="TEST" {...args}>
+      <Collapse {...args}>
         <Collapse.Item header="Sample Title 1">
           {getItemContent(1)}
         </Collapse.Item>
@@ -43,35 +43,26 @@ const Template: Story<CollapseProps> = args => {
         >
           {getItemContent(4)}
         </Collapse.Item>
-        <Collapse.Item header="Sample Title 5" indicator="right">
+        <Collapse.Item
+          header="Sample Title 5"
+          headerLeftExtra={<Badge>Neutral</Badge>}
+        >
           {getItemContent(5)}
         </Collapse.Item>
-        <Collapse.Item header="Sample Title 6" indicator="none">
+        <Collapse.Item
+          header="Sample Title 6"
+          headerRightExtra={<Badge>Neutral</Badge>}
+        >
           {getItemContent(6)}
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 7"
-          headerLeftExtra={<Badge>Neutral</Badge>}
-          indicator="right"
+          headerRightExtra={<Icon name="ri-more" />}
         >
           {getItemContent(7)}
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 8"
-          headerRightExtra={<Badge>Neutral</Badge>}
-          indicator="none"
-        >
-          {getItemContent(8)}
-        </Collapse.Item>
-        <Collapse.Item
-          header="Sample Title 9"
-          headerRightExtra={<Icon name="ri-more" />}
-          indicator="none"
-        >
-          {getItemContent(9)}
-        </Collapse.Item>
-        <Collapse.Item
-          header="Sample Title 10"
           headerLeftExtra={<Badge>Neutral</Badge>}
           headerRightExtra={
             <>
@@ -82,7 +73,7 @@ const Template: Story<CollapseProps> = args => {
           defaultCollapsed={false}
           indicator="right"
         >
-          {getItemContent(10)}
+          {getItemContent(8)}
         </Collapse.Item>
       </Collapse>
     </>
@@ -90,3 +81,7 @@ const Template: Story<CollapseProps> = args => {
 };
 
 export const Interactive = Template.bind({});
+Interactive.args = {
+  hasBorder: true,
+  indicator: 'left',
+};

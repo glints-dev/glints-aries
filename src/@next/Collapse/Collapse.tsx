@@ -1,21 +1,35 @@
 import React from 'react';
-import { CollapseItem } from './CollapseItem';
+import { CollapseItem, CollapseItemProps } from './CollapseItem';
+import { CollapseComponentContainer } from './CollapseStyle';
 
-export interface CollapseProps {
-  name: string;
-  children?: React.ReactNode;
+export interface CollapseProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** If true, there is outer 1px border with 4px border radius, default is true */
+  hasBorder?: boolean;
+  /** The children should all use 'Collapse.Item' */
+  children?: React.ReactElement<CollapseItemProps>[];
+  /** Arrow indicator to be put on the very left or right of the header, default is left, applies to all children div */
+  indicator?: 'left' | 'right' | 'none';
 }
 
 const CollapseComponent = React.forwardRef<HTMLDivElement, CollapseProps>(
-  function Collapse({ name, children }: CollapseProps, ref) {
-    const temp = 'temp';
-
+  function Collapse(
+    { hasBorder = true, children, indicator, ...props }: CollapseProps,
+    ref
+  ) {
     return (
       <>
-        <div ref={ref}>
-          TODO - Collapse Component {name} {temp}
-          {children}
-        </div>
+        <CollapseComponentContainer
+          ref={ref}
+          data-border={hasBorder}
+          {...props}
+        >
+          {React.Children.map(children, child => {
+            const childIndicator =
+              (child.props as { indicator?: 'left' | 'right' | 'none' })
+                ?.indicator || indicator;
+            return React.cloneElement(child, { indicator: childIndicator });
+          })}
+        </CollapseComponentContainer>
       </>
     );
   }

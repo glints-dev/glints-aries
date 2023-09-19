@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { space4, space8 } from '../utilities/spacing';
 import { Neutral } from '../utilities/colors';
 
-export const CollapseItemContainer = styled.div`
+export const CollapseItemHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,7 +11,7 @@ export const CollapseItemContainer = styled.div`
 
   cursor: pointer;
   background-color: ${Neutral.B100};
-  border: 1px solid ${Neutral.B85};
+  border-bottom: 1px solid ${Neutral.B85};
 
   svg {
     height: 20px;
@@ -28,7 +28,7 @@ export const CollapseItemContainer = styled.div`
   }
 `;
 
-export const RightHeaderContent = styled.div`
+export const RightHeaderSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,10 +36,10 @@ export const RightHeaderContent = styled.div`
   margin-left: auto;
 `;
 
-export const CollapseItemContentContainer = styled.div`
+export const CollapseItemContent = styled.div`
   width: 100%;
   padding: ${space8};
 
-  border: 1px solid ${Neutral.B85};
+  border-bottom: 1px solid ${Neutral.B85};
   background-color: ${Neutral.B99};
 `;
