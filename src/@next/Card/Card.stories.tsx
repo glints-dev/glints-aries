@@ -6,6 +6,7 @@ import { Card, CardProps } from './Card';
 import { Typography } from '../Typography';
 import { Neutral, Red } from '../utilities/colors';
 import styled from 'styled-components';
+import { Button } from '../Button';
 
 (Card as React.FunctionComponent<CardProps>).displayName = 'Card';
 
@@ -204,3 +205,33 @@ DisabledActions.args = {
 };
 
 export const CustomHeadingSubHeading = CustomHeadingSubHeadingTemplate.bind({});
+
+const CustomActionsTemplate: Story<CardProps> = args => {
+  return (
+    <Card
+      {...args}
+      customActions={
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <Button>Button A</Button>
+          <Button>Button B</Button>
+        </div>
+      }
+      headerPrimaryAction={{ ...headerPrimaryAction }}
+      headerSecondaryAction={{ ...headerSecondaryAction }}
+    >
+      <Card.Section>
+        This is a section
+        <Card.Section>This is a subsection</Card.Section>
+        <Card.Section>This is a subsection</Card.Section>
+      </Card.Section>
+      <Card.Section>This is a section</Card.Section>
+    </Card>
+  );
+};
+
+export const CustomActions = CustomActionsTemplate.bind({});
+CustomActions.args = {
+  heading: 'Heading',
+  subheading: 'SubHeading',
+  actionsAlignment: 'left',
+};
