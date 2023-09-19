@@ -25,15 +25,19 @@ export const TagRemoveContainerStyle = styled.div<TagRemoveContainerProps>`
   padding: ${space4} ${space4} ${space4} 0;
   display: flex;
 
-  svg {
-    width: 20px;
-    height: 20px;
+  .remove-button-icon {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   @media (max-width: ${Breakpoints.large}) {
-    svg {
-      width: 18px;
-      height: 18px;
+    .remove-button-icon {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 `;

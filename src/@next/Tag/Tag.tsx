@@ -63,7 +63,12 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(function Tag(
   const removeButton = onRemove && (
     <TagRemoveContainerStyle>
       <TagIconWrapper role="button" tabIndex={0}>
-        <Icon name="ri-close" fill={Neutral.B40} onClick={onRemove} />
+        <Icon
+          name="ri-close"
+          fill={Neutral.B40}
+          onClick={onRemove}
+          className="remove-button-icon"
+        />
       </TagIconWrapper>
     </TagRemoveContainerStyle>
   );
