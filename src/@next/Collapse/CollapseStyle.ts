@@ -10,11 +10,8 @@ export const CollapseComponentContainer = styled.div`
 
   &[data-border='true'] {
     border: 1px solid ${Neutral.B85};
+    border-bottom: none;
     border-radius: ${space4};
     overflow: hidden;
-  }
-
-  div:last-child {
-    border-bottom: none;
   }
 `;

@@ -2,10 +2,8 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
-import { Typography } from '../Typography';
 import { Collapse, CollapseProps } from './Collapse';
 import { Badge } from '../Badge';
-import { Neutral } from '../utilities/colors';
 import { Icon } from '../Icon';
 
 export default {
@@ -18,48 +16,42 @@ export default {
 } as Meta;
 
 const Template: Story<CollapseProps> = args => {
-  const getItemContent = (index: number) => (
-    <Typography as="span" variant="subtitle2" color={Neutral.B18}>
-      Sample Content No {index}
-    </Typography>
-  );
-
   return (
     <>
       <Collapse {...args}>
         <Collapse.Item header="Sample Title 1">
-          {getItemContent(1)}
+          Sample Content No 1
         </Collapse.Item>
         <Collapse.Item header="Sample Title 2" defaultCollapsed={false}>
-          {getItemContent(2)}
+          Sample Content No 2
         </Collapse.Item>
         <Collapse.Item header="Sample Title 3" disabled={true}>
-          {getItemContent(3)}
+          Sample Content No 3
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 4"
           defaultCollapsed={false}
           disabled
         >
-          {getItemContent(4)}
+          Sample Content No 4
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 5"
           headerLeftExtra={<Badge>Neutral</Badge>}
         >
-          {getItemContent(5)}
+          Sample Content No 5
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 6"
           headerRightExtra={<Badge>Neutral</Badge>}
         >
-          {getItemContent(6)}
+          Sample Content No 6
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 7"
           headerRightExtra={<Icon name="ri-more" />}
         >
-          {getItemContent(7)}
+          Sample Content No 7
         </Collapse.Item>
         <Collapse.Item
           header="Sample Title 8"
@@ -73,7 +65,10 @@ const Template: Story<CollapseProps> = args => {
           defaultCollapsed={false}
           indicator="right"
         >
-          {getItemContent(8)}
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae,
+          temporibus nisi distinctio necessitatibus rem esse, maiores
+          dignissimos numquam voluptate amet laudantium in quasi doloribus, qui
+          sapiente ad aperiam magnam praesentium?
         </Collapse.Item>
       </Collapse>
     </>

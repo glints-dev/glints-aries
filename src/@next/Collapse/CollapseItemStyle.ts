@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { space4, space8 } from '../utilities/spacing';
 import { Neutral } from '../utilities/colors';
+import { subtitle2 } from '../Typography/TypographyStyles';
 
 export const CollapseItemHeader = styled.div`
   display: flex;
@@ -36,10 +37,23 @@ export const RightHeaderSection = styled.div`
   margin-left: auto;
 `;
 
-export const CollapseItemContent = styled.div`
-  width: 100%;
-  padding: ${space8};
+export const CollapseItemContent = styled.div<{ open: boolean }>`
+  display: grid;
+  grid-template-rows: ${props => (props.open ? '1fr' : '0fr')};
 
-  border-bottom: 1px solid ${Neutral.B85};
+  transition: all 0.2s ease-in-out;
+  opacity: ${props => (props.open ? 1 : 0)};
+
+  width: 100%;
   background-color: ${Neutral.B99};
+`;
+
+export const CollapseContentWrapper = styled.div`
+  overflow: hidden;
+`;
+
+export const CollapseContent = styled.div`
+  padding: ${space8};
+  border-bottom: 1px solid ${Neutral.B85};
+  ${subtitle2}
 `;

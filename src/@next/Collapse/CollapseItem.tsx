@@ -3,6 +3,8 @@ import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
 import { Icon } from '../Icon';
 import {
+  CollapseContent,
+  CollapseContentWrapper,
   CollapseItemHeader,
   CollapseItemContent,
   RightHeaderSection,
@@ -51,7 +53,6 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
         <CollapseItemHeader
           onClick={handleClick}
           data-disabled={disabled}
-          className="collapse-item-header"
           ref={ref}
         >
           {indicator === 'left' && (
@@ -78,11 +79,11 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
             )}
           </RightHeaderSection>
         </CollapseItemHeader>
-        {!isCollapsed && (
-          <CollapseItemContent className="collapse-item-content">
-            {children}
-          </CollapseItemContent>
-        )}
+        <CollapseItemContent open={!isCollapsed}>
+          <CollapseContentWrapper>
+            <CollapseContent>{children}</CollapseContent>
+          </CollapseContentWrapper>
+        </CollapseItemContent>
       </>
     );
   }
