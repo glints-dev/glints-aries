@@ -1,39 +1,69 @@
 import React, { useState } from 'react';
+import { Typography } from '../Typography';
+import { Neutral } from '../utilities/colors';
+import { Icon } from '../Icon';
+import {
+  CollapseItemContainer,
+  CollapseItemContentContainer,
+  RightHeaderContent,
+} from './CollapseItemStyle';
 
 export interface CollapseItemProps {
-  title: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
+  header: React.ReactNode;
+  headerLeftExtra?: React.ReactNode;
+  headerRightExtra?: React.ReactNode;
+  defaultCollapsed?: boolean;
+  disabled?: boolean;
+  indicator?: 'left' | 'right' | 'none';
 }
 
-export const CollapseItem = ({ title, children }: CollapseItemProps) => {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+export const CollapseItem = ({
+  children,
+  header,
+  headerLeftExtra,
+  headerRightExtra,
+  defaultCollapsed = true,
+  disabled = false,
+  indicator = 'left',
+}: CollapseItemProps) => {
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(defaultCollapsed);
+
+  const handleClick = () => {
+    if (!disabled) {
+      setIsCollapsed(!isCollapsed);
+    }
+  };
 
   return (
     <>
-      <div
-        onClick={() => {
-          setIsCollapsed(!isCollapsed);
-        }}
-        style={{
-          width: '100%',
-          cursor: 'pointer',
-          border: '1px solid black',
-          backgroundColor: 'lightgray',
-          padding: '8px',
-        }}
-      >
-        Title: {title}
-      </div>
-      {!isCollapsed && (
-        <div
-          style={{
-            width: '100%',
-            backgroundColor: 'lightblue',
-            padding: '8px',
-          }}
+      <CollapseItemContainer onClick={handleClick} data-disabled={disabled}>
+        {indicator === 'left' && (
+          <>
+            {!isCollapsed && <Icon name="ri-arrow-m-down-fill" />}
+            {isCollapsed && <Icon name="ri-arrow-m-right-fill" />}
+          </>
+        )}
+        <Typography
+          as="span"
+          variant="body1"
+          color={disabled ? Neutral.B85 : Neutral.B18}
         >
-          {children}
-        </div>
+          {header}
+        </Typography>
+        {headerLeftExtra}
+        <RightHeaderContent>
+          {headerRightExtra}
+          {indicator === 'right' && (
+            <>
+              {!isCollapsed && <Icon name="ri-arrow-m-down-fill" />}
+              {isCollapsed && <Icon name="ri-arrow-m-left-fill" />}
+            </>
+          )}
+        </RightHeaderContent>
+      </CollapseItemContainer>
+      {!isCollapsed && (
+        <CollapseItemContentContainer>{children}</CollapseItemContentContainer>
       )}
     </>
   );
