@@ -26,6 +26,8 @@ export type CardProps = {
   headerPrimaryAction?: ComponentAction;
   headerSecondaryAction?: ComponentAction;
   actionsAlignment?: 'left' | 'right';
+  /** Defining custom actions will not show primary and secondary actions */
+  customActions?: React.ReactNode;
 };
 
 const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
@@ -34,6 +36,7 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
     subheading,
     primaryAction,
     secondaryAction,
+    customActions,
     headerPrimaryAction,
     headerSecondaryAction,
     actionsAlignment = 'right',
@@ -76,8 +79,24 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
     );
   };
 
+  const defaultActionContent = (
+    <ButtonGroup>
+      {secondaryAction && (
+        <Button onClick={secondaryAction.action} {...secondaryAction}>
+          {secondaryAction.label}
+        </Button>
+      )}
+      {primaryAction && (
+        <PrimaryButton onClick={primaryAction.action} {...primaryAction}>
+          {primaryAction.label}
+        </PrimaryButton>
+      )}
+    </ButtonGroup>
+  );
+
+  const actionsContent = customActions ? customActions : defaultActionContent;
   const showHeader = !!heading || !!subheading;
-  const showActions = !!primaryAction || !!secondaryAction;
+  const showActions = !!customActions || !!primaryAction || !!secondaryAction;
 
   return (
     <StyledCardContainer ref={ref}>
@@ -114,19 +133,11 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
         {children}
       </StyledCardContentWrapper>
       {showActions && (
-        <StyledCardActionWrapper data-align={actionsAlignment}>
-          <ButtonGroup>
-            {secondaryAction && (
-              <Button onClick={secondaryAction.action} {...secondaryAction}>
-                {secondaryAction.label}
-              </Button>
-            )}
-            {primaryAction && (
-              <PrimaryButton onClick={primaryAction.action} {...primaryAction}>
-                {primaryAction.label}
-              </PrimaryButton>
-            )}
-          </ButtonGroup>
+        <StyledCardActionWrapper
+          data-align={actionsAlignment}
+          className="card-actions-wrapper"
+        >
+          {actionsContent}
         </StyledCardActionWrapper>
       )}
     </StyledCardContainer>

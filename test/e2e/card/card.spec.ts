@@ -85,3 +85,12 @@ test('Card - header and card actions disabled', async ({ page }) => {
     'card-disabled-actions.png'
   );
 });
+
+test('Card - custom actions', async ({ page }) => {
+  const cardPage = new StoryBookPage(
+    page,
+    '?path=/story/next-card--custom-actions'
+  );
+  await cardPage.goto();
+  await expect(cardPage.container).toHaveScreenshot('card-custom-actions.png');
+});
