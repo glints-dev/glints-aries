@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { subtitle2 } from '../Typography/TypographyStyles';
 import { Neutral } from '../utilities/colors';
 import { space4, space8 } from '../utilities/spacing';
+import { Breakpoints } from '..';
 
 const ANIMATION_DURATION = '200ms';
 
@@ -28,6 +29,13 @@ export const CollapseItemHeader = styled.div`
 
     svg {
       fill: ${Neutral.B85};
+    }
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    svg {
+      height: 18px;
+      width: 18px;
     }
   }
 `;
