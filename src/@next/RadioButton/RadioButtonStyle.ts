@@ -20,7 +20,7 @@ export const RadioButtonInput = styled.input`
   border-radius: ${borderRadiusHalf};
   transform: translateY(1.5px);
 
-  ::after {
+  &::after {
     content: '';
     display: block;
     border-radius: ${borderRadiusHalf};
@@ -33,42 +33,42 @@ export const RadioButtonInput = styled.input`
     width: 22px;
     height: 22px;
     transform: none;
-    ::after {
+    &::after {
       width: 10px;
       height: 10px;
       margin: ${space4};
     }
   }
 
-  :hover {
+  &:hover {
     border-color: ${Colors.Neutral.B68};
   }
 
-  :focus-visible {
+  &:focus-visible {
     box-shadow:
       0px 0px 0px 1px ${Colors.Neutral.B100},
       0px 0px 0px 3px ${Colors.Blue.S54};
     outline: none;
   }
 
-  :disabled {
+  &:disabled {
     cursor: not-allowed;
     background-color: ${Colors.Neutral.B95};
     border-color: ${Colors.Neutral.B85};
   }
 
-  :checked {
+  &:checked {
     border-color: ${Colors.Blue.S99};
 
-    ::after {
+    &::after {
       background-color: ${Colors.Blue.S99};
     }
 
-    :disabled {
+    &:disabled {
       background-color: ${Colors.Neutral.B95};
       border-color: ${Colors.Neutral.B85};
 
-      ::after {
+      &::after {
         background-color: ${Colors.Neutral.B85};
       }
     }
