@@ -8,10 +8,11 @@ type Row = {
   variant?: TypographyVariant;
 };
 export interface SkeletonTextProps {
+  className?: string;
   rows?: number | Row[];
 }
 
-export const SkeletonText = ({ rows = 4 }: SkeletonTextProps) => {
+export const SkeletonText = ({ className, rows = 4 }: SkeletonTextProps) => {
   const defaultWidth = '100%';
   const defaultVariant = 'body1';
 
@@ -29,5 +30,9 @@ export const SkeletonText = ({ rows = 4 }: SkeletonTextProps) => {
     });
   };
 
-  return <SkeletonTextContainer>{renderRows()}</SkeletonTextContainer>;
+  return (
+    <SkeletonTextContainer className={className}>
+      {renderRows()}
+    </SkeletonTextContainer>
+  );
 };
