@@ -26,8 +26,8 @@ const CollapseComponent = React.forwardRef<HTMLDivElement, CollapseProps>(
         >
           {React.Children.map(children, child => {
             const childIndicator =
-              (child.props as { indicator?: 'left' | 'right' | 'none' })
-                ?.indicator || indicator;
+              (child.props as Pick<CollapseProps, 'indicator'>)?.indicator ||
+              indicator;
             return React.cloneElement(child, { indicator: childIndicator });
           })}
         </CollapseComponentContainer>
