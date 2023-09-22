@@ -99,9 +99,9 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
   const showActions = !!customActions || !!primaryAction || !!secondaryAction;
 
   return (
-    <StyledCardContainer ref={ref}>
+    <StyledCardContainer ref={ref} className="card-container">
       {showHeader && (
-        <StyledCardHeaderWrapper>
+        <StyledCardHeaderWrapper className="card-heading-container">
           <StyledCardHeaderLeftContainer>
             {headerMarkup()}
           </StyledCardHeaderLeftContainer>
@@ -129,7 +129,10 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
           </StyledCardHeaderRightContainer>
         </StyledCardHeaderWrapper>
       )}
-      <StyledCardContentWrapper data-actions={showActions}>
+      <StyledCardContentWrapper
+        data-actions={showActions}
+        className="card-content-container"
+      >
         {children}
       </StyledCardContentWrapper>
       {showActions && (
