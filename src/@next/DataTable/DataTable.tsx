@@ -144,7 +144,9 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
           {...props}
         >
           <thead>
-            <StyledTableRow>{rowHeaderMarkup}</StyledTableRow>
+            <StyledTableRow data-header={true}>
+              {rowHeaderMarkup}
+            </StyledTableRow>
           </thead>
           <tbody>
             <LoadingRow />

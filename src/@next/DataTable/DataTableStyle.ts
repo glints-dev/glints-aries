@@ -62,9 +62,16 @@ export const StyledTable = styled.table`
 export const StyledTableRow = styled.tr`
   background: ${Neutral.B100};
   box-shadow: inset 0px -1px 0px ${Neutral.B85};
+  cursor: default;
 
   &:hover {
     background: ${Blue.S08};
+  }
+
+  &[data-header='true'] {
+    &:hover {
+      background: ${Neutral.B99};
+    }
   }
 `;
 
