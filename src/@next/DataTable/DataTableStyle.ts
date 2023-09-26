@@ -38,6 +38,7 @@ export const StyledTable = styled.table`
   color: ${Neutral.B18};
   max-width: 100vw;
   border-bottom: 0;
+  cursor: default;
 
   thead tr {
     background: ${Neutral.B99};
