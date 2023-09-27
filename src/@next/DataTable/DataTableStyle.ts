@@ -5,29 +5,29 @@ import { Blue, Neutral } from '../utilities/colors';
 import { space16, space8 } from '../utilities/spacing';
 
 const alignmentStyle = `
-&[data-text-align='right'] {
-  > div {
-    display: flex;
-    justify-content: right;
+  &[data-text-align='right'] {
+    > div {
+      display: flex;
+      justify-content: right;
+    }
   }
-}
 
-&[data-text-align='center'] {
-  > div {
-    display: flex;
-    justify-content: center;
+  &[data-text-align='center'] {
+    > div {
+      display: flex;
+      justify-content: center;
+    }
   }
-}
 `;
 
 const cellVerticalAlign = `
-&[data-vertical-align='top'] {
-  vertical-align: top;
-}
+  &[data-vertical-align='top'] {
+    vertical-align: top;
+  }
 
-&[data-vertical-align='center'] {
-  vertical-align: center;
-}
+  &[data-vertical-align='center'] {
+    vertical-align: center;
+  }
 `;
 
 export const StyledTable = styled.table`
@@ -38,6 +38,7 @@ export const StyledTable = styled.table`
   color: ${Neutral.B18};
   max-width: 100vw;
   border-bottom: 0;
+  cursor: default;
 
   thead tr {
     background: ${Neutral.B99};
