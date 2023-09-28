@@ -46,6 +46,8 @@ export type { CardProps } from './Card';
 export { Card } from './Card';
 export type { CheckboxProps } from './Checkbox';
 export { Checkbox } from './Checkbox';
+export type { CollapseProps } from './Collapse';
+export { Collapse } from './Collapse';
 export type { ComboboxProps } from './Combobox';
 export { Combobox } from './Combobox';
 export type { CurrencyInputProps } from './CurrencyInput';
