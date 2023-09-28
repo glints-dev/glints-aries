@@ -28,14 +28,6 @@ export const StyledBanner = styled.div`
   border: 1px solid ${Neutral.B68};
   border-radius: ${borderRadius8};
 
-  svg {
-    position: absolute;
-    fill: ${Neutral.B40};
-    height: 24px;
-    width: 24px;
-    top: 0;
-  }
-
   &[data-titled='true'] svg {
     top: 3px;
   }
@@ -91,6 +83,14 @@ export const StyledBannerContentContainer = styled.div`
 
 export const StyledBannerTitleContainer = styled.div`
   position: relative;
+
+  svg {
+    position: absolute;
+    fill: ${Neutral.B40};
+    height: 24px;
+    width: 24px;
+    top: 0;
+  }
 `;
 
 export const StyledBannerTitle = styled.div`

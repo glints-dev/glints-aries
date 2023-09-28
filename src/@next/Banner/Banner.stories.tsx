@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import { Icon } from '../Icon';
 
 import { BaseContainer } from '../../Layout/GlintsContainer/GlintsContainer';
 import { Banner, BannerProps } from './Banner';
@@ -50,7 +51,11 @@ const WithTwoButtonsTemplate: Story<
   BannerProps & { buttonDisabled: boolean; buttonLoading: boolean }
 > = args => {
   const action = (
-    <Button disabled={args.buttonDisabled} loading={args.buttonLoading}>
+    <Button
+      disabled={args.buttonDisabled}
+      loading={args.buttonLoading}
+      icon={<Icon name="ri-add" />}
+    >
       Label
     </Button>
   );
