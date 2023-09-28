@@ -8,13 +8,21 @@ export interface CollapseProps extends React.HTMLAttributes<HTMLDivElement> {
   hasBorder?: boolean;
   /** The children should all be 'Collapse.Item' components */
   children?: React.ReactElement<CollapseItemProps>[];
-  /** Arrow indicator to be put on the very left or right of the header (or none), default is left, applies to all children collapse items */
-  indicator?: 'left' | 'right' | 'none';
+  /** If this is true, show arrow indication, applies to all children collapse items */
+  showIndicator?: boolean;
+  /** Arrow indicator to be put on the very left or right of the header, applies to all children collapse items */
+  indicatorPosition?: 'left' | 'right';
 }
 
 const CollapseComponent = React.forwardRef<HTMLDivElement, CollapseProps>(
   function Collapse(
-    { hasBorder = true, children, indicator, ...props }: CollapseProps,
+    {
+      hasBorder = true,
+      children,
+      showIndicator,
+      indicatorPosition,
+      ...props
+    }: CollapseProps,
     ref
   ) {
     return (
@@ -25,10 +33,16 @@ const CollapseComponent = React.forwardRef<HTMLDivElement, CollapseProps>(
           {...props}
         >
           {React.Children.map(children, child => {
-            const childIndicator =
-              (child.props as Pick<CollapseProps, 'indicator'>)?.indicator ||
-              indicator;
-            return React.cloneElement(child, { indicator: childIndicator });
+            const childShowIndicator =
+              (child.props as Pick<CollapseProps, 'showIndicator'>)
+                ?.showIndicator || showIndicator;
+            const childIndicatorPosition =
+              (child.props as Pick<CollapseProps, 'indicatorPosition'>)
+                ?.indicatorPosition || indicatorPosition;
+            return React.cloneElement(child, {
+              showIndicator: childShowIndicator,
+              indicatorPosition: childIndicatorPosition,
+            });
           })}
         </CollapseComponentContainer>
       </>

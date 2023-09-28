@@ -54,7 +54,8 @@ const Template: Story<CollapseProps> = args => {
           </>
         }
         defaultCollapsed={false}
-        indicator="right"
+        showIndicator={true}
+        indicatorPosition="right"
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae,
         temporibus nisi distinctio necessitatibus rem esse, maiores dignissimos
@@ -68,7 +69,8 @@ const Template: Story<CollapseProps> = args => {
 export const Interactive = Template.bind({});
 Interactive.args = {
   hasBorder: true,
-  indicator: 'left',
+  showIndicator: true,
+  indicatorPosition: 'left',
 };
 Interactive.parameters = {
   docs: {

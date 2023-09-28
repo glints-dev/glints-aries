@@ -25,8 +25,10 @@ export interface CollapseItemProps {
   defaultCollapsed?: boolean;
   /** If this is true, you cannot collapse or uncollapsed the item, default is false */
   disabled?: boolean;
+  /** If this is true, show arrow indication, otherwise it is not shown, default is True or whatever specified in Collapse component */
+  showIndicator?: boolean;
   /** Arrow indicator to be put on the very left or right of the header, default is left or whatever specified in Collapse component, you can overwrite for a single item here */
-  indicator?: 'left' | 'right' | 'none';
+  indicatorPosition?: 'left' | 'right';
 }
 
 export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
@@ -38,7 +40,8 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
       headerRight,
       defaultCollapsed = true,
       disabled = false,
-      indicator = 'left',
+      showIndicator = true,
+      indicatorPosition = 'left',
     }: CollapseItemProps,
     ref
   ) {
@@ -57,7 +60,7 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
           data-disabled={disabled}
           ref={ref}
         >
-          {indicator === 'left' && (
+          {showIndicator && indicatorPosition === 'left' && (
             <IndicatorIconWrapper isCollapsed={isCollapsed}>
               <Icon name="ri-arrow-m-right-fill" />
             </IndicatorIconWrapper>
@@ -72,7 +75,7 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
           {headerLeft}
           <RightHeaderSection>
             {headerRight}
-            {indicator === 'right' && (
+            {showIndicator && indicatorPosition === 'right' && (
               <IndicatorIconWrapper
                 isCollapsed={isCollapsed}
                 data-anticlockwise={true}

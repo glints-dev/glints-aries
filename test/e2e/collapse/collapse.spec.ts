@@ -20,7 +20,7 @@ test('Collapse - no border', async ({ page }) => {
 
 test('Collapse - no indicator', async ({ page }) => {
   const collapsePage = getPage(page);
-  await collapsePage.goto('args=indicator:none');
+  await collapsePage.goto('args=showIndicator:false');
   await expect(collapsePage.container).toHaveScreenshot(
     'collapse-no-indicator.png'
   );
@@ -28,7 +28,7 @@ test('Collapse - no indicator', async ({ page }) => {
 
 test('Collapse - right indicator', async ({ page }) => {
   const collapsePage = getPage(page);
-  await collapsePage.goto('args=indicator:right');
+  await collapsePage.goto('args=indicatorPosition:right');
   await expect(collapsePage.container).toHaveScreenshot(
     'collapse-right-indicator.png'
   );
