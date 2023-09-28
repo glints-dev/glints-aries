@@ -37,6 +37,7 @@ export {
   OutlineButton,
   OutlineMonochromeButton,
   PrimaryButton,
+  PlainButton,
 } from './Button';
 export type { ButtonGroupProps } from './ButtonGroup';
 export { ButtonGroup } from './ButtonGroup';

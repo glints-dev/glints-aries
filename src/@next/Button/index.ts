@@ -3,3 +3,4 @@ export * from './DesctructiveButtonStyle';
 export * from './OutlineButtonStyle';
 export * from './OutlineMonochromeStyle';
 export * from './PrimaryButtonStyle';
+export * from './PlainButtonStyle';
