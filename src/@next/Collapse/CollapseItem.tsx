@@ -87,7 +87,9 @@ export const CollapseItem = React.forwardRef<HTMLDivElement, CollapseItemProps>(
         </CollapseItemHeader>
         <CollapseItemContent isCollapsed={isCollapsed}>
           <CollapseContentWrapper>
-            <CollapseContent>{children}</CollapseContent>
+            <CollapseContent className="collapse-item-content">
+              {children}
+            </CollapseContent>
           </CollapseContentWrapper>
         </CollapseItemContent>
       </>
