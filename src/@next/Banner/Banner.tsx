@@ -84,9 +84,9 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
           {...props}
         >
           <StyledBannerTitleContainer>
-            <Icon name={iconNameValue} />
+            {showIcon && <Icon name={iconNameValue} />}
             {title && (
-              <StyledBannerTitle>
+              <StyledBannerTitle data-show-icon={showIcon}>
                 <Typography as="span" variant="subtitle1">
                   {title}
                 </Typography>
@@ -101,12 +101,12 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(
               </StyledCloseIconWrapper>
             )}
           </StyledBannerTitleContainer>
-          <StyledBannerContentContainer>
+          <StyledBannerContentContainer data-show-icon={showIcon}>
             <Typography as="div" variant="body1">
               {children}
             </Typography>
           </StyledBannerContentContainer>
-          <StyledBannerContentContainer>
+          <StyledBannerContentContainer data-show-icon={showIcon}>
             {actionComponent}
           </StyledBannerContentContainer>
         </StyledBanner>
