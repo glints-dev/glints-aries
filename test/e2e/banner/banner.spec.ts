@@ -83,6 +83,12 @@ test('Banner - two buttons', async ({ page }) => {
   await expect(bannerPage.container).toHaveScreenshot('banner-two-buttons.png');
 });
 
+test('Banner - no icon', async ({ page }) => {
+  const bannerPage = new BannerPage(page);
+  await bannerPage.goto('args=showIcon:false');
+  await expect(bannerPage.container).toHaveScreenshot('banner-no-icon.png');
+});
+
 test('Fixed Banner', async ({ page }) => {
   const bannerPage = new BannerPage(page);
   await bannerPage.gotoFixedBannerPage();

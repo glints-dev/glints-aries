@@ -74,7 +74,9 @@ export const StyledBanner = styled.div`
 `;
 
 export const StyledBannerContentContainer = styled.div`
-  padding-left: 40px;
+  &[data-show-icon='true'] {
+    padding-left: 40px;
+  }
 
   button {
     margin-top: 10px;
@@ -95,7 +97,9 @@ export const StyledBannerTitleContainer = styled.div`
 
 export const StyledBannerTitle = styled.div`
   margin-bottom: ${space4};
-  padding-left: 40px;
+  &[data-show-icon='true'] {
+    padding-left: 40px;
+  }
 
   button {
     margin-top: 10px;
