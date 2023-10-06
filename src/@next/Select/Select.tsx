@@ -27,6 +27,7 @@ export interface SelectProps {
   listHeight?: number;
   loadingOptions?: boolean;
   name?: string;
+  onBlur?: () => void;
   onClose?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
@@ -61,6 +62,7 @@ export const Select = ({
   listHeight,
   loadingOptions = false,
   name,
+  onBlur,
   onClose,
   onRemoveTag,
   onSelect,
@@ -161,6 +163,7 @@ export const Select = ({
           placeholder={placeholder ?? 'Search'}
           width={width}
           selectedValues={selectedValues}
+          onBlur={onBlur}
           onSelect={onSelect}
           onFocus={handleFocus}
           inputValue={inputValue}
@@ -184,6 +187,7 @@ export const Select = ({
         disabled={disabled}
         hasError={hasError}
         placeholder={placeholder ?? 'Placeholder'}
+        onBlur={onBlur}
         onRemoveTag={onRemoveTag}
         onSelectClick={handleSelectClick}
         width={width}
