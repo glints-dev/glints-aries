@@ -49,6 +49,7 @@ export const SearchableSelectInput = forwardRef<
     inputValue,
     updateInputValue,
     onInputChange,
+    onBlur,
     onFocus,
     searchableSelectState: { showInput, showPlaceholder, showSelected },
     updateSearchableSelectState,
@@ -116,7 +117,7 @@ export const SearchableSelectInput = forwardRef<
     updateMenuOptions(options);
   };
 
-  const handleInputBlur = () => {
+  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     if (disabled) return;
     setIsSelectedClicked(false);
 
@@ -132,6 +133,8 @@ export const SearchableSelectInput = forwardRef<
         });
       }, 100);
     }
+
+    onBlur?.(e);
   };
 
   useEffect(() => {

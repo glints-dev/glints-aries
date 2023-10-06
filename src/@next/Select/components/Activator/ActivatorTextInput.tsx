@@ -31,6 +31,7 @@ export const ActivatorTextInput = ({
   disabled = false,
   hasError = false,
   onChange,
+  onBlur,
   onFocus,
   onSelect,
   prefix = <Icon name="ri-search" />,
@@ -81,6 +82,7 @@ export const ActivatorTextInput = ({
           ref={activatorRef}
           prefix={prefix}
           onChange={value => handleChange({ value })}
+          onBlur={onBlur}
           onFocus={onFocus}
           error={hasError}
           disabled={disabled}
@@ -92,6 +94,7 @@ export const ActivatorTextInput = ({
           ref={activatorRef}
           prefix={prefix}
           filterOptions={filterOptions}
+          onBlur={onBlur}
           onFocus={onFocus}
           onInputChange={onChange}
           onSelect={onSelect}
