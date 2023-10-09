@@ -145,7 +145,7 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-PositionedOverlay {
   position: absolute;
-  z-index: 400;
+  z-index: 999;
 }
 
 .Polaris-PositionedOverlay--fixed {
