@@ -156,6 +156,8 @@ export const iconNames = [
   'ri-flashlight-line',
   'ri-whatsapp-line',
   'ri-whatsapp-fill',
+  'ri-file-copy-fill',
+  'ri-file-copy-line',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -316,4 +318,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-flashlight-line']: Icons.RiFlashlightLine,
   ['ri-whatsapp-line']: Icons.RiWhatsappLine,
   ['ri-whatsapp-fill']: Icons.RiWhatsappFill,
+  ['ri-file-copy-fill']: Icons.RiFileCopyFill,
+  ['ri-file-copy-line']: Icons.RiFileCopyLine,
 };
