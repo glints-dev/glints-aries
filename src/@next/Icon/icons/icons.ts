@@ -318,7 +318,7 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-twitter-line']: Icons.RiTwitterLine,
   ['ri-upload-fill']: Icons.RiUploadFill,
   ['ri-upload-line']: Icons.RiUploadLine,
-  ['ri-user-line']: Icons.RiUserFill,
+  ['ri-user-line']: Icons.RiUserLine,
   ['ri-user-fill']: Icons.RiUserFill,
   ['ri-user5-line']: Icons.RiUser5Line,
   ['ri-user5-fill']: Icons.RiUser5Fill,
