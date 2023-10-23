@@ -64,6 +64,14 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
   const buttonSize: 'default' | 'large' =
     width <= breakpointWidth ? 'default' : 'large';
 
+  function makeButtonProps(buttonAction: ComponentAction) {
+    const { onClick, action, ...otherProps } = buttonAction;
+    return {
+      onClick: onClick || action,
+      ...otherProps,
+    };
+  }
+
   return (
     <StyledBar data-align={position} ref={ref}>
       <StyledBarContainer>
@@ -79,17 +87,20 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
           ) : (
             <ButtonGroup>
               {tertiaryAction && (
-                <Button {...tertiaryAction} size={buttonSize}>
+                <Button {...makeButtonProps(tertiaryAction)} size={buttonSize}>
                   {tertiaryAction.label}
                 </Button>
               )}
               {secondaryAction && (
-                <Button {...secondaryAction} size={buttonSize}>
+                <Button {...makeButtonProps(secondaryAction)} size={buttonSize}>
                   {secondaryAction.label}
                 </Button>
               )}
               {primaryAction && (
-                <PrimaryButton {...primaryAction} size={buttonSize}>
+                <PrimaryButton
+                  {...makeButtonProps(primaryAction)}
+                  size={buttonSize}
+                >
                   {primaryAction.label}
                 </PrimaryButton>
               )}
