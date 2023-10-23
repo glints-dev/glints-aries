@@ -79,17 +79,17 @@ export const Bar = React.forwardRef<HTMLDivElement, BarProps>(function Bar(
           ) : (
             <ButtonGroup>
               {tertiaryAction && (
-                <Button onClick={tertiaryAction.action} size={buttonSize}>
+                <Button {...tertiaryAction} size={buttonSize}>
                   {tertiaryAction.label}
                 </Button>
               )}
               {secondaryAction && (
-                <Button onClick={secondaryAction.action} size={buttonSize}>
+                <Button {...secondaryAction} size={buttonSize}>
                   {secondaryAction.label}
                 </Button>
               )}
               {primaryAction && (
-                <PrimaryButton onClick={primaryAction.action} size={buttonSize}>
+                <PrimaryButton {...primaryAction} size={buttonSize}>
                   {primaryAction.label}
                 </PrimaryButton>
               )}
