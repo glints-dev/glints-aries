@@ -17,8 +17,8 @@ interface SearchableProps {
   onInputChange?(value: string): void;
 }
 interface OptionsPlaceholderProps {
-  idle?: string;
-  noResult?: string;
+  idle?: React.ReactNode;
+  noResult?: React.ReactNode;
 }
 export interface SelectProps {
   allowMultiple?: boolean;
