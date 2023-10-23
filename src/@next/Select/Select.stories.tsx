@@ -829,6 +829,12 @@ const AsyncSearchableSingleWithInputStateTemplate: Story<
   return (
     <AsyncSearchableSingleSelectWithInputState
       data={slicedCountries}
+      loadingOptions={true}
+      showPopoverOnFocus={true}
+      optionsPlaceholderProps={{
+        idle: 'Type in location',
+        noReslt: 'No matching results',
+      }}
       {...args}
     />
   );
