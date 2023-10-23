@@ -325,3 +325,17 @@ test('Select - Async searchable single select', async ({ page }) => {
     'select-async-searchable-single-select-hasselected-searching.png'
   );
 });
+
+test('Select - Async searchable single select with custom popover placeholder', async ({
+  page,
+}) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoAsyncSearchableSingleSelectCustomPopoverPlaceholderPage();
+
+  await selectPage.activatorTextInput.waitFor();
+  await selectPage.activatorTextInput.focus();
+  await expect(selectPage.optionList).toBeVisible();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-async-searchable-single-select-option-list-with-custom-custom-placeholder.png'
+  );
+});

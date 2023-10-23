@@ -97,6 +97,15 @@ export class SelectPage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoAsyncSearchableSingleSelectCustomPopoverPlaceholderPage(
+    args?: Args
+  ) {
+    this.setPath(
+      '?path=/story/next-select--async-searchable-single-with-input-state-custom-popover-placeholder'
+    );
+    await this.goto(args);
+  }
+
   async gotoSearchableMultiSelectPage(args?: Args) {
     this.setPath('?path=/story/next-select--searchable-multi-select');
     await this.goto(args);
