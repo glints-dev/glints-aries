@@ -16,6 +16,10 @@ interface SearchableProps {
   /** onChange of TextInput activator when Select is searchable */
   onInputChange?(value: string): void;
 }
+interface OptionsPlaceholderProps {
+  idle?: React.ReactNode;
+  noResult?: React.ReactNode;
+}
 export interface SelectProps {
   allowMultiple?: boolean;
   customActivatorIcon?: IconNames;
@@ -42,6 +46,8 @@ export interface SelectProps {
   searchable?: boolean;
   /** props used for searchable Select */
   searchableProps?: SearchableProps;
+  optionsPlaceholderProps?: OptionsPlaceholderProps;
+  showPopoverOnFocus?: boolean;
   /** true = Allow vertical scroll, default by 6 options. */
   scrollable?: boolean;
   sections?: Section[];
@@ -73,6 +79,8 @@ export const Select = ({
   prefix,
   searchable = false,
   searchableProps,
+  optionsPlaceholderProps,
+  showPopoverOnFocus = false,
   scrollable = false,
   sections,
   selectedValues,
@@ -111,9 +119,13 @@ export const Select = ({
   };
 
   const handleFocus = () => {
+    if (showPopoverOnFocus) {
+      setPopoverActive(true);
+      return;
+    }
+
     if (options.length < 1) {
       setPopoverActive(false);
-
       return;
     }
 
@@ -129,6 +141,8 @@ export const Select = ({
   }, [options]);
 
   useEffect(() => {
+    if (showPopoverOnFocus) return;
+
     if (inputValue != '' && optionsLength > 0) {
       setPopoverActive(true);
     }
@@ -136,7 +150,7 @@ export const Select = ({
     if (inputValue === '' && optionsLength < 1) {
       setPopoverActive(false);
     }
-  }, [inputValue, optionsLength]);
+  }, [inputValue, optionsLength, showPopoverOnFocus]);
 
   useEffect(() => {
     if (listHeight) {
@@ -240,6 +254,12 @@ export const Select = ({
             selectedValues={selectedValues}
             width={width}
             onMenuClose={handleClose}
+            noOptionsMessage={
+              optionsPlaceholderProps &&
+              (!inputValue
+                ? optionsPlaceholderProps.idle
+                : optionsPlaceholderProps.noResult)
+            }
             updateSearchableSelectState={newState =>
               updateSearchableSelectState(newState)
             }
