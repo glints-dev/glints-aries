@@ -9,6 +9,12 @@ import {
 } from '../Typography/TypographyStyles';
 
 export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
+  .Polaris-IndexTable__TableCell,
+  .Polaris-IndexTable__TableHeading,
+  .Polaris-IndexTable-ScrollContainer {
+    cursor: default;
+  }
+
   :root {
     --p-surface: rgba(255, 255, 255, 1);
     --p-surface-dark: rgba(32, 33, 35, 1);
