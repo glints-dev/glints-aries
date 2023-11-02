@@ -1,15 +1,20 @@
 import styled from 'styled-components';
-import { space4, space12, space16 } from '../utilities/spacing';
 import { Breakpoints } from '..';
+import { space4, space12, space16 } from '../utilities/spacing';
 import { Blue, Neutral, Red } from '../utilities/colors';
 
 export const StepItemWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: ${space12};
+  cursor: default;
 
-  @media (max-width: ${Breakpoints.large}) {
+  &[data-dot='true'] {
     gap: ${space16};
+  }
+
+  &[data-clickable='true'] {
+    cursor: pointer;
   }
 `;
 
@@ -45,7 +50,7 @@ export const CircleDiv = styled.div`
     }
   }
 
-  @media (max-width: ${Breakpoints.large}) {
+  &[data-dot='true'] {
     height: 10px;
     width: 10px;
 
@@ -58,6 +63,15 @@ export const CircleDiv = styled.div`
       background-color: ${Blue.S99};
     }
   }
+
+  @media (max-width: ${Breakpoints.large}) {
+    height: 24px;
+    width: 24px;
+    svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
 `;
 
 export const VerticalLineWrapper = styled.div`
@@ -68,7 +82,7 @@ export const VerticalLineWrapper = styled.div`
   height: 64px;
   width: 28px;
 
-  @media (max-width: ${Breakpoints.large}) {
+  &[data-dot='true'] {
     width: 10px;
   }
 `;
@@ -82,7 +96,7 @@ export const VerticalLine = styled.div`
     background-color: ${Blue.S99};
   }
 
-  @media (max-width: ${Breakpoints.large}) {
+  &[data-dot='true'] {
     width: 1.5px;
   }
 `;

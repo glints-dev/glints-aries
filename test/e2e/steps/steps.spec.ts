@@ -54,3 +54,15 @@ test('Steps - small screen', async ({ page }) => {
 
   await expect(stepsPage.container).toHaveScreenshot('steps-small-screen.png');
 });
+
+test('Steps - dot style', async ({ page }) => {
+  const stepsPage = new StepsPage(page);
+  await stepsPage.goto('args=isDot:true');
+
+  await stepsPage.nextButton.click();
+  await stepsPage.nextButton.click();
+  await stepsPage.errorButton.click();
+  await stepsPage.nextButton.click();
+
+  await expect(stepsPage.container).toHaveScreenshot('steps-dot.png');
+});

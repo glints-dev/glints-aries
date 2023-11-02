@@ -16,7 +16,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<StepsProps> = () => {
+const Template: Story<StepsProps> = args => {
   const [currentStep, setCurrentStep] = React.useState<number>(1);
   const [errorSteps, setErrorSteps] = React.useState<number[]>([]);
 
@@ -38,9 +38,20 @@ const Template: Story<StepsProps> = () => {
     });
   };
 
+  const handleStepClick = (index: number) => {
+    if (args.clickable) {
+      setCurrentStep(index);
+    }
+  };
+
   return (
     <>
-      <Steps currentStep={currentStep} errorSteps={errorSteps}>
+      <Steps
+        {...args}
+        currentStep={currentStep}
+        errorSteps={errorSteps}
+        handleClick={handleStepClick}
+      >
         <Steps.Step label="Label 1" />
         <Steps.Step label="Label 2" />
         <Steps.Step label="Label 3" />
@@ -72,3 +83,7 @@ const Template: Story<StepsProps> = () => {
 };
 
 export const Interactive = Template.bind({});
+Interactive.args = {
+  isDot: false,
+  clickable: false,
+};
