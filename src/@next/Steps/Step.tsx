@@ -14,10 +14,9 @@ export interface StepProps {
   variant?: 'pending' | 'completed' | 'processing' | 'error';
   /** Label given to the step component  */
   label?: string;
-  hasLine?: boolean;
   /** Step number to be shown, by default it's 1,2,3,... from the parent component, or you can overwrite this */
   index?: number;
-  isDot?: boolean;
+  type?: 'normal' | 'dot';
   clickable?: boolean;
   handleClick?: (index: number) => void;
 }
@@ -26,9 +25,8 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
   {
     variant = 'pending',
     label = '',
-    hasLine = true,
     index = 0,
-    isDot = false,
+    type = 'normal',
     clickable = false,
     handleClick,
   }: StepProps,
@@ -38,20 +36,35 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
     <>
       <StepItemWrapper
         ref={ref}
-        data-dot={isDot}
+        data-dot={type === 'dot'}
         data-clickable={clickable}
         onClick={() => handleClick(index)}
+        className="step-item-wrapper"
       >
-        <CircleDiv data-variant={variant} data-dot={isDot}>
-          {variant === 'completed' && <Icon name="ri-check" />}
-          {variant === 'error' && <Icon name="ri-close" />}
+        <CircleDiv data-variant={variant} data-dot={type === 'dot'}>
+          {variant === 'completed' && (
+            <Icon name="ri-check" className="circle-content" />
+          )}
+          {variant === 'error' && (
+            <Icon name="ri-close" className="circle-content" />
+          )}
           {variant === 'processing' && (
-            <Typography as="div" variant="caption" color={Neutral.B100}>
+            <Typography
+              as="span"
+              variant="caption"
+              color={Neutral.B100}
+              className="circle-content"
+            >
               {index}
             </Typography>
           )}
           {variant === 'pending' && (
-            <Typography as="div" variant="caption" color={Neutral.B40}>
+            <Typography
+              as="span"
+              variant="caption"
+              color={Neutral.B40}
+              className="circle-content"
+            >
               {index}
             </Typography>
           )}
@@ -61,16 +74,18 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
           variant={
             variant === 'processing' || variant === 'error' ? 'body2' : 'body1'
           }
-          color={Neutral.B18}
+          color={
+            variant === 'pending' || variant === 'completed'
+              ? Neutral.B40
+              : Neutral.B18
+          }
         >
           {label}
         </Typography>
       </StepItemWrapper>
-      {hasLine && (
-        <VerticalLineWrapper data-dot={isDot}>
-          <VerticalLine data-variant={variant} data-dot={isDot} />
-        </VerticalLineWrapper>
-      )}
+      <VerticalLineWrapper data-dot={type === 'dot'}>
+        <VerticalLine data-variant={variant} data-dot={type === 'dot'} />
+      </VerticalLineWrapper>
     </>
   );
 });

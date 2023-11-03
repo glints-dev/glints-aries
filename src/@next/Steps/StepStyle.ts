@@ -54,8 +54,7 @@ export const CircleDiv = styled.div`
     height: 10px;
     width: 10px;
 
-    > div,
-    > svg {
+    > .circle-content {
       display: none;
     }
 
@@ -84,6 +83,14 @@ export const VerticalLineWrapper = styled.div`
 
   &[data-dot='true'] {
     width: 10px;
+  }
+
+  &:last-child {
+    display: none;
+  }
+
+  @media (max-width: ${Breakpoints.large}) {
+    width: 24px;
   }
 `;
 

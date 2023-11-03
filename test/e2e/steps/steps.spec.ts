@@ -57,7 +57,7 @@ test('Steps - small screen', async ({ page }) => {
 
 test('Steps - dot style', async ({ page }) => {
   const stepsPage = new StepsPage(page);
-  await stepsPage.goto('args=isDot:true');
+  await stepsPage.goto('args=type:dot');
 
   await stepsPage.nextButton.click();
   await stepsPage.nextButton.click();

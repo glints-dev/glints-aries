@@ -84,6 +84,6 @@ const Template: Story<StepsProps> = args => {
 
 export const Interactive = Template.bind({});
 Interactive.args = {
-  isDot: false,
+  type: 'normal',
   clickable: false,
 };

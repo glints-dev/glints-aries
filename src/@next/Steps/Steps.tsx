@@ -8,8 +8,8 @@ export interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
   errorSteps?: number[];
   /** Step components as child are required (1-indexed) */
   children?: React.ReactElement<StepProps>[];
-  /** If true, display dot only; default is false; automatically passed to all children */
-  isDot?: boolean;
+  /** If dot type, display dot only; default is normal; automatically passed to all children */
+  type?: 'normal' | 'dot';
   /** If true, steps are clickable; default is false; automatically passed to all children */
   clickable?: boolean;
   /** Callback function when step is clicked, index of the step is passed as an argument */
@@ -22,7 +22,7 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
       currentStep = 0,
       errorSteps = [],
       children,
-      isDot = false,
+      type = 'normal',
       clickable = false,
       handleClick,
       ...props
@@ -43,14 +43,17 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
             (child.props as Pick<StepProps, 'variant'>)?.variant || variant;
           const childIndex =
             (child.props as Pick<StepProps, 'index'>)?.index || index + 1;
-          return React.cloneElement(child, {
-            variant: childVariant,
-            hasLine: index !== children.length - 1,
-            index: childIndex,
-            isDot: isDot,
-            clickable: clickable,
-            handleClick: handleClick,
-          });
+
+          return (
+            <child.type
+              {...child.props}
+              variant={childVariant}
+              index={childIndex}
+              type={type}
+              clickable={clickable}
+              handleClick={handleClick}
+            />
+          );
         })}
       </div>
     );
