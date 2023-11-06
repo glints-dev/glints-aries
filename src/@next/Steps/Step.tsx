@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from '../Typography';
 import {
   CircleDiv,
+  StepItemContainer,
   StepItemWrapper,
   VerticalLine,
   VerticalLineWrapper,
@@ -17,43 +18,32 @@ export interface StepProps {
   /** Step number to be shown, by default it's 1,2,3,... from the parent component, or you can overwrite this */
   index?: number;
   type?: 'normal' | 'dot';
-  clickable?: boolean;
-  handleClick?: (index: number) => void;
 }
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
-  {
-    variant = 'pending',
-    label = '',
-    index = 0,
-    type = 'normal',
-    clickable = false,
-    handleClick,
-  }: StepProps,
+  { variant = 'pending', label = '', index = 0, type = 'normal' }: StepProps,
   ref
 ) {
   return (
-    <>
+    <StepItemContainer className="step-item-container">
       <StepItemWrapper
         ref={ref}
         data-dot={type === 'dot'}
-        data-clickable={clickable}
-        onClick={() => handleClick(index)}
         className="step-item-wrapper"
       >
         <CircleDiv data-variant={variant} data-dot={type === 'dot'}>
           {variant === 'completed' && (
-            <Icon name="ri-check" className="circle-content" />
+            <Icon name="ri-check" className="circle-icon" />
           )}
           {variant === 'error' && (
-            <Icon name="ri-close" className="circle-content" />
+            <Icon name="ri-close" className="circle-icon" />
           )}
           {variant === 'processing' && (
             <Typography
               as="span"
               variant="caption"
               color={Neutral.B100}
-              className="circle-content"
+              className="circle-icon"
             >
               {index}
             </Typography>
@@ -63,7 +53,7 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
               as="span"
               variant="caption"
               color={Neutral.B40}
-              className="circle-content"
+              className="circle-icon"
             >
               {index}
             </Typography>
@@ -86,6 +76,6 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>(function Step(
       <VerticalLineWrapper data-dot={type === 'dot'}>
         <VerticalLine data-variant={variant} data-dot={type === 'dot'} />
       </VerticalLineWrapper>
-    </>
+    </StepItemContainer>
   );
 });

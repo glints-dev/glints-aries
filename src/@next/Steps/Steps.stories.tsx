@@ -38,20 +38,9 @@ const Template: Story<StepsProps> = args => {
     });
   };
 
-  const handleStepClick = (index: number) => {
-    if (args.clickable) {
-      setCurrentStep(index);
-    }
-  };
-
   return (
     <>
-      <Steps
-        {...args}
-        currentStep={currentStep}
-        errorSteps={errorSteps}
-        handleClick={handleStepClick}
-      >
+      <Steps {...args} currentStep={currentStep} errorSteps={errorSteps}>
         <Steps.Step label="Label 1" />
         <Steps.Step label="Label 2" />
         <Steps.Step label="Label 3" />
@@ -85,5 +74,4 @@ const Template: Story<StepsProps> = args => {
 export const Interactive = Template.bind({});
 Interactive.args = {
   type: 'normal',
-  clickable: false,
 };

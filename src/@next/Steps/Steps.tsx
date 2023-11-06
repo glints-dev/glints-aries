@@ -10,10 +10,6 @@ export interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactElement<StepProps>[];
   /** If dot type, display dot only; default is normal; automatically passed to all children */
   type?: 'normal' | 'dot';
-  /** If true, steps are clickable; default is false; automatically passed to all children */
-  clickable?: boolean;
-  /** Callback function when step is clicked, index of the step is passed as an argument */
-  handleClick?: (index: number) => void;
 }
 
 export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
@@ -23,8 +19,6 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
       errorSteps = [],
       children,
       type = 'normal',
-      clickable = false,
-      handleClick,
       ...props
     }: StepsProps,
     ref
@@ -50,8 +44,6 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
               variant={childVariant}
               index={childIndex}
               type={type}
-              clickable={clickable}
-              handleClick={handleClick}
             />
           );
         })}

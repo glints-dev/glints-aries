@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import { Breakpoints } from '..';
 import { space4, space12, space16 } from '../utilities/spacing';
 import { Blue, Neutral, Red } from '../utilities/colors';
+import { borderRadiusHalf } from '../utilities/borderRadius';
+
+export const StepItemContainer = styled.div`
+  &:last-child > div:last-child {
+    display: none;
+  }
+`;
 
 export const StepItemWrapper = styled.div`
   display: flex;
@@ -12,10 +19,6 @@ export const StepItemWrapper = styled.div`
   &[data-dot='true'] {
     gap: ${space16};
   }
-
-  &[data-clickable='true'] {
-    cursor: pointer;
-  }
 `;
 
 export const CircleDiv = styled.div`
@@ -24,7 +27,7 @@ export const CircleDiv = styled.div`
   justify-content: center;
   height: 28px;
   width: 28px;
-  border-radius: 50%;
+  border-radius: ${borderRadiusHalf};
 
   svg {
     height: 16px;
@@ -54,7 +57,7 @@ export const CircleDiv = styled.div`
     height: 10px;
     width: 10px;
 
-    > .circle-content {
+    > .circle-icon {
       display: none;
     }
 
@@ -83,10 +86,6 @@ export const VerticalLineWrapper = styled.div`
 
   &[data-dot='true'] {
     width: 10px;
-  }
-
-  &:last-child {
-    display: none;
   }
 
   @media (max-width: ${Breakpoints.large}) {
