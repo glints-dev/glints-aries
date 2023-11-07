@@ -75,3 +75,41 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   type: 'normal',
 };
+
+Interactive.parameters = {
+  docs: {
+    source: {
+      code: `
+    <>
+      <Steps {...args} currentStep={currentStep} errorSteps={errorSteps}>
+        <Steps.Step label="Label 1" />
+        <Steps.Step label="Label 2" />
+        <Steps.Step label="Label 3" />
+        <Steps.Step label="Label 4" />
+        <Steps.Step label="Label 5" />
+      </Steps>
+      <div style={{ margin: '16px 0 8px' }}>
+        Current Step: <b>{currentStep}</b>
+      </div>
+      <div style={{ margin: '8px 0' }}>
+        Error Steps: <b>[{errorSteps.join(', ')}]</b>
+      </div>
+      <ButtonGroup>
+        <Button onClick={handlePrevClick} data-testid="prev-button">
+          Prev
+        </Button>
+        <Button onClick={handleNextClick} data-testid="next-button">
+          Next
+        </Button>
+        <Button
+          onClick={() => handleSetError(currentStep)}
+          data-testid="error-button"
+        >
+          Toggle Error
+        </Button>
+      </ButtonGroup>
+    </>
+      `,
+    },
+  },
+};
