@@ -105,6 +105,7 @@ export {
 } from './Skeleton';
 export type { SpinnerProps } from './Spinner';
 export { Spinner } from './Spinner';
+export { Steps } from './Steps';
 export type { TabModel, TabProps, TabsProps } from './Tabs';
 export { Tab, Tabs } from './Tabs';
 export type { TagProps } from './Tag';
