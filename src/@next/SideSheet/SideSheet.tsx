@@ -126,7 +126,7 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                   )}
                 </StyledSideSheetHeader>
                 {showHorizontalLine && <StyledHorizontalLine />}
-                {children}
+                <div className="sidesheet-content">{children}</div>
                 {(basicButtonAction || primaryButtonAction) && (
                   <StyledSideSheetFooter>
                     <StyledHorizontalLine />
