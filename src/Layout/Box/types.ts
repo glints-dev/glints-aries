@@ -14,9 +14,7 @@ export type BreakpointAliases =
   | 'desktopL';
 
 // Space
-export type SpacingScaleValues =
-  | (typeof Spacing)[keyof typeof Spacing]
-  | 'auto';
+export type SpacingScaleValues = typeof Spacing[keyof typeof Spacing] | 'auto';
 
 export type ResponsiveSpacing = {
   [key in BreakpointAliases]?: SpacingScaleValues;

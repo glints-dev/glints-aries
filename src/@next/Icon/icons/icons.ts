@@ -142,6 +142,7 @@ export const iconNames = [
   'ri-settings-fill',
   'ri-settings-line',
   'ri-shield-check',
+  'ri-shield-check-outline',
   'ri-shining2-line',
   'ri-shining2-fill',
   'ri-sparkling2-line',
@@ -166,7 +167,7 @@ export const iconNames = [
   'ri-phone-lock-line',
 ] as const;
 
-export type IconNames = (typeof iconNames)[number];
+export type IconNames = typeof iconNames[number];
 type SVGComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 
 export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
@@ -310,6 +311,7 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-settings-fill']: Icons.RiSettingsFill,
   ['ri-settings-line']: Icons.RiSettingsLine,
   ['ri-shield-check']: Icons.RiShieldCheck,
+  ['ri-shield-check-outline']: Icons.RiShieldCheckOutline,
   ['ri-shining2-line']: Icons.RiShining2Line,
   ['ri-shining2-fill']: Icons.RiShining2Fill,
   ['ri-sparkling2-line']: Icons.RiSparkling2Line,

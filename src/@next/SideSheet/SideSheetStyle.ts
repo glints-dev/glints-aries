@@ -43,9 +43,7 @@ export const StyledSideSheetContainer = styled.div`
   width: 480px;
   height: 100vh;
   background: ${Neutral.B100};
-  box-shadow:
-    0px 26px 80px rgba(0, 0, 0, 0.2),
-    0px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 26px 80px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   animation: ga-slide-in 0.2s;
   top: 0;
