@@ -140,7 +140,7 @@ const tooltipPositionResolvers: Record<
   },
 };
 
-export type TooltipProps = {
+export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
   preferredPosition?: TooltipPosition;
   children: React.ReactNode;
   content: React.ReactNode;
@@ -151,7 +151,7 @@ export type TooltipProps = {
   timeout?: number; //
   /** if clickable it true, onClick will be called when tooltip is clicked */
   onClick?: () => void;
-};
+}
 
 const defaultPosition = 'top-center';
 
@@ -163,6 +163,7 @@ export const Tooltip = ({
   clickable = false,
   timeout = 0,
   onClick,
+  ...props
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const elRef = useRef<HTMLDivElement>(null);
@@ -292,6 +293,7 @@ export const Tooltip = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
+        {...props}
       >
         {children}
       </StyledTooltipContainer>
