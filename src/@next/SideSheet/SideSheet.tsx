@@ -14,6 +14,7 @@ import {
   StyledHorizontalLine,
   StyledSideSheetFooter,
   StyledButtonGroupContainer,
+  SideSheetContent,
 } from './SideSheetStyle';
 import { Typography } from '../Typography';
 
@@ -126,7 +127,9 @@ const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                   )}
                 </StyledSideSheetHeader>
                 {showHorizontalLine && <StyledHorizontalLine />}
-                <div className="sidesheet-content">{children}</div>
+                <SideSheetContent className="sidesheet-content">
+                  {children}
+                </SideSheetContent>
                 {(basicButtonAction || primaryButtonAction) && (
                   <StyledSideSheetFooter>
                     <StyledHorizontalLine />

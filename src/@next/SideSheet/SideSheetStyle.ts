@@ -113,3 +113,7 @@ export const StyledSideSheetFooter = styled.div`
 export const StyledButtonGroupContainer = styled.div`
   margin: 16px 20px;
 `;
+
+export const SideSheetContent = styled.div`
+  overflow-y: scroll;
+`;
