@@ -7,7 +7,8 @@ export type CurrencyInputProps = Omit<
 > & {
   locale?: string;
   value?: number;
-  onChange?: (value: number) => void;
+  allowEmptyValue?: boolean;
+  onChange?: (value: number | undefined) => void;
   currencyCode: string;
   currencySymbol?: string;
 };
@@ -18,7 +19,8 @@ export const CurrencyInput = React.forwardRef<
 >(function CurrencyInput(
   {
     locale = 'en',
-    value = 0,
+    value,
+    allowEmptyValue = false,
     onChange,
     currencyCode,
     currencySymbol,
@@ -85,9 +87,17 @@ export const CurrencyInput = React.forwardRef<
     return '$';
   };
 
-  const formattedValue = formatter.format(getRawNumber(value.toString())) ?? '';
+  const formattedValue =
+    allowEmptyValue && value === undefined
+      ? ''
+      : formatter.format(getRawNumber((value ?? 0).toString())) ?? '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (allowEmptyValue && e.currentTarget.value === '') {
+      onChange(undefined);
+      return;
+    }
+
     const rawValue = getRawNumber(e.currentTarget.value);
     onChange(rawValue);
   };
