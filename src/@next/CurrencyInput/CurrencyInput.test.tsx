@@ -17,7 +17,7 @@ describe('<Currency />', () => {
   });
 
   describe('allowEmptyValue', () => {
-    it('should call onChange with undefined when allowEmptyValue = true for empty input', async () => {
+    it('should call onChange with null when allowEmptyValue = true for empty input', async () => {
       const onChange = jest.fn();
 
       const screen = render(
@@ -34,7 +34,7 @@ describe('<Currency />', () => {
       expect(onChange).toHaveBeenCalledWith(1000);
 
       fireEvent.change(input, { target: { value: '' } });
-      expect(onChange).toHaveBeenCalledWith(undefined);
+      expect(onChange).toHaveBeenCalledWith(null);
 
       fireEvent.change(input, { target: { value: 2000 } });
       expect(onChange).toHaveBeenCalledWith(2000);
