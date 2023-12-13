@@ -118,9 +118,16 @@ const Select: React.FC<Props> & {
       }
     }
 
-    const matchedChildrenOptions = childrenOptions.filter(data =>
-      filterFunction(data.props.children, inputValue)
-    );
+    const matchedChildrenOptions = childrenOptions.filter(data => {
+      const children = data.props.children;
+      if (typeof children === 'string') {
+        return filterFunction(children, inputValue);
+      }
+      if (typeof children === 'number') {
+        return filterFunction(String(children), inputValue);
+      }
+      return true;
+    });
     return matchedChildrenOptions;
   }, [children, inputValue, disableTyping, isInputChange, filterFunction]);
 
@@ -137,9 +144,17 @@ const Select: React.FC<Props> & {
       setOptions(availableOptions);
 
       if (!isFocus) {
-        const selectedOptionIndex = availableOptions.findIndex(option =>
-          toLower(option.props.children).includes(toLower(inputValue))
-        );
+        const selectedOptionIndex = availableOptions.findIndex(option => {
+          const children = option.props.children;
+          if (typeof children === 'string') {
+            return toLower(children).includes(toLower(inputValue));
+          }
+          if (typeof children === 'number') {
+            return toLower(String(children)).includes(toLower(inputValue));
+          }
+          return false;
+        });
+
         if (activeOptionIndex !== selectedOptionIndex) {
           setActiveOptionIndex(selectedOptionIndex);
         }

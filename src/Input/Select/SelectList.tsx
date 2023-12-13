@@ -78,7 +78,7 @@ interface Props {
 }
 
 export interface SelectItemProps {
-  children: string;
+  children: string | number | React.ReactNode;
   value?: string;
   onOptionClick?(e: React.ChangeEvent<HTMLInputElement>): void;
 }
