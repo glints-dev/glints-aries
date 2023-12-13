@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select /> can still work when receives non-string and non-number option children or value non-string and non-number option children, click option 1`] = `
+exports[`<Select /> can still work when receives number option children or value number option children, click option 1`] = `
 <DocumentFragment>
   .c0 {
   -webkit-box-flex: 1;
@@ -222,11 +222,11 @@ exports[`<Select /> can still work when receives non-string and non-number optio
         value="1"
       />
       <label
-        aria-label="non-string and non-number option children"
+        aria-label="number option children"
         class="c3 c4"
         data-testid="select-label"
       >
-        non-string and non-number option children
+        number option children
       </label>
       <div
         aria-label="show options"
@@ -253,18 +253,14 @@ exports[`<Select /> can still work when receives non-string and non-number optio
       role="listbox"
     >
       <li
-        class="c7"
+        class="c7 active"
         data-id="0"
         data-testid="option"
         data-value="one"
         role="option"
         tabindex="0"
       >
-        <span
-          data-testid="option-1"
-        >
-          1
-        </span>
+        1
       </li>
       <li
         class="c7"
@@ -274,11 +270,7 @@ exports[`<Select /> can still work when receives non-string and non-number optio
         role="option"
         tabindex="0"
       >
-        <span
-          data-testid="option-2"
-        >
-          2
-        </span>
+        2
       </li>
       <li
         class="c7"
@@ -288,18 +280,14 @@ exports[`<Select /> can still work when receives non-string and non-number optio
         role="option"
         tabindex="0"
       >
-        <span
-          data-testid="option-3"
-        >
-          3
-        </span>
+        3
       </li>
     </ul>
   </div>
 </DocumentFragment>
 `;
 
-exports[`<Select /> can still work when receives non-string and non-number option children or value non-string and non-number option children, search filtering 1`] = `
+exports[`<Select /> can still work when receives number option children or value number option children, search filtering 1`] = `
 <DocumentFragment>
   .c0 {
   -webkit-box-flex: 1;
@@ -497,11 +485,11 @@ exports[`<Select /> can still work when receives non-string and non-number optio
         value="1"
       />
       <label
-        aria-label="non-string and non-number option children"
+        aria-label="number option children"
         class="c3 c4"
         data-testid="select-label"
       >
-        non-string and non-number option children
+        number option children
       </label>
       <div
         aria-label="show options"
@@ -536,33 +524,7 @@ exports[`<Select /> can still work when receives non-string and non-number optio
         role="option"
         tabindex="0"
       >
-        <span>
-          1
-        </span>
-      </li>
-      <li
-        class="c7"
-        data-id="1"
-        data-testid="option"
-        data-value="two"
-        role="option"
-        tabindex="0"
-      >
-        <span>
-          2
-        </span>
-      </li>
-      <li
-        class="c7"
-        data-id="2"
-        data-testid="option"
-        data-value="three"
-        role="option"
-        tabindex="0"
-      >
-        <span>
-          3
-        </span>
+        1
       </li>
     </ul>
   </div>
