@@ -136,6 +136,13 @@ export const Select = ({
     setPopoverActive(!popoverActive);
   };
 
+  useEffect(
+    function syncInputValueFromSearchableProps() {
+      setInputValue(searchableProps?.inputValue);
+    },
+    [searchableProps?.inputValue]
+  );
+
   useEffect(() => {
     setMenuOptions(options);
   }, [options]);
