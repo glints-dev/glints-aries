@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isEmpty } from 'lodash';
 import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
@@ -80,7 +81,7 @@ export const Select = ({
   searchable = false,
   searchableProps,
   optionsPlaceholderProps,
-  showPopoverOnFocus = true,
+  showPopoverOnFocus = false,
   scrollable = false,
   sections,
   selectedValues,
@@ -158,7 +159,7 @@ export const Select = ({
   useEffect(() => {
     if (showPopoverOnFocus) return;
 
-    if (inputValue != '' && optionsLength > 0) {
+    if (!isEmpty(inputValue) && optionsLength > 0) {
       setPopoverActive(true);
     }
 
