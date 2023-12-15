@@ -80,7 +80,7 @@ export const Select = ({
   searchable = false,
   searchableProps,
   optionsPlaceholderProps,
-  showPopoverOnFocus = false,
+  showPopoverOnFocus = true,
   scrollable = false,
   sections,
   selectedValues,
