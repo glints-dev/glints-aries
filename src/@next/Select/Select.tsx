@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { isEmpty } from 'lodash';
+import { isEmpty } from 'lodash-es';
 import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
