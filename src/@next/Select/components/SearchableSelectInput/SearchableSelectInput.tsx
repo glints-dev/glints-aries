@@ -131,7 +131,7 @@ export const SearchableSelectInput = forwardRef<
           showInput: false,
           showPlaceholder: false,
         });
-      }, 80);
+      }, 100);
     }
 
     onBlur?.(e);
