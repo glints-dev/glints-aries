@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isEmpty } from 'lodash-es';
 import { Option, Section } from '../Menu';
 import { Popover } from '../Popover';
 import { Typography } from '../Typography';
@@ -136,6 +137,13 @@ export const Select = ({
     setPopoverActive(!popoverActive);
   };
 
+  useEffect(
+    function syncInputValueFromSearchableProps() {
+      setInputValue(searchableProps?.inputValue);
+    },
+    [searchableProps?.inputValue]
+  );
+
   useEffect(() => {
     setMenuOptions(options);
   }, [options]);
@@ -143,7 +151,7 @@ export const Select = ({
   useEffect(() => {
     if (showPopoverOnFocus) return;
 
-    if (inputValue != '' && optionsLength > 0) {
+    if (!isEmpty(inputValue) && optionsLength > 0) {
       setPopoverActive(true);
     }
 
