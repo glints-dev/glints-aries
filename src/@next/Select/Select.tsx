@@ -114,6 +114,14 @@ export const Select = ({
     setMenuOptions(newState);
   };
 
+  const handleOnBlur = () => {
+    setTimeout(() => {
+      if (searchableSelectState.showSelected) setPopoverActive(false);
+    }, 101);
+
+    onBlur?.();
+  };
+
   const handleClose = () => {
     setPopoverActive(false);
     onClose?.();
@@ -185,7 +193,7 @@ export const Select = ({
           placeholder={placeholder ?? 'Search'}
           width={width}
           selectedValues={selectedValues}
-          onBlur={onBlur}
+          onBlur={handleOnBlur}
           onSelect={onSelect}
           onFocus={handleFocus}
           inputValue={inputValue}
