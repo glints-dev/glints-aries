@@ -123,7 +123,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
   });
 
   return (
-    <StyledTabsContainer ref={ref}>
+    <StyledTabsContainer ref={ref} className="tabs-container">
       <StyledTabHeaderContainer
         className="tabs-header-container"
         ref={tabsHeaderRef}
@@ -137,7 +137,9 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         data-scroll-right={canScrollRight}
         data-grabbing={isDragging}
       >
-        <StyledUl data-fitted={fitted}>{renderTabs} </StyledUl>
+        <StyledUl data-fitted={fitted} className="tabs-list">
+          {renderTabs}
+        </StyledUl>
       </StyledTabHeaderContainer>
       <div className="tab-item-content">{children}</div>
     </StyledTabsContainer>
