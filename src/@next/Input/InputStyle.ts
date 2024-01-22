@@ -41,14 +41,10 @@ export const StyledContainer = styled.div<InputProps & PreffixSuffixWidthProps>`
   }
 
   &[data-disabled='true'] input {
-    border: 1px solid ${Neutral.B85};
-    background: ${Neutral.B95};
-    color: ${Neutral.B85};
+    border: none;
+    background: ${Neutral.B99};
+    color: ${Neutral.B18};
     cursor: not-allowed;
-  }
-
-  &[data-disabled='true'] input::placeholder {
-    color: ${Neutral.B85};
   }
 
   &[data-disabled='true'] svg {
