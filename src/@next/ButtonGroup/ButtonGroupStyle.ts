@@ -22,11 +22,11 @@ export const StyledButtonGroup = styled.div`
     border-radius: 0;
     border-right: 0;
 
-    :nth-child(1) {
+    &:nth-child(1) {
       border-radius: ${borderRadius4} 0px 0px ${borderRadius4};
     }
 
-    :nth-last-child(1) {
+    &:nth-last-child(1) {
       border-radius: 0px ${borderRadius4} ${borderRadius4} 0px;
       border-right: 1px solid ${Neutral.B68};
     }
@@ -46,11 +46,11 @@ export const StyledButtonGroup = styled.div`
       border-radius: 0;
       border-right: 0;
     }
-    :nth-child(1) button {
+    &:nth-child(1) button {
       border-radius: ${borderRadius4} 0px 0px ${borderRadius4};
     }
 
-    :nth-last-child(1) button {
+    &:nth-last-child(1) button {
       border-radius: 0px ${borderRadius4} ${borderRadius4} 0px;
       border-right: 1px solid ${Neutral.B68};
     }
