@@ -113,7 +113,7 @@ const DataTableComponent = React.forwardRef<HTMLTableElement, DataTableProps>(
     }
 
     const emptyRow = emptyState ? (
-      <StyledTableRow>
+      <StyledTableRow className="empty-state">
         <StyledTableCell colSpan={headings.length}>
           {emptyState}
         </StyledTableCell>
