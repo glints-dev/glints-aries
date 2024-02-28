@@ -74,6 +74,10 @@ export const StyledTableRow = styled.tr`
       background: ${Neutral.B99};
     }
   }
+
+  &.empty-state&:hover {
+    background: none;
+  }
 `;
 
 export const StyledTabledHeader = styled.th`
