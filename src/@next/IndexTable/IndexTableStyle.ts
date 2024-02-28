@@ -1461,9 +1461,11 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
 
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: ${Neutral.B68} ${Neutral.B100};
+  @supports (-moz-appearance:none) {
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: ${Neutral.B68} ${Neutral.B100};
+    }
   }
 
   /* Chrome, Edge, and Safari */
