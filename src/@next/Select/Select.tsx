@@ -34,6 +34,7 @@ export interface SelectProps {
   name?: string;
   onBlur?: () => void;
   onClose?: () => void;
+  onFocus?: () => void;
   onRemoveTag?({ option }: { option: string }): void;
   onSelect?({ value }: { value: string }): void;
   /** callback function when select component is clicked (opened) */
@@ -71,6 +72,7 @@ export const Select = ({
   name,
   onBlur,
   onClose,
+  onFocus,
   onRemoveTag,
   onSelect,
   onSelectClick,
@@ -131,6 +133,7 @@ export const Select = ({
     }
 
     setPopoverActive(true);
+    onFocus?.();
   };
 
   const handleSelectClick = () => {
