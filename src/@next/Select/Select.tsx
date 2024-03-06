@@ -119,6 +119,11 @@ export const Select = ({
     onClose?.();
   };
 
+  const handleBlur = () => {
+    setPopoverActive(false);
+    onBlur?.();
+  };
+
   const handleFocus = () => {
     if (showPopoverOnFocus) {
       setPopoverActive(true);
@@ -185,7 +190,7 @@ export const Select = ({
           placeholder={placeholder ?? 'Search'}
           width={width}
           selectedValues={selectedValues}
-          onBlur={onBlur}
+          onBlur={handleBlur}
           onSelect={onSelect}
           onFocus={handleFocus}
           inputValue={inputValue}
