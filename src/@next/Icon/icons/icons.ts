@@ -176,6 +176,8 @@ export const iconNames = [
   'ri-whatsapp-fill',
   'ri-phone-lock-fill',
   'ri-phone-lock-line',
+  'ri-megaphone-fill',
+  'ri-megaphone-line',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -356,4 +358,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-whatsapp-fill']: Icons.RiWhatsappFill,
   ['ri-phone-lock-fill']: Icons.RiPhoneLockFill,
   ['ri-phone-lock-line']: Icons.RiPhoneLockLine,
+  ['ri-megaphone-fill']: Icons.RiMegaphoneFill,
+  ['ri-megaphone-line']: Icons.RiMegaphoneLine,
 };
