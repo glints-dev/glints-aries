@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as Breakpoints from '../utilities/breakpoints';
 import { borderRadius8 } from '../utilities/borderRadius';
 import { Neutral } from '../utilities/colors';
-import { space16 } from '../utilities/spacing';
+import { space16, space24 } from '../utilities/spacing';
 import { ModalProps } from './Modal';
 
 export const StyledModalWrapper = styled.div<
@@ -12,7 +12,7 @@ export const StyledModalWrapper = styled.div<
   inset: 0;
   background-color: rgba(45, 45, 45, 0.5);
   display: flex;
-  flex-direction: column;
+  gap: ${space24};
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -146,4 +146,10 @@ export const StyledModalBackButton = styled(StyledModalButton)`
 
 export const StyledModalCloseButton = styled(StyledModalButton)`
   margin-left: 16px;
+`;
+
+export const StyledModalLeftAndRightComponent = styled.div`
+  @media (max-width: ${Breakpoints.large}) {
+    display: none;
+  }
 `;
