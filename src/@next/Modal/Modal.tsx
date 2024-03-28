@@ -14,29 +14,41 @@ import {
   StyledButtonContainer,
   StyledModalCloseButton,
   StyledModalBackButton,
+  StyledModalLeftAndRightComponent,
 } from './ModalStyle';
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-  isOpen?: boolean;
-  header?: React.ReactNode;
-  headerDescription?: React.ReactNode;
-  children?: React.ReactNode;
-  /** This action will be tied to primary button on footer */
-  primaryAction?: ComponentAction;
-  /** This action will be tied to basic button on footer */
-  secondaryAction?: ComponentAction;
-  /** Defining custom actions will not show primary and secondary actions */
-  customActions?: React.ReactNode;
-  showBackButton?: boolean;
-  showCloseButton?: boolean;
-  /** Use this if you don't want to see the header border bottom */
-  showHeaderBorder?: boolean;
-  /** Setting this to true will close modal when clicking outside of Modal body */
-  closeOnClickOutside?: boolean;
-  onClose?: () => void;
-  onBack?: () => void;
-  zIndexOverride?: number;
-}
+type LeftAndRightComponentModalProps =
+  | {
+      leftComponent: React.ReactNode;
+      rightComponent: React.ReactNode;
+    }
+  | {
+      leftComponent?: never;
+      rightComponent?: never;
+    };
+
+export type ModalProps = React.HTMLAttributes<HTMLDivElement> &
+  LeftAndRightComponentModalProps & {
+    isOpen?: boolean;
+    header?: React.ReactNode;
+    headerDescription?: React.ReactNode;
+    children?: React.ReactNode;
+    /** This action will be tied to primary button on footer */
+    primaryAction?: ComponentAction;
+    /** This action will be tied to basic button on footer */
+    secondaryAction?: ComponentAction;
+    /** Defining custom actions will not show primary and secondary actions */
+    customActions?: React.ReactNode;
+    showBackButton?: boolean;
+    showCloseButton?: boolean;
+    /** Use this if you don't want to see the header border bottom */
+    showHeaderBorder?: boolean;
+    /** Setting this to true will close modal when clicking outside of Modal body */
+    closeOnClickOutside?: boolean;
+    onClose?: () => void;
+    onBack?: () => void;
+    zIndexOverride?: number;
+  };
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
   function Modal(
@@ -55,6 +67,8 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       onClose,
       onBack,
       zIndexOverride = 999,
+      leftComponent,
+      rightComponent,
       ...props
     }: ModalProps,
     ref
@@ -148,6 +162,11 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           onClick={() => handleClickOutside()}
           zIndexOverride={zIndexOverride}
         >
+          {leftComponent && (
+            <StyledModalLeftAndRightComponent className="modal-left-component">
+              {leftComponent}
+            </StyledModalLeftAndRightComponent>
+          )}
           <StyledModalContainer
             ref={ref}
             onClick={e => e.stopPropagation()}
@@ -196,6 +215,11 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
               <StyledModalActions>{actionsContent}</StyledModalActions>
             )}
           </StyledModalContainer>
+          {rightComponent && (
+            <StyledModalLeftAndRightComponent className="modal-right-component">
+              {rightComponent}
+            </StyledModalLeftAndRightComponent>
+          )}
         </StyledModalWrapper>
       </Portal>
     );

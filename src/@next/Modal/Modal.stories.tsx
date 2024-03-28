@@ -508,3 +508,44 @@ export const WithNumberInputAndTooltip = WithNumberInputAndTooltipTemplate.bind(
   {}
 );
 WithNumberInputAndTooltip.args = {};
+
+const WithCustomLeftAndRightComponentTemplate: Story<void> = () => {
+  const [showModal, setShowModal] = useState(false);
+  const triggerAlert = () => {
+    setShowModal(true);
+  };
+
+  const customActions = <PrimaryButton fullWidth> Custom Action</PrimaryButton>;
+
+  const primaryAction = {
+    label: 'Primary Action',
+    action: () => console.log('Primary action!'),
+  };
+  const secondaryAction = {
+    label: 'Secondary Action',
+    action: () => console.log('Secondary action!'),
+  };
+
+  return (
+    <>
+      <Button onClick={() => triggerAlert()}>Show Modal</Button>
+      <Modal
+        isOpen={showModal}
+        header="Title"
+        onClose={() => setShowModal(false)}
+        primaryAction={primaryAction}
+        secondaryAction={secondaryAction}
+        customActions={customActions}
+        leftComponent={<Button>Prev</Button>}
+        rightComponent={<Button>Next</Button>}
+      >
+        Content
+      </Modal>
+    </>
+  );
+};
+
+export const WithCustomLeftAndRightComponent =
+  WithCustomLeftAndRightComponentTemplate.bind({});
+
+WithCustomLeftAndRightComponent.args = {};
