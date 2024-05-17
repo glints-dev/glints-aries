@@ -52,7 +52,6 @@ export const StyledModalHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: ${space16} 20px;
   box-shadow: inset 0px -1px 0px ${Neutral.B95};
   border-radius: ${borderRadius8} ${borderRadius8} 0 0;
   align-self: stretch;
@@ -61,12 +60,15 @@ export const StyledModalHeader = styled.div`
     flex: 1;
   }
 
-  &[data-show-border='false'] {
-    box-shadow: unset;
+  &[data-header-has-default-padding='true'] {
+    padding: ${space16} 20px;
+    @media (max-width: ${Breakpoints.large}) {
+      padding: ${space16};
+    }
   }
 
-  @media (max-width: ${Breakpoints.large}) {
-    padding: ${space16};
+  &[data-show-border='false'] {
+    box-shadow: unset;
   }
 `;
 

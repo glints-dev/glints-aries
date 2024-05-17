@@ -48,6 +48,8 @@ export type ModalProps = React.HTMLAttributes<HTMLDivElement> &
     onClose?: () => void;
     onBack?: () => void;
     zIndexOverride?: number;
+    /** This prop will add default padding to the header */
+    headerHasDefaultPadding?: boolean;
   };
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
@@ -63,6 +65,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       showBackButton,
       showCloseButton = true,
       showHeaderBorder = true,
+      headerHasDefaultPadding = true,
       closeOnClickOutside,
       onClose,
       onBack,
@@ -173,7 +176,10 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
             {...props}
           >
             {header && (
-              <StyledModalHeader data-show-border={showHeaderBorder}>
+              <StyledModalHeader
+                data-show-border={showHeaderBorder}
+                data-header-has-default-padding={headerHasDefaultPadding}
+              >
                 {showBackButton && (
                   <StyledButtonContainer>
                     <StyledModalBackButton
