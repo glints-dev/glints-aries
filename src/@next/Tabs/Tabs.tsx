@@ -13,6 +13,7 @@ export type TabModel = {
   id?: string;
   /** Content of the type header */
   content: React.ReactNode;
+  disabled?: boolean;
 };
 
 export type TabsProps = {
@@ -117,6 +118,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
           content={tab.content}
           onSelect={() => handleSelectedIndexChanged(index)}
           selected={index === selectedTabIndex}
+          disabled={tab.disabled}
         ></Tab>
       </StyledLi>
     );

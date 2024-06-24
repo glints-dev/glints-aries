@@ -311,3 +311,30 @@ Overflow.parameters = {
     },
   },
 };
+
+const DisabledTemplate: Story<TabsProps> = args => {
+  const [selected, setSelected] = useState(args.selected || 0);
+  const tabs: TabModel[] = [
+    { id: 'id-tab-1', content: 'Tab #1' },
+    { id: 'id-tab-2', content: 'Tab #2' },
+    { id: 'id-tab-3', content: 'Tab #3 (Disabled)', disabled: true },
+  ];
+
+  const tabContents = [
+    <Typography variant="body2">Tab #1</Typography>,
+    <Typography variant="body2">Tab #2</Typography>,
+  ];
+
+  return (
+    <Tabs
+      tabs={tabs}
+      selected={selected}
+      onSelected={i => setSelected(i)}
+      fitted={args.fitted}
+    >
+      {tabContents[selected]}
+    </Tabs>
+  );
+};
+
+export const Disabled = DisabledTemplate.bind({});

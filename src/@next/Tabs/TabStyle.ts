@@ -93,24 +93,28 @@ export const StyledTabButton = styled.button`
   border: 0;
   background: transparent;
   height: 56px;
-  cursor: pointer;
+  cursor: default;
   color: ${Neutral.B40};
   width: 100%;
   padding: 0 ${space4};
 
-  &:hover {
-    color: ${Neutral.B18};
+  &[data-disabled='false'] {
+    cursor: pointer;
+
+    &:hover {
+      color: ${Neutral.B18};
+    }
+
+    &:hover span::before {
+      background: ${Blue.S100};
+    }
   }
 
-  &:hover span::before {
-    background: ${Blue.S100};
-  }
-
-  &[data-selected='true'] {
+  &&&[data-selected='true'] {
     color: ${Blue.S99};
   }
 
-  &[data-selected='true'] > span::before {
+  &&&[data-selected='true'] > span::before {
     background: ${Blue.S99};
   }
 

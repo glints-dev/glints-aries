@@ -6,13 +6,22 @@ export type TabProps = {
   content: React.ReactNode;
   id?: string;
   selected?: boolean;
+  disabled?: boolean;
   onSelect: () => void;
 };
 
-export const Tab = ({ content, id, selected, onSelect }: TabProps) => {
+export const Tab = ({
+  content,
+  id,
+  selected,
+  disabled = false,
+  onSelect,
+}: TabProps) => {
   const tabRef = useRef(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (disabled) return;
+
     event.preventDefault();
     tabRef.current.scrollIntoView({ behavior: 'smooth' });
     onSelect();
@@ -22,6 +31,7 @@ export const Tab = ({ content, id, selected, onSelect }: TabProps) => {
     <StyledTabButton
       ref={tabRef}
       data-selected={selected}
+      data-disabled={disabled}
       id={id}
       onClick={handleClick}
     >
