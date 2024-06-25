@@ -15,4 +15,14 @@ export class TabsPage extends StoryBookPage {
     this.setPath('?path=/story/next-tabs--overflow');
     await this.goto(args);
   }
+
+  async gotoDisabledTabsPage(args?: Args) {
+    this.setPath('?path=/story/next-tabs--disabled');
+    await this.goto(args);
+  }
+
+  async gotoWithCustomWrapperTabsPage(args?: Args) {
+    this.setPath('?path=/story/next-tabs--custom-wrapper');
+    await this.goto(args);
+  }
 }

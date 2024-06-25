@@ -35,3 +35,34 @@ test('Tabs - overflow', async ({ page }) => {
   await tabsPage.tabHeaders.first().scrollIntoViewIfNeeded();
   await expect(tabsPage.container).toHaveScreenshot('tabs-scroll-start.png');
 });
+
+test('Tabs - disabled', async ({ page }) => {
+  const tabsPage = new TabsPage(page);
+  await tabsPage.gotoDisabledTabsPage();
+
+  await expect(tabsPage.container).toHaveScreenshot('tabs-disabled.png');
+
+  await tabsPage.tabHeaders.last().hover();
+  await expect(tabsPage.container).toHaveScreenshot(
+    'tabs-disabled-unchanged.png'
+  );
+});
+
+test('Tabs - With Custom Wrapper', async ({ page }) => {
+  const tabsPage = new TabsPage(page);
+  await tabsPage.gotoWithCustomWrapperTabsPage();
+
+  await expect(tabsPage.container).toHaveScreenshot(
+    'tabs-with-custom-wrapper.png'
+  );
+
+  await tabsPage.tabHeaders.nth(1).hover();
+  await expect(tabsPage.container).toHaveScreenshot(
+    'tabs-with-custom-wrapper-tooltip.png'
+  );
+
+  await tabsPage.tabHeaders.nth(2).hover();
+  await expect(tabsPage.container).toHaveScreenshot(
+    'tabs-with-custom-wrapper-tooltip-disabled.png'
+  );
+});
