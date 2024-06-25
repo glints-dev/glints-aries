@@ -1,5 +1,5 @@
 import nextId from 'react-id-generator';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { Tab } from './Tab';
 import {
   StyledLi,
@@ -14,6 +14,8 @@ export type TabModel = {
   /** Content of the type header */
   content: React.ReactNode;
   disabled?: boolean;
+  /** The contentWrapper will be a wrapper component for the content */
+  contentWrapper?: (children: ReactNode) => ReactNode;
 };
 
 export type TabsProps = {
@@ -110,16 +112,21 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
 
   const renderTabs = tabs.map((tab: TabModel, index: number) => {
     const tabId = tab.id || nextId();
+
+    const tabContent = (
+      <Tab
+        id={tabId}
+        key={`tab-${tabId}-${index}`}
+        content={tab.content}
+        onSelect={() => handleSelectedIndexChanged(index)}
+        selected={index === selectedTabIndex}
+        disabled={tab.disabled}
+      ></Tab>
+    );
+
     return (
       <StyledLi key={`${tabId}-${index}`} className="tab-item">
-        <Tab
-          id={tabId}
-          key={`tab-${tabId}-${index}`}
-          content={tab.content}
-          onSelect={() => handleSelectedIndexChanged(index)}
-          selected={index === selectedTabIndex}
-          disabled={tab.disabled}
-        ></Tab>
+        {tab.contentWrapper ? tab.contentWrapper(tabContent) : tabContent}
       </StyledLi>
     );
   });

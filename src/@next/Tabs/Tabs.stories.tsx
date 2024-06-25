@@ -11,6 +11,7 @@ import {
   StyledTable,
 } from './TabsStoriesStyle';
 import { withGlintsPortalContainer } from '../../helpers/storybook/Decorators';
+import { Tooltip } from '../Tooltip';
 
 (Tabs as React.FunctionComponent<TabsProps>).displayName = 'Tabs';
 
@@ -338,3 +339,43 @@ const DisabledTemplate: Story<TabsProps> = args => {
 };
 
 export const Disabled = DisabledTemplate.bind({});
+
+const CustomWrapperTemplate: Story<TabsProps> = args => {
+  const [selected, setSelected] = useState(args.selected || 0);
+  const tabs: TabModel[] = [
+    { id: 'id-tab-1', content: 'Tab #1' },
+    {
+      id: 'id-tab-2',
+      content: 'Tab #2 (Hover me)',
+      contentWrapper: children => (
+        <Tooltip content="Hovered 2">{children}</Tooltip>
+      ),
+    },
+    {
+      id: 'id-tab-3',
+      content: 'Tab #3 (Disabled & Hover me)',
+      contentWrapper: children => (
+        <Tooltip content="Hovered 3">{children}</Tooltip>
+      ),
+      disabled: true,
+    },
+  ];
+
+  const tabContents = [
+    <Typography variant="body2">Tab #1</Typography>,
+    <Typography variant="body2">Tab #2</Typography>,
+  ];
+
+  return (
+    <Tabs
+      tabs={tabs}
+      selected={selected}
+      onSelected={i => setSelected(i)}
+      fitted={args.fitted}
+    >
+      {tabContents[selected]}
+    </Tabs>
+  );
+};
+
+export const CustomWrapper = CustomWrapperTemplate.bind({});
