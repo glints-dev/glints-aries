@@ -74,6 +74,7 @@ const Template: Story<StepsProps> = args => {
 export const Interactive = Template.bind({});
 Interactive.args = {
   type: 'normal',
+  orientation: 'vertical',
 };
 
 Interactive.parameters = {

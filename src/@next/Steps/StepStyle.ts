@@ -4,9 +4,22 @@ import { space4, space12, space16 } from '../utilities/spacing';
 import { Blue, Neutral, Red } from '../utilities/colors';
 import { borderRadiusHalf } from '../utilities/borderRadius';
 
+export const StepsContainer = styled.div`
+  &[data-orientation='horizontal'] {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
+`;
+
 export const StepItemContainer = styled.div`
   &:last-child > div:last-child {
     display: none;
+  }
+
+  &[data-orientation='horizontal'] {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -19,6 +32,10 @@ export const StepItemWrapper = styled.div`
   &[data-dot='true'] {
     gap: ${space16};
   }
+
+  .step-label {
+    white-space: nowrap;
+  }
 `;
 
 export const CircleDiv = styled.div`
@@ -28,6 +45,7 @@ export const CircleDiv = styled.div`
   height: 28px;
   width: 28px;
   border-radius: ${borderRadiusHalf};
+  flex-shrink: 0;
 
   svg {
     height: 16px;
@@ -93,6 +111,14 @@ export const VerticalLineWrapper = styled.div`
   }
 `;
 
+export const HorizontalLineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 ${space12};
+  width: 105px;
+`;
+
 export const VerticalLine = styled.div`
   width: 2px;
   height: 100%;
@@ -104,5 +130,15 @@ export const VerticalLine = styled.div`
 
   &[data-dot='true'] {
     width: 1.5px;
+  }
+`;
+
+export const HorizontalLine = styled.div`
+  height: 2px;
+  width: 100%;
+  background-color: ${Neutral.B85};
+
+  &[data-variant='completed'] {
+    background-color: ${Blue.S99};
   }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Step, StepProps } from './Step';
+import { StepsContainer } from './StepStyle';
 
 export interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Step index (1-indexed) marked as processing */
@@ -10,6 +11,7 @@ export interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactElement<StepProps>[];
   /** If dot type, display dot only; default is normal; automatically passed to all children */
   type?: 'normal' | 'dot';
+  orientation?: 'vertical' | 'horizontal';
 }
 
 export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
@@ -19,12 +21,13 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
       errorSteps = [],
       children,
       type = 'normal',
+      orientation = 'vertical',
       ...props
     }: StepsProps,
     ref
   ) {
     return (
-      <div ref={ref} {...props}>
+      <StepsContainer data-orientation={orientation} ref={ref} {...props}>
         {React.Children.map(children, (child, index) => {
           const variant: StepProps['variant'] = errorSteps.includes(index + 1)
             ? 'error'
@@ -41,13 +44,14 @@ export const StepsComponent = React.forwardRef<HTMLDivElement, StepsProps>(
           return (
             <child.type
               {...child.props}
+              orientation={orientation}
               variant={childVariant}
               index={childIndex}
               type={type}
             />
           );
         })}
-      </div>
+      </StepsContainer>
     );
   }
 );
