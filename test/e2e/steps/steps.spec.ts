@@ -66,3 +66,31 @@ test('Steps - dot style', async ({ page }) => {
 
   await expect(stepsPage.container).toHaveScreenshot('steps-dot.png');
 });
+
+test('Steps - Horizontal normal style orientation', async ({ page }) => {
+  const stepsPage = new StepsPage(page);
+  await stepsPage.goto('args=orientation:horizontal;type:dot');
+
+  await stepsPage.nextButton.click();
+  await stepsPage.nextButton.click();
+  await stepsPage.errorButton.click();
+  await stepsPage.nextButton.click();
+
+  await expect(stepsPage.container).toHaveScreenshot(
+    'steps-horizontal-normal.png'
+  );
+});
+
+test('Steps - Horizontal dot style orientation', async ({ page }) => {
+  const stepsPage = new StepsPage(page);
+  await stepsPage.goto('args=orientation:horizontal');
+
+  await stepsPage.nextButton.click();
+  await stepsPage.nextButton.click();
+  await stepsPage.errorButton.click();
+  await stepsPage.nextButton.click();
+
+  await expect(stepsPage.container).toHaveScreenshot(
+    'steps-horizontal-dot.png'
+  );
+});
