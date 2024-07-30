@@ -15,7 +15,7 @@ import nextId from 'react-id-generator';
 export interface CheckboxProps
   extends Omit<
     React.InputHTMLAttributes<HTMLInputElement>,
-    'type' | 'onChange'
+    'type' | 'onChange' | 'onClick'
   > {
   id?: string;
   label?: ReactNode;
@@ -26,6 +26,7 @@ export interface CheckboxProps
   helpText?: string;
   onChange?(newChecked: boolean, id: string): void;
   isPadded?: boolean;
+  isControlled?: boolean;
 }
 
 export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
@@ -40,6 +41,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
       hasError,
       helpText,
       isPadded = true,
+      isControlled = false,
       ...otherProps
     }: CheckboxProps,
     ref
@@ -83,7 +85,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
               <StyledCheckbox
                 role="checkbox"
                 aria-labelledby={labelId}
-                aria-checked={checkedState}
+                aria-checked={isControlled ? checked : checkedState}
                 data-focus={isFocused}
                 onClick={() => handleClick()}
                 onMouseDown={() => setIsFocused(false)}
