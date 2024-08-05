@@ -229,6 +229,7 @@ A standalone piece of software that has a clear boundary that is accessible via 
 7. Shadow (how our shadow look like on every component)
 
 **Creating and maintaining a consistent UI and UX across every part of our product.**
+
 It helps users intuitively navigate and successfully interact with different sections of your applications without confusion. It also creates sense of branding.
 
 If you design a component, you should pay attention to
