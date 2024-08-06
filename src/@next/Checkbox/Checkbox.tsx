@@ -15,7 +15,7 @@ import nextId from 'react-id-generator';
 export interface CheckboxProps
   extends Omit<
     React.InputHTMLAttributes<HTMLInputElement>,
-    'type' | 'onChange' | 'onClick'
+    'type' | 'onChange'
   > {
   id?: string;
   label?: ReactNode;
