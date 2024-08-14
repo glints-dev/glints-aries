@@ -10,9 +10,9 @@ export const ModalWithProvider = () => {
     <Modal
       {...modalProps}
       isOpen={isOpen}
-      onClose={() => {
+      onClose={e => {
         close();
-        onClose?.();
+        onClose?.(e);
       }}
     />
   );

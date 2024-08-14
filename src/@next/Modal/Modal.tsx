@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import { ComponentAction } from '../../types/componentAction';
 import { Button, PrimaryButton } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
@@ -45,7 +45,7 @@ export type ModalProps = React.HTMLAttributes<HTMLDivElement> &
     showHeaderBorder?: boolean;
     /** Setting this to true will close modal when clicking outside of Modal body */
     closeOnClickOutside?: boolean;
-    onClose?: () => void;
+    onClose?: MouseEventHandler<HTMLDivElement | HTMLButtonElement>;
     onBack?: () => void;
     zIndexOverride?: number;
     /** This prop will add default padding to the header */
@@ -152,9 +152,9 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         children
       );
 
-    const handleClickOutside = () => {
+    const handleClickOutside: MouseEventHandler<HTMLDivElement> = event => {
       if (closeOnClickOutside) {
-        onClose?.();
+        onClose?.(event);
       }
     };
 
@@ -162,7 +162,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       <Portal>
         <StyledModalWrapper
           data-testid="modal-wrapper"
-          onClick={() => handleClickOutside()}
+          onClick={handleClickOutside}
           zIndexOverride={zIndexOverride}
         >
           {leftComponent && (
@@ -202,7 +202,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
                     <StyledModalCloseButton
                       data-testid="modal-close-btn"
                       data-has-decription={!!headerDescription}
-                      onClick={() => onClose?.()}
+                      onClick={onClose}
                     >
                       <Icon name="ri-close" />
                     </StyledModalCloseButton>
