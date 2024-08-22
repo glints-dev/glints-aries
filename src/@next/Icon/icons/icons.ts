@@ -199,6 +199,8 @@ export const iconNames = [
   'ri-custom-expense-fill',
   'ri-bank-card-line',
   'ri-bank-card-fill',
+  'ri-indeterminate-circle-line',
+  'ri-indeterminate-circle-fill',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -402,4 +404,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-custom-expense-fill']: Icons.RiCustomExpenseFill,
   ['ri-bank-card-line']: Icons.RiBankCardLine,
   ['ri-bank-card-fill']: Icons.RiBankCardFill,
+  ['ri-indeterminate-circle-line']: Icons.RiIndeterminateCircleLine,
+  ['ri-indeterminate-circle-fill']: Icons.RiIndeterminateCircleFill,
 };
