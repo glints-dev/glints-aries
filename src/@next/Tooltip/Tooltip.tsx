@@ -140,7 +140,8 @@ const tooltipPositionResolvers: Record<
   },
 };
 
-export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TooltipProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'content'> {
   preferredPosition?: TooltipPosition;
   children: React.ReactNode;
   content: React.ReactNode;

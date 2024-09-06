@@ -78,7 +78,7 @@ const RemoveableTemplate: Story<TagProps> = () => {
   ]);
 
   const removeTag = useCallback(
-    tag => () => {
+    (tag: string) => () => {
       setSelectedTags(previousTags =>
         previousTags.filter(previousTag => previousTag !== tag)
       );

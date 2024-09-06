@@ -13,7 +13,7 @@ export const ComboboxMultiSelect = ({
   ...args
 }: ComboboxMultiSelectProps) => {
   const [inputValue, setInputValue] = useState('');
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [isSearchEmpty, setIsSearchEmpty] = useState(false);
 
   const [options, setOptions] = useState(countries);
@@ -58,7 +58,7 @@ export const ComboboxMultiSelect = ({
       : null;
 
   const removeTag = useCallback(
-    tag => () => {
+    (tag: string) => () => {
       const options = [...selectedOptions];
       options.splice(options.indexOf(tag), 1);
       setSelectedOptions(options);

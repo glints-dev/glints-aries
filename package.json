@@ -6,7 +6,7 @@
   "module": "./es/index.js",
   "sideEffects": false,
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "scripts": {
     "build": "npm run build:icon && npm run build:next:icon && npm run build:lib && npm run build:es && npm run build:ts",
@@ -79,10 +79,10 @@
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.188",
     "@types/lodash-es": "^4.17.6",
-    "@types/node": "^12.12.7",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-test-renderer": "^17.0.1",
+    "@types/node": "^16.18.108",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-test-renderer": "^18.3.0",
     "@types/styled-components": "^5.1.1",
     "@types/styled-system": "^5.1.10",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
@@ -116,10 +116,10 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "prettier": "^3.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-is": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
     "start-server-and-test": "^1.15.2",
     "styled-components": "^5.1.1",
     "stylelint": "^10.0.1",
@@ -143,8 +143,8 @@
   },
   "peerDependencies": {
     "lodash-es": "^4.0.0",
-    "react": "^17",
-    "react-dom": "^17",
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18",
     "styled-components": "^4.0.0 || ^5.0.0"
   },
   "jest": {
@@ -167,9 +167,7 @@
     "@glints/poppins": "^1.0.2"
   },
   "resolutions": {
-    "immer": "^9.0.6",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11"
+    "immer": "^9.0.6"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [

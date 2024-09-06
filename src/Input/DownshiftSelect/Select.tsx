@@ -29,6 +29,7 @@ export const defaultEmptyListText =
 // sometimes we want to make additional props available to the subcomponent,
 // e.g. a Item subcomponent needs to know the item it represents.
 export type ItemProps = {
+  children?: React.ReactNode;
   item: Item;
 };
 
