@@ -11,8 +11,8 @@ export interface ToggleSwitchProps {
   defaultActive?: boolean;
   /** The icon components that will be used in both active and inactive states. Both icons have to be defined when opting to use this. */
   iconOptions?: {
-    active: React.ReactType;
-    inactive: React.ReactType;
+    active: React.ElementType;
+    inactive: React.ElementType;
   };
   /** Called when the state of the toggle has been changed. Called with true or false depending on whether the toggle became active or inactive. */
   onChange?: (active: boolean) => void;

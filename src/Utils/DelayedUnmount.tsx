@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 
 interface Props {
+  children?: React.ReactNode;
   mount: boolean;
   delay?: number;
 }

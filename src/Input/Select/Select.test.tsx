@@ -363,11 +363,9 @@ describe('when renderError is given', () => {
   });
 
   it('should render the custom error in the custom error container', () => {
-    const customError = () => (
-      <span data-testid="custom-error">nasty error</span>
-    );
-    const errorContainer = (e: () => React.ReactNode) => (
-      <div data-testid="error-component">{e()}</div>
+    const customError = <span data-testid="custom-error">nasty error</span>;
+    const errorContainer = (e: React.ReactNode) => (
+      <div data-testid="error-component">{e}</div>
     );
     const { container, getByTestId } = render(
       <Select renderError={errorContainer} error={customError}>
