@@ -57,7 +57,7 @@ jobs:
 
   deploy:
     needs: validate
-    if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4'
+    if: startsWith(github.ref, 'refs/heads/feature/') || github.ref == 'refs/heads/v4' || github.ref == 'refs/heads/v5'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
