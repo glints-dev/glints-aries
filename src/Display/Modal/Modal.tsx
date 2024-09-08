@@ -32,7 +32,7 @@ import {
 export const Modal: FC<Props> = ({
   isVisible,
   title,
-  onClose = () => undefined as () => void,
+  onClose = () => undefined,
   children,
   className,
   hideContentArea = false,

@@ -62,7 +62,7 @@ export const Slider = ({
   };
 
   const getSliderContainerDOMNode = React.useCallback(() => {
-    return sliderContainerRef.current as HTMLDivElement;
+    return sliderContainerRef.current;
   }, [sliderContainerRef]);
 
   const handleDotClick = (idx: number) => {
@@ -87,7 +87,7 @@ export const Slider = ({
       child => !isNil(child)
     ).length;
     const windowWidth =
-      getSliderContainerDOMNode().getBoundingClientRect().width;
+      sliderContainerRef.current.getBoundingClientRect().width;
 
     setScreenSize(windowWidth);
 
@@ -144,12 +144,12 @@ export const Slider = ({
     function receiveProps() {
       if (initialItem === undefined) return;
       const windowWidth =
-        getSliderContainerDOMNode().getBoundingClientRect().width;
+        sliderContainerRef.current.getBoundingClientRect().width;
 
       setTranslateValue(-(windowWidth * (initialItem - 1)));
       setIndex(initialItem);
     },
-    [initialItem, getSliderContainerDOMNode]
+    [initialItem, sliderContainerRef]
   );
 
   const childrenCount = React.Children.toArray(children).filter(

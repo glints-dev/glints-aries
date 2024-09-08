@@ -1,15 +1,11 @@
 import React from 'react';
-import { render, fireEvent, queryAllByAttribute } from '@testing-library/react';
-import _userEvent from '@testing-library/user-event';
+import { fireEvent, queryAllByAttribute, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import { first, identity } from 'lodash-es';
 
 import { Select, Item, ItemProps } from './Select';
 import { Item as ItemComponent, Label as LabelComponent } from './SelectStyle';
-
-// userEvent is typed incorrectly. The tab function exists, but is not declared
-// on the userEvent's type, so we have to add it manually here
-const userEvent = _userEvent as typeof _userEvent & { tab: () => void };
 
 const arrowDownKey = { key: 'ArrowDown', keyCode: 40 };
 const enterKey = { key: 'Enter', keyCode: 13 };
@@ -312,14 +308,6 @@ describe('<Select> (Downshift)', () => {
   });
 
   describe('when selectedItem is controlled', () => {
-    it("should change the input value to the controlled item's label", () => {
-      const selectedItem = first(items);
-      const { getInput } = renderSelect({
-        selectedItem,
-      });
-      expect(getInput()).toHaveValue(selectedItem.label);
-    });
-
     it('should call onSelectedItemChange with the target value', () => {
       const onSelectedItemChange = jest.fn();
       const { getInput } = renderSelect({

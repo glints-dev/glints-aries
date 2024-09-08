@@ -1,4 +1,4 @@
-import React, { HTMLProps, useState } from 'react';
+import React, { useState } from 'react';
 import { useCombobox, UseComboboxProps } from 'downshift';
 import { groupBy, indexOf, isFunction, isUndefined, noop } from 'lodash-es';
 import { useId } from 'react-id-generator';
@@ -36,21 +36,21 @@ export type ItemProps = {
 // These are the actual types for the subcomponents. Each subcomponent takes
 // its own, custom props (defined by us) AND the props that correspond to the
 // intrinsic html element which the subcomponent "extends".
-type ContainerType = HTMLProps<HTMLDivElement>;
-type LabelType = HTMLProps<HTMLLabelElement>;
-type ComboboxType = HTMLProps<HTMLDivElement>;
-type InputType = HTMLProps<HTMLInputElement>;
-type IndicatorsContainerType = HTMLProps<HTMLDivElement>;
-type LoadingIndicatorType = HTMLProps<HTMLDivElement>;
-type ClearButtonType = HTMLProps<HTMLButtonElement>;
-type ToggleButtonType = HTMLProps<HTMLButtonElement>;
-type MenuType = HTMLProps<HTMLUListElement>;
-type ItemType = ItemProps & HTMLProps<HTMLLIElement>;
-type EmptyListType = HTMLProps<HTMLLIElement>;
-type HelperTextType = HTMLProps<HTMLSpanElement>;
-type GroupContainerType = HTMLProps<HTMLLIElement>;
-type GroupType = HTMLProps<HTMLUListElement>;
-type GroupHeadingType = HTMLProps<HTMLLIElement>;
+type ContainerType = React.ComponentProps<'div'>;
+type LabelType = React.ComponentProps<'label'>;
+type ComboboxType = React.ComponentProps<'div'>;
+type InputType = React.ComponentProps<'input'>;
+type IndicatorsContainerType = React.ComponentProps<'div'>;
+type LoadingIndicatorType = React.ComponentProps<'div'>;
+type ClearButtonType = React.ComponentProps<'button'>;
+type ToggleButtonType = React.ComponentProps<'button'>;
+type MenuType = React.ComponentProps<'ul'>;
+type ItemType = ItemProps & React.ComponentProps<'li'>;
+type EmptyListType = React.ComponentProps<'li'>;
+type HelperTextType = React.ComponentProps<'span'>;
+type GroupContainerType = React.ComponentProps<'li'>;
+type GroupType = React.ComponentProps<'ul'>;
+type GroupHeadingType = React.ComponentProps<'li'>;
 
 // This is the type for the 'components' prop on the Select. Using
 // ComponentType allows us to take in any kind of component, e.g. class
@@ -202,7 +202,6 @@ export const Select: React.FC<Props> & { Components: Components } = ({
     selectedItem,
     isOpen,
     getLabelProps,
-    getComboboxProps,
     getInputProps,
     getToggleButtonProps,
     getMenuProps,
@@ -211,6 +210,9 @@ export const Select: React.FC<Props> & { Components: Components } = ({
     openMenu,
   } = useCombobox<Item>({
     items: displayItems,
+    isItemDisabled(item) {
+      return item.disabled;
+    },
 
     inputValue,
     onInputValueChange: ({ inputValue }) => {
@@ -287,7 +289,6 @@ export const Select: React.FC<Props> & { Components: Components } = ({
         </Label>
       )}
       <Combobox
-        {...getComboboxProps()}
         data-disabled={disabled}
         data-invalid={invalid}
         data-active={isFocused}
@@ -335,14 +336,17 @@ export const Select: React.FC<Props> & { Components: Components } = ({
           </ToggleButton>
         </IndicatorsContainer>
       </Combobox>
-      <Menu {...getMenuProps()} data-testid="menu">
+      <Menu
+        {...getMenuProps()}
+        className={!isOpen && 'hidden'}
+        data-testid="menu"
+      >
         {(() => {
           const renderItem = (item: Item) => (
             <Item
               {...getItemProps({
                 item,
                 index: indexOf(displayItems, item),
-                disabled: disabled || item.disabled,
               })}
               key={item.value}
               item={item}
@@ -358,7 +362,7 @@ export const Select: React.FC<Props> & { Components: Components } = ({
               return Object.keys(groups).map(groupKey => (
                 <GroupContainer key={groupKey}>
                   <Group>
-                    <GroupHeading disabled={true} data-testid="group-heading">
+                    <GroupHeading data-testid="group-heading">
                       {groupKey}
                     </GroupHeading>
                     {groups[groupKey].map(renderItem)}

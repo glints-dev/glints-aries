@@ -10,9 +10,11 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r0:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-0-toggle-button"
+        id="downshift-:r0:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -56,38 +58,38 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-0-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-0-menu"
-          aria-labelledby="downshift-0-label"
+          aria-controls="downshift-:r0:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r0:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-0-input"
+          id="downshift-:r0:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-0-label"
+        aria-labelledby="downshift-:r0:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-0-menu"
+        id="downshift-:r0:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-0-item-0"
+          id="downshift-:r0:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -107,9 +109,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-1"
+          id="downshift-:r0:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -129,9 +132,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-2"
+          id="downshift-:r0:-item-2"
           role="option"
           title="Singapore"
         >
@@ -151,9 +155,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-3"
+          id="downshift-:r0:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -173,9 +178,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-4"
+          id="downshift-:r0:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -195,9 +201,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-0-item-5"
+          id="downshift-:r0:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -217,9 +224,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-6"
+          id="downshift-:r0:-item-6"
           role="option"
           title="Albania"
         >
@@ -239,9 +247,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-7"
+          id="downshift-:r0:-item-7"
           role="option"
           title="Algeria"
         >
@@ -261,9 +270,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-8"
+          id="downshift-:r0:-item-8"
           role="option"
           title="Germany"
         >
@@ -283,9 +293,10 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-0-item-9"
+          id="downshift-:r0:-item-9"
           role="option"
           title="United States"
         >
@@ -324,9 +335,11 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r3:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-5-toggle-button"
+        id="downshift-:r3:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -370,38 +383,38 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-5-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-5-menu"
-          aria-labelledby="downshift-5-label"
+          aria-controls="downshift-:r3:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r3:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-5-input"
+          id="downshift-:r3:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-5-label"
+        aria-labelledby="downshift-:r3:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-5-menu"
+        id="downshift-:r3:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-5-item-0"
+          id="downshift-:r3:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -421,9 +434,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-1"
+          id="downshift-:r3:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -443,9 +457,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-2"
+          id="downshift-:r3:-item-2"
           role="option"
           title="Singapore"
         >
@@ -465,9 +480,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-3"
+          id="downshift-:r3:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -487,9 +503,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-4"
+          id="downshift-:r3:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -509,9 +526,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-5-item-5"
+          id="downshift-:r3:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -531,9 +549,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-6"
+          id="downshift-:r3:-item-6"
           role="option"
           title="Albania"
         >
@@ -553,9 +572,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-7"
+          id="downshift-:r3:-item-7"
           role="option"
           title="Algeria"
         >
@@ -575,9 +595,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-8"
+          id="downshift-:r3:-item-8"
           role="option"
           title="Germany"
         >
@@ -597,9 +618,10 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-5-item-9"
+          id="downshift-:r3:-item-9"
           role="option"
           title="United States"
         >
@@ -638,9 +660,11 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r1:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-1-toggle-button"
+        id="downshift-:r1:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -684,38 +708,38 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-1-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-1-menu"
-          aria-labelledby="downshift-1-label"
+          aria-controls="downshift-:r1:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r1:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-1-input"
+          id="downshift-:r1:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-1-label"
+        aria-labelledby="downshift-:r1:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-1-menu"
+        id="downshift-:r1:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-1-item-0"
+          id="downshift-:r1:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -735,9 +759,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-1"
+          id="downshift-:r1:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -757,9 +782,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-2"
+          id="downshift-:r1:-item-2"
           role="option"
           title="Singapore"
         >
@@ -779,9 +805,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-3"
+          id="downshift-:r1:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -801,9 +828,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-4"
+          id="downshift-:r1:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -823,9 +851,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-1-item-5"
+          id="downshift-:r1:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -845,9 +874,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-6"
+          id="downshift-:r1:-item-6"
           role="option"
           title="Albania"
         >
@@ -867,9 +897,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-7"
+          id="downshift-:r1:-item-7"
           role="option"
           title="Algeria"
         >
@@ -889,9 +920,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-8"
+          id="downshift-:r1:-item-8"
           role="option"
           title="Germany"
         >
@@ -911,9 +943,10 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-1-item-9"
+          id="downshift-:r1:-item-9"
           role="option"
           title="United States"
         >
@@ -952,9 +985,11 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r7:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-13-toggle-button"
+        id="downshift-:r7:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -998,25 +1033,24 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-13-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-13-menu"
-          aria-labelledby="downshift-13-label"
+          aria-controls="downshift-:r7:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r7:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-13-input"
+          id="downshift-:r7:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
         <div
@@ -1032,15 +1066,16 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         </div>
       </div>
       <ol
-        aria-labelledby="downshift-13-label"
+        aria-labelledby="downshift-:r7:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-13-menu"
+        id="downshift-:r7:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-13-item-0"
+          id="downshift-:r7:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -1060,9 +1095,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-1"
+          id="downshift-:r7:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -1082,9 +1118,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-2"
+          id="downshift-:r7:-item-2"
           role="option"
           title="Singapore"
         >
@@ -1104,9 +1141,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-3"
+          id="downshift-:r7:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -1126,9 +1164,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-4"
+          id="downshift-:r7:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -1148,9 +1187,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-13-item-5"
+          id="downshift-:r7:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -1170,9 +1210,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-6"
+          id="downshift-:r7:-item-6"
           role="option"
           title="Albania"
         >
@@ -1192,9 +1233,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-7"
+          id="downshift-:r7:-item-7"
           role="option"
           title="Algeria"
         >
@@ -1214,9 +1256,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-8"
+          id="downshift-:r7:-item-8"
           role="option"
           title="Germany"
         >
@@ -1236,9 +1279,10 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-13-item-9"
+          id="downshift-:r7:-item-9"
           role="option"
           title="United States"
         >
@@ -1277,9 +1321,11 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r6:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-11-toggle-button"
+        id="downshift-:r6:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -1323,32 +1369,31 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-11-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-11-menu"
-          aria-labelledby="downshift-11-label"
+          aria-controls="downshift-:r6:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r6:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-11-input"
+          id="downshift-:r6:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-11-label"
+        aria-labelledby="downshift-:r6:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-11-menu"
+        id="downshift-:r6:-menu"
         role="listbox"
       >
         <div
@@ -1377,9 +1422,11 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r5:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-10-toggle-button"
+        id="downshift-:r5:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -1436,38 +1483,38 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </div>
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-10-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-10-menu"
-          aria-labelledby="downshift-10-label"
+          aria-controls="downshift-:r5:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r5:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-10-input"
+          id="downshift-:r5:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-10-label"
+        aria-labelledby="downshift-:r5:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-10-menu"
+        id="downshift-:r5:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-10-item-0"
+          id="downshift-:r5:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -1487,9 +1534,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-1"
+          id="downshift-:r5:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -1509,9 +1557,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-2"
+          id="downshift-:r5:-item-2"
           role="option"
           title="Singapore"
         >
@@ -1531,9 +1580,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-3"
+          id="downshift-:r5:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -1553,9 +1603,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-4"
+          id="downshift-:r5:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -1575,9 +1626,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-10-item-5"
+          id="downshift-:r5:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -1597,9 +1649,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-6"
+          id="downshift-:r5:-item-6"
           role="option"
           title="Albania"
         >
@@ -1619,9 +1672,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-7"
+          id="downshift-:r5:-item-7"
           role="option"
           title="Algeria"
         >
@@ -1641,9 +1695,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-8"
+          id="downshift-:r5:-item-8"
           role="option"
           title="Germany"
         >
@@ -1663,9 +1718,10 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-10-item-9"
+          id="downshift-:r5:-item-9"
           role="option"
           title="United States"
         >
@@ -1704,9 +1760,11 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       data-invalid="true"
     >
       <button
+        aria-controls="downshift-:r4:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-9-toggle-button"
+        id="downshift-:r4:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -1750,38 +1808,38 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-9-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 fzYmre"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-9-menu"
-          aria-labelledby="downshift-9-label"
+          aria-controls="downshift-:r4:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r4:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-9-input"
+          id="downshift-:r4:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-9-label"
+        aria-labelledby="downshift-:r4:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-9-menu"
+        id="downshift-:r4:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-9-item-0"
+          id="downshift-:r4:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -1801,9 +1859,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-1"
+          id="downshift-:r4:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -1823,9 +1882,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-2"
+          id="downshift-:r4:-item-2"
           role="option"
           title="Singapore"
         >
@@ -1845,9 +1905,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-3"
+          id="downshift-:r4:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -1867,9 +1928,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-4"
+          id="downshift-:r4:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -1889,9 +1951,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-9-item-5"
+          id="downshift-:r4:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -1911,9 +1974,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-6"
+          id="downshift-:r4:-item-6"
           role="option"
           title="Albania"
         >
@@ -1933,9 +1997,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-7"
+          id="downshift-:r4:-item-7"
           role="option"
           title="Algeria"
         >
@@ -1955,9 +2020,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-8"
+          id="downshift-:r4:-item-8"
           role="option"
           title="Germany"
         >
@@ -1977,9 +2043,10 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-9-item-9"
+          id="downshift-:r4:-item-9"
           role="option"
           title="United States"
         >
@@ -2020,9 +2087,11 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       data-invalid="false"
     >
       <button
+        aria-controls="downshift-:r2:-menu"
+        aria-expanded="false"
         class="PhoneNumberInputStyles__CallingCodeInputToggle-sc-80kraj-2 bollua"
         data-testid="calling-code-input-toggle"
-        id="downshift-2-toggle-button"
+        id="downshift-:r2:-toggle-button"
         tabindex="-1"
         type="button"
       >
@@ -2066,38 +2135,38 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       />
     </div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-owns="downshift-2-menu"
       class="PhoneNumberInputStyles__CallingCodeInput-sc-80kraj-7 jMbDaT"
       data-testid="calling-code-input"
-      role="combobox"
     >
       <div
         class="PhoneNumberInputStyles__CallingCodeFilterInputGroup-sc-80kraj-8 bboEQ"
       >
         <input
+          aria-activedescendant=""
           aria-autocomplete="list"
-          aria-controls="downshift-2-menu"
-          aria-labelledby="downshift-2-label"
+          aria-controls="downshift-:r2:-menu"
+          aria-expanded="false"
+          aria-labelledby="downshift-:r2:-label"
           autocomplete="off"
           class="PhoneNumberInputStyles__CallingCodeFilterInput-sc-80kraj-9 ivyPKY"
           data-testid="calling-code-filter-input"
-          id="downshift-2-input"
+          id="downshift-:r2:-input"
           placeholder="Type country code or country name"
+          role="combobox"
           value=""
         />
       </div>
       <ol
-        aria-labelledby="downshift-2-label"
+        aria-labelledby="downshift-:r2:-label"
         class="PhoneNumberInputStyles__CallingCodeOptionsList-sc-80kraj-11 knbNaN"
-        id="downshift-2-menu"
+        id="downshift-:r2:-menu"
         role="listbox"
       >
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 kDOeGH"
-          id="downshift-2-item-0"
+          id="downshift-:r2:-item-0"
           role="option"
           title="Indonesia"
         >
@@ -2117,9 +2186,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-1"
+          id="downshift-:r2:-item-1"
           role="option"
           title="Malaysia"
         >
@@ -2139,9 +2209,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-2"
+          id="downshift-:r2:-item-2"
           role="option"
           title="Singapore"
         >
@@ -2161,9 +2232,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-3"
+          id="downshift-:r2:-item-3"
           role="option"
           title="Taiwan"
         >
@@ -2183,9 +2255,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-4"
+          id="downshift-:r2:-item-4"
           role="option"
           title="Vietnam"
         >
@@ -2205,9 +2278,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 fJDtfo"
-          id="downshift-2-item-5"
+          id="downshift-:r2:-item-5"
           role="option"
           title="Afghanistan"
         >
@@ -2227,9 +2301,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-6"
+          id="downshift-:r2:-item-6"
           role="option"
           title="Albania"
         >
@@ -2249,9 +2324,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-7"
+          id="downshift-:r2:-item-7"
           role="option"
           title="Algeria"
         >
@@ -2271,9 +2347,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-8"
+          id="downshift-:r2:-item-8"
           role="option"
           title="Germany"
         >
@@ -2293,9 +2370,10 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
           </div>
         </li>
         <li
+          aria-disabled="false"
           aria-selected="false"
           class="PhoneNumberInputStyles__CallingCodeOption-sc-80kraj-12 jWUcAm"
-          id="downshift-2-item-9"
+          id="downshift-:r2:-item-9"
           role="option"
           title="United States"
         >

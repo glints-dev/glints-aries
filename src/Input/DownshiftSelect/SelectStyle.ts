@@ -107,7 +107,7 @@ export const Menu = styled.ul`
   background-color: white;
   z-index: 1;
 
-  [aria-expanded='false'] + & {
+  &.hidden {
     visibility: hidden;
   }
 `;
