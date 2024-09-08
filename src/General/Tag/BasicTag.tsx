@@ -3,7 +3,14 @@ import classNames from 'classnames';
 import { TagContainer, TagContent } from './TagStyle';
 
 const Tag: React.FunctionComponent<Props> = props => {
-  const { className, children, block, outline, onClick, ...restProps } = props;
+  const {
+    className,
+    children,
+    block = false,
+    outline = false,
+    onClick,
+    ...restProps
+  } = props;
 
   return (
     <TagContainer
@@ -21,11 +28,6 @@ const Tag: React.FunctionComponent<Props> = props => {
       </TagContent>
     </TagContainer>
   );
-};
-
-Tag.defaultProps = {
-  block: false,
-  outline: false,
 };
 
 export type Props = React.ComponentPropsWithoutRef<typeof TagContainer> & {

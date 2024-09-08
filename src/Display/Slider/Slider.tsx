@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { isNil } from 'lodash-es';
 
 import classNames from 'classnames';
@@ -63,7 +62,7 @@ export const Slider = ({
   };
 
   const getSliderContainerDOMNode = React.useCallback(() => {
-    return ReactDOM.findDOMNode(sliderContainerRef.current) as Element;
+    return sliderContainerRef.current;
   }, [sliderContainerRef]);
 
   const handleDotClick = (idx: number) => {
@@ -88,7 +87,7 @@ export const Slider = ({
       child => !isNil(child)
     ).length;
     const windowWidth =
-      getSliderContainerDOMNode().getBoundingClientRect().width;
+      sliderContainerRef.current.getBoundingClientRect().width;
 
     setScreenSize(windowWidth);
 
@@ -145,12 +144,12 @@ export const Slider = ({
     function receiveProps() {
       if (initialItem === undefined) return;
       const windowWidth =
-        getSliderContainerDOMNode().getBoundingClientRect().width;
+        sliderContainerRef.current.getBoundingClientRect().width;
 
       setTranslateValue(-(windowWidth * (initialItem - 1)));
       setIndex(initialItem);
     },
-    [initialItem, getSliderContainerDOMNode]
+    [initialItem, sliderContainerRef]
   );
 
   const childrenCount = React.Children.toArray(children).filter(

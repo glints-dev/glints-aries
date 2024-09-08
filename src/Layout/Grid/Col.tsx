@@ -3,9 +3,9 @@ import * as React from 'react';
 import { ColumnContainer } from './GridStyle';
 
 export const Col: React.FunctionComponent<Props> = ({
-  xs,
-  sm,
-  md,
+  xs = 12,
+  sm = 12,
+  md = 12,
   xsOrder,
   smOrder,
   mdOrder,
@@ -30,12 +30,6 @@ export const Col: React.FunctionComponent<Props> = ({
     {children}
   </ColumnContainer>
 );
-
-Col.defaultProps = {
-  xs: 12,
-  sm: 12,
-  md: 12,
-};
 
 export interface Props {
   xs?: number;

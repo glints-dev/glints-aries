@@ -43,31 +43,28 @@ export const PhoneNumberInput = ({
     ['desc', 'asc']
   );
 
-  const {
-    getComboboxProps,
-    getInputProps,
-    getToggleButtonProps,
-    getMenuProps,
-    getItemProps,
-  } = useCombobox<CallingCodeOption>({
-    items: callingCodeOptions,
-    selectedItem: find(callingCodeOptions, { callingCode: value.callingCode }),
-    onSelectedItemChange: ({ selectedItem }) => {
-      onChange({
-        ...value,
-        callingCode: selectedItem
-          ? selectedItem.callingCode
-          : value.callingCode,
-      });
-      closeCallingCodeInput();
-    },
-    inputValue: filterValue,
-    onInputValueChange: ({ type, inputValue }) => {
-      if (type !== useCombobox.stateChangeTypes.InputChange) return;
-      onInputChange(inputValue);
-    },
-    itemToString: option => (option ? option.label : ''),
-  });
+  const { getInputProps, getToggleButtonProps, getMenuProps, getItemProps } =
+    useCombobox<CallingCodeOption>({
+      items: callingCodeOptions,
+      selectedItem: find(callingCodeOptions, {
+        callingCode: value.callingCode,
+      }),
+      onSelectedItemChange: ({ selectedItem }) => {
+        onChange({
+          ...value,
+          callingCode: selectedItem
+            ? selectedItem.callingCode
+            : value.callingCode,
+        });
+        closeCallingCodeInput();
+      },
+      inputValue: filterValue,
+      onInputValueChange: ({ type, inputValue }) => {
+        if (type !== useCombobox.stateChangeTypes.InputChange) return;
+        onInputChange(inputValue);
+      },
+      itemToString: option => (option ? option.label : ''),
+    });
 
   const callingCodeFilterInputRef = useRef<HTMLInputElement>();
   useEffect(
@@ -120,7 +117,6 @@ export const PhoneNumberInput = ({
       </S.TopRow>
       <S.CallingCodeInput
         isOpen={isCallingCodeInputOpen}
-        {...getComboboxProps()}
         data-testid="calling-code-input"
       >
         <S.CallingCodeFilterInputGroup>

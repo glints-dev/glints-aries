@@ -32,17 +32,17 @@ import {
 export const Modal: FC<Props> = ({
   isVisible,
   title,
-  onClose,
+  onClose = () => undefined,
   children,
   className,
-  hideContentArea,
-  centering,
-  fullscreen,
-  removeAnimation,
+  hideContentArea = false,
+  centering = false,
+  fullscreen = false,
+  removeAnimation = false,
   footer,
-  size,
-  hideHeader,
-  keepChildrenMountedOnClose,
+  size = 'm',
+  hideHeader = false,
+  keepChildrenMountedOnClose = false,
   ...restProps
 }) => {
   const modalContentAreaRef = useRef(null);
@@ -231,16 +231,5 @@ export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   /** Whether to keep the child in the DOM when the modal is close */
   keepChildrenMountedOnClose?: boolean;
 }
-
-Modal.defaultProps = {
-  onClose: () => undefined as () => void,
-  size: 'm',
-  hideContentArea: false,
-  hideHeader: false,
-  removeAnimation: false,
-  centering: false,
-  fullscreen: false,
-  keepChildrenMountedOnClose: false,
-};
 
 export default Modal;

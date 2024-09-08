@@ -140,18 +140,22 @@ describe('<Gallery /> active item', () => {
 
 describe('<Gallery /> Slider should have correct translateX to render active slide correctly', () => {
   test('when click on gallery item', () => {
-    const { getByTestId, rerender } = render(<Component />);
+    const getBoundingClientRect = HTMLElement.prototype.getBoundingClientRect;
+    jest
+      .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+      .mockImplementation(function () {
+        if (this?.dataset?.testid === 'slider') {
+          return { width: sliderWrapperWidth };
+        }
+        return getBoundingClientRect.bind(this)();
+      });
+
+    render(<Component />);
     const sliderWrapperWidth = 500;
     const itemIndex = 3;
     const item = document.querySelectorAll('.gallery-item')[itemIndex];
     userEvent.click(item);
 
-    const slider = getByTestId('slider');
-    slider.getBoundingClientRect = jest
-      .fn()
-      .mockReturnValue({ width: sliderWrapperWidth });
-
-    rerender(<Component />);
     expect(document.querySelector('.slider-wrapper')).toHaveStyle(
       `transform: translateX(-${sliderWrapperWidth * itemIndex}px)`
     );
