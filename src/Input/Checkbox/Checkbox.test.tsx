@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
@@ -30,12 +29,10 @@ afterEach(() => {
 });
 
 it(`<Checkbox> should render an input with id, value and onClick props and a label with the text ${props.value}`, () => {
-  const CheckboxSnapshot = renderer
-    .create(
-      <Checkbox id={props.id} value={props.value} onClick={props.onClick} />
-    )
-    .toJSON();
-  expect(CheckboxSnapshot).toMatchSnapshot();
+  const { asFragment } = render(
+    <Checkbox id={props.id} value={props.value} onClick={props.onClick} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('when toggling checkbox, it should fire onClick once and become checked, then fire onClick once and become unchecked', () => {

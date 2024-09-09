@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
@@ -54,8 +53,8 @@ function setupModal(isVisible: boolean, customProps: TestProps = {}) {
 }
 
 it('<Modal> should render with a title, content, footer and an onClick handler', () => {
-  const ModalSnapshot = renderer.create(OpenedModal).toJSON();
-  expect(ModalSnapshot).toMatchSnapshot();
+  const { asFragment } = render(OpenedModal);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('when modal is opened', () => {

@@ -1,65 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Modal> should render with a title, content, footer and an onClick handler 1`] = `
-<div
-  className="ModalStyle__ModalContainer-sc-bg1vyz-0 kNFVBq aries-modal"
-  data-testid="modal-container"
-  onClick={[Function]}
-  onMouseDown={[Function]}
->
+<DocumentFragment>
   <div
-    className="ModalStyle__ModalDialog-sc-bg1vyz-1 fJLdao modal-dialog"
+    class="ModalStyle__ModalContainer-sc-bg1vyz-0 kNFVBq aries-modal"
+    data-testid="modal-container"
   >
     <div
-      aria-modal="true"
-      className="ModalStyle__ModalContentArea-sc-bg1vyz-5 hfcNCP modal-content"
-      data-testid="dialog"
-      onClick={[Function]}
-      role="dialog"
-      size="m"
-      tabIndex={0}
+      class="ModalStyle__ModalDialog-sc-bg1vyz-1 fJLdao modal-dialog"
     >
-      <header
-        className="ModalStyle__ModalHeader-sc-bg1vyz-2 iOUodW modal-header"
+      <div
+        aria-modal="true"
+        class="ModalStyle__ModalContentArea-sc-bg1vyz-5 hfcNCP modal-content"
+        data-testid="dialog"
+        role="dialog"
+        tabindex="0"
       >
-        <h3>
-          Modal Title
-        </h3>
-        <button
-          aria-label="Close button"
-          data-testid="close-button"
-          onClick={[Function]}
-          type="button"
+        <header
+          class="ModalStyle__ModalHeader-sc-bg1vyz-2 iOUodW modal-header"
         >
-          <svg
-            className="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
-            data-testid="icon-svg"
-            fill="grey"
-            height="1em"
-            viewBox="0 0 100 100"
-            width="1em"
+          <h3>
+            Modal Title
+          </h3>
+          <button
+            aria-label="Close button"
+            data-testid="close-button"
+            type="button"
           >
-            <path
-              d="M100 10L90 0 50 40 10 0 0 10l40 40L0 90l10 10 40-40 40 40 10-10-40-40z"
-            />
-          </svg>
-        </button>
-      </header>
-      <section
-        className="ModalStyle__ModalBody-sc-bg1vyz-3 cQJnAI modal-body"
-      >
-        <p>
-          Modal Content
-        </p>
-      </section>
-      <footer
-        className="ModalStyle__ModalFooter-sc-bg1vyz-4 cllJjW modal-footer"
-      >
-        <button>
-          Modal Footer
-        </button>
-      </footer>
+            <svg
+              class="IconStyle__VerticalCenteredSvg-sc-x7d280-0 cqBxxO"
+              data-testid="icon-svg"
+              fill="grey"
+              height="1em"
+              viewBox="0 0 100 100"
+              width="1em"
+            >
+              <path
+                d="M100 10L90 0 50 40 10 0 0 10l40 40L0 90l10 10 40-40 40 40 10-10-40-40z"
+              />
+            </svg>
+          </button>
+        </header>
+        <section
+          class="ModalStyle__ModalBody-sc-bg1vyz-3 cQJnAI modal-body"
+        >
+          <p>
+            Modal Content
+          </p>
+        </section>
+        <footer
+          class="ModalStyle__ModalFooter-sc-bg1vyz-4 cllJjW modal-footer"
+        >
+          <button>
+            Modal Footer
+          </button>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loading> should render as expected 1`] = `
-<div
-  aria-busy="true"
-  aria-live="polite"
-  className="LoadingStyle__LoadingContainer-sc-fg2qx3-0 dTLHiG aries-loading"
-  data-testid="alert"
-  role="alert"
->
+<DocumentFragment>
   <div
-    className="LoadingStyle__Spinner-sc-fg2qx3-1 jHIaBd"
-  />
-</div>
+    aria-busy="true"
+    aria-live="polite"
+    class="LoadingStyle__LoadingContainer-sc-fg2qx3-0 dTLHiG aries-loading"
+    data-testid="alert"
+    role="alert"
+  >
+    <div
+      class="LoadingStyle__Spinner-sc-fg2qx3-1 jHIaBd"
+    />
+  </div>
+</DocumentFragment>
 `;

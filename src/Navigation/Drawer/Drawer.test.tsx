@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render, queryByTestId } from '@testing-library/react';
 
@@ -9,25 +8,21 @@ import Drawer, { DrawerPosition } from './Drawer';
 describe('<Drawer /> render', () => {
   const matchSnapshot = (position: DrawerPosition) => {
     test(`should match snapshot when position is ${position} and drawer is open`, () => {
-      const snapshot = renderer
-        .create(
-          <Drawer isOpen={true} position={position} onClose={jest.fn()}>
-            test-content
-          </Drawer>
-        )
-        .toJSON();
-      expect(snapshot).toMatchSnapshot();
+      const { asFragment } = render(
+        <Drawer isOpen={true} position={position} onClose={jest.fn()}>
+          test-content
+        </Drawer>
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test(`should match snapshot when position is ${position} and drawer is closed`, () => {
-      const snapshot = renderer
-        .create(
-          <Drawer isOpen={false} position={position} onClose={jest.fn()}>
-            test-content
-          </Drawer>
-        )
-        .toJSON();
-      expect(snapshot).toMatchSnapshot();
+      const { asFragment } = render(
+        <Drawer isOpen={false} position={position} onClose={jest.fn()}>
+          test-content
+        </Drawer>
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 

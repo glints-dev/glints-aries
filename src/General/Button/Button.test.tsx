@@ -1,19 +1,16 @@
 import * as React from 'react';
 import Button from '.';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
 import { ButtonVariantType, transformVariant } from './Button';
 import { ButtonVariant, ButtonTheme } from '../../Utils/StyleConfig';
 
-it('<Button> should render with text "click me" and an onClick handler', () => {
+it('<Button> should render with text "click me"', () => {
   const onClick = jest.fn();
-  const ButtonSnapshot = renderer
-    .create(<Button onClick={onClick}>click me</Button>)
-    .toJSON();
-  expect(ButtonSnapshot).toMatchSnapshot();
+  const { asFragment } = render(<Button onClick={onClick}>click me</Button>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('<Button> should render as button by default', () => {

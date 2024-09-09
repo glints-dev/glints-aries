@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
@@ -29,27 +28,14 @@ const setupCollapsible = () => {
   };
 };
 
-function createNodeMock(element: any) {
-  if (element.type === 'div') {
-    return {
-      contains: jest.fn(),
-    };
-  }
-  return null;
-}
-
 describe('<Collapsible>', () => {
   it('should render as expected', () => {
-    const options = { createNodeMock };
-    const closedCollapsibleSnapshot = renderer
-      .create(closedCollapsible, options)
-      .toJSON();
-    expect(closedCollapsibleSnapshot).toMatchSnapshot();
+    const { asFragment: closedCollapsibleAsFragment } =
+      render(closedCollapsible);
+    expect(closedCollapsibleAsFragment()).toMatchSnapshot();
 
-    const openCollapsibleSnapshot = renderer
-      .create(openCollapsible, options)
-      .toJSON();
-    expect(openCollapsibleSnapshot).toMatchSnapshot();
+    const { asFragment: openCollapsibleAsFragment } = render(openCollapsible);
+    expect(openCollapsibleAsFragment()).toMatchSnapshot();
   });
 
   it('should be open by default', () => {

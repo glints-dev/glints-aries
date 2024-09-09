@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
@@ -9,10 +8,10 @@ import Heading from './Heading';
 const heading = 'This is a Heading';
 
 it(`<Heading> should match snapshot when the component is called`, () => {
-  const HeadingSnapshot = renderer
-    .create(<Heading className="test-class-name">{heading}</Heading>)
-    .toJSON();
-  expect(HeadingSnapshot).toMatchSnapshot();
+  const { asFragment } = render(
+    <Heading className="test-class-name">{heading}</Heading>
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('<Heading> should render the correct case for the text when', () => {

@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -44,10 +43,10 @@ function setupTextFieldWithChangeEvent(otherProps?: any) {
 }
 
 it('<TextField> should render with a label of Username and type of text', () => {
-  const TextFieldSnapshot = renderer
-    .create(<TextField type={props.type} label={props.label} />)
-    .toJSON();
-  expect(TextFieldSnapshot).toMatchSnapshot();
+  const { asFragment } = render(
+    <TextField type={props.type} label={props.label} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('when it is rendered', () => {

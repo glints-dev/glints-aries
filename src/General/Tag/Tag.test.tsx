@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
@@ -9,8 +8,8 @@ import Tag from './BasicTag';
 const children = 'Glints Aries';
 
 it(`<Tag> should render a label with the text "Glints Aries"`, () => {
-  const TagSnapshot = renderer.create(<Tag>{children}</Tag>).toJSON();
-  expect(TagSnapshot).toMatchSnapshot();
+  const { asFragment } = render(<Tag>{children}</Tag>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('should display the correct text when rendered', () => {

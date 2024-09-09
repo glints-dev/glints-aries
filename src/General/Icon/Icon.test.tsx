@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import styled from 'styled-components';
@@ -13,8 +12,8 @@ const children = (
 );
 
 test('<Icon> should matches snapshot', () => {
-  const IconSnapshot = renderer.create(<Icon>{children}</Icon>).toJSON();
-  expect(IconSnapshot).toMatchSnapshot();
+  const { asFragment } = render(<Icon>{children}</Icon>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('<Icon> can be styled by styled-component', () => {

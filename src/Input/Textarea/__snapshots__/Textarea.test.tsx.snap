@@ -1,28 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Textarea> should render with a value and label of Description 1`] = `
-<div
-  className="TextareaStyle__TextareaContainer-sc-1998n74-0 eHkxfQ aries-textarea"
->
-  <textarea
-    aria-label="Description"
-    className="TextareaStyle__TextareaInput-sc-1998n74-2 jDObl"
-    disabled={false}
-    onBlur={[Function]}
-    onChange={[Function]}
-    rows={4}
-    style={
-      Object {
-        "maxHeight": "310px",
-      }
-    }
-    value="Explanation"
-  />
-  <label
-    className="TextareaStyle__TextareaLabel-sc-1998n74-1 cyEujW"
-    data-testid="textarea-label"
+<DocumentFragment>
+  <div
+    class="TextareaStyle__TextareaContainer-sc-1998n74-0 eHkxfQ aries-textarea"
   >
-    Description
-  </label>
-</div>
+    <textarea
+      aria-label="Description"
+      class="TextareaStyle__TextareaInput-sc-1998n74-2 jDObl"
+      rows="4"
+      style="max-height: 185px;"
+    >
+      Explanation
+    </textarea>
+    <label
+      class="TextareaStyle__TextareaLabel-sc-1998n74-1 cyEujW"
+      data-testid="textarea-label"
+    >
+      Description
+    </label>
+  </div>
+</DocumentFragment>
 `;

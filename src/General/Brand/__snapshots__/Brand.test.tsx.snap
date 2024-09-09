@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Brand/> should render as expected 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -26,21 +27,22 @@ exports[`<Brand/> should render as expected 1`] = `
 }
 
 <div
-  className="c0 aries-brand"
-  onContextMenu={[Function]}
-  role="presentation"
-  tabIndex={0}
->
-  <img
-    className="c1 brand-image"
-    src="test-file-stub"
-    tabIndex={-1}
-  />
-</div>
+    class="c0 aries-brand"
+    role="presentation"
+    tabindex="0"
+  >
+    <img
+      class="c1 brand-image"
+      src="test-file-stub"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`<Brand/> should render as expected 2`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -65,21 +67,22 @@ exports[`<Brand/> should render as expected 2`] = `
 }
 
 <div
-  className="c0 aries-brand"
-  onContextMenu={[Function]}
-  role="presentation"
-  tabIndex={0}
->
-  <img
-    className="c1 brand-image"
-    src="test-file-stub"
-    tabIndex={-1}
-  />
-</div>
+    class="c0 aries-brand"
+    role="presentation"
+    tabindex="0"
+  >
+    <img
+      class="c1 brand-image"
+      src="test-file-stub"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`<Brand/> should render as expected 3`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -104,21 +107,22 @@ exports[`<Brand/> should render as expected 3`] = `
 }
 
 <div
-  className="c0 aries-brand"
-  onContextMenu={[Function]}
-  role="presentation"
-  tabIndex={0}
->
-  <img
-    className="c1 brand-image"
-    src="test-file-stub"
-    tabIndex={-1}
-  />
-</div>
+    class="c0 aries-brand"
+    role="presentation"
+    tabindex="0"
+  >
+    <img
+      class="c1 brand-image"
+      src="test-file-stub"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`<Brand/> should render as expected 4`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -143,21 +147,22 @@ exports[`<Brand/> should render as expected 4`] = `
 }
 
 <div
-  className="c0 aries-brand"
-  onContextMenu={[Function]}
-  role="presentation"
-  tabIndex={0}
->
-  <img
-    className="c1 brand-image"
-    src="test-file-stub"
-    tabIndex={-1}
-  />
-</div>
+    class="c0 aries-brand"
+    role="presentation"
+    tabindex="0"
+  >
+    <img
+      class="c1 brand-image"
+      src="test-file-stub"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`<Brand/> should render as expected 5`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -182,15 +187,15 @@ exports[`<Brand/> should render as expected 5`] = `
 }
 
 <div
-  className="c0 aries-brand"
-  onContextMenu={[Function]}
-  role="presentation"
-  tabIndex={0}
->
-  <img
-    className="c1 brand-image"
-    src="http://example.com/example.jpg"
-    tabIndex={-1}
-  />
-</div>
+    class="c0 aries-brand"
+    role="presentation"
+    tabindex="0"
+  >
+    <img
+      class="c1 brand-image"
+      src="http://example.com/example.jpg"
+      tabindex="-1"
+    />
+  </div>
+</DocumentFragment>
 `;

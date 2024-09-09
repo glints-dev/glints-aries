@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
@@ -21,11 +20,11 @@ const twoItems = (
 
 describe('<Breadcrumb>', () => {
   it('should render as expected', () => {
-    const oneItemSnapshot = renderer.create(oneItem).toJSON();
-    expect(oneItemSnapshot).toMatchSnapshot();
+    const { asFragment: oneItemAsFragment } = render(oneItem);
+    expect(oneItemAsFragment()).toMatchSnapshot();
 
-    const twoItemsSnapshot = renderer.create(twoItems).toJSON();
-    expect(twoItemsSnapshot).toMatchSnapshot();
+    const { asFragment: twoItemsAsFragment } = render(twoItems);
+    expect(twoItemsAsFragment()).toMatchSnapshot();
   });
 
   it('should show correct slash count', () => {

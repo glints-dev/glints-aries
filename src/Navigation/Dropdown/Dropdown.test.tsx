@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import {
   fireEvent,
@@ -16,15 +15,13 @@ import { Greyscale } from '../../Utils/Colors';
 
 describe('<Dropdown/> render', () => {
   test('should match snapshot', () => {
-    const snapshot = renderer
-      .create(
-        <Dropdown label="Career">
-          <DropdownItem value="pm">Product Manager</DropdownItem>
-          <DropdownItem value="se">Software Engineer</DropdownItem>
-        </Dropdown>
-      )
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(
+      <Dropdown label="Career">
+        <DropdownItem value="pm">Product Manager</DropdownItem>
+        <DropdownItem value="se">Software Engineer</DropdownItem>
+      </Dropdown>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('options should not be visible when it is rendered', () => {

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import 'jest-styled-components';
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 
@@ -11,8 +10,8 @@ import { BadgeVariant } from './BadgeVariant';
 const label = '6';
 
 it(`<Badge> should render a label with the text "6"`, () => {
-  const BadgeSnapshot = renderer.create(<Badge label={label} />).toJSON();
-  expect(BadgeSnapshot).toMatchSnapshot();
+  const { asFragment } = render(<Badge label={label} />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('should display the correct text when rendered', () => {

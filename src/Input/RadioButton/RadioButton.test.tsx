@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as renderer from 'react-test-renderer';
 import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
@@ -65,18 +64,18 @@ const setupRadioButtons = () => {
 
 describe('<RadioButton>', () => {
   it('should render as expected', () => {
-    const singleRadioSnapshot = renderer.create(singleRadioButton).toJSON();
-    expect(singleRadioSnapshot).toMatchSnapshot();
-    const singleRadioSnapshotWhiteTheme = renderer
-      .create(singleRadioButtonWhiteTheme)
-      .toJSON();
-    expect(singleRadioSnapshotWhiteTheme).toMatchSnapshot();
-    const twoRadiosSnapshot = renderer.create(twoRadioButtons).toJSON();
-    expect(twoRadiosSnapshot).toMatchSnapshot();
-    const twoRadioButtonsOneCheckedSnapshot = renderer
-      .create(twoRadioButtonsOneChecked)
-      .toJSON();
-    expect(twoRadioButtonsOneCheckedSnapshot).toMatchSnapshot();
+    const { asFragment: singleRadioAsFragment } = render(singleRadioButton);
+    expect(singleRadioAsFragment()).toMatchSnapshot();
+    const { asFragment: singleRadioWhiteThemeAsFragment } = render(
+      singleRadioButtonWhiteTheme
+    );
+    expect(singleRadioWhiteThemeAsFragment()).toMatchSnapshot();
+    const { asFragment: twoRadiosAsFragment } = render(twoRadioButtons);
+    expect(twoRadiosAsFragment()).toMatchSnapshot();
+    const { asFragment: twoRadioButtonsOneCheckedAsFragment } = render(
+      twoRadioButtonsOneChecked
+    );
+    expect(twoRadioButtonsOneCheckedAsFragment()).toMatchSnapshot();
   });
 
   it('should call onChange when clicked', () => {

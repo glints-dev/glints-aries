@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
@@ -10,17 +9,15 @@ import { ETabThemeVariant } from '../../Utils/StyleConfig';
 
 describe('<Tabs/> render', () => {
   test('should match snapshot', () => {
-    const snapshot = renderer
-      .create(
-        <Tabs>
-          <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
-          <Tabs.Pane tab="Company">Glints</Tabs.Pane>
-          <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
-          <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
-        </Tabs>
-      )
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(
+      <Tabs>
+        <Tabs.Pane tab="Job">Software Engineer</Tabs.Pane>
+        <Tabs.Pane tab="Company">Glints</Tabs.Pane>
+        <Tabs.Pane tab="Location">Jakarta</Tabs.Pane>
+        <Tabs.Pane tab="Salary">Rp 10,000,000</Tabs.Pane>
+      </Tabs>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 

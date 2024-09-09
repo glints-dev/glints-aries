@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { times } from 'lodash-es';
-import * as renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { act, fireEvent, render } from '@testing-library/react';
@@ -120,8 +119,8 @@ afterEach(() => {
 });
 
 it('<Select> should render with 3 options', () => {
-  const SelectSnapshot = renderer.create(SelectComponent).toJSON();
-  expect(SelectSnapshot).toMatchSnapshot();
+  const { asFragment } = render(SelectComponent);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('when it is rendered', () => {

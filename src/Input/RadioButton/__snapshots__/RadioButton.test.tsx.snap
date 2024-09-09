@@ -1,174 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RadioButton> should render as expected 1`] = `
-<label
-  className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
-  disabled={false}
-  tabIndex={0}
->
-  <input
-    disabled={false}
-    name="job-type"
-    type="radio"
-    value="full-time"
-  />
-  <span
-    className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
-    data-testid="radio-icon"
-    disabled={false}
-    size="regular"
-  />
-  <span
-    className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
-    disabled={false}
-    size="regular"
-    tabIndex={-1}
+<DocumentFragment>
+  <label
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
+    tabindex="0"
   >
-    Full Time
-  </span>
-</label>
+    <input
+      name="job-type"
+      type="radio"
+      value="full-time"
+    />
+    <span
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
+      data-testid="radio-icon"
+    />
+    <span
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
+      tabindex="-1"
+    >
+      Full Time
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`<RadioButton> should render as expected 2`] = `
-<label
-  className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 jVAljR aries-radiobtn"
-  disabled={false}
-  tabIndex={0}
->
-  <input
-    disabled={false}
-    name="job-type"
-    type="radio"
-    value="full-time"
-  />
-  <span
-    className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 ejOjGG"
-    data-testid="radio-icon"
-    disabled={false}
-    size="regular"
-  />
-  <span
-    className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 jphpKA radiobtn-content"
-    disabled={false}
-    size="regular"
-    tabIndex={-1}
+<DocumentFragment>
+  <label
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 jVAljR aries-radiobtn"
+    tabindex="0"
   >
-    Full Time
-  </span>
-</label>
+    <input
+      name="job-type"
+      type="radio"
+      value="full-time"
+    />
+    <span
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 ejOjGG"
+      data-testid="radio-icon"
+    />
+    <span
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 jphpKA radiobtn-content"
+      tabindex="-1"
+    >
+      Full Time
+    </span>
+  </label>
+</DocumentFragment>
 `;
 
 exports[`<RadioButton> should render as expected 3`] = `
-Array [
+<DocumentFragment>
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
-    disabled={false}
-    tabIndex={0}
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
+    tabindex="0"
   >
     <input
-      disabled={false}
       name="job-type"
       type="radio"
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
       data-testid="radio-icon"
-      disabled={false}
-      size="regular"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
-      disabled={false}
-      size="regular"
-      tabIndex={-1}
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
+      tabindex="-1"
     >
       Full Time
     </span>
-  </label>,
+  </label>
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
-    disabled={false}
-    tabIndex={0}
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
+    tabindex="0"
   >
     <input
-      disabled={false}
       name="job-type"
       type="radio"
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
       data-testid="radio-icon"
-      disabled={false}
-      size="regular"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
-      disabled={false}
-      size="regular"
-      tabIndex={-1}
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
+      tabindex="-1"
     >
       Intership
     </span>
-  </label>,
-]
+  </label>
+</DocumentFragment>
 `;
 
 exports[`<RadioButton> should render as expected 4`] = `
-Array [
+<DocumentFragment>
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
-    disabled={false}
-    tabIndex={0}
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
+    tabindex="0"
   >
     <input
-      checked={true}
-      disabled={false}
+      checked=""
       name="job-type"
       type="radio"
       value="full-time"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
       data-testid="radio-icon"
-      disabled={false}
-      size="regular"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
-      disabled={false}
-      size="regular"
-      tabIndex={-1}
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
+      tabindex="-1"
     >
       Full Time
     </span>
-  </label>,
+  </label>
   <label
-    className="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
-    disabled={false}
-    tabIndex={0}
+    class="RadioButtonStyle__RadioContainer-sc-1dmv219-3 kRaKRL aries-radiobtn"
+    tabindex="0"
   >
     <input
-      disabled={false}
       name="job-type"
       type="radio"
       value="intership"
     />
     <span
-      className="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
+      class="RadioButtonStyle__RadioIcon-sc-1dmv219-0 grrbBs"
       data-testid="radio-icon"
-      disabled={false}
-      size="regular"
     />
     <span
-      className="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
-      disabled={false}
-      size="regular"
-      tabIndex={-1}
+      class="RadioButtonStyle__RadioLabel-sc-1dmv219-1 heSmNU radiobtn-content"
+      tabindex="-1"
     >
       Intership
     </span>
-  </label>,
-]
+  </label>
+</DocumentFragment>
 `;

@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -36,22 +35,11 @@ function setupTextareaWithChangeEvent(props: Props) {
   return { textareaInput };
 }
 
-function createNodeMock(element: any) {
-  if (element.type === 'textarea') {
-    return {
-      value: 0,
-      offsetHeight: 34,
-    };
-  }
-  return null;
-}
-
 it('<Textarea> should render with a value and label of Description', () => {
-  const options = { createNodeMock };
-  const TextareaSnapshot = renderer
-    .create(<Textarea label={props.label} value={props.value} />, options)
-    .toJSON();
-  expect(TextareaSnapshot).toMatchSnapshot();
+  const { asFragment } = render(
+    <Textarea label={props.label} value={props.value} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('when it is rendered', () => {

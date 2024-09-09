@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as renderer from 'react-test-renderer';
 import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -8,17 +7,15 @@ import Alert, { AlertType } from './Alert';
 
 describe('<Alert/> should match snapshot, when isOpen is falsy', () => {
   test('snapshot should be null regardless of alert type', () => {
-    const snapshot = renderer
-      .create(
-        <Alert
-          type={'success'}
-          message="You have successfully applied to Glints as Software Engineer."
-          isOpen={false}
-          onClose={jest.fn()}
-        />
-      )
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(
+      <Alert
+        type={'success'}
+        message="You have successfully applied to Glints as Software Engineer."
+        isOpen={false}
+        onClose={jest.fn()}
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -33,34 +30,28 @@ describe('<Alert/> should match snapshot, when isOpen is truthy', () => {
   );
 
   test('type is success', () => {
-    const snapshot = renderer
-      .create(<AlertComponent type="success" />)
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(<AlertComponent type="success" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type is warning', () => {
-    const snapshot = renderer
-      .create(<AlertComponent type="warning" />)
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(<AlertComponent type="warning" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type is danger', () => {
-    const snapshot = renderer.create(<AlertComponent type="danger" />).toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(<AlertComponent type="danger" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type is info', () => {
-    const snapshot = renderer.create(<AlertComponent type="info" />).toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(<AlertComponent type="info" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('type is not a predefined type', () => {
-    const snapshot = renderer
-      .create(<AlertComponent type={'xxx' as AlertType} />)
-      .toJSON();
-    expect(snapshot).toMatchSnapshot();
+    const { asFragment } = render(<AlertComponent type={'xxx' as AlertType} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 

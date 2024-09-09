@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import * as renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -33,10 +32,8 @@ function setupNumberInputWithChangeEvent(otherProps?: any) {
 }
 
 it('<NumberInput> should render correctly to match snapshot', () => {
-  const TextFieldSnapshot = renderer
-    .create(<NumberInput label={props.label} />)
-    .toJSON();
-  expect(TextFieldSnapshot).toMatchSnapshot();
+  const { asFragment } = render(<NumberInput label={props.label} />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('when it is rendered without a value passed to it', () => {
