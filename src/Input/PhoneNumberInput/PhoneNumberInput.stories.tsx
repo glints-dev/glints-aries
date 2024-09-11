@@ -100,6 +100,9 @@ const Template: ComponentStory<typeof PhoneNumberInput> = (
         onChange={setValue}
         onInputChange={setFilterInput}
         onBlur={console.log}
+        isPlaceholderFloating={args.isPlaceholderFloating}
+        isRequired={args.isRequired}
+        isDisableCallingCode={args.isDisableCallingCode}
       />
     </>
   );
@@ -119,3 +122,12 @@ Loading.args = { filterDelayMs: 1000 };
 
 export const WithAddon = Template.bind({});
 WithAddon.args = { addon: <Tag>I am an addon :)</Tag> };
+
+export const DisableCallingCodeOptionsAndFloatingPlaceholder = Template.bind(
+  {}
+);
+DisableCallingCodeOptionsAndFloatingPlaceholder.args = {
+  isPlaceholderFloating: true,
+  isRequired: true,
+  isDisableCallingCode: true,
+};

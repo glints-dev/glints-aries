@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Input, InputProps } from '../Input/Input';
 
-export type NumberInputProps = Omit<InputProps, 'type' | 'prefix'>;
+export type NumberInputProps = Omit<InputProps, 'type' | 'prefix'> & {
+  border?: string;
+  borderRadius?: string;
+  required?: boolean;
+  isPlaceholderFloating?: boolean;
+};
 
 const StyledInput = styled(Input)`
   &[type='number'] {
@@ -17,7 +22,26 @@ const StyledInput = styled(Input)`
 `;
 
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-  function NumberInput(props: NumberInputProps, ref) {
-    return <StyledInput ref={ref} type="number" {...props} />;
+  function NumberInput(
+    {
+      border,
+      borderRadius,
+      isPlaceholderFloating,
+      required,
+      ...props
+    }: NumberInputProps,
+    ref
+  ) {
+    return (
+      <StyledInput
+        ref={ref}
+        type="number"
+        {...props}
+        border={border}
+        borderRadius={borderRadius}
+        required={required}
+        isPlaceholderFloating={isPlaceholderFloating}
+      />
+    );
   }
 );

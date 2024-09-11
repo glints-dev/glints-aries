@@ -10,9 +10,11 @@ import {
   StyledSelect,
   StyledSelectTypography,
   StyledTag,
+  SuffixContainer,
   TagsContainer,
   WithPrefixContainer,
 } from './ActivatorStyle';
+import { AsteriskIcon, FloatingLabel } from '../../../Input/InputStyle';
 
 export interface ActivatorSelectProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
@@ -26,6 +28,12 @@ export interface ActivatorSelectProps
   onSelectClick?(): void;
   options?: Option[];
   width?: string;
+  height?: string;
+  required?: boolean;
+  floatingFontSize?: string;
+  isPlaceholderFloating?: boolean;
+  border?: string;
+  borderRadius?: string;
 }
 export const ActivatorSelect = ({
   customActivatorIcon,
@@ -40,6 +48,12 @@ export const ActivatorSelect = ({
   hasError = false,
   options,
   prefix,
+  required,
+  border,
+  borderRadius,
+  height,
+  floatingFontSize,
+  isPlaceholderFloating,
   ...props
 }: ActivatorSelectProps) => {
   const [filteredValues, setFilteredValues] = useState([]);
@@ -64,14 +78,15 @@ export const ActivatorSelect = ({
     onSelectClick();
     onClick?.(e);
   };
+  const selectedPlaceholder = required ? `${placeholder}*` : placeholder;
 
-  const placeholderMarkup = (
+  const placeholderMarkup = isPlaceholderFloating ? undefined : (
     <Typography
       variant="body1"
       as="span"
       color={disabled ? Neutral.B85 : Neutral.B68}
     >
-      {placeholder}
+      {selectedPlaceholder}
     </Typography>
   );
 
@@ -111,6 +126,10 @@ export const ActivatorSelect = ({
       onClick={handleClick}
       disabled={disabled}
       width={width}
+      height={height}
+      border={border}
+      borderRadius={borderRadius}
+      isPlaceholderFloating={isPlaceholderFloating}
     >
       <WithPrefixContainer>
         {prefix && <StyledPrefixContainer>{prefix}</StyledPrefixContainer>}
@@ -126,11 +145,21 @@ export const ActivatorSelect = ({
           </StyledSelectTypography>
         )}
       </WithPrefixContainer>
-      <StyledIcon
-        height={24}
-        name={customActivatorIcon || 'ri-arrow-m-down-line'}
-        fill={disabled ? Neutral.B85 : Neutral.B40}
-      />
+
+      <SuffixContainer>
+        <StyledIcon
+          height={24}
+          name={customActivatorIcon || 'ri-arrow-m-down-line'}
+          fill={disabled ? Neutral.B85 : Neutral.B40}
+        />
+      </SuffixContainer>
+
+      {isPlaceholderFloating && (
+        <FloatingLabel data-testid="textarea-label" fontSize={floatingFontSize}>
+          {placeholder}
+          {required && <AsteriskIcon>*</AsteriskIcon>}
+        </FloatingLabel>
+      )}
     </StyledSelect>
   );
 };

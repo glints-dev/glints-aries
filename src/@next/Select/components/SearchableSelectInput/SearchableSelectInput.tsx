@@ -1,6 +1,11 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { InputProps } from '../../../Input/Input';
-import { StyledInput, StyledPrefixContainer } from '../../../Input/InputStyle';
+import {
+  AsteriskIcon,
+  FloatingLabel,
+  StyledInput,
+  StyledPrefixContainer,
+} from '../../../Input/InputStyle';
 import { Option } from '../../../Menu';
 import { ClearSelected } from './ClearSelected';
 import {
@@ -31,6 +36,12 @@ export type SearchableSelectInputProps = Omit<
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
   options?: Option[];
   updateMenuOptions?: (newState: Option[]) => void;
+  border?: string;
+  borderRadius?: string;
+  floatingFontSize?: string;
+  isPlaceholderFloating?: boolean;
+  required?: boolean;
+  height?: string;
 };
 
 export const SearchableSelectInput = forwardRef<
@@ -55,6 +66,12 @@ export const SearchableSelectInput = forwardRef<
     updateSearchableSelectState,
     options,
     updateMenuOptions,
+    border,
+    borderRadius,
+    floatingFontSize,
+    isPlaceholderFloating,
+    required,
+    height,
     ...props
   }: SearchableSelectInputProps,
   ref
@@ -62,6 +79,8 @@ export const SearchableSelectInput = forwardRef<
   const inputRef = useRef(null);
   const [showClear, setShowClear] = useState(false);
   const [isSelectedClicked, setIsSelectedClicked] = useState(false);
+
+  const isShowPlaceholder = showPlaceholder && !isPlaceholderFloating;
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     if (disabled) return;
@@ -168,6 +187,8 @@ export const SearchableSelectInput = forwardRef<
     });
   }, [selectedValue, handleUpdateSearchableSelectState]);
 
+  const selectedPlaceholder = required ? `${placeholder}*` : placeholder;
+
   return (
     <StyledContainer
       className="select-input-container"
@@ -177,8 +198,11 @@ export const SearchableSelectInput = forwardRef<
       prefixWidth={37}
       suffixWidth={33}
       width={width}
+      height={height}
+      isPlaceholderFloating={isPlaceholderFloating}
     >
-      <StyledPrefixContainer>{prefix}</StyledPrefixContainer>
+      <StyledPrefixContainer height={height}>{prefix}</StyledPrefixContainer>
+
       {showSelected && (
         <StyledSelectedValue
           className="searchable-select"
@@ -196,10 +220,12 @@ export const SearchableSelectInput = forwardRef<
             ref={inputRef}
             onChange={handleInputChange}
             disabled={disabled}
-            placeholder={showPlaceholder ? placeholder : null}
+            placeholder={isShowPlaceholder ? selectedPlaceholder : null}
             value={inputValue}
             onBlur={handleInputBlur}
             onFocus={handleFocus}
+            border={border}
+            borderRadius={borderRadius}
             {...props}
           />
         </InputContainer>
@@ -209,7 +235,14 @@ export const SearchableSelectInput = forwardRef<
           onSelect={onSelect}
           handleClearIconClick={handleClearIconClick}
           updateInputValue={updateInputValue}
+          height={height}
         />
+      )}
+      {isPlaceholderFloating && (
+        <FloatingLabel data-testid="textarea-label" fontSize={floatingFontSize}>
+          {placeholder}
+          {required && <AsteriskIcon>*</AsteriskIcon>}
+        </FloatingLabel>
       )}
     </StyledContainer>
   );

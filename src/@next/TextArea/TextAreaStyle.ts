@@ -2,17 +2,21 @@ import styled from 'styled-components';
 import { borderRadius4 } from '../utilities/borderRadius';
 import { Neutral, Red } from '../utilities/colors';
 import { body1 as typographyBody1 } from '../Typography/TypographyStyles';
+import { FloatingLabel } from '../Input/InputStyle';
 
 interface TextAreaProp {
   width: string;
+  border?: string;
+  borderRadius?: string;
+  isPlaceholderFloating?: boolean;
 }
 
 export const StyledTextAreaContainer = styled.div<TextAreaProp>`
   position: relative;
   width: ${props => props.width};
 
-  border: 1px solid ${Neutral.B68};
-  border-radius: ${borderRadius4};
+  border: ${({ border }) => border ?? `1px solid ${Neutral.B68}`};
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius4};
   padding: 8px 12px 25px 12px;
   cursor: text;
 
@@ -46,6 +50,7 @@ export const StyledTextArea = styled.textarea<TextAreaProp>`
   box-sizing: border-box;
   border: none;
 
+  ${({ isPlaceholderFloating }) => isPlaceholderFloating && FloatingLabel}
   ${typographyBody1}
 
   color: ${Neutral.B18};

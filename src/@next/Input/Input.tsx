@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import {
+  AsteriskIcon,
+  FloatingLabel,
   StyledContainer,
   StyledInput,
   StyledPrefixContainer,
@@ -9,6 +11,12 @@ import {
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   error?: boolean;
+  height?: string;
+  border?: string;
+  borderRadius?: string;
+  floatingFontSize?: string;
+  isPlaceholderFloating?: boolean;
+  required?: boolean;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   inputRef?: React.Ref<HTMLInputElement>;
@@ -16,7 +24,21 @@ export interface InputProps
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   function Input(
-    { error, disabled, prefix, suffix, inputRef, ...props }: InputProps,
+    {
+      error,
+      disabled,
+      prefix,
+      suffix,
+      inputRef,
+      height,
+      border,
+      borderRadius,
+      floatingFontSize,
+      isPlaceholderFloating,
+      placeholder,
+      required,
+      ...props
+    }: InputProps,
     ref
   ) {
     const hasPrefix = !!prefix;
@@ -27,12 +49,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const Prefix = () =>
       hasPrefix ? (
-        <StyledPrefixContainer ref={prefixRef}>{prefix}</StyledPrefixContainer>
+        <StyledPrefixContainer ref={prefixRef} height={height}>
+          {prefix}
+        </StyledPrefixContainer>
       ) : null;
 
     const Suffix = () =>
       hasSuffix ? (
-        <StyledSuffixContainer ref={suffixRef}>{suffix}</StyledSuffixContainer>
+        <StyledSuffixContainer ref={suffixRef} height={height}>
+          {suffix}
+        </StyledSuffixContainer>
       ) : null;
 
     const [prefixWidth, setPrefixWidth] = React.useState(0);
@@ -52,6 +78,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       }
     }, [hasSuffix, suffix]);
 
+    const selectedPlaceholder = required ? `${placeholder}*` : placeholder;
+
     return (
       <StyledContainer
         ref={ref}
@@ -63,7 +91,24 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         suffixWidth={suffixWidth}
       >
         <Prefix />
-        <StyledInput ref={inputRef} disabled={disabled} {...props} />
+        <StyledInput
+          ref={inputRef}
+          placeholder={isPlaceholderFloating ? undefined : selectedPlaceholder}
+          borderRadius={borderRadius}
+          border={border}
+          height={height}
+          disabled={disabled}
+          {...props}
+        />
+        {isPlaceholderFloating && (
+          <FloatingLabel
+            data-testid="textarea-label"
+            fontSize={floatingFontSize}
+          >
+            {placeholder}
+            {required && <AsteriskIcon>*</AsteriskIcon>}
+          </FloatingLabel>
+        )}
         <Suffix />
       </StyledContainer>
     );

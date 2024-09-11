@@ -6,12 +6,14 @@ export interface ClearSelectedProps {
   onSelect?({ value }: { value: string }): void;
   handleClearIconClick?: () => void;
   updateInputValue?(newValue: string): void;
+  height?: string;
 }
 
 export const ClearSelected = ({
   onSelect,
   handleClearIconClick,
   updateInputValue,
+  height,
 }: ClearSelectedProps) => {
   const onClearIconClick = () => {
     updateInputValue('');
@@ -20,7 +22,7 @@ export const ClearSelected = ({
   };
 
   return (
-    <ClearSelectedContainer>
+    <ClearSelectedContainer height={height}>
       <Icon
         name="ri-close-circle-fill"
         style={{ cursor: 'pointer' }}

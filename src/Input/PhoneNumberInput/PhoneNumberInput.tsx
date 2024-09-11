@@ -7,6 +7,7 @@ import { ArrowDownIcon, ArrowUpIcon } from '../../General/Icon/components';
 import { Flex } from '../../Layout/Flex';
 import { useOutsideAlerter } from '../../Utils/useOutsideAlerter';
 import * as S from './PhoneNumberInputStyles';
+import { AsteriskIcon } from '../../@next/Input/InputStyle';
 
 // Downshift wants a ref to this, but we need one ourselves, and there is no way
 // to share.
@@ -28,6 +29,9 @@ export const PhoneNumberInput = ({
   otherOptionsLabel,
   callingCodeFilterInputPlaceholder,
   callingCodeNoOptionsLabel,
+  isDisableCallingCode,
+  isPlaceholderFloating,
+  isRequired,
   error,
   addon,
   ...restProps
@@ -84,18 +88,26 @@ export const PhoneNumberInput = ({
 
   const [significantNumberInputId] = useId(1, 'significant-number-input-');
 
+  const placeholder = isRequired ? `${label}*` : label;
+
   return (
     <S.PhoneNumberInputContainer ref={containerRef} {...restProps}>
       <S.TopRow data-invalid={Boolean(error)}>
         <S.CallingCodeInputToggle
           {...getToggleButtonProps()}
           type="button"
-          onClick={toggleIsCallingCodeOpen}
+          onClick={isDisableCallingCode ? undefined : toggleIsCallingCodeOpen}
           data-testid="calling-code-input-toggle"
         >
           +{value.callingCode}
           <S.CallingCodeInputOpenIndicator>
-            {isCallingCodeInputOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
+            {isDisableCallingCode ? (
+              <span>&nbsp;</span>
+            ) : isCallingCodeInputOpen ? (
+              <ArrowUpIcon />
+            ) : (
+              <ArrowDownIcon />
+            )}
           </S.CallingCodeInputOpenIndicator>
         </S.CallingCodeInputToggle>
         <S.SignificantNumberInput
@@ -111,11 +123,15 @@ export const PhoneNumberInput = ({
           }
           onFocus={onFocus}
           onBlur={onBlur}
-          placeholder={label}
+          placeholder={isPlaceholderFloating ? undefined : placeholder}
           data-invalid={Boolean(error)}
           aria-label={label}
+          isPlaceholderFloating={isPlaceholderFloating}
         />
-        <S.Label htmlFor={significantNumberInputId}>{label}</S.Label>
+        <S.Label htmlFor={significantNumberInputId}>
+          {label}
+          {isRequired && <AsteriskIcon />}
+        </S.Label>
         <S.TopRowAddon data-testid="addon">{addon}</S.TopRowAddon>
       </S.TopRow>
       <S.CallingCodeInput
@@ -195,6 +211,9 @@ export interface Props {
   otherOptionsLabel: string;
   callingCodeFilterInputPlaceholder: string;
   callingCodeNoOptionsLabel: string;
+  isDisableCallingCode?: boolean;
+  isPlaceholderFloating?: boolean;
+  isRequired?: boolean;
 }
 
 export interface PhoneNumber {

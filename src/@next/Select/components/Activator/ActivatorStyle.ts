@@ -10,17 +10,20 @@ import { TextInput } from '../../../TextInput';
 import { Tag } from '../../../Tag';
 import { Typography } from '../../../Typography';
 import { Icon } from '../../../Icon';
+import { StyledSuffixContainer } from '../../../Input/InputStyle';
 
 export const StyledSelect = styled.button<ActivatorSelectProps>`
+  position: relative;
   display: flex;
+
   align-items: center;
   justify-content: space-between;
-  height: 36px;
+  height: ${props => props.height ?? '36px'};
   cursor: pointer;
   padding: 0px 8px 0px 12px;
-  border: 1px solid ${Neutral.B68};
+  border: ${({ border }) => border ?? `1px solid ${Neutral.B68}`};
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-  border-radius: ${borderRadius4};
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius4};
   background: ${Neutral.B100};
   width: ${props => props.width};
 
@@ -92,4 +95,10 @@ export const StyledPrefixContainer = styled.div`
 
 export const StyledIcon = styled(Icon)`
   margin-left: auto;
+`;
+
+export const SuffixContainer = styled(StyledSuffixContainer)<{
+  height?: string;
+}>`
+  z-index: 2;
 `;

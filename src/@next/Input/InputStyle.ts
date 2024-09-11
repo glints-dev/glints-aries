@@ -5,6 +5,7 @@ import { InputProps } from './Input';
 import { space12, space4, space8 } from '../utilities/spacing';
 import { NotoSans } from '../utilities/fonts';
 import { borderRadius4 } from '../utilities/borderRadius';
+import { Greyscale } from '../../Utils/Colors';
 
 export interface PreffixSuffixWidthProps {
   prefixWidth: number;
@@ -56,13 +57,15 @@ export const StyledContainer = styled.div<InputProps & PreffixSuffixWidthProps>`
   }
 `;
 
-export const StyledPrefixContainer = styled.div`
+export const StyledPrefixContainer = styled.div<{
+  height?: string;
+}>`
   position: absolute;
   left: 0;
   color: ${Neutral.B40};
   display: flex;
   align-items: center;
-  height: 36px;
+  height: ${({ height }) => height ?? '36px'};
   padding: 0px ${space8} 0 ${space12};
 
   svg {
@@ -72,18 +75,35 @@ export const StyledPrefixContainer = styled.div`
   }
 `;
 
-export const StyledSuffixContainer = styled(StyledPrefixContainer)`
+export const StyledSuffixContainer = styled(StyledPrefixContainer)<{
+  height?: string;
+}>`
   left: auto;
   right: 0;
 
   padding: 0px ${space12} 0 ${space4};
 `;
 
+export const FloatingLabel = styled.label<{
+  top?: number;
+  left?: number;
+  fontSize?: string;
+}>`
+  position: absolute;
+  left: ${({ left }) => left ?? '0.5'}em;
+  top: ${({ top }) => top ?? '-1.25'}em;
+  visibility: visible;
+  padding: 0 0.3em;
+  background: white;
+  font-size: ${({ fontSize }) => fontSize ?? '12px'};
+  color: ${Greyscale.devilsgrey};
+`;
+
 export const StyledInput = styled.input<InputProps>`
   background: ${Neutral.B100};
   box-sizing: border-box;
-  border: 1px solid ${Neutral.B68};
-  border-radius: ${borderRadius4};
+  border: ${({ border }) => border ?? `1px solid ${Neutral.B68}`};
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius4};
   padding: 0 12px;
 
   font-family: ${NotoSans}, sans-serif;
@@ -98,7 +118,7 @@ export const StyledInput = styled.input<InputProps>`
   order: 1;
   align-self: stretch;
   flex-grow: 0;
-  height: 36px;
+  height: ${({ height }) => height ?? `36px`};
 
   &::placeholder {
     color: ${Neutral.B68};
@@ -114,4 +134,10 @@ export const StyledInput = styled.input<InputProps>`
   @media (max-width: ${Breakpoints.large}) {
     font-size: 14px;
   }
+`;
+
+export const AsteriskIcon = styled.span`
+  color: ${Red.B93};
+  font-size: 20px;
+  vertical-align: middle;
 `;

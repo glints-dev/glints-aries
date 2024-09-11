@@ -9,13 +9,28 @@ export type PasswordInputProps = Omit<
 > & {
   onChange?: (value: string) => void;
   error?: boolean;
+  height?: string;
+  border?: string;
+  borderRadius?: string;
+  required?: boolean;
+  isPlaceholderFloating?: boolean;
 };
 
 export const PasswordInput = React.forwardRef<
   HTMLInputElement,
   PasswordInputProps
 >(function PasswordInput(
-  { value, onChange, error, ...props }: PasswordInputProps,
+  {
+    value,
+    onChange,
+    error,
+    height,
+    border,
+    borderRadius,
+    required,
+    isPlaceholderFloating,
+    ...props
+  }: PasswordInputProps,
   ref
 ) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -44,6 +59,11 @@ export const PasswordInput = React.forwardRef<
         onChange={e => onChange?.(e.currentTarget.value)}
         error={error}
         suffix={!props.disabled && suffixComponent}
+        height={height}
+        border={border}
+        borderRadius={borderRadius}
+        required={required}
+        isPlaceholderFloating={isPlaceholderFloating}
         {...props}
       />
     </>
