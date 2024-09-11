@@ -27,6 +27,72 @@ test('Select - non-searchable single select', async ({ page }) => {
   );
 });
 
+test('Select - non-searchable single select with floating placeholder', async ({
+  page,
+}) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoNonSearchableSingleSelectWithFloatingPlaceholderPage();
+
+  await selectPage.activatorSelect.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-single-select-with-floating-placeholder-close.png'
+  );
+
+  await selectPage.activatorSelect.click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-single-select-with-floating-placeholder-opened.png'
+  );
+
+  await selectPage.options.nth(1).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-single-select-with-floating-placeholder-hover.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await selectPage.activatorSelect.click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-single-select-with-floating-placeholder-selected.png'
+  );
+});
+
+test('Select - non-searchable multiple select with floating placeholder', async ({
+  page,
+}) => {
+  const selectPage = new SelectPage(page);
+  await selectPage.gotoNonSearchableMultipleSelectWithFloatingPlaceholderPage();
+
+  await selectPage.activatorSelect.waitFor();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-close.png'
+  );
+
+  await selectPage.activatorSelect.click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-opened.png'
+  );
+
+  await selectPage.options.nth(1).hover();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-option-hover.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-option-selected.png'
+  );
+
+  await selectPage.options.nth(2).click();
+  await selectPage.options.nth(3).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-options-selected.png'
+  );
+
+  await selectPage.options.nth(1).click();
+  await expect(selectPage.canvas).toHaveScreenshot(
+    'select-non-searchable-multiple-select-with-floating-placeholder-option-deselected.png'
+  );
+});
+
 test('Select - non-searchable multi select', async ({ page }) => {
   const selectPage = new SelectPage(page);
   await selectPage.gotoNonSearchableMultiSelectPage();

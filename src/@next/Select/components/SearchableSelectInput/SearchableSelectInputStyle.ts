@@ -37,6 +37,7 @@ export const StyledContainer = styled(StyledInputContainer)`
   input {
     padding-left: ${props => props.prefixWidth}px;
     padding-right: ${props => props.suffixWidth}px;
+    height: ${props => props.height ?? '36px'};
   }
 
   &[data-error='true'] .searchable-select {
@@ -90,6 +91,8 @@ export const InputContainer = styled.div`
   grid-row: 1 / 1;
 `;
 
-export const ClearSelectedContainer = styled(StyledSuffixContainer)`
+export const ClearSelectedContainer = styled(StyledSuffixContainer)<{
+  height?: string;
+}>`
   z-index: 2;
 `;

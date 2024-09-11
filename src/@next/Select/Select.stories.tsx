@@ -153,6 +153,92 @@ NonSearchableSingleSelect.parameters = {
   },
 };
 
+const NonSearchableSingleSelectWithFloatingPlaceholderTemplate: Story<
+  SelectProps
+> = args => {
+  return (
+    <SingleSelect
+      options={options}
+      isPlaceholderFloating={true}
+      required={true}
+      height="52px"
+      border="2px solid #ACACAD"
+      borderRadius="none"
+      {...args}
+    />
+  );
+};
+
+export const NonSearchableSingleSelectWithFloatingPlaceholder =
+  NonSearchableSingleSelectWithFloatingPlaceholderTemplate.bind({});
+
+NonSearchableSingleSelectWithFloatingPlaceholder.args = {};
+
+NonSearchableSingleSelectWithFloatingPlaceholder.parameters = {
+  docs: {
+    source: {
+      code: `
+            const options = [
+        {
+          active: false,
+          disabled: false,
+          id: '1',
+          label: 'All status',
+          value: 'All status',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '2',
+          label: 'Completed',
+          value: 'Completed',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '3',
+          label: 'Pending',
+          value: 'Pending',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '4',
+          label: 'Expired',
+          value: 'Expired',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '5',
+          label: 'Cancelled',
+          value: 'Cancelled',
+        },
+      ];
+
+
+      const [selected, setSelected] = useState('');
+
+      const handleSelect = ({ value }: { value: string }) => {
+        setSelected(value);
+      };
+
+      return (
+        <SingleSelect
+          options={options}
+          isPlaceholderFloating={true}
+          required={true}
+          height="52px"
+          border='2px solid #ACACAD'
+          borderRadius="none"
+          {...args}
+        />
+      );
+      `,
+    },
+  },
+};
+
 const NonSearchableMultiSelectTemplate: Story<SelectProps> = args => {
   return <NonSearchableMultiSelect options={options} {...args} allowMultiple />;
 };
@@ -236,6 +322,113 @@ NonSearchableMultipleSelect.parameters = {
           onSelect={handleSelect}
           selectedValues={selected}
           width="400px"
+        />
+      );
+      `,
+    },
+  },
+};
+
+const NonSearchableMultipleSelectWithFloatingPlaceholderTemplate: Story<
+  SelectProps
+> = args => {
+  return (
+    <NonSearchableMultiSelect
+      allowMultiple={true}
+      options={options}
+      isPlaceholderFloating={true}
+      required={true}
+      height="52px"
+      border="2px solid #ACACAD"
+      borderRadius="none"
+      {...args}
+    />
+  );
+};
+
+export const NonSearchableMultipleSelectWithFloatingPlaceholder =
+  NonSearchableMultipleSelectWithFloatingPlaceholderTemplate.bind({});
+
+NonSearchableMultipleSelectWithFloatingPlaceholder.args = {};
+
+NonSearchableMultipleSelectWithFloatingPlaceholder.parameters = {
+  docs: {
+    source: {
+      code: `
+            const options = [
+        {
+          active: false,
+          disabled: false,
+          id: '1',
+          label: 'All status',
+          value: 'All status',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '2',
+          label: 'Completed',
+          value: 'Completed',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '3',
+          label: 'Pending',
+          value: 'Pending',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '4',
+          label: 'Expired',
+          value: 'Expired',
+        },
+        {
+          active: false,
+          disabled: false,
+          id: '5',
+          label: 'Cancelled',
+          value: 'Cancelled',
+        },
+      ];
+
+      const [selected, setSelected] = useState([]);
+
+      const handleSelect = ({ value }: { value: string }) => {
+        if (selected.includes(value)) {
+          setSelected(selected.filter(option => option !== value));
+        } else {
+          setSelected([...selected, value]);
+        }
+      };
+    
+      const removeTag = useCallback(
+        ({ option }: { option: string }) =>
+          (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+            e.stopPropagation();
+
+            const options = [...selected];
+            options.splice(options.indexOf(option), 1);
+            setSelected(options);
+          },
+        [selected]
+      );
+
+       return (
+        <SingleSelect
+          allowMultiple
+          onRemoveTag={removeTag}
+          options={options}
+          onSelect={handleSelect}
+          selectedValues={selected}
+          width="400px"
+          isPlaceholderFloating={true}
+          required={true}
+          height="52px"
+          border="2px solid #ACACAD"
+          borderRadius="none"
+          {...args}
         />
       );
       `,

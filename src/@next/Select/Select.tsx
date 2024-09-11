@@ -56,8 +56,13 @@ export interface SelectProps {
   selectedValues?: string[];
   /** sets a width for the Select component*/
   width: string;
+  height?: string;
   /** sets z-index override for option list dropdown. z-index default to 400 */
   zIndexOverride?: number;
+  border?: string;
+  borderRadius?: string;
+  required?: boolean;
+  isPlaceholderFloating?: boolean;
 }
 
 export const Select = ({
@@ -80,7 +85,7 @@ export const Select = ({
   options = [],
   placeholder,
   prefix,
-  searchable = false,
+  searchable,
   searchableProps,
   optionsPlaceholderProps,
   showPopoverOnFocus = false,
@@ -88,11 +93,16 @@ export const Select = ({
   sections,
   selectedValues,
   width,
+  height,
   zIndexOverride,
+  border,
+  borderRadius,
+  required,
+  isPlaceholderFloating,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
-  const [menuOptions, setMenuOptions] = useState(options);
+  const [menuOptions, setMenuOptions] = useState([]);
   const { length: optionsLength } = options;
   const [inputValue, setInputValue] = useState(
     searchableProps?.inputValue || ''
@@ -187,6 +197,7 @@ export const Select = ({
           onChange={searchableProps?.onInputChange}
           placeholder={placeholder ?? 'Search'}
           width={width}
+          height={height}
           selectedValues={selectedValues}
           onBlur={onBlur}
           onSelect={onSelect}
@@ -201,6 +212,10 @@ export const Select = ({
           updateMenuOptions={updateMenuOptions}
           prefix={prefix}
           name={name}
+          isPlaceholderFloating={isPlaceholderFloating}
+          required={required}
+          border={border}
+          borderRadius={borderRadius}
         />
       );
     }
@@ -216,11 +231,16 @@ export const Select = ({
         onRemoveTag={onRemoveTag}
         onSelectClick={handleSelectClick}
         width={width}
+        height={height}
         selectedValues={selectedValues}
         options={options}
         name={name}
         prefix={prefix}
         onClick={onSelectClick}
+        required={required}
+        border={border}
+        borderRadius={borderRadius}
+        isPlaceholderFloating={isPlaceholderFloating}
       />
     );
   };
@@ -230,7 +250,7 @@ export const Select = ({
       active={popoverActive}
       activator={
         <ActivatorWrapper width={width}>
-          {label && <Label>{label}</Label>}
+          {label && !isPlaceholderFloating && <Label>{label}</Label>}
           {activator()}
           {helpText && (
             <HelpTextContainer>

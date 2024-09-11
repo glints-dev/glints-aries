@@ -56,6 +56,22 @@ export class SelectPage extends StoryBookPage {
     await this.goto(args);
   }
 
+  async gotoNonSearchableSingleSelectWithFloatingPlaceholderPage(args?: Args) {
+    this.setPath(
+      '?path=/story/next-select--non-searchable-single-select-with-floating-placeholder'
+    );
+    await this.goto(args);
+  }
+
+  async gotoNonSearchableMultipleSelectWithFloatingPlaceholderPage(
+    args?: Args
+  ) {
+    this.setPath(
+      '?path=/story/next-select--non-searchable-multiple-select-with-floating-placeholder'
+    );
+    await this.goto(args);
+  }
+
   async gotoWithErrorNonSearchablePage(args?: Args) {
     this.setPath('?path=/story/next-select--with-error-non-searchable');
     await this.goto(args);

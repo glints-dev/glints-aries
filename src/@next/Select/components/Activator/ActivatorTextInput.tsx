@@ -18,12 +18,17 @@ export interface ActivatorTextInputProps
   onSelect?({ value }: { value: string }): void;
   selectedValues?: string[];
   width?: string;
+  height?: string;
   inputValue?: string;
   updateInputValue?: (newValue: string) => void;
   searchableSelectState?: SearchableSelectState;
   updateSearchableSelectState?: (newState: SearchableSelectState) => void;
   options?: Option[];
   updateMenuOptions?: (newState: Option[]) => void;
+  border?: string;
+  borderRadius?: string;
+  isPlaceholderFloating?: boolean;
+  required?: boolean;
 }
 
 export const ActivatorTextInput = ({
@@ -41,6 +46,11 @@ export const ActivatorTextInput = ({
   updateInputValue,
   options,
   updateMenuOptions,
+  border,
+  borderRadius,
+  isPlaceholderFloating,
+  required,
+  height,
   ...props
 }: ActivatorTextInputProps) => {
   const activatorRef = useRef(null);
@@ -87,6 +97,10 @@ export const ActivatorTextInput = ({
           error={hasError}
           disabled={disabled}
           width={width}
+          border={border}
+          borderRadius={borderRadius}
+          isPlaceholderFloating={isPlaceholderFloating}
+          required={required}
         />
       ) : (
         <SearchableSelectInput
@@ -106,6 +120,11 @@ export const ActivatorTextInput = ({
           updateInputValue={updateInputValue}
           options={options}
           updateMenuOptions={updateMenuOptions}
+          border={border}
+          borderRadius={borderRadius}
+          isPlaceholderFloating={isPlaceholderFloating}
+          required={required}
+          height={height}
         />
       )}
     </>
