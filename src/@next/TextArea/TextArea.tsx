@@ -10,6 +10,7 @@ import {
   StyledWordCountContainer,
 } from './TextAreaStyle';
 import { Typography } from '../Typography';
+import { AsteriskIcon, FloatingLabel } from '../Input/InputStyle';
 
 export type TextAreaProps = Omit<
   TextareaHTMLAttributes<HTMLTextAreaElement>,
@@ -28,6 +29,11 @@ export type TextAreaProps = Omit<
    * **defaults to** `true`
    */
   canExceedMaxLength: boolean;
+  border?: string;
+  borderRadius?: string;
+  required?: boolean;
+  isPlaceholderFloating?: boolean;
+  floatingFontSize?: string;
 };
 
 const _TextArea = ({
@@ -40,6 +46,12 @@ const _TextArea = ({
   onChange,
   forwardedRef,
   canExceedMaxLength = true,
+  required,
+  border,
+  borderRadius,
+  isPlaceholderFloating,
+  floatingFontSize,
+  placeholder,
   ...props
 }: TextAreaProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -71,6 +83,9 @@ const _TextArea = ({
       data-has-counter={hasMaxLengthEnforced}
       width={width}
       onClick={handleContainerClick}
+      border={border}
+      borderRadius={borderRadius}
+      isPlaceholderFloating={isPlaceholderFloating}
     >
       <StyledTextArea
         ref={textAreaInputRef}
@@ -82,6 +97,9 @@ const _TextArea = ({
         maxLength={!canExceedMaxLength && maxLength}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        border={border}
+        borderRadius={borderRadius}
+        placeholder={isPlaceholderFloating ? undefined : placeholder}
         {...props}
       />
       {hasMaxLengthEnforced && (
@@ -93,6 +111,12 @@ const _TextArea = ({
             {charCount} / {maxLength}
           </Typography>
         </StyledWordCountContainer>
+      )}
+      {isPlaceholderFloating && (
+        <FloatingLabel data-testid="textarea-label" fontSize={floatingFontSize}>
+          {placeholder}
+          {required && <AsteriskIcon>*</AsteriskIcon>}
+        </FloatingLabel>
       )}
     </StyledTextAreaContainer>
   );

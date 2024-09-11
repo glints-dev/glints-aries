@@ -36,7 +36,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -45,7 +45,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -350,7 +350,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -359,7 +359,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -664,7 +664,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 gVdvEE"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 erKVtz"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -673,7 +673,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
         value="12345678"
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -978,7 +978,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -987,7 +987,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -1303,7 +1303,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1312,7 +1312,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -1403,7 +1403,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1412,7 +1412,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -1730,7 +1730,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="true"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -1739,7 +1739,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number
@@ -2046,7 +2046,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
       </button>
       <input
         aria-label="Mobile Number"
-        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 dEiocW"
+        class="PhoneNumberInputStyles__SignificantNumberInput-sc-80kraj-5 jzSVfN"
         data-invalid="false"
         data-testid="significant-number-input"
         id="significant-number-input-1"
@@ -2055,7 +2055,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
         value=""
       />
       <label
-        class="PhoneNumberInputStyles__Label-sc-80kraj-4 jnJeTY"
+        class="PhoneNumberInputStyles__Label-sc-80kraj-4 blJjKL"
         for="significant-number-input-1"
       >
         Mobile Number

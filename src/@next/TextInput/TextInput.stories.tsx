@@ -43,3 +43,27 @@ WithPrefixAndSuffix.args = {
   prefix: <Icon name="ri-search" />,
   disabled: false,
 };
+
+const WithFloatingPlaceholderAndRequiredInputTemplate: Story<
+  TextInputProps
+> = args => {
+  const [value, setValue] = useState('Hi');
+
+  return (
+    <TextInput
+      {...args}
+      value={value}
+      onChange={e => setValue(e)}
+      isPlaceholderFloating={true}
+      required={true}
+      suffix={<div>{value.length}/20</div>}
+    />
+  );
+};
+export const WithFloatingPlaceholderAndRequiredInput =
+  WithFloatingPlaceholderAndRequiredInputTemplate.bind({});
+WithFloatingPlaceholderAndRequiredInput.args = {
+  placeholder: 'Placeholder',
+  prefix: <Icon name="ri-search" />,
+  disabled: false,
+};

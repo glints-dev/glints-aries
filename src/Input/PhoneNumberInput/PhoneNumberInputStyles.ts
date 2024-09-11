@@ -48,7 +48,7 @@ export const CallingCodeInputOpenIndicator = styled.span`
 export const Label = styled.label`
   position: absolute;
   left: 0.5em;
-  top: -0.5em;
+  top: -1.25em;
   visibility: hidden;
 
   padding: 0 0.3em;
@@ -65,7 +65,9 @@ const visibleLabel = css`
   }
 `;
 
-export const SignificantNumberInput = styled.input`
+export const SignificantNumberInput = styled.input<{
+  isPlaceholderFloating?: boolean;
+}>`
   border: none;
 
   width: 100%;
@@ -81,6 +83,7 @@ export const SignificantNumberInput = styled.input`
   }
 
   ${({ value }) => value && visibleLabel}
+  ${({ isPlaceholderFloating }) => isPlaceholderFloating && visibleLabel}
 
   &[data-invalid='true']:focus {
     outline: 2px solid ${PrimaryColor.glintsred};

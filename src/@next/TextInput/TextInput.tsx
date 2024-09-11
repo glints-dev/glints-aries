@@ -5,11 +5,30 @@ import { Input, InputProps } from '../Input/Input';
 export type TextInputProps = Omit<InputProps, 'type' | 'onChange'> & {
   canClear?: boolean;
   onChange?: (value: string) => void;
+  height?: string;
+  border?: string;
+  borderRadius?: string;
+  required?: boolean;
+  isPlaceholderFloating?: boolean;
+  floatingFontSize?: string;
 };
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   function TextInput(
-    { canClear, suffix, value, onChange, error, ...props }: TextInputProps,
+    {
+      canClear,
+      suffix,
+      value,
+      onChange,
+      error,
+      height,
+      border,
+      borderRadius,
+      required,
+      floatingFontSize,
+      isPlaceholderFloating,
+      ...props
+    }: TextInputProps,
     ref
   ) {
     const ClearIcon = () => (
@@ -45,6 +64,12 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         value={value}
         onChange={handleChange}
         error={error}
+        border={border}
+        borderRadius={borderRadius}
+        floatingFontSize={floatingFontSize}
+        isPlaceholderFloating={isPlaceholderFloating}
+        required={required}
+        height={height}
         {...props}
       />
     );

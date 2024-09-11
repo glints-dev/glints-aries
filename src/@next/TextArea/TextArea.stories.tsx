@@ -29,3 +29,26 @@ Interactive.args = {
   maxLength: 0,
   width: '520px',
 };
+
+const WithFloatingPlaceholderTemplate: Story<TextAreaProps> = args => {
+  const [value, setValue] = useState<string>('');
+
+  return (
+    <TextArea
+      {...args}
+      value={value}
+      onChange={val => setValue(val)}
+      floatingFontSize={'16px'}
+      isPlaceholderFloating={true}
+    />
+  );
+};
+export const WithFloatingPlaceholder = WithFloatingPlaceholderTemplate.bind({});
+WithFloatingPlaceholder.args = {
+  placeholder: 'Please enter...',
+  disabled: false,
+  error: false,
+  rows: 3,
+  maxLength: 0,
+  width: '520px',
+};
