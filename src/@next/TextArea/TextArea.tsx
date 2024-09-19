@@ -34,6 +34,8 @@ export type TextAreaProps = Omit<
   required?: boolean;
   isPlaceholderFloating?: boolean;
   floatingFontSize?: string;
+  floatingPlaceholderTop?: number;
+  placeholderColor?: string;
 };
 
 const _TextArea = ({
@@ -52,6 +54,8 @@ const _TextArea = ({
   isPlaceholderFloating,
   floatingFontSize,
   placeholder,
+  floatingPlaceholderTop,
+  placeholderColor,
   ...props
 }: TextAreaProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -99,7 +103,9 @@ const _TextArea = ({
         onBlur={() => setIsFocused(false)}
         border={border}
         borderRadius={borderRadius}
-        placeholder={isPlaceholderFloating ? undefined : placeholder}
+        placeholder={
+          isPlaceholderFloating && !disabled ? undefined : placeholder
+        }
         {...props}
       />
       {hasMaxLengthEnforced && (
@@ -112,8 +118,14 @@ const _TextArea = ({
           </Typography>
         </StyledWordCountContainer>
       )}
-      {isPlaceholderFloating && (
-        <FloatingLabel data-testid="textarea-label" fontSize={floatingFontSize}>
+      {isPlaceholderFloating && !disabled && (
+        <FloatingLabel
+          data-testid="textarea-label"
+          data-error={error}
+          fontSize={floatingFontSize}
+          color={placeholderColor}
+          top={floatingPlaceholderTop}
+        >
           {placeholder}
           {required && <AsteriskIcon>*</AsteriskIcon>}
         </FloatingLabel>
