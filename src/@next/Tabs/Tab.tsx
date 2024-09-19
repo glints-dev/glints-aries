@@ -7,6 +7,7 @@ export type TabProps = {
   id?: string;
   selected?: boolean;
   disabled?: boolean;
+  disabledScrollToTab?: boolean;
   onSelect: () => void;
 };
 
@@ -15,12 +16,13 @@ export const Tab = ({
   id,
   selected,
   disabled = false,
+  disabledScrollToTab = false,
   onSelect,
 }: TabProps) => {
   const tabRef = useRef(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return;
+    if (disabled || disabledScrollToTab) return;
 
     event.preventDefault();
     tabRef.current.scrollIntoView({ behavior: 'smooth' });
