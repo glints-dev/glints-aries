@@ -14,6 +14,9 @@ export type PasswordInputProps = Omit<
   borderRadius?: string;
   required?: boolean;
   isPlaceholderFloating?: boolean;
+  floatingFontSize?: string;
+  placeholderColor?: string;
+  floatingPlaceholderTop?: number;
 };
 
 export const PasswordInput = React.forwardRef<
@@ -29,6 +32,9 @@ export const PasswordInput = React.forwardRef<
     borderRadius,
     required,
     isPlaceholderFloating,
+    floatingFontSize,
+    placeholderColor,
+    floatingPlaceholderTop,
     ...props
   }: PasswordInputProps,
   ref
@@ -64,6 +70,9 @@ export const PasswordInput = React.forwardRef<
         borderRadius={borderRadius}
         required={required}
         isPlaceholderFloating={isPlaceholderFloating}
+        floatingFontSize={floatingFontSize}
+        placeholderColor={placeholderColor}
+        floatingPlaceholderTop={floatingPlaceholderTop}
         {...props}
       />
     </>

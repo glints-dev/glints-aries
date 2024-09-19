@@ -24,10 +24,13 @@ const StyledInput = styled(Input)`
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
   function NumberInput(
     {
+      required,
       border,
       borderRadius,
       isPlaceholderFloating,
-      required,
+      floatingFontSize,
+      placeholderColor,
+      floatingPlaceholderTop,
       ...props
     }: NumberInputProps,
     ref
@@ -41,6 +44,9 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         borderRadius={borderRadius}
         required={required}
         isPlaceholderFloating={isPlaceholderFloating}
+        floatingFontSize={floatingFontSize}
+        placeholderColor={placeholderColor}
+        floatingPlaceholderTop={floatingPlaceholderTop}
       />
     );
   }

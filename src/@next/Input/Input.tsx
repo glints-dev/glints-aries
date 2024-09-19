@@ -17,6 +17,8 @@ export interface InputProps
   floatingFontSize?: string;
   isPlaceholderFloating?: boolean;
   required?: boolean;
+  placeholderColor?: string;
+  floatingPlaceholderTop?: number;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   inputRef?: React.Ref<HTMLInputElement>;
@@ -37,6 +39,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       isPlaceholderFloating,
       placeholder,
       required,
+      placeholderColor,
+      floatingPlaceholderTop,
       ...props
     }: InputProps,
     ref
@@ -93,17 +97,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <Prefix />
         <StyledInput
           ref={inputRef}
-          placeholder={isPlaceholderFloating ? undefined : selectedPlaceholder}
+          placeholder={
+            isPlaceholderFloating && !disabled ? undefined : selectedPlaceholder
+          }
           borderRadius={borderRadius}
           border={border}
           height={height}
           disabled={disabled}
           {...props}
         />
-        {isPlaceholderFloating && (
+        {isPlaceholderFloating && !disabled && (
           <FloatingLabel
             data-testid="textarea-label"
+            data-error={error}
             fontSize={floatingFontSize}
+            color={placeholderColor}
+            top={floatingPlaceholderTop}
           >
             {placeholder}
             {required && <AsteriskIcon>*</AsteriskIcon>}
