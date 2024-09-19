@@ -39,6 +39,8 @@ export interface SelectProps {
   onSelect?({ value }: { value: string }): void;
   /** callback function when select component is clicked (opened) */
   onSelectClick?: () => void;
+  isPopoverActive?: boolean;
+  onPopoverActiveChange?: (isActive: boolean) => void;
   options?: Option[];
   /** sets whether OptionList will follow content's width */
   optionListFitContent?: boolean;
@@ -62,7 +64,6 @@ export interface SelectProps {
   border?: string;
   borderRadius?: string;
   required?: boolean;
-  isPopoverActive?: boolean;
   isPlaceholderFloating?: boolean;
 }
 
@@ -82,6 +83,8 @@ export const Select = ({
   onRemoveTag,
   onSelect,
   onSelectClick,
+  isPopoverActive,
+  onPopoverActiveChange,
   optionListFitContent = false,
   options = [],
   placeholder,
@@ -100,9 +103,18 @@ export const Select = ({
   borderRadius,
   required,
   isPlaceholderFloating,
-  isPopoverActive,
 }: SelectProps) => {
-  const [popoverActive, setPopoverActive] = useState(false);
+  const [internalPopoverActive, setInternalPopoverActive] = useState(false);
+  const popoverActive =
+    isPopoverActive !== undefined ? isPopoverActive : internalPopoverActive;
+  const setPopoverActive = (newState: boolean) => {
+    if (isPopoverActive != undefined) {
+      onPopoverActiveChange?.(newState);
+    } else {
+      setInternalPopoverActive(newState);
+    }
+  };
+
   const [optionListHeight, setOptionListHeight] = useState('');
   const [menuOptions, setMenuOptions] = useState([]);
   const { length: optionsLength } = options;
@@ -127,12 +139,6 @@ export const Select = ({
   const updateMenuOptions = (newState: Option[]) => {
     setMenuOptions(newState);
   };
-
-  useEffect(() => {
-    if (isPopoverActive === false && popoverActive) {
-      setPopoverActive(false);
-    }
-  }, [isPopoverActive, popoverActive]);
 
   const handleClose = () => {
     setPopoverActive(false);
@@ -173,11 +179,11 @@ export const Select = ({
     if (showPopoverOnFocus) return;
 
     if (!isEmpty(inputValue) && optionsLength > 0) {
-      setPopoverActive(true);
+      setInternalPopoverActive(true);
     }
 
     if (inputValue === '' && optionsLength < 1) {
-      setPopoverActive(false);
+      setInternalPopoverActive(false);
     }
   }, [inputValue, optionsLength, showPopoverOnFocus]);
 
