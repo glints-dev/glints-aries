@@ -29,6 +29,7 @@ export type TabsProps = {
   selected?: number;
   children?: React.ReactNode;
   fitted?: boolean;
+  disabledScrollToTab?: boolean;
   onSelected?: (index: number) => void;
 };
 
@@ -38,6 +39,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     selected: selectedIndex = 0,
     children,
     fitted,
+    disabledScrollToTab,
     onSelected,
   }: TabsProps,
   ref
@@ -121,6 +123,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(function Tabs(
         onSelect={() => handleSelectedIndexChanged(index)}
         selected={index === selectedTabIndex}
         disabled={tab.disabled}
+        disabledScrollToTab={disabledScrollToTab}
       ></Tab>
     );
 
