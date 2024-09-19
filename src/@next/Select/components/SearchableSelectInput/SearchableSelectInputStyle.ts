@@ -61,9 +61,12 @@ export const StyledSelected = styled.span`
   white-space: nowrap;
 `;
 
-export const StyledSelectedValue = styled.div`
-  border: 1px solid ${Neutral.B68};
-  border-radius: ${borderRadius4};
+export const StyledSelectedValue = styled.div<{
+  border?: string;
+  borderRadius?: string;
+}>`
+  border: ${({ border }) => border ?? `1px solid ${Neutral.B68}`};
+  border-radius: ${({ borderRadius }) => borderRadius ?? borderRadius4};
   background: transparent;
   box-sizing: border-box;
   padding: 0 12px;
