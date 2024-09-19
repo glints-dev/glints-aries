@@ -62,6 +62,7 @@ export interface SelectProps {
   border?: string;
   borderRadius?: string;
   required?: boolean;
+  isPopoverActive?: boolean;
   isPlaceholderFloating?: boolean;
 }
 
@@ -99,6 +100,7 @@ export const Select = ({
   borderRadius,
   required,
   isPlaceholderFloating,
+  isPopoverActive,
 }: SelectProps) => {
   const [popoverActive, setPopoverActive] = useState(false);
   const [optionListHeight, setOptionListHeight] = useState('');
@@ -125,6 +127,12 @@ export const Select = ({
   const updateMenuOptions = (newState: Option[]) => {
     setMenuOptions(newState);
   };
+
+  useEffect(() => {
+    if (isPopoverActive === false && popoverActive) {
+      setPopoverActive(false);
+    }
+  }, [isPopoverActive, popoverActive]);
 
   const handleClose = () => {
     setPopoverActive(false);

@@ -88,6 +88,7 @@ export const FloatingLabel = styled.label<{
   top?: number;
   left?: number;
   fontSize?: string;
+  color?: string;
 }>`
   position: absolute;
   left: ${({ left }) => left ?? '0.5'}em;
@@ -96,7 +97,13 @@ export const FloatingLabel = styled.label<{
   padding: 0 0.3em;
   background: white;
   font-size: ${({ fontSize }) => fontSize ?? '12px'};
-  color: ${Greyscale.devilsgrey};
+  color: ${({ color }) => color ?? Greyscale.devilsgrey};
+  transition: color 0.2s ease-in-out;
+  pointer-events: none;
+
+  [data-error='true'] & {
+    color: ${Red.B93};
+  }
 `;
 
 export const StyledInput = styled.input<InputProps>`

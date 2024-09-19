@@ -30,7 +30,9 @@ Interactive.args = {
   width: '520px',
 };
 
-const WithFloatingPlaceholderTemplate: Story<TextAreaProps> = args => {
+const WithFloatingAndRequiredPlaceholderTemplate: Story<
+  TextAreaProps
+> = args => {
   const [value, setValue] = useState<string>('');
 
   return (
@@ -40,10 +42,13 @@ const WithFloatingPlaceholderTemplate: Story<TextAreaProps> = args => {
       onChange={val => setValue(val)}
       floatingFontSize={'16px'}
       isPlaceholderFloating={true}
+      required={true}
+      floatingPlaceholderTop={-0.5}
     />
   );
 };
-export const WithFloatingPlaceholder = WithFloatingPlaceholderTemplate.bind({});
+export const WithFloatingPlaceholder =
+  WithFloatingAndRequiredPlaceholderTemplate.bind({});
 WithFloatingPlaceholder.args = {
   placeholder: 'Please enter...',
   disabled: false,
@@ -51,4 +56,5 @@ WithFloatingPlaceholder.args = {
   rows: 3,
   maxLength: 0,
   width: '520px',
+  isPlaceholderFloating: true,
 };

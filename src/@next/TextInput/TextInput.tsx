@@ -11,6 +11,8 @@ export type TextInputProps = Omit<InputProps, 'type' | 'onChange'> & {
   required?: boolean;
   isPlaceholderFloating?: boolean;
   floatingFontSize?: string;
+  placeholderColor?: string;
+  floatingPlaceholderTop?: number;
 };
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
@@ -27,6 +29,8 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       required,
       floatingFontSize,
       isPlaceholderFloating,
+      placeholderColor,
+      floatingPlaceholderTop,
       ...props
     }: TextInputProps,
     ref
@@ -68,6 +72,8 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         borderRadius={borderRadius}
         floatingFontSize={floatingFontSize}
         isPlaceholderFloating={isPlaceholderFloating}
+        placeholderColor={placeholderColor}
+        floatingPlaceholderTop={floatingPlaceholderTop}
         required={required}
         height={height}
         {...props}
