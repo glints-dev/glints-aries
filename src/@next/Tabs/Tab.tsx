@@ -22,10 +22,12 @@ export const Tab = ({
   const tabRef = useRef(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (disabled || disabledScrollToTab) return;
+    if (disabled) return;
 
     event.preventDefault();
-    tabRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (!disabledScrollToTab) {
+      tabRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
     onSelect();
   };
 
