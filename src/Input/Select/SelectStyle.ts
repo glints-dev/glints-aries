@@ -198,7 +198,6 @@ export const SelectListWrapper = styled.ul<SelectListWrapperProps>`
   z-index: 9999;
   max-height: 200px;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
   font-size: ${({ small }) => (small ? '1em' : '1.1em')};
   padding: 0;
   margin: 0;
