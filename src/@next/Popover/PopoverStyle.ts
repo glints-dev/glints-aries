@@ -178,5 +178,6 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-Scrollable--vertical {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 `;
