@@ -70,7 +70,7 @@ const _TextArea = ({
 
   const handleContainerClick = () => {
     if (textAreaInputRef.current) {
-      localRef.current.focus();
+      textAreaInputRef.current.focus();
     }
   };
 
