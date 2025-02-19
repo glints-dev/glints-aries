@@ -1048,7 +1048,7 @@ export const StyledIndexTable: any = createGlobalStyle<{ height?: string }>`
   .Polaris-IndexTable__TableRow {
     background-color: var(--p-surface);
     cursor: pointer;
-    box-shadow: inset 0 -0.0625rem 0 ${Neutral.B85};
+    box-shadow: inset 0 -0.0625rem 0 rgba(212, 213, 216, 0.5);
   }
 
   .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--unclickable {
