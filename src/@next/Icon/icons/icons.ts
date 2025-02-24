@@ -205,6 +205,8 @@ export const iconNames = [
   'ri-indeterminate-circle-fill',
   'ri-toggle-line',
   'ri-toggle-fill',
+  'ri-alert-line',
+  'ri-alert-fill',
 ] as const;
 
 export type IconNames = (typeof iconNames)[number];
@@ -414,4 +416,6 @@ export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['ri-indeterminate-circle-fill']: Icons.RiIndeterminateCircleFill,
   ['ri-toggle-line']: Icons.RiToggleLine,
   ['ri-toggle-fill']: Icons.RiToggleFill,
+  ['ri-alert-line']: Icons.RiAlertLine,
+  ['ri-alert-fill']: Icons.RiAlertFill,
 };
