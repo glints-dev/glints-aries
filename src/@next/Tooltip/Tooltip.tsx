@@ -22,6 +22,7 @@ import {
   StyledTooltipArrow,
   StyledTooltipContainer,
 } from './TooltipStyle';
+import classNames from 'classnames';
 
 const topPositions = ['top-center', 'top-left', 'top-right'] as const;
 const bottomPositions = [
@@ -151,6 +152,7 @@ export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
   timeout?: number; //
   /** if clickable it true, onClick will be called when tooltip is clicked */
   onClick?: () => void;
+  tooltipClassName?: string;
 }
 
 const defaultPosition = 'top-center';
@@ -163,6 +165,7 @@ export const Tooltip = ({
   clickable = false,
   timeout = 0,
   onClick,
+  tooltipClassName,
   ...props
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -301,7 +304,12 @@ export const Tooltip = ({
         <Portal>
           <StyledTooltip
             data-position={position}
-            className={animate ? 'closed-animation' : ''}
+            className={classNames(
+              {
+                'closed-animation': animate,
+              },
+              tooltipClassName
+            )}
             ref={tooltipRef}
             zIndex={zIndex}
             style={{
