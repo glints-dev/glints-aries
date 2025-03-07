@@ -11,7 +11,12 @@ export default {
     asset: {
       control: {
         type: 'radio',
-        options: ['glints-black', 'glints-white'],
+        options: [
+          'glints-black',
+          'glints-white',
+          'glints-taploker-black',
+          'glints-taploker-white',
+        ],
       },
     },
     className: {

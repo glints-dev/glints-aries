@@ -6,6 +6,8 @@ import { BrandContainer, BrandImage } from './BrandStyle';
 
 import GlintsBlack from '../../../assets/image/glints-logo-black.svg';
 import GlintsWhite from '../../../assets/image/glints-logo-white.svg';
+import GlintsTapLokerBlack from '../../../assets/image/glints-taploker-logo-black.svg';
+import GlintsTapLokerWhite from '../../../assets/image/glints-taploker-logo-white.svg';
 
 const Brand = ({
   alt,
@@ -35,6 +37,10 @@ const Brand = ({
     srcAsset = GlintsBlack;
   } else if (asset === 'glints-white') {
     srcAsset = GlintsWhite;
+  } else if (asset === 'glints-taploker-black') {
+    srcAsset = GlintsTapLokerBlack;
+  } else if (asset === 'glints-taploker-white') {
+    srcAsset = GlintsTapLokerWhite;
   } else {
     srcAsset = asset;
   }

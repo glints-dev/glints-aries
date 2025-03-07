@@ -13,6 +13,14 @@ describe('<Brand/>', () => {
     expect(blackLogoSnapshot).toMatchSnapshot();
     const white = renderer.create(<Brand asset="glints-white" />).toJSON();
     expect(white).toMatchSnapshot();
+    const blackTapLoker = renderer
+      .create(<Brand asset="glints-taploker-black" />)
+      .toJSON();
+    expect(blackTapLoker).toMatchSnapshot();
+    const whiteTapLoker = renderer
+      .create(<Brand asset="glints-taploker-white" />)
+      .toJSON();
+    expect(whiteTapLoker).toMatchSnapshot();
     const cutsom = renderer
       .create(<Brand asset="http://example.com/example.jpg" />)
       .toJSON();
