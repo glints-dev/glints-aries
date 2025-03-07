@@ -258,7 +258,7 @@ If you design a component, you should pay attention to
 
 # More about Glints Aries
 
-Find out more about the following topics in our wiki:
+Find out more about the following topics in our wiki :
 
 - [Contributing](https://github.com/glints-dev/glints-aries/wiki/Contributing)
 - [Roadmap](https://github.com/glints-dev/glints-aries/wiki/Roadmap)
