@@ -47,7 +47,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     ref
   ) {
     useEffect(() => {
-      if (!show) {
+      if (!show || duration === Infinity) {
         return;
       }
       const timeId = setTimeout(() => {
