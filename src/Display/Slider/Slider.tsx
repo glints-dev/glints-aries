@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { isNil } from 'lodash-es';
 
 import classNames from 'classnames';
@@ -29,7 +28,7 @@ export const Slider = ({
   containerRef,
 }: Props) => {
   const interval = React.useRef<ReturnType<typeof setTimeout>>();
-  const privateContainerRef = React.useRef<HTMLDivElement>();
+  const privateContainerRef = React.useRef<HTMLDivElement>(null);
   const sliderContainerRef = containerRef || privateContainerRef;
 
   const [translateValue, setTranslateValue] = React.useState(0);
@@ -63,7 +62,7 @@ export const Slider = ({
   };
 
   const getSliderContainerDOMNode = React.useCallback(() => {
-    return ReactDOM.findDOMNode(sliderContainerRef.current) as Element;
+    return sliderContainerRef.current as HTMLDivElement;
   }, [sliderContainerRef]);
 
   const handleDotClick = (idx: number) => {

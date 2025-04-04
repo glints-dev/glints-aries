@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { get, toLower } from 'lodash-es';
 import classNames from 'classnames';
 
@@ -168,7 +167,7 @@ const Select: React.FC<Props> & {
       const element = event.target as HTMLElement;
       if (
         selectContainerRef.current &&
-        !ReactDOM.findDOMNode(selectContainerRef.current).contains(element)
+        !selectContainerRef.current.contains(element)
       ) {
         setIsFocus(false);
       }
