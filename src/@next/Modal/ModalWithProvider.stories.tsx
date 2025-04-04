@@ -58,11 +58,12 @@ Interactive.parameters = {
       import { ModalProvider } from 'glints-aries/lib/@next';
 
       // index.js
-      ReactDOM.render(
+      import { createRoot } from 'react-dom/client';
+      const root = createRoot(document.getElementById('root'));
+      root.render(
         <ModalProvider>
          <App />
-        </ModalProvider>,
-        document.getElementById('root')
+        </ModalProvider>
       );
 
       // Add "ModalWithProvider" component in the root so it's accessible from anywhere

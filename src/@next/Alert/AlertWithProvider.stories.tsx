@@ -57,11 +57,12 @@ Interactive.parameters = {
       import { AlertProvider } from 'glints-aries/lib/@next';
 
       // index.js
-      ReactDOM.render(
+      import { createRoot } from 'react-dom/client';
+      const root = createRoot(document.getElementById('root'));
+      root.render(
         <AlertProvider>
          <App />
-        </AlertProvider>,
-        document.getElementById('root')
+        </AlertProvider>
       );
 
       // Add "AlertWithProvider" component in the root so it's accessible from anywhere
