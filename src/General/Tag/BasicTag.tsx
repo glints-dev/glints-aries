@@ -2,9 +2,14 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { TagContainer, TagContent } from './TagStyle';
 
-const Tag: React.FunctionComponent<Props> = props => {
-  const { className, children, block, outline, onClick, ...restProps } = props;
-
+const Tag: React.FunctionComponent<Props> = ({
+  className,
+  children,
+  block = false,
+  outline = false,
+  onClick,
+  ...restProps
+}) => {
   return (
     <TagContainer
       className={classNames('aries-tag', className)}
@@ -21,11 +26,6 @@ const Tag: React.FunctionComponent<Props> = props => {
       </TagContent>
     </TagContainer>
   );
-};
-
-Tag.defaultProps = {
-  block: false,
-  outline: false,
 };
 
 export type Props = React.ComponentPropsWithoutRef<typeof TagContainer> & {
