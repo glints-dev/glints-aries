@@ -39,4 +39,4 @@ jobs:
         run: |
           aliyun configure set --mode AK --region ${{ secrets.ALIYUN_REGION }} --access-key-id ${{ secrets.ALIYUN_ACCESS_KEY_ID }} --access-key-secret ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
           aliyun oss rm -r oss://${{ secrets.ALIYUN_OSS_BUCKET }}/
-          aliyun oss cp -r .out oss://${{ secrets.ALIYUN_OSS_BUCKET }}/ 
+          aliyun oss cp -r .out oss://${{ secrets.ALIYUN_OSS_BUCKET }}/
