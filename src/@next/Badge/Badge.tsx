@@ -13,6 +13,7 @@ const badgeStatusVariant = [
   'enticing',
   'attention',
   'primary',
+  'branding',
 ] as const;
 
 export type BadgeStatusVariant = (typeof badgeStatusVariant)[number];
