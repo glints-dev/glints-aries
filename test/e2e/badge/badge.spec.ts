@@ -135,6 +135,13 @@ test('Badge - attention - small', async ({ page }) => {
   );
 });
 
+test('Badge - branding - small', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const badgePage = getPage(page);
+  await badgePage.goto('args=status:branding');
+  await expect(badgePage.container).toHaveScreenshot('branding.png');
+});
+
 test('Badge - primary - small', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const badgePage = getPage(page);
