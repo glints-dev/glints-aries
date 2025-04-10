@@ -8,6 +8,7 @@ export type CurrencyInputProps = Omit<
   locale?: string;
   value?: number | null;
   allowEmptyValue?: boolean;
+  showPrefix?: boolean;
   onChange?: (value: number | undefined) => void;
   currencyCode: string;
   currencySymbol?: string;
@@ -21,6 +22,7 @@ export const CurrencyInput = React.forwardRef<
     locale = 'en',
     value,
     allowEmptyValue = false,
+    showPrefix = true,
     onChange,
     currencyCode,
     currencySymbol,
@@ -107,9 +109,11 @@ export const CurrencyInput = React.forwardRef<
       ref={ref}
       type="text"
       prefix={
-        <div>
-          {getCurrencySymbol(localeValue, currencyCode, currencySymbol)}
-        </div>
+        showPrefix && (
+          <div>
+            {getCurrencySymbol(localeValue, currencyCode, currencySymbol)}
+          </div>
+        )
       }
       {...props}
       value={formattedValue}
