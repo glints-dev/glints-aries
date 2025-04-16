@@ -14,6 +14,7 @@ import { CheckboxCellContentContainer } from './components/Checkbox/CheckboxStyl
 type IndexTableProps = Omit<PolarisIndexTableProps, 'emptySearchTitle'> & {
   height?: string;
   selectableItemsCount?: number;
+  showCheckbox?: boolean;
 };
 
 const IndexTable = ({
@@ -25,6 +26,7 @@ const IndexTable = ({
   loading,
   emptyState,
   selectableItemsCount,
+  showCheckbox = true,
   ...props
 }: IndexTableProps) => {
   const renderCheckboxHeader = ({
@@ -45,7 +47,10 @@ const IndexTable = ({
     );
   };
 
-  const checkbox = !loading && itemCount > 0 ? renderCheckboxHeader : undefined;
+  const checkbox =
+    !loading && showCheckbox && itemCount > 0
+      ? renderCheckboxHeader
+      : undefined;
 
   return (
     <>
