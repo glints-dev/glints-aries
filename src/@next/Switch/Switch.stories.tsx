@@ -17,6 +17,7 @@ export default {
 const DefaultTemplate: Story = args => {
   const [checked, setChecked] = useState(args.checked);
   const [isDisabled, setIsDisabled] = useState(args.disabled);
+  const [loading, setLoading] = useState(args.loading);
 
   return (
     <>
@@ -25,10 +26,12 @@ const DefaultTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
+      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
       <div>
         <Switch
           {...args}
           disabled={isDisabled}
+          loading={loading}
           value={'switch'}
           onChange={() => setChecked(!checked)}
         />
@@ -44,6 +47,8 @@ Default.args = {};
 const SwitchWithIconTemplate: Story = args => {
   const [checked, setChecked] = useState(args.checked);
   const [isDisabled, setIsDisabled] = useState(args.disabled);
+  const [loading, setLoading] = useState(args.loading);
+
   return (
     <>
       <div>The checkbox checked is {checked ? 'true' : 'false'}</div>
@@ -51,9 +56,11 @@ const SwitchWithIconTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
+      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
       <div>
         <Switch
           {...args}
+          loading={loading}
           disabled={isDisabled}
           value={'switch'}
           onChange={() => setChecked(!checked)}
@@ -71,6 +78,8 @@ WithIcon.args = {};
 const SwitchWithTextTemplate: Story = args => {
   const [checked, setChecked] = useState(args.checked);
   const [isDisabled, setIsDisabled] = useState(args.disabled);
+  const [loading, setLoading] = useState(args.loading);
+
   return (
     <>
       <div>The checkbox checked is {checked ? 'true' : 'false'}</div>
@@ -78,11 +87,13 @@ const SwitchWithTextTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
+      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
       <div>
         <Switch
           {...args}
           disabled={isDisabled}
           value={'switch'}
+          loading={loading}
           onChange={() => setChecked(!checked)}
           checkedText="Active"
           uncheckedText="Inactive"
@@ -99,6 +110,7 @@ WithText.args = {};
 const SwitchWithTextAndCustomBackgroundColorTemplate: Story = args => {
   const [checked, setChecked] = useState(args.checked);
   const [isDisabled, setIsDisabled] = useState(args.disabled);
+  const [loading, setLoading] = useState(args.loading);
   return (
     <>
       <div>The checkbox checked is {checked ? 'true' : 'false'}</div>
@@ -106,12 +118,14 @@ const SwitchWithTextAndCustomBackgroundColorTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
+      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
       <div>
         <Switch
           {...args}
           disabled={isDisabled}
           value={'switch'}
           onChange={() => setChecked(!checked)}
+          loading={loading}
           checkedText="Active"
           uncheckedText="Inactive"
           checkedBackgroundColor={Green.B61}
