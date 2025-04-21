@@ -12,6 +12,7 @@ export interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   checked?: boolean;
   disabled?: boolean;
+  loading?: boolean;
   onChange: () => void;
   value: string;
   withIcon?: boolean;
@@ -27,6 +28,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
       disabled,
       onChange,
       value,
+      loading,
       withIcon,
       checkedText,
       uncheckedText,
@@ -74,7 +76,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         <InputStyle
           value={value}
           {...otherProps}
-          disabled={disabled}
+          disabled={disabled || loading}
           checked={checked}
           type="checkbox"
           onChange={onChange}
@@ -85,6 +87,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         />
         <SwitchStyle
           data-disabled={disabled}
+          data-loading={loading}
           data-with-icon={!withText && withIcon}
           data-with-text={withText}
         >

@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import { Breakpoints, Spacing, Typography } from '..';
 
 import { Blue, Neutral } from '../utilities/colors';
+import { keyframes } from 'styled-components';
+
+const spin = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const SwitchTextStyle = styled(Typography)``;
 
@@ -67,12 +74,24 @@ export const SwitchStyle = styled.div`
     right: 0;
     border-radius: 16px;
     background: ${Neutral.B100};
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transform: scale(1);
     @media (max-width: ${Breakpoints.large}) {
       width: 14px;
       height: 14px;
     }
+  }
+
+  &[data-loading='true']::before {
+    border: 2px solid ${Neutral.B100};
+    border-top-color: transparent;
+    background: transparent;
+    animation: ${spin} 0.6s linear infinite;
+    transform: rotate(0deg);
+  }
+
+  &[data-loading='true'] {
+    pointer-events: none;
   }
 `;
 

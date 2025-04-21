@@ -35,6 +35,22 @@ test('disabled and checked', async ({ page }) => {
   );
 });
 
+test('loading and unchecked', async ({ page }) => {
+  const switchPage = getPage(page);
+  await switchPage.goto('args=loading:true;checked:false');
+  await expect(switchPage.container).toHaveScreenshot(
+    'switch-loading-unchecked.png'
+  );
+});
+
+test('loading and checked', async ({ page }) => {
+  const switchPage = getPage(page);
+  await switchPage.goto('args=checked:true;loading:true');
+  await expect(switchPage.container).toHaveScreenshot(
+    'switch-loading-checked.png'
+  );
+});
+
 test('mobile - default', async ({ page }) => {
   page.setViewportSize({ width: 768, height: 600 });
   const switchPage = getPage(page);
@@ -66,5 +82,23 @@ test('mobile - disabled and checked', async ({ page }) => {
   await switchPage.goto('args=checked:true;disabled:true');
   await expect(switchPage.container).toHaveScreenshot(
     'switch-mobile-disabled-checked.png'
+  );
+});
+
+test('mobile - loading and unchecked', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const switchPage = getPage(page);
+  await switchPage.goto('args=loading:true;checked:false');
+  await expect(switchPage.container).toHaveScreenshot(
+    'switch-mobile-loading-unchecked.png'
+  );
+});
+
+test('mobile - loading and checked', async ({ page }) => {
+  page.setViewportSize({ width: 768, height: 600 });
+  const switchPage = getPage(page);
+  await switchPage.goto('args=checked:true;loading:true');
+  await expect(switchPage.container).toHaveScreenshot(
+    'switch-mobile-loading-checked.png'
   );
 });
