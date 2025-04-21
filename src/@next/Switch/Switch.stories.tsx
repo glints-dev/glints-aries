@@ -26,7 +26,11 @@ const DefaultTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
-      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
+      <Checkbox
+        checked={loading}
+        label="Set loading"
+        onChange={() => setLoading(!loading)}
+      />
       <div>
         <Switch
           {...args}
@@ -56,7 +60,11 @@ const SwitchWithIconTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
-      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
+      <Checkbox
+        checked={loading}
+        label="Set loading"
+        onChange={() => setLoading(!loading)}
+      />
       <div>
         <Switch
           {...args}
@@ -87,7 +95,11 @@ const SwitchWithTextTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
-      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
+      <Checkbox
+        checked={loading}
+        label="Set loading"
+        onChange={() => setLoading(!loading)}
+      />
       <div>
         <Switch
           {...args}
@@ -118,7 +130,11 @@ const SwitchWithTextAndCustomBackgroundColorTemplate: Story = args => {
         label="Set disable"
         onChange={() => setIsDisabled(!isDisabled)}
       />
-      <Checkbox label="Set loading" onChange={() => setLoading(!loading)} />
+      <Checkbox
+        checked={loading}
+        label="Set loading"
+        onChange={() => setLoading(!loading)}
+      />
       <div>
         <Switch
           {...args}
