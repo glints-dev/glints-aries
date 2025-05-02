@@ -34,10 +34,10 @@ export const Collapsible: FC<Props> = ({
       data-testid="collapsible-container"
       {...defaultProps}
     >
-      <CollapsibleContent tabIndex={-1}>
+      <CollapsibleContent tabIndex={-1} role="region">
         <CollapsibleHeader
           className="collapsible-title"
-          role="tab"
+          role="button"
           aria-expanded={isOpenInternal}
           isOpen={isOpenInternal}
         >
