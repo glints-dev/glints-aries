@@ -9,12 +9,13 @@ exports[`<Collapsible> should render as expected 1`] = `
 >
   <div
     className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 lhhVzD"
+    role="region"
     tabIndex={-1}
   >
     <div
       aria-expanded={false}
       className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 erqJDM collapsible-title"
-      role="tab"
+      role="button"
     >
       label
       <svg
@@ -43,12 +44,13 @@ exports[`<Collapsible> should render as expected 2`] = `
 >
   <div
     className="CollapsibleStyle__CollapsibleContent-sc-133mwvh-0 lhhVzD"
+    role="region"
     tabIndex={-1}
   >
     <div
       aria-expanded={true}
       className="CollapsibleStyle__CollapsibleHeader-sc-133mwvh-2 icCCTS collapsible-title"
-      role="tab"
+      role="button"
     >
       label
       <svg

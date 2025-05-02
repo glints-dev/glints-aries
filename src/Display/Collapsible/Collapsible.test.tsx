@@ -23,7 +23,7 @@ const openCollapsible = (
 const setupCollapsible = () => {
   const { getByRole, getByTestId } = render(defaultCollapsible);
   return {
-    header: getByRole('tab'),
+    header: getByRole('button'),
     container: getByTestId('collapsible-container'),
     body: getByTestId('collapsible-content'),
   };
