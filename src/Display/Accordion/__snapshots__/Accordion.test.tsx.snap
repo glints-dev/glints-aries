@@ -3,7 +3,9 @@
 exports[`<Accordion /> prop className should match snapshot when class name test is passed 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Accordion Container"
     class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion test"
+    role="region"
   >
     <div
       aria-expanded="false"
@@ -12,7 +14,11 @@ exports[`<Accordion /> prop className should match snapshot when class name test
       tabindex="0"
     >
       <div
+        aria-controls="accordion-content-0"
+        aria-expanded="false"
         class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
+        id="accordion-heading-0"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -38,7 +44,10 @@ exports[`<Accordion /> prop className should match snapshot when class name test
         </div>
       </div>
       <div
+        aria-labelledby="accordion-heading-0"
         class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
+        id="accordion-content-0"
+        role="region"
       >
         <div
           class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
@@ -54,7 +63,9 @@ exports[`<Accordion /> prop className should match snapshot when class name test
 exports[`<Accordion /> prop className should match snapshot when class name undefined is passed 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Accordion Container"
     class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
+    role="region"
   >
     <div
       aria-expanded="false"
@@ -63,7 +74,11 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
       tabindex="0"
     >
       <div
+        aria-controls="accordion-content-0"
+        aria-expanded="false"
         class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
+        id="accordion-heading-0"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -89,7 +104,10 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
         </div>
       </div>
       <div
+        aria-labelledby="accordion-heading-0"
         class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
+        id="accordion-content-0"
+        role="region"
       >
         <div
           class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
@@ -105,7 +123,9 @@ exports[`<Accordion /> prop className should match snapshot when class name unde
 exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPosition left is passed 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Accordion Container"
     class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
+    role="region"
   >
     <div
       aria-expanded="false"
@@ -114,7 +134,11 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
       tabindex="0"
     >
       <div
+        aria-controls="accordion-content-0"
+        aria-expanded="false"
         class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 kOQHnF label-wrapper"
+        id="accordion-heading-0"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -140,7 +164,10 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
         </div>
       </div>
       <div
+        aria-labelledby="accordion-heading-0"
         class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
+        id="accordion-content-0"
+        role="region"
       >
         <div
           class="AccordionStyle__Content-sc-7hk6zs-4 hAQoeJ"
@@ -156,7 +183,9 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
 exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPosition right is passed 1`] = `
 <DocumentFragment>
   <div
+    aria-label="Accordion Container"
     class="AccordionStyle__Container-sc-7hk6zs-1 bCUcSS aries-accordion"
+    role="region"
   >
     <div
       aria-expanded="false"
@@ -165,7 +194,11 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
       tabindex="0"
     >
       <div
+        aria-controls="accordion-content-0"
+        aria-expanded="false"
         class="AccordionStyle__IconLabelWrapper-sc-7hk6zs-2 bQDRgc label-wrapper"
+        id="accordion-heading-0"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -191,7 +224,10 @@ exports[`<Accordion.Panel /> prop iconPosition should match snapshot when iconPo
         </div>
       </div>
       <div
+        aria-labelledby="accordion-heading-0"
         class="AccordionStyle__ContentWrapper-sc-7hk6zs-3 iJedH content-wrapper"
+        id="accordion-content-0"
+        role="region"
       >
         <div
           class="AccordionStyle__Content-sc-7hk6zs-4 bBDEAR"

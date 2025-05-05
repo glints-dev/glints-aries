@@ -21,6 +21,8 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
     iconOptions: { activeIcon, inactiveIcon, position },
     onOpen,
     onClick,
+    headingId,
+    contentId,
     ...restProps
   } = props;
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -49,12 +51,22 @@ const AccordionPanel: React.FunctionComponent<Props> = props => {
         tabIndex={-1}
         position={position}
         active={active}
+        role="button"
+        aria-expanded={active}
+        aria-controls={contentId}
+        id={headingId}
       >
         {position === 'left' && renderIcon()}
         <Label>{label}</Label>
         {position === 'right' && renderIcon()}
       </IconLabelWrapper>
-      <ContentWrapper className="content-wrapper" active={active}>
+      <ContentWrapper
+        className="content-wrapper"
+        active={active}
+        role="region"
+        id={contentId}
+        aria-labelledby={headingId}
+      >
         <Content position={position}>{content}</Content>
       </ContentWrapper>
     </PanelWrapper>
@@ -68,6 +80,8 @@ export type Props = React.ComponentPropsWithoutRef<typeof PanelWrapper> & {
   iconOptions?: IconOptions;
   onOpen?(): void;
   onClick?(e: React.MouseEvent<HTMLDivElement, MouseEvent>): void;
+  headingId?: string;
+  contentId?: string;
 };
 
 export default AccordionPanel;
