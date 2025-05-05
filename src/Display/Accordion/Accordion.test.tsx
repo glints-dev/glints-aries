@@ -87,3 +87,99 @@ describe('<Accordion /> click behavior', () => {
     expect(panelContent2).toBeVisible();
   });
 });
+
+describe('<Accordion /> accessibility', () => {
+  test('container should have proper ARIA attributes', () => {
+    const { container } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const accordionContainer = container.querySelector('.aries-accordion');
+    expect(accordionContainer).toHaveAttribute('role', 'region');
+    expect(accordionContainer).toHaveAttribute(
+      'aria-label',
+      'Accordion Container'
+    );
+  });
+
+  test('panel wrapper should have proper ARIA attributes', () => {
+    const { container } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const panelWrapper = container.querySelector('.panel-wrapper');
+    expect(panelWrapper).toHaveAttribute('role', 'tab');
+    expect(panelWrapper).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('label wrapper should have proper ARIA attributes', () => {
+    const { container } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const labelWrapper = container.querySelector('.label-wrapper');
+    expect(labelWrapper).toHaveAttribute('role', 'button');
+    expect(labelWrapper).toHaveAttribute('aria-expanded', 'false');
+    expect(labelWrapper).toHaveAttribute('aria-controls');
+    expect(labelWrapper).toHaveAttribute('id');
+  });
+
+  test('content wrapper should have proper ARIA attributes', () => {
+    const { container } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const contentWrapper = container.querySelector('.content-wrapper');
+    expect(contentWrapper).toHaveAttribute('role', 'region');
+    expect(contentWrapper).toHaveAttribute('id');
+    expect(contentWrapper).toHaveAttribute('aria-labelledby');
+  });
+
+  test('ARIA attributes should correctly reference each other', () => {
+    const { container } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const labelWrapper = container.querySelector('.label-wrapper');
+    const contentWrapper = container.querySelector('.content-wrapper');
+
+    const labelId = labelWrapper.getAttribute('id');
+    const contentId = contentWrapper.getAttribute('id');
+
+    expect(labelWrapper).toHaveAttribute('aria-controls', contentId);
+    expect(contentWrapper).toHaveAttribute('aria-labelledby', labelId);
+  });
+
+  test('aria-expanded should update when panel is toggled', () => {
+    const { container, getByText } = render(
+      <Accordion>
+        <Accordion.Panel label="label" content="content" />
+      </Accordion>
+    );
+
+    const panelWrapper = container.querySelector('.panel-wrapper');
+    const labelWrapper = container.querySelector('.label-wrapper');
+    expect(panelWrapper).toHaveAttribute('aria-expanded', 'false');
+    expect(labelWrapper).toHaveAttribute('aria-expanded', 'false');
+
+    userEvent.click(getByText('label'));
+
+    expect(panelWrapper).toHaveAttribute('aria-expanded', 'true');
+    expect(labelWrapper).toHaveAttribute('aria-expanded', 'true');
+
+    userEvent.click(getByText('label'));
+
+    expect(panelWrapper).toHaveAttribute('aria-expanded', 'false');
+    expect(labelWrapper).toHaveAttribute('aria-expanded', 'false');
+  });
+});
