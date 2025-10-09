@@ -4,6 +4,8 @@ import * as Icons from '../components';
 export const iconNames = [
   'custom-sparkling-fill',
   'custom-sparkling-line',
+  'custom-wand-fill',
+  'custom-wand-line',
   'ri-account-circle-fill',
   'ri-account-circle-line',
   'ri-add-circle-fill',
@@ -227,6 +229,8 @@ type SVGComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
 export const iconsMappingComponent: { [name in IconNames]: SVGComponent } = {
   ['custom-sparkling-fill']: Icons.CustomSparklingFill,
   ['custom-sparkling-line']: Icons.CustomSparklingLine,
+  ['custom-wand-fill']: Icons.CustomWandFill,
+  ['custom-wand-line']: Icons.CustomWandLine,
   ['ri-account-circle-fill']: Icons.RiAccountCircleFill,
   ['ri-account-circle-line']: Icons.RiAccountCircleLine,
   ['ri-add-circle-fill']: Icons.RiAddCircleFill,
