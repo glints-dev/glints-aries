@@ -23,7 +23,7 @@ export type CardProps = {
   children?: React.ReactNode;
   primaryAction?: ComponentAction;
   secondaryAction?: ComponentAction;
-  headerPrimaryAction?: ComponentAction;
+  headerPrimaryAction?: ComponentAction | JSX.Element;
   headerSecondaryAction?: ComponentAction;
   actionsAlignment?: 'left' | 'right';
   /** Defining custom actions will not show primary and secondary actions */
@@ -117,13 +117,20 @@ const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(function Card(
                 </DestructivePlainButton>
               )}
               {headerPrimaryAction && (
-                <PlainButton
-                  onClick={headerPrimaryAction.action}
-                  size="slim"
-                  {...headerPrimaryAction}
-                >
-                  {headerPrimaryAction.label}
-                </PlainButton>
+                <>
+                  {typeof headerPrimaryAction === 'object' &&
+                  'label' in headerPrimaryAction ? (
+                    <PlainButton
+                      onClick={headerPrimaryAction.action}
+                      size="slim"
+                      {...headerPrimaryAction}
+                    >
+                      {headerPrimaryAction.label}
+                    </PlainButton>
+                  ) : (
+                    headerPrimaryAction
+                  )}
+                </>
               )}
             </ButtonGroup>
           </StyledCardHeaderRightContainer>
