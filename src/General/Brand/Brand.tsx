@@ -25,6 +25,7 @@ const Brand = ({
   className,
   rightClickURL,
   onContextMenu,
+  variant = 'horizontal',
   ...defaultProps
 }: Props) => {
   const handleRightClick = (
@@ -84,6 +85,7 @@ const Brand = ({
         src={srcAsset}
         alt={alt}
         tabIndex={-1}
+        $variant={variant}
       />
     </BrandContainer>
   );
@@ -99,6 +101,8 @@ export type Props = React.ComponentPropsWithoutRef<typeof BrandContainer> & {
   rightClickURL?: string;
   /** Executes when the user right-clicks on the component */
   onContextMenu?(): void;
+  /** Display mode of the brand image */
+  variant?: 'square' | 'horizontal';
 };
 
 export default Brand;

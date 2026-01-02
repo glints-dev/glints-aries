@@ -8,21 +8,23 @@ import Brand from './Brand';
 describe('<Brand/>', () => {
   it('should render as expected', () => {
     const blackLogoSnapshot = renderer
-      .create(<Brand asset="glints-black" />)
+      .create(<Brand asset="glints-black" variant="square" />)
       .toJSON();
     expect(blackLogoSnapshot).toMatchSnapshot();
-    const white = renderer.create(<Brand asset="glints-white" />).toJSON();
+    const white = renderer
+      .create(<Brand asset="glints-white" variant="square" />)
+      .toJSON();
     expect(white).toMatchSnapshot();
     const blackTapLoker = renderer
-      .create(<Brand asset="glints-taploker-black" />)
+      .create(<Brand asset="glints-taploker-black" variant="square" />)
       .toJSON();
     expect(blackTapLoker).toMatchSnapshot();
     const whiteTapLoker = renderer
-      .create(<Brand asset="glints-taploker-white" />)
+      .create(<Brand asset="glints-taploker-white" variant="square" />)
       .toJSON();
     expect(whiteTapLoker).toMatchSnapshot();
     const cutsom = renderer
-      .create(<Brand asset="http://example.com/example.jpg" />)
+      .create(<Brand asset="http://example.com/example.jpg" variant="square" />)
       .toJSON();
     expect(cutsom).toMatchSnapshot();
   });
@@ -33,7 +35,7 @@ describe('<Brand/>', () => {
 
     const url = 'https://glints.com';
     const { getByRole } = render(
-      <Brand asset="glints-black" rightClickURL={url} />
+      <Brand asset="glints-black" rightClickURL={url} variant="square" />
     );
     const container = getByRole('presentation');
     fireEvent.contextMenu(container);
@@ -51,11 +53,35 @@ describe('<Brand/>', () => {
         asset="glints-black"
         rightClickURL={url}
         onContextMenu={onContextMenu}
+        variant="square"
       />
     );
     const container = getByRole('presentation');
     expect(onContextMenu).toHaveBeenCalledTimes(0);
     fireEvent.contextMenu(container);
     expect(onContextMenu).toHaveBeenCalledTimes(1);
+  });
+  it('should render with correct styles based on variant', () => {
+    const { container: defaultContainer } = render(<Brand asset="glints" />);
+    expect(defaultContainer.querySelector('.brand-image')).toHaveStyleRule(
+      'width',
+      '5em'
+    );
+
+    const { container: horizontalContainer } = render(
+      <Brand asset="glints" variant="horizontal" />
+    );
+    expect(horizontalContainer.querySelector('.brand-image')).toHaveStyleRule(
+      'width',
+      '5em'
+    );
+
+    const { container: squareContainer } = render(
+      <Brand asset="glints-black" variant="square" />
+    );
+    expect(squareContainer.querySelector('.brand-image')).toHaveStyleRule(
+      'width',
+      '3em'
+    );
   });
 });

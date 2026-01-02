@@ -27,6 +27,12 @@ export default {
         ],
       },
     },
+    variant: {
+      control: {
+        type: 'radio',
+        options: ['horizontal', 'square'],
+      },
+    },
     className: {
       control: {
         disable: true,
@@ -45,11 +51,12 @@ const Template: Story<BrandProps> = args => <Brand {...args} />;
 
 export const Interactive = Template.bind({});
 Interactive.args = {
-  asset: 'glints-black',
+  asset: 'glints',
 };
 
 export const RedirectToGlintsWhenRightClick = Template.bind({});
 RedirectToGlintsWhenRightClick.args = {
   asset: 'glints-black',
+  variant: 'square',
   rightClickURL: 'https://glints.com',
 };
