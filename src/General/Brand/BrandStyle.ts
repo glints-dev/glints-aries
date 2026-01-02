@@ -14,9 +14,9 @@ export const BrandContainer = styled.div`
   }
 `;
 
-export const BrandImage = styled.img`
+export const BrandImage = styled.img<{ $variant?: 'square' | 'horizontal' }>`
   object-fit: contain;
-  width: 3em;
+  width: ${({ $variant }) => ($variant === 'square' ? '3em' : '5em')};
   height: 3em;
   outline: none;
 `;
