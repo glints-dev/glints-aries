@@ -13,9 +13,9 @@ Object {
 
 exports[`Colors PrimaryColor 1`] = `
 Object {
-  "glintsblue": "#0BAEEC",
+  "glintsblue": "#059FFF",
   "glintsred": "#EC272B",
-  "glintsyellow": "#FFF240",
+  "glintsyellow": "#FFD96A",
 }
 `;
 

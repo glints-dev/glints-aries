@@ -1,7 +1,7 @@
 export const PrimaryColor = {
-  glintsyellow: '#FFF240',
+  glintsyellow: '#FFD96A',
   glintsred: '#EC272B',
-  glintsblue: '#0BAEEC',
+  glintsblue: '#059FFF',
 };
 
 export const SecondaryColor = {

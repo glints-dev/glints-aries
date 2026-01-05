@@ -111,7 +111,7 @@ exports[`<Slider/> has null child should match snapshot 1`] = `
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -304,7 +304,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite false i
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -512,7 +512,7 @@ exports[`<Slider/> prop arrowWhite should match snapshot when arrowWhite true is
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -720,7 +720,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -928,7 +928,7 @@ exports[`<Slider/> prop autoplay should go to next slide after 6000ms when autop
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -1135,7 +1135,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -1343,7 +1343,7 @@ exports[`<Slider/> prop autoplay should go to the first slide after 6000ms when 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -1551,7 +1551,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -1759,7 +1759,7 @@ exports[`<Slider/> prop autoplay should not go to next slide after 6000ms when a
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -1967,7 +1967,7 @@ exports[`<Slider/> prop className should match snapshot when class name test is 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -2175,7 +2175,7 @@ exports[`<Slider/> prop className should match snapshot when class name undefine
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -2383,7 +2383,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent false
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -2587,7 +2587,7 @@ exports[`<Slider/> prop fullContent should match snapshot when fullContent true 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c4 {
@@ -2795,7 +2795,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 1 is 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -3003,7 +3003,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 2 is 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -3210,7 +3210,7 @@ exports[`<Slider/> prop initialItem should match snapshot when initialItem 3 is 
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -3418,7 +3418,7 @@ exports[`<Slider/> prop removeDots should match snapshot when removeDots false i
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
@@ -3767,7 +3767,7 @@ exports[`<Slider/> setSize setSize should be called when resize event is trigger
   width: 20px;
   height: 6px;
   border-radius: 8px;
-  background: #FFF240;
+  background: #FFD96A;
 }
 
 .c5 {
