@@ -7,18 +7,10 @@ import Brand from './Brand';
 
 describe('<Brand/>', () => {
   it('should render as expected', () => {
-    const blackLogoSnapshot = renderer
-      .create(<Brand asset="glints-black" variant="square" />)
-      .toJSON();
-    expect(blackLogoSnapshot).toMatchSnapshot();
     const white = renderer
       .create(<Brand asset="glints-white" variant="square" />)
       .toJSON();
     expect(white).toMatchSnapshot();
-    const blackTapLoker = renderer
-      .create(<Brand asset="glints-taploker-black" variant="square" />)
-      .toJSON();
-    expect(blackTapLoker).toMatchSnapshot();
     const whiteTapLoker = renderer
       .create(<Brand asset="glints-taploker-white" variant="square" />)
       .toJSON();
@@ -35,7 +27,7 @@ describe('<Brand/>', () => {
 
     const url = 'https://glints.com';
     const { getByRole } = render(
-      <Brand asset="glints-black" rightClickURL={url} variant="square" />
+      <Brand asset="glints" rightClickURL={url} variant="square" />
     );
     const container = getByRole('presentation');
     fireEvent.contextMenu(container);
@@ -50,7 +42,7 @@ describe('<Brand/>', () => {
     const onContextMenu = jest.fn();
     const { getByRole } = render(
       <Brand
-        asset="glints-black"
+        asset="glints"
         rightClickURL={url}
         onContextMenu={onContextMenu}
         variant="square"
@@ -77,7 +69,7 @@ describe('<Brand/>', () => {
     );
 
     const { container: squareContainer } = render(
-      <Brand asset="glints-black" variant="square" />
+      <Brand asset="glints" variant="square" />
     );
     expect(squareContainer.querySelector('.brand-image')).toHaveStyleRule(
       'width',
