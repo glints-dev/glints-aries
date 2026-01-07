@@ -12,15 +12,9 @@ export default {
       control: {
         type: 'radio',
         options: [
-          'glints-black',
           'glints-white',
-          'glints-white-v2',
-          'glints-taploker-black',
           'glints-taploker-white',
-          'glints-taploker-white-v2',
-          'glints-tapjobs-black',
           'glints-tapjobs-white',
-          'glints-tapjobs-white-v2',
           'glints',
           'glints-tapjobs',
           'glints-taploker',
@@ -56,7 +50,7 @@ Interactive.args = {
 
 export const RedirectToGlintsWhenRightClick = Template.bind({});
 RedirectToGlintsWhenRightClick.args = {
-  asset: 'glints-black',
+  asset: 'glints',
   variant: 'square',
   rightClickURL: 'https://glints.com',
 };
