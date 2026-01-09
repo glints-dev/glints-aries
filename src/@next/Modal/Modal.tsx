@@ -119,7 +119,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
     }
 
     const defaultActionContent = (
-      <ButtonGroup>
+      <ButtonGroup className="modal-actions-button-group">
         {secondaryAction && (
           <Button
             onClick={() => secondaryAction.action?.()}
@@ -218,7 +218,9 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
               {content}
             </StyledModalContent>
             {hasActions && (
-              <StyledModalActions>{actionsContent}</StyledModalActions>
+              <StyledModalActions className="modal-actions">
+                {actionsContent}
+              </StyledModalActions>
             )}
           </StyledModalContainer>
           {rightComponent && (
