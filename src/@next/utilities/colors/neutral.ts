@@ -1,10 +1,10 @@
 export const B100 = '#FFFFFF';
-export const B99 = '#F8FAFC';
-export const B95 = '#EEF0F3';
-export const B85 = '#D4D5D8';
-export const B68 = '#ACACAD';
-export const B40 = '#666666';
-export const B33 = '#545454';
-export const B28 = '#474747';
+export const B99 = '#F7F9FA';
+export const B95 = '#F3F3F3';
+export const B85 = '#DDDDDD';
+export const B68 = '#B3B3B3';
+export const B40 = '#808080';
+export const B33 = '#666666';
+export const B28 = '#4D4D4D';
 export const B18 = '#2D2D2D';
 export const B00 = '#000000';
