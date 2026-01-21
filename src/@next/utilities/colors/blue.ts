@@ -1,7 +1,9 @@
 export const Brand = '#059FFF';
-export const S08 = '#EAF9FF';
-export const S20 = '#CAEEFB';
-export const S54 = '#6CC9EC';
+export const S08 = '#E6F4FA';
+export const S20 = '#C3E8FF';
+export const S54 = '#58BFFF';
 export const S95 = '#059FFF';
-export const S99 = '#017EB7';
-export const S100 = '#00568C';
+export const S97 = '#1A73E8';
+export const S98 = '#0073FF';
+export const S99 = '##1A73E8';
+export const S100 = '#1765CC';

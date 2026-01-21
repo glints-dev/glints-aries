@@ -1,6 +1,6 @@
-export const Brand = '#FFF240';
-export const S45 = '#FFF78C';
-export const S60 = '#FFF566';
-export const S75 = '#FFF240';
-export const S87 = '#F1E320';
-export const S99 = '#DCCD02';
+export const Brand = '#FFCB34';
+export const S45 = '#FFEEBE';
+export const S60 = '#FFD96A';
+export const S75 = '#FFCB34';
+export const S87 = '#FFB400';
+export const S99 = '#FFA600';
