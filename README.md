@@ -28,7 +28,7 @@ import { GlintsContainer } from 'glints-aries';
 
 ### Development
 
-Before that, make sure you already have git, node (version >= 14), and yarn installed.
+Before that, make sure you already have git, node (version >= 14), and yarn(version >= 1.22.0) installed.
 
 1. Clone the repository
 
