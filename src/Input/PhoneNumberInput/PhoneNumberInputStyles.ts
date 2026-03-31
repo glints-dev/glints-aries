@@ -9,6 +9,7 @@ export const PhoneNumberInputContainer = styled.div`
 
 export const TopRow = styled.div`
   display: flex;
+  position: relative;
 
   border: 2px solid ${Greyscale.lightgrey};
   align-items: center;
