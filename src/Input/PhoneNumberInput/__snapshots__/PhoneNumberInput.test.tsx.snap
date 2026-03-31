@@ -6,7 +6,7 @@ exports[`<PhoneNumberInput> should match default snapshot 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -320,7 +320,7 @@ exports[`<PhoneNumberInput> should match snapshot after input has been made 1`] 
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -634,7 +634,7 @@ exports[`<PhoneNumberInput> should match snapshot when a value is given 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -948,7 +948,7 @@ exports[`<PhoneNumberInput> should render an empty state when loading 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -1273,7 +1273,7 @@ exports[`<PhoneNumberInput> should render an empty state when there are no calli
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -1373,7 +1373,7 @@ exports[`<PhoneNumberInput> should render the given addon 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
@@ -1700,7 +1700,7 @@ exports[`<PhoneNumberInput> should render the given error 1`] = `
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="true"
     >
       <button
@@ -2016,7 +2016,7 @@ exports[`<PhoneNumberInput> should toggle the calling code input on clicking the
     class="PhoneNumberInputStyles__PhoneNumberInputContainer-sc-80kraj-0 hzEdvK"
   >
     <div
-      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 hzWGsb"
+      class="PhoneNumberInputStyles__TopRow-sc-80kraj-1 iBvUbr"
       data-invalid="false"
     >
       <button
