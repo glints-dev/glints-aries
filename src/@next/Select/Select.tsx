@@ -65,6 +65,8 @@ export interface SelectProps {
   borderRadius?: string;
   required?: boolean;
   isPlaceholderFloating?: boolean;
+  /** Allow popover to stretch to the full width of its activator */
+  fullWidth?: boolean;
 }
 
 export const Select = ({
@@ -103,6 +105,7 @@ export const Select = ({
   borderRadius,
   required,
   isPlaceholderFloating,
+  fullWidth = true,
 }: SelectProps) => {
   const [internalPopoverActive, setInternalPopoverActive] = useState(false);
   const popoverActive =
@@ -284,7 +287,7 @@ export const Select = ({
       preventFocusOnClose
       preferredAlignment="left"
       preferredPosition="below"
-      fullWidth
+      fullWidth={fullWidth}
       fitContent={optionListFitContent}
       zIndexOverride={zIndexOverride}
     >
@@ -297,7 +300,7 @@ export const Select = ({
             onSelect={onSelect}
             sections={sections}
             selectedValues={selectedValues}
-            width={width}
+            width={fullWidth ? width : undefined}
             onMenuClose={handleClose}
             noOptionsMessage={
               optionsPlaceholderProps &&
