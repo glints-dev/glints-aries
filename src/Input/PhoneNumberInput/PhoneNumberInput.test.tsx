@@ -191,6 +191,39 @@ describe('<PhoneNumberInput>', () => {
     );
   });
 
+  it('should render group headers when options include both featured and non-featured', () => {
+    const { getToggleButton, getCallingCodeOptions } = renderComponent();
+    fireEvent.click(getToggleButton());
+    const [firstOption, secondOption] = getCallingCodeOptions();
+    expect(firstOption.className).not.toEqual(secondOption.className);
+  });
+
+  it('should not render group headers when all options are featured', () => {
+    const featuredOnlyCallingCodeOptions = [
+      { label: 'Indonesia', callingCode: 62, isFeatured: true },
+      { label: 'Malaysia', callingCode: 60, isFeatured: true },
+    ];
+    const { getToggleButton, getCallingCodeOptions } = renderComponent({
+      callingCodeOptions: featuredOnlyCallingCodeOptions,
+    });
+    fireEvent.click(getToggleButton());
+    const [firstOption, secondOption] = getCallingCodeOptions();
+    expect(firstOption.className).toEqual(secondOption.className);
+  });
+
+  it('should not render group headers when all options are non-featured', () => {
+    const nonFeaturedOnlyCallingCodeOptions = [
+      { label: 'Afghanistan', callingCode: 93, isFeatured: false },
+      { label: 'Albania', callingCode: 355, isFeatured: false },
+    ];
+    const { getToggleButton, getCallingCodeOptions } = renderComponent({
+      callingCodeOptions: nonFeaturedOnlyCallingCodeOptions,
+    });
+    fireEvent.click(getToggleButton());
+    const [firstOption, secondOption] = getCallingCodeOptions();
+    expect(firstOption.className).toEqual(secondOption.className);
+  });
+
   it('should focus the calling code filter input on clicking the toggle button', () => {
     const { getToggleButton, getCallingCodeFilterInput } = renderComponent();
     fireEvent.click(getToggleButton());
