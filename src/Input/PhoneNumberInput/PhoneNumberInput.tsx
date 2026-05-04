@@ -34,6 +34,7 @@ export const PhoneNumberInput = ({
   isRequired,
   error,
   addon,
+  showFilterInput = true,
   ...restProps
 }: Props) => {
   const [isCallingCodeInputOpen, setIsCallingCodeInputOpen] = useState(false);
@@ -46,6 +47,19 @@ export const PhoneNumberInput = ({
     ['isFeatured', 'label'],
     ['desc', 'asc']
   );
+  const hasFeaturedOptions = callingCodeOptions.some(item => item.isFeatured);
+  const hasOtherOptions = callingCodeOptions.some(item => !item.isFeatured);
+  const shouldShowGroupHeaders = hasFeaturedOptions && hasOtherOptions;
+  const getGroupHeaderLabel = (item: CallingCodeOption, index: number) => {
+    if (!shouldShowGroupHeaders) return '';
+
+    const previousItem = callingCodeOptions[index - 1];
+    const isGroupBoundary = item.isFeatured !== (previousItem || {}).isFeatured;
+
+    if (!isGroupBoundary) return '';
+
+    return item.isFeatured ? featuredOptionsLabel : otherOptionsLabel;
+  };
 
   const {
     getComboboxProps,
@@ -139,23 +153,25 @@ export const PhoneNumberInput = ({
         {...getComboboxProps()}
         data-testid="calling-code-input"
       >
-        <S.CallingCodeFilterInputGroup>
-          <S.CallingCodeFilterInput
-            {...getInputProps(
-              {
-                placeholder: callingCodeFilterInputPlaceholder,
-              },
-              { ...refErrorFix }
+        {showFilterInput && (
+          <S.CallingCodeFilterInputGroup>
+            <S.CallingCodeFilterInput
+              {...getInputProps(
+                {
+                  placeholder: callingCodeFilterInputPlaceholder,
+                },
+                { ...refErrorFix }
+              )}
+              ref={callingCodeFilterInputRef}
+              data-testid="calling-code-filter-input"
+              onFocus={onFocus}
+              onBlur={onBlur}
+            />
+            {isLoadingCallingCodeOptions && (
+              <S.CallingCodeInputLoading data-testid="calling-code-options-loading" />
             )}
-            ref={callingCodeFilterInputRef}
-            data-testid="calling-code-filter-input"
-            onFocus={onFocus}
-            onBlur={onBlur}
-          />
-          {isLoadingCallingCodeOptions && (
-            <S.CallingCodeInputLoading data-testid="calling-code-options-loading" />
-          )}
-        </S.CallingCodeFilterInputGroup>
+          </S.CallingCodeFilterInputGroup>
+        )}
         <S.CallingCodeOptionsList {...getMenuProps()}>
           {callingCodeOptions.length > 0 ? (
             callingCodeOptions.map((item, index) => (
@@ -166,11 +182,7 @@ export const PhoneNumberInput = ({
                   index,
                 })}
                 title={item.label}
-                withGroupHeader={
-                  item.isFeatured !==
-                    (callingCodeOptions[index - 1] || {}).isFeatured &&
-                  (item.isFeatured ? featuredOptionsLabel : otherOptionsLabel)
-                }
+                withGroupHeader={getGroupHeaderLabel(item, index)}
               >
                 <Flex>
                   <S.CallingCodeOptionCallingCode>
@@ -214,6 +226,7 @@ export interface Props {
   isDisableCallingCode?: boolean;
   isPlaceholderFloating?: boolean;
   isRequired?: boolean;
+  showFilterInput?: boolean;
 }
 
 export interface PhoneNumber {
