@@ -15,6 +15,8 @@ export default {
           'glints-white',
           'glints-taploker-white',
           'glints-tapjobs-white',
+          'glints-tapjobs-white-horizontal',
+          'glints-taploker-white-horizontal',
           'glints',
           'glints-tapjobs',
           'glints-taploker',

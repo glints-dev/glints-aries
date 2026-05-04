@@ -10,6 +10,8 @@ import GlintsTapJobs from '../../../assets/image/glints-tapjobs-logo.svg';
 import GlintsWhite from '../../../assets/image/glints-logo-white.svg';
 import GlintsTapLokerWhite from '../../../assets/image/glints-taploker-logo-white.svg';
 import GlintsTapJobsWhite from '../../../assets/image/glints-tapjobs-logo-white.svg';
+import GlintsTapJobsWhiteHorizontal from '../../../assets/image/glints-tapjobs-logo-white-horizontal.svg';
+import GlintsTapLokerWhiteHorizontal from '../../../assets/image/glints-taploker-logo-white-horizontal.svg';
 
 const Brand = ({
   alt,
@@ -42,6 +44,10 @@ const Brand = ({
     srcAsset = GlintsTapLokerWhite;
   } else if (asset === 'glints-tapjobs-white') {
     srcAsset = GlintsTapJobsWhite;
+  } else if (asset === 'glints-tapjobs-white-horizontal') {
+    srcAsset = GlintsTapJobsWhiteHorizontal;
+  } else if (asset === 'glints-taploker-white-horizontal') {
+    srcAsset = GlintsTapLokerWhiteHorizontal;
   } else if (asset === 'glints') {
     srcAsset = Glints;
   } else if (asset === 'glints-tapjobs') {
