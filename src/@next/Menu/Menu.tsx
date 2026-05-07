@@ -2,7 +2,12 @@ import React from 'react';
 import nextId from 'react-id-generator';
 import { Typography } from '../Typography';
 import { Neutral } from '../utilities/colors';
-import { StyledMenu, StyledSections, TitleContainer } from './MenuStyle';
+import {
+  StyledMenu,
+  StyledSections,
+  TitleContainer,
+  TitleNodeContainer,
+} from './MenuStyle';
 import { MenuOptionLabel } from './components/MenuOptionLabel';
 import { MenuOption } from './components/MenuOption';
 import { MenuOptionCheckbox } from './components/MenuOptionCheckbox';
@@ -16,7 +21,7 @@ export interface Option {
 }
 
 export interface Section {
-  title?: string;
+  title?: string | React.ReactNode;
   options: Option[];
 }
 export interface MenuProps {
@@ -25,7 +30,7 @@ export interface MenuProps {
   options?: Option[];
   /** Selected value based on Option.value */
   selectedValues?: string[];
-  title?: string;
+  title?: string | React.ReactNode;
   allowMultiple?: boolean;
   sections?: Section[];
 }
@@ -42,7 +47,10 @@ export const Menu = ({
   const randomId = nextId('glints-menu');
   const menuId = id ? id : randomId;
 
-  const renderTitle = ({ title }: { title: string }) => {
+  const renderTitle = ({ title }: { title: string | React.ReactNode }) => {
+    if (React.isValidElement(title)) {
+      return <TitleNodeContainer>{title}</TitleNodeContainer>;
+    }
     return (
       <TitleContainer>
         <Typography variant="subtitle2" as="span" color={Neutral.B40}>

@@ -82,6 +82,10 @@ export const TitleContainer = styled.div`
   }
 `;
 
+export const TitleNodeContainer = styled.div`
+  margin: ${space8} 0 ${space4};
+`;
+
 export const ListContainer = styled.div`
   padding: 0 ${space8};
 `;
