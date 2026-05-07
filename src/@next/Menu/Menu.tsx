@@ -5,12 +5,14 @@ import { Neutral } from '../utilities/colors';
 import {
   StyledMenu,
   StyledSections,
+  StyledTooltip,
   TitleContainer,
   TitleNodeContainer,
 } from './MenuStyle';
 import { MenuOptionLabel } from './components/MenuOptionLabel';
 import { MenuOption } from './components/MenuOption';
 import { MenuOptionCheckbox } from './components/MenuOptionCheckbox';
+import { TooltipPosition } from '../Tooltip/Tooltip';
 
 export interface Option {
   disabled?: boolean;
@@ -18,6 +20,10 @@ export interface Option {
   label: string | React.ReactNode;
   sublabel?: React.ReactNode;
   value: string;
+  tooltip?: {
+    content: React.ReactNode;
+    preferredPosition?: TooltipPosition;
+  };
 }
 
 export interface Section {
@@ -64,12 +70,12 @@ export const Menu = ({
     return (
       <StyledMenu>
         {options?.map((option: Option) => {
-          const { value, label, sublabel, disabled, id } = option;
+          const { value, label, sublabel, disabled, id, tooltip } = option;
           const randomId = nextId('glints-menu-option');
           const menuOptionId = id ? id : randomId;
           const isSelected = selectedValues?.includes(value);
 
-          return (
+          const menuOption = (
             <MenuOption
               key={menuOptionId}
               value={value}
@@ -81,6 +87,17 @@ export const Menu = ({
               <MenuOptionLabel label={label} sublabel={sublabel} />
             </MenuOption>
           );
+
+          return tooltip ? (
+            <StyledTooltip
+              content={tooltip.content}
+              preferredPosition={tooltip.preferredPosition ?? 'left-middle'}
+            >
+              {menuOption}
+            </StyledTooltip>
+          ) : (
+            menuOption
+          );
         })}
       </StyledMenu>
     );
@@ -90,12 +107,12 @@ export const Menu = ({
     return (
       <StyledMenu>
         {options?.map((option: Option) => {
-          const { value, label, disabled, id } = option;
+          const { value, label, disabled, id, tooltip } = option;
           const randomId = nextId('glints-menu-option');
           const menuOptionId = id ? id : randomId;
           const isSelected = selectedValues?.includes(value);
 
-          return (
+          const menuOption = (
             <MenuOption
               key={menuOptionId}
               value={value}
@@ -110,6 +127,17 @@ export const Menu = ({
                 label={label}
               />
             </MenuOption>
+          );
+
+          return tooltip ? (
+            <StyledTooltip
+              content={tooltip.content}
+              preferredPosition={tooltip.preferredPosition ?? 'left-middle'}
+            >
+              {menuOption}
+            </StyledTooltip>
+          ) : (
+            menuOption
           );
         })}
       </StyledMenu>

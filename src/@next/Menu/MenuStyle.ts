@@ -4,6 +4,7 @@ import { Blue, Neutral } from '../utilities/colors';
 import { space16, space4, space8 } from '../utilities/spacing';
 
 import { MenuProps } from './Menu';
+import { Tooltip } from '../Tooltip/Tooltip';
 
 export const StyledMenu = styled.ul<MenuProps>`
   list-style: none;
@@ -71,6 +72,13 @@ export const StyledMenu = styled.ul<MenuProps>`
       }
     }
   }
+`;
+
+export const StyledTooltip = styled(Tooltip).attrs({
+  zIndex: 500,
+})`
+  display: block;
+  width: 100%;
 `;
 
 export const TitleContainer = styled.div`
