@@ -32,8 +32,12 @@ const options = [
     active: false,
     disabled: false,
     id: '2',
-    label: 'Completed',
-    value: 'Completed',
+    label: 'Tooltip Added',
+    value: 'Tooltip Added',
+    tooltip: {
+      content: 'Sample Tooltip',
+      preferredPosition: 'right-middle',
+    },
   },
   {
     active: false,
@@ -84,8 +88,12 @@ Basic.parameters = {
           active: false,
           disabled: false,
           id: '2',
-          label: 'Completed',
-          value: 'Completed',
+          label: 'Tooltip Added',
+          value: 'Tooltip Added',
+          tooltip: {
+            content: "Sample Tooltip",
+            preferredPosition: 'right-middle'
+          }
         },
         {
           active: false,
@@ -169,8 +177,12 @@ AllowMultiple.parameters = {
           active: false,
           disabled: false,
           id: '2',
-          label: 'Completed',
-          value: 'Completed',
+          label: 'Tooltip Added',
+          value: 'Tooltip Added',
+          tooltip: {
+            content: "Sample Tooltip",
+            preferredPosition: 'right-middle'
+          }
         },
         {
           active: false,

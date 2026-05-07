@@ -3,7 +3,7 @@ import { MenuPage } from './menuPage';
 
 test('Menu - basic without title', async ({ page }) => {
   const menuPage = new MenuPage(page);
-  await menuPage.goto('args=title:');
+  await menuPage.goto('args=title:!null');
   await expect(menuPage.canvas).toHaveScreenshot(
     'menu-basic-without-title.png'
   );
