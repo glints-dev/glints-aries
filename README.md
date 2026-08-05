@@ -43,7 +43,7 @@ yarn
 yarn build
 ```
 
-3. Start the application
+3. Start Storybook
 
 ```bash
 yarn storybook
