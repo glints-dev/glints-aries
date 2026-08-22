@@ -43,13 +43,13 @@ yarn
 yarn build
 ```
 
-3. Start the application
+3. Start Storybook
 
 ```bash
 yarn storybook
 ```
 
-4. Open your browser on (port 6006)[http://localhost:6006].
+4. Open [http://localhost:6006](http://localhost:6006) in your browser.
 
 Note: For Windows user, please use [WSL2 Linux](https://learn.microsoft.com/en-us/windows/wsl/install) to execute all the commands above. Make sure that the repository is cloned on the linux folder, not on your C drive.
 
