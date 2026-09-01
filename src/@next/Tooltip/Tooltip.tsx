@@ -285,7 +285,7 @@ export const Tooltip = ({
       timeoutRef.current = setTimeout(() => {
         setIsActive(false);
         setAnimate(false);
-      }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
+      }, 110); // Unmount just before the 120ms exit animation completes.
     }, timeout);
   };
 
