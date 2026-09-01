@@ -16,30 +16,42 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-Popover__PopoverOverlay {
   opacity: 0;
-  transition: opacity 100ms ease,
-    transform 100ms ease;
+  scale: 0.88;
+  transition:
+    opacity 140ms ease-out,
+    scale 240ms cubic-bezier(0.2, 1.45, 0.4, 1),
+    transform 240ms cubic-bezier(0.2, 1.45, 0.4, 1);
   transform: translateY(-0.3125rem);
 }
 
 .Polaris-Popover__PopoverOverlay--entering {
   opacity: 1;
+  scale: 1;
   transform: translateY(0);
 }
 
 .Polaris-Popover__PopoverOverlay--open {
   opacity: 1;
+  scale: 1;
   transform: none;
 }
 
 .Polaris-Popover__PopoverOverlay--exiting {
-  opacity: 1;
+  opacity: 0;
+  scale: 0.96;
   transform: translateY(0);
-  transition-duration: 0ms;
+  transition: opacity 90ms ease-in, scale 90ms ease-in;
 }
 
 .Polaris-Popover--measuring:not(.Polaris-Popover__PopoverOverlay--exiting) {
   opacity: 0;
   transform: translateY(-0.3125rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Polaris-Popover__PopoverOverlay {
+    transition-duration: 0.01ms;
+  }
 }
 
 .Polaris-Popover--fullWidth {
