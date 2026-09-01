@@ -237,8 +237,16 @@ export const Tooltip = ({
 
   useEffect(() => {
     if (isActive) {
+      const tooltipElement = tooltipRef.current;
+      const tooltipRect = tooltipElement?.getClientRects()[0];
       tooltipPositionsHandlerRef.current(
-        tooltipRef?.current?.getClientRects()[0],
+        tooltipRect &&
+          new DOMRect(
+            tooltipRect.x,
+            tooltipRect.y,
+            tooltipElement.offsetWidth,
+            tooltipElement.offsetHeight
+          ),
         elRef?.current?.getClientRects()[0],
         position
       );

@@ -131,12 +131,11 @@ export const StyledTooltip = styled.div<{ zIndex?: number }>`
     bottom: ${nonCentralArrowMargin};
   }
 
-  animation: soft-scale-in-tooltip 240ms cubic-bezier(0.2, 1.45, 0.4, 1)
-    forwards;
+  animation: soft-scale-in-tooltip 240ms cubic-bezier(0.2, 1.45, 0.4, 1);
+
   &.closed-animation {
     animation: soft-scale-out-tooltip 120ms ease-in forwards;
   }
-  animation-fill-mode: forwards;
 
   @keyframes soft-scale-in-tooltip {
     0% {
@@ -145,14 +144,14 @@ export const StyledTooltip = styled.div<{ zIndex?: number }>`
     }
     100% {
       opacity: 1;
-      scale: 1;
+      scale: none;
     }
   }
 
   @keyframes soft-scale-out-tooltip {
     0% {
       opacity: 1;
-      scale: 1;
+      scale: none;
     }
     100% {
       opacity: 0;

@@ -32,7 +32,7 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-Popover__PopoverOverlay--open {
   opacity: 1;
-  scale: 1;
+  scale: none;
   transform: none;
 }
 
