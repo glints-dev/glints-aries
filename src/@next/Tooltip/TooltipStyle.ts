@@ -131,28 +131,36 @@ export const StyledTooltip = styled.div<{ zIndex?: number }>`
     bottom: ${nonCentralArrowMargin};
   }
 
-  animation: fade-in-tooltip 400ms ease-in forwards;
+  animation: soft-scale-in-tooltip 240ms cubic-bezier(0.2, 1.45, 0.4, 1);
+
   &.closed-animation {
-    animation: fade-out-tooltip 400ms ease-out forwards;
+    animation: soft-scale-out-tooltip 120ms ease-in forwards;
   }
-  animation-fill-mode: forwards;
 
-  @keyframes fade-in-tooltip {
+  @keyframes soft-scale-in-tooltip {
     0% {
       opacity: 0;
+      scale: 0.88;
     }
     100% {
       opacity: 1;
+      scale: none;
     }
   }
 
-  @keyframes fade-out-tooltip {
+  @keyframes soft-scale-out-tooltip {
     0% {
       opacity: 1;
+      scale: none;
     }
     100% {
       opacity: 0;
+      scale: 0.96;
     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01ms;
   }
 
   @media (max-width: ${Breakpoints.large}) {

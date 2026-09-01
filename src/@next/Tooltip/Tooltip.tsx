@@ -237,8 +237,16 @@ export const Tooltip = ({
 
   useEffect(() => {
     if (isActive) {
+      const tooltipElement = tooltipRef.current;
+      const tooltipRect = tooltipElement?.getClientRects()[0];
       tooltipPositionsHandlerRef.current(
-        tooltipRef?.current?.getClientRects()[0],
+        tooltipRect &&
+          new DOMRect(
+            tooltipRect.x,
+            tooltipRect.y,
+            tooltipElement.offsetWidth,
+            tooltipElement.offsetHeight
+          ),
         elRef?.current?.getClientRects()[0],
         position
       );
@@ -285,7 +293,7 @@ export const Tooltip = ({
       timeoutRef.current = setTimeout(() => {
         setIsActive(false);
         setAnimate(false);
-      }, 370); // animation is 400ms, make this slightly lower to prevent visual glitch
+      }, 110); // Unmount just before the 120ms exit animation completes.
     }, timeout);
   };
 
