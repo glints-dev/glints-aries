@@ -17,6 +17,7 @@ describe('StyledPopover motion', () => {
     expect(css).toContain('scale:0.88');
     expect(css).toContain('scale:none');
     expect(css).toContain('scale:0.96');
+    expect(css).toContain('.Polaris-Popover__PopoverOverlay .Polaris-Popover');
     expect(css).toContain('@media (prefers-reduced-motion:reduce)');
   });
 });

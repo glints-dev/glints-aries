@@ -14,7 +14,7 @@ export const StyledPopover: any = createGlobalStyle`
   will-change: left, top;
 }
 
-.Polaris-Popover__PopoverOverlay {
+.Polaris-Popover__PopoverOverlay .Polaris-Popover {
   opacity: 0;
   scale: 0.88;
   transition:
@@ -24,19 +24,19 @@ export const StyledPopover: any = createGlobalStyle`
   transform: translateY(-0.3125rem);
 }
 
-.Polaris-Popover__PopoverOverlay--entering {
+.Polaris-Popover__PopoverOverlay--entering .Polaris-Popover {
   opacity: 1;
   scale: 1;
   transform: translateY(0);
 }
 
-.Polaris-Popover__PopoverOverlay--open {
+.Polaris-Popover__PopoverOverlay--open .Polaris-Popover {
   opacity: 1;
   scale: none;
   transform: none;
 }
 
-.Polaris-Popover__PopoverOverlay--exiting {
+.Polaris-Popover__PopoverOverlay--exiting .Polaris-Popover {
   opacity: 0;
   scale: 0.96;
   transform: translateY(0);
@@ -45,11 +45,13 @@ export const StyledPopover: any = createGlobalStyle`
 
 .Polaris-Popover--measuring:not(.Polaris-Popover__PopoverOverlay--exiting) {
   opacity: 0;
-  transform: translateY(-0.3125rem);
+  scale: none;
+  transform: none;
+  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Polaris-Popover__PopoverOverlay {
+  .Polaris-Popover__PopoverOverlay .Polaris-Popover {
     transition-duration: 0.01ms;
   }
 }
