@@ -21,6 +21,7 @@ export class TooltipPage extends StoryBookPage {
       .frameLocator('internal:attr=[title="storybook-preview-iframe"i]')
       .getByTestId(testId);
 
-    tooltipEl.hover();
+    await tooltipEl.hover();
+    await this.page.waitForTimeout(300);
   }
 }
