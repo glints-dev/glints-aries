@@ -254,8 +254,25 @@ export const Tooltip = ({
       content
     );
 
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [animate, setAnimate] = useState<boolean>(false);
+
+  useEffect(
+    () => () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    },
+    []
+  );
+
   const handleMouseEnter = () => {
-    if (!clickable) setIsActive(true);
+    if (!clickable) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      setAnimate(false);
+      setIsActive(true);
+    }
   };
   const handleMouseLeave = () => {
     if (!clickable) {
@@ -270,8 +287,6 @@ export const Tooltip = ({
     }
   };
 
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [animate, setAnimate] = useState<boolean>(false);
   const handleAnimation = () => {
     // if you click during the tooltip's lifespan, it should reset the timeout
     if (timeoutRef.current) {
