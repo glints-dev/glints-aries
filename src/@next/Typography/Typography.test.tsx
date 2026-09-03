@@ -73,6 +73,14 @@ describe('<Typography />', () => {
     }
   );
 
+  it('renders buttons with semibold weight', () => {
+    const { getByText } = render(
+      <Typography variant="button">{paragraphText}</Typography>
+    );
+
+    expect(getByText(paragraphText)).toHaveStyleRule('font-weight', '600');
+  });
+
   it('renders the specified color', () => {
     const { getByText } = render(
       <Typography color={Blue.Brand}>{paragraphText}</Typography>

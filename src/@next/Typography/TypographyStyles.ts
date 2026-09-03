@@ -136,13 +136,12 @@ export const body2 = css`
 
 export const button = css`
   font-family: ${NotoSans}, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.75px;
 
   @media (max-width: ${Breakpoints.large}) {
-    font-weight: 600;
     line-height: 140%;
     letter-spacing: 0.25px;
   }
