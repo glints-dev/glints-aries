@@ -153,6 +153,8 @@ export interface TooltipProps extends React.HTMLAttributes<HTMLDivElement> {
   /** if clickable it true, onClick will be called when tooltip is clicked */
   onClick?: () => void;
   tooltipClassName?: string;
+  /** delay before showing a hover-triggered tooltip */
+  hoverOpenDelay?: number;
 }
 
 const defaultPosition = 'top-center';
@@ -166,6 +168,7 @@ export const Tooltip = ({
   timeout = 0,
   onClick,
   tooltipClassName,
+  hoverOpenDelay = 300,
   ...props
 }: TooltipProps) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -254,11 +257,25 @@ export const Tooltip = ({
       content
     );
 
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const handleMouseEnter = () => {
-    if (!clickable) setIsActive(true);
+    if (clickable || hoverTimeoutRef.current) return;
+    if (hoverOpenDelay <= 0) {
+      setIsActive(true);
+      return;
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      hoverTimeoutRef.current = null;
+      setIsActive(true);
+    }, hoverOpenDelay);
   };
   const handleMouseLeave = () => {
     if (!clickable) {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+        hoverTimeoutRef.current = null;
+        return;
+      }
       setIsActive(false);
       handleAnimation();
     }
@@ -272,6 +289,14 @@ export const Tooltip = ({
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [animate, setAnimate] = useState<boolean>(false);
+
+  useEffect(
+    () => () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    },
+    []
+  );
   const handleAnimation = () => {
     // if you click during the tooltip's lifespan, it should reset the timeout
     if (timeoutRef.current) {

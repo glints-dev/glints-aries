@@ -1,6 +1,7 @@
 import React, {
   HTMLAttributes,
   FC,
+  useEffect,
   useRef,
   useState,
   useCallback,
@@ -20,12 +21,34 @@ export const Tooltip: FC<Props> = ({
   text,
   textAsString,
   position = 'top',
+  hoverOpenDelay = 300,
   ...defaultProps
 }) => {
   const contentRef = useRef(null);
+  const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isShow, setIsShow] = useState(false);
   const showTooltip = () => setIsShow(true);
   const hideTooltip = () => setIsShow(false);
+
+  const clearHoverTimeout = () => {
+    if (!hoverTimeoutRef.current) return;
+    clearTimeout(hoverTimeoutRef.current);
+    hoverTimeoutRef.current = null;
+  };
+
+  useEffect(() => clearHoverTimeout, []);
+
+  const showTooltipAfterDelay = () => {
+    if (hoverTimeoutRef.current || isShow) return;
+    if (hoverOpenDelay <= 0) {
+      showTooltip();
+      return;
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      hoverTimeoutRef.current = null;
+      showTooltip();
+    }, hoverOpenDelay);
+  };
 
   const hideTooltipIfTouchOutside = useCallback(
     (event: TouchEvent | React.TouchEvent) => {
@@ -60,8 +83,11 @@ export const Tooltip: FC<Props> = ({
       // Adding onTouchStart and onTouchEnd as a workaround
       // On mobile, it shows the tooltip on touch and hides the tooltip when the touch is released
       onTouchStart={handleTouchStart}
-      onMouseOver={showTooltip}
-      onMouseLeave={hideTooltip}
+      onMouseOver={showTooltipAfterDelay}
+      onMouseLeave={() => {
+        clearHoverTimeout();
+        hideTooltip();
+      }}
       {...defaultProps}
     >
       {isShow && (
@@ -98,6 +124,8 @@ interface BaseProps extends HTMLAttributes<HTMLHeadingElement> {
   //    * additional classes to the respective elements. */
   classes?: Classes;
   position?: Position;
+  /** delay before showing the tooltip on hover */
+  hoverOpenDelay?: number;
 }
 
 export interface StringTooltip extends BaseProps {
