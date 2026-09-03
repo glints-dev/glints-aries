@@ -6,79 +6,79 @@ import { NotoSans, Poppins } from '../utilities/fonts';
 export const headline1 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
-  font-size: 60px;
-  line-height: 140%;
+  font-size: 36px;
+  line-height: 125%;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
-    font-size: 36px;
+    font-size: 28px;
   }
 `;
 
 export const headline2 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
-  font-size: 50px;
-  line-height: normal;
+  font-size: 32px;
+  line-height: 125%;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 600;
-    font-size: 32px;
-    line-height: 140%;
+    font-size: 24px;
+    line-height: 125%;
   }
 `;
 
 export const headline3 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
-  font-size: 36px;
-  line-height: normal;
+  font-size: 28px;
+  line-height: 130%;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 600;
-    font-size: 28px;
-    line-height: 140%;
+    font-size: 22px;
+    line-height: 130%;
   }
 `;
 
 export const headline4 = css`
   font-family: ${Poppins}, sans-serif;
   font-weight: 700;
-  font-size: 30px;
-  line-height: 140%;
-  letter-spacing: 0;
-
-  @media (max-width: ${Breakpoints.large}) {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 150%;
-  }
-`;
-
-export const headline5 = css`
-  font-weight: 700;
-  font-size: 26px;
-  line-height: normal;
+  font-size: 24px;
+  line-height: 130%;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 600;
     font-size: 20px;
+    line-height: 130%;
+  }
+`;
+
+export const headline5 = css`
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0;
+
+  @media (max-width: ${Breakpoints.large}) {
+    font-weight: 600;
+    font-size: 18px;
   }
 `;
 
 export const headline6 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 150%;
+  font-size: 18px;
+  line-height: 140%;
   letter-spacing: 0;
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.15px;
   }
 `;
@@ -86,7 +86,7 @@ export const headline6 = css`
 export const subtitle1 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.15px;
 
@@ -98,7 +98,7 @@ export const subtitle1 = css`
 export const subtitle2 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 150%;
   letter-spacing: 0.25px;
 
@@ -111,7 +111,7 @@ export const subtitle2 = css`
 export const body1 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   letter-spacing: 0px;
 
@@ -123,7 +123,7 @@ export const body1 = css`
 export const body2 = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.25px;
 
@@ -143,6 +143,7 @@ export const button = css`
 
   @media (max-width: ${Breakpoints.large}) {
     font-weight: 600;
+    line-height: 140%;
     letter-spacing: 0.25px;
   }
 `;
@@ -150,8 +151,8 @@ export const button = css`
 export const caption = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 150%;
+  font-size: 12px;
+  line-height: 140%;
   letter-spacing: 0.25px;
 
   @media (max-width: ${Breakpoints.large}) {
@@ -163,12 +164,12 @@ export const caption = css`
 export const overline = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 140%;
   letter-spacing: 1.5px;
 
   @media (max-width: ${Breakpoints.large}) {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.2px;
   }
 `;

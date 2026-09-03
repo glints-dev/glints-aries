@@ -1,8 +1,26 @@
 import * as React from 'react';
 import 'jest-styled-components';
 import { render } from '@testing-library/react';
-import { Typography } from './Typography';
+import { Typography, Variant } from './Typography';
 import * as Blue from '../utilities/colors/blue';
+
+const typographyMetrics: ReadonlyArray<
+  readonly [Variant, string, string, string, string | undefined]
+> = [
+  ['headline1', '36px', '125%', '28px', undefined],
+  ['headline2', '32px', '125%', '24px', '125%'],
+  ['headline3', '28px', '130%', '22px', '130%'],
+  ['headline4', '24px', '130%', '20px', '130%'],
+  ['headline5', '20px', '140%', '18px', undefined],
+  ['headline6', '18px', '140%', '16px', undefined],
+  ['subtitle1', '16px', '150%', '16px', undefined],
+  ['subtitle2', '13px', '150%', '12px', undefined],
+  ['body1', '14px', '150%', '14px', undefined],
+  ['body2', '14px', '150%', '14px', '140%'],
+  ['button', '14px', '150%', '14px', '140%'],
+  ['caption', '12px', '140%', '12px', undefined],
+  ['overline', '11px', '140%', '11px', undefined],
+];
 
 describe('<Typography />', () => {
   const paragraphText =
@@ -30,21 +48,30 @@ describe('<Typography />', () => {
     expect(container.querySelector(asElement)).not.toBeNull();
   });
 
-  it('renders its children with variant text style', () => {
-    const variant = 'headline1';
-    render(<Typography variant={variant}>{paragraphText}</Typography>);
+  it.each(typographyMetrics)(
+    'renders %s with the approved desktop and mobile metrics',
+    (variant, fontSize, lineHeight, mobileFontSize, mobileLineHeight) => {
+      const { getByText } = render(
+        <Typography variant={variant}>{paragraphText}</Typography>
+      );
+      const typography = getByText(paragraphText);
 
-    const typographyClass = Typography({ variant, children: paragraphText })
-      .type.styledComponentId;
-    const TypographyRoots = document.getElementsByClassName(typographyClass);
-    const style = window.getComputedStyle(TypographyRoots[0]);
+      expect(typography).toHaveStyleRule('font-size', fontSize);
+      expect(typography).toHaveStyleRule('line-height', lineHeight);
 
-    expect(style.fontFamily).toBe('Poppins,sans-serif');
-    expect(style.fontWeight).toBe('700');
-    expect(style.fontSize).toBe('60px');
-    expect(style.lineHeight).toBe('140%');
-    expect(style.letterSpacing).toBe('0');
-  });
+      if (mobileFontSize !== fontSize) {
+        expect(typography).toHaveStyleRule('font-size', mobileFontSize, {
+          media: '(max-width:768px)',
+        });
+      }
+
+      if (mobileLineHeight) {
+        expect(typography).toHaveStyleRule('line-height', mobileLineHeight, {
+          media: '(max-width:768px)',
+        });
+      }
+    }
+  );
 
   it('renders the specified color', () => {
     const { getByText } = render(

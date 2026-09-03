@@ -11,63 +11,59 @@ interface StyledSkeletonTextProps {
 }
 
 const headline1 = css`
-  height: 84px;
+  height: 45px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 36px;
+    height: 35px;
   }
 `;
 
 const headline2 = css`
-  height: 75px;
+  height: 40px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 32px;
+    height: 30px;
   }
 `;
 
 const headline3 = css`
-  height: 54px;
+  height: 36.4px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 28px;
+    height: 28.6px;
   }
 `;
 
 const headline4 = css`
-  height: 42px;
+  height: 31.2px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 24px;
+    height: 26px;
   }
 `;
 
 const headline5 = css`
-  height: 39px;
+  height: 28px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 20px;
+    height: 25.2px;
   }
 `;
 
 const headline6 = css`
-  height: 36px;
+  height: 25.2px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 18px;
+    height: 22.4px;
   }
 `;
 
 const subtitle1 = css`
-  height: 32px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    height: 16px;
-  }
+  height: 24px;
 `;
 
 const subtitle2 = css`
-  height: 21px;
+  height: 19.5px;
 
   @media (max-width: ${Breakpoints.large}) {
     height: 18px;
@@ -75,39 +71,31 @@ const subtitle2 = css`
 `;
 
 const body1 = css`
-  height: 24px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    height: 21px;
-  }
+  height: 21px;
 `;
 
 const body2 = css`
-  height: 24px;
+  height: 21px;
 
   @media (max-width: ${Breakpoints.large}) {
-    height: 21px;
+    height: 19.6px;
   }
 `;
 
 const button = css`
-  height: 14px;
+  height: 21px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    height: 19.6px;
+  }
 `;
 
 const caption = css`
-  height: 20px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    height: 17px;
-  }
+  height: 16.8px;
 `;
 
 const overline = css`
-  height: 17px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    height: 14px;
-  }
+  height: 15.4px;
 `;
 
 const variantHeightMapping: {
