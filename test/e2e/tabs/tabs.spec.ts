@@ -57,11 +57,13 @@ test('Tabs - With Custom Wrapper', async ({ page }) => {
   );
 
   await tabsPage.tabHeaders.nth(1).hover();
+  await expect(tabsPage.container.getByText('Hovered 2')).toBeVisible();
   await expect(tabsPage.container).toHaveScreenshot(
     'tabs-with-custom-wrapper-tooltip.png'
   );
 
   await tabsPage.tabHeaders.nth(2).hover();
+  await expect(tabsPage.container.getByText('Hovered 3')).toBeVisible();
   await expect(tabsPage.container).toHaveScreenshot(
     'tabs-with-custom-wrapper-tooltip-disabled.png'
   );

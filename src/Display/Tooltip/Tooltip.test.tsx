@@ -1,9 +1,17 @@
 import * as React from 'react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 
 import Tooltip, { Position } from './Tooltip';
+
+beforeEach(() => {
+  jest.useFakeTimers();
+});
+
+afterEach(() => {
+  jest.useRealTimers();
+});
 
 describe('<Tooltip/> snapshot', () => {
   test('should match snapshot when Tooltip is hidden', () => {
@@ -42,6 +50,9 @@ describe('<Tooltip/> snapshots with position prop', () => {
       );
       const element = queryByText('mock content');
       fireEvent.mouseOver(element);
+      act(() => {
+        jest.advanceTimersByTime(300);
+      });
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -105,6 +116,44 @@ describe('<Tooltip/> snapshot with html content', () => {
     );
     const element = queryByText('mock content');
     fireEvent.mouseOver(element);
+    act(() => {
+      jest.advanceTimersByTime(300);
+    });
     expect(asFragment()).toMatchSnapshot();
+  });
+});
+
+describe('<Tooltip/> hover delay', () => {
+  test('shows after the default delay', () => {
+    const { queryByText } = render(
+      <Tooltip text="mock text">
+        <span>mock content</span>
+      </Tooltip>
+    );
+
+    fireEvent.mouseOver(queryByText('mock content'));
+    expect(queryByText('mock text')).not.toBeInTheDocument();
+
+    act(() => {
+      jest.advanceTimersByTime(300);
+    });
+    expect(queryByText('mock text')).toBeInTheDocument();
+  });
+
+  test('cancels showing when the pointer leaves', () => {
+    const { queryByText } = render(
+      <Tooltip text="mock text">
+        <span>mock content</span>
+      </Tooltip>
+    );
+    const element = queryByText('mock content');
+
+    fireEvent.mouseOver(element);
+    fireEvent.mouseLeave(element);
+    act(() => {
+      jest.advanceTimersByTime(300);
+    });
+
+    expect(queryByText('mock text')).not.toBeInTheDocument();
   });
 });
