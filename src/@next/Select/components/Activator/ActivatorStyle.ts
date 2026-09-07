@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import * as Breakpoints from '../../../utilities/breakpoints/Breakpoints';
 import { borderRadius4 } from '../../../utilities/borderRadius';
 import { Neutral, Red } from '../../../utilities/colors';
 import { NotoSans } from '../../../utilities/fonts';
@@ -30,13 +29,9 @@ export const StyledSelect = styled.button<ActivatorSelectProps>`
   color: ${Neutral.B18};
   font-family: ${NotoSans}, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   letter-spacing: 0px;
-
-  @media (max-width: ${Breakpoints.large}) {
-    font-size: 14px;
-  }
 
   &:focus {
     outline: none;

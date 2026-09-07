@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as Breakpoints from '../../../utilities/breakpoints';
 import { Neutral, Red } from '../../../utilities/colors';
 import { NotoSans } from '../../../utilities/fonts';
 import {
@@ -79,14 +78,10 @@ export const StyledSelectedValue = styled.div<{
   font-family: ${NotoSans}, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
 
   color: ${Neutral.B18};
-
-  @media (max-width: ${Breakpoints.large}) {
-    font-size: 14px;
-  }
 `;
 
 export const InputContainer = styled.div`
