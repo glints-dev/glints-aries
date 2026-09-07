@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as Breakpoints from '../utilities/breakpoints';
 import { Neutral, Red } from '../utilities/colors';
 import { InputProps } from './Input';
 import { space12, space4, space8 } from '../utilities/spacing';
@@ -22,7 +21,7 @@ export const StyledContainer = styled.div<InputProps & PreffixSuffixWidthProps>`
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
 
   &[data-prefix='true'] input {
@@ -116,7 +115,7 @@ export const StyledInput = styled.input<InputProps>`
   font-family: ${NotoSans}, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
 
   color: ${Neutral.B18};
@@ -136,10 +135,6 @@ export const StyledInput = styled.input<InputProps>`
     box-shadow:
       0px 0px 0px 1px ${Neutral.B100},
       0px 0px 0px 3px #6ac9ec;
-  }
-
-  @media (max-width: ${Breakpoints.large}) {
-    font-size: 14px;
   }
 `;
 

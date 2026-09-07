@@ -40,7 +40,7 @@ const WithFloatingAndRequiredPlaceholderTemplate: Story<
       {...args}
       value={value}
       onChange={val => setValue(val)}
-      floatingFontSize={'16px'}
+      floatingFontSize={'14px'}
       isPlaceholderFloating={true}
       required={true}
       floatingPlaceholderTop={-0.5}
