@@ -150,7 +150,7 @@ export const button = css`
 export const caption = css`
   font-family: ${NotoSans}, sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 140%;
   letter-spacing: 0.25px;
 

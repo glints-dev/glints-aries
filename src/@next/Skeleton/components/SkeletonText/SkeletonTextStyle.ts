@@ -91,7 +91,11 @@ const button = css`
 `;
 
 const caption = css`
-  height: 16.8px;
+  height: 18.2px;
+
+  @media (max-width: ${Breakpoints.large}) {
+    height: 16.8px;
+  }
 `;
 
 const overline = css`
