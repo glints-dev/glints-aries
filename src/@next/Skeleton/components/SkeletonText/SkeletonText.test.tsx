@@ -16,7 +16,7 @@ const skeletonMetrics = [
   ['body1', '21px', '21px'],
   ['body2', '21px', '19.6px'],
   ['button', '21px', '19.6px'],
-  ['caption', '16.8px', '16.8px'],
+  ['caption', '18.2px', '16.8px'],
   ['overline', '15.4px', '15.4px'],
 ] as const;
 

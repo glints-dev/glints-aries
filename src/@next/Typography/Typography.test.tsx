@@ -18,7 +18,7 @@ const typographyMetrics: ReadonlyArray<
   ['body1', '14px', '150%', '14px', undefined],
   ['body2', '14px', '150%', '14px', '140%'],
   ['button', '14px', '150%', '14px', '140%'],
-  ['caption', '12px', '140%', '12px', undefined],
+  ['caption', '13px', '140%', '12px', undefined],
   ['overline', '11px', '140%', '11px', undefined],
 ];
 
