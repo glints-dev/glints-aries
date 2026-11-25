@@ -56,18 +56,18 @@ export const ActivatorTextInput = ({
   const activatorRef = useRef(null);
   const [hasSelectedValues, setHasSelectedValues] = useState(false);
 
-  const filterOptions = (str: string) => {
-    if (str === '') {
+  const filterOptions = (query: string) => {
+    if (query === '') {
       updateMenuOptions(options);
       return options;
     }
 
-    const filterRegex = new RegExp(str, 'i');
-    const filterOptions = options.filter((option: Option) =>
-      (option.label as string).match(filterRegex)
+    const normalizedQuery = query.toLowerCase();
+    return options.filter(
+      ({ label }) =>
+        typeof label === 'string' &&
+        label.toLowerCase().includes(normalizedQuery)
     );
-
-    return filterOptions;
   };
 
   const handleChange = ({ value }: { value: string }) => {
