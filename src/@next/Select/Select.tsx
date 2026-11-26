@@ -10,6 +10,7 @@ import { Label } from './components/Label/Label';
 import { SearchableSelectState } from './components/SearchableSelectInput/SearchableSelectInput';
 import { IconNames } from '../Icon/icons/icons';
 import { ActivatorWrapper, HelpTextContainer } from './SelectStyle';
+import { highlightMatchedText } from './highlightMatchedText';
 
 interface SearchableProps {
   /** value of TextInput activator when Select is searchable */
@@ -67,6 +68,8 @@ export interface SelectProps {
   isPlaceholderFloating?: boolean;
   /** Allow popover to stretch to the full width of its activator */
   fullWidth?: boolean;
+  /** when searchable, bolds the part of each option label that matches the input value */
+  highlightMatchedText?: boolean;
 }
 
 export const Select = ({
@@ -93,6 +96,7 @@ export const Select = ({
   prefix,
   searchable,
   searchableProps,
+  highlightMatchedText: shouldHighlightMatchedText = false,
   optionsPlaceholderProps,
   showPopoverOnFocus = false,
   scrollable = false,
@@ -295,7 +299,11 @@ export const Select = ({
         <Popover.Pane height={optionListHeight}>
           <OptionList
             loading={loadingOptions}
-            menuOptions={menuOptions}
+            menuOptions={
+              shouldHighlightMatchedText
+                ? highlightMatchedText(menuOptions, inputValue)
+                : menuOptions
+            }
             allowMultiple={allowMultiple}
             onSelect={onSelect}
             sections={sections}
