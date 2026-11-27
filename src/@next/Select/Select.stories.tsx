@@ -1098,6 +1098,7 @@ AsyncSearchableSingleWithInputState.parameters = {
             inputValue,
             onInputChange: (value: string) => debounceHandleInputChange(value),
           }}
+          highlightMatchedText
           width="600px"
           label="Label"
         />
